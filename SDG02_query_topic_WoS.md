@@ -309,8 +309,7 @@ This query consists of 1 phrase
 
 Genebanks already covered (Target 2.5), so not included as a term here.
 
-Country names included....NOTES? CITATION?
-
+Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[3](#f3)</sup>.
 
 ``` Ceylon =
 TS =
@@ -417,7 +416,6 @@ TS=
 <b id="f1">1</b> This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)".
 (https://unstats.un.org/sdgs/indicators/indicators-list/) [↩](#SDGT+Is)
 
-<b id="f1">1</b> FAO statistical year book (2013), Part 3 Feeding the world, ISBN: 9789251073964, http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244.
+<b id="f2">2</b> FAO statistical year book (2013), Part 3 Feeding the world, ISBN: 9789251073964, http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244.
 
-#This code includes a return link, but doesn't work with mulitple occurences
-<b id="f1">1</b> FAO statistical year book (2013), Part 3 Feeding the world, ISBN: 9789251073964, http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244. [↩](#FAO2013)
+<b id="f3">3</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
