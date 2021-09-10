@@ -5,11 +5,9 @@
 1. Full query in copy-pastable format (to be added at the end)
 2. General notes about method for SDG 1
 3. Documentation and string sections for each target
-   * Target 1.1
-   * Target 1.2
-   * ...
 
-## Full query
+
+## 1. Full query
 
 <details>
   <summary>Click to show the final copy-pastable full query for SDG 1</summary>
@@ -20,13 +18,13 @@ TS= ( ( "poverty" ) OR (("social protection$" OR "social floor$" OR "social serv
 
 </details>
 
-## General notes
+## 2. General notes
 
 Source of Targets and Indicators:
 Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021]
 <sup id="SDGT+Is">[1](#f1)</sup>
 
-## Targets
+## 3. Targets
 
 ## Target 1.1/1.2
 
