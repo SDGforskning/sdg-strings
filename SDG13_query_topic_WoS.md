@@ -2,24 +2,21 @@
 
 **Contents**
 
-1. Full query in copy-pastable format (to be added at the end)
+1. Full query in copy-pasteable format
 2. General notes about method for SDG13
 3. Documentation and string sections for each target
-   * Target 13.1
-   * Target 13.2
-   * ...
 
-## Full query
+## 1. Full query
 
 <details>
-  <summary>Click to show the final copy-pastable full query for SDG13</summary>
+  <summary>Click to show the final copy-pasteable full query for SDG13</summary>
 
 ```
-  Test
+TS=( ( ("educati*" OR "curriculum" OR "curricula" OR "institutional capacity" OR "human capacity" OR "systemic capacity" OR "awareness" OR "perception$" OR "technical knowledge transfer" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technology transfer$" OR "official development assistance" OR "official development aid" OR "foreign aid" OR "international aid" OR "cooperation fund" OR "investment$" OR "invest" OR "investing") AND ( (("climate change$" OR "global warming" OR "climatic change$") NEAR/15 ("mitigat*" OR "adapt*" OR "impact reduction" OR "early warning" OR "risk$") ) OR "climate mitigation" ) ) OR "Green climate fund" OR "climate action$" OR "climate governance" OR "climate mitigation" OR (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming") OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*"OR "reced*")) OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*")) ) NEAR/10 ("action$" OR "sustainab*" OR "assessment$" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "impact reduction" OR "impact$" OR "effect$" OR "planning" OR "strateg*" OR "manag*" OR "policy" OR "policies" OR "legislat*" OR "govern*" OR "disaster risk reduction" OR "preparedness" ) ) OR ( ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR ("climate" NEAR/5 ("anthropogenic" OR "human impact$")) ) ) OR (( "methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "carbon emissions" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6" ) AND ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming") ) ) OR ((( ("hazard*" OR "catastroph*" OR "disaster*" OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation")) OR "drought$" OR "flood*" OR "collaps*" OR "tipping point" OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) ) ) OR "Livelihood Vulnerability Index" ) AND ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")) ) OR ("Kyoto protocol" OR "Paris Agreement" OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "UNFCCC" OR "United Nations Framework Convention on Climate Change" ) OR ("SDG13" OR "SDG$ 13" OR "SDG-13" OR "sustainable development goal$ 13" OR (("sustainable development goal$" OR "SDG$" OR "goal 13") NEAR/15 "climate")) )
 ```
 </details>
 
-## General notes
+## 2. General notes
 
 Source of Targets and Indicators:
 Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021]
@@ -28,7 +25,7 @@ Statistics Division. (2021). *Global indicator framework for the Sustainable Dev
 * Definition of "capacity" : "[...] the ability of people, organizations and society as a whole to manage their affairs successfully"<sup id="UNDGcapacity">[2](#f2)</sup>.
 * Definition of "capacity development" : "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"<sup id="UNDGcapacity">[2](#f2)</sup>.
 
-## Targets
+## 3. Targets
 
 ## Target 13.1
 
