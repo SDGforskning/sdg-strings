@@ -301,6 +301,9 @@ Truncate `cure` carefully
 "ownership"
 "access*"
 "control"
+
+"barrier$"
+"obstacle$"
 ```
 
 ## Capacity and technology transfer
