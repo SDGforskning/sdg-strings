@@ -74,8 +74,6 @@ Statistics Division. (2021). *Global indicator framework for the Sustainable Dev
 
 ## Target 7.1
 
-These targets are combined, as they cover similar topics.
-
 > **7.1 By 2030, ensure universal access to affordable, reliable and modern energy services**
 >
 > 7.1.1 Proportion of population with access to electricity
@@ -288,7 +286,7 @@ TS=
       )
     OR "biofuel$" OR "bioenergy" OR "biodiesel"
     OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*"
-    OR "solar array" OR OR "solar PV" OR "solar photovoltaic$"      
+    OR "solar array" OR "solar PV" OR "solar photovoltaic$"      
     OR "solar thermal power" OR "solar thermal technolog*" OR "solar thermal collector$"
     OR "solar energy collector$" OR "solar district heating" OR "solar district cooling"
     OR "solar air heating system$" OR "solar space heating system$"
