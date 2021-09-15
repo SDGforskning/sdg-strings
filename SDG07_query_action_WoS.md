@@ -317,7 +317,7 @@ TS=
         )
       OR "biofuel$" OR "bioenergy" OR "biodiesel"
       OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*"
-      OR "solar array" OR OR "solar PV" OR "solar photovoltaic$"
+      OR "solar array" OR "solar PV" OR "solar photovoltaic$"
       OR "solar thermal power" OR "solar thermal technolog*" OR "solar thermal collector$"
       OR "solar energy collector$" OR "solar district heating" OR "solar district cooling"
       OR "solar air heating system$" OR "solar space heating system$"
