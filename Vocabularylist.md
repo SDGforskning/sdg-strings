@@ -99,6 +99,18 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
 "countr*" OR "nation$" OR "develop* state$"
 ```
 
+## Effects
+
+```Ceylon=
+"impact$"
+"effect$"
+"affect$"
+"affecting"
+"affected"
+"response$"
+"consequence$"
+```
+
 ## Actions
 
 ### Improving/increasing
@@ -279,7 +291,7 @@ Truncate `cure` carefully
 "equal" / "unequal"
 "share"
 "sharing"
-"shared benefit$"
+"shared benefit$" OR "benefit sharing"
 "justice"
 "democracy"
 
@@ -352,19 +364,29 @@ See also "Risks and disasters". For more terms (GHG, climate mitigation etc.), s
 "protect*"
 ```
 
-## Incentives, investment and income
+## Financial assistance, investment and income
 
 Truncate `invest` and `subsidy` carefully (e.g. investigated, subside)
 
 ```Ceylon=
 "incentive$"
-"subsidy" OR "subsidies"
+"subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+"government* subsid*"
+"economic subsid*"
+"price support$"
+"tax break$"
 
 "market$"
 "investment$"
 "investing"
 "invest"
 "financ*"
+
+"ODA" OR "official development assistance"
+"official development aid"
+"foreign aid"
+"international aid"
+"cooperation fund"
 
 "income$"
 "wage$"
@@ -374,16 +396,19 @@ Truncate `invest` and `subsidy` carefully (e.g. investigated, subside)
 "GDP"
 ```
 
-## Effects
+## Social/welfare services
 
 ```Ceylon=
-"impact$"
-"effect$"
-"affect$"
-"affecting"
-"affected"
-"response$"
-"consequence$"
+"social protection$"
+"social floor$"
+"social service$"
+"welfare system$"
+"welfare service$"
+"social welfare"
+"social security"
+
+"basic service$"
+"essential service$"
 ```
 
 ## Feasibility/adoption/uptake of a new technology
@@ -391,7 +416,15 @@ Truncate `invest` and `subsidy` carefully (e.g. investigated, subside)
 ```Ceylon=
 "barrier$"
 "obstacle$"
+"implement*"
+"adopt*"
 
+"subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+"government* subsid*"
+"economic subsid*"
+"price support$"
+"tax break$"
+"incentive$"
 "economic feasibility"
 "cost-effectiveness"
 "affordab*"
@@ -401,7 +434,4 @@ Truncate `invest` and `subsidy` carefully (e.g. investigated, subside)
 "commercial development"
 "develop* commercially"
 "commerciali?ation"
-
-"implement*"
-"adopt*"
 ```
