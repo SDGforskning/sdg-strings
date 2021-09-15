@@ -20,7 +20,7 @@ Note: Web of Science reads "SDG-1" also as "SDG 1"
 "eco-friendly"
 ```
 
-##Countries
+## Countries
 
 Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174) - United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
@@ -290,7 +290,7 @@ Truncate `invest` carefully (e.g. investigated)
 "consequence$"
 ```
 
-## Terms that may indicate discussion of feasibility/adoption/uptake of a new technology
+## Feasibility/adoption/uptake of a new technology
 
 ```Ceylon=
 "barrier$"
