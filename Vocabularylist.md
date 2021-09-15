@@ -16,6 +16,8 @@ Note: Web of Science reads "SDG-1" also as "SDG 1"
 "sustainable development goal$ 1"
  (("sustainable development goal$" OR "SDG$" OR "goal 1")  NEAR/15 "poverty")
 
+#More general
+"sustainable development"
 "sustainab*"
 "eco-friendly"
 ```
@@ -41,6 +43,62 @@ Lists of least developed countries, small island developing states and landlocke
 #Landlocked developing states (LDS)
 "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgystan" OR "Lao People’s Democratic Republic" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "Paraguay" OR "Republic of Moldova" OR "Rwanda" OR "South Sudan" OR "Tajikistan" OR "The former Yugoslav Republic of Macedonia" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"
 ```
+
+## Groups of people
+
+Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
+
+```Ceylon=
+"the poor"
+"the poorest"
+"rural poor"
+"urban poor"
+(("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+
+"the vulnerable"
+"vulnerable group$"
+
+("person$" OR "people" OR "adult$")
+    NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
+"disability"
+
+("person$" OR "people" OR "adult$")
+    NEAR/3 ("unemployed")
+
+"patient$"
+
+("person$" OR "people" OR "adult$")
+    NEAR/3 ("older" OR "elderly")
+"old* person$"
+"old* people"
+"elderly"
+
+"pregnant"
+"pregnancy"
+"fetus" OR "foetus" OR "fetal" OR "foetal"
+"perinatal" OR "prenatal" "neonatal" OR "antenatal"
+"newborn$"
+"babies"
+"infant$"
+"newborn$"
+"children"
+"child"
+"under-five"
+"girls"
+"boys"
+
+"adult$"
+"women" OR "woman"
+"men" OR "man"
+
+"humans" OR "humanity" OR "human"
+"people" OR "person$"
+
+"rural"
+"urban" OR "city" OR "cities" OR "town$" OR "village$"
+"countr*" OR "nation$" OR "develop* state$"
+```
+
 ## Actions
 
 ### Improving/increasing
@@ -188,6 +246,7 @@ Truncate `cure` carefully
 "alleviat*"
 "cure"
 "cured"
+"rehabilitat*"
 ```
 
 ## Security/insecurity
@@ -203,18 +262,29 @@ Truncate `cure` carefully
 "preserv*"
 "reliab*" / "unrelaib*"
 "vulnerab*"
+"stability"
+
+"preparedness"
+"early warning"
 ```
 
 ## Access and sharing
 
+`equity`, `justice`, `democracy` may need combining in a phrase (e.g. `health equity`, `energy democracy`)
+
 ```Ceylon=
 "equitab*" / "inequitab*"
+"equity"
+"equality" / "inequality"
+"equal" / "unequal"
 "share"
 "sharing"
 "shared benefit$"
+"justice"
+"democracy"
+
 "affordab*" / "inaffordab*"
-"equality" / "inequality"
-"equal" / "unequal"
+
 "right$"
 "ownership"
 "access*"
@@ -244,25 +314,51 @@ From United Nations Development Group (2017) Capacity Development, UNDAF compani
 "capacity building" OR "capacity development"
 ```
 
+## Climate changes
+
+See also "Risks and disasters". For more terms (GHG, climate mitigation etc.), see SDG13 string.
+
+```Ceylon=
+"climate change"
+"climatic change$"
+"global warming"
+"changing climate"
+("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
+("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+```
+
 ## Risks and disasters
 
 ```Ceylon=
 "disaster$"
-"catastroph*"
+"catastrophe$"
 "risk$"
-"extrem*"
 "shock$"
 "hazard*"
 "collaps*"
+
 "tipping point$"
+"extrem*"
+("extreme$" NEAR/2 ("climat*" OR "weather" OR "precipitation"))
+"drought$"
+"flood*"
+
+"financial crash*"
+"economic downturn$"
+
+"disaster risk reduction"
+"preparedness"
+"early warning"
+"protect*"
 ```
 
 ## Incentives, investment and income
 
-Truncate `invest` carefully (e.g. investigated)
+Truncate `invest` and `subsidy` carefully (e.g. investigated, subside)
 
 ```Ceylon=
 "incentive$"
+"subsidy" OR "subsidies"
 
 "market$"
 "investment$"
@@ -295,12 +391,17 @@ Truncate `invest` carefully (e.g. investigated)
 ```Ceylon=
 "barrier$"
 "obstacle$"
+
 "economic feasibility"
 "cost-effectiveness"
 "affordab*"
 "cost-advantage$"
+
 "upscale" OR "scale-up"
 "commercial development"
 "develop* commercially"
 "commerciali?ation"
+
+"implement*"
+"adopt*"
 ```
