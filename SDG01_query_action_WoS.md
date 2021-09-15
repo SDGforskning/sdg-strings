@@ -5,6 +5,8 @@
 1. Full query in copy-pasteable format
 2. General notes about method for SDG 1
 3. Documentation and string sections for each target
+4. Authorship and review
+5. Footnotes
 
 
 ## 1. Full query
@@ -370,7 +372,9 @@ TS=
 )
 ```
 
-## Footnotes
+## 4. Authorship and review
+
+## 5. Footnotes
 <b id="f1">1</b> This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)".
 (https://unstats.un.org/sdgs/indicators/indicators-list/) [↩](#SDGT+Is)
 
