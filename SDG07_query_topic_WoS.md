@@ -11,57 +11,6 @@
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG 7</summary>
 
-  Note that this query should be run in multiple steps, and then combined as shown in the final steps.
-
-Search #1
-```
-TS= ( ( (("clean" OR "cleaner" OR "decarboni*" OR "low-carbon") NEAR/3 ( "fuel$" OR "energy" OR "power" OR "technolog*" OR "electricity" OR "cooking" OR "stove$" ) ) OR "solar cooker$" OR "solar box cooker$" ) )
-```
-Search #2
-```
-TS=( ( ( "affordab*" OR "access*" OR "reliab*" OR "resilien*" OR "equitab*" OR (("develop*" OR "upgrad*" OR "invest" OR "investment$" OR "investing" OR "modern*") NEAR/10 "infrastructure") ) NEAR/15 ("electricity" OR "electrical grid" OR "electrical infrastucture" OR (("energy" OR "power") NEAR/2 ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply" OR "electrical" OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$") ) OR (("energy" OR "power" OR "electric" OR "electrical") NEAR/15 ("microgrid" OR "microgrids" OR "micro-grid" OR "micro-grids")) OR "off grid solution$" ) ) OR ( ("stable supply" OR "supply stability" OR "grid stability" OR ("moderni*" NEAR/3 ("energy" OR "power" OR "electricity" OR "grid" OR "grids")) OR "sustainable development" ) AND ("electricity" OR "electrical grid" OR "electrical infrastucture" OR (("energy" OR "power") NEAR/2 ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply" OR "electrical" OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$") ) OR ("microgrid" OR "microgrids" OR "micro-grid" OR "micro-grids") OR "off grid solution$" ) ) OR "universal electrification" OR "rural electrification" OR (("electrification" OR "electricity" OR "electrical supply" OR "energy service$" OR "energy access" OR "power supply") NEAR/15 ((("remote" OR "rural") NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")) OR ("least developed" NEAR/3 ("countr*" OR "state$" OR "nation$")) OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" ) ) OR "energy security" OR "energy insecurity" OR "energy poverty" OR "energy vulnerability" OR "fuel poverty" OR "energy democracy" OR "energy justice" )
-```
-
-Search #3
-```
-TS=( "energy sector transformation" OR "renewable energy transition$" OR "national energy transition$" OR (("share" OR "shares" OR "proportion$" OR "percentage$") NEAR/3 ("renewables" OR "carbon-neutral" OR "green electricity" OR "green energy" OR "green power") ) OR ( (("electricity" OR "power" OR "powered" OR "energy") NEAR/5 ( "renewable$" OR "sustainable" OR "hydrothermal" OR "geothermal" OR "hydroelectric" OR "hydropower" OR "hydrokinetic" OR "hybrid" OR "carbon-neutral" OR "green electricity" OR "green energy" OR "green power" ) ) OR "biofuel$" OR "bioenergy" OR "biodiesel" OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$" OR "solar thermal power" OR "solar thermal technolog*" OR "solar thermal collector$" OR "solar energy collector$" OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$" OR ("solar thermal energy" NEAR/15 ("power" OR "electric*" OR "water heating" OR "industrial process heat*")) OR "wind farm$" OR "wind turbine$" OR "tidal turbine$" OR "stream turbine$" OR "current turbine$" OR (("biomass" OR "wind" OR "solar") NEAR/10 ("electric*" OR "generat*" OR "service$" OR "sector" OR "produc*" OR "supply" OR "technolog*" OR "energy system$" OR "power system$" OR "energy crop$" OR "energy security" OR "biofuel$" OR "bioenergy" OR "biodiesel" ) ) OR ("hydrogen" NEAR/10 ("renewable substitute$" OR "renewable source$")) OR (("fuel cell$" OR "battery" OR "batteries" OR "energy storage" OR "smart grid$") NEAR/15 ("renewable" OR "sustainab*")) ) )
-```
-
-Search #4
-```
-TS= ( ("energy intensity" AND ("energy consum*" OR "sustainab*" OR "energy efficiency" OR "GDP" OR "economic" OR "economy" OR "economies" OR "industry" OR "industrial" OR "manufacturing" OR ("emission$" NEAR/5 ("carbon" OR "co2")) OR "footprint$" OR "sustainable development" ) ) OR ( ("economic growth" OR "GDP") NEAR/15 ("energy use$" OR "energy consum*") ) )
-```
-
-Search #5
-```
-TS= ( ( ( "energy efficiency" OR "energy performance standard$" OR (("energy efficien*" OR "energy saving") NEAR/10 ("housing" OR "houses" OR "residential" OR "building$" OR "cities" OR "industry" OR "industrial" OR "manufacturing" OR "technolog*") ) ) ) OR ("energy efficiency" NEAR/15 "sustainable development") )
-```
-
-Search #6
-```
-TS= ( "caloric restriction" OR "calorie restriction" OR "metabolic syndrome" OR "muscle$" OR "mitochondria" OR "cardiovascular" OR "feed conversion" OR "animal energetics" OR "human energetics" OR ( ("metabolism" OR "metabolic") NOT ("climate change" OR "economy" OR "economies" OR "social metabolism" OR "urban metabolism" OR "urban energy" OR "economic metabolism" OR "socioeconomic metabolism" OR "societal metabolism" OR "industrial metabolism" OR "carbon metabolism" )) )
-```
-
-Search #7
-```
-TS= ( ( "technical knowledge transfer" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technology transfer$" OR (("research" OR "technology") NEAR/5 ("access*" OR "sharing" OR "shared benefit$")) OR "capacity building" OR "build capacity" OR "capacity development" OR "international cooperation" OR "international collaboration" OR "foreign aid" OR "official development aid" OR "official development assistance" ) NEAR/15 ("electricity" OR "electrical grid" OR "electrical infrastucture" OR (("energy" OR "power") NEAR/2 ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply" OR "electrical" OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$" OR "transition$" OR "policy" OR "policies" OR "clean" OR "cleaner" OR "decarboni*" OR "renewable" OR "green" OR "sustainable" OR "energy efficiency" )) ) )
-```
-
-Search #8
-```
-TS= ("SDG$ 7" OR "SDG7" OR "SDG-7" OR "sustainable development goal$ 7" OR (("sustainable development goal$" OR "SDG$" OR "goal 7" ) NEAR/15 "energy"))
-```
-
-Search #9
-```
-#5 NOT #6
-```
-
-Search #10
-```
-#9 OR #8 OR #7 OR #4 OR #3 OR #2 OR #1
-```
-
 </details>
 
 ## 2. General notes
@@ -115,8 +64,6 @@ This phrase focuses on the universal and affordable access to electricity part o
 
 `energy` and `power` are combined with other terms to avoid hits from other subject areas (biological energy, mechanical power). NEAR/2 is used as they should be almost next to each other.
 
-*Comment 03092021 - note the typo in the second expression for infrastructure*
-
 ```Ceylon =
 TS=
 (
@@ -131,7 +78,7 @@ TS=
     )
   )
   NEAR/15
-      ("electricity" OR "electrical grid" OR "electrical infrastucture"
+      ("electricity" OR "electrical grid" OR "electrical infrastructure"
       OR
         (
           ("energy" OR "power")
@@ -158,8 +105,6 @@ TS=
 
 The terms in the first expression are more specific so can be combined more loosely (`AND`) to electricity/energy.
 
-*Comment 03092021 - note the typo in the second expression for infrastructure*
-
 ```Ceylon =
 TS=
 (
@@ -172,7 +117,7 @@ TS=
   OR "sustainable development"    
   )
   AND
-      ("electricity" OR "electrical grid" OR "electrical infrastucture"
+      ("electricity" OR "electrical grid" OR "electrical infrastructure"
       OR
         (
           ("energy" OR "power")
