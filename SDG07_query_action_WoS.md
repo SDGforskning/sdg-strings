@@ -67,8 +67,6 @@ Statistics Division. (2021). *Global indicator framework for the Sustainable Dev
 
 ## Target 7.1
 
-These targets are combined, as they cover similar topics.
-
 > **7.1 By 2030, ensure universal access to affordable, reliable and modern energy services**
 >
 > 7.1.1 Proportion of population with access to electricity
