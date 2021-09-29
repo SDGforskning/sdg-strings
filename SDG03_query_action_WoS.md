@@ -407,15 +407,21 @@ This query consists of 2 phrases.
 
 Here only mortality is included (not survival). For survival,  there are very few results and they often concern animals.
 
-To add specific types of ambient air pollution, we used  World Health Organisation's (WHO) website <sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>.
+To add specific types of ambient air pollution, we used  World Health Organisation's (WHO) website <sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and household air pollution.
+
+`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as poisoning indicates disease/mortality health impacts already. This primarily improves the results by finding publications about reducing carbon monoxide poisoning.
+
+The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss these with regards to disease, but in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO)
+
+NOTE: Expore effects of just hygeine (possible too broad with dental hygeine/oral), but can probbaly just have sanitation alone!
 
 ``` Ceylon =
 TS =
 (
   (
-    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity")
+    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning*")
     NEAR/10
-        ( "air pollution" OR "PM2.5" OR "PM10" OR "ground-level ozone"
+        ( "air pollution" OR "PM2.5" OR "PM10" OR "fine particulate matter" OR "ground-level ozone"
           OR
             (
               ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
@@ -430,14 +436,14 @@ TS =
               NEAR/3
                   ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean")
             )
-          OR "poor hygiene" OR "*adequate sanitation" OR "sanitation facilities"
+          OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
+          OR "*adequate sanitation" OR "sanitation facilities"
           OR
             (
               ("food" OR "foods")
               NEAR/3
                   ("unsafe" OR "contaminated" OR "contamination")
             )
-          OR "unintentional poisoning$" OR "accidental poisoning$"
         )
 
   )
@@ -451,24 +457,36 @@ TS =
 
 ##### Phrase 2:
 
-This second phrase was created as these search terms often give results for animals, and thus the topic terms are combined with words for humans.
+This second phrase was created as the terms for chemicals below often give results for animals, and thus they are combined with words for humans.
 
-Used World Health Organisation's (WHO) website to add specific chemicals of major public health concern <sup id="WHOchem">[11](#f11)</sup>.
+World Health Organization's (WHO) website was used to add specific chemicals of major public health concern <sup id="WHOchem">[11](#f11)</sup>. For some reason `fluoride` was not included in v2019-12; now added. Inadequate fluoride is not included, as the target is focused on poisoning/contamination.
+
+This string was simplified from v.2019-12 to remove the `NEAR/5 ("exposure" OR "residue$")` expression from the terms for chemicals of public health concern. The combination with terms for mortality and humans already implies exposure. A side-effect of this is that `lead` must be searched for as part of a phrase, due to its common use as a verb.
+
+Terms for `poisoning` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, a disease from excess fluoride, was added.
+
+The term `contamination` was used alone in v2019-12 - it is very broad. Contamination of food and drinking water is covered in phrase 1 - but due to the lack of terms for humans, it is hard to search more generally there for e.g. `water contamination` without introducing noise from biological results. Thus `contamination` in phrase 2 is now limited to `water contamination` and `soil contamination` (+ variants).
+
+This set was not limited to action terms in v2019-12. Now added.
+
 
 ``` Ceylon =
 TS =
 (
   (
-    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity")
-    NEAR/10
-          ( "hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "pollution" OR "contamination"
-          OR
-            (
-              ("arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin" OR "lead" OR "mercury" OR "pesticide$")
-              NEAR/5
-                  ("exposure" OR "residue$")
-            )
+    (
+      ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "*toxicity" OR "poisoning" OR "poisoned" OR "fluorosis")
+      NEAR/10
+          ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "pollution"
+          OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
+          OR "arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin$" OR "mercury" OR "fluoride" OR "pesticide$"
+          OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
           )
+    )
+    NEAR/15
+        ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
+        OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
+        )
   )
   AND
       ("humans" OR "humanity" OR "human" OR "people" OR "person$"
