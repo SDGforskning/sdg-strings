@@ -403,17 +403,22 @@ TS =
 
 This query consists of 2 phrases.
 
+It is interpreted to mean pollution with chemicals/substances, or with pathogens that many contaminate water, air or soil.
+* Whether food poisoning from contamination should be included is an open question - it is not air, soil or water per se, but does have to do with hygiene/sanitation (3.9.2). So far it is included. [Example result](https://www.webofscience.com/wos/woscc/full-record/WOS:A1993KR35200011)
+* In Phrase 2, the inclusion of `sanitation` and terms for disease finds some results to do with sanitation and prevention of communicable disease - is this consistent? Does it fall under 3.9.2? Sanitation can refer to both infrastructure (relevant for preventing water contamination) but also personal sanitation. The same can be said for `hand hygiene`, `personal hygiene` etc. in Phrase 1.
+
 ##### Phrase 1:
 
 Here only mortality is included (not survival). For survival,  there are very few results and they often concern animals.
 
-To add specific types of ambient air pollution, we used  World Health Organisation's (WHO) website <sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and household air pollution.
+To add specific types of ambient air pollution, we used  World Health Organisation's (WHO) website <sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and indoor/household air pollution.
 
-`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as poisoning indicates disease/mortality health impacts already. This primarily improves the results by finding publications about reducing carbon monoxide poisoning.
+`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as it reflects a disease/mortality aspect. This improves the results by catching results about carbon monoxide poisoning.
 
 The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss these with regards to disease, but in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO)
 
-NOTE: Expore effects of just hygeine (possible too broad with dental hygeine/oral), but can probbaly just have sanitation alone!
+`hygiene` could be used alone, but there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also broad, and often returns animal results. Thus it is used as part of phrases below.
+
 
 ``` Ceylon =
 TS =
@@ -434,15 +439,15 @@ TS =
             (
               ("drinking water" OR "potable water" OR "water source$" OR "sanitation")
               NEAR/3
-                  ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean")
+                  ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean" OR "sanitation")
             )
           OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
-          OR "*adequate sanitation" OR "sanitation facilities"
+          OR "poor sanitation" OR "*adequate sanitation" OR "sanitation facilities"
           OR
             (
               ("food" OR "foods")
               NEAR/3
-                  ("unsafe" OR "contaminated" OR "contamination")
+                  ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
             )
         )
 
@@ -457,7 +462,7 @@ TS =
 
 ##### Phrase 2:
 
-This second phrase was created as the terms for chemicals below often give results for animals, and thus they are combined with words for humans.
+This second phrase was created as the terms for chemicals below often give results for animals, and thus they are combined with words for humans. Certain diseases are also included in these terms for humans, because they are diseases nearly always used in the context of humans and relevant for this topic.
 
 World Health Organization's (WHO) website was used to add specific chemicals of major public health concern <sup id="WHOchem">[11](#f11)</sup>. For some reason `fluoride` was not included in v2019-12; now added. Inadequate fluoride is not included, as the target is focused on poisoning/contamination.
 
@@ -465,9 +470,9 @@ This string was simplified from v.2019-12 to remove the `NEAR/5 ("exposure" OR "
 
 Terms for `poisoning` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, a disease from excess fluoride, was added.
 
-The term `contamination` was used alone in v2019-12 - it is very broad. Contamination of food and drinking water is covered in phrase 1 - but due to the lack of terms for humans, it is hard to search more generally there for e.g. `water contamination` without introducing noise from biological results. Thus `contamination` in phrase 2 is now limited to `water contamination` and `soil contamination` (+ variants).
+The term `contamination` was used alone in v2019-12 - it is very broad. Contamination of food and drinking water is covered in phrase 1 - but due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology. `contamination` in phrase 2 is broader: `water contamination` and `soil contamination` (+ variants). `sanitation` is used alone in this phrase.
 
-This set was not limited to action terms in v2019-12. Now added.
+This set was not limited to action terms in v2019-12. Now added, same as phrase 1.
 
 
 ``` Ceylon =
@@ -481,6 +486,7 @@ TS =
           OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
           OR "arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin$" OR "mercury" OR "fluoride" OR "pesticide$"
           OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
+          OR "sanitation"
           )
     )
     NEAR/15
@@ -492,9 +498,10 @@ TS =
       ("humans" OR "humanity" OR "human" OR "people" OR "person$"
         OR "children" OR "child" OR "infant$" OR "babies"
         OR "adult$" OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
-        OR "patient$"
         OR "rural" OR "urban" OR "city" OR "cities" OR "town$" OR "village$" OR "countr*" OR "nation$" OR "develop* state$"
+        OR "patient$"
         OR "premature death$" OR "premature mortality"
+        OR "neglected tropical disease$" OR "diarrhoea*" OR "diarrhea*"
       )
 )
 
