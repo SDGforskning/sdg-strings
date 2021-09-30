@@ -409,22 +409,24 @@ It is interpreted to mean pollution with chemicals/substances, or with pathogens
 
 ##### Phrase 1:
 
-Here only mortality is included (not survival). For survival,  there are very few results and they often concern animals.
+The basic structure is *disease/mortality* + *pollutants/contamination* + *action*.
 
-To add specific types of ambient air pollution, we used  World Health Organisation's (WHO) website <sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and indoor/household air pollution.
+In the disease/mortality terms, only terms for mortality are included (not survival). For survival,  there are few results and they often concern animals.
 
-`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as it reflects a disease/mortality aspect. This improves the results by catching results about carbon monoxide poisoning.
+To add specific types of air pollution, we used  World Health Organisation's (WHO) website about ambient air pollution<sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and indoor/household air pollution.
 
-The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss these with regards to disease, but in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO)
+`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as it reflects a disease/mortality aspect already. This improves the results by finding those about carbon monoxide poisoning.
 
-`hygiene` could be used alone, but there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also broad, and often returns animal results. Thus it is used as part of phrases below.
+The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss these in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO).
+
+`hygiene` is not used alone as there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also broad, and can return animal results. Thus it is used as part of phrases below.
 
 
 ``` Ceylon =
 TS =
 (
   (
-    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning*")
+    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning$")
     NEAR/10
         ( "air pollution" OR "PM2.5" OR "PM10" OR "fine particulate matter" OR "ground-level ozone"
           OR
@@ -462,15 +464,17 @@ TS =
 
 ##### Phrase 2:
 
-This second phrase was created as the terms for chemicals below often give results for animals, and thus they are combined with words for humans. Certain diseases are also included in these terms for humans, because they are diseases nearly always used in the context of humans and relevant for this topic.
+The basic structure is *disease/mortality* + *pollutants/contamination* + *action* + *humans*.
+
+This phrase was created as certain pollutants/contamination terms often give results for animals; thus they are combined with terms for humans. Certain diseases are also included in these terms for humans, because they are nearly always used in the context of humans and relevant for this topic.
 
 World Health Organization's (WHO) website was used to add specific chemicals of major public health concern <sup id="WHOchem">[11](#f11)</sup>. For some reason `fluoride` was not included in v2019-12; now added. Inadequate fluoride is not included, as the target is focused on poisoning/contamination.
 
-This string was simplified from v.2019-12 to remove the `NEAR/5 ("exposure" OR "residue$")` expression from the terms for chemicals of public health concern. The combination with terms for mortality and humans already implies exposure. A side-effect of this is that `lead` must be searched for as part of a phrase, due to its common use as a verb.
+This string was simplified from v.2019-12 to remove the `NEAR/5 ("exposure" OR "residue$")` expression from the terms for chemicals of public health concern. The combination with terms for mortality and humans already implies exposure. A side-effect of this is that `lead` must be searched for as part of a phrase, due to its use as a verb.
 
-Terms for `poisoning` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, a disease from excess fluoride, was added.
+`"poisoning$" OR "poisoned"` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, a disease from excess fluoride, was added.
 
-The term `contamination` was used alone in v2019-12 - it is very broad. Contamination of food and drinking water is covered in phrase 1 - but due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology. `contamination` in phrase 2 is broader: `water contamination` and `soil contamination` (+ variants). `sanitation` is used alone in this phrase.
+The term `contamination` was used alone in v2019-12 - it is very broad. `contamination` is now limited to `water contamination` and `soil contamination` (+ variants). Contamination of food and drinking water is covered in phrase 1 (due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology).
 
 This set was not limited to action terms in v2019-12. Now added, same as phrase 1.
 
@@ -480,7 +484,7 @@ TS =
 (
   (
     (
-      ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "*toxicity" OR "poisoning" OR "poisoned" OR "fluorosis")
+      ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "*toxicity" OR "poisoning$" OR "poisoned" OR "fluorosis")
       NEAR/10
           ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "pollution"
           OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
