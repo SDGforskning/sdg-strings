@@ -362,6 +362,7 @@ See also "Risks and disasters". For more terms (GHG, climate mitigation etc.), s
 "economic downturn$"
 
 "disaster risk reduction"
+"Sendai Framework for Disaster Risk Reduction"
 "preparedness"
 "early warning"
 "protect*"
