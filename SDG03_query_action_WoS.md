@@ -109,22 +109,44 @@ TS=
 >
 > 3.3.5 Number of people requiring interventions against neglected tropical diseases
 
-This query consists of 1 phrase.
-
 The target is interpreted to include research which may help combat / end epidemics of communicable and waterborne diseases. Within "ending epidemics", we consider research on ending pandemics as relevant, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include several approaches in addition to the generic action terms: treatment, prevention (e.g. vaccination) and drug development. We add these as many researchers may consider that it goes without saying that e.g. research on treatments for chagas are a form of "combating" chagas.
 
-The basic structure is *communicable diseases* + *action*.
+This query consists of 2 phrases. The basic structure for both is *communicable diseases* + *action*.
 
-The communicable diseases are split into sections.
-* The first section deals with communicable and waterborne diseases in general. Note that the search terms here will also find "non contagious" "non transmissible" "non communicable" diseases - considered ok since these are covered in target 3.4.
-* The second section starts listing specific communicable, vaccine-preventable and waterborne diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used the World Health Organization's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases <sup id="WHOGHO">[2](#f2)</sup>. Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the CDC Waterborne Diseases Prevention Branch <sup id="CDCwaterborne">[13](#f13)</sup>. I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
-* The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included<sup id="WHONTD">[3](#f3)</sup>.
+Action terms: `limited` was removed from the action terms, as it was used often in other contexts (e.g. "limited data"). Although `vaccination` may find some results on vaccine side effects, it also finds works on vaccination from a host of relevant perspectives (e.g. programs, barriers, hesitancy) - an alternative approach would be to add a near statement including all these terms.
+
+##### Phrase 1
+
+This covers communicable diseases as a category. The search terms here are difficult, as `communicable` will also find `non communicable` ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. conjunction with `infectious`). Non communicable diseases are covered in target 3.4, so in terms of SDG3 it is ok that they are included, but for a target-by-target approach it creates some noise. Approximately 10 % of the results for this phrase also include `non-communicable` (past 5 years). This is the reason these terms were split into a separate phrase.
+
+``` Ceylon =
+TS =
+(
+  ("communicable disease$" OR "communicable illness*")
+  NEAR/15
+      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending"
+      OR
+        (
+          ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
+          NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+        )
+      OR "vaccinate" OR "vaccination"
+      OR (("develop*" OR "research*") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
+      )
+)
+```  
+
+##### Phrase 2
+
+*The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes.
+
+The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used the World Health Organization's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases <sup id="WHOGHO">[2](#f2)</sup>. Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
+
+The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the CDC Waterborne Diseases Prevention Branch <sup id="CDCwaterborne">[13](#f13)</sup>. I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
+
+The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included<sup id="WHONTD">[3](#f3)</sup>.
 
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
-
-`limited` was removed from the action terms, as it was used often in other contexts (e.g. "limited data").
-
-Although `vaccination` may find some results on vaccine side effects, it also finds works on vaccination from a host of relevant perspectives (e.g. programs, barriers, hesitancy) - an alternative approach would be to add a near statement including all these terms.
 
 ``` Ceylon =
 TS =
@@ -132,7 +154,7 @@ TS =
   (
     (
       ("water borne" OR "waterborne" OR "water-borne" OR "water-related"
-        OR "communicable" OR "contagious" OR "transmissible" OR "infectious"
+      OR "contagious" OR "transmissible" OR "infectious"
       )
       NEAR/5
           ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
@@ -155,6 +177,7 @@ TS =
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
+
     OR "amebiasis"
     OR "cryptosporidiosis" OR "cryptosporidium infection$"
     OR "giardiasis" OR "giardia infection$"
