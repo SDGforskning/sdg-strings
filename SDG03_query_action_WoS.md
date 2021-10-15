@@ -49,15 +49,15 @@ Children under five is however extremely difficult to limit bibliometrically sin
 
 This query consists of 2 phrases.
 
+Both include a double `NOT` expression to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans.
+
 ##### Phrase 1:
 
-The basic structure is *children/mothers* + *mortality* + *action*.
+The basic structure is *children/mothers* + *mortality* + *action* + *excluding livestock*
 
 Having a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented...."
 
 `lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding")
-
-The double `NOT` expression helps to remove results referring to mortality of livestock, but retains those referring to these animals as models for humans.
 
 ```Ceylon =
 TS=
@@ -77,7 +77,7 @@ TS=
 ```
 ##### Phrase 2:
 
-Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/mothers* + *survival* + *action*.
+Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/mothers* + *survival* + *action* + *excluding livestock*.
 
 ```Ceylon =
 TS=
@@ -111,16 +111,20 @@ TS=
 
 This query consists of 1 phrase.
 
-The first section deals with waterborne and communicable diseases in general. Note that this also finds "non contagious" "non transmissable" "non communicable" diseases - considered ok since these are covered in target 3.4
+The target is interpreted to include research which may help combat / end epidemics of communicable and waterborne diseases. Within "ending epidemics", we consider research on ending pandemics as relevant, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include several approaches in addition to the generic action terms: treatment, prevention (e.g. vaccination) and drug development. We add these as many researchers may consider that it goes without saying that e.g. research on treatments for chagas are a form of "combating" chagas.
 
-The second section starts listing specific diseases.
-`hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. Note that `AIDS` is not used as it is often used as a verb. To list  additional diseases, we used the World Health Organisation's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases<sup id="WHOGHO">[2](#f2)</sup>.
-A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on their prevention/treatment can inform human prevention/treatment, or prevent zoonotic transmission.
-STIs and STDs also included as categories of communicable diseases, as sexual health is mentioned in another target
+The basic structure is *communicable diseases* + *action*.
 
-The third section lists neglected tropical diseases, as mentioned in the target. We used the WHOs website to add specific neglected tropical diseases<sup id="WHONTD">[3](#f3)</sup>.
+The communicable diseases are split into sections.
+* The first section deals with communicable and waterborne diseases in general. Note that the search terms here will also find "non contagious" "non transmissible" "non communicable" diseases - considered ok since these are covered in target 3.4.
+* The second section starts listing specific communicable, vaccine-preventable and waterborne diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used the World Health Organization's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases <sup id="WHOGHO">[2](#f2)</sup>. Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the CDC Waterborne Diseases Prevention Branch <sup id="CDCwaterborne">[13](#f13)</sup>. I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
+* The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included<sup id="WHONTD">[3](#f3)</sup>.
 
-The final part specifies action. Ending epidemics is specifically mentioned in the target. Note that treatment terms are also relevant for this point, as an epidemic can be ended by treatment, prevention, etc.
+A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
+
+`limited` was removed from the action terms, as it was used often in other contexts (e.g. "limited data").
+
+Although `vaccination` may find some results on vaccine side effects, it also finds works on vaccination from a host of relevant perspectives (e.g. programs, barriers, hesitancy) - an alternative approach would be to add a near statement including all these terms.
 
 ``` Ceylon =
 TS =
@@ -150,44 +154,52 @@ TS =
     OR "polio*"
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
+    OR "syphilis"
+    OR "amebiasis"
+    OR "cryptosporidiosis" OR "cryptosporidium infection$"
+    OR "giardiasis" OR "giardia infection$"
+    OR "shigellosis"
+    OR "cronobacter infection$"
+    OR "acanthamoeba"
+    OR "balamuthia"
+    OR "naegleria"
+    OR "sappinia"
+    OR "typhoid"
+    OR "diarrheal disease$"
 
     OR "neglected tropical disease$"
-    OR "Buruli ulcer"
+    OR "buruli ulcer"
     OR "chagas"
     OR "dengue"
     OR "chikungunya"
-    OR "dracunculiasis"
-    OR "guinea-worm disease"
+    OR "dracunculiasis" OR "guinea-worm disease"
     OR "echinococcosis"
+    OR "foodborne trematodiases"
+    OR "human african trypanosomiasis" OR "sleeping sickness"
     OR "leishmaniasis"
     OR "leprosy"
     OR "lymphatic filariasis"
-    OR "mycetoma"
-    OR "chromoblastomycosis"
-    OR "onchocerciasis"
-    OR "river blindness"
-    OR "foodborne termatodiases"
+    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
+    OR "onchocerciasis" OR "river blindness"
     OR "rabies"
     OR "scabies"
     OR "schistosomiasis"
     OR "soil-transmitted helminthiases"
     OR "snakebite envenoming"
-    OR "taeniasis"
-    OR "cysticercosis"
+    OR "taeniasis" OR "cysticercosis"
     OR "trachoma"
     OR "yaws"
-    OR "human african trypanosomiasis"
-    OR "sleeping sickness"
   )
-  NEAR/10
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR    "eradicat*" OR "eliminat*" OR "tackl*"
+  NEAR/15
+      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending"
       OR
-        (("stop" OR "stopped" OR "stopping" OR "end" OR "ended" OR "ending" OR "limit" OR "limited" OR "limiting")
-        NEAR/3 "epidemic$"
+        (
+          ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
+          NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
         )
       OR "vaccinate" OR "vaccination"
       OR "antimalarial$"
-      OR (("develop*" OR "research*") NEAR/3 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
+      OR (("develop*" OR "research*") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
       )
 )
 
@@ -453,7 +465,7 @@ TS =
                   ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean" OR "sanitation")
             )
           OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
-          OR "poor sanitation" OR "*adequate sanitation" OR "sanitation facilities"
+          OR "poor sanitation" OR "*adequate sanitation" OR "good sanitation" OR "sanitation facilities"
           OR
             (
               ("food" OR "foods")
@@ -670,9 +682,9 @@ TS =
 <b id="f1">1</b> This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)".
 (https://unstats.un.org/sdgs/indicators/indicators-list/) [↩](#SDGT+Is)
 
- <b id="f2">2</b> WHO (n.d.) Global Health Observatory data repository; By theme. http://apps.who.int/gho/data/node.home [accessed 15.11.2019]; WHO (n.d.) Global Health Observatory data repository; Vaccine-preventable communicable diseases; By category. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.11.2019].[↩](#WHOGHO)
+ <b id="f2">2</b> WHO (n.d.) Global Health Observatory data repository; By theme. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]; WHO (n.d.) Global Health Observatory data repository; By category; Vaccine-preventable communicable diseases. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.10.2021].[↩](#WHOGHO)
 
-<b id="f3">3</b> WHO (n.d.) Neglected Tropical Diseases. https://www.who.int/neglected_diseases/diseases/en/ [accessed 15.11.2019]  [↩](#WHONTD)
+<b id="f3">3</b> p2 in World Health Organization. (2020). Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
 
 <b id="f4">4</b> WHO (2018) Noncommunicable diseases. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
 
@@ -691,3 +703,5 @@ TS =
 <b id="f11">11</b> WHO (n.d.) International Programme on Chemical Safety, Ten chemicals of major public health concern. https://www.who.int/ipcs/assessment/public_health/chemicals_phc/en/ [accessed 15.11.2019]  [↩](#WHOchem)
 
 <b id="f12">12</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+
+<b id="f13">13</b> Centers for Disease Control and Prevention (2021) Waterborne Disease Prevention Branch. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
