@@ -117,7 +117,7 @@ Action terms: `limited` was removed from the action terms, as it was used often 
 
 ##### Phrase 1
 
-This covers communicable diseases as a category. The search terms here are difficult, as `communicable` will also find `non communicable` ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. conjunction with `infectious`). Non communicable diseases are covered in target 3.4, so in terms of SDG3 it is ok that they are included, but for a target-by-target approach it creates some noise. Approximately 10 % of the results for this phrase also include `non-communicable` (past 5 years). This is the reason these terms were split into a separate phrase.
+This covers communicable diseases as a category. The search terms here are difficult, as `communicable` will also find `non communicable` ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious`). Non communicable diseases are covered in target 3.4, so in terms of SDG3 it is ok that they are included, but for a target-by-target approach it creates some noise. Approximately 10 % of the results for this phrase also include `non-communicable` (past 5 years). This is the reason these terms were split into a separate phrase.
 
 ``` Ceylon =
 TS =
@@ -138,7 +138,7 @@ TS =
 
 ##### Phrase 2
 
-*The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes.
+The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes.
 
 The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used the World Health Organization's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases <sup id="WHOGHO">[2](#f2)</sup>. Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
 
@@ -236,11 +236,13 @@ TS =
 >
 > 3.4.2 Suicide mortality rate
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
+* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover treatment, prevention and any other aspects related to reducing mortality.
+* Phrases 2 and 3 focus on the "mental health and well-being" part. It is interpreted to cover improving mental health, both by the treatment of disease and via health promotion.
 
 ##### Phrase 1:
 
-Used World Health Organisation's (WHO) factsheets to add the "main types" of non-communicable diseases<sup id="WHOFSnoncomm">[4](#f4)</sup>.
+We used World Health Organization factsheets to add the "main types" of non-communicable diseases<sup id="WHOFSnoncomm">[4](#f4)</sup>.
 
 Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database <sup id="WHOcancer">[5](#f5)</sup> and using nomenclature as explained by the U.S. National Institutes of Health and National Cancer Institute SEER training modules <sup id="NIHcancer">[6](#f6)</sup>.
 
@@ -251,7 +253,7 @@ TS=
 (
   (
     (
-      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "noninfectious")
+      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious")
       NEAR/5
           ("disease$" OR "illness*")
     )
@@ -264,9 +266,9 @@ TS=
   )
   NEAR/10
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "vaccinate" OR "vaccination"
       OR "cancer therapy" OR "cancer therapies"
-      OR (("develop*" OR "research*") NEAR/3 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/3 ("medicine$" OR "cure" OR "drug$"))
+      OR ("mortality" NEAR/3 ("decrease$" OR "lower"))
       )
 )
 
@@ -274,25 +276,49 @@ TS=
 
 ##### Phrase 2:
 
-Used World Health Organisation's (WHO) factsheets to add types of mental disorders<sup id="WHOFSmental">[7](#f7)</sup>. As the focus of the target is "mental health", developmental disorders included by WHO (e.g. autism) were not included.
+This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
+
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used World Health Organization factsheets to add types of mental disorders<sup id="WHOFSmental">[7](#f7)</sup>. As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
 
 ``` Ceylon =
 TS=
 (
-  ("suicide$"
-  OR "mental health disorder$" OR "mental illness*"
-  OR "depression"
+  ("mental health disorder$" OR "mental illness*"
+  OR "suicid*"
+  OR "depression" OR "depressive disorder$"
   OR "bipolar affective disorder"
   OR "schizophrenia"
-  OR "psychosis"
+  OR "psychosis" OR "psychoses"
   OR "dementia"
   )
-  NEAR/10
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR (("develop*" OR "research*") NEAR/3 ("medicine$" OR "cure" OR "drug$"))
+  NEAR/15
+      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
+      OR "intervention$" OR "treat*" OR "cure" OR "cured"
+      OR (("develop*" OR "research*" OR "novel") NEAR/3 ("medicine$" OR "drug$"))
+      OR ("decreas*" NEAR/3 ("occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"))
       )
 )
+```
 
+##### Phrase 3:
+
+This phrase focuses on the promotion of well-being. The general structure is *well-being* + *promotion*.
+
+`wellbeing` is used alone, rather than qualified with "mental" - well-being seems to be used to convey a sense of overall health, which should include the mental/psychosocial aspect. `quality of life` was tested, but this adds a lot of results which seem to be more medical (i.e.  quality of life could be improved after intervention x for condition y).
+
+`increas*` was removed as an action term for `mental health` as it tends to be used in other ways (e.g. "increasing demand for services", "increasingly in focus")
+
+``` Ceylon =
+TS=
+(
+  ("mental health"
+      NEAR/5 ("promote" OR "promotion" OR "strengthen*" OR "improv*" OR "intervention$")
+  )
+  OR
+    (("well being" OR "wellbeing" OR "mental resilience" OR "psycho* resilience")
+        NEAR/5 ("promote" OR "promotion" OR "strengthen*" OR "improv*" OR "increas*" OR "enhance*")
+    )
+)
 ```  
 
 ## Target 3.5
