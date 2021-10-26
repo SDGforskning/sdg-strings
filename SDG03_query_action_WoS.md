@@ -111,7 +111,7 @@ TS=
 
 The target is interpreted to include research which may help combat / end epidemics of communicable and waterborne diseases. Within "ending epidemics", we consider research on ending pandemics as relevant, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include several approaches in addition to the generic action terms: treatment, prevention (e.g. vaccination) and drug development. We add these as many researchers may consider that it goes without saying that e.g. research on treatments for chagas are a form of "combating" chagas.
 
-This query consists of 2 phrases. The basic structure for both is *communicable diseases* + *action*.
+This query consists of 3 phrases. The basic structure for both is *communicable diseases* + *action*.
 
 Action terms: `limited` was removed from the action terms, as it was used often in other contexts (e.g. "limited data"). Although `vaccination` may find some results on vaccine side effects, it also finds works on vaccination from a host of relevant perspectives (e.g. programs, barriers, hesitancy) - an alternative approach would be to add a near statement including all these terms.
 
@@ -147,6 +147,9 @@ The third section is for waterborne diseases. A definitive list of prioritised "
 The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included<sup id="WHONTD">[3](#f3)</sup>.
 
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
+
+Phrase 3 is the same as phrase 2, except it includes different action terms. These were separated out as they can be combined with `AND` rather than needing `NEAR`.
+
 
 ``` Ceylon =
 TS =
@@ -215,13 +218,89 @@ TS =
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending"
-      OR
+      )
+)
+
+```   
+
+##### Phrase 3
+
+Phrase 3 is the same as phrase 2, except it includes different action terms. These were separated out as they can be combined with `AND` rather than needing `NEAR`.
+
+``` Ceylon =
+TS =
+(
+  (
+    (
+      ("water borne" OR "waterborne" OR "water-borne" OR "water-related"
+      OR "contagious" OR "transmissible" OR "infectious"
+      )
+      NEAR/5
+          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
+    )
+    OR "hepatitis"
+    OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV"
+    OR "tuberculosis"
+    OR "malaria"
+    OR "cholera"
+    OR "meningitis"
+    OR "influenza"
+    OR "rubella"
+    OR "diphtheria"
+    OR "japanese encephalitis"
+    OR "measles"
+    OR "mumps"
+    OR "tetanus"
+    OR "pertussis"
+    OR "polio*"
+    OR "yellow fever"
+    OR "sexually transmitted disease$" OR "sexually transmitted infection$"
+    OR "syphilis"
+
+    OR "amebiasis"
+    OR "cryptosporidiosis" OR "cryptosporidium infection$"
+    OR "giardiasis" OR "giardia infection$"
+    OR "shigellosis"
+    OR "cronobacter infection$"
+    OR "acanthamoeba"
+    OR "balamuthia"
+    OR "naegleria"
+    OR "sappinia"
+    OR "typhoid"
+    OR "diarrheal disease$"
+
+    OR "neglected tropical disease$"
+    OR "buruli ulcer"
+    OR "chagas"
+    OR "dengue"
+    OR "chikungunya"
+    OR "dracunculiasis" OR "guinea-worm disease"
+    OR "echinococcosis"
+    OR "foodborne trematodiases"
+    OR "human african trypanosomiasis" OR "sleeping sickness"
+    OR "leishmaniasis"
+    OR "leprosy"
+    OR "lymphatic filariasis"
+    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
+    OR "onchocerciasis" OR "river blindness"
+    OR "rabies"
+    OR "scabies"
+    OR "schistosomiasis"
+    OR "soil-transmitted helminthiases"
+    OR "snakebite envenoming"
+    OR "taeniasis" OR "cysticercosis"
+    OR "trachoma"
+    OR "yaws"
+  )
+  AND
+      (
         (
-          ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
-          NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+          ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "treat*" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
+          NEAR/3
+              ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
         )
       OR "vaccinate" OR "vaccination"
-      OR "antimalarial$"
+      OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
       OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
       )
 )
