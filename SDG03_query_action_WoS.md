@@ -408,9 +408,16 @@ TS=
 >
 > 3.5.2 Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
 
-This query consists of 1 phrase.
+This target was interpreted to include research about the prevention and treatment of harmful uses of a) alcohol, and b) drugs/substances, rather than all use of alcohol/drugs.
 
-Alcohol was limited to harmful use/clearly harmful types of drinking. Drugs/substances were expanded using MeSH terms.
+This query consists of 1 phrase. The basic structure is *harmful use + prevention/treatment*.
+
+Drug/substances were expanded using MeSH terms.
+* Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
+* Under "substance-related disorders" (D019966), a number of specific substances are listed, including `amphetamine`, `cocaine`, `inhalent`, `tobacco` etc.
+`addiction` and `dependence` were considered as terms that can indicate harmful use.
+
+`therapy` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...).
 
 ``` Ceylon =
 TS=
@@ -418,16 +425,27 @@ TS=
   ("binge drinking" OR "binge drinker$" OR "alcoholism"
     OR
     (
-      ("drug$" OR "narcotic$" OR "alcohol" OR "narcotic$" OR "substance" OR "tobacco"
-        OR "amphetamine$" OR "methamphetamine$" OR "cocaine" OR "inhalant$" OR "marijuana" OR "opioid" OR "heroin" OR "phencyclidine"
+      ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
+      OR "alcohol"
+      OR "amphetamine$" OR "methamphetamine$" OR "MDMA" OR "ecstasy"
+      OR "cocaine"
+      OR "inhalant$" OR "amyl nitrite"
+      OR "marijuana" OR "cannabis"
+      OR "opioid$" OR "opiate$" OR "heroin" OR "morphine"
+      OR "phencyclidine" OR "LSD" OR "psilocybin" OR "dimethyltriptamine"
+      OR "khat"
+      OR "tobacco"
       )
-      NEAR/2
-          ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "harmful use*" OR "use disorder$")    
+      NEAR/3
+          ("abuse" OR "misuse" OR "harmful use*" OR "use disorder$" OR "dependence" OR "addict*" OR "overdose$")    
     )
   )
-  NEAR/5
-      ("prevent*" OR "combat*" OR "tackl*" OR "fight* against" OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*" OR "treat*" OR "cure" OR "curing" OR "cured"
-      OR "rehabilitat*"
+  NEAR/15
+      ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
+      OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*"
+      OR "treat*" OR "cure" OR "curing" OR "cured"
+      OR "intervention$" OR "therapy" OR "therapies"
+      OR "rehabilitat*" OR "aftercare" OR "services" OR "outreach"
       )
 )
 ```
