@@ -70,7 +70,7 @@ TS=
       NEAR/15
           ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
       NEAR/15
-          ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*")
+          ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
   )
   NOT (("pigs" OR "cows" OR "sheep" OR "cattle") NOT ("human" OR "model"))    
 )
@@ -124,14 +124,16 @@ TS =
 (
   ("communicable disease$" OR "communicable illness*")
   NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending"
+      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*"
+      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
       OR
         (
           ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
           NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
         )
       OR "vaccinate" OR "vaccination"
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
       )
 )
 ```  
@@ -217,7 +219,9 @@ TS =
     OR "yaws"
   )
   NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending"
+      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*"
+      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
+      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
       )
 )
 
@@ -295,13 +299,15 @@ TS =
   AND
       (
         (
-          ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "treat*" OR "eradicat*" OR "eliminat*" OR "tackl*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
+          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "limit" OR "limiting"
+          OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
+          OR "treat*")
           NEAR/3
               ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
         )
       OR "vaccinate" OR "vaccination"
       OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "treat*" OR "cure" OR "drug$" OR "therap*" OR "intervention$"))
       )
 )
 
@@ -343,9 +349,9 @@ TS=
     OR (("malignant" OR "incurable") NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
   )
   NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "cancer therapy" OR "cancer therapies"
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
+      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
+      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
       OR ("mortality" NEAR/3 ("decrease$" OR "lower"))
       OR ("survival" NEAR/3 ("improv*" OR "increas*" OR "enhanc*"))
       )
@@ -372,7 +378,8 @@ TS=
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "intervention$" OR "treat*" OR "cure" OR "cured"
+      OR "treat*" OR "cure" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
+      OR "outreach" OR "services"
       OR (("develop*" OR "research*" OR "novel") NEAR/3 ("medicine$" OR "drug$"))
       OR ("decreas*" NEAR/3 ("occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"))
       )
@@ -391,11 +398,17 @@ This phrase focuses on the promotion of well-being. The general structure is *we
 TS=
 (
   ("mental health"
-      NEAR/5 ("promote" OR "promotion" OR "strengthen*" OR "improv*" OR "intervention$")
+      NEAR/5
+          ("promote" OR "promotion" OR "strengthen*" OR "improv*"
+          OR "therapy" OR "therapies" OR "intervention$"
+          OR "outreach" OR "services")
   )
   OR
-    (("well being" OR "wellbeing" OR "mental resilience" OR "psycho* resilience")
-        NEAR/5 ("promote" OR "promotion" OR "strengthen*" OR "improv*" OR "increas*" OR "enhance*")
+    (
+      ("well being" OR "wellbeing" OR "mental resilience" OR "psycho* resilience")
+      NEAR/5
+          ("promote" OR "promotion" OR "strengthen*" OR "improv*"
+          OR "increas*" OR "enhance*")
     )
 )
 ```  
@@ -446,9 +459,8 @@ TS=
   NEAR/15
       ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
       OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*"
-      OR "treat*" OR "cure" OR "curing" OR "cured"
-      OR "intervention$" OR "therapy" OR "therapies"
-      OR "rehabilitat*" OR "aftercare" OR "services" OR "outreach"
+      OR "treat*" OR "cure" OR "curing" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
+      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare"
       )
 )
 ```
