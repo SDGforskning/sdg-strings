@@ -131,7 +131,7 @@ TS =
           NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
         )
       OR "vaccinate" OR "vaccination"
-      OR (("develop*" OR "research*") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
       )
 )
 ```  
@@ -222,7 +222,7 @@ TS =
         )
       OR "vaccinate" OR "vaccination"
       OR "antimalarial$"
-      OR (("develop*" OR "research*") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
       )
 )
 
@@ -237,7 +237,7 @@ TS =
 > 3.4.2 Suicide mortality rate
 
 This query consists of 3 phrases.
-* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover treatment, prevention and any other aspects related to reducing mortality.
+* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover treatment, prevention and any other aspects related to reducing mortality. In contrast to 3.3, here there is an explicit focus on reducing mortality.
 * Phrases 2 and 3 focus on the "mental health and well-being" part. It is interpreted to cover improving mental health, both by the treatment of disease and via health promotion.
 
 ##### Phrase 1:
@@ -246,7 +246,7 @@ We used World Health Organization factsheets to add the "main types" of non-comm
 
 Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database <sup id="WHOcancer">[5](#f5)</sup> and using nomenclature as explained by the U.S. National Institutes of Health and National Cancer Institute SEER training modules <sup id="NIHcancer">[6](#f6)</sup>.
 
-Note that premature death from these diseases can be covered within the phrasing of the action part (e.g. prevent premature mortality from noncommunicable diseases).
+Premature death from these diseases can be covered within the phrasing of the action part (e.g. prevent premature mortality from noncommunicable diseases). Some action terms are stand-alone while others are combined with `mortality`; for `lower` this was necessary to avoid e.g. "cancer of the lower intestine".
 
 ``` Ceylon =
 TS=
@@ -257,18 +257,18 @@ TS=
       NEAR/5
           ("disease$" OR "illness*")
     )
-    OR "cardiovascular disease$" OR "heart disease"
-    OR "stroke$"
+    OR "cardiovascular disease$" OR "heart disease" OR "heart attack$" OR "stroke$"
     OR "diabetes"
-    OR "chronic respiratory disease$" OR "asthma" OR "chronic obstructive pulmonary disease$" OR "chronic obstructive airway disease$" OR "chronic bronchitis" OR "pulmonary emphysema"
-    OR "cancer$" OR "*sarcoma" OR "*carcinoma" OR "*blastoma" OR "sarcoma" OR "carcinoma" OR "blastoma" OR "myeloma" OR "lymphoma" OR "leukaemia" OR "leukemia" OR "Mesothelioma" OR "Melanoma"  
-    OR ("malignant" NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
+    OR "chronic respiratory disease$" OR "asthma" OR "chronic obstructive pulmonary disease$" OR "COPD" OR "chronic obstructive airway disease$" OR "chronic bronchitis" OR "emphysema"
+    OR "cancer$" OR "*sarcoma" OR "sarcoma$" OR "*carcinoma" OR "carcinoma$" OR "*blastoma" OR "blastoma$" OR "myeloma$" OR "lymphoma$" OR "leukaemia" OR "leukemia" OR "mesothelioma$" OR "melanoma$"  
+    OR (("malignant" OR "incurable") NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
   )
-  NEAR/10
+  NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "treat*" OR "cure" OR "cured" OR "eradicat*" OR "eliminat*" OR "tackl*"
       OR "cancer therapy" OR "cancer therapies"
-      OR (("develop*" OR "research*" OR "novel") NEAR/3 ("medicine$" OR "cure" OR "drug$"))
+      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "cure" OR "drug$" OR "therap*"))
       OR ("mortality" NEAR/3 ("decrease$" OR "lower"))
+      OR ("survival" NEAR/3 ("improv*" OR "increas*" OR "enhanc*"))
       )
 )
 
