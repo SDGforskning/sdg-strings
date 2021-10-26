@@ -415,8 +415,11 @@ This query consists of 1 phrase. The basic structure is *harmful use + preventio
 Drug/substances were expanded using MeSH terms.
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
 * Under "substance-related disorders" (D019966), a number of specific substances are listed, including `amphetamine`, `cocaine`, `inhalent`, `tobacco` etc.
+<<<<<<< HEAD
 Additional terms were added from the National Institutes of Health "Commonly Used Drugs Charts", with the understanding that this is an USA-centric source<sup id="NIHdrugs">[14](#f14)</sup>.
 
+=======
+>>>>>>> 3660c7ecf54eef8e2b2178e9e361e69ebd481b86
 `addiction` and `dependence` were considered as terms that can indicate harmful use.
 
 `therapy` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...).
