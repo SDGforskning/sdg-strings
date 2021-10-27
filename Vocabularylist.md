@@ -66,6 +66,7 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
     NEAR/3 ("unemployed")
 
 "patient$"
+"hospital*"
 
 ("person$" OR "people" OR "adult$")
     NEAR/3 ("older" OR "elderly")
@@ -86,7 +87,7 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
 "under-five"
 "girls"
 "boys"
-
+"adolescent$"
 "adult$"
 "women" OR "woman"
 "men" OR "man"
