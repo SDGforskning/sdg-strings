@@ -682,10 +682,10 @@ TS =
   )
   AND
       ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "infant$" OR "babies"
+        OR "adolescent$" OR "children" OR "child" OR "infant$" OR "babies"
         OR "adult$" OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
         OR "rural" OR "urban" OR "city" OR "cities" OR "town$" OR "village$" OR "countr*" OR "nation$" OR "develop* state$"
-        OR "patient$"
+        OR "patient$" OR "hospital*"
         OR "premature death$" OR "premature mortality"
         OR "neglected tropical disease$" OR "diarrhoea*" OR "diarrhea*"
       )
