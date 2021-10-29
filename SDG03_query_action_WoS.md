@@ -61,20 +61,30 @@ Having a wide `NEAR/15` interval helps to find results which talk reducing morta
 
 `lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding")
 
+Rats and mice are not removed from the `NOT` statement as these are usually animal models for humans.
+
 ```Ceylon =
 TS=
 (
-  (   ("child*" OR "infant$" OR "under-five"
-      OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal" OR "newborn$"
-      OR (("premature" OR "preterm") NEAR/3 ("birth$" OR "deliver*" OR "babies" OR "baby"))
-      OR "maternal" OR "mothers" OR "childbirth" OR "child-birth" OR "birth"
-      )
-      NEAR/15
-          ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
-      NEAR/15
-          ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+  (   
+    ("child*" OR "infant$" OR "under-five$"
+    OR "baby" OR "babies" OR "newborn$"
+    OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal"
+    OR "childbirth" OR "child-birth" OR "birth" OR "births" OR "premature deliver*" OR "preterm deliver*" OR "preterm labor" OR "preterm labour"
+    OR "maternal" OR "mothers"
+    )
+    NEAR/15
+        (
+          ("mortality" NEAR/5 "improv*")
+          OR
+          (
+            ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
+            NEAR/15
+                ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+          )
+        )
   )
-  NOT (("pigs" OR "cows" OR "sheep" OR "cattle") NOT ("human" OR "model"))    
+  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
 )
 ```
 ##### Phrase 2:
@@ -84,17 +94,19 @@ Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. red
 ```Ceylon =
 TS=
 (
-  (   ("child*" OR "infant$" OR "under-five"
-       OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal" OR "newborn$"
-       OR (("premature" OR "preterm") NEAR/3 ("birth$" OR "deliver*" OR "babies" OR "baby"))
-       OR "maternal" OR "mothers" OR "childbirth" OR "child-birth" OR "birth"
-      )
-      NEAR/15
-          ("surviv*")
-      NEAR/15
-          ("improv*" OR "increas*" OR "enhanc*")
+  (   
+    ("child*" OR "infant$" OR "under-five$"
+    OR "baby" OR "babies" OR "newborn$"
+    OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal"
+    OR "childbirth" OR "child-birth" OR "birth" OR "premature deliver*" OR "preterm deliver*"
+    OR "maternal" OR "mothers"
+    )
+    NEAR/15
+        ("surviv*")
+    NEAR/15
+        ("improv*" OR "increas*" OR "enhanc*")
   )
-  NOT (("pigs" OR "cows" OR "sheep" OR "cattle") NOT ("human" OR "model"))   
+  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))   
 )
 ```
 ## Target 3.3
@@ -880,7 +892,7 @@ TS =
 
 <a id="f5"></a> International Agency for Research on Cancer. (2019). *The Cancer Dictionary*. World Health Organization. http://www-dep.iarc.fr/WHOdb/WHOdb.htm [accessed 15.11.2019] [↩](#WHOcancer)
 
-<a id="f6"></a> National Cancer Institute. (n.d.). Cancer Classification. National Institutes of Health. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
+<a id="f6"></a> National Cancer Institute. (n.d.). *Cancer Classification*. National Institutes of Health. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
 
 <a id="f14"></a> National Institute on Drug Abuse. (2020, August). *Commonly Used Drugs Charts*. National Institutes of Health. https://www.drugabuse.gov/drug-topics/commonly-used-drugs-charts [Accessed 26.10.2021] [↩](#NIHdrugs)
 
