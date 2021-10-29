@@ -22,9 +22,11 @@
 
 ## 2. General notes
 
-Source of Targets and Indicators:
-Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021]
-<sup id="SDGT+Is">[1](#f1)</sup>
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+
+Abbreviations:
+* World Health Organization (WHO)
+* Medical Subject Headings (MeSH) - https://www.ncbi.nlm.nih.gov/mesh/
 
 ## 3. Targets
 
@@ -142,11 +144,11 @@ TS =
 
 The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes.
 
-The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used the World Health Organization's (WHO) Global Health Observatory data repository for adding specific vaccine preventable & communicable diseases <sup id="WHOGHO">[2](#f2)</sup>. Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
+The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
 
-The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the CDC Waterborne Diseases Prevention Branch <sup id="CDCwaterborne">[13](#f13)</sup>. I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
+The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>). I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
 
-The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included<sup id="WHONTD">[3](#f3)</sup>.
+The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020](#f3)</a>).
 
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
 
@@ -327,9 +329,9 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-We used World Health Organization factsheets to add the "main types" of non-communicable diseases<sup id="WHOFSnoncomm">[4](#f4)</sup>.
+We used World Health Organization factsheets to add the "main types" of non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>).
 
-Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database <sup id="WHOcancer">[5](#f5)</sup> and using nomenclature as explained by the U.S. National Institutes of Health and National Cancer Institute SEER training modules <sup id="NIHcancer">[6](#f6)</sup>.
+Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
 Premature death from these diseases can be covered within the phrasing of the action part (e.g. prevent premature mortality from noncommunicable diseases). Some action terms are stand-alone while others are combined with `mortality`; for `lower` this was necessary to avoid e.g. "cancer of the lower intestine".
 
@@ -363,7 +365,7 @@ TS=
 
 This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
 
-Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used World Health Organization factsheets to add types of mental disorders<sup id="WHOFSmental">[7](#f7)</sup>. As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
 
 ``` Ceylon =
 TS=
@@ -429,11 +431,11 @@ Drug/substances were expanded using MeSH terms.
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
 * Under "substance-related disorders" (D019966), a number of specific substances are listed, including `amphetamine`, `cocaine`, `inhalent`, `tobacco` etc.
 
-Additional terms were added from the National Institutes of Health "Commonly Used Drugs Charts", with the understanding that this is an USA-centric source<sup id="NIHdrugs">[14](#f14)</sup>.
+Additional terms were added from the National Institutes of Health "Commonly Used Drugs Charts", with the understanding that this is an USA-centric source (<a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>).
 
 `addiction` and `dependence` were considered as terms that can indicate harmful use.
 
-`therapy` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...).
+`therapy` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treat*` should cover not only treatment, but also treatment centres.
 
 ``` Ceylon =
 TS=
@@ -840,20 +842,29 @@ TS =
 ## 4. Authorship and review
 
 ## 5. Footnotes
-<b id="f1">1</b> This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)".
-(https://unstats.un.org/sdgs/indicators/indicators-list/) [↩](#SDGT+Is)
 
- <b id="f2">2</b> WHO (n.d.) Global Health Observatory data repository; By theme. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]; WHO (n.d.) Global Health Observatory data repository; By category; Vaccine-preventable communicable diseases. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.10.2021].[↩](#WHOGHO)
+<a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
 
-<b id="f3">3</b> p2 in World Health Organization. (2020). Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
+<a id="f5"></a> International Agency for Research on Cancer. (2019). *The Cancer Dictionary*. World Health Organization. http://www-dep.iarc.fr/WHOdb/WHOdb.htm [accessed 15.11.2019] [↩](#WHOcancer)
 
-<b id="f4">4</b> WHO (2018) Noncommunicable diseases. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
+<a id="f6"></a> National Cancer Institute. (n.d.). Cancer Classification. National Institutes of Health. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
 
-<b id="f5">5</b> WHO, International Agency for Research on Cancer (2019) The Cancer Dictionary. http://www-dep.iarc.fr/WHOdb/WHOdb.htm [accessed 15.11.2019] [↩](#WHOcancer)
+<a id="f14"></a> National Institute on Drug Abuse. (2020, August). *Commonly Used Drugs Charts*. National Institutes of Health. https://www.drugabuse.gov/drug-topics/commonly-used-drugs-charts [Accessed 26.10.2021] [↩](#NIHdrugs)
 
-<b id="f6">6</b> NIH, NCI,SEER (n.d.) Cancer Classification. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
+<a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
-<b id="f7">7</b> WHO (2019) Mental disorders. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
+<a id="f4"></a> World Health Organization. (2018). *Noncommunicable diseases*. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
+
+<a id="f7"></a> World Health Organization. (2019). *Mental disorders*. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
+
+<a id="f3"></a> World Health Organization. (2020). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
+
+<a id="f2"></a> World Health Organization. (n.d. a). *Global Health Observatory data repository: By theme*. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]
+
+<a id="f2a"></a> World Health Organization. (n.d. b). *Global Health Observatory data repository: By category: Vaccine-preventable communicable diseases*. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.10.2021].[↩](#WHOGHO)
+
+
+--
 
 <b id="f8">8</b> WHO (n.d.) Health Equity. https://www.who.int/topics/health_equity/en/ [accessed 29.11.2019] [↩](#WHOequity)
 
@@ -864,7 +875,3 @@ TS =
 <b id="f11">11</b> WHO (n.d.) International Programme on Chemical Safety, Ten chemicals of major public health concern. https://www.who.int/ipcs/assessment/public_health/chemicals_phc/en/ [accessed 15.11.2019]  [↩](#WHOchem)
 
 <b id="f12">12</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
-
-<b id="f13">13</b> Centers for Disease Control and Prevention (2021) Waterborne Disease Prevention Branch. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
-
-<b id="f14">14</b> National Institute on Drug Abuse. (2020, August). Commonly Used Drugs Charts. National Institutes of Health. https://www.drugabuse.gov/drug-topics/commonly-used-drugs-charts [Accessed 26.10.2021] [↩](#NIHdrugs)
