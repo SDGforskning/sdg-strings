@@ -300,7 +300,7 @@ Truncate `cure` carefully
 "justice"
 "democracy"
 
-"affordab*" / "inaffordab*"
+"affordab*" / "unaffordab*"
 
 "right$"
 "ownership"
