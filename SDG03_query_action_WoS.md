@@ -556,7 +556,7 @@ TS =
 ```
 
 
-## Target 3.7 & 3.8
+## Target 3.7
 
 > **3.7 By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes**
 >
@@ -564,14 +564,67 @@ TS =
 >
 > 3.7.2 Adolescent birth rate (aged 10–14 years; aged 15–19 years) per 1,000 women in that age group
 
+This target is interpreted to cover research on access to: 1) sexual health services and family planning, 2) education and information about sexual health and family planning. It also covers research about reproductive health in national strategies and programmes. This query consists of 2 phrases.
+
+##### Phrase 1:
+
+The structure is *reproductive health + access*
+
+I am unsure whether we need to include action terms here: `(NEAR/15 ("improv*" OR "increas*" OR "enhanc*" OR "expand*" OR "promot*" OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address" OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*")`. Is research on barriers themselves a direct contribution to improving access/removing these barriers?
+
+Originally, terms for reproductive health were combined with service/information terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. If *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unneccesary restriction.
+
+`abortion` is included as part of reproductive health as according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
+
+Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this.
+
+``` Ceylon =
+TS =
+(
+  ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
+  OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
+  OR "sex education"
+  )
+  NEAR/15
+      ("access*" OR "barrier$" OR "obstacle$"
+      OR "right$" OR "coverage"
+      OR "afford*" OR "unaffordab*"
+      )
+)
+
+```
+
+##### Phrase 2:
+
+The structure is *reproductive health + national programmes*
+
+``` Ceylon =
+TS =
+(
+  ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare")
+  NEAR/15
+      ("national" NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies"))
+)
+
+```
+
+## Target 3.8
+
 > **3.8 Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all**
 >
 > 3.8.1 Coverage of essential health services
 >
 > 3.8.2 Proportion of population with large household expenditures on health as a share of total household expenditure or income
 
-This query consists of 3 phrases.
+We have included `health equity`. Definition from World Health Organization: "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential"<sup id="WHOequity">[8](#f8)</sup>.
 
+``` Ceylon =
+TS =
+(
+  "universal health coverage" OR "universal healthcare" OR "health equity"
+)
+
+```
 ##### Phrase 1:
 
 ``` Ceylon =
@@ -592,30 +645,6 @@ TS =
   )
   NEAR/5
       ("access*" OR "afford*" OR "barrier$")
-)
-
-```
-
-##### Phrase 2:
-
-We have included `health equity`. Definition from World Health Organisation: "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential"<sup id="WHOequity">[8](#f8)</sup>.
-
-``` Ceylon =
-TS =
-(
-  "universal health coverage" OR "universal healthcare" OR "health equity"
-)
-
-```
-
-##### Phrase 3:
-
-``` Ceylon =
-TS =
-(
-  ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare")
-  NEAR/10
-      ("national" NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies"))
 )
 
 ```
@@ -898,9 +927,9 @@ TS =
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
-<a id="f4"></a> World Health Organization. (2018). *Noncommunicable diseases*. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
+<a id="f4"></a> World Health Organization. (2018). *Noncommunicable diseases*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
 
-<a id="f7"></a> World Health Organization. (2019). *Mental disorders*. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
+<a id="f7"></a> World Health Organization. (2019). *Mental disorders*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
 
 <a id="f3"></a> World Health Organization. (2020). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
 
@@ -908,6 +937,7 @@ TS =
 
 <a id="f2a"></a> World Health Organization. (n.d. b). *Global Health Observatory data repository: By category: Vaccine-preventable communicable diseases*. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.10.2021].[↩](#WHOGHO)
 
+<a id="f15"></a> World Health Organization. (n.d. c). *Abortion*. [Fact sheet]. https://www.who.int/health-topics/abortion [accessed 29.10.2021].[↩](#WHOabortion)
 
 --
 
