@@ -366,8 +366,8 @@ TS=
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
       OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
       OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
-      OR ("mortality" NEAR/3 ("decrease$" OR "lower"))
-      OR ("survival" NEAR/3 ("improv*" OR "increas*" OR "enhanc*"))
+      OR ("mortality" NEAR/5 ("decrease$" OR "lower" OR "improv*"))
+      OR ("survival" NEAR/5 ("improv*" OR "increas*" OR "enhanc*"))
       )
 )
 
