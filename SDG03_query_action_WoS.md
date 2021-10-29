@@ -473,43 +473,76 @@ TS=
 >
 > 3.6.1 Death rate due to road traffic injuries
 
+This target is interpreted to mean reducing deaths and injuries from road traffic accidents. We consider the prevention of accidents and improvement to road/vehicle safety to be part of this.
+
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
+The basic structure is *injury/accidents + traffic/vehicles + reduction*
+
 Note `limit$` not included (only `limiting`) as mostly used for city limits or speed limits.
 
-``` Ceylon =
-TS =
-(
-  (
-    ("mortality" OR "death" OR "injury" OR "injuries" OR "accident$")
-    NEAR/10
-        ("traffic" OR "road" OR "motor-vehicle$")    
-  )
-  NEAR/5
-      ("prevent*" OR "combat*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "treat*" OR "avoid*")
-)
+`vehicle` is combined in a separate phrase, with only `accident$`, because it is used in a molecular context (i.e. xyz works as a vehicle for delivery of the drug").
 
-```
-
-##### Phrase 2:
-
-`road` not included due to metaphorical use e.g. road to recovery.
+`improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes".
 
 ``` Ceylon =
 TS =
 (
   (
-    ("surviv*")
-    NEAR/10
-        ("traffic" OR "motor-vehicle$")    
+    (
+      ("mortality" OR "death" OR "injury" OR "injuries" OR "accident$")
+      NEAR/15
+          ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
+          OR "cars" OR "car" OR "motorcycle$" OR "automobile$" OR "pedestrian$"
+          OR "motor-vehicle$" OR "vehicle safety" OR "vehicle collision$" OR "vehicle braking" OR "vehicle crash*" OR "vehicle-vehicle"
+          )
+    )
+    OR
+    (
+      (
+        ("accident$")
+        NEAR/15
+            ("vehicle$")    
+      )
+    )
   )
   NEAR/5
-      ("improv*" OR "increas*" OR "enhanc*")
+      ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "treat*" OR "avoid*"
+      OR "improv*")
 )
 
 ```
+
+#### Phrase 2
+
+The basic structure is *safety + traffic/vehicles + improvement*
+
+Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (e.g. biomedical, or biological wildlife). `safety` seems to be a much more relevant term.
+
+The `NOT` expression is included because `car` results in biomedical results when combined with safety ("CAR T cells"), and `traffic` results in some additions from air traffic safety.
+
+``` Ceylon =
+TS =
+(
+  (
+    (
+      ("safety")
+      NEAR/15
+          ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
+          OR "cars" OR "motorcycle$" OR "automobile$" OR "pedestrian$"
+          OR "motor-vehicle$" OR "vehicle safety" OR "vehicle collision$" OR "vehicle braking" OR "vehicle crash*" OR "vehicle-vehicle"
+          )
+    )
+    NEAR/5
+        ("improv*" OR "increas*" OR "enhanc*")
+  )
+  NOT ("car t cell" OR "air traffic")
+)
+
+```
+
 
 ## Target 3.7 & 3.8
 
