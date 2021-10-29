@@ -53,7 +53,7 @@ This query consists of 2 phrases.
 
 Both include a double `NOT` expression to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans.
 
-##### Phrase 1:
+##### Phrase 1
 
 The basic structure is *children/mothers* + *mortality* + *action* + *excluding livestock*
 
@@ -87,7 +87,7 @@ TS=
   NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
 )
 ```
-##### Phrase 2:
+##### Phrase 2
 
 Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/mothers* + *survival* + *action* + *excluding livestock*.
 
@@ -339,7 +339,7 @@ This query consists of 3 phrases.
 * Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover treatment, prevention and any other aspects related to reducing mortality. In contrast to 3.3, here there is an explicit focus on reducing mortality.
 * Phrases 2 and 3 focus on the "mental health and well-being" part. It is interpreted to cover improving mental health, both by the treatment of disease and via health promotion.
 
-##### Phrase 1:
+##### Phrase 1
 
 We used World Health Organization factsheets to add the "main types" of non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>).
 
@@ -373,7 +373,7 @@ TS=
 
 ```  
 
-##### Phrase 2:
+##### Phrase 2
 
 This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
 
@@ -400,7 +400,7 @@ TS=
 )
 ```
 
-##### Phrase 3:
+##### Phrase 3
 
 This phrase focuses on the promotion of well-being. The general structure is *well-being* + *promotion*.
 
@@ -489,7 +489,7 @@ This target is interpreted to mean reducing deaths and injuries from road traffi
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+##### Phrase 1
 
 The basic structure is *injury/accidents + traffic/vehicles + reduction*
 
@@ -527,7 +527,7 @@ TS =
 
 ```
 
-#### Phrase 2
+##### Phrase 2
 
 The basic structure is *safety + traffic/vehicles + improvement*
 
@@ -566,17 +566,17 @@ TS =
 
 This target is interpreted to cover research on access to: 1) sexual health services and family planning, 2) education and information about sexual health and family planning. It also covers research about reproductive health in national strategies and programmes. This query consists of 2 phrases.
 
-##### Phrase 1:
+##### Phrase 1
 
 The structure is *reproductive health + access*
 
-I am unsure whether we need to include action terms here: `(NEAR/15 ("improv*" OR "increas*" OR "enhanc*" OR "expand*" OR "promot*" OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address" OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*")`. Is research on barriers themselves a direct contribution to improving access/removing these barriers?
+I am unsure whether we need to include action terms here. I don't know if it makes it too narrow. Is research on barriers themselves a direct contribution to improving access/removing these barriers?
 
 Originally, terms for reproductive health were combined with service/information terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. If *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unneccesary restriction.
 
 `abortion` is included as part of reproductive health as according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
 
-Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this.
+Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>)). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>)).
 
 ``` Ceylon =
 TS =
@@ -586,17 +586,28 @@ TS =
   OR "sex education"
   )
   NEAR/15
-      ("access*" OR "barrier$" OR "obstacle$"
-      OR "right$" OR "coverage"
-      OR "afford*" OR "unaffordab*"
+      ("health equity" OR "equity in health*" OR "health for all"
+      OR
+        (
+          ("access*" OR "barrier$" OR "obstacle$"
+          OR "right$" OR "coverage"
+          OR "afford" OR "affordab*" OR "unaffordab*"
+          )
+          NEAR/5
+            ("improv*" OR "increas*" OR "enhanc*"
+            OR "expand*" OR "provide" OR "promot*" OR "ensur*"
+            OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
+            OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
+            )
+        )
       )
-)
+)       
 
 ```
 
-##### Phrase 2:
+##### Phrase 2
 
-The structure is *reproductive health + national programmes*
+The basic structure is *reproductive health + national programmes*.
 
 ``` Ceylon =
 TS =
@@ -616,37 +627,51 @@ TS =
 >
 > 3.8.2 Proportion of population with large household expenditures on health as a share of total household expenditure or income
 
-We have included `health equity`. Definition from World Health Organization: "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential"<sup id="WHOequity">[8](#f8)</sup>.
+This target is interpreted to include research about 1) Achieving universal health coverage, 2) Avoiding financial obstacles to healthcare, 3) Achieving access to healthcare services, 4) Achieving access to essential medicines and vaccines.
+
+##### Phrase 1
+
+Here these terms are used alone, since the majority of works mentioning them seem to be coming from the angle of working towards universal health coverage.
 
 ``` Ceylon =
 TS =
 (
-  "universal health coverage" OR "universal healthcare" OR "health equity"
+  "universal health coverage" OR "universal healthcare" OR "universal health care"
 )
 
 ```
-##### Phrase 1:
+
+##### Phrase 2
+
+We have included `health equity`, as we consider it to be covered by the idea of "medicines and vaccines for all". `treatment` is not used alone, as there are technical biomed works about e.g. barrier treatments.
+
+Just like 3.7, it is difficult to know if we need action terms here or not, and, if yes, what the NEAR number should be...
 
 ``` Ceylon =
 TS =
 (
-  ("health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
-    OR "family planning"
-    OR "medicine$" OR "vaccine$"
-    OR
-      (
-        ("reproductive health" OR "sexual health" OR "mental health" OR "mental well-being" OR "psychiatric")
-        NEAR/3
-            ("support" OR "service$"
-            OR "facility" OR "facilities" OR "hospital$" OR "clinic$"
-            OR "treatment" OR "care"
-            )      
-      )
+  ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
+  OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
+  OR "medicine$" OR "vaccine$" OR "medication$"
+  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*"
   )
-  NEAR/5
-      ("access*" OR "afford*" OR "barrier$")
+  NEAR/15
+      ("health equity" OR "equity in health*" OR "health for all"
+      OR
+        (
+          ("access*" OR "barrier$" OR "obstacle$"
+          OR "coverage"
+          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "household expenditure$" OR "medical expenditure$" OR "microinsurance"
+          )
+          NEAR/5
+              ("improv*" OR "increas*" OR "enhanc*"
+              OR "expand*" OR "provide" OR "promot*" OR "ensur*"
+              OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
+              OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
+              )
+        )
+      )
 )
-
 ```
 
 ## Target 3.9
@@ -927,6 +952,8 @@ TS =
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
+<a id="f16"></a> World Health Organization. (1981). *Global Strategy for health for all by the year 2000*. "Health for all" series, 3. http://apps.who.int/iris/bitstream/handle/10665/38893/9241800038.pdf [↩](#WHOhealthforall)
+
 <a id="f4"></a> World Health Organization. (2018). *Noncommunicable diseases*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
 
 <a id="f7"></a> World Health Organization. (2019). *Mental disorders*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
@@ -939,9 +966,9 @@ TS =
 
 <a id="f15"></a> World Health Organization. (n.d. c). *Abortion*. [Fact sheet]. https://www.who.int/health-topics/abortion [accessed 29.10.2021].[↩](#WHOabortion)
 
---
+<a id="f8"></a> World Health Organization. (n.d. d). *Health Equity*. https://www.who.int/topics/health_equity/en/ [accessed 29.11.2019] [↩](#WHOequity)
 
-<b id="f8">8</b> WHO (n.d.) Health Equity. https://www.who.int/topics/health_equity/en/ [accessed 29.11.2019] [↩](#WHOequity)
+--
 
 <b id="f9">9</b> WHO (n.d.) Ambient air pollution: Pollutants. https://www.who.int/airpollution/ambient/pollutants/en/ [accessed 15.11.2019] [↩](#WHOairpoll)
 
