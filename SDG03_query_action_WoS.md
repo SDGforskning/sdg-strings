@@ -822,16 +822,39 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This query consists of 1 phrase.
+This target is interpreted to be about the reduction of tobacco use, via control and other methods, including in reference to implementation of the WHO FCTC.
 
-NB in the article version this was combined with 3.b, but no need, so here are split.
+WHO FCTC: A treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+
+This query consists of 2 phrases.
+
+#### Phrase 1
+
+Implementation is not specifically added here, as referring to the WHO framework is likely to be in reference to this anyway.
 
 ``` Ceylon =
 TS =
 (
-  "World health organization framework convention on tobacco control"
+  "World health organization* framework convention on tobacco control" OR "WHO framework convention on tobacco control" OR "WHO FCTC"
 )
+```
 
+#### Phrase 2
+
+The basic structure is *tobacco + reduction/control*
+
+"use" is not specified, as the FCTC also refers to tobacco control and reduction in supply, attractiveness, etc.
+
+``` Ceylon =
+TS =
+(
+  (
+    ("tobacco" OR "smoking")
+    NEAR/5
+    ("reduc*" OR "control")
+  )
+  AND ("tobacco")
+)
 ```
 
 ## Target 3.b
@@ -971,6 +994,8 @@ TS =
 <a id="f6"></a> National Cancer Institute. (n.d.). *Cancer Classification*. National Institutes of Health. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
 
 <a id="f14"></a> National Institute on Drug Abuse. (2020, August). *Commonly Used Drugs Charts*. National Institutes of Health. https://www.drugabuse.gov/drug-topics/commonly-used-drugs-charts [Accessed 26.10.2021] [↩](#NIHdrugs)
+
+<a id="f16"></a> Regional Office for Europe. (n.d.). *WHO Framework Convention on Tobacco Control (WHO FCTC)*. World Health Organization. https://www.euro.who.int/en/health-topics/disease-prevention/tobacco/publications/key-policy-documents/who-framework-convention-on-tobacco-control-who-fctc [accessed 10.11.2021].[↩](#WHOFCTC)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
