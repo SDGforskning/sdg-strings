@@ -658,32 +658,38 @@ TS =
 
 ##### Phrase 2
 
-We have included `health equity`, as we consider it to be covered by the idea of "medicines and vaccines for all". `treatment` is not used alone, as there are technical biomed works about e.g. barrier treatments.
+The basic structure is *health care/medications + access/affordability/quality + action*
+
+`treatment` is not used alone, as there are technical biomedical works about e.g. barrier treatments.
+
+Under *access* terms, we have included `health equity` and `vaccine equity`, as we consider it to cover the idea of "medicines and vaccines for all".
 
 Just like 3.7, it is difficult to know if we need action terms here or not, and, if yes, what the NEAR number should be...
 
 ``` Ceylon =
 TS =
 (
-  ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
+  ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
   OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "medicine$" OR "vaccine$" OR "medication$"
-  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*"
+  OR "medicines" OR "vaccine$" OR "medication$"
+  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*" OR "treatment cost$"
   )
   NEAR/15
-      ("health equity" OR "equity in health*" OR "health for all"
+      ("health equity" OR "equity in health*" OR "health care equity" OR "equity in healthcare" OR "health for all" OR "vaccine equity"
       OR
         (
           ("access*" OR "barrier$" OR "obstacle$"
-          OR "coverage"
-          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$"
+          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$"
           OR "microinsurance"
+          OR "quality medicines" OR "quality care" OR "quality of care" OR "quality health care"
           )
           NEAR/5
               ("improv*" OR "increas*" OR "enhanc*"
               OR "expand*" OR "provide" OR "promot*" OR "ensur*"
-              OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
+              OR "dismant*" OR "remov*" OR "avoid*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
+              OR "decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
               OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
+              OR "more affordable"
               )
         )
       )
