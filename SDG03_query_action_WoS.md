@@ -630,16 +630,28 @@ TS =
 >
 > 3.8.2 Proportion of population with large household expenditures on health as a share of total household expenditure or income
 
-This target is interpreted to include research about 1) Achieving universal health coverage, 2) Avoiding financial obstacles to healthcare, 3) Achieving access to healthcare services, 4) Achieving access to essential medicines and vaccines.
+This target is interpreted to include research about 1) Achieving universal health coverage, 2) Avoiding financial obstacles/hardship in healthcare, including access to medicines/vaccines, 3) Achieving access to healthcare services, 4) Achieving access to essential medicines and vaccines that are safe and effective.
 
 ##### Phrase 1
 
-Here these terms are used alone, since the majority of works mentioning them seem to be coming from the angle of working towards universal health coverage.
+The basic structure is *universal health coverage + achieving*
+
+"Achieving" is interpreted broadly to cover both establishment, expansion, maintenance and obstacles. `for universal health coverage` finds a variety of phrases which are related to this, e.g. "policies for", "legal framework for", "tool for".
 
 ``` Ceylon =
 TS =
 (
-  "universal health coverage" OR "universal healthcare" OR "universal health care"
+  ("universal health coverage" OR "universal healthcare" OR "universal health care")
+  NEAR/5
+  ("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "build*" OR "solution$" OR "architect$" OR "develop"
+  OR "path$" OR "pathway$" OR "road$" OR "route" OR "roadmap"  OR "toward$" OR "way to"
+  OR "scal* up" OR "accelerat*" OR "expand" OR "expansion*" OR "broaden*" OR "advancing" OR "advance"
+  OR "achiev*" OR "attain*" OR "provision" OR "provid*" OR "deliver"
+  OR "maintain*" OR "sustain*" OR "support" OR "strengthen*"
+  OR "barrier$" OR "obstacle$" OR "financing"
+  OR "reality" OR "promise$" OR "realization" OR "priority" OR "prioriti*"
+  OR "for universal health coverage"
+  )
 )
 
 ```
@@ -664,7 +676,8 @@ TS =
         (
           ("access*" OR "barrier$" OR "obstacle$"
           OR "coverage"
-          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "household expenditure$" OR "medical expenditure$" OR "microinsurance"
+          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$"
+          OR "microinsurance"
           )
           NEAR/5
               ("improv*" OR "increas*" OR "enhanc*"
