@@ -118,6 +118,8 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
 
 ### Improving/increasing
 
+Avoids using `advanced`
+
 ```Ceylon=
 "increas*"
 "strengthen*"
@@ -128,7 +130,15 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
 "more efficient"
 "higher"
 "upgrad*"
+"scal* up"
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+
 "overcome"
+"ensure"
+"attain*"
+"achiev*"
 ```
 
 ### Maintaining/conserving
@@ -137,6 +147,7 @@ Note that `poor` or e.g. `old` cannot be used alone (adjecitve).
 "maintain*"
 "conserv*"
 "preserv*"
+"sustain"
 ```
 
 ### Decreasing
@@ -232,9 +243,9 @@ Truncate `polic*` and `program*` carefully (e.g. police, programmers)
 "monitor*"
 ```
 
-### Establishing
+### Establishing / achieving
 
-Truncate `plan` carefully (e.g. planes)
+Truncate `plan` carefully (e.g. planes), also `development` (e.g. biological development)
 
 ```Ceylon=
 "establish*"
@@ -247,6 +258,20 @@ Truncate `plan` carefully (e.g. planes)
 "planning"
 "adopt*"
 "build*"
+"architect"
+"develop" OR "development"
+
+"pathway$"
+"path$"
+"route"
+"roadmap"
+"towards"
+"way to"
+
+"overcome"
+"ensure"
+"attain*"
+"achiev*"
 ```
 
 ### Treating
