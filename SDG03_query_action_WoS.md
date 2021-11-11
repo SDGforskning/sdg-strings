@@ -929,7 +929,7 @@ TS =
   AND
   ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "essential drug$" OR "treatment$")
   AND
-  ("access")
+  ("access" OR "accessibility")
 )
 ```
 
