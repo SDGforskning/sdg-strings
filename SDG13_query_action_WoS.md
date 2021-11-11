@@ -25,6 +25,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 * Definition of "capacity" : "[...] the ability of people, organizations and society as a whole to manage their affairs successfully"<sup id="UNDGcapacity">[2](#f2)</sup>.
 * Definition of "capacity development" : "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"<sup id="UNDGcapacity">[2](#f2)</sup>.
+* Most of the terminalogy/definition is taken from https://www.undrr.org/terminology/hazard
 
 ## 3.Targets
 
@@ -56,10 +57,17 @@ TS=
         )
       )
       NEAR/15
-          ("hazard*" OR "catastroph*" OR "disaster*"
-          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation"))
-          OR "drought$" OR "flood*"
-          OR "collaps*" OR "tipping point"  
+          (
+          ("natural" OR "anthropogenic" OR "multi" OR "environmental" OR "technological" OR "biological") 
+          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
+          )
+          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow"))
+          OR "drought$" OR "flood*" OR "heatwaves" and "cold spells"
+          OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
+          OR "storm surges"
+          OR "earthquake$" OR "volcanic activity" OR "volcanic emission$"
+          OR "landslides" OR "rockslides" OR "surface collapses" OR "mud flows"
+          OR "tipping point"  
           OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
           )
     )
