@@ -833,21 +833,16 @@ This query consists of 2 phrases.
 Implementation is not specifically added here, as referring to the WHO framework is likely to be in reference to this anyway.
 
 ``` Ceylon =
-TS =
-(
-  "Framework convention on tobacco control" OR "WHO FCTC"
-)
+TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 ```
 
 #### Phrase 2
 
-The basic structure is *tobacco + reduction/control*
+The basic structure is *tobacco + reduction/control + action*
 
 "use" is not specified, as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` covers these (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
 
-`reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as some may discuss this without being combined with the "implement" terms, but `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant).
-
-`alternative livlihood$` refers to production, while `alternative$` can also apply to smoking alternatives.
+`reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as some may discuss this without being combined with the "implement" terms, but `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant). Phrase 3 deals with tobacco production in more depth.
 
 `developing` finds some results about developing countries, rather than developing interventions, but this is hard to avoid.
 
@@ -871,23 +866,33 @@ TS =
     )
   OR "reduc* tobacco" OR "reduc* smoking" OR "decreas* tobacco"
   OR "reduce dependence on"
-  OR
-    (
-      ("tobacco farm*" OR "tobacco production" OR "tobacco growing")
-      AND
-        ("diversif*" OR "alternative crop$" OR "crop substitution"
-        OR "alternative livelihood$" OR "alternative sustainable livelihood$"
-        )
-      AND
-        ("support*" OR "encourag*" OR "facilitat*" OR "promot*" OR "help"
-        OR "implement*" OR "introduc*" OR "establish*" OR "develop*" OR "adopt*" OR "propos*" OR "uptake"
-        OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
-        )
-    )
   )
   AND ("tobacco")
 )
 ```
+
+#### Phrase 3
+
+The basic structure is *tobacco farming + alternatives + action*
+
+`alternative livlihood$` refers to production, while `alternative$` can also apply to smoking alternatives.
+
+```Ceylon =
+TS=
+(
+  ("tobacco farm*" OR "tobacco production" OR "tobacco growing")
+  AND
+    ("diversif*" OR "alternative crop$" OR "crop substitution"
+    OR "alternative livelihood$" OR "alternative sustainable livelihood$"
+    )
+  AND
+    ("support*" OR "encourag*" OR "facilitat*" OR "promot*" OR "help"
+    OR "implement*" OR "introduc*" OR "establish*" OR "develop*" OR "adopt*" OR "propos*" OR "uptake"
+    OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+    )
+)
+```
+
 
 ## Target 3.b
 
