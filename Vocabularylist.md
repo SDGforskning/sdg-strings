@@ -33,7 +33,8 @@ Some country names are shortened when it is expected that research may not use t
 Note - this includes small island developing states under "developing states". Make sure to adjust depending on whether the target specifies developing countries, or least developed countries, or SIDS
 (("least developed" OR "developing" ) NEAR/3 ("countr*" OR "state$" OR "nation$"))
 This can be also written as the below to avoid the NEAR statement -
-"least developed countr*" OR "developing countr*" OR "least developed nation$" OR "developing nation$" OR "developing states"
+"least developed countr*" OR "least developed nation$" 
+OR "developing countr*" OR "developing nation$" OR "developing states"
 
 "developing world"
 "official development assistance"
