@@ -46,15 +46,20 @@ TS=
 (
   (
     (
-      ("combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*"
-      OR "prevent*" OR "stop*" OR "avoid*"
-      OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "vulnerab*" OR "preparedness" OR "mitigat*"
+      (
+      "combat*" OR "prevent*" OR "stop*" OR "avoid*"OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "vulnerab*" OR "preparedness" OR "mitigat*"
       OR "early warning" OR "policy" OR "policies" OR "protect*"  
       OR
         (
           ("disaster$" OR "risk$")
           NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$")
         )
+      OR
+        (
+        ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
+         NEAR/5 ("impact$" OR "risk$" OR "cosequence$ OR "effect*" OR "influence$")
+        )
+         
       )
       NEAR/15
           (
@@ -64,20 +69,20 @@ TS=
           OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow"))
           OR "drought$" OR "flood*" OR "heatwaves" and "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
-          OR "storm surges"
+          OR "storm surge$"
           OR "earthquake$" OR "volcanic activity" OR "volcanic emission$"
-          OR "landslides" OR "rockslides" OR "surface collapses" OR "mud flows"
-          OR "tipping point"  
+          OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
+          OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
+          OR "tipping point$"  
           OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+          OR "climate change$" OR "climatic change$" OR "global warming" OR "changing climate"
+          OR
+           (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming"))
           )
     )
   OR "livelihood vulnerability index"
   )
-  AND
-      ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate"
-      OR
-        (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-      )
+ 
 )
 
 ```
