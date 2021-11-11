@@ -131,14 +131,16 @@ Avoids using `advanced`
 "higher"
 "upgrad*"
 "scal* up"
+"build*" ("build* capacity")
 "expand" OR "expansion*"
 "accelerat*"
 "advance" OR "advancing"
+"develop" OR "developing"
 
 "overcome"
 "ensure"
 "attain*"
-"achiev*"
+"achiev*" - note, see lower for own section on establishing/achieving
 ```
 
 ### Maintaining/conserving
@@ -258,7 +260,7 @@ Truncate `plan` carefully (e.g. planes), also `development` (e.g. biological dev
 "planning"
 "adopt*"
 "introduc*"
-"build*"
+"build*" ("build capacity")
 "architect"
 "develop" OR "development"
 
