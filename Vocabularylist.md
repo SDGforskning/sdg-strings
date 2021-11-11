@@ -131,7 +131,7 @@ Avoids using `advanced`
 "higher"
 "upgrad*"
 "scal* up"
-"build*" ("build* capacity")
+"build*" ("build* capacity" / "capacity building" / "capacity development")
 "expand" OR "expansion*"
 "accelerat*"
 "advance" OR "advancing"
@@ -260,7 +260,7 @@ Truncate `plan` carefully (e.g. planes), also `development` (e.g. biological dev
 "planning"
 "adopt*"
 "introduc*"
-"build*" ("build capacity")
+"build*" ("build* capacity" / "capacity building" / "capacity development")
 "architect"
 "develop" OR "development"
 
