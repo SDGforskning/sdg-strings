@@ -257,6 +257,7 @@ Truncate `plan` carefully (e.g. planes), also `development` (e.g. biological dev
 "planned"
 "planning"
 "adopt*"
+"introduc*"
 "build*"
 "architect"
 "develop" OR "development"
