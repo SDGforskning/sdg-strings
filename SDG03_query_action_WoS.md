@@ -576,7 +576,7 @@ Originally, terms for reproductive health were combined with service/information
 
 Terms such as `reproductive health` will cover `reproductive health care / health services` etc.. `abortion` is included as part of reproductive health, as according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
 
-Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>)). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>)).
+Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>).
 
 ``` Ceylon =
 TS =
@@ -904,16 +904,44 @@ TS=
 >
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
-This query consists of 1 phrase.
+* Development of medicines/vaccines for neglected tropical and other communicable diseases is covered under target 3.3. The search string there should be broad enough to apply on both the individual and national level.
+* Access to essential medicines and vaccines is covered in target 3.8.  
 
-Any works mentioning the DOHA declaration are likely to be addressing access to medicines
+Thus two elements are not covered, but can be interpreted from the target:
+* research about how the Doha declaration affects things on a national/regulatory level, perhaps more broadly how access to essential medicines can be ensured despite intellectual property rights (phrase 1)
+* research about support for medical research and basic health from official development assistance (phrase 2)
+
+This query consists of 2 phrases.
+
+#### Phrase 1
+
+The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation.  About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
+> "In the declaration, ministers stress that it is important to implement and interpret the TRIPS Agreement in a way that supports public health — by promoting both access to existing medicines and the creation of new medicines.[...]. It emphasizes that the TRIPS Agreement does not and should not prevent member governments from acting to protect public health."
+
+This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances .
+
+`patents` is used in the plural as when singular it tends to have specific/biomedical uses.
 
 ``` Ceylon =
 TS =
 (
-  "DOHA declaration"
+  ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property rights")
+  AND
+  ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "essential drug$" OR "treatment$")
+  AND
+  ("access")
 )
+```
 
+#### Phrase 2
+
+``` Ceylon =
+TS =
+(
+  ("official development assistance" OR "official development aid")
+  AND
+  ("health" OR "medical research" OR "medical R&D")
+)
 ```
 
 ## Target 3.c
@@ -922,55 +950,80 @@ TS =
 >
 > 3.c.1 Health worker density and distribution
 
-This query consists of 1 phrase.
+This target is interpreted to cover research about the training and retention of the health workforce in developing countries. It also covers research about health financing in these countries - for this there could be considered slight overlap with 3.b regarding ODA.
+
+To specify countries, we use lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[12](#f12)</sup>.
+
+This query consists of 2 phrases.
+
+#### Phrase 1
+
+The basic structure is *health workers + retention/training + countries*
 
 Types of healthcare worker expanded using MeSH terms.
-
-Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[12](#f12)</sup>.
 
 ``` Ceylon =
 TS =
 (
   (
-    (
-      (  
-         (
-           ("health" OR "healthcare" OR "medical")
-           NEAR/3
-              ("workforce" OR "professional$" OR "worker$" OR "practitioner$" OR "human resources" OR "student$")
-         )
-         OR "nurse$" OR "doctor$" OR "physicians" OR "surgeons" OR "midwives" OR "gynecologists"
-         OR "Anesthetists" OR "Audiologists" OR "Dental Staff" OR "Dentists" OR "Doulas" OR "Emergency Medical Dispatcher$" OR "Health Educators"
-         OR "Health Facility Administrators" OR "Infection Control Practitioners" OR "Medical Chaperones" OR "Medical Laboratory Personnel"
-         OR "Nutritionists" OR "Occupational Therapists" OR "Optometrists" OR "Pharmacists" OR "Physical Therapists" OR "Allergists" OR "Anesthesiologists"
-         OR "Cardiologists" OR "Dermatologists" OR "Endocrinologists" OR "Gastroenterologists" OR "General Practitioners" OR "Geriatricians" OR "Hospitalists" OR "Nephrologists" OR "Neurologists"
-         OR "Oncologists" OR "Ophthalmologists" OR "Otolaryngologists" OR "Pathologists" OR "Pediatricians" OR "Physiatrists" OR "Pulmonologists" OR "Radiologists" OR "Rheumatologists" OR "Urologists"
-      )
-      NEAR/10
-          ("retention" OR "train" OR "training" OR "recruitment" OR "educat*" OR "professional development"
-          OR "human capital flight" OR "brain drain" OR "emigration" OR "capacity building" OR "capacity development"
-          OR "financing" OR "invest" OR "investment$" OR "investing"
-          )
+    (  
+       (
+         ("health" OR "healthcare" OR "medical")
+         NEAR/3
+            ("workforce" OR "professional$" OR "worker$" OR "practitioner$" OR "human resources" OR "student$")
+       )
+       OR "nurse$" OR "doctor$" OR "physicians" OR "surgeons" OR "midwives" OR "gynecologists"
+       OR "Anesthetists" OR "Audiologists" OR "Dental Staff" OR "Dentists" OR "Doulas" OR "Emergency Medical Dispatcher$" OR "Health Educators"
+       OR "Health Facility Administrators" OR "Infection Control Practitioners" OR "Medical Chaperones" OR "Medical Laboratory Personnel"
+       OR "Nutritionists" OR "Occupational Therapists" OR "Optometrists" OR "Pharmacists" OR "Physical Therapists" OR "Allergists" OR "Anesthesiologists"
+       OR "Cardiologists" OR "Dermatologists" OR "Endocrinologists" OR "Gastroenterologists" OR "General Practitioners" OR "Geriatricians" OR "Hospitalists" OR "Nephrologists" OR "Neurologists"
+       OR "Oncologists" OR "Ophthalmologists" OR "Otolaryngologists" OR "Pathologists" OR "Pediatricians" OR "Physiatrists" OR "Pulmonologists" OR "Radiologists" OR "Rheumatologists" OR "Urologists"
     )
-    OR
-    ( "health financing"
-      OR
-      (
-        ("financing" OR "invest" OR "investment$" OR "investing")
-        NEAR/3
-            ("health service$" OR "healthcare" OR "medical care")
-      )
-    )    
+    NEAR/15
+        ("retention" OR "train" OR "training" OR "recruitment" OR "educat*" OR "professional development"
+        OR "human capital flight" OR "brain drain" OR "emigration" OR "capacity building" OR "capacity development"
+        OR "financing" OR "invest" OR "investment$" OR "investing"
+        )
   )
   AND
       (
-        (("least developed" OR "least-developed" OR "developing") NEAR/2 ("countr*" OR "nation$" OR "state$"))
+        (
+          ("least developed" OR "least-developed" OR "developing")
+          NEAR/3 ("countr*" OR "nation$" OR "state$")
+        )
         OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
         OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands"
         OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgystan" OR "Lao People’s Democratic Republic" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "Paraguay" OR "Republic of Moldova" OR "Rwanda" OR "South Sudan" OR "Tajikistan" OR "The former Yugoslav Republic of Macedonia" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"        
       )
 )
+```
 
+#### Phrase 2
+
+The basic structure is *health financing + countries*
+
+``` Ceylon =
+TS =
+(
+  ("health financing"
+  OR
+    (
+      ("financing" OR "invest" OR "investment$" OR "investing")
+      NEAR/3
+          ("health service$" OR "healthcare" OR "medical care")
+    )
+  )    
+AND
+    (
+      (
+        ("least developed" OR "least-developed" OR "developing")
+        NEAR/3 ("countr*" OR "nation$" OR "state$")
+      )
+      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
+      OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands"
+      OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgystan" OR "Lao People’s Democratic Republic" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "Paraguay" OR "Republic of Moldova" OR "Rwanda" OR "South Sudan" OR "Tajikistan" OR "The former Yugoslav Republic of Macedonia" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"        
+      )
+)
 ```
 
 ## Target 3.d
@@ -1051,6 +1104,8 @@ TS =
 <a id="f15"></a> World Health Organization. (n.d. c). *Abortion*. [Fact sheet]. https://www.who.int/health-topics/abortion [accessed 29.10.2021].[↩](#WHOabortion)
 
 <a id="f8"></a> World Health Organization. (n.d. d). *Health Equity*. https://www.who.int/topics/health_equity/en/ [accessed 29.11.2019] [↩](#WHOequity)
+
+<a id="f17"></a> World Trade Organization. (n.d.). *The Doha Declaration explained*. https://www.wto.org/english/tratop_e/dda_e/dohaexplained_e.htm [accessed 11.11.2021] [↩](#WTOdoha)
 
 --
 
