@@ -679,7 +679,7 @@ TS =
       OR
         (
           ("access*" OR "barrier$" OR "obstacle$"
-          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$"
+          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$" OR "out of pocket"
           OR "microinsurance"
           OR "quality medicines" OR "quality care" OR "quality of care" OR "quality health care"
           )
@@ -1037,17 +1037,27 @@ AND
 
 This query consists of 1 phrase.
 
-Health risks is a broad concept. We have interpreted it as sudden risks and disasters, given the concepts of "early warning" and "risk reduction" in the target.
+This target refers to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
+>"Under the IHR, States Parties are obliged to develop and maintain minimum core capacities for surveillance and response, including at points of entry, in order to early detect, assess, notify, and respond to any potential public health events of international concern. [...]. The 13 core capacities are: (1) Legislation and financing; (2) IHR Coordination and National Focal Point Functions; (3) Zoonotic events and the Human-Animal Health Interface; (4) Food safety; (5) Laboratory; (6) Surveillance; (7) Human resources; (8) National Health Emergency Framework; (9) Health Service Provision; (10) Risk communication; (11) Points of entry; (12) Chemical events; (13) Radiation emergencies."
 
-The `NOT` statement is required to eliminate hits for e.g. crop epidemics.
+Indicator 3.d.2 indicates that they also consider resistance a particular health risk.
+
+The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
 ``` Ceylon =
 TS =
 (
   (
-    ("early warning*" OR "risk reduction" OR "management" OR "preparedness" OR "disaster planning")
+    ("early warning*" OR "risk communication" OR "surveillance"
+    OR "preparedness" OR "disaster planning" OR "national health emergency framework"
+    OR "capacity" OR "risk reduction" OR "management"
+    )
     NEAR/5  
-        ("health risk$" OR "pandemic$" OR "epidemic$" OR "medical disaster$" OR "health emergency" OR "health emergencies")
+        ("health risk$" OR "pandemic$" OR "epidemic$"
+        OR "medical disaster$" OR "health emergency" OR "health emergencies"
+        OR "radiation emergenc*" OR "chemical events" OR "zoonotic events"
+        OR "antibiotic resistan*" OR "antimicrobial resistan*" OR "antifungal resistan*"
+        )
   )
   NOT
       ("blight" OR "plant pathogen$" OR "plant disease$")
@@ -1089,6 +1099,8 @@ TS =
 <a id="f16"></a> Regional Office for Europe. (n.d.). *WHO Framework Convention on Tobacco Control (WHO FCTC)*. World Health Organization. https://www.euro.who.int/en/health-topics/disease-prevention/tobacco/publications/key-policy-documents/who-framework-convention-on-tobacco-control-who-fctc [accessed 10.11.2021].[↩](#WHOFCTC)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+
+<a id="f18"></a> The Global Health Observatory. (n.d.). *Average of 13 International Health Regulations core capacity scores, SPAR version*. World Health Organization. https://www.who.int/data/gho/data/indicators/indicator-details/GHO/-average-of-13-international-health-regulations-core-capacity-scores-spar-version [accessed 11.11.2021] [↩](#WHOGHO)
 
 <a id="f16"></a> World Health Organization. (1981). *Global Strategy for health for all by the year 2000*. "Health for all" series, 3. http://apps.who.int/iris/bitstream/handle/10665/38893/9241800038.pdf [↩](#WHOhealthforall)
 
