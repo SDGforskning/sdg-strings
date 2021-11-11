@@ -313,10 +313,11 @@ Truncate `cure` carefully
 
 ## Access and sharing
 
-`equity`, `justice`, `democracy` may need combining in a phrase (e.g. `health equity`, `energy democracy`)
+`equity`, `justice`, `democracy` may need combining in a phrase (e.g. `health equity`, `energy democracy`). Note that `access*` will also find accessory, accession, etc.
 
-```Ceylon=
-"equitab*" / "inequitab*"
+"access*"
+"equitab*"
+"inequitab*"
 "equity"
 "equality" / "inequality"
 "equal" / "unequal"
@@ -326,7 +327,8 @@ Truncate `cure` carefully
 "justice"
 "democracy"
 
-"affordab*" / "unaffordab*"
+"affordab*"
+"unaffordab*"
 
 "right$"
 "ownership"
