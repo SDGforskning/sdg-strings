@@ -643,15 +643,15 @@ TS =
 (
   ("universal health coverage" OR "universal healthcare" OR "universal health care")
   NEAR/5
-  ("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "build*" OR "solution$" OR "architect$" OR "develop"
-  OR "path$" OR "pathway$" OR "road$" OR "route" OR "roadmap"  OR "toward$" OR "way to"
-  OR "scal* up" OR "accelerat*" OR "expand" OR "expansion*" OR "broaden*" OR "advancing" OR "advance"
-  OR "achiev*" OR "attain*" OR "provision" OR "provid*" OR "deliver"
-  OR "maintain*" OR "sustain*" OR "support" OR "strengthen*"
-  OR "barrier$" OR "obstacle$" OR "financing"
-  OR "reality" OR "promise$" OR "realization" OR "priority" OR "prioriti*"
-  OR "for universal health coverage"
-  )
+    ("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "build*" OR "solution$" OR "architect$" OR "develop"
+    OR "path$" OR "pathway$" OR "road$" OR "route" OR "roadmap"  OR "toward$" OR "way to"
+    OR "scal* up" OR "accelerat*" OR "expand" OR "expansion*" OR "broaden*" OR "advancing" OR "advance"
+    OR "achiev*" OR "attain*" OR "provision" OR "provid*" OR "deliver"
+    OR "maintain*" OR "sustain*" OR "support" OR "strengthen*"
+    OR "barrier$" OR "obstacle$" OR "financing"
+    OR "reality" OR "promise$" OR "realization" OR "priority" OR "prioriti*"
+    OR "for universal health coverage"
+    )
 )
 
 ```
@@ -822,9 +822,9 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This target is interpreted to be about the reduction of tobacco use, via control and other methods, including in reference to implementation of the WHO FCTC.
+This target is interpreted to be about the reduction of tobacco use, via control and other methods, in reference to implementation of the WHO FCTC.
 
-WHO FCTC: A treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+WHO FCTC: A treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures in the implementation, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
 This query consists of 2 phrases.
 
@@ -835,7 +835,7 @@ Implementation is not specifically added here, as referring to the WHO framework
 ``` Ceylon =
 TS =
 (
-  "World health organization* framework convention on tobacco control" OR "WHO framework convention on tobacco control" OR "WHO FCTC"
+  "Framework convention on tobacco control" OR "WHO FCTC"
 )
 ```
 
@@ -843,15 +843,47 @@ TS =
 
 The basic structure is *tobacco + reduction/control*
 
-"use" is not specified, as the FCTC also refers to tobacco control and reduction in supply, attractiveness, etc.
+"use" is not specified, as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` covers these (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
+
+`reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as some may discuss this without being combined with the "implement" terms, but `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant).
+
+`alternative livlihood$` refers to production, while `alternative$` can also apply to smoking alternatives.
+
+`developing` finds some results about developing countries, rather than developing interventions, but this is hard to avoid.
 
 ``` Ceylon =
 TS =
 (
   (
-    ("tobacco" OR "smoking")
-    NEAR/5
-    ("reduc*" OR "control")
+    (
+      ("tobacco" OR "smoking" OR "cigarette$")
+      NEAR/5
+          ("reduc*" OR "control" OR "ban" OR "bans"
+          OR "legislation" OR "policy" OR "policies" OR "regulat*" OR "law" OR "strateg*" OR "intervention$"
+          OR "tax" OR "taxes" OR "taxation"
+          OR "health warning$"
+          OR "smoking cessation" OR "services" OR "cessation service" OR "cessation program*" OR "alternative$"
+          )
+      NEAR/5
+          ("implement*" OR "introduc*" OR "establish*" OR "adopt*" OR "propos*" OR "uptake"
+          OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+          OR "develop" OR "developing" OR "build" OR "building")
+    )
+  OR "reduc* tobacco" OR "reduc* smoking" OR "decreas* tobacco"
+  OR "reduce dependence on"
+  OR
+    (
+      ("tobacco farm*" OR "tobacco production" OR "tobacco growing")
+      AND
+        ("diversif*" OR "alternative crop$" OR "crop substitution"
+        OR "alternative livelihood$" OR "alternative sustainable livelihood$"
+        )
+      AND
+        ("support*" OR "encourag*" OR "facilitat*" OR "promot*" OR "help"
+        OR "implement*" OR "introduc*" OR "establish*" OR "develop*" OR "adopt*" OR "propos*" OR "uptake"
+        OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+        )
+    )
   )
   AND ("tobacco")
 )
