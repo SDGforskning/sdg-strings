@@ -377,7 +377,7 @@ TS=
 
 This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
 
-Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
 
 ``` Ceylon =
 TS=
@@ -1040,7 +1040,9 @@ This query consists of 1 phrase.
 This target refers to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
 >"Under the IHR, States Parties are obliged to develop and maintain minimum core capacities for surveillance and response, including at points of entry, in order to early detect, assess, notify, and respond to any potential public health events of international concern. [...]. The 13 core capacities are: (1) Legislation and financing; (2) IHR Coordination and National Focal Point Functions; (3) Zoonotic events and the Human-Animal Health Interface; (4) Food safety; (5) Laboratory; (6) Surveillance; (7) Human resources; (8) National Health Emergency Framework; (9) Health Service Provision; (10) Risk communication; (11) Points of entry; (12) Chemical events; (13) Radiation emergencies."
 
-Indicator 3.d.2 indicates that they also consider resistance a particular health risk.
+There are also 19 technical areas from the Joint External Evaluation tool, which in addition to the 13 above include antimicrobial resistance, immunization, "national laboratory system", biosafety and biosecurity, "emergency preparedness", "emergency response operations", linking public health and security authorities, medical countermeasures and personnel deployment (<a id="WHOJEE">[World Health Organization 2019b](#f19)</a>). A number of search terms are taken from this document.
+
+`national action plan` is in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks. `health emergency` is more unambiguously about emergency situations.
 
 The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
@@ -1048,16 +1050,36 @@ The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 TS =
 (
   (
-    ("early warning*" OR "risk communication" OR "surveillance"
-    OR "preparedness" OR "disaster planning" OR "national health emergency framework"
-    OR "capacity" OR "risk reduction" OR "management"
+    ("national health risk$" OR "global health risk$" OR "public health risk$" OR "pandemic$" OR "epidemic$"
+    OR "medical disaster$" OR "health emergency" OR "health emergencies"
+    OR "radiation emergenc*" OR "radiation event$"
+    OR "chemical event$" OR "chemical emergenc*"
+    OR "zoonotic event$" OR "zoonotic emergenc*"
+    OR "food safety" OR "foodborne event$"
+    OR "biosecurity event$" OR "biosecurity emergenc*"
+    OR "antimicrobial resistan*" OR "antibiotic resistan*" OR "antifungal resistan*"
     )
-    NEAR/5  
-        ("health risk$" OR "pandemic$" OR "epidemic$"
-        OR "medical disaster$" OR "health emergency" OR "health emergencies"
-        OR "radiation emergenc*" OR "chemical events" OR "zoonotic events"
-        OR "antibiotic resistan*" OR "antimicrobial resistan*" OR "antifungal resistan*"
+    NEAR/15  
+      (
+        ("early warning*" OR "risk communication" OR "surveillance" OR "monitoring system$"
+        OR "laboratory reporting" OR "laboratory capacity" OR "laboratory quality" OR "laboratory system$"
+        OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
+        OR "capacity" OR "risk reduction"
+        OR "vaccination program*" OR "vaccination framework" OR "immunization program*"
+        OR "emergency management" OR "emergency response" OR "personnel deployment" OR "security authorities"
+        OR "legislation" OR "policy" OR "policies" OR "financing"
+        OR "international health regulations" OR "national focal point$" OR "national action plan$"
         )
+      NEAR/5
+        ("establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "build*" OR "develop"
+        OR "path$" OR "pathway$" OR "road$" OR "route" OR "roadmap"  OR "toward$" OR "way to"
+        OR "scal* up" OR "expand" OR "expansion*" OR "broaden*" OR "advancing" OR "advance"
+        OR "achiev*" OR "attain*" OR "provid*" OR "deliver"
+        OR "maintain*" OR "sustain*" OR "support" OR "strengthen*"
+        OR "barrier$" OR "obstacle$"
+        OR "priority" OR "prioriti*"  
+        )
+      )
   )
   NOT
       ("blight" OR "plant pathogen$" OR "plant disease$")
@@ -1072,14 +1094,14 @@ TS =
 ``` Ceylon =
 TS =
 (
-  ( "SDG$ 3" OR "SDG3" OR "SDG-3" OR "sustainable development goal$ 3"
+  ("SDG$ 3" OR "SDG3" OR "SDG-3" OR "sustainable development goal$ 3"
     OR
     (
       ("sustainable development goal$" OR "SDG$" OR "goal 3")
       NEAR/15 "health"
     )
   )
-  NOT "Secoisolariciresinol Diglucoside")
+  NOT "Secoisolariciresinol Diglucoside"
 )
 
 ```
@@ -1106,7 +1128,9 @@ TS =
 
 <a id="f4"></a> World Health Organization. (2018). *Noncommunicable diseases*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases [accessed 15.11.2019] [↩](#WHOFSnoncomm)
 
-<a id="f7"></a> World Health Organization. (2019). *Mental disorders*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
+<a id="f7"></a> World Health Organization. (2019a). *Mental disorders*. [Fact sheet]. https://www.who.int/en/news-room/fact-sheets/detail/mental-disorders [accessed 29.11.2019] [↩](#WHOFSmental)
+
+<a id="f19"></a> World Health Organization. (2019b). *WHO Benchmarks for International Health Regulation (IHR) Capacities*. https://apps.who.int/iris/handle/10665/311158 [↩](#WHOJEE)
 
 <a id="f3"></a> World Health Organization. (2020). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
 
