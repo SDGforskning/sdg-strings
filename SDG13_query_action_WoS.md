@@ -64,21 +64,18 @@ TS=
       NEAR/15
           (
           (
-          ("natural" OR "anthropogenic" OR "multi" OR "environmental" OR "technological" OR "biological") 
+          ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
           NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
           )
           OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow"))
-          OR "drought$" OR "flood*" OR "heatwaves" OR "cold spells"
+          OR "drought$" OR "flood*" OR "heatwave$" OR "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
           OR "storm surge$"
-          OR "earthquake$" OR "volcanic activity" OR "volcanic emission$"
+          OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
           OR "tipping point$"  
           OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-          OR "climate change$" OR "climatic change$" OR "global warming" OR "changing climate"
-          OR
-           (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
           )
     )
   OR "livelihood vulnerability index"
