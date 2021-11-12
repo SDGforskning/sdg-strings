@@ -154,13 +154,13 @@ TS =
 
 ##### Phrase 2
 
-The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes.
+The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes. Diarrhoeal diseases are also included here, as they are a major cause of death due to transmission of pathogens via inadequate WASH, or direct waterborne diseases.  
 
 The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
 
-The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>). I am unsure whether `diarrheal diseases` is too broad or not - waterborne pathogens are not the only cause, with WASH being a large factor. However, they may fall under "communicable" diseases more generally. Included so far.
+The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
 
-The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020](#f3)</a>).
+The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020a](#f3)</a>).
 
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
 
@@ -172,7 +172,7 @@ TS =
 (
   (
     (
-      ("water borne" OR "waterborne" OR "water-borne" OR "water-related"
+      ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
       OR "contagious" OR "transmissible" OR "infectious"
       )
       NEAR/5
@@ -207,7 +207,6 @@ TS =
     OR "naegleria"
     OR "sappinia"
     OR "typhoid"
-    OR "diarrheal disease$"
 
     OR "neglected tropical disease$"
     OR "buruli ulcer"
@@ -250,7 +249,7 @@ TS =
 (
   (
     (
-      ("water borne" OR "waterborne" OR "water-borne" OR "water-related"
+      ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
       OR "contagious" OR "transmissible" OR "infectious"
       )
       NEAR/5
@@ -285,7 +284,6 @@ TS =
     OR "naegleria"
     OR "sappinia"
     OR "typhoid"
-    OR "diarrheal disease$"
 
     OR "neglected tropical disease$"
     OR "buruli ulcer"
@@ -714,95 +712,94 @@ It is interpreted to mean pollution with chemicals/substances, or with pathogens
 
 ##### Phrase 1:
 
-The basic structure is *disease/mortality* + *pollutants/contamination* + *action*.
+The basic structure is *pollutants/contamination* + *disease/mortality* + *action*.
 
 In the disease/mortality terms, only terms for mortality are included (not survival). For survival,  there are few results and they often concern animals.
 
 To add specific types of air pollution, we used  World Health Organisation's (WHO) website about ambient air pollution<sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and indoor/household air pollution.
 
-`poisoning*` was moved from the pollution terms (v2019-12) to the mortality terms, as it reflects a disease/mortality aspect already. This improves the results by finding those about carbon monoxide poisoning.
+`poisoning*` reflects a disease/mortality aspect, thus is included with the *disease/mortality* terms. This improves the results by finding those about carbon monoxide poisoning.
 
-The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss these in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO).
+The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss gases in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO).
 
-`hygiene` is not used alone as there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also broad, and can return animal results. Thus it is used as part of phrases below.
+`hygiene` is not used alone as there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also limited here, to remove animal results, and included more broadly in phrase 2.
 
 
 ``` Ceylon =
 TS =
 (
   (
-    ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning$")
-    NEAR/10
-        ( "air pollution" OR "PM2.5" OR "PM10" OR "fine particulate matter" OR "ground-level ozone"
-          OR
-            (
-              ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
-              NEAR/15
-                  ("pollution" OR "poisoning$")
-            )
-          OR "smoke pollution"
-          OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
-          OR
-            (
-              ("drinking water" OR "potable water" OR "water source$" OR "sanitation")
-              NEAR/3
-                  ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean" OR "sanitation")
-            )
-          OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
-          OR "poor sanitation" OR "*adequate sanitation" OR "good sanitation" OR "sanitation facilities"
-          OR
-            (
-              ("food" OR "foods")
-              NEAR/3
-                  ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
-            )
-        )
-
+    "air pollution" OR "PM2.5" OR "PM10" OR "fine particulate matter" OR "ground-level ozone"
+    OR
+    (
+      ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
+      NEAR/15
+          ("pollution" OR "poisoning$")
+    )
+    OR "smoke pollution"
+    OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
+    OR
+    (         
+      ("drinking water" OR "potable water" OR "water source$" OR "sanitation")
+      NEAR/3
+          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean" OR "sanitation")
+    )
+    OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
+    OR "poor sanitation" OR "*adequate sanitation" OR "good sanitation" OR "sanitation facilities"
+    OR
+    (
+      ("food" OR "foods")
+      NEAR/3
+          ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
+    )
   )
   NEAR/15
-      ( "prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
-        OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
+      (
+        ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity"
+        OR "poisoning$"
+        )
+        NEAR/5
+          ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
+          OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
+          )
       )
-)
+)      
 
 ```
 
 ##### Phrase 2:
 
-The basic structure is *disease/mortality* + *pollutants/contamination* + *action* + *humans*.
+The basic structure is *pollutants/contamination + disease/mortality + action + humans*.
 
 This phrase was created as certain pollutants/contamination terms often give results for animals; thus they are combined with terms for humans. Certain diseases are also included in these terms for humans, because they are nearly always used in the context of humans and relevant for this topic.
 
-World Health Organization's (WHO) website was used to add specific chemicals of major public health concern <sup id="WHOchem">[11](#f11)</sup>. For some reason `fluoride` was not included in v2019-12; now added. Inadequate fluoride is not included, as the target is focused on poisoning/contamination.
+Specific chemicals were added from the WHO list of chemicals of major public health concern (<a id="WHOchem">[WHO, 2020b](#f11)</a>). `lead` must be searched for as part of a phrase, due to its use as a verb. Although the list specifies "highly hazardous pesticides", pesticides generally are searched for (research on limiting the health effects of all pesticides is considered relevant). Additional terms were added from the SDG topic page for chemicals and waste (<a id="SDGKPchem">[Sustainable Development Goals Knowledge Platform, n.d.](#f20)</a>). `contamination` is limited to `water contamination` and `soil contamination` (+ variants), as contamination of food and drinking water is covered in phrase 1 (due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology).
 
-This string was simplified from v.2019-12 to remove the `NEAR/5 ("exposure" OR "residue$")` expression from the terms for chemicals of public health concern. The combination with terms for mortality and humans already implies exposure. A side-effect of this is that `lead` must be searched for as part of a phrase, due to its use as a verb.
-
-`"poisoning$" OR "poisoned"` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, a disease from excess fluoride, was added.
-
-The term `contamination` was used alone in v2019-12 - it is very broad. `contamination` is now limited to `water contamination` and `soil contamination` (+ variants). Contamination of food and drinking water is covered in phrase 1 (due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology).
-
-This set was not limited to action terms in v2019-12. Now added, same as phrase 1.
+`poisoning$ OR poisoned` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, is a disease from excess fluoride.
 
 
 ``` Ceylon =
 TS =
 (
   (
-    (
-      ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "*toxicity" OR "poisoning$" OR "poisoned" OR "fluorosis")
-      NEAR/10
-          ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "pollution"
-          OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
-          OR "arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin$" OR "mercury" OR "fluoride" OR "pesticide$"
-          OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
-          OR "sanitation"
+      ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$" OR "radioactive waste$" OR "pollution"
+      OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
+      OR "arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin$" OR "mercury" OR "fluoride" OR "pesticide$"
+      OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
+      OR "persistent organic pollutant$"
+      OR "sanitation"
+      )
+      NEAR/15
+        (
+          ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity"
+          OR "*toxicity" OR "poisoning$" OR "poisoned" OR "fluorosis"
           )
-    )
-    NEAR/15
-        ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
-        OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
+          NEAR/5
+            ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
+            OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
+            )
         )
-  )
+)
   AND
       ("humans" OR "humanity" OR "human" OR "people" OR "person$"
         OR "adolescent$" OR "children" OR "child" OR "infant$" OR "babies"
@@ -1035,14 +1032,14 @@ AND
 >
 > 3.d.2 Percentage of bloodstream infections due to selected antimicrobial-resistant organisms
 
-This query consists of 1 phrase.
-
-This target refers to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
+This target is interpreted to refer to research about health emergency preparedness, particularly in reference to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
 >"Under the IHR, States Parties are obliged to develop and maintain minimum core capacities for surveillance and response, including at points of entry, in order to early detect, assess, notify, and respond to any potential public health events of international concern. [...]. The 13 core capacities are: (1) Legislation and financing; (2) IHR Coordination and National Focal Point Functions; (3) Zoonotic events and the Human-Animal Health Interface; (4) Food safety; (5) Laboratory; (6) Surveillance; (7) Human resources; (8) National Health Emergency Framework; (9) Health Service Provision; (10) Risk communication; (11) Points of entry; (12) Chemical events; (13) Radiation emergencies."
 
-There are also 19 technical areas from the Joint External Evaluation tool, which in addition to the 13 above include antimicrobial resistance, immunization, "national laboratory system", biosafety and biosecurity, "emergency preparedness", "emergency response operations", linking public health and security authorities, medical countermeasures and personnel deployment (<a id="WHOJEE">[World Health Organization 2019b](#f19)</a>). A number of search terms are taken from this document.
+There are also 19 technical areas from the Joint External Evaluation tool, which in addition to the 13 above include antimicrobial resistance, immunization, "national laboratory system", biosafety and biosecurity, "emergency preparedness", "emergency response operations", linking public health and security authorities, medical countermeasures and personnel deployment (<a id="WHOJEE">[WHO 2019b](#f19)</a>). A number of search terms are taken from this document.
 
-`national action plan` is in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks. `health emergency` is more unambiguously about emergency situations.
+This query consists of 1 phrase. The general structure is *health emergencies + preparedness + action*
+
+`national action plan` is in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited.
 
 The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
@@ -1050,7 +1047,7 @@ The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 TS =
 (
   (
-    ("national health risk$" OR "global health risk$" OR "public health risk$" OR "pandemic$" OR "epidemic$"
+    ("national health risk$" OR "global health risk$" OR "pandemic$" OR "epidemic$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
     OR "chemical event$" OR "chemical emergenc*"
@@ -1122,6 +1119,8 @@ TS =
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
+<a id="f20"></a> Sustainable Development Goals Knowledge Platform. (n.d.). *Chemicals and waste*. https://sustainabledevelopment.un.org/topics/chemicalsandwaste [accessed 12.11.2021] [↩](#SDGKPchem)
+
 <a id="f18"></a> The Global Health Observatory. (n.d.). *Average of 13 International Health Regulations core capacity scores, SPAR version*. World Health Organization. https://www.who.int/data/gho/data/indicators/indicator-details/GHO/-average-of-13-international-health-regulations-core-capacity-scores-spar-version [accessed 11.11.2021] [↩](#WHOGHO)
 
 <a id="f16"></a> World Health Organization. (1981). *Global Strategy for health for all by the year 2000*. "Health for all" series, 3. http://apps.who.int/iris/bitstream/handle/10665/38893/9241800038.pdf [↩](#WHOhealthforall)
@@ -1132,7 +1131,9 @@ TS =
 
 <a id="f19"></a> World Health Organization. (2019b). *WHO Benchmarks for International Health Regulation (IHR) Capacities*. https://apps.who.int/iris/handle/10665/311158 [↩](#WHOJEE)
 
-<a id="f3"></a> World Health Organization. (2020). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
+<a id="f3"></a> World Health Organization. (2020a). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
+
+<a id="f11"></a> World Health Organization. (2020b, June 20). *10 chemicals of public health concern*. [Photo story]. https://www.who.int/news-room/photo-story/photo-story-detail/10-chemicals-of-public-health-concern [accessed 15.11.2021]  [↩](#WHOchem)
 
 <a id="f2"></a> World Health Organization. (n.d. a). *Global Health Observatory data repository: By theme*. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]
 
@@ -1149,7 +1150,3 @@ TS =
 <b id="f9">9</b> WHO (n.d.) Ambient air pollution: Pollutants. https://www.who.int/airpollution/ambient/pollutants/en/ [accessed 15.11.2019] [↩](#WHOairpoll)
 
 <b id="f10">10</b> WHO (n.d.) Household air pollution: Pollutants. https://www.who.int/airpollution/household/pollutants/en/ [accessed 15.11.2019] [↩](#WHOhouseair)
-
-<b id="f11">11</b> WHO (n.d.) International Programme on Chemical Safety, Ten chemicals of major public health concern. https://www.who.int/ipcs/assessment/public_health/chemicals_phc/en/ [accessed 15.11.2019]  [↩](#WHOchem)
-
-<b id="f12">12</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
