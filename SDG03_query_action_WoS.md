@@ -704,23 +704,24 @@ TS =
 >
 > 3.9.3 Mortality rate attributed to unintentional poisoning
 
-This query consists of 2 phrases.
+This query consists of 2 phrases. The phrases are similar, but phrase 2 includes terms which need to be limited to humans.
 
-It is interpreted to mean pollution with chemicals/substances, or with pathogens that many contaminate water, air or soil.
-* Whether food poisoning from contamination should be included is an open question - it is not air, soil or water per se, but does have to do with hygiene/sanitation (3.9.2). So far it is included. [Example result](https://www.webofscience.com/wos/woscc/full-record/WOS:A1993KR35200011)
-* In Phrase 2, the inclusion of `sanitation` and terms for disease finds some results to do with sanitation and prevention of communicable disease - is this consistent? Does it fall under 3.9.2? Sanitation can refer to both infrastructure (relevant for preventing water contamination) but also personal sanitation. The same can be said for `hand hygiene`, `personal hygiene` etc. in Phrase 1.
+The target is interpreted to cover research about pollution/contamination of water, air or soil with chemicals/substances or pathogens. In light of indicator 3.9.2, we also include research on reducing illness due to poor sanitation (whether it be directly due to contamination in the water source, or spread of disease between people due to lack of WASH facilities).
+
+* Unsure whether food poisoning/contaminated food should be included - it is not air, soil or water, but is related to hygiene/sanitation. So far, it is included. The High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>) mentions food in reference to WASH:
+>"These services need to be accompanied by adequate hygiene practices such as handwashing after defecation or before food preparation and intake..."
 
 ##### Phrase 1:
 
-The basic structure is *pollutants/contamination* + *disease/mortality* + *action*.
+The basic structure is *contamination/toxins* + *disease/mortality* + *action*.
 
-In the disease/mortality terms, only terms for mortality are included (not survival). For survival,  there are few results and they often concern animals.
+In the disease/mortality terms, only terms for mortality are included. `survival` is not - there are few results and they often concern animals.
 
-To add specific types of air pollution, we used  World Health Organisation's (WHO) website about ambient air pollution<sup id="WHOairpoll">[9](#f9)</sup> and household air pollution <sup id="WHOhouseair">[10](#f10)</sup>. `air pollution` covers both ambient and indoor/household air pollution.
+Specific types of air pollution were added from WHO factsheets on ambient air pollution (<a id="WHOambientairpoll">[WHO, 2021a](#f22)</a>) and household air pollution  (<a id="WHOhouseairpoll">[WHO, 2021b](#f23)</a>). `air pollution` will find both ambient and indoor/household air pollution. Note that `pollution` alone is covered in phrase 2.
 
-`poisoning*` reflects a disease/mortality aspect, thus is included with the *disease/mortality* terms. This improves the results by finding those about carbon monoxide poisoning.
+`poisoning*` reflects a disease/mortality aspect, thus is included with the *disease/mortality* terms. This improves the results by finding those about carbon monoxide poisoning. `unintentional poisoning$`+ are additionally included in the *contamination/toxins* terms; thus the string will find e.g. "reducing accidental poisonings".
 
-The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss gases in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO).
+The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss gases in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO). The chemical abbreviations for the gases (e.g. `SO2`) are not used, as they result in technical articles where sorbents or fuel cells can be "poisoned".
 
 `hygiene` is not used alone as there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also limited here, to remove animal results, and included more broadly in phrase 2.
 
@@ -729,29 +730,32 @@ The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary
 TS =
 (
   (
-    "air pollution" OR "PM2.5" OR "PM10" OR "fine particulate matter" OR "ground-level ozone"
+    "air pollution" OR "PM2.5" OR "PM10" OR "particulate matter" OR "ozone"
     OR
     (
       ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
       NEAR/15
           ("pollution" OR "poisoning$")
     )
-    OR "smoke pollution"
-    OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
+    OR "smoke pollution" OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
     OR
     (         
-      ("drinking water" OR "potable water" OR "water source$" OR "sanitation")
+      ("drinking water" OR "potable water" OR "water source$")
       NEAR/3
-          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean" OR "sanitation")
+          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean")
     )
     OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
+    OR "handwashing"
     OR "poor sanitation" OR "*adequate sanitation" OR "good sanitation" OR "sanitation facilities"
+    OR "water, sanitation and hygiene"
     OR
     (
       ("food" OR "foods")
       NEAR/3
           ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
     )
+    OR "food poisoning$" OR "foodborne pathogens"
+    OR "unintentional poisoning$" OR "accidental poisoning$"
   )
   NEAR/15
       (
@@ -773,7 +777,7 @@ The basic structure is *pollutants/contamination + disease/mortality + action + 
 
 This phrase was created as certain pollutants/contamination terms often give results for animals; thus they are combined with terms for humans. Certain diseases are also included in these terms for humans, because they are nearly always used in the context of humans and relevant for this topic.
 
-Specific chemicals were added from the WHO list of chemicals of major public health concern (<a id="WHOchem">[WHO, 2020b](#f11)</a>). `lead` must be searched for as part of a phrase, due to its use as a verb. Although the list specifies "highly hazardous pesticides", pesticides generally are searched for (research on limiting the health effects of all pesticides is considered relevant). Additional terms were added from the SDG topic page for chemicals and waste (<a id="SDGKPchem">[Sustainable Development Goals Knowledge Platform, n.d.](#f20)</a>). `contamination` is limited to `water contamination` and `soil contamination` (+ variants), as contamination of food and drinking water is covered in phrase 1 (due to the lack of terms for humans, it is hard to search more generally there without introducing noise from biology).
+Specific chemicals were added from the WHO list of chemicals of major public health concern (<a id="WHOchem">[WHO, 2020b](#f11)</a>). Although the list specifies "highly hazardous pesticides", pesticides generally are searched for (research on limiting the health effects of all pesticides is considered relevant). `lead` must be searched for as part of a phrase, due to its use as a verb. Additional terms were added from the SDG topic page for chemicals and waste (<a id="SDGKPchem">[Sustainable Development Goals Knowledge Platform, n.d.](#f20)</a>). `contamination` is limited to `water contamination` and `soil contamination` (+ variants) to limit to the environment. Contamination of drinking water is covered in phrase 1 (here `water` alone is sufficient, due to the *human* terms). `heavy metals` as a general term is not included - many results seemed to be toxicity in plants, despite the *human* terms.
 
 `poisoning$ OR poisoned` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, is a disease from excess fluoride.
 
@@ -782,10 +786,20 @@ Specific chemicals were added from the WHO list of chemicals of major public hea
 TS =
 (
   (
-      ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$" OR "radioactive waste$" OR "pollution"
-      OR "soil contamination" OR "contamination of soil$" OR "water contamination" OR "contamination of water"
-      OR "arsenic" OR "asbestos" OR "benzene" OR "cadmium" OR "dioxin$" OR "mercury" OR "fluoride" OR "pesticide$"
+      ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$"
+      OR "pollution"
+      OR "soil contamination" OR "contamination of soil$"
+      OR "water contamination" OR "contamination of water"
+      OR "arsenic"
+      OR "asbestos"
+      OR "benzene"
+      OR "cadmium"
+      OR "dioxin$"
+      OR "mercury"
+      OR "fluoride"
+      OR "pesticide$"
       OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
+      OR "radioactive waste$"
       OR "persistent organic pollutant$"
       OR "sanitation"
       )
@@ -1109,6 +1123,8 @@ TS =
 
 <a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
 
+<a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] [↩](#HLPF)
+
 <a id="f5"></a> International Agency for Research on Cancer. (2019). *The Cancer Dictionary*. World Health Organization. http://www-dep.iarc.fr/WHOdb/WHOdb.htm [accessed 15.11.2019] [↩](#WHOcancer)
 
 <a id="f6"></a> National Cancer Institute. (n.d.). *Cancer Classification*. National Institutes of Health. https://training.seer.cancer.gov/disease/categories/classification.html [accessed 15.11.2019] [↩](#NIHcancer)
@@ -1135,6 +1151,10 @@ TS =
 
 <a id="f11"></a> World Health Organization. (2020b, June 20). *10 chemicals of public health concern*. [Photo story]. https://www.who.int/news-room/photo-story/photo-story-detail/10-chemicals-of-public-health-concern [accessed 15.11.2021]  [↩](#WHOchem)
 
+<a id="f22"></a> World Health Organization. (2021a). *Ambient (outdoor) air pollution*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health [accessed 12.11.2021] [↩](#WHOambientairpoll)
+
+<a id="f23"></a> World Health Organization. (2021b). *Household air pollution and health*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health [accessed 12.11.2021] [↩](#WHOhouseairpoll)
+
 <a id="f2"></a> World Health Organization. (n.d. a). *Global Health Observatory data repository: By theme*. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]
 
 <a id="f2a"></a> World Health Organization. (n.d. b). *Global Health Observatory data repository: By category: Vaccine-preventable communicable diseases*. http://apps.who.int/gho/data/node.main.170?lang=en [accessed 15.10.2021].[↩](#WHOGHO)
@@ -1144,9 +1164,3 @@ TS =
 <a id="f8"></a> World Health Organization. (n.d. d). *Health Equity*. https://www.who.int/topics/health_equity/en/ [accessed 29.11.2019] [↩](#WHOequity)
 
 <a id="f17"></a> World Trade Organization. (n.d.). *The Doha Declaration explained*. https://www.wto.org/english/tratop_e/dda_e/dohaexplained_e.htm [accessed 11.11.2021] [↩](#WTOdoha)
-
---
-
-<b id="f9">9</b> WHO (n.d.) Ambient air pollution: Pollutants. https://www.who.int/airpollution/ambient/pollutants/en/ [accessed 15.11.2019] [↩](#WHOairpoll)
-
-<b id="f10">10</b> WHO (n.d.) Household air pollution: Pollutants. https://www.who.int/airpollution/household/pollutants/en/ [accessed 15.11.2019] [↩](#WHOhouseair)
