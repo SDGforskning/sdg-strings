@@ -356,7 +356,8 @@ TS=
     )
     OR "cardiovascular disease$" OR "heart disease" OR "heart attack$" OR "stroke$"
     OR "diabetes"
-    OR "chronic respiratory disease$" OR "asthma" OR "chronic obstructive pulmonary disease$" OR "COPD" OR "chronic obstructive airway disease$" OR "chronic bronchitis" OR "emphysema"
+    OR "chronic respiratory disease$" OR "asthma"  OR "emphysema" OR "chronic obstructive pulmonary disease$" OR "COPD" OR "chronic obstructive airway disease$" OR "chronic bronchitis"
+    OR (("chronic") NEAR/3 ("lung" OR "pulmonary"))
     OR "cancer$" OR "*sarcoma" OR "sarcoma$" OR "*carcinoma" OR "carcinoma$" OR "*blastoma" OR "blastoma$" OR "myeloma$" OR "lymphoma$" OR "leukaemia" OR "leukemia" OR "mesothelioma$" OR "melanoma$"  
     OR (("malignant" OR "incurable") NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
   )
@@ -472,7 +473,7 @@ TS=
       ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
       OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*"
       OR "treat*" OR "cure" OR "curing" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
-      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare"
+      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare" OR "counseling"
       )
 )
 ```
@@ -502,19 +503,20 @@ TS =
 (
   (
     (
-      ("mortality" OR "death" OR "injury" OR "injuries" OR "accident$")
+      ("mortality" OR "death$" OR "fatalities" OR "injury" OR "injuries" OR "accident$" OR "crash" OR "crashes" OR "collision$")
       NEAR/15
           ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
-          OR "cars" OR "car" OR "motorcycle$" OR "automobile$" OR "pedestrian$"
+          OR "cars" OR "car" OR "motorcycle$" OR "automobile$"
           OR "motor-vehicle$" OR "vehicle safety" OR "vehicle collision$" OR "vehicle braking" OR "vehicle crash*" OR "vehicle-vehicle"
+          OR "pedestrian$"
           )
     )
     OR
     (
       (
-        ("accident$")
+        ("accident$" OR "crash" OR "crashes" OR "collision$")
         NEAR/15
-            ("vehicle$")    
+            ("vehicle$" OR "driver$" OR "driving")    
       )
     )
   )
@@ -531,6 +533,8 @@ The basic structure is *safety + traffic/vehicles + improvement*
 
 Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife). `safety` seems to be a much more relevant term.
 
+When combined with `safety`, `vehicle$` does not seem to have the same issue as in phrase 1.
+
 The `NOT` expression is included because `car` results in biomedical results when combined with safety ("CAR T cells"), and `traffic` results in some additions from air traffic safety.
 
 ``` Ceylon =
@@ -541,8 +545,9 @@ TS =
       ("safety")
       NEAR/15
           ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
-          OR "cars" OR "motorcycle$" OR "automobile$" OR "pedestrian$"
-          OR "motor-vehicle$" OR "vehicle safety" OR "vehicle collision$" OR "vehicle braking" OR "vehicle crash*" OR "vehicle-vehicle"
+          OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$"
+          OR "vehicle$"
+          OR "pedestrian$" OR "driver$" OR "driving"
           )
     )
     NEAR/5
@@ -581,7 +586,7 @@ TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
   OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR "sex education"
+  OR (("reproduct*" OR "sex*") NEAR/5 ("education" OR "inform*"))
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health for all"
@@ -593,7 +598,7 @@ TS =
           )
           NEAR/5
             ("improv*" OR "increas*" OR "enhanc*"
-            OR "expand*" OR "provide" OR "promot*" OR "ensur*"
+            OR "expand*" OR "provide" OR "provision" OR "promot*" OR "ensur*"
             OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
             OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
             )
@@ -612,7 +617,7 @@ TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
   OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR "sex education"
+  OR (("reproduct*" OR "sex*") NEAR/5 ("education" OR "inform*"))
   )
   NEAR/15
       ("national" NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies"))
@@ -683,7 +688,7 @@ TS =
           )
           NEAR/5
               ("improv*" OR "increas*" OR "enhanc*"
-              OR "expand*" OR "provide" OR "promot*" OR "ensur*"
+              OR "expand*" OR "provide" OR "provision" OR "promot*" OR "ensur*"
               OR "dismant*" OR "remov*" OR "avoid*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
               OR "decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
               OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
@@ -742,7 +747,7 @@ TS =
     (         
       ("drinking water" OR "potable water" OR "water source$")
       NEAR/3
-          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "polluted" OR "clean")
+          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "pollut*" OR "clean")
     )
     OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
     OR "handwashing"
@@ -973,7 +978,7 @@ This query consists of 2 phrases.
 
 The basic structure is *health workers + retention/training + countries*
 
-Types of healthcare worker expanded using MeSH terms.
+Types of healthcare worker expanded using MeSH terms. One could include `shortage*` in the *retention/training* terms, but do we want to add papers mentioning the problem (shortage) without mentioning solutions outlined in the target (retention, training etc.)?
 
 ``` Ceylon =
 TS =
@@ -983,7 +988,7 @@ TS =
        (
          ("health" OR "healthcare" OR "medical")
          NEAR/3
-            ("workforce" OR "professional$" OR "worker$" OR "practitioner$" OR "human resources" OR "student$")
+            ("workforce" OR "professional$" OR "worker$" OR "personnel" OR "practitioner$" OR "human resources" OR "student$")
        )
        OR "nurse$" OR "doctor$" OR "physicians" OR "surgeons" OR "midwives" OR "gynecologists"
        OR "Anesthetists" OR "Audiologists" OR "Dental Staff" OR "Dentists" OR "Doulas" OR "Emergency Medical Dispatcher$" OR "Health Educators" OR "Health Facility Administrators" OR "Infection Control Practitioners" OR "Medical Chaperones" OR "Medical Laboratory Personnel" OR "Nutritionists" OR "Occupational Therapists" OR "Optometrists" OR "Pharmacists" OR "Physical Therapists" OR "Allergists" OR "Anesthesiologists" OR "Cardiologists" OR "Dermatologists" OR "Endocrinologists" OR "Gastroenterologists" OR "General Practitioners" OR "Geriatricians" OR "Hospitalists" OR "Nephrologists" OR "Neurologists" OR "Oncologists" OR "Ophthalmologists" OR "Otolaryngologists" OR "Pathologists" OR "Pediatricians" OR "Physiatrists" OR "Pulmonologists" OR "Radiologists" OR "Rheumatologists" OR "Urologists"
