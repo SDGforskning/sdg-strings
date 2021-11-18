@@ -679,7 +679,7 @@ TS =
   ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
   OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
   OR "medicines" OR "vaccine$" OR "medication$"
-  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*" OR "treatment cost$"
+  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*" OR "treatment cost$" OR "health treatment"
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health care equity" OR "equity in healthcare" OR "health for all" OR "vaccine equity"
@@ -1070,7 +1070,8 @@ The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 TS =
 (
   (
-    ("national health risk$" OR "global health risk$" OR "pandemic$" OR "epidemic$"
+    ("national health risk$" OR "global health risk$"
+    OR "pandemic$" OR "epidemic$" OR "outbreak$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
     OR "chemical event$" OR "chemical emergenc*"
