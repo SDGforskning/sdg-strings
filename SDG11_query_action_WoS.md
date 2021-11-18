@@ -69,7 +69,7 @@ Phrase 1 doc
 
 ```Ceylon =
 TS=
-( test
+(  "transport*" OR bus* OR train$ OR underground* OR tube* OR taxi* OR rail* OR van$ OR boat* OR ferry OR plane* OR vehicl* OR travel* 
 
 )
 ```
@@ -79,7 +79,7 @@ Phrase 2 doc
 
 ```Ceylon =
 TS=
-(
+(convenient OR accessible OR reachable OR affordable OR safe OR secure OR sustainab* 
 
 )
 ```
