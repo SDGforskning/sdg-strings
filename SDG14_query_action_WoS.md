@@ -92,7 +92,7 @@ This SDG is interpreted to be about the marine environment; however, certain top
 
 This query is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets.
 
-The first part (`TS=`) consists of marine habitats, organisms, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal name is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
+The first part (`TS=`) consists of marine habitats, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal name is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
 
 `seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
 
@@ -116,7 +116,7 @@ TS=
   OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
   OR "seagrass*"
   OR "sponge ground$" OR "organic fall$"
-  OR "reef" OR "reefs"  
+  OR "reef" OR "reefs"
 
   OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$"
   OR "coastal water$"
@@ -223,7 +223,9 @@ SO =
 
 This query consists of 1 phrase. **It should be combined with marine terms with `AND`**
 
-Here, `decreas*`, `limit` and `reduc*` and several other phrases were included (e.g. `decreas* pollut*`) due to general use.
+The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive is from the EU, and covers pollution as one of the topics.
+
+`limit pollution` was specified to avoid "pollution limits". `pollution` covers various kinds (e.g. noise pollution).
 
 The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast but are not really marine.
 
@@ -231,41 +233,50 @@ The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of
 TS=
 (
   (
-    (  "prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*"
-    OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc* pollut*" OR "decreas* pollut*" OR "limit pollut*"
-    OR "manag*" OR "regulat*" OR "legislat*" OR "prohibit*"
-    OR "water framework directive" OR "OSPAR convention"
-    OR "bioremediat*" OR "remediat*"
-    OR "treat*" OR "recover*" OR "cleanup"
-    OR "technolog*"
-    OR "sorption" OR "biosorption"
-    OR "monitor*" OR "assess*"
-    OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
-    OR "life cycle assess*"
-    OR "environment* assess*" OR "environment* impact assess*"
+    (
+      ("prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*" OR "combat" OR "fight"
+      OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc*" OR "decreas*" OR "limit pollut*" OR "prohibit*"
+      OR "water framework directive" OR "OSPAR convention"
+      )
+      OR
+        (
+          ("bioremediat*" OR "remediat*"
+          OR "treat*" OR "recover*" OR "cleanup"
+          OR "technolog*"
+          OR "sorption" OR "biosorption"
+          OR "monitor*" OR "assess*"
+          OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+          OR "life cycle assess*"
+          OR "environment* assess*" OR "environment* impact assess*"
+          OR "manag*" OR "regulat*" OR "legislat*"
+          )
+          NEAR/5
+              ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"  
+              OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
+              OR "enforc*"
+              )
+        )
     )
     NEAR/15
         (  "pollut*"
-        OR "wastewater"
-        OR "eutrophicat*"
+        OR "wastewater" OR "sewage"
+        OR "eutrophicat*" OR "excess nutrient$"
         OR
           (
             ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
             NEAR/15
-                ("waste" OR "effluent$" OR "runoff" OR "eutrophicat*" OR "ecotox*")          
+                ("waste" OR "effluent$" OR "discharge" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$")          
           )
         OR "oil spill$"
-        OR "litter"
+        OR "litter" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
-        OR "plastic$" OR "microplastic$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT")
+            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$")
             NEAR/15
                 ("contamina*" OR "bioaccumula*")          
           )
-        OR (("mine tailings" OR "mining") NEAR/5 ("contam*"))
-        OR "noise pollution"
         )
   )
   NOT ("PM2.5" OR "PM10")
