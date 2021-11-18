@@ -158,9 +158,11 @@ TS =
 
 ##### Phrase 2
 
-The first section covers communicable and waterborne diseases as a category. See Phrase 1 for notes. Diarrhoeal diseases are also included here, as they are a major cause of death due to transmission of pathogens via inadequate WASH, or direct waterborne diseases.  
+The first section covers communicable and waterborne diseases as a category. See also Phrase 1.
 
-The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections.
+Specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
+
+The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. Diseases were also added from a WHO list of epidemic and pandemic-prone diseases (<a id="WHOepipan">[Regional Office for the Eastern Mediterranean, n.d.](#f24)</a>). `SARS` covers also "SARS-CoV-2" (covid-19).
 
 The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
 
@@ -188,7 +190,7 @@ TS =
     OR "malaria"
     OR "cholera"
     OR "meningitis"
-    OR "influenza"
+    OR "influenza" OR "avian influenza" OR "H5N1"
     OR "rubella"
     OR "diphtheria"
     OR "japanese encephalitis"
@@ -200,6 +202,13 @@ TS =
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
+    OR "lower respiratory infection$"
+    OR "coronavirus" OR "covid" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
+    OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
+    OR "ebola"
+    OR "plague"
+    OR "rift valley fever"
+    OR "zika virus"
 
     OR "amebiasis"
     OR "cryptosporidiosis" OR "cryptosporidium infection$"
@@ -277,6 +286,7 @@ TS =
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
+    OR "lower respiratory infection$"
 
     OR "amebiasis"
     OR "cryptosporidiosis" OR "cryptosporidium infection$"
@@ -343,7 +353,7 @@ This query consists of 3 phrases.
 
 ##### Phrase 1
 
-We used World Health Organization factsheets to add the "main types" of non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>).
+We added diseases from the World Health Organization factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
 
 Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
@@ -364,6 +374,9 @@ TS=
     OR (("chronic") NEAR/3 ("lung" OR "pulmonary"))
     OR "cancer$" OR "*sarcoma" OR "sarcoma$" OR "*carcinoma" OR "carcinoma$" OR "*blastoma" OR "blastoma$" OR "myeloma$" OR "lymphoma$" OR "leukaemia" OR "leukemia" OR "mesothelioma$" OR "melanoma$"  
     OR (("malignant" OR "incurable") NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
+    OR "kidney disease$"
+    OR "alzheimer*" OR "dementia"
+    OR "cirrhosis"
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
@@ -1062,7 +1075,7 @@ There are also 19 technical areas from the Joint External Evaluation tool, which
 
 This query consists of 1 phrase. The general structure is *health emergencies + preparedness + action*
 
-`national action plan` is in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited.
+`national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited.
 
 The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
@@ -1086,10 +1099,10 @@ TS =
         OR "laboratory reporting" OR "laboratory capacity" OR "laboratory quality" OR "laboratory system$"
         OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
         OR "capacity" OR "risk reduction"
-        OR "vaccination program*" OR "vaccination framework" OR "immunization program*"
+        OR "vaccination program*" OR "vaccination framework$" OR "immunization program*"
         OR "emergency management" OR "emergency response" OR "personnel deployment" OR "security authorities"
         OR "legislation" OR "policy" OR "policies" OR "financing"
-        OR "international health regulations" OR "national focal point$" OR "national action plan$"
+        OR "international health regulations" OR "national focal point$" OR "national action plan*"
         )
       NEAR/5
         ("establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "build*" OR "develop"
@@ -1141,6 +1154,8 @@ TS =
 
 <a id="f14"></a> National Institute on Drug Abuse. (2020, August). *Commonly Used Drugs Charts*. National Institutes of Health. https://www.drugabuse.gov/drug-topics/commonly-used-drugs-charts [Accessed 26.10.2021] [↩](#NIHdrugs)
 
+<a id="f24"></a> Regional Office for the Eastern Mediterranean. (n.d.). *Epidemic and pandemic-prone diseases*. World Health Organization. http://www.emro.who.int/pandemic-epidemic-diseases/health-topics/related-health-topics.html [Accessed 18.11.2021] [↩](#WHOepipan)
+
 <a id="f16"></a> Regional Office for Europe. (n.d.). *WHO Framework Convention on Tobacco Control (WHO FCTC)*. World Health Organization. https://www.euro.who.int/en/health-topics/disease-prevention/tobacco/publications/key-policy-documents/who-framework-convention-on-tobacco-control-who-fctc [accessed 10.11.2021].[↩](#WHOFCTC)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
@@ -1161,7 +1176,9 @@ TS =
 
 <a id="f3"></a> World Health Organization. (2020a). *Ending the neglect to attain the Sustainable Development Goals: a road map for neglected tropical diseases 2021–2030*. https://apps.who.int/iris/handle/10665/338565  [↩](#WHONTD)
 
-<a id="f11"></a> World Health Organization. (2020b, June 20). *10 chemicals of public health concern*. [Photo story]. https://www.who.int/news-room/photo-story/photo-story-detail/10-chemicals-of-public-health-concern [accessed 15.11.2021]  [↩](#WHOchem)
+<a id="f11"></a> World Health Organization. (2020b, June 20). *10 chemicals of public health concern.*. [Photo story]. https://www.who.int/news-room/photo-story/photo-story-detail/10-chemicals-of-public-health-concern [accessed 15.11.2021]  [↩](#WHOchem)
+
+<a id="f23"></a> World Health Organization. (2020c, Dec 9). *The top 10 causes of death*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death [accessed 18.11.2021]  [↩](#WHOFStop10)
 
 <a id="f22"></a> World Health Organization. (2021a). *Ambient (outdoor) air pollution*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health [accessed 12.11.2021] [↩](#WHOambientairpoll)
 
