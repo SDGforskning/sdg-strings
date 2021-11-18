@@ -24,6 +24,8 @@
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
+Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
+
 Abbreviations:
 * World Health Organization (WHO)
 * Medical Subject Headings (MeSH) - https://www.ncbi.nlm.nih.gov/mesh/
@@ -46,8 +48,7 @@ These targets are combined, as they cover similar topics.
 >
 > 3.2.2 Neonatal mortality rate
 
-The targets are interpreted as reducing the mortality rate for mothers during childbirth and for newborns and children under 5.
-Children under five is however extremely difficult to limit bibliometrically since it is often referred to as childhood mortality - thus we include terms for children and infants generally.
+The targets are interpreted as reducing the mortality rate for mothers during childbirth and for newborns and children under 5. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally. It is also limited only to the groups in the targets (mothers, children, newborns) - one could consider including `"fetus" OR "foetus" OR "fetal" OR "foetal" OR "miscarriage$"`, but a strict interpretation of the target does not include these groups. Children "under five" is however extremely difficult to limit bibliometrically since it is often referred to as childhood mortality - thus we include terms for children and infants generally.
 
 This query consists of 2 phrases.
 
@@ -59,7 +60,7 @@ The basic structure is *children/mothers* + *mortality* + *action* + *excluding 
 
 Having a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented...."
 
-`lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding")
+`lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding"). `mortality` is paired with `improve` due to the formulation "improved mortality rates".
 
 Rats and mice are not removed from the `NOT` statement as these are usually animal models for humans.
 
@@ -68,9 +69,11 @@ TS=
 (
   (   
     ("child*" OR "infant$" OR "under-five$"
-    OR "baby" OR "babies" OR "newborn$"
-    OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal"
-    OR "childbirth" OR "child-birth" OR "birth" OR "births" OR "premature deliver*" OR "preterm deliver*" OR "preterm labor" OR "preterm labour"
+    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
+    OR "perinatal" OR "prenatal" OR "antenatal"
+    OR "pregnan*" OR "post partum" OR "postpartum" OR "peripartum" OR "obstetric$"
+    OR "childbirth" OR "child-birth" OR "birth" OR "births" or "post partum" OR "postpartum" OR "peripartum"
+    OR "premature deliver*" OR "preterm deliver*" OR "preterm labor" OR "preterm labour"
     OR "maternal" OR "mothers"
     )
     NEAR/15
@@ -96,8 +99,9 @@ TS=
 (
   (   
     ("child*" OR "infant$" OR "under-five$"
-    OR "baby" OR "babies" OR "newborn$"
-    OR "fetus" OR "foetus" OR "fetal" OR "foetal" OR "perinatal" OR "prenatal" OR "neonatal" OR "antenatal"
+    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
+    OR "perinatal" OR "prenatal" OR "antenatal"
+    OR "pregnan*"
     OR "childbirth" OR "child-birth" OR "birth" OR "premature deliver*" OR "preterm deliver*"
     OR "maternal" OR "mothers"
     )
@@ -1143,6 +1147,8 @@ TS =
 <a id="f20"></a> Sustainable Development Goals Knowledge Platform. (n.d.). *Chemicals and waste*. https://sustainabledevelopment.un.org/topics/chemicalsandwaste [accessed 12.11.2021] [↩](#SDGKPchem)
 
 <a id="f18"></a> The Global Health Observatory. (n.d.). *Average of 13 International Health Regulations core capacity scores, SPAR version*. World Health Organization. https://www.who.int/data/gho/data/indicators/indicator-details/GHO/-average-of-13-international-health-regulations-core-capacity-scores-spar-version [accessed 11.11.2021] [↩](#WHOGHO)
+
+<a id="f22"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f16"></a> World Health Organization. (1981). *Global Strategy for health for all by the year 2000*. "Health for all" series, 3. http://apps.who.int/iris/bitstream/handle/10665/38893/9241800038.pdf [↩](#WHOhealthforall)
 
