@@ -19,63 +19,63 @@ Note that this query should be run in multiple steps, and then combined as shown
 
 Search #1
 ```
-TS= ( "ocean$" OR "oceanogra*" OR "marine" OR "seas" OR "deep sea" OR "seabed" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$" OR "organic fall$" OR "bathyal" OR "abyssal" OR "submarine" OR "subtidal" OR "intertidal" OR "rocky shore$" OR "mangrove$" OR "kelp bed$" OR "kelp forest$" OR (("seaweed$" OR "macroalga*") NEAR/3 ("bed$" OR "assemblage$" OR "communit*")) OR "seagrass*" OR "beach*" OR "salt marsh*" OR "mud flat$" OR "*tidal flat" OR "*tidal flats" OR "sea ice" OR "sponge ground$" OR "reef" OR "reefs" OR "estuar*" OR "fjord$" OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal communit*" OR "coastal water$" OR "coastal dune$" OR "coastal zone management" OR (("coast*" OR "*tidal") NEAR/15 ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$" OR "offshore" OR "fish*" OR "aquaculture" OR "shrimp farm*")) OR ("sea" NEAR/15 ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$" OR "offshore" OR "*tidal" OR "fish*" OR "aquaculture" OR "shrimp farm*")) OR (("harbour$" OR "port" OR "ports") NEAR/15 ("sea" OR "seas" OR "coast*" OR "gulf" OR "ship*" OR "maritime")) ) OR SO=( ("marine*" OR "ocean*" OR "estuar*" OR "deep sea*") OR ("Annual review of marine*" OR "Advances in marine*" OR "African journal of marine*" OR "Archive of fishery and marine*" OR "Biologiya moray marine*" OR "Bulletin of marine*" OR "Cahiers de biologie marine*" OR "Frontiers in marine*" OR "Geo marine*" OR "Helgoland marine*" OR "ICES journal of marine*" OR "Indian journal of marine*" OR "International journal of marine*" OR "Journal of experimental marine*" OR "Journal of marine*" OR "Meeresforschung reports on marine*" OR "mer marine*" OR "molecular marine*" OR "Regional studies in marine*" OR "Research in marine*" OR "Russian journal of marine*" OR "South African journal of marine*" OR "Transnav international journal on marine*" OR "Vie et milieu serie a biologie marine*" OR "Applied ocean*" OR "China ocean*" OR "Acta ocean*" OR "Annales de l institut ocean*" OR "Applied ocean*" OR "Brazilian journal of ocean*" OR "Cahiers orstom ocean*" OR "California cooperative ocean*" OR "Fisheries ocean*" OR "Fishery bulletin of the national ocean*" OR "IEEE journal of ocean*" OR "International journal of naval architecture and ocean*" OR "Journal of geophysical research ocean*" OR "Journal of ocean*" OR "Journal of operational ocean*" OR "Journal of physical ocean*" OR "Journal of the waterway port coastal and ocean*" OR "Physical ocean*" OR "Progress in ocean*" OR "Revista de biologia marina y ocean*" OR "Vie et milieu serie b ocean*" ) )
+
 ```
 Search #2
 ```
-TS=( ( ( "prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*" OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc* pollut*" OR "decreas* pollut*" OR "limit pollut*" OR "manag*" OR "regulat*" OR "legislat*" OR "prohibit*" OR "water framework directive" OR "OSPAR convention" OR "bioremediat*" OR "remediat*" OR "treat*" OR "recover*" OR "cleanup" OR "technolog*" OR "sorption" OR "biosorption" OR "monitor*" OR "assess*" OR "indicator$" OR "bioindicator$" OR "index" OR "indices" OR "life cycle assess*" OR "environment* assess*" OR "environment* impact assess*" ) NEAR/15( "pollut*" OR "wastewater" OR "eutrophicat*" OR (("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*") NEAR/15 ("waste" OR "effluent$" OR "runoff" OR "eutrophicat*" OR "ecotox*")) OR "oil spill$" OR "litter" OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*")) OR "plastic$" OR "microplastic$" OR (("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT") NEAR/15 ("contamina*" OR "bioaccumula*")) OR "noise pollution" OR (("mine tailings" OR "mining") NEAR/15 ("contam*")) ) ) NOT ("PM2.5" OR "PM10") )
+
 ```
 Search #3
 ```
-TS=( ( (("ecosystem-based" OR "area-based") NEAR/3 ("manag*" OR "approach*" OR "govern*")) OR ("sustainab*" NEAR/3 ("manag*" OR "govern*")) OR "marine spatial planning" OR "spatial management" OR "coastal zone management" OR "locally managed marine area$" OR "LMMA$" OR "ecosystem restoration" OR "habitat restoration" ) OR (("manag*" OR "protect*" OR "conserv*") NEAR/15 (("increas*" OR "strengthen" OR "improv*" OR "preserv*") NEAR/3 ("resilien*" OR "biodiversity" OR ("ocean$" NEAR/3 "health$") OR ("ecosystem$" NEAR/3 "health$") ) ) ) OR ( (("protect*" NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")) OR ("no-take" NEAR/3 ("area*" OR "zone*")) ) NEAR/15 ("designat*" OR "establish*" OR "propose*" OR "placement" OR "design*" OR "manag*" OR "implement*" OR "plan$" OR "planned" OR "planning" OR "impact$" OR "effect$" ) ) )
+
 ```
 Search #4
 ```
-TS=( ("acidif*" NEAR/15 ("ocean$" OR "seawater" OR "sea water" OR "marine") ) NEAR/15 ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$" OR "calcif*" OR "decalcif*" OR "calcium carbonate" OR "dissol*" OR "aragonite" OR "calcite" ) )
+
 ```
 Search #5
 ```
-TS= ( (( "prevent*" OR "avoid*" OR "stop*" OR "prohibit*" OR "tackling" OR "tackle" OR "restrict*" OR "reduc*" OR "decreas*" OR "minimi*" OR "mitigat*" OR "remov*" OR "limit$" OR "limiting" OR "limited" OR "manag*" OR "regulat*" OR "law$" OR "strateg*" OR "policy" OR "policies" OR "marine stewardship council" OR "regional fisheries management organi?ation$" OR "RFMOs" OR "UNCLOS" OR "convention on the law of the sea" OR "fish stocks agreement" OR "code of conduct for responsible fisheries" OR "CCRF" OR "port state measures agreement" ) NEAR/10 ("overfish*" OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*")) OR "bycatch" OR "by-catch" OR (("illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "ghost" OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded")) ) NEAR/10 ("fishing" OR "fisher*" OR "trawl*" OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*")) ) ) ) ) OR (("fishery" OR "fisheries" OR "fishing" OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*")) OR "fish stock$" OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$")) ) NEAR/15 ("manage*" OR "restor*" OR "protect*" OR "conservation" OR "sustainab*" OR "assess*" OR "collaps*" OR "maximum sustainable yield*" OR "MSY" OR "marine stewardship council" OR "regional fisheries managment organi?ation$" OR "RFMOs" OR "UNCLOS" OR "convention on the law of the sea" OR "fish stocks agreement" OR "code of conduct for responsible fisheries" OR "CCRF" OR "port state measures agreement" ) ) )
+
 ```
 Search #6
 ```
-TS= ( ( ("MPA" OR "MPAs" OR "marine protected area$" OR "reserve" OR "reserves" OR "marine park$" OR "marine conservation zone$" OR (("protected" OR "protection") NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")) OR (("conserved" OR "conservation" OR "conserves" OR "conserving") NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")) OR ("no-take" NEAR/3 ("area*" OR "zone*")) OR "conservation action$" ) NEAR/15 ("designat*" OR "establish*" OR "propose*" OR "placement" OR "design*" OR "manage*" OR "implement*" OR "plans" OR "plan" OR "planned" OR "planning" ) ) OR (("biodivers*" OR "biological diversity") NEAR/3 ("beyond national jurisdiction" OR "beyond areas of national jurisdiction" OR "ABNJ")) OR "BBNJ" )
+
 ```
 Search #7
 ```
-TS=( ( ("overfish*" OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*" OR "stock$")) OR "bycatch" OR "by-catch" OR( ("illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "ghost" OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded")) OR "overcapacity" ) NEAR/15 ("fishing" OR "fisher*" OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*")) ) ) ) OR ( (("developing" OR "least developed") NEAR/3 ("state*" OR "nation$" OR "countr*") ) OR "developing world" OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" ) ) AND ( ("ODA" OR "official development assistance" OR "world trade organisation" OR "WTO" OR "government* subsid*" OR "economic subsid*" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" OR "price support$" OR "tax break$" ) AND ("fishing" OR "fisher*" OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*")) ) ) )
+
 ```
 Search #8
 ```
-TS=( ( ("sustainab*" NEAR/15 ("tourism" OR "ecotourism" OR "tourist$" OR "whale watch*" OR "sightsee*" OR "recreation*" OR "aquaculture" OR "fish farm*" OR "fisher*" OR "fishing" OR "harvest*" OR "exploit*" OR "use" OR "using" OR "manag*" OR "livelihood$" OR "social-ecological system$" OR "socialecological system$" OR "econom*" ) ) OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR (("marine spatial planning" OR "ecosystem based management") AND "econom*") ) AND ( (("least developed") NEAR/3 ("state*" OR "nation$" OR "countr*" OR "small island*" OR "Pacific island*") ) OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" ) )
+
 ```
 Search #9
 ```
-TS=( ( ("blue growth" OR "blue econom*" OR "blue bond$" OR "bioprospect*" OR "biopiracy" OR ("bioactive" NEAR/3 ("compound*" OR "substance*")) OR "bioresource$" OR "biological resource$" OR "genetic resource$" OR "biotechnolog*" OR (("biodivers*" OR "diversity") NEAR/15 ( "development" OR "livelihood$" OR "fisher*" OR "fishing" OR "harvest*" OR "tourism" OR "ecotourism" OR "tourist$" OR ("ecosystem*" NEAR/3 "service$") OR "Nagoya protocol" ) ) ) AND ( (("developing" OR "least developed") NEAR/3 ("state*" OR "nation$" OR "countr*" OR "small island*" OR "Pacific island*") ) OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" ) ) OR ("transfer of marine technolog*" OR "marine technology transfer") OR ( (("share$" or "sharing" OR "develop*" OR "establish*" OR "increas*" OR "improv*" OR "build*" OR "implement*" OR "capacity development" OR "develop* capacity" OR "invest" OR "investment$" OR "investing" OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation" ) NEAR/15 ( (("research" OR "scientific" OR "science") NEAR/5 ("policy" OR "policies" OR "programme$" OR "advisor$" OR "framework$" OR "initiative$" OR "capacity" OR "capabilit*" OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$" OR"network$") ) OR "observ* network$" OR "observ* system$" OR "data infrastructure$" OR "data network$" OR "monitoring network$" OR "ecological monitoring" OR (("ocean*" OR "marine" OR "biological") NEAR/2 ("observator*" OR "monitoring")) OR (("taxonom*" OR "genom*" OR "species") NEAR/5 ("knowledge" OR "research" OR "capacity" OR "compentence$" OR "database$" OR "register$" OR "inventory" OR "inventories") ) ) ) AND ("biodiversity" OR ("biological" NEAR/3 "diversity") OR (("ocean*" OR "marine") NEAR/3 ("research" OR "science")) OR "ocean health" OR "ecosystem health" OR "healthy ocean$" ) ) )
+
 ```
 Search #10
 ```
-TS=( ( ("fisher*" OR "fishing" OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*")) ) NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence" ) ) AND ( ("access*" OR "use* right$" OR "ownership" OR "control$" OR "equitab*" OR "inequitab*") NEAR/15 ("market$" OR "trade*" OR "territor*" OR "right$" OR "livelihood$" OR "policy" OR "policies" OR "law$" OR "law of the sea" OR "regulat*" OR "institutional framework$" ) ) )
+
 ```
 Search #11
 ```
-TS=( ("conserv*" OR "blue growth" OR ("sustainab*" NEAR/15 ("use" OR "exploit*" OR "manag*" OR "govern*" OR "fisher*" OR "fishing" OR "harvest*" OR "tourism" OR "ecotourism" OR "tourist$" OR "aquaculture" OR "fish farm*" OR "resource$" OR "economy" ) ) ) AND ("law of the sea" OR "UNCLOS" OR "the future we want" OR (("biodivers*" OR "biological diversity") NEAR/3 ("beyond national jurisdiction" OR "ABNJ")) OR "BBNJ" OR "common fisheries policy" OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas" OR ("convention$" NEAR/3 ("Conservation of Antarctic Living Marine Resources" OR "biological diversity" OR "OSPAR")) OR "MSFD" OR ("directive$" NEAR/3 ("marine strategy framework" OR "water framework" OR "marine spatial planning")) OR ("international" NEAR/3 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" ) ) ) )
+
 ```
 Search #12
 ```
-TS= ("SDG14" OR "SDG 14" OR "SDG-14" OR "sustainable development goal$ 14" OR (("sustainable development goal$" OR "SDG$" OR "goal 14") AND "Life below water") OR (("sustainable development goal$" OR "SDG$" OR "goal 14") NEAR/15 "oceans"))
+
 ```
 Search #13
 ```
-#2 OR #3 OR #4 OR #6 OR #8 OR #9 OR #11
+
 ```
 Search #14
 ```
-#1 AND #13
+
 ```
 Search #15
 ```
-#5 OR #7 OR #10 OR #12 OR #14
+
 ```
 
 </details>
@@ -84,16 +84,17 @@ Search #15
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
-Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[2](#f2)</sup>.
+Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
 
+This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Thus, the fishery-related targets are currently not limited using the *marine terms* below.
 
 ## 3. Marine terms: String for limiting certain phrases to the marine environment
 
-This query is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets, as the results become too limited (many fisheries papers do not use these words, or concern both freshwater and marine fisheries).
+This query is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets.
 
-The first part (`TS=`) consists of marine habitats, organisms, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal name is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals with over 100 articles are included, but not if Freshwater or Atmospheric elements are in their title. List gathered from Publication Name Index in Web of Science (in searches for “marine*” or “ocean*”).
+The first part (`TS=`) consists of marine habitats, organisms, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal name is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
 
-`seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `coast` and `sea` are combined with other terms to prevent hits that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries").
+`seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
 
 ```Ceylon =
 TS=
@@ -106,37 +107,41 @@ TS=
   OR "hydrothermal vent$" OR "cold seep$"
   OR "subtidal" OR "intertidal" OR "deep sea" OR "bathyal" OR "abyssal"
   OR "rocky shore$" OR "beach*"
-  OR "salt marsh*" OR "mud flat$" OR "*tidal flat" OR "*tidal flats"
+  OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
   OR "estuar*" OR "fjord$"
   OR "sea ice"
 
   OR "mangrove$"
   OR "kelp bed$" OR "kelp forest$"
-  OR (("seaweed$" OR "macroalga*") NEAR/3 ("bed$" OR "assemblage$" OR "communit*"))
+  OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
   OR "seagrass*"
   OR "sponge ground$" OR "organic fall$"
   OR "reef" OR "reefs"  
 
-  OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal water$"
+  OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$"
+  OR "coastal water$"
   OR "coastal communit*" OR "coastal zone management"
   OR (
       ("coast*" OR "*tidal")
       NEAR/15
-          ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$" OR "offshore"
-            OR "fish*" OR "aquaculture" OR "shrimp farm*"
+          ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
+          OR "offshore" OR "current$"
+          OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
           )
      )
      OR (
          ("sea")
          NEAR/15
-             ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$" OR "offshore" OR "*tidal"
-               OR "fish*" OR "aquaculture" OR "shrimp farm*"
+             ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
+             OR "offshore" OR "ship*"
+             OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
+             OR "*tidal" OR "pelagic"
              )
         )
       OR (
           ("harbour$" OR "port" OR "ports")
           NEAR/15
-              ("sea" OR "seas" OR "coast*" OR "gulf" OR "ship*" OR "maritime")
+              ("sea" OR "coast*" OR "gulf" OR "ship*" OR "maritime")
          )
 )
 
@@ -148,47 +153,62 @@ SO =
   OR "Annual review of marine*"
   OR "Advances in marine*"
   OR "African journal of marine*"
+  OR "Applied ocean*"
+  OR "Acta ocean*"
+  OR "Annales de l institut ocean*"
   OR "Archive of fishery and marine*"
+  OR "Asia-pacific journal of ocean law and policy"
   OR "Biologiya moray marine*"
   OR "Bulletin of marine*"
+  OR "Brazilian journal of ocean*"
+  OR "California cooperative ocean*"
   OR "Cahiers de biologie marine*"
+  OR "Cahiers orstom ocean*"
+  OR "China ocean*"
+  OR "Ciencias Marinas"
+  OR "Coastal engineering"
+  OR "Coral reefs"
+  OR "Esturaries and coasts"
+  OR "Estuarine coastal and shelf science"
   OR "Frontiers in marine*"
+  OR "Fisheries ocean*"
+  OR "Fishery bulletin of the national ocean*"
+  OR "IEEE journal of ocean*"
+  OR "International journal of naval architecture and ocean*"
   OR "Geo marine*"
+  OR "Gulf and Caribbean Research"
   OR "Helgoland marine*"
   OR "ICES journal of marine*"
   OR "Indian journal of marine*"
   OR "International journal of marine*"
   OR "Journal of experimental marine*"
-  OR "Journal of marine*"
-  OR "Meeresforschung reports on marine*"
-  OR "mer marine*"
-  OR "molecular marine*"
-  OR "Regional studies in marine*"
-  OR "Research in marine*"
-  OR "Russian journal of marine*"
-  OR "South African journal of marine*"
-  OR "Transnav international journal on marine*"
-  OR "Vie et milieu serie a biologie marine*"
-  OR "Applied ocean*"
-  OR "China ocean*"
-  OR "Acta ocean*"
-  OR "Annales de l institut ocean*"
-  OR "Applied ocean*"
-  OR "Brazilian journal of ocean*"
-  OR "Cahiers orstom ocean*"
-  OR "California cooperative ocean*"
-  OR "Fisheries ocean*"
-  OR "Fishery bulletin of the national ocean*"
-  OR "IEEE journal of ocean*"
-  OR "International journal of naval architecture and ocean*"
   OR "Journal of geophysical research ocean*"
+  OR "Journal of marine*"
+  OR "Journal of the marine*"
   OR "Journal of ocean*"
   OR "Journal of operational ocean*"
   OR "Journal of physical ocean*"
+  OR "Journal of sea research"
   OR "Journal of the waterway port coastal and ocean*"
+  OR "Mediterranean marine science"
+  OR "Meeresforschung reports on marine*"
+  OR "mer marine*"
+  OR "molecular marine*"
+  OR "New Zealand journal of marine*"
   OR "Physical ocean*"
   OR "Progress in ocean*"
+  OR "PROCEEDINGS OF THE INSTITUTION OF CIVIL ENGINEERS-MARITIME ENGINEERING"
+  OR "Regional studies in marine*"
+  OR "Research in marine*"
   OR "Revista de biologia marina y ocean*"
+  OR "Russian journal of marine*"
+  OR "Scientia marina"
+  OR "Sea technology"
+  OR "Ships and offshore structures"
+  OR "South African journal of marine*"
+  OR "Thalassas"
+  OR "Transnav international journal on marine*"
+  OR "Vie et milieu serie a biologie marine*"
   OR "Vie et milieu serie b ocean*"
 )
 
@@ -799,6 +819,4 @@ TS =
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
-Old format - I suggest we change to author-date
-
-<b id="f2">2</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+<a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
