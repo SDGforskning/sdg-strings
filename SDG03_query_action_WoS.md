@@ -331,11 +331,13 @@ TS =
   AND
       (
         (
-          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "limit" OR "limiting"
-          OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
-          OR "treat*")
+          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*"
+          OR "limit" OR "limiting" OR "decreas*"
+          OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+          OR "stop" OR "stopped" OR "stopping" OR "control"
+          )
           NEAR/3
-              ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+              ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
         )
       OR "vaccinate" OR "vaccination"
       OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
@@ -387,6 +389,7 @@ TS=
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
       OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
+      OR ("decreas*" NEAR/3 ("occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"))
       OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
       OR ("mortality" NEAR/5 ("decrease$" OR "lower" OR "improv*"))
       OR ("survival" NEAR/5 ("improv*" OR "increas*" OR "enhanc*"))
@@ -410,7 +413,6 @@ TS=
   OR "bipolar affective disorder"
   OR "schizophrenia"
   OR "psychosis" OR "psychoses"
-  OR "dementia"
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
