@@ -378,45 +378,100 @@ TS=
 
 ```
 
-## Target 14.2
+## Target 14.2 & 14.5
 
 > **14.2 By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience, and take action for their restoration in order to achieve healthy and productive oceans**
 >
 > 14.2.1 Number of countries using ecosystem-based approaches to managing marine areas
 
-This query consists of 3 phrases. **All should be combined with marine terms with `AND`**
+> **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
+>
+> 14.5.1 Coverage of protected areas in relation to marine areas
+
+Target 14.2 is interpreted to cover research about a) management of marine ecosystems, b) protection of these ecosystems, and c) restoring these ecosystems. It also talks about management/protection to avoid "adverse impacts", implying that research about the impacts of protected/managed areas is relevant. 14.5 is interpreted to cover research about the establishment and management of marine protected areas.
+
+While 14.2 is not explicitly about establishing marine protected areas (as we see in target 14.5), "protect" is still used as one of the actions, suggesting that research on the establishment of MPAs falls under 14.2 too (amongst research on other aspects of protection, such as the impacts of other protection measures). A string for 14.5 is still retained, but the research found there will also be covered under 14.2. 14.5 is just a more specific area.
+
+**All phrases should be combined with marine terms with `AND`**
+
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-These terms are included without action terms, as management is already inherent.
+This phrase covers terms for sustainable management, protection, and restoration. These terms are included without action terms, as management/restoration are actions themselves. This means the phrase will also find research about the impacts of these actions.
+
+Various types of management framework are included, as well as some specific pieces of legeslation (Conservation of Antarctic Marine Living Resources).
+
+`BBNJ` is a narrow concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
 ```Ceylon =
 TS=
 (
-      (("ecosystem-based" OR "area-based") NEAR/3 ("manag*" OR "approach*" OR "govern*"))
-  OR  (("sustainab*") NEAR/3 ("manag*" OR "govern*"))
-  OR "marine spatial planning" OR "spatial management"
-  OR "coastal zone management"
+  "marine spatial planning" OR "spatial management"
+  OR "coastal zone management" OR "integrated coastal zone planning"
   OR "locally managed marine area$" OR "LMMA$"
-  OR "ecosystem restoration" OR "habitat restoration"
+  OR
+    (
+      ("ecosystem-based" OR "area-based")
+      NEAR/5 ("manag*" OR "approach*" OR "govern*")
+    )
+  OR  
+    ("sustainab*"
+    NEAR/5 ("manag*" OR "govern*")
+    )
+  OR "MPA" OR "MPAs" OR "marine protected area$"
+  OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+  OR "marine conservation zone$"
+  OR
+    (
+      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
+      NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
+    )
+  OR "Conservation of Antarctic Marine Living Resources"  
+  OR
+    (
+      ("biodivers*" OR "biological diversity")
+      NEAR/3 ("beyond national jurisdiction" OR "beyond areas of national jurisdiction" OR "ABNJ")
+    )
+  OR "BBNJ"
+  OR
+    ("no-take"
+    NEAR/3 ("area*" OR "zone*")
+    )
+  OR  
+    (
+      ("restore" OR "restored" OR "restoration")
+      NEAR/5 ("ecosystem$" OR "habitat$")
+    )
 )
-
 ```
 
 ##### Phrase 2:
 
+This phase is about sustainable management, protection and restoration, connected to the positive impacts mentioned in the target (health & ecosystem resilience, and production). It aims to find works talking about impacts, or drivers of the impacts, in managed/protected/restored areas. The basic structure is *management/protection/restoration + action + ocean health/productivity*.
+
+The *ocean health* terms include various terms to do with functioning ecosystems. "ecosystem functioning" and "ecosystem services" are terms used in biology about the biological functioning of the ecosystem and services it provides to humans, respectively. `diversity` elements are included as diversity at various levels is important for ecosystem functioning, resilience and services (though not necessarily linearly). `key species` and `foundation species` are species whose presence is important for ecosystem maintenance/creation. `water quality` is included as this can be a driver of key species loss.
+
+The *productivity* terms include terms suggested by the phrase "productive oceans"; it is interpreted as referring to products for humans, rather than e.g. primary production. Fish stocks are not the only important product from the ocean. Should more be included here?
+
 ```Ceylon =
 TS=
 (
-  ("manag*" OR "protect*" OR "conserv*")
+  ("manag*" OR "protect*" OR "conserv*" OR "restore" OR "restoration")
   NEAR/15
     (
-      ("increas*" OR "strengthen" OR "improv*" OR "preserv*")
+      ("increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
+      OR "preserv*" OR "support*" OR "ensure" OR "sustain"
+      )
       NEAR/3
-          ("resilien*"
-          OR "biodiversity"
-          OR ("ocean$" NEAR/3 "health$")
-          OR ("ecosystem$" NEAR/3 "health$")  
+          (  ("ocean$" NEAR/3 "health$")
+          OR (("ecosystem$" OR "habitat$") NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function"))
+          OR "resilien*"
+          OR "water quality"
+          OR "biodiversity" OR "species diversity" OR "functional diversity" OR "genetic diversity"
+          OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
+
+          OR "productivity" OR "food production" OR "fish stock$"
           )
     )
 )
@@ -424,28 +479,63 @@ TS=
 
 ##### Phrase 3:
 
-Combined to get results which are actually discussing the management/establishment/impacts of protected areas
+This phrase is the opposite of phrase 2 - it covers negative impacts on ocean health and productivity.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("protect*" NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$"))
-    OR ("no-take" NEAR/3 ("area*" OR "zone*"))
+  ("manag*" OR "protect*" OR "conserv*" OR "restore" OR "restoration")
+  NEAR/15
+    (
+      ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop")
+      NEAR/3
+          (
+            (("ecosystem$" OR "habitat$") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degredation" OR "loss"))
+            OR ("biodiversity" NEAR/3 "loss*")
+
+            OR (("fisheries" OR "fishery" OR "fish stock$") NEAR/3 ("decline$" OR "collapse"))
+          )    
+    )
+)
+```
+
+## Target 14.5
+
+> **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
+>
+> 14.5.1 Coverage of protected areas in relation to marine areas
+
+The target is interpreted to cover research about the establishment and management of marine protected areas. **See notes on 14.2** (*While 14.2 is not explicitly about  marine protected areas (as we see in target 14.5), "protect" is still used as one of the actions, suggesting that research on the establishment/maintenance of MPAs falls under 14.2 too (amongst research on other aspects of protection, such as the impacts of other measures). A string for 14.5 is still retained, but the research found there will also be covered under 14.2. 14.5 is just a more specific area.*)
+
+This query consists of 1 phrase. **It should be combined with marine terms with `AND`**
+
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degress of protection); for exmaple, `no take zone$`, `conservation zone$`, `marine protected area$`.
+
+``` Ceylon =
+TS=
+(
+  ("MPA" OR "MPAs" OR "marine protected area$"
+  OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+  OR "marine conservation zone$"
+  OR
+    (
+      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
+      NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
+    )
+  OR
+    ("no-take"
+    NEAR/3 ("area*" OR "zone*")
+    )
   )
   NEAR/15
-      ("designat*"
-      OR "establish*"
-      OR "propose*"
-      OR "placement"
-      OR "design*"
-      OR "manag*"
-      OR "implement*"
-      OR "plan$" OR "planned" OR "planning"
-      OR "impact$" OR "effect$"
+      ("designat*" OR "placement" OR "delineat*"
+      OR "design" OR "create" OR "creation"
+      OR "establish*" OR "propose*" OR "proposal$" OR "implement*"
+      OR "plans" OR "plan" OR "planned" OR "planning"
+      OR "priorit*"
+      OR "manage*" OR "enforce" OR "enforcement"
       )
 )
-
 ```
 
 ## Target 14.3
@@ -541,67 +631,6 @@ TS=
       OR "code of conduct for responsible fisheries" OR "CCRF"
       OR "port state measures agreement"
       )
-)
-```
-
-## Target 14.5
-
-> **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
->
-> 14.5.1 Coverage of protected areas in relation to marine areas
-
-This query consists of 2 phrases. **All should be combined with marine terms with `AND`**
-
-##### Phrase 1:
-
-Again, here, the focus is on conserving marine areas. Therefore the words int he final section are included to exclude publications which may just mention marine protected areas (e.g. a place where fieldwork was carried out).
-
-``` Ceylon =
-TS=
-(
-  ("MPA" OR "MPAs"
-  OR "marine protected area$"
-  OR "reserve" OR "reserves"
-  OR "marine park$"
-  OR "marine conservation zone$"
-  OR
-  (
-    ("protected" OR "protection")
-    NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
-  )
-  OR
-  (
-    ("conserved" OR "conservation" OR "conserves" OR "conserving")  
-    NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
-  )
-  OR ("no-take" NEAR/3 ("area*" OR "zone*"))
-  OR "conservation action$"
-  )
-  NEAR/15
-      ("designat*"
-      OR "establish*"
-      OR "propose*"
-      OR "placement"
-      OR "design*"
-      OR "manage*"
-      OR "implement*"
-      OR "plans" OR "plan" OR "planned" OR "planning"
-      )
-)
-```
-
-##### Phrase 2:
-
-`BBNJ` is a narrow concept specifically related to difficulties conserving beyond national boundaries, so any publications mentioning it are likely to be relevant.
-
-``` Ceylon =
-TS=
-(
-  (
-    ("biodivers*" OR "biological diversity")
-    NEAR/3 ("beyond national jurisdiction" OR "beyond areas of national jurisdiction" OR "ABNJ")
-  )
-  OR "BBNJ"
 )
 ```
 
