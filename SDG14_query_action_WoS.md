@@ -292,7 +292,7 @@ TS=
         OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
         OR "life cycle assess*"
         OR "environment* assess*" OR "environment* impact assess*"
-        OR "manag*" OR "control$"
+        OR "manag*" OR "pollution control$"
         OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
         )
         NEAR/5
@@ -344,7 +344,7 @@ TS=
 TS=
 (
   (
-    ("limit pollut*"
+    ("limit pollut*" OR "control pollut*"
     OR "biosorption" OR "bioremediat*"
     OR "water framework directive" OR "OSPAR convention" OR "Marine strategy framework directive"
     )
