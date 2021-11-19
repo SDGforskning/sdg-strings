@@ -221,62 +221,156 @@ SO =
 >
 > 14.1.1 (a) Index of coastal eutrophication; and (b) plastic debris density
 
-This query consists of 1 phrase. **It should be combined with marine terms with `AND`**
+This target is interpreted to cover research about the prevention and reduction of marine pollution (all kinds). We consider the establishment/imrpovement of pollution monitoring to fall under prevention.
 
-The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive is from the EU, and covers pollution as one of the topics.
+**All phrases should be combined with marine terms with `AND`**. This query consists of 3 phrases, the basic structure is *action + pollution*. The pollution terms are mostly the same between them; the difference is how closely they are combined with the various action terms.
 
-`limit pollution` was specified to avoid "pollution limits". `pollution` covers various kinds (e.g. noise pollution).
+<a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f3)</a> was used to supplement with marine pollution types. The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast.
 
-The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast but are not really marine.
+#### Phrase 1
+
+`tackle` is not included as an action term as it could be a type of marine debris.
+
+`pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `pollution or contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms.
+
+```Ceylon =
+TS=
+(
+  (
+    ("prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*" OR "combat" OR "fight"
+    OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc*" OR "decreas*"
+    OR "prohibit*"
+    OR "remediate" OR "remediation" OR "cleanup" OR "clean up"
+    )  
+    NEAR/5
+        (  "pollut*"
+        OR "wastewater" OR "waste water" OR "sewage"
+        OR "eutrophicat*" OR "excess nutrient$"
+        OR "effluent$" OR "runoff" OR "run off"
+        OR
+          (
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
+            NEAR/15
+                ("waste" OR "discharge")          
+          )
+        OR "waste management"
+        OR "litter" OR "littering" OR "garbage patch"
+        OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
+        OR "plastic$" OR "microplastic$" OR "micro plastic$"
+        OR
+          (
+            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
+            NEAR/15
+                ("contamination" OR "pollut*")          
+          )
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$"
+        OR "oil spill$"
+        )
+  )
+  NOT ("PM2.5" OR "PM10")
+)
+
+```
+
+#### Phrase 2
+
+The development of `indicators` is included as part of prevention (monitoring).
+
+`pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste).
 
 ```Ceylon =
 TS=
 (
   (
     (
-      ("prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*" OR "combat" OR "fight"
-      OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc*" OR "decreas*" OR "limit pollut*" OR "prohibit*"
-      OR "water framework directive" OR "OSPAR convention"
-      )
-      OR
-        (
-          ("bioremediat*" OR "remediat*"
-          OR "treat*" OR "recover*" OR "cleanup"
-          OR "technolog*"
-          OR "sorption" OR "biosorption"
-          OR "monitor*" OR "assess*"
-          OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
-          OR "life cycle assess*"
-          OR "environment* assess*" OR "environment* impact assess*"
-          OR "manag*" OR "regulat*" OR "legislat*"
-          )
-          NEAR/5
-              ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"  
-              OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
-              OR "enforc*"
-              )
+        ("treatment" OR "recovery"
+        OR "technolog*"
+        OR "monitor*" OR "assess*"
+        OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+        OR "life cycle assess*"
+        OR "environment* assess*" OR "environment* impact assess*"
+        OR "manag*" OR "control$"
+        OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
         )
-    )
+        NEAR/5
+            ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+            OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
+            OR "enforc*" OR "prioriti*"
+            )
+    )  
     NEAR/15
         (  "pollut*"
-        OR "wastewater" OR "sewage"
+        OR "wastewater" OR "waste water" OR "sewage"
         OR "eutrophicat*" OR "excess nutrient$"
+        OR "effluent$" OR "runoff" OR "run off"
         OR
           (
             ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
             NEAR/15
-                ("waste" OR "effluent$" OR "discharge" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$")          
+                ("waste" OR "discharge")          
           )
-        OR "oil spill$"
-        OR "litter" OR "garbage patch"
+        OR "waste management"
+        OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
         OR "plastic$" OR "microplastic$" OR "micro plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$")
+            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
             NEAR/15
-                ("contamina*" OR "bioaccumula*")          
+                ("contamination" OR "pollut*")          
           )
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$"
+        OR "oil spill$"
+        )
+  )
+  NOT ("PM2.5" OR "PM10")
+)
+
+```
+
+#### Phrase 3
+
+`limit pollution` was specified to avoid "pollution limits". The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics.
+
+`pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. In this phrase, specific pollutants (e.g. `mercury`) do not need to be combined with `pollution or contamination`, because the action terms are all related to pollution.
+
+```Ceylon =
+TS=
+(
+  (
+    ("limit pollut*"
+    OR "biosorption" OR "bioremediat*"
+    OR "water framework directive" OR "OSPAR convention" OR "Marine strategy framework directive"
+    )
+    AND
+        (  "pollut*"
+        OR "wastewater" OR "waste water" OR "sewage"
+        OR "eutrophicat*" OR "excess nutrient$"
+        OR "effluent$" OR "runoff" OR "run off"
+        OR
+          (
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
+            NEAR/15
+                ("waste" OR "discharge")          
+          )
+        OR "pesticide$"
+        OR "waste management"
+        OR "litter" OR "littering" OR "garbage patch"
+        OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
+        OR "plastic$" OR "microplastic$" OR "micro plastic$"
+        OR "heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury"
+        OR "mining" OR "mine tailing$"
+        OR "oil"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "Pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$"
         )
   )
   NOT ("PM2.5" OR "PM10")
@@ -827,6 +921,8 @@ TS =
 ## 5. Authorship and review
 
 ## 6. Footnotes
+
+<a id="f3"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
