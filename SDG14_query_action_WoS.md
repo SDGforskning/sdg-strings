@@ -401,7 +401,7 @@ This query consists of 3 phrases.
 
 This phrase covers terms for sustainable management, protection, and restoration. These terms are included without action terms, as management/restoration are actions themselves. This means the phrase will also find research about the impacts of these actions.
 
-Various types of management framework are included, as well as some specific pieces of legeslation (Conservation of Antarctic Marine Living Resources).
+Various types of management framework and protected areas are included, as well as some specific pieces of legislation (e.g. Conservation of Antarctic Marine Living Resources).
 
 `BBNJ` is a narrow concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
@@ -423,12 +423,14 @@ TS=
   OR "MPA" OR "MPAs" OR "marine protected area$"
   OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
   OR "marine conservation zone$"
+  OR "particularly sensitive sea areas$"
   OR
     (
       ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
       NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
     )
   OR "Conservation of Antarctic Marine Living Resources"  
+  OR "International coral reef initiative"
   OR
     (
       ("biodivers*" OR "biological diversity")
@@ -518,6 +520,7 @@ TS=
   ("MPA" OR "MPAs" OR "marine protected area$"
   OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
   OR "marine conservation zone$"
+  OR "particularly sensitive sea areas$"
   OR
     (
       ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
