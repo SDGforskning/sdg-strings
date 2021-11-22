@@ -496,7 +496,7 @@ TS=
       ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop" OR "limit" OR "minimi*" OR "mitigat*")
       NEAR/3
           (
-            (("ecosystem$" OR "habitat$") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss"))
+            (("ecosystem$" OR "habitat$" OR "environment*") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss"))
             OR ("biodiversity" NEAR/3 "loss*")
             OR (("fisheries" OR "fishery" OR "fish stock$") NEAR/3 ("decline$" OR "collapse"))
           )    
