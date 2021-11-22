@@ -467,13 +467,16 @@ TS=
       OR "preserv*" OR "support*" OR "ensure" OR "sustain"
       )
       NEAR/3
-          (  ("ocean$" NEAR/3 "health$")
-          OR (("ecosystem$" OR "habitat$") NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function"))
+          ( ("ocean$" NEAR/3 "health$")
+          OR
+            (
+              ("ecosystem$" OR "habitat$" OR "environment*")
+              NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$" OR "quality")
+            )
           OR "resilien*"
           OR "water quality"
           OR "biodiversity" OR "species diversity" OR "functional diversity" OR "genetic diversity"
           OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
-
           OR "productivity" OR "food production" OR "fish stock$"
           )
     )
@@ -490,12 +493,11 @@ TS=
   ("manag*" OR "protect*" OR "conserv*" OR "restore" OR "restoration")
   NEAR/15
     (
-      ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop")
+      ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop" OR "limit" OR "minimi*" OR "mitigat*")
       NEAR/3
           (
-            (("ecosystem$" OR "habitat$") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degredation" OR "loss"))
+            (("ecosystem$" OR "habitat$") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss"))
             OR ("biodiversity" NEAR/3 "loss*")
-
             OR (("fisheries" OR "fishery" OR "fish stock$") NEAR/3 ("decline$" OR "collapse"))
           )    
     )
