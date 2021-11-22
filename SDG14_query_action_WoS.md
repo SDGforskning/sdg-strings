@@ -223,9 +223,9 @@ SO =
 
 This target is interpreted to cover research about the prevention and reduction of marine pollution (all kinds). We consider the establishment/imrpovement of pollution monitoring to fall under prevention.
 
-**All phrases should be combined with marine terms with `AND`**. This query consists of 3 phrases, the basic structure is *action + pollution*. The pollution terms are mostly the same between them; the difference is how closely they are combined with the various action terms.
+**All phrases should be combined with marine terms with `AND`**. This query consists of 3 phrases, the basic structure is *action + pollution*. The pollution terms are mostly the same between them; the difference is how closely they are combined with the various action terms (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)).
 
-<a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f3)</a> was used to supplement with marine pollution types. The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast.
+<a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f3)</a> was used to supplement with marine pollution types, as well as types mentioned in relation to the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities <a id="marinepollUN">[UN Environment Programme, n.d.](#f4)</a>. The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast.
 
 #### Phrase 1
 
@@ -249,7 +249,7 @@ TS=
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
             NEAR/15
                 ("waste" OR "discharge")          
           )
@@ -308,7 +308,7 @@ TS=
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
             NEAR/15
                 ("waste" OR "discharge")          
           )
@@ -336,7 +336,7 @@ TS=
 
 #### Phrase 3
 
-`limit pollution` was specified to avoid "pollution limits". The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics.
+`limit pollution` was specified to avoid "pollution limits". The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics. Global Programme of Action for the Protection of the Marine Environment from Land-based Activities is hosted by the UN environment program, and is an intergovernmental action program.
 
 `pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. In this phrase, specific pollutants (e.g. `mercury`) do not need to be combined with `pollution or contamination`, because the action terms are all related to pollution.
 
@@ -347,6 +347,7 @@ TS=
     ("limit pollut*" OR "control pollut*"
     OR "biosorption" OR "bioremediat*"
     OR "water framework directive" OR "OSPAR convention" OR "Marine strategy framework directive"
+    OR "Global Programme of Action for the Protection of the Marine Environment"
     )
     AND
         (  "pollut*"
@@ -355,7 +356,7 @@ TS=
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
             NEAR/15
                 ("waste" OR "discharge")          
           )
@@ -956,3 +957,5 @@ TS =
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+
+<a id="f4"></a> UN Environment Programme. (n.d.). *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]. [↩](#marinepollUN)
