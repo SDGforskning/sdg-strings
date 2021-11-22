@@ -245,7 +245,7 @@ TS=
     NEAR/5
         (  "pollut*"
         OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
@@ -304,7 +304,7 @@ TS=
     NEAR/15
         (  "pollut*"
         OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
@@ -352,7 +352,7 @@ TS=
     AND
         (  "pollut*"
         OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
@@ -547,18 +547,28 @@ TS=
 
 This query consists of 1 phrase. **It should be combined with marine terms with `AND`**
 
-The target has a clear focus on impacts, therefore this is the focus of this query. Focus on impacts by combining with "impact" words and calcification terms, as this is specifically affected by acidification.
+The target is interpreted to cover research that focuses on the impacts of acidification, so that these can be minimized and addressed. "Minimize [the impacts]" is ok to interpret, but "address the impacts" is harder to know what it covers. Thus this query is left open in terms of actions. The basic structure is *acidification + impacts*.
+
+`ph` was considered as an *acidification* term, but returns results from industrial processes, thus is combined in phrases. `OA` will find "okadeic acid" (shellfish poisoning) if used alone, hence the `AND ocean$` term (marine is not included, as often use "marine toxin").
+
+`calcification` and related terms are included here as *impacts*, as this biological process is one of the big concerns in terms of impacts of acidification. Also included are effect terms generally (e.g. `impact*`) and major biological processes that can be impacted (e.g. `reproduction`).
 
 ``` Ceylon =
 TS =
 (
-  ("acidif*" NEAR/15 ("ocean$" OR "seawater" OR "sea water" OR "marine")
-  NEAR/15
-      ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
-      OR  "calcif*" OR "decalcif*" OR "calcium carbonate" OR "dissol*" OR "aragonite" OR "calcite"
-      )
+  (
+    ("acidif*" OR "OA"
+    OR "ocean ph" OR "low ph" OR "declining ph" OR "decreas* ph" OR "effect$ of ph" OR "effect$ of seawater ph"
+    )
+    NEAR/15
+        ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$" OR "results in" OR "changes" OR "alter*"
+        OR "sensitiv*" OR "vulnerab*" OR "threat"
+        OR "calcif*" OR "decalcif*" OR "calcium carbonate" OR "dissol*" OR "aragonite" OR "calcite" OR "carbonate saturation"
+        OR "extinction" OR "adaptation" OR "adaptive capacity" OR "competition" OR "recruitment" OR "survival" OR "reproduction"
+        )
+  )
+  AND "ocean$"
 )
-
 ```   
 
 ## Target 14.4
