@@ -87,13 +87,16 @@ TS=
 
 ## Target 13.2 
 
+This query consists of 5 phrase.
+
 > **13.2 Integrate climate change measures into national policies, strategies and planning**
 >
 >13.2.1 Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-##### Phrase 1: climate mitigation as as term
+##### Phrase 1: 
+"Climate mitigation" and similar as searchterm alone
 
 ``` Ceylon =
 TS=
@@ -103,8 +106,9 @@ TS=
 
 ```
 ##### Phrase 2: 
-Climate mitigation devided in indicators of climate change: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
-Indicator + adaptation incentive
+
+Climate change devided in indicators of climate change:
+global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
 
 ``` Ceylon =
 
@@ -133,7 +137,7 @@ TS=
 ```
 ##### Phrase 3:
 
-Reduction of GHGs = climate mitigation according to UNEP definition
+Reduction of GHGs = main climate mitigation according to UNEP definition
 
 ``` Ceylon =
 TS=
@@ -185,7 +189,7 @@ TS=
 )
 ```
 
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in phrase 1 and phrase 2.
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in the given phrases.
 
 ## Target 13.b
 
@@ -193,26 +197,11 @@ Carbon capture/storage technology can contribute to climate mitigation (i.e. red
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-This query consists of x phrases.
+
+Covered by phrase 1 &  2 from target 13.2
 
 
-## Target 13.3 (part) & 13.b
-
-> **13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning**
->
->13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
-
-
-This query consists of x phrases.
-
-
-
-Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
-
-
-
-
-## Target 13.3 (part) & 13.a								
+## Target 13.3 & 13.a								
 
 > **13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning**
 >
@@ -222,7 +211,11 @@ Re target 13.3 - Interpretatation of what should be considered as contributing t
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
+Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+
 This query consists of 1 phrase.
+
+##### Phrase 1:
 
 `Green climate fund` is a dedicated climate fund.
 
