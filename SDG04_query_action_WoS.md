@@ -40,10 +40,22 @@ This query consists of x phrases.
 
 Phrase 1 doc
 
+
 ```Ceylon =
 TS=
 (
-
+ (
+  (
+   ("education" OR "schooling" OR "tuition" OR "instruction"
+   NEAR/5
+   "primary and secondary"
+   )
+    NEAR/3
+    ("free" OR "equitable" OR "quality")
+    )
+     NEAR/5
+       (complet* OR finish*)
+  NOT ("clinical")
 )
 ```
 ##### Phrase 2:
