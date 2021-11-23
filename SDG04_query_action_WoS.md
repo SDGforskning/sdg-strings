@@ -39,7 +39,8 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
-
+Excluding "clinical" reduces, but does not exclude the challenge of many hits chiefly regarding medical conditions etc.
+What to do about "higher education"? Risky to exclude
 
 ```Ceylon =
 TS=
@@ -61,14 +62,27 @@ TS=
 ##### Phrase 2:
 
 Phrase 2 doc
+Have strong doubts about including these terms, as they seem to radically decrease the number of hits when added using AND or NEAR
+
+```Ceylon =
+TS=
+("girl$" OR "boy$" OR "both sexes" OR "child*" OR "youth$" OR "adolescen*"
+)
+```
+#### Phrase 3:
+
+Phrase 3 doc
 
 ```Ceylon =
 TS=
 (
-
+"proficien*" 
+ NEAR/5 
+ ("read*" OR "mathematic*")
+  AND
+  (minim*)
 )
 ```
-
 ## Target 4.2
 
 > **4.2 By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre‑primary education so that they are ready for primary education**
