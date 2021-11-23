@@ -47,13 +47,9 @@ TS=
   (
     (
       (
-      "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" OR "mitigat*"
-      OR "early warning" OR "policy" OR "policies" OR "protect*"  
-      OR
-        (
-          ("disaster$" OR "risk$")
-          NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$")
-        )
+      "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" 
+      OR "mitigat*" OR "early warning" OR "policy" OR "policies" OR "protect*"  
+      OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
       OR
         (
         ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
@@ -128,7 +124,7 @@ TS=
       OR
         (
           ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-          NEAR/2 ("impact$" OR "effect$")          
+          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")          
         )
       OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness"
