@@ -85,74 +85,52 @@ TS=
 ```
 
 
-## Target 13.2 & 13.b
+## Target 13.2 
 
 > **13.2 Integrate climate change measures into national policies, strategies and planning**
 >
 >13.2.1 Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 >
 >13.2.2 Total greenhouse gas emissions per year		
->
-> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
->
->13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-This query consists of x phrases.
-
-
-
-## Target 13.3 (part) & 13.b
-
-> **13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning**
->
->13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
-
-
-This query consists of x phrases.
-
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms.
-
-Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
-
-##### Phrase 1:
+##### Phrase 1: climate mitigation as as term
 
 ``` Ceylon =
 TS=
 (
-  "climate action$" OR "climate governance" OR "climate mitigation"  
+  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation" 
 )
+
 ```
-
-##### Phrase 2:
-
-Polar and alpine regions much in focus regarding climate change impacts.
-
-Note that although target 14.B focuses on CC planning and management in small island developing states and least developed countries, other targets concern these things for all countries. Therefore we have not specified LDC or SIDS here - they will be included with the rest.
+##### Phrase 2: 
+Climate mitigation devided in indicators of climate change: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
+Indicator + adaptation incentive
 
 ``` Ceylon =
+
 TS=
 (
   ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
   OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-  OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*"OR "reced*"))
-  OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))  
-  )
+  OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
+  OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
+  OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
+  OR (("sea-level" OR "sea level") NEAR/3 ("increas*" OR "rise"))
+  OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
+    )
   NEAR/10
       ("action$" OR "sustainab*" OR "assessment$"
       OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
-      OR "impact reduction"
       OR
         (
-          ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*" OR "mitigat*")
+          ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
           NEAR/2 ("impact$" OR "effect$")          
         )
-      OR "planning" OR "strateg*" OR "manag*"
-      OR "policy" OR "policies" OR "legislat*" OR "govern*"
-      OR "disaster risk reduction" OR "preparedness"
-      )
+      OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
+      OR "govern*" OR "disaster risk reduction" OR "preparedness"
+       )
 )
 ```
-
 ##### Phrase 3:
 
 Reduction of GHGs = climate mitigation according to UNEP definition
@@ -205,6 +183,32 @@ TS=
   OR "UNFCCC" OR "United Nations Framework Convention on Climate Change"
 )
 ```
+
+
+## Target 13.b
+
+> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
+>
+>13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
+
+This query consists of x phrases.
+
+
+## Target 13.3 (part) & 13.b
+
+> **13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning**
+>
+>13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
+
+
+This query consists of x phrases.
+
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms.
+
+Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+
+
+
 
 ## Target 13.3 (part) & 13.a								
 
