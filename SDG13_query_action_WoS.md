@@ -48,7 +48,7 @@ TS=
     (
       (
       "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" 
-      OR "mitigat*" OR "early warning" OR "policy" OR "policies" OR "protect*"  
+      OR "mitigat*" OR "early warnin$" OR "policy" OR "policies" OR "protect*"  
       OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
       OR
         (
@@ -63,11 +63,11 @@ TS=
           ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
           NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
           )
-          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow"))
-          OR "drought$" OR "flood*" OR "heatwave$" OR "cold spells"
+          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+          OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$"OR "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
-          OR "storm surge$"
-          OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$"
+          OR "storm$"
+          OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
           OR "tipping point$"  
@@ -97,7 +97,9 @@ This query consists of 5 phrase.
 ``` Ceylon =
 TS=
 (
-  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation" OR "climate adaptation plan"
+  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation$" OR "climate adaptation plan$"
+   OR (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/5  ("action$" OR "sustainab*" OR "assessment$"
+      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"))
 )
 
 ```
@@ -110,8 +112,7 @@ global mean surface temperature, global ocean heat content, state of ocean acidi
 
 TS=
 (
-  ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
-  OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
+  (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
   OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
   OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
   OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
@@ -119,9 +120,6 @@ TS=
   OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
     )
   NEAR/10
-      ("action$" OR "sustainab*" OR "assessment$"
-      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
-      OR
         (
           ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
           NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")          
