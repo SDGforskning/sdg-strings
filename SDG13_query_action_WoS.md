@@ -98,7 +98,7 @@ TS=
 ``` Ceylon =
 TS=
 (
-  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation" 
+  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation" OR "climate adaptation plan"
 )
 
 ```
@@ -149,8 +149,9 @@ TS=
 ```
 
 ##### Phrase 4:
-
-The second part of this phrase covers the six main greenhouse gases (covered by the Kyoto Protocol) as listed in the 2014 IPCC Synthesis Report<sup id="IPCC2014">[3](#f4)</sup>.  
+The second part of this phrase covers the six main greenhouse gases (covered by the Kyoto Protocol) as listed in the 2014 IPCC Synthesis Report<sup id="IPCC2014">[3](#f4)</sup>.
+this parts need to be linked to climate change 
+ 
 
 ``` Ceylon =
 TS=
@@ -184,6 +185,7 @@ TS=
 )
 ```
 
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in phrase 1 and phrase 2.
 
 ## Target 13.b
 
@@ -203,7 +205,7 @@ This query consists of x phrases.
 
 This query consists of x phrases.
 
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms.
+
 
 Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
 
