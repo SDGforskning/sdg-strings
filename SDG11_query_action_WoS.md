@@ -121,15 +121,17 @@ TS=
 >
 > 11.4.1 Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)
 
-This query consists of x phrases.
+This query consists of 1 phrase.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Only cultural heritage included in first draft.
 
 ```Ceylon =
 TS=
-(
+("cultur* heritage" OR "heritage object$" OR "heritage build*" OR "heritage site$")
+
+AND ("maintain*" OR "conserv*" OR "preserv*" OR "sustain")
 
 )
 ```
