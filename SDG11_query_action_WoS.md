@@ -80,10 +80,7 @@ NEAR/5 (increas* OR expand* OR build* OR boost* OR raise* OR escalate* OR extend
 Phrase 2 doc
 
 ```Ceylon =
-TS=
-(convenient OR accessible OR reachable OR affordable OR safe OR secure OR sustainab* 
 
-)
 ```
 
 ## Target 11.3
@@ -195,8 +192,12 @@ Phrase 1 doc
 
 ```Ceylon =
 TS=
-(
-
+( 
+(( "city" OR "cities" OR "urban" OR "municipalit*") 
+NEAR/5 
+( "air quality" OR "smog" OR “air pollution” OR "waste management" OR "solid waste" OR "PM10" OR "PM2.5" OR “fine pariculate matter”)
+NEAR/5 
+("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))
 )
 ```
 ##### Phrase 2:
