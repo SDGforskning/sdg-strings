@@ -39,34 +39,43 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
-Excluding "clinical" reduces, but does not exclude the challenge of many hits chiefly regarding medical conditions etc.
+
 What to do about "higher education"? Risky to exclude
 
 ```Ceylon =
 TS=
 (
- (
-  (
+ (access*
+ NEAR/5
    ("education" OR "schooling" OR "tuition" OR "instruction"
-   NEAR/5
-   "primary and secondary"
    )
-    NEAR/3
-    ("free" OR "equitable" OR "quality")
+    NEAR/5
+    ("primary" OR "secondary"
     )
-     NEAR/5
-       (complet* OR finish*)
-  NOT ("clinical")
+     NEAR/3
+     ("free" OR "equitable" OR "quality")
+ )
 )
 ```
 ##### Phrase 2:
 
 Phrase 2 doc
-Have strong doubts about including these terms, as they seem to radically decrease the number of hits when added using AND or NEAR
 
 ```Ceylon =
 TS=
-("girl$" OR "boy$" OR "both sexes" OR "child*" OR "youth$" OR "adolescen*"
+(
+ ( 
+  ("education" OR "schooling" OR "tuition" OR "instruction"
+   ) 
+    NEAR/3
+    ("primary" OR "secondary"
+    )
+     NEAR/5
+     ("complet*" OR "finish*" OR "graduat*"
+     )
+      NEAR/5
+      ("ensur*" OR "increas*" OR "attain*")
+  )
 )
 ```
 #### Phrase 3:
@@ -76,11 +85,36 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
-"proficien*" 
- NEAR/5 
- ("read*" OR "mathematic*")
-  AND
-  (minim*)
+ (
+  ("education" OR "schooling" OR "tuition" OR "instruction"
+  )
+   NEAR/5
+   ("primary" OR "secondary"
+   )
+    NEAR/7
+    (
+    ("dropout" NEAR/5 ("reduc*" OR "decreas*" OR "minimi*" OR "lower*")
+    )
+  )  
+)
+```
+#### Phrase 4:
+
+Phrase 4 doc
+Difficult phrase:
+Hardly any hits when action terms are included. 
+Including "minim*" also drastically decreases number of hits
+
+```Ceylon =
+TS=
+(
+ ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*)
+  NEAR/10
+  "proficien*" 
+   NEAR/5 
+   ("read*" OR "mathematic*")
+   AND
+   (minim*)
 )
 ```
 ## Target 4.2
@@ -130,7 +164,16 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+  ("access"
+  )
+  NEAR/5
+  (
+   ("afford*" OR "quality"
+   )
+    NEAR/5
+    ("technic*" OR "vocation*" OR "tertiar*" OR "university"
+    )
+   ) 
 )
 ```
 ##### Phrase 2:
