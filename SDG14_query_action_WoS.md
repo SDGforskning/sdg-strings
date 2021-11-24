@@ -534,7 +534,7 @@ TS=
     )
   )
   NEAR/15
-      ("designat*" OR "placement" OR "delineat*"
+      ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
       OR "design" OR "create" OR "creation"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*"
       OR "plans" OR "plan" OR "planned" OR "planning"
@@ -582,13 +582,19 @@ TS =
 >
 > 14.4.1 Proportion of fish stocks within biologically sustainable levels
 
-This query consists of 2 phrases.
+This target is interpreted to cover research about:
+* ending overfishing, illegal/unreported fishing, destructive fishing  (phrase 1)
+* implementation of science-based fisheries management (for MSY) (phrase 2)
+
+Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
 ##### Phrase 1:
 
-Relevant legislation and organisations to reducing overfishing included.
+The basic structure is *action + overfishing/illegal/destructive fishing*
 
-Note that specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species (unless explicitly related by the authors to fisheries). Therefore, even publications on specific fish species must use the terms fishery etc.
+Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions.
+
+`bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
 
 ``` Ceylon =
 TS=
@@ -624,6 +630,10 @@ TS=
 
 ##### Phrase 2:
 
+The basic structure is *fisheries + management/restoration actions*
+
+`management` will find a number of terms, e.g. "ecosystem based management", "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
+
 ``` Ceylon =
 TS=
 (
@@ -633,19 +643,38 @@ TS=
   OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$"))
   )
   NEAR/15
-      ("manage*"
-      OR "restor*"
-      OR "protect*" OR "conservation"
-      OR "sustainab*"
-      OR "assess*"
-      OR "collaps*"
-      OR "maximum sustainable yield*" OR "MSY"
-      OR "marine stewardship council"
-      OR "regional fisheries managment organi?ation$" OR "RFMOs"
-      OR "UNCLOS" OR "convention on the law of the sea"
-      OR "fish stocks agreement"
-      OR "code of conduct for responsible fisheries" OR "CCRF"
-      OR "port state measures agreement"
+      (
+        (
+          ("manage*" OR "plan" OR "planning" OR "governance"
+          OR "restor*"
+          OR "sustainab*"
+          )
+          NEAR/5
+              ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*" OR "develop*"
+              OR "reform*" OR "improv*" OR "better"     
+              OR "strategy" OR "policy" OR "policies" OR "legislat*"        
+              )
+        )   
+      OR
+        (
+          ("collaps*" OR "closure$"
+          )
+          NEAR/5
+              ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*"   
+              OR "prevent*" OR "avoid*"
+              OR "strategy" OR "policy" OR "policies" OR "legislat*"
+              )
+        )    
+      OR
+        ("maximum sustainable yield*" OR "MSY"
+        OR "marine stewardship council"
+        OR "regional fisheries managment organi?ation$" OR "RFMOs"
+        OR "UNCLOS" OR "convention on the law of the sea"
+        OR "fish stocks agreement"
+        OR "code of conduct for responsible fisheries" OR "CCRF"
+        OR "port state measures agreement"
+        OR "common fisheries policy"
+        )
       )
 )
 ```
@@ -870,7 +899,9 @@ TS=
 
 This query consists of 1 phrase.
 
-Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), NOT the biology of individual fish species (unless explicitly related by the authors to fisheries)
+"use* right$" will cover "terratorial use rights in fisheries" (TURFs)
+
+Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), NOT the biology of individual fish species (unless explicitly related by the authors to fisheries).
 
 ``` Ceylon =
 TS =
