@@ -72,9 +72,11 @@ Phrase 1 doc
 TS=(
       (convenient* OR access* OR reachab* OR affordab* OR safe OR secur* OR sustainab* OR public* OR urban*)
           NEAR/5  
-            ("transport*" OR bus$ OR underground* OR tube* OR taxi* OR rail* OR boat* OR ferry OR plane* OR vehicl* OR bike* OR scooter* OR van* OR road* OR street* OR travel*                 OR vessel*)  
+            ("transport*" OR bus$ OR underground* OR tube* OR taxi* OR rail* OR boat* OR ferry OR plane* OR vehicl* 
+            OR bike* OR scooter* OR van* OR road* OR street* OR travel* OR vessel*)  
               NEAR/5  
-                (increas* OR expand* OR build* OR boost* OR raise* OR escalate* OR extend* OR develop* OR improv* OR implement* OR establish* OR enhanc*)
+                (increas* OR expand* OR build* OR boost* OR raise* OR escalate* OR extend* OR develop*
+                OR improv* OR implement* OR establish* OR enhanc*)
      )
 ```
 ##### Phrase 2:
