@@ -160,6 +160,8 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
+Adding "ensure" NEAR/3 to the phrase would reduce hits from 75 to 1...
+Adding NEAR/3 ("education" OR "schooling" OR "tuition" OR "instruction") to the phrase would reduce hits from 75 to 6
 
 ```Ceylon =
 TS=
@@ -173,7 +175,8 @@ TS=
     NEAR/5
     ("technic*" OR "vocation*" OR "tertiar*" OR "university"
     )
-   ) 
+   )
+  ) 
 )
 ```
 ##### Phrase 2:
@@ -183,7 +186,13 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
-
+"participat*"
+  NEAR/5
+  ("formal" OR "non-formal"
+  )
+   NEAR/3
+   ("education" OR "schooling" OR "tuition" OR "instruction" OR "training"
+  )
 )
 ```
 
