@@ -97,8 +97,7 @@ This query consists of 5 phrase.
 ``` Ceylon =
 TS=
 (
-  "climate action$" OR "climate governance" OR "climate mitigation" OR "climate change adaptation$" OR "climate adaptation plan$"
-   OR (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/5  ("action$" OR "sustainab*" OR "assessment$"
+  (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
       OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"))
 )
 
@@ -110,9 +109,9 @@ global mean surface temperature, global ocean heat content, state of ocean acidi
 
 ``` Ceylon =
 
-TS=
-(
-  (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
+TS=(
+ (
+ (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
   OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
   OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
   OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
@@ -120,10 +119,10 @@ TS=
   OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
     )
   NEAR/10
-        (
-          ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")          
-        )
+  (
+        (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
+        
       OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness"
        )
@@ -141,7 +140,7 @@ TS=
   NEAR/5
       ("GHG" OR "greenhouse gas" OR "greenhouse gases"
       OR "carbon footprint"
-      OR ("climate" NEAR/5 ("anthropogenic" OR "human impact$"))
+      OR ("climate" NEAR/5 ("human impact$"))
       )
 )
 ```
