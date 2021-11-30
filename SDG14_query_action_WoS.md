@@ -687,53 +687,32 @@ TS=
 >
 >  14.6.1 Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing
 
-This query consists of 1 phrase.
+This target is interpreted to cover research about how fisheries subsidies are related to negative outcomes (overcapacity, overfishing, and IUU finishing), and how they are implemented in developing and LDCs. Prevention of IUU fishing generally is covered in 14.4.
 
-This query finds subsidies/WTO/ODA related to fisheries (final section) which concern either a) least developed countries and small-island developing states (second section) or b) overfishing/harmful fishing (first section).
+The original version of this query combined *IUU fishing OR LDCs + subsidies + fishing*; however, it was very narrow, with a number of results missed, including research about subsidies which do not contribute to negative effects (i.e. subsidies that could promote positive outcomes). Research on both is needed for assessing what subsidies to keep. Thus, the query has been simplified to cover research talking about fisheries subsidies - this is not a large set of research.
+
+This query consists of 1 phrase. The general structure is *subsidies + fisheries*
+
+*Subsidies* is interpreted to include also other economic instruments (tax breaks, development assistance) given that the indicator is about "international instruments". `subsidi*` is not used alone due to e.g. "subsidiary". `larval subsidi*` is a term to do with fish population dynamics.
 
 ``` Ceylon =
 TS =
 (
-  (
-    ("overfish*"
-    OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*"))
-    OR "bycatch" OR "by-catch"
-    OR
-      (  
-        ("illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite"
-        OR "ghost"
-        OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-        OR "overcapacity"
-        )
-        NEAR/15
-            ("fishing" OR "fisher*" OR "trawl*"
-            OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-            )
-      )  
-    )
-  OR
     (
-      (("developing" OR "least developed") NEAR/3 ("state*" OR "nation$" OR "countr*"))
-	   OR "developing world"
-	   OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-	   OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands"
-     )
-  )
-  AND
-      (
-        ("ODA" OR "official development assistance"
-        OR "world trade organisation" OR "WTO"
+        ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial"
+        OR "world trade organization" OR "WTO"
         OR "government* subsid*"
         OR "economic subsid*"
-        OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+        OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" OR "subsidi?ed"
         OR "price support$"
         OR "tax break$"
         )
-      AND
-        ("fishing" OR "fisher*"
-        OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-        )  
-      )
+        NEAR/15
+          ("fishing" OR "fisher*"
+          OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+          )  
+    )
+    NOT "larval subsidi*"
 )
 ```
 
