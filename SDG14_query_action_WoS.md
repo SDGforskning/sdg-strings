@@ -409,8 +409,10 @@ Various types of management framework and protected areas are included, as well 
 TS=
 (
   "marine spatial planning" OR "spatial management"
-  OR "coastal zone management" OR "integrated coastal zone planning"
+  OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+  OR "community based management"
   OR "locally managed marine area$" OR "LMMA$"
+  OR "resilience based management"
   OR
     (
       ("ecosystem-based" OR "area-based")
@@ -722,31 +724,44 @@ TS =
 >
 > 14.7.1 Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries
 
+This target is interpreted to include research about sustainable use of marine resources for economic benefits in LCDs and SIDS. This includes sustainable fisheries, tourism, aquaculture, ++. This target specifically only concerns least-developed countries and SIDS, but is internally inconsistent with the indicator which concerns all countries. This makes a large difference to the results. As the target is clearly focused on SIDS and LDCs, we retain this limit, particularly as the indicator is only about sustainable fisheries.
+
 This query consists of 1 phrase. **All should be combined with marine terms with `AND`**
 
-This query combines various economic uses and terms with sustainability. Note that this target specifically only concerns least-developed countries and SIDS, thus these are included. Here, the target is internally inconsistent with the indicator, which also concerns developing states and all countries.
+The general structure is *sustainable + economic activities + LDCs/SIDS*.
+
+I am a little unsure whether `AND` OR `NEAR/15` is better for the combination og *sustainable + economic acitvities* - leaning towards AND.
 
 ``` Ceylon =
 TS =
 (
     (
-      ("sustainab*"
-      NEAR/15
-          ("tourism" OR "ecotourism" OR "tourist$" OR "whale watch*" OR "sightsee*"
-          OR "recreation*"
-          OR "aquaculture" OR "fish farm*"
-          OR "fisher*" OR "fishing" OR "harvest*"
-          OR "exploit*"
-          OR "use" OR "using"
-          OR "manag*"
-          OR "livelihood$"
-          OR "social-ecological system$" OR "socialecological system$"
-          OR "econom*"
-          )
+      (
+        ("sustainab*"
+        OR "marine spatial planning" OR "MSP"
+        OR "ecosystem based management" OR "area based management" OR "resilience based management"
+        OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+        OR "community based management"
+        OR "locally managed marine area$" OR "LMMA$"
+        OR "MPA" OR "MPAs" OR "marine protected area$"
+        OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+        OR "marine conservation zone$"
+        OR "particularly sensitive sea areas$"
+        )
+        AND
+            ("tourism" OR "ecotourism" OR "tourist$" OR "whale watch*" OR "sightsee*"
+            OR "aquaculture" OR "fish farm*"
+            OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
+            OR "exploit*" OR "goods and services" OR "ecosystem services"
+            OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+            OR "livelihood$"
+            OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
+            OR "econom*" OR "GDP"
+            )
       )
+      OR ("sustainab*" NEAR/5 ("manag*" OR "utilization" OR "use" OR "using" OR "usage"))
       OR "bio-econom*" OR "bioeconom*"
       OR "blue growth" OR "blue econom*" OR "blue bond$"
-      OR (("marine spatial planning" OR "ecosystem based management") AND "econom*")
     )
   AND
     (
