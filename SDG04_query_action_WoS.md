@@ -211,7 +211,17 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+ ("increas*"
+ )
+  NEAR/15
+  (
+   ("necessar*" OR "required" OR "relevant")
+    NEAR/5
+     ("skill*")
+      NEAR/5
+       ("employ*" OR "job*" OR "entrepreneur*")
+       )
+ )
 )
 ```
 ##### Phrase 2:
