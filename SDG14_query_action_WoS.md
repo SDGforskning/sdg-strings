@@ -614,6 +614,7 @@ TS=
       ("overfish*"
       OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*"))
       OR "bycatch" OR "by-catch"
+      OR "IUU fishing"
       OR
         (  
           ("illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite"
@@ -916,9 +917,22 @@ TS=
 >
 > 14.b.1 Degree of application of a legal/regulatory/ policy/institutional framework which recognizes and protects access rights for small-scale fisheries
 
-This query consists of 1 phrase.
+This target is interpreted to cover research about access to marine resources/markets for small scale fishers.
 
-"use* right$" will cover "terratorial use rights in fisheries" (TURFs)
+This query consists of 1 phrase. The general structure is *fishing + small scale + access/rights*. In the previous version, a fourth section about resources was included `("market$"
+OR "trade" OR "trading"
+OR "territory" OR "territories"
+OR (("fish*" OR "shellfish") NEAR/3 ("area$" OR "grounds"))
+OR "right$"
+OR "livelihood$"
+OR "policy" OR "policies"
+OR "law$"
+OR "law of the sea"
+OR "regulat*"
+OR "institutional framework$"
+)` - however the terms for access seem to be enough, and these are too much of a limitation.
+
+`use* right$` covers "territorial use rights in fisheries" (TURFs).
 
 Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), NOT the biology of individual fish species (unless explicitly related by the authors to fisheries).
 
@@ -926,32 +940,26 @@ Again, here, specific fish species as search terms are not needed because the fo
 TS =
 (
     (
-      ("fisher*" OR "fishing"
-      OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+      ("fisher*" OR "fishing" OR "shellfish")
+      NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence")    
+    )
+    AND
+      (
+        ("access*"
+        NEAR/15 ("fish*" OR "resource$" OR "market$" OR "commerc*")
+        )
+      OR
+        ("right$*"
+        NEAR/5 ("use" OR "usage" OR "property" OR "tenure" OR "fish*" OR "human" OR "lack of")
+        )
+      OR "ownership" OR "inheritance" OR "commons"
+      OR
+        ("control$"
+        NEAR/5 ("social" OR "catch" OR "state" OR "government" OR "legal" OR "commercial")
+        )
+      OR "equitab*" OR "inequitab*"
+      OR "marginali*"
       )
-      NEAR/5
-          ("small-scale"
-          OR "artisan*"
-          OR "tradition*"
-          OR "subsistence"
-          )    
-    )
-  AND
-    (
-      ("access*" OR "use* right$" OR "ownership" OR "control$" OR "equitab*" OR "inequitab*")
-      NEAR/15
-          ("market$"
-          OR "trade*"
-          OR "territor*"
-          OR "right$"
-          OR "livelihood$"
-          OR "policy" OR "policies"
-          OR "law$"
-          OR "law of the sea"
-          OR "regulat*"
-          OR "institutional framework$"
-          )      
-    )
 )
 
 ```
