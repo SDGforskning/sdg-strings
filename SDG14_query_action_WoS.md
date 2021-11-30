@@ -469,15 +469,13 @@ TS=
       OR "preserv*" OR "support*" OR "ensure" OR "sustain"
       )
       NEAR/3
-          ( ("ocean$" NEAR/3 "health$")
-          OR
             (
-              ("ecosystem$" OR "habitat$" OR "environment*")
+              ("ocean$" OR "ecosystem$" OR "habitat$" OR "environment*")
               NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$" OR "quality")
             )
           OR "resilien*"
           OR "water quality"
-          OR "biodiversity" OR "species diversity" OR "functional diversity" OR "genetic diversity"
+          OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
           OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
           OR "productivity" OR "food production" OR "fish stock$"
           )
@@ -728,9 +726,9 @@ This target is interpreted to include research about sustainable use of marine r
 
 This query consists of 1 phrase. **All should be combined with marine terms with `AND`**
 
-The general structure is *sustainable + economic activities + LDCs/SIDS*.
+The general structure is *sustainable + economic benefits + LDCs/SIDS*.
 
-I am a little unsure whether `AND` OR `NEAR/15` is better for the combination og *sustainable + economic acitvities* - leaning towards AND.
+*economic benefits* is interpreted widely, to also include e.g. livelihoods, fisheries and ecosystem services. I am a little unsure whether `AND` OR `NEAR/15` is better for the combination of *sustainable + economic benefits* - leaning towards AND.
 
 ``` Ceylon =
 TS =
@@ -781,32 +779,42 @@ TS =
 >
 > 14.a.1 Proportion of total research budget allocated to research in the field of marine technology
 
+This target is difficult to interpret, particularly as "increase scientific knowledge [...] in order to improve ocean health" could cover just about all marine research. We interpret it to cover:
+* research about biodiversity benefits to developing countries, LDCs and SIDS
+* research about transfer of marine technology
+* research about improving marine research infrastructure/capacity
+
 This query consists of 3 phrases. **All should be combined with marine terms with `AND`**
 
 ##### Phrase 1:
 
-Concerns contributions of biodiversity to the development of least developed countries and small island developing states. We include `ecosystem services` as a contribution of biodiversity to these countries.
+Concerns scientific knowledge about contributions of biodiversity to development. This includes diversity in terms of "economic" benefits (taken from 14.7), but also direct products of diversity, such as bioprospecting, new biotechnologies, genetic resources. The structure is *biodiversity benefits + developing countries*.
+
+The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
 
 ``` Ceylon =
 TS=
 (
     ("blue growth" OR "blue econom*" OR "blue bond$"
     OR "bioprospect*"
-    OR "biopiracy"
-    OR ("bioactive" NEAR/3 ("compound*" OR "substance*"))
+    OR "biopiracy" OR "Nagoya protocol"
+    OR ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
     OR "bioresource$" OR "biological resource$" OR "genetic resource$"
     OR "biotechnolog*"
     OR
       (
         ("biodivers*" OR "diversity")
         NEAR/15
-            ("development"
+            ("sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "development impacts" OR "development assistance"
+            OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
+            OR "aquaculture" OR "fish farm*"
+            OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
+            OR "exploit*" OR "goods and services" OR "ecosystem services"
+            OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
             OR "livelihood$"
-            OR "fisher*" OR "fishing"
-            OR "harvest*"
-            OR "tourism" OR "ecotourism" OR "tourist$"
-            OR ("ecosystem*" NEAR/3 "service$")
-            OR "Nagoya protocol"
+            OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
+            OR "econom*" OR "GDP"
+            OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
             )
       )
     )
@@ -823,7 +831,7 @@ TS=
 
 ##### Phrase 2:
 
-Technology transfer simple terms.
+Technology transfer - this is such a specific term, that any articles using it are likely to be highly relevant to the target.
 
 ``` Ceylon =
 TS=
@@ -835,16 +843,17 @@ TS=
 
 ##### Phrase 3:
 
-Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attemts to link various kinds of scientific and knowledge infratstuctures to "ocean health" terms - a very broad concept.
+Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attempts to link various kinds of scientific and knowledge infrastructures to "ocean health" terms - a very broad concept. The general structure is *action + marine science + ocean health/marine science*. Marine science is enough to be included, as ocean health can mean so many things.  
 
-The term `build*` int he first section covers capacity building.
+The term `build*` in the first section covers capacity building. Some of the *ocean health* terms are taken from 14.2.
 
 ``` Ceylon =
 TS=
 (
     (
       ("share$" or "sharing"
-      OR "develop*" OR "establish*" OR "increas*" OR "improv*" OR "build*" OR "implement*"
+      OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
+      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate"
       OR "capacity development" OR "develop* capacity"  
       OR "invest" OR "investment$" OR "investing"
       OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
@@ -854,7 +863,8 @@ TS=
             (
               ("research" OR "scientific" OR "science")
               NEAR/5
-                  ("policy" OR "policies" OR "programme$"
+                  ("knowledge" OR "data"
+                  OR "policy" OR "policies" OR "programme" OR "programmes"
                   OR "advisor$"
                   OR "framework$" OR "initiative$"
                   OR "capacity" OR "capabilit*"
@@ -862,25 +872,40 @@ TS=
                   OR "network$"
                   )
             )
+          OR "citizen science"
           OR "observ* network$" OR "observ* system$"
-          OR "data infrastructure$" OR "data network$"
-          OR "monitoring network$" OR "ecological monitoring"
-          OR (("ocean*" OR "marine" OR "biological") NEAR/2 ("observator*" OR "monitoring"))
+          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean"
+          OR "monitoring network$" OR "biomonitoring"
           OR
             (
-              ("taxonom*" OR "genom*" OR "species")
+              ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity")
+              NEAR/3 ("observator*" OR "monitoring")
+            )
+          OR
+            (
+              ("taxonom*" OR "genom*" OR "genetic" OR "species" OR "biodiversity" OR "diversity")
               NEAR/5
-                  ("knowledge" OR "research" OR "capacity" OR "compentence$"
-                  OR "database$" OR "register$" OR "inventory" OR "inventories"
+                  ("research" OR "capacity"
+                  OR "knowledge" OR "data"
+                  OR "compentenc*" OR "expertise" OR "capabilit*"
+                  OR "database$" OR "register$" OR "inventory" OR "inventories" OR "information system$" OR "infrastructure$" OR "facilities"
+                  OR "herbaria" OR "museum collection$"
                   )            
             )
           )
     )
   AND
-    (
-       ("biodiversity" OR ("biological" NEAR/3 "diversity")
-    OR (("ocean*" OR "marine") NEAR/3 ("research" OR "science"))
-    OR "ocean health" OR "ecosystem health" OR "healthy ocean$"
+    ("marine life"
+    OR (("ocean*" OR "marine") NEAR/3 ("research" OR "science" OR "scientific"))
+    OR
+      (
+        ("ecosystem$" OR "habitat$" OR "environment*" OR "ocean$" OR "marine")
+        NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$" OR "quality")
+      )
+    OR "resilien*"
+    OR "water quality"
+    OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+    OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
     )
 )
 ```
