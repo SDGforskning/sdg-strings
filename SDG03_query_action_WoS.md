@@ -26,9 +26,11 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
 
-Abbreviations:
-* World Health Organization (WHO)
-* Medical Subject Headings (MeSH) - https://www.ncbi.nlm.nih.gov/mesh/
+During editing of this string (2021), we have consulted two other sets of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f29)</a> and <a id="Els">[Rivest et al. (2021)](#f30)</a>.
+
+**Abbreviations**
+* WHO - World Health Organization
+* MeSH - Medical Subject Headings - https://www.ncbi.nlm.nih.gov/mesh/
 
 ## 3. Targets
 
@@ -747,7 +749,7 @@ The basic structure is *contamination/toxins* + *disease/mortality* + *action*.
 
 In the disease/mortality terms, only terms for mortality are included. `survival` is not - there are few results and they often concern animals.
 
-Specific types of air pollution were added from WHO factsheets on ambient air pollution (<a id="WHOambientairpoll">[WHO, 2021a](#f22)</a>) and household air pollution  (<a id="WHOhouseairpoll">[WHO, 2021b](#f23)</a>). `air pollution` will find both ambient and indoor/household air pollution. Note that `pollution` alone is covered in phrase 2.
+Specific types of air pollution were added from WHO factsheets on ambient air pollution (<a id="WHOambientairpoll">[WHO, 2021a](#f22)</a>) and household air pollution  (<a id="WHOhouseairpoll">[WHO, 2021b](#f25)</a>). `air pollution` will find both ambient and indoor/household air pollution. Note that `pollution` alone is covered in phrase 2.
 
 `poisoning*` reflects a disease/mortality aspect, thus is included with the *disease/mortality* terms. This improves the results by finding those about carbon monoxide poisoning. `unintentional poisoning$`+ are additionally included in the *contamination/toxins* terms; thus the string will find e.g. "reducing accidental poisonings".
 
@@ -1152,6 +1154,8 @@ TS =
 
 ## 5. Footnotes
 
+<a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
 <a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
 
 <a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] [↩](#HLPF)
@@ -1165,6 +1169,8 @@ TS =
 <a id="f24"></a> Regional Office for the Eastern Mediterranean. (n.d.). *Epidemic and pandemic-prone diseases*. World Health Organization. http://www.emro.who.int/pandemic-epidemic-diseases/health-topics/related-health-topics.html [Accessed 18.11.2021] [↩](#WHOepipan)
 
 <a id="f16"></a> Regional Office for Europe. (n.d.). *WHO Framework Convention on Tobacco Control (WHO FCTC)*. World Health Organization. https://www.euro.who.int/en/health-topics/disease-prevention/tobacco/publications/key-policy-documents/who-framework-convention-on-tobacco-control-who-fctc [accessed 10.11.2021].[↩](#WHOFCTC)
+
+<a id="f30"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
@@ -1190,7 +1196,7 @@ TS =
 
 <a id="f22"></a> World Health Organization. (2021a). *Ambient (outdoor) air pollution*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health [accessed 12.11.2021] [↩](#WHOambientairpoll)
 
-<a id="f23"></a> World Health Organization. (2021b). *Household air pollution and health*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health [accessed 12.11.2021] [↩](#WHOhouseairpoll)
+<a id="f25"></a> World Health Organization. (2021b). *Household air pollution and health*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health [accessed 12.11.2021] [↩](#WHOhouseairpoll)
 
 <a id="f2"></a> World Health Organization. (n.d. a). *Global Health Observatory data repository: By theme*. http://apps.who.int/gho/data/node.home [accessed 15.10.2021]
 
