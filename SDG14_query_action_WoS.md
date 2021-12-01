@@ -88,6 +88,8 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 
 This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Thus, the fishery-related targets are currently not limited using the *marine terms* below.
 
+A source of keywords for several targets was an OECD publication, Marine Protected Areas: Economics, Management and Effective Policy Mixes (<a id="OECD">[OECD, 2017](#f5)</a>).
+
 ## 3. Marine terms: String for limiting certain phrases to the marine environment
 
 This query is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets.
@@ -336,7 +338,11 @@ TS=
 
 #### Phrase 3
 
-`limit pollution` was specified to avoid "pollution limits". The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution. The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics. Global Programme of Action for the Protection of the Marine Environment from Land-based Activities is hosted by the UN environment program, and is an intergovernmental action program.
+`limit pollution` was specified to avoid "pollution limits".
+* The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution.
+* The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics.
+* Global Programme of Action for the Protection of the Marine Environment from Land-based Activities is hosted by the UN environment program, and is an intergovernmental action program.
+* MARPOL is the International convention for the prevention of pollution from ships (International Maritime Organization)
 
 `pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. In this phrase, specific pollutants (e.g. `mercury`) do not need to be combined with `pollution or contamination`, because the action terms are all related to pollution.
 
@@ -346,8 +352,11 @@ TS=
   (
     ("limit pollut*" OR "control pollut*"
     OR "biosorption" OR "bioremediat*"
-    OR "water framework directive" OR "OSPAR convention" OR "Marine strategy framework directive"
+    OR "water framework directive"
+    OR "OSPAR convention"
+    OR "Marine strategy framework directive"
     OR "Global Programme of Action for the Protection of the Marine Environment"
+    OR "MARPOL" OR "prevention of pollution from ships"
     )
     AND
         (  "pollut*"
@@ -496,7 +505,7 @@ TS=
       ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop" OR "limit" OR "minimi*" OR "mitigat*")
       NEAR/3
           (
-            (("ecosystem$" OR "habitat$" OR "environment*") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss"))
+            (("ecosystem$" OR "habitat$" OR "environment*") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss" OR "destruction"))
             OR ("biodiversity" NEAR/3 "loss*")
             OR (("fisheries" OR "fishery" OR "fish stock$") NEAR/3 ("decline$" OR "collapse"))
           )    
@@ -1078,6 +1087,8 @@ TS =
 ## 6. Footnotes
 
 <a id="f3"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
+
+<a id="f5"></a> OECD. (2017). *Marine biodiversity, the role of marine protected areas and good practice insights* in *Marine protected areas: Economics, management and effective policy mixes". https://doi.org/10.1787/9789264276208-en. [↩](#OECD)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
