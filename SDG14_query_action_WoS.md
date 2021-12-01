@@ -196,7 +196,6 @@ SO =
   OR "Meeresforschung reports on marine*"
   OR "mer marine*"
   OR "molecular marine*"
-  OR "New Zealand journal of marine*"
   OR "Physical ocean*"
   OR "Progress in ocean*"
   OR "PROCEEDINGS OF THE INSTITUTION OF CIVIL ENGINEERS-MARITIME ENGINEERING"
@@ -1088,7 +1087,7 @@ TS =
 
 <a id="f3"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
 
-<a id="f5"></a> OECD. (2017). *Marine biodiversity, the role of marine protected areas and good practice insights* in *Marine protected areas: Economics, management and effective policy mixes". https://doi.org/10.1787/9789264276208-en. [↩](#OECD)
+<a id="f5"></a> OECD. (2017). "Marine biodiversity, the role of marine protected areas and good practice insights" in *Marine protected areas: Economics, management and effective policy mixes*. https://doi.org/10.1787/9789264276208-en. [↩](#OECD)
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
