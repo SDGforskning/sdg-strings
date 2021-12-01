@@ -29,6 +29,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 **Abbreviations**
 * FAO - Food and Agriculture Organization of the United organizations
 * WHO - World Health Organization
+* MeSH - Medical Subject Headings - https://www.ncbi.nlm.nih.gov/mesh/
 
 ## 3. Targets
 
