@@ -40,21 +40,16 @@ This query consists of x phrases.
 
 Phrase 1 doc
 
-What to do about "higher education"? Risky to exclude
-
 ```Ceylon =
 TS=
 (
- (access*
- NEAR/5
-   ("education" OR "schooling" OR "tuition" OR "instruction"
-   )
-    NEAR/5
-    ("primary" OR "secondary"
-    )
-     NEAR/3
-     ("free" OR "equitable" OR "quality")
- )
+ (
+  ("education" OR "schooling" OR "tuition" OR "instruction") 
+   NEAR/5
+   ("primary" OR "secondary")
+    NEAR/3
+    ("free" OR "equitable" OR "quality")
+  )
 )
 ```
 ##### Phrase 2:
@@ -89,7 +84,7 @@ TS=
   ("education" OR "schooling" OR "tuition" OR "instruction"
   )
    NEAR/5
-   ("primary" OR "secondary"
+   ("primary" OR "secondary")
    )
     NEAR/7
     (
@@ -101,20 +96,19 @@ TS=
 #### Phrase 4:
 
 Phrase 4 doc
-Difficult phrase:
-Hardly any hits when action terms are included. 
-Including "minim*" also drastically decreases number of hits
-
+Action terms left out, as they seem to drastically remove number of hits and eliminate relevant ones.
 ```Ceylon =
 TS=
 (
- ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*)
-  NEAR/10
-  "proficien*" 
-   NEAR/5 
-   ("read*" OR "mathematic*")
-   AND
-   (minim*)
+ (
+   ("minim*")
+   NEAR/5
+   (
+    ("proficienc*" OR "skill*") 
+      NEAR/5 
+      ("read*" OR "mathematic*")
+   )
+ ) 
 )
 ```
 ## Target 4.2
@@ -130,12 +124,24 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
-
+Adding action terms ("ensure*" OR "secure*")NEAR/3 at he beginning reduces hits from 29 to 1 (very relevant)
 ```Ceylon =
 TS=
 (
-
-)
+ (access*)
+  NEAR/5
+  (
+   ("quality")
+    NEAR/5
+    (
+     ("early childhood")
+      NEAR/5
+      ("development"OR "care")
+     )
+      OR
+      ("pre-primary education")
+   )
+ )
 ```
 ##### Phrase 2:
 
@@ -144,10 +150,32 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+ ( 
+  ("children*" OR "boys and girls" OR "under-five")
+ )  
+   NEAR/5
+   (
+    ("developmental*")
+     NEAR/5 ("on track" OR "health*" OR "sound")
+   )
+)
+```
+#### Phrase 3:
+```Ceylon =
+TS=
+(
+ ("ready" OR "readiness")
+  NEAR
+  ("primary education")
+)
+```
+#### Phrase 4:
+```Ceylon =
+TS=
+(
 
 )
 ```
-
 
 ## Target 4.3
 
@@ -162,6 +190,7 @@ This query consists of x phrases.
 Phrase 1 doc
 Adding "ensure" NEAR/3 to the phrase would reduce hits from 75 to 1...
 Adding NEAR/3 ("education" OR "schooling" OR "tuition" OR "instruction") to the phrase would reduce hits from 75 to 6
+Search terms "afford*" OR "quality" seem to make trouble - perhaps drop phrase 1 for phrase 2?
 
 ```Ceylon =
 TS=
@@ -179,10 +208,30 @@ TS=
   ) 
 )
 ```
-##### Phrase 2:
-
+#### Phrase 2: 
 Phrase 2 doc
 
+```Ceylon =
+TS=
+(
+ (
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*")
+  NEAR/3
+   ("access")
+  )
+   NEAR/5
+    (
+    ("technic*" OR "vocation*" OR "tertiar*" OR "university")
+     NEAR 3/
+     ("education" OR "schooling" OR "tuition" OR "instruction" OR "training")
+    ) 
+ )
+)
+```
+##### Phrase 3:
+
+Phrase 3 doc
+Adding action verbs radically decrease the number of hits
 ```Ceylon =
 TS=
 (
@@ -211,8 +260,7 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
- ("increas*"
- )
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
   NEAR/15
   (
    ("necessar*" OR "required" OR "relevant")
@@ -220,7 +268,7 @@ TS=
      ("skill*")
       NEAR/5
        ("employ*" OR "job*" OR "entrepreneur*")
-       )
+   )
  )
 )
 ```
@@ -231,8 +279,14 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
-
-)
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
+  NEAR/5
+   (
+    ("information and communication technology" OR "ICT") 
+     NEAR/3 
+     ("skill*")
+    ) 
+   )
 ```
 
 ## Target 4.5
