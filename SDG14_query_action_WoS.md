@@ -239,7 +239,7 @@ TS=
   (
     ("prevent*" OR "avoid*" OR "stop*" OR "remov*" OR "eliminat*" OR "combat" OR "fight"
     OR "minimi*" OR "restrict*" OR "mitigat*" OR "alleviat*" OR "reduc*" OR "decreas*"
-    OR "prohibit*"
+    OR "prohibit*" OR "protect*"
     OR "remediate" OR "remediation" OR "cleanup" OR "clean up"
     )  
     NEAR/5
@@ -729,7 +729,7 @@ This query consists of 1 phrase. **All should be combined with marine terms with
 
 The general structure is *sustainable + economic benefits + LDCs/SIDS*.
 
-*economic benefits* is interpreted widely, to also include e.g. livelihoods, fisheries and ecosystem services. I am a little unsure whether `AND` OR `NEAR/15` is better for the combination of *sustainable + economic benefits* - leaning towards AND.
+*economic benefits* is interpreted widely, to also include e.g. livelihoods, fisheries and ecosystem services. The `Nairobi Convention` is included, which refers to the Nairobi Convention for the Protection, Management, and Development of the Coastal and Marine Environment of the Eastern Africa region. I am a little unsure whether `AND` OR `NEAR/15` is better for the combination of *sustainable + economic benefits* - leaning towards AND.
 
 ``` Ceylon =
 TS =
@@ -761,6 +761,7 @@ TS =
       OR ("sustainab*" NEAR/5 ("manag*" OR "utilization" OR "use" OR "using" OR "usage"))
       OR "bio-econom*" OR "bioeconom*"
       OR "blue growth" OR "blue econom*" OR "blue bond$"
+      OR "Nairobi Convention"
     )
   AND
     (
@@ -852,7 +853,7 @@ The term `build*` in the first section covers capacity building. Some of the *oc
 TS=
 (
     (
-      ("share$" or "sharing"
+      ("share$" or "sharing" OR "provide"
       OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
       OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate"
       OR "capacity development" OR "develop* capacity"  
@@ -868,7 +869,7 @@ TS=
                   OR "policy" OR "policies" OR "programme" OR "programmes"
                   OR "advisor$"
                   OR "framework$" OR "initiative$"
-                  OR "capacity" OR "capabilit*"
+                  OR "capacity" OR "capabilit*" OR "training"
                   OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$"
                   OR "network$"
                   )
@@ -970,41 +971,92 @@ TS =
 >
 > 14.c.1 Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources
 
-This query consists of 1 phrase. **It should be combined with marine terms with `AND`**
+This target is interpreted to cover research about the implementation and development of international law for conservation and sustainable use of the oceans.
+
+This query consists of 2 phrases. **All should be combined with marine terms with `AND`**
+
+##### Phrase 1
+The general structure is *international law + action*. This phrase contains specific international laws relevant to conservation and sustainable use. Phrase 2 covers general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/terretory disputes.
+
+`CITES` is not included as it is also a verb.
 
 ``` Ceylon =
 TS =
 (
-    ("conserv*" OR "blue growth"
+    ("law of the sea" OR "UNCLOS"
+    OR "the future we want"
+    OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
+    OR "BBNJ"
+    OR "common fisheries policy"
+    OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+    OR
+      ("convention$"
+      NEAR/3 ("Conservation of Antarctic Living Marine Resources" OR "biological diversity" OR "OSPAR" OR "international trade in endangered species")
+      )
+    OR
+      ("directive$"
+      NEAR/3 ("marine strategy framework" OR "water framework" OR "marine spatial planning")
+      )
+    OR "MSFD" OR "habitats directive"
+    OR "regional seas programme"
+    )
+    NEAR/5
+        ("implement*" OR "ratif*" OR "fulfill*"
+        OR "ensur*" OR "enforc*" OR "into practice" OR "praxis"
+        OR "develop*" OR "new" OR "propos*" OR "negotiat*"
+        )
+)
+```
+
+##### Phrase 2
+
+The general structure is *sustinable use/conservation + international law + action*. Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/terretory disputes.  
+
+``` Ceylon =
+TS =
+(
+    ("conservation"
+    OR "marine spatial planning" OR "MSP"
+    OR "ecosystem based management" OR "area based management" OR "resilience based management"
+    OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+    OR "community based management"
+    OR "locally managed marine area$" OR "LMMA$"
+    OR "MPA" OR "MPAs" OR "marine protected area$"
+    OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+    OR "marine conservation zone$"
+    OR "particularly sensitive sea areas$"
+    OR "blue growth" OR "blue econom*"
+    OR
+      ("sustainab*"
+      NEAR/5 ("manag*" OR "utilization" OR "use" OR "using" OR "usage")
+      )
     OR
       ("sustainab*"
       NEAR/15
-          ("use"
-          OR "exploit*"
-          OR "manag*"
-          OR "govern*"
-          OR "fisher*" OR "fishing" OR "harvest*"
+          ("manag*" OR "govern*"
           OR "tourism" OR "ecotourism" OR "tourist$"
           OR "aquaculture" OR "fish farm*"
-          OR "resource$"
-          OR "economy"
+          OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
+          OR "exploit*" OR "goods and services" OR "ecosystem services"
+          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+          OR "livelihood$"
+          OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
+          OR "econom*" OR "GDP"
           )
       )  
     )
   AND
-    ("law of the sea" OR "UNCLOS"
-    OR "the future we want"
-    OR (("biodivers*" OR "biological diversity") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-    OR "BBNJ"
-    OR "common fisheries policy"
-    OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-    OR ("convention$" NEAR/3 ("Conservation of Antarctic Living Marine Resources" OR "biological diversity" OR "OSPAR"))
-    OR ("directive$" NEAR/3 ("marine strategy framework" OR "water framework" OR "marine spatial planning"))
-    OR "MSFD"
-    OR ("international" NEAR/3 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*"))
-    )
+    (
+      ("international"
+      NEAR/3 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
+      )
+      NEAR/5
+          ("implement*" OR "ratif*" OR "fulfill*"
+          OR "ensur*" OR "enforc*" OR "into practice" OR "praxis"
+          OR "develop*" OR "new" OR "propos*" OR "negotiat*"
+          )
+    )  
 )
-
 ```
 
 ## General SDG
