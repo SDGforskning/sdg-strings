@@ -305,12 +305,13 @@ Truncate `cure` carefully
 "law$"
 "policy" OR "policies"
 "regulat*"
-"legal*" 
+"legal*"
 "legislat*"
 "agreement$"
 "treaty" OR "treaties"
 "strateg*"
 "framework$"
+"instrument$"
 ```
 
 ## Security/insecurity
