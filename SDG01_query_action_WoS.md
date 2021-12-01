@@ -49,6 +49,7 @@ This query consists of 1 phrase.
 ```Ceylon =
 TS=
 (
+  ("anti-poverty" OR
   "poverty"
   NEAR/5
       ("decreas*" OR "minimi*" OR "reduc*"
@@ -56,6 +57,7 @@ TS=
       OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
       OR "out of" OR "overcome"
       )
+  )
 )
 ```
 
@@ -82,6 +84,7 @@ Note more general terms such as "basic services" are not included here (as these
 
 ```Ceylon =
 TS=
+
 (
   ("social protection$" OR "social floor$" OR "social service$"
   OR "welfare system$" OR "welfare service$"
@@ -93,6 +96,7 @@ TS=
       OR "build" OR "building"
       )
 )
+
 ```
 
 ##### Phrase 2:
