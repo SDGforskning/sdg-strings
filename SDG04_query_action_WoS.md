@@ -300,11 +300,16 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
-
+In doubt about action terms here, as they reduce the number of hits (26>7)and seem to eliminate relevant articles.
 ```Ceylon =
 TS=
 (
-
+ ("equit*" OR "equal*")
+ NEAR/3
+  ("gender")
+   NEAR/5
+   (("access")NEAR/5("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
+   )
 )
 ```
 ##### Phrase 2:
@@ -314,7 +319,45 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+ ("vulnerab*")
+ NEAR/5
+ (
+  ("access")
+   NEAR/5
+   ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
+ )
+)
+```
+##### Phrase 3:
 
+Phrase 3 doc
+
+```Ceylon =
+TS=
+(
+ ("person$ with disabilit*"OR "disabl*")
+  NEAR/5
+  (
+   ("access")
+   NEAR/5
+   ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
+  )
+)
+```
+##### Phrase 4:
+
+Phrase 4 doc
+
+```Ceylon =
+TS=
+(
+ ("indigen*")
+  NEAR/5
+  (
+   ("access")
+    NEAR/5
+    ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
+  )
 )
 ```
 
