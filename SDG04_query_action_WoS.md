@@ -376,7 +376,13 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+("achiev*" OR "reach*")
+ NEAR 
+ (
+ ("basic" OR "fundament*" OR "functional")
+  NEAR/5
+   ("numera*" OR "litera*")
+ )
 )
 ```
 ##### Phrase 2:
