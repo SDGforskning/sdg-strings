@@ -70,9 +70,36 @@ Phrase 1 doc
 ```Ceylon =
 
 TS=(
-("convenient*" OR "access*" OR "reachab*" OR "affordab*" OR "safe" OR "secur*" OR "sustainab*" OR "public*" OR "urban*") 
-NEAR/5  ("transport*" OR "bus$" OR "underground*" OR "tube*" OR "taxi*" OR "rail*" OR "boat*" OR "ferry" OR "ferries" OR "plane*" OR "vehicl*" OR "bike*" OR "scooter*" OR "van$" OR "road*" OR "street*" OR "travel*" OR "vessel*") 
-NEAR/5 ("increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" OR "extend*" OR "develop*" OR "improv*" OR "implement*" OR "establish*" OR "enhanc*")
+     (
+      (
+        (
+          ("convenient*" OR "access*" OR "reachab*" OR "affordab*" OR "safe" OR "secur*" OR "sustainab*")
+          
+          NEAR/5 
+                  ("transport*" OR "road*" OR "street*" OR "railway*" OR  “waterway*” OR "travel*" OR “traffic*” 
+                  OR bus OR buses OR "taxi*" OR "boat*" OR "ferry" OR "ferries" OR aeroplan* OR "vehicl*" OR "bike*" 
+                  OR "scooter*" OR "vessel*" OR “train$” OR "underground*" OR “tube*” OR "tunnel*")
+          )
+       )
+        NEAR/5 
+        (
+        (
+        ("increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" OR "extend*" OR "develop*" OR "improv*"
+        OR "implement*" OR "establish*" OR "enhanc*")
+     )
+     )
+     )
+     
+     NEAR/5 
+     
+     (
+      (
+       (
+          ("city" OR "cities" OR "urban" OR "municipalit*" OR “public*” OR “human settlement*”)
+       )
+      )
+     )
+      
 )
 ```
 ##### Phrase 2:
