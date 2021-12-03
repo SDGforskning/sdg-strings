@@ -88,7 +88,7 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 
 This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Thus, the fishery-related targets are currently not limited using the *marine terms* below.
 
-A source of keywords for several targets was an OECD publication, Marine Protected Areas: Economics, Management and Effective Policy Mixes (<a id="OECD">[OECD, 2017](#f5)</a>). In addition, during editing of this string (2021), we have consulted two other sets of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f5)</a> and <a id="Els">[Rivest et al. (2021)](#f6)</a>.
+A source of keywords for several targets was OECDs "Marine Protected Areas: Economics, Management and Effective Policy Mixes" (<a id="OECD">[OECD, 2017](#f5)</a>), and FAOs "State of World Fisheries and Aquaculture" (<a id="FAOfish">[FAO, 2018](#f8)</a>). In addition, during editing of this string (2021), we have consulted two other sets of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f5)</a> and <a id="Els">[Rivest et al. (2021)](#f6)</a>.
 
 ## 3. Marine terms: String for limiting certain phrases to the marine environment
 
