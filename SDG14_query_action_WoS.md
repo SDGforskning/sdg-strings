@@ -267,7 +267,7 @@ TS=
         OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-        OR "polycyclic aromatic hydrocarbon$"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$"
         )
   )
@@ -326,7 +326,7 @@ TS=
         OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-        OR "polycyclic aromatic hydrocarbon$"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$"
         )
   )
@@ -379,7 +379,7 @@ TS=
         OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "Pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-        OR "polycyclic aromatic hydrocarbon$"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         )
   )
   NOT ("PM2.5" OR "PM10")
@@ -417,7 +417,8 @@ Various types of management framework and protected areas are included, as well 
 TS=
 (
   "marine spatial planning" OR "spatial management"
-  OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+  OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
+  OR "coastal resources management"
   OR "community based management"
   OR "locally managed marine area$" OR "LMMA$"
   OR "resilience based management"
@@ -454,7 +455,7 @@ TS=
   OR  
     (
       ("restore" OR "restored" OR "restoration")
-      NEAR/5 ("ecosystem$" OR "habitat$")
+      NEAR/5 ("ecosystem$" OR "habitat$" OR "communit*" OR "seagrass" OR "saltmarsh*" OR "coastal wetland$")
     )
 )
 ```
@@ -477,9 +478,14 @@ TS=
       OR "preserv*" OR "support*" OR "ensure" OR "sustain"
       )
       NEAR/3
+          (
             (
               ("ocean$" OR "ecosystem$" OR "habitat$" OR "environment*")
-              NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$" OR "quality")
+              NEAR/3
+                  ("health$" OR "recovery"
+                  OR "service$" OR "functioning" OR "function$"
+                  OR "quality" OR "integrity" OR "stability" OR "resilience"
+                  )
             )
           OR "resilien*"
           OR "water quality"
@@ -503,10 +509,21 @@ TS=
     (
       ("avoid" OR "prevent*" OR "decreas*" OR "reduc*" OR "stop" OR "limit" OR "minimi*" OR "mitigat*")
       NEAR/3
-          (
-            (("ecosystem$" OR "habitat$" OR "environment*") NEAR/3 ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss" OR "destruction"))
-            OR ("biodiversity" NEAR/3 "loss*")
-            OR (("fisheries" OR "fishery" OR "fish stock$") NEAR/3 ("decline$" OR "collapse"))
+          ("tipping point$"
+          OR "extinction$"
+          OR
+            (
+              ("ecosystem$" OR "habitat$" OR "environment*"
+              OR "biodiversity" OR "diversity" OR "species"
+              )
+              NEAR/3
+                  ("decline$" OR "collapse" OR "dead zone$" OR "degradation" OR "loss" OR "losses" OR "destruction")
+            )
+          OR
+            (
+              ("fisheries" OR "fishery" OR "fish stock$")
+              NEAR/3 ("decline$" OR "collapse")
+            )
           )    
     )
 )
@@ -591,7 +608,7 @@ TS =
 > 14.4.1 Proportion of fish stocks within biologically sustainable levels
 
 This target is interpreted to cover research about:
-* ending overfishing, illegal/unreported fishing, destructive fishing  (phrase 1)
+* ending overfishing, illegal/unreported fishing, destructive fishing  (phrase 1 & 2)
 * implementation of science-based fisheries management (for MSY) (phrase 2)
 
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
@@ -600,23 +617,15 @@ Specific fish species as search terms are not needed in this query because the f
 
 The basic structure is *action + overfishing/illegal/destructive fishing*
 
-Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions.
-
 `bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
 
 ``` Ceylon =
 TS=
 (
-  ( "prevent*" OR "avoid*" OR "stop*" OR "prohibit*"
-  OR "tackling" OR "tackle" OR "restrict*"
+  ( "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ending"
+  OR "tackling" OR "tackle" OR "restrict*" OR "combat*"
   OR "reduc*" OR "decreas*" OR "minimi*" OR "mitigat*" OR "remov*" OR "limit$" OR "limiting" OR "limited"
-  OR "manag*" OR "regulat*" OR "law$" OR "strateg*" OR "policy" OR "policies"
-  OR "marine stewardship council"
-  OR "regional fisheries management organi?ation$" OR "RFMOs"
-  OR "UNCLOS" OR "convention on the law of the sea"
-  OR "fish stocks agreement"
-  OR "code of conduct for responsible fisheries" OR "CCRF"
-  OR "port state measures agreement"
+  OR "manag*" OR "monitor" OR "surveillance" OR "regulat*"
   )
   NEAR/10
       ("overfish*"
@@ -626,7 +635,50 @@ TS=
       OR
           (  
             ("overcapacity"
-            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite"
+            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
+            OR "ghost"
+            OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
+            )
+            NEAR/10
+                ("fishing" OR "fisher*" OR "trawl*"
+                OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+                )
+          )
+      )       
+)
+```
+
+##### Phrase 2:
+
+The basic structure is *action + overfishing/illegal/destructive fishing*
+
+Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action.
+
+`bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
+
+``` Ceylon =
+TS=
+(
+  ("marine stewardship council"
+  OR "regional fisheries management organi?ation$" OR "RFMOs"
+  OR "UNCLOS" OR "convention on the law of the sea"
+  OR "fish stocks agreement"
+  OR "code of conduct for responsible fisheries" OR "CCRF"
+  OR "port state measures agreement" OR "PSMA"
+  OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+  OR "common fisheries policy"
+  OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"
+  OR "criminali*" OR "solutions" OR "catch documentation"
+  )
+  NEAR/15
+      ("overfish*"
+      OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*"))
+      OR "bycatch" OR "by-catch"
+      OR "IUU fishing"
+      OR
+          (  
+            ("overcapacity"
+            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
             OR "ghost"
             OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
             )
@@ -639,17 +691,18 @@ TS=
 )
 ```  
 
-##### Phrase 2:
+##### Phrase 3:
 
 The basic structure is *fisheries + management/restoration actions*
 
-`management` will find a number of terms, e.g. "ecosystem based management", "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
+`management` will find a number of terms, e.g. "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
 
 ``` Ceylon =
 TS=
 (
   ("fishery" OR "fisheries" OR "fishing"
   OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+  OR "overfish*"
   OR "fish stock$"
   OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$"))
   )
@@ -657,13 +710,14 @@ TS=
       (
         (
           ("manage*" OR "plan" OR "planning" OR "governance"
-          OR "restor*"
+          OR "restor*" OR "stock recovery"
           OR "sustainab*"
+          OR "EBFM" OR "ecosystem approach*"
           )
           NEAR/5
               ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*" OR "develop*"
               OR "reform*" OR "improv*" OR "better"     
-              OR "strategy" OR "policy" OR "policies" OR "legislat*"        
+              OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"      
               )
         )   
       OR
@@ -673,17 +727,18 @@ TS=
           NEAR/5
               ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*"   
               OR "prevent*" OR "avoid*"
-              OR "strategy" OR "policy" OR "policies" OR "legislat*"
+              OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"
               )
         )    
       OR
         ("maximum sustainable yield*" OR "MSY"
         OR "marine stewardship council"
-        OR "regional fisheries managment organi?ation$" OR "RFMOs"
+        OR "regional fisheries management organi?ation$" OR "RFMOs"
         OR "UNCLOS" OR "convention on the law of the sea"
         OR "fish stocks agreement"
         OR "code of conduct for responsible fisheries" OR "CCRF"
         OR "port state measures agreement"
+        OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
         OR "common fisheries policy"
         )
       )
@@ -748,8 +803,11 @@ TS =
       (
         ("sustainab*"
         OR "marine spatial planning" OR "MSP"
-        OR "ecosystem based management" OR "area based management" OR "resilience based management"
-        OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+        OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
+        OR "area based management"
+        OR "resilience based management"
+        OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
+        OR "coastal resources management"
         OR "community based management"
         OR "locally managed marine area$" OR "LMMA$"
         OR "MPA" OR "MPAs" OR "marine protected area$"
@@ -761,7 +819,7 @@ TS =
             ("tourism" OR "ecotourism" OR "tourist$" OR "whale watch*" OR "sightsee*"
             OR "aquaculture" OR "fish farm*"
             OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-            OR "exploit*" OR "goods and services" OR "ecosystem services"
+            OR "exploit*" OR "goods and services" OR "ecosystem service$"
             OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
             OR "livelihood$"
             OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
@@ -821,7 +879,7 @@ TS=
             OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
             OR "aquaculture" OR "fish farm*"
             OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-            OR "exploit*" OR "goods and services" OR "ecosystem services"
+            OR "exploit*" OR "goods and services" OR "ecosystem service$"
             OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
             OR "livelihood$"
             OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
@@ -867,7 +925,7 @@ TS=
       OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
       OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate"
       OR "capacity development" OR "develop* capacity"  
-      OR "invest" OR "investment$" OR "investing"
+      OR "invest" OR "investing"
       OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
       )
       NEAR/15
@@ -876,11 +934,12 @@ TS=
               ("research" OR "scientific" OR "science")
               NEAR/5
                   ("knowledge" OR "data"
-                  OR "policy" OR "policies" OR "programme" OR "programmes"
+                  OR "policy" OR "policies" OR "programme" OR "programmes" OR "research agenda"
                   OR "advisor$"
                   OR "framework$" OR "initiative$"
                   OR "capacity" OR "capabilit*" OR "training"
                   OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$"
+                  OR "investment$" OR "funding"
                   OR "network$"
                   )
             )
@@ -1028,7 +1087,8 @@ TS =
     ("conservation"
     OR "marine spatial planning" OR "MSP"
     OR "ecosystem based management" OR "area based management" OR "resilience based management"
-    OR "coastal zone management" OR "integrated coastal zone planning" OR "coastal resources management"
+    OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
+    OR "coastal resources management"
     OR "community based management"
     OR "locally managed marine area$" OR "LMMA$"
     OR "MPA" OR "MPAs" OR "marine protected area$"
