@@ -80,7 +80,7 @@ This query consists of 7 phrases.
 
 ##### Phrase 1:
 
-Note more general terms such as "basic services" are not included here (as these have technology applications), but are combined in the next phrase in combination with poor and vulnerable groups.
+Note more general terms such as "basic services" are not included here (as these have technology applications), but are combined in the next phrase in combination with poor and vulnerable groups. `welfare state` was concidered but excluded as it leads mostly to historical papers.
 
 ```Ceylon =
 TS=
@@ -179,12 +179,12 @@ TS=
 
 ##### Phrase 4:
 
-These topics are more specific so do not require combination
+These topics are more specific so do not require combination. *added microcredit any reason why not?*
 
 ```Ceylon =
 TS=
 (
-  "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance"
+  "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "micro credit" OR "micro-credit"
   OR "wage theft"
 )
 ```
