@@ -286,11 +286,21 @@ TS=
     )
     NEAR/15
         (
-          ("extreme$" NEAR/2 ("climat*" OR "weather" OR "precipitation"))
-          OR "climate change" OR "drought$" OR "flood*"
-          OR "disaster$" OR "catastrophe$" OR "shock$"
+           ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
+          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$")
+          )
+          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+          OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$"OR "cold spells"
+          OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
+          OR "storm$"
+          OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+          OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
+          OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
+          OR "tipping point$"  
+          OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+        
           OR "financial crash*" OR "economic downturn$" OR "socio-economic resilience"
-        )
+         )
   )
   AND
       ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
