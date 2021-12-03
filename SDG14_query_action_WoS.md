@@ -98,6 +98,8 @@ The first part (`TS=`) consists of marine habitats, physical features, and terms
 
 `seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
 
+I considered adding the 25 most common marine fisheries species (<a id="FAOfish">[FAO, 2018](#f8)</a>), however this gave few extra relevant results. It introduced a lot more noise with the use of `MPA` in 14.2/14.5, as this is commonly used as a unit of pressure (MPa) when discussing the processing of these species for food. Relevant species include: `"theragra chalcogramma" OR "engraulis ringens" OR "katsuwonus pelamis" OR "sardinella" OR "trachurus" OR "clupea harengus" OR "scomber japonicus" OR "thunnus albacares" OR "gadus morhua" OR "engraulis japonicus" OR "decapterus" OR "sardina pilchardus" OR "trichiurus lepturus" OR "micromesistius poutassou" OR "scomber scombrus" OR "scomberomorus" OR "dosidicus gigas" OR "nemipterus" OR "brevoortia patronus" OR "sprattus sprattus" OR "portunus trituberculatus" OR "acetes japonicus" OR "sardinops melaonstictus" OR "scomber colias" OR "rastrelliger kanagurta"`.
+
 ```Ceylon =
 TS=
 (
@@ -652,7 +654,7 @@ TS=
 
 The basic structure is *action + overfishing/illegal/destructive fishing*
 
-Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action.
+Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
 
 `bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
 
@@ -695,7 +697,7 @@ TS=
 
 The basic structure is *fisheries + management/restoration actions*
 
-`management` will find a number of terms, e.g. "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
+`management` will find a number of terms, e.g. "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
 
 ``` Ceylon =
 TS=
@@ -1045,7 +1047,7 @@ This target is interpreted to cover research about the implementation and develo
 This query consists of 2 phrases. **All should be combined with marine terms with `AND`**
 
 ##### Phrase 1
-The general structure is *international law + action*. This phrase contains specific international laws relevant to conservation and sustainable use. Phrase 2 covers general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/terretory disputes.
+The general structure is *international law + action*. This phrase contains specific international laws relevant to conservation and sustainable use. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
 
 `CITES` is not included as it is also a verb.
 
@@ -1148,6 +1150,8 @@ TS =
 ## 6. Footnotes
 
 <a id="f6"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
+<a id="f8"></a> FAO. (2018). *The State of World Fisheries and Aquaculture 2018 - Meeting the sustainable development goals*. The State of World Fisheries and Agriculture. https://www.fao.org/documents/card/en/c/I9540EN/ [Accessed 03 December 2021].
 
 <a id="f3"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
 
