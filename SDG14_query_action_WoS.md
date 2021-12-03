@@ -624,16 +624,18 @@ TS=
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
       OR
-        (  
-          ("illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite"
-          OR "ghost"
-          OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
+          (  
+            ("overcapacity"
+            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite"
+            OR "ghost"
+            OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
+            )
+            NEAR/10
+                ("fishing" OR "fisher*" OR "trawl*"
+                OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+                )
           )
-          NEAR/10
-              ("fishing" OR "fisher*" OR "trawl*"
-              OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-              )
-        )      
+      )       
 )
 ```  
 
