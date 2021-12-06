@@ -411,7 +411,9 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+ ("educat* for")
+  NEAR/5
+  ("sustainab*" OR "sustainable development" OR "sustainable lifestyle")
 )
 ```
 ##### Phrase 2:
@@ -421,7 +423,51 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+ ("educat* for")
+  NEAR/5
+  ("human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "global citizen*" OR "cultural divers*")
+)
+```
+##### Phrase 3:
 
+Phrase 3 doc
+
+```Ceylon =
+TS=
+(
+ ("educat*")
+  NEAR
+  (
+   ("cultur*")
+   NEAR("sustainab*")
+  )
+)
+```
+##### Phrase 4:
+
+Phrase 4 doc
+
+```Ceylon =
+TS=
+(
+ (
+  ("global citizen*" NEAR "education")
+   NEAR
+   ("educ* polic*"OR "currricul*" OR "teacher educ*" OR "student assess*")
+ )
+)
+```
+##### Phrase 5:
+
+Phrase 5 doc
+
+```Ceylon =
+TS=
+(
+ (
+  ("sustainable development*" NEAR "education")
+   NEAR("educ* polic*"OR "currricul*" OR "teacher educ*" OR "student assess*")
+ )
 )
 ```
 
