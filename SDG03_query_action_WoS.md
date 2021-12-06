@@ -754,7 +754,7 @@ In the disease/mortality terms, only terms for mortality are included. `survival
 
 Specific types of air pollution were added from WHO factsheets on ambient air pollution (<a id="WHOambientairpoll">[WHO, 2021a](#f22)</a>) and household air pollution  (<a id="WHOhouseairpoll">[WHO, 2021b](#f25)</a>). `air pollution` will find both ambient and indoor/household air pollution. Note that `pollution` alone is covered in phrase 2.
 
-`poisoning*` reflects a disease/mortality aspect, thus is included with the *disease/mortality* terms. This improves the results by finding those about carbon monoxide poisoning. `unintentional poisoning$`+ are additionally included in the *contamination/toxins* terms; thus the string will find e.g. "reducing accidental poisonings".
+`poisoning*` reflects a disease/mortality/health outcome, thus is included with the *disease/mortality* terms. This improves the results by vastly increasing recall of those about reducing carbon monoxide poisoning. `unintentional OR accidental NEAR/3 poisoning$` is additionally included in the *contamination/toxins* terms; thus the string will find e.g. "reducing accidental poisonings", "preventing unintentional child poisoning" or "treating accidental drug poisonings".
 
 The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary because there are medical papers that discuss gases in terms of diagnosis or treatment (e.g. diffusion lung capacity of CO). The chemical abbreviations for the gases (e.g. `SO2`) are not used, as they result in technical articles where sorbents or fuel cells can be "poisoned".
 
