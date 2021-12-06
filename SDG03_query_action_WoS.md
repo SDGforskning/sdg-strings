@@ -473,7 +473,7 @@ Additional terms were added from the National Institutes of Health "Commonly Use
 
 `addiction` and `dependence` were considered as terms that can indicate harmful use. A number of drugs are combined with these terms because either a) they can be used in non-abuse contexts as treatments, or b) there is a lot of research about their effects (e.g. "cocaine can reduce the heart's...").
 
-`therapy` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treat*` should cover not only treatment, but also treatment centres.
+`therapy OR therapies` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treat*` should cover not only treatment, but also treatment centres.
 
 ``` Ceylon =
 TS=
@@ -481,7 +481,6 @@ TS=
   ("binge drinking" OR "binge drinker$" OR "alcoholism"
   OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
   OR "opioid epidemic"
-  OR "drug related deaths" OR "drug poisoning$"
   OR
     (
       ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
@@ -503,7 +502,7 @@ TS=
       ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
       OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*" OR "mitigat*"
       OR "treat*" OR "cure" OR "curing" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
-      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare" OR "counseling"
+      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare" OR "counseling" OR "counselling"
       )
 )
 ```
