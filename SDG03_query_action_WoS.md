@@ -481,6 +481,7 @@ TS=
   ("binge drinking" OR "binge drinker$" OR "alcoholism"
   OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
   OR "opioid epidemic"
+  OR "drug related deaths" OR "drug poisoning$"
   OR
     (
       ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
@@ -789,7 +790,11 @@ TS =
           ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
     )
     OR "food poisoning$" OR "foodborne pathogens"
-    OR "unintentional poisoning$" OR "accidental poisoning$"
+    OR
+      ("poisoning$"
+      NEAR/3
+          ("unintentional" OR "accidental")
+      )
   )
   NEAR/15
       (
