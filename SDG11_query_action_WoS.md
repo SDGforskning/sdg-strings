@@ -180,24 +180,32 @@ TS=
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This query consists of x phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some?
 
 ```Ceylon =
 TS=
 (
-(("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made")
-NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+
 OR 
+
 ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+
 OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
 OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
 OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+
 OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
-OR (weather* NEAR/3 disaster*)
+
+OR (weather* NEAR/3 disaster*)) 
+
+NEAR/15
+
+((death$ or casualt* or mortality) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
 
 )
 ```
@@ -208,7 +216,17 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
-(death$ or casualt* or mortality) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+
+)
+```
+
+##### Phrase 3:
+
+Phrase 3 doc
+
+```Ceylon =
+TS=
+(
 
 )
 ```
