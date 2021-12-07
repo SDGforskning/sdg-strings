@@ -236,7 +236,7 @@ NEAR/15 ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or 
 ```
 ##### Phrase 3:
 
-Chosen NEAR/30 as a substiture for AND. This search should really be #X AND #Y, where disaster-search string is X and global GDP-string is Y. This one needs a second pair of eyes.
+Chosen NEAR/30 as a substiture for AND. This search should really be #X AND #Y, where disaster-search string is X and global GDP-string is Y. 
 
 ```Ceylon =
 TS=
