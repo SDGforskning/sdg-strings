@@ -211,6 +211,31 @@ NEAR/15
 ```
 ##### Phrase 2:
 
+Opposite terminology of death, i.e. increase survival. Include mortality? Depends on scope (increase in certain diseases after tsunami).
+
+```Ceylon =
+TS=
+(
+((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+
+OR 
+
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+
+OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
+OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+
+OR (weather* NEAR/3 disaster*)) 
+
+NEAR/15 ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))))
+
+)
+```
+##### Phrase 3:
+
 Chosen NEAR/30 as a substiture for AND. This search should really be #X AND #Y, where disaster-search string is X and global GDP-string is Y. This one needs a second pair of eyes.
 
 ```Ceylon =
@@ -237,9 +262,9 @@ NEAR/30
 )
 ```
 
-##### Phrase 3:
+##### Phrase 4:
 
-Phrase 3 doc
+Phrase 4 doc
 
 ```Ceylon =
 TS=
