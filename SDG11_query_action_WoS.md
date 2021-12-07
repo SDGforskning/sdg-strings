@@ -211,11 +211,28 @@ NEAR/15
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+Chosen NEAR/30 as a substiture for AND. This search should really be #X AND #Y, where disaster-search string is X and global GDP-string is Y. This one needs a second pair of eyes.
 
 ```Ceylon =
 TS=
 (
+((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+
+OR 
+
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+
+OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
+OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+
+OR (weather* NEAR/3 disaster*)) 
+
+NEAR/30
+
+(("gross global product$" or ((global or world) NEAR/3 ("domestic product$" or gdp$))) NEAR/30 (decrease* or declin* or reduc* or lower* or loss or losses))
 
 )
 ```
