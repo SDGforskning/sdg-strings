@@ -189,6 +189,15 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
+(("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made")
+NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+OR 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
+OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+OR (weather* NEAR/3 disaster*)
 
 )
 ```
@@ -199,6 +208,7 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+(death$ or casualt* or mortality) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
 
 )
 ```
