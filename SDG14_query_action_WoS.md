@@ -987,53 +987,95 @@ TS=
 
 > **14.b Provide access for small-scale artisanal fishers to marine resources and markets**
 >
-> 14.b.1 Degree of application of a legal/regulatory/ policy/institutional framework which recognizes and protects access rights for small-scale fisheries
+> 14.b.1 Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries
 
-This target is interpreted to cover research about access to marine resources/markets for small scale fishers.
+This target is interpreted to cover research about the rights and governance of SSFs, as these shape access to resources and markets. It could be interpreted more narrowly to only cover research actually referring to access to marine resources/markets, but I feel this is too narrow here, as it is a small area and as "access" is controlled by many structures (governance, territorial control, common property...)
 
-This query consists of 1 phrase. The general structure is *fishing + small scale + access/rights*. In the previous version, a fourth section about resources was included `("market$"
-OR "trade" OR "trading"
-OR "territory" OR "territories"
-OR (("fish*" OR "shellfish") NEAR/3 ("area$" OR "grounds"))
-OR "right$"
-OR "livelihood$"
-OR "policy" OR "policies"
-OR "law$"
-OR "law of the sea"
-OR "regulat*"
-OR "institutional framework$"
-)` - however the terms for access seem to be enough, and these are too much of a limitation.
+Should access to credit be included?
+
+This query consists of 2 phrases.  Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), NOT the biology of individual fish species (unless explicitly related by the authors to fisheries).
+
+#### Phrase 1
+
+The general structure is *fishing + small scale + access/rights/control*. 
 
 `use* right$` covers "territorial use rights in fisheries" (TURFs).
-
-Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), NOT the biology of individual fish species (unless explicitly related by the authors to fisheries).
 
 ``` Ceylon =
 TS =
 (
     (
       ("fisher*" OR "fishing" OR "shellfish")
-      NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence")    
+      NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence" OR "indigenous")    
     )
     AND
-      (
-        ("access*"
-        NEAR/15 ("fish*" OR "resource$" OR "market$" OR "commerc*")
+        (
+          ("access" 
+          NEAR/5 ("fishery" OR "fisheries")
+          )
+        OR
+          ("access*"
+          NEAR/10 
+            ("ground$" OR "area$" OR "territor*" 
+            OR "resource$" OR "market$" OR "trade" OR "trader$" OR "commerc*"
+            OR "conflict$" OR "dispute$" OR "contested" OR "competition"
+            )
+          )
+        OR "territoriali*"
+        OR 
+          (
+            ("territor*" OR "boundaries")
+            NEAR/5  
+              ("fish*" OR "traditional" OR "restructur*" OR "planning"
+              OR "conflict$" OR "dispute$" OR "contested" OR "appropriation$" OR "competition"
+              )
+          )
+        OR
+          (
+            ("competition" OR "conflict$") 
+            NEAR/10 "fish*"
+          )
+        OR
+          ("right$*"
+          NEAR/5 ("fish*" OR "use" OR "usage" OR "property" OR "tenure" OR "territor*" OR "human" OR "lack of")
+          )
+        OR "ownership" OR "inheritance"
+        OR "commons" OR "common property" OR "open access fish*"
+        OR
+          ("control$"
+          NEAR/5 ("social" OR "catch" OR "state" OR "government" OR "legal" OR "commercial")
+          )
+        OR "equitab*" OR "inequitab*"
+        OR "marginali*" OR "criminali*" 
+        OR "distributional justice" OR "blue justice" OR "blue injustice"
         )
-      OR
-        ("right$*"
-        NEAR/5 ("use" OR "usage" OR "property" OR "tenure" OR "fish*" OR "human" OR "lack of")
-        )
-      OR "ownership" OR "inheritance" OR "commons"
-      OR
-        ("control$"
-        NEAR/5 ("social" OR "catch" OR "state" OR "government" OR "legal" OR "commercial")
-        )
-      OR "equitab*" OR "inequitab*"
-      OR "marginali*"
-      )
 )
 
+```
+
+#### Phrase 2
+
+The general structure is *fishing + small scale + management/regulation*. `management` is not included with `traditional`because "traditional fisheries management" does not always refer to traditional fisheries, but the manegement traditions.
+
+```Ceylon =
+TS =
+(
+    (
+      ("fisher*" OR "fishing" OR "shellfish")
+      NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence" OR "indigenous")    
+    )
+    NEAR/15
+        ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "law" OR "laws" OR "regulations")
+) 
+OR 
+TS =
+(
+    (
+      ("fisher*" OR "fishing" OR "shellfish")
+      NEAR/5 ("small-scale" OR "artisan*"  OR "subsistence" OR "indigenous")    
+    )
+    NEAR/15 "management"
+)
 ```
 
 ## Target 14.c
