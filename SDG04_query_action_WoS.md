@@ -482,11 +482,17 @@ This query consists of x phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
+"Basic services" not included. Education or schooling is often counted as a basic service, but otherwise that term seems to refer to food, health etc. and be used in other, more general contexts than that of schools, education etc. 
 
 ```Ceylon =
 TS=
 (
-
+ (
+  ("education* facility" OR "education* facilities")
+ )
+  NEAR
+  ("child*" OR "disab*" OR "gender"OR "all")
+ ) 
 )
 ```
 ##### Phrase 2:
@@ -496,7 +502,13 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
-
+ ("school*"OR "educati*")
+ NEAR/5
+  (
+   ("learning environment")
+   NEAR 
+   ("safe*" OR "non-violen*" OR "inclusive" OR "effective")
+  )
 )
 ```
 
