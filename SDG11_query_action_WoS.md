@@ -236,7 +236,6 @@ NEAR/15 ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or 
 ```
 ##### Phrase 3:
 
-Chosen NEAR/30 as a substiture for AND. This search should really be #X AND #Y, where disaster-search string is X and global GDP-string is Y. 
 
 ```Ceylon =
 TS=
@@ -255,7 +254,7 @@ OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
 
 OR (weather* NEAR/3 disaster*)) 
 
-NEAR/30
+AND
 
 (("gross global product$" or ((global or world) NEAR/3 ("domestic product$" or gdp$))) NEAR/30 (decrease* or declin* or reduc* or lower* or loss or losses))
 
