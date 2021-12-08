@@ -615,7 +615,9 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+ ("qualif* teacher$")
+  NEAR
+  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "scal* up")
 )
 ```
 ##### Phrase 2:
@@ -625,7 +627,41 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+ ("teacher training"OR"teacher education")
+   NEAR
+   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
+)
+```
+##### Phrase 3:
 
+Phrase 3 doc
+
+```Ceylon =
+TS=
+(
+ ("teacher*")
+  NEAR
+  (
+   ("minim*")NEAR("qualifi*")
+  )
+)
+```
+##### Phrase 4:
+
+Phrase 4 doc
+
+```Ceylon =
+TS=
+(
+ ("teacher*")
+  NEAR
+  ("qualif*")
+   NEAR
+   (
+    ("educat*")
+     NEAR/3
+     ("level")
+   )
 )
 ```
 
