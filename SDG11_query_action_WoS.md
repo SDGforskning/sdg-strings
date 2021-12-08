@@ -281,7 +281,7 @@ OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "
 
 OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
 
-OR (weather* NEAR/3 disaster*)) NEAR/30 ((("people" or "person$") NEAR/4 ("affect*" or "afflict*" or "distress*" or "disturb*" or "influenc*" or "upset*")) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
+OR (weather* NEAR/3 disaster*)) NEAR/30 ((("people" or "person*") NEAR/4 ("affect*" or "afflict*" or "distress*" or "disturb*" or "influenc*" or "upset*")) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
 )
 
 ```
