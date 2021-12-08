@@ -210,14 +210,15 @@ TS=
 
 This query consists of 1 phrase. The basic structure is *productivity/access + small-scale food producers*
 
-Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops` in phrase above. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
+Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops` in phrase above. `small scale`+ `farm*` will cover e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
 ``` Ceylon =
   TS= (
           (
             (
-              ("production" OR "productivity" OR "yield$"
-              OR "livlihood$" OR "income$" OR "benefit$"
+              ("production" OR "productivity" OR "yield$" OR "agricultural output$"
+              OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
+              OR "benefit$"
               )
               NEAR/5
                 ("improve*" OR "increase*" OR "enhance"
@@ -233,8 +234,8 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
                 OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance"
                 OR "market$" OR "marketing" OR "traders" OR "trade"
                 OR "agricultur* input$" OR "farm input$" OR "agricultural resources" OR "water"
-                OR "farm* machinery" OR "farm* equipment"
-                OR "farm* experience" OR "information"
+                OR "machinery" OR "equipment" OR "technology"
+                OR "farm* experience" OR "information" OR "training"
                 OR "equitab*" OR "inequitab*"
                 )
             )
