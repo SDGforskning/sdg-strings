@@ -82,7 +82,7 @@ Search #15
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
 
@@ -852,9 +852,8 @@ TS =
 > 14.a.1 Proportion of total research budget allocated to research in the field of marine technology
 
 This target is difficult to interpret, particularly as "increase scientific knowledge [...] in order to improve ocean health" could cover just about all marine research. We interpret it to cover:
-* research about biodiversity benefits to developing countries, LDCs and SIDS
-* research about transfer of marine technology
-* research about improving marine research infrastructure/capacity
+* research about biodiversity benefits to developing countries, LDCs and SIDS (phrase 1)
+* research about transfer of marine technology, and improving marine research infrastructure/capacity (phrase 2 and 3)
 
 This query consists of 3 phrases. **All should be combined with marine terms with `AND`**
 
@@ -915,7 +914,9 @@ TS=
 
 ##### Phrase 3:
 
-Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attempts to link various kinds of scientific and knowledge infrastructures to "ocean health" terms - a very broad concept. The general structure is *action + marine science + ocean health/marine science*. Marine science is enough to be included, as ocean health can mean so many things.  
+Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attempts to link various kinds of scientific and knowledge infrastructures to "ocean health" terms - a very broad concept. The general structure is *action + marine science + ocean health/marine science*. Research about advancing marine science in considered enough to be included.
+
+The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>). 
 
 The term `build*` in the first section covers capacity building. Some of the *ocean health* terms are taken from 14.2.
 
@@ -931,27 +932,29 @@ TS=
       OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
       )
       NEAR/15
-          (
+          ("ocean science" OR "ocean research" OR "marine research" OR "marine science"
+          OR
             (
               ("research" OR "scientific" OR "science")
               NEAR/5
-                  ("knowledge" OR "data"
-                  OR "policy" OR "policies" OR "programme" OR "programmes" OR "research agenda"
+                  ("knowledge" OR "capacity"
+                  OR "policy" OR "policies" OR "programme" OR "programmes" OR "research agenda" OR "framework$" OR "initiative$"
                   OR "advisor$"
-                  OR "framework$" OR "initiative$"
-                  OR "capacity" OR "capabilit*" OR "training"
-                  OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$"
-                  OR "investment$" OR "funding"
+                  OR "capabilit*" OR "training" OR "compentenc*" OR "expertise" OR "capabilit*" OR "skills"
+                  OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$" OR "laboratories" OR "laboratory facilities" OR "sampling equipment"
+                  OR "database$" OR "software" OR "data"
+                  OR "investment$" OR "funding" OR "GERD" OR "expenditure"
                   OR "network$"
                   )
             )
           OR "citizen science"
-          OR "observ* network$" OR "observ* system$"
-          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean"
+          OR "observ* network$" OR "observ* system$" OR "observ* facilities"
+          OR "remote sensing equipment" OR "tide gauges"
+          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean" OR "modelling technique$"
           OR "monitoring network$" OR "biomonitoring"
           OR
             (
-              ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity")
+              ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity" OR "environmental")
               NEAR/3 ("observator*" OR "monitoring")
             )
           OR
@@ -959,9 +962,11 @@ TS=
               ("taxonom*" OR "genom*" OR "genetic" OR "species" OR "biodiversity" OR "diversity")
               NEAR/5
                   ("research" OR "capacity"
-                  OR "knowledge" OR "data"
-                  OR "compentenc*" OR "expertise" OR "capabilit*"
-                  OR "database$" OR "register$" OR "inventory" OR "inventories" OR "information system$" OR "infrastructure$" OR "facilities"
+                  OR "knowledge" OR "data" OR "software"
+                  OR "compentenc*" OR "expertise" OR "capabilit*" OR "skills"
+                  OR "database$" OR "register$" OR "reference librar*" OR "inventory" OR "inventories" OR "information system$"
+                  OR "guidelines"
+                  OR "infrastructure$" OR "facilities" OR "sampling equipment" OR "laboratory facilities"
                   OR "herbaria" OR "museum collection$"
                   )            
             )
@@ -972,8 +977,12 @@ TS=
     OR (("ocean*" OR "marine") NEAR/3 ("research" OR "science" OR "scientific"))
     OR
       (
-        ("ecosystem$" OR "habitat$" OR "environment*" OR "ocean$" OR "marine")
-        NEAR/3 ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$" OR "quality")
+        ("ecosystem$" OR "habitat$" OR "environment*" OR "ocean$" OR "marine" OR "environment*")
+        NEAR/3
+            ("health$" OR "recovery"
+            OR "service$" OR "functioning" OR "function$"
+            OR "quality" OR "integrity" OR "stability" OR "resilience"
+            )
       )
     OR "resilien*"
     OR "water quality"
@@ -997,7 +1006,7 @@ This query consists of 2 phrases.  Again, here, specific fish species as search 
 
 #### Phrase 1
 
-The general structure is *fishing + small scale + access/rights/control*. 
+The general structure is *fishing + small scale + access/rights/control*.
 
 `use* right$` covers "territorial use rights in fisheries" (TURFs).
 
@@ -1010,19 +1019,19 @@ TS =
     )
     AND
         (
-          ("access" 
+          ("access"
           NEAR/5 ("fishery" OR "fisheries")
           )
         OR
           ("access*"
-          NEAR/10 
-            ("ground$" OR "area$" OR "territor*" 
+          NEAR/10
+            ("ground$" OR "area$" OR "territor*"
             OR "resource$" OR "market$" OR "trade" OR "trader$" OR "commerc*"
             OR "conflict$" OR "dispute$" OR "contested" OR "competition"
             )
           )
         OR "territoriali*"
-        OR 
+        OR
           (
             ("territor*" OR "boundaries")
             NEAR/5  
@@ -1032,7 +1041,7 @@ TS =
           )
         OR
           (
-            ("competition" OR "conflict$") 
+            ("competition" OR "conflict$")
             NEAR/10 "fish*"
           )
         OR
@@ -1046,7 +1055,7 @@ TS =
           NEAR/5 ("social" OR "catch" OR "state" OR "government" OR "legal" OR "commercial")
           )
         OR "equitab*" OR "inequitab*"
-        OR "marginali*" OR "criminali*" 
+        OR "marginali*" OR "criminali*"
         OR "distributional justice" OR "blue justice" OR "blue injustice"
         )
 )
@@ -1066,8 +1075,8 @@ TS =
     )
     NEAR/15
         ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "law" OR "laws" OR "regulations")
-) 
-OR 
+)
+OR
 TS =
 (
     (
@@ -1201,7 +1210,9 @@ TS =
 
 <a id="f7"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
-<a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+<a id="f1"></a> Statistics Division. (2021a). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+
+<a id="f9"></a> Statistics Division. (2021b). *SDG Indicators Metadata Repository*. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 8 December 2021] [↩](#SDGindmetadata)
 
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
