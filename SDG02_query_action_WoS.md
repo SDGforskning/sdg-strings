@@ -221,8 +221,8 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
               OR "benefit$"
               )
               NEAR/5
-                ("improve*" OR "increase*" OR "enhance"
-                OR "efficie*" OR "better" OR "raise" OR "bolster"
+                ("improve*" OR "increase*" OR "enhanc*"
+                OR "efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
                 )
             )
           OR "value addition" OR "non-farm employment" OR "off-farm employment"
