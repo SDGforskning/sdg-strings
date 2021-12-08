@@ -88,7 +88,6 @@ TS=
               ("child*" OR "infant$")
         )
       OR "food insecurity"
-      OR "obesity" OR "overweight"
       )
     NEAR/5
         (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
@@ -103,9 +102,7 @@ TS=
  )
 ```
 
-#### Optional Phrase 1b
-
-`"obesity" OR "overweight"` can be used in phrase 1 without issues - however, in terms of presenting results for Norway, separating out obesity may be useful for the user as it accounts for maybe 50 % of results.
+`"obesity" OR "overweight"` can added to the above section (phrase 1) without issues - the action terms are identical - however, in terms of presenting results, separating out obesity may be useful for the user as it accounts for maybe 50 % of results.
 
 ```Ceylon =
 TS=
@@ -125,7 +122,7 @@ TS=
 
 ##### Phrase 2:
 
-The general structure is *food security/safety/status + action*
+The general structure is *food security/safety/nutritional status + action*
 
 `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods.
 
@@ -211,47 +208,66 @@ TS=
 >
 > 2.3.2 Average income of small-scale food producers, by sex and indigenous status
 
-This query consists of 1 phrase.
+This query consists of 1 phrase. The basic structure is *productivity/access + small-scale food producers*
 
-Production and income of small-scale farmers is so specific that any publications mentioning these will likely be relevant to the target, thus no action terms are included.
-
-Types of agricultural system expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by "crops" in phrase above.
-
+Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops` in phrase above. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
 ``` Ceylon =
   TS= (
-          ( "productivity" OR "yield$" OR "production"
-            OR "income$" OR "value addition" OR "non-farm employment"
-            OR "property rights" OR "land grab*"
-            OR
+          (
             (
-              ( "access" )
+              ("production" OR "productivity" OR "yield$"
+              OR "livlihood$" OR "income$" OR "benefit$"
+              )
               NEAR/5
-                ( "farmland$" OR "land" OR "financial service$" OR "market$" OR "agricultur* input$" OR "farm input$" )
+                ("improve*" OR "increase*" OR "enhance"
+                OR "efficie*" OR "better" OR "raise" OR "bolster"
+                )
             )
+          OR "value addition" OR "non-farm employment" OR "off-farm employment"
+          OR
+            (
+              ("access*" OR "barrier$")
+              NEAR/5
+                ("farmland$" OR "land"
+                OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance"
+                OR "market$" OR "marketing" OR "traders" OR "trade"
+                OR "agricultur* input$" OR "farm input$" OR "agricultural resources" OR "water"
+                OR "farm* machinery" OR "farm* equipment"
+                OR "farm* experience" OR "information"
+                OR "equitab*" OR "inequitab*"
+                )
+            )
+          OR "land grab*"
+          OR "tenure"
+          OR
+            ("right$" NEAR/5 ("farmland$" OR "land" OR "property")
+            )
+          OR "distributional justice"  
           )
-          NEAR/15
-             ( "smallhold*" OR "family farm*"
-               OR
-               (
-                  ("small-scale" OR "indigenous" OR "homestead*" )
+          AND
+              ("smallhold*" OR "family farm*"
+              OR
+                (
+                  ("small-scale" OR "indigenous" OR "homestead*")
                   NEAR/5
                     (
-                      ( "food producer$" OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$"
-                        OR "pasture$" OR "pastoralist$" OR "agroforest*" OR "aquaculture" OR "fisher*"
+                      ("food producer$" OR "food production" OR "food grower$" OR "agricultur*"
+                      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$"
+                      OR "pasture$" OR "pastoralist$" OR "agroforest*"
+                      OR "aquaculture" OR "fisher*" OR "fish farm*"
                       )
                     OR
                       (
-                         ( "food" OR "agricultur*"
-                           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-                           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-                         )
-                         NEAR/5
-                            ( "production" OR "producer$" )
+                        ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+                        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+                        )
+                        NEAR/5
+                            ("production" OR "producer$" OR "grower$")
                       )
                     )
-               )
-             )
+                )
+              )
       )
 
 
