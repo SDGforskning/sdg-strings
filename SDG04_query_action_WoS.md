@@ -527,7 +527,14 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-
+ ("scholarship*"
+  NEAR/5
+  ("availab*"OR "access" OR "obtain" OR "receiv*")
+ )
+  NEAR
+  (
+  "least developed countr*" OR "least developed nation$"OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*") 
+  )
 )
 ```
 ##### Phrase 2:
@@ -537,7 +544,46 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
+ ("enrol*" OR "participat*" OR "partake")
+  NEAR/5
+  ("higher edu*" OR "vocational training" OR "information and communications technology" OR "ICT" OR ("educat* program*"))
+   NEAR
+   (
+    ("other" OR "develop*") NEAR/3 ("countr*")
+   )
+)
+```
+##### Phrase 3:
 
+Phrase 3 doc
+
+```Ceylon =
+TS=
+(
+ ("student mobility")
+  NEAR
+  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*")
+ )
+)
+```
+##### Phrase 4:
+
+Phrase 4 doc
+
+```Ceylon =
+TS=
+(
+ (
+  ("international")
+  NEAR
+   ("scholarship*"OR "exchang*")
+ )
+  NEAR
+   ("education")
+    NEAR
+    (
+     ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*")
+    )
 )
 ```
 
