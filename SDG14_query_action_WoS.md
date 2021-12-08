@@ -916,7 +916,7 @@ TS=
 
 Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attempts to link various kinds of scientific and knowledge infrastructures to "ocean health" terms - a very broad concept. The general structure is *action + marine science + ocean health/marine science*. Research about advancing marine science in considered enough to be included.
 
-The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>). 
+The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>).
 
 The term `build*` in the first section covers capacity building. Some of the *ocean health* terms are taken from 14.2.
 
@@ -998,7 +998,7 @@ TS=
 >
 > 14.b.1 Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries
 
-This target is interpreted to cover research about the rights and governance of SSFs, as these shape access to resources and markets. It could be interpreted more narrowly to only cover research actually referring to access to marine resources/markets, but I feel this is too narrow here, as it is a small area and as "access" is controlled by many structures (governance, territorial control, common property...)
+This target is interpreted to cover research about the rights and governance of SSFs, as these shape access to resources and markets. It could be interpreted more narrowly to only cover research actually referring to access to marine resources/markets, but I feel this is too narrow here, as it is a small area and as "access" is controlled by many structures (governance, territorial control, common property...). This interpretation is supported as "Appropriate legal, regulatory and policy frameworks" are included as a key feature of an enabling environment for this indicator in the indicator metadata (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.b.1)](#f9)</a>).
 
 Should access to credit be included?
 
@@ -1008,13 +1008,13 @@ This query consists of 2 phrases.  Again, here, specific fish species as search 
 
 The general structure is *fishing + small scale + access/rights/control*.
 
-`use* right$` covers "territorial use rights in fisheries" (TURFs).
+`use* right$` covers "territorial use rights in fisheries" (TURFs). `resource$` (under `access`) covers "marine resources".
 
 ``` Ceylon =
 TS =
 (
     (
-      ("fisher*" OR "fishing" OR "shellfish")
+      ("fisher*" OR "fishing" OR "shellfish" OR "marine resource$")
       NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence" OR "indigenous")    
     )
     AND
@@ -1064,26 +1064,26 @@ TS =
 
 #### Phrase 2
 
-The general structure is *fishing + small scale + management/regulation*. `management` is not included with `traditional`because "traditional fisheries management" does not always refer to traditional fisheries, but the manegement traditions.
+The general structure is *fishing + small scale + management/regulation*. `management` is not included in the first half with `traditional` because "traditional fisheries management" does not always refer to traditional fisheries, but the management traditions. Traditional is a word that is used in many contexts, thus `traditional` is also used with a closer near statement (in the first half).
 
 ```Ceylon =
 TS =
 (
     (
-      ("fisher*" OR "fishing" OR "shellfish")
+      ("fisher*" OR "fishing" OR "shellfish" OR "marine resource$")
       NEAR/5 ("small-scale" OR "artisan*" OR "tradition*" OR "subsistence" OR "indigenous")    
     )
-    NEAR/15
+    NEAR/5
         ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "law" OR "laws" OR "regulations")
 )
 OR
 TS =
 (
     (
-      ("fisher*" OR "fishing" OR "shellfish")
-      NEAR/5 ("small-scale" OR "artisan*"  OR "subsistence" OR "indigenous")    
+      ("fisher*" OR "fishing" OR "shellfish" OR "marine resource$")
+      NEAR/15 ("small-scale" OR "artisan*" OR "subsistence" OR "indigenous")    
     )
-    NEAR/15 "management"
+    NEAR/15 ("management" OR "governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "law" OR "laws" OR "regulations")
 )
 ```
 
