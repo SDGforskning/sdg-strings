@@ -586,6 +586,19 @@ TS=
     )
 )
 ```
+##### Phrase 5:
+
+Phrase 5 doc
+"official development assistance" OR "oda" returns no relevant hits combined with "scholarship"", but combined with more general terms connected with education etc
+
+```Ceylon =
+TS=
+(
+ ("official development assistance" OR "oda")
+  NEAR
+  ("student*" OR "educat*"OR"school*")
+)
+```
 
 ## Target 4.c
 
