@@ -39,6 +39,8 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
+This target is interpreted to cover research about stop/strategy to deal/minimise impact of climate-related hazards and natural disasters; generel terms for hazards and desasters and specific types are mentioned.
+
 This query consists of 1 phrase.
 
 ``` Ceylon =
@@ -64,14 +66,14 @@ TS=
           NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
           )
           OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-          OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$"OR "cold spells"
+          OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"OR  "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
           OR "storm$"
           OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
           OR "tipping point$"  
-          OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+          OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
           )
     )
   OR "livelihood vulnerability index"
@@ -83,13 +85,19 @@ TS=
 
 ## Target 13.2 
 
-This query consists of 5 phrase.
-
 > **13.2 Integrate climate change measures into national policies, strategies and planning**
 >
 >13.2.1 Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 >
 >13.2.2 Total greenhouse gas emissions per year		
+
+This target is interpreted to cover research about 
+  - climate mitigation as general topic (phrase 1)
+  - national policies, strategies and planning related to indicators of climate change (phrase 2)
+  - reduction of greenhouse gases as a fixed class (phrase 3) and six main greenhouse gases (phrase 4)
+  - Frameworks for action (phrase 5)
+
+This query consists of 5 phrases.
 
 ##### Phrase 1: 
 "Climate mitigation" and similar as searchterm alone
@@ -190,6 +198,7 @@ Carbon capture/storage technology can contribute to climate mitigation (i.e. red
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
+This target is interpreted to cover research
 
 This query consists of 5 phrases. 
 Those are phrase 1 &  2 from target 13.2 AND LDC/SIDC
