@@ -32,25 +32,34 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 11.1.1 Proportion of urban population living in slums, informal settlements or inadequate housing
 
-This query consists of x phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Basic services
 
 ```Ceylon =
-TS=
-(
+TS=("waste management" OR "sanitation" OR "water supply" OR "postal service*" OR "electricity service*" OR "public transportation") 
 
-)
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+Affordable and safe housing
 
 ```Ceylon =
 TS=
-(
+(("affordable" OR "adequat*" OR "safe*" OR "secur*") NEAR/5 "housing")
+
+)
+
+```
+##### Phrase 3:
+
+Upgrade slums
+
+```Ceylon =
+TS=
+((("slum" OR "slums")) NEAR/15 (Upgrad* OR improv* OR moderni* OR enhanc* OR reduc*)) 
 
 )
 ```
