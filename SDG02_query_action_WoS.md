@@ -52,8 +52,8 @@ These targets are combined, as they cover similar topics.
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
 These targets are interpreted to cover research about
-* reducing hunger and all forms of malnurition for all people - although children are mentioned specifically, the target does not seem to limit to them.
-* access to safe and nutritious food, reducing food insecurity, for all people
+* reducing hunger and all forms of malnurition for all people (although children are mentioned specifically, the target does not seem limited to them).
+* access to safe and nutritious food, reducing food insecurity, for all people. This includes food safety and right to food.
 
 This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
 
@@ -208,9 +208,11 @@ TS=
 >
 > 2.3.2 Average income of small-scale food producers, by sex and indigenous status
 
-This query consists of 1 phrase. The basic structure is *productivity/access + small-scale food producers*
+This target is interprered to include research about small-scale food producers (terrestraial and aquatic) which focuses on access to various resources and increasing productivity/income.
 
-Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops` in phrase above. `small scale`+ `farm*` will cover e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
+This query consists of 1 phrase. The basic structure is *productivity/access etc. + small-scale food producers*
+
+Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
 ``` Ceylon =
   TS= (
@@ -280,11 +282,16 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
 >
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
-This query consists of 1 phrase.
+This target is interpreted to cover research about
+* sustainable and resilient food production systems, and increasing productivity within sustainable systems
+* adaptation of food production systems to climate change and disasters
+* how food production systems can affect land and soil quality
 
-Types of agricultural system expanded using MeSH and Emtree subject vocabularies.
+Increases in productivity of systems in general (i.e. without reference to sustainable/resilient practices) are not considered relevant.
 
-Types of crops and livestock expanded using: FAO statistical year book (2013) <sup id="FAO2013">[1](#f1)</sup>. Major crops or "important food crops" included, oil crops excluded. Root crops covered by "crops" in phrase above.
+This query consists of 1 phrase. The general structure is *food production systems + sustainability/resilience/adaptation*.
+
+Types of agricultural system expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`.
 
 ``` Ceylon =
 TS= (
@@ -552,7 +559,7 @@ TS=
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
-<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244. [↩](#FAO2013)
+<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244.
 
 <a id="f6"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
