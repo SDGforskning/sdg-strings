@@ -212,11 +212,12 @@ This target is interprered to include research about small-scale food producers 
 
 This query consists of 1 phrase. The basic structure is *productivity/access etc. + small-scale food producers*
 
-Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
+Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
 ``` Ceylon =
   TS= (
-          (
+          ("sustainable intensification"
+          OR
             (
               ("production" OR "productivity" OR "yield$" OR "agricultural output$"
               OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
@@ -257,7 +258,7 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
                     (
                       ("food producer$" OR "food production" OR "food grower$" OR "agricultur*"
                       OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$"
-                      OR "pasture$" OR "pastoralist$" OR "agroforest*"
+                      OR "pasture$" OR "pastoralist$" OR "agroforest*" OR "silvopastur*"
                       OR "aquaculture" OR "fisher*" OR "fish farm*"
                       )
                     OR
@@ -283,58 +284,138 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-* sustainable and resilient food production systems, and increasing productivity within sustainable systems
-* adaptation of food production systems to climate change and disasters
-* how food production systems can affect land and soil quality
+* sustainable and resilient food production systems, which covers also increasing productivity within sustainable systems (phrase 1)
+* adaptation and preparedness of food production systems to climate change and disasters (phrase 1)
+* how food production systems can improve/maintain soil quality and ecosystems (phrase 2)
 
-Increases in productivity of systems in general (i.e. without reference to sustainable/resilient practices) are not considered relevant.
+Increases in productivity of production in general (i.e. without reference to sustainable/resilient practices) are not considered relevant. Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include other parts of the food system such as processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Types of agriculture are expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
 
-This query consists of 1 phrase. The general structure is *food production systems + sustainability/resilience/adaptation*.
+This query consists of 2 phrases.
 
-Types of agricultural system expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`.
+#### Phrase 1
+
+The general structure is *food production systems + sustainability/resilience/adaptation*.
+
+Resilience in terms of food production has been described by FAO as:
+> " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014](#f7)</a>)
+
+Natural disasters, climate, market volatility, civil and political unrest are examples of risks (<a id="FAO2014">[FAO, 2014](#f7)</a>).
 
 ``` Ceylon =
-TS= (
-        ( "food production" OR "food supply" OR "food supplies"
-          OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
-          OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-          OR "agroforest*" OR "aquaculture" OR "fisher*"
+TS=
+(
+  (
+      ("food production" OR "food grower$"
+      OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
+      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "agroforest*" OR "silvopastur*"
+      OR "aquaculture" OR "fisher*" OR "fish farm*"
+      OR
+        (
+          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+          )
+          NEAR/5
+              ("production" OR "producer$" OR "grower$")
+        )      
+      )
+      NEAR/15
+          ("sustainab*"
+          OR "resilient" OR "livelihood vulnerability index"
+          OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*"))
           OR
-          (
-            ( "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-              OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-            )
-            NEAR/5
-                ( "production" OR "producer$" )
-          )      
-        )
-        NEAR/15
-            ( "sustainab*" OR "eco-friendly" OR "resilient agricultur*"
-              OR
-              (
-                ( "adapt*" OR "resilien*" OR "mitigat*" OR "vulnerab*" OR "cope" OR "coping"
-                  OR "preparedness" OR "early warning" OR "protect*"
-                )
-                NEAR/10
-                    ( "disaster$" OR "drought$" OR "flood*"
-                      OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-                      OR ("extreme$" NEAR/2 ("climat*" OR "weather" OR "precipitation"))
-                    )
+            (
+              ("adapt*" OR "resilien*" OR "mitigat*" OR "cope" OR "coping"
+              OR "preparedness" OR "early warning" OR "protect*" OR "avoid*" OR "vulnerab*"
+              OR "policy" OR "policies"
               )
-              OR
-              (
-                ( "soil quality" OR "land quality" OR "biodiversity" OR "ecosystem function*" )
-                NEAR/5
-                  ( "improv*" OR "restor*" OR "enhanc*" OR "maintain*" OR "preserv*"
-                    OR "conserv*" OR "protect*" OR "resilien*"
+              NEAR/10
+                  ("disaster$" OR "catastroph*"
+                  OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+                  OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
+                  OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
+                  OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
+                  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+                  OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
+                  OR "tipping point$"  
+                  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
+                  OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate"
+                  OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
+                  OR "war" OR "wars"
+                  OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+                  OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
                   )
-              )
-            )  
+            )
+          )  
+  )
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*")
+)
+```  
+#### Phrase 2
 
+The general structure is *food production systems + ecosystem and soil improvement*.
+
+Types of land/soil degredation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a>.
+
+``` Ceylon =
+TS=
+(
+  "ecoagricultur*" OR "eco-agricultur*"
+  OR
+    (
+      ("food production" OR "food grower$"
+      OR "agricultur*"
+      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "agroforest*" OR "silvopastur*"
+      OR "aquaculture" OR "fisher*" OR "fish farm*"
+      OR
+        (
+          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+          )
+          NEAR/5
+              ("production" OR "producer$" OR "grower$")
+        )      
+      )
+      NEAR/15
+          ("eco-friendly" OR "ecosystem approach"
+          OR
+            (
+              ("soil quality" OR "land quality"
+              OR "biodiversity" OR "species diverity" OR "ecosystem$" OR "pollinator$"
+              )
+              NEAR/5
+                ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
+                OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
+                OR "resilien*"
+                )
+            )
+          OR
+            (
+              ("desertification"
+              OR
+                ("soil$"
+                NEAR/5 
+                  ("loss" OR "degredation" OR "depletion" OR "erosion" OR "compaction" OR "salinization" OR "salinisation" OR "chemical pollution")
+                )
+              OR
+                (
+                  ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
+                  NEAR/5 ("loss" OR "degredation" OR "depletion")
+                )
+              )
+              NEAR/5
+                ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                OR "stop*" OR "end" OR "ending" OR "halt"
+                OR "avoid*" OR "prevent*"
+                )
+            )
+          )  
     )
+)
 
 ```  
-
 
 ## Target 2.5
 
@@ -560,6 +641,10 @@ TS=
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
 <a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244.
+
+<a id="f7"></a> FAO. (2014). *Building a Common Vision for Sustainable Food and Agriculture. Principles and Approaches*. https://www.fao.org/3/a-i3940e.pdf. [↩](#FAO2014)
+
+<a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches. [↩](#SFS)
 
 <a id="f6"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
