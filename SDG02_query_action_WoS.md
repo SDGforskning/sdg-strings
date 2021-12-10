@@ -230,10 +230,10 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
             (
               ("access*" OR "barrier$")
               NEAR/5
-                ("farmland$" OR "land"
+                ("farmland$" OR "land" OR "resources"
                 OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance"
                 OR "market$" OR "marketing" OR "traders" OR "trade"
-                OR "agricultur* input$" OR "farm input$" OR "agricultural resources" OR "water"
+                OR "agricultur* input$" OR "farm input$" OR "water"
                 OR "machinery" OR "equipment" OR "technology"
                 OR "farm* experience" OR "information" OR "training"
                 OR "equitab*" OR "inequitab*"
@@ -247,7 +247,7 @@ Types of agricultural system were expanded using MeSH (MEDLINE database, NIH) an
           OR "distributional justice"  
           )
           AND
-              ("smallhold*" OR "family farm*"
+              ("smallhold*" OR "family farm*" OR "home gardening"
               OR
                 (
                   ("small-scale" OR "indigenous" OR "homestead*")
