@@ -20,7 +20,7 @@
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f3)</a>).
 
@@ -219,13 +219,14 @@ Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree
           ("sustainable intensification"
           OR
             (
-              ("production" OR "productivity" OR "yield$" OR "agricultural output$"
+              ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
               OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
               OR "benefit$"
               )
               NEAR/5
                 ("improve*" OR "increase*" OR "enhanc*"
                 OR "efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
+                OR "diversif*"
                 )
             )
           OR "value addition" OR "non-farm employment" OR "off-farm employment"
@@ -247,7 +248,9 @@ Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree
           OR
             ("right$" NEAR/5 ("farmland$" OR "land" OR "property")
             )
-          OR "distributional justice"  
+          OR  
+            ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice")
+            )
           )
           AND
               ("smallhold*" OR "family farm*" OR "home gardening"
@@ -284,20 +287,62 @@ Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-* sustainable and resilient food production systems, which covers also increasing productivity within sustainable systems (phrase 1)
-* adaptation and preparedness of food production systems to climate change and disasters (phrase 1)
-* how food production systems can improve/maintain soil quality and ecosystems (phrase 2)
+* increasing the productivity of food production systems (phrase 1)
+* resilient food production systems, adaptation and preparedness of food production systems to climate change and disasters (phrase 2)
+* sustainable food production systems (phrase 3)
+* how food production systems can improve/maintain soil quality and ecosystems (phrase 3)
 
-Increases in productivity of production in general (i.e. without reference to sustainable/resilient practices) are not considered relevant. Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include other parts of the food system such as processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Types of agriculture are expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
+Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
+> "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
 
-This query consists of 2 phrases.
+Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Types of agriculture are expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
+
+This query consists of 3 phrases.
 
 #### Phrase 1
 
-The general structure is *food production systems + sustainability/resilience/adaptation*.
+The general structure is *food production systems + production + action*.
+
+``` Ceylon =
+TS=
+(
+  (
+      ("food production" OR "food grower$"
+      OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
+      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "agroforest*" OR "silvopastur*"
+      OR "aquaculture" OR "fish farm*"
+      OR
+        (
+          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+          )
+          NEAR/5
+              ("production" OR "producer$" OR "grower$")
+        )      
+      )
+      NEAR/15
+          ("sustainable intensification"
+          OR
+            (
+              ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$")
+              NEAR/5
+                ("improve*" OR "increase*" OR "enhanc*"
+                OR "efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
+                )
+            )
+          )  
+  )
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*")
+)
+```  
+
+#### Phrase 2
+
+The general structure is *food production systems + resilience/adaptation*.
 
 Resilience in terms of food production has been described by FAO as:
-> " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014](#f7)</a>)
+> " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014, p.28](#f7)</a>)
 
 Natural disasters, climate, market volatility, civil and political unrest are examples of risks (<a id="FAO2014">[FAO, 2014](#f7)</a>).
 
@@ -320,14 +365,13 @@ TS=
         )      
       )
       NEAR/15
-          ("sustainab*"
-          OR "resilient" OR "livelihood vulnerability index"
+          ("resilien*" OR "livelihood vulnerability index"
           OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*"))
           OR
             (
               ("adapt*" OR "resilien*" OR "mitigat*" OR "cope" OR "coping"
               OR "preparedness" OR "early warning" OR "protect*" OR "avoid*" OR "vulnerab*"
-              OR "policy" OR "policies"
+              OR "policy" OR "policies" OR "diversification"
               )
               NEAR/10
                   ("disaster$" OR "catastroph*"
@@ -351,68 +395,78 @@ TS=
   NOT ("solar farm*" OR "wind farm*" OR "power farm*")
 )
 ```  
-#### Phrase 2
 
-The general structure is *food production systems + ecosystem and soil improvement*.
+#### Phrase 3
 
-Types of land/soil degredation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a>.
+The general structure is *food production systems + sustinability / ecosystems and soil + action*.
+
+Types of land/soil degredation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>). `agroecolog*` (argoecology, or the agroecological approach) is considered relevant, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>).
 
 ``` Ceylon =
 TS=
-(
-  "ecoagricultur*" OR "eco-agricultur*"
+( "ecoagricultur*" OR "eco-agricultur*"
   OR
     (
-      ("food production" OR "food grower$"
-      OR "agricultur*"
-      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "silvopastur*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
-      OR
-        (
-          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-          )
-          NEAR/5
-              ("production" OR "producer$" OR "grower$")
-        )      
+      (
+        ("food production" OR "food grower$"
+        OR "agricultur*"
+        OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+        OR "agroforest*" OR "silvopastur*"
+        OR "aquaculture" OR "fisher*" OR "fish farm*"
+        OR
+          (
+            ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+            )
+            NEAR/5
+                ("production" OR "producer$" OR "grower$")
+          )      
+        )
+        NEAR/15
+            ("sustainab*" OR "agroecolog*"
+            OR "eco-friendly" OR "ecosystem approach"
+            OR "soil conservation" OR "water conservation"
+            OR
+              (
+                ("soil structure" OR "soil fertility" OR "soil health"
+                OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
+                OR "biodiversity" OR "species diverity" OR "ecosystem$" OR "pollinator$"
+                )
+                NEAR/5
+                  ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
+                  OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
+                  OR "resilien*" OR "support"
+                  )
+              )
+            OR
+              (
+                ("desertification"
+                OR
+                  ("soil$"
+                  NEAR/5
+                      ("loss" OR "degredation" OR "depletion" OR "nutrient imbalance$"
+                      OR "erosion" OR "compaction" OR "waterlogging"
+                      OR "salinization" OR "salinisation" OR "acidification"
+                      OR "chemical pollution" OR "contamination"
+                      )
+                  )
+                OR
+                  (
+                    ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
+                    NEAR/5 ("loss" OR "degredation" OR "depletion")
+                  )
+                )
+                NEAR/5
+                  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                  OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                  OR "stop*" OR "end" OR "ending" OR "halt"
+                  OR "avoid*" OR "prevent*"
+                  )
+              )
+            )  
       )
-      NEAR/15
-          ("eco-friendly" OR "ecosystem approach"
-          OR
-            (
-              ("soil quality" OR "land quality"
-              OR "biodiversity" OR "species diverity" OR "ecosystem$" OR "pollinator$"
-              )
-              NEAR/5
-                ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
-                OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
-                OR "resilien*"
-                )
-            )
-          OR
-            (
-              ("desertification"
-              OR
-                ("soil$"
-                NEAR/5 
-                  ("loss" OR "degredation" OR "depletion" OR "erosion" OR "compaction" OR "salinization" OR "salinisation" OR "chemical pollution")
-                )
-              OR
-                (
-                  ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-                  NEAR/5 ("loss" OR "degredation" OR "depletion")
-                )
-              )
-              NEAR/5
-                ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                OR "stop*" OR "end" OR "ending" OR "halt"
-                OR "avoid*" OR "prevent*"
-                )
-            )
-          )  
     )
+    NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
 
 ```  
@@ -648,7 +702,9 @@ TS=
 
 <a id="f6"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
-<a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+<a id="f1"></a> Statistics Division. (2021a). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+
+<a id="f9"></a> Statistics Division. (2021b). *SDG Indicators Metadata Repository*. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 8 December 2021] [↩](#SDGindmetadata)
 
 <a id="f3"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
