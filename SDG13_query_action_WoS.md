@@ -39,7 +39,11 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about stop/strategy to deal/minimise impact of climate-related hazards and natural disasters; generel terms for hazards and desasters and specific types are mentioned.
+This target is interpreted to cover research about 
+- how to stop
+- strategies to deal
+- minimise impact 
+of climate-related hazards and natural disasters; both generel terms for hazards and desasters and specific types are mentioned.
 
 This query consists of 1 phrase.
 
@@ -91,11 +95,12 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about national policies, strategies and planning related to
   - climate mitigation as general topic (phrase 1)
-  - national policies, strategies and planning related to indicators of climate change (phrase 2)
+  - adaptation to indicators of climate change (phrase 2)
   - reduction of greenhouse gases as a fixed class (phrase 3) and six main greenhouse gases (phrase 4)
-  - Frameworks for action (phrase 5)
+and generel Frameworks for action (phrase 5)
+
 
 This query consists of 5 phrases.
 
@@ -107,7 +112,9 @@ TS=
 (
   (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
       OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"))
-)
+    AND
+      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
+   )
 
 ```
 ##### Phrase 2: 
@@ -130,10 +137,9 @@ TS=(
   (
         (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
           NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
-        
-      OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
-      OR "govern*" OR "disaster risk reduction" OR "preparedness"
-       )
+   ))
+   AND
+      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))     )
 )
 ```
 ##### Phrase 3:
@@ -150,6 +156,8 @@ TS=
       OR "carbon footprint"
       OR ("climate" NEAR/5 ("human impact$"))
       )
+  AND
+      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))     
 )
 ```
 
@@ -173,6 +181,9 @@ TS=
     ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate"
     OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
     )
+  AND
+      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))   
+    
 )
 ```
 
@@ -192,26 +203,31 @@ TS=
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in the given phrases.
 
-## Target 13.b
+~~## Target 13.b
 
-> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
+~~> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-This target is interpreted to cover research
+~~This target is interpreted to cover research ???
 
-This query consists of 5 phrases. 
-Those are phrase 1 &  2 from target 13.2 AND LDC/SIDC
+~~on determined contributions, long-term strategies, national adaptation plans and adaptation communications in LDC/SIDS; Both general terms such as "climate change" are used (phrase 1), as well as the most common climate change indicators (phrase 2). Those are phrase 1 &  2 from target 13.2 AND LDC/SIDC
 
-##### Phrase 1: 
+
+~~This query consists of 2 phrases. 
+
+~~##### Phrase 1: 
 "Climate mitigation" and similar as searchterm alone
 
-``` Ceylon =
+~~``` Ceylon =
 TS=
 (
-  (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
-      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"))
-      AND
+  ("climate mitigation"
+  ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3 
+  ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
+      OR "govern*" OR "disaster risk reduction" OR "preparedness")
+  )
+  ~~AND
       ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
         OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" 
         OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" 
@@ -229,15 +245,15 @@ TS=
 )
 )
 
-```
-##### Phrase 2: 
+~~```
+~~##### Phrase 2: 
 
-Climate change devided in indicators of climate change:
+~~Climate change devided in indicators of climate change:
 global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
 
-``` Ceylon =
-
+~~``` Ceylon =
 TS=(
+ ~~(
  (
  (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
   OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
@@ -250,11 +266,10 @@ TS=(
   (
         (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
           NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
-        
       OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness"
        )
-
+)
  AND
       ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
         OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" 
@@ -271,7 +286,6 @@ TS=(
         OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" 
         OR "Yemen" OR "Haiti"
 )
-
 )
 
 
@@ -288,7 +302,18 @@ TS=(
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-Re target 13.3 - Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+This target is considered to cover research about 
+ - education about "climate change mitigation;.."
+ - awareness raising about "climate change mitigation,.."
+ - technical knowledge transfer  to "climate change mitigation;.."
+ - international aid to "climate change mitigation;.."
+
+"climate change mitigation;.." covers as before   
+- climate mitigation as general topic 
+- adaptation to indicators of climate change (indicators of climate change = earlyy warning)(MISSING)
+- reduction of greenhouse gases as a fixed class and six main greenhouse gases (MISSING)
+
+Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
 
 This query consists of 1 phrase.
 
@@ -307,6 +332,9 @@ TS=
     OR "official development assistance" OR "official development aid" OR "foreign aid" OR "international aid" OR "cooperation fund" OR "investment$" OR "invest" OR "investing"
     )
     AND
+      (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
+      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*") or "climate mitigation")
+    
         ("climate mitigation"
         OR
           (
