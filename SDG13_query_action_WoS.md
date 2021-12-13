@@ -203,9 +203,9 @@ TS=
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in the given phrases.
 
-~~## Target 13.b
+## Target 13.b
 
-~~> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
+> **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
@@ -216,10 +216,10 @@ Carbon capture/storage technology can contribute to climate mitigation (i.e. red
 
 ~~This query consists of 2 phrases. 
 
-~~##### Phrase 1: 
+##### Phrase 1: 
 "Climate mitigation" and similar as searchterm alone
 
-~~``` Ceylon =
+``` Ceylon =
 TS=
 (
   ("climate mitigation"
@@ -227,7 +227,7 @@ TS=
   ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness")
   )
-  ~~AND
+ AND
       ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
         OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" 
         OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" 
@@ -245,15 +245,15 @@ TS=
 )
 )
 
-~~```
-~~##### Phrase 2: 
+```
+##### Phrase 2: 
 
-~~Climate change devided in indicators of climate change:
+Climate change devided in indicators of climate change:
 global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
 
-~~``` Ceylon =
+``` Ceylon =
 TS=(
- ~~(
+(
  (
  (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
   OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
