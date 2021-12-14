@@ -39,8 +39,8 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about how strengthen resilience, national strategies to deal and how to minimize impact of climate-related hazards and natural disasters; both generel terms for hazards and desasters and specific types are mentioned.
-
+This target is interpreted to cover research about how strengthen resilience, national strategies to deal and how to minimize impact of climate-related hazards and natural disasters; 
+For climate-related hazards and natural disasters both generel terms are mentioned.
 This query consists of 2 phrases.
 
 ``` Ceylon =
@@ -52,7 +52,7 @@ TS=
       "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" 
       OR "mitigat*" OR "early warnin$" 
       OR "policy" OR "policies" OR "protect*"  
-      OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
+      OR(("disaster$" OR "risk$") NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
       OR
         (
         ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
@@ -81,7 +81,7 @@ TS=
     (
       (
       "policy" OR "policies" OR "protect*"  
-      OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
+      OR(("disaster$" OR "risk$") NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
       OR
         (
         ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
