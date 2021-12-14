@@ -39,13 +39,9 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about 
-- how to stop
-- strategies to deal
-- minimise impact 
-of climate-related hazards and natural disasters; both generel terms for hazards and desasters and specific types are mentioned.
+This target is interpreted to cover research about how strengthen resilience, national strategies to deal and how to minimize impact of climate-related hazards and natural disasters; both generel terms for hazards and desasters and specific types are mentioned.
 
-This query consists of 1 phrase.
+This query consists of 2 phrases.
 
 ``` Ceylon =
 TS=
@@ -54,7 +50,8 @@ TS=
     (
       (
       "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" 
-      OR "mitigat*" OR "early warnin$" OR "policy" OR "policies" OR "protect*"  
+      OR "mitigat*" OR "early warnin$" 
+      OR "policy" OR "policies" OR "protect*"  
       OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
       OR
         (
@@ -65,14 +62,38 @@ TS=
       )
       NEAR/15
           (
-          (
           ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
           NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
           )
-          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+         
+    )
+  OR "livelihood vulnerability index"
+  )
+ 
+)
+```
+ Phrase 2
+ 
+``` Ceylon =
+TS=
+(
+  (
+    (
+      (
+      "policy" OR "policies" OR "protect*"  
+      OR(("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
+      OR
+        (
+        ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
+         NEAR/5 ("impact$" OR "risk$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")
+        )
+         
+      )
+      NEAR/15
+          (
+          ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
           OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"OR  "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
-          OR "storm$"
           OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
@@ -80,11 +101,12 @@ TS=
           OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
           )
     )
-  OR "livelihood vulnerability index"
+
   )
  
 )
 ```
+
 
 
 ## Target 13.2 
@@ -110,36 +132,41 @@ This query consists of 5 phrases.
 ``` Ceylon =
 TS=
 (
-  (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
-      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"))
-    AND
-      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
-   )
+  (
+  ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") 
+  NEAR/3  ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*")
+  )
+  AND
+  ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
+)
 
 ```
 ##### Phrase 2: 
 
 Climate change devided in indicators of climate change:
-global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
+global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618) (GIVES LITTLE) 
 
 ``` Ceylon =
 
-TS=(
- (
- (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-  OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
-  OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
-  OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
-  OR (("sea-level" OR "sea level") NEAR/3 ("increas*" OR "rise"))
-  OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
-    )
-  NEAR/10
+TS=
+(
   (
-        (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
-   ))
-   AND
-      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))     )
+    (
+    (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
+    OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
+    OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
+    OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
+    OR (("sea-level" OR "sea level") NEAR/3 ("increas*" OR "rise"))
+    OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
+    )
+    NEAR/10
+    (
+      ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+        NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")        
+    )
+  )
+  AND
+  ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
 )
 ```
 ##### Phrase 3:
@@ -149,6 +176,7 @@ Reduction of GHGs = main climate mitigation according to UNEP definition
 ``` Ceylon =
 TS=
 (
+  (
   ("reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*"
   )
   NEAR/5
@@ -156,8 +184,9 @@ TS=
       OR "carbon footprint"
       OR ("climate" NEAR/5 ("human impact$"))
       )
+   )   
   AND
-      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))     
+      ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
 )
 ```
 
@@ -182,7 +211,7 @@ TS=
     OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
     )
   AND
-      (("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies"))   
+     ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
     
 )
 ```
@@ -298,19 +327,21 @@ TS=(
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
+This target is considered to cover research about 
+ - education about "climate change mitigation;.."
+ - awareness raising about "climate change mitigation,.."
+
 > **13.a Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible**
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is considered to cover research about 
- - education about "climate change mitigation;.."
- - awareness raising about "climate change mitigation,.."
+
  - technical knowledge transfer  to "climate change mitigation;.."
  - international aid to "climate change mitigation;.."
 
 "climate change mitigation;.." covers as before   
 - climate mitigation as general topic 
-- adaptation to indicators of climate change (indicators of climate change = earlyy warning)(MISSING)
+- adaptation to indicators of climate change (indicators of climate change = early warning)(MISSING)
 - reduction of greenhouse gases as a fixed class and six main greenhouse gases (MISSING)
 
 Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
