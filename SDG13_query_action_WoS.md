@@ -238,12 +238,6 @@ Carbon capture/storage technology can contribute to climate mitigation (i.e. red
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-~~This target is interpreted to cover research ???
-
-~~on determined contributions, long-term strategies, national adaptation plans and adaptation communications in LDC/SIDS; Both general terms such as "climate change" are used (phrase 1), as well as the most common climate change indicators (phrase 2). Those are phrase 1 &  2 from target 13.2 AND LDC/SIDC
-
-
-~~This query consists of 2 phrases. 
 
 ##### Phrase 1: 
 "Climate mitigation" and similar as searchterm alone
@@ -327,22 +321,13 @@ TS=(
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about 
- - education about "climate change mitigation;.."
- - awareness raising about "climate change mitigation,.."
-
 > **13.a Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible**
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
+This target is considered to cover research about education and general awareness raising about "climate change mitigation,.." . "climate change mitigation;.." covers as in target 13.2 climate mitigation as general topic, indicators of climate change (MISSING) and reduction of greenhouse gases as a fixed class and six main greenhouse gases (MISSING)
 
- - technical knowledge transfer  to "climate change mitigation;.."
- - international aid to "climate change mitigation;.."
-
-"climate change mitigation;.." covers as before   
-- climate mitigation as general topic 
-- adaptation to indicators of climate change (indicators of climate change = early warning)(MISSING)
-- reduction of greenhouse gases as a fixed class and six main greenhouse gases (MISSING)
+It also covers technical knowledge transfer, international aid related to "climate change mitigation;.."
 
 Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
 
@@ -364,15 +349,9 @@ TS=
     )
     AND
       (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
-      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*") or "climate mitigation")
+      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "impact reduction" OR "early warning" OR "risk$") or "climate mitigation")
     
-        ("climate mitigation"
-        OR
-          (
-            ("climate change$" OR "global warming" OR "climatic change$")
-            NEAR/15
-                ("mitigat*" OR "adapt*" OR "impact reduction" OR "early warning" OR "risk$")
-          )
+        
         )
   )
   OR "green climate fund"
