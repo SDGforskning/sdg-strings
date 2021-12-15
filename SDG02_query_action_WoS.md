@@ -532,11 +532,13 @@ TS=
 This target is interpreted to cover research about:
 * The preservation of diversity of farmed species/wild relatives (phrases 1,2).
 * Establishment/maintenance of agricultural genetic banks/preservation of tissue (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity (phrase 3).
-* Benefit sharing for genetic resources and traditional knowledge (phrase 4).
+* Benefit sharing for genetic resources and traditional knowledge related to food and agriculture (phrases 4,5).
 
 The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farming OR farmer$ OR farm$` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
-This query consists of 4 phrases.
+Central instruments are The Treaty on Plant Genetic Resources for Food and Agriculture, the Convention on Biological Diversity and elaborations in the Nagoya Protocol.
+
+This query consists of 5 phrases.
 
 #### Phrase 1
 
@@ -558,6 +560,7 @@ TS=
     )
     NEAR/5
         ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
+        OR "Convention on biological diversity"
         OR
           (
             ("loss" OR "extinction")
@@ -570,8 +573,6 @@ TS=
           )
         )        
 )
-OR
-TS=("Global Plan of Action for Animal Genetic Resources")
 ```
 
 #### Phrase 2
@@ -660,47 +661,76 @@ TS=
 
 #### Phrase 4
 
+Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>). However, the string is set up so that we do not need to define benefits or use types. The general structure is *genetic resources/knowledge + sharing/access + agriculture/food*
+
+`access OR accessing OR accessib*` is used here to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
+
 ``` Ceylon =
 TS=
 (
-    (
-        ( "genetic resource$" OR "germplasm" OR "bioprospecting" OR "traditional knowledge" )
-        NEAR/15
-            ( "agricultur*" OR "farming"
-              OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-              OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-              OR "cultiva*" OR "wild variet*" OR "wild relativ*" OR "landrace$" OR "local breed$" OR "traditional variet*" OR "traditional breed$"
-            )
+    ("genetic resource$"
+    OR "germplasm" OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+    OR "seed commons"
+    OR "bioprospecting"
+    OR "traditional knowledge" OR "indigenous knowledge" OR "autochthonous knowledge"
     )
     NEAR/15
-        ( "sharing" OR "equitab*" OR "fair" OR "ownership" OR "access*" )                
+        ("sharing" OR "equitab*" OR "inequitable" OR "fair"
+        OR "ownership" OR "access" OR "accessing" OR "accessib*" OR "right$"
+        OR "governance"
+        OR "material transfer agreement$" OR "informed consent"
+        OR "Nagoya Protocol"
+        OR "International Seed Treaty"
+        OR "biopiracy"
+        )
+    NEAR/15
+        ("food"
+        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
+        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        OR "landrace$" OR "wild relative$"
+        OR
+          (
+            ("local*" OR "traditional" OR "wild" OR "autochthonous")
+            NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+          )
+        )                 
 )   
 ```
 
 #### Phrase 5
 
-Treaties/topics related to sharing/access/ownership of genetic resources and traditional knowledge are included: `"convention on biological diversity" OR "CBD" OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"OR "Nagoya Protocol" OR "International Seed Treaty"`
-
-`biopiracy` is the unfair exploitation of genetic resources/traditional knowledge
+Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *genetic resources + agriculture/food + instruments*
 
 ``` Ceylon =
 TS =
 (
-    ( "genetic resource$" OR "germplasm" OR "bioprospecting" OR "traditional knowledge" )
+    ("genetic resource$"
+    OR "bioprospecting"
+    OR "traditional knowledge" OR "indigenous knowledge" OR "autochthonous knowledge"
+    )
     AND
-        ( "agricultur*" OR "farming"
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-          OR "cultiva*" OR "wild variet*" OR "wild relativ*" OR "landrace$" OR "local breed$" OR "traditional variet*" OR "traditional breed$"
+        ("food"
+        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
+        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        OR "landrace$" OR "wild relative$"
+        OR
+          (
+            ("local*" OR "traditional" OR "wild" OR "autochthonous")
+            NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+          )
         )
     AND
-        ( "convention on biological diversity" OR "CBD"
-          OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"
-          OR "Nagoya Protocol"
-          OR "International Seed Treaty"
-          OR "biopiracy"
+        ("Convention on biological diversity" OR "CBD"
+        OR "Nagoya Protocol"
+        OR "International Seed Treaty"
+        OR "biopiracy"
+        OR "Global Plan of Action for Animal Genetic Resources"
+        OR "Plant Genetic Resources for Food and Agriculture"
         )
 )
+
 ```
 
 
@@ -832,6 +862,8 @@ TS=
 <a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244
 
 <a id="f7"></a> FAO. (2014). *Building a Common Vision for Sustainable Food and Agriculture. Principles and Approaches*. https://www.fao.org/3/a-i3940e.pdf [↩](#FAO2014)
+
+<a id="f12"></a> Garforth, C. (2018). "An Introduction to the Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization" in *Proceedings of the International Workshop on Access and Benefit-sharing for Genetic Resources for Food and Agriculture*. FAO. https://www.fao.org/3/CA0099EN/ca0099en.pdf [↩](#Garforth)
 
 <a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches [↩](#SFS)
 
