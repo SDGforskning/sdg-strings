@@ -284,15 +284,15 @@ Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree
 This target is interpreted to cover research about
 * increasing the productivity of food production systems (phrase 1)
 * resilient food production systems, adaptation and preparedness of food production systems to climate change and disasters (phrase 2)
-* sustainable food production systems (phrase 3)
-* how food production systems can improve/maintain soil quality and ecosystems (phrase 3)
+* sustainable food production systems (outside of resilience; phrase 3)
+* how food production systems can improve/maintain soil quality and ecosystems (phrase 4,5)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
 
 Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Types of agriculture are expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
 
-This query consists of 3 phrases.
+This query consists of 5 phrases.
 
 #### Phrase 1
 
@@ -302,9 +302,9 @@ The general structure is *food production systems + production + action*.
 TS=
 (
   (
-      ("food production" OR "food grower$"
+      ("food production" OR "food grower$" OR "farm*"
       OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
-      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "silvopastur*"
       OR "aquaculture" OR "fish farm*"
       OR
@@ -317,7 +317,10 @@ TS=
         )      
       )
       NEAR/15
-          ("sustainable intensification"
+          (
+            ("intensification"
+            NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*")
+            )
           OR
             (
               ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$")
@@ -345,9 +348,9 @@ Natural disasters, climate, market volatility, civil and political unrest are ex
 TS=
 (
   (
-      ("food production" OR "food grower$"
+      ("food production" OR "food grower$" OR "farm*"
       OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
-      OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "silvopastur*"
       OR "aquaculture" OR "fisher*" OR "fish farm*"
       OR
@@ -368,7 +371,7 @@ TS=
               OR "preparedness" OR "early warning" OR "protect*" OR "avoid*" OR "vulnerab*"
               OR "policy" OR "policies" OR "diversification"
               )
-              NEAR/10
+              NEAR/15
                   ("disaster$" OR "catastroph*"
                   OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
                   OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
@@ -393,19 +396,18 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food production systems + sustinability / ecosystems and soil + action*.
+The general structure is *food production systems + sustainability*.
 
-Types of land/soil degredation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>). `agroecolog*` (argoecology, or the agroecological approach) is considered relevant, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>).
+`agroecolog*` (agroecology, or the agroecological approach) is considered relevant, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>).
 
 ``` Ceylon =
 TS=
 ( "ecoagricultur*" OR "eco-agricultur*"
   OR
     (
-      (
-        ("food production" OR "food grower$"
+        ("food production" OR "food grower$" OR "farm*"
         OR "agricultur*"
-        OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
         OR "agroforest*" OR "silvopastur*"
         OR "aquaculture" OR "fisher*" OR "fish farm*"
         OR
@@ -420,50 +422,103 @@ TS=
         NEAR/15
             ("sustainab*" OR "agroecolog*"
             OR "eco-friendly" OR "ecosystem approach"
-            OR "soil conservation" OR "water conservation"
-            OR
-              (
-                ("soil structure" OR "soil fertility" OR "soil health"
-                OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
-                OR "biodiversity" OR "species diverity" OR "ecosystem$" OR "pollinator$"
-                )
-                NEAR/5
-                  ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
-                  OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
-                  OR "resilien*" OR "support"
-                  )
+            OR "water conservation"       
+            )
+    )
+    NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
+)
+```
+
+#### Phrase 4
+
+The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "positives", phrase 5 covers "negatives".
+
+``` Ceylon =
+TS=
+(
+    ("food production" OR "food grower$" OR "farm*"
+    OR "agricultur*"
+    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+    OR "agroforest*" OR "silvopastur*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR
+      (
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        )
+        NEAR/5
+            ("production" OR "producer$" OR "grower$")
+      )      
+    )
+    NEAR/15
+          ("soil conservation"
+          OR
+            (
+              ("soil structure" OR "soil fertility" OR "soil health"
+              OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
+              OR "biodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
               )
-            OR
-              (
-                ("desertification"
-                OR
+              NEAR/5
+                ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
+                OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
+                OR "resilien*" OR "support"
+                )
+            )
+          )     
+)
+
+```
+
+#### Phrase 5
+
+The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "negatives", phrase 4 covers "positives".
+
+Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>).
+
+``` Ceylon =
+TS=
+(
+        ("food production" OR "food grower$" OR "farm*"
+        OR "agricultur*"
+        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+        OR "agroforest*" OR "silvopastur*"
+        OR "aquaculture" OR "fisher*" OR "fish farm*"
+        OR
+          (
+            ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+            )
+            NEAR/5
+                ("production" OR "producer$" OR "grower$")
+          )      
+        )
+        NEAR/15
+            (
+              ("desertification"
+              OR
                   ("soil$"
                   NEAR/5
-                      ("loss" OR "degredation" OR "depletion" OR "nutrient imbalance$"
+                      ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
                       OR "erosion" OR "compaction" OR "waterlogging"
                       OR "salinization" OR "salinisation" OR "acidification"
                       OR "chemical pollution" OR "contamination"
                       )
                   )
-                OR
+              OR
                   (
-                    ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-                    NEAR/5 ("loss" OR "degredation" OR "depletion")
-                  )
-                )
-                NEAR/5
-                  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                  OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                  OR "stop*" OR "end" OR "ending" OR "halt"
-                  OR "avoid*" OR "prevent*"
+                    ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$"
+                    )
+                    NEAR/5 ("loss" OR "degradation" OR "depletion")
                   )
               )
+              NEAR/5
+                ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                OR "stop*" OR "end" OR "ending" OR "halt"
+                OR "avoid*" OR "prevent*"
+                )
             )  
-      )
-    )
-    NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
-
 ```  
 
 ## Target 2.5
