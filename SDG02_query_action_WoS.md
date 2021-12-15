@@ -530,26 +530,31 @@ TS=
 > 2.5.2 Proportion of local breeds classified as being at risk of extinction
 
 This target is interpreted to cover research about:
-* The preservation of genetic diversity of farmed species/wild relatives, including research about extinction.
-* Establishment/maintenance of agricultural genetic banks/preservation (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity.
-* Benefit sharing regarding genetic resources and traditional knowledge
+* The preservation of diversity of farmed species/wild relatives (phrases 1,2).
+* Establishment/maintenance of agricultural genetic banks/preservation of tissue (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity (phrase 3).
+* Benefit sharing for genetic resources and traditional knowledge (phrase 4).
 
-Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
+The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farming OR farmer$ OR farm$` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
 This query consists of 4 phrases.
 
 #### Phrase 1
 
-The general structure is *agricultural diversity + action* - this phrase covers terms which are used in the context of agricultural diversity.
+The general structure is *agricultural diversity/landraces + action* OR *relevant strategies* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands.
 
-Conserving wild relatives and traditional varieties is maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as although the target does not focus on these supporting species, research about agrobiodiversity is likely looking at the whole system (i.e. supporting diversity AND agricultural diversity).
+Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as although the target does not focus on these supporting species, research about agrobiodiversity is likely looking at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
 
 ``` Ceylon =
 TS=
 (
     ("agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
-    OR "landrace$" OR "local breed$" OR "traditional variet*" OR "traditional breed$" OR "traditional cultivar$"
-    OR "wild variet*" OR "wild relative$"
+    OR "landrace$" OR "wild relative$"
+    OR  
+      (
+        ("local*" OR "traditional" OR "wild" OR "autochthonous")
+        NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+      )
+    OR "plant genetic resource$" OR "animal genetic resource$"
     )
     NEAR/5
         ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
@@ -565,42 +570,49 @@ TS=
           )
         )        
 )
+OR
+TS=("Global Plan of Action for Animal Genetic Resources")
 ```
 
 #### Phrase 2
 
-The general structure is *diversity + action + agriculture* - this phrase covers diversity terms which can be used outside the context of agricultural diversity. Terms which can apply to wild species are also combined with agricultural/domestic concepts to ensure the research is related to agriculture in some way.
+The general structure is *diversity + action + agriculture* - this phrase covers diversity terms which can be used outside the context of agricultural diversity. Complement to phrase 1.
+
+Publications about groups and using terms which also include wild species (e.g. agricultural "seeds", cultivated "plants", farmed "fish") should be fdound by their use of `"agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmed" OR "farmer$" OR "cultiva*"`.
+
+Terminology to do with breeding programmes could be included here, but we want research that is about prorammes for genetic diversity, and this should already be covered by *diversity + action* - the inclusion of breeding programmes alone finds results about programmes for other objectives (e.g. increased productivity). It also introduces noise around the *use* of genetic resources *for* breeding programmes, whereas we want research about breeding programs *for* genetic diversity. `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
 
 ``` Ceylon =
 TS=
 (
-        (       
-           ("genetic diversity" OR "genetic resource$")
-           NEAR/10
-                ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
-                OR
-                    (
-                      ("loss" OR "extinction")
-                      NEAR/5
-                        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                        OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                        OR "stop*" OR "end" OR "ending" OR "halt"
-                        OR "avoid*" OR "prevent*"
-                        )
-                    )
-                )
+        ("increase genetic diversity" OR "improve genetic diversity"
+        OR
+          (       
+             ("genetic diversity" OR "genetic resource$")
+             NEAR/10
+                  ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
+                  OR
+                      (
+                        ("loss" OR "extinction")
+                        NEAR/5
+                          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                          OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                          OR "stop*" OR "end" OR "ending" OR "halt"
+                          OR "avoid*" OR "prevent*"
+                          )
+                      )
+                  )
+          )
         )
         NEAR/15
-            ("agricultur*"
+            ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle"
+            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "ducks" OR "buffalo*"      
+            OR "landrace$" OR "wild relative$"
             OR
               (
-                 ("seed$" OR "plant$" OR "animal$" OR "breed$"
-                 OR "fish" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-                 )
-                 NEAR/5
-                     ("domestic*" OR "farm*" OR "cultiva*")
+                ("local*" OR "traditional" OR "wild" OR "autochthonous")
+                NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
               )
             )
 )
@@ -608,31 +620,42 @@ TS=
 
 #### Phrase 3
 
+The general structure is *gene banks + action + agriculture*
+
+`cryoconservation` and `cryopreservation` are ex situ in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>); research about cryopreservation for relevant groups is thus considered relevant.
+
 ``` Ceylon =
 TS=
-    (
-        ( "plant bank$" OR "seed bank$" OR "gene bank$" OR "germplasm bank$"
+(
+      ("cryoconservation"
+      OR
+        (
+          ("plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          )
+          NEAR/5
+              ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered"
+              OR "establish*" OR "support" OR "build*"
+              OR "funding" OR "policy" OR "policies"
+              )
+        )
+      OR
+        ("cryopreservation"
+        NEAR/5
+            ("germplasm" OR "oocyte$" OR "sperm*" OR "semen" OR "embryo$" OR "somatic cells")
+        )
+      )  
+      NEAR/15
+          ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "ducks" OR "buffalo*"     
+          OR "landrace$" OR "wild relative$"
           OR
             (
-                ( "genetic diversity" OR "genetic resource$" )
-                NEAR/10
-                ( "maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered" )
+              ("local*" OR "traditional" OR "wild" OR "autochthonous")
+              NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
             )
-        )
-        NEAR/15
-            ( "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-              OR "livestock" OR "poultry" OR "cattle"
-              OR "landrace$" OR "local breed$" OR "traditional variet*" OR "traditional breed$"
-              OR
-                (
-                    ( "seed$" OR "plant$" OR "animal$" OR "breed$"
-                       OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
-                     )
-                     NEAR/5
-                         ( "domestic*" OR "farm*" OR "agricultur*" OR "cultiva*" OR "wild variet*" OR "wild relative$" )
-                )
-            )
-    )
+          )
+)
 ```
 
 #### Phrase 4
@@ -801,6 +824,8 @@ TS=
 ## 5. Footnotes
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
+<a id="f11"></a> Commission on Genetic Resources for Food and Agriculture Assessments. (2015). *The Second Report on the State of the World’s Animal Genetic Resources for Food and Agriculture*. FAO. https://www.fao.org/publications/sowangr/en/
 
 <a id="f10"></a> FAO. (2004). *What is Agrobiodiversity?* in "Building on Gender, Agrobiodiversity and Local Knowledge" [Training manual]. https://www.fao.org/3/y5609e/y5609e.pdf [↩](#FAO2004)
 
