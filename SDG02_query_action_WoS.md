@@ -59,7 +59,7 @@ This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2
 
 Should `food/nutrition sovereignty` be included here, or does it go too far?
 
-##### Phrase 1:
+#### Phrase 1
 
 The general structure is *hunger/malnutrition + action*
 
@@ -120,7 +120,7 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The general structure is *food security/safety/nutritional status + action*
 
@@ -156,7 +156,7 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 The general structure is *undernutrition/food supply + actions + humans*
 
@@ -456,7 +456,7 @@ TS=
             (
               ("soil structure" OR "soil fertility" OR "soil health"
               OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
-              OR "biodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
+              OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
               )
               NEAR/5
                 ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
@@ -529,18 +529,87 @@ TS=
 >
 > 2.5.2 Proportion of local breeds classified as being at risk of extinction
 
+This target is interpreted to cover research about:
+* The preservation of genetic diversity of farmed species/wild relatives, including research about extinction.
+* Establishment/maintenance of agricultural genetic banks/preservation (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity.
+* Benefit sharing regarding genetic resources and traditional knowledge
+
+Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
+
 This query consists of 4 phrases.
 
-Types of crops and livestock expanded using: FAO statistical year book (2013) <sup id="FAO2013">[1](#f1)</sup>. Major crops or "important food crops" included, oil crops excluded. Root crops covered by "crops" in phrase above.
+#### Phrase 1
 
-##### Phrase 1:
+The general structure is *agricultural diversity + action* - this phrase covers terms which are used in the context of agricultural diversity.
 
-Limitation of the topic (genetic resources) to agricultural resources by combining terms with agricultural terms (e.g. `poultry, livestock, cereals`).
-Terms which can apply to wild species combined with agricultural concepts (e.g. `animal$`is combined with `"domestic* OR farm*"` etc.)
+Conserving wild relatives and traditional varieties is maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as although the target does not focus on these supporting species, research about agrobiodiversity is likely looking at the whole system (i.e. supporting diversity AND agricultural diversity).
 
 ``` Ceylon =
 TS=
 (
+    ("agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
+    OR "landrace$" OR "local breed$" OR "traditional variet*" OR "traditional breed$" OR "traditional cultivar$"
+    OR "wild variet*" OR "wild relative$"
+    )
+    NEAR/5
+        ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
+        OR
+          (
+            ("loss" OR "extinction")
+            NEAR/5
+              ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+              OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+              OR "stop*" OR "end" OR "ending" OR "halt"
+              OR "avoid*" OR "prevent*"
+              )
+          )
+        )        
+)
+```
+
+#### Phrase 2
+
+The general structure is *diversity + action + agriculture* - this phrase covers diversity terms which can be used outside the context of agricultural diversity. Terms which can apply to wild species are also combined with agricultural/domestic concepts to ensure the research is related to agriculture in some way.
+
+``` Ceylon =
+TS=
+(
+        (       
+           ("genetic diversity" OR "genetic resource$")
+           NEAR/10
+                ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
+                OR
+                    (
+                      ("loss" OR "extinction")
+                      NEAR/5
+                        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                        OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                        OR "stop*" OR "end" OR "ending" OR "halt"
+                        OR "avoid*" OR "prevent*"
+                        )
+                    )
+                )
+        )
+        NEAR/15
+            ("agricultur*"
+            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+            OR "livestock" OR "poultry" OR "cattle"
+            OR
+              (
+                 ("seed$" OR "plant$" OR "animal$" OR "breed$"
+                 OR "fish" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+                 )
+                 NEAR/5
+                     ("domestic*" OR "farm*" OR "cultiva*")
+              )
+            )
+)
+```
+
+#### Phrase 3
+
+``` Ceylon =
+TS=
     (
         ( "plant bank$" OR "seed bank$" OR "gene bank$" OR "germplasm bank$"
           OR
@@ -566,18 +635,7 @@ TS=
     )
 ```
 
-##### Phrase 2:
-
-``` Ceylon =
-TS=
-(
-    ( "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity" )
-    NEAR/5
-        ("maintain*" OR "conserv*" OR "preserv*" OR "protect*")        
-)
-```
-
-##### Phrase 3:
+#### Phrase 4
 
 ``` Ceylon =
 TS=
@@ -596,11 +654,11 @@ TS=
 )   
 ```
 
-##### Phrase 4:
+#### Phrase 5
 
-`"convention on biological diversity" OR "CBD" OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"OR "Nagoya Protocol" OR "International Seed Treaty"` Treaties/topics related to sharing/access/ownership of genetic resources and traditional knowledge
+Treaties/topics related to sharing/access/ownership of genetic resources and traditional knowledge are included: `"convention on biological diversity" OR "CBD" OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"OR "Nagoya Protocol" OR "International Seed Treaty"`
 
-`biopiracy` - i.e. unfair exploitation of genetic resources/traditional knowledge
+`biopiracy` is the unfair exploitation of genetic resources/traditional knowledge
 
 ``` Ceylon =
 TS =
@@ -744,11 +802,13 @@ TS=
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
-<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244.
+<a id="f10"></a> FAO. (2004). *What is Agrobiodiversity?* in "Building on Gender, Agrobiodiversity and Local Knowledge" [Training manual]. https://www.fao.org/3/y5609e/y5609e.pdf [↩](#FAO2004)
 
-<a id="f7"></a> FAO. (2014). *Building a Common Vision for Sustainable Food and Agriculture. Principles and Approaches*. https://www.fao.org/3/a-i3940e.pdf. [↩](#FAO2014)
+<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244
 
-<a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches. [↩](#SFS)
+<a id="f7"></a> FAO. (2014). *Building a Common Vision for Sustainable Food and Agriculture. Principles and Approaches*. https://www.fao.org/3/a-i3940e.pdf [↩](#FAO2014)
+
+<a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches [↩](#SFS)
 
 <a id="f6"></a> Rivest, Maxime; Kashnitsky, Yury; Bédard-Vallée, Alexandre; Campbell, David; Khayat, Paul; Labrosse, Isabelle; Pinheiro, Henrique; Provençal, Simon; Roberge, Guillaume; James, Chris. (2021). *Improving the Scopus and Aurora queries to identify research that supports the United Nations Sustainable Development Goals (SDGs) 2021* V3. [Dataset]. doi: 10.17632/9sxdykm8s4.3 [↩](#Els)
 
@@ -756,6 +816,6 @@ TS=
 
 <a id="f9"></a> Statistics Division. (2021b). *SDG Indicators Metadata Repository*. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 8 December 2021] [↩](#SDGindmetadata)
 
-<a id="f3"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+<a id="f3"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
 
 <a id="f4"></a> WHO. (2021, June 9). *Malnutrition*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/malnutrition. [↩](#WHOmalnut)
