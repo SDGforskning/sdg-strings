@@ -102,12 +102,12 @@ TS=
  )
 ```
 
-`"obesity" OR "overweight"` can added to the above section (phrase 1) without issues - the action terms are identical - however, in terms of presenting results, separating out obesity may be useful for the user as it accounts for maybe 50 % of results.
+`"obesity" OR "overweight"` can added to the above section (phrase 1) without issues - the action terms are identical - however, in terms of presenting results, separating out obesity may be useful for the user as it accounts for maybe 50 % of results. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself.
 
 ```Ceylon =
 TS=
 (
-  ("obesity" OR "overweight"
+  ("obesity" OR "overweight" OR "becoming obese"
   )
   NEAR/5
     ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
@@ -214,9 +214,17 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 
 Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
+`intensification` implies increasing production, but results in some noise when used alone - it can be used in other context, and finds results about the effects of agricultural intensification, or refers to intensification of large-scale farming (set in comparison with SSF), thus it is combined with other terms. Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example.
+(Original combination with: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
+
 ``` Ceylon =
   TS= (
-          ("sustainable intensification"
+          (
+              ("intensification"
+              NEAR/5
+                ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"                
+                )
+              )  
           OR
             (
               ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
@@ -230,21 +238,8 @@ Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree
                 )
             )
           OR "value addition" OR "non-farm employment" OR "off-farm employment"
-          OR
-            (
-              ("access*" OR "barrier$")
-              NEAR/5
-                ("farmland$" OR "land" OR "resources"
-                OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance"
-                OR "market$" OR "marketing" OR "traders" OR "trade"
-                OR "agricultur* input$" OR "farm input$" OR "water"
-                OR "machinery" OR "equipment" OR "technology"
-                OR "farm* experience" OR "information" OR "training"
-                OR "equitab*" OR "inequitab*"
-                )
-            )
-          OR "land grab*"
-          OR "tenure"
+          OR "access*" OR "barrier$" OR "obstacle$"
+          OR "land grab*" OR "tenure"
           OR
             ("right$" NEAR/5 ("farmland$" OR "land" OR "property")
             )
