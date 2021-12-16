@@ -34,7 +34,14 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 4.1.2 Completion rate (primary education, lower secondary education, upper secondary education)
 
-This query consists of x phrases.
+These targets are interpreted to cover research about
+
+* Completion of primary and secondary education			
+* Access to primary and secondary education that is free and equitable			
+* Achieving minimal profiency in reading and mathematics			
+
+
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
@@ -44,12 +51,14 @@ Phrase 1 doc
 TS=
 (
  (
-  ("education" OR "schooling" OR "tuition" OR "instruction") 
-   NEAR/5
-   ("primary" OR "secondary")
-    NEAR/3
-    ("free" OR "equitable" OR "quality")
-  )
+  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*")
+  NEAR/5
+   (
+    ("complet*" OR "finish*" OR "graduate" OR "graduated" OR "graduation" OR "dropout*" OR "drop-out*" OR "drop out" OR "quit*")
+     NEAR/5
+      ("strengthen*" OR "improv*" OR "enhanc*" OR "better*"OR "higher" OR "ensure" OR "attain" OR "achiev*" OR "prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR    "lower$")
+   )
+ )
 )
 ```
 ##### Phrase 2:
@@ -58,58 +67,28 @@ Phrase 2 doc
 
 ```Ceylon =
 TS=
-(
- ( 
-  ("education" OR "schooling" OR "tuition" OR "instruction"
-   ) 
-    NEAR/3
-    ("primary" OR "secondary"
-    )
-     NEAR/5
-     ("complet*" OR "finish*" OR "graduat*"
-     )
-      NEAR/5
-      ("ensur*" OR "increas*" OR "attain*")
-  )
+("access*"
+ NEAR/3
+ ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
 )
 ```
 #### Phrase 3:
 
 Phrase 3 doc
-
+Considered including terms for primary and secondary education, but too many relevant hits were excluded. 
 ```Ceylon =
 TS=
 (
- (
-  ("education" OR "schooling" OR "tuition" OR "instruction"
-  )
-   NEAR/5
-   ("primary" OR "secondary")
-   )
-    NEAR/7
-    (
-    ("dropout" NEAR/5 ("reduc*" OR "decreas*" OR "minimi*" OR "lower*")
-    )
-  )  
-)
-```
-#### Phrase 4:
-
-Phrase 4 doc
-Action terms left out, as they seem to drastically remove number of hits and eliminate relevant ones.
-```Ceylon =
-TS=
-(
- (
-   ("minim*")
-   NEAR/5
+ ("Increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
+  NEAR/5
    (
-    ("proficienc*" OR "skill*") 
-      NEAR/5 
-      ("read*" OR "mathematic*")
-   )
- ) 
-)
+    ("basi*" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+     NEAR/10
+     ("proficienc*" OR "skill*" OR "comprehen*")
+      NEAR/5
+       ("read*" OR "literac*" OR "mathematic*" OR "maths" OR "numera*")
+    )
+ )
 ```
 ## Target 4.2
 
