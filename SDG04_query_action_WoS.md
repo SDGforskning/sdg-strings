@@ -34,7 +34,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 4.1.2 Completion rate (primary education, lower secondary education, upper secondary education)
 
-These targets are interpreted to cover research about
+Thia target is interpreted to cover research about
 
 * Completion of primary and secondary education			
 * Access to primary and secondary education that is free and equitable			
