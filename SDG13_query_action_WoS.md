@@ -40,7 +40,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
 This target is interpreted to cover research about how strengthen resilience, national strategies to deal and how to minimize impact of climate-related hazards and natural disasters; 
-For climate-related hazards and natural disasters both generel terms are mentioned.
+For climate-related hazards and natural disasters both generel terms and specific hazards/desasters are mentioned.
 This query consists of 2 phrases.
 
 ``` Ceylon =
@@ -325,12 +325,9 @@ TS=(
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is considered to cover research about education and general awareness raising about "climate change mitigation,.." . "climate change mitigation;.." covers as in target 13.2 climate mitigation as general topic, indicators of climate change (MISSING) and reduction of greenhouse gases as a fixed class and six main greenhouse gases (MISSING)
-
-It also covers technical knowledge transfer, international aid related to "climate change mitigation;.."
-
-Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
-
+This target is considered to cover research about education and general awareness raising about climate change mitigation, adaptaion and impact reduction. It also covers technical knowledge transfer, international aid related to this topics . Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+We include general terms about mitigation and additionally the main climate mitigation reduction og GHG 
+removed  "investment$" OR "invest" OR "investing" 
 This query consists of 1 phrase.
 
 ##### Phrase 1:
@@ -345,15 +342,24 @@ TS=
     OR "institutional capacity" OR "human capacity" OR "systemic capacity"
     OR "awareness" OR "perception$"
     OR "technical knowledge transfer" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technology transfer$"
-    OR "official development assistance" OR "official development aid" OR "foreign aid" OR "international aid" OR "cooperation fund" OR "investment$" OR "invest" OR "investing"
+    OR "official development assistance" OR "official development aid" OR "foreign aid" OR "international aid" OR "cooperation fund" OR 
+   
     )
     AND
-      (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
-      OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "impact reduction" OR "early warning" OR "risk$") or "climate mitigation")
-    
-        
-        )
-  )
+      (
+        ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3  ("action$" OR "sustainab*"
+        OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "impact reduction" OR "early warning" OR "risk$") or "climate mitigation" or "sustainable development"
+        OR 
+        (
+          ("reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*"
+          )
+          NEAR/5
+           ("GHG" OR "greenhouse gas" OR "greenhouse gases"
+            OR "carbon footprint"
+           )
+        )   
+     )
+    )
   OR "green climate fund"
 )
 
