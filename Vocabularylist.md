@@ -387,7 +387,7 @@ From United Nations Development Group (2017) Capacity Development, UNDAF compani
 
 ## Climate changes
 
-See also "Risks and disasters". For more terms (GHG, climate mitigation etc.), see SDG13 string.
+See also "Risks and disasters" for climate related disasters. For more terms (GHG, climate mitigation etc.), see SDG13 string.
 
 ```Ceylon=
 "climate change"
@@ -407,15 +407,25 @@ See also "Risks and disasters". For more terms (GHG, climate mitigation etc.), s
 "shock$"
 "hazard*"
 "collaps*"
-
-"tipping point$"
 "extrem*"
-("extreme$" NEAR/2 ("climat*" OR "weather" OR "precipitation"))
-"drought$"
-"flood*"
 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+"drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
+"wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
+"tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
+"earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+"landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
+"tipping point$"  
+("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
+
+(("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
 "financial crash*"
 "economic downturn$"
+
+"war" OR "wars"
+(("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+
+"outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
 
 "disaster risk reduction"
 "Sendai Framework for Disaster Risk Reduction"
