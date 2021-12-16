@@ -22,6 +22,8 @@
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
+For several targets, it was necessary to have search terms for food production systems. Types of system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f3)</a>).
 
 During editing of this string (2021), we have consulted two other sets of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f5)</a> and <a id="Els">[Rivest et al. (2021)](#f6)</a>.
@@ -212,7 +214,7 @@ This target is interprered to include research about small-scale food producers 
 
 This query consists of 1 phrase. The basic structure is *productivity/access etc. + small-scale food producers*
 
-Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
+ `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
 `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
 
@@ -258,23 +260,21 @@ Originally `"access*" OR "barrier$"` was combined with many other terms (access 
                     (
                       ("food producer$" OR "food production" OR "food grower$" OR "agricultur*"
                       OR "farm*" OR "cropping system$" OR "orchard$" OR "arable land$"
-                      OR "pasture$" OR "pastoralist$" OR "agroforest*" OR "silvopastur*"
+                      OR "pasture$" OR "pastoral*" OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
                       OR "aquaculture" OR "fisher*" OR "fish farm*"
                       )
                     OR
                       (
                         ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-                        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+                        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                         )
                         NEAR/5
-                            ("production" OR "producer$" OR "grower$")
+                            ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
                       )
                     )
                 )
               )
       )
-
-
 ```   
 
 ## Target 2.4
@@ -285,14 +285,14 @@ Originally `"access*" OR "barrier$"` was combined with many other terms (access 
 
 This target is interpreted to cover research about
 * increasing the productivity of food production systems (phrase 1)
-* resilient food production systems, adaptation and preparedness of food production systems to climate change and disasters (phrase 2)
-* sustainable food production systems (outside of resilience; phrase 3)
-* how food production systems can improve/maintain soil quality and ecosystems (phrase 4,5)
+* resilient food production systems/agricultural practices, adaptation and preparedness of food production systems to climate change and disasters, including the species themselves (phrases 2,3)
+* sustainable food production systems (outside of resilience; phrase 4)
+* how food production systems can improve/maintain soil quality and ecosystems (phrase 5,6)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
 
-Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Types of agriculture are expanded using MeSH and Emtree subject vocabularies. Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farm*` will cover types of farming in two words e.g. forest farming.
+Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>).
 
 This query consists of 5 phrases.
 
@@ -308,16 +308,16 @@ TS=
   (
       ("food production" OR "food grower$" OR "farm*"
       OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "silvopastur*"
+      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+      OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fish farm*"
       OR
         (
           ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5
-              ("production" OR "producer$" OR "grower$")
+              ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
         )      
       )
       NEAR/15
@@ -348,6 +348,8 @@ Resilience in terms of food production has been described by FAO as:
 
 Natural disasters, climate, market volatility, civil and political unrest are examples of risks (<a id="FAO2014">[FAO, 2014](#f7)</a>).
 
+`pastoral*` is limited here, as it finds results from other uses (pastoral care, religion studies).
+
 ``` Ceylon =
 TS=
 (
@@ -355,19 +357,19 @@ TS=
       ("food production" OR "food grower$" OR "farm*"
       OR "agricultur*" OR "ecoagricultur*" OR "eco-agricultur*"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "silvopastur*"
+      OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fisher*" OR "fish farm*"
       OR
         (
           ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5
-              ("production" OR "producer$" OR "grower$")
+              ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
         )      
       )
       NEAR/15
-          ("resilien*" OR "livelihood vulnerability index"
+          ("resilien*" OR "livelihood vulnerability"
           OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*"))
           OR
             (
@@ -376,7 +378,8 @@ TS=
               OR "policy" OR "policies" OR "diversification"
               )
               NEAR/15
-                  ("disaster$" OR "catastroph*"
+                  ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
+                  OR "disaster$" OR "catastroph*"
                   OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
                   OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
                   OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
@@ -385,8 +388,8 @@ TS=
                   OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
                   OR "tipping point$"  
                   OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
-                  OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate"
                   OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
+                  OR "financial crash*" OR "economic downturn$"
                   OR "war" OR "wars"
                   OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
                   OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
@@ -400,6 +403,44 @@ TS=
 
 #### Phrase 3
 
+The general structure is *agricultural species + resilience/adaptation*. This phrase aims at finding works on the climate/disaster resilience of these animals/crops themselves (not just the production system).
+
+Not all species/groups included - the additional results found by excluded terms (i.e. not already covered by phrase 2 or included terms) were often irrelevant (e.g. vegetable intake and psychological resilience).
+
+``` Ceylon =
+TS=
+(
+  (
+      ("crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+      OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
+      )
+      NEAR/15
+          ("livelihood vulnerability"
+          OR
+            (
+              ("adapt*" OR "resilien*" OR "mitigat*" OR "cope" OR "coping" OR "vulnerab*"
+              )
+              NEAR/15
+                  ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
+                  OR "disaster$" OR "catastroph*"
+                  OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+                  OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
+                  OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
+                  OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
+                  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+                  OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
+                  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
+                  OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
+                  OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
+                  )
+            )
+          )  
+  ) NOT ("wild pig$")
+)
+```
+
+#### Phrase 4
+
 The general structure is *food production systems + sustainability*.
 
 `agroecolog*` (agroecology, or the agroecological approach) is considered relevant, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>).
@@ -411,16 +452,16 @@ TS=
     (
         ("food production" OR "food grower$" OR "farm*"
         OR "agricultur*"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-        OR "agroforest*" OR "silvopastur*"
+        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+        OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
         OR "aquaculture" OR "fisher*" OR "fish farm*"
         OR
           (
             ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
             )
             NEAR/5
-                ("production" OR "producer$" OR "grower$")
+                ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
           )      
         )
         NEAR/15
@@ -433,7 +474,7 @@ TS=
 )
 ```
 
-#### Phrase 4
+#### Phrase 5
 
 The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "positives", phrase 5 covers "negatives".
 
@@ -442,16 +483,16 @@ TS=
 (
     ("food production" OR "food grower$" OR "farm*"
     OR "agricultur*"
-    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-    OR "agroforest*" OR "silvopastur*"
+    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+    OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*"
     OR
       (
         ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5
-            ("production" OR "producer$" OR "grower$")
+            ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
       )      
     )
     NEAR/15
@@ -470,10 +511,9 @@ TS=
             )
           )     
 )
-
 ```
 
-#### Phrase 5
+#### Phrase 6
 
 The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "negatives", phrase 4 covers "positives".
 
@@ -484,16 +524,16 @@ TS=
 (
         ("food production" OR "food grower$" OR "farm*"
         OR "agricultur*"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-        OR "agroforest*" OR "silvopastur*"
+        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+        OR "agroforest*" OR "silvopastur*" OR "silvopastoral*"
         OR "aquaculture" OR "fisher*" OR "fish farm*"
         OR
           (
             ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
             )
             NEAR/5
-                ("production" OR "producer$" OR "grower$")
+                ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
           )      
         )
         NEAR/15
@@ -538,15 +578,13 @@ This target is interpreted to cover research about:
 * Establishment/maintenance of agricultural genetic banks/preservation of tissue (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity (phrase 3).
 * Benefit sharing for genetic resources and traditional knowledge related to food and agriculture (phrases 4,5).
 
-The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Types of crops and livestock expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" are included, oil crops excluded. Root crops are covered by `crops`. `farming OR farmer$ OR farm$` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
-
-Central instruments are The Treaty on Plant Genetic Resources for Food and Agriculture, the Convention on Biological Diversity and elaborations in the Nagoya Protocol.
+The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Central instruments are The Treaty on Plant Genetic Resources for Food and Agriculture, the Convention on Biological Diversity and elaborations in the Nagoya Protocol.
 
 This query consists of 5 phrases.
 
 #### Phrase 1
 
-The general structure is *agricultural diversity/landraces + action* OR *relevant strategies* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands.
+The general structure is *agricultural diversity/landraces + action* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands.
 
 Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as although the target does not focus on these supporting species, research about agrobiodiversity is likely looking at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
 
@@ -612,7 +650,7 @@ TS=
         NEAR/15
             ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "ducks" OR "buffalo*"      
+            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
             OR "landrace$" OR "wild relative$"
             OR
               (
@@ -652,7 +690,7 @@ TS=
       NEAR/15
           ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "ducks" OR "buffalo*"     
+          OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
           OR "landrace$" OR "wild relative$"
           OR
             (
@@ -691,7 +729,7 @@ TS=
         ("food"
         OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
         OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         OR "landrace$" OR "wild relative$"
         OR
           (
@@ -717,7 +755,7 @@ TS =
         ("food"
         OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
         OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "ducks"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         OR "landrace$" OR "wild relative$"
         OR
           (
@@ -863,7 +901,7 @@ TS=
 
 <a id="f10"></a> FAO. (2004). *What is Agrobiodiversity?* in "Building on Gender, Agrobiodiversity and Local Knowledge" [Training manual]. https://www.fao.org/3/y5609e/y5609e.pdf [↩](#FAO2004)
 
-<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244
+<a id="f2"></a> FAO statistical year book. (2013). *Part 3 Feeding the world*. ISBN: 9789251073964. http://www.fao.org/publications/card/en/c/1d6e6a08-4937-5c7d-8665-3e0ed6f29244 [↩](#FAO2013)
 
 <a id="f7"></a> FAO. (2014). *Building a Common Vision for Sustainable Food and Agriculture. Principles and Approaches*. https://www.fao.org/3/a-i3940e.pdf [↩](#FAO2014)
 
