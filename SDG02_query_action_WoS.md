@@ -214,7 +214,9 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 
 Types of agriculture were expanded using MeSH (MEDLINE database, NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Types of crops and livestock expanded using the FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f1)</a>). Major crops or "important food crops" included, oil crops excluded. Root crops covered by `crops`. `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years.
 
-`intensification` implies increasing production, but results in some noise when used alone - it can be used in other context, and finds results about the effects of agricultural intensification, or refers to intensification of large-scale farming (set in comparison with SSF), thus it is combined with other terms. Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example.
+`intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+
+Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example.
 (Original combination with: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ``` Ceylon =
@@ -297,6 +299,8 @@ This query consists of 5 phrases.
 #### Phrase 1
 
 The general structure is *food production systems + production + action*.
+
+`intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
 
 ``` Ceylon =
 TS=
