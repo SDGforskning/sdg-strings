@@ -152,33 +152,14 @@ TS=
 >
 > 4.3.1 Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex
 
-This query consists of x phrases.
+This target is interpreted to cover research about:
+* Access to technical, vocational and tertiary education, including universities  
+
+This query consists of 1 phrase.
 
 ##### Phrase 1:
 
 Phrase 1 doc
-Adding "ensure" NEAR/3 to the phrase would reduce hits from 75 to 1...
-Adding NEAR/3 ("education" OR "schooling" OR "tuition" OR "instruction") to the phrase would reduce hits from 75 to 6
-Search terms "afford*" OR "quality" seem to make trouble - perhaps drop phrase 1 for phrase 2?
-
-```Ceylon =
-TS=
-(
-  ("access"
-  )
-  NEAR/5
-  (
-   ("afford*" OR "quality"
-   )
-    NEAR/5
-    ("technic*" OR "vocation*" OR "tertiar*" OR "university"
-    )
-   )
-  ) 
-)
-```
-#### Phrase 2: 
-Phrase 2 doc
 
 ```Ceylon =
 TS=
@@ -186,31 +167,16 @@ TS=
  (
   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*")
   NEAR/3
-   ("access")
-  )
-   NEAR/5
-    (
-    ("technic*" OR "vocation*" OR "tertiar*" OR "university")
-     NEAR 3/
-     ("education" OR "schooling" OR "tuition" OR "instruction" OR "training")
-    ) 
- )
-)
-```
-##### Phrase 3:
-
-Phrase 3 doc
-Adding action verbs radically decrease the number of hits
-```Ceylon =
-TS=
-(
-"participat*"
-  NEAR/5
-  ("formal" OR "non-formal"
+   (
+    ("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*")
   )
    NEAR/3
-   ("education" OR "schooling" OR "tuition" OR "instruction" OR "training"
-  )
+    (
+     ("technic*" OR "vocation*" OR "tertiar*" OR "university")
+      NEAR
+      ("educat*")
+    )
+ )
 )
 ```
 
