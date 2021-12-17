@@ -575,7 +575,7 @@ TS=
 
 This target is interpreted to cover research about:
 * The preservation of diversity of farmed species/wild relatives (phrases 1,2).
-* Establishment/maintenance of agricultural genetic banks/preservation of tissue (seed, plant, animal), as this is mentioned as a way to maintain genetic diversity (phrase 3).
+* Agricultural genetic banks and preservation of tissue (seed, plant, animal) (phrase 3).
 * Benefit sharing for genetic resources and traditional knowledge related to food and agriculture (phrases 4,5).
 
 The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Central instruments are The Treaty on Plant Genetic Resources for Food and Agriculture, the Convention on Biological Diversity and elaborations in the Nagoya Protocol.
@@ -665,30 +665,40 @@ TS=
 
 The general structure is *gene banks + action + agriculture*
 
+The action terms for genebanks helps to filter out results which mention genebanks that were used in research (i.e. samples were taken from...).
+
 `cryoconservation` and `cryopreservation` are ex situ in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>); research about cryopreservation for relevant groups is thus considered relevant.
+
+`domestic*` was removed from the agriculture terms as results were mostly about domestic cats.
 
 ``` Ceylon =
 TS=
 (
+  (
       ("cryoconservation"
       OR
         (
           ("plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
           )
-          NEAR/5
-              ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered"
-              OR "establish*" OR "support" OR "build*"
+          NEAR/15
+              ("diversity" OR "genetic resources" OR "agricultural biodiversity"
+              OR "maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered"
+              OR "establish*" OR "support" OR "build*" OR "strengthen*"
+              OR "collection$ management" OR "collection$ development"
               OR "funding" OR "policy" OR "policies"
               )
         )
       OR
         ("cryopreservation"
-        NEAR/5
-            ("germplasm" OR "oocyte$" OR "sperm*" OR "semen" OR "embryo$" OR "somatic cells")
+        NEAR/15
+            ("diversity" OR "genetic resources" OR "agricultural biodiversity"
+            OR "conserv*" OR "extinct*" OR "endangered"
+            OR "germplasm" OR "oocyte$" OR "sperm*" OR "semen" OR "embryo$" OR "somatic cells"
+            )
         )
       )  
       NEAR/15
-          ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
+          ("agricultur*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*"
           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
           OR "landrace$" OR "wild relative$"
@@ -698,6 +708,7 @@ TS=
               NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
             )
           )
+  ) NOT ("soil seed bank$" OR "weed seed bank$" OR "dung seed bank$")        
 )
 ```
 
@@ -784,43 +795,51 @@ TS =
 >
 > 2.a.2 Total official flows (official development assistance plus other official flows) to the agriculture sector
 
+This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks. It is difficult to decide if this should be limited to research about developing countries - while target indicates that the results of these investments and collaborations should benefit LDCs, that does not necessarily mean that research on these themes is only beneficial if carried out in LDCs. An optional phrase for combining with LDCs is included below.
+
 This query consists of 1 phrase
-
-Genebanks already covered (Target 2.5), so not included as a term here.
-
-Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[3](#f3)</sup>.
 
 ``` Ceylon =
 TS =
     (
-        ( "Agriculture Orientation Index for Government Expenditure$"
-          OR
+        "Agriculture Orientation Index for Government Expenditure$"
+        OR
           (
-              ( "invest" OR "investing" OR "investment$" OR "international cooperation"
-               OR "official development aid" OR "official development assistance"
-              )
-              AND
-                  ( "rural infrastructure" OR "food security" OR "food insecurity"OR "agronomy" OR "agroecology"
-                    OR
-                    (
-                        ( "sustainab*" OR "infrastructure" OR "technolog*" OR "research" OR "science$" )
-                        NEAR/3 "agricultur*"
-                    )                  
-                  )
-          )
-        )
-        AND
-            ( "developing world"
-              OR
-              (
-                    ( "developing" OR "least developed" )
-                    NEAR/3 ( "state$" OR "nation$" OR "countr*" )
-              )
-              OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-              OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands"
-              OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgystan" OR "Lao People’s Democratic Republic" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "Paraguay" OR "Republic of Moldova" OR "Rwanda" OR "South Sudan" OR "Tajikistan" OR "The former Yugoslav Republic of Macedonia" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"            
+            ("invest" OR "investing" OR "investment$"
+            OR "government expenditure" OR "public spending"
+            OR "development aid" OR "development assistance"
+            OR "international cooperation" OR "international collaboration"
             )
+            NEAR/15
+                ("rural infrastructure"
+                OR "agronomy" OR "agroecology" OR "agricultural sector"
+                OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+                OR
+                  (
+                      ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation"
+                      )
+                      NEAR/3 ("agricultur*" OR "farming" OR "farm" OR "irrigation")
+                  )                  
+                )
+          )
     )
+
+```
+
+Optional LDC phrase, can be combined with `AND`
+
+```Ceylon =
+TS=         ("developing world"
+            OR
+              (
+                  ( "developing" OR "least developed" )
+                  NEAR/3 ("state$" OR "nation$" OR "countr*")
+              )
+            OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
+            OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+            OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgyzstan" OR "Kyrgyz Republic" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova" OR "Rwanda" OR "South Sudan" OR "Swaziland" OR "Tajikistan" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"        
+            )
+
 
 ```
 
