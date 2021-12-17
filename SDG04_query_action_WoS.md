@@ -34,12 +34,11 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 4.1.2 Completion rate (primary education, lower secondary education, upper secondary education)
 
-Thia target is interpreted to cover research about
+This target is interpreted to cover research about
 
 * Completion of primary and secondary education			
 * Access to primary and secondary education that is free and equitable			
 * Achieving minimal profiency in reading and mathematics			
-
 
 This query consists of 3 phrases.
 
@@ -98,29 +97,29 @@ TS=
 >
 > 4.2.2 Participation rate in organized learning (one year before the official primary entry age), by sex
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+
+* Access to early childhood education (and care)
+* Readiness for primary education
+
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
-Adding action terms ("ensure*" OR "secure*")NEAR/3 at he beginning reduces hits from 29 to 1 (very relevant)
+The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in education
+
 ```Ceylon =
 TS=
 (
- (access*)
-  NEAR/5
+ ("access" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*")
+ NEAR/5
   (
-   ("quality")
-    NEAR/5
-    (
-     ("early childhood")
-      NEAR/5
-      ("development"OR "care")
-     )
-      OR
-      ("pre-primary education")
-   )
- )
+   ("early childhood")
+   NEAR/3
+    ("care and education" OR "education")
+  )
+)
 ```
 ##### Phrase 2:
 
@@ -129,30 +128,21 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
- ( 
-  ("children*" OR "boys and girls" OR "under-five")
- )  
-   NEAR/5
-   (
-    ("developmental*")
-     NEAR/5 ("on track" OR "health*" OR "sound")
-   )
-)
-```
-#### Phrase 3:
-```Ceylon =
-TS=
-(
- ("ready" OR "readiness")
+ (
+  ("ready" OR "readiness" OR "prepar" OR "school readiness")
   NEAR
-  ("primary education")
-)
-```
-#### Phrase 4:
-```Ceylon =
-TS=
-(
-
+   ("primary education*" OR "primary school*" OR "elementary school*")
+ )
+  OR 
+   (
+    (
+     ("children*" OR "under-five*" OR "early childhood")
+    )
+     NEAR/5 
+     ("development*")
+      NEAR 
+      "school entry"
+   )
 )
 ```
 
