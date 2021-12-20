@@ -70,53 +70,32 @@ TS=
 >
 > 11.2.1 Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities
 
-This query consists of x phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Transport systems
 
 ```Ceylon =
 
-TS=(
-     (
-      (
-        (
-          ("convenient*" OR "access*" OR "reachab*" OR "affordab*" OR "safe" OR "secur*" OR "sustainab*")
-          
-          NEAR/5 
-                  ("transport*" OR "road*" OR "street*" OR "railway*" OR  “waterway*” OR "travel*" OR “traffic*” 
-                  OR bus OR buses OR "taxi*" OR "boat*" OR "ferry" OR "ferries" OR aeroplan* OR "vehicl*" OR "bike*" 
-                  OR "scooter*" OR "vessel*" OR “train$” OR "underground*" OR “tube*” OR "tunnel*")
-          )
-       )
-        NEAR/5 
-        (
-        (
-        ("increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" OR "extend*" OR "develop*" OR "improv*"
-        OR "implement*" OR "establish*" OR "enhanc*")
-     )
-     )
-     )
-     
-     NEAR/5 
-     
-     (
-      (
-       (
-          ("city" OR "cities" OR "urban" OR "municipalit*" OR “public*” OR “human settlement*”)
-       )
-      )
-     )
-      
-)
+TS=
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+Road safety
 
 ```Ceylon =
 
+TS=
+```
+
+##### Phrase 3:
+
+Public transport
+
+```Ceylon =
+
+TS=
 ```
 
 ## Target 11.3
