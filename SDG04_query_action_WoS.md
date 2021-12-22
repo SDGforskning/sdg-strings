@@ -186,25 +186,24 @@ TS=
 >
 > 4.4.1 Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+
+* Reducing the number of youths and adults not in employment, education or training ("NEET")
+* The impact of improved ICT skills on employability
+
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
+https://www.decentjobsforyouth.org/
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
-  NEAR/15
-  (
-   ("necessar*" OR "required" OR "relevant")
-    NEAR/5
-     ("skill*")
-      NEAR/5
-       ("employ*" OR "job*" OR "entrepreneur*")
-   )
- )
+("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+  NEAR/5
+   ("NEET*" OR "not in employment, education or training") NOT ("protein" OR "nuclear") 
 )
 ```
 ##### Phrase 2:
@@ -214,14 +213,16 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
- ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*" OR "relevan*")
   NEAR/5
-   (
-    ("information and communication technology" OR "ICT") 
-     NEAR/3 
-     ("skill*")
-    ) 
-   )
+  (
+   ("information and communication technology" OR "ICT")
+    NEAR/5
+    ("skill*")
+  )
+   NEAR
+   ("employ*" OR "job*" OR "entrepreneur*")
+)
 ```
 
 ## Target 4.5
