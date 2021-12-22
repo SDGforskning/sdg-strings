@@ -231,37 +231,58 @@ TS=
 >
 > 4.5.1 Parity indices (female/male, rural/urban, bottom/top wealth quintile and others such as disability status, indigenous peoples and conflict-affected, as data become available) for all education indicators on this list that can be disaggregated
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+* Gender disparities in education
+* Access to education for vulnerable persons
+* Access to education for persons with disabilities
+* Access to education for indigenous peoples
+
+This query consists of 4 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
-In doubt about action terms here, as they reduce the number of hits (26>7)and seem to eliminate relevant articles.
+
 ```Ceylon =
 TS=
 (
- ("equit*" OR "equal*")
- NEAR/3
-  ("gender")
-   NEAR/5
-   (("access")NEAR/5("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
-   )
+(
+(
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR     "limit*" OR "lower*" OR "fight*" OR "combat*")	
+NEAR/3 
+(
+("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+NEAR/5
+("equity*" OR "non-equity*" OR "equality" OR "non-equality*" OR "balanc*" OR "unbalanc*" OR "disparity" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*")
 )
+)	
+NEAR/3	
+(
+("school*" OR "educat*" OR "vocational training" OR "student*")
+)
+)
+)	
 ```
 ##### Phrase 2:
 
 Phrase 2 doc
 
 ```Ceylon =
-TS=
+TS =
 (
- ("vulnerab*")
- NEAR/5
- (
-  ("access")
-   NEAR/5
-   ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
- )
+(
+(
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*")
+NEAR/5
+("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter")
+)
+NEAR/5
+(
+("school*" OR "educat*" OR "vocational training")
+)
+NEAR
+vulnerab*
+)
 )
 ```
 ##### Phrase 3:
@@ -271,13 +292,19 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
- ("person$ with disabilit*"OR "disabl*")
-  NEAR/5
-  (
-   ("access")
-   NEAR/5
-   ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
-  )
+(
+(
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*")
+NEAR/5
+("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter")
+)
+NEAR/5
+(
+("school*" OR "educat*" OR "vocational training")
+)
+NEAR
+("person$ with disabilit*" OR "disab*")
+)
 )
 ```
 ##### Phrase 4:
@@ -285,15 +312,21 @@ TS=
 Phrase 4 doc
 
 ```Ceylon =
-TS=
+TS =
 (
- ("indigen*")
-  NEAR/5
-  (
-   ("access")
-    NEAR/5
-    ("education" OR "schooling" OR "tuition" OR "instruction"OR "training")
-  )
+(
+(
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*")
+NEAR/5
+("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter")
+)
+NEAR/5
+(
+("school*" OR "educat*" OR "vocational training")
+)
+NEAR
+indigen*
+)
 )
 ```
 
