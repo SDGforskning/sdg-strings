@@ -70,15 +70,17 @@ TS=
 >
 > 11.2.1 Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities
 
+This target is interpreted to mean improving safe accessible (affordable is included in accessible) public transport systems.
+
+
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Transport systems
+The basic structure is improve + safe + Transport systems  
 
 ```Ceylon =
-
-TS=
+TS= ((((("transport system*" AND ("safe*" OR "secure*" OR "sustainab*" OR "accessab*")) AND ("city" OR "cities" OR "urban" OR "municipalit*" OR “human settlement*” OR “town*” OR “neighborhood*” OR “village*” OR "infrastructure*" OR vehicle*OR "road*" OR roads OR "railway*" OR  “waterway*” OR "travel*" OR “traffic*” OR bus OR "taxi*" OR "ferry" OR "ferries" OR  "vehicl*"  OR "vessel*" OR “train$” OR "underground*" OR “tube” OR “public transport*” OR ”pedestrian*” OR "maritim*"  OR "socio*" OR journey OR airport* )))))
 ```
 ##### Phrase 2:
 
