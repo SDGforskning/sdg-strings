@@ -1095,7 +1095,7 @@ TS =
 
 This target is interpreted to cover research about the implementation and development of international law for conservation and sustainable use of the oceans.
 
-This query consists of 2 phrases. **All should be combined with marine terms with `AND`**
+This query consists of 2 phrases. **ALl should be combined with marine terms with `AND`**
 
 ##### Phrase 1
 The general structure is *international law + action*. This phrase contains specific international laws relevant to conservation and sustainable use. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
@@ -1184,14 +1184,16 @@ TS =
 
 ## General SDG
 
-Structured slightly differently to the other goals as "water" is too general a word to use (also central to SDG 6).
+"water" is too general a word to use (also central to SDG 6).
 
 ``` Ceylon =
 TS =
 (
-     "SDG14" OR "SDG 14" OR "SDG-14" OR "sustainable development goal$ 14"
-  OR (("sustainable development goal$" OR "SDG$" OR "goal 14") AND "life below water")
-  OR (("sustainable development goal$" OR "SDG$" OR "goal 14") NEAR/15 "oceans")
+  "SDG14" OR "SDG$ 14" OR "sustainable development goal$ 14"
+  OR (
+        ("sustainable development goal$" OR "SDG$" OR "goal 14") 
+        AND ("ocean$" OR "life below water")
+     )
 )
 
 ```
