@@ -843,32 +843,25 @@ TS=         ("developing world"
 
 ```
 
-## Target 2.B/2.C
+## Target 2.b
 
 > **2.b Correct and prevent trade restrictions and distortions in world agricultural markets, including through the parallel elimination of all forms of agricultural export subsidies and all export measures with equivalent effect, in accordance with the mandate of the Doha Development Round.**
 >
 > 2.b.1 Agricultural export subsidies
 
-> **2.c Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility.**
->
-> 2.c.1 Indicator of food price anomalies
+This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms. There are not many works about this topic found.
 
-These targets were combined.
-
-This query consists of 3 phrases
+This query consists of 2 phrases
 
 #### Phrase 1:
-
-Although this appears to be a broad search, there are very few papers in this specialised  field. Therefore it was not limited further
 
 ``` Ceylon =
 TS=
 (
-  ( "export subsid*" OR "export credit$" )
-  NEAR/5
-      ( "agricultur*" OR "food" )
+  ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
+  AND
+      ("agricultur*" OR "food")
 )
-
 ```
 
 #### Phrase 2:
@@ -876,25 +869,65 @@ TS=
 ```Ceylon =
 TS=
 (
-  ( "trade restrict*" OR "distort*" OR "price-fixing" OR "Doha" )
-  NEAR/5
-      (("trade" OR "market$") NEAR/5 ("agricultur*" OR "food"))
+  ("distort*" OR "price-fixing"
+  OR "trade restrict*" OR "Doha"
+  OR "state support*" OR "state financial support"
+  )
+  NEAR/15
+      (
+        ("trade" OR "trading" OR "market$" OR "export$" OR "food aid")
+        NEAR/5 ("agricultur*" OR "food")
+      )
 )
 ```
 
-#### Phrase 3:
+## Target 2.c
+
+> **2.c Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility.**
+>
+> 2.c.1 Indicator of food price anomalies
+
+This target is interpreted to cover research about preventing price volatility in food/agriculture. It consists of two phrases, where the basic structure is *action + prices + volatility + agriculture*.
+
+#### Phrase 1:
 
 ```Ceylon =
 TS=
 (
   (
-    ( "food" OR "agricultur*" )
-    NEAR/3 ( "price$" )
+    ("prevent*" OR "avoid" OR "limit" OR "reduc*" OR "minimi*"
+    OR "mitigat*" OR "tackl*" OR "combat" OR "counteract"
+    OR "stabiliz*" OR "stabilis*"
+    OR "policy" OR "policies"
+    )
+    NEAR/5
+        ("price$" OR "market$")
+    NEAR/5
+        ("volatil*" OR "instability" OR "unstable" OR "anomalies")
   )
-  NEAR/5
-      ( "volatil*" OR "stabil*" )
+  AND ("food" OR "agricultur*")
 )
 ```
+
+```Ceylon =
+TS=
+(
+  ("stabili* prices" OR "stabili* markets"
+  OR
+    (
+      ("ensur*" OR "increas*" OR "improv*" OR "encourag*" OR "maintain*" OR "strengthen*"
+      OR "policy" OR "policies" OR "intervention$"
+      )
+      NEAR/5
+          ("price$" OR "market$")
+      NEAR/5
+          ("stable" OR "stabili*")
+    )
+  )  
+  AND ("food" OR "agricultur*")
+)
+```
+
 
 ## SDG generic
 
@@ -937,3 +970,5 @@ TS=
 <a id="f3"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
 
 <a id="f4"></a> WHO. (2021, June 9). *Malnutrition*. [Fact sheet]. https://www.who.int/news-room/fact-sheets/detail/malnutrition. [↩](#WHOmalnut)
+
+<a id="f12"></a> Information and External Relations Division of the WTO Secretariat. (n.d.). *Export subsidies and other export support measures* [Fact sheet]. World Trade Organization. https://www.wto.org/english/tratop_e/agric_e/factsheetagric17_e.htm [accessed 31 Dec 2021] [↩](#WTOexport)
