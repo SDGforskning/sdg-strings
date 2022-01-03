@@ -1,5 +1,7 @@
 # Search query for SDG 14 - Life below water, Bergen action-approach.
 
+Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
+
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -1191,7 +1193,7 @@ TS =
 (
   "SDG14" OR "SDG$ 14" OR "sustainable development goal$ 14"
   OR (
-        ("sustainable development goal$" OR "SDG$" OR "goal 14") 
+        ("sustainable development goal$" OR "SDG$" OR "goal 14")
         AND ("ocean$" OR "life below water")
      )
 )

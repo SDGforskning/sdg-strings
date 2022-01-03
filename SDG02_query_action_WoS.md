@@ -1,5 +1,7 @@
 # Search query for SDG 2 - Zero Hunger, Bergen action-approach.
 
+End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
+
 **Contents**
 
 1. Full query in copy-pasteable format
