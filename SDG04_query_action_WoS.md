@@ -38,7 +38,7 @@ This target is interpreted to cover research about
 
 * Completion of primary and secondary education			
 * Access to primary and secondary education that is free and equitable			
-* Achieving minimal profiency in reading and mathematics			
+* Achieving minimal proficiency in reading and mathematics			
 
 This query consists of 3 phrases.
 
@@ -336,22 +336,29 @@ indigen*
 >
 > 4.6.1 Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+		
+* Achieving minimal or functional proficiency in literacy and numeracy skills
+
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
+This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level but not with school/educational system as such are found 
 
 ```Ceylon =
 TS=
 (
-("achiev*" OR "reach*")
- NEAR 
- (
- ("basic" OR "fundament*" OR "functional")
+ ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
   NEAR/5
-   ("numera*" OR "litera*")
- )
+   (
+    ("basi*" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary" OR "functional") 
+    NEAR
+     ("proficienc*" OR "skill*" OR "comprehen*")
+      NEAR/5
+       ("read*" OR "literacy" OR "literate" OR "mathematic*" OR "maths" OR "numeracy" OR "numerate")
+   )
 )
 ```
 ##### Phrase 2:
@@ -361,7 +368,9 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
-
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+  NEAR/3
+   (" illitera*" OR "anal$abet*")
 )
 ```
 
