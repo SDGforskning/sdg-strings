@@ -787,7 +787,7 @@ TS =
 ```
 
 
-## Target 2.A
+## Target 2.a
 
 > **2.a Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries.**
 >
@@ -849,7 +849,7 @@ TS=         ("developing world"
 >
 > 2.b.1 Agricultural export subsidies
 
-This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms. There are not many works about this topic found.
+This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor. There are not many works about this topic found.
 
 This query consists of 2 phrases
 
@@ -870,12 +870,12 @@ TS=
 TS=
 (
   ("distort*" OR "price-fixing"
-  OR "trade restrict*" OR "Doha"
+  OR "trade restrict*" OR "Doha" OR "food aid"
   OR "state support*" OR "state financial support"
   )
   NEAR/15
       (
-        ("trade" OR "trading" OR "market$" OR "export$" OR "food aid")
+        ("trade" OR "trading" OR "market$" OR "export$")
         NEAR/5 ("agricultur*" OR "food")
       )
 )
@@ -912,7 +912,12 @@ TS=
 ```Ceylon =
 TS=
 (
-  ("stabili* prices" OR "stabili* markets"
+  (
+    (
+      ("stabili*" OR "well functioning")
+      NEAR/5
+         ("price$" OR "market$")
+    )
   OR
     (
       ("ensur*" OR "increas*" OR "improv*" OR "encourag*" OR "maintain*" OR "strengthen*"
@@ -921,7 +926,7 @@ TS=
       NEAR/5
           ("price$" OR "market$")
       NEAR/5
-          ("stable" OR "stabili*")
+          ("stable" OR "functioning")
     )
   )  
   AND ("food" OR "agricultur*")
