@@ -380,31 +380,45 @@ TS=
 >
 > 4.7.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+		
+* Results and outcomes of education for sustainable development (ESD) and global citizenship (GCED) 
+* Results and outcomes of education for human rights, gender equality, peace, non-violence and cultural diversity
+* Education for sustainable development (ESD) and global citizenship (GCED) in education policies, curricula, teacher education and student assessments
+
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
-
+https://en.unesco.org/themes/education-sustainable-development
 ```Ceylon =
-TS=
-(
- ("educat* for")
-  NEAR/5
-  ("sustainab*" OR "sustainable development" OR "sustainable lifestyle")
-)
+TS= 
+ (
+  (
+   ("skill*" OR "knowledge" OR "competen*" OR "outcome*" OR "result*")
+   NEAR
+   ("ESD" OR "educat*")
+    NEAR/5
+    ("sustainabilit*" OR "sustainable development" OR "sustainable lifestyle")
+   )
+ )
 ```
 ##### Phrase 2:
 
 Phrase 2 doc
-
+The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 only returned irrelevant hits from medical, mathematical and chemical research
 ```Ceylon =
 TS=
 (
- ("educat* for")
-  NEAR/5
-  ("human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "global citizen*" OR "cultural divers*")
-)
+ (
+  ("skill*" OR "knowledge" OR "competen*" OR "understand*" OR "outcome*" OR "result*")
+   NEAR
+   ("educat*")
+    NEAR/5
+    ("human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "global citizen*" OR "cultural divers*")
+  )
+ )
 ```
 ##### Phrase 3:
 
@@ -413,39 +427,23 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
- ("educat*")
-  NEAR
+ (
   (
-   ("cultur*")
-   NEAR("sustainab*")
+   (
+    "sustainable development*" OR "sustainab*" OR "global citizen*"
+    )
+    NEAR 
+    "educat*"
+   )
+    OR 
+    (
+    "ESD"
+    )
   )
-)
-```
-##### Phrase 4:
-
-Phrase 4 doc
-
-```Ceylon =
-TS=
-(
- (
-  ("global citizen*" NEAR "education")
    NEAR
-   ("educ* polic*"OR "currricul*" OR "teacher educ*" OR "student assess*")
- )
-)
-```
-##### Phrase 5:
-
-Phrase 5 doc
-
-```Ceylon =
-TS=
-(
- (
-  ("sustainable development*" NEAR "education")
-   NEAR("educ* polic*"OR "currricul*" OR "teacher educ*" OR "student assess*")
- )
+   (
+   "educ* polic*" OR "currricul*" OR "teacher educ*" OR "student assess*"
+  )
 )
 ```
 
