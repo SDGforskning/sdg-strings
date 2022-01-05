@@ -453,38 +453,45 @@ TS=
 >
 > 4.a.1 Proportion of schools offering basic services, by type of service
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+* Safe and inclusive learning environments
+* Access to basic services such as electricity, internet, drinking water and sanitation facilities in schools
+
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
 Phrase 1 doc
-"Basic services" not included. Education or schooling is often counted as a basic service, but otherwise that term seems to refer to food, health etc. and be used in other, more general contexts than that of schools, education etc. 
 
 ```Ceylon =
 TS=
 (
- (
-  ("education* facility" OR "education* facilities")
- )
+ ("school*" OR "education*")
   NEAR
-  ("child*" OR "disab*" OR "gender"OR "all")
- ) 
+   (
+    ("learning environment")
+    NEAR
+    ("safe*" OR "secure*" OR "inclus*" OR "effectiv*")
+   )
 )
 ```
 ##### Phrase 2:
 
 Phrase 2 doc
+The definition of basic services in schools in retrieved from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf
 
 ```Ceylon =
 TS=
 (
- ("school*"OR "educati*")
- NEAR/5
-  (
-   ("learning environment")
-   NEAR 
-   ("safe*" OR "non-violen*" OR "inclusive" OR "effective")
-  )
+ (
+  ("school*"OR "education* facility" OR "education* facilities")
+  NEAR
+   (
+    ("access")
+    NEAR/5
+     ("electricit*" OR "internet*" OR "computer*" OR "adapted infrastructure*" OR "adapted material*" OR "drinking water*" OR "sanitation*" OR "handwash*")
+   )
+ )
 )
 ```
 
