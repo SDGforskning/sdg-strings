@@ -32,19 +32,19 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access, reliance on and increasing use of clean fuels and household technology (phrase 1). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is clearly about households and use by the general population (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-* Access to, and affordable, reliable and modern electricity and energy services (phrases 2-5)
+* Access, reliance on clean vs. dirty fuels, and increasing use of clean fuels and household technology (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is clearly about households, i.e. heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Access to, and affordable, reliable and modern electricity and energy services (phrases 3-6)
 
 This query consists of 5 phrases.
 
 ##### Phrase 1:
 
-This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean fuels/tech + reliance/access*
+This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household fuels/tech + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`.
 
 Clean cooking is part of clean fuels/tech, mentioned in the high level political forum document (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
 > “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
 
-Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean".
+Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean". There are a large number of results lost by removing the ideas of decarbonisation and "clean technology" generally - consider including them in the topic/wide approach?
 
 The second half of this phrase contains terms for various aspects to do with reliance, access and ways to increase usage, e.g.:
 * Usage rates and availability
@@ -60,11 +60,14 @@ TS=
   ("solar cooker$" OR "solar box cooker$"
   OR
     (
-      ("clean" OR "cleaner" OR "decarboni*" OR "low-carbon")  
-      NEAR/3
-          ("fuel$" OR "energy" OR "power" OR "electricity"
-          OR "technolog*"            
-          OR "cooking" OR "cookstove$" OR "stove$"
+      ("clean" OR "cleaner"
+      OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
+      OR "unprocessed coal"
+      )  
+      NEAR/15
+          ("cooking" OR "cookstove$" OR "stove$"
+          OR "lighting" OR "lamps"
+          OR "heating"
           )
     )
   )
@@ -72,7 +75,7 @@ TS=
       ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
       OR "access*" OR "availab*" OR "barrier$" OR "obstacle$"
       OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-      OR "implement*" OR "adopt*" OR "transition$"
+      OR "implement*" OR "adopt*" OR "transition$" OR "intervention$"
       OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
       OR "policy" OR "policies" OR "legislation"
       OR "energy strateg*" OR "energy management" OR "energy planning"
@@ -83,7 +86,42 @@ TS=
       )
 )
 ```
-##### Phrase 2:
+#### Phrase 2
+
+This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean fuels/tech + reliance/access + households*. It is similar to phrase 1, but includes terms such as `kerosene` og `fuel$` which are broad unless combined with `household$`.
+
+```Ceylon =
+TS=
+(
+  (
+    ("clean" OR "cleaner"
+    OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
+    OR "unprocessed coal" OR "kerosene"
+    )  
+    NEAR/15
+        ("fuel$" OR "energy" OR "electricity"
+        OR "cooking" OR "cookstove$" OR "stove$"
+        OR "lighting" OR "lamps"
+        OR "heating"          
+        )
+    NEAR/15
+        ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
+        OR "access*" OR "availab*" OR "barrier$" OR "obstacle$"
+        OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
+        OR "implement*" OR "adopt*" OR "transition$" OR "intervention$"
+        OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
+        OR "policy" OR "policies" OR "legislation"
+        OR "energy strateg*" OR "energy management" OR "energy planning"
+        OR "feed-in tariff$" OR "market$" OR "initiative$"
+        OR (("energy" OR "green") NEAR/2 "certificat*")
+        OR "incentive$" OR "investment$" OR "investing" OR "invest"
+        OR "sustainable development" OR "sustainable energy development"
+        )
+  )    
+  AND ("household$" OR "home$" OR "houses" OR "housing")      
+)
+```
+##### Phrase 3
 
 This phrase focuses on the universal and affordable access to electricity part of the T&Is. Papers discussing reliability and resilience of power grids are included. Some aspects about infrastructure also concern target 7.A/7.B.
 
@@ -124,7 +162,7 @@ TS=
 )
 ```
 
-##### Phrase 3:
+##### Phrase 4
 
 `stable` and `stability` are very general words, so are combined with other terms here to reflect reliability.
 
@@ -158,7 +196,7 @@ TS=
 )
 ```
 
-##### Phrase 4:
+##### Phrase 5
 
 Access relates to energy poverty, security, justice etc.
 
@@ -172,7 +210,7 @@ TS=
 )
 ```
 
-##### Phrase 5:
+##### Phrase 6
 
 Universal access, covering electrification of remote/rural regions. Least developed countries are likely to be relevant in the context of universal electrification and access for all.
 
