@@ -17,7 +17,9 @@
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+
+Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
 
 ## 3. Targets
 
@@ -29,19 +31,28 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
+This target is interpreted to cover research about:
+* Access, reliance on and increasing use of clean fuels and household technology (phrase 1). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is clearly about households and use by the general population (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Access to, and affordable, reliable and modern electricity and energy services (phrases 2-5)
+
 This query consists of 5 phrases.
 
 ##### Phrase 1:
 
-This phrase focuses on the clean fuels and technology part of the T&Is. Clean cooking is part of this, mentioned in the high level political forum document <sup id="HLPF2018">[2](#f2)</sup>. `solar cookers` are a type of clean cooking technology.
+This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean fuels/tech + reliance/access*
 
-The second half of this phrase contains terms for various aspects:
+Clean cooking is part of clean fuels/tech, mentioned in the high level political forum document (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
+> “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+
+Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean".
+
+The second half of this phrase contains terms for various aspects to do with reliance, access and ways to increase usage, e.g.:
 * Usage rates and availability
 * Barriers to increase
 * Implementation
 * Research concerning bringing technology to users
 * Policy
-* Incentives. Investment concerns target 7.A
+* Incentives and investment
 
 ```Ceylon =
 TS=
@@ -53,7 +64,7 @@ TS=
       NEAR/3
           ("fuel$" OR "energy" OR "power" OR "electricity"
           OR "technolog*"            
-          OR "cooking" OR "stove$"
+          OR "cooking" OR "cookstove$" OR "stove$"
           )
     )
   )
@@ -163,7 +174,7 @@ TS=
 
 ##### Phrase 5:
 
-Universal access, covering electrification of remote/rural regions. Least developed countries are likely to be relevant in the context of universal electrification and access for all. Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[3](#f3)</sup>.
+Universal access, covering electrification of remote/rural regions. Least developed countries are likely to be relevant in the context of universal electrification and access for all.
 
 ```Ceylon =
 TS=
@@ -447,12 +458,14 @@ TS=
 
 ## 5. Footnotes
 
-<a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+<a id="f1"></a> Statistics Division. (2021a). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+
+<a id="f4"></a> Statistics Division. (2021b). *SDG Indicators Metadata Repository*. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 8 December 2021] [↩](#SDGindmetadata)
+
+<a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+
+<a id="f3">2</a> UN High level political forum on Sustainable Development. (2018). *2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all*. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf [Accessed 06.01.2022] [↩](#HLPF2018)
 
 Old format - I suggest we change to author-date
-
-<b id="f2">2</b> UN (2018) 2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf. [↩](#HLPF2018)
-
-<b id="f3">3</b> United Nations (2019) World Economic Situation and Prospects (Statistical Annex). https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <b id="f4">4</b> European Environment Agency (2016) Energy intensity. https://www.eea.europa.eu/data-and-maps/indicators/total-primary-energy-intensity-3 [↩](#EEA2016)
