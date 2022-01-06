@@ -529,6 +529,7 @@ TS=
 ##### Phrase 2:
 
 Phrase 2 doc
+https://unstats.un.org/sdgs/metadata/files/Metadata-04-0b-01.pdf
 
 ```Ceylon =
 TS = 
