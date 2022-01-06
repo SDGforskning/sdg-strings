@@ -242,61 +242,21 @@ TS=
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-
+This target is considered to cover research about planning and management of adaptation to climate change /this is a dificu
+https://aurora-network-global.github.io/sdg-queries/query_SDG13.xml
 ##### Phrase 1: 
-"Climate mitigation" and similar as searchterm alone
+
 
 ``` Ceylon =
 TS=
 (
-  ("climate mitigation"
-  ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3 
-  ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" )) 
-      OR "govern*" OR "disaster risk reduction" OR "preparedness")
-  )
- AND
-      ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
-        OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" 
-        OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" 
-        OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" 
-        OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" 
-        OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" 
-        OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-        OR
-        "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" 
-        OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" 
-        OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" 
-        OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" 
-        OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" 
-        OR "Yemen" OR "Haiti"
-)
-)
-
-```
-##### Phrase 2: 
-
-Climate change devided in indicators of climate change:
-global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618)
-
-``` Ceylon =
-TS=(
-(
- (
- (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-  OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
-  OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
-  OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
-  OR (("sea-level" OR "sea level") NEAR/3 ("increas*" OR "rise"))
-  OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
+  (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") 
+  NEAR/3 
+    (
+    ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*") OR 
+    ("national" OR "govern*" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" )) 
     )
-  NEAR/10
-  (
-        (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
-      OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
-      OR "govern*" OR "disaster risk reduction" OR "preparedness"
-       )
-)
+  )  
  AND
       ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
         OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" 
@@ -314,7 +274,6 @@ TS=(
         OR "Yemen" OR "Haiti"
 )
 )
-
 
 ```
 
@@ -400,3 +359,5 @@ Old format - I suggest we change to author-date
 <b id="f2">2</b> United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] [↩](#UNDGcapacity)
 
 <b id="f3">3</b> IPCC, 2014: Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
+
+https://aurora-network-global.github.io/sdg-queries/query_SDG13.xml
