@@ -32,14 +32,15 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access, reliance on clean vs. dirty fuels, and increasing use of clean fuels and household technology (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is clearly about households, i.e. heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-* Access to, and affordable, reliable and modern electricity and energy services (phrases 3-6)
+* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean household technology (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, i.e. heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Affordable, reliable and modern electricity and energy services (phrases 3,4,5)
+* Access to electricity and energy services (phrases 3 and 6)
 
 This query consists of 5 phrases.
 
 ##### Phrase 1:
 
-This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household fuels/tech + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`.
+This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household energy activities + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`. Adding `fuels OR technologies` in addition is too restrictive here - a number of works just talk about "clean cookstoves" for example.
 
 Clean cooking is part of clean fuels/tech, mentioned in the high level political forum document (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
 > “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
@@ -88,7 +89,7 @@ TS=
 ```
 #### Phrase 2
 
-This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean fuels/tech + reliance/access + households*. It is similar to phrase 1, but includes terms such as `kerosene` og `fuel$` which are broad unless combined with `household$`.
+The basic structure is *clean fuels/tech + reliance/access + households*. It is similar to phrase 1, but includes terms such as `kerosene` og `fuel$` which are broad unless combined with `household$`.
 
 ```Ceylon =
 TS=
@@ -96,10 +97,10 @@ TS=
   (
     ("clean" OR "cleaner"
     OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
-    OR "unprocessed coal" OR "kerosene"
+    OR "coal" OR "kerosene"
     )  
     NEAR/15
-        ("fuel$" OR "energy" OR "electricity"
+        ("fuel$" OR "energy" OR "electric*"
         OR "cooking" OR "cookstove$" OR "stove$"
         OR "lighting" OR "lamps"
         OR "heating"          
@@ -121,117 +122,117 @@ TS=
   AND ("household$" OR "home$" OR "houses" OR "housing")      
 )
 ```
+
 ##### Phrase 3
 
-This phrase focuses on the universal and affordable access to electricity part of the T&Is. Papers discussing reliability and resilience of power grids are included. Some aspects about infrastructure also concern target 7.A/7.B.
+This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; phrase 4 uses broader terms for affordability, and phrase 6 broader terms for access.
 
-`energy` and `power` are combined with other terms to avoid hits from other subject areas (biological energy, mechanical power). NEAR/2 is used as they should be almost next to each other.
+The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy povery.
 
 ```Ceylon =
 TS=
 (
-  ( "affordab*"
-  OR "access*"
-  OR "reliab*" OR "resilien*"
-  OR "equitab*"
-  OR
-    ("infrastructure"
-    NEAR/10  
-        ("develop*" OR "upgrad*" OR "invest" OR "investment$" OR "investing" OR "modern*")
-    )
+  ("energy poverty" OR "energy vulnerability" OR "fuel poverty"
+  OR "energy democracy" OR "energy justice"
+  OR "energy security" OR "energy insecurity"
   )
-  NEAR/15
-      ("electricity" OR "electrical grid" OR "electrical infrastructure"
-      OR
-        (
-          ("energy" OR "power")
-          NEAR/2
-              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply"
-              OR "electrical"
-              OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$"
-              )            
-        )
-      OR
-        (
-          ("energy" OR "power" OR "electric" OR "electrical")
-          NEAR/15
-              ("microgrid" OR "microgrids" OR "micro-grid" OR "micro-grids")            
-        )
-      OR "off grid solution$"  
+  NEAR/5
+      ("reduc*" OR "decreas*" OR "alleviat*" OR "address*"
+      OR "combat" OR "fight*" OR "tackle"
+      OR "improv*" OR "strengthen*"
       )
 )
+OR TS=("increas* energy security")
 ```
 
 ##### Phrase 4
 
-`stable` and `stability` are very general words, so are combined with other terms here to reflect reliability.
+This phrase finds works about affordable energy/electricity (in addition to phrase 3). The general structure is *affordable + energy*.
 
-The terms in the first expression are more specific so can be combined more loosely (`AND`) to electricity/energy.
+`energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power).
 
 ```Ceylon =
 TS=
 (
-  ("stable supply" OR "supply stability" OR "grid stability"
-  OR
-    ("moderni*"
-    NEAR/3
-        ("energy" OR "power" OR "electricity" OR "grid" OR "grids")
-    )    
-  OR "sustainable development"    
-  )
-  AND
-      ("electricity" OR "electrical grid" OR "electrical infrastructure"
+  ("affordab*")
+  NEAR/15
+      ("energy service$" OR "electricity" OR "electrical energy"
       OR
         (
-          ("energy" OR "power")
-          NEAR/2
-              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply"
-              OR "electrical"
-              OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$"
-              )            
+          ("energy" OR "power" OR "electric" OR "electrical")
+          NEAR/3
+              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply")            
         )
-      OR "microgrid" OR "microgrids" OR "micro-grid" OR "micro-grids"
-      OR "off grid solution$"  
       )
 )
 ```
 
 ##### Phrase 5
 
-Access relates to energy poverty, security, justice etc.
+This phrase to find research about modern or reliable energy services (in addition to phrase 3), as well as sustainable development of energy services.
+
+`stable` and `stability` are very general words, so are combined with other terms.
 
 ```Ceylon =
 TS=
 (
-  "universal electrification" OR "rural electrification"
-  OR "energy security" OR "energy insecurity"
-  OR "energy poverty" OR "energy vulnerability" OR "fuel poverty"
-  OR "energy democracy" OR "energy justice"
+  ("stable supply" OR "supply stability" OR "grid stability"
+  OR "reliab*" OR "resilien*"
+  OR
+    ("modern*"
+    NEAR/5
+        ("energy" OR "electricity" OR "grid" OR "grids")
+    )    
+  OR "sustainable development"    
+  )
+  NEAR/15
+      ("energy service$" OR "electricity" OR "electrical energy"
+      OR
+        (
+          ("energy" OR "power" OR "electric" OR "electrical")
+          NEAR/3
+              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply"
+              OR "infrastructure" OR "grid" OR "grids" OR "energy system$"
+              )            
+        )
+      OR "microgrid$" OR "micro grid$"
+      OR "off grid solution$"  
+      )
 )
 ```
 
 ##### Phrase 6
 
-Universal access, covering electrification of remote/rural regions. Least developed countries are likely to be relevant in the context of universal electrification and access for all.
+This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification, access + energy services, electrification + regions*. Least developed countries are included regions.
 
 ```Ceylon =
 TS=
 (
-  ("electrification" OR "electricity" OR "electrical supply"
-  OR "energy service$" OR "energy access" OR "power supply"
+  "universal electrification" OR "rural electrification"
+  OR
+    ("access"
+    NEAR/5
+      ("energy service$")
+    )
+)
+TS=
+(
+  ("electrification" OR "energy service$" OR "energy access"
+  OR
+    ("access"
+    NEAR/5
+      ("electrical supply" OR "power supply" OR "electricity")
+    )  
   )
   NEAR/15
-      (
-        (
-          ("remote" OR "rural")
-          NEAR/3
-              ("region$" OR "area" OR "areas" OR "communities" OR "community")
+      ("rural"
+      OR
+        ("remote"
+        NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")
         )
       OR
-        (
-          "least developed"
-          NEAR/3
-              ("countr*" OR "state$" OR "nation$")
+        ("least developed"
+        NEAR/3 ("countr*" OR "state$" OR "nation$")
         )
       OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"    
       )
@@ -449,6 +450,10 @@ TS=
 This query consists of 1 phrase.
 
 *Comment 03092021 - note the typo in the second expression for infrastructure*
+("infrastructure"
+NEAR/10  
+    ("develop*" OR "upgrad*" OR "invest" OR "investment$" OR "investing" OR "modern*")
+)
 
 ```Ceylon =
 TS=
