@@ -45,6 +45,7 @@ This query consists of 1 phrase.
 `Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <sup id="HLPF2017">[2](#f2)</sup>. `Child labour` and `modern slavery` were included as elements of this. These are now taken out, as they are not necessarily linked to poverty. However, articles linking these with poverty reduction can be expected to use the word poverty also. If no link, then it is too indirect.
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
+For topic: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic*" OR "extreme")
 
 ```Ceylon =
 TS=
@@ -62,26 +63,20 @@ TS=
 ```
 
 
-## Target 1.3/1.4
 
-These targets are combined, as they cover similar topics.
+## Target 1.3
 
 > **1.3 Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable**
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 >
-> **1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance**
->
-> 1.4.1 Proportion of population living in households with access to basic services
->
-> 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
-This query consists of 7 phrases.
+This target is interpreted as to cover research about access to social protection systems. `welfare state` was concidered but excluded as it leads mostly to historical papers.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-Note more general terms such as "basic services" are not included here (as these have technology applications), but are combined in the next phrase in combination with poor and vulnerable groups. `welfare state` was concidered but excluded as it leads mostly to historical papers.
-
+Access and implementation of social services
 ```Ceylon =
 TS=
 
@@ -98,6 +93,54 @@ TS=
 )
 
 ```
+
+##### Phrase 2:
+
+Social services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
+
+Variants of the second part of this phrase are used in several places in this SDG to link the topics with poverty, women or children etc. (as relevant to each target).
+
+```Ceylon =
+TS=
+(
+  ("social protection$" OR "social floor$" OR "social service$"
+  OR "welfare system$" OR "welfare service$"
+  OR "social welfare" OR "social security" 
+  )
+  NEAR/15
+      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+      OR "the vulnerable" OR "vulnerable group$"
+      OR "slum" OR "slums"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
+      OR "workers" OR "women"
+      OR
+        (
+          ("person$" OR "people" OR "adult$")
+          NEAR/3
+              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
+        )
+      OR "disability"
+      OR
+        (
+          ("work" OR "workplace" OR "worker$" OR "occupational")
+          NEAR/3
+              ("injury" OR "injuries" OR "illness*")
+        )
+      OR "worker$ compensation"
+      OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
+      )
+)
+```
+
+
+## Target 1.4
+> **1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance**
+>
+> 1.4.1 Proportion of population living in households with access to basic services
+>
+> 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
+
+
 
 ##### Phrase 2:
 
