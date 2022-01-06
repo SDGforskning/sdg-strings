@@ -12,7 +12,7 @@
 ## 1. Full query
 
 <details>
-  <summary>Click to show the final copy-pasteable full query for SDG13</summary>
+  <summary>Click to show the final copy-pasteable full query for SDG13 (not updated!)</summary>
 
 ```
 TS=( ( ("educati*" OR "curriculum" OR "curricula" OR "institutional capacity" OR "human capacity" OR "systemic capacity" OR "awareness" OR "perception$" OR "technical knowledge transfer" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technology transfer$" OR "official development assistance" OR "official development aid" OR "foreign aid" OR "international aid" OR "cooperation fund" OR "investment$" OR "invest" OR "investing") NEAR/15 ( (("climate change$" OR "global warming" OR "climatic change$") NEAR/15 ("mitigat*" OR "adapt*" OR "impact reduction" OR "early warning" OR "risk$") ) OR "climate mitigation" ) ) OR "Green climate fund" OR "climate action$" OR "climate governance" OR "climate mitigation" OR (("climate change$" OR "global warming" OR "climatic change$" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming") OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*"OR "reced*")) OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*")) ) NEAR/10 ("action$" OR "sustainab*" OR "assessment$" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "impact reduction" OR (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*" OR "mitigat*") NEAR/2 ("impact$" OR "effect$")) OR "planning" OR "strateg*" OR "manag*" OR "policy" OR "policies" OR "legislat*" OR "govern*" OR "disaster risk reduction" OR "preparedness" ) ) OR ( ("reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*" ) NEAR/5 ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR ("climate" NEAR/5 ("anthropogenic" OR "human impact$")) ) ) OR (( ("reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*" ) NEAR/5 ("methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "carbon emissions" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6") ) AND ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming") ) ) OR ((( ("combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "prevent*" OR "stop*" OR "avoid*" OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "vulnerab*" OR "preparedness" OR "mitigat*" OR "early warning" OR "policy" OR "policies" OR "protect*" OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$")) ) NEAR/15 ("hazard*" OR "catastroph*" OR "disaster*" OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation")) OR "drought$" OR "flood*" OR "collaps*" OR "tipping point" OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) ) ) OR "Livelihood Vulnerability Index" ) AND ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate" OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")) ) OR ("Kyoto protocol" OR "Paris Agreement" OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "UNFCCC" OR "United Nations Framework Convention on Climate Change" ) OR ("SDG13" OR "SDG$ 13" OR "SDG-13" OR "sustainable development goal$ 13" OR (("sustainable development goal$" OR "SDG$" OR "goal 13") NEAR/15 "climate")) )
@@ -39,9 +39,12 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about how strengthen resilience, national strategies to deal and how to minimize impact of climate-related hazards and natural disasters; 
-For climate-related hazards and natural disasters both generel terms and specific hazards/desasters are mentioned.
+This target is interpreted to cover research about how strengthen resilience to climate-related hazards and natural disasters; national strategies to deal with climate-related hazards and natural disasters and how to minimize impact of climate-related hazards and natural disasters; 
+For climate-related hazards and natural disasters both generel terms (phrase 1) and specific hazards/desasters (phrase 2) are used.
 This query consists of 2 phrases.
+
+##### Phrase 1: 
+General terms for hazard/desaster 
 
 ``` Ceylon =
 TS=
@@ -72,7 +75,8 @@ TS=
  
 )
 ```
- Phrase 2
+#####  Phrase 2: 
+Specific desasters and hazards
  
 ``` Ceylon =
 TS=
@@ -123,11 +127,13 @@ This target is interpreted to cover research about national policies, strategies
   - reduction of greenhouse gases as a fixed class (phrase 3) and six main greenhouse gases (phrase 4)
 and generel Frameworks for action (phrase 5)
 
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
 This query consists of 5 phrases.
 
 ##### Phrase 1: 
-"Climate mitigation" and similar as searchterm alone
+
+National policies, strategies and planning related to "climate mitigation" and similar terms 
 
 ``` Ceylon =
 TS=
@@ -142,8 +148,7 @@ TS=
 
 ```
 ##### Phrase 2: 
-
-Climate change devided in indicators of climate change:
+National policies, strategies and planning related to adaptation to indicators of climate change:  
 global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level (https://library.wmo.int/doc_num.php?explnum_id=10618) (GIVES LITTLE) 
 
 ``` Ceylon =
@@ -170,8 +175,7 @@ TS=
 )
 ```
 ##### Phrase 3:
-
-Reduction of GHGs = main climate mitigation according to UNEP definition
+National policies, strategies and planning related to reduction of GHGs = main climate mitigation according to the 2014 IPCC Synthesis Report<sup id="IPCC2014">[3](#f4)</sup> UNEP definition 
 
 ``` Ceylon =
 TS=
@@ -230,7 +234,7 @@ TS=
 )
 ```
 
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but are included in the given phrases.
+
 
 ## Target 13.b
 
@@ -247,7 +251,7 @@ TS=
 (
   ("climate mitigation"
   ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate") NEAR/3 
-  ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
+  ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" )) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness")
   )
  AND
@@ -289,7 +293,7 @@ TS=(
   (
         (("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
           NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*"))        
-      OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies")) 
+      OR ("national" NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans")) 
       OR "govern*" OR "disaster risk reduction" OR "preparedness"
        )
 )
@@ -325,9 +329,14 @@ TS=(
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is considered to cover research about education and general awareness raising about climate change mitigation, adaptaion and impact reduction. It also covers technical knowledge transfer, international aid related to this topics . Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
-We include general terms about mitigation and additionally the main climate mitigation reduction og GHG 
-removed  "investment$" OR "invest" OR "investing" 
+This target is considered to cover research about education and general awareness raising about climate change mitigation, adaptaion and impact reduction. It also covers technical knowledge transfer, international aid related to this topics. 
+Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+
+We include general terms about mitigation and additionally the main climate mitigation reduction og GHG.
+
+removed  "investment$" OR "invest" OR "investing" from previous version
+13.a concidered to be part of 13.3
+
 This query consists of 1 phrase.
 
 ##### Phrase 1:
