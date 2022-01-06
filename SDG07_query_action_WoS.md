@@ -48,12 +48,11 @@ Clean cooking is part of clean fuels/tech, mentioned in the high level political
 Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean". There are a large number of results lost by removing the ideas of decarbonisation and "clean technology" generally - consider including them in the topic/wide approach?
 
 The second half of this phrase contains terms for various aspects to do with reliance, access and ways to increase usage, e.g.:
-* Usage rates and availability
+* Usage and access
 * Barriers to increase
 * Implementation
 * Research concerning bringing technology to users
-* Policy
-* Incentives and investment
+* Policies, incentives and investments
 
 ```Ceylon =
 TS=
@@ -82,7 +81,7 @@ TS=
       OR "energy strateg*" OR "energy management" OR "energy planning"
       OR "feed-in tariff$" OR "market$" OR "initiative$"
       OR (("energy" OR "green") NEAR/2 "certificat*")
-      OR "incentive$" OR "investment$" OR "investing" OR "invest"
+      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
       OR "sustainable development" OR "sustainable energy development"
       )
 )
@@ -115,7 +114,7 @@ TS=
         OR "energy strateg*" OR "energy management" OR "energy planning"
         OR "feed-in tariff$" OR "market$" OR "initiative$"
         OR (("energy" OR "green") NEAR/2 "certificat*")
-        OR "incentive$" OR "investment$" OR "investing" OR "invest"
+        OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
         OR "sustainable development" OR "sustainable energy development"
         )
   )    
@@ -245,63 +244,55 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
+This target is interpreted to cover research about increasing the use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), bringing of technology into use (e.g. commercialisation, scaling up) and research measuring usage of renewables (e.g. reliance on it, how large share does it have). Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to).
+
 This query consists of 2 phrases.
 
-Search limited with terms that concern the changing of energy systems to renewables (incentives, policies), bringing of technology into use (commercialisation, scaling up) and measures that reflect the share of renewables. Basic research on renewable technology not included unless addresses these concepts around increasing the global share of renewables.
-
 ##### Phrase 1:
+
+This phrase covers established phrases around transitioning to renewable energy.
 
 ```Ceylon =
 TS=
 (
   "energy sector transformation"
   OR "renewable energy transition$" OR "national energy transition$"
-  OR
-    (
-      ("share" OR "shares" OR "proportion$" OR "percentage$")
-      NEAR/3
-          ("renewables" OR "carbon-neutral" OR "green electricity" OR "green energy" OR "green power")
-    )
 )
 ```
 ##### Phrase 2:
 
-The first half of this phrase contains terms for various aspects:
-* Usage rates and availability
-* Terms for global energy mix/supplies/markets/shares
-* Barriers to increase
+The general structure of this phrase is *transitions/shares/incentives etc. + renewable energy*. The first part contains terms for various aspects, such as:
+* Usage
+* Global energy mix/supplies/shares
+* Support and barriers
 * Implementation. Here "transition" alone was too general so is combined.
 * Research concerning bringing technology to users
-* Policy
-* Incentives
+* Policies, incentives and investments
 
-They are then combined with various types of renewable energy generation in the second expression. `solar energy` is combined with technological terms to prevent hits from astronomy. `biomass`, `wind` and `solar` combined with other terms to prevent hits from other subject areas.
-
-Energy storage and smart grids to deal with fluctuations in supply are part of renewable energy transition (req. for renewables), inferred from the high level political forum document <sup id="HLPF2018">[2](#f2)</sup>.
+In the renewable energy terms, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>).
 
 ```Ceylon =
 TS=
 (
   ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-  OR "access*" OR "availab*"
   OR
     (
       ("share" OR "shares" OR "proportion$" OR "percentage$")
-      NEAR/2
-          ("generat*" OR "service$" OR "sector" OR "production" OR "supply"
-          OR "energy system$" OR "power system$" OR "global energy" OR "global electricity"
+      NEAR/5
+          ("generat*" OR "service$" OR "sector" OR "production" OR "supply" OR "supplies"
+          OR "global energy" OR "global electricity" OR "energy mix"
           )
     )
   OR "barrier$" OR "obstacle$"
   OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-  OR "implement*" OR "adopt*" OR "energy transition$" OR "renewable transition$" OR "transition* to" OR "pathway to"
+  OR (("promot*" OR "support*" OR "encourag*") NEAR/5 "renewable$")
+  OR "implement*" OR "adopt*" OR "energy transition$" OR "renewable transition$" OR "transition* to"
   OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
-  OR "policy" OR "policies" OR "legislation"
+  OR "policy" OR "policies" OR "legislation" OR "kyoto protocol"
   OR "energy strateg*" OR "energy management" OR "energy planning"
-  OR "kyoto protocol"
   OR "feed-in tariff$" OR "market$" OR "initiative$"
   OR (("energy" OR "green") NEAR/2 "certificat*")
-  OR "incentive$" OR "investment$" OR "investing" OR "invest"
+  OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
   OR "sustainable development" OR "sustainable energy development"
   )
   NEAR/15
@@ -507,7 +498,7 @@ TS=
 
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
-<a id="f3">2</a> UN High level political forum on Sustainable Development. (2018). *2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all*. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf [Accessed 06.01.2022] [↩](#HLPF2018)
+<a id="f3">2</a> UN High level political forum on Sustainable Development. (2018). *2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all*. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf [Accessed 06.01.2022] (#HLPF2018)
 
 Old format - I suggest we change to author-date
 
