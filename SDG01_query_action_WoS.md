@@ -140,11 +140,33 @@ TS=
 >
 > 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
+definition of basic services: https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
+basic servives: drinking water services , basic sanitation services basic hygene services, waste collection mobility and transport, ict, education
+health
 
+Phrase 1 & 2 cover assess to basic services, ...
+##### Phrase 1:
+
+Access and implementation of social services
+```Ceylon =
+TS=
+
+(
+  ("basic services"
+  )
+  NEAR/10
+      ("implement*" OR "establish*"
+      OR "coverage" OR "covered" OR "covering"
+      OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
+      OR "build" OR "building"
+      )
+)
+
+```
 
 ##### Phrase 2:
 
-Basic services and protections with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
+Basic services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
 
 Variants of the second part of this phrase are used in several places in this SDG to link the topics with poverty, women or children etc. (as relevant to each target).
 
