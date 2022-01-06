@@ -547,6 +547,10 @@ TS =
 >
 > 4.c.1 Proportion of teachers with the minimum required qualifications, by education level
 
+This target is interpreted to include research about
+* Improving teacher qualifications
+* International cooperation for teacher training in developing countries
+
 This query consists of x phrases.
 
 ##### Phrase 1:
@@ -554,12 +558,14 @@ This query consists of x phrases.
 Phrase 1 doc
 
 ```Ceylon =
-TS=
-(
- ("qualif* teacher$")
-  NEAR
-  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "scal* up")
-)
+TS= 
+ (
+  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up")
+   NEAR
+   (
+    ("teacher* qualification$")
+   )
+ )
 ```
 ##### Phrase 2:
 
@@ -568,9 +574,13 @@ Phrase 2 doc
 ```Ceylon =
 TS=
 (
- ("teacher training"OR"teacher education")
-   NEAR
-   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
+ (
+  ("teacher")
+  NEAR
+  ("education" OR "training")
+ ) 
+  NEAR
+  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
 )
 ```
 ##### Phrase 3:
