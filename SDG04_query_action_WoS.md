@@ -501,7 +501,12 @@ TS=
 >
 > 4.b.1 Volume of official development assistance flows for scholarships by sector and type of study
 
-This query consists of x phrases.
+This target is interpreted to cover research about
+		
+* Availabilty of scholarships to students from developing countries
+* Official development assistance (ODA) concerning higher education and vocational training
+
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
@@ -510,13 +515,14 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
- ("scholarship*"
-  NEAR/5
-  ("availab*"OR "access" OR "obtain" OR "receiv*")
- )
+ ("scholarships*"
+  NEAR
+  ("students"
+  )
+ ) 
   NEAR
   (
-  "least developed countr*" OR "least developed nation$"OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*") 
+  "least developed countr*" OR "least developed nation$"OR "developing countr*" OR "developing nation$" OR "developing states" OR "Africa*" 
   )
 )
 ```
@@ -525,62 +531,13 @@ TS=
 Phrase 2 doc
 
 ```Ceylon =
-TS=
-(
- ("enrol*" OR "participat*" OR "partake")
-  NEAR/5
-  ("higher edu*" OR "vocational training" OR "information and communications technology" OR "ICT" OR ("educat* program*"))
-   NEAR
-   (
-    ("other" OR "develop*") NEAR/3 ("countr*")
-   )
-)
-```
-##### Phrase 3:
-
-Phrase 3 doc
-
-```Ceylon =
-TS=
-(
- ("student mobility")
-  NEAR
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*")
- )
-)
-```
-##### Phrase 4:
-
-Phrase 4 doc
-
-```Ceylon =
-TS=
-(
+TS = 
  (
-  ("international")
-  NEAR
-   ("scholarship*"OR "exchang*")
+  ("official development assistance" OR "ODA")
+  NEAR 
+   ("educat*" OR "training program*")
  )
-  NEAR
-   ("education")
-    NEAR
-    (
-     ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR ("Africa*")
-    )
-)
-```
-##### Phrase 5:
 
-Phrase 5 doc
-"official development assistance" OR "oda" returns no relevant hits combined with "scholarship"", but combined with more general terms connected with education etc
-
-```Ceylon =
-TS=
-(
- ("official development assistance" OR "oda")
-  NEAR
-  ("student*" OR "educat*"OR"school*")
-)
 ```
 
 ## Target 4.c
