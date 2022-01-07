@@ -21,6 +21,11 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
 
+Abbreviations:
+* IEA - International Energy Agency
+* WHO - World Health Organization
+* LDC - least developed countries
+
 ## 3. Targets
 
 ## Target 7.1
@@ -32,9 +37,12 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean household technology (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, i.e. heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean technology in households (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
 * Affordable, reliable and modern electricity and energy services (phrases 3,4,5)
 * Access to electricity and energy services (phrases 3 and 6)
+
+<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms and reference for understanding "modern energy access":
+>There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting.
 
 This query consists of 5 phrases.
 
@@ -58,6 +66,7 @@ The second half of this phrase contains terms for various aspects to do with rel
 TS=
 (
   ("solar cooker$" OR "solar box cooker$"
+  OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
   OR
     (
       ("clean" OR "cleaner"
@@ -94,9 +103,9 @@ The basic structure is *clean fuels/tech + reliance/access + households*. It is 
 TS=
 (
   (
-    ("clean" OR "cleaner"
+    ("clean" OR "cleaner" OR "modern"
     OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
-    OR "coal" OR "kerosene"
+    OR "coal" OR "kerosene" OR "solid fuel$"
     )  
     NEAR/15
         ("fuel$" OR "energy" OR "electric*"
@@ -170,7 +179,7 @@ TS=
 
 This phrase to find research about modern or reliable energy services (in addition to phrase 3), as well as sustainable development of energy services.
 
-`stable` and `stability` are very general words, so are combined with other terms.
+`stable` and `stability` are very general words, so are combined with other terms. `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
 
 ```Ceylon =
 TS=
@@ -194,15 +203,15 @@ TS=
               OR "infrastructure" OR "grid" OR "grids" OR "energy system$"
               )            
         )
-      OR "microgrid$" OR "micro grid$"
-      OR "off grid solution$"  
+      OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
+      OR "off grid solution$" OR "off-grid system$"
       )
 )
 ```
 
 ##### Phrase 6
 
-This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification, access + energy services, electrification + regions*. Least developed countries are included regions.
+This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / access + energy  / access + energy + regions*. Least developed countries are included regions. `energy services` is considered specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`).
 
 ```Ceylon =
 TS=
@@ -213,14 +222,25 @@ TS=
     NEAR/5
       ("energy service$")
     )
-)
-TS=
-(
-  ("electrification" OR "energy service$" OR "energy access"
   OR
     ("access"
-    NEAR/5
-      ("electrical supply" OR "power supply" OR "electricity")
+    NEAR/15
+      ("electricity" OR "energy")
+    NEAR/15
+      ("microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
+      OR "off grid solution$" OR "off-grid system$"
+      )
+    )
+)
+OR
+TS=
+(
+  ("electrification" OR "energy access" OR "grid extension$"
+  OR
+    (
+      ("access" OR "provide$" OR "provision")
+      NEAR/5
+          ("electrical supply" OR "power supply" OR "electricity" OR "energy service$")
     )  
   )
   NEAR/15
@@ -491,6 +511,8 @@ TS=
 ## 4. Authorship and review
 
 ## 5. Footnotes
+
+<a id="f5"></a> IEA. (2020, 13th October). *Defining energy access: 2020 methodology*. https://www.iea.org/articles/defining-energy-access-2020-methodology [accessed 7th Jan 2022] [↩](#IEAaccess)
 
 <a id="f1"></a> Statistics Division. (2021a). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
