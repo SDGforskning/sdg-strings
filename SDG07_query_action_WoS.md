@@ -96,7 +96,7 @@ TS=
       )
 )
 ```
-#### Phrase 2
+##### Phrase 2
 
 The basic structure is *clean fuels/tech + reliance/access + households*. It is similar to phrase 1, but includes terms such as `kerosene` og `fuel$` which are broad unless combined with `household$`.
 
@@ -269,7 +269,7 @@ This target is interpreted to cover research about increasing the use of renewab
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+##### Phrase 1
 
 This phrase covers established phrases around transitioning to renewable energy.
 
@@ -280,7 +280,7 @@ TS=
   OR "renewable energy transition$" OR "national energy transition$"
 )
 ```
-##### Phrase 2:
+##### Phrase 2
 
 The general structure of this phrase is *transitions/shares/incentives etc. + renewable energy*. The first part contains terms for various aspects, such as:
 * Usage
@@ -371,7 +371,7 @@ TS=
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
 This target is interpreted to cover:
-* Research about energy intensity (phrase 1)
+* Research about improving energy intensity (phrase 1)
 * Research about improving energy efficiency and measures/interventions to improve efficiency
 
 Energy intensity definition from the European Environment Agency:
@@ -379,9 +379,11 @@ Energy intensity definition from the European Environment Agency:
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+##### Phrase 1
 
-This phrase finds research about energy intensity. The `AND` combination contains terms that help avoid publications using the term in other contexts.
+This phrase finds research about improving energy intensity; the general structure is *energy intensity + action + energy terms*. The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts. 
+
+The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
 
 ```Ceylon =
 TS=
@@ -412,11 +414,11 @@ TS=
 )
 ```
 
-##### Phrase 2:
+##### Phrase 2
 
 This phrase finds research about increasing energy efficiency. The general structure is *action + energy efficiency + sectors / action + energy efficiency*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part).
 
-Here, *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
+The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
 
 *sectors/process terms* were built around generic terms (e.g. `residential` will find `residential water heating`), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
 
