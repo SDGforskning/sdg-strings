@@ -106,7 +106,8 @@ expand Public transport
 The basic structure is expand+ "public transport"
 
 ```Ceylon =
-TS=(("public transport" AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
+TS=(("public transport" AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
+OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
 
 TS=
 ```
