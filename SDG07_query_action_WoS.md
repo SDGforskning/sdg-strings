@@ -23,6 +23,7 @@ Lists of least developed countries (LDCs), small island developing states (SIDS)
 
 Abbreviations:
 * IEA - International Energy Agency
+* EEA - European Environment Agency
 * WHO - World Health Organization
 * LDC - least developed countries
 
@@ -41,16 +42,16 @@ This target is interpreted to cover research about:
 * Affordable, reliable and modern electricity and energy services (phrases 3,4,5)
 * Access to electricity and energy services (phrases 3 and 6)
 
-<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms and reference for understanding "modern energy access":
->There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting.
+<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target, and as a reference for understanding "modern energy access":
+>"There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting." (IEA 2020)
 
-This query consists of 5 phrases.
+This query consists of 6 phrases.
 
 ##### Phrase 1:
 
-This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household energy activities + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`. Adding `fuels OR technologies` in addition is too restrictive here - a number of works just talk about "clean cookstoves" for example.
+This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household energy activities + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`. Adding `fuels OR technologies` as an additional element is too restrictive here - a number of works just talk about "clean cookstoves" for example.
 
-Clean cooking is part of clean fuels/tech, mentioned in the high level political forum document (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
+Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
 > “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
 
 Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean". There are a large number of results lost by removing the ideas of decarbonisation and "clean technology" generally - consider including them in the topic/wide approach?
@@ -369,40 +370,102 @@ TS=
 >
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
+This target is interpreted to cover:
+* Research about energy intensity (phrase 1)
+* Research about improving energy efficiency and measures/interventions to improve efficiency
+
+Energy intensity definition from the European Environment Agency:
+>"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" (<a id="EEA2016">[EEA, 2016](#f6)</a>).
+
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The term "energy intensity" is combined with these other terms to prevent finding publications using the term in other contexts. Energy intensity definition from the European Environment Agency:
->"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" <sup id="EEA2016">[4](#f4)</sup>.
+This phrase finds research about energy intensity. The `AND` combination contains terms that help avoid publications using the term in other contexts.
 
 ```Ceylon =
 TS=
 (
   ("energy intensity"
+  NEAR/10
+      ("reduc*" OR "decreas*" OR "lower"
+      OR "improv*" OR "enhanc*" OR "better" OR "more efficient"
+      OR "policy" OR "policies" OR "legislation"
+      OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "initiative$" OR "intervention$"
+      OR  (("energy" OR "green") NEAR/2 "certificat*")
+      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+      OR "energy sustainability"
+      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+      OR "sustainable development"
+      )
+  )
   AND
       ("energy consum*" OR "sustainab*" OR "energy efficiency"
       OR "GDP" OR "economic" OR "economy" OR "economies"
       OR "industry" OR "industrial" OR "manufacturing"
+      OR "policy" OR "policies"
       OR ("emission$" NEAR/5 ("carbon" OR "co2"))
       OR "footprint$"
       OR "sustainable development"
       )
-  )
-  OR
-  (
-    ("economic growth" OR "GDP")
-    NEAR/15
-        ("energy use$" OR "energy consum*")
-  )
 )
 ```
 
 ##### Phrase 2:
 
-Phrase 2 involves a `NOT` expression. This is to remove results concerning biological energy efficiency. Uses of `metabolism` as a term outside of biology are retained using a double negative `NOT` statement.
+This phrase finds research about increasing energy efficiency. The general structure is *action + energy efficiency + sectors / action + energy efficiency*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part).
 
-The first part includes mechanisms by which increases can be brought about.
+Here, *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
+
+*sectors/process terms* were built around generic terms (e.g. `residential` will find `residential water heating`), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
+
+```Ceylon =
+TS=
+(
+    (
+      ("increas*" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher"
+      OR "policy" OR "policies" OR "legislation"
+      OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "initiative$" OR "intervention$"
+      OR  (("energy" OR "green") NEAR/2 "certificat*")
+      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+      OR "energy sustainability"
+      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+      OR "sustainable development"
+      )
+      NEAR/15
+            ("energy efficien*" OR "energy saving")
+      NEAR/15
+            ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
+            OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
+            OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods"
+            OR "plug-in device$" OR "smart"
+            OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
+            OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
+            OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
+            OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
+            )
+    )
+  OR
+    ("energy efficiency"
+    NEAR/15
+        ("policy" OR "policies" OR "framework$" OR "legislation"
+        OR "energy strateg*" OR "energy management" OR "energy planning"
+        OR "initiative$" OR "intervention$"
+        OR  (("energy" OR "green") NEAR/2 "certificat*")
+        OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+        OR "energy sustainability"
+        OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+        OR "sustainable development"
+        )
+    )
+)
+```
+
+*OLD FORMAT KEPT TO BE USED/ADAPTED IN TOPIC APPROACH* - As energy efficiency cant be used alone
+
+Involves a `NOT` expression. This is to remove results concerning biological energy efficiency. Uses of `metabolism` as a term outside of biology are retained using a double negative `NOT` statement.
 
 ```Ceylon =
 TS=
@@ -414,18 +477,23 @@ TS=
       OR "energy strateg*" OR "energy management" OR "energy planning"
       OR "initiative$"
       OR  (("energy" OR "green") NEAR/2 "certificat*")
-      OR "incentive$" OR "investment$" OR "investing" OR "invest"
+      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
       OR "energy sustainability"
+      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
       )
       NEAR/15
           ("energy efficiency"
-          OR "energy performance standard$"
           OR
             (
               ("energy efficien*" OR "energy saving")
-              NEAR/10
-                  ("housing" OR "houses" OR "residential" OR "building$" OR "cities"
-                    OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
+              NEAR/15
+                  ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
+                  OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
+                  OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods" OR "plug-in device$" OR "smart"
+                  OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
+                  OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
+                  OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
+                  OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
                   )
             )
           )
@@ -512,7 +580,13 @@ TS=
 
 ## 5. Footnotes
 
+<a id="f6"></a> EEA .(2016). *Energy intensity*. https://www.eea.europa.eu/data-and-maps/indicators/total-primary-energy-intensity-3 [↩](#EEA2016)
+
+<a id="f8"></a> IEA. (2014). *Energy Efficiency Indicators: Fundamentals on Statistics*. https://www.iea.org/reports/energy-efficiency-indicators-fundamentals-on-statistics [accessed 7th Jan 2022] [↩](#IEAmanual)
+
 <a id="f5"></a> IEA. (2020, 13th October). *Defining energy access: 2020 methodology*. https://www.iea.org/articles/defining-energy-access-2020-methodology [accessed 7th Jan 2022] [↩](#IEAaccess)
+
+<a id="f7"></a> IEA. (2021). *Appliances and Equipment*. https://www.iea.org/reports/appliances-and-equipment [accessed 7th Jan 2022] [↩](#IEAenergylabelling)
 
 <a id="f1"></a> Statistics Division. (2021a). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
@@ -521,7 +595,3 @@ TS=
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f3">2</a> UN High level political forum on Sustainable Development. (2018). *2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all*. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf [Accessed 06.01.2022] (#HLPF2018)
-
-Old format - I suggest we change to author-date
-
-<b id="f4">4</b> European Environment Agency (2016) Energy intensity. https://www.eea.europa.eu/data-and-maps/indicators/total-primary-energy-intensity-3 [↩](#EEA2016)
