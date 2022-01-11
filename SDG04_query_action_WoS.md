@@ -251,21 +251,28 @@ Phrase 1 doc
 ```Ceylon =
 TS=
 (
-(
-(
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR     "limit*" OR "lower*" OR "fight*" OR "combat*")	
-NEAR/3 
-(
-("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-NEAR/5
-("equity*" OR "non-equity*" OR "equality" OR "non-equality*" OR "balanc*" OR "unbalanc*" OR "disparity" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*")
-)
-)	
-NEAR/3	
-(
-("school*" OR "educat*" OR "vocational training" OR "student*")
-)
-)
+ (
+  (
+   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR     "limit*" OR "lower*" OR "fight*" OR "combat*"
+   )	
+   NEAR/3 
+    (
+     (
+      "gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male"
+     )
+     NEAR/5
+      (
+      "equit*" OR "non-equit*" OR "equalit*" OR "non-equalit*" OR "inequalit*" OR "balanc*" OR "unbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*"
+      )
+     )
+    ) 	
+    NEAR/3	
+     (
+      (
+       "school*" OR "educat*" OR "vocational training" OR "student*"
+       )
+     )
+ )
 )	
 ```
 ##### Phrase 2:
