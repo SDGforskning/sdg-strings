@@ -88,7 +88,8 @@ TS=
       ("implement*" OR "establish*"
       OR "coverage" OR "covered" OR "covering"
       OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
-      OR "build" OR "building"
+      OR "build" OR "building" OR
+      OR "access*" OR "barrier$" OR "obstacle$"
       )
 )
 
@@ -140,25 +141,43 @@ TS=
 >
 > 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
-definition of basic services: https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
-basic servives: drinking water services , basic sanitation services basic hygene services, waste collection mobility and transport, ict, education
-health
+This target is interpreted to cover research about access and implementation of basic services (phrase 1 & 2); financial services (phrase 3 -5 ) and acces and right to land 
+(phrase 6 & )
 
-Phrase 1 & 2 cover assess to basic services, ...
+
+Phrase 1 & 2 cover assess to basic services, as defined in 
+Basic services are defined to include (SDG Indicators Metadata repository)https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
+Drinking water services, basic sanitation services, basic hygiene facilities are covered also in SDG 6, and basic information services avr covered in SDG 9. For those we also inlcuded more specific terms, for the other services just the general term is included. For more details and more extensive search terms we refer to the respective SDG  
+clean fuels (SDG 7), basic waste collection services (SDG Indicator 11.6.1), basic mobility (mostly covered SDG 11.2.1)), basic education services (mostly covered in SDG 4.1.1), basic health care (mostly covered in 3.8.1)
+
+
 ##### Phrase 1:
 
-Access and implementation of social services
-```Ceylon =
+Access and implementation to basic services inkluding specific terms for some of those
+
+``Ceylon =
 TS=
 
 (
-  ("basic services"
-  )
+  ("basic services" 
+  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed") 
+  OR "protected dug well$" OR "protected spring$" 
+  
+  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$" "pit latrine$" 
+  
+  OR "basic hygiene facilit*" 
+  OR "clean fuels"
+  OR "basic information services" OR "broadband internet" 
+  OR "basic mobility"
+  OR "basic waste collection services" 
+  OR "basic education services"
+    )
   NEAR/10
       ("implement*" OR "establish*"
       OR "coverage" OR "covered" OR "covering"
       OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
       OR "build" OR "building"
+      OR "access*" OR "barrier$" OR "obstacle$"
       )
 )
 
@@ -173,10 +192,21 @@ Variants of the second part of this phrase are used in several places in this SD
 ```Ceylon =
 TS=
 (
-  ("social protection$" OR "social floor$" OR "social service$"
-  OR "welfare system$" OR "welfare service$"
-  OR "social welfare" OR "social security" OR "basic service$" OR "essential service$"
-  )
+  (  ("basic services" 
+  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed") 
+  OR "protected dug well$" OR "protected spring$" 
+  
+  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$" "pit latrine$" 
+  
+  OR "basic hygiene facilit*" 
+  OR "clean fuels"
+  OR "basic information services" OR "broadband internet" 
+  OR "basic mobility"
+  OR "basic waste collection services" 
+  OR "basic education services"
+    )
+ 
+ )
   NEAR/15
       ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
       OR "the vulnerable" OR "vulnerable group$"
@@ -204,7 +234,7 @@ TS=
 
 ##### Phrase 3:
 
-These phrases are so general that they must be combined with poverty/vulnerable groups even though the target concerns all people
+This phrase coveres acces to financial services; these phrases are so general that they must be combined with poverty/vulnerable groups even though the target concerns all people
 
 ```Ceylon =
 TS=
@@ -244,7 +274,7 @@ TS=
 
 ##### Phrase 4:
 
-These topics are more specific so do not require combination. *added microcredit any reason why not?*
+Microfinance: These topics are more specific so do not require combination. *added microcredit any reason why not?*
 
 ```Ceylon =
 TS=
@@ -272,6 +302,7 @@ TS=
 ```
 
 ##### Phrase 6:
+ownership of land
 
 ```Ceylon =
 TS=
@@ -297,7 +328,7 @@ TS=
 ```
 
 ##### Phrase 7:
-
+ownership of land part 2
 ```Ceylon =
 TS=
 (
@@ -456,6 +487,8 @@ TS=
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
 Old format - I suggest we change to author-date
+
+https://unstats.un.org/sdgs/metadata/ SDG Indicators Metadata repository
 
 <b id="f2">2</b> UN (2017) 2017 HLPF Thematic Review of SDG 1: End Poverty in All its Forms Everywhere.  https://sustainabledevelopment.un.org/content/documents/14379SDG1format-final_OD.pdf [↩](#HLPF2017)
 
