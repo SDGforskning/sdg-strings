@@ -135,6 +135,7 @@ TS=
 
 
 ## Target 1.4
+
 > **1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance**
 >
 > 1.4.1 Proportion of population living in households with access to basic services
@@ -155,15 +156,15 @@ clean fuels (SDG 7), basic waste collection services (SDG Indicator 11.6.1), bas
 
 Access and implementation to basic services inkluding specific terms for some of those
 
-``Ceylon =
+```Ceylon =
 TS=
 
 (
   ("basic services" 
-  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed") 
+  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed"))
   OR "protected dug well$" OR "protected spring$" 
   
-  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$" "pit latrine$" 
+  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$"  OR "pit latrine$" 
   
   OR "basic hygiene facilit*" 
   OR "clean fuels"
@@ -183,54 +184,6 @@ TS=
 
 ```
 
-##### Phrase 2:
-
-Basic services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
-
-Variants of the second part of this phrase are used in several places in this SDG to link the topics with poverty, women or children etc. (as relevant to each target).
-
-```Ceylon =
-TS=
-(
-  (  ("basic services" 
-  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed") 
-  OR "protected dug well$" OR "protected spring$" 
-  
-  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$" "pit latrine$" 
-  
-  OR "basic hygiene facilit*" 
-  OR "clean fuels"
-  OR "basic information services" OR "broadband internet" 
-  OR "basic mobility"
-  OR "basic waste collection services" 
-  OR "basic education services"
-    )
- 
- )
-  NEAR/15
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "slum" OR "slums"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "workers" OR "women"
-      OR
-        (
-          ("person$" OR "people" OR "adult$")
-          NEAR/3
-              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
-        )
-      OR "disability"
-      OR
-        (
-          ("work" OR "workplace" OR "worker$" OR "occupational")
-          NEAR/3
-              ("injury" OR "injuries" OR "illness*")
-        )
-      OR "worker$ compensation"
-      OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      )
-)
-```
 
 ##### Phrase 3:
 
