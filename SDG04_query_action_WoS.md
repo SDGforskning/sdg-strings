@@ -293,12 +293,13 @@ TS =
      )
    )
    NEAR/5
-   
-("school*" OR "educat*" OR "vocational training")
-)
-NEAR
-vulnerab*
-)
+   (
+   "school*" OR "educat*" OR "vocational training"
+   )
+ )
+  NEAR
+   vulnerab*
+ )
 )
 ```
 ##### Phrase 3:
@@ -308,19 +309,25 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
-(
-(
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*")
-NEAR/5
-("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter")
-)
-NEAR/5
-(
-("school*" OR "educat*" OR "vocational training")
-)
-NEAR
-("person$ with disabilit*" OR "disab*")
-)
+ (
+  (
+   (
+    "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*"
+    )
+    NEAR/5
+    (
+    "access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
+    )
+   )
+   NEAR/5
+    (
+     ("school*" OR "educat*" OR "vocational training")
+    )
+     NEAR
+     (
+     "person$ with disabilit*" OR "disab*"
+     )
+ )
 )
 ```
 ##### Phrase 4:
@@ -330,19 +337,25 @@ Phrase 4 doc
 ```Ceylon =
 TS =
 (
-(
-(
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*")
-NEAR/5
-("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter")
-)
-NEAR/5
-(
-("school*" OR "educat*" OR "vocational training")
-)
-NEAR
-indigen*
-)
+ (
+  (
+   (
+   "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*"
+   )
+   NEAR/5
+   (
+    "access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
+    )
+  )
+  NEAR/5
+   (
+    (
+    "school*" OR "educat*" OR "vocational training"
+    )
+   )
+    NEAR
+    indigen*
+ )
 )
 ```
 
