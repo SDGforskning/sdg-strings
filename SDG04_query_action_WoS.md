@@ -173,7 +173,7 @@ TS=
   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*")
   NEAR/3
    (
-    ("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*")
+    ("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*")
   )
    NEAR/3
     (
