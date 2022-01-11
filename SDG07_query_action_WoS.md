@@ -381,7 +381,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1
 
-This phrase finds research about improving energy intensity; the general structure is *energy intensity + action + energy terms*. The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts. 
+This phrase finds research about improving energy intensity; the general structure is *energy intensity + action + energy terms*. The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts.
 
 The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
 
@@ -518,50 +518,106 @@ TS=
 )
 ```
 
-## Target 7.a/7.b
+## Target 7.a
 
 > **7.a By 2030, enhance international cooperation to facilitate access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology, and promote investment in energy infrastructure and clean energy technology**
 >
 > 7.a.1 International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems
->
+
+This means of implementation target is interpreted to cover research about a) international cooperation for clean energy research and technology, b) access to clean energy research and technology, and c) investment in clean energy research and technology and d) investment in energy infrastructure (inc. renewables). Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target.
+
+This query consists of 2 phrases. Phrase 1 covers everything to do with clean energy research and clean energy technologies, while phrase 2 covers investment in energy infrastructure and renewables generally.
+
+##### Phrase 1
+
+The general structure is *sharing/investing/cooperation + clean energy*.
+
+```Ceylon =
+TS=
+(
+  ("transfer of technolog*" OR "technology transfer$"
+  OR
+    ("knowledge transfer"
+    NEAR/3 ("technolog*" OR "technical")
+    )
+  OR
+    (
+      ("research" OR "technology" OR "technologies" OR "innovation$")
+      NEAR/5
+          ("access*" OR "sharing" OR "shared benefit$"
+          OR "capacity building" OR "build* capacity" OR "capacity development"
+          )
+    )  
+  OR "international cooperation" OR "international collaboration"
+  OR "foreign aid" OR "official development aid" OR "official development assistance"
+  OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+  )
+  NEAR/15
+      ("cleantech"
+      OR
+        (
+          ("technolog*" OR "innovation$")
+          NEAR/3
+              ("clean" OR "cleaner" OR "green" OR "greener"
+              OR "decarboni*" OR "low carbon" OR "renewable$" OR "energy efficiency"  
+              )
+        )      
+      OR
+        (
+          ("research*")
+          NEAR/3
+              ("energy" OR "electricity" OR "fuel" OR "fuels")
+          NEAR/3
+              ("clean" OR "cleaner" OR "green" OR "greener"
+              OR "decarboni*" OR "low carbon" OR "renewable$"
+              OR "energy efficiency"  
+              OR "transition$" OR "policy" OR "policies"
+              )
+        )  
+      )             
+)
+```
+
+##### Phrase 2
+
+The general structure is *investment + energy infrastructure/renewable energy*.
+
+```Ceylon =
+TS=
+(
+  ("foreign aid" OR "official development aid" OR "official development assistance"
+  OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+  )
+  NEAR/15
+      ("energy service$" OR "energy sector"
+      OR "electrical infrastructure"
+      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
+      OR "energy storage system$"
+      OR
+        (
+          ("energy" OR "electricity")
+          NEAR/5
+              ("generation" OR "infrastructure" OR "access" OR "renewable$")
+        )             
+      )
+)
+```
+
+## Target 7.b
+
 > **7.b By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States and landlocked developing countries, in accordance with their respective programmes of support**
 >
 > 7.b.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This query consists of 1 phrase.
+This target is interpreted to cover research about infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Modern energy is defined in 7.1. This query consists of 1 phrase.
 
-*Comment 03092021 - note the typo in the second expression for infrastructure*
 ("infrastructure"
 NEAR/10  
     ("develop*" OR "upgrad*" OR "invest" OR "investment$" OR "investing" OR "modern*")
 )
 
 ```Ceylon =
-TS=
-(
-  ("technical knowledge transfer" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technology transfer$"
-  OR
-    (
-      ("research" OR "technology")
-      NEAR/5 ("access*" OR "sharing" OR "shared benefit$")
-    )  
-  OR "capacity building" OR "build capacity" OR "capacity development"
-  OR "international cooperation" OR "international collaboration" OR "foreign aid" OR "official development aid" OR "official development assistance"
-  )
-  NEAR/15
-      ("electricity" OR "electrical grid" OR "electrical infrastucture"
-      OR
-        (
-          ("energy" OR "power")
-          NEAR/2
-              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply" OR "electrical"
-              OR "infrastructure" OR "grid" OR "grids" OR "technolog*" OR "energy system$" OR "power system$"
-              OR "transition$" OR "policy" OR "policies"
-              OR "clean" OR "cleaner" OR "decarboni*" OR "renewable" OR "green" OR "sustainable" OR "energy efficiency"  
-              )
-        )        
-      )
-)
+
 ```
 
 ## General SDG
