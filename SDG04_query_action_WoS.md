@@ -399,7 +399,7 @@ TS=
 (
  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*")
   NEAR/3
-   (" illitera*" OR "anal$abet*")
+   (" illitera*" OR "anal$abet*" OR "innumeracy*")
 )
 ```
 
