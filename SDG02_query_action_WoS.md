@@ -155,7 +155,7 @@ TS=
   )
   NEAR/5
      ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-     OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"" OR "promote"
+     OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
      OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
      )
 )
