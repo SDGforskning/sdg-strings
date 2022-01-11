@@ -323,7 +323,7 @@ TS=
           NEAR/5
               ("renewable$"  OR "sustainable"
               OR "hydrothermal" OR "geothermal"
-              OR "hydroelectric" OR "hydropower"
+              OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "hydro power"
               OR "hydrokinetic"
               OR "hybrid" OR "carbon-neutral"
               OR "green electricity" OR "green energy" OR "green power"
@@ -559,7 +559,8 @@ TS=
           ("technolog*" OR "innovation$")
           NEAR/3
               ("clean" OR "cleaner" OR "green" OR "greener"
-              OR "decarboni*" OR "low carbon" OR "renewable$" OR "energy efficiency"  
+              OR "decarboni*" OR "low carbon" OR "energy efficiency"  
+              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower"
               )
         )      
       OR
@@ -597,7 +598,9 @@ TS=
         (
           ("energy" OR "electricity")
           NEAR/5
-              ("generation" OR "infrastructure" OR "access" OR "renewable$")
+              ("generation" OR "infrastructure" OR "access"
+              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower"
+              )
         )             
       )
 )
@@ -609,15 +612,41 @@ TS=
 >
 > 7.b.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Modern energy is defined in 7.1. This query consists of 1 phrase.
+This target is interpreted to cover research about improving infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Modern energy is defined in 7.1. This query consists of 1 phrase. Specific LDCs, SIDS and LDSs are included as terms.
 
-("infrastructure"
-NEAR/10  
-    ("develop*" OR "upgrad*" OR "invest" OR "investment$" OR "investing" OR "modern*")
-)
+```
+TS=
+(
+  (
+    ("improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
+    OR "more efficient" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "accelerat*"
+    )  
+    NEAR/5  
+      ("energy service$" OR "energy sector"
+      OR "electrical infrastructure"
+      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
+      OR "energy storage system$"
+      OR
+        (
+          ("energy" OR "electricity")
+          NEAR/5
+              ("generation" OR "infrastructure" OR "technolog*"
+              OR "access" OR "off grid"
+              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower")
+        )             
+      )
+  )
+  AND  
+      ("least developed countr*" OR "least developed nation$"
+      OR "developing countr*" OR "developing nation$" OR "developing states"
 
-```Ceylon =
+      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
 
+      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+
+      OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgyzstan" OR "Kyrgyz Republic" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova" OR "Rwanda" OR "South Sudan" OR "Swaziland" OR "Tajikistan" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"
+      )
+)      
 ```
 
 ## General SDG
