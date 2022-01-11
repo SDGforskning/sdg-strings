@@ -66,10 +66,15 @@ Phrase 2 doc
 
 ```Ceylon =
 TS=
-("access*"
- NEAR/3
- ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
-)
+(
+ (
+  "access*"
+   NEAR/3
+  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
+ )
+  NEAR
+  ("free" OR "equitab*" OR "quality")
+)  
 ```
 #### Phrase 3:
 
