@@ -364,7 +364,7 @@ TS=
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This query consists of x phrases.
+This query consists of 2 phrases, combined with OR.
 
 ##### Phrase 1:
 
@@ -372,7 +372,7 @@ Phrase 1 doc
 
 ```Ceylon =
 TS=
-(
+("green space$" OR garden$ OR park$ OR "recreational area$" OR "public area$"
 
 )
 ```
@@ -382,8 +382,7 @@ Phrase 2 doc
 
 ```Ceylon =
 TS=
-(
-
+(safe OR inclus* OR access* OR unrestrict*
 )
 ```
 
