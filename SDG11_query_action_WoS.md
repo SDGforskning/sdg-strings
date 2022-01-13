@@ -419,11 +419,11 @@ This query consists of x phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Since name of Sendai includes disaster risk reduction it does not make sense to include as an action for countries. Rather include synonyms for implementation? Few hits just for this simple search:
 
 ```Ceylon =
 TS=
-(
+(sendai framework" AND "implement*")
 
 )
 ```
