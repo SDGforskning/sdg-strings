@@ -286,6 +286,31 @@ OR (weather* NEAR/3 disaster*)) NEAR/30 ((("people" or "person*") NEAR/4 ("affec
 )
 
 ```
+##### Phrase 5:
+All included for indicator 11.5.2, too many synonyms for basic services? Verbs repeated due to search syntax and difference, might be edited?
+
+```Ceylon =
+TS=(
+((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+
+OR
+
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+
+OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
+OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
+
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+
+OR ("weather*" NEAR/3 "disaster*"))
+
+AND
+
+((((("gross global product$" or (("global" or "world") NEAR/3 ("domestic product$" or gdp$))) NEAR/15 ("decrease*" or "declin*" or "reduc*" or "lower*" or "loss" or "losses"))) OR (("critical infrastructure" OR "basic service$" OR "physical asset$" OR "social security" OR "social welfare" OR "drinking water service$" OR "sanitation service$" OR "hygiene service$" or "health service$" or "waste collection" OR "ICT" OR "education service$" OR "mobility" OR "transport*") NEAR/15 ("devast*" OR "destruct*" OR "destroy*" OR "damage*" OR "disrupt*" OR "broken"))) OR ((“Financial” or “economic” or “stock exchange”) NEAR/4 (“loss” or “losses” or “collapse*” or “crash*” or “decreas*” or “declin*” or “reduc*”)))
+)
+
+```
 
 ## Target 11.6
 
