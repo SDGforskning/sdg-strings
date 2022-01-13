@@ -21,11 +21,10 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
 
-Abbreviations:
+Other abbreviations:
 * IEA - International Energy Agency
 * EEA - European Environment Agency
 * WHO - World Health Organization
-* LDC - least developed countries
 
 ## 3. Targets
 
@@ -280,6 +279,7 @@ TS=
   OR "renewable energy transition$" OR "national energy transition$"
 )
 ```
+
 ##### Phrase 2
 
 The general structure of this phrase is *transitions/shares/incentives etc. + renewable energy*. The first part contains terms for various aspects, such as:
@@ -420,7 +420,7 @@ This phrase finds research about increasing energy efficiency. The general struc
 
 The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
 
-*sectors/process terms* were built around generic terms (e.g. `residential` will find `residential water heating`), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
+*sector terms* were built around generic terms (e.g. `residential` will find "residential water heating"), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
 
 ```Ceylon =
 TS=
@@ -524,13 +524,11 @@ TS=
 >
 > 7.a.1 International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems
 
-This means of implementation target is interpreted to cover research about a) international cooperation for clean energy research and technology, b) access to clean energy research and technology, and c) investment in clean energy research and technology and d) investment in energy infrastructure (inc. renewables). Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target.
-
-This query consists of 2 phrases. Phrase 1 covers everything to do with clean energy research and clean energy technologies, while phrase 2 covers investment in energy infrastructure and renewables generally.
+This target is interpreted to cover research about a) international cooperation for clean energy research and technology, b) access to clean energy research and technology, and c) investment in clean energy research and technology (all phrase 1), and d) investment in energy infrastructure (inc. renewables; phrase 2). Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target.
 
 ##### Phrase 1
 
-The general structure is *sharing/investing/cooperation + clean energy*.
+The general structure is *sharing/investing/cooperation + clean energy/tech*. Major forms of renewable energy are included. 
 
 ```Ceylon =
 TS=
@@ -581,7 +579,7 @@ TS=
 
 ##### Phrase 2
 
-The general structure is *investment + energy infrastructure/renewable energy*.
+The general structure is *investment + energy infrastructure/renewable energy*. Major forms of renewable energy are included. 
 
 ```Ceylon =
 TS=
@@ -614,7 +612,7 @@ TS=
 
 This target is interpreted to cover research about improving infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Modern energy is defined in 7.1. This query consists of 1 phrase. Specific LDCs, SIDS and LDSs are included as terms.
 
-```
+```Ceylon =
 TS=
 (
   (
