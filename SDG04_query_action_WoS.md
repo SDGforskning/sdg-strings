@@ -647,7 +647,12 @@ TS=
 ```Ceylon =
 TS=
 (
-
+"SDG$ 4" OR "SDG4" OR "SDG-4" OR "sustainable development goal$ 4"
+    OR
+    (
+      ("sustainable development goal$" OR "SDG$" OR "goal 4")
+      NEAR/15 "education"
+    )
 )
 ```
 
