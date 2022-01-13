@@ -578,9 +578,9 @@ TS =
 
 This target is interpreted to include research about
 * Improving teacher qualifications
-* International cooperation for teacher training in developing countries
+* Teacher training in developing countries
 
-This query consists of x phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
@@ -604,12 +604,18 @@ Phrase 2 doc
 TS=
 (
  (
-  ("teacher")
+  (
+  "teacher"
+  )
   NEAR
-  ("education" OR "training")
- ) 
+   (
+   "education" OR "training"
+   )
+  ) 
   NEAR
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
+  (
+  "least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states"
+  )
 )
 ```
 ##### Phrase 3:
@@ -619,29 +625,13 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
- ("teacher*")
+ (
+ "teacher*"
+ )
   NEAR
   (
-   ("minim*")NEAR("qualifi*")
+   "level of qualification*" OR "qualification level"
   )
-)
-```
-##### Phrase 4:
-
-Phrase 4 doc
-
-```Ceylon =
-TS=
-(
- ("teacher*")
-  NEAR
-  ("qualif*")
-   NEAR
-   (
-    ("educat*")
-     NEAR/3
-     ("level")
-   )
 )
 ```
 
