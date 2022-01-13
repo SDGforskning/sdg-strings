@@ -120,26 +120,35 @@ TS=
 >
 > 11.3.2 Proportion of cities with a direct participation structure of civil society in urban planning and management that operate regularly and democratically
 
-This query consists of x phrases.
+This target is interpreted to cover research about making urbanization processes more inclusive and sustainable, and improving human settlement planning and management with regards to participation, integration and sustainability. There are two key aspects: urbanization, and settlement planning and management.
+
+This query consists of three phrases, combined as phrase 1 OR phrase 2 AND phrase 3
 
 ##### Phrase 1:
 
-Phrase 1 doc
+Urbanization
 
 ```Ceylon =
 TS=
-(
-
+((improv* OR develop* OR enhanc*) NEAR(1) (urbani*))
 )
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+Settlement planning
 
 ```Ceylon =
 TS=
-(
+((settlement OR urban OR city or region*) NEAR(2) (plan*)
+)
+```
+##### Phrase 3:
 
+Aspects of improvement
+
+```Ceylon =
+TS=
+((inclu* OR particip* OR sustainab* OR integr*)
 )
 ```
 
