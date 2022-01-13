@@ -419,7 +419,7 @@ This query consists of x phrases.
 
 ##### Phrase 1:
 
-Since name of Sendai includes disaster risk reduction it does not make sense to include as an action for countries. Rather include synonyms for implementation? Few hits just for this simple search:
+Since name of Sendai includes disaster risk reduction it does not make sense to include as an action neither for national or local. Rather include synonyms for implementation? Few hits just for this simple search below. Add national or local to distinguish 11.b.1 and 11.b.2 perhaps, will not get many results.
 
 ```Ceylon =
 TS=
