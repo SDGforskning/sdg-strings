@@ -186,7 +186,7 @@ This query consists of 4 phrases.
 
 ##### Phrase 1:
 
-Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some?
+Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some? 
 
 ```Ceylon =
 TS=
@@ -195,7 +195,7 @@ TS=
 
 OR 
 
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
 
 OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
 OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
@@ -203,11 +203,11 @@ OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "
 
 OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
 
-OR (weather* NEAR/3 disaster*)) 
+OR ("weather*" NEAR/3 "disaster*")) 
 
 NEAR/15
 
-((death$ or casualt* or mortality) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
+(("death$" or "casualt*" or "mortalit*" or "missing") NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
 
 )
 ```
