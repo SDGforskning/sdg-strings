@@ -1,5 +1,7 @@
 # Search query for SDG 14 - Life below water, Bergen topic-approach.
 
+***Current status**: Not under active development, awaiting the action approaches to be finished. Similar to the original version (v2019.11).* 
+
 **Contents**
 
 1. Full query in copy-pasteable format
