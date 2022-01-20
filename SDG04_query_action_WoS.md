@@ -1,5 +1,9 @@
 # Search query for SDG 4 - Quality Education, Bergen action-approach.
 
+Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
+
+***Current status**: This string is a first draft, under active development. It is currently being reviewed.*
+
 **Contents**
 
 1. Full query in copy-pasteable format
