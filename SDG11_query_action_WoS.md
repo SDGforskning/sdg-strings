@@ -79,6 +79,10 @@ This query consists of 3 phrases.
 
 The basic structure is improve + safe + Transport systems  
 
+Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by
+limiting the search with terms concerning land transport.
+
+
 ```Ceylon =
 TS=((("transport system*" AND ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliabl*" OR "affordable*"))
 AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "neighborhood*" OR "village*"OR
@@ -106,7 +110,7 @@ expand Public transport
 The basic structure is expand+ "public transport"
 
 ```Ceylon =
-TS=(("public transport" AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
+TS=(("public transport") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
 OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
 
 TS=
