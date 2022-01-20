@@ -1,8 +1,5 @@
+
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
-
-Make cities and human settlements inclusive, safe, resilient and sustainable 
-
-***Current status**: This string is an in-progress first draft, under active development.*
 
 **Contents**
 
@@ -335,32 +332,32 @@ AND
 > 11.6.1 Proportion of municipal solid waste collected and managed in controlled facilities out of total municipal waste generated, by cities
 >
 > 11.6.2 Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)
+> 
 
-This query consists of x phrases.
+This query consists of 2 phrases: "air quality" and "waste management"
 
 ##### Phrase 1:
 
 Phrase 1 doc
 
 ```Ceylon =
-TS=
-( 
-(( "city" OR "cities" OR "urban" OR "municipalit*") 
-NEAR/5 
-( "air quality" OR "smog" OR “air pollution” OR "waste management" OR "solid waste" OR "PM10" OR "PM2.5" OR “fine pariculate matter”)
-NEAR/5 
-("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))
-)
+TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution"  OR "suspended particles" )) NEAR/5 (("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))) 
+
+
+
+OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ((improve OR enhance) NEAR/5 ("clean air" OR "air quality")))
+
+
+
+
 ```
 ##### Phrase 2:
 
 Phrase 2 doc
 
 ```Ceylon =
-TS=
-(
+TS= ("city" OR "cities" OR "urban" OR "municipalit*")OR "waste management" OR "solid waste"
 
-)
 ```
 
 ## Target 11.7
@@ -501,5 +498,7 @@ TS=
 https://sdgs.un.org/sites/default/files/2021-10/Transportation%20Report%202021_FullReport_Digital.pdf
 
 https://unstats.un.org/sdgs/metadata/?Text=&Goal=11&Target=11.6
+
+https://unstats.un.org/sdgs/metadata/?Text=&Goal=&Target=11.2
 
 
