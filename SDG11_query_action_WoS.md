@@ -1,5 +1,8 @@
-
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
+
+Make cities and human settlements inclusive, safe, resilient and sustainable 
+
+***Current status**: This string is an in-progress first draft, under active development.*
 
 **Contents**
 
