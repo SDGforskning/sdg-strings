@@ -1,5 +1,7 @@
 # Search query for SDG 01 - No Poverty, Bergen action-approach.
 
+***Current status**: Under active development to improve the strings and structure. Originally based on an existing version (v2019.11). "Full query" not updated.* 
+
 **Contents**
 
 1. Full query in copy-pasteable format
