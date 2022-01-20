@@ -2,6 +2,8 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
+***Current status**: This string has undergone development to improve the phrases and structure, and is awaiting review. It is now substantially changed from the original version it was based on (v2019.11).* 
+
 **Contents**
 
 1. Full query in copy-pasteable format
