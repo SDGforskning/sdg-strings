@@ -2,6 +2,8 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
+***Current status**: This string has undergone development to improve the phrases and structure, and is awaiting a review of these changes. It is substantially changed from the original version it was based on (v2019.11).* 
+
 **Contents**
 
 1. Full query in copy-pasteable format
