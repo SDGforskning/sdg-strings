@@ -1,6 +1,6 @@
 # Information about these files - SDGstrings_wos
 
-This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. [Read more about the project here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
+This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. [Read more about the project and contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
 
 The files in this repository contain search strings to find publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). The strings are formatted to be used with Web of Science core collection. The files are a work-in-progress.
 
