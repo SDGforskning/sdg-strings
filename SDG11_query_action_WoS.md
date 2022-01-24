@@ -353,10 +353,10 @@ OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human sett
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf 
 
 ```Ceylon =
-TS= ("city" OR "cities" OR "urban" OR "municipalit*")OR "waste management" OR "solid waste"
+TS= ("city" OR "cities" OR "urban" OR "municipalit*")OR "waste management" OR "solid waste" - drafting
 
 ```
 
