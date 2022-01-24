@@ -263,7 +263,7 @@ TS=
         OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
-        OR "plastic$" OR "microplastic$" OR "micro plastic$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
             ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
@@ -322,7 +322,7 @@ TS=
         OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
-        OR "plastic$" OR "microplastic$" OR "micro plastic$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
             ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
@@ -378,7 +378,7 @@ TS=
         OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
-        OR "plastic$" OR "microplastic$" OR "micro plastic$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR "heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury"
         OR "mining" OR "mine tailing$"
         OR "oil"
