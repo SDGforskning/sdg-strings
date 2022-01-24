@@ -357,7 +357,7 @@ Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.
 
 ```Ceylon =
 
-TS=(("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste" OR "MSW" OR ("end of life" NEAR "waste") OR ("eol" NEAR "waste") OR ("end of chain" NEAR "waste") OR ("eoc" NEAR "waste")) 
+TS=(("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste" OR "MSW" OR ("end of life" NEAR "waste") OR ("eol" NEAR "waste") OR ("end of chain" NEAR "waste") OR ("eoc" NEAR "waste") OR "garbage" OR "rubbish") 
 
 NEAR 
 
@@ -370,7 +370,7 @@ Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.
 
 ```Ceylon =
 
-TS=(((("waste" NEAR/3 "manag*") OR ("waste" NEAR/3 "collect*")) 
+TS=(((("waste" NEAR/3 "manag*") OR ("waste" NEAR/3 "collect*") OR ("garbage" NEAR/3 "manag*") OR ("garbage" NEAR/3 "collect*") OR ("rubbish" NEAR/3 "manag*") OR ("rubbish" NEAR/3 "collect*")) 
 
 NEAR 
 
