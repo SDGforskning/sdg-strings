@@ -479,17 +479,25 @@ TS=
 >
 > No suitable replacement indicator was proposed. The global statistical community is encouraged to work to develop an indicator that could be proposed for the 2025 comprehensive review. See E/CN.3/2020/2, paragraph 23.
 
-This query consists of x phrases.
+This query consists of 1 phrase.
+https://unstats.un.org/sdgs/metadata/?Text=&Goal=11&Target=11.c - only target, no metadate.
+Used developing countries and not least developing countries due to very few results. 
 
 ##### Phrase 1:
 
 Phrase 1 doc
 
 ```Ceylon =
-TS=
-(
 
-)
+TS=((("develop* countr*") 
+
+NEAR/30 
+
+(("local*" OR "native*") NEAR/5 "material*")) 
+
+NEAR/30 
+
+("construct*" OR "build*"))
 ```
 ##### Phrase 2:
 
