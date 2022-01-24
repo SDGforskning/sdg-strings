@@ -334,7 +334,7 @@ AND
 > 11.6.2 Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)
 > 
 
-This query consists of 2 phrases: "air quality" and "waste management"
+This query consists of 3 phrases: "air quality" and 2 phrases for "waste management"
 
 ##### Phrase 1:
 
@@ -353,12 +353,35 @@ OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human sett
 ```
 ##### Phrase 2:
 
-Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf 
+Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms. 
 
 ```Ceylon =
-TS= ("city" OR "cities" OR "urban" OR "municipalit*")OR "waste management" OR "solid waste" - drafting
+
+TS=(("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste" OR "MSW" OR ("end of life" NEAR "waste") OR ("eol" NEAR "waste") OR ("end of chain" NEAR "waste") OR ("eoc" NEAR "waste")) 
+
+NEAR 
+
+("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"))
+```
+
+##### Phrase 3:
+
+Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms. Combine phrase 2 and 3? Include specific waste management activities as recycling, incinerate etc?
+
+```Ceylon =
+
+TS=(((("waste" NEAR/3 "manag*") OR ("waste" NEAR/3 "collect*")) 
+
+NEAR 
+
+("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*") 
+
+NEAR 
+
+("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "improv*" OR "ameliorat*" OR "better*")))
 
 ```
+
 
 ## Target 11.7
 
