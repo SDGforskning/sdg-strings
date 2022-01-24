@@ -66,13 +66,13 @@ TS=
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. 
 
 ```Ceylon =
 TS=
 (
  (
-  "access*"
+  "access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*"
    NEAR/3
   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
  )
