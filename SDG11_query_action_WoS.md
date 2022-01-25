@@ -415,27 +415,20 @@ NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*")
 >
 > 11.a.1 Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space
 
-This query consists of x phrases.
+This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string. Limited truncation to avoid “plant” og “plants”. 
+
+This query consists of 1 phrase.
 
 ##### Phrase 1:
 
 Phrase 1 doc
 
 ```Ceylon =
-TS=
-(
-
-)
-```
-##### Phrase 2:
-
-Phrase 2 doc
-
-```Ceylon =
-TS=
-(
-
-)
+TS=( 
+("economic*" OR "social" OR "environmental" OR "territorial") 
+NEAR ("cooperat*" OR "collaborat*" OR "develop*") 
+NEAR ("regional plan" OR "regional plans*" OR "regional planning"OR "national plan" OR "national plans" OR "national planning" OR "urban policies" OR "urban policy") 
+) 
 ```
 
 ## Target 11.b
@@ -513,7 +506,12 @@ TS=
 ```Ceylon =
 TS=
 (
-
+  "SDG$ 11" OR "sdgs" OR "SDG-11" OR "sustainable development goal$ 11"
+    OR
+    (
+      ("sustainable development goal$" OR "SDG$" OR "goal 11")
+      NEAR/15 ("cities" OR "communities")
+    )
 )
 ```
 
