@@ -158,11 +158,11 @@ NEAR ("urbani?ation" OR "urban development")
 Settlement planning. The use of NEAR is difficult to tune for achieving relevant results without too much noise. 
 
 ```Ceylon =
-TS= ( 
-("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")  
-NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*")  
-NEAR/3 ("plan*" OR "manag*")  
-NEAR ("democra*" OR "participat*" OR "integrat*" OR "sustainab*") 
+TS= (
+("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*") 
+NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*" OR "local" OR "municipal*" OR "county" OR "state") 
+NEAR/3 ("plan*" OR "manag*") 
+NEAR ("democra*" OR "taking part" OR "integrat*" OR "sustainab*")
 ) 
 ```
 
