@@ -394,26 +394,19 @@ NEAR
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This query consists of 2 phrases, combined with OR.
+This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically. 
+
+This query consists of 1 phrase.
 
 ##### Phrase 1:
 
-Phrase 1 doc
-
 ```Ceylon =
-TS=
-("green space$" OR garden$ OR park$ OR "recreational area$" OR "public area$"
-
-)
-```
-##### Phrase 2:
-
-Phrase 2 doc
-
-```Ceylon =
-TS=
-(safe OR inclus* OR access* OR unrestrict*
-)
+TS=( 
+("increas*" OR "improv*" OR "expand*" OR "enlarg*") 
+NEAR ("green space$" OR "garden$" OR "park$" OR "recreational area$" OR "public area$") 
+NEAR ("safe" OR "inclus"* OR "access*" OR "unrestrict*" OR "restrict*" OR "discriminat*" OR "harass*" OR "exclu*" OR "prohibit*") 
+NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*") 
+) 
 ```
 
 ## Target 11.a
