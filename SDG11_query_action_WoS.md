@@ -138,36 +138,32 @@ TS=
 >
 > 11.3.2 Proportion of cities with a direct participation structure of civil society in urban planning and management that operate regularly and democratically
 
-This target is interpreted to cover research about making urbanization processes more inclusive and sustainable, and improving human settlement planning and management with regards to participation, integration and sustainability. There are two key aspects: urbanization, and settlement planning and management.
+This target is interpreted to cover research about making urbanization processes more inclusive and sustainable, and improving human settlement planning and management with regards to participation, integration and sustainability. There are two key aspects: urbanization, and settlement planning and management. Terms from indicators are not included in phrases, as they are very measurement specific and assumed to be included in results from the more general phrases.
 
-This query consists of three phrases, combined as phrase 1 OR phrase 2 AND phrase 3
+This query consists of two phrases
 
 ##### Phrase 1:
 
 Urbanization
 
 ```Ceylon =
-TS=
-((improv* OR develop* OR enhanc*) NEAR(1) (urbani*))
-)
+TS=( 
+("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")  
+NEAR ("sustainab*" OR "inclusive")  
+NEAR ("urbani?ation" OR "urban development") 
+) 
 ```
 ##### Phrase 2:
 
-Settlement planning
+Settlement planning. The use of NEAR is difficult to tune for achieving relevant results without too much noise. 
 
 ```Ceylon =
-TS=
-((settlement OR urban OR city or region*) NEAR(2) (plan*)
-)
-```
-##### Phrase 3:
-
-Aspects of improvement
-
-```Ceylon =
-TS=
-((inclu* OR particip* OR sustainab* OR integr*)
-)
+TS= ( 
+("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")  
+NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*")  
+NEAR/3 ("plan*" OR "manag*")  
+NEAR ("democra*" OR "participat*" OR "integrat*" OR "sustainab*") 
+) 
 ```
 
 ## Target 11.4
