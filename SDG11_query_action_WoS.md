@@ -32,25 +32,38 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 > 11.1.1 Proportion of urban population living in slums, informal settlements or inadequate housing
 
+This target interpreted to cover reasearch on
+
+- Access to adequate, safe and affordable housing and basic services 
+
+- Upgrading slums.  
+
+Search terms are partly based on definitions of basic services, housing standards and slums found in SDG indicator metadata (https://unstats.un.org/sdgs/metadata/files/Metadata-11-01-01.pdf).  
+
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Basic services
+Acccess to housing
 
 ```Ceylon =
-TS=("waste management" OR "sanitation" OR "water supply" OR "postal service*" OR "electricity service*" OR "public transportation") 
-
+TS=( 
+(("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing") 
+NEAR 
+("adequate" OR "inadequate" OR "affordable" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security") 
+NEAR ("housing" OR "settlements" OR "living conditions")) 
+) 
 ```
 ##### Phrase 2:
 
-Affordable and safe housing
+Access to basic services. Phrase differs from the one used in target 1.4, not sure which approach is best. 
 
 ```Ceylon =
-TS=
-(("affordable" OR "adequat*" OR "safe*" OR "secur*") NEAR/5 "housing")
-
-)
+TS=( 
+("access") 
+NEAR 
+("basic services" OR "waste management" OR "sanitation" OR "water supply" OR "drinking water" OR "postal service*" OR "electricity service*" OR "public transportation")
+) 
 
 ```
 ##### Phrase 3:
@@ -58,10 +71,11 @@ TS=
 Upgrade slums
 
 ```Ceylon =
-TS=
-((("slum" OR "slums")) NEAR/15 (Upgrad* OR improv* OR moderni* OR enhanc* OR reduc*)) 
-
-)
+TS=( 
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing") 
+NEAR 
+("slum" OR "slums") 
+) 
 ```
 
 ## Target 11.2
