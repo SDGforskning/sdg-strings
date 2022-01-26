@@ -7,3 +7,16 @@ The files in this repository contain search strings to find publications related
 Each file contains a search string for a specific SDG, broken up into phrases by target. File names consist of the SDG and the approach used (topic vs. action). The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets ("action"), or research more broadly related to the topics in the targets ("topic"). These approaches are described in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed during 2019, and should be the same as those deposited openly on publication of Armitage, Lorenz & Mikki (2020). The original uploads of these strings (tab format, published May 2020) can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
+
+
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
