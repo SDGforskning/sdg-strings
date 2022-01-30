@@ -140,8 +140,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
-The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in organized learning.
+The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. The basic structure is access + early childhood education.
 
 ```Ceylon =
 TS=
@@ -161,7 +160,7 @@ TS=
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+The basic structure is school readiness OR children's development + school entry.
 
 ```Ceylon =
 TS=
