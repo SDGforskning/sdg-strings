@@ -192,33 +192,70 @@ TS=
 > 4.3.1 Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex
 
 This target is interpreted to cover research about:
-* Access to technical, vocational and tertiary education, including universities  
+* Equal access for all to technical, vocational and tertiary education, including universities  
 
-This query consists of 1 phrase.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+The basic structure is increase + access without discrimination + education level + admission
 
 ```Ceylon =
 TS=
 (
  (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*")
-  NEAR/3
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "initiative$" OR "intervention$")
+  NEAR/5
+  ("access*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*" OR "inequalit*")
+  NEAR/15
+  (
    (
-    ("access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*")
-  )
-   NEAR/3
+    ("technic*" OR "vocation*" OR "tertiar*" OR "university")
+    NEAR/3 
+    ("education" OR "training" OR "school*" OR "learning") 
+    OR 
+    "higher education"
+   ) 
+    OR 
     (
-     ("technic*" OR "vocation*" OR "tertiar*" OR "university")
-      NEAR
-      ("educat*")
-    )
+     ("university" OR "universities") 
+     NEAR/5 
+     ("admission$" OR "enroll*")
+    ) 
+  )
  )
+) 
+
+```
+##### Phrase 2:
+
+The basic structure is lack of discrimination + access + educational level
+
+```Ceylon =
+TS=
+(
+ (
+  ("inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*" OR "inequalit*") 
+  NEAR/5 
+  ("access")
+ ) 
+ NEAR/15
+  (
+   (
+    ("technic*" OR "vocation*" OR "tertiar*") 
+    NEAR/3 
+    ("education" OR "training" OR "school*" OR "learning")
+   ) 
+  OR 
+  "university" OR "universities" OR "higher education"
+ ) 
 )
 ```
+##### Phrase 3:
 
+```Ceylon =
+TS= "inclusive higher education"
+```
 ## Target 4.4
 
 > **4.4 By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship**
