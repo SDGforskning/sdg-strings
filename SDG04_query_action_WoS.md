@@ -48,7 +48,7 @@ This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing c
 
 ##### Phrase 1:
 
-In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To avoid including those, we have used many varaints of the verb complete, but avoided "completed" and "complete*"
+In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To avoid including those, we have used many variants of the verb complete, but avoided "completed" and "complete*". The basic structure is education level + children + complete + increase.
 
 ```Ceylon =
 TS=
@@ -57,6 +57,7 @@ TS=
   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR 
    (
     ("school" OR "education") 
+   ) 
     NEAR/3
     ("boys" OR "girls" OR "kids" OR "children")
    )
@@ -72,7 +73,7 @@ TS=
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts. The basic structure is education level + children + dropout + reduce.
 
 ```Ceylon =
 (
@@ -91,7 +92,7 @@ Phrase 2 doc
 ```
 ##### Phrase 3:
 
-"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. 
+"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. The basic structure is access + school + free/equitable/quality.
 
 ```Ceylon =
 TS=
@@ -107,7 +108,7 @@ TS=
 ```
 #### Phrase 4:
 
-We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary. 
+We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary. The basic structure is increase + level of skills + reading and mathematics.
 ```Ceylon =
 TS=
 (
