@@ -132,7 +132,7 @@ TS=
 
 This target is interpreted to cover research about
 
-* Access to early childhood education (and care)
+* Access to institutionalized, early childhood education (and care)
 * Readiness for primary education
 
 This query consists of 2 phrases.
@@ -140,17 +140,21 @@ This query consists of 2 phrases.
 ##### Phrase 1:
 
 Phrase 1 doc
-The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in education
+The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in organized learning.
 
 ```Ceylon =
 TS=
 (
- ("access" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*")
+ ("access" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "hinder*")
  NEAR/5
+  (
   (
    ("early childhood")
    NEAR/3
     ("care and education" OR "education")
+   )
+   OR
+   ("pre-kindergarten*")
   )
 )
 ```
@@ -162,11 +166,13 @@ Phrase 2 doc
 TS=
 (
  (
-  ("ready" OR "readiness" OR "prepar" OR "school readiness")
+  ("ready" OR "readiness" OR "prepared*
   NEAR
-   ("primary education*" OR "primary school*" OR "elementary school*")
+   ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
  )
   OR 
+  "school readiness"
+  OR
    (
     (
      ("children*" OR "under-five*" OR "early childhood")
