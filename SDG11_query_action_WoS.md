@@ -84,26 +84,26 @@ NEAR
 >
 > 11.2.1 Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities
 
-This target is interpreted to mean improving safe accessible public transport systems.
+This target is interpreted to cover research about improving sustainable transport systems, public transport and road safety.
 
 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is improve + safe + Transport systems  
+The basic structure is improve + safe + Transport systems  (bytte Transport system med sustainable transport?)
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by
 limiting the search with terms concerning land transport.
 
 
 ```Ceylon =
-TS=((("transport system*" AND ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliabl*" OR "affordable*"))
-AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "neighborhood*" OR "village*"OR
-"infrastructure*" OR vehicle* OR "road*" OR roads OR "railway*" OR  "waterway*" OR "travel*" OR "traffic*" OR bus OR "taxi*" 
-OR "ferry" OR "ferries" OR  "vehicl*"  OR "vessel*" OR "train$" OR "underground*" OR "tube" OR "public transport*" OR "pedestrian*"
-OR "maritim*"  OR "socio*" OR journey OR airport* OR cycl* )) AND ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
-OR "build*" OR "boost*" OR "raise*" OR "escalate*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*")))
+TS=((("transport* system*" AND ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliabl*" OR "affordable*"))
+AND ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighborhood*" OR "village*"OR
+"infrastructure*"  OR "road*" OR "railway*" OR  "waterway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
+OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "public transport*" OR "pedestrian*"
+OR "journey*" OR "airport*" OR "cycl*")) AND ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
+OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*")))
 ```
 ##### Phrase 2:
 
