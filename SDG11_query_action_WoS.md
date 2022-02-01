@@ -84,7 +84,7 @@ NEAR
 >
 > 11.2.1 Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about improving sustainable transport systems, public transport and road safety.
+This target is interpreted to cover research about improving safe sustainable transport of humans in cities.
 
 
 This query consists of 3 phrases.
@@ -94,7 +94,7 @@ This query consists of 3 phrases.
 The basic structure is improve + safe + Transport systems  
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by
-limiting the search with terms concerning land transport. It is also difficult to exclude freight transport.
+limiting the search with terms concerning land transport. It is also difficult to exclude freight transport. (We could focus on transport, not transport systems.)
 
 
 ```Ceylon =
