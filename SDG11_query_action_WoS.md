@@ -98,9 +98,9 @@ limiting the search with terms concerning land transport.
 
 
 ```Ceylon =
-TS=((("transport* system*" AND ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliabl*" OR "affordable*"))
-AND ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighborhood*" OR "village*"OR
-"infrastructure*"  OR "road*" OR "railway*" OR  "waterway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
+TS=((("transport* system*" NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab*" OR "affordabl*"))
+NEAR/15 ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
+"infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
 OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "public transport*" OR "pedestrian*"
 OR "journey*" OR "airport*" OR "cycl*")) AND ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
 OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*")))
