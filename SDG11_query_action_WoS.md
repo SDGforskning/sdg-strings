@@ -91,10 +91,10 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is improve + safe + Transport systems  (bytte Transport system med sustainable transport?)
+The basic structure is improve + safe + Transport systems  
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by
-limiting the search with terms concerning land transport.
+limiting the search with terms concerning land transport. It is also difficult to exclude freight transport.
 
 
 ```Ceylon =
@@ -124,7 +124,7 @@ expand Public transport
 The basic structure is expand+ "public transport"
 
 ```Ceylon =
-TS=(("public transport") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
+TS=(("public transport*") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
 OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
 
 TS=
