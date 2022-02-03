@@ -99,7 +99,7 @@ limiting the search with terms concerning land transport. It is also difficult t
 
 ```Ceylon =
 TS=(((("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")  NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab*" OR "affordabl*" OR "availab*"))
-NEAR/15 (("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
+AND (("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
 "infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
 OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"OR "public transport*" OR "pedestrian*"
 OR "journey*" OR "airport*" OR "cycl*")) AND ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
