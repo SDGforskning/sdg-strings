@@ -331,15 +331,30 @@ AND
 ## Target 11.6
 
 > **11.6 By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management**
->
+
+This target is interpreted to mean reducing the environmental impact of cities
+
+The target is divided in two indicators
+
 > 11.6.1 Proportion of municipal solid waste collected and managed in controlled facilities out of total municipal waste generated, by cities
 >
 > 11.6.2 Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)
-> 
 
-This query consists of 3 phrases: "air quality" and 2 phrases for "waste management"
+
+
+
+This query consists of 4 phrases: 1 phrase "reducing the environmental impact of cities"  1 phrase for "air quality" and 2 phrases for "waste management"
 
 ##### Phrase 1:
+
+The basic structure is reduce + "environmental impact" + cities
+
+
+```Ceylon =
+TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*")) AND ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))
+
+
+##### Phrase 2:
 
 Phrase 1 doc
 
@@ -354,7 +369,7 @@ OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human sett
 
 
 ```
-##### Phrase 2:
+##### Phrase 3:
 
 Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms. 
 
@@ -367,7 +382,7 @@ NEAR
 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"))
 ```
 
-##### Phrase 3:
+##### Phrase 4:
 
 Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms. Combine phrase 2 and 3? Include specific waste management activities as recycling, incinerate etc?
 
