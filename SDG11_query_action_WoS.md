@@ -113,7 +113,7 @@ The basic structure is safe+road+improve
 ```Ceylon =
 
 TS=(((("safety" OR "safe*" OR "secure*" OR "hazardous*") NEAR/5 (("traffic*" OR "road*"  OR "highway$" OR "motorway$" OR "street*"
-OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "speed limit*")) NEAR/5 (("improv*" OR "increase*" OR "enhance*"
+OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "speed limit*" OR "accident*" OR "pedestrian$" OR "cyclist$" OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$" OR "driver$" OR "driving")) NEAR/5 (("improv*" OR "increase*" OR "enhance*"
 OR  "reduce*" OR "develop*")))) NOT ("air traffic*" OR "food*"))
 ```
 
