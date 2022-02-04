@@ -192,13 +192,15 @@ TS=
 > 4.3.1 Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex
 
 This target is interpreted to cover research about:
-* Equal access for all to technical, vocational and tertiary education, including universities  
+* Equal access for all to technical, vocational and tertiary education, including universities
 
-This query consists of 3 phrases.
+We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access.
+
+This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise, and to avoid including for instance a large quantity of articles about open access publishing and universities. In phrase 1, "access" is limited by the inclusion of action terms, and the condition that "university" must be near admission or enrollment. In phrase 2, "access" is limited by its combination with justice terms. This allows for a freer use of "university" and related terms. 
 
 ##### Phrase 1:
 
-The basic structure is increase + access without discrimination + education level + admission
+The basic structure is action + access + higher education
 
 ```Ceylon =
 TS=
@@ -206,7 +208,7 @@ TS=
  (
   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "initiative$" OR "intervention$")
   NEAR/5
-  ("access*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*" OR "inequalit*")
+  ("access*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*" OR "inequalit*" OR   "afford*")
   NEAR/15
   (
    (
@@ -229,7 +231,7 @@ TS=
 ```
 ##### Phrase 2:
 
-The basic structure is lack of discrimination + access + educational level
+The basic structure is justice terms + access + higher education
 
 ```Ceylon =
 TS=
