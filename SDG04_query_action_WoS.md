@@ -266,27 +266,30 @@ TS= "inclusive higher education"
 
 This target is interpreted to cover research about
 
-* Reducing the number of youths and adults not in employment, education or training ("NEET")
-* The impact of improved ICT skills on employability
+* Increase the number of youths and adults who have relevant skills for employment and entrepreneurship
+* Improvement of ICT skills and employability
 
-This query consists of 2 phrases.
+This query consists of 2 phrases. In order to limit the search to research concerning opportunities for employment and avoid articles having to do with employees and employers and their (needs for) development of skills in jobs, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise. 
 
 ##### Phrase 1:
 
-Phrase 1 doc
-https://www.decentjobsforyouth.org/
+The basic structure is action + skills + employability/entrepreneurship
 
 ```Ceylon =
 TS=
 (
-("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
   NEAR/5
-   ("NEET*" OR "not in employment, education or training") NOT ("protein" OR "nuclear") 
-)
+   ("skill$" OR "abilit*" OR "competenc*") 
+    NEAR/5
+    ("employability*" OR "employment" OR "decent job$" OR "entrepreneurship$")
+ )
+
+
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+The basic structure is action + ICT + skill + employability. Some terms used in Phrase 1, like "abilit*" and "entrepreneurship$" are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
 
 ```Ceylon =
 TS=
@@ -294,12 +297,12 @@ TS=
  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*" OR "relevan*")
   NEAR/5
   (
-   ("information and communication technology" OR "ICT")
+   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*")
     NEAR/5
-    ("skill*")
+    ("skill*" OR "competen*")
   )
    NEAR
-   ("employ*" OR "job*" OR "entrepreneur*")
+   ("employab*" OR "employment" OR "job*")
 )
 ```
 
