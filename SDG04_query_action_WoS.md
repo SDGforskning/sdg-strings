@@ -425,8 +425,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
-This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level but not with school/educational system as such are found 
+This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level but not with school/educational system as such are found. The first phrase finds research about improving skills. The basic structure is action + level + skills
 
 ```Ceylon =
 TS=
@@ -434,24 +433,24 @@ TS=
  ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
   NEAR/5
    (
-    ("basi*" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary" OR "functional") 
+    ("basi*" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*") 
     NEAR
-     ("proficienc*" OR "skill*" OR "comprehen*")
+     ("proficien*" OR "skill*" OR "comprehen*" OR "abilit*")
       NEAR/5
-       ("read*" OR "literacy" OR "literate" OR "mathematic*" OR "maths" OR "numeracy" OR "numerate")
+       ("read*" OR "literacy" OR "literate" OR "math*" OR "numeracy" OR "numerate")
    )
 )
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+In the second phrase we reverse the question and search for research about decreasing illiteracy and innumeracy. The basic structure is decrease + illiteracy/innumeracy. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hots containing "innumerable".
 
 ```Ceylon =
 TS=
 (
- ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "eliminat*")
   NEAR/3
-   (" illitera*" OR "anal$abet*" OR "innumeracy*")
+   (" illitera*" OR "anal*abet*" OR "innumeracy*")
 )
 ```
 
