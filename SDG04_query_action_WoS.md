@@ -462,43 +462,32 @@ TS=
 
 This target is interpreted to cover research about
 		
-* Results and outcomes of education for sustainable development (ESD) and global citizenship (GCED) 
-* Results and outcomes of education for human rights, gender equality, peace, non-violence and cultural diversity
-* Education for sustainable development (ESD) and global citizenship (GCED) in education policies, curricula, teacher education and student assessments
+* Frameworks for education for sustainable development (ESD) and global citizenship (GCED) 
+* Education in and about sustainable development, sustainable lifestyles, human rights, gender equality, peace, non-violence, global citizenship and cultural diversity
 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
-https://en.unesco.org/themes/education-sustainable-development
+The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
+tested, but only returned irrelevant hits from medical, mathematical and chemical research.
+
 ```Ceylon =
 TS= 
- (
-  (
-   ("skill*" OR "knowledge" OR "competen*" OR "outcome*" OR "result*")
-   NEAR
-   ("ESD" OR "educat*")
-    NEAR/5
-    ("sustainabilit*" OR "sustainable development" OR "sustainable lifestyle")
-   )
- )
+(
+ ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
+ NEAR/5
+ ("sustainable lifestyle" OR "promot* sustainable development" OR "promotion of sustainable development" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*"  OR "non-violen*" OR "cultural divers*")
+ ) 
+
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
-The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 only returned irrelevant hits from medical, mathematical and chemical research
+The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but only returned irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD)
+
 ```Ceylon =
-TS=
-(
- (
-  ("skill*" OR "knowledge" OR "competen*" OR "understand*" OR "outcome*" OR "result*")
-   NEAR
-   ("educat*")
-    NEAR/5
-    ("human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "global citizen*" OR "cultural divers*")
-  )
- )
+TS= 
+("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
 ```
 ##### Phrase 3:
 
@@ -507,23 +496,9 @@ Phrase 3 doc
 ```Ceylon =
 TS=
 (
- (
-  (
-   (
-    "sustainable development*" OR "sustainab*" OR "global citizen*"
-    )
-    NEAR 
-    "educat*"
-   )
-    OR 
-    (
-    "ESD"
-    )
-  )
-   NEAR
-   (
-   "educ* polic*" OR "currricul*" OR "teacher educ*" OR "student assess*"
-  )
+ ("curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR "esd" OR "gced" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
+ NEAR/5
+ ("sustainable development")
 )
 ```
 
