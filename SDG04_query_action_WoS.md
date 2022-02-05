@@ -293,7 +293,7 @@ Terms are from ILO: https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills
 TS= 
 (
  (
-  ("learn and adapt") OR (("read*" OR "writ*" OR "comput*")) OR (("listen*" OR "communicat*") NEAR/3 "effective*") OR ("think creatively" OR "creative thinking") OR ("solve    problem$" OR "problem-solv*") OR (("interact*") NEAR ("co-work*")) OR (("work*")NEAR/3 ("team*" OR "group*")) OR ("basic technolog*") OR (("lead*") NEAR/5 ("effectiv*")) OR (("follow*")NEAR/3 ("supervis*"))
+  ("learn and adapt") OR (("read*" OR "writ*" OR "comput*")) OR (("listen*" OR "communicat*") NEAR/3 "effective*") OR ("think creatively" OR "creative thinking") OR ("solve problem$" OR "problem-solv*") OR (("interact*") NEAR ("co-work*")) OR (("work*")NEAR/3 ("team*" OR "group*")) OR ("basic technolog*") OR (("lead*") NEAR/5 ("effectiv*")) OR (("follow*") NEAR/3 ("supervis*"))
  )
  NEAR
  ("employability")
@@ -325,74 +325,62 @@ TS=
 > 4.5.1 Parity indices (female/male, rural/urban, bottom/top wealth quintile and others such as disability status, indigenous peoples and conflict-affected, as data become available) for all education indicators on this list that can be disaggregated
 
 This target is interpreted to cover research about
-* Gender disparities in education
-* Access to education for vulnerable persons
-* Access to education for persons with disabilities
-* Access to education for indigenous peoples
+* Reducing gender disparities in education
+* Securing access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
 
-This query consists of 4 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+The basic structure is action + gender + education
 
 ```Ceylon =
 TS=
 (
  (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR     "limit*" OR "lower*" OR "fight*" OR "combat*"
-   )	
+   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*") 
    NEAR/3 
     (
-     (
-      "gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male"
-     )
+     ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
      NEAR/5
-      (
-      "equit*" OR "non-equit*" OR "equalit*" OR "non-equalit*" OR "inequalit*" OR "balanc*" OR "unbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*"
-      )
+      ("equit*" OR "equal*" OR "balanc*")
      )
     ) 	
     NEAR/3	
      (
-      (
-       "school*" OR "educat*" OR "vocational training" OR "student*"
-       )
+      ("school*" OR "educat*" OR "vocational training" OR "student*")
      )
- )
+  )
 )	
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+In this phrase, the basic structure is the same as in phrase 1, action + gender + education, but reversed to search for reduction of disparity, rather than increase of equality.
 
 ```Ceylon =
-TS =
+TS= 
+(
  (
   (
+   ("eliminat*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR "limit*" OR "lower*" OR "fight*" OR "combat*")
+  ) 
+  NEAR/5 
    (
-    (
-     "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR   "avoid" OR "prevent*" OR "combat*"
-     )
-     NEAR/5
-     (
-     "access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
-     )
+    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male") 
+    NEAR/5
+    ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
    )
-   NEAR/5
-   (
-   "school*" OR "educat*" OR "vocational training"
+   NEAR/3
+   ( 
+    ("school*" OR "educat*" OR "vocational training" OR "student*")
    )
- )
-  NEAR
-   vulnerab*
  )
 )
 ```
 ##### Phrase 3:
 
-Phrase 3 doc
+The basic structure is action + access + education + vulnerable groups
 
 ```Ceylon =
 TS=
@@ -404,7 +392,7 @@ TS=
     )
     NEAR/5
     (
-    "access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
+    "access" OR "admission*" OR "admit*" OR "attend*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
     )
    )
    NEAR/5
@@ -413,38 +401,14 @@ TS=
     )
      NEAR
      (
-     "person$ with disabilit*" OR "disab*"
+      ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
+      NEAR/3
+      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*")
      )
- )
-)
-```
-##### Phrase 4:
-
-Phrase 4 doc
-
-```Ceylon =
-TS =
-(
- (
-  (
-   (
-   "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*"
-   )
-   NEAR/5
-   (
-    "access" OR "admission*" OR "admit*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
-    )
+     OR
+     "disab*" OR "vulnerab*" OR "indigenous")
   )
-  NEAR/5
-   (
-    (
-    "school*" OR "educat*" OR "vocational training"
-    )
-   )
-    NEAR
-    indigen*
  )
-)
 ```
 
 ## Target 4.6
