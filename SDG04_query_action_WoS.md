@@ -266,7 +266,7 @@ TS= "inclusive higher education"
 
 This target is interpreted to cover research about
 
-* Increase the number of youths and adults who have relevant skills for employment and entrepreneurship
+* Increasing the number of youths and adults who have relevant skills for employment and entrepreneurship
 * Improvement of ICT skills and employability
 
 This query consists of 3 phrases. The first covers skills at an overriding level, the second core skills as defined by ILO, and the third ICT skills. In order to limit the search to research concerning opportunities for employment and avoid articles having to do with employees and employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise. 
@@ -420,12 +420,13 @@ TS=
 This target is interpreted to cover research about
 		
 * Achieving minimal or functional proficiency in literacy and numeracy skills
+This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level, but not with school / educational system as such are found.
 
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level but not with school/educational system as such are found. The first phrase finds research about improving skills. The basic structure is action + level + skills
+The first phrase finds research about improving skills. The basic structure is action + level + skills
 
 ```Ceylon =
 TS=
@@ -443,7 +444,7 @@ TS=
 ```
 ##### Phrase 2:
 
-In the second phrase we reverse the question and search for research about decreasing illiteracy and innumeracy. The basic structure is decrease + illiteracy/innumeracy. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hots containing "innumerable".
+In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is decrease + illiteracy etc. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hits containing "innumerable".
 
 ```Ceylon =
 TS=
