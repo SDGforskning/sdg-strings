@@ -465,13 +465,14 @@ This target is interpreted to cover research about
 		
 * Frameworks for education for sustainable development (ESD) and global citizenship (GCED) 
 * Education in and about sustainable development, sustainable lifestyles, human rights, gender equality, peace, non-violence, global citizenship and cultural diversity
+* Culture's contribution to sustainable development
 
-This query consists of 3 phrases.
+This query consists of 4 phrases.
 
 ##### Phrase 1:
 
 The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
-tested, but only returned irrelevant hits from medical, mathematical and chemical research.
+tested, but only returned irrelevant hits from medical, mathematical and chemical research. The first part of the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc., and the second part entails specified content of ESD and GCED. The basic structure is educational framework + ESD/GCED
 
 ```Ceylon =
 TS= 
@@ -492,7 +493,7 @@ TS=
 ```
 ##### Phrase 3:
 
-Phrase 3 doc
+This phrase combines the frameworks for education from phrase 1 with the specific term sustainable development. The structure is frameworks + sustainable development
 
 ```Ceylon =
 TS=
@@ -502,7 +503,22 @@ TS=
  ("sustainable development")
 )
 ```
+##### Phrase 4:
 
+This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is culture + contribution + sustainable development.
+
+```Ceylon =
+TS= 
+(
+ (
+  ("culture*" OR "cultural")
+  NEAR/5
+  ("contribut*" OR "influen*" OR "impact*" )
+ )
+  NEAR 
+  "sustainable development"
+ )
+```
 ## Target 4.a
 
 > **4.a Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, non-violent, inclusive and effective learning environments for all**
