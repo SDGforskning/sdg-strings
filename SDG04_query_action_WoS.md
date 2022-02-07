@@ -619,29 +619,29 @@ TS=
 > 4.c.1 Proportion of teachers with the minimum required qualifications, by education level
 
 This target is interpreted to include research about
-* Improving teacher qualifications
+* Increasing the number of qualified teachers
 * Teacher training in developing countries
 * International cooperation for teacher training
 
-This query consists of 3 phrases.
+This query consists of 4 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+This phrase finds research about increasing the number of qualified teachers. However, neither "qualified teacher*" nor "professional development" are included in the search as they predominantly return hits about how teachers who are already qualified can improve, whereas the target is interpreted to concern increasing the number who attain the minimum required qualification. The basic structure is action + qualified/certified teachers.
 
 ```Ceylon =
 TS= 
  (
-  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up")
+  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "reduc*" OR "decreas*")
    NEAR
    (
-    ("teach* qualification$" OR "teach* certific*")
+    ("teach* qualification$" OR "teach* certific*" OR "certif* teacher*" OR "unqualified teacher*")
    )
  )
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
+This phrase finds articles about teacher education in developing countries, especially least developed countries and small island developing states. The basic structure is teacher + education + least developed countries or small island developing states. 
 
 ```Ceylon =
 TS=
@@ -649,15 +649,15 @@ TS=
  (
   ("teacher")
   NEAR
-   ("education" OR "training")
+   ("educat*" OR "train*")
   ) 
   NEAR
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states")
+  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "small island developing states" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands")
 )
 ```
 ##### Phrase 3:
 
-Phrase 3 doc
+This phrase finds articles about the level of qualification for teachers. The basic structure is teacher + level of qualification.
 
 ```Ceylon =
 TS=
@@ -669,7 +669,7 @@ TS=
 ```
 ##### Phrase 4:
 
-Phrase 4 doc
+This phrase finds articles about international cooperation for teacher education. Much research is concerned with globalization and internationalization as aspects of teacher education, therefore "program*" and related terms is included to find specific projects or efforts. The basic structure is teacher + education + international cooperation.
 
 ```Ceylon =
 TS=
@@ -681,6 +681,7 @@ TS=
     NEAR
     ("international program*" OR "international cooperation*" OR "international partners*")
  )
+ OR "international teacher education program*"
 )
 ```
 
