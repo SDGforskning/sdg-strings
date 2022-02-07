@@ -356,7 +356,7 @@ TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit
 
 ##### Phrase 2:
 
-Phrase 1 doc
+11.6.2
 
 ```Ceylon =
 TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution"  OR "suspended particles" )) NEAR/5 (("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))) 
