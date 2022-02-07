@@ -351,7 +351,11 @@ The basic structure is reduce + "environmental impact" + cities
 
 
 ```Ceylon =
-TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*")) AND ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))
+TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "public*"
+OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*")) 
+AND ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" 
+OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR
+"combat*" OR collect* OR manage* OR treat*))
 
 
 ##### Phrase 2:
@@ -359,11 +363,17 @@ TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit
 11.6.2
 
 ```Ceylon =
-TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution"  OR "suspended particles" )) NEAR/5 (("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))) 
+TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" 
+OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution" 
+OR "suspended particles" )) NEAR/5 (("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$"
+OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR
+"lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))) 
 
 
 
-OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ((improve OR enhance) NEAR/5 ("clean air" OR "air quality")))
+OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" 
+OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ((improve OR enhance)
+NEAR/5 ("clean air" OR "air quality")))
 
 
 
