@@ -523,31 +523,52 @@ TS=
 > 4.a.1 Proportion of schools offering basic services, by type of service
 
 This target is interpreted to cover research about
-* Safe and inclusive learning environments
+* Safe and inclusive education facilities
+* Effective learning environments in schools
 * Access to basic services such as electricity, internet, drinking water and sanitation facilities in schools
 
-This query consists of 2 phrases.
+We understand the target to be concerned chiefly with facilities for primary and secondary education. We do not include higher education, education and learning taking place in other contexts such as hospitals, prisons, or workplaces, or virtual/online learning arenas.
+
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Phrase 1 doc
+This phrase finds research on ensuring safe and inclusive schools and education facilities. The basic structure is action + school + safe and inclusive.
 
 ```Ceylon =
 TS=
 (
- ("school*" OR "education*")
-  NEAR
-   (
-    ("learning environment")
-    NEAR
-    ("safe*" OR "secure*" OR "inclus*" OR "effectiv*")
-   )
+ ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provide*")
+ NEAR/5
+ (
+  ("school*" OR "education facilit*")
+  NEAR/5
+  ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR (("sensitive")NEAR/5 "child*" OR "disability" OR "gender"))
+ )
 )
 ```
 ##### Phrase 2:
 
-Phrase 2 doc
-The definition of basic services in schools in retrieved from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf
+This phrase focuses on effective learning environments in schools. The basic structure is provide + effective learning environment + school. 
+
+```Ceylon =
+TS=
+(
+ ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*") 
+ NEAR/5
+ (
+  ("learning environment*")
+   NEAR/5
+   ("effective")
+  )
+  AND
+  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR 
+      "school" OR "education" OR "learner*")
+)
+```
+##### Phrase 3:
+
+This phrase focuses on access to basic services in schools. The definition of basic services in schools in retrieved from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf The basic structure is school + access + basic services.
 
 ```Ceylon =
 TS=
@@ -556,7 +577,7 @@ TS=
   ("school*"OR "education* facility" OR "education* facilities")
   NEAR
    (
-    ("access")
+    ("access*")
     NEAR/5
      ("electricit*" OR "internet*" OR "computer*" OR "adapted infrastructure*" OR "adapted material*" OR "drinking water*" OR "sanitation*" OR "handwash*")
    )
