@@ -480,7 +480,7 @@ TS=
  ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
  NEAR/5
  (
-  ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
+  ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning")
  )
  NEAR/5
  (
