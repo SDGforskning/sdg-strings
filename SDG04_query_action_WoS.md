@@ -477,16 +477,14 @@ tested, but only returned irrelevant hits from medical, mathematical and chemica
 ```Ceylon =
 TS= 
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*")
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
  NEAR/5
  (
   ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
  )
  NEAR/5
  (
-  ("sustainable lifestyle" OR "promot* sustainable development" OR "promotion of sustainable development" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*"  OR "non-violen*" OR "cultural divers*")
-  OR 
-  ("sustainable development")
+  ("sustainable development" OR "sustainable lifestyle" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*")
  ) 
 ) 
 ```
@@ -497,7 +495,7 @@ The search phrase ESD for Education for Sustainable Development, retrieved from 
 ```Ceylon =
 TS= 
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*")
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
  NEAR/5
  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
 ) 
