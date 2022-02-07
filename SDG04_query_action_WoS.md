@@ -467,43 +467,42 @@ This target is interpreted to cover research about
 * Education in and about sustainable development, sustainable lifestyles, human rights, gender equality, peace, non-violence, global citizenship and cultural diversity
 * Culture's contribution to sustainable development
 
-This query consists of 4 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
 The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
-tested, but only returned irrelevant hits from medical, mathematical and chemical research. The first part of the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc., and the second part entails specified content of ESD and GCED. The basic structure is educational framework + ESD/GCED
+tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED. The basic structure is action + education + ESD/GCED
 
 ```Ceylon =
 TS= 
 (
- ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*")
  NEAR/5
- ("sustainable lifestyle" OR "promot* sustainable development" OR "promotion of sustainable development" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*"  OR "non-violen*" OR "cultural divers*")
+ (
+  ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
+ )
+ NEAR/5
+ (
+  ("sustainable lifestyle" OR "promot* sustainable development" OR "promotion of sustainable development" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*"  OR "non-violen*" OR "cultural divers*")
+  OR 
+  ("sustainable development")
  ) 
-
+) 
 ```
 ##### Phrase 2:
 
-The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but only returned irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD)
+The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but only returned irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD) and the structure is action + ESD.
 
 ```Ceylon =
 TS= 
-("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
+(
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*")
+ NEAR/5
+ ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
+) 
 ```
 ##### Phrase 3:
-
-This phrase combines the frameworks for education from phrase 1 with the specific term sustainable development. The structure is frameworks + sustainable development
-
-```Ceylon =
-TS=
-(
- ("curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR "esd" OR "gced" OR ("learn*" NEAR/5 "student*") OR "learning environment" OR "online learning" OR "professional learning")
- NEAR/5
- ("sustainable development")
-)
-```
-##### Phrase 4:
 
 This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is culture + contribution + sustainable development.
 
