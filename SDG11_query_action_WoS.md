@@ -464,17 +464,15 @@ NEAR ("regional plan" OR "regional plans*" OR "regional planning"OR "national pl
 >
 > 11.b.2 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This query consists of x phrases.
+This query consists of 1 phrases.
 
 ##### Phrase 1:
 
-Since name of Sendai includes disaster risk reduction it does not make sense to include as an action neither for national or local. Rather include synonyms for implementation? Few hits just for this simple search below. Add national or local to distinguish 11.b.1 and 11.b.2 perhaps, will not get many results.
 
 ```Ceylon =
-TS=
-(sendai framework" AND "implement*")
 
-)
+TS=(("disaster*" NEAR/5 ("reduc*" OR "decreas*" OR "minimi*" OR "lower*")) AND (sendai or hyogo) AND (("implement*" OR “adopt*”) NEAR/5 ("polic*" OR "plan")))
+
 ```
 ##### Phrase 2:
 
