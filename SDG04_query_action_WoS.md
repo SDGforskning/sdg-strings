@@ -401,7 +401,8 @@ TS=
     )
      NEAR
      (
-      ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
+      (
+       ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
       NEAR/3
       ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*")
      )
