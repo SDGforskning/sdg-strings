@@ -404,10 +404,10 @@ TS=
       (
        ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
       NEAR/3
-      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*")
+      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced")
      )
      OR
-     "disab*" OR "vulnerab*" OR "indigenous")
+     "disab*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "displaced" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural")
   )
  )
 ```
