@@ -380,7 +380,7 @@ TS=
 ```
 ##### Phrase 3:
 
-The basic structure is action + access + education + vulnerable groups
+We have not found an authoritative source defining "vulnerable groups", probably as who is considered to be vulnerable depends on the context and situation. Some of the terms were found in https://www.un.org/en/desa/leaving-no-one-behind, and others were found in articles from initial searches. "Elderly" can be vulnerable in some situations, but were omitted as they are not considered to be the primary target group for education. "Older" however, is included, to address the issues of lifelong learning. Terms like "migrant", "minority" and "rural" need not signify vulnerability, but were discovered to find research where these factors were seen as potential hindrances to accessing education, and were therefore included. The basic structure is action + access + education + vulnerable groups
 
 ```Ceylon =
 TS=
@@ -407,7 +407,7 @@ TS=
       ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced")
      )
      OR
-     "disab*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "displaced" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural")
+     "disab*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural")
   )
  )
 ```
