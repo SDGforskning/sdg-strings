@@ -64,7 +64,7 @@ TS=
   ) 
   NEAR/5
    (
-    ("complete" OR ""completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation" 
+    ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation" 
      NEAR/5
       ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*" )
    )
@@ -76,6 +76,7 @@ TS=
 In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts. The basic structure is education level + children + dropout + reduce.
 
 ```Ceylon =
+TS=
 (
  (
   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR 
@@ -88,7 +89,9 @@ In this phrase we reverse the concept of increasing school completion, and focus
   NEAR/5
    ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit*" OR "early school-leaving")
    NEAR/5
-   ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*"
+   ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
+ )
+)
 ```
 ##### Phrase 3:
 
@@ -98,7 +101,7 @@ In this phrase we reverse the concept of increasing school completion, and focus
 TS=
 (
  (
-  "access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*"
+  ("access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*")
    NEAR/3
   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
  )
