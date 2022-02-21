@@ -169,7 +169,7 @@ The basic structure is school readiness OR children's development + school entry
 TS=
 (
  (
-  ("ready" OR "readiness" OR "prepared*
+  ("ready" OR "readiness" OR "prepared*")
   NEAR
    ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
  )
