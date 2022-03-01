@@ -83,7 +83,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-This pharse is about access and implementation of social services
+This pharse is about access to and implementation of social services
 
 ```Ceylon =
 TS=
@@ -150,44 +150,55 @@ TS=
 >
 > 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
-This target is interpreted to cover research about access and implementation of basic services (phrase 1 & 2); financial services (phrase 3 -5 ) and acces and right to land 
+This target is interpreted to cover research about access and implementation of basic services (phrase 1); financial services (phrase 3 -5 ) and acces and right to land 
 (phrase 6 & )
 
 
-Phrase 1 & 2 cover access to basic services, as defined in the (SDG Indicators Metadata repository): https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
-Drinking water services, basic sanitation services, basic hygiene facilities are covered also in SDG 6, and basic information services avr covered in SDG 9. For those we also inlcuded more specific terms, for the other services just the general term is included. For more details and more extensive search terms we refer to the respective SDG  
-clean fuels (SDG 7), basic waste collection services (SDG Indicator 11.6.1), basic mobility (mostly covered SDG 11.2.1)), basic education services (mostly covered in SDG 4.1.1), basic health care (mostly covered in 3.8.1)
+Phrase 1 covers access to basic services, as defined in the UN Statistics Division Metadata repository (<a id="SDGT+Is">[UN Metadata Repository, 2022](#f1)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
+We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.
 
 
 ##### Phrase 1:
 
-Access and implementation to basic services inkluding specific terms for some of those
+Access and implementation to basic services
 
 ```Ceylon =
 TS=
 
 (
   ("basic services" 
-  OR "drinking water service$" OR ("water" NEAR/3 ("pipe" OR "boreholes" OR "tube wells" OR "delivered" OR "packed"))
-  OR "protected dug well$" OR "protected spring$" 
-  
-  OR "basic sanitation service$" OR "piped sewer system$" OR "septic tank$"  OR "pit latrine$" 
-  
-  OR "basic hygiene facilit*" 
-  OR "clean fuels"
-  OR "basic information services" OR "broadband internet" 
-  OR "basic mobility"
-  OR "basic waste collection services" 
-  OR "basic education services"
+   OR 
+   "drinking water service$" or "drinking water source$" OR "source$ of drinking water" OR "drinking water facilit*" OR "basic drinking water$" 
+   OR 
+   "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" 
+   OR
+   "hygiene facilit*" OR  "hygiene service*" OR "handwashing facility" OR "hand-washing facility"  
+   OR 
+   "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"  
+   OR 
+   "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*"
+   OR 
+   (("waste" OR "garbage" or "rubish") NEAR/1 ("collection" OR "managment") NEAR/1 ("service$" OR "facilit*")))
+   OR
+   "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
+   OR
+   "education services" OR "schooling services" OR "education system" OR "school system"
+   OR 
+   (("LTE" OR "broadband" OR "3G" OR "narrowband" OR "2G" OR "mobile-cellular") NEAR/3 ("household" OR "housing" OR "home$" OR "living")(
     )
-  NEAR/10
+   NEAR/10
       ("implement*" OR "establish*"
       OR "coverage" OR "covered" OR "covering"
       OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
       OR "build" OR "building"
       OR "access*" OR "barrier$" OR "obstacle$"
+      
+      OR  ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
       )
 )
+
+
 
 ```
 
