@@ -42,12 +42,16 @@ These targets are combined, as they cover similar topics.
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This query consists of 1 phrase.
+This targets are interpreted as to cover research about poverty reduction. 
 
-`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <sup id="HLPF2017">[2](#f2)</sup>. `Child labour` and `modern slavery` were included as elements of this. These are now taken out, as they are not necessarily linked to poverty. However, articles linking these with poverty reduction can be expected to use the word poverty also. If no link, then it is too indirect.
+`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <sup id="HLPF2017">[2](#f2)</sup>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
-For topic: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic*" OR "extreme")
+
+*For the topic approach terms such as: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic* *" OR "extreme") should be included.*
+
+This query consists of 1 phrase.
+
 
 ```Ceylon =
 TS=
@@ -73,12 +77,14 @@ TS=
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 >
 
-This target is interpreted as to cover research about access to social protection systems. `welfare state` was concidered but excluded as it leads mostly to historical papers.
+This target is interpreted as to cover research about access to social protection systems. `welfare state` was concidered but excluded as it leads mostly to historical papers about early walfare states.
+
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-Access and implementation of social services
+This pharse is about access and implementation of social services
+
 ```Ceylon =
 TS=
 
@@ -99,7 +105,7 @@ TS=
 
 ##### Phrase 2:
 
-Social services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
+This phrase deals with social services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
 
 Variants of the second part of this phrase are used in several places in this SDG to link the topics with poverty, women or children etc. (as relevant to each target).
 
@@ -148,8 +154,7 @@ This target is interpreted to cover research about access and implementation of 
 (phrase 6 & )
 
 
-Phrase 1 & 2 cover assess to basic services, as defined in 
-Basic services are defined to include (SDG Indicators Metadata repository)https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
+Phrase 1 & 2 cover access to basic services, as defined in the (SDG Indicators Metadata repository): https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
 Drinking water services, basic sanitation services, basic hygiene facilities are covered also in SDG 6, and basic information services avr covered in SDG 9. For those we also inlcuded more specific terms, for the other services just the general term is included. For more details and more extensive search terms we refer to the respective SDG  
 clean fuels (SDG 7), basic waste collection services (SDG Indicator 11.6.1), basic mobility (mostly covered SDG 11.2.1)), basic education services (mostly covered in SDG 4.1.1), basic health care (mostly covered in 3.8.1)
 
