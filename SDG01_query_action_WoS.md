@@ -157,8 +157,31 @@ This target is interpreted to cover research about access and implementation of 
 Phrase 1 covers access to basic services, as defined in the UN Statistics Division Metadata repository (<a id="SDGT+Is">[UN Metadata Repository, 2022](#f1)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
 We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.
 
+WORK IN PROGRESS DIFFERENT VERSJONS NEEDS FURTHER TESTING
 
-##### Phrase 1:
+##### Phrase 1. v1 basic:
+
+Access to basic services
+
+```Ceylon =
+TS=
+
+(
+  ("basic services" OR "basic drinking water service$" OR "basic hygiene service$*" OR "basic sanitation service$*" OR "waste collection services" OR 
+   OR "basic mobility" OR "basic health care service$" OR "basic education services" OR "basic information services" OR "clean fuels" )
+   NEAR/10
+  ("access*" OR "coverage" OR "barrier$" OR "obstacle$")
+  NEAR/5
+  ( "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
+      OR "build" OR "building"=
+      
+      
+)
+
+
+
+```
+##### Phrase 1. v2 utvidet:
 
 Access and implementation to basic services
 
@@ -184,24 +207,25 @@ TS=
    OR
    "education services" OR "schooling services" OR "education system" OR "school system"
    OR 
-   (("LTE" OR "broadband" OR "3G" OR "narrowband" OR "2G" OR "mobile-cellular") NEAR/3 ("household" OR "housing" OR "home$" OR "living")(
-    )
+  
+   (OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services )
    NEAR/10
       ("implement*" OR "establish*"
       OR "coverage" OR "covered" OR "covering"
       OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
       OR "build" OR "building"
-      OR "access*" OR "barrier$" OR "obstacle$"
-      
-      OR  ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+      OR "access*" OR "barrier$" OR "obstacle$")
+   NEAR/5
+     ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
+      OR "the vulnerable" OR "vulnerable group$"
       )
 )
 
-
+Need to be change in case we exclude people bolk
+??? (("LTE" OR "broadband" OR "3G" OR "narrowband" OR "2G" OR "mobile-cellular") NEAR/3 ("household" OR "housing" OR "home$" OR "living")
 
 ```
-
 
 ##### Phrase 3:
 
