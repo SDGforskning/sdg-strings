@@ -368,7 +368,8 @@ TS=
     OR "policy" OR "policies" OR "protect*" OR "preparedness"
     OR "safety net$" OR "social protection$" OR "social floor$" OR "social security"
     OR ("mitigat*" NEAR/5 "impact$")
-    OR
+    OR "Sendai Framework" 
+    OR 
       (
         ("disaster$" OR "risk$")
         NEAR/3
@@ -380,10 +381,10 @@ TS=
            ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
           NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$")
           )
-          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-          OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$"OR "cold spells"
+          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
+          OR "drought$" OR "flood*" OR "cold spells"
           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
-          OR "storm$"
+          OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*" OR
           OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
