@@ -257,7 +257,7 @@ Originally `"access*" OR "barrier$"` was combined with many other terms (access 
             )
           )
           AND
-              ("smallhold*" OR "family farm*" OR "home gardening"
+              ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
               OR
                 (
                   ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
