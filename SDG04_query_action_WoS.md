@@ -48,7 +48,7 @@ This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing c
 
 ##### Phrase 1:
 
-In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To avoid including those, we have used many variants of the verb complete, but avoided "completed" and "complete*". The basic structure is education level + children + complete + increase.
+In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*". The basic structure is education level + children + complete + increase.
 
 ```Ceylon =
 TS=
@@ -59,7 +59,7 @@ TS=
     ("school" OR "education") 
    ) 
     NEAR/3
-    ("boys" OR "girls" OR "kids" OR "children")
+    ("boys" OR "girls" OR "kids" OR "child*")
    )
   ) 
   NEAR/5
@@ -83,7 +83,7 @@ TS=
    (
     ("school" OR "education") 
     NEAR/3
-    ("boys" OR "girls" OR "kids" OR "children")
+    ("boys" OR "girls" OR "kids" OR "child*")
    )
   ) 
   NEAR/5
