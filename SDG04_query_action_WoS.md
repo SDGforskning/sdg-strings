@@ -143,22 +143,24 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The search term "care" is combined with "education" as using it alone would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. The basic structure is access + early childhood education.
+The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is access + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
 
 ```Ceylon =
 TS=
 (
- ("access" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "hinder*")
+ ("access" OR "equitab*" OR "non-equit*" OR "barrier" OR "obstacle" OR "hinder*")
  NEAR/5
-  (
+ (
   (
    ("early childhood")
    NEAR/3
-    ("care and education" OR "education")
-   )
-   OR
-   ("pre-kindergarten*")
+    ("education")
   )
+   OR
+   ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*")
+ )
+  NOT 
+  ("pig*" OR "plant*" OR "fish*") 
 )
 ```
 ##### Phrase 2:
