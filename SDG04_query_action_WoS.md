@@ -199,7 +199,7 @@ TS=
 This target is interpreted to cover research about:
 * Equal access for all to technical, vocational and tertiary education, including universities
 
-We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access.
+We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access. We have also included post-secondary education, which is in Unesco's International Standard Classification of Education (ISCED) http://uis.unesco.org/en/topic/international-standard-classification-education-isced a level between upper secondary and tertiary education, which does not necessarily give access to tertiary education, and is often practically or vocationally, as opposed to theoretially or generally, oriented. 
 
 This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise, and to avoid including for instance a large quantity of articles about open access publishing and universities. In phrase 1, "access" is limited by the inclusion of action terms, and the condition that "university" must be near admission or enrollment. In phrase 2, "access" is limited by its combination with justice terms. This allows for a freer use of "university" and related terms. 
 
@@ -217,7 +217,7 @@ TS=
   NEAR/15
   (
    (
-    ("technic*" OR "vocation*" OR "tertiar*" OR "university")
+    ("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
     NEAR/3 
     ("education" OR "training" OR "school*" OR "learning") 
     OR 
@@ -225,7 +225,7 @@ TS=
    ) 
     OR 
     (
-     ("university" OR "universities") 
+     ("university" OR "universities" OR "college$") 
      NEAR/5 
      ("admission$" OR "enroll*")
     ) 
@@ -249,12 +249,12 @@ TS=
  NEAR/15
   (
    (
-    ("technic*" OR "vocation*" OR "tertiar*") 
+    ("technic*" OR "vocation*" OR "postsecondary" OR "post secondary" OR "tertiar*") 
     NEAR/3 
     ("education" OR "training" OR "school*" OR "learning")
    ) 
   OR 
-  "university" OR "universities" OR "higher education"
+  "university" OR "universities" OR "higher education" OR "college$"
  ) 
 )
 ```
