@@ -274,7 +274,7 @@ This target is interpreted to cover research about
 * Increasing the number of youths and adults who have relevant skills for employment and entrepreneurship
 * Improvement of ICT skills and employability
 
-This query consists of 3 phrases. The first covers skills at an overriding level, the second core skills as defined by ILO, and the third ICT skills. In order to limit the search to research concerning opportunities for employment and avoid articles having to do with employees and employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise. 
+This query consists of 4 phrases. The first two cover skills at an overriding level, the third core skills as defined by ILO, and the fourth ICT skills. In order to limit the search to research concerning opportunities for employment and avoid articles having to do with employees and employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise. 
 
 ##### Phrase 1:
 
@@ -285,26 +285,40 @@ TS=
 (
  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
   NEAR/5
-   ("skill$" OR "abilit*" OR "competenc*") 
+   ("skill$" OR "abilit*" OR "competenc*" OR "literac*") 
     NEAR/5
     ("employability*" OR "employment" OR "decent job$" OR "entrepreneurship$")
  )
 ```
 ##### Phrase 2:
 
-Terms are from ILO: https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf. Employment is omitted as a search term here, as it leads to too much noise from articles concerned with the use (="employment") of the skills. The basic structure is core skills + employability
+This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is action + unemployment + skills 
+
+```Ceylon =
+TS=
+(
+ ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
+  NEAR/5
+  ("unemploy*" OR "underemploy*") 
+   NEAR/5 
+   ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate") 
+ )
+ ```
+##### Phrase 3:
+
+Terms are from ILO: https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf. Employment is omitted as a search term here, as it leads to too much noise from articles concerned with the use (="employment") of the skills. The basic structure is core and transferable skills + employability
 
 ```Ceylon =
 TS= 
 (
  (
-  ("learn and adapt") OR (("read*" OR "writ*" OR "comput*")) OR (("listen*" OR "communicat*") NEAR/3 "effective*") OR ("think creatively" OR "creative thinking") OR ("solve problem$" OR "problem-solv*") OR (("interact*") NEAR ("co-work*")) OR (("work*")NEAR/3 ("team*" OR "group*")) OR ("basic technolog*") OR (("lead*") NEAR/5 ("effectiv*")) OR (("follow*") NEAR/3 ("supervis*"))
+  ("learn and adapt") OR (("read*" OR "writ*" OR "comput*")) OR (("listen*" OR "communicat*") NEAR/3 "effective*") OR ("think creatively" OR "creative thinking") OR ("solve problem$" OR "problem-solv*") OR (("interact*") NEAR ("co-work*")) OR (("work*")NEAR/3 ("team*" OR "group*")) OR ("basic technolog*") OR (("lead*") NEAR/5 ("effectiv*")) OR (("follow*") NEAR/3 ("supervis*")) OR "transfer*"
  )
  NEAR
  ("employability")
 ) 
 ```
-##### Phrase 3:
+##### Phrase 4:
 
 The basic structure is action + ICT + skill + employability. Some terms used in Phrase 1, like "abilit*" and "entrepreneurship$" are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
 
@@ -314,9 +328,9 @@ TS=
  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*" OR "relevan*")
   NEAR/5
   (
-   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*")
+   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
     NEAR/5
-    ("skill*" OR "competen*")
+    ("skill*" OR "competen*" OR "literac*")
   )
    NEAR
    ("employab*" OR "employment" OR "job*")
