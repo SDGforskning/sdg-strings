@@ -351,7 +351,7 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is action + gender + education
+The basic structure is action + gender equality + education
 
 ```Ceylon =
 TS=
@@ -375,7 +375,7 @@ TS=
 ```
 ##### Phrase 2:
 
-In this phrase, the basic structure is the same as in phrase 1, action + gender + education, but reversed to search for reduction of disparity, rather than increase of equality.
+In this phrase, the basic structure is similar to phrase 1, but reversed to search for reduction of disparity: action + gender disparity + education
 
 ```Ceylon =
 TS= 
@@ -423,10 +423,10 @@ TS=
       (
        ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
       NEAR/3
-      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced")
+      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced" OR "develop* contr*")
      )
      OR
-     "disab*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural")
+     "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural")
   )
  )
 ```
