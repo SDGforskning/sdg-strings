@@ -497,14 +497,14 @@ tested, but only returned irrelevant hits from medical, mathematical and chemica
 ```Ceylon =
 TS= 
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*")
  NEAR/5
  (
   ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning")
  )
  NEAR/5
  (
-  ("sustainable development" OR "sustainable lifestyle" OR "global citizen*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*")
+  ("sustainable development" OR "sustainable lifestyle" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*")
  ) 
 ) 
 ```
