@@ -157,8 +157,7 @@ TS=
 This target is interpreted to cover research about access and implementation of basic services (phrase 1); financial services (phrase 3 -5 ) and acces and right to land 
 (phrase 6 & )
 
-
-Phrase 1 covers access to basic services, as defined in the (<a id="SDGT+IsMet">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf
+Phrase 1 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
 *We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
 
@@ -487,7 +486,7 @@ TS=
 
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
-<a id="f11"></a> UN Statistics Dvision SDG Indicators Metadata Repository, 2022 https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf [↩](SDGT+IsMet)
+<a id="f11"></a> UN Statistics Division SDG Indicators Metadata Repository, 2022 https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf [↩](#SDGTMetrep)
 
 <b id="f2">2</b> UN (2017) *2017 HLPF Thematic Review of SDG 1: End Poverty in All its Forms Everywhere.*  https://sustainabledevelopment.un.org/content/documents/14379SDG1format-final_OD.pdf [↩](#HLPF2017)
 
