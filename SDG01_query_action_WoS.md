@@ -48,7 +48,7 @@ These targets are combined, as they cover similar topics.
 
 This targets are interpreted as to cover research about poverty reduction. 
 
-`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <sup id="HLPF2017">[2](#f2)</sup>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
+`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
 
