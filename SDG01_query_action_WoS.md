@@ -362,7 +362,7 @@ This query consists of x phrases.
 
 Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
 
-Disabled people, children, elderly people and pregnant women included under "vulnerable". Least developed countries and small island developing states have been included due as their population is more likely to be poor and the countries likely to have lower institutional resilience. SIDS in particular may be exposed to environmental disasters. Lists of least developed countries, small island developing states and landlocked developing states are from the United Nations World Economic Situation and Prospects (tables F, H and I, pages 173-174)<sup id="UNLDCs">[3](#f3)</sup>.
+Disabled people, children, elderly people and pregnant women included under "vulnerable". Least developed countries and small island developing states have been included due as their population is more likely to be poor and the countries likely to have lower institutional resilience. SIDS in particular may be exposed to environmental disasters. Lists of least developed countries (LDCs), small island developing states (SIDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
 
 ```Ceylon =
 TS=
@@ -439,6 +439,7 @@ This query consists of 1 phrase.
 The policy aspect of this target should be captured by other parts of the query (e.g. policies for poverty eradication or improved social protection systems).
 
 Disabled people, children, elderly people and pregnant women included under "vulnerable".
+In this version we added government spending/development aid on  education and health services.
 
 ```Ceylon =
 TS=
@@ -462,6 +463,8 @@ TS=
   	  OR "social protection$" OR "social floor$" OR "social service$" OR "social security"
       OR "welfare system$" OR "social welfare" OR "welfare service$"
       OR "basic service$" OR "essential service$"
+      OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
+      OR "education services" OR "schooling services" OR "education system" OR "school system"
       )
 )
 ```
