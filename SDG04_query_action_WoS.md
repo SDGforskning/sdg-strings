@@ -148,7 +148,7 @@ The search term "care" is not used alone as it would give too many hits that are
 ```Ceylon =
 TS=
 (
- ("access" OR "equitab*" OR "non-equit*" OR "barrier" OR "obstacle" OR "hinder*")
+ ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" )
  NEAR/5
  (
   (
@@ -157,7 +157,7 @@ TS=
     ("education")
   )
    OR
-   ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*")
+   ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "under five$")
  )
   NOT 
   ("pig*" OR "plant*" OR "fish*") 
@@ -497,14 +497,14 @@ tested, but only returned irrelevant hits from medical, mathematical and chemica
 ```Ceylon =
 TS= 
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*")
+ ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*" OR "facilitat*")
  NEAR/5
  (
   ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning")
  )
  NEAR/5
  (
-  ("sustainable development" OR "sustainable lifestyle" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*")
+  ("sustainable development" OR "sustainable lifestyle" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*")
  ) 
 ) 
 ```
