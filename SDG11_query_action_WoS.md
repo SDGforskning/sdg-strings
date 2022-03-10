@@ -91,14 +91,15 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is improve + safe + Transport systems  
+The basic structure is improve + safe + Transport systems + cities
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by
 limiting the search with terms concerning land transport. It is also difficult to exclude freight transport. (We could focus on transport, not transport systems.)
 
 
 ```Ceylon =
-TS=(((("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")  NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab*" OR "affordabl*" OR "availab*"))
+TS=(((("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
+NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab*" OR "affordab*" OR "availab*"))
 AND (("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
 "infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
 OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"OR "public transport*" OR "pedestrian*"
@@ -112,9 +113,11 @@ The basic structure is safe+road+improve
 
 ```Ceylon =
 
-TS=(((("safety" OR "safe*" OR "secure*" OR "hazardous*") NEAR/5 (("traffic*" OR "road*"  OR "highway$" OR "motorway$" OR "street*"
-OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "speed limit*" OR "accident*" OR "pedestrian$" OR "cyclist$" OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$" OR "driver$" OR "driving")) NEAR/5 (("improv*" OR "increase*" OR "enhance*"
-OR  "reduce*" OR "develop*")))) NOT ("air traffic*" OR "food*"))
+TS=(((("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*") NEAR/5 (("traffic*" OR "road*"  OR "highway$" OR "motorway$" OR "street*"
+OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "speed limit*" OR "accident*" OR "pedestrian$" 
+OR "cyclist$" OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$"
+OR "driver$" OR "driving")) NEAR/5 (("improv*" OR "increase*" OR "enhance*"
+OR  "reduc*" OR "develop*")))) NOT ("air traffic*" OR "food*"))
 ```
 
 ##### Phrase 3:
@@ -124,7 +127,8 @@ expand Public transport
 The basic structure is expand+ "public transport"
 
 ```Ceylon =
-TS=(("public transport*") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*" OR "boost*" OR "raise*" OR "escalate*" 
+TS=(("public transport*") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*"
+OR "boost*" OR "raise*" OR "escalate*" 
 OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
 
 TS=
@@ -543,6 +547,8 @@ TS=
 ## 4. Authorship and review
 
 ## 5. Footnotes
+
+http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
