@@ -34,7 +34,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 This target interpreted to cover reasearch on
 
-- Access to adequate, safe and affordable housing and basic services 
+- Improving access to adequate, safe and affordable housing and basic services 
 
 - Upgrading slums.  
 
@@ -48,11 +48,11 @@ Acccess to housing
 
 ```Ceylon =
 TS=( 
-(("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing") 
+(("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*") 
 NEAR 
-("adequate" OR "inadequate" OR "affordable" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security") 
-NEAR ("housing" OR "settlements" OR "living conditions")) 
-) 
+("adequate" OR "inadequate" OR "affordabl$" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security") 
+NEAR ("housing" OR "settlements" OR "living conditions"))
+)
 ```
 ##### Phrase 2:
 
@@ -72,10 +72,10 @@ Upgrade slums
 
 ```Ceylon =
 TS=( 
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing") 
+("strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand*" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*") 
 NEAR 
-("slum" OR "slums") 
-) 
+("slum" OR "slums" OR "shanty town$" OR "informal settlement*") 
+)	 
 ```
 
 ## Target 11.2
