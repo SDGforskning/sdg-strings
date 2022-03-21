@@ -1,6 +1,6 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen action-approach.
 
-***Current status**: This string has undergone development to improve the phrases and structure, and is awaiting a review of these changes. It is substantially changed from the original version it was based on (v2019.11).* 
+**Current status**: This string is being edited after internal review - expect changes. It is substantially changed from the original version it was based on (v2019.11).
 
 **Contents**
 
@@ -530,7 +530,7 @@ This target is interpreted to cover research about a) international cooperation 
 
 ##### Phrase 1
 
-The general structure is *sharing/investing/cooperation + clean energy/tech*. Major forms of renewable energy are included. 
+The general structure is *sharing/investing/cooperation + clean energy/tech*. Major forms of renewable energy are included.
 
 ```Ceylon =
 TS=
@@ -581,7 +581,7 @@ TS=
 
 ##### Phrase 2
 
-The general structure is *investment + energy infrastructure/renewable energy*. Major forms of renewable energy are included. 
+The general structure is *investment + energy infrastructure/renewable energy*. Major forms of renewable energy are included.
 
 ```Ceylon =
 TS=
@@ -664,6 +664,10 @@ TS=
 ```
 
 ## 4. Authorship and review
+
+V2 edit (Oct-Feb 2022): CSA
+Internal review (Mar 2022): HMB, ML
+Terminology workshop with specialists (Apr 2022):
 
 ## 5. Footnotes
 
