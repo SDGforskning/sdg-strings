@@ -19,6 +19,20 @@
 
 ## 2. General notes
 
+This target uses various descriptive terms for energy services, technologies and fuels. For the purpose of these search strings, we are operating using the following definitions:
+
+* Modern energy services: We consider this to mainly refer to electrification and reliance on clean fuels/technology. <a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a reference for understanding "modern energy access":
+>"There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting." (IEA 2020)
+
+* Sustainable energy services: These are only mentioned in 7.b, and we interpret this to be the same as "modern".
+
+* Renewable energy: We consider this to cover energy (e.g. electricity, heating) from sources that are renewable. We do not include "low-carbon" finite sources or "cleaner fossil fuel technology" in this category.
+
+* Clean fuels/technology: We consider this to cover fuels and technology that do not release, or reduce the release of, pollution that directly harms humans. This could include cleaner fossil-fuel/ non-renewable sources, as well as renewable energy (but not e.g. biomass burning that produces household air pollution). It does not automatically include decarbonised technologies. This is based on the 7.1.2 indicator metadata, which links "clean" to indoor air quality, and the examples given in target 7.a:
+> “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+
+> "[...] access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology [...]" (target 7.a)
+
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Lists of least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>).
@@ -39,103 +53,130 @@ Other abbreviations:
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean technology in households (phrases 1-2). In v1 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-* Affordable, reliable and modern electricity and energy services (phrases 3,4,5)
-* Access to electricity and energy services (phrases 3 and 6)
+* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean technology in households (phrases 1-3). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Affordable, reliable and modern electricity and energy services (phrases 4-6)
+* Access to electricity and energy services (phrases 4 and 7)
 
-<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target, and as a reference for understanding "modern energy access":
->"There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting." (IEA 2020)
+<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target.
 
-This query consists of 6 phrases.
+This query consists of 7 phrases.
 
-##### Phrase 1:
-
-This phrase focuses on the clean fuels and technology part of the T&Is. The basic structure is *clean household energy activities + reliance/access*. Phrase 2 is similar, but adds some terms that need to be combined with `household$`. Adding `fuels OR technologies` as an additional element is too restrictive here - a number of works just talk about "clean cookstoves" for example.
-
-Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). `solar cookers` are a type of clean cooking technology. The indicator metadata defines clean as:
-> “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-
-Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Thus, while `decarboni*` was included in v1, it is removed in this version - carbon emissions do not seem to be the focus here under "clean". There are a large number of results lost by removing the ideas of decarbonisation and "clean technology" generally - consider including them in the topic/wide approach?
-
-The second half of this phrase contains terms for various aspects to do with reliance, access and ways to increase usage, e.g.:
-* Usage and access
-* Barriers to increase
-* Implementation
-* Research concerning bringing technology to users
-* Policies, incentives and investments
-
-```Ceylon =
-TS=
-(
-  ("solar cooker$" OR "solar box cooker$"
-  OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
-  OR
-    (
-      ("clean" OR "cleaner"
-      OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
-      OR "unprocessed coal"
-      )  
-      NEAR/15
-          ("cooking" OR "cookstove$" OR "stove$"
-          OR "lighting" OR "lamps"
-          OR "heating"
-          )
-    )
-  )
-  NEAR/15
-      ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-      OR "access*" OR "availab*" OR "barrier$" OR "obstacle$"
-      OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-      OR "implement*" OR "adopt*" OR "transition$" OR "intervention$"
-      OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
-      OR "policy" OR "policies" OR "legislation"
-      OR "energy strateg*" OR "energy management" OR "energy planning"
-      OR "feed-in tariff$" OR "market$" OR "initiative$"
-      OR (("energy" OR "green") NEAR/2 "certificat*")
-      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-      OR "sustainable development" OR "sustainable energy development"
-      )
-)
-```
-##### Phrase 2
-
-The basic structure is *clean fuels/tech + reliance/access + households*. It is similar to phrase 1, but includes terms such as `kerosene` og `fuel$` which are broad unless combined with `household$`.
+##### Phrase 1
+The basic structure is *clean fuels/tech + action + households*. The action part of this phrase contains terms for various aspects to do with increasing reliance, access and uptake, e.g. interventions, policy, investing and reducing barriers. *Household terms* are included as terms such as `fuel$` are broad. "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc.
 
 ```Ceylon =
 TS=
 (
   (
-    ("clean" OR "cleaner" OR "modern"
-    OR "pm2.5" OR "fine particulate matter" OR "indoor air pollution"
-    OR "coal" OR "kerosene" OR "solid fuel$"
-    )  
+    (
+      ("clean*" OR "modern*")
+      NEAR/5
+          ("fuel$" OR "energ*" OR "electric*"
+          OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"
+          )
+    )
     NEAR/15
-        ("fuel$" OR "energy" OR "electric*"
-        OR "cooking" OR "cookstove$" OR "stove$"
-        OR "lighting" OR "lamps"
-        OR "heating"          
-        )
-    NEAR/15
-        ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-        OR "access*" OR "availab*" OR "barrier$" OR "obstacle$"
-        OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-        OR "implement*" OR "adopt*" OR "transition$" OR "intervention$"
-        OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
-        OR "policy" OR "policies" OR "legislation"
-        OR "energy strateg*" OR "energy management" OR "energy planning"
-        OR "feed-in tariff$" OR "market$" OR "initiative$"
-        OR (("energy" OR "green") NEAR/2 "certificat*")
-        OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+        ("implement*" OR "adopt*" OR "establish*" OR "transition*"
+        OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up"
+        OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
+        OR
+          (
+            ("increas*" OR "improv*" OR "facilitate" OR "expand*" OR "expansion")
+            NEAR/5
+                ("relian*" OR "uptake" OR "use" OR "usage" OR "primary source$"
+                OR "access*" OR "availab*" OR "attractive*"
+                OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
+                OR "commercial development" OR "develop* commercially" OR "commerciali?ation" OR "investment$"
+                )
+          )
+        OR (("reduc*" OR "remov*" OR "address") NEAR/5 ("barrier$" OR "obstacle$"))
+        OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+        OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
         OR "sustainable development" OR "sustainable energy development"
         )
   )    
-  AND ("household$" OR "home$" OR "houses" OR "housing")      
+  AND ("household$" OR "home$" OR "house" OR "houses" OR "housing" OR "room"
+      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "community" OR "village$" OR "women")      
+)
+```
+##### Phrase 2:
+
+The basic structure is *clean household energy activities + action*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
+
+```Ceylon =
+TS=
+(
+  ("solar cooker$" OR "solar box cooker$" OR "solar cooking"
+  OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
+  )
+  NEAR/15
+      ("implement*" OR "adopt*" OR "establish*" OR "transition*"
+      OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up"
+      OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
+      OR
+        (
+          ("increas*" OR "improv*" OR "facilitate" OR "expand*" OR "expansion")
+          NEAR/5
+              ("relian*" OR "uptake" OR "use" OR "usage" OR "primary source$"
+              OR "access*" OR "availab*" OR "attractive*"
+              OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
+              OR "commercial development" OR "develop* commercially" OR "commerciali?ation" OR "investment$"
+              )
+        )
+      OR (("reduc*" OR "remov*" OR "address") NEAR/5 ("barrier$" OR "obstacle$"))
+      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
+      OR "sustainable development" OR "sustainable energy development"
+      )
 )
 ```
 
-##### Phrase 3
+##### Phrase 3:
 
-This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; phrase 4 uses broader terms for affordability, and phrase 6 broader terms for access.
+The basic structure is *dirty fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
+
+```Ceylon =
+TS=
+(
+  (
+    ("kerosene" OR "solid fuel$" OR "coal")
+    NEAR/15
+        ("transition*" OR "intervention$" OR "initiative$"
+        OR "encourag*" OR "incentive$" OR "investing" OR "invest"
+        OR "reduc*" OR "decreas*" OR "prevent" OR "mitigat*" OR "phase out"
+        OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+        OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
+        OR "sustainable development" OR "sustainable energy development"
+        )
+  )    
+  NEAR/15 ("household$" OR "home$" OR "house" OR "houses" OR "housing"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      OR "residential heating" OR "central heating" OR "winter heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps")      
+)
+OR
+TS=
+(
+  ("coal"
+  NEAR/5
+      ("transition*" OR "intervention$" OR "initiative$"
+      OR "encourag*" OR "incentive$" OR "investing" OR "invest"
+      OR "phase out"
+      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
+      OR "sustainable development" OR "sustainable energy development"
+      )
+  )    
+  NEAR/15
+      ("household$" OR "home$" OR "house" OR "houses" OR "housing"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      OR "heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
+      )      
+)
+```
+
+##### Phrase 4
+
+This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; phrase 5 uses broader terms for affordability, and phrase 7 broader terms for access.
 
 The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy povery.
 
@@ -155,7 +196,7 @@ TS=
 OR TS=("increas* energy security")
 ```
 
-##### Phrase 4
+##### Phrase 5
 
 This phrase finds works about affordable energy/electricity (in addition to phrase 3). The general structure is *affordable + energy*.
 
@@ -177,7 +218,7 @@ TS=
 )
 ```
 
-##### Phrase 5
+##### Phrase 6
 
 This phrase to find research about modern or reliable energy services (in addition to phrase 3), as well as sustainable development of energy services.
 
@@ -211,7 +252,7 @@ TS=
 )
 ```
 
-##### Phrase 6
+##### Phrase 7
 
 This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / access + energy  / access + energy + regions*. Least developed countries are included regions. `energy services` is considered specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`).
 
@@ -665,9 +706,9 @@ TS=
 
 ## 4. Authorship and review
 
-V2 edit (Oct-Feb 2022): CSA
-Internal review (Mar 2022): HMB, ML
-Terminology workshop with specialists (Apr 2022):
+* V2 edit (Oct-Feb 2022): CSA
+* Internal review (Mar 2022): HMB, ML
+* Terminology workshop with specialists (Apr 2022):
 
 ## 5. Footnotes
 
