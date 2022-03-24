@@ -55,8 +55,8 @@ Other abbreviations:
 This target is interpreted to cover research about:
 * Increasing access to and primary use of clean fuels and clean technology in households (phrases 1 & 2). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
 * Reducing the use of non-clean fuels in households (phrase 3)
-* Improving access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4-6)
-* Improving the affordability and reliability of energy services.
+* Improving access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4 & 5)
+* Improving the affordability and reliability of energy services (phrase 6)
 
 <a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target. This query consists of 7 phrases.
 
@@ -203,62 +203,6 @@ OR TS=("increas* energy security")
 
 ##### Phrase 5
 
-This phrase finds works about affordable energy/electricity (in addition to phrase 3). The general structure is *affordable + energy*.
-
-`energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power).
-
-```Ceylon =
-TS=
-(
-  ("affordab*")
-  NEAR/15
-      ("energy service$" OR "electricity" OR "electrical energy"
-      OR
-        (
-          ("energy" OR "power" OR "electric" OR "electrical")
-          NEAR/3
-              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply")            
-        )
-      )
-)
-```
-
-##### Phrase 6
-
-This phrase to find research about modern or reliable energy services (in addition to phrase 3), as well as sustainable development of energy services.
-
-`stable` and `stability` are very general words, so are combined with other terms. `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
-
-```Ceylon =
-TS=
-(
-  ("stable supply" OR "supply stability" OR "grid stability"
-  OR "reliab*" OR "resilien*"
-  OR
-    ("modern*"
-    NEAR/5
-        ("energy" OR "electricity" OR "grid" OR "grids")
-    )    
-  OR "sustainable development"    
-  )
-  NEAR/15
-      ("energy service$" OR "electricity" OR "electrical energy"
-      OR
-        (
-          ("energy" OR "power" OR "electric" OR "electrical")
-          NEAR/3
-              ("generat*" OR "service$" OR "sector" OR "produc*" OR "supply"
-              OR "infrastructure" OR "grid" OR "grids" OR "energy system$"
-              )            
-        )
-      OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
-      OR "off grid solution$" OR "off-grid system$"
-      )
-)
-```
-
-##### Phrase 7
-
 This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries and rural areas.
 
 ```Ceylon =
@@ -302,6 +246,42 @@ TS=
         NEAR/3 ("countr*" OR "state$" OR "nation$")
         )
       OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"    
+      )
+)
+```
+
+##### Phrase 6
+
+This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+```
+TS=
+(
+  (
+    (
+      ("improv*" OR "increas*" OR "ensur*")
+      NEAR/5
+      ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*")  
+    )
+    OR
+    (
+      ("reduc*" OR "decreas*" OR "improv*" OR "prevent")
+      NEAR/5
+      ("unstable" OR "instability" OR "unreliab*" OR "inafford*" OR "costly" OR "expensive")  
+    )
+  )
+  NEAR/15
+      ("energy service$" OR "electricity supply"
+      OR
+        (
+          ("energy" OR "power" OR "electric" OR "electrical")
+          NEAR/3
+              ("household$" OR "home$" OR "house" OR "houses" OR "housing"
+              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
+              OR "sustainable"
+              )            
+        )
+      OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
+      OR "off grid solution$" OR "off-grid system$"
       )
 )
 ```
