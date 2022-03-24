@@ -206,44 +206,49 @@ OR TS=("increas* energy security")
 This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries and rural areas.
 
 ```Ceylon =
+TS= ("universal electrification" OR "rural electrification")
+OR
 TS=
 (
-  "universal electrification" OR "rural electrification"
-  OR
-    ("access"
-    NEAR/5
-      ("energy service$")
-    )
-  OR
-    ("access"
-    NEAR/15
-      ("electricity" OR "energy")
-    NEAR/15
-      ("microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
-      OR "off grid solution$" OR "off-grid system$"
+  (
+    ("improv*" OR "increas*" OR "ensur*")
+    NEAR/5 ("access" OR "provision")  
+  )
+  NEAR/5
+      ("energy service$" OR "electricity supply"
+      OR
+        (
+          ("energy" OR "power" OR "electric*")
+          NEAR/3
+              ("household$" OR "home$" OR "house" OR "houses" OR "housing"
+              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
+              OR "sustainable"
+              )            
+        )
       )
-    )
 )
 OR
 TS=
 (
-  ("electrification" OR "energy access" OR "grid extension$"
+  ("electrification" OR "grid extension$"
   OR
     (
-      ("access" OR "provide$" OR "provision")
-      NEAR/5
-          ("electrical supply" OR "power supply" OR "electricity" OR "energy service$")
-    )  
+      (
+        ("improv*" OR "increas*" OR "ensur*")
+        NEAR/5 ("access" OR "provision")
+      )
+      NEAR/5 ("electrical supply" OR "power supply" OR "electricity")
+    )
   )
   NEAR/15
       ("rural"
       OR
-        ("remote"
-        NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")
+        (
+          ("remote")
+          NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")
         )
       OR
-        ("least developed"
-        NEAR/3 ("countr*" OR "state$" OR "nation$")
+        ("least developed" NEAR/3 ("countr*" OR "state$" OR "nation$")
         )
       OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"    
       )
@@ -273,7 +278,7 @@ TS=
       ("energy service$" OR "electricity supply"
       OR
         (
-          ("energy" OR "power" OR "electric" OR "electrical")
+          ("energy" OR "power" OR "electric*")
           NEAR/3
               ("household$" OR "home$" OR "house" OR "houses" OR "housing"
               OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
