@@ -53,27 +53,32 @@ Other abbreviations:
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access and reliance on clean vs. dirty fuels, and increasing use of clean fuels and clean technology in households (phrases 1-3). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-* Affordable, reliable and modern electricity and energy services (phrases 4-6)
-* Access to electricity and energy services (phrases 4 and 7)
+* Increasing access to and primary use of clean fuels and clean technology in households (phrases 1 & 2). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Reducing the use of non-clean fuels in households (phrase 3)
+* Improving access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4-6)
+* Improving the affordability and reliability of energy services.
 
-<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target.
-
-This query consists of 7 phrases.
+<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target. This query consists of 7 phrases.
 
 ##### Phrase 1
-The basic structure is *clean fuels/tech + action + households*. The action part of this phrase contains terms for various aspects to do with increasing reliance, access and uptake, e.g. interventions, policy, investing and reducing barriers. *Household terms* are included as terms such as `fuel$` are broad. "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc.
+The basic structure is *clean fuels/tech + action + households*. The action part of this phrase contains terms for various aspects to do with increasing reliance, access and uptake, e.g. interventions, policy, investing and reducing barriers. *Household terms* are included as terms such as `fuel$` are broad. "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc. or by the general term `energy transition$`.
 
 ```Ceylon =
 TS=
 (
   (
     (
-      ("clean*" OR "modern*")
-      NEAR/5
-          ("fuel$" OR "energ*" OR "electric*"
-          OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"
-          )
+      ("energy transition$"
+      NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating")
+      )
+    OR
+      (
+        ("clean*" OR "modern*")
+        NEAR/5
+            ("fuel$" OR "energ*" OR "electric*"
+            OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"
+            )
+      )
     )
     NEAR/15
         ("implement*" OR "adopt*" OR "establish*" OR "transition*"
@@ -254,7 +259,7 @@ TS=
 
 ##### Phrase 7
 
-This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / access + energy  / access + energy + regions*. Least developed countries are included regions. `energy services` is considered specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`).
+This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries and rural areas.
 
 ```Ceylon =
 TS=
