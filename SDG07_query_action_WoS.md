@@ -138,7 +138,7 @@ TS=
 
 ##### Phrase 3:
 
-The basic structure is *dirty fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
+The basic structure is *"dirty" fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. 
 
 ```Ceylon =
 TS=
@@ -163,7 +163,7 @@ TS=
 (
   ("coal"
   NEAR/5
-      ("transition*" OR "intervention$" OR "initiative$"
+      ("transition*" OR "coal to electricity" OR "intervention$" OR "initiative$"
       OR "encourag*" OR "incentive$" OR "investing" OR "invest"
       OR "phase out"
       OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
