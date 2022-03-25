@@ -587,34 +587,47 @@ TS=
 >
 > 7.a.1 International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems
 
-This target is interpreted to cover research about a) international cooperation for clean energy research and technology, b) access to clean energy research and technology, and c) investment in clean energy research and technology (all phrase 1), and d) investment in energy infrastructure (inc. renewables; phrase 2). Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target.
+This target is interpreted to cover research about:
+* increasing international cooperation for clean energy research and technology
+* improving access to clean energy research and technology, in part via transfers of technology between sectors/actors
+* promoting investment in clean energy research and technology
+* promoting investment in energy infrastructure (phrase 2).
+
+Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. This target consists of 2 phrases.
 
 ##### Phrase 1
 
-The general structure is *sharing/investing/cooperation + clean energy/tech*. Major forms of renewable energy are included.
+The general structure is *action + sharing/investing/cooperation + clean energy research/tech*. Major forms of renewable energy are included.
 
 ```Ceylon =
 TS=
 (
-  ("transfer of technolog*" OR "technology transfer$"
-  OR
-    ("knowledge transfer"
-    NEAR/3 ("technolog*" OR "technical")
+  (
+    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulate$" OR "support*"
+    OR "build*" OR "develop" OR "developing" OR "improv*"
+    OR "invest" OR "investing"
     )
-  OR
-    (
-      ("research" OR "technology" OR "technologies" OR "innovation$")
-      NEAR/5
-          ("access*" OR "sharing" OR "shared benefit$"
-          OR "capacity building" OR "build* capacity" OR "capacity development"
+    NEAR/5
+        ("transfer of technolog*" OR "technology transfer$"
+        OR
+          ("knowledge transfer"
+          NEAR/3 ("technolog*" OR "technical")
           )
-    )  
-  OR "international cooperation" OR "international collaboration"
-  OR "foreign aid" OR "official development aid" OR "official development assistance"
-  OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+        OR
+          (
+            ("research" OR "technology" OR "technologies" OR "innovation$")
+            NEAR/5
+                ("access*" OR "sharing" OR "shared benefit$"
+                OR "capacity building" OR "build* capacity" OR "capacity development"
+                )
+          )  
+        OR "international cooperation" OR "international collaboration"
+        OR "foreign aid" OR "official development aid" OR "official development assistance"
+        OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+        )
   )
   NEAR/15
-      ("cleantech"
+      ("cleantech" OR "energy research" OR "energy efficiency research"
       OR
         (
           ("technolog*" OR "innovation$")
@@ -624,31 +637,26 @@ TS=
               OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower"
               )
         )      
-      OR
-        (
-          ("research*")
-          NEAR/3
-              ("energy" OR "electricity" OR "fuel" OR "fuels")
-          NEAR/3
-              ("clean" OR "cleaner" OR "green" OR "greener"
-              OR "decarboni*" OR "low carbon" OR "renewable$"
-              OR "energy efficiency"  
-              OR "transition$" OR "policy" OR "policies"
-              )
-        )  
       )             
 )
 ```
 
 ##### Phrase 2
 
-The general structure is *investment + energy infrastructure/renewable energy*. Major forms of renewable energy are included.
+The general structure is *action + investment + energy infrastructure/renewable energy*. Major forms of renewable energy are included.
 
 ```Ceylon =
 TS=
 (
-  ("foreign aid" OR "official development aid" OR "official development assistance"
-  OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+  (
+    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulate$" OR "support*"
+    OR "build*" OR "develop" OR "developing" OR "improv*"
+    OR "invest" OR "investing"
+    )
+    NEAR/5
+      ("foreign aid" OR "official development aid" OR "official development assistance"
+      OR "investment$" OR "invest" OR "investing" OR "green bond$" OR "climate bond$"
+      )
   )
   NEAR/15
       ("energy service$" OR "energy sector"
