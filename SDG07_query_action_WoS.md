@@ -446,97 +446,107 @@ TS=
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
 This target is interpreted to cover:
-* Research about improving energy intensity (phrase 1)
-* Research about improving energy efficiency and measures/interventions to improve efficiency
+* Research about improving energy intensity (phrase 1,2)
+* Research about improving energy efficiency and measures/interventions to improve efficiency (phrase 3)
 
 Energy intensity definition from the European Environment Agency:
 >"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" (<a id="EEA2016">[EEA, 2016](#f6)</a>).
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1
 
-This phrase finds research about improving energy intensity; the general structure is *energy intensity + action + energy terms*. The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts.
+This phrase finds research about improving energy intensity. The general structure is *energy intensity + action + energy terms*.
 
-The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
+The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts. The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
 
 ```Ceylon =
 TS=
 (
   ("energy intensity"
-  NEAR/10
+  NEAR/5
       ("reduc*" OR "decreas*" OR "lower"
       OR "improv*" OR "enhanc*" OR "better" OR "more efficient"
-      OR "policy" OR "policies" OR "legislation"
-      OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "policy" OR "policies" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
       OR "initiative$" OR "intervention$"
-      OR  (("energy" OR "green") NEAR/2 "certificat*")
       OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-      OR "energy sustainability"
+      OR  (("energy" OR "green") NEAR/2 "certificat*")
       OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-      OR "sustainable development"
+      OR "sustainable development" OR "energy sustainability"
       )
   )
   AND
       ("energy consum*" OR "sustainab*" OR "energy efficiency"
       OR "GDP" OR "economic" OR "economy" OR "economies"
       OR "industry" OR "industrial" OR "manufacturing"
-      OR "policy" OR "policies"
       OR ("emission$" NEAR/5 ("carbon" OR "co2"))
       OR "footprint$"
-      OR "sustainable development"
       )
 )
 ```
 
 ##### Phrase 2
+This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The general structure is *energy consumption + action + economy*.
 
-This phrase finds research about increasing energy efficiency. The general structure is *action + energy efficiency + sectors / action + energy efficiency*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part).
+```Ceylon =
+TS=
+(
+  ("energy consum*"
+  NEAR/5 ("decouple*" OR "de couple*")
+  )
+    NEAR/5 ("econom*" OR "GDP")
+)
+```
 
-The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
+##### Phrase 3
+
+This phrase finds research about increasing energy efficiency. The general structure is *energy efficiency/loss + action + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances).
 
 *sector terms* were built around generic terms (e.g. `residential` will find "residential water heating"), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
+
+The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>). `increase$ OR increasing` is used to avoid "increasingly".
 
 ```Ceylon =
 TS=
 (
     (
-      ("increas*" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher"
-      OR "policy" OR "policies" OR "legislation"
-      OR "energy strateg*" OR "energy management" OR "energy planning"
-      OR "initiative$" OR "intervention$"
-      OR  (("energy" OR "green") NEAR/2 "certificat*")
-      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-      OR "energy sustainability"
-      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-      OR "sustainable development"
+      (
+        (
+          ("energy efficien*" OR "energy saving")
+          NEAR/5
+              ("increase$" OR "increasing" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher")
+        )
+        OR ("energy loss" NEAR/5 ("reduc*" OR "decreas*" OR "limit" OR "prevent*"))
       )
       NEAR/15
-            ("energy efficien*" OR "energy saving")
+          ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
+          OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
+          OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods"
+          OR "plug-in device$" OR "smart"
+          OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
+          OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
+          OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
+          OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
+          )
+    )
+    OR
+    ( "energy efficiency"
+      NEAR/5
+          ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
+          OR "initiative$" OR "intervention$"
+          OR "incentive$" OR "investment$" OR "investing" OR "invest"
+          )
+    )
+    OR
+    ( "energy efficiency"
       NEAR/15
-            ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
-            OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
-            OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods"
-            OR "plug-in device$" OR "smart"
-            OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
-            OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
-            OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
-            OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
-            )
-    )
-  OR
-    ("energy efficiency"
-    NEAR/15
-        ("policy" OR "policies" OR "framework$" OR "legislation"
-        OR "energy strateg*" OR "energy management" OR "energy planning"
-        OR "initiative$" OR "intervention$"
-        OR  (("energy" OR "green") NEAR/2 "certificat*")
-        OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-        OR "energy sustainability"
-        OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-        OR "sustainable development"
-        )
-    )
+          ((("energy" OR "green") NEAR/2 "certificat*")
+          OR "green bond$" OR "climate bond$"
+          OR "energy sustainability"
+          OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+          OR "sustainable development"
+          )
+      )
 )
 ```
 
