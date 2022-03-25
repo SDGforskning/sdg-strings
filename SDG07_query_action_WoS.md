@@ -203,7 +203,7 @@ OR TS=("increas* energy security")
 
 ##### Phrase 5
 
-This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries and rural areas.
+This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries, SIDS, landlocked developing countries and rural areas.
 
 ```Ceylon =
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
@@ -211,7 +211,9 @@ OR
 TS=
 (
   (
-    ("improv*" OR "increas*" OR "ensur*")
+    ("improv*" OR "increas*" OR "ensur*" OR "strengthen*" OR "enhanc*" OR "better"
+    OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "accelerat*"
+    )
     NEAR/5 ("access" OR "provision")  
   )
   NEAR/5
@@ -222,7 +224,7 @@ TS=
           NEAR/3
               ("household$" OR "home$" OR "house" OR "houses" OR "housing"
               OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
-              OR "sustainable"
+              OR "sustainable" OR "green" OR "clean" OR "modern"
               )            
         )
       )
@@ -234,10 +236,12 @@ TS=
   OR
     (
       (
-        ("improv*" OR "increas*" OR "ensur*")
+        ("improv*" OR "increas*" OR "ensur*" OR "strengthen*" OR "enhanc*" OR "better"
+        OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "accelerat*"
+        )
         NEAR/5 ("access" OR "provision")
       )
-      NEAR/5 ("electrical supply" OR "power supply" OR "electricity")
+      NEAR/5 ("energy" OR "electricity" OR "electrical supply" OR "power supply")
     )
   )
   NEAR/15
@@ -247,10 +251,14 @@ TS=
           ("remote")
           NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")
         )
-      OR
-        ("least developed" NEAR/3 ("countr*" OR "state$" OR "nation$")
-        )
-      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"    
+      OR "least developed countr*" OR "least developed nation$"
+      OR "developing countr*" OR "developing nation$" OR "developing states"
+
+      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
+
+      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+
+      OR "Afghanistan" OR "Armenia" OR "Azerbaijan" OR "Bhutan" OR "Bolivia" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "Ethiopia" OR "Kazakhstan" OR "Kyrgyzstan" OR "Kyrgyz Republic" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "Mali" OR "Mongolia" OR "Nepal" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova" OR "Rwanda" OR "South Sudan" OR "Swaziland" OR "Tajikistan" OR "Turkmenistan" OR "Uganda" OR "Uzbekistan" OR "Zambia" OR "Zimbabwe"
       )
 )
 ```
@@ -681,14 +689,15 @@ TS=
 >
 > 7.b.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about improving infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Modern energy is defined in 7.1. This query consists of 1 phrase. Specific LDCs, SIDS and LDSs are included as terms.
+This target is interpreted to cover research about improving infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Infrastructure and technology is interpreted to cover electricity generation, power grids and storage, energy services, and renewable energy. The general structure is *action + infrastructure/technology + developing countries*.
 
 ```Ceylon =
 TS=
 (
   (
     ("improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
-    OR "more efficient" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "accelerat*"
+    OR "more efficient" OR "upgrad*" OR "scal* up"
+    OR "build*" OR "expand" OR "deploy" OR "accelerat*" OR "prioriti$e"
     )  
     NEAR/5  
       ("energy service$" OR "energy sector"
@@ -699,9 +708,9 @@ TS=
         (
           ("energy" OR "electricity")
           NEAR/5
-              ("generation" OR "infrastructure" OR "technolog*"
-              OR "access" OR "off grid"
-              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower")
+              ("infrastructure" OR "technolog*"
+              OR "generation" OR "off grid"
+              OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower")
         )             
       )
   )
