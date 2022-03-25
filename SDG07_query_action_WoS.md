@@ -58,7 +58,7 @@ This target is interpreted to cover research about:
 * Improving access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4 & 5)
 * Improving the affordability and reliability of energy services (phrase 6)
 
-<a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a source of terms for this target. This query consists of 7 phrases.
+<a id="IEAaccess">[IEA (2020)](#f5)</a> and <a id="UNThemereport">[UN (2021)](#f9)</a> were used as a source of terms for this target. This query consists of 7 phrases.
 
 ##### Phrase 1
 The basic structure is *clean fuels/tech + action + households*. The action part of this phrase contains terms for various aspects to do with increasing reliance, access and uptake, e.g. interventions, policy, investing and reducing barriers. *Household terms* are included as terms such as `fuel$` are broad. "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc. or by the general term `energy transition$`.
@@ -138,7 +138,7 @@ TS=
 
 ##### Phrase 3:
 
-The basic structure is *"dirty" fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. 
+The basic structure is *"dirty" fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
 
 ```Ceylon =
 TS=
@@ -206,7 +206,7 @@ OR TS=("increas* energy security")
 This phrase is about universal access, covering electrification of remote/rural regions. The general structure is *universal electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least economically developed countries and rural areas.
 
 ```Ceylon =
-TS= ("universal electrification" OR "rural electrification")
+TS= ("universal electrification" OR "rural electrification" OR "national electrification")
 OR
 TS=
 (
@@ -258,7 +258,7 @@ TS=
 ##### Phrase 6
 
 This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
-```
+```Ceylon =
 TS=
 (
   (
@@ -271,7 +271,7 @@ TS=
     (
       ("reduc*" OR "decreas*" OR "improv*" OR "prevent")
       NEAR/5
-      ("unstable" OR "instability" OR "unreliab*" OR "inafford*" OR "costly" OR "expensive")  
+      ("unstable" OR "instability" OR "unreliab*" OR "unafford*" OR "costly" OR "expensive")  
     )
   )
   NEAR/15
@@ -715,5 +715,8 @@ TS=
 <a id="f4"></a> Statistics Division. (2021b). *SDG Indicators Metadata Repository*. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 8 December 2021] [↩](#SDGindmetadata)
 
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
+
+<a id="f9"></a> United Nations. (2021). *Theme Report on Energy Access* [Executive summary, Background document]. High-level Dialogue on Energy
+New York, September 2021. https://www.un.org/en/conferences/energy2021/RESOURCES [Accessed 03.03.2022]. [↩](#UNThemereport)
 
 <a id="f3"></a> UN High level political forum on Sustainable Development. (2018). *2018 HLPF Review of SDG implementation: SDG 7- Ensure access to affordable, reliable, sustainable and modern energy for all*. https://sustainabledevelopment.un.org/content/documents/195532018_background_notes_SDG_7Final1.pdf [Accessed 06.01.2022]
