@@ -416,7 +416,7 @@ TS=
 
 ##### Phrase 4
 
-This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*.
+This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `oil` is not linked to consumption due to results from medicine (e.g. fish oil).
 
 ```Ceylon =
 TS=
