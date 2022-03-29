@@ -32,21 +32,71 @@ During editing of this string (2021), we have also consulted of queries from the
 
 ## 3. Targets
 
-## Target 1.1/1.2
-
-These targets are combined, as they cover similar topics.
+## Target 1.1
 
 > **1.1 By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day**
 >
 > 1.1.1 Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)
 >
+
+This target is interpreted as to cover research about eradicate extreme poverty and reduce the number of people living below the international poverty line. 
+
+`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
+
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
+
+*For the topic approach terms such as: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic* *" OR "extreme") should be included.*
+
+This query consists of 2 phrases.
+
+Phrase 1: Covers research about eradicate extreme poverty
+
+*The basic structure is as follows: extreme poverty + action*
+
+```Ceylon =
+TS=
+(
+  ("extreme poverty" OR "severe poverty" OR "extremely poor" OR "severely poor" OR "destitution"
+    NEAR/5
+        ("decreas*" OR "minimi*" OR "reduc*"
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+        OR "end" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "excap*" OR "mitigat*"
+        )
+  )
+)  
+```
+
+Phrase 2 (WORK IN PROGRESS): Covers research about reducing the number of poeple livining below the international poverty line
+
+Doesn't give any hits as stated here
+
+```Ceylon =
+TS=
+(
+  ("international poverty line" OR "$1.25 a day" OR "$1.9 a day" OR "$1.25 per day " OR "$1.9 per day")
+    NEAR/5
+        ("decreas*" OR "minimi*" OR "reduc*"
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+        OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "mitigat*"
+        )
+  vunerable groups poverty ine
+    )
+
+```
+
+
+
+## Target 1.2
+
 > **1.2 By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions**
 >
 > 1.2.1 Proportion of population living below the national poverty line, by sex and age
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This targets are interpreted as to cover research about poverty reduction. 
+This target is interpreted as to cover research about poverty reduction in in all forms. 
 
 `Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
@@ -61,17 +111,16 @@ This query consists of 1 phrase.
 TS=
 (
   ("anti-poverty" OR
-  "poverty"
+  "poverty" OR "the poor" OR "working poor"
   NEAR/5
       ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-      OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
-      OR "out of" OR "overcome"
+      OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*" OR "escape" OR "mitigate" OR "relief"
+      OR "lift out of" OR "overcome"
       )
   )
 )
 ```
-
 
 
 ## Target 1.3
