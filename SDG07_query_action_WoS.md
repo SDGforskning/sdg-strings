@@ -279,7 +279,9 @@ TS=
     (
       ("reduc*" OR "decreas*" OR "improv*" OR "prevent")
       NEAR/5
-      ("unstable" OR "instability" OR "unreliab*" OR "unafford*" OR "costly" OR "expensive")  
+      ("unstable" OR "instability" OR "unreliab*"
+      OR "unafford*" OR "costly" OR "energy cost$" OR "expensive"
+      )  
     )
   )
   NEAR/15
@@ -337,6 +339,7 @@ TS=
       NEAR/5
           ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
           OR "contribution" OR "proportion" OR "share" OR "expansion"
+          OR "feasibility"
           OR "affordab*" OR "investment$"
           OR "energy service$" OR "energy sector"
           OR "global energy" OR "global electricity" OR "energy mix"
@@ -348,7 +351,7 @@ TS=
   OR (("energy" OR "green") NEAR/2 "certificat*")
   OR "barrier$" OR "obstacle$"
   OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
-  OR "subsidi*" OR "economic feasibility" OR "cost-effectiveness" OR "cost-advantage$"
+  OR "subsidi*" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
   OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
   OR "feed-in tariff$" OR "market$"
   OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
@@ -379,6 +382,8 @@ TS=
         )
       OR "wind farm$" OR "wind turbine$"
       OR "tidal turbine$" OR "stream turbine$" OR "current turbine$"
+      OR "tidal power" OR "tidal energy" OR "marine energy"
+      OR ("wave energy" NEAR/5 ("converter$" OR "renewable" OR "power" OR "generat*" OR "energy harvesting"))
       OR "biofuel$" OR "bioenergy" OR "biodiesel"
       OR
         (
@@ -623,7 +628,7 @@ TS=
           )
         OR
           (
-            ("research" OR "technology" OR "technologies" OR "innovation$")
+            ("research" OR "technology" OR "technologies" OR "innovation$" OR "R&D")
             NEAR/5
                 ("access*" OR "sharing" OR "shared benefit$"
                 OR "capacity building" OR "build* capacity" OR "capacity development"
@@ -638,11 +643,11 @@ TS=
       ("cleantech" OR "energy research" OR "energy efficiency research"
       OR
         (
-          ("technolog*" OR "innovation$")
+          ("technolog*" OR "innovation$" OR "R&D")
           NEAR/3
               ("clean" OR "cleaner" OR "green" OR "greener"
               OR "decarboni*" OR "low carbon" OR "energy efficiency"  
-              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower"
+              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine energy" OR "tidal energy" OR "wave energy"
               )
         )      
       )             
@@ -676,7 +681,7 @@ TS=
           ("energy" OR "electricity")
           NEAR/5
               ("generation" OR "infrastructure" OR "access"
-              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower"
+              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
               )
         )             
       )
@@ -710,7 +715,9 @@ TS=
           NEAR/5
               ("infrastructure" OR "technolog*"
               OR "generation" OR "off grid"
-              OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower")
+              OR "sustainable" OR "renewable$"
+              OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
+              )
         )             
       )
   )
@@ -745,7 +752,7 @@ TS=
 
 * V2 edit (Oct-Feb 2022): CSA
 * Internal review (Mar 2022): HMB, ML
-* Terminology workshop with specialists (Apr 2022):
+* Terminology workshop with specialists (2022):
 
 ## 5. Footnotes
 
