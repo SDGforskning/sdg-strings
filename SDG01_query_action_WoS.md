@@ -68,7 +68,7 @@ TS=
 
 Phrase 2 (WORK IN PROGRESS): Covers research about reducing the number of poeple livining below the international poverty line
 
-Doesn't give any hits as stated here, might only work in th etopic apporoach
+Doesn't give any hits as stated here, might only work in the topic apporoach
 
 ```Ceylon =
 TS=
@@ -135,29 +135,29 @@ TS=
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 >
 
-This target is interpreted as to cover research about access to social protection systems. `welfare state` was concidered but excluded as it leads mostly to historical papers about early walfare states.
+This target is interpreted as to cover research about about access to, coverage of and establishment/implementation of social protection systems, social services and social floors. 
+`welfare state` was concidered but excluded as it leads mostly to historical papers about early walfare states.
 
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-This pharse is about access to and implementation of social services
-
+This pharse is about about access to, coverage of and establishment/implementation of social protection systems
 ```Ceylon =
 TS=
 
 (
-  ("social protection$" OR "social floor$" OR "social service$"
-  OR "welfare system$" OR "welfare service$"
+  ("social protection$" OR "social service$"
+  OR "welfare system$" OR "welfare service$" OR "social security system*" OR "social security service"
+  OR "social floor$" OR "basic income" OR "cash benefits" OR "social benefits"
   )
   NEAR/10
-      ("implement*" OR "establish*"
-      OR "coverage" OR "covered" OR "covering"
-      OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
-      OR "build" OR "building" OR
-      OR "access*" OR "barrier$" OR "obstacle$"
-      )
-)
+      ("implement*" OR "establish*" OR "propose*" OR "design*" 
+      OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$" OR "path$" "route" "roadmap" 
+       
+      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
+        
+    )
 
 ```
 
