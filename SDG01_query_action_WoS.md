@@ -51,25 +51,24 @@ This query consists of 2 phrases.
 
 Phrase 1: Covers research about eradicate extreme poverty
 
-*The basic structure is as follows: extreme poverty + action*
+*The basic structure is as follows: extreme/global poverty + action*
 
 ```Ceylon =
 TS=
 (
-  ("extreme poverty" OR "severe poverty" OR "extremely poor" OR "severely poor" OR "destitution"
-    NEAR/5
-        ("decreas*" OR "minimi*" OR "reduc*"
-        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-        OR "end" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
-        OR "lift out of" OR "lifting out of" OR "overcom*" OR "excap*" OR "mitigat*"
-        )
-  )
-)  
+  ("extreme poverty" OR "severe poverty" OR "destitution" OR "global poverty" OR "international poverty")
+   NEAR/5
+    ("decreas*" OR "minimi*" OR "reduc*"
+      OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+      OR "end" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
+      OR "lift out of" OR "lifting out of" OR "overcom*" OR "excap*" OR "mitigat*"
+      )
+  )  
 ```
 
 Phrase 2 (WORK IN PROGRESS): Covers research about reducing the number of poeple livining below the international poverty line
 
-Doesn't give any hits as stated here
+Doesn't give any hits as stated here, might only work in th etopic apporoach
 
 ```Ceylon =
 TS=
@@ -81,7 +80,7 @@ TS=
         OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "mitigat*"
         )
-  vunerable groups poverty ine
+  vunerable groups and people
     )
 
 ```
@@ -106,12 +105,17 @@ This target is interpreted as to cover research about poverty reduction in in al
 
 This query consists of 1 phrase.
 
+*The general structure is poverty/the poor + decrease*
 
 ```Ceylon =
 TS=
 (
   ("anti-poverty" OR
-  "poverty" OR "the poor" OR "working poor"
+  "poverty" 
+  OR "the poor" OR "the poorest"
+  OR "rural poor" OR "urban poor" 
+  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+  OR "working poor"
   NEAR/5
       ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
@@ -120,6 +124,7 @@ TS=
       )
   )
 )
+
 ```
 
 
