@@ -145,7 +145,9 @@ This query consists of 3 phrases.
 All cover research about about access to, coverage of and establishment/implementation of social protection systems, social floors and social services. Some of the terms work well without groups of poeple (e.g welfare system), some need to be combined with "vulnerable people" ("unemployment benefit$") and some with poverty/"poor people"
 
 Phrase 1: access/coverage/implementation + social protection systems (899)
+
 Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (36)
+
 Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (184)
 
 `welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
@@ -153,7 +155,9 @@ Phrase 3: access/coverage/implementation + social protection systems/social serv
 ##### Phrase 1:
 
 This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systtems and similar concepts. As we talk about systems services is does not need to be combined with groups of poeple.
+
 *basic structure: access/coverage/implementation + social protection systems*
+
 
 ```Ceylon =
 TS=
@@ -172,7 +176,9 @@ TS=
 ##### Phrase 2:
 
 This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups 
+
 *basic structure: access/coverage/implementation + social protection systems/social floors + vulnerable groups
+
 
 vulnerable groups are based in the groups mentioned in the indicators
 ```Ceylon =
@@ -219,7 +225,9 @@ TS=
 ##### Phrase 3:
 
 This phrase is about about access to, coverage of and establishment/implementation of social protection/social benefits and similar concepts. These terms need to be combined with groups of people/poverty/the poor. We did not include other "vulnerable groups as the terms are rather general; e.g. social services for children or mothers can be related to other things than poverty
+
 *basic structure: access/coverage/implementation + social protection systems/social services + poverty and the poor*
+
 
 ```Ceylon =
 TS=
@@ -256,8 +264,7 @@ This target is interpreted to cover research about:
 
 
 Phrase 1: ensure + access/right/opportunities (equal are implicit) + economic resourses  ???
-
-assess and implementation of basic services (phrase 1)
+Phrase 2: ensure + access and implementation of basic services (phrase 1)
 (phrase 3 -5 ) and acces and right to ownership of land and other property, inheritance
 assess to financial services incluiding microfinance
 
@@ -269,7 +276,7 @@ TS=
 (
   (
     (
-      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*"
+      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
             )
       NEAR/10
       ("access*" OR "equitab*" OR "equity" OR "equality"
@@ -317,8 +324,28 @@ Access to basic services
 
 ```Ceylon =
 TS=
+TS=
 
 (
+  (
+    (
+      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+            )
+      NEAR/10
+      ("access*" OR "equitab*" OR "equity" OR "equality"
+      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+      )
+    )
+  OR "empower*"
+  )
+  NEAR/5
+  ("basic services" OR "basic drinking water service$" OR "basic hygiene service$*" OR "basic sanitation service$*" OR "waste collection services" OR 
+   OR "basic mobility" OR "basic health care service$" OR "basic education services" OR "basic information services" OR "clean fuels" )
+)
+
+
+
+
   ("basic services" OR "basic drinking water service$" OR "basic hygiene service$*" OR "basic sanitation service$*" OR "waste collection services" OR 
    OR "basic mobility" OR "basic health care service$" OR "basic education services" OR "basic information services" OR "clean fuels" )
    NEAR/10
