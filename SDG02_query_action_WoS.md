@@ -37,9 +37,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 
 ## 3. Targets
 
-## Target 2.1/2.2
-
-These targets are combined, as they cover similar topics.
+## Target 2.1
 
 > **2.1 By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.**
 >
@@ -47,27 +45,18 @@ These targets are combined, as they cover similar topics.
 >
 > 2.1.2 Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
 
-> **2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons.**
->
-> 2.2.1 Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age
->
-> 2.2.2 Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)
->
-> 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
+This target is interpreted to cover research about
+* Ending/reducing hunger/lack of food, reducing food insecurity
+* Increasing access to food and improving food supply systems
+* Increasing the safety and nutritional value of the food available.
 
-These targets are interpreted to cover research about
-* reducing hunger and all forms of malnurition for all people (although children are mentioned specifically, the target does not seem limited to them).
-* access to safe and nutritious food, reducing food insecurity, for all people. This includes food safety and right to food. It also includes research about nutritional quality.
-
-This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
-
-Should `food/nutrition sovereignty` be included here, or does it go too far?
+It consists of 3 phrases.
 
 #### Phrase 1
 
-The general structure is *hunger/malnutrition + action*
+The general structure is *hunger + action*
 
-Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A). `dietary NEAR/3 deficiency` finds a number of specific ones not searched for (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply. Hunger is used in phrases (`ending hunger`, `world hunger`) for the same reason. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant). `undernutrition` and other terms are included in phrase 3.
+Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
 
 ```Ceylon =
 TS=
@@ -75,22 +64,6 @@ TS=
   (
       ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger" OR "hunger and poverty" OR "poverty and hunger"
       OR "famine$"
-      OR "malnutrition" OR "malnourish*"
-      OR "kwashiorkor" OR "marasmus"
-      OR "inadequate vitamin$" OR "anaemia" OR "anemia"
-      OR
-        ("deficien*"
-        NEAR/3
-            ("vitamin$" OR "micronutrient$" OR "iron" OR "iodine"
-            OR "nutritional" OR "dietary"
-            )
-        )
-      OR
-        (
-          ("stunting" OR "stunted" OR "wasting")
-          NEAR/15
-              ("child*" OR "infant$")
-        )
       OR "food insecurity"
       )
     NEAR/5
@@ -102,48 +75,135 @@ TS=
             OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
         )
   )
-  NOT (("feast and famine" OR "feast-famine" OR "salmon anemia") NOT ("end* hunger" OR "malnutrition"))    
+  NOT (("feast and famine" OR "feast-famine") NOT ("end* hunger" OR "malnutrition"))    
  )
-```
-
-`"obesity" OR "overweight"` can added to the above section (phrase 1) without issues - the action terms are identical - however, in terms of presenting results, separating out obesity may be useful for the user as it accounts for maybe 50 % of results. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself.
-
-```Ceylon =
-TS=
-(
-  ("obesity" OR "overweight" OR "becoming obese"
-  )
-  NEAR/5
-    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
-    OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
-    OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-    OR "prevent*" OR "avoid*"
-    OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
-    OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-    )
-)
 ```
 
 #### Phrase 2
 
-The general structure is *food security/safety/nutritional status + action*
-
-`stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc.
+The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term.
 
 ``` Ceylon =
 TS=
 (
   (
     (
-      ("food" OR "nutritio*")
+      ("food")
+      NEAR/5
+        ("access" OR "safety" OR "unsafe"
+        OR "secure" OR "security" OR "reliable" OR "reliability"    
+        )
+    )
+  OR "right to food"
+  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  )
+  NEAR/5
+     ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+     OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
+     OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+     )
+)
+```   
+
+#### Phrase 3
+
+The general structure is *food supply + action + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results.
+
+``` Ceylon =
+TS=
+ (
+    ("food supply"
+      NEAR/5
+         ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+         OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
+         OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+         )
+    )  
+    AND
+      ( "humans" OR "humanity" OR "human" OR "people" OR "person$"
+        OR "children" OR "child" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
+        OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
+        OR "patient$" OR "poverty"
+        OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
+      )
+)
+```
+
+## Target 2.2
+
+> **2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons.**
+>
+> 2.2.1 Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age
+>
+> 2.2.2 Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)
+>
+> 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
+
+This target is interpreted to cover research about reducing malnutrition for all people (although children, girls, the elderly and pregnant women are mentioned specifically, the target does not seem limited to them). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+
+This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
+
+Should `food/nutrition sovereignty` be included here, or does it go too far?
+
+#### Phrase 1
+
+The general structure is *malnutrition + action*
+
+`dietary NEAR/3 deficiency` finds a number of specific ones not searched for (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `undernutrition` and other terms are included in phrase 3. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself.
+
+```Ceylon =
+TS=
+(
+  (
+      ("malnutrition" OR "malnourish*"
+      OR "kwashiorkor" OR "marasmus"
+      OR "inadequate vitamin$" OR "anaemia" OR "anemia"
+      OR
+        ("deficien*"
+        NEAR/3
+            ("vitamin$" OR "micronutrient$" OR "iron" OR "iodine"
+            OR "nutritional" OR "dietary"
+            )
+        )
+      OR
+        (
+          ("stunting" OR "stunted" OR "wasting" OR "underweight")
+          NEAR/15
+              ("child*" OR "infant$")
+        )
+      OR "obesity" OR "overweight" OR "becoming obese"
+      )
+    NEAR/5
+        (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+            OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
+            OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+            OR "prevent*" OR "avoid*"
+            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
+            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+        )
+  )
+  NOT ("salmon anemia" NOT ("end* hunger" OR "malnutrition"))    
+ )
+```
+
+#### Phrase 2
+
+The general structure is *food security/safety/nutritional status + action*
+
+`stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care".
+
+``` Ceylon =
+TS=
+(
+  (
+    (
+      ("nutritio*")
       NEAR/5
         ("access"
         OR "safe" OR "unsafe"
         OR "secure" OR "security" OR "insecurity" OR "reliable" OR "reliability"    
         )
     )
-  OR "right to food"
-  OR "food safety"
   OR "diet* quality" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   OR
     (
@@ -184,15 +244,6 @@ TS=
            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
           )
     )
-    OR
-    (
-      ("food supply")
-      NEAR/5
-         ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-         OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
-         OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-         )
-    )  
   )
   AND
     ( "humans" OR "humanity" OR "human" OR "people" OR "person$"
