@@ -94,7 +94,7 @@ TS=
         OR "secure" OR "security" OR "reliable" OR "reliability"    
         )
     )
-  OR "right to food" OR "food sovereignty"
+  OR "right to food" OR "right to adequate food" OR "food sovereignty"
   OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   )
   NEAR/5
