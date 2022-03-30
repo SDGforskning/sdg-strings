@@ -81,7 +81,7 @@ TS=
 
 #### Phrase 2
 
-The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term.
+The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
 ``` Ceylon =
 TS=
@@ -94,7 +94,7 @@ TS=
         OR "secure" OR "security" OR "reliable" OR "reliability"    
         )
     )
-  OR "right to food"
+  OR "right to food" OR "food sovereignty"
   OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   )
   NEAR/5
@@ -139,11 +139,9 @@ TS=
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
-This target is interpreted to cover research about reducing malnutrition for all people (although children, girls, the elderly and pregnant women are mentioned specifically, the target does not seem limited to them). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (although children, girls, the elderly and pregnant women are mentioned specifically, the target does not seem limited to them). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
 
 This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
-
-Should `food/nutrition sovereignty` be included here, or does it go too far?
 
 #### Phrase 1
 
@@ -157,38 +155,39 @@ TS=
   (
       ("malnutrition" OR "malnourish*"
       OR "kwashiorkor" OR "marasmus"
-      OR "inadequate vitamin$" OR "anaemia" OR "anemia"
+      OR "anaemia" OR "anemia"
       OR
-        ("deficien*"
-        NEAR/3
-            ("vitamin$" OR "micronutrient$" OR "iron" OR "iodine"
-            OR "nutritional" OR "dietary"
-            )
+        (
+          ("deficien*"OR "inadequa*")
+          NEAR/3
+              ("vitamin$" OR "micronutrient$" OR "iron" OR "iodine"
+              OR "nutritional" OR "dietary"
+              )
         )
       OR
         (
           ("stunting" OR "stunted" OR "wasting" OR "underweight")
           NEAR/15
-              ("child*" OR "infant$")
+              ("child*" OR "infant$" OR "under five$" OR "babies")
         )
       OR "obesity" OR "overweight" OR "becoming obese"
       )
-    NEAR/5
-        (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
-            OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
-            OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-            OR "prevent*" OR "avoid*"
-            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
-            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-        )
+      NEAR/5
+          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+          OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
+          OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+          OR "prevent*" OR "avoid*"
+          OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
+          OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+          )
   )
-  NOT ("salmon anemia" NOT ("end* hunger" OR "malnutrition"))    
- )
+  NOT ("salmon anemia")    
+)
 ```
 
 #### Phrase 2
 
-The general structure is *food security/safety/nutritional status + action*
+The general structure is *nutritional access/quality/status + action*
 
 `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care".
 
@@ -199,18 +198,19 @@ TS=
     (
       ("nutritio*")
       NEAR/5
-        ("access"
-        OR "safe" OR "unsafe"
-        OR "secure" OR "security" OR "insecurity" OR "reliable" OR "reliability"    
+        ("access" OR "safe" OR "unsafe"
+        OR "secure" OR "insecurity" OR "reliable" OR "reliability"    
         )
     )
-  OR "diet* quality" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  OR "diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   OR
     (
       ("nutritio*" OR "folate status" OR "micronutrient$")
       NEAR/5
-          ("women" OR "girls" OR "mother$" OR "pregnancy" OR "child*" OR "infant$" OR "perinatal"
-          OR "old* persons" OR "old* people" OR "elderly")
+          ("women" OR "girls" OR "mother$" OR "pregnancy"
+          OR "child*" OR "infant$" OR "under five$" OR "babies" OR "perinatal"
+          OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
+          )
     )
   )
   NEAR/5
@@ -223,9 +223,7 @@ TS=
 
 #### Phrase 3
 
-The general structure is *undernutrition/food supply + actions + humans*
-
-For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from e.g. animals and therefore they had to be combined with "human" terms
+The general structure is *undernutrition/food supply + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from e.g. animals and therefore they had to be combined with "human" terms
 
 ``` Ceylon =
 TS=
@@ -247,7 +245,7 @@ TS=
   )
   AND
     ( "humans" OR "humanity" OR "human" OR "people" OR "person$"
-      OR "children" OR "child" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
+      OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
       OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
       OR "patient$" OR "poverty"
       OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
