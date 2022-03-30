@@ -49,7 +49,7 @@ This target is interpreted as to cover research about eradicate extreme poverty 
 
 This query consists of 2 phrases.
 
-Phrase 1: Covers research about eradicate extreme poverty
+Phrase 1: Covers research about eradicate extreme poverty (515)
 
 *The basic structure is as follows: extreme/global poverty + action*
 
@@ -57,7 +57,7 @@ Phrase 1: Covers research about eradicate extreme poverty
 TS=
 (
   ("extreme poverty" OR "severe poverty" OR "destitution" OR "global poverty" OR "international poverty")
-   NEAR/5
+   NEAR/10
     ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
       OR "end" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
@@ -103,19 +103,18 @@ This target is interpreted as to cover research about poverty reduction in in al
 
 *For the topic approach terms such as: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic* *" OR "extreme") should be included.*
 
-This query consists of 1 phrase.
+This query consists of 1 phrase.(20,864)
 
 *The general structure is poverty/the poor + decrease*
 
 ```Ceylon =
 TS=
 (
-  ("anti-poverty" OR
-  "poverty" 
-  OR "the poor" OR "the poorest"
-  OR "rural poor" OR "urban poor" 
-  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-  OR "working poor"
+  ("anti-poverty" 
+    OR
+    ("poverty"   OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+     )
   NEAR/5
       ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
@@ -135,51 +134,58 @@ TS=
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 >
 
-This target is interpreted as to cover research about about access to, coverage of and establishment/implementation of social protection systems, social services and social floors. 
-`welfare state` was concidered but excluded as it leads mostly to historical papers about early walfare states.
+This target is interpreted as to cover research about about access to, coverage of and establishment/implementation of social protection systems, social services and social floors. Social floors encompasses a number of things such as essential health care, basic income security, child benefits, income support benefits, basic income, employment guarantees.
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
+All cover research about about access to, coverage of and establishment/implementation of social protection systems, social floors and social services. Some of the terms work well without groups of poeple (e.g welfare system), some need to be combined with "vulnerable people" ("unemployment benefit$") and some with poverty/"poor people"
+
+Phrase 1: access/coverage/implementation + social protection systems (899)
+Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (36)
+Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (184)
+
+`welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
 
 ##### Phrase 1:
 
-This pharse is about about access to, coverage of and establishment/implementation of social protection systems
+This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systtems and similar concepts. As we talk about systems services is does not need to be combined with groups of poeple.
+*basic structure: access/coverage/implementation + social protection systems*
+
 ```Ceylon =
 TS=
-
 (
-  ("social protection$" OR "social service$"
-  OR "welfare system$" OR "welfare service$" OR "social security system*" OR "social security service"
-  OR "social floor$" OR "basic income" OR "cash benefits" OR "social benefits"
-  )
-  NEAR/10
-      ("implement*" OR "establish*" OR "propose*" OR "design*" 
-      OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$" OR "path$" "route" "roadmap" 
-       
-      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
-        
-    )
+  ("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
+      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
+   NEAR/10
+  ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$")
+)
+  
+ ```  
 
-```
 
 ##### Phrase 2:
 
-This phrase deals with social services with focus on certain groups. Combining these terms with specific groups avoids picking up publications using the terms basic services, social security and social welfare but not related to poverty (e.g. technological basic services or psychological wellbeing).
+This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups 
+*basic structure: access/coverage/implementation + social protection systems/social floors + vulnerable groups
 
-Variants of the second part of this phrase are used in several places in this SDG to link the topics with poverty, women or children etc. (as relevant to each target).
-
+vulnerable groups are based in the groups mentioned in the indicators
 ```Ceylon =
 TS=
-(
-  ("social protection$" OR "social floor$" OR "social service$"
-  OR "welfare system$" OR "welfare service$"
-  OR "social welfare" OR "social security" 
+( 
+  (
+  "implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
+      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
+      )
+  NEAR/10
+  (
+  "basic income" OR "cash benefit"  OR "income security" 
+  OR "unemployment benefit$" OR "sickness benefit$" OR "sick benefit"
   )
-  NEAR/15
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+  NEAR/10
+  (
+  "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
-      OR "slum" OR "slums"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "workers" OR "women"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       OR
         (
           ("person$" OR "people" OR "adult$")
@@ -193,12 +199,37 @@ TS=
           NEAR/3
               ("injury" OR "injuries" OR "illness*")
         )
-      OR "worker$ compensation"
-      OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      )
+      OR "pregnant" OR "pregnancy"
+       OR "disability" OR "unemployed"
+      OR "children" OR "child" OR "pregnant" OR "pregnancy" 
+      OR  "maternity" OR "female" OR "women" OR "girls"
+  )
 )
 ```
 
+##### Phrase 3:
+
+This phrase is about about access to, coverage of and establishment/implementation of social protection/social benefits and similar concepts. These terms need to be combined with groups of people/poverty/the poor. We did not include other "vulnerable groups as the terms are rather general; e.g. social services for children or mothers can be related to other things than poverty
+*basic structure: access/coverage/implementation + social protection systems/social services + poverty and the poor*
+
+```Ceylon =
+TS=
+
+(
+ ("implement*" OR "establish*" OR "propose*" OR "design*" 
+      OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$"
+      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")   
+  NEAR/10 
+  ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
+  NEAR/10
+  ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+      OR "the vulnerable" OR "vulnerable group$"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      )
+  
+  )    
+```  
 
 ## Target 1.4
 
