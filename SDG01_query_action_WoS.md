@@ -74,7 +74,9 @@ Doesn't give any hits as stated here, might only work in the topic apporoach
 TS=
 (
   ("international poverty line" OR "$1.25 a day" OR "$1.9 a day" OR "$1.25 per day " OR "$1.9 per day")
-    NEAR/5
+   
+   NEAR/5
+    
         ("decreas*" OR "minimi*" OR "reduc*"
         OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
         OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
@@ -109,13 +111,16 @@ This query consists of 1 phrase.(20,864)
 
 ```Ceylon =
 TS=
+
 (
   ("anti-poverty" 
     OR
     ("poverty"   OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
      )
+     
   NEAR/5
+  
       ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
       OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*" OR "escape" OR "mitigate" OR "relief"
@@ -155,7 +160,9 @@ TS=
 (
   ("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
+      
    NEAR/10
+   
   ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$")
 )
   
@@ -175,7 +182,9 @@ TS=
   "implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
       )
+      
   NEAR/10
+  
   (
   "basic income" OR "cash benefit"  OR "income security" 
   OR "unemployment benefit$" OR "sickness benefit$" OR "sick benefit"
@@ -218,10 +227,14 @@ TS=
 (
  ("implement*" OR "establish*" OR "propose*" OR "design*" 
       OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$"
-      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")   
+      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
+      
   NEAR/10 
+  
   ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
+  
   NEAR/10
+  
   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
@@ -239,8 +252,58 @@ TS=
 >
 > 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
-This target is interpreted to cover research about access and implementation of basic services (phrase 1); financial services (phrase 3 -5 ) and acces and right to land 
-(phrase 6 & )
+This target is interpreted to cover research about:
+
+
+Phrase 1: ensure + access/right/opportunities (equal are implicit) + economic resourses  ???
+
+assess and implementation of basic services (phrase 1)
+(phrase 3 -5 ) and acces and right to ownership of land and other property, inheritance
+assess to financial services incluiding microfinance
+
+Phrase 1a:
+
+```Ceylon =
+TS=
+
+(
+  (
+    (
+      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*"
+            )
+      NEAR/10
+      ("access*" OR "equitab*" OR "equity" OR "equality"
+      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+      )
+    )
+  OR "empower*"
+  )
+  NEAR/5
+  (
+  (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities" OR "assets"))
+  OR "decent work" OR "paid work" OR "full employment" OR "labour market"
+  )
+)
+OR
+TS=
+
+(
+  ("overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*"
+  )
+  NEAR/10
+  ("unequal" OR "unaffordab*" OR "barrier$" OR "obstacle$"
+  )
+  NEAR/5
+  (
+  (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities"))
+  OR "decent work" OR "paid work" OR "full employment" OR "labour market"
+  )
+)
+
+
+```
+
+----
 
 Phrase 1 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
@@ -266,9 +329,6 @@ TS=
       
       
 )
-
-
-
 ```
 ##### Phrase 1. v2 utvidet:
 
