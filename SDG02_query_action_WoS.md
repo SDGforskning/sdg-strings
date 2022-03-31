@@ -285,7 +285,7 @@ This query consists of 1 phrase. The basic structure is *action + productivity/a
               OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
               )
               NEAR/5
-                ("improve*" OR "increase*" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*"
+                ("improve*" OR "increase*" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
                 OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*" OR "empower" OR "empowering"
                 OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                 )
@@ -337,8 +337,8 @@ This query consists of 1 phrase. The basic structure is *action + productivity/a
 
 This target is interpreted to cover research about
 * increasing the productivity of food production systems (phrase 1)
-* resilient food production systems/agricultural practices, adaptation and preparedness of food production systems to climate change and disasters, including the species themselves (phrases 2,3)
-* sustainable food production systems (outside of resilience; phrase 4)
+* implementation of resilient food production systems/agricultural practices, including strengthening adaptation and preparedness of food production systems/species to climate change and disasters (phrases 2,3)
+* increasing sustainable food production systems/practices (outside of resilience; phrase 4)
 * how food production systems can improve/maintain soil quality and ecosystems (phrase 5,6)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
@@ -346,13 +346,11 @@ Increasing productivity of all food production systems (i.e. without reference t
 
 Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Thus concepts such as food sovereignty are too wide. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
-This query consists of 5 phrases.
+This query consists of 6 phrases.
 
 #### Phrase 1
 
-The general structure is *food production systems + production + action*.
-
-`intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+The general structure is *food production systems + production + action*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
 
 ``` Ceylon =
 TS=
@@ -368,8 +366,7 @@ TS=
           ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
-          NEAR/5
-              ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
         )      
       )
       NEAR/15
@@ -381,8 +378,8 @@ TS=
             (
               ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$")
               NEAR/5
-                ("improve*" OR "increase*" OR "enhanc*"
-                OR "efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
+                ("improve*" OR "increase*" OR "enhanc*" OR "stimulat*"
+                OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
                 )
             )
           )  
@@ -393,14 +390,16 @@ TS=
 
 #### Phrase 2
 
-The general structure is *food production systems + resilience/adaptation*.
+Phrase 2 and 3 concern reducing vulnerability / increasing resilience. They have the same terms for food production systems, but differ in the terms for resilience: phrase 2 is linked to general terms for resilience, while phrase 3 covers terms need to be connected to disasters/shocks/risks.
 
 Resilience in terms of food production has been described by FAO as:
 > " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014, p.28](#f7)</a>)
 
-Natural disasters, climate, market volatility, civil and political unrest are examples of risks (<a id="FAO2014">[FAO, 2014](#f7)</a>).
+The basic structure of phrase 2 is *food production systems + resilience/vulnerability + action*.
 
-`pastoral*` is limited here, as it finds results from other uses (pastoral care, religion studies). `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
+In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
+
+In the *resilience* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
 
 ``` Ceylon =
 TS=
@@ -411,124 +410,155 @@ TS=
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fisher*" OR "fish farm*"
+      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+      OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
       OR
         (
-          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-          )
-          NEAR/5
-              ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+          ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
+          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
         )      
       )
       NEAR/15
-          ("climate smart agriculture"
-          OR "resilien*" OR "livelihood vulnerability"
-          OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*"))
-          OR
+          (
             (
-              ("adapt*" OR "resilien*" OR "mitigat*" OR "cope" OR "coping" OR "tolera*"
-              OR "preparedness" OR "early warning" OR "protect*" OR "avoid*" OR "vulnerab*"
-              OR "policy" OR "policies" OR "diversification"
+              ("climate smart agriculture" OR "resilien*"
+              OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*"))
               )
-              NEAR/15
-                  ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-                  OR "disaster$" OR "catastroph*"
-                  OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-                  OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
-                  OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
-                  OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
-                  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
-                  OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
-                  OR "tipping point$"  
-                  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
-                  OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
-                  OR "financial crash*" OR "economic downturn$"
-                  OR "war" OR "wars"
-                  OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-                  OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
+              NEAR/5
+                  ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*" OR "create" OR "creating"
+                  OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+                  OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
+                  OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                   )
             )
+            OR
+              ("vulnerability"
+              NEAR/5
+                ("reduc*" OR "decreas*" OR "prevent*" OR "remov*" OR "fight*" OR "combat*"
+                OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+                )
+              )
           )  
   )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*")
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*" OR "wild pig$")
 )
 ```  
 
 #### Phrase 3
 
-The general structure is *agricultural species + resilience/adaptation*. This phrase aims at finding works on the climate/disaster resilience of these animals/crops themselves (not just the production system).
+The basic structure of phrase 3 is *food production systems + disaster/climate change + action*.
 
-Not all species/groups included - the additional results found by excluded terms (i.e. not already covered by phrase 2 or included terms) were often irrelevant (e.g. vegetable intake and psychological resilience). `tolera*` is a particularly influential term that increases results ca. 2x ("drought tolerance" of crops being a common research theme).
+The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
 
 ``` Ceylon =
 TS=
 (
   (
-      ("crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+      ("food production" OR "food grower$" OR "agro food"
+      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+      OR "aquaculture" OR "fisher*" OR "fish farm*"
+      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
       OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
+      OR
+        (
+          ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
+          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+        )      
       )
       NEAR/15
-          ("livelihood vulnerability"
-          OR
-            (
-              ("adapt*" OR "resilien*" OR "mitigat*" OR "cope" OR "coping" OR "toleran*" OR "vulnerab*"
+          (
+              ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
+              OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+              OR
+                (
+                  ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
+                  NEAR/5
+                    ("implement*" OR "establish*" OR "build*" OR "develop"
+                    OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+                    OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*"
+                    )
+                )
               )
-              NEAR/15
-                  ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-                  OR "disaster$" OR "catastroph*"
-                  OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-                  OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
-                  OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
-                  OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
-                  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
-                  OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
-                  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
-                  OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
-                  OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
-                  )
-            )
-          )  
-  ) NOT ("wild pig$")
+              NEAR/5
+                      ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
+                      OR "disaster$" OR "catastroph*"
+                      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
+                      OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
+                      OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
+                      OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
+                      OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+                      OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
+                      OR "tipping point$"  
+                      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
+                      OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
+                      OR "financial crash*" OR "economic downturn$"
+                      OR "war" OR "wars"
+                      OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+                      OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
+                      )
+          )
+  )
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*" OR "wild pig$")
 )
 ```
 
 #### Phrase 4
 
-The general structure is *food production systems + sustainability*.
+The general structure is *ecoagriculture + action // food production systems + sustainability + action*.
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
-Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2, while relevant terms around rights and "nutrition sensitive agriculture" are included in target 2.1/2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
+Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
 ``` Ceylon =
 TS=
-( "ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
-  OR "conservation agriculture" OR "conservation farming"
-  OR
-    (
-        ("food production" OR "food grower$" OR "agri food"
-        OR "farm*" OR "agricultur*"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-        OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture" OR "fisher*" OR "fish farm*"
-        OR
-          (
-            ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-            )
-            NEAR/5
-                ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-          )      
+  (
+    ("ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
+    OR "conservation agriculture" OR "conservation farming"
+    )
+    NEAR/5
+        ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*"
+        OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+        OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
+        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
         )
-        NEAR/15
-            ("sustainab*" OR "agroecolog*"
-            OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
-            OR "eco-friendly" OR "ecosystem approach"
-            OR "natural pest control" OR "natural pest management" OR "biological pest control"
-            OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$"
-            OR "reduced tillage" OR "mulch" OR "mulching"
-            OR "water conservation"       
-            )
+  )
+OR
+TS=
+(
+  (
+    ("food production" OR "food grower$" OR "agri food"
+    OR "farm*" OR "agricultur*"
+    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR
+      (
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+        )
+        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+      )      
+    )
+    NEAR/15
+        (
+          ("sustainab*" OR "agroecolog*"
+          OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
+          OR "eco-friendly" OR "ecosystem approach"
+          OR "natural pest control" OR "natural pest management" OR "biological pest control"
+          OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$"
+          OR "reduced tillage" OR "mulch" OR "mulching"
+          OR "water conservation"       
+          )
+          NEAR/5
+              ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*"
+              OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+              OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
+              OR  "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+              )
+        )   
     )
     NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
@@ -536,7 +566,7 @@ TS=
 
 #### Phrase 5
 
-The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "positives", phrase 5 covers "negatives". Some terms are already covered in phrase 4 (e.g. reduced tillage)
+The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "positives", phrase 6 covers "negatives". Some terms are already covered in phrase 4 (e.g. reduced tillage)
 
 ``` Ceylon =
 TS=
@@ -551,8 +581,7 @@ TS=
         ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
-        NEAR/5
-            ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
       )      
     )
     NEAR/15
@@ -575,7 +604,7 @@ TS=
 
 #### Phrase 6
 
-The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "negatives", phrase 4 covers "positives".
+The general structure is *food production systems + ecosystems and soil + action*. - this phrase covers "negatives", phrase 5 covers "positives".
 
 Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>).
 
@@ -592,35 +621,33 @@ TS=
             ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
             OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
             )
-            NEAR/5
-                ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+            NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
           )      
         )
         NEAR/15
             (
               ("desertification"
               OR
-                  ("soil$"
-                  NEAR/5
-                      ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
-                      OR "erosion" OR "compaction" OR "waterlogging"
-                      OR "salinization" OR "salinisation" OR "acidification"
-                      OR "chemical pollution" OR "contamination"
-                      )
-                  )
-              OR
-                  (
-                    ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$"
+                ("soil$"
+                NEAR/5
+                    ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
+                    OR "erosion" OR "compaction" OR "waterlogging"
+                    OR "salinization" OR "salinisation" OR "acidification"
+                    OR "chemical pollution" OR "contamination"
                     )
-                    NEAR/5 ("loss" OR "degradation" OR "depletion")
-                  )
+                )
+              OR
+                (
+                  ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
+                  NEAR/5 ("loss" OR "degradation" OR "depletion")
+                )
               )
               NEAR/5
-                ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                OR "stop*" OR "end" OR "ending" OR "halt"
-                OR "avoid*" OR "prevent*"
-                )
+                  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+                  OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+                  OR "stop*" OR "end" OR "ending" OR "halt"
+                  OR "avoid*" OR "prevent*"
+                  )
             )  
 )
 ```  
