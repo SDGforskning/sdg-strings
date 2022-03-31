@@ -261,46 +261,46 @@ TS=
 >
 > 2.3.2 Average income of small-scale food producers, by sex and indigenous status
 
-This target is interpreted to include research about small-scale food producers (terrestrial and aquatic) which focuses on access to various resources, rights, and increasing productivity/income.
+This target is interpreted to include research about increasing the productivity and income of small-scale food producers (terrestrial and aquatic). Specific ways to do this are mentioned (securing access, rights, and opportunities for non-farm employment/value addition), so these are included too.
 
-This query consists of 1 phrase. The basic structure is *productivity/access etc. + small-scale food producers*
+This query consists of 1 phrase. The basic structure is *action + productivity/access etc. + small-scale food producers*
 
- `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The part for small-scale farming may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+ For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The phrase may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
-`intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
-
-Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example.
-(Original combination with: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
+ In the *productivity/access etc. terms*:
+ - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+- Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination with: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ``` Ceylon =
   TS= (
           (
-              ("intensification"
-              NEAR/5
-                ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"                
-                )
-              )  
+            ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
           OR
             (
               ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
               OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
-              OR "benefit$"
+              OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
+              OR "access*" OR "empowerment" OR "benefit$"
+              OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
+              OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
               )
               NEAR/5
-                ("improve*" OR "increase*" OR "enhanc*"
-                OR "efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
-                OR "diversif*"
+                ("improve*" OR "increase*" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*"
+                OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*" OR "empower" OR "empowering"
+                OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                 )
             )
-          OR "value addition" OR "non-farm employment" OR "off-farm employment"
-          OR "access*" OR "barrier$" OR "obstacle$" OR "empower*"
-          OR "land grab*" OR "tenure"
           OR
-            ("right$" NEAR/5 ("farmland$" OR "land" OR "property")
-            )
-          OR  
-            ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice")
-            )
+            (
+              ("barrier$" OR "obstacle$"
+              OR ("distribution*" NEAR/5 "injustice")
+              OR "land grab*"
+              )
+              NEAR/5
+                  ("reduc*" OR "prevent*" OR "remov*" OR "fight*" OR "combat*"
+                  OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulate"
+                  )
+              )
           )
           AND
               ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
