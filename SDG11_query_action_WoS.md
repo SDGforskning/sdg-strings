@@ -103,7 +103,7 @@ NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab
 AND (("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
 "infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
 OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"OR "public transport*" OR "pedestrian*"
-OR "journey*" OR "airport*" OR "cycl*")) AND ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
+OR "journey*" OR "airport*" OR "cycl*")) NEAR/5 ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
 OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))))
 ```
 ##### Phrase 2:
