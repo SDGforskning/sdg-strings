@@ -50,7 +50,7 @@ This target is interpreted to cover research about
 * Increasing access to food and improving food supply systems
 * Increasing the safety and nutritional value of the food available.
 
-It consists of 3 phrases.
+It consists of 3 phrases. Phrase 1 focuses on positive actions, phrase 2 on negative actions, and phrase 3 on terms which need to be combined with human terms.
 
 #### Phrase 1
 
@@ -86,16 +86,15 @@ The general structure is *food access/safety/nutrition + action*. `food` should 
 ``` Ceylon =
 TS=
 (
-  (
-    (
-      ("food")
-      NEAR/5
-        ("access" OR "safety" OR "unsafe"
-        OR "secure" OR "security" OR "reliable" OR "reliability"    
+  ("right to food" OR "right to adequate food" OR "food sovereignty"
+  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  OR
+    ("food"
+    NEAR/5
+        ("access" OR "safety" OR "unsafe" OR "secure" OR "security"
+        OR "reliable" OR "reliability"    
         )
     )
-  OR "right to food" OR "right to adequate food" OR "food sovereignty"
-  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   )
   NEAR/5
      ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
@@ -120,12 +119,12 @@ TS=
          )
     )  
     AND
-      ( "humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
+        ("humans" OR "humanity" OR "human" OR "people" OR "person$"
+        OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
         OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
-        OR "patient$" OR "poverty"
-        OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
-      )
+        OR "agricultur*" OR "food security" OR "poverty"
+        OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
+        )
 )
 ```
 
@@ -147,7 +146,7 @@ This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2
 
 The general structure is *malnutrition + action*
 
-`dietary NEAR/3 deficiency` finds a number of specific ones not searched for (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `undernutrition` and other terms are included in phrase 3. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself.
+`dietary NEAR/3 deficiency` finds a number of specific ones (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself. `undernutrition` and other terms are included in phrase 3.
 
 ```Ceylon =
 TS=
@@ -244,11 +243,11 @@ TS=
     )
   )
   AND
-    ( "humans" OR "humanity" OR "human" OR "people" OR "person$"
-      OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
-      OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
-      OR "patient$" OR "poverty"
-      OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
+    ("humans" OR "humanity" OR "human" OR "people" OR "person$"
+    OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
+    OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
+    OR "agricultur*" OR "food security" OR "poverty"
+    OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
     )
 )
 
