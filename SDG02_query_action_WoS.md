@@ -62,9 +62,9 @@ Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding r
 TS=
 (
   (
-      ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger" OR "hunger and poverty" OR "poverty and hunger"
-      OR "famine$"
-      OR "food insecurity"
+      ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
+      OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
+      OR "food insecurity" OR "nutritional insecurity"
       )
     NEAR/5
         (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
@@ -138,7 +138,7 @@ TS=
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
-This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (although children, girls, the elderly and pregnant women are mentioned specifically, the target does not seem limited to them). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
 
 This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
 
@@ -146,7 +146,7 @@ This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2
 
 The general structure is *malnutrition + action*
 
-`dietary NEAR/3 deficiency` finds a number of specific ones (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself. `undernutrition` and other terms are included in phrase 3.
+Actions such as `decreas*` will cover formulations such as "to reduce the ris of obesity". `dietary NEAR/3 deficiency` finds a number of specific deficiencies (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself. `undernutrition` and other terms are included in phrase 3.
 
 ```Ceylon =
 TS=
@@ -157,17 +157,14 @@ TS=
       OR "anaemia" OR "anemia"
       OR
         (
-          ("deficien*"OR "inadequa*")
+          ("deficien*" OR "inadequa*")
           NEAR/3
-              ("vitamin$" OR "micronutrient$" OR "iron" OR "iodine"
-              OR "nutritional" OR "dietary"
-              )
+              ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
         )
       OR
         (
           ("stunting" OR "stunted" OR "wasting" OR "underweight")
-          NEAR/15
-              ("child*" OR "infant$" OR "under five$" OR "babies")
+          NEAR/15 ("child*" OR "infant$" OR "under five$" OR "babies")
         )
       OR "obesity" OR "overweight" OR "becoming obese"
       )
@@ -186,20 +183,16 @@ TS=
 
 #### Phrase 2
 
-The general structure is *nutritional access/quality/status + action*
+The general structure is *nutritional access/quality/status of specific groups + action*
 
-`stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care".
+Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care".
 
 ``` Ceylon =
 TS=
 (
   (
-    (
-      ("nutritio*")
-      NEAR/5
-        ("access" OR "safe" OR "unsafe"
-        OR "secure" OR "insecurity" OR "reliable" OR "reliability"    
-        )
+    ("nutritio*"
+      NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability")
     )
   OR "diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
   OR
@@ -269,7 +262,7 @@ This query consists of 1 phrase. The basic structure is *action + productivity/a
 
  In the *productivity/access etc. terms*:
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
-- Originally `"access*" OR "barrier$"` was combined with many other terms (access to...) - however I am not sure this is necessary, as the target is so broad in what should be accessible. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination with: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
+- Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however I have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination may need to be reincluded for the topic approach: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ``` Ceylon =
   TS= (
@@ -544,11 +537,10 @@ TS=
     )
     NEAR/15
         (
-          ("sustainab*" OR "agroecolog*"
+          ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
           OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
-          OR "eco-friendly" OR "ecosystem approach"
-          OR "natural pest control" OR "natural pest management" OR "biological pest control"
-          OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$"
+          OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
+          OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
           OR "reduced tillage" OR "mulch" OR "mulching"
           OR "water conservation"       
           )
@@ -755,13 +747,11 @@ TS=
 
 #### Phrase 3
 
-The general structure is *gene banks/ex situ + diversity/protection + agriculture*
+The general structure is *gene banks/ex situ + diversity/protection/policy + agriculture*
 
-Here, action terms are not used because multiple angles can be relevant - research about establishment of gene banks for maintaining diversity, research about farmers' use of gene banks, research about how best to store samples in gene banks, etc.. `cryoconservation` and `cryopreservation` are ex situ in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>).
+The *diversity/protection/policy* terms are included to help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...). They ensure that the work relates to conservation, genetic diversity, or gene bank policies in some way. Action terms are not used because multiple angles can be relevant - research about establishment of gene banks for maintaining diversity, research about farmers' use of gene banks, research about how best to store samples in gene banks, etc.
 
-The *diversity/protection* terms help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...).
-
-For the *agriculture terms*, `domestic*` was removed from this phrase as results were mostly about domestic cats. A `NOT` expression was added for `seed banks` as these can be both human storage of seeds but also natural seed banks in the soil.
+For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are included as in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). For the *agriculture terms*, `domestic*` was removed from this phrase as results were mostly about domestic cats. A `NOT` expression was added for `seed banks` as these can be both human storage of seeds but also natural seed banks in the soil.
 
 ``` Ceylon =
 TS=
@@ -803,11 +793,12 @@ TS=
 
 #### Phrase 4
 
-The general structure is *resources/benefits/knowledge + sharing/access + action + agriculture/food*.
+The general structure is *resources/knowledge + sharing/access + action + agriculture/food*.
 
-Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>). However, the string is set up so that we do not need to define benefits or use types.
+For the *resource/knowledge* terms, `traditional NEAR knowledge` etc. will cover variations such as "traditional agricultural knowledge". The string is set up so that we do not have to define the benefits. Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>).
 
-`access OR accessing OR accessib*` is used here to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge. `traditional NEAR knowledge` etc. will cover e.g. traditional agricultural knowledge.
+In the *sharing/access* terms, the more generic terms are combined with actions (e.g. increase access) while terms that are more specific to this issues are not (e.g. governance, justice), because it might be unnatural to write about e.g. "increasing justice". `access OR accessing OR accessib*` is used here to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
+
 
 ``` Ceylon =
 TS=
@@ -856,9 +847,7 @@ TS=
 
 #### Phrase 5
 
-Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *resources/knowledge/rights + agriculture/food + instruments/specific issues*
-
-`traditional NEAR knowledge` etc. will cover e.g. traditional agricultural knowledge.
+Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *resources/knowledge/rights + agriculture/food + instruments/specific issues*. In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
 
 ``` Ceylon =
 TS =
@@ -1062,7 +1051,7 @@ TS=
 <a id="f12"></a> Garforth, C. (2018). "An Introduction to the Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization" in *Proceedings of the International Workshop on Access and Benefit-sharing for Genetic Resources for Food and Agriculture*. FAO. https://www.fao.org/3/CA0099EN/ca0099en.pdf [↩](#Garforth)
 
 <a id="f14"></a> High Level Panel of Experts on Food Security and Nutrition. (2019). *Agroecological and other innovative approaches for sustainable agriculture and food systems that enhance food security and nutrition*. A report by the High Level Panel of Experts on Food Security and Nutrition
-of the UN Committee on World Food Security, Rome. https://www.fao.org/cfs/cfs-hlpe [accessed 03 Jan 2022] [↩](#HLPE)
+of the UN Committee on World Food Security, Rome. https://www.fao.org/cfs/cfs-hlpe/hlpe-reports/report-14-elaboration-process/en/ [accessed 03 Jan 2022] [↩](#HLPE)
 
 <a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches [↩](#SFS)
 
