@@ -262,15 +262,18 @@ AND
 
 This target is interpreted to cover research about:
 
+???? action term in the wholhe target needs to be disscuses ???
 
 Phrase 1: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses  ???
+Phrase 1b: remove + barriers + economic resourses  ???
+Phrase 2: ensure + access/implementation of basic services 
+Phrase 3: ensure + acces/right to ownership of land and other property, inheritance
 
-Phrase 2: ensure + access and implementation of basic services 
 
-(phrase 3 -5 ) and acces and right to ownership of land and other property, inheritance
-assess to financial services incluiding microfinance
 
 ##### Phrase 1:
+
+Phrase 1a: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses  + "the poor"
 
 ```Ceylon =
 TS=
@@ -280,18 +283,30 @@ TS=
      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
             )
       NEAR/10
-      ("access*" OR "equitab*" OR "equity" OR "equality"
+      ("access*" OR "equitab*" OR "equity" OR "equality" OR "ownership" OR "control"
       OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" OR "empower*"
+      "distribution" OR "redistribution" OR "equalit*" OR "inequalit*"
+        OR "equitab*" OR "inequitab*" OR "benefit sharing"
       )
    )
   NEAR/5
   (
-  (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities" OR "assets"))
-  OR "decent work" OR "paid work" OR "full employment" OR "labour market"
+  (("economic*" OR "financial") NEAR/3 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+   "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "micro credit" OR "micro-credit"
+  OR "decent work" OR "paid work" OR "full employment" OR "labour market$"
+  "income" OR "wealth" OR "money" OR "natural resourses" OR "banking")
   )
+AND
+ ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+      OR "the vulnerable" OR "vulnerable group$"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      )
 )
 OR
-
+```
+##### Phrase 1b: overcome + barriers + economic resourses  + "the poor"
+```Ceylon =
 TS=
 
 (
@@ -302,9 +317,18 @@ TS=
   )
   NEAR/5
   (
-  (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities"))
+  (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities" OR "services"))
+  
   OR "decent work" OR "paid work" OR "full employment" OR "labour market"
+  "income" OR "wealth" OR "money" OR "natural resourses" OR "banking"
   )
+  AND
+ ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+      OR "the vulnerable" OR "vulnerable group$"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      )  
+  
 )
 
 
@@ -312,9 +336,9 @@ TS=
 
 ##### Phrase 2
 
-Phrase 2 cover access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
+Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
-We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
+~~We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
 
 *action : ensure + access*
 *general form :  action + basic services* 
@@ -350,83 +374,23 @@ AND
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       ) 
 
+```
 
 
 ##### Phrase 3:
-
-This phrase coveres acces to financial services; these phrases are so general that they must be combined with poverty/vulnerable groups even though the target concerns all people
+ownership of land, inheritancce 
 
 ```Ceylon =
 TS=
 (
+  ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+    )
+   NEAR/10
+  ("access*" OR "equitab*" OR "equity" OR "equality"
+    OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+      )
+   NEAR/10
   (
-    ("income" OR "wealth" OR "money" OR "economic" OR "natural resource$" OR "banking")
-    NEAR/10
-      ("distribution" OR "redistribution" OR "equalit*" OR "inequalit*"
-        OR "equitab*" OR "inequitab*" OR "benefit sharing"
-        OR "right$" OR "ownership" OR "access" OR "control"
-      )
-  )
-  AND
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "workers" OR "women"
-      OR
-        (
-          ("person$" OR "people" OR "adult$")
-          NEAR/3
-              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
-        )
-      OR "disability"
-      OR
-        (
-          ("work" OR "workplace" OR "worker$" OR "occupational")
-          NEAR/3
-              ("injury" OR "injuries" OR "illness*")
-        )
-      OR "worker$ compensation"
-      OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      OR "sustainable development"
-      )
-)
-```
-
-##### Phrase 4:
-
-Microfinance: These topics are more specific so do not require combination. *added microcredit any reason why not?*
-
-```Ceylon =
-TS=
-(
-  "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "micro credit" OR "micro-credit"
-  OR "wage theft"
-)
-```
-
-##### Phrase 5:
-
-```Ceylon =
-TS=
-(
-  "financial service$"
-  NEAR/15
-      ("right$" OR "access*" OR "availab*"
-      OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "women"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "sustainable development"
-      )
-)
-```
-
-##### Phrase 6:
-ownership of land
-
-```Ceylon =
-TS=
-(
   ("land holding$" OR "tenure right$" OR "land tenure"
   OR
     (
@@ -434,37 +398,10 @@ TS=
       NEAR/10
           ("right$" OR "ownership" )
     )
-  )
-  NEAR/15
-      ("access" OR "benefit sharing"
-      OR "equitab*" OR "inequitab*" OR "equal" OR "unequal" OR "equalit*" OR "inequalit*"
-      OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "women"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "sustainable development"
-      )
-)
+  OR "inheritance"  
+ )
+ )
 ```
-
-##### Phrase 7:
-ownership of land part 2
-```Ceylon =
-TS=
-(
-  ("access" NEAR/5 ("land$" OR "farmland$")
-  )
-  NEAR/15
-      ("equitab*" OR "inequitab*" OR "equal" OR "unequal" OR "equalit*" OR "inequalit*"
-      OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "women"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "sustainable development"
-      )
-)
-```
-
 ## Target 1.5
 
 > **1.5 By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters**
@@ -477,13 +414,19 @@ TS=
 >
 > 1.5.4 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This query consists of x phrases.
+Technological/industrial/chemical disasters are not included as they are not explicilty mentioned in the target eventhough they ar epart of the SEndai Framework 
+
+This query consists of 1 phrase.
 
 ##### Phrase 1:
+*action : policy/risk reduction* 
+*general structure: action + disaster + vulnerable groups 
 
 Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
 
-Disabled people, children, elderly people and pregnant women included under "vulnerable". Least developed countries and small island developing states have been included due as their population is more likely to be poor and the countries likely to have lower institutional resilience. SIDS in particular may be exposed to environmental disasters. Lists of least developed countries (LDCs), small island developing states (SIDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
+Disabled people, children, elderly people and pregnant women included under "vulnerable". 
+
+~~Least developed countries and small island developing states have been included due as their population is more likely to be poor and the countries likely to have lower institutional resilience. SIDS in particular may be exposed to environmental disasters. Lists of least developed countries (LDCs), small island developing states (SIDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
 
 ```Ceylon =
 TS=
@@ -503,17 +446,21 @@ TS=
     )
     NEAR/15
         (
-           ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
-          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$")
+          "war" OR "wars" 
+          OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil")) 
+          "pandemic$" OR "epidemic$" 
+          ( ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "economic") 
+          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
           )
           OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
           OR "drought$" OR "flood*" OR "cold spells"
-          OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
+          OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado"
           OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*" OR
           OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
           OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
           OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
           OR "tipping point$"  
+          OR "avalanche"
           OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
         
           OR "financial crash*" OR "economic downturn$" OR "socio-economic resilience"
@@ -531,13 +478,8 @@ TS=
         )
       OR "disability"
       OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      OR
-        (
-          (("developing" OR "least developed") NEAR/3 ("state$" OR "nation$" OR "countr*"))
-          OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-          OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands"       
-        )
-      )  
+      
+     )  
 )
 ```
 
