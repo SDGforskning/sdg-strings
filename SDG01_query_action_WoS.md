@@ -146,9 +146,9 @@ All cover research about about access to, coverage of and establishment/implemen
 
 Phrase 1: access/coverage/implementation + social protection systems (899)
 
-Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (36)
+Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (~~36)
 
-Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (184)
+Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (~~184)
 
 `welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
 
@@ -195,7 +195,7 @@ TS=
   "basic income" OR "cash benefit"  OR "income security" 
   OR "unemployment benefit$" OR "sickness benefit$" OR "sick benefit"
   )
-  NEAR/10
+  AND
   (
   "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
@@ -241,7 +241,7 @@ TS=
   
   ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
   
-  NEAR/10
+AND
   
   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
@@ -263,28 +263,27 @@ TS=
 This target is interpreted to cover research about:
 
 
-Phrase 1: ensure + access/right/opportunities (equal are implicit) + economic resourses  ???
-Phrase 2: ensure + access and implementation of basic services (phrase 1)
+Phrase 1: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses  ???
+
+Phrase 2: ensure + access and implementation of basic services 
+
 (phrase 3 -5 ) and acces and right to ownership of land and other property, inheritance
 assess to financial services incluiding microfinance
 
-Phrase 1a:
+##### Phrase 1:
 
 ```Ceylon =
 TS=
 
 (
   (
-    (
-      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+     ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
             )
       NEAR/10
       ("access*" OR "equitab*" OR "equity" OR "equality"
-      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" OR "empower*"
       )
-    )
-  OR "empower*"
-  )
+   )
   NEAR/5
   (
   (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities" OR "assets"))
@@ -292,6 +291,7 @@ TS=
   )
 )
 OR
+
 TS=
 
 (
@@ -310,98 +310,47 @@ TS=
 
 ```
 
-----
+##### Phrase 2
 
-Phrase 1 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
+Phrase 2 cover access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
-*We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
+We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
 
-WORK IN PROGRESS DIFFERENT VERSJONS NEEDS FURTHER TESTING
-
-##### Phrase 1. v1 basic:
-
-Access to basic services
+*action : ensure + access*
+*general form :  action + basic services* 
 
 ```Ceylon =
 TS=
-TS=
 
 (
-  (
-    (
-      ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
-            )
-      NEAR/10
-      ("access*" OR "equitab*" OR "equity" OR "equality"
-      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
-      )
+  ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
     )
-  OR "empower*"
-  )
-  NEAR/5
-  ("basic services" OR "basic drinking water service$" OR "basic hygiene service$*" OR "basic sanitation service$*" OR "waste collection services" OR 
-   OR "basic mobility" OR "basic health care service$" OR "basic education services" OR "basic information services" OR "clean fuels" )
-)
-
-
-
-
-  ("basic services" OR "basic drinking water service$" OR "basic hygiene service$*" OR "basic sanitation service$*" OR "waste collection services" OR 
-   OR "basic mobility" OR "basic health care service$" OR "basic education services" OR "basic information services" OR "clean fuels" )
    NEAR/10
-  ("access*" OR "coverage" OR "barrier$" OR "obstacle$")
-  NEAR/5
-  ( "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
-      OR "build" OR "building"=
-      
-      
-)
-```
-##### Phrase 1. v2 utvidet:
-
-Access and implementation to basic services
-
-```Ceylon =
-TS=
-
-(
-  ("basic services" 
-   OR 
-   "drinking water service$" or "drinking water source$" OR "source$ of drinking water" OR "drinking water facilit*" OR "basic drinking water$" 
-   OR 
-   "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" 
-   OR
-   "hygiene facilit*" OR  "hygiene service*" OR "handwashing facility" OR "hand-washing facility"  
-   OR 
-   "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"  
-   OR 
-   "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*"
-   OR 
-   (("waste" OR "garbage" or "rubish") NEAR/1 ("collection" OR "managment") NEAR/1 ("service$" OR "facilit*")))
-   OR
-   "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
-   OR
-   "education services" OR "schooling services" OR "education system" OR "school system"
-   OR 
-  
-   (OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services )
-   NEAR/10
-      ("implement*" OR "establish*"
-      OR "coverage" OR "covered" OR "covering"
-      OR "improv*" OR "strengthen*" OR "increas*" OR "enhanc*"
-      OR "build" OR "building"
-      OR "access*" OR "barrier$" OR "obstacle$")
-   NEAR/5
-     ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-      OR "the vulnerable" OR "vulnerable group$"
+  ("access*" OR "equitab*" OR "equity" OR "equality"
+    OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
       )
+NEAR/10
+(
+("basic" NEAR/3 "service$") 
+
+   OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic")) 
+   OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation" 
+   OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility" 
+   OR "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"   
+   OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*" 
+   OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*")) 
+   OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" 
+   OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system" 
+   OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services" ) 
 )
+AND
+   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+      OR "the vulnerable" OR "vulnerable group$"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      ) 
 
-Need to be change in case we exclude people bolk
-??? (("LTE" OR "broadband" OR "3G" OR "narrowband" OR "2G" OR "mobile-cellular") NEAR/3 ("household" OR "housing" OR "home$" OR "living")
 
-```
 
 ##### Phrase 3:
 
