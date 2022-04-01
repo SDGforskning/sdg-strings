@@ -280,12 +280,12 @@ This query consists of 1 phrase. The basic structure is *action + productivity/a
               ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
               OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
               OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
-              OR "access*" OR "empowerment" OR "benefit$"
+              OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
               OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
               OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
               )
               NEAR/5
-                ("improve*" OR "increase*" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
+                ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
                 OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*" OR "empower" OR "empowering"
                 OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                 )
@@ -294,7 +294,7 @@ This query consists of 1 phrase. The basic structure is *action + productivity/a
             (
               ("barrier$" OR "obstacle$"
               OR ("distribution*" NEAR/5 "injustice")
-              OR "land grab*"
+              OR "land grab*" OR "tenure insecurity"
               )
               NEAR/5
                   ("reduc*" OR "prevent*" OR "remov*" OR "fight*" OR "combat*"
@@ -426,7 +426,7 @@ TS=
               )
               NEAR/5
                   ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*" OR "create" OR "creating"
-                  OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+                  OR "improv*" OR "increase" OR "increasing" OR "maintain*"
                   OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
                   OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                   )
@@ -476,7 +476,7 @@ TS=
                   ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
                   NEAR/5
                     ("implement*" OR "establish*" OR "build*" OR "develop"
-                    OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+                    OR "improv*" OR "increase" OR "increasing" OR "maintain*"
                     OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*"
                     )
                 )
@@ -520,7 +520,7 @@ TS=
     )
     NEAR/5
         ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*"
-        OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+        OR "improv*" OR "increase" OR "increasing" OR "maintain*"
         OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
         OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
         )
@@ -554,7 +554,7 @@ TS=
           )
           NEAR/5
               ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*"
-              OR "improve*" OR "increase" OR "increasing" OR "maintain*"
+              OR "improv*" OR "increase" OR "increasing" OR "maintain*"
               OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
               OR  "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
               )
@@ -663,7 +663,7 @@ TS=
 This target is interpreted to cover research about:
 * The preservation of diversity of farmed species/wild relatives (phrases 1,2).
 * Agricultural genetic banks and preservation of tissue (seed, plant, animal) (phrase 3).
-* Benefit sharing for genetic resources and traditional knowledge related to food and agriculture (phrases 4,5).
+* Promoting access and benefit sharing for genetic resources and traditional knowledge related to food and agriculture (phrases 4,5).
 
 The FAO Second Global Assessment of Animal Genetic Resources was used as a source of terms (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). Central instruments are The Treaty on Plant Genetic Resources for Food and Agriculture, the Convention on Biological Diversity and elaborations in the Nagoya Protocol.
 
@@ -673,9 +673,9 @@ This query consists of 5 phrases.
 
 #### Phrase 1
 
-The general structure is *agricultural diversity/landraces + action* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands.
+The general structure is *agricultural diversity/landraces + action* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
 
-Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as although the target does not focus on these supporting species, research about agrobiodiversity is likely looking at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
+Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc.
 
 ``` Ceylon =
 TS=
@@ -694,7 +694,7 @@ TS=
         OR "Convention on biological diversity"
         OR
           (
-            ("loss" OR "extinction")
+            ("loss" OR "extinction" OR "declin*" OR "disappear*")
             NEAR/5
               ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
               OR "lowering" OR "lower$" OR "lowered" OR "combat*"
@@ -725,7 +725,7 @@ TS=
                   ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
                   OR
                       (
-                        ("loss" OR "extinction")
+                        ("loss" OR "extinction" OR "declin*" OR "disappear*")
                         NEAR/5
                           ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
                           OR "lowering" OR "lower$" OR "lowered" OR "combat*"
@@ -755,13 +755,13 @@ TS=
 
 #### Phrase 3
 
-The general structure is *gene banks + action + agriculture*
+The general structure is *gene banks/ex situ + diversity/protection + agriculture*
 
-The action terms for genebanks helps to filter out results which mention genebanks that were used in research (i.e. samples were taken from...).
+Here, action terms are not used because multiple angles can be relevant - research about establishment of gene banks for maintaining diversity, research about farmers' use of gene banks, research about how best to store samples in gene banks, etc.. `cryoconservation` and `cryopreservation` are ex situ in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>).
 
-`cryoconservation` and `cryopreservation` are ex situ in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>); research about cryopreservation for relevant groups is thus considered relevant.
+The *diversity/protection* terms help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...).
 
-`domestic*` was removed from the agriculture terms as results were mostly about domestic cats.
+For the *agriculture terms*, `domestic*` was removed from this phrase as results were mostly about domestic cats. A `NOT` expression was added for `seed banks` as these can be both human storage of seeds but also natural seed banks in the soil.
 
 ``` Ceylon =
 TS=
@@ -770,23 +770,17 @@ TS=
       ("cryoconservation"
       OR
         (
-          ("plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          ("plant bank$" OR "seed bank$"
+          OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          OR "ex situ" OR "cryopreserv*"
           )
           NEAR/15
               ("diversity" OR "genetic resources" OR "agricultural biodiversity"
               OR "maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered"
-              OR "establish*" OR "support" OR "build*" OR "strengthen*"
               OR "collection$ management" OR "collection$ development"
-              OR "funding" OR "policy" OR "policies"
+              OR "funding" OR "fund" OR "invest" OR "investing" OR "investment$"
+              OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
               )
-        )
-      OR
-        ("cryopreservation"
-        NEAR/15
-            ("diversity" OR "genetic resources" OR "agricultural biodiversity"
-            OR "conserv*" OR "extinct*" OR "endangered"
-            OR "germplasm" OR "oocyte$" OR "sperm*" OR "semen" OR "embryo$" OR "somatic cells"
-            )
         )
       )  
       NEAR/15
@@ -809,58 +803,69 @@ TS=
 
 #### Phrase 4
 
-Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>). However, the string is set up so that we do not need to define benefits or use types. The general structure is *genetic resources/knowledge + sharing/access + agriculture/food*
+The general structure is *resources/benefits/knowledge + sharing/access + action + agriculture/food*.
+
+Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>). However, the string is set up so that we do not need to define benefits or use types.
 
 `access OR accessing OR accessib*` is used here to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge. `traditional NEAR knowledge` etc. will cover e.g. traditional agricultural knowledge.
 
 ``` Ceylon =
 TS=
 (
-    ("genetic resource$"
-    OR "germplasm" OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+  (
+    ("genetic resource$" OR "agrobiodiversity"
+    OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$"
+    OR "cryobank$" OR "ex situ" OR "cryopreserv*" OR "germplasm"
     OR "seed commons"
     OR "bioprospecting"
     OR (("traditional" OR "indigenous" OR "autochthonous") NEAR/3 ("knowledge"))
     )
     NEAR/15
-        ("sharing" OR "equitab*" OR "inequitable" OR "fair"
-        OR "ownership" OR "access" OR "accessing" OR "accessib*" OR "right$"
-        OR "governance"
+        ("governance" OR "justice" OR "ownership"
+        OR "biopiracy" OR "inequitable" OR "inequity"
         OR "material transfer agreement$" OR "informed consent"
-        OR "Nagoya Protocol"
-        OR "International Seed Treaty"
-        OR "biopiracy"
-        )
-    NEAR/15
-        ("food"
-        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
-        OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture"
-        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-        OR "landrace$" OR "wild relative$"
         OR
           (
-            ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-            NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+            ("sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$")
+            NEAR/5
+                ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
+                OR "better" OR "strengthen*" OR "empower" OR "empowering"
+                OR "barrier$" OR "obstacle$"
+                OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+                )
           )
-        )                 
+        )
+  )    
+  AND
+      ("food"
+      OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultivar$" OR "permaculture"
+      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+      OR "aquaculture"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+      OR "landrace$" OR "wild relative$"
+      OR
+        (
+          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+          NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+        )
+      )                 
 )   
 ```
 
 #### Phrase 5
 
-Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *genetic resources + agriculture/food + instruments*
+Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *resources/knowledge/rights + agriculture/food + instruments/specific issues*
 
 `traditional NEAR knowledge` etc. will cover e.g. traditional agricultural knowledge.
 
 ``` Ceylon =
 TS =
 (
-    ("genetic resource$"
+    ("genetic resource$" OR "agrobiodiversity"
     OR "bioprospecting"
-    OR (("traditional" OR "indigenous" OR "autochthonous") NEAR/3 ("knowledge"))
+    OR (("traditional" OR "indigenous" OR "autochthonous") NEAR/3 ("knowledge" OR "right$"))
     )
     AND
         ("food"
@@ -883,7 +888,7 @@ TS =
         OR "International Seed Treaty"
         OR "biopiracy"
         OR "Global Plan of Action for Animal Genetic Resources"
-        OR "Plant Genetic Resources for Food and Agriculture"
+        OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"
         )
 )
 
