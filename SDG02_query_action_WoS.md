@@ -905,7 +905,7 @@ TS =
 
 This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries.
 
-This query consists of 1 phrase. The general structure is *action + rural infrastructure/technology*
+This query consists of 1 phrase. The general structure is *investment/cooperation + rural infrastructure/technology*
 
 ``` Ceylon =
 TS =
@@ -962,28 +962,32 @@ This query consists of 2 phrases
 
 #### Phrase 1:
 
+The basic structure is *export subsidies + agriculture/food*.
+
 ``` Ceylon =
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
   AND
-      ("agricultur*" OR "food")
+      ("agricultur*" OR "agrifood" OR "food")
 )
 ```
 
 #### Phrase 2:
 
+The basic structure is *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
+
 ```Ceylon =
 TS=
 (
-  ("distort*" OR "price-fixing"
+  ("distort*" OR "price-fixing" OR "dumping"
   OR "trade restrict*" OR "Doha" OR "food aid"
   OR "state support*" OR "state financial support"
   )
   NEAR/15
       (
         ("trade" OR "trading" OR "market$" OR "export$")
-        NEAR/5 ("agricultur*" OR "food")
+        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
       )
 )
 ```
@@ -994,52 +998,38 @@ TS=
 >
 > 2.c.1 Indicator of food price anomalies
 
-This target is interpreted to cover research about preventing price volatility in food/agriculture. It consists of two phrases, where the basic structure is *action + prices + volatility + agriculture*.
+This target is interpreted to cover research about preventing price volatility in food/agriculture, and about stable food commodity markets. It consists of two phrases, where the basic structure is *action + volatility/stability + agricultural markets/prices*.
 
 #### Phrase 1:
 
 ```Ceylon =
 TS=
 (
-  (
-    ("prevent*" OR "avoid" OR "limit" OR "reduc*" OR "minimi*"
-    OR "mitigat*" OR "tackl*" OR "combat" OR "counteract"
-    OR "stabiliz*" OR "stabilis*"
-    OR "policy" OR "policies"
-    )
-    NEAR/5
-        ("price$" OR "market$")
-    NEAR/5
-        ("volatil*" OR "instability" OR "unstable" OR "anomalies")
-  )
-  AND ("food" OR "agricultur*")
-)
-```
-
-```Ceylon =
-TS=
-(
-  (
     (
-      ("stabili*" OR "well functioning")
-      NEAR/5
-         ("price$" OR "market$")
-    )
-  OR
-    (
-      ("ensur*" OR "increas*" OR "improv*" OR "encourag*" OR "maintain*" OR "strengthen*"
-      OR "policy" OR "policies" OR "intervention$"
+      (
+        ("prevent*" OR "avoid" OR "limit" OR "reduc*" OR "minimi*" OR "mitigat*" OR "tackl*" OR "combat"
+        OR "stabiliz*" OR "stabilis*" OR "intervention$" OR "counteract"
+        OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulat*"
+        )
+        NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies")
       )
-      NEAR/5
-          ("price$" OR "market$")
-      NEAR/5
-          ("stable" OR "functioning")
+      OR
+      (
+        ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*"
+        OR "secure" OR "securing" OR "ensur*" OR "maintain*" OR "strengthen*"
+        )
+        NEAR/5 ("stability" OR "stable" OR "functioning")
+      )
+      OR (("stabiliz*" OR "stabilis*") NEAR/5 ("price$" OR "market$"))
     )
-  )  
-  AND ("food" OR "agricultur*")
+    NEAR/15
+        (
+          ("price$" OR "market$")
+          NEAR/5
+            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
+        )
 )
 ```
-
 
 ## SDG generic
 
