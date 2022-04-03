@@ -46,7 +46,9 @@ This target is interpreted as to cover research about eradication of extreme pov
 This query consists of 1 phrase.
 
 Phrase 1: Covers research about eradicate extreme poverty (*515*)
+
 *Action: decrease/eradicate*
+
 *The basic structure is as follows: extreme/global poverty + action*
 
 ```Ceylon =
@@ -74,9 +76,10 @@ This target is interpreted as to cover research about poverty reduction in in al
 
 `Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
-This query consists of 1 phrase.(20,864)
+This query consists of 1 phrase.(*20,899*)
 
 *Action: decrease/eradicate*
+
 *The basic structure is as follows: poverty/the poor + action*
 
 ```Ceylon =
@@ -122,11 +125,12 @@ Phrase 3: access/coverage/implementation + social protection systems/social serv
 
 `welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
 
-##### Phrase 1:
+##### Phrase 1: (*901*)
 
 This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systems and similar concepts. As we talk about systems/services is does not need to be combined with groups of people.
 
 *Action: access/coverage/implementation*
+
 *The basic structure is as follows: action + social protection systems*
 
 ```Ceylon =
@@ -143,11 +147,12 @@ TS=
  ```  
 
 
-##### Phrase 2:
+##### Phrase 2 (*113*):
 
 This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups 
 
 *Action: access/coverage/implementation*
+
 *The basic structure is as follows: action + social protection systems/social floors + vulnerable groups*
 
 Vulnerable groups are based in the groups mentioned in the indicators
@@ -193,11 +198,12 @@ TS=
 )
 ```
 
-##### Phrase 3:
+##### Phrase 3 (*742*):
 
 This phrase is about about access to, coverage of and establishment/implementation of social protection/social benefits and similar concepts. These terms need to be combined with groups of people/poverty/the poor. We did not include other "vulnerable groups as the terms are rather general; e.g. social services for children or mothers can be related to other things than poverty
 
 *Action: access/coverage/implementation*
+
 *The basic structure is as follows: action + social protection systems/social services + poverty and the poor*
 
 
@@ -205,23 +211,23 @@ This phrase is about about access to, coverage of and establishment/implementati
 TS=
 
 (
- ("implement*" OR "establish*" OR "propose*" OR "design*" 
+  (
+    ("implement*" OR "establish*" OR "propose*" OR "design*" 
       OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
       
-  NEAR/10 
+    NEAR/10 
   
-  ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
-  
+    ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
+  ) 
 AND
-  
   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-      )
+   )
   
-  )    
+)    
 ```  
 
 ## Target 1.4
@@ -280,11 +286,12 @@ AND
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       )
 )
-OR
+
 ```
 ##### Phrase 1b:
 
 *Action: overcome + barriers*
+
 *The basic structure is as follows: action + economic resourses  + "the poor"*
 
 ```Ceylon =
@@ -315,7 +322,7 @@ TS=
 
 ```
 
-##### Phrase 2
+##### Phrase 2 (*1562*)
 
 Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
@@ -325,37 +332,38 @@ Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[U
 TS=
 
 (
-  ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+  (
+    ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
     )
-   NEAR/10
-  ("access*" OR "equitab*" OR "equity" OR "equality"
-    OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
-      )
-NEAR/10
-(
-("basic" NEAR/3 "service$") 
-
-   OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic")) 
-   OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation" 
-   OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility" 
-   OR "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"   
-   OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*" 
-   OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*")) 
-   OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" 
-   OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system" 
-   OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services" ) 
+    NEAR/10
+    ("access*" OR "equitab*" OR "equity" OR "equality"
+      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+    )
+    NEAR/10
+    (
+      ("basic" NEAR/3 "service$") 
+      OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic")) 
+      OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation" 
+      OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility" 
+      OR "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"   
+      OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*" 
+      OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*")) 
+      OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" 
+      OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system" 
+      OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services" 
+    ) 
+  )
+  AND
+  ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+    OR "the vulnerable" OR "vulnerable group$"
+    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+  ) 
 )
-AND
-   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-      ) 
-
 ```
 
 
-##### Phrase 3:
+##### Phrase 3 (3339):
 
 *The basic structure is as follows: action + ownership of land, inheritance, property * 
 
@@ -364,21 +372,17 @@ AND
 TS=
 (
   ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
-    )
-   NEAR/10
+  )
+  NEAR/10
   ("access*" OR "equitab*" OR "equity" OR "equality"
     OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
-      )
-   NEAR/10
-  (
+  )
+  NEAR/10
   ("land holding$" OR "tenure right$" OR "land tenure"
   OR
-    (
-      ("land" OR "lands" OR "farmland$" OR "inheritance" OR "property")
-      )
-  OR "inheritance"  
- )
- )
+  (("land" OR "lands" OR "farmland$" OR "inheritance" OR "property") NEAR/3 ("right*" OR "ownership"))
+  )
+)
 ```
 
 ## Target 1.5
@@ -400,6 +404,7 @@ This query consists of 1 phrase (*7809*).
 ##### Phrase 1:
 
 *Action : policy/risk reduction* 
+
 *The basic structure is as follows:: action + disaster + vulnerable groups 
 
 Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
@@ -477,6 +482,7 @@ This target is interpreted to cover research about investment, increased resourc
 This query consists of 1 phrase. (*111*)
 
 *Action : improve invenstment, international aid*
+
 *The basic structure is as follows:: action + programs + poverty*
 
 
@@ -533,39 +539,7 @@ TS=
 >
 > 1.b.1 Pro-poor public social spending
 
-This query consists of 1 phrase.
 
-The policy aspect of this target should be captured by other parts of the query (e.g. policies for poverty eradication or improved social protection systems).
-
-Disabled people, children, elderly people and pregnant women included under "vulnerable".
-In this version we added government spending/development aid on  education and health services.
-
-```Ceylon =
-TS=
-(
-  ("development cooperation" OR "development aid" OR "official development assistance"
-  OR "government spending"
-  )		
-  AND
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "women" 		
-  	  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-      OR
-        (
-          ("person$" OR "people" OR "adult$")
-          NEAR/3
-              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
-        )
-      OR "disability"
-  	  OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-  	  OR "social protection$" OR "social floor$" OR "social service$" OR "social security"
-      OR "welfare system$" OR "social welfare" OR "welfare service$"
-      OR "basic service$" OR "essential service$"
-      OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
-      OR "education services" OR "schooling services" OR "education system" OR "school system"
-      )
-)
 ```
 
 ## General SDG
