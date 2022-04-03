@@ -41,14 +41,12 @@ During editing of this string (2021), we have also consulted of queries from the
 
 This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line. 
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) 
 
-*For the topic approach terms such as: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic* *" OR "extreme") should be included.*
-
-This query consists of 2 phrases.
+This query consists of 1 phrase.
 
 Phrase 1: Covers research about eradicate extreme poverty (*515*)
-
+*Action: decrease/eradicate*
 *The basic structure is as follows: extreme/global poverty + action*
 
 ```Ceylon =
@@ -64,29 +62,6 @@ TS=
   )  
 ```
 
-Phrase 2 (WORK IN PROGRESS): Covers research about reducing the number of poeple livining below the international poverty line
-
-Doesn't give any hits as stated here, might only work in the topic apporoach
-
-```Ceylon =
-TS=
-(
-  ("international poverty line" OR "$1.25 a day" OR "$1.9 a day" OR "$1.25 per day " OR "$1.9 per day")
-   
-   NEAR/5
-    
-        ("decreas*" OR "minimi*" OR "reduc*"
-        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-        OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
-        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "mitigat*"
-        )
-  vunerable groups and people
-    )
-
-```
-
-
-
 ## Target 1.2
 
 > **1.2 By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions**
@@ -99,13 +74,10 @@ This target is interpreted as to cover research about poverty reduction in in al
 
 `Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
-
-*For the topic approach terms such as: poverty line,  poverty indicator, ("poverty") NEAR/3 ("chronic* *" OR "extreme") should be included.*
-
 This query consists of 1 phrase.(20,864)
 
-*The general structure is poverty/the poor + decrease*
+*Action: decrease/eradicate*
+*The basic structure is as follows: poverty/the poor + action*
 
 ```Ceylon =
 TS=
@@ -152,10 +124,10 @@ Phrase 3: access/coverage/implementation + social protection systems/social serv
 
 ##### Phrase 1:
 
-This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systtems and similar concepts. As we talk about systems services is does not need to be combined with groups of poeple.
+This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systems and similar concepts. As we talk about systems/services is does not need to be combined with groups of people.
 
-*basic structure: access/coverage/implementation + social protection systems*
-
+*Action: access/coverage/implementation*
+*The basic structure is as follows: action + social protection systems*
 
 ```Ceylon =
 TS=
@@ -175,10 +147,11 @@ TS=
 
 This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups 
 
-*basic structure: access/coverage/implementation + social protection systems/social floors + vulnerable groups
+*Action: access/coverage/implementation*
+*The basic structure is as follows: action + social protection systems/social floors + vulnerable groups*
 
+Vulnerable groups are based in the groups mentioned in the indicators
 
-vulnerable groups are based in the groups mentioned in the indicators
 ```Ceylon =
 TS=
 ( 
@@ -224,7 +197,8 @@ TS=
 
 This phrase is about about access to, coverage of and establishment/implementation of social protection/social benefits and similar concepts. These terms need to be combined with groups of people/poverty/the poor. We did not include other "vulnerable groups as the terms are rather general; e.g. social services for children or mothers can be related to other things than poverty
 
-*basic structure: access/coverage/implementation + social protection systems/social services + poverty and the poor*
+*Action: access/coverage/implementation*
+*The basic structure is as follows: action + social protection systems/social services + poverty and the poor*
 
 
 ```Ceylon =
@@ -260,18 +234,23 @@ AND
 
 This target is interpreted to cover research about:
 
-???? action term in the wholhe target needs to be disscuses ???
+???? action term in the whole target needs to be disscused ???
+*Action: ensure + access* OR should it be *Action: ensure OR access*
 
-Phrase 1: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses  ???
-Phrase 1b: remove + barriers + economic resourses  ???
+Phrase 1: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses
+
+Phrase 1b: remove + barriers + economic resourses
+
 Phrase 2: ensure + access/implementation of basic services 
+
 Phrase 3: ensure + acces/right to ownership of land and other property, inheritance
 
 
 
-##### Phrase 1:
+##### Phrase 1a:
 
-Phrase 1a: ensure + access/right/opportunities (equal is considered to be implicit when those two combined) + economic resourses  + "the poor"
+*The basic structure is as follows: action (equal is considered to be implicit) + economic resourses  + "the poor"*
+
 
 ```Ceylon =
 TS=
@@ -303,7 +282,11 @@ AND
 )
 OR
 ```
-##### Phrase 1b: overcome + barriers + economic resourses  + "the poor"
+##### Phrase 1b:
+
+*Action: overcome + barriers*
+*The basic structure is as follows: action + economic resourses  + "the poor"*
+
 ```Ceylon =
 TS=
 
@@ -336,10 +319,7 @@ TS=
 
 Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
 
-~~We only include the general terms. This is rather boread but most of the basic services are covered in more detail in its spesific SDG (drinking water services, basic sanitation services, basic hygiene facilities in SDG 6; basic information services in SDG 9.c.1 (https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf) ; clean fuels  in SDG 7, basic waste collection services SDG Indicator 11.6.1, basic mobility in SDG 11.2.1, basic education services SDG 4.1.1, basic health care in SDG 3.8.1.*
-
-*action : ensure + access*
-*general form :  action + basic services* 
+*The basic structure is as follows: action + basic services* 
 
 ```Ceylon =
 TS=
@@ -376,7 +356,9 @@ AND
 
 
 ##### Phrase 3:
-ownership of land, inheritancce 
+
+*The basic structure is as follows: action + ownership of land, inheritance, property * 
+
 
 ```Ceylon =
 TS=
@@ -393,13 +375,12 @@ TS=
   OR
     (
       ("land" OR "lands" OR "farmland$" OR "inheritance" OR "property")
-      NEAR/10
-          ("right$" OR "ownership" )
-    )
+      )
   OR "inheritance"  
  )
  )
 ```
+
 ## Target 1.5
 
 > **1.5 By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters**
@@ -418,8 +399,8 @@ This query consists of 1 phrase (*7809*).
 
 ##### Phrase 1:
 
-*action : policy/risk reduction* 
-*general structure: action + disaster + vulnerable groups 
+*Action : policy/risk reduction* 
+*The basic structure is as follows:: action + disaster + vulnerable groups 
 
 Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
 
@@ -496,7 +477,7 @@ This target is interpreted to cover research about investment, increased resourc
 This query consists of 1 phrase. (*111*)
 
 *Action : improve invenstment, international aid*
-*Basic structure: action + programs + poverty*
+*The basic structure is as follows:: action + programs + poverty*
 
 
 
