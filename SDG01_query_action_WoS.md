@@ -39,9 +39,7 @@ During editing of this string (2021), we have also consulted of queries from the
 > 1.1.1 Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)
 >
 
-This target is interpreted as to cover research about eradicate extreme poverty and reduce the number of people living below the international poverty line. 
-
-`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
+This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line. 
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) and does not add results regarding poverty.
 
@@ -49,7 +47,7 @@ This target is interpreted as to cover research about eradicate extreme poverty 
 
 This query consists of 2 phrases.
 
-Phrase 1: Covers research about eradicate extreme poverty (515)
+Phrase 1: Covers research about eradicate extreme poverty (*515*)
 
 *The basic structure is as follows: extreme/global poverty + action*
 
@@ -416,17 +414,16 @@ TS=
 
 Technological/industrial/chemical disasters are not included as they are not explicilty mentioned in the target eventhough they ar epart of the SEndai Framework 
 
-This query consists of 1 phrase.
+This query consists of 1 phrase (*7809*).
 
 ##### Phrase 1:
+
 *action : policy/risk reduction* 
 *general structure: action + disaster + vulnerable groups 
 
 Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
 
 Disabled people, children, elderly people and pregnant women included under "vulnerable". 
-
-~~Least developed countries and small island developing states have been included due as their population is more likely to be poor and the countries likely to have lower institutional resilience. SIDS in particular may be exposed to environmental disasters. Lists of least developed countries (LDCs), small island developing states (SIDS) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
 
 ```Ceylon =
 TS=
@@ -441,33 +438,35 @@ TS=
       (
         ("disaster$" OR "risk$")
         NEAR/3
-            ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$")
+            ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$" OR "program")
       )
     )
     NEAR/15
-        (
-          "war" OR "wars" 
-          OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil")) 
-          "pandemic$" OR "epidemic$" 
-          ( ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "economic") 
-          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+    (
+      "war" OR "wars" 
+      OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil")) 
+      OR "pandemic$" OR "epidemic$" 
+      OR ( 
+            ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "economic") 
+              NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$")
           )
-          OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
-          OR "drought$" OR "flood*" OR "cold spells"
-          OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado"
-          OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*" OR
-          OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
-          OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
-          OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
-          OR "tipping point$"  
-          OR "avalanche"
-          OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-        
-          OR "financial crash*" OR "economic downturn$" OR "socio-economic resilience"
-         )
+      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
+      OR "drought$" OR "flood*" OR "cold spells"
+      OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado"
+      OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
+      OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+      OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
+      OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
+      OR "tipping point$"  
+      OR "avalanche"
+      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+
+      OR "financial crash*" OR "economic downturn$" OR "socio-economic resilience"
+    )
   )
   AND
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+    (
+      "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
       OR "the vulnerable" OR "vulnerable group$"
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
       OR
@@ -483,16 +482,72 @@ TS=
 )
 ```
 
-## Target 1.a/1.b
+## Target 1.a
 
-These targets are combined, as they cover similar topics.
 
 > **1.a Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions.**
 >
 > 1.a.1 Total official development assistance grants from all donors that focus on poverty reduction as a share of the recipient country’s gross national income
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
->
+
+This target is interpreted to cover research about investment, increased resources, incl. development aid to implement programs and policies (to end) poverty in developing countries, in particular least developed countries. "to end" is considered to be implicit. 
+
+This query consists of 1 phrase. (*111*)
+
+*Action : improve invenstment, international aid*
+*Basic structure: action + programs + poverty*
+
+
+
+```Ceylon =
+TS=
+( 
+  (
+    ("development aid" OR "development assistance" OR "development spending" OR "foreign aid" OR "international aid" OR "cooperation fund"
+        OR "international cooperation" OR "international collaboration" 
+        OR (
+            ("government" OR "public" OR "international")
+            NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
+            NEAR/5 ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+            OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "promote"
+                   )
+           )         
+    )
+  NEAR/10
+    ("programm" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "framework$" OR "planning" OR "service$" OR "agenc*"    )
+  )
+  AND
+  ("anti-poverty" 
+    OR
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+    )
+  )
+  AND
+  (
+  "least developed countr*" OR "least developed nation$" 
+  OR
+  "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+  OR "less developed countr*" OR "less developed nation$"
+  OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+  OR "underserved countr*" OR "underserved nation$"
+  OR "deprived countr*" OR "deprived nation$"
+  OR "middle income countr*" OR "middle income nation$" 
+  OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$" 
+  OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+  OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+  OR
+  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+  )
+)
+ 
+```  
+ 
+ 
+
+## Target 1.b
+
 > **1.b Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions**
 >
 > 1.b.1 Pro-poor public social spending
