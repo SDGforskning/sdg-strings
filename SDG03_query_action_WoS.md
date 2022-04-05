@@ -56,7 +56,7 @@ The basic structure is *mothers/birth* + *mortality* + *action* + *excluding liv
 
 Some of the *mothers/birth* terms may find results concerning newborn mortality, this is difficult to avoid and may lead to some overlap with 3.2. Many works also talk about both maternal and neonatal mortality together. As both are in the same SDG this should not be an issue for SDG sets.
 
-For the *action* terms: Having some terms with a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented....". `lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding"). `mortality` is paired with `improve` due to the formulation "improved mortality rates".
+For the *action* terms: Having some terms with a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented....". `lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding"). `mortality` is paired with `improve` due to the formulation "improved mortality rates". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 A double `NOT` expression is included to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans. Rats and mice are not in the `NOT` statement as these are usually animal models for humans.
 
@@ -80,7 +80,7 @@ TS=
           (
             ("mortality" OR "death$")
             NEAR/15
-                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+                ("improv*" OR "prevent$" OR "preventing" OR "prevention" OR "prevented" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
           )
         )
   )
@@ -102,7 +102,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1
 
-The basic structure is *children/babies* + *mortality* + *action* + *excluding livestock*
+The basic structure is *children/babies* + *mortality* + *action* + *excluding livestock*. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ```Ceylon =
 TS=
@@ -123,7 +123,7 @@ TS=
           (
             ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
             NEAR/15
-                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+                ("improv*" OR "prevent$" OR "preventing" OR "prevention" OR "prevented" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
           )
   )
   NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
@@ -177,13 +177,15 @@ Action terms: `limited` was removed from the action terms, as it was used often 
 
 This covers communicable diseases as a category. The basic structure for both is *"communicable diseases"* + *action / action + epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
+`prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
+
 ``` Ceylon =
 TS =
 (
   (
     ("communicable disease$" OR "communicable illness*")
     NEAR/15
-        ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
+        ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
         OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
         OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
         OR
@@ -214,7 +216,7 @@ In the *communicable disease* terms, specific diseases were added from sources o
 - The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
 - The fourth section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020a](#f3)</a>).
 
-A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
+A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 
 ``` Ceylon =
@@ -289,7 +291,7 @@ TS =
     OR "yaws"
   )
   NEAR/5
-      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
+      ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
       OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
       )
@@ -299,7 +301,7 @@ TS =
 
 ##### Phrase 3
 
-The general structure is *communicable diseases + action + epidemics/interventions*. This phrase is a complement to phrase 3, where *generic actions* are covered. The action terms in this phrase were separated out as they can be combined with `AND` rather than needing `NEAR`.
+The general structure is *communicable diseases + action + epidemics/interventions*. This phrase is a complement to phrase 3, where *generic actions* are covered. The action terms in this phrase were separated out as they can be combined with `AND` rather than needing `NEAR`. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS =
@@ -375,7 +377,7 @@ TS =
   AND
       (    
         (
-          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
+          ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
           OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
           OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
           )
@@ -412,7 +414,7 @@ This query consists of 3 phrases.
 
 The structure is *non-communicable diseases + action*. We added diseases from the WHO factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and a WHO factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>). Cancer terms were based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
- A tighter `NEAR` distance is used for some action terms due to other uses (e.g. `lower` needs a tighter combination to avoid e.g. "cancer of the lower intestine").
+ A tighter `NEAR` distance is used for some action terms due to other uses (e.g. `lower` needs a tighter combination to avoid e.g. "cancer of the lower intestine"). `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS=
@@ -444,7 +446,7 @@ TS=
           (
             ("mortality" OR "death$")
             NEAR/15
-                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+                ("improv*" OR "prevent$" OR "preventing" OR "prevention" OR "prevented" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
           )
         OR
           ("surviv*"
@@ -459,7 +461,7 @@ TS=
 
 This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
 
-Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant.
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS=
@@ -476,7 +478,7 @@ TS=
       OR "treat" OR "cure" OR "cured"
       OR
         (
-          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
+          ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
           OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
           OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
           )
@@ -542,7 +544,7 @@ Terms were added from the National Institutes of Health "Commonly Used Drugs Cha
 
 `addiction` and `dependence` were considered as terms that can indicate harmful use. A number of drugs are combined with these terms because either a) they can be used in non-abuse contexts as treatments, or b) there is a lot of research about their effects (e.g. "cocaine can reduce the heart's...").
 
-`therapy OR therapies` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treat*` should cover not only treatment, but also treatment centres.
+`therapy OR therapies` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treatment$` should cover not only treatment, but also treatment centres. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS=
@@ -574,7 +576,7 @@ TS=
     )
   )
   NEAR/5
-      ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
+      ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "tackl*" OR "fight* against"
       OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "limiting" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
       OR "treat" OR "cure" OR "cured" OR "control"
@@ -628,76 +630,45 @@ TS=
 >
 > 3.6.1 Death rate due to road traffic injuries
 
-This target is interpreted to mean reducing deaths and injuries from road traffic accidents. We consider the prevention of accidents and improvement to road/vehicle safety to be part of this.
+This target is interpreted to cover research about reducing deaths and injuries from road traffic accidents. The prevention of accidents and improvement to road/vehicle safety is not considered relevant unless it is connected to health - the reducing injury/death focus is evident in the target and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). Improving road safety generally is covered in SDG 11.2.
 
-This query consists of 2 phrases.
+This query consists of 1 phrase. Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife).
 
-##### Phrase 1
+The basic structure is *traffic/road users + mortality/morbidity + action*
 
-The basic structure is *injury/accidents + traffic/vehicles + reduction*
-
-Note `limit$` not included (only `limiting`) as mostly used for city limits or speed limits.
-
-`vehicle` is combined in a separate phrase, with only `accident$`, because it is used in a molecular context (i.e. xyz works as a vehicle for delivery of the drug").
-
-`improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes".
+In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms,  `vehicle OR driver OR car OR cars` are combined in a separate phrase, with `accident OR crash` etc, because these are used in a biomedical or general context (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y").
 
 ``` Ceylon =
 TS =
 (
   (
-    (
-      ("mortality" OR "death$" OR "fatalities" OR "injury" OR "injuries" OR "accident$" OR "crash" OR "crashes" OR "collision$")
-      NEAR/15
-          ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
-          OR "cars" OR "car" OR "motorcycle$" OR "automobile$"
-          OR "motor-vehicle$" OR "vehicle safety" OR "vehicle collision$" OR "vehicle braking" OR "vehicle crash*" OR "vehicle-vehicle"
-          OR "pedestrian$"
-          )
-    )
-    OR
-    (
-      (
-        ("accident$" OR "crash" OR "crashes" OR "collision$")
-        NEAR/15
-            ("vehicle$" OR "driver$" OR "driving")    
+      ("traffic" OR "road" OR "roads" OR "roadway$" OR "street$" OR "intersection$" OR "roundabout$" OR "highway$" OR "motorway$"
+      OR "cycling lane$" OR "cycle path$" OR "bicycle lane$" OR "walkway$" OR "walking path$" OR "sidewalk$" OR "pavement$"
+      OR "bicycle$" OR "motorcycle$" OR "motorbike$" OR "automobile$" OR "buses" OR "bus" OR "lorry" OR "lorries" OR "truck$" OR "HGV$" OR "SUV$"
+      OR "pedestrian$" OR "cyclist$"
+      OR "driving fatalities"
+      OR (("vehicle$" OR "driver$" OR "driving" OR "car" OR "cars") NEAR/15 ("accident$" OR "crash*" OR "collision$" OR "traffic" OR "RTI" OR "RTIs"))
       )
-    )
-  )
-  NEAR/5
-      ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "treat*" OR "avoid*"
-      OR "improv*")
-)
-
-```
-
-##### Phrase 2
-
-The basic structure is *safety + traffic/vehicles + improvement*
-
-Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife). `safety` seems to be a much more relevant term.
-
-When combined with `safety`, `vehicle$` does not seem to have the same issue as in phrase 1.
-
-The `NOT` expression is included because `car` results in biomedical results when combined with safety ("CAR T cells"), and `traffic` results in some additions from air traffic safety.
-
-``` Ceylon =
-TS =
-(
-  (
-    (
-      ("safety")
-      NEAR/15
-          ("traffic" OR "road" OR "roads" OR "roadway$" OR "highway$" OR "motorway$"
-          OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$"
-          OR "vehicle$"
-          OR "pedestrian$" OR "driver$" OR "driving"
+      AND
+          (
+            ("mortality" OR "death$" OR "fatalities" OR "fatal" OR "deadly"
+            OR "morbidity" OR "injury" OR "injuries" OR "road trauma$" OR "RTI" OR "RTIs"
+            )
+            NEAR/5
+                ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "tackl*" OR "fight*"
+                OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "alleviat*" OR "mitigat*"
+                OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
+                OR "treat" OR "avoid*" OR "improv*"
+                OR
+                  (
+                      ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "research*" OR "novel" OR "new")  
+                      NEAR/5
+                          ("treatment$" OR "intervention$" OR "therapy" OR "therapies" OR "first aid")
+                  )
+                )
           )
-    )
-    NEAR/5
-        ("improv*" OR "increas*" OR "enhanc*")
   )
-  NOT ("car t cell" OR "air traffic")
+  NOT ("air traffic" OR "boat traffic")
 )
 
 ```
