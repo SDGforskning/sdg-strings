@@ -490,7 +490,7 @@ TS=
           )
           NEAR/5
               ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
-              OR "outreach" OR "services"
+              OR "outreach" OR "services" OR "support" OR "counseling" OR "counselling"
               )
         )
       )
@@ -501,9 +501,7 @@ TS=
 
 This phrase focuses on the promotion of well-being. The general structure is *well-being* + *promotion*.
 
-`wellbeing` is used alone, rather than qualified with "mental" - well-being seems to be used to convey a sense of overall health, which should include the mental/psychosocial aspect. `quality of life` was tested, but this adds a lot of results which seem to be more medical (i.e.  quality of life could be improved after intervention x for condition y).
-
-`increas*` was removed as an action term for `mental health` as it tends to be used in other ways (e.g. "increasing demand for services", "increasingly in focus")
+`wellbeing` is used alone, rather than qualified with "mental" - well-being seems to be used to convey a sense of overall health, which should include the mental/psychosocial aspect. `quality of life` was tested, but this adds a lot of results which seem to be more medical (i.e.  quality of life could be improved after intervention x for condition y). `increas*` was removed as an action term for `mental health` as it tends to be used in other ways (e.g. "increasing demand for services", "increasingly in focus").
 
 ``` Ceylon =
 TS=
@@ -519,7 +517,7 @@ TS=
             )
             NEAR/5
               ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
-              OR "outreach" OR "services" OR "support"
+              OR "outreach" OR "services" OR "support" OR "counseling" OR "counselling"
               )
           )
       )  
@@ -534,15 +532,13 @@ TS=
 >
 > 3.5.2 Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
 
-This target was interpreted to include research about the prevention and treatment of harmful uses of a) alcohol, and b) drugs/substances, rather than all use of alcohol/drugs.
+This target was interpreted to include research about the prevention and treatment of harmful uses of a) alcohol, and b) drugs/substances. It does not cover all use of alcohol/drugs. We also interpret this to be mainly limited to works about reducing harmful use, rather than e.g. controlling supply of illicit drugs.
 
 This query consists of 1 phrase. The basic structure is *harmful use + prevention/treatment*.
 
-Drug/substances were expanded using MeSH terms.
+Terms were added from the National Institutes of Health "Commonly Used Drugs Charts" (although this is a USA-centric source we assume it will cover many types; <a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>). Drug/substances were also expanded using MeSH terms:
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
 * Under "substance-related disorders" (D019966), a number of specific substances are listed, including `amphetamine`, `cocaine`, `inhalent`, `tobacco` etc.
-
-Additional terms were added from the National Institutes of Health "Commonly Used Drugs Charts", with the understanding that this is an USA-centric source (<a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>).
 
 `addiction` and `dependence` were considered as terms that can indicate harmful use. A number of drugs are combined with these terms because either a) they can be used in non-abuse contexts as treatments, or b) there is a lot of research about their effects (e.g. "cocaine can reduce the heart's...").
 
@@ -551,7 +547,7 @@ Additional terms were added from the National Institutes of Health "Commonly Use
 ``` Ceylon =
 TS=
 (
-  ("binge drinking" OR "binge drinker$" OR "alcoholism"
+  ("binge drinking" OR "binge drinker$" OR "alcoholism" OR "excessive drinking" OR "problematic drinking"
   OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
   OR "opioid epidemic"
   OR
@@ -568,14 +564,30 @@ TS=
       OR "tobacco"
       )
       NEAR/3
-          ("abuse" OR "misuse" OR "harmful use*" OR "use disorder$" OR "dependence" OR "addict*" OR "overdose$")    
+          ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
+          OR
+            (
+              ("use" OR "uses" OR "usage" OR "consumption")
+              NEAR/3 ("harmful" OR "problematic" OR "excessive" OR "disorder$")    
+            )
+          )
     )
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
-      OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "alleviat*" OR "mitigat*"
-      OR "treat*" OR "cure" OR "curing" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
-      OR "services" OR "outreach" OR "rehabilitat*" OR "aftercare" OR "counseling" OR "counselling"
+      OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "limiting" OR "alleviat*" OR "mitigat*"
+      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
+      OR "treat" OR "cure" OR "cured" OR "control"
+      OR
+        (
+          ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
+          OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
+          )  
+          NEAR/5
+              ("medicine$" OR "cures" OR "cure" OR "treatment$" OR "intervention$" OR "therapy" OR "therapies"
+              OR "outreach" OR "services" OR "support" OR "rehabilitat*" OR "aftercare" OR "counseling" OR "counselling"
+              )
+        )
       )
 )
 ```
