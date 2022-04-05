@@ -682,17 +682,18 @@ TS =
 >
 > 3.7.2 Adolescent birth rate (aged 10–14 years; aged 15–19 years) per 1,000 women in that age group
 
-This target is interpreted to cover research on access to: 1) sexual health services and family planning, 2) education and information about sexual health and family planning. We also consider it to cover research about the coverage/implementation of reproductive health/sexual health in national strategies and programmes. This query consists of 2 phrases.
+This target is interpreted to cover research about:
+* improving access to sexual health services and family planning
+* improving access to education and information about sexual health and family planning
+* the coverage/implementation of reproductive health/sexual health in national strategies and programmes. This query consists of 2 phrases.
 
 ##### Phrase 1
 
 The basic structure is *reproductive health + access + action*
 
-I am unsure whether we need to include action terms here. I don't know if it makes it too narrow. Is research on barriers themselves a direct contribution to improving access/removing these barriers? There could however be research about "x occurs due to barriers to healthcare", which is not really a direct contribution to removing the barriers.
+Originally, *reproductive health* terms were combined with *service/information* terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. When *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unnecessary restriction.
 
-Originally, terms for reproductive health were combined with service/information terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. When *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unnecessary restriction.
-
-Terms such as `reproductive health` will cover `reproductive health care / health services` etc.. `abortion` is included as part of reproductive health, as according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
+Terms such as `reproductive health` will cover `reproductive health care / health services` etc.. `abortion` is included as part of reproductive health, according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
 
 Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>).
 
@@ -707,25 +708,30 @@ TS =
       ("health equity" OR "equity in health*" OR "health for all"
       OR
         (
-          ("access*" OR "barrier$" OR "obstacle$"
-          OR "right$" OR "coverage"
-          OR "afford" OR "affordab*" OR "unaffordab*"
-          )
+          ("access*" OR "right$" OR "coverage" OR "afford" OR "affordab*")
           NEAR/5
-            ("improv*" OR "increas*" OR "enhanc*"
-            OR "expand*" OR "provide" OR "provision" OR "promot*" OR "ensur*"
-            OR "dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "support*" OR "advoca*" OR "address"
-            OR "policy" OR "policies" OR "initiative$" OR "program*" OR "strateg*"
+            ("increas*" OR "enhanc*" OR "universal"
+            OR "expand*" OR "provide" OR "providing" OR "provision" OR "promot*" OR "ensur*"
+            OR "improv*" OR "support*" OR "advoca*" OR "address*" OR "fight*"
+            OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*"
+            )
+        )
+      OR
+        (
+          ("barrier$" OR "obstacle$" OR "impediment$" OR "unaffordab*" OR "expensive")
+          NEAR/5
+            ("dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome"
+            OR "improv*" OR "support*" OR "advoca*" OR "address*" OR "fight*"
+            OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*"
             )
         )
       )
 )       
-
 ```
 
 ##### Phrase 2
 
-The basic structure is *reproductive health + national programmes*.
+The basic structure is *reproductive health + national programmes + action*. Here we have included LMICs and LDCs as "synonyms" for national; this provides over double the number of relevant results, as works often refer to e.g. "...implementation of a reproductive health programme in Tunisia".
 
 ``` Ceylon =
 TS =
@@ -735,7 +741,20 @@ TS =
   OR (("reproduct*" OR "sex*") NEAR/5 ("education" OR "inform*"))
   )
   NEAR/15
-      ("national" NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies"))
+    (
+      (
+         ("policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*")
+         NEAR/5
+            ("national" OR "state" OR "federal"
+            OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+            OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+            )
+      )
+      NEAR/15
+        ("establish*" OR "propose*" OR "proposing" OR "design*" OR "develop" OR "build" OR "implement*"
+        OR "integrat*" OR "incorporat*" OR "include" OR "inclusion"
+        )
+    )
 )
 
 ```
