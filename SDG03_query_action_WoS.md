@@ -167,50 +167,54 @@ TS=
 >
 > 3.3.5 Number of people requiring interventions against neglected tropical diseases
 
-The target is interpreted to include research which may help combat / end epidemics of communicable and waterborne diseases. Within "ending epidemics", we consider research on ending pandemics as relevant, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include several approaches in addition to the generic action terms: treatment, prevention (e.g. vaccination) and drug development. We add these as many researchers may consider that it goes without saying that e.g. research on treatments for chagas are a form of "combating" chagas.
+The target is interpreted to include research which talks about combating / end epidemics of communicable and waterborne diseases. We interpret "ending epidemics", to include research on ending pandemics, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include action terms such as `prevent OR treat OR control` and research about better prevention and treatment (e.g. development of vaccines and drugs). We add these as many researchers may consider that it goes without saying that e.g. research on new treatments for chagas are a form of "combating" chagas.
 
-This query consists of 3 phrases. The basic structure for both is *communicable diseases* + *action*.
+This query consists of 3 phrases.
 
 Action terms: `limited` was removed from the action terms, as it was used often in other contexts (e.g. "limited data"). Although `vaccination` may find some results on vaccine side effects, it also finds works on vaccination from a host of relevant perspectives (e.g. programs, barriers, hesitancy) - an alternative approach would be to add a near statement including all these terms.
 
 ##### Phrase 1
 
-This covers communicable diseases as a category. The search terms here are difficult, as `communicable` will also find `non communicable` ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious`). Non communicable diseases are covered in target 3.4, so in terms of SDG3 it is ok that they are included, but for a target-by-target approach it creates some noise. Approximately 10 % of the results for this phrase also include `non-communicable` (past 5 years). This is the reason these terms were split into a separate phrase.
+This covers communicable diseases as a category. The basic structure for both is *"communicable diseases"* + *action / action + epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
 ``` Ceylon =
 TS =
 (
-  ("communicable disease$" OR "communicable illness*")
-  NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*"
-      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
-      OR
-        (
-          ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
-          NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+  (
+    ("communicable disease$" OR "communicable illness*")
+    NEAR/15
+        ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
+        OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
+        OR
+          (
+            ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
+            NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+          )
+        OR
+          (
+            ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
+            OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
+            )
+            NEAR/5 ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*")
+          )
         )
-      OR "vaccinate" OR "vaccination"
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
-      )
+  )
+  NOT ("non communicable" NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "communicable and non communicable"))
 )
 ```  
 
 ##### Phrase 2
 
-The first section covers communicable and waterborne diseases as a category. See also Phrase 1.
+The general structure is *communicable diseases + generic action*. This phrase is a complement to phrase 3, where *action + epidemics/interventions* are covered.
 
-Specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
-
-The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. Diseases were also added from a WHO list of epidemic and pandemic-prone diseases (<a id="WHOepipan">[Regional Office for the Eastern Mediterranean, n.d.](#f24)</a>). `SARS` covers also "SARS-CoV-2" (covid-19).
-
-The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
-
-The third section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020a](#f3)</a>).
+In the *communicable disease* terms, specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
+- The first section covers communicable and waterborne diseases as a category (see also Phrase 1).
+- The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. Diseases were also added from a WHO list of epidemic and pandemic-prone diseases (<a id="WHOepipan">[Regional Office for the Eastern Mediterranean, n.d.](#f24)</a>). `SARS` covers also "SARS-CoV-2" (covid-19).
+- The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
+- The fourth section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020a](#f3)</a>).
 
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission.
-
-Phrase 3 is the same as phrase 2, except it includes different action terms. These were separated out as they can be combined with `AND` rather than needing `NEAR`.
 
 
 ``` Ceylon =
@@ -284,10 +288,10 @@ TS =
     OR "trachoma"
     OR "yaws"
   )
-  NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*"
-      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
+  NEAR/5
+      ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
       )
 )
 
@@ -295,7 +299,7 @@ TS =
 
 ##### Phrase 3
 
-Phrase 3 is the same as phrase 2, except it includes different action terms. These were separated out as they can be combined with `AND` rather than needing `NEAR`.
+The general structure is *communicable diseases + action + epidemics/interventions*. This phrase is a complement to phrase 3, where *generic actions* are covered. The action terms in this phrase were separated out as they can be combined with `AND` rather than needing `NEAR`.
 
 ``` Ceylon =
 TS =
