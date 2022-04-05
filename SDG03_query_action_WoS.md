@@ -2,7 +2,7 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string has undergone development to improve the phrases and structure, and is awaiting a review of these changes. It is substantially changed from the original version it was based on (v2019.11).*
+**Current status**: Has undergone internal review, currently being edited. This string has undergone development to improve the phrases and structure and is substantially changed from the original version it was based on (v2019.11).*
 
 **Contents**
 
@@ -38,9 +38,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 
 ## 3. Targets
 
-## Target 3.1/3.2
-
-These targets are combined, as they cover similar topics.
+## Target 3.1
 
 > **3.1 By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births.**
 >
@@ -48,57 +46,63 @@ These targets are combined, as they cover similar topics.
 >
 > 3.1.2 Proportion of births attended by skilled health personnel
 
-> **2.2 3.2 By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under‑5 mortality to at least as low as 25 per 1,000 live births**
->
-> 3.2.1 Under‑5 mortality rate
->
-> 3.2.2 Neonatal mortality rate
+The target is interpreted as reducing the maternal mortality rate. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
 
-The targets are interpreted as reducing the mortality rate for mothers during childbirth and for newborns and children under 5. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally. It is also limited only to the groups in the targets (mothers, children, newborns) - one could consider including `"fetus" OR "foetus" OR "fetal" OR "foetal" OR "miscarriage$"`, but a strict interpretation of the target does not include these groups. Children "under five" is however extremely difficult to limit bibliometrically since it is often referred to as childhood mortality - thus we include terms for children and infants generally.
-
-This query consists of 2 phrases.
-
-Both include a double `NOT` expression to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans.
+This query consists of 1 phrase.
 
 ##### Phrase 1
 
-The basic structure is *children/mothers* + *mortality* + *action* + *excluding livestock*
+The basic structure is *mothers/birth* + *mortality* + *action* + *excluding livestock*. Originally, a second phrase was added for "improve survival", but this mostly added noise - many results were about babies rather than mothers, and others were about "maternal" effects in animals.
 
-Having a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented...."
+Some of the *mothers/birth* terms may find results concerning newborn mortality, this is difficult to avoid and may lead to some overlap with 3.2. Many works also talk about both maternal and neonatal mortality together. As both are in the same SDG this should not be an issue for SDG sets.
 
-`lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding"). `mortality` is paired with `improve` due to the formulation "improved mortality rates".
+For the *action* terms: Having some terms with a wide `NEAR/15` interval helps to find results which talk reducing mortality via a factor: e.g. "xyz is a leading cause of maternal mortality. We examine how xyz can be prevented....". `lower`, `limited` and `limits` are not included in the action terms due to general use (e.g. "limited understanding"). `mortality` is paired with `improve` due to the formulation "improved mortality rates".
 
-Rats and mice are not removed from the `NOT` statement as these are usually animal models for humans.
+A double `NOT` expression is included to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans. Rats and mice are not in the `NOT` statement as these are usually animal models for humans.
 
 ```Ceylon =
 TS=
 (
   (   
-    ("child*" OR "infant$" OR "under-five$"
-    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
-    OR "perinatal" OR "prenatal" OR "antenatal"
-    OR "pregnan*" OR "post partum" OR "postpartum" OR "peripartum" OR "obstetric$"
-    OR "childbirth" OR "child-birth" OR "birth" OR "births" or "post partum" OR "postpartum" OR "peripartum"
+    ("pregnan*" OR "post partum" OR "postpartum" OR "peripartum" OR "obstetric$"
+    OR "childbirth" OR "child-birth" OR "birth" OR "births"
     OR "premature deliver*" OR "preterm deliver*" OR "preterm labor" OR "preterm labour"
     OR "maternal" OR "mothers"
     )
     NEAR/15
         (
-          ("mortality" NEAR/5 "improv*")
+          (
+            ("mortality" OR "death$")
+            NEAR/5
+                ("lowering" OR "lowered" OR "lower$" OR "limit" OR "limiting")
+          )
           OR
           (
-            ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
+            ("mortality" OR "death$")
             NEAR/15
-                ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
           )
         )
   )
   NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
 )
 ```
-##### Phrase 2
 
-Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/mothers* + *survival* + *action* + *excluding livestock*.
+## Target 3.2
+
+> **3.2 By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under‑5 mortality to at least as low as 25 per 1,000 live births**
+>
+> 3.2.1 Under‑5 mortality rate
+>
+> 3.2.2 Neonatal mortality rate
+
+This target is interpreted to cover research about reducing mortality for young children and newborns. Children "under five" is however extremely difficult to limit via terms since it is often referred to as childhood mortality - thus we include terms for children and infants generally.
+
+This query consists of 2 phrases.
+
+##### Phrase 1
+
+The basic structure is *children/babies* + *mortality* + *action* + *excluding livestock*
 
 ```Ceylon =
 TS=
@@ -107,18 +111,48 @@ TS=
     ("child*" OR "infant$" OR "under-five$"
     OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
     OR "perinatal" OR "prenatal" OR "antenatal"
-    OR "pregnan*"
-    OR "childbirth" OR "child-birth" OR "birth" OR "premature deliver*" OR "preterm deliver*"
-    OR "maternal" OR "mothers"
     )
     NEAR/15
-        ("surviv*")
-    NEAR/15
-        ("improv*" OR "increas*" OR "enhanc*")
+        (
+          (
+            ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
+            NEAR/5
+                ("lowering" OR "lowered" OR "lower$" OR "limit" OR "limiting")
+          )
+          OR
+          (
+            ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
+            NEAR/15
+                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+          )
   )
-  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))   
+  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
 )
 ```
+
+##### Phrase 2
+
+Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/babies* + *survival* + *action* + *excluding livestock*.
+
+```Ceylon =
+TS=
+(
+  (   
+    ("child*" OR "infant$" OR "under-five$"
+    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
+    OR "perinatal" OR "prenatal" OR "antenatal"
+    )
+    NEAR/15
+      (
+        ("surviv*")
+        NEAR/5 ("improv*" OR "increas*" OR "enhanc*" OR "intervention$")
+        )
+  )
+  NOT (("pigs" OR "porcine" OR "cows" OR "sheep" OR "cattle" OR "poultry" OR "newborn cell") NOT ("human" OR "model"))   
+)
+```
+
+
 ## Target 3.3
 
 > **3.3 By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases.**
@@ -191,7 +225,7 @@ TS =
           ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
     )
     OR "hepatitis"
-    OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV"
+    OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
     OR "tuberculosis"
     OR "malaria"
     OR "cholera"
@@ -1161,6 +1195,9 @@ TS =
 ```
 
 ## 4. Authorship and review
+
+First edited draft (feb 2022): CSA
+Internal review (mar 2022): HMB, ML
 
 ## 5. Footnotes
 
