@@ -189,7 +189,7 @@ TS =
         OR
           (
             ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
-            NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission")
+            NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
           )
         OR
           (
@@ -210,7 +210,7 @@ The general structure is *communicable diseases + generic action*. This phrase i
 
 In the *communicable disease* terms, specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
 - The first section covers communicable and waterborne diseases as a category (see also Phrase 1).
-- The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `AIDS` is not used as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. Diseases were also added from a WHO list of epidemic and pandemic-prone diseases (<a id="WHOepipan">[Regional Office for the Eastern Mediterranean, n.d.](#f24)</a>). `SARS` covers also "SARS-CoV-2" (covid-19).
+- The second section covers specific communicable & vaccine-preventable diseases. `hepatitis`, `tuberculosis`, `HIV`, `malaria` are taken directly from the target. The term `aids` is combined with `prevent aids` as it is used as a verb. We then used WHO Global Health Observatory data for adding specific communicable (<a id="WHOGHO">[WHO, n.d. a](#f2)</a>) and vaccine-preventable diseases (<a id="WHOGHOb">[WHO, n.d. b](#f2a)</a>). Here, they are listed according to SDG target; those under target 3.3. were included. This also included the category sexually transmitted infections. Diseases were also added from a WHO list of epidemic and pandemic-prone diseases (<a id="WHOepipan">[Regional Office for the Eastern Mediterranean, n.d.](#f24)</a>). `SARS` covers also "SARS-CoV-2" (covid-19).
 - The third section is for waterborne diseases. A definitive list of prioritised "waterborne diseases" was not found and the MeSH term has no specific diseases; as a way to improve the query, we have used 11 diseases/pathogens prioritised by the U.S. Centers for Disease Control and Prevention, Waterborne Diseases Prevention Branch (<a id="CDCwaterborne">[Centers for Disease Control and Prevention, 2021](#f13)</a>).
 - The fourth section lists neglected tropical diseases, as mentioned in the target. The 20 diseases/disease groups currently prioritised by WHO in their 2021-2030 roadmap are included (p. 2, <a id="WHONTD">[WHO, 2020a](#f3)</a>).
 
@@ -247,7 +247,7 @@ TS =
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
     OR "lower respiratory infection$"
-    OR "coronavirus" OR "covid" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
+    OR "coronavirus" OR "covid" OR "covid19" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
     OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
     OR "ebola"
     OR "plague"
@@ -373,22 +373,27 @@ TS =
     OR "yaws"
   )
   AND
-      (
+      (    
         (
-          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*"
-          OR "limit" OR "limiting" OR "decreas*"
+          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
           OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-          OR "stop" OR "stopped" OR "stopping" OR "control"
+          OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
           )
           NEAR/3
               ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
         )
-      OR "vaccinate" OR "vaccination"
-      OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "treat*" OR "cure" OR "drug$" OR "therap*" OR "intervention$"))
+      OR
+        (
+          ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
+          OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
+          )
+          NEAR/5
+              ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
+              OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
+              )
+        )
       )
 )
-
 ```   
 
 ## Target 3.4
@@ -400,16 +405,14 @@ TS =
 > 3.4.2 Suicide mortality rate
 
 This query consists of 3 phrases.
-* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover treatment, prevention and any other aspects related to reducing mortality. In contrast to 3.3, here there is an explicit focus on reducing mortality.
-* Phrases 2 and 3 focus on the "mental health and well-being" part. It is interpreted to cover improving mental health, both by the treatment of disease and via health promotion.
+* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover research with links to reducing mortality. In contrast to 3.3, here there is an explicit focus on reducing mortality in the target, indicators and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>).
+* Phrases 2 and 3 focus on the "promote mental health and well-being" part. It is interpreted to cover improving mental health and wellbeing, both by the treatment of disease and via health promotion.
 
 ##### Phrase 1
 
-We added diseases from the World Health Organization factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
+The structure is *non-communicable diseases + action*. We added diseases from the WHO factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and a WHO factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>). Cancer terms were based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
-Cancer terms based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
-
-Premature death from these diseases can be covered within the phrasing of the action part (e.g. prevent premature mortality from noncommunicable diseases). Some action terms are stand-alone while others are combined with `mortality`; for `lower` this was necessary to avoid e.g. "cancer of the lower intestine".
+ A tighter `NEAR` distance is used for some action terms due to other uses (e.g. `lower` needs a tighter combination to avoid e.g. "cancer of the lower intestine").
 
 ``` Ceylon =
 TS=
@@ -431,12 +434,22 @@ TS=
     OR "cirrhosis"
   )
   NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "treat*" OR "cure" OR "cured" OR "therap*" OR "intervention$"
-      OR ("decreas*" NEAR/3 ("occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"))
-      OR (("develop*" OR "research*" OR "novel") NEAR/5 ("medicine$" OR "vaccine$" OR "drug$"))
-      OR ("mortality" NEAR/5 ("decrease$" OR "lower" OR "improv*"))
-      OR ("survival" NEAR/5 ("improv*" OR "increas*" OR "enhanc*"))
+      (
+          (
+            ("mortality" OR "death$")
+            NEAR/5
+                ("lowering" OR "lowered" OR "lower$" OR "limit" OR "limiting")
+          )
+        OR
+          (
+            ("mortality" OR "death$")
+            NEAR/15
+                ("improv*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
+          )
+        OR
+          ("surviv*"
+          NEAR/5 ("improv*" OR "increas*" OR "enhanc*" OR "intervention$")
+          )
       )
 )
 
@@ -446,7 +459,7 @@ TS=
 
 This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
 
-Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant (e.g. autism).
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant.
 
 ``` Ceylon =
 TS=
@@ -460,10 +473,26 @@ TS=
   )
   NEAR/15
       ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "treat*" OR "cure" OR "cured" OR "therapy" OR "therapies" OR "intervention$"
-      OR "outreach" OR "services"
-      OR (("develop*" OR "research*" OR "novel") NEAR/3 ("medicine$" OR "drug$"))
-      OR ("decreas*" NEAR/3 ("occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"))
+      OR "treat" OR "cure" OR "cured"
+      OR
+        (
+          ("prevent*" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
+          OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+          OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
+          )
+          NEAR/3
+              ("epidemic$" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
+        )
+      OR
+        (
+          ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
+          OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
+          )
+          NEAR/5
+              ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
+              OR "outreach" OR "services"
+              )
+        )
       )
 )
 ```
@@ -479,19 +508,21 @@ This phrase focuses on the promotion of well-being. The general structure is *we
 ``` Ceylon =
 TS=
 (
-  ("mental health"
-      NEAR/5
-          ("promote" OR "promotion" OR "strengthen*" OR "improv*"
-          OR "therapy" OR "therapies" OR "intervention$"
-          OR "outreach" OR "services")
-  )
-  OR
-    (
-      ("well being" OR "wellbeing" OR "mental resilience" OR "psycho* resilience")
-      NEAR/5
-          ("promote" OR "promotion" OR "strengthen*" OR "improv*"
-          OR "increas*" OR "enhance*")
-    )
+  ("mental health" OR "well being" OR "wellbeing")
+  NEAR/5
+      ("promot*" OR "strengthen*" OR "improv*" OR "enhanc*"
+      OR (("reduc*" OR "decreas*") NEAR/5 "problem$")
+      OR
+          (
+            ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
+            OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
+            )
+            NEAR/5
+              ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
+              OR "outreach" OR "services" OR "support"
+              )
+          )
+      )  
 )
 ```  
 
@@ -1209,7 +1240,7 @@ Internal review (mar 2022): HMB, ML
 
 <a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
 
-<a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] [↩](#HLPF)
+<a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] (#HLPF)
 
 <a id="f5"></a> International Agency for Research on Cancer. (2019). *The Cancer Dictionary*. World Health Organization. http://www-dep.iarc.fr/WHOdb/WHOdb.htm [accessed 15.11.2019] [↩](#WHOcancer)
 
