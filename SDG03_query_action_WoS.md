@@ -532,9 +532,9 @@ TS=
 >
 > 3.5.2 Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
 
-This target was interpreted to include research about the prevention and treatment of harmful uses of a) alcohol, and b) drugs/substances. It does not cover all use of alcohol/drugs. We also interpret this to be mainly limited to works about reducing harmful use, rather than e.g. controlling supply of illicit drugs.
+This target was interpreted to include research about the prevention and treatment of harmful uses of alcohol and drugs. It does not cover all use of alcohol/drugs. We also interpret this to be mainly limited to works about reducing use, rather than e.g. controlling supply of illicit drugs.
 
-This query consists of 1 phrase. The basic structure is *harmful use + prevention/treatment*.
+This query consists of 1 phrase. The basic structure is *harmful use + action // harmful use + action + treatment*.
 
 Terms were added from the National Institutes of Health "Commonly Used Drugs Charts" (although this is a USA-centric source we assume it will cover many types; <a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>). Drug/substances were also expanded using MeSH terms:
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
@@ -573,13 +573,44 @@ TS=
           )
     )
   )
-  NEAR/15
+  NEAR/5
       ("prevent*" OR "combat*" OR "tackl*" OR "fight* against"
       OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "limiting" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
       OR "treat" OR "cure" OR "cured" OR "control"
-      OR
-        (
+      )
+)
+OR
+TS=
+(
+  ("binge drinking" OR "binge drinker$" OR "alcoholism" OR "excessive drinking" OR "problematic drinking"
+  OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
+  OR "opioid epidemic"
+  OR
+    (
+      ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
+      OR "alcohol"
+      OR "amphetamine$" OR "methamphetamine$" OR "MDMA" OR "ecstasy"
+      OR "cocaine"
+      OR "inhalant$" OR "amyl nitrite"
+      OR "marijuana" OR "cannabis"
+      OR "opioid$" OR "opiate$" OR "heroin" OR "morphine"
+      OR "phencyclidine" OR "LSD" OR "psilocybin" OR "dimethyltriptamine"
+      OR "khat"
+      OR "tobacco"
+      )
+      NEAR/3
+          ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
+          OR
+            (
+              ("use" OR "uses" OR "usage" OR "consumption")
+              NEAR/3 ("harmful" OR "problematic" OR "excessive" OR "disorder$")    
+            )
+          )
+    )
+  )
+  NEAR/15
+      (
           ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
           OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
           )  
@@ -587,7 +618,6 @@ TS=
               ("medicine$" OR "cures" OR "cure" OR "treatment$" OR "intervention$" OR "therapy" OR "therapies"
               OR "outreach" OR "services" OR "support" OR "rehabilitat*" OR "aftercare" OR "counseling" OR "counselling"
               )
-        )
       )
 )
 ```
