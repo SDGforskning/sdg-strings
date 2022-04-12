@@ -43,34 +43,86 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about how strengthen resilience to climate-related hazards and natural disasters; national strategies to deal with climate-related hazards and natural disasters and how to minimize impact of climate-related hazards and natural disasters; 
+This target is interpreted to cover research about how to strengthen resilience to climate-related hazards and natural disasters; strategies to deal with climate-related hazards and natural disasters and how to minimize impact of climate-related hazards and natural disasters; 
+
 For climate-related hazards and natural disasters both generel terms (phrase 1) and specific hazards/desasters (phrase 2) are used.
 This query consists of 2 phrases.
 
 ##### Phrase 1: 
+
+Action: strengthen/improve OR establish "risk planning" 
+Basic structure: (strengthen/improve reslience OR "risk planning" ) + disasters
+
 General terms for hazard/desaster 
 
 ``` Ceylon =
 TS=
 (
   (
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR 
+   "develop" OR "developing" OR "implement"
+    OR "build* capacity" OR "capacity building" OR "capacity development"
+    )
+    NEAR/5
+  ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "risk reduction")
+)
+OR
+(
+  ("establish*" OR "propose*" OR  "implement*" OR "adopt*" OR "introduc*"
+  "roadmap" OR "towards" OR "way to")
+   NEAR/5
+   (("risk$ ) NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
+)
+NEAR/15
+          (
+          ("natural" OR "anthropogenic" OR "environmental" OR "climat*" OR "man-made") 
+          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
+          )
+          ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
+           OR "drought$" OR "flood*" OR "cold spells"
+           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
+            OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*" OR 
+            OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+            OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
+            OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
+            OR "tipping point$"  
+            OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
+          )
+
+   
+
+:::::::::::::::::::::::
+TS=
+(
+  (
     (
       (
-      "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "resilien*" OR "cope" OR "coping" OR "preparedness" 
+      "combat*" OR "prevent*" OR "stop*" OR "avoid* "OR "adapt*" OR "cope" OR "coping" OR "preparedness" 
       OR "mitigat*" OR "early warnin$" 
       OR "policy" OR "policies" OR "protect*"  
-      OR(("disaster$" OR "risk$") NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$"))
+      OR "policy" OR "policies" OR "protect*"  OR resilience
+      OR(("disaster$" OR "risk$") NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$" "policy" OR "policies" OR "protect*"  ))
       OR
         (
-        ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
+        ("minimi*" OR "limit" OR "limiting" OR "decreas*" ) 
          NEAR/5 ("impact$" OR "risk$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")
         )
          
       )
       NEAR/15
           (
-          ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") 
-          NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
+            ("natural" OR "anthropogenic" OR "environmental" OR "climat*" OR "man-made") 
+             NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*")
+          OR
+           ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
+           OR "drought$" OR "flood*" OR "cold spells"
+           OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" 
+            OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*" OR 
+            OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
+            OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
+            OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
+            OR "tipping point$"  
+            OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
           )
          
     )
@@ -93,7 +145,7 @@ TS=
       OR
         (
         ("minimi*" OR "limit" OR "limiting" OR "decreas*") 
-         NEAR/5 ("impact$" OR "risk$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")
+         NEAR/5 ("impact$" OR "risk$" OR "consequence$" OR "effect*" OR "influence$" OR "vulnerab*")
         )
          
       )
