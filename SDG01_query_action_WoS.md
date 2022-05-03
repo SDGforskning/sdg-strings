@@ -403,9 +403,7 @@ This query consists of 1 phrase.
 
 ##### Phrase 1:
 
-*The basic structure is as follows:: action + disaster + vulnerable groups 
-
-Inclusion of `vulnerab*` here will pick up publications discussing the livelihood vulnerability index.
+*The basic structure is as follows:: action + disaster + vulnerable groups*
 
 Disabled people, children, elderly people and pregnant women included under "vulnerable". 
 
