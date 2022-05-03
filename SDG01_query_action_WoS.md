@@ -397,13 +397,11 @@ TS=
 >
 > 1.5.4 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-Technological/industrial/chemical disasters are not included as they are not explicilty mentioned in the target eventhough they ar epart of the SEndai Framework 
+We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
 
-This query consists of 1 phrase (*7809*).
+This query consists of 1 phrase.
 
 ##### Phrase 1:
-
-*Action : policy/risk reduction* 
 
 *The basic structure is as follows:: action + disaster + vulnerable groups 
 
@@ -415,56 +413,65 @@ Disabled people, children, elderly people and pregnant women included under "vul
 TS=
 (
   (
-    ("resilien*" OR "coping" OR "cope" OR "vulnerab*"
-    OR "policy" OR "policies" OR "protect*" OR "preparedness"
+    (  
+      (
+        ("improv*" OR "increas*" OR "better" OR "enhanc*" OR "build" OR "strengthen*") 
+        NEAR/5 ("resilien*" OR "coping" OR "cope" OR "protection")
+      )
+    OR  
+      (
+        ("mitigat*" OR "prevent*" OR "reduc*" OR "decreas*" OR "manag*") 
+        NEAR/5 ("impact$" OR "vulnerab*" OR "exposure")
+      )
+    OR "policy" OR "policies" OR "Sendai Framework"
+    OR "protect" OR "protecting" OR "safeguard*" OR "preparedness"  
     OR "safety net$" OR "social protection$" OR "social floor$" OR "social security"
-    OR ("mitigat*" NEAR/5 "impact$")
-    OR "Sendai Framework" 
     OR 
       (
         ("disaster$" OR "risk$")
-        NEAR/3
-            ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$" OR "program")
+        NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$" OR "program$" OR "programme$")
       )
     )
     NEAR/15
-    (
-      "war" OR "wars" 
-      OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil")) 
-      OR "pandemic$" OR "epidemic$" 
-      OR ( 
-            ("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "economic") 
-              NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$")
-          )
-      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$"))
-      OR "drought$" OR "flood*" OR "cold spells"
-      OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado"
-      OR "heatwave$" OR "heat-wave$" OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
-      OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
-      OR "landslide$" OR "rockslide$" OR "surface collapse$" OR "mud flow$"
-      OR "land-slide$" OR "rock-slide$" OR "mud-flow$"
-      OR "tipping point$"  
-      OR "avalanche"
-      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-      OR "financial crash*" OR "economic downturn$" OR "socio-economic resilience"
-    )
+        ("disaster$" OR "catastrophe$"
+        OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+        OR (("natural" OR "climat*") NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$"))
+        OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+        OR "drought$" OR "flood*" 
+        OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+        OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+        OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+        OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+        OR (  
+              ("anthropogenic" 
+              OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+              OR "chemical" OR "heavy metal$" OR "pesticide$"
+              OR "biological" OR "disease" OR "zoonotic"
+              OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+              ) 
+              NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+           ) 
+        OR "outbreak$" OR "pandemic$" OR "epidemic$"
+        OR "war" OR "wars" OR "armed conflict$"
+        OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+        OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+        OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+        )
   )
   AND
-    (
-      "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-      OR
-        (
-          ("person$" OR "people" OR "adult$")
-          NEAR/3
-              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
-        )
-      OR "disability"
-      OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      
-     )  
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"
+    OR "the vulnerable" OR "vulnerable group$"
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+    OR
+      (
+        ("person$" OR "people" OR "adult$")
+        NEAR/3
+            ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
+      )
+    OR "disability"
+    OR "babies" OR "infants" OR "newborn$" OR "children" OR "child" OR "pregnant" OR "pregnancy"   
+    )  
 )
 ```
 
@@ -561,6 +568,8 @@ TS=
 ## 5. Footnotes
 
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
+<a id="f4"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. (https://council.science/publications/hazard-information-profiles/).[↩](#disasters)
 
 <a id="f11"></a> UN Statistics Division SDG Indicators Metadata Repository, 2022 https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf [↩](#SDGTMetrep)
 
