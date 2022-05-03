@@ -397,15 +397,13 @@ TS=
 >
 > 1.5.4 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
+This target is interpreted to cover research about improving the resilience and reducing impacts of disasters for the poor and those in vulnerable situations. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters. 
 
-This query consists of 1 phrase.
+We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
 
-##### Phrase 1:
+The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations". We have also included least-developed countries, based on the assumption that these may be in a more vulnerable position when it comes to disasters. 
 
-*The basic structure is as follows:: action + disaster + vulnerable groups*
-
-The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations". We have also included least-developed countries as part of the string, based on the assumption that these may be in a more vulnerable position when it comes to disasters. 
+This query consists of 1 phrase. The basic structure is *action + disaster + vulnerable groups*.
 
 ```Ceylon =
 TS=
