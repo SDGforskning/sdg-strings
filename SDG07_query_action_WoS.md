@@ -203,7 +203,7 @@ OR TS=("increas* energy security")
 
 ##### Phrase 5
 
-This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include least developed countries, SIDS, landlocked developing countries and rural areas.
+This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
 
 ```Ceylon =
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
