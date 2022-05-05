@@ -544,8 +544,6 @@ TS=
 > 1.b.1 Pro-poor public social spending
 
 
-```
-
 
 ## 4. Authorship and review
 
