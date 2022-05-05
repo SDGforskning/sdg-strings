@@ -546,19 +546,6 @@ TS=
 
 ```
 
-## General SDG
-
-```Ceylon =
-TS=
-(
-  "SDG$ 1" OR "SDG1" OR "SDG-1" OR "sustainable development goal$ 1"
-    OR
-    (
-      ("sustainable development goal$" OR "SDG$" OR "goal 1")
-      NEAR/15 "poverty"
-    )
-)
-```
 
 ## 4. Authorship and review
 
