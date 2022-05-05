@@ -1020,20 +1020,6 @@ TS=
 )
 ```
 
-## SDG generic
-
-```Ceylon =
-TS=
-(
-  "SDG2" OR "SDG$ 2" OR "SDG-2" OR "sustainable development goal$ 2"
-  OR
-    (
-      ( "sustainable development goal$" OR "SDG$" OR "goal 2" )
-      NEAR/15 ( "hunger" )
-    )
-)
-```
-
 ## 4. Authorship and review
 
 ## 5. Footnotes
