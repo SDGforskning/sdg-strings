@@ -1,6 +1,6 @@
 # Search query for SDG 01 - No Poverty, Bergen action-approach.
 
-***Current status**: This string is currently under active development to improve the phrases and structure. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.* 
+**Current status**: This string is currently under active development to improve the phrases and structure. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.*
 
 **Contents**
 
@@ -24,7 +24,7 @@
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/). 
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/).
 
 Lists of least developed countries (LDCs) are from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) - countries were included if they appeared in the tables from 2016 to 2021 (i.e. were on these lists at any time between Nov 2015 and Dec 2020) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>).
 
@@ -39,9 +39,9 @@ During editing of this string (2021), we have also consulted of queries from the
 > 1.1.1 Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)
 >
 
-This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line. 
+This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line.
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts) 
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts)
 
 This query consists of 1 phrase.
 
@@ -72,7 +72,7 @@ TS=
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty reduction in in all forms. 
+This target is interpreted as to cover research about poverty reduction in in all forms.
 
 `Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
 
@@ -86,14 +86,14 @@ This query consists of 1 phrase.(*20,899*)
 TS=
 
 (
-  ("anti-poverty" 
+  ("anti-poverty"
     OR
     ("poverty"   OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
      )
-     
+
   NEAR/5
-  
+
       ("decreas*" OR "minimi*" OR "reduc*"
       OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
       OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*" OR "escape" OR "mitigate" OR "relief"
@@ -119,9 +119,9 @@ All cover research about about access to, coverage of and establishment/implemen
 
 Phrase 1: access/coverage/implementation + social protection systems (899)
 
-Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (~~36)
+Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (~36)
 
-Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (~~184)
+Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (~184)
 
 `welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
 
@@ -138,18 +138,18 @@ TS=
 (
   ("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
-      
+
    NEAR/10
-   
+
   ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$")
 )
-  
+
  ```  
 
 
 ##### Phrase 2 (*113*):
 
-This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups 
+This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups
 
 *Action: access/coverage/implementation*
 
@@ -159,16 +159,16 @@ Vulnerable groups are based in the groups mentioned in the indicators
 
 ```Ceylon =
 TS=
-( 
+(
   (
   "implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
       )
-      
+
   NEAR/10
-  
+
   (
-  "basic income" OR "cash benefit"  OR "income security" 
+  "basic income" OR "cash benefit"  OR "income security"
   OR "unemployment benefit$" OR "sickness benefit$" OR "sick benefit"
   )
   AND
@@ -192,7 +192,7 @@ TS=
         )
       OR "pregnant" OR "pregnancy"
        OR "disability" OR "unemployed"
-      OR "children" OR "child" OR "pregnant" OR "pregnancy" 
+      OR "children" OR "child" OR "pregnant" OR "pregnancy"
       OR  "maternity" OR "female" OR "women" OR "girls"
   )
 )
@@ -212,21 +212,21 @@ TS=
 
 (
   (
-    ("implement*" OR "establish*" OR "propose*" OR "design*" 
+    ("implement*" OR "establish*" OR "propose*" OR "design*"
       OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$"
       OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
-      
-    NEAR/10 
-  
+
+    NEAR/10
+
     ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
-  ) 
+  )
 AND
   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
       OR "the vulnerable" OR "vulnerable group$"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
    )
-  
+
 )    
 ```  
 
@@ -247,7 +247,7 @@ Phrase 1: ensure + access/right/opportunities (equal is considered to be implici
 
 Phrase 1b: remove + barriers + economic resourses
 
-Phrase 2: ensure + access/implementation of basic services 
+Phrase 2: ensure + access/implementation of basic services
 
 Phrase 3: ensure + acces/right to ownership of land and other property, inheritance
 
@@ -263,7 +263,7 @@ TS=
 
 (
   (
-     ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+     ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
             )
       NEAR/10
       ("access*" OR "equitab*" OR "equity" OR "equality" OR "ownership" OR "control"
@@ -306,7 +306,7 @@ TS=
   NEAR/5
   (
   (("economic*" OR "financial") NEAR/3 ("resources" OR "opportunities" OR "services"))
-  
+
   OR "decent work" OR "paid work" OR "full employment" OR "labour market"
   "income" OR "wealth" OR "money" OR "natural resourses" OR "banking"
   )
@@ -316,7 +316,7 @@ TS=
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
       OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       )  
-  
+
 )
 
 
@@ -324,58 +324,58 @@ TS=
 
 ##### Phrase 2 (*1562*)
 
-Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a> 
+Phrase 2 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a>
 
-*The basic structure is as follows: action + basic services* 
+*The basic structure is as follows: action + basic services*
 
 ```Ceylon =
 TS=
 
 (
   (
-    ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+    ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
     )
     NEAR/10
     ("access*" OR "equitab*" OR "equity" OR "equality"
-      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+      OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$"
     )
     NEAR/10
     (
-      ("basic" NEAR/3 "service$") 
-      OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic")) 
-      OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation" 
-      OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility" 
+      ("basic" NEAR/3 "service$")
+      OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic"))
+      OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation"
+      OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility"
       OR "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"   
-      OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*" 
-      OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*")) 
-      OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" 
-      OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system" 
-      OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services" 
-    ) 
+      OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*"
+      OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*"))
+      OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
+      OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system"
+      OR  "basic information services" OR "basic telecommunication services" OR "basic mobile services"
+    )
   )
   AND
   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
     OR "the vulnerable" OR "vulnerable group$"
     OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-  ) 
+  )
 )
 ```
 
 
 ##### Phrase 3 (3339):
 
-*The basic structure is as follows: action + ownership of land, inheritance, property * 
+*The basic structure is as follows: action + ownership of land, inheritance, property *
 
 
 ```Ceylon =
 TS=
 (
-  ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" 
+  ("ensure" OR "establish*" OR "propose*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "build*" OR                         "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
   )
   NEAR/10
   ("access*" OR "equitab*" OR "equity" OR "equality"
-    OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$" 
+    OR "equal" OR "share" OR "sharing" OR "affordab*" OR "right$"
   )
   NEAR/10
   ("land holding$" OR "tenure right$" OR "land tenure"
@@ -397,11 +397,11 @@ TS=
 >
 > 1.5.4 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about improving the resilience and reducing impacts of disasters for the poor and those in vulnerable situations. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters. 
+This target is interpreted to cover research about improving the resilience and reducing impacts of disasters for the poor and those in vulnerable situations. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters.
 
 We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
 
-The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations". We have also included least-developed countries, based on the assumption that these may be in a more vulnerable position when it comes to disasters. 
+The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations". We have also included least-developed countries, based on the assumption that these may be in a more vulnerable position when it comes to disasters.
 
 This query consists of 1 phrase. The basic structure is *action + disaster + vulnerable groups*.
 
@@ -411,47 +411,54 @@ TS=
   (
     (  
       (
-        ("improv*" OR "increas*" OR "better" OR "enhanc*" OR "build" OR "strengthen*") 
-        NEAR/5 ("resilien*" OR "coping" OR "cope" OR "protection")
+        ("improv*" OR "increas*" OR "better" OR "enhanc*" OR "build" OR "strengthen*"
+        OR "develop" OR "developing" OR "implement"
+        OR "build* capacity" OR "capacity building" OR "capacity development"
+        )
+        NEAR/5 ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "protection")
       )
     OR  
       (
-        ("mitigat*" OR "prevent*" OR "reduc*" OR "decreas*" OR "manag*") 
+        ("mitigat*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimis*" OR "minimiz*" OR "manag*")
         NEAR/5 ("impact$" OR "vulnerab*" OR "exposure")
       )
-    OR "policy" OR "policies" OR "Sendai Framework"
-    OR "protect" OR "protecting" OR "safeguard*" OR "preparedness"  
+    OR "protect" OR "protecting" OR "safeguard*"  
     OR "safety net$" OR "social protection$" OR "social floor$" OR "social security"
-    OR 
+    OR
       (
-        ("disaster$" OR "risk$")
-        NEAR/3 ("plan*" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "medical response$" OR "program$" OR "programme$")
+        ("establish*" OR "propos*" OR "implement*" OR "adopt*" OR "introduc*" OR "roadmap" OR "towards" OR "way to")
+        NEAR/5
+            (
+              ("disaster$" OR "risk$")
+              NEAR/3 ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "medical response$")
+            )
       )
+    OR "Sendai Framework"
     )
     NEAR/15
         ("disaster$" OR "catastrophe$"
         OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
         OR (("natural" OR "climat*") NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$"))
         OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-        OR "drought$" OR "flood*" 
+        OR "drought$" OR "flood*"
         OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
         OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
         OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
         OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
         OR (  
-              ("anthropogenic" 
+              ("anthropogenic"
               OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
               OR "chemical" OR "heavy metal$" OR "pesticide$"
               OR "biological" OR "disease" OR "zoonotic"
               OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-              ) 
+              )
               NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
-           ) 
+           )
         OR "outbreak$" OR "pandemic$" OR "epidemic$"
         OR "war" OR "wars" OR "armed conflict$"
         OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-        OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+        OR "financial crash*" OR "financial shock$" OR "financial disaster$"
         OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
         )
   )
@@ -481,7 +488,7 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about investment, increased resources, incl. development aid to implement programs and policies (to end) poverty in developing countries, in particular least developed countries. "to end" is considered to be implicit. 
+This target is interpreted to cover research about investment, increased resources, incl. development aid to implement programs and policies (to end) poverty in developing countries, in particular least developed countries. "to end" is considered to be implicit.
 
 This query consists of 1 phrase. (*111*)
 
@@ -493,10 +500,10 @@ This query consists of 1 phrase. (*111*)
 
 ```Ceylon =
 TS=
-( 
+(
   (
     ("development aid" OR "development assistance" OR "development spending" OR "foreign aid" OR "international aid" OR "cooperation fund"
-        OR "international cooperation" OR "international collaboration" 
+        OR "international cooperation" OR "international collaboration"
         OR (
             ("government" OR "public" OR "international")
             NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
@@ -509,7 +516,7 @@ TS=
     ("programm" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "framework$" OR "planning" OR "service$" OR "agenc*"    )
   )
   AND
-  ("anti-poverty" 
+  ("anti-poverty"
     OR
     ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
@@ -517,25 +524,25 @@ TS=
   )
   AND
   (
-  "least developed countr*" OR "least developed nation$" 
+  "least developed countr*" OR "least developed nation$"
   OR
   "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
   OR "less developed countr*" OR "less developed nation$"
   OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
   OR "underserved countr*" OR "underserved nation$"
   OR "deprived countr*" OR "deprived nation$"
-  OR "middle income countr*" OR "middle income nation$" 
-  OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$" 
+  OR "middle income countr*" OR "middle income nation$"
+  OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
   OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
   OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
   OR
   "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
   )
 )
- 
+
 ```  
- 
- 
+
+
 
 ## Target 1.b
 
