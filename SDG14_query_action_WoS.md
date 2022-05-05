@@ -1186,22 +1186,6 @@ TS =
 )
 ```
 
-## General SDG
-
-"water" is too general a word to use (also central to SDG 6).
-
-``` Ceylon =
-TS =
-(
-  "SDG14" OR "SDG$ 14" OR "sustainable development goal$ 14"
-  OR (
-        ("sustainable development goal$" OR "SDG$" OR "goal 14")
-        AND ("ocean$" OR "life below water")
-     )
-)
-
-```
-
 ## 5. Authorship and review
 
 ## 6. Footnotes
