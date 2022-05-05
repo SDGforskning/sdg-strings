@@ -753,20 +753,6 @@ TS=
 )      
 ```
 
-## General SDG
-
-```Ceylon =
-TS=
-(
-  "SDG$ 7" OR "SDG7" OR "SDG-7" OR "sustainable development goal$ 7"
-  OR
-    (
-      ("sustainable development goal$" OR "SDG$" OR "goal 7" )
-      NEAR/15 "energy"
-    )
-)
-```
-
 ## 4. Authorship and review
 
 * V2 edit (Oct-Feb 2022): CSA
