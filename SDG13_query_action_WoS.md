@@ -102,104 +102,106 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about national policies, strategies and planning related to
-  - climate change mitigation and adaptation as general topics, inkl. reducing the impacts of indicators of climate change
-  - reduction of greenhouse gases as a fixed class,and six main greenhouse gases (phrase 2)
-  - and generel Frameworks for action (phrase 3)
+This target is interpreted to cover research about
+  - national policies, strategies and planning related to climate change mitigation and adaptation actions, including  reduction of greenhouse gases (phrase 1)
+  - national policies, strategies and planning related to reducing the indicators of climate change & their impacts (phrase 2)
+  - national policies, strategies and planning related to international frameworks for action (phrase 3)
 
-Indicators of climate change are here interpreted as changes that can be observed and measured (https://library.wmo.int/doc_num.php?explnum_id=10618): global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level
-
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our target interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-National policies, strategies and planning related to climate change mitigation and adaptation and similar terms
-This phrase does not have an explicit action
+This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The general structure is *climate change/GHGs + action + national plans + climate*.
+
+We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f4)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (as listed in the 2014 IPCC Synthesis Report<a id="IPCC2014">[3](#f4)</a>. The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
 ``` Ceylon =
 TS=
 (
   (
-    (
-      ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate")
-      NEAR/3  
-      ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*")
+    ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
+    OR ("warming" NEAR/3 ("climat*" OR "atmospher*" OR "ocean"))
+    OR "GHG" OR "greenhouse gas" OR "greenhouse gases"
+    OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$"
+    OR "methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
     )
-    OR
-    (
-      (
-      (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-      OR (("global temperature" OR "surface temperature") NEAR/3 ("increas*" OR "rise"))
-      OR (("sea ice*" OR "sea-ice" OR "glaci*") NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas'"))
-      OR ("permafrost" NEAR/3 ("degrada*" OR "decreas*" OR "melt*"))
-      OR (("sea-level" OR "sea level") NEAR/3 ("increas*" OR "rise"))
-      OR (("ocean acidification" OR "ocean heat content") NEAR/3 ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*"))
-      )
-      NEAR/10
-      (
-        ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-          NEAR/2 ("impact$" OR "effect$" OR "cosequence$" OR "effect*" OR "influence$" OR "vulnerab*")        
-      )
-    )
+    NEAR/5
+          ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
+          OR "reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+          OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+          )
   )
   AND
-  (("national" OR "state" OR "federal") NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans"))
+    (
+      ("national" OR "state" OR "federal" OR "domestic")
+      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
+    )
+  AND
+    ("climate" OR "global warming" OR "climatic change$"
+    OR ("warming" NEAR/3 ("atmospher*" OR "ocean"))
+    OR "GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$"
+    OR "sea level rise"
+    )
 )
 ```
 
 ##### Phrase 2:
-National policies, strategies and planning related to reduction of GHGs = main climate mitigation according to the 2014 IPCC Synthesis Report<sup id="IPCC2014">[3](#f4)</sup> UNEP definition .
-The second part of this phrase covers the six main greenhouse gases (covered by the Kyoto Protocol) as listed in the 2014 IPCC Synthesis Report<sup id="IPCC2014">[3](#f4)</sup>. This parts need to be linked to climate change
 
-Action: reduce
+This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The general structure is *climate change indicators + action + national plans*.
 
-Basic structure: reduce + greenhouse gas (+ climate change) + national planning
-
+Indicators of climate change are changes that can be observed and measured (https://library.wmo.int/doc_num.php?explnum_id=10618): global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level.
 
 ``` Ceylon =
 TS=
 (
   (
     (
-    "reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*"
-    )
-    NEAR/5
-    (
-      ("GHG" OR "greenhouse gas" OR "greenhouse gases"
-      OR "carbon footprint"
-        OR ("climate" NEAR/5 ("human impact$"))
-      )
-      OR
       (
-        (
-        "methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "carbon emissions"
-        OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
-        )
-        NEAR/5
-        ("climate change$" OR "climatic change$" OR "global warming" OR "changing climate"
-        OR (("climate" OR "atmospher*" OR "ocean") NEAR/3 "warming")
-        )      
+        ("global temperature" OR "surface temperature" OR "sea-level" OR "sea level")
+        NEAR/3 ("increas*" OR "rise" OR "rising")
       )
+    OR
+      (
+        ("sea ice*" OR "sea-ice" OR "glacial" OR "glacier$" OR "permafrost")
+        NEAR/5 ("melt*" OR "retreat*" OR "reduc*" OR "decreas*" OR "degrada*")
+      )
+    OR "ocean acidification" OR "ocean heat content"
     )
-  )   
+    NEAR/15
+        ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
+        OR
+            (
+              ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+              NEAR/2 ("impact$" OR "effect$" OR "consequence$" OR "influence$" OR "vulnerab*")        
+            )
+        )
+  )
   AND
-  ("national"  OR "state" OR "federal") NEAR/5 ("program*"OR "strateg*"OR "policy" OR "policies" OR "plan" OR "planning" OR "plans"))
+    (
+      ("national" OR "state" OR "federal" OR "domestic")
+      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
+    )
 )
 ```
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action (i.e. applied climate science rather than basic). This does pick up some results to do with energy transitions, but generally as related to climate. IPCC not included as their scenarios are referred to as a reference very often and in fields not necessarily directly contributing to the targets.
+Frameworks for action are included, as documents referencing these are likely to be discussing climate action (i.e. applied climate science rather than basic). This does pick up some results to do with energy transitions, but generally as related to climate.
 
 ``` Ceylon =
 TS=
 (
-  "Kyoto protocol"
-  OR "Paris Agreement"
-  OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24"
+  ("Kyoto protocol" OR "Paris Agreement"
+  OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "COP 25" OR "COP25" OR "COP 26" OR "COP26"
   OR "UNFCCC" OR "United Nations Framework Convention on Climate Change"
+  )
+    AND
+    (
+      ("national" OR "state" OR "federal" OR "domestic")
+      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
+    )
 )
 ```
 
@@ -332,7 +334,7 @@ TS=
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
-<a id="f3">3</a> IPCC, 2014: Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
+<a id="f3">3</a> IPCC (2014) Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
 
 <a id="f5"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. (https://council.science/publications/hazard-information-profiles/).[↩](#disasters)
 
