@@ -1242,25 +1242,6 @@ TS =
 
 ```
 
-## General SDG
-
-`Secoisolariciresinol Diglucoside` is abbreviated to SDG, thus excluded.
-
-``` Ceylon =
-TS =
-(
-  ("SDG$ 3" OR "SDG3" OR "SDG-3" OR "sustainable development goal$ 3"
-    OR
-    (
-      ("sustainable development goal$" OR "SDG$" OR "goal 3")
-      NEAR/15 "health"
-    )
-  )
-  NOT "Secoisolariciresinol Diglucoside"
-)
-
-```
-
 ## 4. Authorship and review
 
 First edited draft (feb 2022): CSA
