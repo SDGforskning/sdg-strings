@@ -333,23 +333,6 @@ TS=
 
 ```
 
-
-
-
-## General SDG
-
-``` Ceylon =
-TS=
-(
-  "SDG13" OR "SDG$ 13" OR "SDG-13" OR "sustainable development goal$ 13"
-  OR
-    (
-      ("sustainable development goal$" OR "SDG$" OR "goal 13")
-      NEAR/15 "climate"
-    )
-)
-```
-
 ## 4. Authorship and review
 
 ## 5. Footnotes
