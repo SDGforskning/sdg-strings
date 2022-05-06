@@ -236,7 +236,7 @@ TS=
           ("educat*" OR "curriculum" OR "curricula" OR "teacher training"
           OR "awareness"
           OR "capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise"
+          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
           OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
           )
     )  
@@ -305,7 +305,7 @@ TS=
         )
         NEAR/5
             ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-            OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise"
+            OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
             OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
             OR "educat*" OR "awareness"
             )
