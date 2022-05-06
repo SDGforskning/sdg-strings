@@ -46,7 +46,7 @@ During editing of this string (2021), we have consulted another set of queries f
 
 This target is interpreted to cover research about how to strengthen resilience to climate-related hazards and natural disasters. Strategies dealing with climate-related hazards and natural disasters and how to minimize impact of climate-related hazards and natural disasters are considered to be a method to improve resilience, and improve the indicator 13.1.1.
 
-This query consists of 1 phrase. The basic structure is *(action + resilience OR action + plans) + disasters*
+This query consists of 1 phrase. The basic structure is *action + resilience/impacts/plans + disasters*
 
 The terms for disasters contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
 
@@ -115,7 +115,7 @@ This query consists of 3 phrases.
 
 This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The general structure is *climate change/GHGs + action + national plans + climate*.
 
-We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f4)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (as listed in the 2014 IPCC Synthesis Report<a id="IPCC2014">[3](#f4)</a>. The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f4)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f4)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
 ``` Ceylon =
 TS=
