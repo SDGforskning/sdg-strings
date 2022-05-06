@@ -34,7 +34,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 This target interpreted to cover reasearch on
 
-- Improving access to adequate, safe and affordable housing and basic services 
+- Improving access to adequate, safe and affordable housing and basic services
 
 - Upgrading slums.  
 
@@ -47,23 +47,23 @@ This query consists of 3 phrases.
 Acccess to housing
 
 ```Ceylon =
-TS=( 
-(("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*") 
-NEAR 
-("adequate" OR "inadequate" OR "affordabl$" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security") 
+TS=(
+(("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
+NEAR
+("adequate" OR "inadequate" OR "affordabl$" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security")
 NEAR ("housing" OR "settlements" OR "living conditions"))
 )
 ```
 ##### Phrase 2:
 
-Access to basic services. Phrase differs from the one used in target 1.4, not sure which approach is best. 
+Access to basic services. Phrase differs from the one used in target 1.4, not sure which approach is best.
 
 ```Ceylon =
-TS=( 
-("access") 
-NEAR 
+TS=(
+("access")
+NEAR
 ("basic services" OR "waste management" OR "sanitation" OR "water supply" OR "drinking water" OR "postal service*" OR "electricity service*" OR "public transportation")
-) 
+)
 
 ```
 ##### Phrase 3:
@@ -71,10 +71,10 @@ NEAR
 Upgrade slums
 
 ```Ceylon =
-TS=( 
-("strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand*" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*") 
-NEAR 
-("slum" OR "slums" OR "shanty town$" OR "informal settlement*") 
+TS=(
+("strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand*" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*")
+NEAR
+("slum" OR "slums" OR "shanty town$" OR "informal settlement*")
 )	 
 ```
 
@@ -101,7 +101,7 @@ limiting the search with terms concerning land transport. It is also difficult t
 TS=(((("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
 NEAR/15 ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*" OR "reliab*" OR "affordab*" OR "availab*"))
 AND (("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"OR
-"infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*" 
+"infrastructure*"  OR "road*" OR "railway*" OR "travel*" OR "traffic*" OR "bus*" OR "taxi*"
 OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"OR "public transport*" OR "pedestrian*"
 OR "journey*" OR "airport*" OR "cycl*")) NEAR/5 ((improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
 OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))))
@@ -114,7 +114,7 @@ The basic structure is safe+road+improve
 ```Ceylon =
 
 TS=(((("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*") NEAR/5 (("traffic*" OR "road*"  OR "highway$" OR "motorway$" OR "street*"
-OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "speed limit*" OR "accident*" OR "pedestrian$" 
+OR "cycling lanes" OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "speed limit*" OR "accident*" OR "pedestrian$"
 OR "cyclist$" OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$"
 OR "driver$" OR "driving")) NEAR/5 (("improv*" OR "increase*" OR "enhance*"
 OR  "reduc*" OR "develop*")))) NOT ("air traffic*" OR "food*"))
@@ -128,7 +128,7 @@ The basic structure is expand+ "public transport"
 
 ```Ceylon =
 TS=(("public transport*") AND (improv* OR moderni* OR reduc* OR "increas*" OR "expand*" OR "build*"
-OR "boost*" OR "raise*" OR "escalate*" 
+OR "boost*" OR "raise*" OR "escalate*"
 OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"))
 
 TS=
@@ -151,23 +151,23 @@ This query consists of two phrases
 Urbanization
 
 ```Ceylon =
-TS=( 
+TS=(
 ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")  
 NEAR ("sustainab*" OR "inclusive")  
-NEAR ("urbani?ation" OR "urban development") 
-) 
+NEAR ("urbani?ation" OR "urban development")
+)
 ```
 ##### Phrase 2:
 
-Settlement planning. The use of NEAR is difficult to tune for achieving relevant results without too much noise. 
+Settlement planning. The use of NEAR is difficult to tune for achieving relevant results without too much noise.
 
 ```Ceylon =
 TS= (
-("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*") 
-NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*" OR "local" OR "municipal*" OR "county" OR "state") 
-NEAR/3 ("plan*" OR "manag*") 
+("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")
+NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*" OR "local" OR "municipal*" OR "county" OR "state")
+NEAR/3 ("plan*" OR "manag*")
 NEAR ("democra*" OR "taking part" OR "integrat*" OR "sustainab*")
-) 
+)
 ```
 
 ## Target 11.4
@@ -176,22 +176,22 @@ NEAR ("democra*" OR "taking part" OR "integrat*" OR "sustainab*")
 >
 > 11.4.1 Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)
 
-This target is interpreted as to cover research on protecting cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Culturall Statistics (http://uis.unesco.org/sites/default/files/documents/unesco-framework-for-cultural-statistics-2009-en_0.pdf). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc.. 
+This target is interpreted as to cover research on protecting cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Culturall Statistics (http://uis.unesco.org/sites/default/files/documents/unesco-framework-for-cultural-statistics-2009-en_0.pdf). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc..
 
 This query consists of 1 phrase.
 
 ##### Phrase 1:
 
 ```Ceylon =
-TS=( 
+TS=(
 
 ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "increas*")   
 
-NEAR ("maintain*" OR "conserv*" OR "preserv*" OR "sustain" OR "protect*") 
+NEAR ("maintain*" OR "conserv*" OR "preserv*" OR "sustain" OR "protect*")
 
-NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "heritage site$" OR "museum$" OR "archaeological place$" OR "archaeological site$" OR "historical place$" OR "historical building$" OR "historical monument$" OR "historical artefact$" OR "cultural landscape$" OR "natural heritage" OR "nature formation$" OR "geopark$" OR "natural habitat$" OR "nature park$" OR "nature reserv*" OR "zoo$" OR "zoological garden$" OR "botanical garden$" OR "aquarium" OR "aquaria") 
+NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "heritage site$" OR "museum$" OR "archaeological place$" OR "archaeological site$" OR "historical place$" OR "historical building$" OR "historical monument$" OR "historical artefact$" OR "cultural landscape$" OR "natural heritage" OR "nature formation$" OR "geopark$" OR "natural habitat$" OR "nature park$" OR "nature reserv*" OR "zoo$" OR "zoological garden$" OR "botanical garden$" OR "aquarium" OR "aquaria")
 
-) 
+)
 ```
 
 ## Target 11.5
@@ -206,24 +206,24 @@ This query consists of 4 phrases.
 
 ##### Phrase 1:
 
-Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some? 
+Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some?
 
 ```Ceylon =
 TS=
 (
 ((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
 
-OR 
+OR
 
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
 
 OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
 OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
 
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
 
-OR ("weather*" NEAR/3 "disaster*")) 
+OR ("weather*" NEAR/3 "disaster*"))
 
 NEAR/15
 
@@ -240,17 +240,17 @@ TS=
 (
 ((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
 
-OR 
+OR
 
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
 
 OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
 OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
 
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
 
-OR (weather* NEAR/3 disaster*)) 
+OR (weather* NEAR/3 disaster*))
 
 NEAR/15 ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))))
 
@@ -264,17 +264,17 @@ TS=
 (
 ((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
 
-OR 
+OR
 
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$")) 
+("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
 
 OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
 OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$" 
+OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
 
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
 
-OR (weather* NEAR/3 disaster*)) 
+OR (weather* NEAR/3 disaster*))
 
 AND
 
@@ -356,8 +356,8 @@ The basic structure is reduce + "environmental impact" + cities
 
 ```Ceylon =
 TS=((("environment* impact*") AND ("city" OR "cities" OR "urban" OR "municipalit*" OR "public*"
-OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*")) 
-AND ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*" 
+OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*"))
+AND ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*"
 OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR
 "combat*" OR collect* OR manage* OR treat*))
 
@@ -367,15 +367,15 @@ OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" O
 11.6.2
 
 ```Ceylon =
-TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" 
-OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution" 
+TS=(((("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*"
+OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ("smog*" OR "air pollution"
 OR "suspended particles" )) NEAR/5 (("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$"
 OR "limiting" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR
-"lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*))) 
+"lowered" OR "fight*" OR "combat*" OR collect* OR manage* OR treat*)))
 
 
 
-OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*" 
+OR (("city" OR "cities" OR "urban" OR "municipalit*" OR "public*" OR "human settlement*"
 OR "town*" OR "communit*" OR "village*" OR "populated area*") NEAR/3 ((improve OR enhance)
 NEAR/5 ("clean air" OR "air quality")))
 
@@ -385,13 +385,13 @@ NEAR/5 ("clean air" OR "air quality")))
 ```
 ##### Phrase 3:
 
-Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms. 
+Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.org/sdgs/metadata/files/Metadata-11-06-01.pdf. Split query to search for waste management or waste collection as its own query. Waste management and Waste (both with synonyms) are different concepts. A bit different action terms.
 
 ```Ceylon =
 
-TS=(("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste" OR "MSW" OR ("end of life" NEAR "waste") OR ("eol" NEAR "waste") OR ("end of chain" NEAR "waste") OR ("eoc" NEAR "waste") OR "garbage" OR "rubbish") 
+TS=(("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste" OR "MSW" OR ("end of life" NEAR "waste") OR ("eol" NEAR "waste") OR ("end of chain" NEAR "waste") OR ("eoc" NEAR "waste") OR "garbage" OR "rubbish")
 
-NEAR 
+NEAR
 
 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"))
 ```
@@ -402,13 +402,13 @@ Related to SDG 1.4.1, 6.3.1, 12.3.1.b, 12.5.1. Metadata from https://unstats.un.
 
 ```Ceylon =
 
-TS=(((("waste" NEAR/3 "manag*") OR ("waste" NEAR/3 "collect*") OR ("garbage" NEAR/3 "manag*") OR ("garbage" NEAR/3 "collect*") OR ("rubbish" NEAR/3 "manag*") OR ("rubbish" NEAR/3 "collect*")) 
+TS=(((("waste" NEAR/3 "manag*") OR ("waste" NEAR/3 "collect*") OR ("garbage" NEAR/3 "manag*") OR ("garbage" NEAR/3 "collect*") OR ("rubbish" NEAR/3 "manag*") OR ("rubbish" NEAR/3 "collect*"))
 
-NEAR 
+NEAR
 
-("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*") 
+("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
 
-NEAR 
+NEAR
 
 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "improv*" OR "ameliorat*" OR "better*")))
 
@@ -423,19 +423,19 @@ NEAR
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically. 
+This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically.
 
 This query consists of 1 phrase.
 
 ##### Phrase 1:
 
 ```Ceylon =
-TS=( 
-("increas*" OR "improv*" OR "expand*" OR "enlarg*") 
-NEAR ("green space$" OR "garden$" OR "park$" OR "recreational area$" OR "public area$") 
-NEAR ("safe" OR "inclus"* OR "access*" OR "unrestrict*" OR "restrict*" OR "discriminat*" OR "harass*" OR "exclu*" OR "prohibit*") 
-NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*") 
-) 
+TS=(
+("increas*" OR "improv*" OR "expand*" OR "enlarg*")
+NEAR ("green space$" OR "garden$" OR "park$" OR "recreational area$" OR "public area$")
+NEAR ("safe" OR "inclus"* OR "access*" OR "unrestrict*" OR "restrict*" OR "discriminat*" OR "harass*" OR "exclu*" OR "prohibit*")
+NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*")
+)
 ```
 
 ## Target 11.a
@@ -444,7 +444,7 @@ NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*")
 >
 > 11.a.1 Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space
 
-This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string. Limited truncation to avoid “plant” og “plants”. 
+This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string. Limited truncation to avoid “plant” og “plants”.
 
 This query consists of 1 phrase.
 
@@ -453,11 +453,11 @@ This query consists of 1 phrase.
 Phrase 1 doc
 
 ```Ceylon =
-TS=( 
-("economic*" OR "social" OR "environmental" OR "territorial") 
-NEAR ("cooperat*" OR "collaborat*" OR "develop*") 
-NEAR ("regional plan" OR "regional plans*" OR "regional planning"OR "national plan" OR "national plans" OR "national planning" OR "urban policies" OR "urban policy") 
-) 
+TS=(
+("economic*" OR "social" OR "environmental" OR "territorial")
+NEAR ("cooperat*" OR "collaborat*" OR "develop*")
+NEAR ("regional plan" OR "regional plans*" OR "regional planning"OR "national plan" OR "national plans" OR "national planning" OR "urban policies" OR "urban policy")
+)
 ```
 
 ## Target 11.b
@@ -495,10 +495,10 @@ TS=
 >
 > No suitable replacement indicator was proposed. The global statistical community is encouraged to work to develop an indicator that could be proposed for the 2025 comprehensive review. See E/CN.3/2020/2, paragraph 23.
 
-This target is interpreted as concerning only LDCs and local materials or LDCs and their construction industry. It is about providing financial or technical assistance for the building and construction industry in order for them to use local materials. Local materials are defined as: ..."“local building material”, the term is used to refer to materials of which the entire production process takes place within the same region." 
-Reference document: http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf. Countries from SDG14. 
+This target is interpreted as concerning only LDCs and local materials or LDCs and their construction industry. It is about providing financial or technical assistance for the building and construction industry in order for them to use local materials. Local materials are defined as: ..."“local building material”, the term is used to refer to materials of which the entire production process takes place within the same region."
+Reference document: http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf. Countries from SDG14.
 
-This query consists of 2 phrases. 
+This query consists of 2 phrases.
 
 "Construction" and "Building" are widely used (in general) to describe other activities than construction materials, or the building industry - these search temrs should not be used on its own. (Very high precision, perhaps not good?)
 
@@ -508,7 +508,7 @@ Phrase 1 doc
 
 ```Ceylon =
 
-TS=((("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS" OR "SIDS" OR "small island developing state*"OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" ) 
+TS=((("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS" OR "SIDS" OR "small island developing state*"OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" )
 
 AND
 
@@ -519,13 +519,42 @@ AND
 
 ```Ceylon =
 
-TS=((("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS" OR "SIDS" OR "small island developing state*"OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" ) 
+TS=((("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS" OR "SIDS" OR "small island developing state*"OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Antigua and Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Federated states of Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "Saint Vincent and the Grenadines" OR "Samoa" OR "São Tomé and Príncipe" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Tuvalu" OR "Vanuatu" OR "American Samoa" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "British Virgin Islands" OR "Cayman Islands" OR "Commonwealth of Northern Marianas" OR "Cook Islands" OR "Curaçao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "U.S. Virgin Islands" )
 
 AND
 
 ((("construction" OR "building") NEAR/3 ("industry" OR "industries" OR "company" OR "companies" or "sector$"))  AND ((("economic*" or "financial*" or "monetary" or "technical*") NEAR/3 ("support*" or "assist*")) or "know how" or "expertise")))
 
 ```
+A possibility. "building" not used alone because there are many references to metaphorical building.
+```
+TS=
+(
+    ("local building material$" OR "local construction material$"
+    OR
+       (
+         ("construction" OR "buildings" OR "sustainable building" OR "building material$" OR "architect*" OR "housing" OR "house$" OR "homes")
+  	     NEAR/5
+            ("sustainab*" OR "ecofriendly" OR "eco friendly" OR "resilient" OR "local material$")
+  	   )          
+    )
+  AND
+  	(
+      ("technolog*" OR "research" OR "knowledge"
+  	  OR "skills" OR "tools" OR "competenc*" OR "know how" OR "expertise" OR "techniques" OR "capabilit*"
+  	  OR "economic*" or "financial*" or "monetary" or "technical*"
+      )
+  		NEAR/5
+          ("sharing" OR "shared" OR "share" OR "transfer" OR "cooperat*" OR "collaborat*" OR "partnership$"
+          OR "invest*" OR "fund$" OR "funding" OR "support*" or "assist*")
+  	)
+  AND
+    ("least developed countr*" OR "least developed nation$"
+    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+    )
+)
+```
+
 
 ## General SDG
 
@@ -555,5 +584,3 @@ https://sdgs.un.org/sites/default/files/2021-10/Transportation%20Report%202021_F
 https://unstats.un.org/sdgs/metadata/?Text=&Goal=11&Target=11.6
 
 https://unstats.un.org/sdgs/metadata/?Text=&Goal=&Target=11.2
-
-
