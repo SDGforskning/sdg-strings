@@ -212,9 +212,10 @@ This target is considered to cover research about improving education, awareness
 
 This query consists of 1 phrase. The general structure is *action + education/awareness/capacity + climate mit/adapt/red/warning*
 
-Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge.  
-* Definition of "capacity" : "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
-* Definition of "capacity development" : "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge. Awareness is included in some definitions.
+* Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+* "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
@@ -227,7 +228,7 @@ TS=
 (
   (
     (
-      ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise"
+      ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
       OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
       OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
       )
@@ -236,6 +237,7 @@ TS=
           OR "awareness"
           OR "capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
           OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*"
+          OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
           )
     )  
   NEAR/15      
@@ -272,7 +274,7 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-Awaiting input from issue #12 https://github.com/SDGforskning/SDGstrings_wos/issues/12
+Awaiting input from issue https://github.com/SDGforskning/SDGstrings_wos/issues/12
 
 ##### Phrase 1:
 
@@ -285,51 +287,47 @@ Awaiting input from issue #12 https://github.com/SDGforskning/SDGstrings_wos/iss
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-This target is considered to cover research about planning and management of adaptation to climate change /this is a dificu
-https://aurora-network-global.github.io/sdg-queries/query_SDG13.xml
+This target is considered to cover research about planning for climate change, and raising capacity for climate-related management, in least developed countries and small island developing states. We consider "climate-related management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3. We use the same interpretation of capacity as used under target 13.3.
 
-##### Phrase 1:
-Action: raising capacity (OR climate plan)
+This target consists of 1 phrase. The basic structure is *(action + capacity + climate management // climate plans) + LDCs/SIDS*
 
-Basic structure: (raising capacity AND climate action) OR climate planing in LDC or SIDS
+Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc.
+
 ``` Ceylon =
 TS=
 (
   (
     (
       (
-        ("capacity" OR "technolog*" OR "research" OR "skills" OR "knowledge"  
-        OR "tools" OR "awareness" OR "competenc*")  
-        NEAR/5  
-        ("raise" OR "increas*" OR "improv*" OR "enhanc*" OR "build*" OR "develop*" OR "invest" OR "investing")
+        ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
+        OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
+        OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
+        )
+        NEAR/5
+            ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
+            OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*"
+            OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
+            OR "educat*" OR "awareness"
+            )
       )  
-      AND
-      ("climat*"  
-  		NEAR/5  
-      ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"  
-      OR "management" OR "communication")
+    AND
+      (
+        ("climat*" OR "global warming" OR "climatic change$" OR "sea level rise")
+        NEAR/5
+            ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
+            OR "early warning" OR "preparedness" OR "risk$" OR "vulnerab*"
+            )
       )
     )  
-    OR  
-    ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans"))
+    OR ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
+    OR "green climate fund"
   )   
   AND
   ("least developed countr*" OR "least developed nation$" OR "small island developing state$"
-  OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros"
-  OR "Congo" OR "Djibouti"  OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho"
-  OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda"
-  OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo"  
-  OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic"
-  OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan"
-  OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "Angola" OR "Benin" OR "Burkina Faso"
-  OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea"
-  OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi"
-  OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone"
-  OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR " "Tanzania" OR "Zambia" OR "Cambodia"
-  OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR
-      "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
- )
-
+  OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+  OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+  )
+)
 ```
 
 ## 4. Authorship and review
@@ -337,6 +335,8 @@ TS=
 ## 5. Footnotes
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
+<a id="f6"></a> Climate-ADAPT. (2019, last updated 2021). Capacity building on climate change adaptation. European Environment Agency & European Commission. (https://climate-adapt.eea.europa.eu/metadata/adaptation-options/capacity-building-on-climate-change-adaptation/) [accessed 6 May 2022].[↩](#climateADAPT)
 
 <a id="f3">3</a> IPCC (2014) Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
 
