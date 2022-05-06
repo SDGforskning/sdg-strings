@@ -527,27 +527,27 @@ AND
 
 ```
 A possibility. "building" not used alone because there are many references to metaphorical building.
-```
+```Ceylon =
 TS=
 (
     ("local building material$" OR "local construction material$"
     OR
        (
          ("construction" OR "buildings" OR "sustainable building" OR "building material$" OR "architect*" OR "housing" OR "house$" OR "homes")
-  	     NEAR/5
+         NEAR/5
             ("sustainab*" OR "ecofriendly" OR "eco friendly" OR "resilient" OR "local material$")
-  	   )          
+       )          
     )
   AND
-  	(
-      ("technolog*" OR "research" OR "knowledge"
-  	  OR "skills" OR "tools" OR "competenc*" OR "know how" OR "expertise" OR "techniques" OR "capabilit*"
-  	  OR "economic*" or "financial*" or "monetary" or "technical*"
+    (
+      ("technolog*" OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "know how" OR "expertise" OR "techniques" OR "capabilit*"
+      OR "economic*" or "financial*" or "monetary" or "technical*"
       )
-  		NEAR/5
+      NEAR/5
           ("sharing" OR "shared" OR "share" OR "transfer" OR "cooperat*" OR "collaborat*" OR "partnership$"
-          OR "invest*" OR "fund$" OR "funding" OR "support*" or "assist*")
-  	)
+          OR "invest*" OR "fund$" OR "funding" OR "support*" or "assist*"
+          )
+    )
   AND
     ("least developed countr*" OR "least developed nation$"
     OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
