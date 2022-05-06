@@ -272,11 +272,9 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-NO
+Awaiting input from issue #12 https://github.com/SDGforskning/SDGstrings_wos/issues/12
 
 ##### Phrase 1:
-
-
 
 
 
