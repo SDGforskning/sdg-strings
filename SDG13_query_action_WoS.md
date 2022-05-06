@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently under active development to improve the phrases and structure. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.
+**Current status**: This string is currently being edited after internal review. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.
 
 **Contents**
 
@@ -26,9 +26,6 @@ Take urgent action to combat climate change and its impacts.
 ## 2. General notes
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
-
-* Definition of "capacity" : "[...] the ability of people, organizations and society as a whole to manage their affairs successfully"<a id="UNDGcapacity">[2](#f2)</a>.
-* Definition of "capacity development" : "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"<a id="UNDGcapacity">[2](#f2)</a>.
 
 During editing of this string (2021), we have consulted another set of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f4)</a>.
 
@@ -55,7 +52,7 @@ TS=
 (
   (
     (
-      ("improv*" OR "increas*" OR "better" OR "enhanc*" OR "build" OR "strengthen*"
+      ("improv*" OR "increas*" OR "better" OR "enhanc*" OR "build" OR "strengthen*" OR "raise"
       OR "develop" OR "developing" OR "implement"
       OR "build* capacity" OR "capacity building" OR "capacity development"
       )
@@ -211,50 +208,59 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about improving education, general awareness and capacity about climate change mitigation, adaptaion and impact reduction. It also covers technical knowledge transfer, international aid related to this topics.
-Interpretatation of what should be considered as contributing to "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage climate change mitigation, adaption, impact reduction and early warning. Here consider we that all research on these topics would contribute, and therefore they do not have to be combined with the concept of capacity.
+This target is considered to cover research about improving education, awareness and capacity about climate change mitigation, adaptation,  impact reduction and early warning.
 
-We include general terms about cimate change mitigation as well as the reduction og greenhouse gases as the main method of climate change mitigation.
+This query consists of 1 phrase. The general structure is *action + education/awareness/capacity + climate mit/adapt/red/warning*
 
-This query consists of 1 phrase.
+Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge.  
+* Definition of "capacity" : "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+* Definition of "capacity development" : "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 
-`Green climate fund` is a dedicated climate fund.
+For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-##### Phrase 1:
+In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investments as an "action" in the sense that they can drive action (e.g. cooperation fund for education).
 
+We have also included `green climate fund` as a stand-alone term, as the purpose of this fund is improving capacity on climate change ("GCF was established by 194 governments to limit or reduce greenhouse gas (GHG) emissions in developing countries, and to help vulnerable societies adapt to the unavoidable impacts of climate change.", https://www.greenclimate.fund/).
 
 ``` Ceylon =
 TS=
 (
   (
     (
-      ("raise" OR "increas*" OR "improv*" OR "enhanc*" OR "build*" OR "develop*" OR "invest" OR "investing")
-      NEAR/5
-      ("capacity" OR "technolog*" OR "research" OR "skills" OR "knowledge"  
-      OR "tools" OR "awareness" OR "competenc*" "educati*" OR "curriculum" OR "curricula"
-      OR "official development assistance" OR "official development aid" OR       
-      "foreign aid" OR "international aid" OR "cooperation fund" )
-    )  
-    NEAR /15      
-    (
-      (
-        ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate")
-        NEAR/3  
-        ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR
-        "impact reduction" OR "early warning" OR "risk$")
+      ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise"
+      OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
+      OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
       )
-      OR "climate mitigation" OR "sustainable development"
-      OR
+      NEAR/5
+          ("educat*" OR "curriculum" OR "curricula" OR "teacher training"
+          OR "awareness"
+          OR "capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
+          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*"
+          )
+    )  
+  NEAR/15      
       (
-        ("reduc*" OR "combat*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "alleviat*" OR
-        "tackl*" OR "lower" OR "mitigat*" OR "prevent*" OR "stop*" OR "avoid*"
+        (
+          ("climate" OR "global warming" OR "climatic change$" OR "sea level rise")
+          NEAR/5  
+              ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
+              OR "early warning" OR "preparedness" OR "risk$" OR "vulnerab*"
+              OR
+                (
+                  ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+                  NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
+                )
+              )
         )
-        NEAR/5
-        ("GHG" OR "greenhouse gas" OR "greenhouse gases"
-        OR "carbon footprint"
-        )
-      )   
-    )
+        OR
+          (
+            ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+            OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+            )
+              NEAR/5
+                  ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
+          )   
+      )
   )  
   OR "green climate fund"
 )
