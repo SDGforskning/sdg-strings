@@ -500,7 +500,7 @@ Reference document: http://uis.unesco.org/sites/default/files/documents/sdg11-sy
 
 This query consists of 2 phrases.
 
-"Construction" and "Building" are widely used (in general) to describe other activities than construction materials, or the building industry - these search temrs should not be used on its own. (Very high precision, perhaps not good?)
+"Construction" and "Building" are widely used (in general) to describe other activities than construction materials, or the building industry - these search terms should not be used on its own. (Very high precision, perhaps not good?)
 
 ##### Phrase 1:
 
