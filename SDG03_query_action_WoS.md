@@ -976,15 +976,13 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This target is interpreted to be about the reduction of tobacco use, via control and other methods, in reference to implementation of the WHO FCTC.
-
-WHO FCTC: A treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures in the implementation, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+This target is interpreted to be about the reduction of tobacco use and production, in reference to implementation of the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
 This query consists of 2 phrases.
 
 #### Phrase 1
 
-Implementation is not specifically added here, as referring to the WHO framework is likely to be in reference to this anyway.
+This phrase finds works referring to the FCTC. We assume that any research specifically mentioning this framework are likely to be about tobacco reduction.
 
 ``` Ceylon =
 TS = ("Framework convention on tobacco control" OR "WHO FCTC")
@@ -994,11 +992,11 @@ TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 
 The basic structure is *tobacco + reduction/control + action*
 
-"use" is not specified, as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` covers these (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
+We do not limit to tobacco "use", as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` will cover many terms here (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
 
 `reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as some may discuss this without being combined with the "implement" terms, but `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant). Phrase 3 deals with tobacco production in more depth.
 
-`developing` finds some results about developing countries, rather than developing interventions, but this is hard to avoid.
+`developing` finds some results about developing countries, rather than developing interventions/policy, but this is hard to avoid and we lose many relevant results if cutting it.
 
 ``` Ceylon =
 TS =
@@ -1027,9 +1025,7 @@ TS =
 
 #### Phrase 3
 
-The basic structure is *tobacco farming + alternatives + action*
-
-`alternative livlihood$` refers to production, while `alternative$` can also apply to smoking alternatives.
+The basic structure is *tobacco farming + alternatives + action*.
 
 ```Ceylon =
 TS=
@@ -1058,46 +1054,70 @@ TS=
 >
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
-* Development of medicines/vaccines for neglected tropical and other communicable diseases is covered under target 3.3. The search string there should be broad enough to apply on both the individual and national level.
-* Access to essential medicines and vaccines is covered in target 3.8.  
-
-Thus two elements are not covered, but can be interpreted from the target:
-* research about how the Doha declaration affects things on a national/regulatory level, perhaps more broadly how access to essential medicines can be ensured despite intellectual property rights (phrase 1)
-* research about support for medical research and basic health from official development assistance (phrase 2)
+This target is interpreted to cover research about:
+* Support for development of medicines/vaccines for diseases in developing countries (phrase 1).
+* Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
 
 #### Phrase 1
 
-The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation.  About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
-> "In the declaration, ministers stress that it is important to implement and interpret the TRIPS Agreement in a way that supports public health — by promoting both access to existing medicines and the creation of new medicines.[...]. It emphasizes that the TRIPS Agreement does not and should not prevent member governments from acting to protect public health."
-
-This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances .
-
-`patents` is used in the plural as when singular it tends to have specific/biomedical uses.
-
 ``` Ceylon =
 TS =
 (
-  ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property rights")
+  (
+      ("support" OR "financial assist*" OR "economic assist*"
+      OR "official development assistance" OR "development aid" OR "development fund*" OR "development spending"
+      OR "investing" OR "invest"
+      OR "cooperation fund$"
+      OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+      OR "international cooperation" OR "international collaboration" OR "international network$" OR "international partnership$"
+      OR "development cooperation" OR "development network$" OR "development partnership$"
+      OR "research partnership$" OR "technical knowledge transfer*" OR "transfer of technical knowledge" OR "transfer of technolog*"
+      )
+      NEAR/5
+          (
+            ("develop*" OR "research*" OR "novel" OR "new")
+            NEAR/5 ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
+          )
+  )
   AND
-  ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "essential drug$" OR "treatment$")
-  AND
-  ("access" OR "accessibility")
+    ("least developed countr*" OR "least developed nation$" OR
+    "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+    OR "less developed countr*" OR "less developed nation$"
+    OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+    OR "underserved countr*" OR "underserved nation$"
+    OR "deprived countr*" OR "deprived nation$"
+    OR "middle income countr*" OR "middle income nation$"
+    OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
+    OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+    OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+    OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
+    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"  
+    )
 )
 ```
 
 #### Phrase 2
 
+This phrase concerns access to medicines and vaccines. The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation. This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances. About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
+> "In the declaration, ministers stress that it is important to implement and interpret the TRIPS Agreement in a way that supports public health — by promoting both access to existing medicines and the creation of new medicines.[...]. It emphasizes that the TRIPS Agreement does not and should not prevent member governments from acting to protect public health."
+
+The structure is *agreements/IPR + medication + access*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a standalone term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
+
 ``` Ceylon =
 TS =
 (
-  ("official development assistance" OR "official development aid"
-  OR ("international aid" AND "funding")
-  )
+  ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property" OR "TRIPS agreement")
   AND
-  ("health" OR "medical research" OR "medical R&D")
+  ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "essential drug$" OR "treatment$")
+  AND
+  ("access" OR "accessibility" OR "affordab*")
 )
+OR
+TS= "vaccine inequity"
 ```
 
 ## Target 3.c
