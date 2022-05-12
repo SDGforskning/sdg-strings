@@ -242,7 +242,7 @@ The pollution terms and structure are mostly the same between the three phrases;
 
 Action terms: `tackle` is not included as an action term as it could be a type of marine debris.
 
-Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms. This phrase does not include `waste management` like the others because it does not fit with these action terms. 
+Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms. This phrase does not include `waste management` like the others because it does not fit with these action terms.
 
 ```Ceylon =
 TS=
@@ -352,7 +352,7 @@ The pollution terms and structure are mostly the same between the three phrases;
 
 `limit pollution` was specified to avoid "pollution limits".
 * The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution.
-* The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics.
+* The Water Framework Directive and Marine Strategy Framework Directives from the EU, and covers pollution and marine litter (respectively) as one of their topics. The Barcelona convention refers to the Mediterranean.
 * Global Programme of Action for the Protection of the Marine Environment from Land-based Activities is hosted by the UN environment program, and is an intergovernmental action program.
 * MARPOL is the International convention for the prevention of pollution from ships (International Maritime Organization)
 
@@ -367,6 +367,7 @@ TS=
     OR "water framework directive"
     OR "OSPAR convention"
     OR "Marine strategy framework directive"
+    OR "Barcelona convention"
     OR "Global Programme of Action for the Protection of the Marine Environment"
     OR "MARPOL" OR "prevention of pollution from ships"
     )
@@ -398,11 +399,13 @@ TS=
 
 ```
 
-## Target 14.2 & 14.5
+## Target 14.2
 
 > **14.2 By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience, and take action for their restoration in order to achieve healthy and productive oceans**
 >
 > 14.2.1 Number of countries using ecosystem-based approaches to managing marine areas
+
+## Target 14.5
 
 > **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
 >
@@ -756,6 +759,42 @@ TS=
         OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
         OR "common fisheries policy"
         )
+      )
+)
+```
+## Target 14.5
+
+> **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
+>
+> 14.5.1 Coverage of protected areas in relation to marine areas
+
+The target is interpreted to cover research about the establishment and management of marine protected areas. This provides overlap with 14.2 - while 14.2 is not explicitly about marine protected areas, "protect" is stated as one of the actions, suggesting that research on the establishment/maintenance of MPAs falls under 14.2 as well as 14.5.
+
+This query consists of 1 phrase. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degress of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
+
+For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise. These action terms should also be able to find research discussing both establishment, but also e.g. policy for establishment. 
+
+``` Ceylon =
+TS=
+(
+  ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
+  OR "design" OR "designing" OR "create" OR "creation" OR "creating"
+  OR "establish*" OR "propose*" OR "proposal$" OR "implement*"
+  OR "plans" OR "plan" OR "planned" OR "planning"
+  OR "priorit*"
+  OR "manag*" OR "enforce" OR "enforcement" OR "enforcing"
+  )
+  NEAR/5
+      ("MPA" OR "MPAs" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      OR "particularly sensitive sea area$"
+      OR
+        (
+          ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
+          NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
+        )
+      OR ("no-take" NEAR/3 ("area$" OR "zone*"))
       )
 )
 ```
