@@ -238,11 +238,11 @@ It consists of 3 phrases.
 
 The general structure is *action + pollution*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-The pollution terms and structure are mostly the same between the three phrases; the difference is how closely they are combined with the various action terms (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)).
+The pollution terms and structure are mostly the same between the three phrases; the difference is the action terms, and how closely they are combined with these (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)). In this phrase, the action terms consist of general actions.
 
 Action terms: `tackle` is not included as an action term as it could be a type of marine debris.
 
-Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `pollution or contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms.
+Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms. This phrase does not include `waste management` like the others because it does not fit with these action terms. 
 
 ```Ceylon =
 TS=
@@ -255,77 +255,73 @@ TS=
     )  
     NEAR/5
         (  "pollut*"
-        OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
-        OR "effluent$" OR "runoff" OR "run off"
+        OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrient$"
+        OR "effluent$" OR "nutrient runoff" OR "nutrient run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "radioactive")
             NEAR/15
-                ("waste" OR "discharge")          
+                ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
-        OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
-            NEAR/15
-                ("contamination" OR "pollut*")          
+            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$" OR "mining" OR "mine tailing$" OR "oil")
+            NEAR/15 "contamination"         
           )
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$"
         )
   )
-  NOT ("PM2.5" OR "PM10")
+  NOT ("PM2.5" OR "PM10" OR "leaf litter")
 )
 
 ```
 
 #### Phrase 2
 
-The general structure is *action + pollution*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action + pollution tech/treatments + pollution*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-The pollution terms and structure are mostly the same between the three phrases; the difference is how closely they are combined with the various action terms (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)).
+The pollution terms and structure are mostly the same between the three phrases; the difference is the action terms, and how closely they are combined with these (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)). In this phrase, the action terms consist of general actions and "pollution actions".
 
-The development of `indicators` is included as part of prevention (monitoring).
-
-`pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste).
+The development of `indicators` is included as part of prevention (monitoring). `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste).
 
 ```Ceylon =
 TS=
 (
   (
     (
-        ("treatment" OR "recovery"
-        OR "technolog*"
-        OR "monitor*" OR "assess*"
-        OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
-        OR "life cycle assess*"
-        OR "environment* assess*" OR "environment* impact assess*"
-        OR "manag*" OR "pollution control$"
-        OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
+        ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
+        OR "enforc*" OR "prioriti*"
         )
         NEAR/5
-            ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
-            OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
-            OR "enforc*" OR "prioriti*"
+            ("treatment" OR "recovery"
+            OR "technolog*"
+            OR "monitor*" OR "assess*"
+            OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+            OR "life cycle assess*" OR "LCA"
+            OR "environment* assess*" OR "environment* impact assess*"
+            OR "manag*" OR "pollution control$"
+            OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
             )
     )  
     NEAR/15
         (  "pollut*"
         OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
-        OR "effluent$" OR "runoff" OR "run off"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrient$"
+        OR "effluent$" OR "nutrient runoff" OR "nutrient run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "radioactive")
             NEAR/15
-                ("waste" OR "discharge")          
+                ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
         OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
@@ -333,13 +329,12 @@ TS=
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "mining" OR "mine tailing$" OR "oil")
-            NEAR/15
-                ("contamination" OR "pollut*")          
+            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$" OR "mining" OR "mine tailing$" OR "oil")
+            NEAR/15 "contamination"          
           )
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$"
         )
@@ -353,7 +348,7 @@ TS=
 
 The general structure is *action + pollution*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-The pollution terms and structure are mostly the same between the three phrases; the difference is how closely they are combined with the various action terms (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)).
+The pollution terms and structure are mostly the same between the three phrases; the difference is the action terms, and how closely they are combined with these (closely combined terms in phrase 1 (`NEAR/5`), medium in phrase 2 (`NEAR/15`), and loosely in phrase 3 (`AND`)). In this phrase, the action terms consist of frameworks and specific phrases.
 
 `limit pollution` was specified to avoid "pollution limits".
 * The OSPAR convention is the Convention for the protection of the marine environment of the North-East Atlantic, and covers the prevention and elimination of pollution.
@@ -361,7 +356,7 @@ The pollution terms and structure are mostly the same between the three phrases;
 * Global Programme of Action for the Protection of the Marine Environment from Land-based Activities is hosted by the UN environment program, and is an intergovernmental action program.
 * MARPOL is the International convention for the prevention of pollution from ships (International Maritime Organization)
 
-`pollution` covers various kinds (e.g. noise pollution). `"effluent$" OR "runoff" OR "run off" OR "eutrophicat*" OR "ecotox*" OR "pesticide$"` will cover various types of pollution from agriculture and aquaculture. In this phrase, specific pollutants (e.g. `mercury`) do not need to be combined with `pollution or contamination`, because the action terms are all related to pollution.
+`pollution` covers various kinds (e.g. noise pollution). In this phrase, specific pollutants (e.g. `mercury`) do not need to be combined with `pollution or contamination`, because the action terms are all related to pollution.
 
 ```Ceylon =
 TS=
@@ -377,26 +372,24 @@ TS=
     )
     AND
         (  "pollut*"
-        OR "wastewater" OR "waste water" OR "sewage"
-        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrients"
+        OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
+        OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrient$"
         OR "effluent$" OR "runoff" OR "run off"
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "radioactive")
-            NEAR/15
-                ("waste" OR "discharge")          
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "radioactive")
+            NEAR/15 ("waste" OR "discharge")          
           )
-        OR "pesticide$"
         OR "waste management"
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
-        OR "heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury"
+        OR "heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$"
         OR "mining" OR "mine tailing$"
         OR "oil"
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "Pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "Pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         )
   )
