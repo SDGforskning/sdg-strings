@@ -1058,7 +1058,7 @@ TS=
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
 This target is interpreted to cover research about:
-* Support for development of medicines/vaccines for diseases in developing countries (phrase 1).
+* Support for development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect  (phrase 1).
 * Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
@@ -1087,8 +1087,9 @@ TS =
           )
   )
   AND
-    ("least developed countr*" OR "least developed nation$" OR
-    "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+    ("neglected tropical disease$" OR "buruli ulcer" OR "chagas" OR "dengue" OR "chikungunya" OR "dracunculiasis" OR "guinea-worm disease" OR "echinococcosis" OR "foodborne trematodiases" OR "human african trypanosomiasis" OR "sleeping sickness" OR "leishmaniasis" OR "leprosy" OR "lymphatic filariasis" OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses" OR "onchocerciasis" OR "river blindness" OR "rabies" OR "scabies" OR "schistosomiasis" OR "soil-transmitted helminthiases" OR "snakebite envenoming" OR "taeniasis" OR "cysticercosis" OR "trachoma" OR "yaws"
+    OR "least developed countr*" OR "least developed nation$"
+    OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
     OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
     OR "underserved countr*" OR "underserved nation$"
