@@ -1005,16 +1005,19 @@ TS =
     (
       ("tobacco" OR "smoking" OR "cigarette$")
       NEAR/5
-          ("reduc*" OR "control" OR "ban" OR "bans"
+        (
+          ("reduc*" OR "control" OR "ban" OR "bans" OR "banning" OR "prohibiting" OR "prohibit"
           OR "legislation" OR "policy" OR "policies" OR "regulat*" OR "law" OR "strateg*" OR "intervention$"
           OR "tax" OR "taxes" OR "taxation"
           OR "health warning$"
-          OR "smoking cessation" OR "services" OR "cessation service" OR "cessation program*" OR "alternative$"
+          OR "smoking cessation" OR "quitting" OR "services" OR "cessation service" OR "cessation program*" OR "alternative$"
           )
-      NEAR/5
-          ("implement*" OR "introduc*" OR "establish*" OR "adopt*" OR "propos*" OR "uptake"
-          OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
-          OR "develop" OR "developing" OR "build" OR "building")
+          NEAR/5
+            ("implement*" OR "introduc*" OR "establish*" OR "adopt*" OR "propos*" OR "uptake"
+            OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+            OR "develop" OR "developing" OR "build" OR "building"
+            )
+        )
     )
   OR "reduc* tobacco" OR "reduc* smoking" OR "decreas* tobacco"
   OR "reduce dependence on"
