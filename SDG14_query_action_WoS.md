@@ -405,15 +405,15 @@ TS=
 >
 > 14.2.1 Number of countries using ecosystem-based approaches to managing marine areas
 
-Target 14.2 is interpreted to cover research about a) sustainable management of marine/coastal ecosystems, b) protection of these ecosystems, which would include establishment and management of marine protected areas (MPAs), and c) restoring these ecosystems.
-
-Note, the interpretation of protection to include establishment of MPAs means that this topic encompasses 14.5.
+Target 14.2 is interpreted to cover research about a) sustainable management of marine/coastal ecosystems, b) protection of these ecosystems, which would include establishment and management of marine protected areas (MPAs), and c) restoring these ecosystems. Note, the interpretation of protection to include establishment of MPAs means that this target also encompasses 14.5.
 
 This query consists of 3 phrases. Phrase 1 covers the establishment/management of protected areas. Phrase 2 covers the establishment/improvement of sustainable management approaches. Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems.
 
 ##### Phrase 1
 
 This phrase covers the establishment/management of protected areas. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degress of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
 
 ```Ceylon =
 TS=
@@ -474,7 +474,7 @@ Phrase 3 covers research about restoring, protecting, conserving or managing mar
 
 The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, we have action terms that are clear verbs for manage/protect etc., but combine other forms of these words with other actions (establishing, improving etc).
 
-Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection (e.g. Conservation of Antarctic Marine Living Resources). Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
+Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
 ```Ceylon =
 TS=
