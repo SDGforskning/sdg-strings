@@ -458,13 +458,12 @@ TS=
       OR "community based management"
       OR "locally managed marine area$" OR "LMMA$"
       OR "resilience based management"
+      OR ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
       OR
         (
           ("ecosystem-based" OR "area-based")
           NEAR/5 ("manag*" OR "approach*" OR "govern*")
         )
-      OR  
-        ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
       )
 )
 ```
@@ -520,45 +519,6 @@ TS=
       OR ("no-take" NEAR/3 ("area*" OR "zone*"))
       OR "Conservation of Antarctic Marine Living Resources"  
       OR "International coral reef initiative"
-      )
-)
-```
-
-## Target 14.5
-
-> **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
->
-> 14.5.1 Coverage of protected areas in relation to marine areas
-
-The target is interpreted to cover research about the establishment and management of marine protected areas. **See notes on 14.2** (*While 14.2 is not explicitly about  marine protected areas (as we see in target 14.5), "protect" is still used as one of the actions, suggesting that research on the establishment/maintenance of MPAs falls under 14.2 too (amongst research on other aspects of protection, such as the impacts of other measures). A string for 14.5 is still retained, but the research found there will also be covered under 14.2. 14.5 is just a more specific area.*)
-
-This query consists of 1 phrase. The general structure is *protected areas + action*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degress of protection); for exmaple, `no take zone$`, `conservation zone$`, `marine protected area$`.
-
-``` Ceylon =
-TS=
-(
-  ("MPA" OR "MPAs" OR "marine protected area$"
-  OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-  OR "marine conservation zone$"
-  OR "particularly sensitive sea areas$"
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
-      NEAR/3 ("area*" OR "zone*" OR "habitat$" OR "ecosystem$")
-    )
-  OR
-    ("no-take"
-    NEAR/3 ("area*" OR "zone*")
-    )
-  )
-  NEAR/15
-      ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
-      OR "design" OR "create" OR "creation"
-      OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning"
-      OR "manage*" OR "enforce" OR "enforcement"
       )
 )
 ```
