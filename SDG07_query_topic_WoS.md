@@ -337,6 +337,61 @@ TS=
 )
 ```
 
+*OLD STRING FROM ACTION APPROACH* - this is copied here as it was removed from the action approach, but may still be useful in the topic approach.
+
+Involves a `NOT` expression. This is to remove results concerning biological energy efficiency. Uses of `metabolism` as a term outside of biology are retained using a double negative `NOT` statement.
+
+```Ceylon =
+TS=
+(
+  (
+    (
+      ("increas*" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher"
+      OR "policy" OR "policies" OR "legislation"
+      OR "energy strateg*" OR "energy management" OR "energy planning"
+      OR "initiative$"
+      OR  (("energy" OR "green") NEAR/2 "certificat*")
+      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+      OR "energy sustainability"
+      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+      )
+      NEAR/15
+          ("energy efficiency"
+          OR
+            (
+              ("energy efficien*" OR "energy saving")
+              NEAR/15
+                  ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
+                  OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
+                  OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods" OR "plug-in device$" OR "smart"
+                  OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
+                  OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
+                  OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
+                  OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
+                  )
+            )
+          )
+    )
+  OR ("energy efficiency" NEAR/15 "sustainable development")
+  )
+  NOT
+      ("caloric restriction" OR "calorie restriction" OR "metabolic syndrome"
+      OR "muscle$" OR "mitochondria" OR "cardiovascular"
+      OR "feed conversion" OR "animal energetics" OR "human energetics"
+      OR
+        (
+          ("metabolism" OR "metabolic")
+          NOT
+              ("climate change" OR "economy" OR "economies"
+              OR "social metabolism" OR "urban metabolism" OR "urban energy" OR "economic metabolism" OR "socioeconomic metabolism" OR "societal metabolism" OR "industrial metabolism" OR "carbon metabolism"
+              )
+        )
+      )
+)
+```
+
+
+
 ## Target 7.a/7.b
 
 > **7.a By 2030, enhance international cooperation to facilitate access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology, and promote investment in energy infrastructure and clean energy technology**
