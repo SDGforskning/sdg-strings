@@ -108,7 +108,7 @@ The basic structure is *children/babies* + *mortality* + *action* + *excluding l
 TS=
 (
   (   
-    ("child*" OR "infant$" OR "under-five$"
+    ("child*" OR "infant$" OR "toddler$" OR "under-five$"
     OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
     OR "perinatal" OR "prenatal" OR "antenatal"
     )
@@ -139,15 +139,14 @@ Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. red
 TS=
 (
   (   
-    ("child*" OR "infant$" OR "under-five$"
+    ("child*" OR "infant$" OR "toddler$" OR "under-five$"
     OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
     OR "perinatal" OR "prenatal" OR "antenatal"
     )
     NEAR/15
-      (
-        ("surviv*")
-        NEAR/5 ("improv*" OR "increas*" OR "enhanc*" OR "intervention$")
-        )
+      ("surviv*"
+      NEAR/5 ("improv*" OR "increas*" OR "enhanc*" OR "intervention$")
+      )
   )
   NOT (("pigs" OR "porcine" OR "cows" OR "sheep" OR "cattle" OR "poultry" OR "newborn cell") NOT ("human" OR "model"))   
 )
