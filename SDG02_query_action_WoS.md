@@ -237,7 +237,7 @@ TS=
   )
   AND
     ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-    OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
+    OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "adult$"
     OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
     OR "agricultur*" OR "food security" OR "poverty"
     OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
