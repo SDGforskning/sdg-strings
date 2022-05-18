@@ -959,7 +959,7 @@ TS =
 )
   AND
       ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "adolescent$" OR "children" OR "child" OR "infant$" OR "babies" OR "under five$"
+        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
         OR "elderly" OR "adult$" OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
         OR "rural" OR "urban" OR "city" OR "cities" OR "town$" OR "village$" OR "countr*" OR "nation$" OR "develop* state$"
         OR "patient$" OR "hospital*"
