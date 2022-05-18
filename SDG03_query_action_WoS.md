@@ -102,7 +102,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1
 
-The basic structure is *children/babies* + *mortality* + *action* + *excluding livestock*. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
+The basic structure is *children/babies* + *mortality* + *action* + *excluding livestock*. `prevent*`, `preterm` and `premature` are not used, as they generally (when used without reference to births/newborns) refer to "preventable deaths"/"premature death".
 
 ```Ceylon =
 TS=
@@ -125,6 +125,7 @@ TS=
             NEAR/15
                 ("improv*" OR "prevent$" OR "preventing" OR "prevention" OR "prevented" OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "intervention$")
           )
+        )
   )
   NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
 )
