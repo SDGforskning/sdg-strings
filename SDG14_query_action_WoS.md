@@ -421,7 +421,8 @@ TS=
   ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
   OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
   OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "planned" OR "planning" OR "framework" OR "governance" OR "manag*"
+  OR "plans" OR "plan" OR "planned" OR "planning"
+  OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
   OR "enforce" OR "enforcement" OR "enforcing"
   OR "strengthen" OR "improv*"
   )
@@ -448,7 +449,7 @@ TS=
   ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
   OR "design" OR "designing" OR "create" OR "creation" OR "creating"
   OR "establish*" OR "propos*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "governance"
+  OR "plans" OR "plan" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance"
   OR "enforce" OR "enforcement" OR "enforcing"
   OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*" OR "support*"
   )
@@ -487,7 +488,7 @@ TS=
       ("designat*" OR "placement" OR "expand*" OR "extend"
       OR "design" OR "designing" OR "create" OR "creation" OR "creating"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning" OR "framework" OR "strategy" OR "governance"
+      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
       OR "enforce" OR "enforcement" OR "enforcing"
       OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
       OR "preserv*" OR "support*" OR "ensur*"
