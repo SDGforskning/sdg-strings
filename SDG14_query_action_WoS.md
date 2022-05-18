@@ -501,7 +501,7 @@ TS=
       ("ecosystem$" OR "habitat$" OR "communit*"
       OR "mangrove$" OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
       OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
-      OR "sponge ground$" OR "reef" OR "reefs"
+      OR "sponge ground$" OR "reef" OR "reefs" OR "coral$"
       OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
       OR "estuar*" OR "fjord$" OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$" OR "coastal water$"
       OR
