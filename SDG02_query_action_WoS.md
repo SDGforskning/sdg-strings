@@ -120,8 +120,8 @@ TS=
     )  
     AND
         ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "under fives" OR "infant$" OR "babies" OR "adolescent$" OR "adult$"
-        OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
+        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
+        OR "adult$" OR "women" OR "men" OR "woman" OR "man"
         OR "agricultur*" OR "food security" OR "poverty"
         OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
         )
@@ -164,7 +164,7 @@ TS=
       OR
         (
           ("stunting" OR "stunted" OR "wasting" OR "underweight")
-          NEAR/15 ("child*" OR "infant$" OR "under five$" OR "babies")
+          NEAR/15 ("child*" OR "infant$" OR "under five$" OR "babies" OR "toddler$" OR "girl$" OR "boy$")
         )
       OR "obesity" OR "overweight" OR "becoming obese"
       )
@@ -185,7 +185,7 @@ TS=
 
 The general structure is *nutritional access/quality/status of specific groups + action*
 
-Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care".
+Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard". 
 
 ``` Ceylon =
 TS=
@@ -200,7 +200,7 @@ TS=
       ("nutritio*" OR "folate status" OR "micronutrient$")
       NEAR/5
           ("women" OR "girls" OR "mother$" OR "pregnancy"
-          OR "child*" OR "infant$" OR "under five$" OR "babies" OR "perinatal"
+          OR "child*" OR "under five$" OR "infant$" OR "toddler$" OR "girl$" OR "boy$" OR "babies" OR "perinatal" 
           OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
           )
     )
@@ -237,8 +237,8 @@ TS=
   )
   AND
     ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-    OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "adult$"
-    OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
+    OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
+    OR "adult$" OR "women" OR "men" OR "woman" OR "man"
     OR "agricultur*" OR "food security" OR "poverty"
     OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
     )
