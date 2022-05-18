@@ -96,11 +96,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 ## 3. Marine terms: String for limiting certain phrases to the marine environment
 
-This string is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets (14.4, 14.6 and 14.b).
+This string is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets (14.4, 14.6 and 14.b). It does not work perfectly, as a number of publications may be about e.g. freshwater habitats, but still mention marine habitats in a comparative way. This is difficult to avoid.
 
 The first part (`TS=`) consists of marine habitats, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal search is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
 
-`seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
+`seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `reef` is used rather than `coral` as additions only due to the latter are mostly non-relevant ("coral-like structures".) `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
 
 I considered adding the 25 most common marine fisheries species (<a id="FAOfish">[FAO, 2018](#f8)</a>), however this gave few extra relevant results. It introduced a lot more noise with the use of `MPA` in 14.2/14.5, as this is commonly used as a unit of pressure (MPa) when discussing the processing of these species for food. Relevant species include: `"theragra chalcogramma" OR "engraulis ringens" OR "katsuwonus pelamis" OR "sardinella" OR "trachurus" OR "clupea harengus" OR "scomber japonicus" OR "thunnus albacares" OR "gadus morhua" OR "engraulis japonicus" OR "decapterus" OR "sardina pilchardus" OR "trichiurus lepturus" OR "micromesistius poutassou" OR "scomber scombrus" OR "scomberomorus" OR "dosidicus gigas" OR "nemipterus" OR "brevoortia patronus" OR "sprattus sprattus" OR "portunus trituberculatus" OR "acetes japonicus" OR "sardinops melaonstictus" OR "scomber colias" OR "rastrelliger kanagurta"`.
 
@@ -419,10 +419,10 @@ Conserving areas of the ocean is considered widely to include several types of p
 TS=
 (
   ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
-  OR "design" OR "designing" OR "create" OR "creation" OR "creating"
+  OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
   OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "planned" OR "planning"
-  OR "manag*" OR "enforce" OR "enforcement" OR "enforcing"
+  OR "plans" OR "plan" OR "planned" OR "planning" OR "framework" OR "governance" OR "manag*"
+  OR "enforce" OR "enforcement" OR "enforcing"
   OR "strengthen" OR "improv*"
   )
   NEAR/5
@@ -433,7 +433,7 @@ TS=
           ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
           NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
         )
-      OR ("no-take" NEAR/3 ("area$" OR "zone*"))
+      OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
       )
 )
 ```
@@ -442,13 +442,14 @@ TS=
 
 Phrase 2 covers the establishment/improvement of sustainable management approaches.  The general structure is *action + sustainable management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-```Ceylon=
+```Ceylon =
 TS=
 (
   ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
   OR "design" OR "designing" OR "create" OR "creation" OR "creating"
   OR "establish*" OR "propos*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "enforce" OR "enforcement" OR "enforcing"
+  OR "plans" OR "plan" OR "governance"
+  OR "enforce" OR "enforcement" OR "enforcing"
   OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*" OR "support*"
   )
   NEAR/5
@@ -458,6 +459,7 @@ TS=
       OR "community based management"
       OR "locally managed marine area$" OR "LMMA$"
       OR "resilience based management"
+      OR "herbivore management area$"
       OR ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
       OR
         (
@@ -485,7 +487,7 @@ TS=
       ("designat*" OR "placement" OR "expand*" OR "extend"
       OR "design" OR "designing" OR "create" OR "creation" OR "creating"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning"
+      OR "plans" OR "plan" OR "planned" OR "planning" OR "framework" OR "strategy" OR "governance"
       OR "enforce" OR "enforcement" OR "enforcing"
       OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
       OR "preserv*" OR "support*" OR "ensur*"
@@ -517,7 +519,10 @@ TS=
       OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
       OR "productivity" OR "food production" OR "fish stock$" OR "fishery" OR "fisheries" OR "aquaculture"
       OR ("no-take" NEAR/3 ("area*" OR "zone*"))
-      OR "Conservation of Antarctic Marine Living Resources"  
+      OR "Habitats directive"
+      OR "CBD" OR "HELCOM" OR "OSPAR" OR "UNEP"
+      OR "Conservation of Antarctic Marine Living Resources" OR "CCAMLR"
+      OR "Lima convention" OR "Nairobi convention" OR "Noumea convention" OR "Barcelona convention" OR "World heritage convention"
       OR "International coral reef initiative"
       )
 )
