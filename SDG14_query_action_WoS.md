@@ -738,32 +738,38 @@ TS=
 >
 >  14.6.1 Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing
 
-This target is interpreted to cover research about how fisheries subsidies are related to negative outcomes (overcapacity, overfishing, and IUU finishing), and how they are implemented in developing and LDCs. Prevention of IUU fishing generally is covered in 14.4.
+This target is interpreted to cover research about reducing/eliminating fisheries subsidies that contribute to negative outcomes (overcapacity, overfishing, and IUU finishing). We also consider relevant research about development assistance and fisheries, and works talking about WTO and other instruments in the context of fisheries.
 
-The original version of this query combined *IUU fishing OR LDCs + subsidies + fishing*; however, it was very narrow, with a number of results missed, including research about subsidies which do not contribute to negative effects (i.e. subsidies that could promote positive outcomes). Research on both is needed for assessing what subsidies to keep. Thus, the query has been simplified to cover research talking about fisheries subsidies - this is not a large set of research.
+This query consists of 1 phrase. The general structure is *action + subsidies + fisheries // international instruments + fisheries*
 
-This query consists of 1 phrase. The general structure is *subsidies + fisheries*
-
-*Subsidies* is interpreted to include also other economic instruments (tax breaks, development assistance) given that the indicator is about "international instruments". `subsidi*` is not used alone due to e.g. "subsidiary". `larval subsidi*` is a term to do with fish population dynamics.
+`larval subsidi*` is a term to do with fish population dynamics and is removed.
 
 ``` Ceylon =
 TS =
 (
+  (
     (
-        ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial"
-        OR "world trade organization" OR "WTO"
-        OR "government* subsid*"
-        OR "economic subsid*"
-        OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" OR "subsidi?ed"
-        OR "price support$"
-        OR "tax break$"
-        )
-        NEAR/15
-          ("fishing" OR "fisher*"
-          OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-          )  
+      ("reduc*" OR "limit" OR "minimi*"
+      OR "prohibit*" OR "eliminat*" OR "ban" OR "banning" OR "banned" OR "cut*"
+      OR "remov*" OR "end" OR "ending" OR "prevent*" OR "stop*" OR "halt*"
+      )
+      NEAR/5 "subsid*"
     )
-    NOT "larval subsidi*"
+    NEAR/15
+        ("fishing" OR "fisher*" OR "overfishing"
+        OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
+        )  
+  )
+  NOT "larval subsidi*"
+)
+OR
+TS=
+(
+  ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
+  NEAR/15
+      ("fishing" OR "fisher*" OR "overfishing"
+      OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
+      )  
 )
 ```
 
