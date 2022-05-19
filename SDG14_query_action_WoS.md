@@ -583,53 +583,47 @@ TS =
 > 14.4.1 Proportion of fish stocks within biologically sustainable levels
 
 This target is interpreted to cover research about:
-* ending overfishing, illegal/unreported fishing, destructive fishing  (phrase 1 & 2)
-* implementation of science-based fisheries management (for MSY) (phrase 2)
+* ending overfishing, illegal/unreported fishing (IUU fishing), destructive fishing  (phrase 1 & 2)
+* implementation of science-based fisheries management (phrase 3)
 
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
 ##### Phrase 1:
 
-The basic structure is *action + overfishing/illegal/destructive fishing*
+The basic structure is *generic action + overfishing/illegal/destructive fishing*. The *overfishing* terms are the same in phrase 1 and phrase 2, but the action terms differ and are added at a closer distance in phrase 1.
 
-`bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
+`bycatch` is included as a form of destructive/IUU fishing, as is `blast fishing`. We also consider abandoned gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by fishing. Fishery `collapse OR closure$` are considered relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
 
 ``` Ceylon =
 TS=
 (
-  ( "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ending"
+  ("prevent*" OR "avoid*" OR "stop*" OR "end" OR "ending"
   OR "tackling" OR "tackle" OR "restrict*" OR "combat*"
   OR "reduc*" OR "decreas*" OR "minimi*" OR "mitigat*" OR "remov*" OR "limit$" OR "limiting" OR "limited"
-  OR "manag*" OR "monitor" OR "surveillance" OR "regulat*"
+  OR "manag*" OR "regulat*" OR "solution$" OR "monitor*"
   )
-  NEAR/10
+  NEAR/5
       ("overfish*"
-      OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*"))
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
+      OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
+      OR "ghost fishing" OR "ghost nets" OR "ALDFG"
       OR
-          (  
-            ("overcapacity"
-            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
-            OR "ghost"
-            OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-            )
-            NEAR/10
-                ("fishing" OR "fisher*" OR "trawl*"
-                OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-                )
+        (
+          ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
+          OR "illegal*" OR "unreport*" OR "unregulated" OR "corruption" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
           )
+          NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
+        )
       )       
 )
 ```
 
 ##### Phrase 2:
 
-The basic structure is *action + overfishing/illegal/destructive fishing*
+The basic structure is *instrument actions + overfishing/illegal/destructive fishing*. The *overfishing* terms are the same in phrase 1 and phrase 2, but the action terms differ and are added at a closer distance in phrase 1.
 
-Relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
-
-`bycatch` is included as a form of destructive/unreported fishing (i.e. catch of species that are not the main target), as is `blast fishing`. We also consider `ghost fishing` to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by the fishing industry.
+In this phrase, relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
 
 ``` Ceylon =
 TS=
@@ -642,80 +636,61 @@ TS=
   OR "port state measures agreement" OR "PSMA"
   OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
   OR "common fisheries policy"
-  OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"
-  OR "criminali*" OR "solutions" OR "catch documentation"
+  OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
+  OR "criminali*" OR "catch documentation" OR "surveillance" OR "regulation$" OR "regulated" OR "regulating" OR "enforc*"
   )
   NEAR/15
       ("overfish*"
-      OR (("overharvest*" OR "overexploit*") NEAR/15 ("fish*" OR "shellfish*"))
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
+      OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
+      OR "ghost fishing" OR "ghost nets" OR "ALDFG"
       OR
-          (  
-            ("overcapacity"
-            OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
-            OR "ghost"
-            OR (("gear" OR "tackle") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-            )
-            NEAR/10
-                ("fishing" OR "fisher*" OR "trawl*"
-                OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-                )
+        (
+          ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
+          OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
           )
+          NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
+        )
       )       
 )
 ```  
 
 ##### Phrase 3:
 
-The basic structure is *fisheries + management/restoration actions*
+The basic structure is *action + management/restoration actions + fisheries*. This phrase differs to phrases 1 and 2 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
 
-`management` will find a number of terms, e.g. "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the MSY.
+`management` will find a number of terms, e.g. "science-based management", "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the max. sustainable yield.
 
 ``` Ceylon =
 TS=
 (
-  ("fishery" OR "fisheries" OR "fishing"
-  OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-  OR "overfish*"
-  OR "fish stock$"
-  OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$"))
+  (
+    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*" OR "develop*"
+    OR "reform*" OR "improv*" OR "better"     
+    OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"      
+    OR "marine stewardship council"
+    OR "regional fisheries management organi?ation$" OR "RFMOs"
+    OR "UNCLOS" OR "convention on the law of the sea"
+    OR "fish stocks agreement"
+    OR "code of conduct for responsible fisheries" OR "CCRF"
+    OR "port state measures agreement"
+    OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+    OR "common fisheries policy"
+    )
+    NEAR/15
+      ("manage*" OR "plan" OR "planning" OR "governance"
+      OR "restor*" OR "stock recovery"
+      OR "sustainab*"
+      OR "EBFM" OR "ecosystem approach*"
+      OR "maximum sustainable yield*" OR "MSY"
+      )
   )
   NEAR/15
-      (
-        (
-          ("manage*" OR "plan" OR "planning" OR "governance"
-          OR "restor*" OR "stock recovery"
-          OR "sustainab*"
-          OR "EBFM" OR "ecosystem approach*"
-          )
-          NEAR/5
-              ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*" OR "develop*"
-              OR "reform*" OR "improv*" OR "better"     
-              OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"      
-              )
-        )   
-      OR
-        (
-          ("collaps*" OR "closure$"
-          )
-          NEAR/5
-              ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*"   
-              OR "prevent*" OR "avoid*"
-              OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "agreement*" OR "treaty" OR "treaties"
-              )
-        )    
-      OR
-        ("maximum sustainable yield*" OR "MSY"
-        OR "marine stewardship council"
-        OR "regional fisheries management organi?ation$" OR "RFMOs"
-        OR "UNCLOS" OR "convention on the law of the sea"
-        OR "fish stocks agreement"
-        OR "code of conduct for responsible fisheries" OR "CCRF"
-        OR "port state measures agreement"
-        OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-        OR "common fisheries policy"
-        )
+      ("fishery" OR "fisheries" OR "fishing"
+      OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
+      OR "fish stock$" OR "overfishing"
+      OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$"))
       )
 )
 ```
