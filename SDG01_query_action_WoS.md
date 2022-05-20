@@ -554,6 +554,11 @@ TS=
 
 ## 4. Authorship and review
 
+v2019.12: ML, CSA SRM
+New version, first draft: ML (Feb 2022)
+Internal review: HMB, CSA (March 2022)
+New version, second draft: ML, CSA (May 2022)
+
 ## 5. Footnotes
 
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)

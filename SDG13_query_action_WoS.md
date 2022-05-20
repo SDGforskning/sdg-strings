@@ -332,6 +332,12 @@ TS=
 
 ## 4. Authorship and review
 
+v2019.12: ML, CSA, SRM
+New version, first draft: ML (Oct-Feb 2022)
+Internal review: EHS, CSA (March 2022)
+New version, second draft: ML, CSA (April-May 2022)
+Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership). ML has a PhD in climate/geoscience.
+
 ## 5. Footnotes
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)

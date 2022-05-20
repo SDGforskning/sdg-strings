@@ -185,7 +185,7 @@ TS=
 
 The general structure is *nutritional access/quality/status of specific groups + action*
 
-Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard". 
+Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
 
 ``` Ceylon =
 TS=
@@ -200,7 +200,7 @@ TS=
       ("nutritio*" OR "folate status" OR "micronutrient$")
       NEAR/5
           ("women" OR "girls" OR "mother$" OR "pregnancy"
-          OR "child*" OR "under five$" OR "infant$" OR "toddler$" OR "girl$" OR "boy$" OR "babies" OR "perinatal" 
+          OR "child*" OR "under five$" OR "infant$" OR "toddler$" OR "girl$" OR "boy$" OR "babies" OR "perinatal"
           OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
           )
     )
@@ -1021,6 +1021,11 @@ TS=
 ```
 
 ## 4. Authorship and review
+
+v2019.12: CSA, ML, SRM
+New version, first draft: CSA (Feb 2022)
+Internal review: EHS, ML (March 2022)
+New version, second draft: CSA (May 2022)
 
 ## 5. Footnotes
 

@@ -565,7 +565,7 @@ Here, "clean" is interpreted to include also low-carbon due to the specific ment
 
 ##### Phrase 1
 
-The general structure is *action + sharing/investing/cooperation + clean energy research/tech*. 
+The general structure is *action + sharing/investing/cooperation + clean energy research/tech*.
 
 ```Ceylon =
 TS=
@@ -611,7 +611,7 @@ TS=
 
 ##### Phrase 2
 
-The general structure is *action + investment + energy infrastructure/renewable energy*. 
+The general structure is *action + investment + energy infrastructure/renewable energy*.
 
 ```Ceylon =
 TS=
@@ -702,9 +702,11 @@ TS=
 
 ## 4. Authorship and review
 
-* V2 edit (Oct-Feb 2022): CSA
-* Internal review (Mar 2022): HMB, ML
-* Terminology workshop with specialists (2022):
+v2019.12: ML, CSA, SRM
+New version, first draft: CSA (Oct-Feb 2022)
+Internal review: HMB, ML (March 2022)
+New version, second draft: CSA (May 2022)
+Specialist input: 
 
 ## 5. Footnotes
 

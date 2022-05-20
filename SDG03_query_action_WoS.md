@@ -1294,8 +1294,10 @@ TS =
 
 ## 4. Authorship and review
 
-First edited draft (feb 2022): CSA
-Internal review (mar 2022): HMB, ML
+v2019.12: ML, CSA, SRM
+New version, first draft: CSA (Feb 2022)
+Internal review: HMB, ML (March 2022)
+New version, second draft: CSA (May 2022)
 
 ## 5. Footnotes
 

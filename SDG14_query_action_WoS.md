@@ -1130,8 +1130,8 @@ TS =
 
 ## 5. Authorship and review
 
+Specialist input: Associate professor of fisheries at UiB. CSA has a PhD in marine biology.
 v2019.12: CSA, ML, SRM
-Review by specialist: Associate professor of fisheries at UiB. CSA has a PhD in marine biology.
 New version, first draft: CSA (Feb 2022)
 Internal review: ML, HMB (March 2022)
 
