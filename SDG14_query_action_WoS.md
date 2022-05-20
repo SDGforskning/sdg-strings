@@ -840,149 +840,118 @@ TS =
 >
 > 14.a.1 Proportion of total research budget allocated to research in the field of marine technology
 
-This target is difficult to interpret, particularly as "increase scientific knowledge [...] in order to improve ocean health" could cover just about all marine research. We interpret it to cover:
-* research about biodiversity benefits to developing countries, LDCs and SIDS (phrase 1)
-* research about transfer of marine technology, and improving marine research infrastructure/capacity (phrase 2 and 3)
+This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could cover a lot of marine research. We interpret it to cover:
+* research about transfer of marine technology (phrase 1)
+* research about developing research capacity/infrastructure (phrase 2)
+* research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Concerns scientific knowledge about contributions of biodiversity to development. This includes diversity in terms of "economic" benefits (taken from 14.7), but also direct products of diversity, such as bioprospecting, new biotechnologies, genetic resources.
-
-The general structure is *biodiversity benefits + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
+The general structure is *transfer of technology*. This is such a specific term that any publications using it are likely to be highly relevant to the target.
 
 ``` Ceylon =
-TS=
-(
-    ("blue growth" OR "blue econom*" OR "blue bond$"
-    OR "bioprospect*"
-    OR "biopiracy" OR "Nagoya protocol"
-    OR ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
-    OR "bioresource$" OR "biological resource$" OR "genetic resource$"
-    OR "biotechnolog*"
-    OR
-      (
-        ("biodivers*" OR "diversity")
-        NEAR/15
-            ("sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "development impacts" OR "development assistance"
-            OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-            OR "aquaculture" OR "fish farm*"
-            OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-            OR "exploit*" OR "goods and services" OR "ecosystem service$"
-            OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-            OR "livelihood$"
-            OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
-            OR "econom*" OR "GDP"
-            OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
-            )
-      )
-    )
-  AND
-    (
-      (("developing" OR "least developed")
-      NEAR/3 ("state*" OR "nation$" OR "countr*" OR "small island*" OR "Pacific island*")
-      )
-      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-    )
-)
+TS= ("transfer of marine technolog*" OR "marine technology transfer")
 ```
 
 ##### Phrase 2:
 
-Technology transfer - this is such a specific term, that any articles using it are likely to be highly relevant to the target.
+This phrase covers research about improving scientific knowledge, research capacity and transfer of marine technology. Research about advancing marine science in considered enough to be included.
 
-The general structure is *transfer of technology*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action + marine science*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-``` Ceylon =
-TS=
-(
-  "transfer of marine technolog*"
-  OR "marine technology transfer"
-)
-```
+The *marine science* terms include generic terms for ocean science, terms for research knowledge/tools++, terms for data infrastructures, and terms for citizen science and monitoring. The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>).
 
-##### Phrase 3:
-
-Concerns increasing scientific knowledge, research capacity and transfer of marine technology to improve ocean health. This phrase attempts to link various kinds of scientific and knowledge infrastructures to "ocean health" terms - a very broad concept. Research about advancing marine science in considered enough to be included.
-
-The general structure is *action + marine science + ocean health/marine science*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>).
-
-The term `build*` in the first section covers capacity building. Some of the *ocean health* terms are taken from 14.2.
+The terms `build* OR develop*` in the first section covers capacity building/development.
 
 ``` Ceylon =
 TS=
 (
-    (
-      ("share$" or "sharing" OR "provide"
+      ("provide" OR "provision"
       OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
-      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate"
-      OR "capacity development" OR "develop* capacity"  
-      OR "invest" OR "investing"
-      OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
+      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate" OR "prioriti*"
+      OR "invest" OR "investing" OR "fund"
+      OR "share$"
+      OR "plan" OR "planned" OR "planning"
+      OR "policy" OR "policies" OR "initiative$" OR "framework" OR "governance" OR "strategy" OR "programme$" OR "agenda"
       )
-      NEAR/15
+      NEAR/5
           ("ocean science" OR "ocean research" OR "marine research" OR "marine science"
+          OR "taxonomic research" OR "genetic research" OR "biodiversity research" OR "diversity research" OR "taxonomic science"
           OR
             (
-              ("research" OR "scientific" OR "science")
+              ("research" OR "scientific" OR "science" OR "technology" OR "biotech*"
+              OR "taxonom*" OR "genetic" OR "species" OR "biodiversity" OR "diversity"
+              )
               NEAR/5
-                  ("knowledge" OR "capacity"
-                  OR "policy" OR "policies" OR "programme" OR "programmes" OR "research agenda" OR "framework$" OR "initiative$"
-                  OR "advisor$"
-                  OR "capabilit*" OR "training" OR "compentenc*" OR "expertise" OR "capabilit*" OR "skills"
-                  OR "infrastructure" OR "facilities" OR "vessel$" OR "vehicle$" OR "laboratories" OR "laboratory facilities" OR "sampling equipment"
-                  OR "database$" OR "software" OR "data"
+                  ("knowledge" OR "capacity" OR "advisor*"
+                  OR "capabilit*" OR "training"  OR "expertise" OR "skills" OR "compentenc*"
+                  OR "infrastructure" OR "facilities" OR "research vessel$" OR "vehicle$" OR "laboratories" OR "equipment" OR "herbaria" OR "museum collection$"
+                  OR "database$" OR "software" OR "data" OR "register$" OR "reference librar*" OR "inventory" OR "inventories" OR "information system$"
+                  OR "guidelines"
                   OR "investment$" OR "funding" OR "GERD" OR "expenditure"
-                  OR "network$"
+                  OR "network$" OR "sharing" OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
                   )
             )
+          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean" OR "modelling technique$"
           OR "citizen science"
           OR "observ* network$" OR "observ* system$" OR "observ* facilities"
           OR "remote sensing equipment" OR "tide gauges"
-          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean" OR "modelling technique$"
           OR "monitoring network$" OR "biomonitoring"
           OR
             (
               ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity" OR "environmental")
               NEAR/3 ("observator*" OR "monitoring")
             )
-          OR
-            (
-              ("taxonom*" OR "genom*" OR "genetic" OR "species" OR "biodiversity" OR "diversity")
-              NEAR/5
-                  ("research" OR "capacity"
-                  OR "knowledge" OR "data" OR "software"
-                  OR "compentenc*" OR "expertise" OR "capabilit*" OR "skills"
-                  OR "database$" OR "register$" OR "reference librar*" OR "inventory" OR "inventories" OR "information system$"
-                  OR "guidelines"
-                  OR "infrastructure$" OR "facilities" OR "sampling equipment" OR "laboratory facilities"
-                  OR "herbaria" OR "museum collection$"
-                  )            
-            )
           )
-    )
+)
+```
+
+##### Phrase 3:
+
+The general structure is *biodiversity + development/benefits + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+This phrase covers research about contributions of biodiversity to development. "Development" is interpreted widely to include activities and benefits. This includes impacts on the economy (taken from 14.7), but also direct products of diversity, such as bioprospecting and biotechnology.
+
+`development` is not used alone because it is used in many other contexts (e.g. developmental biology). The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
+
+``` Ceylon =
+TS=
+(
+  (
+    ("biodivers*" OR "diversity" OR "bioresource$" OR "biological resource$" OR "genetic resource$")
+    NEAR/5
+        ("benefit$"
+        OR ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
+        OR "bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*"
+        OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
+        OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
+        OR "aquaculture" OR "fish farm*"
+        OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
+        OR "exploit*" OR "goods and services" OR "ecosystem service$"
+        OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+        OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
+        OR "livelihood$" OR "job$" OR "income$" OR "profit*"
+        OR "trade" OR "trading" OR "market$"
+        OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$"
+        OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+        )
+  )
   AND
-    ("marine life"
-    OR (("ocean*" OR "marine") NEAR/3 ("research" OR "science" OR "scientific"))
-    OR
-      (
-        ("ecosystem$" OR "habitat$" OR "environment*" OR "ocean$" OR "marine" OR "environment*")
-        NEAR/3
-            ("health$" OR "recovery"
-            OR "service$" OR "functioning" OR "function$"
-            OR "quality" OR "integrity" OR "stability" OR "resilience"
-            )
-      )
-    OR "resilien*"
-    OR "water quality"
-    OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-    OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
+    ("least developed countr*" OR "least developed nation$"
+    OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+    OR "less developed countr*" OR "less developed nation$"
+    OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+    OR "underserved countr*" OR "underserved nation$"
+    OR "deprived countr*" OR "deprived nation$"
+    OR "middle income countr*" OR "middle income nation$"
+    OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
+    OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+    OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
     )
 )
 ```
