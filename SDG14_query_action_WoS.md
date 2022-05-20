@@ -636,6 +636,7 @@ TS=
   OR "port state measures agreement" OR "PSMA"
   OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
   OR "common fisheries policy"
+  OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
   OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
   OR "criminali*" OR "catch documentation" OR "surveillance" OR "regulation$" OR "regulated" OR "regulating" OR "enforc*"
   )
@@ -666,24 +667,26 @@ The basic structure is *action + management/restoration actions + fisheries*. Th
 TS=
 (
   (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "design*" OR "propos*" OR "develop*"
-    OR "reform*" OR "improv*" OR "better"     
-    OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"      
-    OR "marine stewardship council"
-    OR "regional fisheries management organi?ation$" OR "RFMOs"
-    OR "UNCLOS" OR "convention on the law of the sea"
-    OR "fish stocks agreement"
-    OR "code of conduct for responsible fisheries" OR "CCRF"
-    OR "port state measures agreement"
-    OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-    OR "common fisheries policy"
+    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
+    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis"
+    OR "negotiat*" OR "reform*" OR "improv*" OR "better"         
     )
     NEAR/15
-      ("manage*" OR "plan" OR "planning" OR "governance"
+      ("manag*" OR "plan" OR "planning" OR "governance"
       OR "restor*" OR "stock recovery"
       OR "sustainab*"
       OR "EBFM" OR "ecosystem approach*"
       OR "maximum sustainable yield*" OR "MSY"
+      OR "marine stewardship council"
+      OR "regional fisheries management organi?ation$" OR "RFMOs"
+      OR "UNCLOS" OR "convention on the law of the sea"
+      OR "fish stocks agreement"
+      OR "code of conduct for responsible fisheries" OR "CCRF"
+      OR "port state measures agreement"
+      OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+      OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+      OR "common fisheries policy"
+      OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
       )
   )
   NEAR/15
@@ -1042,98 +1045,95 @@ TS =
 
 This target is interpreted to cover research about the implementation and development of international law for conservation and sustainable use of the oceans.
 
-This query consists of 2 phrases
+This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
 
 ##### Phrase 1
-The general structure is *international law + action*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-This phrase contains specific international laws relevant to conservation and sustainable use. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
-
-`CITES` is not included as it is also a verb.
+This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
 
 ``` Ceylon =
 TS =
 (
-    ("law of the sea" OR "UNCLOS"
-    OR "the future we want"
-    OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-    OR "BBNJ"
-    OR "common fisheries policy"
-    OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-    OR
-      ("convention$"
-      NEAR/3 ("Conservation of Antarctic Living Marine Resources" OR "biological diversity" OR "OSPAR" OR "international trade in endangered species")
-      )
-    OR
-      ("directive$"
-      NEAR/3 ("marine strategy framework" OR "water framework" OR "marine spatial planning")
-      )
-    OR "MSFD" OR "habitats directive"
-    OR "regional seas programme"
+    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
+    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*"
+    OR "negotiat*" OR "reform*" OR "improv*" OR "better"    
     )
     NEAR/5
-        ("implement*" OR "ratif*" OR "fulfill*"
-        OR "ensur*" OR "enforc*" OR "into practice" OR "praxis"
-        OR "develop*" OR "new" OR "propos*" OR "negotiat*"
+        ("law of the sea" OR "UNCLOS"
+        OR "the future we want"
+        OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
+        OR "BBNJ"
+        OR "common fisheries policy"
+        OR "marine stewardship council"
+        OR "regional fisheries management organi?ation$" OR "RFMOs"
+        OR "fish stocks agreement"
+        OR "code of conduct for responsible fisheries" OR "CCRF"
+        OR "port state measures agreement"
+        OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+        OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+        OR ("directive$" NEAR/3 "marine spatial planning")
+        OR "habitats directive" OR "convention on biological diversity"
+        OR "Convention on International Trade in Endangered Species"
+        OR "Regional seas programme"
+        OR "Water framework directive"
+        OR "OSPAR convention"
+        OR "Marine strategy framework directive" OR "MSFD"
+        OR "Barcelona convention"
+        OR "Global Programme of Action for the Protection of the Marine Environment"
+        OR "MARPOL" OR "prevention of pollution from ships"
+        OR "Conservation of Antarctic Living Marine Resources"
         )
 )
 ```
 
 ##### Phrase 2
 
-The general structure is *sustinable use/conservation + international law + action*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action + international law + sustinable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/terretory disputes.  
 
 ``` Ceylon =
 TS =
 (
-    ("conservation"
+  (
+    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
+    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*"
+    OR "negotiat*" OR "reform*" OR "improv*" OR "better"  
+    )
+    NEAR/5
+        ("international"
+        NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
+        )
+  )
+  NEAR/15
+    ("conservation" OR "sustainab*" OR "ecosystem restoration"
+
     OR "marine spatial planning" OR "MSP"
     OR "ecosystem based management" OR "area based management" OR "resilience based management"
     OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
     OR "coastal resources management"
-    OR "community based management"
-    OR "locally managed marine area$" OR "LMMA$"
-    OR "MPA" OR "MPAs" OR "marine protected area$"
+    OR "community based management" OR "locally managed marine area$" OR "LMMA$"
+    OR "marine spatial planning" OR "spatial management"
+    OR "herbivore management area$"
+    OR "ecosystem approach*"
+
+    OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine protected area$"
     OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
     OR "marine conservation zone$"
     OR "particularly sensitive sea areas$"
+
     OR "blue growth" OR "blue econom*"
-    OR
-      ("sustainab*"
-      NEAR/5 ("manag*" OR "utilization" OR "use" OR "using" OR "usage")
-      )
-    OR
-      ("sustainab*"
-      NEAR/15
-          ("manag*" OR "govern*"
-          OR "tourism" OR "ecotourism" OR "tourist$"
-          OR "aquaculture" OR "fish farm*"
-          OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-          OR "exploit*" OR "goods and services" OR "ecosystem services"
-          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-          OR "livelihood$"
-          OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
-          OR "econom*" OR "GDP"
-          )
-      )  
     )
-  AND
-    (
-      ("international"
-      NEAR/3 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
-      )
-      NEAR/5
-          ("implement*" OR "ratif*" OR "fulfill*"
-          OR "ensur*" OR "enforc*" OR "into practice" OR "praxis"
-          OR "develop*" OR "new" OR "propos*" OR "negotiat*"
-          )
-    )  
 )
 ```
 
 ## 5. Authorship and review
+
+v2019.12: CSA, ML, SRM
+Review by specialist: Associate professor of fisheries at UiB. CSA has a PhD in marine biology.
+New version, first draft: CSA (Feb 2022)
+Internal review: ML, HMB (March 2022)
 
 ## 6. Footnotes
 
