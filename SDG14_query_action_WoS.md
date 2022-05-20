@@ -427,7 +427,7 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
       OR "particularly sensitive sea area$"
       OR
         (
@@ -718,7 +718,7 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
       OR "particularly sensitive sea area$"
       OR
         (
@@ -762,7 +762,9 @@ TS =
   )
   NOT "larval subsidi*"
 )
+
 OR
+
 TS=
 (
   ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
@@ -779,55 +781,55 @@ TS=
 >
 > 14.7.1 Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries
 
-This target is interpreted to include research about sustainable use of marine resources for economic benefits in LCDs and SIDS. This includes sustainable fisheries, tourism, aquaculture, ++. This target specifically only concerns least-developed countries and SIDS, but is internally inconsistent with the indicator which concerns all countries. This makes a large difference to the results. As the target is clearly focused on SIDS and LDCs, we retain this limit, particularly as the indicator is only about sustainable fisheries.
+This target is interpreted to include research about increasing economic benefits to LDCs and SIDS via sustainable use of marine resources. This target specifically only concerns least-developed countries and SIDS, but this is a bit inconsistent with the indicator which concerns all countries. This makes a large difference to the results. As the target is clearly focused on SIDS and LDCs, we retain this limit.
 
-This query consists of 1 phrase. The general structure is *sustainable + economic benefits + LDCs/SIDS*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+This query consists of 1 phrase. The general structure is *action + economic benefits + sustainable use/instruments + LDCs/SIDS*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-*economic benefits* is interpreted widely, to also include e.g. livelihoods, fisheries and ecosystem services. The `Nairobi Convention` is included, which refers to the Nairobi Convention for the Protection, Management, and Development of the Coastal and Marine Environment of the Eastern Africa region. I am a little unsure whether `AND` OR `NEAR/15` is better for the combination of *sustainable + economic benefits* - leaning towards AND.
+*economic benefits* is interpreted to also include e.g. livelihoods, blue growth, and ecosystem services. The `Nairobi Convention` is included, which refers to the Nairobi Convention for the Protection, Management, and Development of the Coastal and Marine Environment of the Eastern Africa region, as well as other instruments to do with sustainable use/fisheries.
 
 ``` Ceylon =
 TS =
 (
     (
-      (
-        ("sustainab*"
-        OR "marine spatial planning" OR "MSP"
-        OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
-        OR "area based management"
-        OR "resilience based management"
-        OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
-        OR "coastal resources management"
-        OR "community based management"
-        OR "locally managed marine area$" OR "LMMA$"
-        OR "MPA" OR "MPAs" OR "marine protected area$"
-        OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-        OR "marine conservation zone$"
-        OR "particularly sensitive sea areas$"
-        )
-        AND
-            ("tourism" OR "ecotourism" OR "tourist$" OR "whale watch*" OR "sightsee*"
-            OR "aquaculture" OR "fish farm*"
-            OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-            OR "exploit*" OR "goods and services" OR "ecosystem service$"
-            OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-            OR "livelihood$"
-            OR "profit*" OR "monetary" OR "monetiz*" OR "investor$"
-            OR "econom*" OR "GDP"
-            )
+      ("increase" OR "increasing" OR "increased" OR "increases"
+      OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better"
+      OR "scal* up" OR "build* capacity" OR "capacity building"
+      OR "expand" OR "expansion*" OR "develop" OR "developing" OR "development"
+      OR "plans" OR "plan" OR "planned" OR "planning"
+      OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance"
       )
-      OR ("sustainab*" NEAR/5 ("manag*" OR "utilization" OR "use" OR "using" OR "usage"))
-      OR "bio-econom*" OR "bioeconom*"
-      OR "blue growth" OR "blue econom*" OR "blue bond$"
+      NEAR/5
+          ("econom*" OR "GDP"
+          OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "socio economic" OR "socioeconomic"
+          OR "livelihood$" OR "income$" OR "profit*"
+          OR "trade" OR "trading" OR "market$"
+          OR "monetary" OR "moneti*" OR "investor$"
+          OR "bio-econom*" OR "bioeconom*"            
+          OR "blue growth" OR "blue econom*" OR "blue bond$"
+          )
+    )
+    AND
+      ("sustainab*"
+      OR "marine spatial planning" OR "MSP"
+      OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
+      OR "area based management" OR "resilience based management" OR "community based management"
+      OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
+      OR "coastal resources management"
+      OR "locally managed marine area$" OR "LMMA$"
+      OR "marine protected area$" OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      OR "marine conservation zone$" OR "particularly sensitive sea areas$"
+      OR "regional fisheries management organi?ation$" OR "RFMOs"
+      OR "port state measures agreement"
+      OR "fish stocks agreement" OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+      OR "code of conduct for responsible fisheries" OR "CCRF"
       OR "Nairobi Convention"
-    )
-  AND
-    (
-      ("least developed"
-      NEAR/3 ("state*" OR "nation$" OR "countr*" OR "small island*" OR "Pacific island*")
       )
-      OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti"
-      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-    )
+    AND
+      ("least developed countr*" OR "least developed nation$"  OR "small island developing state$" OR "Pacific island*"
+      OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+      )
 )
 
 ```
