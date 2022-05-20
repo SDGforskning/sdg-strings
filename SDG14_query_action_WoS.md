@@ -799,10 +799,10 @@ TS =
       OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance"
       )
       NEAR/5
-          ("econom*" OR "GDP"
+          ("econom*" OR "GDP" OR "wealth"
           OR "exploit*" OR "goods and services" OR "ecosystem service$"
           OR "socio economic" OR "socioeconomic"
-          OR "livelihood$" OR "income$" OR "profit*"
+          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
           OR "trade" OR "trading" OR "market$"
           OR "monetary" OR "moneti*" OR "investor$"
           OR "bio-econom*" OR "bioeconom*"            
