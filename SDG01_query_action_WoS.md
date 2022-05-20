@@ -1,6 +1,6 @@
 # Search query for SDG 01 - No Poverty, Bergen action-approach.
 
-**Current status**: This string is currently under active development to improve the phrases and structure. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.*
+**Current status**: This string undergoing editing after review. It is substantially changed from the original version it was based on (v2019.11).*
 
 **Contents**
 
@@ -37,31 +37,26 @@ During editing of this string (2021), we have also consulted of queries from the
 > **1.1 By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day**
 >
 > 1.1.1 Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)
->
 
-This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line.
+This target is interpreted as to cover research about eradication of extreme poverty and reduce the number of people living below the international poverty line. Here we consider relevance limited to research about absolute poverty, vs. target 1.2 which is about poverty generally.
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` - taken out as adds irrelevant hits (picks up random numbers from abstracts)
+This query consists of 1 phrase. The basic structure is *extreme/global poverty + action*.
 
-This query consists of 1 phrase.
-
-Phrase 1: Covers research about eradicate extreme poverty (*515*)
-
-*Action: decrease/eradicate*
-
-*The basic structure is as follows: extreme/global poverty + action*
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line.
 
 ```Ceylon =
 TS=
 (
-  ("extreme poverty" OR "severe poverty" OR "destitution" OR "global poverty" OR "international poverty")
+  ("extreme poverty" OR "severe poverty" OR "deep poverty" OR "abject poverty" OR "absolute poverty" OR "destitution"
+  OR "global poverty" OR "international poverty"
+  )
    NEAR/10
-    ("decreas*" OR "minimi*" OR "reduc*"
-      OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-      OR "end" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*"
-      OR "lift out of" OR "lifting out of" OR "overcom*" OR "excap*" OR "mitigat*"
-      )
-  )  
+    ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
+    OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+    OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+    OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
+    )
+)  
 ```
 
 ## Target 1.2
@@ -72,38 +67,30 @@ TS=
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty reduction in in all forms.
+This target is interpreted as to cover research about poverty reduction.
 
-`Decent work` was considered for inclusion as highlighted as the main route out of poverty in the High level political forum document <a id="HLPF2017">[UN (2017)](#f2)</a>. `Child labour` and `modern slavery` were included as elements of this. In this version these are now taken out, as they are not necessarily linked to poverty. However, articles linking these topics with poverty reduction can be expected to use the word poverty as well and therefore to be covered but the phrase below. If there is no link to poverty, then it is too indirect and should not be included here.
+`Decent work` was considered for inclusion as it is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
 
-This query consists of 1 phrase.(*20,899*)
-
-*Action: decrease/eradicate*
-
-*The basic structure is as follows: poverty/the poor + action*
+This query consists of 1 phrase. The general structure is *poverty/the poor + action*
 
 ```Ceylon =
 TS=
-
 (
-  ("anti-poverty"
-    OR
-    ("poverty"   OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+  "anti-poverty" OR "out of poverty"
+  OR
+  (
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-     )
-
-  NEAR/5
-
-      ("decreas*" OR "minimi*" OR "reduc*"
-      OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-      OR "end" OR "ended" OR "ending" OR "eliminat*" OR "prevent*" OR "eradicat*" OR "escape" OR "mitigate" OR "relief"
-      OR "lift out of" OR "overcome"
-      )
+    )
+    NEAR/5
+        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+        OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
+        )
   )
 )
-
 ```
-
 
 ## Target 1.3
 
