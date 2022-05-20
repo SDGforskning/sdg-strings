@@ -97,91 +97,95 @@ TS=
 > **1.3 Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable**
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
->
 
-This target is interpreted as to cover research about about access to, coverage of and establishment/implementation of social protection systems, social services and social floors. Social floors encompasses a number of things such as essential health care, basic income security, child benefits, income support benefits, basic income, employment guarantees.
+This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems, social services and social floors. Social floors encompasses basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>.
 
-This query consists of 3 phrases.
-All cover research about about access to, coverage of and establishment/implementation of social protection systems, social floors and social services. Some of the terms work well without groups of poeple (e.g welfare system), some need to be combined with "vulnerable people" ("unemployment benefit$") and some with poverty/"poor people"
+This query consists of 3 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), some need to be combined with "vulnerable people" (phrase 2) and some with poverty/"poor people" (phrase 3).
 
-Phrase 1: access/coverage/implementation + social protection systems (899)
+##### Phrase 1
 
-Phrase 2: access/coverage/implementation + social protection systems/social floors + vulnerable groups (~36)
+This phrase is about access to, coverage of and establishment/implementation of floors/ protection systems/welfare systems. As we talk about systems/services is does not need to be combined with groups of people.
 
-Phrase 3: access/coverage/implementation + social protection systems/social services + poverty and the poor (~184)
+The basic structure is *action + social protection systems*
 
-`welfare state` was concidered but excluded as it leads mostly to papers about early walfare states and the history of those.
-
-##### Phrase 1: (*901*)
-
-This phrase is about about access to, coverage of and establishment/implementation of social protection *systems*/welfare systems and similar concepts. As we talk about systems/services is does not need to be combined with groups of people.
-
-*Action: access/coverage/implementation*
-
-*The basic structure is as follows: action + social protection systems*
+`welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
 ```Ceylon =
 TS=
 (
-  ("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
-      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
-
-   NEAR/10
-
-  ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$")
-)
-
- ```  
-
-
-##### Phrase 2 (*113*):
-
-This phrase is about about access to, coverage of and establishment/implementation of specific social social floors such as cash, sickness benefits for vulnerable groups
-
-*Action: access/coverage/implementation*
-
-*The basic structure is as follows: action + social protection systems/social floors + vulnerable groups*
-
-Vulnerable groups are based in the groups mentioned in the indicators
-
-```Ceylon =
-TS=
-(
-  (
-  "implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR "pathway$"
-      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$"
+  ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*"
+  OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect"  OR "design*" OR "develop*" OR "pathway$"
+  OR
+    (
+      ("increas*" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
+      OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "advoca*"
       )
+      NEAR/5 ("coverage" OR "covered" OR "covering" OR "access*")
+    )
+  OR
+    (
+      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+      OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*"
+      OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+      OR "improv*" OR "manag*"
+      )
+      NEAR/5 ("barrier$" OR "obstacle$")
+    )
+  )
+  NEAR/5
+      ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$" OR "social protection program*")
+)
+```  
 
-  NEAR/10
 
+##### Phrase 2
+
+This phrase is about specific social floors. The basic structure is *action + social protection systems/social floors + vulnerable groups*. The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
+
+```Ceylon =
+TS=
+(
   (
-  "basic income" OR "cash benefit"  OR "income security"
-  OR "unemployment benefit$" OR "sickness benefit$" OR "sick benefit"
+    ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*"
+    OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*" OR "pathway$"
+    OR
+      (
+        ("increas*" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
+        OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "advoca*"
+        )
+        NEAR/5 ("coverage" OR "covered" OR "covering" OR "access*")
+      )
+    OR
+      (
+        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+        OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*"
+        OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "improv*" OR "manag*"
+        )
+        NEAR/5 ("barrier$" OR "obstacle$")
+      )
+    )
+    NEAR/5
+          ("basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance"
+          OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance"
+          OR "disability benefit$" OR "disability allowance" OR "disability pension$"
+          OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "sickness allowance"
+          OR "paid maternity leave" OR "paid maternal leave" OR "maternity pay" OR "maternity allowance" OR "parental benefit$"
+          OR "child benefit$"
+          OR "pension$ insurance" OR "pension plan$" OR "pension benefit$"  OR "public pension$" OR "state pension$"
+          )
   )
   AND
-  (
-  "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-      OR
-        (
-          ("person$" OR "people" OR "adult$")
-          NEAR/3
-              ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")
-        )
-      OR "disability"
-      OR
-        (
-          ("work" OR "workplace" OR "worker$" OR "occupational")
-          NEAR/3
-              ("injury" OR "injuries" OR "illness*")
-        )
-      OR "pregnant" OR "pregnancy"
-       OR "disability" OR "unemployed"
-      OR "children" OR "child" OR "pregnant" OR "pregnancy"
-      OR  "maternity" OR "female" OR "women" OR "girls"
-  )
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+    OR "the vulnerable" OR "vulnerable group$"
+    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+    OR "disabled" OR "disabilities" OR "disability"
+    OR "unemployed"
+    OR "older" OR "elderly")
+    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*"))
+    OR "pregnant" OR "pregnancy" OR "children" OR "child" OR  "maternity" OR "female" OR "women" OR "girls"
+    )
 )
 ```
 
@@ -549,6 +553,8 @@ New version, second draft: ML, CSA (May 2022)
 ## 5. Footnotes
 
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+
+<a id="f5"></a> International Labour Organization (n.d.) Social protection floor. (https://www.ilo.org/secsoc/areas-of-work/policy-development-and-applied-research/social-protection-floor/lang--en/index.htm) [Accessed May 2022].[↩](#socialfloors)
 
 <a id="f4"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. (https://council.science/publications/hazard-information-profiles/).[↩](#disasters)
 
