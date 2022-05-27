@@ -45,6 +45,8 @@ This target is interpreted to cover research about how to strengthen resilience 
 
 This query consists of 1 phrase. The basic structure is *action + resilience/impacts/plans + disasters*
 
+Under actions, we considered including the Paris agreement as article 7 is relevant to this target. However, most results were not relevant (e.g. results about what would happen to rainfall under the Paris Agreement goal of 1.5...).
+
 The terms for disasters contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
 
 ``` Ceylon =
@@ -74,6 +76,8 @@ TS=
           )
     )
     OR "sendai framework"
+    OR "cancun adapation framework"
+    OR "readiness and preparatory support programme" OR "readiness programme"
   )  
   NEAR/15
   (
@@ -99,10 +103,12 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about
-  - national policies, strategies and planning related to climate change mitigation and adaptation actions, including  reduction of greenhouse gases (phrase 1)
-  - national policies, strategies and planning related to reducing the indicators of climate change & their impacts (phrase 2)
-  - national policies, strategies and planning related to international frameworks for action (phrase 3)
+This target is interpreted to cover research which mention national policies, strategies and planning and also:
+  - climate change mitigation and adaptation actions, including  reduction of greenhouse gases (phrase 1)
+  - reducing the indicators of climate change & their impacts (phrase 2)
+  - international frameworks for action, or climate change integration into policy (phrase 3)
+
+We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning.
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
@@ -125,7 +131,8 @@ TS=
     OR "methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
     )
     NEAR/5
-          ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
+          ("action$" OR "sustainab*"
+          OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*" OR "vulnerab*"
           OR "reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
           OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
           )
@@ -133,7 +140,9 @@ TS=
   AND
     (
       ("national" OR "state" OR "federal" OR "domestic")
-      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
+      NEAR/5
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
     )
   AND
     ("climate" OR "global warming" OR "climatic change$"
@@ -176,16 +185,18 @@ TS=
         )
   )
   AND
-    (
-      ("national" OR "state" OR "federal" OR "domestic")
-      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
-    )
+      (
+        ("national" OR "state" OR "federal" OR "domestic")
+        NEAR/5
+            ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+            OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
+      )
 )
 ```
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action (i.e. applied climate science rather than basic). This does pick up some results to do with energy transitions, but generally as related to climate.
+Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate.
 
 ``` Ceylon =
 TS=
@@ -193,12 +204,29 @@ TS=
   ("Kyoto protocol" OR "Paris Agreement"
   OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "COP 25" OR "COP25" OR "COP 26" OR "COP26"
   OR "UNFCCC" OR "United Nations Framework Convention on Climate Change"
+  OR "Cancun adaptation framework"
   )
-    AND
+  AND
     (
       ("national" OR "state" OR "federal" OR "domestic")
-      NEAR/5 ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans")
+      NEAR/5
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
+          )
     )
+)
+OR
+TS=
+(
+  ("climate change$" NEAR/5 ("integrat*" OR "includ*" OR "inclus*"))
+  NEAR/15
+      (
+        ("national" OR "state" OR "federal" OR "domestic")
+        NEAR/5
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
+          )
+      )
 )
 ```
 
@@ -210,7 +238,7 @@ TS=
 
 This target is considered to cover research about improving education, awareness and capacity about climate change mitigation, adaptation,  impact reduction and early warning.
 
-This query consists of 1 phrase. The general structure is *action + education/awareness/capacity + climate mit/adapt/red/warning*
+This query consists of 1 phrase. The general structure is *action + education/awareness/capacity + climate mit/adapt/warning*
 
 Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge. Awareness is included in some definitions.
 * Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
@@ -219,21 +247,22 @@ Interpretation of what should be considered as contributing to raising "human an
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investments as an "action" in the sense that they can drive action (e.g. cooperation fund for education).
+In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investments as an "action" in the sense that they can drive action (e.g. cooperation fund for education). We have also included `green climate fund` (https://www.greenclimate.fund/).
 
-We have also included `green climate fund` as a stand-alone term, as the purpose of this fund is improving capacity on climate change ("GCF was established by 194 governments to limit or reduce greenhouse gas (GHG) emissions in developing countries, and to help vulnerable societies adapt to the unavoidable impacts of climate change.", https://www.greenclimate.fund/).
+In this string, sometimes the same terms appear in two parts (e.g. awareness). This is because these terms are likely sufficient in a less limited combination (e.g. increase climate awareness), while others need an additional element (e.g. improve curricula for climate action - we need the "action" element to avoid e.g. improving university curricula for basic climate science).
 
 ``` Ceylon =
 TS=
 (
-  (
     (
       ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
       OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
       OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
+      OR "green climate fund"
+      OR "strategy" OR "initiative$"
       )
       NEAR/5
-          ("educat*" OR "curriculum" OR "curricula" OR "teacher training"
+          ("educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
           OR "awareness"
           OR "capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
           OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
@@ -245,8 +274,9 @@ TS=
         (
           ("climate" OR "global warming" OR "climatic change$" OR "sea level rise")
           NEAR/5  
-              ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
-              OR "early warning" OR "preparedness" OR "risk$" OR "vulnerab*"
+              ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
+              OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
+              OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
               OR
                 (
                   ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
@@ -263,8 +293,6 @@ TS=
                   ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
           )   
       )
-  )  
-  OR "green climate fund"
 )
 
 ```
@@ -274,7 +302,16 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
+---
 Awaiting input from issue https://github.com/SDGforskning/SDGstrings_wos/issues/12
+
+Term suggestions from CAB:
+•	climate finance, climate finance negotiations, Financial Mechanism, commitment, national commitments, mitigation, mitigate, mitigation action, developing country needs, transparency, financial transparency
+•	Developed country, developing country, Annex II Parties, developing country Parties, developed country Parties
+•	Green Climate Fund, GCF, Financial Mechanism of the Convention, long-term finance
+•	Article 11, Kyoto Protocol, Special Climate Change Fund, SCCF, Least Developed Countries Fund, LDCF, Green Environment Facility, GEF, Adaptation Fund, AF
+
+---
 
 ##### Phrase 1:
 
@@ -287,9 +324,13 @@ Awaiting input from issue https://github.com/SDGforskning/SDGstrings_wos/issues/
 >
 >13.b.1 Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
 
-This target is considered to cover research about planning for climate change, and raising capacity for climate-related management, in least developed countries and small island developing states. We consider "climate-related management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3. We use the same interpretation of capacity as used under target 13.3.
+This target is considered to cover research about least developed countries and small island developing states, about
+* planning for climate change
+* raising capacity for climate-change management. We consider "climate-change management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3. We use the same interpretation of capacity as used under target 13.3.
 
-This target consists of 1 phrase. The basic structure is *(action + capacity + climate management // climate plans) + LDCs/SIDS*
+We do not need to include terms for women, youth, marginalised communities because research about these groups will be included in the results anyway.
+
+This target consists of 1 phrase. The basic structure is *(climate planning/management // action + capacity + climate management) + LDCs/SIDS*
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc.
 
@@ -297,30 +338,33 @@ Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan,
 TS=
 (
   (
-    (
+    ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
+    OR "nationally determined contribution$"
+    OR
       (
-        ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
-        OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-        OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
-        )
-        NEAR/5
-            ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-            OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
-            OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
-            OR "educat*" OR "awareness"
+        (
+          ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
+          OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
+          OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
+          OR "green climate fund"
+          )
+          NEAR/5
+              ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
+              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
+              OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
+              OR "educat*" OR "awareness"
+              )
+        )  
+        AND
+            (
+              ("climat*" OR "global warming" OR "climatic change$" OR "sea level rise")
+              NEAR/5
+                  ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
+                  OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
+                  OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
+                  )
             )
       )  
-    AND
-      (
-        ("climat*" OR "global warming" OR "climatic change$" OR "sea level rise")
-        NEAR/5
-            ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
-            OR "early warning" OR "preparedness" OR "risk$" OR "vulnerab*"
-            )
-      )
-    )  
-    OR ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
-    OR "green climate fund"
   )   
   AND
   ("least developed countr*" OR "least developed nation$" OR "small island developing state$"
@@ -336,7 +380,7 @@ v2019.12: ML, CSA, SRM
 New version, first draft: ML (Oct-Feb 2022)
 Internal review: EHS, CSA (March 2022)
 New version, second draft: ML, CSA (April-May 2022)
-Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership). ML has a PhD in climate/geoscience.
+Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership) & ML (PhD in climate/geoscience).
 
 ## 5. Footnotes
 
