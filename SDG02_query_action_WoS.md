@@ -443,6 +443,8 @@ The basic structure of phrase 3 is *food production systems + disaster/climate c
 
 The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
 
+The *disaster* terms were taken from a standardised list we used across the SDGs, which was developed based on selected hazards listed in <a id="Murray">[Murray et al. (2021)](#f15)</a>.
+
 ``` Ceylon =
 TS=
 (
@@ -477,19 +479,20 @@ TS=
               NEAR/5
                       ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
                       OR "disaster$" OR "catastroph*"
-                      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-                      OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spells"
-                      OR "wildfire*" OR "forest fire*" OR "wild-fire*" OR "forestfire*"
-                      OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "storm$"
-                      OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$"
-                      OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "mud-flow$"
+                      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+                      OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+                      OR "drought$" OR "flood*"
+                      OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+                      OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+                      OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+                      OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+                      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
                       OR "tipping point$"  
-                      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "tsunami*"
-                      OR (("volatil*" OR "unstable" OR "instability") NEAR/5 ("market$" OR "price$"))
-                      OR "financial crash*" OR "economic downturn$"
-                      OR "war" OR "wars"
+                      OR "outbreak$" OR "pandemic$" OR "epidemic$"
+                      OR "war" OR "wars" OR "armed conflict$"
                       OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-                      OR "outbreak$" OR "disease risk$" OR "pandemic$" OR "epidemic$"
+                      OR "financial crash*" OR "financial shock$" OR "financial disaster$"
+                      OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
                       )
           )
   )
@@ -1043,6 +1046,8 @@ New version, second draft: CSA (May 2022)
 
 <a id="f14"></a> High Level Panel of Experts on Food Security and Nutrition. (2019). *Agroecological and other innovative approaches for sustainable agriculture and food systems that enhance food security and nutrition*. A report by the High Level Panel of Experts on Food Security and Nutrition
 of the UN Committee on World Food Security, Rome. https://www.fao.org/cfs/cfs-hlpe/hlpe-reports/report-14-elaboration-process/en/ [accessed 03 Jan 2022] [↩](#HLPE)
+
+<a id="f15"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. DOI: 10.24948/2021.05 (https://council.science/publications/hazard-information-profiles/). [↩](#Murray)
 
 <a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches [↩](#SFS)
 
