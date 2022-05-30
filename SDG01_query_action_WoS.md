@@ -96,7 +96,9 @@ TS=
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 
-This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems, social services and social floors. Social floors encompass basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>. We consider research about social services included.
+This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems and social floors.
+
+To aid interpretation of "social protection" and find terms, we used a guide to terminology and types from the Governance and Social Development Resource Centre <a id="gsdrc">([Carter et al. 2019](#f9))</a>. We interpreted social floors according to the ILO, as including basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>.
 
 This query consists of 2 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), but some need to be combined with "vulnerable people" or poverty (phrase 2).
 
@@ -110,7 +112,7 @@ As the *social protection* terms include a systemic element (systems, services) 
 TS=
 (
   ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*"
-  OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect"  OR "design*" OR "develop*" OR "pathway$"
+  OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect"  OR "design*" OR "develop*"
   OR
     (
       ("increas*" OR "improv*" OR "enhanc*" OR "better" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
@@ -129,8 +131,9 @@ TS=
     )
   )
   NEAR/5
-      ("welfare system$" OR "welfare service$" OR "social security system" OR "basic social service$" OR "social floor$"
-      OR "social protection program*" OR "social safety net$" OR "safety net program*"
+      ("welfare system$" OR "welfare service$" OR "social security system"
+      OR "basic social service$" OR "social assistance service$" OR "social floor$"
+      OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
       )
 )
 ```  
@@ -140,14 +143,14 @@ TS=
 
 This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The basic structure is *action + social protection/social floors + vulnerable groups*.
 
-The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
+The terms for *vulnerable groups* are based on the groups mentioned in the indicator. `"social care service$" OR "social service$"` are sometimes considered a part of social protection <a id="gsdrc">([Carter et al. 2019](#f9))</a> - we include them here, although they do introduce noise as there are many works which mention them as a factor (e.g. a health study that discusses whether participants had access to social care).
 
 ```Ceylon =
 TS=
 (
   (
     ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*" OR "propose$"
-    OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*" OR "pathway$"
+    OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*"
     OR
       (
         ("increas*" OR "improv*" OR "enhanc*" OR "better" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
@@ -159,21 +162,22 @@ TS=
       (
         ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
         OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*"
-        OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "dismantl*"
         OR "improv*" OR "manag*"
         )
         NEAR/5 ("barrier$" OR "obstacle$")
       )
     )
     NEAR/5
-          ("social protection$" OR "social benefits" OR "social security" OR "social service$"
-          OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance"
-          OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance"
-          OR "disability benefit$" OR "disability allowance" OR "disability pension$"
-          OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "sickness allowance"
-          OR "paid maternity leave" OR "paid maternal leave" OR "maternity pay" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave"
-          OR "child benefit$"
+          ("social protection$" OR "social security" OR "social benefits" OR "social insurance"
+          OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
+          OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
+          OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
+          OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "paid medical leave" OR "sickness allowance"
+          OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
+          OR "child benefit$" OR "child tax credit$" OR "child allowance"
           OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
+          OR "social care service$" OR "social service$"
           )
   )
   AND
@@ -474,16 +478,13 @@ TS=
     )
     NEAR/15
         ("anti-poverty" OR "out of poverty"
-        OR  (
-              ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-              OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-              )
-              NEAR/5
-                    ("minimi*" OR "reduc*" OR "mitigat*"
-                    OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-                    OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
-                    OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
-                    )
+        OR  ("poverty"
+            NEAR/5
+                ("minimi*" OR "reduc*" OR "mitigat*"
+                OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+                OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+                OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
+                )
             )
         )
   )
@@ -547,6 +548,8 @@ New version, second draft: ML, CSA (May 2022)
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
 <a id="f7"></a> Department of Economic and Social Affairs (2009) *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf [↩](#DESA)
+
+<a id="f9"></a> Carter, Roelen, Enfield & Avis (2019) Types of social protection. Governance and Social Development Resource Centre. (https://gsdrc.org/topic-guides/social-protection/types-of-social-protection/) [Accessed May 2022].[↩](#gsdrc)
 
 <a id="f5"></a> International Labour Organization (n.d.) Social protection floor. (https://www.ilo.org/secsoc/areas-of-work/policy-development-and-applied-research/social-protection-floor/lang--en/index.htm) [Accessed May 2022].[↩](#socialfloors)
 
