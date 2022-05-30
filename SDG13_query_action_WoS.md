@@ -118,7 +118,7 @@ This query consists of 3 phrases.
 
 This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The general structure is *climate change/GHGs + action + national plans + climate*.
 
-We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f4)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f4)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
 ``` Ceylon =
 TS=
@@ -157,7 +157,7 @@ TS=
 
 This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The general structure is *climate change indicators + action + national plans*.
 
-Indicators of climate change are changes that can be observed and measured (https://library.wmo.int/doc_num.php?explnum_id=10618): global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level.
+Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
 ``` Ceylon =
 TS=
@@ -319,7 +319,7 @@ TS=
     OR "opertionali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
     OR "contribut*" OR "commitment$" OR "negotiation$"
     OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
-    OR "donor$" OR "donation$"
+    OR "donor$" OR "donation$" OR "donate"
     OR "annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD countr*"
     )
     NEAR/15
@@ -343,11 +343,9 @@ This target is considered to cover research about least developed countries and 
 * planning for climate change
 * raising capacity for climate-change management. We consider "climate-change management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
-We do not need to include terms for women, youth, marginalised communities because research about these groups will be included in the results anyway.
-
 This target consists of 1 phrase. The basic structure is *(climate planning/management // action + capacity + climate management) + LDCs/SIDS*
 
-Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc.
+Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
 ``` Ceylon =
 TS=
@@ -402,7 +400,7 @@ Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leade
 
 ## 5. Footnotes
 
-<a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
+<a id="f4"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
 <a id="f6"></a> Climate-ADAPT. (2019, last updated 2021). Capacity building on climate change adaptation. European Environment Agency & European Commission. (https://climate-adapt.eea.europa.eu/metadata/adaptation-options/capacity-building-on-climate-change-adaptation/) [accessed 6 May 2022].[↩](#climateADAPT)
 
@@ -412,4 +410,6 @@ Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leade
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
-<a id="f2">2</a> United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] [↩](#UNDGcapacity)
+<a id="f2"></a> United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] [↩](#UNDGcapacity)
+
+<a id="f7"></a> World Meteorological Organization (2021) State of the Global Climate 2020. https://library.wmo.int/doc_num.php?explnum_id=10618 [accessed 19.02.2022] [↩](#wmo)
