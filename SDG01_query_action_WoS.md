@@ -455,58 +455,55 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about investment, increased resources, incl. development aid to implement programs and policies (to end) poverty in developing countries, in particular least developed countries. "to end" is considered to be implicit.
+This target is interpreted to cover research about international investment and poverty reduction in developing countries. It was considered whether "programmes and policies" should be an element in the search strategy, but the results without it look relevant.
 
-This query consists of 1 phrase. (*111*)
-
-*Action : improve invenstment, international aid*
-
-*The basic structure is as follows:: action + programs + poverty*
-
-
+This query consists of 1 phrase. The basic structure is *International financing + anti-poverty + developing countries*.
 
 ```Ceylon =
 TS=
 (
   (
-    ("development aid" OR "development assistance" OR "development spending" OR "foreign aid" OR "international aid" OR "cooperation fund"
-        OR "international cooperation" OR "international collaboration"
-        OR (
-            ("government" OR "public" OR "international")
-            NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
-            NEAR/5 ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-            OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "promote"
-                   )
-           )         
+    ("ODA" OR "development spending" OR "foreign aid" OR "foreign investment$" OR "cooperation fund"
+    OR  (
+          ("international" OR "development")
+          NEAR/3
+              ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+              OR "aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$"
+              )
+        )    
     )
-  NEAR/10
-    ("programm" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "framework$" OR "planning" OR "service$" OR "agenc*"    )
+    NEAR/15
+        ("anti-poverty" OR "out of poverty"
+        OR  (
+              ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+              OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+              )
+              NEAR/5
+                    ("minimi*" OR "reduc*" OR "mitigat*"
+                    OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+                    OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+                    OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
+                    )
+            )
+        )
   )
   AND
-  ("anti-poverty"
-    OR
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-    )
-  )
-  AND
-  (
-  "least developed countr*" OR "least developed nation$"
-  OR
-  "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
-  OR "less developed countr*" OR "less developed nation$"
-  OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
-  OR "underserved countr*" OR "underserved nation$"
-  OR "deprived countr*" OR "deprived nation$"
-  OR "middle income countr*" OR "middle income nation$"
-  OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
-  OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
-  OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-  OR
-  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-  )
+      ("least developed countr*" OR "least developed nation$"
+      OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+      OR "less developed countr*" OR "less developed nation$"
+      OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+      OR "underserved countr*" OR "underserved nation$"
+      OR "deprived countr*" OR "deprived nation$"
+      OR "middle income countr*" OR "middle income nation$"
+      OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
+      OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+      OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+      OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+      "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+      "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
+      "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+      )
 )
-
 ```  
 
 ## Target 1.b
@@ -515,7 +512,28 @@ TS=
 >
 > 1.b.1 Pro-poor public social spending
 
+This target is interpreted to cover research about policies that can stimulate investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about international and national policies and poverty reduction. The general structure is *Policy + antipoverty*.
 
+``` Ceylon =
+TS=
+(
+  ("law$" OR "legislat*"
+  OR (("national" OR "government*" OR "regional" OR "local" OR "international") NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"))
+  OR "investment policy"
+  )
+  NEAR/15
+      ("anti-poverty" OR "out of poverty"
+      OR  ("poverty"
+          NEAR/3
+              ("minimi*" OR "reduc*" OR "mitigat*"
+              OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+              OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+              OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
+              )
+          )
+      )
+)
+```
 
 ## 4. Authorship and review
 
