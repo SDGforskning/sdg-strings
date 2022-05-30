@@ -247,7 +247,7 @@ Interpretation of what should be considered as contributing to raising "human an
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investments as an "action" in the sense that they can drive action (e.g. cooperation fund for education). We have also included `green climate fund` (https://www.greenclimate.fund/).
+In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investments as an "action" in the sense that they can drive action (e.g. cooperation fund for education). We have also included specialist funds such as the [Green climate fund](https://www.greenclimate.fund/).
 
 In this string, sometimes the same terms appear in two parts (e.g. awareness). This is because these terms are likely sufficient in a less limited combination (e.g. increase climate awareness), while others need an additional element (e.g. improve curricula for climate action - we need the "action" element to avoid e.g. improving university curricula for basic climate science).
 
@@ -257,15 +257,18 @@ TS=
     (
       ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
       OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-      OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
-      OR "green climate fund"
+      OR "invest" OR "investing" OR "fund$" OR "funding"
+      OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
+      OR "financial assistance" OR "financial support" OR "economic assistance" OR "economic support"
+      OR "climate aid" OR "climate financ*" OR "climate fund*"
+      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
       OR "strategy" OR "initiative$"
       )
       NEAR/5
           ("educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
           OR "awareness"
           OR "capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
+          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*" OR "training"
           OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
           )
     )  
@@ -296,14 +299,18 @@ TS=
 )
 
 ```
+
 ## Target 13.a								
 
 > **13.a Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible**
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
----
-Awaiting input from issue https://github.com/SDGforskning/SDGstrings_wos/issues/12
+This target is interpreted to cover research about
+* Transparency in climate financing (phrase 1)
+* Mechanisms for providing climate financing, including operalisation/capitalisation, and contributions and commitments of developed countries (phrase 2)
+
+This query consists of 2 phrases.
 
 Term suggestions from CAB:
 •	climate finance, climate finance negotiations, Financial Mechanism, commitment, national commitments, mitigation, mitigate, mitigation action, developing country needs, transparency, financial transparency
@@ -311,12 +318,49 @@ Term suggestions from CAB:
 •	Green Climate Fund, GCF, Financial Mechanism of the Convention, long-term finance
 •	Article 11, Kyoto Protocol, Special Climate Change Fund, SCCF, Least Developed Countries Fund, LDCF, Green Environment Facility, GEF, Adaptation Fund, AF
 
----
-
 ##### Phrase 1:
 
+This phrase covers transparency around climate financing. The general structure is *transparency + climate financing*. The term `investment$ OR investing` were tried, but created mostly noise ("investment climate").
 
+``` Ceylon =
+TS=
+(
+    ("transparency" OR "corruption" OR "accountability" OR "allocation$" OR "misallocation")
+    NEAR/15
+        ("climate financ*" OR "climate aid"
+        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
+        OR
+          ("climat*"
+          NEAR/5
+              ("finance" OR "financing" OR "fund" OR "funds" OR "funding" OR "economic support" OR "economic assistance" OR "financial assistance" OR "financial support")
+          )
+        )
+)
+```
 
+##### Phrase 2:
+
+This phrase covers operalisation/capitalisation, commitments, and developed countries regarding climate financing. The general structure is *actions/developed countries + climate financing*.
+
+``` Ceylon =
+TS=
+(
+    ("opertionali*" OR "capitali*"
+    OR "contribut*" OR "commitment$" OR "negotiation$" OR "donor$" OR "donation$"
+    OR "annex II part*" OR "developed countr*" OR "developed nation$" OR "OECD countr*"
+    OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
+    )
+    NEAR/15
+        ("climate financ*" OR "climate aid"
+        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
+        OR
+          ("climat*"
+          NEAR/5
+              ("finance" OR "financing" OR "fund" OR "funds" OR "funding" OR "economic support" OR "economic assistance" OR "financial assistance" OR "financial support")
+          )
+        )
+)
+```
 
 ## Target 13.b
 
@@ -326,7 +370,7 @@ Term suggestions from CAB:
 
 This target is considered to cover research about least developed countries and small island developing states, about
 * planning for climate change
-* raising capacity for climate-change management. We consider "climate-change management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3. We use the same interpretation of capacity as used under target 13.3.
+* raising capacity for climate-change management. We consider "climate-change management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
 We do not need to include terms for women, youth, marginalised communities because research about these groups will be included in the results anyway.
 
@@ -340,17 +384,20 @@ TS=
   (
     ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
     OR "nationally determined contribution$"
+    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
     OR
       (
         (
           ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
           OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-          OR "invest" OR "investing" OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
-          OR "green climate fund"
+          OR "invest" OR "investing" OR "fund$" OR "funding"
+          OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
+          OR "financial assistance" OR "financial support" OR "economic assistance" OR "economic support"
+          OR "climate financ*" OR "climate aid" OR "climate fund*"
           )
           NEAR/5
               ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*"
+              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*" OR "training"
               OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
               OR "educat*" OR "awareness"
               )
@@ -380,7 +427,7 @@ v2019.12: ML, CSA, SRM
 New version, first draft: ML (Oct-Feb 2022)
 Internal review: EHS, CSA (March 2022)
 New version, second draft: ML, CSA (April-May 2022)
-Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership) & ML (PhD in climate/geoscience).
+Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership; May 2022) & ML (PhD in climate/geoscience).
 
 ## 5. Footnotes
 
