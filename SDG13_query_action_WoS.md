@@ -141,7 +141,7 @@ TS=
     (
       ("national" OR "state" OR "federal" OR "domestic")
       NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
           OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
     )
   AND
@@ -188,7 +188,7 @@ TS=
       (
         ("national" OR "state" OR "federal" OR "domestic")
         NEAR/5
-            ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+            ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
             OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
       )
 )
@@ -210,7 +210,7 @@ TS=
     (
       ("national" OR "state" OR "federal" OR "domestic")
       NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
           OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
           )
     )
@@ -223,7 +223,7 @@ TS=
       (
         ("national" OR "state" OR "federal" OR "domestic")
         NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
           OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
           )
       )
