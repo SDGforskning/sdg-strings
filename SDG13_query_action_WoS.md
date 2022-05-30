@@ -306,52 +306,28 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is interpreted to cover research about
-* Transparency in climate financing (phrase 1)
-* Mechanisms for providing climate financing, including operationalisation/capitalisation, and contributions and commitments of developed countries (phrase 2)
+This target is interpreted to cover research about the supply of climate financing. This covers transparency and allocation of climate financing, as well as research about the provision of climate financing (e.g. operationalisation/capitalisation, contributions and commitments, developed countries who supply financing).
 
-This query consists of 2 phrases.
+This query consists of 1 phrase. The general structure is *transparancy/aspects of provision + climate financing*.
 
-##### Phrase 1:
-
-This phrase covers transparency around climate financing. The general structure is *transparency + climate financing*. The term `investment$ OR investing` were tried, but created mostly noise ("investment climate").
+The term `investment$ OR investing` were tried, but created mostly noise ("investment climate").
 
 ``` Ceylon =
 TS=
 (
-    ("transparency" OR "corruption" OR "accountability" OR "allocation$" OR "misallocation")
-    NEAR/15
-        ("climate financ*" OR "climate aid"
-        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
-        OR
-          ("climat*"
-          NEAR/5
-              ("finance" OR "financing" OR "fund" OR "funds" OR "funding" OR "economic support" OR "economic assistance" OR "financial assistance" OR "financial support")
-          )
-        )
-)
-```
-
-##### Phrase 2:
-
-This phrase covers operalisation/capitalisation, commitments, and developed countries regarding climate financing. The general structure is *actions/developed countries + climate financing*.
-
-``` Ceylon =
-TS=
-(
-    ("opertionali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
+    ("transparency" OR "accountability" OR "allocation$" OR "misallocation" OR "corruption"
+    OR "opertionali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
     OR "contribut*" OR "commitment$" OR "negotiation$"
+    OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
     OR "donor$" OR "donation$"
     OR "annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD countr*"
-    OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
     )
     NEAR/15
         ("climate financ*" OR "climate aid"
         OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
         OR
           ("climat*"
-          NEAR/5
-              ("finance" OR "financing" OR "fund" OR "funds" OR "funding" OR "economic support" OR "economic assistance" OR "financial assistance" OR "financial support")
+          NEAR/5 ("finance" OR "financing" OR "fund" OR "funds" OR "funding" OR "economic support" OR "economic assistance" OR "financial assistance" OR "financial support")
           )
         )
 )
