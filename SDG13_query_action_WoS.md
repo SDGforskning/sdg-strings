@@ -308,15 +308,9 @@ TS=
 
 This target is interpreted to cover research about
 * Transparency in climate financing (phrase 1)
-* Mechanisms for providing climate financing, including operalisation/capitalisation, and contributions and commitments of developed countries (phrase 2)
+* Mechanisms for providing climate financing, including operationalisation/capitalisation, and contributions and commitments of developed countries (phrase 2)
 
 This query consists of 2 phrases.
-
-Term suggestions from CAB:
-•	climate finance, climate finance negotiations, Financial Mechanism, commitment, national commitments, mitigation, mitigate, mitigation action, developing country needs, transparency, financial transparency
-•	Developed country, developing country, Annex II Parties, developing country Parties, developed country Parties
-•	Green Climate Fund, GCF, Financial Mechanism of the Convention, long-term finance
-•	Article 11, Kyoto Protocol, Special Climate Change Fund, SCCF, Least Developed Countries Fund, LDCF, Green Environment Facility, GEF, Adaptation Fund, AF
 
 ##### Phrase 1:
 
@@ -345,9 +339,10 @@ This phrase covers operalisation/capitalisation, commitments, and developed coun
 ``` Ceylon =
 TS=
 (
-    ("opertionali*" OR "capitali*"
-    OR "contribut*" OR "commitment$" OR "negotiation$" OR "donor$" OR "donation$"
-    OR "annex II part*" OR "developed countr*" OR "developed nation$" OR "OECD countr*"
+    ("opertionali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
+    OR "contribut*" OR "commitment$" OR "negotiation$"
+    OR "donor$" OR "donation$"
+    OR "annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD countr*"
     OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
     )
     NEAR/15
