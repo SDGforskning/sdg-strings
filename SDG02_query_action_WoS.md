@@ -422,6 +422,7 @@ TS=
                   OR "improv*" OR "increase" OR "increasing" OR "maintain*"
                   OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*" OR "empower" OR "empowering"
                   OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+                  OR "adaptation fund" OR "climate financ*" OR "climate aid" OR "green climate fund" OR "least developed countries fund"
                   )
             )
             OR
