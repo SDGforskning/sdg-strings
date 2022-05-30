@@ -67,9 +67,7 @@ TS=
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty reduction.
-
-`Decent work` was considered for inclusion as it is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
+This target is interpreted as to cover research about poverty reduction. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
 
 This query consists of 1 phrase. The general structure is *poverty/the poor + action*
 
@@ -98,7 +96,7 @@ TS=
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 
-This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems, social services and social floors. Social floors encompasses basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>.
+This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems, social services and social floors. Social floors encompass basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>. We consider research about social services included.
 
 This query consists of 3 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), some need to be combined with "vulnerable people" (phrase 2) and some with poverty/"poor people" (phrase 3).
 
@@ -117,7 +115,7 @@ TS=
   OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect"  OR "design*" OR "develop*" OR "pathway$"
   OR
     (
-      ("increas*" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
+      ("increas*" OR "improv*" OR "enhanc*" OR "better" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
       OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "advoca*"
       )
       NEAR/5 ("coverage" OR "covered" OR "covering" OR "access*")
@@ -140,17 +138,17 @@ TS=
 
 ##### Phrase 2
 
-This phrase is about specific social floors. The basic structure is *action + social protection systems/social floors + vulnerable groups*. The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
+This phrase is about specific social floors and systems, where the terms work better when combined with groups of people. The basic structure is *action + social protection systems/social floors + vulnerable groups*. The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
 
 ```Ceylon =
 TS=
 (
   (
-    ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*"
+    ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*" OR "propose$"
     OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*" OR "pathway$"
     OR
       (
-        ("increas*" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
+        ("increas*" OR "improv*" OR "enhanc*" OR "better" OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
         OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "advoca*"
         )
         NEAR/5 ("coverage" OR "covered" OR "covering" OR "access*")
@@ -166,13 +164,14 @@ TS=
       )
     )
     NEAR/5
-          ("basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance"
+          ("social protection$" OR "social benefits" OR "social security" OR "social service$"
+          OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance"
           OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance"
           OR "disability benefit$" OR "disability allowance" OR "disability pension$"
-          OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "sickness allowance"
-          OR "paid maternity leave" OR "paid maternal leave" OR "maternity pay" OR "maternity allowance" OR "parental benefit$"
+          OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "sickness allowance"
+          OR "paid maternity leave" OR "paid maternal leave" OR "maternity pay" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave"
           OR "child benefit$"
-          OR "pension$ insurance" OR "pension plan$" OR "pension benefit$"  OR "public pension$" OR "state pension$"
+          OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
           )
   )
   AND
@@ -182,44 +181,12 @@ TS=
     OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
     OR "disabled" OR "disabilities" OR "disability"
     OR "unemployed"
-    OR "older" OR "elderly")
-    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*"))
+    OR "older people" OR "older adult$" OR "elderly" OR "elders" OR "retired people" OR "retired adults"
+    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
     OR "pregnant" OR "pregnancy" OR "children" OR "child" OR  "maternity" OR "female" OR "women" OR "girls"
     )
 )
 ```
-
-##### Phrase 3 (*742*):
-
-This phrase is about about access to, coverage of and establishment/implementation of social protection/social benefits and similar concepts. These terms need to be combined with groups of people/poverty/the poor. We did not include other "vulnerable groups as the terms are rather general; e.g. social services for children or mothers can be related to other things than poverty
-
-*Action: access/coverage/implementation*
-
-*The basic structure is as follows: action + social protection systems/social services + poverty and the poor*
-
-
-```Ceylon =
-TS=
-
-(
-  (
-    ("implement*" OR "establish*" OR "propose*" OR "design*"
-      OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "develop" OR "development" OR"pathway$"
-      OR "coverage" OR "covered" OR "covering" OR "access*" OR "barrier$" OR "obstacle$")
-
-    NEAR/10
-
-    ("social protection$" OR "social benefits" OR "social security" OR "social service$" OR "health care benefit$")   
-  )
-AND
-  ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-      OR "the vulnerable" OR "vulnerable group$"
-      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*"
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-   )
-
-)    
-```  
 
 ## Target 1.4
 
@@ -406,7 +373,7 @@ TS=
         OR "develop" OR "developing" OR "implement"
         OR "build* capacity" OR "capacity building" OR "capacity development"
         )
-        NEAR/5 ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "protection")
+        NEAR/5 ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "protection" OR "early warning")
       )
     OR  
       (
@@ -429,7 +396,6 @@ TS=
     NEAR/15
         ("disaster$" OR "catastrophe$"
         OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-        OR (("natural" OR "climat*") NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$"))
         OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
         OR "drought$" OR "flood*"
         OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
@@ -438,13 +404,13 @@ TS=
         OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
         OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
         OR (  
-              ("anthropogenic"
+              ("anthropogenic" OR "natural" OR "climat*"
               OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
               OR "chemical" OR "heavy metal$" OR "pesticide$"
               OR "biological" OR "disease" OR "zoonotic"
               OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
               )
-              NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+              NEAR/3 ("hazard$")
            )
         OR "outbreak$" OR "pandemic$" OR "epidemic$"
         OR "war" OR "wars" OR "armed conflict$"
