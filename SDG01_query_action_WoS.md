@@ -98,15 +98,13 @@ TS=
 
 This target is interpreted as to cover research about establishment/implementation and improving access to/coverage of social protection systems, social services and social floors. Social floors encompass basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>. We consider research about social services included.
 
-This query consists of 3 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), but some need to be combined with "vulnerable people" or poverty (phrase 2).
+This query consists of 2 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), but some need to be combined with "vulnerable people" or poverty (phrase 2).
 
 ##### Phrase 1
 
-This phrase is about access to, coverage of and establishment/implementation of floors/ protection systems/welfare systems. As we talk about systems/services is does not need to be combined with groups of people.
+This phrase is about access to, coverage of and establishment of floors/protection systems/welfare systems. The basic structure is *action + social protection systems*.
 
-The basic structure is *action + social protection systems*
-
-`welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
+As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
 ```Ceylon =
 TS=
@@ -140,7 +138,9 @@ TS=
 
 ##### Phrase 2
 
-This phrase is about specific social floors and systems, where the terms work better when combined with groups of people. The basic structure is *action + social protection systems/social floors + vulnerable groups*. The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
+This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The basic structure is *action + social protection/social floors + vulnerable groups*.
+
+The terms for *vulnerable groups* are based on the groups mentioned in the indicator.
 
 ```Ceylon =
 TS=
@@ -207,12 +207,12 @@ We based this interpretation of financial and economic resources on <a id="DESA"
 > Economic resources refer to the direct factors of production such as “immoveable” assets, including land, housing, common pool resources and infrastructure, as well as “moveable” assets, such as productive equipment, technology and livestock. Financial resources refer to money-based resources, including government expenditures, private financial flows and official development assistance, as well as income, credit, savings and remittances. [...] Labour is the primary resource available to the vast majority of people, particularly
 those from low-income households [...]
 
-Although the target states for "all men and women", we target the results to this SDG by combining the phrases also to an element about "the poor and the vulnerable". This includes terms for poverty, poor and marginalisation, as well as terms for developing countries and least developed countries (based on the assumption that the populations there, on a global scale, might be considered economically "poor"). We do this because a) some of the search terms are quite general (for example, appear in general economic research), and b) because other SDGs  refer to access to specific basic services (e.g. modern energy in SDG 7, essential healthcare in SDG 3); thus we assume that the most relevant research for this target should also consider poverty.
+Although the target states for "all men and women", we target the results to this SDG by combining the phrases also to an element about "the poor and the vulnerable". We do this because a) some of the search terms are quite general (for example, appear in general economic research), and b) because other SDGs refer to access to specific basic services (e.g. modern energy in SDG 7, essential healthcare in SDG 3); thus we assume that the most relevant research for this target should also consider poverty.
 
 ##### Phrase 1
-This phrase covers ensuring access and rights to financial services. The basic structure is *action + access/rights + financial services*.
+This phrase covers ensuring access and rights to financial services. The basic structure is *action + access/rights + financial services + poor/vulnerable*.
 
-Sources of terms included <a id="DESA">[Department of Economic and Social Affairs (2009)](#f7)</a> and a digital financial inclusion report from the <a id="sgsa">[UNSGSA et al. (2018)](#f8)</a>.  
+Sources of terms for *financial services* included <a id="DESA">[Department of Economic and Social Affairs (2009)](#f7)</a> and a digital financial inclusion report from the <a id="sgsa">[UNSGSA et al. (2018)](#f8)</a>. For the *poor and vulnerable* terms, we include terms for poverty and least developed countries (on the assumption that the population there as a while can, on a global scale, be considered poorer or more vulnerable).   
 
 ```Ceylon =
 TS=
@@ -264,7 +264,7 @@ TS=
 
 ##### Phrase 2
 
-This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is *action + access/rights + resources*. "security" is used in phrases because otherwise there are many results about food security.
+This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is *action + access/rights + resources + poor/vulnerable*. "security" is used in phrases because otherwise there are many results about food security. For the *poor and vulnerable* terms, we include terms for poverty and least developed countries (on the assumption that the population there as a while can, on a global scale, be considered poorer or more vulnerable).   
 
 ```Ceylon =
 TS=
@@ -317,7 +317,7 @@ TS=
 
 Phrase 3 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a>
 
-*The basic structure is as follows: action + basic services*
+The basic structure is *action + access + basic services  + poverty*.
 
 ```Ceylon =
 TS=
@@ -372,7 +372,7 @@ TS=
 
 This target is interpreted to cover research about improving the resilience and reducing impacts of disasters for the poor and those in vulnerable situations. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters.
 
-The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations", based on the indicator in 1.3. We have also included terms for least-developed countries and small-island developing states, based on the assumption that these may be in a more vulnerable position when it comes to disasters.
+The target is limited to "the poor and those in vulnerable situations". Disabled people, children, elderly people and pregnant women are included as groups in "vulnerable situations", based on the indicator in 1.3. We have also included terms for least-developed countries and small-island developing states, based on the assumption that these populations may be considered more vulnerable when it comes to disasters.
 
 We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
 
@@ -449,7 +449,6 @@ TS=
 
 ## Target 1.a
 
-
 > **1.a Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions.**
 >
 > 1.a.1 Total official development assistance grants from all donors that focus on poverty reduction as a share of the recipient country’s gross national income
@@ -509,8 +508,6 @@ TS=
 )
 
 ```  
-
-
 
 ## Target 1.b
 
