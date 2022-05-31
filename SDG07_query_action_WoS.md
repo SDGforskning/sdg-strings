@@ -68,9 +68,7 @@ TS=
 (
   (
     (
-      ("energy transition$"
-      NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating")
-      )
+      ("energy transition$" NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"))
     OR
       (
         ("clean*" OR "modern*")
@@ -101,7 +99,8 @@ TS=
         )
   )    
   AND ("household$" OR "home$" OR "house" OR "houses" OR "housing" OR "room"
-      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "community" OR "village$" OR "women")      
+      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "community" OR "village$" OR "women"
+      )      
 )
 ```
 ##### Phrase 2:
@@ -246,11 +245,7 @@ TS=
   )
   NEAR/15
       ("rural"
-      OR
-        (
-          ("remote")
-          NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community")
-        )
+      OR ("remote" NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community"))
       OR "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
       OR "less developed countr*" OR "less developed nation$"
@@ -261,12 +256,9 @@ TS=
       OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
       OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
       OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-      OR
-      "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-      OR
-      "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-      OR
-      "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*" OR "turkish" OR "turkey"
+      OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+      OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*" OR "turkish" OR "turkey"
       )
 )
 ```
@@ -280,16 +272,15 @@ TS=
   (
     (
       ("improv*" OR "increas*" OR "ensur*")
-      NEAR/5
-      ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*")  
+      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*")  
     )
     OR
     (
       ("reduc*" OR "decreas*" OR "improv*" OR "prevent")
       NEAR/5
-      ("unstable" OR "instability" OR "unreliab*"
-      OR "unafford*" OR "costly" OR "energy cost$" OR "expensive"
-      )  
+          ("unstable" OR "instability" OR "unreliab*"
+          OR "unafford*" OR "costly" OR "energy cost$" OR "expensive"
+          )  
     )
   )
   NEAR/15
@@ -325,8 +316,7 @@ This phrase covers the general terms of transitioning and transforming to renewa
 
 ```Ceylon =
 TS=
-("renewable"
-  NEAR/5 ("energy transition$" OR "sector transformation$" OR "energy transformation$")
+("renewable" NEAR/5 ("energy transition$" OR "sector transformation$" OR "energy transformation$")
 )
 ```
 
@@ -356,7 +346,7 @@ TS=
   OR "implement*" OR "adopting" OR "adoption"
   OR "energy transition$" OR "renewable transition$" OR "transition* to"
   OR "incentive$" OR "initiative$"
-  OR (("energy" OR "green") NEAR/2 "certificat*")
+  OR ("certificat*" NEAR/2 ("energy" OR "green"))
   OR "barrier$" OR "obstacle$"
   OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
   OR "subsidi*" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
@@ -385,8 +375,7 @@ TS=
       OR "solar air heating system$" OR "solar space heating system$"
       OR
         ("solar thermal energy"
-        NEAR/15
-            ("power" OR "electric*" OR "water heating" OR "industrial process heat*")
+        NEAR/15 ("power" OR "electric*" OR "water heating" OR "industrial process heat*")
         )
       OR "wind farm$" OR "wind turbine$"
       OR "tidal turbine$" OR "stream turbine$" OR "current turbine$"
@@ -493,7 +482,7 @@ TS=
   ("energy consum*"
   NEAR/5 ("decouple*" OR "de couple*")
   )
-    NEAR/5 ("econom*" OR "GDP")
+  NEAR/5 ("econom*" OR "GDP")
 )
 ```
 
@@ -512,8 +501,7 @@ TS=
       (
         (
           ("energy efficien*" OR "energy utili$ation efficiency" OR "energy saving")
-          NEAR/5
-              ("increase$" OR "increasing" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher")
+          NEAR/5 ("increase$" OR "increasing" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher")
         )
         OR ("energy loss" NEAR/5 ("reduc*" OR "decreas*" OR "limit" OR "prevent*"))
       )
@@ -529,22 +517,22 @@ TS=
           )
     )
     OR
-    ( "energy efficiency"
+      ("energy efficiency"
       NEAR/5
-          ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
-          OR "initiative$" OR "intervention$"
-          OR "incentive$" OR "investment$" OR "investing" OR "invest"
-          )
-    )
+            ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
+            OR "initiative$" OR "intervention$"
+            OR "incentive$" OR "investment$" OR "investing" OR "invest"
+            )
+      )
     OR
-    ( "energy efficiency"
+      ("energy efficiency"
       NEAR/15
-          ((("energy" OR "green") NEAR/2 "certificat*")
-          OR "green bond$" OR "climate bond$"
-          OR "energy sustainability"
-          OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-          OR "sustainable development"
-          )
+            ("green bond$" OR "climate bond$"
+            OR ("certificat*" NEAR/2 ("energy" OR "green"))
+            OR "energy sustainability"
+            OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
+            OR "sustainable development"
+            )
       )
 )
 ```
@@ -556,9 +544,9 @@ TS=
 > 7.a.1 International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems
 
 This target is interpreted to cover research about:
-* increasing international cooperation for clean energy research and technology
-* improving access to clean energy research and technology, in part via transfers of technology between sectors/actors
-* promoting investment in clean energy research and technology
+* increasing international cooperation for clean energy research and technology (phrase 1)
+* improving access to clean energy research and technology, in part via transfers of technology between sectors/actors (phrase 1)
+* promoting investment in clean energy research and technology, here we include e.g. development assistance (phrase 1)
 * promoting investment in energy infrastructure (phrase 2).
 
 Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. This target consists of 2 phrases.
@@ -576,11 +564,11 @@ TS=
     OR "invest" OR "investing"
     )
     NEAR/5
-        ("transfer of technolog*" OR "technology transfer$"
-        OR
-          ("knowledge transfer"
-          NEAR/3 ("technolog*" OR "technical")
-          )
+        (
+          (
+            ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" )
+            NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+            )
         OR
           (
             ("research" OR "technology" OR "technologies" OR "innovation$" OR "R&D")
@@ -589,9 +577,19 @@ TS=
                 OR "capacity building" OR "build* capacity" OR "capacity development"
                 )
           )  
-        OR "international cooperation" OR "international collaboration"
-        OR "foreign aid" OR "official development aid" OR "official development assistance"
-        OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
+        OR  
+          (
+            ("international" OR "development")
+            NEAR/3
+                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$"
+                )
+          )
+        OR "foreign aid" OR "ODA"
+        OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
+        OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
+        OR "economic support" OR "economic assistance"
+        OR "green bond$" OR "climate bond$"
         )
   )
   NEAR/15
@@ -622,8 +620,16 @@ TS=
     OR "invest" OR "investing"
     )
     NEAR/5
-      ("foreign aid" OR "official development aid" OR "official development assistance"
-      OR "investment$" OR "invest" OR "investing" OR "green bond$" OR "climate bond$"
+      ("invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
+      OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
+      OR "economic support" OR "economic assistance"
+      OR "green bond$" OR "climate bond$"
+      OR "ODA" OR "foreign aid"
+      OR
+        (
+          ("international" OR "development")
+          NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$")
+        )
       )
   )
   NEAR/15
