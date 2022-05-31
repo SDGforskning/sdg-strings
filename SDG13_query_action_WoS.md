@@ -108,7 +108,7 @@ This target is interpreted to cover research which mention national policies, st
   - reducing the indicators of climate change & their impacts (phrase 2)
   - international frameworks for action, or climate change integration into policy (phrase 3)
 
-We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning.
+We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning. We also include sectoral plans as a synonym - although not completely the same as a national plan, it may be used to refer to a plan on a national level for the sector. 
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
@@ -139,7 +139,7 @@ TS=
   )
   AND
     (
-      ("national" OR "state" OR "federal" OR "domestic")
+      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
       NEAR/5
           ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
           OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
@@ -186,7 +186,7 @@ TS=
   )
   AND
       (
-        ("national" OR "state" OR "federal" OR "domestic")
+        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
         NEAR/5
             ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
             OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
@@ -196,7 +196,7 @@ TS=
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate.
+Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. with the frameworks in this approach, as the results can be very general, rather than about countries implementing climate change into their national policies. 
 
 ``` Ceylon =
 TS=
@@ -208,20 +208,19 @@ TS=
   )
   AND
     (
-      ("national" OR "state" OR "federal" OR "domestic")
+      ("national" OR "state" OR "federal" OR "domestic" OR "sectoral")
       NEAR/5
           ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
-          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
           )
     )
 )
 OR
 TS=
 (
-  ("climate change$" NEAR/5 ("integrat*" OR "includ*" OR "inclus*"))
+  ("climate change$" NEAR/5 ("integrat*" OR "includ*" OR "inclus*" OR "mainstream*"))
   NEAR/15
       (
-        ("national" OR "state" OR "federal" OR "domestic")
+        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
         NEAR/5
           ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
           OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
