@@ -403,7 +403,7 @@ Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leade
 
 <a id="f6"></a> Climate-ADAPT. (2019, last updated 2021). Capacity building on climate change adaptation. European Environment Agency & European Commission. (https://climate-adapt.eea.europa.eu/metadata/adaptation-options/capacity-building-on-climate-change-adaptation/) [accessed 6 May 2022].[↩](#climateADAPT)
 
-<a id="f3">3</a> IPCC (2014) Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
+<a id="f3"></a> IPCC (2014) Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, R.K. Pachauri and L.A. Meyer (eds.)]. IPCC, Geneva, Switzerland, 151 pp. [↩](#IPCC2014)
 
 <a id="f5"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. https://council.science/publications/hazard-information-profiles/. [↩](#disasters)
 
