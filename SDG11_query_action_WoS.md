@@ -202,59 +202,41 @@ NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "herit
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
+This target is interpreted to cover research on the affect natural disasters have on poor people and people in vulnerable situations and the impact on economic losses, specifically tied to the GGDP. The disasters can be man-made, but are natural/ecological disasters and includes water-related disasters, such as drought and floods. Search strings are based on SDG Indicators metadata repository https://unstats.un.org/sdgs/metadata/?Text=sustainable&Goal=&Target=, the Sendai Framework as presented on prevetionweb: https://www.preventionweb.net/sendai-framework/sendai-framework-at-a-glance and the SDG 11 Synthesis Report http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf.
+
 This query consists of 4 phrases.
 
 ##### Phrase 1:
 
-Copied and extended disaster search terms from SDG1. Included specific synonyms, delete some?
+Copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added "extreme fire$", "heavy rain*" and added $ to sea level$.
 
 ```Ceylon =
-TS=
-(
-((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
+TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("death$" or "casualt*" or "mortalit*" or "missing") NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR 
+(("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")) OR (("person$" OR "people" OR "adult$")  NEAR/3 ("unemploy*")) OR "patient$" OR (("person$" OR "people" OR "adult$")  NEAR/3 ("older" OR "elderly")) OR ("old* person$" OR "old* people" OR "older adult$"OR "elderly") OR "child*" OR "wom$n"))
 
-OR
 
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-
-OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
-OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
-
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-OR ("weather*" NEAR/3 "disaster*"))
-
-NEAR/15
-
-(("death$" or "casualt*" or "mortalit*" or "missing") NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
-
-)
 ```
 ##### Phrase 2:
 
-Opposite terminology of death, i.e. increase survival. Include mortality? Depends on scope (increase in certain diseases after tsunami).
+Opposite terminology of death, i.e. increase survival. 
 
 ```Ceylon =
-TS=
-(
-((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
-
-OR
-
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-
-OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
-OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
-
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-OR (weather* NEAR/3 disaster*))
-
-NEAR/15 ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))))
-
-)
+TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR 
+(("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")) OR (("person$" OR "people" OR "adult$")  NEAR/3 ("unemploy*")) OR "patient$" OR (("person$" OR "people" OR "adult$")  NEAR/3 ("older" OR "elderly")) OR ("old* person$" OR "old* people" OR "older adult$"OR "elderly") OR "child*" OR "wom$n"))
 ```
 ##### Phrase 3:
 
@@ -283,29 +265,7 @@ AND
 )
 ```
 
-##### Phrase 4:
 
-Phrase 4 doc
-
-```Ceylon =
-TS=
-(
-((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
-
-OR
-
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-
-OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
-OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
-
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-OR (weather* NEAR/3 disaster*)) NEAR/30 ((("people" or "person*") NEAR/4 ("affect*" or "afflict*" or "distress*" or "disturb*" or "influenc*" or "upset*")) NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
-)
-
-```
 ##### Phrase 5:
 All included for indicator 11.5.2, too many synonyms for basic services? Verbs repeated due to search syntax and difference, might be edited?
 
