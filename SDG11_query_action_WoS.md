@@ -208,7 +208,7 @@ This query consists of 4 phrases.
 
 ##### Phrase 1:
 
-Copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added "extreme fire$", "heavy rain*" and added $ to sea level$.
+Copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added extreme fire$, heavy rain* - as exact phrases and added $ to sea level$.
 
 ```Ceylon =
 TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
