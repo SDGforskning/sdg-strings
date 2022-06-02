@@ -202,13 +202,11 @@ NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "herit
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This target is interpreted to cover research on the affect natural disasters have on poor people and people in vulnerable situations and the impact on economic losses, specifically tied to the GGDP. The disasters can be man-made, but are natural/ecological disasters and includes water-related disasters, such as drought and floods. Search strings are based on SDG Indicators metadata repository https://unstats.un.org/sdgs/metadata/?Text=sustainable&Goal=&Target=, the Sendai Framework as presented on prevetionweb: https://www.preventionweb.net/sendai-framework/sendai-framework-at-a-glance and the SDG 11 Synthesis Report http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf.
+This target is interpreted to cover research on the affect natural disasters have on poor people and people in vulnerable situations and the impact on economic losses, specifically tied to the GGDP. The disasters can be man-made, but are natural/ecological disasters and includes water-related disasters, such as drought and floods. Search strings are based on SDG Indicators metadata repository https://unstats.un.org/sdgs/metadata/?Text=sustainable&Goal=&Target=, the Sendai Framework as presented on prevetionweb: https://www.preventionweb.net/sendai-framework/sendai-framework-at-a-glance and the SDG 11 Synthesis Report http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf - and copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added "extreme fire$", "heavy rain*" and added $ to sea level$). Added people groups to phrase 1 and 2, big difference and otherwise relevant articles get excluded, but achieves manageable number of results. Phrase 3 edited to include prevent
 
-This query consists of 4 phrases.
+This query consists of 3 phrases. 
 
 ##### Phrase 1:
-
-Copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added extreme fire$, heavy rain* - as exact phrases and added $ to sea level$.
 
 ```Ceylon =
 TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
@@ -240,55 +238,16 @@ TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR
 ```
 ##### Phrase 3:
 
-
 ```Ceylon =
-TS=
-(
-((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
-
-OR
-
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-
-OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
-OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
-
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-OR (weather* NEAR/3 disaster*))
-
-AND
-
-(("gross global product$" or ((global or world) NEAR/3 ("domestic product$" or gdp$))) NEAR/30 (decrease* or declin* or reduc* or lower* or loss or losses))
-
-)
-```
-
-
-##### Phrase 5:
-All included for indicator 11.5.2, too many synonyms for basic services? Verbs repeated due to search syntax and difference, might be edited?
-
-```Ceylon =
-TS=(
-((("natural" OR "anthropogenic" OR "environmental" OR "climat$" OR "man-made") NEAR/3 ("hazard*" OR "catastroph*" OR "disaster*" OR "shock$"))
-
-OR
-
-("extreme$" NEAR/3 ("climat*" OR "weather" OR "meteorol*" OR "precipitation" OR "rain" OR "snow" OR "temperature$"))
-
-OR "climat* change$" OR "changing climate$" OR "global warming" OR "drought$" OR "flood*" OR "heatwave$" OR "heat-wave$" OR "cold spell$"
-OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado$"
-OR "storm$" OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "surface collapse$" OR "mud flow$" OR "tipping point$" or wildfire$ OR "forest fire$" or "avalanche$" or "tsunami$" or "tidal wave$"
-
-OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-
-OR ("weather*" NEAR/3 "disaster*"))
-
-AND
-
-((((("gross global product$" or (("global" or "world") NEAR/3 ("domestic product$" or gdp$))) NEAR/15 ("decrease*" or "declin*" or "reduc*" or "lower*" or "loss" or "losses"))) OR (("critical infrastructure" OR "basic service$" OR "physical asset$" OR "social security" OR "social welfare" OR "drinking water service$" OR "sanitation service$" OR "hygiene service$" or "health service$" or "waste collection" OR "ICT" OR "education service$" OR "mobility" OR "transport*") NEAR/15 ("devast*" OR "destruct*" OR "destroy*" OR "damage*" OR "disrupt*" OR "broken"))) OR ((“Financial” or “economic” or “stock exchange”) NEAR/4 (“loss” or “losses” or “collapse*” or “crash*” or “decreas*” or “declin*” or “reduc*”)))
-)
+TS=(((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$") NEAR/15 (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR 
+"halt*") NEAR/15 ("decrease*" or "declin*" or "reduc*" OR "lower*" or "loss" or "losses")))))
 
 ```
 
