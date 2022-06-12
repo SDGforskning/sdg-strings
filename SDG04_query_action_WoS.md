@@ -41,10 +41,10 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 This target is interpreted to cover research about
 
 * Increasing completion of primary and secondary education			
-* Improving access to quality primary and secondary education that is free and equitable			
+* Ensuring access to quality primary and secondary education that is free and equitable			
 * Achieving minimal proficiency in reading and mathematics			
 
-This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing completion and reducing dropout rates respectively. Phrase 3 is about access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
+This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing completion and reducing dropout rates respectively. Phrase 3 is about ensuring access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
 
 ##### Phrase 1:
 
@@ -95,14 +95,14 @@ TS=
 ```
 ##### Phrase 3:
 
-"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. The basic structure is access + school + free/equitable/quality.
+"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. The basic structure is increase + access + school + free/equitable/quality.
 
 ```Ceylon =
 TS=
 (
  (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "scal* up" OR "build*" OR  "expand"  OR "accelerat*" OR "ensure" OR  "attain*" OR "achiev*" )  
+   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "scal* up" OR "build*" OR "expand"  OR "accelerat*" OR "ensure" OR  "attain*" OR "achiev*" )  
    NEAR
    ("access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*"))
    NEAR/3
@@ -139,26 +139,28 @@ TS=
 
 This target is interpreted to cover research about
 
-* Access to institutionalized, early childhood education (and care)
+* Ensuring access to institutionalized, early childhood education (and care)
 * Readiness for primary education
 
 This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is access + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
+The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is improve access / remove obstacles + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
 
 ```Ceylon =
 TS=
 (
- ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" )
- NEAR/5
- (
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "overcome" OR  "ensure" OR "attain*" OR "achiev*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*") 
+ NEAR/5 
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+  NEAR/5
   (
-   ("early childhood")
-   NEAR/3
+   (
+    ("early childhood")
+    NEAR/3
     ("education")
-  )
+   )
    OR
    ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "under five$")
  )
