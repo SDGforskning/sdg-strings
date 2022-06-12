@@ -492,12 +492,12 @@ This target is interpreted to cover research about
 * Education in and about sustainable development, sustainable lifestyles, human rights, gender equality, peace, non-violence, global citizenship and cultural diversity
 * Culture's contribution to sustainable development
 
-This query consists of 4 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
 The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
-tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED. The basic structure is action + education + ESD/GCED
+tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The next part entails more and less detailed content of ESD and GCED, and the last part challenges of and strategies for teaching them. The basic structure is action + education + ESD/GCED + teaching
 
 ```Ceylon =
 TS= 
@@ -508,8 +508,8 @@ TS=
   ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning")
  )
  NEAR/5
- (
-  ("sustainable development" OR "sustainable lifestyle$" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*")
+("sustainable development" OR "sustainable lifestyle$" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*"
+OR ("sustainability" NEAR/5 ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "transition$"))
  ) 
 ) 
 ```
@@ -526,18 +526,6 @@ TS=
 ) 
 ```
 ##### Phrase 3:
-
-The phrase addresses different kinds of sustainability, and challenges of teaching it.The structure is sustainabilty + teaching strategies / challenges + education
-
-```Ceylon =
-TS=
-("sustainability" AND 
-("interdisciplinary" OR "transdisciplinary" OR "crossdisciplinary" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "whole school")	
-NEAR 
-("education")
-)	
-```
-##### Phrase 4:
 
 This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is culture + contribution + sustainable development.
 
