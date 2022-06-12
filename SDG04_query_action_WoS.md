@@ -527,12 +527,12 @@ TS=
 ```
 ##### Phrase 3:
 
-..is new, and experimenting ... it addresses different kinds of sustainability, and challenges of teaching it. Should probably be split up and better integrated with other phrases - thankful for ideas on how
+The phrase addresses different kinds of sustainability, and challenges of teaching it.The structure is sustainabilty + teaching strategies / challenges + education
 
 ```Ceylon =
 TS=
 ("sustainability" AND 
-("interdisciplinary" OR "transdisciplinary" OR "crossdisciplinary" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change")	
+("interdisciplinary" OR "transdisciplinary" OR "crossdisciplinary" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "whole school")	
 NEAR 
 ("education")
 )	
