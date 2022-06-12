@@ -41,7 +41,7 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 This target is interpreted to cover research about
 
 * Increasing completion of primary and secondary education			
-* Access to quality primary and secondary education that is free and equitable			
+* Improving access to quality primary and secondary education that is free and equitable			
 * Achieving minimal proficiency in reading and mathematics			
 
 This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing completion and reducing dropout rates respectively. Phrase 3 is about access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
@@ -101,12 +101,15 @@ TS=
 TS=
 (
  (
-  ("access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*")
+  (
+   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "scal* up" OR "build*" OR  "expand"  OR "accelerat*" OR "ensure" OR  "attain*" OR "achiev*" )  
+   NEAR
+   ("access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*"))
    NEAR/3
-  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
- )
-  NEAR
-  ("free" OR "equitab*" OR "quality")
+   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
+   )
+   NEAR
+   ("free" OR "equitab*" OR "quality")
 )  
 ```
 #### Phrase 4:
