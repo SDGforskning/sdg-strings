@@ -497,7 +497,7 @@ This query consists of 3 phrases.
 ##### Phrase 1:
 
 The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
-tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The next part entails more and less detailed content of ESD and GCED, and the last part challenges of and strategies for teaching them. The basic structure is action + education + ESD/GCED + teaching
+tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED. The basic structure is action + education + ESD/GCED
 
 ```Ceylon =
 TS= 
@@ -515,14 +515,17 @@ OR ("sustainability" NEAR/5 ("interdisciplinar*" OR "transdisciplinar*" OR "cros
 ```
 ##### Phrase 2:
 
-The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but only returned irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD) and the structure is action + ESD.
+The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but used alone returned too many irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD) and the structure is action + ESD.
 
 ```Ceylon =
 TS= 
 (
  ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
  NEAR/5
- ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
+ (
+  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education") 
+ OR ("whole school" OR "teaching") NEAR ("sustainab*" OR "ESD" NEAR/5 "educat*")
+ )
 ) 
 ```
 ##### Phrase 3:
