@@ -632,7 +632,7 @@ There are no actions terms included, as there are so few hits they are considere
 ```Ceylon =
 TS=
 (
- ("scholarships*" OR "scholarship program*" OR "sponsorship*" OR "exchange program*") 
+ ("scholarships*" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant*") 
   NEAR
   ("student*" OR "higher education" OR "trainee*" OR "student exchange*" OR "student mobility*" OR (("information and communication$ technology" OR "technic*" OR "engineer*" OR "science" OR "scientific") NEAR ("program*")))
  AND
