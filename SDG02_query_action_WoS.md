@@ -910,8 +910,15 @@ TS =
             ("government" OR "public")
             NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
           )
-        OR "development aid" OR "development assistance" OR "development spending" OR "foreign aid" OR "international aid" OR "cooperation fund"
-        OR "international cooperation" OR "international collaboration" OR "international network$"
+        OR "ODA" OR "cooperation fund$" OR "development spending"
+        OR
+          (
+            ("international" OR "development" OR "foreign")
+            NEAR/3
+                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "financial support" OR "financial resources"
+                )
+          )
         )
         NEAR/15
             ("rural infrastructure"
@@ -919,9 +926,7 @@ TS =
             OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
             OR
               (
-                ("infrastructure" OR "technolog*" OR "biotech*"
-                OR "research" OR "science$" OR "innovation" OR "R&D"
-                )
+                ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
                 NEAR/3 ("agricultur*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
               )                  
             )
@@ -949,9 +954,9 @@ TS =
 >
 > 2.b.1 Agricultural export subsidies
 
-This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor. There are not many works about this topic found.
+This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
 
-This query consists of 2 phrases
+This query consists of 2 phrases.
 
 #### Phrase 1:
 
@@ -976,6 +981,7 @@ TS=
   ("distort*" OR "price-fixing" OR "dumping"
   OR "trade restrict*" OR "Doha" OR "food aid"
   OR "state support*" OR "state financial support"
+  OR "WTO dispute$"
   )
   NEAR/15
       (
@@ -1004,7 +1010,7 @@ TS=
         OR "stabiliz*" OR "stabilis*" OR "intervention$" OR "counteract"
         OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulat*"
         )
-        NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies")
+        NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$")
       )
       OR
       (
