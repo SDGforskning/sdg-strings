@@ -233,8 +233,8 @@ TS=
         )
         NEAR/5
             ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-            OR "ownership" OR "control" OR "right$"
-            OR "affordab*" OR "empower*" OR "inclusion"
+            OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+            OR "affordab*" OR "pro poor" OR "inexpensive"
             )
       )
       OR
@@ -243,8 +243,9 @@ TS=
         OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
         )
         NEAR/5
-            ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-            OR "unaffordab*" OR "expensive" OR "exclusion" OR "unbanked"
+            ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+            OR "unaffordab*" OR "expensive"
+            OR "unbanked"
             )      
       )
     )
@@ -286,7 +287,8 @@ TS=
         NEAR/5
             ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
             OR "ownership" OR "control" OR "right$"
-            OR "affordab*" OR "empower*" OR "inclusion" OR "sharing"
+            OR "affordab*" OR "pro poor"
+            OR "empower*" OR "inclusion" OR "sharing"
             OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
             )
       )
@@ -336,8 +338,9 @@ TS=
       OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
       )
       NEAR/5
-          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-          OR "ownership" OR "right$" OR "affordab*" OR "empower*" OR "inclusion"
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal" OR "empower*" OR "inclusion"
+          OR "ownership" OR "right$"
+          OR "affordab*" OR "inexpensive" OR "low cost" OR "pro poor"
           )
     )
     NEAR/10
@@ -487,7 +490,7 @@ TS=
         )    
     )
     NEAR/15
-        ("anti-poverty" OR "out of poverty"
+        ("anti-poverty" OR "out of poverty" OR "pro poor"
         OR  ("poverty"
             NEAR/5
                 ("minimi*" OR "reduc*" OR "mitigat*"
@@ -533,7 +536,7 @@ TS=
   OR "investment policy"
   )
   NEAR/15
-      ("anti-poverty" OR "out of poverty"
+      ("anti-poverty" OR "out of poverty" OR "pro poor"
       OR  ("poverty"
           NEAR/3
               ("minimi*" OR "reduc*" OR "mitigat*"
