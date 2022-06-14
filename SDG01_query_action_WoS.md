@@ -320,13 +320,12 @@ TS=
 
 ##### Phrase 3
 
-Phrase 3 covers access to basic services, as defined in the <a id="SDGMetrep">[UN Statistics Dvision SDG Indicators Metadata Repository, 2022](#f11)</a>
+Phrase 3 covers access to basic services. Basic services terms were gathered from the metadata for indicator 1.4 (<a id="SDGMetrep">[UN Statistics Division SDG Indicators Metadata Repository, 2022](#f11)</a>) and a presentation from UNESCAP/UN Habitat <a id="UNhabitat">[Njiru, 2018](#f15)</a>.
 
-The basic structure is *action + access + basic services  + poverty*.
+The basic structure is *action + access + basic services + poverty*.
 
 ```Ceylon =
 TS=
-
 (
   (
     (
@@ -342,16 +341,25 @@ TS=
           )
     )
     NEAR/10
-        (("basic" NEAR/3 "service$")
-        OR "clean water" OR ("drinking water" NEAR/3 ("service$" OR "source$" OR "facilit*" OR "basic"))
-        OR "sanitation service$" OR "sanitation facilit$" or "toilet facilit$" OR "basic sanitation"
-        OR "hygiene facilit*" OR "hygiene service*" OR "handwashing facility" OR "hand-washing facility"
-        OR "clean fuels" OR "clean technology" OR "basic electricity" OR "modern energy"   
-        OR "basic mobility" OR "transport* system*" OR "transport* infrastructure*" OR "public transport*"
-        OR (("waste" OR "garbage" or "rubbish") NEAR/1 ("collection" OR "management") NEAR/1 ("service$" OR "facilit*"))
-        OR "health care" OR "health-care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care"
-        OR "basic education" OR "education services" OR "schooling services" OR "education system" OR "school system"
-        OR "basic information services" OR "basic telecommunication services" OR "basic mobile services"
+        (
+          ("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
+        OR
+          (("drinking water" OR "sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
+          NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
+          )
+        OR "improved drinking water" OR "improved source$ of drinking water" OR "clean drinking water" OR "clean water"
+        OR (("waste" OR "garbage" OR "rubbish") NEAR/2 ("service$" OR "facility" OR "facilities"))
+        OR (("health" OR "medical") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "essential" OR "primary" OR "care"))
+        OR "healthcare"
+        OR (("education*" OR "school*") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "primary"))
+        OR
+          (("basic information" OR "telecommunication" OR "basic communication" OR "ICT")
+          	NEAR/2 ("service$" OR "facility" OR "facilities" OR "infrastructure")
+          )
+        OR "electricity service$" OR "energy service$" OR "modern energy" OR "clean fuel$" OR "clean energy"
+        OR "public open space$" OR "public space$"
+        OR "basic mobility" OR "urban mobility" OR "rural mobility" OR "all-season road$"
+        OR ("transport*" NEAR/2 ("service$" OR "infrastructure" OR "system$" OR "public"))
         )
   )
   AND
@@ -558,6 +566,8 @@ New version, second draft: ML, CSA (May 2022)
 <a id="f5"></a> International Labour Organization (n.d.) Social protection floor. (https://www.ilo.org/secsoc/areas-of-work/policy-development-and-applied-research/social-protection-floor/lang--en/index.htm) [Accessed May 2022].[↩](#socialfloors)
 
 <a id="f4"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. (https://council.science/publications/hazard-information-profiles/).[↩](#disasters)
+
+<a id="f15"></a> Njiru, E. (March 2018) *Introducing indicator 1.4.1*. UNESCAP, UN Habitat Global Urban Observatory. https://www.unescap.org/sites/default/files/Indicator%201.4.1_Basic%20Services.pdf (accessed Jun 2022). [↩](#UNhabitat)
 
 <a id="f13"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 
