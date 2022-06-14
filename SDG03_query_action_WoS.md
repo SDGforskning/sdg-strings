@@ -978,7 +978,7 @@ TS =
 
 This target is interpreted to be about the reduction of tobacco use and production, in reference to implementation of the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 #### Phrase 1
 
@@ -990,7 +990,7 @@ TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 
 #### Phrase 2
 
-The basic structure is *tobacco + reduction/control + action*
+This phrase finds works about reduction and preventative measures around tobacco use. The basic structure is *tobacco + reduction/control + action*
 
 We do not limit to tobacco "use", as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` will cover many terms here (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
 
@@ -1028,20 +1028,22 @@ TS =
 
 #### Phrase 3
 
-The basic structure is *tobacco farming + alternatives + action*.
+This phrase covers research about alternatives to tobacco production. The basic structure is *tobacco farming + alternatives + action*.
 
 ```Ceylon =
 TS=
 (
   ("tobacco farm*" OR "tobacco production" OR "tobacco growing")
   AND
-    ("diversif*" OR "alternative crop$" OR "crop substitution"
-    OR "alternative livelihood$" OR "alternative sustainable livelihood$"
-    )
-  AND
-    ("support*" OR "encourag*" OR "facilitat*" OR "promot*" OR "help"
-    OR "implement*" OR "introduc*" OR "establish*" OR "develop*" OR "adopt*" OR "propos*" OR "uptake"
-    OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+    (
+      ("diversif*" OR "alternative crop$" OR "crop substitution"
+      OR "alternative livelihood$" OR "alternative sustainable livelihood$"
+      )
+      NEAR/5
+        ("support*" OR "provid*" OR "encourag*" OR "facilitat*" OR "promot*" OR "help"
+        OR "implement*" OR "introduc*" OR "establish*" OR "develop*" OR "adopt*" OR "propos*" OR "uptake"
+        OR "improv*" OR "strengthen*" OR "increas*" OR "achiev*"
+        )
     )
 )
 ```
@@ -1058,32 +1060,43 @@ TS=
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
 This target is interpreted to cover research about:
-* Support for development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect  (phrase 1).
+* Support for development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect. We interpret "support" as financial support as well as cooperation and research partnerships  (phrase 1).
 * Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
 
 #### Phrase 1
 
-The general structure is *support + vaccine/medicine development + developing countries*.
+The general structure is *support + vaccine/medicine development + developing countries*. Note that here, `development` is combined within phrases (e.g. `development aid OR development fund`) because it is also a part of "vaccine development".
 
 ``` Ceylon =
 TS =
 (
   (
       ("support" OR "financial assist*" OR "economic assist*"
-      OR "official development assistance" OR "development aid" OR "development fund*" OR "development spending"
-      OR "investing" OR "invest"
-      OR "cooperation fund$"
-      OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-      OR "international cooperation" OR "international collaboration" OR "international network$" OR "international partnership$"
+      OR "ODA" OR "development assistance" OR "official development aid"
       OR "development cooperation" OR "development network$" OR "development partnership$"
-      OR "research partnership$" OR "technical knowledge transfer*" OR "transfer of technical knowledge" OR "transfer of technolog*"
+      OR "cooperation fund$" OR "development spending"
+      OR
+        (
+          ("international" OR "foreign" OR "research" OR "R&D")
+          NEAR/3
+              ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+              OR "aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "financial support" OR "financial resources"
+              )
+        )
+      OR "investing" OR "invest" OR "funding"
+      OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+      OR
+        (
+          ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
+          NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+        )
       )
       NEAR/5
           (
             ("develop*" OR "research*" OR "novel" OR "new")
-            NEAR/5 ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
+            NEAR/5 ("medicine$" OR "medication$" OR "therap*" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
           )
   )
   AND
@@ -1136,7 +1149,7 @@ TS =
 >
 > 3.c.1 Health worker density and distribution
 
-This target is interpreted to cover research about increasing the training and retention of the health workforce in developing countries. It also covers research about increasing health financing in these countries.
+This target is interpreted to cover research about increasing the training and retention of the health workforce in developing countries (phrase 1). It also covers research about increasing health financing in these countries (phrase 2).
 
 This query consists of 2 phrases.
 
@@ -1207,13 +1220,15 @@ TS =
       )
       NEAR/5
           ("financing" OR "invest" OR "investment$" OR "investing" OR "funding" OR "funds"
-          OR "financial assist*" OR "economic assist*"
-          OR "official development assistance" OR "development aid" OR "development fund*" OR "development spending"
+          OR "health spending" OR "health care spending" OR "health budget" OR "public spending" OR "government spending"
+          OR "financial assist*" OR "economic assist*" OR "financial support" OR "financial resources"
           OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+          OR "ODA" OR "cooperation fund$" OR "development spending"
+          OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$"))
           )
     )
     NEAR/15
-        ("health sector" OR "health financing" OR "health budget"
+        ("health sector" OR "health financing" OR "health budget" OR "health spending"
         OR "health service$" OR "healthcare" OR "health care" OR "medical care"
         OR "medical research" OR "health research" OR "health R&D" OR "medical R&D"
         )   
@@ -1258,7 +1273,7 @@ This query consists of 1 phrase. The general structure is *health emergencies + 
 TS =
 (
   (
-    ("national health risk$" OR "global health risk$"
+    ("national health risk$" OR "international health risk$" OR "global health risk$"
     OR "pandemic$" OR "epidemic$" OR "outbreak$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
@@ -1270,12 +1285,12 @@ TS =
     )
     NEAR/15  
       (
-        ("early warning*" OR "risk communication" OR "surveillance" OR "monitoring system$"
-        OR "laboratory reporting" OR "laboratory capacity" OR "laboratory quality" OR "laboratory system$"
+        ("capacity" OR "early warning*" OR "surveillance" OR "monitoring system$"
+        OR "laboratory reporting" OR "laboratory infrastructure" OR "laboratory quality" OR "laboratory system$"
         OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
-        OR "capacity" OR "risk reduction"
-        OR "vaccination program*" OR "vaccination framework$" OR "immunization program*"
+        OR "risk reduction" OR "risk management" OR "risk communication"
         OR "emergency management" OR "emergency response" OR "personnel deployment" OR "security authorities"
+        OR "vaccination program*" OR "vaccination framework$" OR "immuni$ation program*"
         OR "legislation" OR "policy" OR "policies" OR "financing"
         OR "international health regulations" OR "national focal point$" OR "national action plan*"
         )
