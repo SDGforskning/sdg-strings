@@ -472,20 +472,19 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about international investment and poverty reduction in developing countries. It was considered whether "programmes and policies" should be an element in the search strategy, but the results without it look relevant.
-
-This query consists of 1 phrase. The basic structure is *International financing + anti-poverty + developing countries*.
+This target is interpreted to cover research about international investment for poverty reduction in developing countries. This query consists of 1 phrase. The basic structure is *International financing/cooperation + anti-poverty + developing countries*.
 
 ```Ceylon =
 TS=
 (
   (
-    ("ODA" OR "development spending" OR "foreign aid" OR "foreign investment$" OR "cooperation fund"
+    ("ODA" OR "development spending" OR "cooperation fund"
     OR  (
-          ("international" OR "development")
+          ("international" OR "development" OR "foreign")
           NEAR/3
               ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-              OR "aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$"
+              OR "aid" OR "assistance"
+              OR "fund$" OR "funding" OR "grant$" OR "investment$" OR "investing" OR "financing" OR "financial support" OR "financial resources" OR "capital flow$"
               )
         )    
     )
@@ -532,8 +531,11 @@ This target is interpreted to cover research about policies that can stimulate i
 TS=
 (
   ("law$" OR "legislat*"
-  OR (("national" OR "government*" OR "regional" OR "local" OR "international") NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"))
-  OR "investment policy"
+  OR (
+      ("national" OR "government*" OR "regional" OR "local" OR "international")
+      NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$")
+     )
+  OR "investment policy" OR "investment policies"
   )
   NEAR/15
       ("anti-poverty" OR "out of poverty" OR "pro poor"
