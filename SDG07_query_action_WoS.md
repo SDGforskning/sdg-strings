@@ -545,7 +545,7 @@ TS=
 This target is interpreted to cover research about:
 * increasing international cooperation for clean energy research and technology (phrase 1)
 * improving access to clean energy research and technology, in part via transfers of technology between sectors/actors (phrase 1)
-* promoting investment in clean energy research and technology, here we include e.g. development assistance (phrase 1)
+* promoting investment in clean energy research and technology, here we include development assistance (phrase 1)
 * promoting investment in energy infrastructure (phrase 2).
 
 Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. This target consists of 2 phrases.
@@ -563,28 +563,20 @@ TS=
     OR "invest" OR "investing"
     )
     NEAR/5
-        (
-          (
-            ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" )
-            NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
-            )
-        OR
-          (
-            ("research" OR "technology" OR "technologies" OR "innovation$" OR "R&D")
-            NEAR/5
-                ("access*" OR "sharing" OR "shared benefit$"
-                OR "capacity building" OR "build* capacity" OR "capacity development"
-                )
-          )  
+        ("ODA" OR "development spending" OR "cooperation fund"
+        OR  (
+              ("international" OR "development" OR "foreign")
+              NEAR/3
+                  ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+                  OR "aid" OR "assistance"
+                  OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
+                  )
+              )
         OR  
-          (
-            ("international" OR "development")
-            NEAR/3
-                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$"
-                )
-          )
-        OR "foreign aid" OR "ODA"
+            (
+              ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
+              NEAR/3 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+            )
         OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
         OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
         OR "economic support" OR "economic assistance"
@@ -598,7 +590,7 @@ TS=
           ("technolog*" OR "innovation$" OR "R&D")
           NEAR/3
               ("clean" OR "cleaner" OR "green" OR "greener"
-              OR "decarboni*" OR "low carbon" OR "energy efficiency"  
+              OR "decarboni*" OR "low carbon" OR "energy efficien*"  
               OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine energy" OR "tidal energy" OR "wave energy"
               )
         )      
@@ -614,37 +606,38 @@ The general structure is *action + investment + energy infrastructure/renewable 
 TS=
 (
   (
-    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulate$" OR "support*"
+    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulat*" OR "expand" OR "support*"
     OR "build*" OR "develop" OR "developing" OR "improv*"
     OR "invest" OR "investing"
     )
     NEAR/5
-      ("invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
+      ("ODA" OR "development spending" OR "cooperation fund"
+      OR  (
+            ("international" OR "development" OR "foreign")
+            NEAR/3
+                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+                OR "aid" OR "assistance"
+                OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
+                )
+          )
+      OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
       OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
       OR "economic support" OR "economic assistance"
       OR "green bond$" OR "climate bond$"
-      OR "ODA" OR "foreign aid"
-      OR
-        (
-          ("international" OR "development")
-          NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "grant$" OR "investment$")
-        )
       )
   )
   NEAR/15
-      ("energy service$" OR "energy sector"
-      OR "electrical infrastructure"
+      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
+      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid"))
       OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
       OR "energy storage system$"
       OR
         (
-          ("energy" OR "electricity")
+          ("power station$" OR "power generation" OR "energy generation" OR "generator$")
           NEAR/5
-              ("generation" OR "infrastructure" OR "access"
-              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
-              )
+              ("modern" OR "clean" OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy")
         )             
-      )
+      )            
 )
 ```
 
@@ -654,30 +647,27 @@ TS=
 >
 > 7.b.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about improving infrastructure and technologies for sustainable and modern energy services in developing countries (with a focus on LDCs, SIDS and LDSs). Infrastructure and technology is interpreted to cover electricity generation, power grids and storage, energy services, and renewable energy. The general structure is *action + infrastructure/technology + developing countries*.
+This target is interpreted to cover research about improving infrastructure for sustainable and modern energy services in developing countries. The focus is on infrastructure and supply. We interpret this to cover electricity generation, power grids, storage, and energy services. The general structure is *action + infrastructure/technology/modern services + developing countries*.
 
 ```Ceylon =
 TS=
 (
   (
     ("improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
-    OR "more efficient" OR "upgrad*" OR "scal* up"
-    OR "build*" OR "expand" OR "deploy" OR "accelerat*" OR "prioriti$e"
+    OR "more efficient" OR "upgrad*" OR "scal* up" OR "moderni*"
+    OR "build" OR "expand*" OR "extend*" OR "deploy" OR "accelerat*" OR "prioriti$e"
+    OR "sustainable transition$" OR "renewable energy transition$" OR "renewable transition$" OR "energy sector transform*"
     )  
     NEAR/5  
-      ("energy service$" OR "energy sector"
-      OR "electrical infrastructure"
+      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
+      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid"))
       OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
       OR "energy storage system$"
       OR
         (
-          ("energy" OR "electricity")
+          ("power station$" OR "power generation" OR "energy generation" OR "generator$")
           NEAR/5
-              ("infrastructure" OR "technolog*"
-              OR "generation" OR "off grid"
-              OR "sustainable" OR "renewable$"
-              OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
-              )
+              ("modern" OR "clean" OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy")
         )             
       )
   )
