@@ -596,7 +596,7 @@ TS=
 ```
 ##### Phrase 3:
 
-This phrase focuses on access to basic services in schools. The definition of basic services in schools in retrieved from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf The basic structure is school + access + basic services.
+This phrase focuses on access to basic services in schools. The terms for basic services in schools are taken and adapted from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf The basic structure is school + access + basic services.
 
 ```Ceylon =
 TS=
