@@ -234,7 +234,7 @@ TS=
         NEAR/5
             ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
             OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-            OR "affordab*" OR "pro poor" OR "inexpensive"
+            OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
             )
       )
       OR
@@ -340,7 +340,7 @@ TS=
       NEAR/5
           ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal" OR "empower*" OR "inclusion"
           OR "ownership" OR "right$"
-          OR "affordab*" OR "inexpensive" OR "low cost" OR "pro poor"
+          OR "affordab*" OR "inexpensive" OR "low cost" OR "pro poor" OR "free of charge" OR "free service$"
           )
     )
     NEAR/10
