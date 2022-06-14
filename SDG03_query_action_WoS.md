@@ -708,7 +708,9 @@ TS =
       ("health equity" OR "equity in health*" OR "health for all"
       OR
         (
-          ("access*" OR "right$" OR "coverage" OR "afford" OR "affordab*")
+          ("access*" OR "right$" OR "coverage"
+          OR "afford" OR "affordab*" OR "low cost" OR "free of charge" OR "free service$" OR "subsidi*"
+          )
           NEAR/5
             ("increas*" OR "enhanc*" OR "universal"
             OR "expand*" OR "provide" OR "providing" OR "provision" OR "promot*" OR "ensur*"
@@ -767,11 +769,11 @@ TS =
 >
 > 3.8.2 Proportion of population with large household expenditures on health as a share of total household expenditure or income
 
-This target is interpreted to include research about 1) Achieving universal health coverage, 2) Avoiding financial obstacles/hardship in healthcare, including access to medicines/vaccines, 3) Achieving access to healthcare services, 4) Achieving access to essential medicines and vaccines that are safe and effective.
+This target is interpreted to include research about 1) Achieving universal health coverage and access to healthcare, 2) Avoiding financial obstacles/hardship in healthcare, including access to essential medicines and vaccines
 
 ##### Phrase 1
 
-The basic structure is *universal health coverage + achieving*
+This phrase covers achieving universal health coverage. The basic structure is *universal health coverage + action*.
 
 "Achieving" is interpreted broadly to cover both establishment, expansion, maintenance and obstacles. `for universal health coverage` finds a variety of phrases which are related to this, e.g. "policies for", "legal framework for", "tool for".
 
@@ -795,28 +797,26 @@ TS =
 
 ##### Phrase 2
 
-The basic structure is *health care/medications + access/affordability/quality + action*
+This phrase covers access to healthcare, essential medicines and vaccines. The basic structure is *health care/medications + access/affordability/quality + action*
 
-`treatment` is not used alone, as there are technical biomedical works about e.g. barrier treatments.
-
-Under *access* terms, we have included `health equity` and `vaccine equity`, as we consider it to cover the idea of "medicines and vaccines for all".
-
-Just like 3.7, it is difficult to know if we need action terms here or not, and, if yes, what the NEAR number should be...
+`treatment` is not used alone, as there are technical biomedical works about e.g. barrier treatments. Under *access* terms, we have included `health equity` and `vaccine equity`, as we consider it to cover the idea of "medicines and vaccines for all".
 
 ``` Ceylon =
 TS =
 (
   ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
   OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "medicines" OR "vaccine$" OR "medication$"
-  OR "essential treatment$" OR "life saving treatment$" OR "treatment access" OR "access to treatment$" OR "treatment need" OR "treatment program*" OR "treatment cost$" OR "health treatment"
+  OR "vaccine$" OR "immuni$ation"
+  OR (("essential" OR "basic" OR "life saving" OR "necessary" OR "emergency") NEAR/3 ("medicines" OR "medication$" OR "treatment*" OR "therap*"))
+  OR "treatment access" OR "access to treatment$"
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health care equity" OR "equity in healthcare" OR "health for all" OR "vaccine equity"
       OR
         (
           ("access*" OR "barrier$" OR "obstacle$"
-          OR "afford" OR "affordab*" OR "unaffordab*" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$" OR "out of pocket"
+          OR "afford" OR "affordab*" OR "low cost" OR "inexpensive" OR "free service$" OR "free of charge" OR "voucher$"
+          OR "unaffordab*" OR "high price$" OR "costly" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$" OR "out of pocket"
           OR "microinsurance"
           OR "quality medicines" OR "quality care" OR "quality of care" OR "quality health care"
           )
@@ -1108,22 +1108,26 @@ TS =
 
 #### Phrase 2
 
-This phrase concerns access to medicines and vaccines. The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation. This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances. About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
+This phrase concerns access to essential medicines and vaccines. The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation. This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances. About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
 > "In the declaration, ministers stress that it is important to implement and interpret the TRIPS Agreement in a way that supports public health — by promoting both access to existing medicines and the creation of new medicines.[...]. It emphasizes that the TRIPS Agreement does not and should not prevent member governments from acting to protect public health."
 
-The structure is *agreements/IPR + medicines + access*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a standalone term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
+The structure is *agreements/IPR + medicines + access*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a  term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
 
 ``` Ceylon =
 TS =
 (
   ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property" OR "TRIPS agreement")
   AND
-  ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "essential drug$" OR "treatment$")
+    ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "immuni$ation" OR "essential drug$" OR "medication$"
+    OR (("essential" OR "life saving" OR "emergency" OR "health" OR "medical") NEAR/3 ("treatment*" OR "therap*"))
+    OR "treatment access" OR "access to treatment$"
+    )
   AND
-  ("access" OR "accessibility" OR "affordab*")
+    ("access" OR "accessibility"
+    OR "affordab*" OR "low cost" OR "inexpensive" OR "free of charge" OR "unaffordab*" OR "expensive"
+    OR "vaccine equity" OR "vaccine inequity"
+    )
 )
-OR
-TS= "vaccine inequity"
 ```
 
 ## Target 3.c
