@@ -180,7 +180,7 @@ TS=
 
 ##### Phrase 4
 
-This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; phrase 5 uses broader terms for affordability, and phrase 7 broader terms for access.
+This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
 The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy povery.
 
@@ -266,13 +266,14 @@ TS=
 ##### Phrase 6
 
 This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+
 ```Ceylon =
 TS=
 (
   (
     (
-      ("improv*" OR "increas*" OR "ensur*")
-      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*")  
+      ("improv*" OR "increas*" OR "ensur*" OR "implement*")
+      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost")  
     )
     OR
     (
@@ -333,26 +334,24 @@ TS=
 (
   (
     (
-      ("increase" OR "improv*" OR "enhanc*" OR "promot*" OR "support" OR "encourag*")
+      ("increase" OR "improv*" OR "enhanc*" OR "promot*" OR "support" OR "encourag*" OR "speed up" OR "accelerate")
       NEAR/5
-          ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
+          ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation"
           OR "contribution" OR "proportion" OR "share" OR "expansion"
-          OR "feasibility"
-          OR "affordab*" OR "investment$"
+          OR "feasibility" OR "attractiveness" OR "incentive$" OR "initiative$"
+          OR "affordab*" OR "inexpensive" OR "low cost" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
+          OR "investment$" OR "subsidies" OR "subsidi$ation" OR "financing" OR "funding" OR "commerciali?ation"
           OR "energy service$" OR "energy sector"
-          OR "global energy" OR "global electricity" OR "energy mix"
+          OR "global energy" OR "global electricity" OR "energy mix" OR "market share$"
           )
     )
-  OR "implement*" OR "adopting" OR "adoption"
+  OR (("reduc*" OR "decreas*" OR "remov*" OR "dismantl*") NEAR/5 ("barrier$" OR "obstacle$"))
+  OR "implement" OR "adopt" OR "incentivi*"
   OR "energy transition$" OR "renewable transition$" OR "transition* to"
-  OR "incentive$" OR "initiative$"
   OR ("certificat*" NEAR/2 ("energy" OR "green"))
-  OR "barrier$" OR "obstacle$"
   OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
-  OR "subsidi*" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
-  OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-  OR "feed-in tariff$" OR "market$"
-  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "commerciali?ation"
+  OR "subsidi$e" OR "investing" OR "invest" OR "green bond$" OR "climate bond$" OR "feed-in tariff$"
+  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially"
   OR "sustainable development" OR "sustainable energy development"
   )
   NEAR/15
