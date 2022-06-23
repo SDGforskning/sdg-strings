@@ -247,15 +247,27 @@ TS=
 ```
 ##### Phrase 2:
 
-The basic structure is justice terms + access + higher education
+The basic structure is action/justice terms + access + higher education
 
 ```Ceylon =
 TS=
 (
  (
-  ("inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "equal*" OR "barrier*" OR "obstacle*" OR "inequalit*") 
-  NEAR/5 
-  ("access")
+  (
+   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "initiative$" OR "intervention$") 
+   NEAR/5
+   ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+  )
+  OR 
+   (
+    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "improv*" OR "manag*") 
+    NEAR/5
+    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+   )
+NEAR/5
+(
+ ("access")
+)
  ) 
  NEAR/15
   (
