@@ -714,19 +714,6 @@ TS=
 )
 ```
 
-## General SDG
-
-```Ceylon =
-TS=
-(
-"SDG$ 4" OR "SDG4" OR "SDG-4" OR "sustainable development goal$ 4"
-    OR
-    (
-      ("sustainable development goal$" OR "SDG$" OR "goal 4")
-      NEAR/15 "education"
-    )
-)
-```
 
 ## 4. Authorship and review
 EHS. Internal review first draft: KH, HMB, CSA (January 2022). Workshop external input (February 2022). Internal review second draft: CSA, ML (March 2022). Workshop external input (June 2022).
