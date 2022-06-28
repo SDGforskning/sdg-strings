@@ -373,7 +373,8 @@ TS=
 
 This target is considered to cover research about least developed countries and small island developing states, about
 * planning for climate change
-* raising capacity for climate-change management. We consider "climate-change management" to cover climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
+* managing climate change
+* raising capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
 This target consists of 1 phrase. The basic structure is *(climate planning/management // action + capacity + climate management) + LDCs/SIDS*
 
@@ -385,7 +386,7 @@ TS=
   (
     ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
     OR "nationally determined contribution$"
-    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
+    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund" OR "adaptation financ*"
     OR
       (
         (
@@ -396,11 +397,15 @@ TS=
           OR "financial assistance" OR "financial support" OR "economic assistance" OR "economic support"
           OR "climate financ*" OR "climate aid" OR "climate fund*"
           )
-          NEAR/5
-              ("capacity" OR "infrastructure$" OR "technolog*" OR "early warning system$"
-              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "capabilit*" OR "training"
-              OR "communication" OR "social network$" OR "information network$" OR "collaboration" OR "cooperation"
-              OR "educat*" OR "awareness"
+          NEAR/5            
+              ("capacity" OR "capabilit*"
+              OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
+              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
+              OR "awareness" OR "responsibilit*"
+              OR "infrastructure$" OR "technolog*" OR "early warning system$"
+              OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
+              OR "economic resources" OR "financial resources" OR "human resource$"
+              OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
               )
         )  
         AND
@@ -410,6 +415,7 @@ TS=
                   ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
                   OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
                   OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
+                  OR "solutions" OR "problems" OR "manag*"
                   )
             )
       )  
