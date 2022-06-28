@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently being edited after internal review. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.
+**Current status**: This string is currently being edited after speciqalist input. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.
 
 **Contents**
 
@@ -58,7 +58,7 @@ TS=
       OR "develop" OR "developing" OR "implement"
       OR "build* capacity" OR "capacity building" OR "capacity development"
       )
-      NEAR/5 ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "risk reduction")
+      NEAR/5 ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "risk reduction" OR "preparedness" OR "preparing" OR "preparation")
     )
     OR  
       (
@@ -67,12 +67,14 @@ TS=
       )
     OR
     (
-      ("establish*" OR "propos*" OR "implement*" OR "adopt*" OR "introduc*" OR "roadmap" OR "towards" OR "way to")
+      ("establish*" OR "propos*" OR "implement*" OR "adopt*" OR "introduc*" OR "roadmap" OR "towards" OR "way to" OR "preparing" OR "prepare")
       NEAR/5
           (
             ("disaster$" OR "risk$")
             NEAR/3
-                ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief" OR "manag*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "medical response$")
+                ("plan" OR "plans" OR "planning" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
+                OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
+                )
           )
     )
     OR "sendai framework"
