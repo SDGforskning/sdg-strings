@@ -110,7 +110,7 @@ This target is interpreted to cover research which mention national policies, st
   - reducing the indicators of climate change & their impacts (phrase 2)
   - international frameworks for action, or climate change integration into policy (phrase 3)
 
-We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning. We also include sectoral plans as a synonym - although not completely the same as a national plan, it may be used to refer to a plan on a national level for the sector.
+Under "national policies, strategies and planning", we consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form. `sectoral plans` is also included - although sectoral =/= national, it may be used to refer to a plan on a national level for the sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
@@ -127,10 +127,11 @@ TS=
 (
   (
     ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
+    OR "climate action" OR "climate adaptation" OR "climate mitigation" OR "climate resilience"
     OR ("warming" NEAR/3 ("climat*" OR "atmospher*" OR "ocean"))
     OR "GHG" OR "greenhouse gas" OR "greenhouse gases"
     OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$"
-    OR "methane" OR "CH4" OR "nitrous oxide" OR "N2O" OR "carbon dioxide" OR "CO2" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
+    OR "methane" OR "CH4" OR "nitrous oxide" OR "NOX" OR "N2O" OR "carbon dioxide" OR "CO2" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
     )
     NEAR/5
           ("action$" OR "sustainab*"
@@ -141,10 +142,12 @@ TS=
   )
   AND
     (
-      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
+      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
       NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
-          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
+          ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
+          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
+          )
     )
   AND
     ("climate" OR "global warming" OR "climatic change$"
@@ -188,17 +191,19 @@ TS=
   )
   AND
       (
-        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
+        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
         NEAR/5
-            ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
-            OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee")
+            ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+            OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
+            OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
+            )
       )
 )
 ```
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. with the frameworks in this approach, as the results can be very general, rather than about countries implementing climate change into their national policies.
+Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general rather than about countries implementing climate change into their national policies.
 
 ``` Ceylon =
 TS=
@@ -210,23 +215,28 @@ TS=
   )
   AND
     (
-      ("national" OR "state" OR "federal" OR "domestic" OR "sectoral")
+      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
       NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
+          ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+          OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
           )
     )
 )
 OR
 TS=
 (
-  ("climate change$" NEAR/5 ("integrat*" OR "includ*" OR "inclus*" OR "mainstream*"))
+  (
+    ("climate change$" OR "climate action" OR "climate adaptation" OR "climate mitigation" OR "climate resilience")
+    NEAR/5 ("integrat*" OR "includ*" OR "inclus*" OR "mainstream*")
+  )
   NEAR/15
       (
-        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral")
+        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
         NEAR/5
-          ("program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans" OR "law$" OR "legislat*"
-          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
-          )
+            ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
+            OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
+            OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
+            )
       )
 )
 ```
