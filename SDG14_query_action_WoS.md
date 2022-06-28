@@ -10,7 +10,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 2. General notes about method for SDG 14
 3. Marine terms: String for limiting certain phrases to the marine environment
 4. Documentation and string sections for each target
-5. Authorship and review
+5. Contributions
 6. Footnotes
 
 
@@ -1130,10 +1130,11 @@ TS =
 
 ## 5. Authorship and review
 
-Specialist input: Associate professor of fisheries at UiB. CSA has a PhD in marine biology.
-v2019.12: CSA, ML, SRM
-New version, first draft: CSA (Feb 2022)
-Internal review: ML, HMB (March 2022)
+* v2019.12: CSA, ML, SRM
+* New version: CSA (Feb-May 2022)
+* Internal review: ML, HMB (March 2022)
+
+Specialist input: KE (Associate professor of fisheries at UiB; review of v2019.12). CSA holds a PhD in marine biology.
 
 ## 6. Footnotes
 

@@ -9,7 +9,7 @@ Take urgent action to combat climate change and its impacts.
 1. Full query in copy-pasteable format
 2. General notes about method for SDG13
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 
@@ -108,7 +108,7 @@ This target is interpreted to cover research which mention national policies, st
   - reducing the indicators of climate change & their impacts (phrase 2)
   - international frameworks for action, or climate change integration into policy (phrase 3)
 
-We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning. We also include sectoral plans as a synonym - although not completely the same as a national plan, it may be used to refer to a plan on a national level for the sector. 
+We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form of national policy/strategy/planning. We also include sectoral plans as a synonym - although not completely the same as a national plan, it may be used to refer to a plan on a national level for the sector.
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
@@ -196,7 +196,7 @@ TS=
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. with the frameworks in this approach, as the results can be very general, rather than about countries implementing climate change into their national policies. 
+Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. with the frameworks in this approach, as the results can be very general, rather than about countries implementing climate change into their national policies.
 
 ``` Ceylon =
 TS=
@@ -391,11 +391,15 @@ TS=
 
 ## 4. Authorship and review
 
-v2019.12: ML, CSA, SRM
-New version, first draft: ML (Oct-Feb 2022)
-Internal review: EHS, CSA (March 2022)
-New version, second draft: ML, CSA (April-May 2022)
-Specialist input: Camilla A. Borrevik (PhD in ethnography, Pacific climate leadership; May 2022) & ML (PhD in climate/geoscience).
+* v2019.12: ML, CSA, SRM
+
+* New version, first draft: ML (Oct 2021-Feb 2022)
+
+* Internal review: EHS, CSA (March 2022)
+
+* New version, second draft: CSA, ML (April-June 2022)
+
+Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022). ML holds a PhD in climate geoscience.
 
 ## 5. Footnotes
 
