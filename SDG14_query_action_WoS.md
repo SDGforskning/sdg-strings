@@ -1128,7 +1128,7 @@ TS =
 )
 ```
 
-## 5. Authorship and review
+## 5. Contributions
 
 * v2019.12: CSA, ML, SRM
 * New version: CSA (Feb-May 2022)

@@ -389,7 +389,7 @@ TS=
 )
 ```
 
-## 4. Authorship and review
+## 4. Contributions
 
 * v2019.12: ML, CSA, SRM
 
