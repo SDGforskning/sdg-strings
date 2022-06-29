@@ -368,8 +368,8 @@ TS=
 
 This target is interpreted to cover research about
 * Reducing gender disparities in education
-* Securing access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
-
+* Securing access to education and vocational training for vulnerable persons
+* 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
@@ -449,7 +449,7 @@ TS=
       ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced" OR "develop* contr*")
      )
      OR
-     "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural")
+     "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "immigrant*" OR "low* income*" OR "minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "marginal*" OR "slum*" OR "rural")
   )
  )
 ```
