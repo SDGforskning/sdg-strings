@@ -586,13 +586,15 @@ This target is interpreted to cover research about:
 * ending overfishing, illegal/unreported fishing (IUU fishing), destructive fishing  (phrase 1 & 2)
 * implementation of science-based fisheries management (phrase 3)
 
+Whether specific fishing types should be included as a "destructive" practice is difficult as the meaning and scope of this term varies - see discussion in <a id="f10">[Willer et al. (2022)](#destructive)</a>. In general, we focus in our strings on including terms for "destructive", leaving the classification up to the authors themselves. However, these authors did find that blast and poison fishing are practices mentioned very often in conjunction with "destructive", and thus we include these concepts in our strings. Bottom trawling is a more difficult and debated type to place, although commonly linked to destructive fishing, particularly with variations in terminology (see discussion in the paper). We therefore combine trawling with terms for damage or destruction. 
+
+We also consider abandoned, lost and discarded gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life related to fishing activities. `bycatch` is discarded/unwanted catch; we have included it here as it can contribute to overfishing or harm to engangered species. Fishery `collapse OR closure$` are also included as relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
+
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
 ##### Phrase 1:
 
 The basic structure is *generic action + overfishing/illegal/destructive fishing*. The *overfishing* terms are the same in phrase 1 and phrase 2, but the action terms differ and are added at a closer distance in phrase 1.
-
-`bycatch` is included as a form of destructive/IUU fishing, as is `blast fishing`. We also consider abandoned gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life caused by fishing. Fishery `collapse OR closure$` are considered relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
 
 ``` Ceylon =
 TS=
@@ -607,7 +609,7 @@ TS=
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
       OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-      OR "ghost fishing" OR "ghost nets" OR "ALDFG"
+      OR "ghost fishing" OR "ghost nets" OR "ALDFG" OR "poison fishing"
       OR
         (
           ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
@@ -615,6 +617,7 @@ TS=
           )
           NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
         )
+      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))
       )       
 )
 ```
@@ -645,7 +648,7 @@ TS=
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
       OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-      OR "ghost fishing" OR "ghost nets" OR "ALDFG"
+      OR "ghost fishing" OR "ghost nets" OR "ALDFG" OR "poison fishing"
       OR
         (
           ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
@@ -653,6 +656,7 @@ TS=
           )
           NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
         )
+      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))
       )       
 )
 ```  
@@ -1155,3 +1159,5 @@ Specialist input: KE (Associate professor of fisheries at UiB; review of v2019.1
 <a id="f2"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f4"></a> UN Environment Programme. (n.d.). *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]. [↩](#marinepollUN)
+
+<a id="f10"></a> Willer, D. F., Brian, J. I., Derrick, C. J., Hicks, M., Pacay, A., McCarthy, A. H., Benbow, S., Brooks, H., Hazin, C., Mukherjee, N., McOwen, C. J., Walker, J., & Steadman, D. (2022). ‘Destructive fishing’—A ubiquitously used but vague term? Usage and impacts across academic research, media and policy. Fish and Fisheries, 00, 1– 16. https://doi.org/10.1111/faf.12668 . [↩](#destructive)
