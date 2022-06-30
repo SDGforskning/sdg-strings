@@ -526,8 +526,7 @@ TS=
   ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR "pre-service teach*" OR "teacher$ in training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning" OR "lifelong learning" OR "pedagogic*" OR "didactic*")
  )
  NEAR/5
-("sustainable development" OR "sustainable lifestyle$" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*"
-OR ("sustainability" NEAR/5 ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "transition$" OR "transformati*"))
+("sustainable development" OR "sustainable lifestyle$" OR "global citizen*" OR "eco-citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*" OR "democra*" OR ("sustainability" NEAR/5 ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "social" OR "societal" OR "cultural" OR "economic" OR "ecological" OR "environment*" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "transition$" OR "transformati*"))
  ) 
 ) 
 ```
