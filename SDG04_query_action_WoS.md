@@ -369,7 +369,7 @@ TS=
 This target is interpreted to cover research about
 * Reducing gender disparities in education
 * Securing access to education and vocational training for vulnerable persons
-* 
+
 This query consists of 3 phrases.
 
 ##### Phrase 1:
@@ -422,7 +422,7 @@ TS=
 ```
 ##### Phrase 3:
 
-We have not found an authoritative source defining "vulnerable groups", probably as who is considered to be vulnerable depends on the context and situation. Some of the terms were found in https://www.un.org/en/desa/leaving-no-one-behind, and others were found in articles from initial searches. "Elderly" can be vulnerable in some situations, but were omitted as they are not considered to be the primary target group for education. "Older" however, is included, to address the issues of lifelong learning. Terms like "migrant", "minority" and "rural" need not signify vulnerability, but were discovered to find research where these factors were seen as potential hindrances to accessing education, and were therefore included. The basic structure is action + access + education + vulnerable groups
+We have not found an authoritative source defining "vulnerable groups", probably as who is considered to be vulnerable depends on the context and situation. Some of the terms were found in https://www.un.org/en/desa/leaving-no-one-behind, and others were found in articles from initial searches. "Elderly" can be vulnerable in some situations, but were omitted as they are not considered to be the primary target group for education. "Older" however, is included, to address the issues of lifelong learning. Terms like "migrant", "minority" and "rural" need not signify vulnerability, but were discovered to find research where these factors were seen as potential hindrances to accessing education, and were therefore included. The structure of the part concerning vulnerable groups is slightly different from similar strings in other targets, as initial testing proved this to return more relevant hits and less noise. The basic structure is action + access + education + vulnerable groups.
 
 ```Ceylon =
 TS=
