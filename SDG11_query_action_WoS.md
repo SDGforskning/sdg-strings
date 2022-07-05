@@ -203,9 +203,9 @@ NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "part
 >
 > 11.4.1 Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)
 
-This target is interpreted as to cover research on protecting cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Culturall Statistics (http://uis.unesco.org/sites/default/files/documents/unesco-framework-for-cultural-statistics-2009-en_0.pdf). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc..
+This target is interpreted as to cover research on strengthening the protection of cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Culturall Statistics (http://uis.unesco.org/sites/default/files/documents/unesco-framework-for-cultural-statistics-2009-en_0.pdf). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc..
 
-This query consists of 1 phrase.
+This query consists of 1 phrase. The basic structure is action + cultural heritage.
 
 ##### Phrase 1:
 
@@ -214,12 +214,11 @@ TS=(
 
 ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "increas*")   
 
-NEAR ("maintain*" OR "conserv*" OR "preserv*" OR "sustain" OR "protect*")
+NEAR ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves" OR "preserv*" OR "sustain" OR "protect*" OR "safeguard*")
 
 NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "heritage site$" OR "museum$" OR "archaeological place$" OR "archaeological site$" OR "historical place$" OR "historical building$" OR "historical monument$" OR "historical artefact$" OR "cultural landscape$" OR "natural heritage" OR "nature formation$" OR "geopark$" OR "natural habitat$" OR "nature park$" OR "nature reserv*" OR "zoo$" OR "zoological garden$" OR "botanical garden$" OR "aquarium" OR "aquaria")
 
-)
-```
+)```
 
 ## Target 11.5
 
