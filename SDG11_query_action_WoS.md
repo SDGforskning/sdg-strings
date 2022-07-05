@@ -50,7 +50,7 @@ Acccess to housing. The basic structure is action + housing.
 TS=(
 (("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
 NEAR
-("adequa*" OR "inadequa*" OR "affordab*" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security" OR "tenure")
+("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security" OR "tenure")
 NEAR ("housing" OR "settlements" OR "living conditions"))
 )
 ```
@@ -410,15 +410,16 @@ This target is interpreted as to cover research on strengthening links between u
 This query consists of 1 phrase.
 
 ##### Phrase 1:
-
-Phrase 1 doc
+The basic structure is action + planning
 
 ```Ceylon =
-TS=(
-("economic*" OR "social" OR "environmental" OR "territorial")
-NEAR ("cooperat*" OR "collaborat*" OR "develop*")
-NEAR ("regional plan" OR "regional plans*" OR "regional planning"OR "national plan" OR "national plans" OR "national planning" OR "urban policies" OR "urban policy")
+TS= (
+("strengthen*" OR "implement*" OR "expand*" OR "improv*" OR "ensur*" OR "capacity")
+NEAR/15
+(("national" OR "regional") NEAR/3 ("plan" OR "planning" OR "plans" OR "strateg*" OR "framework$" OR "program" OR "programs" OR "policy" OR "policies" OR "cooperat*"))
+NEAR/15 ("city" OR "cities" OR "town$" OR "village$" OR "built-up area$" OR "urban*" OR "rural area$" OR "rural development" OR "neighbourhood$" OR "neighborhood$" OR "settlement$")
 )
+
 ```
 
 ## Target 11.b
