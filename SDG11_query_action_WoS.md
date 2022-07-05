@@ -370,18 +370,34 @@ NEAR
 
 This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically.
 
-This query consists of 1 phrase.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
+This phrase is about increasing/improving safe/accessible spaces and access to spaces. The basic structure is action + public spaces.
 
 ```Ceylon =
-TS=(
-("increas*" OR "improv*" OR "expand*" OR "enlarg*")
-NEAR ("green space$" OR "garden$" OR "park$" OR "recreational area$" OR "public area$")
-NEAR ("safe" OR "inclus"* OR "access*" OR "unrestrict*" OR "restrict*" OR "discriminat*" OR "harass*" OR "exclu*" OR "prohibit*")
-NEAR ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*")
+TS=( 
+("increas*" OR "improv*" OR "expand*" OR "enlarg*" OR "provi*" OR "build*" OR "create" OR "creation" OR "creating" OR "enhanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*") 
+NEAR/15 
+("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$" OR "community garden$" OR "allotment garden$" OR "urban allotment$" OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+) 
+NEAR/15 ("safe" OR "inclus"* OR "access*" OR "unrestrict*") 
 )
+
 ```
+##### Phrase 2:
+This phrase is about exclusion or justice and public spaces. The basic structure is action + public spaces.
+
+```Ceylon =
+TS=( 
+("restrict*" OR "inaccess*" OR "inequalit*" OR "equal access" OR "inequit*" OR "equitab*" OR "justice" OR "injustice" OR "discriminat*" OR "exclu*" OR "harass*" OR "assault*" OR "unsafe")
+NEAR/15 
+("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$" OR "community garden$" OR "allotment garden$" OR "urban allotment$" OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+) 
+) 
+
+```
+
 
 ## Target 11.a
 
