@@ -50,19 +50,47 @@ Acccess to housing
 TS=(
 (("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
 NEAR
-("adequate" OR "inadequate" OR "affordabl$" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security")
+("adequa*" OR "inadequa*" OR "affordab*" OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security" OR "tenure")
 NEAR ("housing" OR "settlements" OR "living conditions"))
 )
 ```
 ##### Phrase 2:
 
-Access to basic services. Phrase differs from the one used in target 1.4, not sure which approach is best.
+Phrase 2 covers access to basic services. Basic services terms were gathered from the metadata for indicator 1.4 (<a id="SDGMetrep">[UN Statistics Division SDG Indicators Metadata Repository, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat <a id="UNhabitat">[Njiru, 2018](#f3)</a>
 
 ```Ceylon =
 TS=(
-("access")
+(("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
 NEAR
-("basic services" OR "waste management" OR "sanitation" OR "water supply" OR "drinking water" OR "postal service*" OR "electricity service*" OR "public transportation")
+(("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
+OR 
+(("drinking water" OR "sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
+	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
+)
+OR "improved drinking water" OR "improved source$ of drinking water" OR "clean drinking water" OR "clean water"
+OR 
+(("waste" OR "garbage" OR "rubbish") 
+	NEAR/2 ("service$" OR "facility" OR "facilities")
+)
+OR
+(("health" OR "medical")
+	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "essential" OR "primary" OR "care")
+)
+OR "healthcare"
+OR 
+(("education*" OR "school*")
+	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "primary")
+)
+OR 
+(("basic information" OR "telecommunication" OR "basic communication" OR "ICT")
+	NEAR/2 ("service$" OR "facility" OR "facilities" OR "infrastructure")
+)
+OR "electricity service$" OR "energy service$" OR "modern energy" OR "clean fuel$" OR "clean energy"
+OR "public open space$" OR "public space$"
+OR "basic mobility" OR "urban mobility" OR "rural mobility" OR "all-season road$"
+OR ("transport*" NEAR/2 ("service$" OR "infrastructure" OR "system$" OR "public"))
+))
+NEAR ("housing" OR "settlements" OR "living conditions")
 )
 
 ```
@@ -496,6 +524,9 @@ http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-
 
 <a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
+<a id="f2"></a> UN Statistics Division SDG Indicators Metadata Repository, 2022 https://unstats.un.org/sdgs/metadata/files/Metadata-01-04-01.pdf [↩](#SDGTMetrep)
+
+<a id="f3"></a> Njiru, E. (March 2018) *Introducing indicator 1.4.1*. UNESCAP, UN Habitat Global Urban Observatory. https://www.unescap.org/sites/default/files/Indicator%201.4.1_Basic%20Services.pdf (accessed Jun 2022). [↩](#UNhabitat)
 
 https://sdgs.un.org/sites/default/files/2021-10/Transportation%20Report%202021_FullReport_Digital.pdf
 
