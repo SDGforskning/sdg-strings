@@ -44,7 +44,7 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Acccess to housing
+Acccess to housing. The basic structure is action + housing.
 
 ```Ceylon =
 TS=(
@@ -56,7 +56,8 @@ NEAR ("housing" OR "settlements" OR "living conditions"))
 ```
 ##### Phrase 2:
 
-Phrase 2 covers access to basic services. Basic services terms were gathered from the metadata for indicator 1.4 (<a id="SDGMetrep">[UN Statistics Division SDG Indicators Metadata Repository, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat <a id="UNhabitat">[Njiru, 2018](#f3)</a>
+Phrase 2 covers access to basic services. Basic services terms were gathered from the metadata for indicator 1.4 (<a id="SDGMetrep">[UN Statistics Division SDG Indicators Metadata Repository, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat <a id="UNhabitat">[Njiru, 2018](#f3)</a>. The basic structure is action + basic services.
+
 
 ```Ceylon =
 TS=(
@@ -175,26 +176,25 @@ This query consists of two phrases
 
 ##### Phrase 1:
 
-Urbanization
+This phrase covers urbanization. The basic structure is action + urbanization.
 
 ```Ceylon =
 TS=(
-("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")  
-NEAR ("sustainab*" OR "inclusive")  
+("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
+NEAR ("sustainab*" OR "inclusive")
 NEAR ("urbani?ation" OR "urban development")
 )
 ```
 ##### Phrase 2:
 
-Settlement planning. The use of NEAR is difficult to tune for achieving relevant results without too much noise.
+This phrase covers settlement planning. The basic structure is action + settlement planning + processs aspects.
 
 ```Ceylon =
-TS= (
-("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")
-NEAR ("settlement*" OR "urban*" OR "city" OR "cities" OR "rural" OR "region*" OR "nation*" OR "local" OR "municipal*" OR "county" OR "state")
-NEAR/3 ("plan*" OR "manag*")
-NEAR ("democra*" OR "taking part" OR "integrat*" OR "sustainab*")
+TS= (("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*") 
+NEAR/15 (("settlement*" OR "urban*" OR "city" OR "cities" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$") NEAR/3 ("plan*" OR "manag*"))
+NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
 )
+
 ```
 
 ## Target 11.4
