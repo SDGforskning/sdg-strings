@@ -48,87 +48,116 @@ This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing c
 
 ##### Phrase 1:
 
-In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*". The basic structure is education level + children + complete + increase.
+The basic structure is *school education + completion + action*.
+
+In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*".
 
 ```Ceylon =
 TS=
 (
- (
-  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR
-   (
-    ("school" OR "education")
-   )
-    NEAR/3
-    ("boys" OR "girls" OR "kids" OR "child*")
-   )
+  ("primary school*" OR "elementary school*" OR "primary educat*"
+  OR "middle school*" OR "secondary school*" OR "secondary education*"
+  OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
   )
   NEAR/5
-   (
-    ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation"
-     NEAR/5
-      ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*" )
-   )
- )
+     (
+       ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
+       NEAR/5
+          ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*")
+     )
 )
 ```
+
 ##### Phrase 2:
 
-In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts. The basic structure is education level + children + dropout + reduce.
+The basic structure is *school education + dropout + action*.
+
+In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts.
 
 ```Ceylon =
 TS=
 (
- (
-  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR
-   (
-    ("school" OR "education")
-    NEAR/3
-    ("boys" OR "girls" OR "kids" OR "child*")
-   )
+  ("primary school*" OR "elementary school*" OR "primary educat*"
+  OR "middle school*" OR "secondary school*" OR "secondary education*"
+  OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
   )
-  NEAR/5
-   ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit*" OR "early school-leaving")
-   NEAR/5
-   ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
- )
+  NEAR/15
+    (
+      ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit*" OR "early school-leaving")
+      NEAR/5
+          ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
+    )
 )
 ```
 ##### Phrase 3:
 
-"Quality education" is a broad term, and the short name of SDG 4.  As specified by Unesco, https://en.unesco.org/themes/education/sdgs/material/04, "it specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force." These are all adressed in the subsequent targets, therefore "quality education" is not elaborated further here. The basic structure is increase + access + school + free/equitable/quality.
+The basic structure is *action + access + school + free/equitable/quality*.
+
+"Quality education" is a broad term, and the short name of SDG 4.  As specified by UNESCO in its SDG Resources for Educators (<a id="unescoquality">[UNESCO, n.d.a](#f2)</a>):
+> "Quality education specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force."
+
+These are all addressed in the subsequent targets, therefore "quality education" is not elaborated on further here.
 
 ```Ceylon =
 TS=
 (
- (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "scal* up" OR "build*" OR "expand"  OR "accelerat*" OR "ensure" OR  "attain*" OR "achiev*" )  
-   NEAR
-   ("access*" OR "enter*" OR "entr" OR "enroll*" OR "admission" OR "admit*"))
-   NEAR/3
-   ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "primary education" OR "secondary education")
-   )
-   NEAR
-   ("free" OR "equitab*" OR "quality")
+    (
+      ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+      OR "scal* up" OR "build*" OR "expand"  OR "accelerat*"
+      OR "ensure" OR  "attain*" OR "achiev*"
+      )  
+      NEAR/5 ("access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*")
+    )
+    NEAR/15
+      (
+        ("primary school*" OR "elementary school*" OR "primary educat*"
+        OR "middle school*" OR "secondary school*" OR "secondary education"
+        )
+        NEAR/5 ("free" OR "equit*" OR "quality")
+      )
 )  
 ```
 #### Phrase 4:
 
-We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary. The basic structure is increase + level of skills + reading and mathematics.
+The basic structure is *action + level + skill + reading and mathematics*.
+
+We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary.
+
 ```Ceylon =
 TS=
 (
- ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
-  NEAR/5
-   (
-    ("basi*" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
-     NEAR/10
-     ("proficienc*" OR "skill*" OR "comprehen*")
-      NEAR/5
-       ("read*" OR "literac*" OR "mathematic*" OR "maths" OR "numera*")
-    )
- )
+  (
+    ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
+    NEAR/5
+      (
+        ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*")
+      )
+  )
+  NEAR/15 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+)
 ```
+
+*SUGGESTION*
+```Ceylon =
+TS=
+(
+  (
+    (
+      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
+      NEAR/5
+        (
+          ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+        )
+    )
+    NEAR/15 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+  )
+  AND ("school" OR "student$" OR "boys" OR "girls" OR "kids" OR "child*")
+)
+```
+
 ## Target 4.2
 
 > **4.2 By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre‑primary education so that they are ready for primary education**
@@ -146,51 +175,48 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
+The basic structure is *action + access + early care*.
+
 The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is improve access / remove obstacles + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "overcome" OR  "ensure" OR "attain*" OR "achiev*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*")
- NEAR/5
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
-  NEAR/5
   (
-   (
-    ("early childhood")
-    NEAR/3
-    ("education")
-   )
-   OR
-   ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "under five$")
- )
-  NOT
-  ("pig*" OR "plant*" OR "fish*")
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+    OR "overcome" OR  "ensure" OR "attain*" OR "achiev*"
+    OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+    )
+    NEAR/5
+      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+  )
+  NEAR/5
+      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
+      OR (("early childhood" OR "under five$") NEAR/3 "education")
+      )
 )
+NOT
+TS= ("pig*" OR "plant*" OR "fish*")
+
 ```
 ##### Phrase 2:
 
-The basic structure is school readiness OR children's development + school entry.
+The basic structure is *school readiness // child development + school entry*.
 
 ```Ceylon =
 TS=
 (
- (
-  ("ready" OR "readiness" OR "prepared*")
-  NEAR
-   ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
- )
-  OR
   "school readiness"
   OR
-   (
     (
-     ("children*" OR "under-five*" OR "early childhood")
+      ("ready" OR "readiness" OR "prepared*")
+      NEAR/5
+        ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
     )
-     NEAR/5
-     ("development*")
-      NEAR
-      "school entry"
+  OR
+    (
+      ("development*" NEAR/5 ("children*" OR "under-five*" OR "early childhood"))
+      NEAR/5 "school entry"
    )
 )
 ```
@@ -204,88 +230,90 @@ TS=
 This target is interpreted to cover research about:
 * Equal access for all to technical, vocational and tertiary education, including universities
 
-We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access. We have also included post-secondary education, which is in Unesco's International Standard Classification of Education (ISCED) http://uis.unesco.org/en/topic/international-standard-classification-education-isced a level between upper secondary and tertiary education, which does not necessarily give access to tertiary education, and is often practically or vocationally, as opposed to theoretially or generally, oriented.
+We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access. We have also included post-secondary education, a level between upper secondary and tertiary education which does not necessarily give access to tertiary education, and is often practically or vocationally, as opposed to theoretically or generally, oriented (according to UNESCO's International Standard Classification of Education (ISCED); <a id="isced">[UNESCO, 2012](#f3)</a>).
 
-This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise, and to avoid including for instance a large quantity of articles about open access publishing and universities. In phrase 1, "access" is limited by the inclusion of action terms, and the condition that "university" must be near admission or enrollment. In phrase 2, "access" is limited by its combination with justice terms. This allows for a freer use of "university" and related terms.
+This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise. In particular, combinations of `access` with `university or education` can result in a large quantity of articles about open access publishing and universities, which are not relevant here. To avoid this, in phrase 1 "access" is limited by the inclusion of action terms, and the condition that `university` must be near `admission$ OR enrol*`. In phrase 2, "access" is limited by its combination with terms to do with equality/discrimination, allowing us to also find publications that do not mention enrolment or admission specifically.
 
 ##### Phrase 1:
 
-The basic structure is action + access + higher education
+The basic structure is *action + access + higher education*
 
 ```Ceylon =
 TS=
 (
- (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "initiative$" OR "intervention$")
-  NEAR/5
-  ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "barrier*" OR "obstacle*" OR "afford*")
-  OR
-  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR     "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "improv*" OR "manag*")
-  NEAR/5
-  ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-  )
-  NEAR/15
-  (
-   (
-    ("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
-    NEAR/3
-    ("education" OR "training" OR "school*" OR "learning")
-    OR
-    "higher education"
-   )
-    OR
     (
-     ("university" OR "universities" OR "college$")
-     NEAR/5
-     ("admission$" OR "enroll*")
+      ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
+      NEAR/5
+        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+    )
+  OR
+    (
+      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+      OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+      OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+      OR "improv*" OR "manag*"
+      )
+      NEAR/5
+        ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
     )
   )
- )
+  NEAR/15
+      ("higher education"
+      OR (("university" OR "universities" OR "college$") NEAR/5 ("admission$" OR "enrol*"))
+      OR
+        (
+          ("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
+          NEAR/3 ("education" OR "training" OR "school*" OR "learning")
+        )
+      )
 )
 
 ```
 ##### Phrase 2:
 
-The basic structure is action/justice terms + access + higher education
+The basic structure is *action + equality + higher education*
 
 ```Ceylon =
 TS=
 (
- (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "initiative$" OR "intervention$")
-   NEAR/5
-   ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+    (
+        (
+          ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
+          NEAR/5
+              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+        )
+      OR
+        (
+          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+          OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+          OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+          OR "improv*" OR "manag*"
+          )
+          NEAR/5
+              ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+        )
+    )
+    NEAR/15 ("access")
   )
-  OR
-   (
-    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*" OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "improv*" OR "manag*")
-    NEAR/5
-    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-   )
-NEAR/5
-(
- ("access")
-)
- )
- NEAR/15
-  (
-   (
-    ("technic*" OR "vocation*" OR "postsecondary" OR "post secondary" OR "tertiar*")
-    NEAR/3
-    ("education" OR "training" OR "school*" OR "learning")
-   )
-  OR
-  "university" OR "universities" OR "higher education" OR "college$"
- )
+  NEAR/15
+      ("university" OR "universities" OR "higher education" OR "college$"
+      OR
+        (
+          ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
+          NEAR/3 ("education" OR "training" OR "school*" OR "learning")
+        )
+      )
 )
 ```
+
 ##### Phrase 3:
 
 ```Ceylon =
 TS= "inclusive higher education"
 ```
+
 ## Target 4.4
 
 > **4.4 By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship**
@@ -297,66 +325,82 @@ This target is interpreted to cover research about
 * Increasing the number of youths and adults who have relevant skills for employment and entrepreneurship
 * Improvement of ICT skills and employability
 
-This query consists of 4 phrases. The first two cover skills at an overriding level, the third core skills as defined by ILO, and the fourth ICT skills. In order to limit the search to research concerning opportunities for employment and avoid articles having to do with employees and employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise.
+This query consists of 4 phrases. The first two cover skills at an overriding level, the third core skills as defined by the UN International Labor Organisation, and the fourth ICT skills. In order to limit the search to research concerning opportunities for employment, and avoid articles about employees/employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise.
 
 ##### Phrase 1:
 
-The basic structure is action + skills + employability/entrepreneurship
+The basic structure is *action + skills + employability/entrepreneurship*
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
-  NEAR/5
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
+  (
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
     NEAR/5
-    ("employability*" OR "employment" OR "decent job$" OR "entrepreneurship$")
- )
+      ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
+  )
+  NEAR/5 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+)
 ```
 ##### Phrase 2:
 
-This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is action + unemployment + skills
+This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *action + unemployment + skills*
 
 ```Ceylon =
 TS=
 (
- ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
-  NEAR/5
-  ("unemploy*" OR "underemploy*")
-   NEAR/5
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
+  (
+    ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
+    NEAR/5
+        ("unemploy*" OR "underemploy*")
+  )
+  NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
  )
  ```
+
 ##### Phrase 3:
 
-Terms are from ILO: https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf. Employment is omitted as a search term here, as it leads to too much noise from articles concerned with the use (="employment") of the skills. The basic structure is core and transferable skills + employability
+The basic structure is *core and transferable skills + employability*
+
+Types of skills included here are taken from an ILO publication on youth skills for employability (<a id="iloskills">[Brewer 2013](#f4)</a>). Employment is omitted as a search term here, as it leads to irrelevant results concerned with the use (="employment") of the skills.
 
 ```Ceylon =
 TS=
 (
- (
-  ("learn and adapt") OR (("read*" OR "writ*" OR "comput*")) OR (("listen*" OR "communicat*") NEAR/3 "effective*") OR ("think creatively" OR "creative thinking") OR ("solve problem$" OR "problem-solv*") OR (("interact*") NEAR ("co-work*")) OR (("work*")NEAR/3 ("team*" OR "group*")) OR ("basic technolog*") OR (("lead*") NEAR/5 ("effectiv*")) OR (("follow*") NEAR/3 ("supervis*")) OR "transfer*"
- )
- NEAR
- ("employability")
+  (
+    "read*" OR "writ*" OR "comput*" OR "literacy" OR "numeracy"
+    OR (("basic technolog*" OR "speciali$ed") NEAR/3 ("skills" OR "knowledge"))
+    OR "learn and adapt"
+    OR (("listen*" OR "communicat*") NEAR/3 ("skills" OR "effective*"))
+    OR "think creatively" OR "creative thinking" OR "solve problem$" OR "problem-solv*"
+    OR ("interact*" NEAR/3 ("co-work*" OR "colleague$"))
+    OR (("work" OR "working") NEAR/3 ("team*" OR "group*"))
+    OR ("leader*" NEAR/5 ("skills" OR "effectiv*"))
+    OR ("follow*" NEAR/3 "supervis*")
+    OR ("transfer*" NEAR/3 "skills")
+  )
+  NEAR/15 "employability"
 )
 ```
 ##### Phrase 4:
 
-The basic structure is action + ICT + skill + employability. Some terms used in Phrase 1, like "abilit*" and "entrepreneurship$" are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
+The basic structure is *action + ICT + skill + employability*.
+
+Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*" OR "relevan*")
-  NEAR/5
   (
-   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
     NEAR/5
-    ("skill*" OR "competen*" OR "literac*")
+      (
+        ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
+        NEAR/5
+            ("skill*" OR "competen*" OR "literac*")
+      )
   )
-   NEAR
-   ("employab*" OR "employment" OR "job*")
+  NEAR/15 ("employab*" OR "employment" OR "job" OR "jobs" OR "decent work")
 )
 ```
 
@@ -374,84 +418,99 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is action + gender equality + education
+The basic structure is *action + gender equality + education*
 
 ```Ceylon =
 TS=
 (
- (
   (
-   ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*")
-   NEAR/3
-    (
-     ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-     NEAR/5
-      ("equit*" OR "equal*" OR "balanc*")
-     )
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "support*")
+    NEAR/5
+        (
+          ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+          NEAR/5
+              ("equit*" OR "equal*" OR "balanc*")
+        )
     ) 	
-    NEAR/3
-     (
-      ("school*" OR "educat*" OR "vocational training" OR "student*")
-     )
-  )
+    NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
+
 ##### Phrase 2:
 
-In this phrase, the basic structure is similar to phrase 1, but reversed to search for reduction of disparity: action + gender disparity + education
+In this phrase, the basic structure is similar to phrase 1, but reversed to search for reduction of disparity: *action + gender disparity + education*
 
 ```Ceylon =
 TS=
 (
- (
   (
-   ("eliminat*" OR "reduc*" OR "remov*" OR "minimi*" OR "reduc*" OR "limit*" OR "lower*" OR "fight*" OR "combat*")
+    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+    OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+    OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+    OR "improv*"
+    )
+    NEAR/5
+      (
+        ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+        NEAR/5
+            ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
+            OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*"
+            )
+      )
   )
   NEAR/5
-   (
-    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-    NEAR/5
-    ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
-   )
-   NEAR/3
-   (
-    ("school*" OR "educat*" OR "vocational training" OR "student*")
-   )
- )
+      ("school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
+
 ##### Phrase 3:
 
-We have not found an authoritative source defining "vulnerable groups", probably as who is considered to be vulnerable depends on the context and situation. Some of the terms were found in https://www.un.org/en/desa/leaving-no-one-behind, and others were found in articles from initial searches. "Elderly" can be vulnerable in some situations, but were omitted as they are not considered to be the primary target group for education. "Older" however, is included, to address the issues of lifelong learning. Terms like "migrant", "minority" and "rural" need not signify vulnerability, but were discovered to find research where these factors were seen as potential hindrances to accessing education, and were therefore included. The basic structure is action + access + education + vulnerable groups
+The basic structure is *action + access + education + vulnerable groups*
+
+"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
 
 ```Ceylon =
 TS=
 (
- (
   (
-   (
-    "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "ensure*" OR "secure*" OR "stop*" OR "end*" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid" OR "prevent*" OR "combat*"
-    )
-    NEAR/5
     (
-    "access" OR "admission*" OR "admit*" OR "attend*" OR "inclusion*" OR "inclusiv*" OR "discriminat*" OR "non-discriminat*" OR "equitab*" OR "non-equit*" OR "barrier*" OR "obstacle*" OR "enter"
-    )
-   )
-   NEAR/5
-    (
-     ("school*" OR "educat*" OR "vocational training")
-    )
-     NEAR
-     (
       (
-       ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
-      NEAR/3
-      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "indigenous" OR "vulnerab*" OR "poor" OR "poverty" OR "displaced" OR "develop* contr*")
-     )
-     OR
-     "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural")
+        ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "support*")
+        NEAR/5
+            ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*"
+            OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*"
+            )
+      )
+    OR
+      (
+        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+        OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+        OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "improv*"
+        )
+        NEAR/5
+            ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"
+            OR "barrier*" OR "obstacle*"
+            )
+      )
+    )
+    NEAR/5 ("school*" OR "educat*" OR "vocational training")
   )
- )
+  NEAR/15
+      (
+        (
+          ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
+          NEAR/3
+              ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
+              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*"
+              )
+        )
+     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor"
+     OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*"
+     OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
+     )
+)
 ```
 
 ## Target 4.6
@@ -460,10 +519,9 @@ TS=
 >
 > 4.6.1 Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex
 
-This target is interpreted to cover research about
+This target is interpreted to cover research about achieving minimal or functional proficiency in literacy and numeracy skills.
 
-* Achieving minimal or functional proficiency in literacy and numeracy skills
-This is closely related to target 4.1, however, with the second phrase, more hits having to do with literacy and numeracy level, but not with school / educational system as such are found.
+This is closely related to target 4.1, however, with the second phrase, we find more results about literacy and numeracy level, but not with school / educational system.
 
 This query consists of 2 phrases.
 
@@ -474,27 +532,31 @@ The first phrase finds research about improving skills. The basic structure is a
 ```Ceylon =
 TS=
 (
- ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
-  NEAR/5
-   (
-    ("basi*" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-    NEAR
-     ("proficien*" OR "skill*" OR "comprehen*" OR "abilit*")
+    (
+      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
       NEAR/5
-       ("read*" OR "literacy" OR "literate" OR "math*" OR "numeracy" OR "numerate")
-   )
+        (
+          ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
+          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
+        )
+    )
+    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
 )
 ```
+
 ##### Phrase 2:
 
-In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is decrease + illiteracy etc. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hits containing "innumerable".
+In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is *decrease + illiteracy*. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hits containing "innumerable".
 
 ```Ceylon =
 TS=
 (
- ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "eliminat*")
+  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting"
+  OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lowers" OR "lowered" OR "fight*" OR "combat*" OR "eliminat*"
+  OR "improv*"
+  )
   NEAR/3
-   (" illitera*" OR "anal*abet*" OR "innumeracy*")
+      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumera*")
 )
 ```
 
@@ -514,54 +576,75 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The search phrase GCED for Global Citizenship Education, retrieved from https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 was
-tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED. The basic structure is action + education + ESD/GCED
+The basic structure is *action + education + sustainability/GCED*.
+
+ <a id="gced">[UNESCO (n.d.b)](#f8)</a> was used as a source of terms. The search term `GCED` for Global Citizenship Education was tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED.
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*" OR "facilitat*")
- NEAR/5
- (
-  ("educ*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR ("learn*" NEAR/5 "student*") OR "online learning" OR "professional learning")
- )
- NEAR/5
-("sustainable development" OR "sustainable lifestyle$" OR "global citizen*" OR "glocal*" OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*" OR "cultural divers*" OR "toleran*"
-OR ("sustainability" NEAR/5 ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological" OR "participation" OR "agency" OR "responsibility" OR "ethic*" OR "wicked problem$" OR "complexity" OR "capacity for change" OR "transition$"))
- )
+  (
+    ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*"
+    OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*" OR "facilitat*"
+    )
+    NEAR/5
+        ("educat*" OR "curricul*"
+        OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training"
+        OR "online learning" OR "professional learning"
+        OR ("learn*" NEAR/5 "student*")
+        )
+  )
+  NEAR/5
+      ("sustainable development" OR "sustainable lifestyle$"
+      OR "global citizen*" OR "glocal*"
+      OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*"
+      OR "cultural divers*" OR "toleran*"
+      OR
+          ("sustainability"
+          NEAR/5
+              ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological"
+              OR "participation" OR "agency" OR "responsibility"
+              OR "ethic*" OR "wicked problem$" OR "complexity"
+              OR "capacity for change" OR "transition$"
+              )
+          )
+      )
 )
 ```
+
 ##### Phrase 2:
 
-The search phrase ESD for Education for Sustainable Development, retrieved from https://en.unesco.org/themes/education-sustainable-development was tested, but used alone returned too many irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD) and the structure is action + ESD.
+The basic structure is *action + ESD*.
+
+The search phrase `ESD` for Education for Sustainable Development was tested, but used alone returned too many irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD).
 
 ```Ceylon =
 TS=
 (
- ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
- NEAR/5
- (
-  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education")
- OR ("whole school" OR "teaching") NEAR ("sustainab*" OR "ESD" NEAR/5 "educat*")
- )
+  ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
+  NEAR/5
+      ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
+      OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
+      )
 )
 ```
+
 ##### Phrase 3:
 
-This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is culture + contribution + sustainable development.
+This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is *culture + contribution + sustainable development*.
 
 ```Ceylon =
 TS=
 (
- (
-  ("culture*" OR "cultural")
-  NEAR/5
-  ("contribut*" OR "influen*" OR "impact*" )
- )
-  NEAR
-  "sustainable development"
- )
+  (
+    ("culture*" OR "cultural")
+    NEAR/5 ("contribut*" OR "influen*" OR "impact*")
+  )
+  NEAR/5 "sustainable development"
+)
 ```
+
+
 ## Target 4.a
 
 > **4.a Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, non-violent, inclusive and effective learning environments for all**
@@ -579,20 +662,23 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-This phrase finds research on ensuring safe and inclusive schools and education facilities. The basic structure is action + school + safe and inclusive.
+This phrase finds research on ensuring safe and inclusive schools and education facilities. The basic structure is *action + school + safe and inclusive*.
 
 ```Ceylon =
 TS=
 (
- ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provide*")
- NEAR/5
- (
-  ("school*" OR "education facilit*")
+  ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
   NEAR/5
-  ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR (("sensitive")NEAR/5 "child*" OR "disability" OR "gender"))
- )
+      (
+        ("school*" OR "education facilit*")
+        NEAR/5
+            ("safe*" OR "secure*" OR "non-violen*" OR "inclus*"
+            OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
+            )
+      )
 )
 ```
+
 ##### Phrase 2:
 
 This phrase focuses on effective learning environments in schools. The basic structure is provide + effective learning environment + school.
@@ -600,34 +686,38 @@ This phrase focuses on effective learning environments in schools. The basic str
 ```Ceylon =
 TS=
 (
- ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
- NEAR/5
- (
-  ("learning environment*")
-   NEAR/5
-   ("effective")
+  (
+    ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
+    NEAR/5
+        ("learning environment*" NEAR/5 "effective")
   )
   AND
-  ("primary school*" OR "elementary school*" OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR
-      "school" OR "education" OR "learner*")
+    ("primary school*" OR "elementary school*" OR "primary educat*"
+    OR "middle school*" OR "secondary school*" OR "secondary educat*"
+    OR "school" OR "education" OR "learner*"
+    )
 )
 ```
+
 ##### Phrase 3:
 
-This phrase focuses on access to basic services in schools. The terms for basic services in schools are taken and adapted from: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf The basic structure is school + access + basic services.
+This phrase focuses on access to basic services in schools. The basic structure is *school + access + basic services*.
+
+The terms for basic services in schools are taken and adapted from ...??? p83: http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2019/08/sdg4-global-indicators-4.a.pdf
 
 ```Ceylon =
 TS=
 (
- (
-  ("school*"OR "education* facility" OR "education* facilities")
-  NEAR
-   (
-    ("access*")
-    NEAR/5
-     ("electricit*" OR "internet*" OR "computer*" OR "adapted infrastructure*" OR "adapted material*" OR "drinking water*" OR "sanitation*" OR "handwash*")
-   )
- )
+  ("school*" OR "education* facility" OR "education* facilities")
+  NEAR/15
+      ("access*"
+      NEAR/5
+          ("electricity" OR "electrical supply" OR "modern energy"
+          OR "internet" OR "computer*" OR "ICT facilit*"
+          OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
+          OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$"
+          )
+      )
 )
 ```
 
@@ -637,25 +727,41 @@ TS=
 >
 > 4.b.1 Volume of official development assistance flows for scholarships by sector and type of study
 
-This target is interpreted to cover research about
-
-* Availabilty of scholarships to students from developing countries
+This target is interpreted to cover research about the availability of scholarships to students from developing countries and African countries.
 
 This query consists of 1 phrase.
 
 ##### Phrase 1:
 
-There are no actions terms included, as there are so few hits they are considered to be of potential interest even without action terms. Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search entirely. The basic structure is scholarships + student/education + developing countries.
+The basic structure is *scholarships + student/education + developing countries/African countries*.
+
+There are no actions terms included, as there are so few results they are considered to be of potential interest even without action terms. Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search.
 
 ```Ceylon =
 TS=
 (
- ("scholarships*" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant*")
-  NEAR
-  ("student*" OR "higher education" OR "trainee*" OR "student exchange*" OR "student mobility*" OR (("information and communication$ technology" OR "technic*" OR "engineer*" OR "science" OR "scientific") NEAR ("program*")))
- AND
-  ("least developed countr*" OR "least developed nation$"OR "developing countr*" OR "developing nation$" OR "developing states" OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "small island developing states" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands" OR (("Africa*" OR "Algeria" OR "Angola" OR "Benin" OR "Botswana" OR "Burkina Faso" OR "Burundi" OR "Cameroon" OR "Canary Islands" OR "Cape Verde" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Democratic Republic of Congo" OR "Djibouti" OR "Egypt" OR "Equatorial Guinea" OR "Eritrea" OR "Ethiopia" OR "Gabon" OR "Gambia" OR "Ghana" OR "Guinea" OR "Guinea Bissau" OR "Ivory Coast" OR "Cote d’Ivoire" OR "Jamahiriya" OR "Kenya" OR "Lesotho" OR "Liberia" OR "Libya" OR "Libia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mauritius" OR "Mayote" OR "Morocco" OR "Mozambique" OR "Mocambique" OR "Namibia" OR "Niger" OR "Nigeria" OR "Principe" OR "Reunion" OR "Rwanda" OR "Sao Tome" OR "Senegal" OR "Seychelles" OR "Sierra Leone" OR "Somalia" OR "South Africa" OR "St Helena" OR "Sudan" OR "Swaziland" OR "Tanzania" OR "Togo" OR "Tunisia" OR "Uganda" OR "Western Sahara" OR "Zaire" OR "Zambia" OR "Zimbabwe") NOT ("guinea pig" OR "guinea pigs" OR "aspergillus niger")
- ))
+  (
+    ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
+    NEAR/15
+        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility")
+  )
+AND
+  ("least developed countr*" OR "least developed nation$"
+  OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+  OR "less developed countr*" OR "less developed nation$"
+  OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+  OR "underserved countr*" OR "underserved nation$"
+  OR "deprived countr*" OR "deprived nation$"
+  OR "middle income countr*" OR "middle income nation$"
+  OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
+  OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+  OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+  OR  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+  OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+  OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
+  OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+  OR "Africa*" OR "Algeria*" OR "Angola*" OR "Benin" OR "beninese" OR "Botswana*" OR "Burkina Faso" OR "Burkina Fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Cameroon*" OR "Canary Islands" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "Central African Republic" OR "Chad" OR "Congo" OR "congolese" OR "Djibouti*" OR "Egypt*" OR "Equatorial Guinea" OR "Eritrea*" OR "Ethiopia*" OR "Gabon*" OR "Gambia*" OR "Ghana*" OR "Guinea" OR "guinean$" OR "Guinea Bissau" OR "Ivory Coast" OR "Cote d’Ivoire" OR "Jamahiriya" OR "Kenya*" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Libya*" OR "Libia" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania" OR "mauritanian$" OR "Mauritius" OR "mauritian$" OR "Mayotte" OR "Morocco" OR "moroccan$" OR "Mozambique" OR "Mocambique" OR "mozambican$" OR "Namibia*" OR "Niger" OR "Nigeria*" OR "Principe" OR "Reunion" OR "Rwanda*" OR "Sao Tome" OR "Senegal*" OR "Seychelles" OR "seychellois*" OR "Sierra Leone*" OR "Somalia*" OR "South Africa*" OR "St Helena" OR "Sudan*" OR "Swaziland*" OR "Tanzania*" OR "Togo" OR "togolese" OR "tongan" OR "Tunisia*" OR "Uganda*" OR "Western Sahara" OR "Zaire" OR "Zambia*" OR "Zimbabwe*"
+  )
 )
 ```
 
@@ -667,68 +773,72 @@ TS=
 
 This target is interpreted to include research about
 * Increasing the number of qualified teachers
-* Teacher training in developing countries
-* International cooperation for teacher training
+* Increasing/improving teacher training in developing countries, including via international cooperation for teacher training
 
-This query consists of 4 phrases.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-This phrase finds research about increasing the number of qualified teachers. However, neither "qualified teacher*" nor "professional development" are included in the search as they predominantly return hits about how teachers who are already qualified can improve, whereas the target is interpreted to concern increasing the number who attain the minimum required qualification. The basic structure is action + qualified/certified teachers.
+The basic structure is *action + qualified/certified teachers*.
+
+This phrase finds research about increasing the number of qualified teachers. However, neither "qualified teacher*" nor "professional development" are included in the search as they predominantly return hits about how teachers who are already qualified can improve, whereas the target is interpreted to concern increasing the number who attain the minimum required qualification.
 
 ```Ceylon =
 TS=
- (
-  ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "reduc*" OR "decreas*")
-   NEAR
-   (
-    ("teach* qualification$" OR "teach* certific*" OR "certif* teacher*" OR "unqualified teacher*")
-   )
- )
+(
+  (
+    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up")
+    NEAR/5
+      ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
+      OR "teacher recruitment" OR "teacher training"
+      OR "number of teachers"
+      OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
+      )
+  )
+OR
+  (
+    ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
+    NEAR/5
+       ("unqualified teacher$" OR "teacher attrition" OR "teacher shortage$")
+  )   
+)
 ```
+
 ##### Phrase 2:
 
-This phrase finds articles about teacher education in developing countries, especially least developed countries and small island developing states. The basic structure is teacher + education + least developed countries or small island developing states.
+This phrase finds articles about teacher education in developing countries, international cooperation for teacher education. Much research is concerned with globalization and internationalization as aspects of teacher education, therefore program is specified. The basic structure is *action + teacher education + countries*.
 
 ```Ceylon =
 TS=
 (
- (
-  ("teacher")
-  NEAR
-   ("educat*" OR "train*")
+  (
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up"
+    OR
+      (
+        ("international" OR "development")
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")
+      )
+     OR "international teacher education program*" OR "international teacher training program*"
+    )
+    NEAR/5
+      ("teacher training" OR "teacher education")
   )
-  NEAR
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR "Angola" OR "Benin" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Comoros" OR "Congo" OR "Djibouti" OR "Eritrea" OR "Ethiopia" OR "Gambia" OR "Guinea" OR "Guinea-Bissau" OR "Lesotho" OR "Liberia" OR "Madagascar" OR "Malawi" OR "Mali" OR "Mauritania" OR "Mozambique" OR "Niger" OR "Rwanda" OR "Sao Tome and Principe" OR "Senegal" OR "Sierra Leone" OR "Somalia" OR "South Sudan" OR "Sudan" OR "Togo" OR "Uganda" OR "Tanzania" OR "Zambia" OR "Cambodia" OR "Kiribati" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu" OR "Vanuatu" OR "Afghanistan" OR "Bangladesh" OR "Bhutan" OR "Nepal" OR "Yemen" OR "Haiti" OR "small island developing states" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Comoros" OR "Cuba" OR "Dominica" OR "Dominican Republic" OR "Micronesia" OR "Fiji" OR "Grenada" OR "Guinea-Bissau" OR "Guyana" OR "Haiti" OR "Jamaica" OR "Kiribati" OR "Maldives" OR "Marshall Islands" OR "Mauritius" OR "Nauru" OR "Palau" OR "Papua New Guinea" OR "Saint Kitts and Nevis" OR "Saint Lucia" OR "St Lucia" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa" OR "Sao Tome" OR "Seychelles" OR "Singapore" OR "Solomon Islands" OR "Suriname" OR "Timor-Leste" OR "Tonga" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "Tuvalu" OR "Vanuatu" OR "Anguilla" OR "Aruba" OR "Bermuda" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia" OR "Guadeloupe" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia" OR "Niue" OR "Puerto Rico" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands")
-)
-```
-##### Phrase 3:
-
-This phrase finds articles about the level of qualification for teachers. The basic structure is teacher + level of qualification.
-
-```Ceylon =
-TS=
-(
- ("teacher*")
-  NEAR
-  ("level of qualification*" OR "qualification level")
-)
-```
-##### Phrase 4:
-
-This phrase finds articles about international cooperation for teacher education. Much research is concerned with globalization and internationalization as aspects of teacher education, therefore "program*" and related terms is included to find specific projects or efforts. The basic structure is teacher + education + international cooperation.
-
-```Ceylon =
-TS=
-(
- (
-  ("teacher*")
-   NEAR
-   ("education*" OR "train*")
-    NEAR
-    ("international program*" OR "international cooperation*" OR "international partners*")
- )
- OR "international teacher education program*"
+  AND
+    ("least developed countr*" OR "least developed nation$"
+    OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
+    OR "less developed countr*" OR "less developed nation$"
+    OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+    OR "underserved countr*" OR "underserved nation$"
+    OR "deprived countr*" OR "deprived nation$"
+    OR "middle income countr*" OR "middle income nation$"
+    OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
+    OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
+    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
+    OR  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+    OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+    OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
+    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+    )
 )
 ```
 
@@ -742,4 +852,18 @@ TS=
 Specialist input: KHH (Professor in Climate change, Sustainability and Education; Jan 2022). Workshops (Feb 2022, Jun 2022).
 
 ## 5. Footnotes
-<a id="f1"></a> Statistics Division. (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+<a id="f5"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)
+
+<a id="f4"></a> Brewer, L. (2013). *Enhancing youth employability: What? Why? and How? Guide to core work skills*. International Labour Office, Skills and Employability Department. https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf [↩](#iloskills)
+
+<a id="f6"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
+
+<a id="f1"></a> Statistics Division (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
+
+<a id="f3"></a> UNESCO (2012). *International Standard Classification of education ISCED 2011*. http://uis.unesco.org/en/topic/international-standard-classification-education-isced [↩](#isced)
+
+<a id="f2"></a> UNESCO (n.d.a). *SDG Resources for Educators - Quality Education*. https://en.unesco.org/themes/education/sdgs/material/04 [accessed Jun 2022] [↩](#unescoquality)
+
+<a id="f8"></a> UNESCO (n.d.b). *ESD for 2030 toolbox: Implementation*. https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 [accessed Jun 2022] [↩](#unescogced)
+
+<a id="f7"></a> United Nations (n.d.) *Fight racism. Vulnerable groups, who are they?*. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022). [↩](#UNracism)
