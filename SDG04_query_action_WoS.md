@@ -50,45 +50,45 @@ This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing c
 
 ##### Phrase 1:
 
-The basic structure is *school education + completion + action*.
+The basic structure is *action + completion + school education*.
 
 In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*".
 
 ```Ceylon =
 TS=
 (
-  ("primary school*" OR "elementary school*" OR "primary educat*"
-  OR "middle school*" OR "secondary school*" OR "secondary education*"
-  OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
+  (
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*")
+    NEAR/5
+      ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
   )
   NEAR/5
-     (
-       ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
-       NEAR/5
-          ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*")
-     )
+      ("primary school*" OR "elementary school*" OR "primary educat*"
+      OR "middle school*" OR "secondary school*" OR "secondary education*"
+      OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
+      )
 )
 ```
 
 ##### Phrase 2:
 
-The basic structure is *school education + dropout + action*.
+The basic structure is *action + dropout + school education*.
 
 In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts.
 
 ```Ceylon =
 TS=
 (
-  ("primary school*" OR "elementary school*" OR "primary educat*"
-  OR "middle school*" OR "secondary school*" OR "secondary education*"
-  OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
-  )
-  NEAR/15
-    (
+  (
+    ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
+    NEAR/5
       ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit*" OR "early school-leaving")
-      NEAR/5
-          ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
-    )
+  )
+  NEAR/5
+      ("primary school*" OR "elementary school*" OR "primary educat*"
+      OR "middle school*" OR "secondary school*" OR "secondary education*"
+      OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
+      )
 )
 ```
 ##### Phrase 3:
