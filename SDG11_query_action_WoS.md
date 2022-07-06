@@ -1,12 +1,14 @@
 
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
 
+**Current status**: This string is a first draft. It is awaiting specialist input. It is undergoing technical review.*
+
 **Contents**
 
 1. Full query in copy-pasteable format
 2. General notes about method for SDG 11
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 ## 1. Full query
@@ -64,13 +66,13 @@ TS=(
 (("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
 NEAR
 (("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
-OR 
+OR
 (("drinking water" OR "sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
 	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
 )
 OR "improved drinking water" OR "improved source$ of drinking water" OR "clean drinking water" OR "clean water"
-OR 
-(("waste" OR "garbage" OR "rubbish") 
+OR
+(("waste" OR "garbage" OR "rubbish")
 	NEAR/2 ("service$" OR "facility" OR "facilities")
 )
 OR
@@ -78,11 +80,11 @@ OR
 	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "essential" OR "primary" OR "care")
 )
 OR "healthcare"
-OR 
+OR
 (("education*" OR "school*")
 	NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "primary")
 )
-OR 
+OR
 (("basic information" OR "telecommunication" OR "basic communication" OR "ICT")
 	NEAR/2 ("service$" OR "facility" OR "facilities" OR "infrastructure")
 )
@@ -190,7 +192,7 @@ NEAR ("urbani?ation" OR "urban development")
 This phrase covers settlement planning. The basic structure is action + settlement planning + processs aspects.
 
 ```Ceylon =
-TS= (("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*") 
+TS= (("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")
 NEAR/15 (("settlement*" OR "urban*" OR "city" OR "cities" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$") NEAR/3 ("plan*" OR "manag*"))
 NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
 )
@@ -231,36 +233,36 @@ NEAR ("cultur* heritage" OR "heritage object$" OR "heritage building$" OR "herit
 
 This target is interpreted to cover research on the affect natural disasters have on poor people and people in vulnerable situations and the impact on economic losses, specifically tied to the GGDP. The disasters can be man-made, but are natural/ecological disasters and includes water-related disasters, such as drought and floods. Search strings are based on SDG Indicators metadata repository https://unstats.un.org/sdgs/metadata/?Text=sustainable&Goal=&Target=, the Sendai Framework as presented on prevetionweb: https://www.preventionweb.net/sendai-framework/sendai-framework-at-a-glance and the SDG 11 Synthesis Report http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf - and copied and slightly added to natural disaster search terms from the projects standardisation of strings for disasters. (Added "extreme fire$", "heavy rain*" and added $ to sea level$). Added people groups to phrase 1 and 2, big difference and otherwise relevant articles get excluded, but achieves manageable number of results. Phrase 3 edited to include prevent
 
-This query consists of 3 phrases. 
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
 ```Ceylon =
 TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
   OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
   OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
   OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
   OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
-  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("death$" or "casualt*" or "mortalit*" OR fatal* or "missing") NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR 
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("death$" or "casualt*" or "mortalit*" OR fatal* or "missing") NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR
 (("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")) OR (("person$" OR "people" OR "adult$")  NEAR/3 ("unemploy*")) OR "patient$" OR (("person$" OR "people" OR "adult$")  NEAR/3 ("older" OR "elderly")) OR ("old* person$" OR "old* people" OR "older adult$"OR "elderly") OR "child*" OR "wom$n"))
 
 
 ```
 ##### Phrase 2:
 
-Opposite terminology of death, i.e. increase survival. 
+Opposite terminology of death, i.e. increase survival.
 
 ```Ceylon =
 TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
   OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
   OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
   OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
   OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
-  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR 
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND ((mortality NEAR/5 improv*) OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))) AND (("the poor" OR "the poorest" OR "rural poor" OR "urban poor") OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*")) OR ("the vulnerable" OR "vulnerable group$") OR
 (("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly")) OR (("person$" OR "people" OR "adult$")  NEAR/3 ("unemploy*")) OR "patient$" OR (("person$" OR "people" OR "adult$")  NEAR/3 ("older" OR "elderly")) OR ("old* person$" OR "old* people" OR "older adult$"OR "elderly") OR "child*" OR "wom$n"))
 ```
 ##### Phrase 3:
@@ -268,12 +270,12 @@ TS= ((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR
 ```Ceylon =
 TS=(((("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
   OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*" 
+  OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
   OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
   OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
   OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*") 
-  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$") NEAR/15 (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR 
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
+  OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")) AND (("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$") NEAR/15 (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR
 "halt*") NEAR/15 ("decrease*" or "declin*" or "reduc*" OR "lower*" or "loss" or "losses")))))
 
 ```
@@ -377,12 +379,12 @@ This query consists of 2 phrases.
 This phrase is about increasing/improving safe/accessible spaces and access to spaces. The basic structure is action + public spaces.
 
 ```Ceylon =
-TS=( 
-("increas*" OR "improv*" OR "expand*" OR "enlarg*" OR "provi*" OR "build*" OR "create" OR "creation" OR "creating" OR "enhanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*") 
-NEAR/15 
+TS=(
+("increas*" OR "improv*" OR "expand*" OR "enlarg*" OR "provi*" OR "build*" OR "create" OR "creation" OR "creating" OR "enhanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*")
+NEAR/15
 ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$" OR "community garden$" OR "allotment garden$" OR "urban allotment$" OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-) 
-NEAR/15 ("safe" OR "inclus"* OR "access*" OR "unrestrict*") 
+)
+NEAR/15 ("safe" OR "inclus"* OR "access*" OR "unrestrict*")
 )
 
 ```
@@ -390,12 +392,12 @@ NEAR/15 ("safe" OR "inclus"* OR "access*" OR "unrestrict*")
 This phrase is about exclusion or justice and public spaces. The basic structure is action + public spaces.
 
 ```Ceylon =
-TS=( 
+TS=(
 ("restrict*" OR "inaccess*" OR "inequalit*" OR "equal access" OR "inequit*" OR "equitab*" OR "justice" OR "injustice" OR "discriminat*" OR "exclu*" OR "harass*" OR "assault*" OR "unsafe")
-NEAR/15 
+NEAR/15
 ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$" OR "community garden$" OR "allotment garden$" OR "urban allotment$" OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-) 
-) 
+)
+)
 
 ```
 
@@ -533,7 +535,13 @@ TS=
 )
 ```
 
-## 4. Authorship and review
+## 4. Contributions
+
+* v2022.xx: HMB, IG, KH (Oct 2021-Jun 2022)
+
+* Internal review: EHS, CSA (March 2022)
+
+Specialist input:
 
 ## 5. Footnotes
 

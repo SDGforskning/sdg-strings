@@ -2,14 +2,14 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: Has undergone internal review, currently being edited. This string has undergone development to improve the phrases and structure and is substantially changed from the original version it was based on (v2019.11).*
+**Current status**: This string is undergoing final edits
 
 **Contents**
 
 1. Full query in copy-pasteable format
 2. General notes about method for SDG 3
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 
@@ -1311,12 +1311,16 @@ TS =
 
 ```
 
-## 4. Authorship and review
+## 4. Contributions
 
-v2019.12: ML, CSA, SRM
-New version, first draft: CSA (Feb 2022)
-Internal review: HMB, ML (March 2022)
-New version, second draft: CSA (May 2022)
+* v2019.12: CSA, ML, SRM
+
+* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+
+* Internal review: HMB, ML (March 2022)
+
+* v2022.xx,, second draft: CSA (April-June 2022)
+
 
 ## 5. Footnotes
 

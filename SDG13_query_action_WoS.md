@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently being edited after speciqalist input. It is substantially changed from the original version it was based on (v2019.11). "Full query" not updated.
+**Current status**: This string is undergoing final edits
 
 **Contents**
 
@@ -432,11 +432,11 @@ TS=
 
 * v2019.12: ML, CSA, SRM
 
-* New version, first draft: ML (Oct 2021-Feb 2022)
+* v2022.xx, first draft: ML (Oct 2021-Feb 2022)
 
 * Internal review: EHS, CSA (March 2022)
 
-* New version, second draft: CSA, ML (April-June 2022)
+* v2022.xx,, second draft: CSA, ML (April-June 2022)
 
 Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022). ML holds a PhD in climate geoscience.
 

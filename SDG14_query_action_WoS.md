@@ -2,7 +2,7 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: This string is undergoing edits after internal review. It is substantially changed from the original version it was based on (v2019.11).*
+**Current status**: This string is undergoing final edits
 
 **Contents**
 
@@ -586,7 +586,7 @@ This target is interpreted to cover research about:
 * ending overfishing, illegal/unreported fishing (IUU fishing), destructive fishing  (phrase 1 & 2)
 * implementation of science-based fisheries management (phrase 3)
 
-Whether specific fishing types should be included as a "destructive" practice is difficult as the meaning and scope of this term varies - see discussion in <a id="destructive">[Willer et al. (2022)](#f10)</a>. In general, we focus in our strings on including terms for "destructive", leaving the classification up to the authors themselves. However, these authors did find that blast and poison fishing are practices mentioned very often in conjunction with "destructive", and thus we include these concepts in our strings. Bottom trawling is a more difficult and debated type to place, although commonly linked to destructive fishing, particularly with variations in terminology (see discussion in the paper). We therefore combine trawling with terms for damage or destruction. 
+Whether specific fishing types should be included as a "destructive" practice is difficult as the meaning and scope of this term varies - see discussion in <a id="destructive">[Willer et al. (2022)](#f10)</a>. In general, we focus in our strings on including terms for "destructive", leaving the classification up to the authors themselves. However, these authors did find that blast and poison fishing are practices mentioned very often in conjunction with "destructive", and thus we include these concepts in our strings. Bottom trawling is a more difficult and debated type to place, although commonly linked to destructive fishing, particularly with variations in terminology (see discussion in the paper). We therefore combine trawling with terms for damage or destruction.
 
 We also consider abandoned, lost and discarded gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life related to fishing activities. `bycatch` is discarded/unwanted catch; we have included it here as it can contribute to overfishing or harm to engangered species. Fishery `collapse OR closure$` are also included as relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
 
@@ -1135,10 +1135,12 @@ TS =
 ## 5. Contributions
 
 * v2019.12: CSA, ML, SRM
-* New version: CSA (Feb-May 2022)
+
+* v2022.xx: CSA (Feb-May 2022)
+
 * Internal review: ML, HMB (March 2022)
 
-Specialist input: KE (Associate professor of fisheries at UiB; review of v2019.12). CSA holds a PhD in marine biology.
+Specialist input: KE (Associate professor of fisheries at UiB; review of v2019.12 in 2019). CSA holds a PhD in marine biology.
 
 ## 6. Footnotes
 

@@ -2,14 +2,14 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string has undergone development to improve the phrases and structure, and is awaiting a review of these changes. It is substantially changed from the original version it was based on (v2019.11).
+**Current status**: This string is undergoing final edits
 
 **Contents**
 
 1. Full query in copy-pasteable format
 2. General notes about method for SDG 2
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 ## 1. Full query
@@ -1030,12 +1030,16 @@ TS=
 )
 ```
 
-## 4. Authorship and review
+## 4. Contributions
 
-v2019.12: CSA, ML, SRM
-New version, first draft: CSA (Feb 2022)
-Internal review: EHS, ML (March 2022)
-New version, second draft: CSA (May 2022)
+* v2019.12: CSA, ML, SRM
+
+* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+
+* Internal review: EHS, ML (March 2022)
+
+* v2022.xx,, second draft: CSA (April-June 2022)
+
 
 ## 5. Footnotes
 
