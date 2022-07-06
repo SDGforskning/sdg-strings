@@ -28,6 +28,8 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f10)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters). For African countries (target 4.b), we adapted a filter developed by <a id="Africancountries">[Pienaar et al. (2011)](#f9)</a>.
+
 ## 3. Targets
 
 ## Target 4.1
@@ -858,6 +860,8 @@ Specialist input: KHH (Professor in Climate change, Sustainability and Education
 
 <a id="f6"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 
+<a id="f9"></a> Pienaar, E., Grobler, L., Busgeeth, K., Eisinga, A. and Siegfried, N. (2011). *Developing a geographic search filter to identify randomised controlled trials in Africa: finding the optimal balance between sensitivity and precision*. Health Information & Libraries Journal, 28: 210-215. https://doi.org/10.1111/j.1471-1842.2011.00936.x. [↩](#Africancountries)
+
 <a id="f1"></a> Statistics Division (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
 <a id="f3"></a> UNESCO (2012). *International Standard Classification of education ISCED 2011*. http://uis.unesco.org/en/topic/international-standard-classification-education-isced [↩](#isced)
@@ -865,5 +869,7 @@ Specialist input: KHH (Professor in Climate change, Sustainability and Education
 <a id="f2"></a> UNESCO (n.d.a). *SDG Resources for Educators - Quality Education*. https://en.unesco.org/themes/education/sdgs/material/04 [accessed Jun 2022] [↩](#unescoquality)
 
 <a id="f8"></a> UNESCO (n.d.b). *ESD for 2030 toolbox: Implementation*. https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 [accessed Jun 2022] [↩](#unescogced)
+
+<a id="f10"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f7"></a> United Nations (n.d.) *Fight racism. Vulnerable groups, who are they?*. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022). [↩](#UNracism)
