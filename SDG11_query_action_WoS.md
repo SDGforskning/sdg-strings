@@ -46,7 +46,9 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-Access to housing. The basic structure is *action + housing*.
+This phrase covers research about improving access, affordability, safety etc. of housing. The basic structure is *action + safe/affordable + housing*.
+
+"homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
 ```Ceylon =
 TS=
@@ -72,6 +74,7 @@ Phrase 2 covers access to basic services. The basic structure is *action + basic
 
 Basic services terms were gathered from documentation for indicator 1.4.1 in the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat (<a id="UNhabitat">[Njiru, 2018](#f3)</a>).
 
+"homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
 ```Ceylon =
 TS=
@@ -145,34 +148,6 @@ Challenge: The term "transport system" is used in several subjects as biology, c
 TS=
 (
   (
-    ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
-    NEAR/15
-        ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*"  OR "availab*" OR "reliab*"
-        OR "affordab*" OR "low cost*" OR "expensive" OR "cost-effective*"
-        )
-  )
-  AND
-      (
-        ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"
-        OR "infrastructure*" OR "public transport*"
-        OR "pedestrian*" OR "cycl*"
-        OR "road*" OR "railway*" OR "traffic*" OR "bus*" OR "taxi*"
-        OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"
-        OR "airport*"
-        OR "travel*" OR "journey*"
-        )
-        NEAR/5
-            (improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
-            OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
-            )
-      )
-)
-```
-
-```Ceylon =
-TS=
-(
-  (
     (
       ("improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*"
       OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
@@ -193,6 +168,36 @@ TS=
       OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"
       OR "airport*"
       OR "travel*" OR "journey*"
+      )
+)
+```
+
+OLD VERSION (same terms different order) - delete/edit this one or the one above
+
+```Ceylon =
+TS=
+(
+  (
+    ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
+    NEAR/15
+        ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*"  OR "availab*" OR "reliab*"
+        OR "affordab*" OR "low cost*" OR "expensive" OR "cost-effective*"
+        )
+  )
+  AND
+      (
+        ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"
+        OR "infrastructure*" OR "public transport*"
+        OR "pedestrian*" OR "cycl*"
+        OR "road*" OR "railway*" OR "traffic*" OR "bus*" OR "taxi*"
+        OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"
+        OR "airport*"
+        OR "travel*" OR "journey*"
+        )
+        NEAR/5
+            (improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
+            OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
+            )
       )
 )
 ```
@@ -780,9 +785,11 @@ Specialist input:
 
 <a id="f5"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. https://council.science/publications/hazard-information-profiles/. [↩](#disasters)
 
+<a id="f3"></a> Njiru, E. (March 2018) *Introducing indicator 1.4.1*. UNESCAP, UN Habitat Global Urban Observatory. https://www.unescap.org/sites/default/files/Indicator%201.4.1_Basic%20Services.pdf (accessed Jun 2022). [↩](#UNhabitat)
+
 <a id="f4"></a> UNESCO Institute for Statistics (2009). *2009 UNESCO Framework for Cultural Statistics*. UNESCO. http://uis.unesco.org/sites/default/files/documents/unesco-framework-for-cultural-statistics-2009-en_0.pdf [↩](#unescoculturalstats)
 
-<a id="f7"></a> United Nations (2018). *Tracking progress towards inclusive, safe, resilient and sustainable cities and human settlements*. High Level Political Forum 2018. http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf (#hlpf2018)
+<a id="f7"></a> United Nations (2018). *Tracking progress towards inclusive, safe, resilient and sustainable cities and human settlements*. High Level Political Forum 2018. http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf
 
 <a id="f8"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
 
@@ -790,6 +797,4 @@ Specialist input:
 
 <a id="f1"></a> UN Statistics Division (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
-<a id="f2"></a> UN Statistics Division (2022). SDG Indicators Metadata Repository. https://unstats.un.org/sdgs/metadata (#SDGmetarep)
-
-<a id="f3"></a> Njiru, E. (March 2018) *Introducing indicator 1.4.1*. UNESCAP, UN Habitat Global Urban Observatory. https://www.unescap.org/sites/default/files/Indicator%201.4.1_Basic%20Services.pdf (accessed Jun 2022). [↩](#UNhabitat)
+<a id="f2"></a> UN Statistics Division (2022). SDG Indicators Metadata Repository. https://unstats.un.org/sdgs/metadata
