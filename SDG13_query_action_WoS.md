@@ -84,17 +84,17 @@ TS=
     OR "readiness and preparatory support programme" OR "readiness programme"
   )  
   NEAR/15
-  (
-  ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-  OR "drought$" OR "flood*"
-  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-  )
+      (
+        ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+        OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+        OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+        OR "drought$" OR "flood*"
+        OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+        OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+        OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+        OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+      )
 )
 
 ```
