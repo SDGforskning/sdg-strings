@@ -205,7 +205,9 @@ TS=
 
 ##### Phrase 3:
 
-Frameworks for action are included, as documents referencing these are likely to be discussing climate action. This does pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general rather than about countries implementing climate change into their national policies.
+This phrase covers national policies, strategies and planning related to specific "action frameworks" for mitigation and adaptation, and general terms for integration of climate mitigation and action. The general structure is *action frameworks + national plans // climate action + integration + national plans*.
+
+Some of the frameworks for action (e.g. COP) pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general.
 
 ``` Ceylon =
 TS=
