@@ -13,7 +13,6 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 5. Contributions
 6. Footnotes
 
-
 ## 1. Full query
 
 <details>
@@ -848,8 +847,8 @@ TS =
 > 14.a.1 Proportion of total research budget allocated to research in the field of marine technology
 
 This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could cover a lot of marine research. We interpret it to cover:
-* research about transfer of marine technology (phrase 1)
-* research about developing research capacity/infrastructure (phrase 2)
+* research about transfer of marine technology (phrase 1 and phrase 2)
+* research about developing marine research capacity/infrastructure (phrase 2)
 * research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
@@ -878,8 +877,16 @@ TS=
       ("provide" OR "provision"
       OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
       OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate" OR "prioriti*"
-      OR "invest" OR "investing" OR "fund"
-      OR "share$"
+      OR "invest" OR "investing" OR "fund" OR "funding" OR "financing" OR "financial support" OR "financial resources"
+      OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
+      OR "ODA" OR "cooperation fund$"
+      OR (("international" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$"))
+      OR (("international" OR "development") NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"))
+      OR
+        (
+          ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
+          NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+        )
       OR "plan" OR "planned" OR "planning"
       OR "policy" OR "policies" OR "initiative$" OR "framework" OR "governance" OR "strategy" OR "programme$" OR "agenda"
       )
@@ -990,7 +997,7 @@ TS =
       OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*" OR "legislat*" OR "governance"
       )
       NEAR/5
-        ("access" OR "right$*"
+        ("access*" OR "right$"
         OR "commons" OR "common property" OR "common fishing ground$" OR "ownership" OR "inheritance"
         )
     )
@@ -1093,9 +1100,9 @@ TS =
 
 ##### Phrase 2
 
-The general structure is *action + international law + sustinable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action + international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/terretory disputes.  
+Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
 
 ``` Ceylon =
 TS =
@@ -1112,7 +1119,6 @@ TS =
   )
   NEAR/15
     ("conservation" OR "sustainab*" OR "ecosystem restoration"
-
     OR "marine spatial planning" OR "MSP"
     OR "ecosystem based management" OR "area based management" OR "resilience based management"
     OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
@@ -1121,12 +1127,10 @@ TS =
     OR "marine spatial planning" OR "spatial management"
     OR "herbivore management area$"
     OR "ecosystem approach*"
-
     OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine protected area$"
     OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
     OR "marine conservation zone$"
     OR "particularly sensitive sea areas$"
-
     OR "blue growth" OR "blue econom*"
     )
 )
