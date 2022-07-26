@@ -106,7 +106,7 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food supply + action + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results.
+The general structure is *food supply + action + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ``` Ceylon =
 TS=
@@ -120,9 +120,11 @@ TS=
     )  
     AND
         ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
+        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
         OR "adult$" OR "women" OR "men" OR "woman" OR "man"
         OR "agricultur*" OR "food security" OR "poverty"
+        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+        OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
         OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
         )
 )
@@ -199,7 +201,7 @@ TS=
     (
       ("nutritio*" OR "folate status" OR "micronutrient$")
       NEAR/5
-          ("women" OR "girls" OR "mother$" OR "pregnancy"
+          ("women" OR "mother$" OR "pregnancy"
           OR "child*" OR "under five$" OR "infant$" OR "toddler$" OR "girl$" OR "boy$" OR "babies" OR "perinatal"
           OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
           )
@@ -215,7 +217,7 @@ TS=
 
 #### Phrase 3
 
-The general structure is *undernutrition/food supply + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from e.g. animals and therefore they had to be combined with "human" terms
+The general structure is *undernutrition/food supply + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ``` Ceylon =
 TS=
@@ -236,12 +238,14 @@ TS=
     )
   )
   AND
-    ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-    OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
-    OR "adult$" OR "women" OR "men" OR "woman" OR "man"
-    OR "agricultur*" OR "food security" OR "poverty"
-    OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$" OR "agricultur*"
-    )
+      ("humans" OR "humanity" OR "human" OR "people" OR "person$"
+      OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
+      OR "adult$" OR "women" OR "men" OR "woman" OR "man"
+      OR "agricultur*" OR "food security" OR "poverty"
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+      OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
+      )
 )
 
 ```
@@ -256,7 +260,7 @@ TS=
 
 This target is interpreted to include research about increasing the productivity and income of small-scale food producers (terrestrial and aquatic). Specific ways to do this are mentioned (securing access, rights, and opportunities for non-farm employment/value addition), so these are included too.
 
-This query consists of 1 phrase. The basic structure is *action + productivity/access etc. + small-scale food producers*
+This query consists of 1 phrase. The basic structure is *productivity/access etc. + action + small-scale food producers*
 
  For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The phrase may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
@@ -1045,6 +1049,8 @@ TS=
 
 <a id="f5"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
+<a id="f16"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)
+
 <a id="f11"></a> Commission on Genetic Resources for Food and Agriculture Assessments. (2015). *The Second Report on the State of the World’s Animal Genetic Resources for Food and Agriculture*. FAO. https://www.fao.org/publications/sowangr/en/
 
 <a id="f10"></a> FAO. (2004). *What is Agrobiodiversity?* in "Building on Gender, Agrobiodiversity and Local Knowledge" [Training manual]. https://www.fao.org/3/y5609e/y5609e.pdf [↩](#FAO2004)
@@ -1059,6 +1065,8 @@ TS=
 of the UN Committee on World Food Security, Rome. https://www.fao.org/cfs/cfs-hlpe/hlpe-reports/report-14-elaboration-process/en/ [accessed 03 Jan 2022] [↩](#HLPE)
 
 <a id="f15"></a> Murray, V. et al. (2021) Hazard Information Profiles: Supplement to UNDRR-ISC Hazard Definition & Classification Review: Technical Report: Geneva, Switzerland, United Nations Office for Disaster Risk Reduction; Paris, France, International Science Council. DOI: 10.24948/2021.05 (https://council.science/publications/hazard-information-profiles/). [↩](#Murray)
+
+<a id="f17"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 
 <a id="f8"></a> One Planet network Sustainable Food Systems (SFS) Programme. (2020). *Towards a Common Understanding of Sustainable Food Systems. Key approaches, concepts, and terms*. https://www.oneplanetnetwork.org/knowledge-centre/resources/towards-common-understanding-sustainable-food-systems-key-approaches [↩](#SFS)
 
