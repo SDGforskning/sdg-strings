@@ -327,13 +327,14 @@ TS=
 
 This target is interpreted to cover research about the international supply of climate financing. This covers research about the provision of climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
 
-This query consists of 1 phrase. The general structure is *transparancy/aspects of provision/countries + climate financing*.
+This query consists of 1 phrase. The general structure is *transparancy/aspects of provision/countries + climate financing + climate*.
 
-The term `investment$ OR investing` were tried, but created mostly noise ("investment climate"). We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
+The term `investment$ OR investing` were tried, but created mostly noise from climate being used metaphorically ("investment climate"). The *climate* terms at the end of the phrase are added to try and reduce these. We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
 
 ``` Ceylon =
 TS=
 (
+  (
     ("transparency" OR "accountability" OR "governance" OR "allocation$" OR "misallocation" OR "corruption"
     OR "operationali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
     OR "contribut*" OR "commitment$" OR "negotiation$"
@@ -356,16 +357,24 @@ TS=
     OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia*"
     )
     NEAR/15
-        ("climate financ*" OR "climate aid" OR "climate loan$"
+        ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
         OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
         OR
           ("climat*"
-          NEAR/5
-              ("finance" OR "financing" OR "fund" OR "funds" OR "funding"
-              OR "economic support" OR "economic assistance" OR "economic resources" OR "financial assistance" OR "financial support" OR "financial resources"
+          NEAR/15
+              ("financing" OR "fund" OR "funds" OR "funding"
+              OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
+              OR "ODA" OR "cooperation fund$" OR "development spending"
+              OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
               )
           )
         )
+  )
+  AND
+      ("climate change" OR "global warming" OR "climate action" OR "climate mitigation" OR "climate adaptation"
+      OR "climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
+      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
+      )
 )
 ```
 
@@ -388,7 +397,7 @@ Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan,
 TS=
 (
   (
-    ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"))
+    ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"¨OR "adaptation communication$"))
     OR "nationally determined contribution$"
     OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund" OR "adaptation financ*"
     OR
@@ -396,9 +405,10 @@ TS=
         (
           ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
           OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-          OR "invest" OR "investing" OR "fund$" OR "funding"
-          OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
-          OR "financial assistance" OR "financial support" OR "economic assistance" OR "economic support"
+          OR "investing" OR "invest" OR "financing" OR "funding"
+          OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
+          OR "ODA" OR "cooperation fund$" OR "development spending"
+          OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "fund$" OR "finance" OR "grant$" OR "investment$"))
           OR "climate financ*" OR "climate aid" OR "climate fund*"
           )
           NEAR/5            
