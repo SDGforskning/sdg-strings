@@ -19,9 +19,7 @@
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
-
-This target uses various terms for categories of energy services, technologies and fuels. For these search strings, we are using the following definitions:
+This target uses various terms for categories of energy services, technologies and fuels (e.g. "renewable", "clean", "modern"). This presents two challenges: 1) Interpreting exactly what types of services/technologies these refer to, and 2) matching this up with how researchers actually use these terms in their work. Our understanding is that researchers from different traditions, subject areas or political alignments may prefer/avoid certain terms, or define them differently (for example, some might say nuclear is "renewable" while others would disagree; whether natural gas is "green"; whether one prefers the term "low carbon" to "renewable"). For the latter challenge, we try to use a range of terms, but without going too far outside what we consider most people to mean by the term. For the first challenge, we have used sources from large international agencies/the UN to interpret the language of the SDG, and we are using the following definitions:
 
 * **Modern energy services**: We consider this to refer to services which meet energy needs based on **clean fuels/technology** (see below for definition of this). Electrification is an important type. <a id="IEAaccess">[IEA (2020)](#f5)</a> was used as a reference for understanding "modern energy access":
 >"There is no single internationally-accepted and internationally-adopted definition of modern energy access. Yet significant commonality exists across definitions, including: Household access to a minimum level of electricity; Household access to safer and more sustainable (i.e. minimum harmful effects on health and the environment as possible) cooking and heating fuels and stoves; Access to modern energy that enables productive economic activity, e.g. mechanical power for agriculture, textile and other industries; Access to modern energy for public services, e.g. electricity for health facilities, schools and street lighting." (IEA 2020)
@@ -35,6 +33,8 @@ This target uses various terms for categories of energy services, technologies a
 > "[...] access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology [...]" (target 7.a)
 
 * **Sustainable energy services**: These are only mentioned in 7.b, and we interpret this to be the same as "modern".
+
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
@@ -81,7 +81,7 @@ TS=
     )
     NEAR/15
         ("implement*" OR "adopt*" OR "establish*" OR "transition*"
-        OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up"
+        OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up" OR "rollout" OR "roll out"
         OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
         OR
           (
@@ -115,8 +115,8 @@ TS=
   OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
   )
   NEAR/15
-      ("implement*" OR "adopt*" OR "establish*" OR "transition*"
-      OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up"
+      ("implement*" OR "adopt*" OR "establish*" OR "transition*" OR "substitut*"
+      OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up" OR "rollout" OR "roll out"
       OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
       OR
         (
@@ -146,7 +146,7 @@ TS=
   (
     ("kerosene" OR "solid fuel$" OR "coal")
     NEAR/15
-        ("transition*" OR "intervention$" OR "initiative$"
+        ("transition*" OR "substitut*" OR "intervention$" OR "initiative$"
         OR "encourag*" OR "incentive$" OR "investing" OR "invest"
         OR "reduc*" OR "decreas*" OR "prevent" OR "mitigat*" OR "phase out"
         OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
@@ -163,7 +163,7 @@ TS=
 (
   ("coal"
   NEAR/5
-      ("transition*" OR "coal to electricity" OR "intervention$" OR "initiative$"
+      ("transition*" OR "substitut*" OR "coal to electricity" OR "intervention$" OR "initiative$"
       OR "encourag*" OR "incentive$" OR "investing" OR "invest"
       OR "phase out"
       OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
@@ -183,7 +183,7 @@ TS=
 
 This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
-The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy povery.
+The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy poverty. `energy sufficiency` was tested (to do with having enough energy, equity and avoiding overconsumption), as was `energy NEAR/3 (dignity OR care)` but there were few relevant results at this time in this combination.
 
 ```Ceylon =
 TS=
@@ -274,7 +274,7 @@ TS=
   (
     (
       ("improv*" OR "increas*" OR "ensur*" OR "implement*")
-      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost")  
+      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap")  
     )
     OR
     (
@@ -290,7 +290,7 @@ TS=
       OR
         (
           ("energy" OR "power" OR "electric*")
-          NEAR/3
+          NEAR/5
               ("household$" OR "home$" OR "house" OR "houses" OR "housing"
               OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
               OR "sustainable"
@@ -298,6 +298,8 @@ TS=
         )
       OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
       OR "off grid solution$" OR "off-grid system$"
+      OR (("energy" OR "electricity") NEAR/3 ("infrastructure" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
+      OR "community energy" OR "community renewable energy"
       )
 )
 ```
@@ -318,7 +320,9 @@ This phrase covers the general terms of transitioning and transforming to renewa
 
 ```Ceylon =
 TS=
-("renewable" NEAR/5 ("energy transition$" OR "sector transformation$" OR "energy transformation$")
+(
+  ("renewable" NEAR/5 ("energy transition$" OR "sector transformation$" OR "energy transformation$"))
+  OR ("renewable energy" NEAR/5 "substitut*")
 )
 ```
 
@@ -328,21 +332,21 @@ This phrase covers specific terms for increasing the share of renewable energy, 
 
 The "promotional mechanisms" include several aspects, such as Incentives and barriers; Policies, incentives and investments; Economic mechanisms; Research concerning bringing technology to users; Sustainable development. `adopting OR adoption` is used as "adopted" is used often as a verb in methods; `increase` is used rather than "increas*" as a number of technical works begin with the technical issue of "increasing proportions of renewables in the power grid".
 
-In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>).
+In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results refering to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
 
 ```Ceylon =
 TS=
 (
   (
     (
-      ("increase" OR "improv*" OR "enhanc*" OR "promot*" OR "support" OR "encourag*" OR "speed up" OR "accelerate")
+      ("increase" OR "improv*" OR "enhanc*" OR "promot*" OR "support" OR "encourag*" OR "speed up" OR "accelerate" OR "expand")
       NEAR/5
           ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation"
           OR "contribution" OR "proportion" OR "share" OR "expansion"
           OR "feasibility" OR "attractiveness" OR "incentive$" OR "initiative$"
           OR "affordab*" OR "inexpensive" OR "low cost" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
           OR "investment$" OR "subsidies" OR "subsidi$ation" OR "financing" OR "funding" OR "commerciali?ation"
-          OR "energy service$" OR "energy sector"
+          OR "energy service$" OR "energy sector" OR "generation" OR "capacity"
           OR "global energy" OR "global electricity" OR "energy mix" OR "market share$"
           )
     )
@@ -352,32 +356,28 @@ TS=
   OR ("certificat*" NEAR/2 ("energy" OR "green"))
   OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
   OR "subsidi$e" OR "investing" OR "invest" OR "green bond$" OR "climate bond$" OR "feed-in tariff$"
-  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially"
+  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "roll out" OR "rollout"
   OR "sustainable development" OR "sustainable energy development"
   )
   NEAR/15
-      (
+      ("non conventional energy"
+      OR
         (
           ("electricity" OR "power" OR "powered" OR "energy")
           NEAR/5
-              ("renewable$"  OR "sustainable"
+              ("renewable$"  OR "sustainable" OR "green"
               OR "hydrothermal" OR "geothermal"
               OR "hydroelectric" OR "hydropower" OR "hydro"
               OR "hydrokinetic"
-              OR "green"
               )    
         )
       OR "geothermal health pump$" OR "ground source heat pump$"
-      OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*"
-      OR "solar array" OR "solar PV" OR "solar photovoltaic$"
-      OR "solar thermal power" OR "solar thermal technolog*" OR "solar thermal collector$"
-      OR "solar energy collector$" OR "solar district heating" OR "solar district cooling"
-      OR "solar air heating system$" OR "solar space heating system$"
-      OR
-        ("solar thermal energy"
-        NEAR/15 ("power" OR "electric*" OR "water heating" OR "industrial process heat*")
-        )
-      OR "wind farm$" OR "wind turbine$"
+      OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
+      OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
+      OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
+      OR ("solar thermal" NEAR/3 ("power" OR "technolog*" OR "collector$" OR "district"))
+      OR ("solar thermal energy" NEAR/15 ("power" OR "electric*" OR "water heating" OR "industrial process heat*"))
+      OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories"
       OR "tidal turbine$" OR "stream turbine$" OR "current turbine$"
       OR "tidal power" OR "tidal energy" OR "marine energy"
       OR ("wave energy" NEAR/5 ("converter$" OR "renewable" OR "power" OR "generat*" OR "energy harvesting"))
@@ -391,12 +391,11 @@ TS=
               OR "energy crop$" OR "energy security"
               )
         )
-      OR ("hydrogen" NEAR/10 ("renewable substitute$" OR "renewable source$"))
+      OR ("hydrogen" NEAR/10 ("renewable substitute$" OR "renewable source$" OR "green"))
       OR
         (
-          ("fuel cell$" OR "battery" OR "batteries" OR "energy storage" OR "smart grid$")
-          NEAR/15
-              ("renewable" OR "sustainab*")
+          ("fuel cell$" OR "battery" OR "batteries" OR "lithium ion" OR "energy storage" OR "smart grid$")
+          NEAR/15 ("renewable" OR "sustainab*")
         )
       )
 )
@@ -412,11 +411,11 @@ TS=
   (
     ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
     OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-    OR "transition*" OR "intervention$"
+    OR "transition*" OR "substitut*" OR "intervention$"
     OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
     )
     NEAR/5
-        ("fossil fuel$" OR "coal" OR "oil")
+        ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
   )
   NEAR/15
     ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
@@ -433,9 +432,7 @@ TS=
 >
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
-This target is interpreted to cover:
-* Research about improving energy intensity (phrase 1,2)
-* Research about improving energy efficiency and measures/interventions to improve efficiency (phrase 3)
+This target is interpreted to cover research about improving energy intensity (phrase 1,2), and research about improving energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we hold our interpretation within this topic.
 
 Energy intensity definition from the European Environment Agency:
 >"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" (<a id="EEA2016">[EEA, 2016](#f6)</a>).
@@ -520,8 +517,7 @@ TS=
       ("energy efficiency"
       NEAR/5
             ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
-            OR "initiative$" OR "intervention$"
-            OR "incentive$" OR "investment$" OR "investing" OR "invest"
+            OR "initiative$" OR "intervention$" OR "incentive$" OR "investment$" OR "investing" OR "invest"
             )
       )
     OR
@@ -549,7 +545,9 @@ This target is interpreted to cover research about:
 * promoting investment in clean energy research and technology, here we include development assistance (phrase 1)
 * promoting investment in energy infrastructure (phrase 2).
 
-Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. This target consists of 2 phrases.
+Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. All phrases also include `energy transition$` as this term incorporates many of the aspects around modernised and cleaner energy supplies/infrastructure/tech.
+
+This target consists of 2 phrases.
 
 ##### Phrase 1
 
@@ -559,7 +557,7 @@ The general structure is *action + sharing/investing/cooperation + clean energy 
 TS=
 (
   (
-    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulate$" OR "support*"
+    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulat*" OR "support*"
     OR "build*" OR "develop" OR "developing" OR "improv*"
     OR "invest" OR "investing"
     )
@@ -585,7 +583,7 @@ TS=
         )
   )
   NEAR/15
-      ("cleantech" OR "energy research" OR "energy efficiency research"
+      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$"
       OR
         (
           ("technolog*" OR "innovation$" OR "R&D")
@@ -622,16 +620,16 @@ TS=
                 )
           )
       OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
-      OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
-      OR "economic support" OR "economic assistance"
+      OR (("financial*" or "monetary" OR "economic") NEAR/3 ("support*" or "assist*" OR "resources"))
       OR "green bond$" OR "climate bond$"
       )
   )
   NEAR/15
       ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
-      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid"))
-      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
-      OR "energy storage system$"
+      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
+      OR "community energy" OR "community renewable energy"
+      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
+      OR "energy transition$"
       OR
         (
           ("power station$" OR "power generation" OR "energy generation" OR "generator$")
@@ -661,9 +659,8 @@ TS=
     )  
     NEAR/5  
       ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
-      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid"))
-      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$"
-      OR "energy storage system$"
+      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "community" OR "cooperative$"))
+      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
       OR
         (
           ("power station$" OR "power generation" OR "energy generation" OR "generator$")
