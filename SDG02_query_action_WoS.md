@@ -2,27 +2,34 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string is undergoing final edits
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
 
 **Contents**
 
-1. Full query in copy-pasteable format
-2. General notes about method for SDG 2
+1. Full query
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
 
 ## 1. Full query
 
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/4e12caa9-b453-40b9-9c49-3df0c3b89075-481db7c0/relevance/1 (no filters, all years)
+
+Results for Norway from 01.2014-05.2022 can be viewed here: https://www.webofscience.com/wos/woscc/summary/ec8adce0-bc7a-429f-8d25-8f52e100ce14-481dbbee/relevance/1
+
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG2</summary>
 
 ```
+Not ready yet
 ```
 
 </details>
 
 ## 2. General notes
+
+This document contains search strings for finding publications related to the actions in the SDG 2 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 2 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021a](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
