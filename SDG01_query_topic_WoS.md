@@ -48,10 +48,8 @@ This query consists of 1 phrase. The basic structure is *extreme/global poverty*
 
 ```Ceylon =
 TS=
-(
-  ("extreme poverty" OR "severe poverty" OR "deep poverty" OR "abject poverty" OR "absolute poverty" OR "destitution"
+("extreme poverty" OR "severe poverty" OR "deep poverty" OR "abject poverty" OR "absolute poverty" OR "destitution"
   OR "global poverty" OR "international poverty"
-  )
 )  
 ```
 
@@ -71,10 +69,8 @@ This query consists of 1 phrase. The general structure is *poverty/the poor*
 TS=
 (
   "anti-poverty" OR "out of poverty"
-  OR
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-    )
+  OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
 )
 ```
 
