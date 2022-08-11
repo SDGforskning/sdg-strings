@@ -1,6 +1,6 @@
 # Search query for SDG 01 - No Poverty, Bergen action-approach.
 
-**Current status**: This string is undergoing final edits
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
 
 **Contents**
 
@@ -12,6 +12,10 @@
 
 
 ## 1. Full query
+
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/46016f81-a6f4-41b0-975d-1918396fe206-481a7695/relevance/1 (no filters; all years).
+
+Results for Norway from 01.2014-05.2022 can be viewed here: https://www.webofscience.com/wos/woscc/summary/80aaa861-2d32-4ffa-9446-6204dba35b86-481aafb3/relevance/1
 
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG 1</summary>
