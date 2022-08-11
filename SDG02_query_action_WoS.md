@@ -57,7 +57,7 @@ This target is interpreted to cover research about
 * Increasing access to food and improving food supply systems
 * Increasing the safety and nutritional value of the food available.
 
-It consists of 3 phrases. Phrase 1 focuses on positive actions, phrase 2 on negative actions, and phrase 3 on terms which need to be combined with human terms.
+It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
 #### Phrase 1
 
@@ -83,7 +83,7 @@ TS=
         )
   )
   NOT (("feast and famine" OR "feast-famine") NOT ("end* hunger" OR "malnutrition"))    
- )
+)
 ```
 
 #### Phrase 2
@@ -147,15 +147,15 @@ TS=
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
-This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
 
-This query consists of 3 phrases. Phrase 1 focuses on negative actions, phrase 2 on positive actions. Phrase 3 is for terms which need to be combined with human terms.
+This query consists of 3 phrases. Phrase 3 is for terms which need to be combined with human terms.
 
 #### Phrase 1
 
 The general structure is *malnutrition + action*
 
-Actions such as `decreas*` will cover formulations such as "to reduce the ris of obesity". `dietary NEAR/3 deficiency` finds a number of specific deficiencies (e.g. dietary selenium deficieny, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself. `undernutrition` and other terms are included in phrase 3.
+Actions such as `decreas*` will cover formulations such as "to reduce the risk of obesity". `dietary NEAR/3 deficiency` finds a number of specific deficiencies (e.g. dietary selenium deficiency, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `obese` is not included alone, as it tends to be used as a descriptor for a subject group, e.g. "reducing condition x in obese adults", rather than reducing obesity itself. `undernutrition` and other terms are included in phrase 3.
 
 ```Ceylon =
 TS=
@@ -273,64 +273,64 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 
  In the *productivity/access etc. terms*:
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
-- Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however I have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination may need to be reincluded for the topic approach: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
+- Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however I have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ``` Ceylon =
-  TS= (
+TS= (
+      (
+        ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
+        OR
           (
-            ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
-          OR
-            (
-              ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
-              OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
-              OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
-              OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
-              OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
-              OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
-              )
-              NEAR/5
+            ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
+            OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
+            OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
+            OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
+            OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
+            OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
+            )
+            NEAR/5
                 ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
                 OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*" OR "empower" OR "empowering"
                 OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
                 )
+          )
+        OR
+          (
+            ("barrier$" OR "obstacle$"
+            OR ("distribution*" NEAR/5 "injustice")
+            OR "land grab*" OR "tenure insecurity"
             )
+            NEAR/5
+                ("reduc*" OR "prevent*" OR "remov*" OR "fight*" OR "combat*"
+                OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulate"
+                )
+          )
+        )
+        AND
+          ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
           OR
             (
-              ("barrier$" OR "obstacle$"
-              OR ("distribution*" NEAR/5 "injustice")
-              OR "land grab*" OR "tenure insecurity"
-              )
+              ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
               NEAR/5
-                  ("reduc*" OR "prevent*" OR "remov*" OR "fight*" OR "combat*"
-                  OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulate"
-                  )
-              )
-          )
-          AND
-              ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
-              OR
                 (
-                  ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
-                  NEAR/5
-                    (
-                      ("food producer$" OR "food production" OR "food grower$" OR "agro food$"
-                      OR "agricultur*" OR "farm*" OR "permaculture"
-                      OR "cropping system$" OR "orchard$" OR "arable land$"
-                      OR "pasture$" OR "pastoral*" OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-                      OR "aquaculture" OR "fisher*" OR "fish farm*"
-                      )
-                    OR
-                      (
-                        ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-                        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-                        )
-                        NEAR/5
-                            ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
-                      )
+                  ("food producer$" OR "food production" OR "food grower$" OR "agro food$"
+                  OR "agricultur*" OR "farm*" OR "permaculture"
+                  OR "cropping system$" OR "orchard$" OR "arable land$"
+                  OR "pasture$" OR "pastoral*" OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+                  OR "aquaculture" OR "fisher*" OR "fish farm*"
+                  )
+                OR
+                  (
+                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+                    OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                     )
+                    NEAR/5
+                        ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
+                  )
                 )
-              )
-      )
+            )
+          )
+)
 ```   
 
 ## Target 2.4
@@ -461,52 +461,52 @@ The *disaster* terms were taken from a standardised list we used across the SDGs
 TS=
 (
   (
-      ("food production" OR "food grower$" OR "agro food"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
-      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
-      OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
-      OR
-        (
-          ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
-          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
-      )
-      NEAR/15
+    ("food production" OR "food grower$" OR "agro food"
+    OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
+    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+    OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
+    OR
+      (
+        ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
+        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+      )      
+    )
+    NEAR/15
+      (
+        ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
+        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+        OR
           (
-              ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
-              OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
-              OR
-                (
-                  ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
-                  NEAR/5
-                    ("implement*" OR "establish*" OR "build*" OR "develop"
-                    OR "improv*" OR "increase" OR "increasing" OR "maintain*"
-                    OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*"
-                    )
-                )
+            ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
+            NEAR/5
+              ("implement*" OR "establish*" OR "build*" OR "develop"
+              OR "improv*" OR "increase" OR "increasing" OR "maintain*"
+              OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "strengthen*"
               )
-              NEAR/5
-                      ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-                      OR "disaster$" OR "catastroph*"
-                      OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-                      OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-                      OR "drought$" OR "flood*"
-                      OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-                      OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-                      OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-                      OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-                      OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-                      OR "tipping point$"  
-                      OR "outbreak$" OR "pandemic$" OR "epidemic$"
-                      OR "war" OR "wars" OR "armed conflict$"
-                      OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-                      OR "financial crash*" OR "financial shock$" OR "financial disaster$"
-                      OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-                      )
           )
+        )
+        NEAR/5
+            ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
+            OR "disaster$" OR "catastroph*"
+            OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+            OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+            OR "drought$" OR "flood*"
+            OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+            OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+            OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+            OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+            OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
+            OR "tipping point$"  
+            OR "outbreak$" OR "pandemic$" OR "epidemic$"
+            OR "war" OR "wars" OR "armed conflict$"
+            OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+            OR "financial crash*" OR "financial shock$" OR "financial disaster$"
+            OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+            )
+      )
   )
   NOT ("solar farm*" OR "wind farm*" OR "power farm*" OR "wild pig$")
 )
@@ -566,8 +566,8 @@ TS=
               OR  "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
               )
         )   
-    )
-    NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
+  )
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
 ```
 
@@ -618,44 +618,44 @@ Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)<
 ``` Ceylon =
 TS=
 (
-        ("food production" OR "food grower$" OR "agri food"
-        OR "farm*" OR "agricultur*" OR "permaculture"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-        OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture" OR "fisher*" OR "fish farm*"
+  ("food production" OR "food grower$" OR "agri food"
+  OR "farm*" OR "agricultur*" OR "permaculture"
+  OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+  OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+  OR "aquaculture" OR "fisher*" OR "fish farm*"
+  OR   
+    (
+      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+      )
+      NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+    )      
+  )
+  NEAR/15
+      (
+        ("desertification"
+        OR
+          ("soil$"
+          NEAR/5
+              ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
+              OR "erosion" OR "compaction" OR "waterlogging"
+              OR "salinization" OR "salinisation" OR "acidification"
+              OR "chemical pollution" OR "contamination"
+              )
+          )
         OR
           (
-            ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-            )
-            NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-          )      
+            ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
+            NEAR/5 ("loss" OR "degradation" OR "depletion")
+          )
         )
-        NEAR/15
-            (
-              ("desertification"
-              OR
-                ("soil$"
-                NEAR/5
-                    ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
-                    OR "erosion" OR "compaction" OR "waterlogging"
-                    OR "salinization" OR "salinisation" OR "acidification"
-                    OR "chemical pollution" OR "contamination"
-                    )
-                )
-              OR
-                (
-                  ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-                  NEAR/5 ("loss" OR "degradation" OR "depletion")
-                )
-              )
-              NEAR/5
-                  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                  OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                  OR "stop*" OR "end" OR "ending" OR "halt"
-                  OR "avoid*" OR "prevent*"
-                  )
-            )  
+        NEAR/5
+            ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+            OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+            OR "stop*" OR "end" OR "ending" OR "halt"
+            OR "avoid*" OR "prevent*"
+            )
+      )  
 )
 ```  
 
@@ -1015,24 +1015,24 @@ This target is interpreted to cover research about preventing price volatility i
 ```Ceylon =
 TS=
 (
+  (
     (
-      (
-        ("prevent*" OR "avoid" OR "limit" OR "reduc*" OR "minimi*" OR "mitigat*" OR "tackl*" OR "combat"
-        OR "stabiliz*" OR "stabilis*" OR "intervention$" OR "counteract"
-        OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulat*"
-        )
-        NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$")
+      ("prevent*" OR "avoid" OR "limit" OR "reduc*" OR "minimi*" OR "mitigat*" OR "tackl*" OR "combat"
+      OR "stabiliz*" OR "stabilis*" OR "intervention$" OR "counteract"
+      OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulat*"
       )
-      OR
-      (
-        ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*"
-        OR "secure" OR "securing" OR "ensur*" OR "maintain*" OR "strengthen*"
-        )
-        NEAR/5 ("stability" OR "stable" OR "functioning")
-      )
-      OR (("stabiliz*" OR "stabilis*") NEAR/5 ("price$" OR "market$"))
+      NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$")
     )
-    NEAR/15
+  OR
+    (
+      ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*"
+      OR "secure" OR "securing" OR "ensur*" OR "maintain*" OR "strengthen*"
+      )
+      NEAR/5 ("stability" OR "stable" OR "functioning")
+    )
+  OR (("stabiliz*" OR "stabilis*") NEAR/5 ("price$" OR "market$"))
+  )
+  NEAR/15
         (
           ("price$" OR "market$")
           NEAR/5
