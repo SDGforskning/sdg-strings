@@ -2,12 +2,12 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string is undergoing final edits
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
 
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG 3
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
@@ -19,12 +19,14 @@ Ensure healthy lives and promote well-being for all at all ages.
   <summary>Click to show the final copy-pasteable full query for SDG 3</summary>
 
 ```
-
+Not ready yet
 ```
 
 </details>
 
 ## 2. General notes
+
+This document contains search strings for finding publications related to the actions in the SDG 3 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 3 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
@@ -175,7 +177,7 @@ Action terms: `limited` was removed from the action terms, as it was used often 
 
 ##### Phrase 1
 
-This covers communicable diseases as a category. The basic structure for both is *"communicable diseases"* + *action / action + epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
+This covers communicable diseases as a category. The basic structure is *"communicable diseases"* + *action / action + epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
 `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
@@ -208,7 +210,7 @@ TS =
 
 ##### Phrase 2
 
-The general structure is *communicable diseases + generic action*. This phrase is a complement to phrase 3, where *action + epidemics/interventions* are covered.
+The general structure is *communicable diseases + generic action*. This phrase is a complement to phrase 1, where "communicable diseases" as a category was covered.
 
 In the *communicable disease* terms, specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
 - The first section covers communicable and waterborne diseases as a category (see also Phrase 1).
@@ -406,13 +408,15 @@ TS =
 >
 > 3.4.2 Suicide mortality rate
 
+This target is interpreted to cover research about reducing mortality from non-communicable diseases. In contrast to 3.3, here there is an explicit focus on reducing mortality in the target, indicators and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). It also covers research about improving mental health and wellbeing, where we include both by treatment and via health promotion.
+
 This query consists of 3 phrases.
-* Phrase 1 focuses on the "non-communicable diseases" part. It is interpreted to cover research with links to reducing mortality. In contrast to 3.3, here there is an explicit focus on reducing mortality in the target, indicators and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>).
-* Phrases 2 and 3 focus on the "promote mental health and well-being" part. It is interpreted to cover improving mental health and wellbeing, both by the treatment of disease and via health promotion.
+* Phrase 1 focuses on the "non-communicable diseases" part.
+* Phrases 2 and 3 focus on the "promote mental health and well-being" part.
 
 ##### Phrase 1
 
-The structure is *non-communicable diseases + action*. We added diseases from the WHO factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and a WHO factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>). Cancer terms were based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
+The structure is *non-communicable diseases + mortality + action*. We added diseases from the WHO factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and a WHO factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>). Cancer terms were based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
  A tighter `NEAR` distance is used for some action terms due to other uses (e.g. `lower` needs a tighter combination to avoid e.g. "cancer of the lower intestine"). `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
@@ -459,9 +463,9 @@ TS=
 
 ##### Phrase 2
 
-This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease* + *prevention/treatment*.
+This phrase focuses on non-communicable mental illnesses/diseases. The general structure is *disease + prevention/treatment + action*.
 
-Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not consider developmental disorders to be relevant. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
+Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not include developmental disorders. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS=
@@ -636,7 +640,7 @@ This query consists of 1 phrase. Originally, a second phrase was included about 
 
 The basic structure is *traffic/road users + mortality/morbidity + action*
 
-In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms,  `vehicle OR driver OR car OR cars` are combined in a separate phrase, with `accident OR crash` etc, because these are used in a biomedical or general context (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y").
+In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y").
 
 ``` Ceylon =
 TS =
@@ -685,7 +689,9 @@ TS =
 This target is interpreted to cover research about:
 * improving access to sexual health services and family planning
 * improving access to education and information about sexual health and family planning
-* the coverage/implementation of reproductive health/sexual health in national strategies and programmes. This query consists of 2 phrases.
+* the coverage/implementation of reproductive health/sexual health in national strategies and programmes.
+
+This query consists of 2 phrases.
 
 ##### Phrase 1
 
@@ -845,9 +851,9 @@ TS =
 
 This query consists of 2 phrases. The phrases are similar, but phrase 2 includes terms which need to be limited to humans.
 
-The target is interpreted to cover research about pollution/contamination of water, air or soil with chemicals/substances or pathogens. In light of indicator 3.9.2, we also include research on reducing illness due to poor sanitation (whether it be directly due to contamination in the water source, or spread of disease between people due to lack of WASH facilities).
+The target is interpreted to cover research about reducing deaths and illness due to pollution/contamination of water, air or soil with chemicals/substances or pathogens. In light of indicator 3.9.2, we also include due to poor sanitation (whether it be directly due to contamination in the water source, or spread of disease between people due to lack of WASH facilities).
 
-* Unsure whether food poisoning/contaminated food should be included - it is not air, soil or water, but is related to hygiene/sanitation. So far, it is included. The High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>) mentions food in reference to WASH:
+Unsure whether food poisoning/contaminated food should be included - it is not air, soil or water, but is related to hygiene/sanitation. So far, it is included. The High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>) mentions food in reference to WASH:
 >"These services need to be accompanied by adequate hygiene practices such as handwashing after defecation or before food preparation and intake..."
 
 ##### Phrase 1:
@@ -976,7 +982,7 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This target is interpreted to be about the reduction of tobacco use and production, in reference to implementation of the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+This target is interpreted to cover research about strenghtening/implementing reduction of tobacco use and production, or the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
 This query consists of 3 phrases.
 
@@ -990,7 +996,7 @@ TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 
 #### Phrase 2
 
-This phrase finds works about reduction and preventative measures around tobacco use. The basic structure is *tobacco + reduction/control + action*
+This phrase finds works about strengthening/implementing reduction and preventative measures around tobacco use. The basic structure is *tobacco + reduction/control + action*
 
 We do not limit to tobacco "use", as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` will cover many terms here (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
 
@@ -1096,7 +1102,7 @@ TS =
       NEAR/5
           (
             ("develop*" OR "research*" OR "novel" OR "new")
-            NEAR/5 ("medicine$" OR "medication$" OR "therap*" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
+            NEAR/5 ("medicine$" OR "medication$" OR "therapy" OR "therapies" OR "therapeutic$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
           )
   )
   AND
@@ -1157,7 +1163,7 @@ This query consists of 2 phrases.
 
 The basic structure is *action + retention/training + health workers + countries*
 
-Types of healthcare worker are expanded using MeSH terms. `training` and `education` are separated out as there are many results about "training to improve outcomes..." rather than improving the training itself.
+Types of healthcare worker are expanded using MeSH terms. `training` and `education` are separated out as there are many results about "training to improve outcomes..." rather than improving the training itself. Types of health worker were supplemented from the subcategories under the MeSH category "Health Personnel" (MeSH ID D006282).
 
 ``` Ceylon =
 TS =
@@ -1183,8 +1189,8 @@ TS =
              ("health" OR "healthcare" OR "medical")
              NEAR/3 ("workforce" OR "professional$" OR "worker$" OR "personnel" OR "practitioner$" OR "human resources" OR "student$")
            )
-           OR "nurse$" OR "doctor$" OR "physicians" OR "surgeons" OR "midwives" OR "gynecologists"
-           OR "Anesthetists" OR "Audiologists" OR "Dental Staff" OR "Dentists" OR "Doulas" OR "Emergency Medical Dispatcher$" OR "Health Educators" OR "Health Facility Administrators" OR "Infection Control Practitioners" OR "Medical Chaperones" OR "Medical Laboratory Personnel" OR "Nutritionists" OR "Occupational Therapists" OR "Optometrists" OR "Pharmacists" OR "Physical Therapists" OR "Allergists" OR "Anesthesiologists" OR "Cardiologists" OR "Dermatologists" OR "Endocrinologists" OR "Gastroenterologists" OR "General Practitioners" OR "Geriatricians" OR "Hospitalists" OR "Nephrologists" OR "Neurologists" OR "Oncologists" OR "Ophthalmologists" OR "Otolaryngologists" OR "Pathologists" OR "Pediatricians" OR "Physiatrists" OR "Pulmonologists" OR "Radiologists" OR "Rheumatologists" OR "Urologists"
+           OR "nurse$" OR "doctor$" OR "physician$"
+           OR "Anesthetist$" OR "Audiologist$" OR "Dental Staff" OR "Dentist$" OR "Doula$" OR "Emergency Medical Dispatcher$" OR "Health Educator$" OR "Health Facility Administrator$" OR "Infection Control Practitioner$" OR "Medical Chaperone$" OR "Medical Laboratory Personnel" OR "Nutritionist$" OR "Therapist$" OR "Optometrist$" OR "Pharmacist$" OR "Allergist$" OR "Anesthesiolog*" OR "Cardiolog*" OR "Dermatolog*" OR "Endocrinolog*" OR "Gastroenterolog*" OR "General Practic*" OR "Geriatrician$" OR "gynecologist$" OR "Hospitalist$" OR "Nephrolog*" OR "Neurolog*" OR "Oncolog*" OR "Ophthalmolog*" OR "Otolaryngolog*" OR "midwives" OR "Pathologist$" OR "Pediatric*" OR "Physiatrist$" OR "Pulmonolog*" OR "Radiolog*" OR "Rheumatolog*" OR "surgeon$" OR "Urologist$"
        )
   )
   AND
@@ -1260,7 +1266,7 @@ TS =
 >
 > 3.d.2 Percentage of bloodstream infections due to selected antimicrobial-resistant organisms
 
-This target is interpreted to refer to research about health emergency preparedness, particularly in reference to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
+This target is interpreted to refer to research about establishing/strengthening health emergency preparedness, particularly in reference to the IHR. From <a id="WHOGHO">[The Global Health Observatory (n.d.)](#f18)</a>:
 >"Under the IHR, States Parties are obliged to develop and maintain minimum core capacities for surveillance and response, including at points of entry, in order to early detect, assess, notify, and respond to any potential public health events of international concern. [...]. The 13 core capacities are: (1) Legislation and financing; (2) IHR Coordination and National Focal Point Functions; (3) Zoonotic events and the Human-Animal Health Interface; (4) Food safety; (5) Laboratory; (6) Surveillance; (7) Human resources; (8) National Health Emergency Framework; (9) Health Service Provision; (10) Risk communication; (11) Points of entry; (12) Chemical events; (13) Radiation emergencies."
 
 There are also 19 technical areas from the Joint External Evaluation tool, which in addition to the 13 above include antimicrobial resistance, immunization, "national laboratory system", biosafety and biosecurity, "emergency preparedness", "emergency response operations", linking public health and security authorities, medical countermeasures and personnel deployment (<a id="WHOJEE">[WHO 2019b](#f19)</a>). A number of search terms are taken from this document.
