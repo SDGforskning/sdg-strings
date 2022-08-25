@@ -130,28 +130,12 @@ We considered including terms for primary and secondary education, but too many 
 TS=
 (
   (
-    ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
-    NEAR/5
-      (
-        ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
-        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*")
-      )
-  )
-  NEAR/15 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
-)
-```
-
-*SUGGESTION*
-```Ceylon =
-TS=
-(
-  (
     (
       ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
       NEAR/5
         (
           ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
-          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
         )
     )
     NEAR/15 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
