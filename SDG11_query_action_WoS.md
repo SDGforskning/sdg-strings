@@ -649,16 +649,7 @@ This query consists of 1 phrase. The basic structure is *action + disaster/clima
 
 ```Ceylon =
 
-TS=
-(
-  ("disaster*"
-  NEAR/5 ("reduc*" OR "decreas*" OR "minimi*" OR "lower*")
-  )
-  AND ("sendai" OR "hyogo")
-  AND (("implement*" OR “adopt*”) NEAR/5 ("polic*" OR "plan"))
-)
 
-### FORSLAG:
 TS=
 (
   (
