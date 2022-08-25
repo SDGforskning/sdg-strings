@@ -341,38 +341,35 @@ This query consists of 3 phrases.
 This phrase covers research about reducing mortality from disasters. The basic structure is *disasters + mortality + action + vulnerable people*.
 
 ```Ceylon =
-TS=
-(
-  (
-    ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
-    OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-    OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
-    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-    OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
-    OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-    OR ("climate change" OR "climatic change$" OR "global warming" OR "changing climate")
-  )
-  AND
+TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
+OR (  ("anthropogenic" 
+         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+         OR "chemical" OR "heavy metal$" OR "pesticide$"
+         OR "biological" OR "disease" OR "zoonotic"
+         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+         ) 
+         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+      ) 
+OR "outbreak$" OR "pandemic$" OR "epidemic$"
+OR "war" OR "wars" OR "armed conflict$"
+OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+
+)  )AND
       (
         ("death$" OR "casualt*" OR "mortalit*" OR "fatal*" OR "missing")
         NEAR/15
             ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
-      )
-  AND
-      (
-        ("the poor" OR "the poorest" OR "rural poor" OR "urban poor")
-        OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-        OR ("the vulnerable" OR "vulnerable group$")
-        OR (("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly"))
-        OR (("person$" OR "people" OR "adult$") NEAR/3 ("unemploy*"))
-        OR "patient$"
-        OR (("person$" OR "people" OR "adult$")  NEAR/3 ("older" OR "elderly"))
-        OR "old* person$" OR "old* people" OR "older adult$" OR "elderly"
-        OR "child*" OR "woman" OR "women"
-      )
-)
+      ))
 ```
 
 ##### Phrase 2:
@@ -380,36 +377,34 @@ TS=
 This phrase covers research about increasing survival after disasters. The basic structure is *disasters + survival + action + vulnerable people*
 
 ```Ceylon =
-TS=
-(
-  (
-    ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
-    OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-    OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
-    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-    OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
-    OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-    OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-  )
-  AND
+TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
+OR (  ("anthropogenic" 
+         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+         OR "chemical" OR "heavy metal$" OR "pesticide$"
+         OR "biological" OR "disease" OR "zoonotic"
+         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+         ) 
+         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+      ) 
+OR "outbreak$" OR "pandemic$" OR "epidemic$"
+OR "war" OR "wars" OR "armed conflict$"
+OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+
+)  )  AND
     (
       (mortality NEAR/5 improv*)
       OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))
-    )
-  AND
-    (
-      ("the poor" OR "the poorest" OR "rural poor" OR "urban poor")
-      OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-      OR ("the vulnerable" OR "vulnerable group$")
-      OR (("person$" OR "people" OR "adult$") NEAR/3 ("disabled" OR "disabilities" OR "unemployed" OR "older" OR "elderly"))
-      OR (("person$" OR "people" OR "adult$") NEAR/3 ("unemploy*"))
-      OR "patient$"
-      OR (("person$" OR "people" OR "adult$") NEAR/3 ("older" OR "elderly"))
-      OR "old* person$" OR "old* people" OR "older adult$" OR "elderly" OR "child*" OR "woman" OR "women"
-    )
-)
+    ))
 ```
 
 ##### Phrase 3:
