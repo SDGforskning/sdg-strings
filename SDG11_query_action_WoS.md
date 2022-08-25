@@ -412,31 +412,36 @@ OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
 This phrase covers research about reducing the effect of disasters on global GDP.
 
 ```Ceylon =
-TS=
-(
-  (
-    ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$" OR "fire$"))
-    OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-    OR ("rogue wave$" OR "tsunami$" OR "tidal wave$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*" OR "heavy rain*"  OR "drought$" OR "flood*"
-    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-    OR "earthquake$" OR "volcanic activit*" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*")
-    OR ("sea level$" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-    OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-  )
-  AND
+TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
+  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+  OR "drought$" OR "flood*" 
+  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
+OR (  ("anthropogenic" 
+         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+         OR "chemical" OR "heavy metal$" OR "pesticide$"
+         OR "biological" OR "disease" OR "zoonotic"
+         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+         ) 
+         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+      ) 
+OR "outbreak$" OR "pandemic$" OR "epidemic$"
+OR "war" OR "wars" OR "armed conflict$"
+OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+
+)  )  AND
       (
         ("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$")
         NEAR/15
-            (
-              ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*"
-              OR "avoid*" OR "prevent*" OR "combat*" OR "halt*"
-              )
-              NEAR/15 ("decrease*" or "declin*" or "reduc*" OR "lower*" or "loss" or "losses")
+   ("loss" or "losses")
             )
       )
-)
 
 ```
 
