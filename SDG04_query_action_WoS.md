@@ -386,7 +386,7 @@ TS=
             ("skill*" OR "competen*" OR "literac*")
       )
   )
-  NEAR/15 ("employab*" OR "employment" OR "job" OR "jobs" OR "decent work")
+  NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
 )
 ```
 
