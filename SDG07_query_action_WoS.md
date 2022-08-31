@@ -1,11 +1,11 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen action-approach.
 
-**Current status**: This string is undergoing editing after specialist input.
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
 
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG 7
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
@@ -14,10 +14,14 @@
 
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG 7</summary>
-
+```
+Not ready yet
+```
 </details>
 
 ## 2. General notes
+
+This document contains search strings for finding publications related to the actions in the SDG 7 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 7 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 This target uses various terms for categories of energy services, technologies and fuels (e.g. "renewable", "clean", "modern"). This presents two challenges: 1) Interpreting exactly what types of services/technologies these refer to, and 2) matching this up with how researchers actually use these terms in their work. Our understanding is that researchers from different traditions, subject areas or political alignments may prefer/avoid certain terms, or define them differently (for example, some might say nuclear is "renewable" while others would disagree; whether natural gas is "green"; whether one prefers the term "low carbon" to "renewable"). For the latter challenge, we try to use a range of terms, but without going too far outside what we consider most people to mean by the term. For the first challenge, we have used sources from large international agencies/the UN to interpret the language of the SDG, and we are using the following definitions:
 
@@ -701,9 +705,9 @@ TS=
 
 * Internal review: HMB, ML (March 2022)
 
-* v2022.xx,, second draft: CSA, ML (April-June 2022)
+* v2022.xx,, second draft: CSA, ML (Apr-Jul 2022)
 
-Specialist input:
+Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
 ## 5. Footnotes
 
