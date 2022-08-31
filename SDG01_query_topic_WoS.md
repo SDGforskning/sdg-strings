@@ -1,4 +1,4 @@
-# Search query for SDG 01 - No Poverty, Bergen action-approach.
+# Search query for SDG 01 - No Poverty, Bergen topic-approach.
 
 **Current status**: This string is currently being converted from the action version, unstable/not yet working as intended. Unsure of translation of 1.3.
 
