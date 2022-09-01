@@ -237,7 +237,7 @@ TS=
 (
   (
     ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
-    NEAR/15 ("sustainab*" OR "inclusiv*")
+    NEAR/15 ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
   )
   NEAR/15 ("urbani?ation" OR "urban development")
 )
@@ -250,10 +250,10 @@ This phrase covers settlement planning. The basic structure is *action + settlem
 TS=
 (
     (
-      ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*")
+      ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "integrated")
       NEAR/15
           (
-            ("settlement*" OR "urban*" OR "city" OR "cities" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
+            ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
             NEAR/3 ("plan*" OR "manag*")
           )
     )
@@ -551,7 +551,7 @@ TS=
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
       OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR ("park$" NEAR/15 ("city" OR "cities" "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
       )
 )
 
@@ -571,7 +571,7 @@ TS=
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
       OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolotan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
       )
 )
 ```
