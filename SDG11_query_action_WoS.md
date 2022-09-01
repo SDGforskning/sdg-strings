@@ -212,7 +212,7 @@ TS=
 (
   (
     (
-      ("improv*" OR "increase*" OR "enhanc*" OR "reduc*" OR "develop*")
+      ("provide*" OR "improv*" OR "increase*" OR "enhanc*" OR "reduc*" OR "develop*")
       NEAR/5
           ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*")
     )
