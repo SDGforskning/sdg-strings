@@ -854,7 +854,7 @@ Specialist input: KHH (Professor in Climate change, Sustainability and Education
 
 <a id="f8"></a> UNESCO (n.d.b). *ESD for 2030 toolbox: Implementation*. https://en.unesco.org/themes/education-sustainable-development/toolbox/implementation#esd-impl-46 [accessed Jun 2022] [↩](#unescogced)
 
-<a id="f11"></a> UNESCO Institute for Statistics. (2018). *Metadata for the global and thematic indicators for the follow-up of SDG 4 and Education 2030*. http://uis.unesco.org/sites/default/files/documents/metadata-global-thematic-indicators-sdg4-education2030-2017-en_1.pdf (#unescotcg)
+<a id="f11"></a> UNESCO Institute for Statistics. (2018). *Metadata for the global and thematic indicators for the follow-up of SDG 4 and Education 2030*. http://uis.unesco.org/sites/default/files/documents/metadata-global-thematic-indicators-sdg4-education2030-2017-en_1.pdf [↩](#unescotcg)
 
 <a id="f10"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
