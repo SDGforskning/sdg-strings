@@ -172,35 +172,7 @@ TS=
 )
 ```
 
-OLD VERSION (same terms different order) - delete/edit this one or the one above
 
-```Ceylon =
-TS=
-(
-  (
-    ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
-    NEAR/15
-        ("safe*" OR "secure*" OR "risk*" OR "sustainab*" OR "access*"  OR "availab*" OR "reliab*"
-        OR "affordab*" OR "low cost*" OR "expensive" OR "cost-effective*"
-        )
-  )
-  AND
-      (
-        ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"
-        OR "infrastructure*" OR "public transport*"
-        OR "pedestrian*" OR "cycl*"
-        OR "road*" OR "railway*" OR "traffic*" OR "bus*" OR "taxi*"
-        OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"
-        OR "airport*"
-        OR "travel*" OR "journey*"
-        )
-        NEAR/5
-            (improv* OR moderni* OR reduc* OR "increas*" OR "expand*"
-            OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
-            )
-      )
-)
-```
 
 ##### Phrase 2:
 
