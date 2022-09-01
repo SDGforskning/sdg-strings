@@ -236,11 +236,11 @@ This phrase finds research about expanding public transport. The basic structure
 ```Ceylon =
 TS=
 (
-  ("improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*" OR "build*"
+  ("provide*" OR "improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*" OR "build*"
   OR "boost*" OR "raise*" OR "escalat*"
   OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
   )
-  AND ("public transport*")  
+  NEAR/5 ("public transport*")  
 )
 ```
 
