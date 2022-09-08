@@ -82,7 +82,7 @@ TS=
   (
     ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
     NEAR/5
-      ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit*" OR "early school-leaving")
+      ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving")
   )
   NEAR/5
       ("primary school*" OR "elementary school*" OR "primary educat*"
