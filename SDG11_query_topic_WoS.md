@@ -136,7 +136,7 @@ TS=
 
 This target is interpreted to cover research about improving safe sustainable transport of humans in cities and improving road safety.
 
-This query consists of 3 phrases.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
