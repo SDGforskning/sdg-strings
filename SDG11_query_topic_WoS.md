@@ -195,15 +195,8 @@ TS=
 )
 ```
 
-##### Phrase 3:
 
-This phrase finds research about expanding public transport. The basic structure is *public transport*.
 
-```Ceylon =
-TS=
-("public transport*")  
-
-```
 
 ## Target 11.3
 
