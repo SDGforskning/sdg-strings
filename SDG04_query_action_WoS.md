@@ -542,7 +542,7 @@ TS=
   OR "improv*"
   )
   NEAR/3
-      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumera*")
+      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumerate*" OR "innumeracy")
 )
 ```
 
