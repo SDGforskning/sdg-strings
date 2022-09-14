@@ -513,7 +513,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The first phrase finds research about improving skills. The basic structure is action + level + skills
+The first phrase finds research about improving skills. The basic structure is *action + level + skills*.
 
 ```Ceylon =
 TS=
@@ -532,7 +532,7 @@ TS=
 
 ##### Phrase 2:
 
-In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is *decrease + illiteracy*. The seemingly similar search terms are truncated differently, as "innumera*" only returns noise with hits containing "innumerable".
+In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is *decrease + illiteracy*. 
 
 ```Ceylon =
 TS=
@@ -542,7 +542,7 @@ TS=
   OR "improv*"
   )
   NEAR/3
-      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumerate*" OR "innumeracy")
+      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
 )
 ```
 
