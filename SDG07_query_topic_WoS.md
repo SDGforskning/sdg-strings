@@ -337,7 +337,7 @@ TS=
               OR "hydrokinetic"
               )    
         )
-      OR "geothermal health pump$" OR "ground source heat pump$"
+      OR "geothermal heat pump$" OR "ground source heat pump$"
       OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
       OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
       OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
