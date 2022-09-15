@@ -306,37 +306,26 @@ TS=
 >
 > 14.3.1 Average marine acidity (pH) measured at agreed suite of representative sampling stations
 
-The target is interpreted to cover research that focuses on minimising the impacts of ocean acidification (OA). We interpret "address" also as a term meaning to limit/combat. We also interpret this to cover research about improving resilience to OA.
+The target is interpreted to cover research that focuses on the impacts of ocean acidification (OA). We also interpret this to cover research about improving resilience to OA.
 
-The general structure is *action + impacts + acidification*.
+The general structure is *impacts + acidification*.
 
 *Acidification* terms: `ph` returns results from industrial processes, thus is combined in phrases. `OA` is a common abbreviation (e.g. osteoarthritis) and will find "okadeic acid" (shellfish poisoning) if used alone, hence the `AND ocean$` term (marine is not included, as often use "marine toxin"). Using all the marine terms (minus "marine") vs. just using `AND ocean$` actually only adds few extra results, many not relevant; likely because "ocean acidification" is a well-established term.  
 
-*Impact terms*: In this version, general impact terms are included as these work best with action terms (e.g. `impact*`). However, for the topic approach more impact terms should be added, e.g. major biological processes that can be impacted, such as calcification: `"calcif*" OR "decalcif*" OR "calcium carbonate" OR "dissol*" OR "aragonite" OR "calcite" OR "carbonate saturation" OR "extinction" OR "adaptation" OR "adaptive capacity" OR "competition" OR "recruitment" OR "survival" OR "reproduction"`
+*Impact terms*: General impact terms are included (e.g. `impact*`). We also include major biological processes that can be impacted.
 
 ``` Ceylon =
 TS =
 (
   (
-    (
-      (
-        ("decreas*" OR "minimi*" OR "reduc*" OR "limit" OR "mitigat*" OR "alleviat*"
-        OR "fight*" OR "combat*" OR "tackl*" OR "resist*"
-        OR "stop*" OR "avoid*" OR "prevent*" OR "halt*"       
-        )
-        NEAR/5
-          ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
-          OR "results in" OR "changes" OR "alter*"
-          OR "sensitiv*" OR "vulnerab*" OR "threat*"
-          )
-      )
-      OR
-      (
-        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*"
-        OR "maintain*" OR "preserv*"
-        )
-        NEAR/5 ("resilience" OR "adaptive capacity" OR "coping" OR "toleranc*")
-      )
+    ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
+    OR "results in" OR "changes" OR "alter*"
+    OR "sensitiv*" OR "vulnerab*" OR "threat*"
+    OR "resilience" OR "adaptive capacity" OR "coping" OR "toleranc*"
+    OR "calcif*" OR "decalcif*" OR "calcium carbonate"
+    OR "aragonite" OR "calcite" OR "carbonate saturation" 
+    OR "extinction$" OR "adaptation" OR "adaptive capacity"
+    OR "competition" OR "recruitment" OR "survival" OR "reproduction"
     )
     NEAR/15
         ("acidi*" OR "OA" OR "ocean ph" OR "seawater ph"
