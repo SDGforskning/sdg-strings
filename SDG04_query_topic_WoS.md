@@ -145,25 +145,20 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *action + access + early care*.
+The basic structure is *access + early care*.
 
-The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is improve access / remove obstacles + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
+The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-    OR "overcome" OR  "ensure" OR "attain*" OR "achiev*"
-    OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
-    )
-    NEAR/5
-      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
-  )
+ (
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+ )
   NEAR/5
       ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
       OR (("early childhood" OR "under five$") NEAR/3 "education")
-      )
+  )
 )
 NOT
 TS= ("pig*" OR "plant*" OR "fish*")
