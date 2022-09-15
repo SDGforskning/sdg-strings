@@ -2,12 +2,12 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is undergoing final edits
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
 
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG13
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
@@ -24,6 +24,8 @@ Take urgent action to combat climate change and its impacts.
 </details>
 
 ## 2. General notes
+
+This document contains search strings for finding publications related to the actions in the SDG 13 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 13 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
@@ -96,7 +98,6 @@ TS=
         OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
       )
 )
-
 ```
 
 ## Target 13.2
@@ -205,7 +206,7 @@ TS=
 
 ##### Phrase 3:
 
-This phrase covers national policies, strategies and planning related to specific "action frameworks" for mitigation and adaptation, and general terms for integration of climate mitigation and action. The general structure is *action frameworks + national plans // climate action + integration + national plans*.
+This phrase covers national policies, strategies and planning related to specific "action frameworks", and integration of climate measures and climate change generally into policy. The general structure is *action frameworks + national plans // climate action + action + national plans*. While in phrase 1 climate change had to be linked to *measures terms*, here we allow climate change to stand alone, since it is more closely linked to national policies (`NEAR` is used here, rather than `AND` in phrase 1).
 
 Some of the frameworks for action (e.g. COP) pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general.
 
@@ -230,7 +231,7 @@ OR
 TS=
 (
   (
-    ("climate change$" OR "climate action" OR "climate adaptation" OR "climate mitigation" OR "climate resilience")
+    ("climate change$" OR "climate measures" OR "climate action" OR "climate adaptation" OR "climate mitigation" OR "climate resilience")
     NEAR/5 ("integrat*" OR "includ*" OR "inclus*" OR "mainstream*")
   )
   NEAR/15
@@ -446,13 +447,13 @@ TS=
 
 * v2019.12: ML, CSA, SRM
 
-* v2022.xx, first draft: ML (Oct 2021-Feb 2022)
+* v 1.0.0, first draft: ML (Oct 2021-Feb 2022)
 
 * Internal review: EHS, CSA (March 2022)
 
-* v2022.xx,, second draft: CSA, ML (April-June 2022)
+* v 1.0.0, second draft: CSA, ML (April-June 2022)
 
-Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022). ML holds a PhD in climate geoscience.
+Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022), Marta Lorenz (PhD in climate geoscience).
 
 ## 5. Footnotes
 
