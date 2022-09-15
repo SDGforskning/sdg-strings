@@ -271,32 +271,30 @@ This query consists of 4 phrases. The first two cover skills at an overriding le
 
 ##### Phrase 1:
 
-The basic structure is *action + skills + employability/entrepreneurship*
+The basic structure is *skills + employability/entrepreneurship*
 
 ```Ceylon =
 TS=
 (
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
-    NEAR/5
-      ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
+   ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
   )
-  NEAR/5 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+  NEAR/5
+  ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
 ```
 ##### Phrase 2:
 
-This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *action + unemployment + skills*
+This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *unemployment + skills*
 
 ```Ceylon =
 TS=
 (
   (
-    ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
-    NEAR/5
-        ("unemploy*" OR "underemploy*")
+    ("unemploy*" OR "underemploy*")
   )
-  NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
+  NEAR/5 
+  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
  )
  ```
 
@@ -326,7 +324,7 @@ TS=
 ```
 ##### Phrase 4:
 
-The basic structure is *action + ICT + skill + employability*.
+The basic structure is *ICT + skill + employability*.
 
 Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
 
@@ -334,15 +332,12 @@ Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omit
 TS=
 (
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
+   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
     NEAR/5
-      (
-        ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-        NEAR/5
-            ("skill*" OR "competen*" OR "literac*")
-      )
+    ("skill*" OR "competen*" OR "literac*")
   )
-  NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
+   NEAR/15
+   ("employab*" OR "employment" OR "job$" OR "decent work")
 )
 ```
 
