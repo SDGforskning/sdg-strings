@@ -264,7 +264,7 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is interpreted to cover research about the international supply of climate financing. This covers research about the provision of climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
+This target is interpreted to cover research about the international supply of climate financing. This covers research about climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
 
 This query consists of 1 phrase. The general structure is *transparancy/aspects of provision/countries + climate financing + climate*.
 
@@ -326,9 +326,9 @@ TS=
 This target is considered to cover research about least developed countries and small island developing states, about
 * planning for climate change
 * managing climate change
-* raising capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
+* capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
-This target consists of 1 phrase. The basic structure is *(climate planning/management // action + capacity + climate management) + LDCs/SIDS*
+This target consists of 1 phrase. The basic structure is *(climate planning/management // capacity + climate management) + LDCs/SIDS*
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
