@@ -1,5 +1,5 @@
 
-# Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
+# Search query for SDG 11 -Sustainable cities and communities, Bergen topic-approach.
 
 **Current status**: This string is a first draft. It is awaiting specialist input. It is undergoing technical review.*
 
@@ -136,28 +136,23 @@ TS=
 
 This target is interpreted to cover research about improving safe sustainable transport of humans in cities and improving road safety.
 
-This query consists of 3 phrases.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *improve + safe + transport systems + cities*
+The basic structure is safe + transport systems + cities*
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by limiting the search with terms concerning land transport. It is also difficult to exclude freight transport. (We could focus on transport, not transport systems.)
 
 ```Ceylon =
 TS=
 (
-  (
-    (
-      ("improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*"
-      OR "build*" OR "boost*" OR "raise*" OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
-      )
-      NEAR/15
-          ("safe*" OR "secure*" OR "risk*" OR "sustainab*"
+   (
+      ("safe*" OR "secure*" OR "risk*" OR "sustainab*"
           OR "access*"  OR "availab*" OR "reliab*"
           OR "afford*" OR "low cost*" OR "expensive" OR "cost-effective*"
           )
-    )
+    
     NEAR/15 ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
   )
   AND
@@ -170,22 +165,21 @@ TS=
       OR "travel*" OR "journey*"
       )
 )
+
 ```
 
 
 
 ##### Phrase 2:
 
-This phrase covers research about improving road safety. The basic structure is *action + safety + road*.
+This phrase covers research about improving road safety. The basic structure is *safety + road*.
 
 ```Ceylon =
 
 TS=
 (
   (
-    (
-      ("provide*" OR "improv*" OR "increase*" OR "enhanc*" OR "reduc*" OR "develop*")
-      NEAR/5
+     (
           ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*")
     )
     NEAR/5
@@ -201,20 +195,8 @@ TS=
 )
 ```
 
-##### Phrase 3:
 
-This phrase finds research about expanding public transport. The basic structure is *action + public transport*.
 
-```Ceylon =
-TS=
-(
-  ("provide*" OR "improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*" OR "build*"
-  OR "boost*" OR "raise*" OR "escalat*"
-  OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
-  )
-  NEAR/5 ("public transport*")  
-)
-```
 
 ## Target 11.3
 
