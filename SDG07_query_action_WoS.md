@@ -142,7 +142,7 @@ TS=
 
 ##### Phrase 3:
 
-The basic structure is *"dirty" fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
+The basic structure is *"dirty" fuels + action + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
 
 ```Ceylon =
 TS=
@@ -187,13 +187,13 @@ TS=
 
 This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
-The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy poverty. `energy sufficiency` was tested (to do with having enough energy, equity and avoiding overconsumption), as was `energy NEAR/3 (dignity OR care)` but there were few relevant results at this time in this combination.
+The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy poverty. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
 
 ```Ceylon =
 TS=
 (
   ("energy poverty" OR "energy vulnerability" OR "fuel poverty"
-  OR "energy democracy" OR "energy justice"
+  OR "energy democracy" OR "energy justice" OR "energy inequity"
   OR "energy security" OR "energy insecurity"
   )
   NEAR/5
@@ -207,7 +207,7 @@ OR TS=("increas* energy security")
 
 ##### Phrase 5
 
-This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
+This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy + households / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
 
 ```Ceylon =
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
@@ -407,7 +407,7 @@ TS=
 
 ##### Phrase 3
 
-This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `oil` is not linked to consumption due to results from medicine (e.g. fish oil).
+This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `consumption` is used in phrases as in combination with "oil" it causes issues (e.g. fish oil).
 
 ```Ceylon =
 TS=
@@ -520,7 +520,7 @@ TS=
     OR
       ("energy efficiency"
       NEAR/5
-            ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
+            ("policy" OR "policies" OR "framework$" OR "legislation" OR "management" OR "planning" OR "plan" OR "plans"
             OR "initiative$" OR "intervention$" OR "incentive$" OR "investment$" OR "investing" OR "invest"
             )
       )
