@@ -43,11 +43,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about
 
-* Increasing completion of primary and secondary education			
-* Ensuring access to quality primary and secondary education that is free and equitable			
-* Achieving minimal proficiency in reading and mathematics			
+* Completion of primary and secondary education			
+* Access to quality primary and secondary education that is free and equitable			
+* Minimal proficiency in reading and mathematics			
 
-This query consists of 4 phrases. Phrase 1 and 2 are concerned with completion and reducing dropout rates respectively. Phrase 3 is about ensuring access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
+This query consists of 4 phrases. Phrase 1 and 2 are concerned with completion and reducing dropout rates respectively. Phrase 3 is about access to free and equitable primary and secondary education, and phrase 4 about minimal proficiency in reading and mathematics.
 
 ##### Phrase 1:
 
@@ -71,7 +71,7 @@ TS=
 
 The basic structure is *dropout + school education*.
 
-In this phrase we reverse the concept of school completion, and focus on  dropouts.
+In this phrase we reverse the concept of school completion, and focus on dropouts.
 
 ```Ceylon =
 TS=
@@ -138,7 +138,7 @@ TS=
 
 This target is interpreted to cover research about
 
-* Ensuring access to institutionalized, early childhood education (and care)
+* Access to institutionalized, early childhood education (and care)
 * Readiness for primary education
 
 This query consists of 2 phrases.
@@ -264,8 +264,8 @@ TS= "inclusive higher education"
 
 This target is interpreted to cover research about
 
-* Increasing the number of youths and adults who have relevant skills for employment and entrepreneurship
-* Improvement of ICT skills and employability
+* Relevant skills for employment and entrepreneurship
+* ICT skills and employability
 
 This query consists of 4 phrases. The first two cover skills at an overriding level, the third core skills as defined by the UN International Labor Organisation, and the fourth ICT skills. In order to limit the search to research concerning opportunities for employment, and avoid articles about employees/employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise.
 
