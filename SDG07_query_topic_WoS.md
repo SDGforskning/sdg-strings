@@ -229,7 +229,7 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
-This target is interpreted to cover research about increasing the use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
+This target is interpreted to cover research about use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
 
 This query consists of 3 phrases.
 
@@ -247,38 +247,13 @@ TS=
 
 ##### Phrase 2
 
-This phrase covers specific terms for increasing the share of renewable energy, including a wider set of terms for renewables. The general structure is *action/transitions/promotional mechanisms + renewable energy*.
+This phrase covers terms renewable energy. The general structure is *renewable energy*.
 
-The "promotional mechanisms" include several aspects, such as Incentives and barriers; Policies, incentives and investments; Economic mechanisms; Research concerning bringing technology to users; Sustainable development. `adopting OR adoption` is used as "adopted" is used often as a verb in methods; `increase` is used rather than "increas*" as a number of technical works begin with the technical issue of "increasing proportions of renewables in the power grid".
-
-In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results refering to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
+In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy) - these have been narrowed slightly in the topic approach compared to the action approach (particularly biomass was causing issues). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results referring to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
 
 ```Ceylon =
 TS=
 (
-  (
-    (
-      ("increase" OR "improv*" OR "enhanc*" OR "promot*" OR "support" OR "encourag*" OR "speed up" OR "accelerate" OR "expand")
-      NEAR/5
-          ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation"
-          OR "contribution" OR "proportion" OR "share" OR "expansion"
-          OR "feasibility" OR "attractiveness" OR "incentive$" OR "initiative$"
-          OR "affordab*" OR "inexpensive" OR "low cost" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
-          OR "investment$" OR "subsidies" OR "subsidi$ation" OR "financing" OR "funding" OR "commerciali?ation"
-          OR "energy service$" OR "energy sector" OR "generation" OR "capacity"
-          OR "global energy" OR "global electricity" OR "energy mix" OR "market share$"
-          )
-    )
-  OR (("reduc*" OR "decreas*" OR "remov*" OR "dismantl*") NEAR/5 ("barrier$" OR "obstacle$"))
-  OR "implement" OR "adopt" OR "incentivi*"
-  OR "energy transition$" OR "renewable transition$" OR "transition* to"
-  OR ("certificat*" NEAR/2 ("energy" OR "green"))
-  OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
-  OR "subsidi$e" OR "investing" OR "invest" OR "green bond$" OR "climate bond$" OR "feed-in tariff$"
-  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "roll out" OR "rollout"
-  OR "sustainable development" OR "sustainable energy development"
-  )
-  NEAR/15
       ("non conventional energy"
       OR
         (
@@ -305,8 +280,8 @@ TS=
         (
           ("biomass" OR "wind" OR "solar")
           NEAR/10
-              ("electric*" OR "generat*" OR "service$" OR "sector"
-              OR "technolog*" OR "energy system$" OR "power system$"
+              ("electric*" OR "energy generat*" OR "energy service$" OR "energy sector"
+              OR "energy system$" OR "power system$"
               OR "energy crop$" OR "energy security"
               )
         )
@@ -322,19 +297,22 @@ TS=
 
 ##### Phrase 3
 
-This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `oil` is not linked to consumption due to results from medicine (e.g. fish oil).
+This phrase covers reduction in fossil fuels. The general structure is *fossil fuels + reliance/energy mix*. Action terms are retained for "oil" because it is used to generally (e.g. consuption of fish oil, reliance of technology for oil drilling etc.)
 
 ```Ceylon =
 TS=
 (
-  (
-    ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
-    OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-    OR "transition*" OR "substitut*" OR "intervention$"
-    OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+  ("fossil fuel$" OR "coal" OR "natural gas" OR "grey hydrogen" OR "conventional energy"
+  OR
+    (
+      ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
+      OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
+      OR "transition*" OR "substitut*" OR "intervention$"
+      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
+      )
+      NEAR/5
+          ("oil")
     )
-    NEAR/5
-        ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
   )
   NEAR/15
     ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
