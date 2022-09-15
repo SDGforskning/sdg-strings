@@ -130,20 +130,20 @@ TS=
 
 This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
-The general structure is *energy security/access phrases + action*. `increas*` is not used alone as there are many results using it talking about the results of e.g. energy poverty. `energy sufficiency` was tested (to do with having enough energy, equity and avoiding overconsumption), as was `energy NEAR/3 (dignity OR care)` but there were few relevant results at this time in this combination.
+The general structure is *energy security/access phrases*. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
 
 ```Ceylon =
 TS=
 (
   "energy poverty" OR "energy vulnerability" OR "fuel poverty"
-  OR "energy democracy" OR "energy justice"
+  OR "energy democracy" OR "energy justice" OR "energy inequity"
   OR "energy security" OR "energy insecurity"
 )
 ```
 
 ##### Phrase 5
 
-This phrase is about improving access to energy services and electricity. The general structure is *electrification / action + access + energy  / action + access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
+This phrase is about improving access to energy services and electricity. The general structure is *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
 
 ```Ceylon =
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
@@ -196,7 +196,7 @@ TS=
 
 ##### Phrase 6
 
-This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+This phrase finds works about affordability and reliability of energy services. The general structure is *afford/stable + energy*. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
 
 ```Ceylon =
 TS=
@@ -211,7 +211,7 @@ TS=
           ("energy" OR "power" OR "electric*")
           NEAR/5
               ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
+              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "village$"
               OR "sustainable"
               )            
         )
