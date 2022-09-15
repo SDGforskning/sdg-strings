@@ -667,7 +667,7 @@ TS=
 
 ##### Phrase 2:
 
-This phrase focuses on effective learning environments in schools. The basic structure is provide + effective learning environment + school.
+This phrase focuses on effective learning environments in schools. The basic structure is *provide + effective learning environment + school*.
 
 ```Ceylon =
 TS=
@@ -687,24 +687,26 @@ TS=
 
 ##### Phrase 3:
 
-This phrase focuses on access to basic services in schools. The basic structure is *school + access + basic services*.
+This phrase focuses on improving access to basic services in schools. The basic structure is *action + access + basic services + schools*.
 
 The terms for basic services in schools are taken and adapted from <a id="unescotcg">[UNESCO Institute for statistics (2018)](#f11)</a>
 
 ```Ceylon =
 TS=
 (
-  ("school*" OR "education* facility" OR "education* facilities")
+ (
+  ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
+  NEAR/3
+    ("access*"
+    NEAR/5
+      ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR 
+      "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
+      OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
+     )
+  )
   NEAR/15
-      ("access*"
-      NEAR/5
-          ("electricity" OR "electrical supply" OR "modern energy"
-          OR "internet" OR "computer*" OR "ICT facilit*"
-          OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
-          OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$"
-          )
-      )
-)
+  ("school*" OR "education* facility" OR "education* facilities")
+ ) 
 ```
 
 ## Target 4.b
