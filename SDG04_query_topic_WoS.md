@@ -166,7 +166,7 @@ TS= ("pig*" OR "plant*" OR "fish*")
 ```
 ##### Phrase 2:
 
-The basic structure is *school readiness // child development + school entry*.
+The basic structure is *school readiness / child development + school entry*.
 
 ```Ceylon =
 TS=
@@ -197,68 +197,45 @@ This target is interpreted to cover research about:
 
 We have interpreted the target widely, and included search terms to identify research on discrimination, barriers etc. that may prevent or hinder access. We have also included post-secondary education, a level between upper secondary and tertiary education which does not necessarily give access to tertiary education, and is often practically or vocationally, as opposed to theoretically or generally, oriented (according to UNESCO's International Standard Classification of Education (ISCED); <a id="isced">[UNESCO, 2012](#f3)</a>).
 
-This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise. In particular, combinations of `access` with `university or education` can result in a large quantity of articles about open access publishing and universities, which are not relevant here. To avoid this, in phrase 1 "access" is limited by the inclusion of action terms, and the condition that `university` must be near `admission$ OR enrol*`. In phrase 2, "access" is limited by its combination with terms to do with equality/discrimination, allowing us to also find publications that do not mention enrolment or admission specifically.
+This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise. In particular, combinations of `access` with `university or education` can result in a large quantity of articles about open access publishing and universities, which are not relevant here. To avoid this, in phrase 1 "access" is limited by the condition that `university` must be near `admission$ OR enrol*`. In phrase 2, "access" is limited by its combination with terms to do with equality/discrimination, allowing us to also find publications that do not mention enrolment or admission specifically.
 
 ##### Phrase 1:
 
-The basic structure is *action + access + higher education*
+The basic structure is *access/barriers + higher education*
 
 ```Ceylon =
 TS=
 (
   (
-    (
-      ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
-      NEAR/5
-        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
-    )
-  OR
-    (
-      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
-      OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
-      OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-      OR "improv*" OR "manag*"
-      )
-      NEAR/5
-        ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-    )
+    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+    OR
+    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
   )
-  NEAR/15
+  NEAR/5
       ("higher education"
-      OR (("university" OR "universities" OR "college$") NEAR/5 ("admission$" OR "enrol*"))
+      OR 
+       (("university" OR "universities" OR "college$") NEAR/5 ("admission$" OR "enrol*"))
       OR
-        (
-          ("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
-          NEAR/3 ("education" OR "training" OR "school*" OR "learning")
+        (("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
+         NEAR/3 ("education" OR "training" OR "school*" OR "learning")
         )
-      )
+     )
 )
-
 ```
 ##### Phrase 2:
 
-The basic structure is *action + equality + higher education*
+The basic structure is *equality + higher education*
 
 ```Ceylon =
 TS=
 (
   (
     (
-        (
-          ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
-          NEAR/5
-              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
-        )
+      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
       OR
-        (
-          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
-          OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
-          OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-          OR "improv*" OR "manag*"
-          )
-          NEAR/5
-              ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-        )
+      (
+       ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+      )
     )
     NEAR/15 ("access")
   )
@@ -269,7 +246,7 @@ TS=
           ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
           NEAR/3 ("education" OR "training" OR "school*" OR "learning")
         )
-      )
+   )
 )
 ```
 
