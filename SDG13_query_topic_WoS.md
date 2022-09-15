@@ -206,9 +206,9 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about improving education, awareness and capacity about climate change mitigation, adaptation,  impact reduction and early warning.
+This target is considered to cover research about education, awareness and capacity about climate change mitigation, adaptation, impact reduction and early warning.
 
-This query consists of 1 phrase. The general structure is *action + education/awareness/capacity + climate mit/adapt/warning*
+This query consists of 1 phrase. The general structure is *education/awareness/capacity + climate mit/adapt/warning*
 
 Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
 * Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
@@ -217,34 +217,18 @@ Interpretation of what should be considered as contributing to raising "human an
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investing as an "action" in the sense that it can drive action (e.g. cooperation fund for education). We have also included specialist funds such as the [Green climate fund](https://www.greenclimate.fund/).
-
-In this string, sometimes the same terms appear in two parts (e.g. awareness). This is because these terms are likely sufficient alone (e.g. increase climate awareness), while others need an additional element (e.g. improve curricula for climate action - we need climate "action" to avoid e.g. improving university curricula for basic climate science).
-
 ``` Ceylon =
 TS=
 (
-    (
-      ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
-      OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-      OR "invest" OR "investing" OR "fund$" OR "funding"
-      OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
-      OR "financial assistance" OR "financial support" OR "economic assistance" OR "economic support"
-      OR "climate aid" OR "climate financ*" OR "climate fund*"
-      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
-      OR "strategy" OR "initiative$"
-      )
-      NEAR/5
-          ("capacity" OR "capabilit*"
-          OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
-          OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
-          OR "awareness" OR "responsibilit*"
-          OR "infrastructure$" OR "technolog*" OR "early warning system$"
-          OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
-          OR "economic resources" OR "financial resources" OR "human resource$"
-          OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
-          )
-    )  
+  ("capacity" OR "capabilit*"
+  OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
+  OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
+  OR "awareness" OR "responsibilit*"
+  OR "infrastructure$" OR "technolog*" OR "early warning system$"
+  OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
+  OR "economic resources" OR "financial resources" OR "human resource$"
+  OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
+  )  
   NEAR/15      
       (
         (
@@ -356,27 +340,16 @@ TS=
     OR "nationally determined contribution$"
     OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund" OR "adaptation financ*"
     OR
-      (
-        (
-          ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
-          OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
-          OR "investing" OR "invest" OR "financing" OR "funding"
-          OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
-          OR "ODA" OR "cooperation fund$" OR "development spending"
-          OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "fund$" OR "finance" OR "grant$" OR "investment$"))
-          OR "climate financ*" OR "climate aid" OR "climate fund*"
-          )
-          NEAR/5            
-              ("capacity" OR "capabilit*"
-              OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
-              OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
-              OR "awareness" OR "responsibilit*"
-              OR "infrastructure$" OR "technolog*" OR "early warning system$"
-              OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
-              OR "economic resources" OR "financial resources" OR "human resource$"
-              OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
-              )
-        )  
+      (        
+        ("capacity" OR "capabilit*"
+        OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
+        OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
+        OR "awareness" OR "responsibilit*"
+        OR "infrastructure$" OR "technolog*" OR "early warning system$"
+        OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
+        OR "economic resources" OR "financial resources" OR "human resource$"
+        OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
+        )
         AND
             (
               ("climat*" OR "global warming" OR "climatic change$" OR "sea level rise")
