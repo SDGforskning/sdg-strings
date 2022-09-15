@@ -1,5 +1,5 @@
 
-# Search query for SDG 4 - Quality Education, Bergen action-approach.
+# Search query for SDG 4 - Quality Education, Bergen topic-approach.
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
@@ -47,22 +47,18 @@ This target is interpreted to cover research about
 * Ensuring access to quality primary and secondary education that is free and equitable			
 * Achieving minimal proficiency in reading and mathematics			
 
-This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing completion and reducing dropout rates respectively. Phrase 3 is about ensuring access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
+This query consists of 4 phrases. Phrase 1 and 2 are concerned with completion and reducing dropout rates respectively. Phrase 3 is about ensuring access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
 
 ##### Phrase 1:
 
-The basic structure is *action + completion + school education*.
+The basic structure is *completion + school education*.
 
 In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*".
 
 ```Ceylon =
 TS=
 (
-  (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*")
-    NEAR/5
-      ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
-  )
+ ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
   NEAR/5
       ("primary school*" OR "elementary school*" OR "primary educat*"
       OR "middle school*" OR "secondary school*" OR "secondary education*"
@@ -73,19 +69,15 @@ TS=
 
 ##### Phrase 2:
 
-The basic structure is *action + dropout + school education*.
+The basic structure is *dropout + school education*.
 
-In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts.
+In this phrase we reverse the concept of school completion, and focus on  dropouts.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("prevent*" OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "lower$" OR "improv*")
-    NEAR/5
-      ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving")
-  )
-  NEAR/5
+ ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving")
+   NEAR/5
       ("primary school*" OR "elementary school*" OR "primary educat*"
       OR "middle school*" OR "secondary school*" OR "secondary education*"
       OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
@@ -94,7 +86,7 @@ TS=
 ```
 ##### Phrase 3:
 
-The basic structure is *action + access + school + free/equitable/quality*.
+The basic structure is *access + school + free/equitable/quality*.
 
 "Quality education" is a broad term, and the short name of SDG 4.  As specified by UNESCO in its SDG Resources for Educators (<a id="unescoquality">[UNESCO, n.d.a](#f2)</a>):
 > "Quality education specifically entails issues such as appropriate skills development, gender parity, provision of relevant school infrastructure, equipment, educational materials and resources, scholarships or teaching force."
@@ -104,26 +96,20 @@ These are all addressed in the subsequent targets, therefore "quality education"
 ```Ceylon =
 TS=
 (
-  (
-    (
-      ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-      OR "scal* up" OR "build*" OR "expand"  OR "accelerat*"
-      OR "ensure" OR  "attain*" OR "achiev*"
-      )  
-      NEAR/5 ("access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*")
-    )
-    NEAR/15
-      (
-        ("primary school*" OR "elementary school*" OR "primary educat*"
+ (
+  ("access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*")
+  NEAR/15
+   (
+     ("primary school*" OR "elementary school*" OR "primary educat*"
         OR "middle school*" OR "secondary school*" OR "secondary education"
-        )
-        NEAR/5 ("free" OR "equit*" OR "quality")
       )
+      NEAR/5 ("free" OR "equit*" OR "quality")
+    )
 )  
 ```
 #### Phrase 4:
 
-The basic structure is *action + level + skill + reading and mathematics*.
+The basic structure is *level + skill + reading and mathematics*.
 
 We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary.
 
@@ -131,17 +117,14 @@ We considered including terms for primary and secondary education, but too many 
 TS=
 (
   (
-    (
-      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
-      NEAR/5
-        (
-          ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
-          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
-        )
-    )
-    NEAR/15 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+    ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+    NEAR/10 
+    ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
   )
-  AND ("school" OR "student$" OR "boys" OR "girls" OR "kids" OR "child*")
+    NEAR/15
+    ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
+    AND 
+    ("school" OR "student$" OR "boys" OR "girls" OR "kids" OR "child*")
 )
 ```
 
