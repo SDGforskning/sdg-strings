@@ -779,7 +779,6 @@ TS=
     NEAR/5
       ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
       OR "teacher recruitment" OR "teacher training"
-      OR "number of teachers"
       OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
       )
   )
