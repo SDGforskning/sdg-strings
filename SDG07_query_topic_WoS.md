@@ -58,7 +58,7 @@ Other abbreviations:
 > 7.1.2 Proportion of population with primary reliance on clean fuels and technology
 
 This target is interpreted to cover research about:
-* Access to and primary use of clean fuels and clean technology in households (phrases 1 & 2). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
+* Clean fuels and clean technology in households (phrases 1 & 2). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
 * The use of non-clean fuels in households (phrase 3)
 * Access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4 & 5)
 * The affordability and reliability of energy services (phrase 6)
@@ -66,14 +66,13 @@ This target is interpreted to cover research about:
 <a id="IEAaccess">[IEA (2020)](#f5)</a> and <a id="UNThemereport">[UN (2021)](#f9)</a> were used as a source of terms for this target. This query consists of 6 phrases.
 
 ##### Phrase 1
-The basic structure is *clean fuels/tech + households*. The action part of this phrase contains terms for various aspects to do with increasing reliance, access and uptake, e.g. interventions, policy, investing and reducing barriers. *Household terms* are included as terms such as `fuel$` are broad. "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc. or by the general term `energy transition$`.
+The basic structure is *clean fuels/tech + households*. *Household terms* are included as terms such as `fuel$` are broad. Compared to the action approach, a couple of terms were removed as they created noise (`home OR community`). "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc. or by the general term `energy transition$`.
 
 ```Ceylon =
 TS=
 (
   (
-    (
-      ("energy transition$" NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"))
+    ("energy transition$" NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"))
     OR
       (
         ("clean*" OR "modern*")
@@ -82,92 +81,46 @@ TS=
             OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"
             )
       )
-    )
-    NEAR/15
-        ("implement*" OR "adopt*" OR "establish*" OR "transition*"
-        OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up" OR "rollout" OR "roll out"
-        OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
-        OR "relian*" OR "uptake" OR "use" OR "usage" OR "primary source$"
-        OR "access*" OR "availab*" OR "attractive*"
-        OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-        OR "commercial development" OR "develop* commercially" OR "commerciali?ation" OR "investment$"
-        OR "barrier$" OR "obstacle$"
-        OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-        OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
-        OR "sustainable development" OR "sustainable energy development"
-        )
   )    
-  AND ("household$" OR "home$" OR "house" OR "houses" OR "housing" OR "room"
-      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "community" OR "village$" OR "women"
+  AND ("household$" OR "homes" OR "house" OR "houses" OR "housing"
+      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "village$" OR "women"
       )      
 )
 ```
 ##### Phrase 2:
 
-The basic structure is *clean household energy activities + action*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
+The basic structure is *clean household energy activities*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
 
 ```Ceylon =
 TS=
 (
-  ("solar cooker$" OR "solar box cooker$" OR "solar cooking"
+  "solar cooker$" OR "solar box cooker$" OR "solar cooking"
   OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
-  )
-  NEAR/15
-      ("implement*" OR "adopt*" OR "establish*" OR "transition*" OR "substitut*"
-      OR "intervention$" OR "initiative$" OR "upscale" OR "scale-up" OR "rollout" OR "roll out"
-      OR "encourag*" OR "incentive$" OR "investing" OR "invest" OR "subsidi*"
-      OR "relian*" OR "uptake" OR "use" OR "usage" OR "primary source$"
-      OR "access*" OR "availab*" OR "attractive*"
-      OR "economic feasibility" OR "cost-effectiveness" OR "affordab*" OR "cost-advantage$"
-      OR "commercial development" OR "develop* commercially" OR "commerciali?ation" OR "investment$"
-      OR "barrier$" OR "obstacle$"
-      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-      OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
-      OR "sustainable development" OR "sustainable energy development"
-      )
 )
 ```
 
 ##### Phrase 3:
 
-The basic structure is *"dirty" fuels + action*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
+The basic structure is *"dirty" fuels + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. The household terms are slightly edited compared to the action string to reduce noise (`slum OR slums`, and removed `village$`).
 
 ```Ceylon =
 TS=
 (
-  (
-    ("kerosene" OR "solid fuel$" OR "coal")
-    NEAR/15
-        ("transition*" OR "substitut*" OR "intervention$" OR "initiative$"
-        OR "encourag*" OR "incentive$" OR "investing" OR "invest"
-        OR "reduc*" OR "decreas*" OR "prevent" OR "mitigat*" OR "phase out"
-        OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-        OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
-        OR "sustainable development" OR "sustainable energy development"
-        )
+  ("kerosene" OR "solid fuel$" OR "coal"
   )    
   NEAR/15
-      ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      ("household$" OR "homes" OR "house" OR "houses" OR "housing"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
       OR "residential heating" OR "central heating" OR "winter heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
       )      
 )
 OR
 TS=
 (
-  ("coal"
-  NEAR/5
-      ("transition*" OR "substitut*" OR "coal to electricity" OR "intervention$" OR "initiative$"
-      OR "encourag*" OR "incentive$" OR "investing" OR "invest"
-      OR "phase out"
-      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-      OR "feed-in tariff$" OR (("energy" OR "green") NEAR/2 "certificat*")
-      OR "sustainable development" OR "sustainable energy development"
-      )
-  )    
+  ("coal")    
   NEAR/15
-      ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      ("household$" OR "homes" OR "house" OR "houses" OR "housing"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
       OR "heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
       )      
 )
