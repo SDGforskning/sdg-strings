@@ -434,10 +434,10 @@ TS=
 > 7.a.1 International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems
 
 This target is interpreted to cover research about:
-* increasing international cooperation for clean energy research and technology (phrase 1)
-* improving access to clean energy research and technology, in part via transfers of technology between sectors/actors (phrase 1)
-* promoting investment in clean energy research and technology, here we include development assistance (phrase 1)
-* promoting investment in energy infrastructure (phrase 2).
+* international cooperation for clean energy research and technology (phrase 1)
+* access to clean energy research and technology, in part via transfers of technology between sectors/actors (phrase 1)
+* investment in clean energy research and technology, here we include development assistance (phrase 1)
+* investment in energy infrastructure (phrase 2).
 
 Here, "clean" is interpreted to include also low-carbon due to the specific mention of cleaner fossil fuel technologies in the target. All phrases also include `energy transition$` as this term incorporates many of the aspects around modernised and cleaner energy supplies/infrastructure/tech.
 
@@ -445,36 +445,30 @@ This target consists of 2 phrases.
 
 ##### Phrase 1
 
-The general structure is *action + sharing/investing/cooperation + clean energy research/tech*.
+The general structure is *sharing/investing/cooperation + clean energy research/tech*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulat*" OR "support*"
-    OR "build*" OR "develop" OR "developing" OR "improv*"
-    OR "invest" OR "investing"
+  ("ODA" OR "development spending" OR "cooperation fund"
+  OR  
+    (
+      ("international" OR "development" OR "foreign")
+      NEAR/3
+          ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+          OR "aid" OR "assistance"
+          OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
+          )
     )
-    NEAR/5
-        ("ODA" OR "development spending" OR "cooperation fund"
-        OR  (
-              ("international" OR "development" OR "foreign")
-              NEAR/3
-                  ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                  OR "aid" OR "assistance"
-                  OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
-                  )
-              )
-        OR  
-            (
-              ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
-              NEAR/3 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
-            )
-        OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
-        OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
-        OR "economic support" OR "economic assistance"
-        OR "green bond$" OR "climate bond$"
-        )
+  OR  
+    (
+      ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
+      NEAR/3 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+    )
+  OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
+  OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
+  OR "economic support" OR "economic assistance"
+  OR "green bond$" OR "climate bond$"
   )
   NEAR/15
       ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$"
@@ -493,30 +487,23 @@ TS=
 
 ##### Phrase 2
 
-The general structure is *action + investment + energy infrastructure/renewable energy*.
+The general structure is *investment + energy infrastructure/renewable energy*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("promot*" OR "increas*" OR "ensur*" OR "encourag*" OR "stimulat*" OR "expand" OR "support*"
-    OR "build*" OR "develop" OR "developing" OR "improv*"
-    OR "invest" OR "investing"
-    )
-    NEAR/5
-      ("ODA" OR "development spending" OR "cooperation fund"
-      OR  (
-            ("international" OR "development" OR "foreign")
-            NEAR/3
-                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance"
-                OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
-                )
-          )
-      OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
-      OR (("financial*" or "monetary" OR "economic") NEAR/3 ("support*" or "assist*" OR "resources"))
-      OR "green bond$" OR "climate bond$"
+  ("ODA" OR "development spending" OR "cooperation fund"
+  OR  (
+        ("international" OR "development" OR "foreign")
+        NEAR/3
+            ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+            OR "aid" OR "assistance"
+            OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
+            )
       )
+  OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
+  OR (("financial*" or "monetary" OR "economic") NEAR/3 ("support*" or "assist*" OR "resources"))
+  OR "green bond$" OR "climate bond$"  
   )
   NEAR/15
       ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
@@ -540,16 +527,17 @@ TS=
 >
 > 7.b.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about improving infrastructure for sustainable and modern energy services in developing countries. The focus is on infrastructure and supply. We interpret this to cover electricity generation, power grids, storage, and energy services. The general structure is *action + infrastructure/technology/modern services + developing countries*.
+This target is interpreted to cover research about infrastructure for sustainable and modern energy services in developing countries. The focus is on infrastructure and supply. We interpret this to cover electricity generation, power grids, storage, and energy services. The general structure is *action/modern/sustainable + infrastructure/technology/services + developing countries*. This string has been converted from the topic approach by retaining the action terms, but adding to them to additionally include works generally talking about modern and sustainable services.
 
 ```Ceylon =
 TS=
 (
   (
-    ("improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
-    OR "more efficient" OR "upgrad*" OR "scal* up" OR "moderni*"
+    ("modern*" OR "clean" OR "sustainable" OR "renewable$" OR "decarboni*" OR "low carbon"
+    OR "improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
+    OR "more efficient" OR "upgrad*" OR "scal* up"
     OR "build" OR "expand*" OR "extend*" OR "deploy" OR "accelerat*" OR "prioriti$e"
-    OR "sustainable transition$" OR "renewable energy transition$" OR "renewable transition$" OR "energy sector transform*"
+    OR "energy sector transform*"
     )  
     NEAR/5  
       ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
@@ -559,7 +547,9 @@ TS=
         (
           ("power station$" OR "power generation" OR "energy generation" OR "generator$")
           NEAR/5
-              ("modern" OR "clean" OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy")
+              ("modern*" OR "clean" OR "sustainable" OR "renewable$" OR "decarboni*" OR "low carbon"
+              OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
+              )
         )             
       )
   )
@@ -591,11 +581,11 @@ TS=
 
 * v2019.12: ML, CSA, SRM
 
-* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+* v 1.0.0, first draft: CSA (Oct 2021-Feb 2022)
 
 * Internal review: HMB, ML (March 2022)
 
-* v2022.xx,, second draft: CSA, ML (Apr-Jul 2022)
+* v 1.0.0, second draft: CSA, ML (Apr-Jul 2022)
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
