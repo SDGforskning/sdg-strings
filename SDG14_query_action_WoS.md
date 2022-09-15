@@ -2,12 +2,12 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: This string is undergoing final edits
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
 
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG 14
+2. General notes
 3. Marine terms: String for limiting certain phrases to the marine environment
 4. Documentation and string sections for each target
 5. Contributions
@@ -18,7 +18,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG 14</summary>
 
-Note that this query should be run in multiple steps, and then combined as shown in the final steps.
+Not ready yet
 
 Search #1
 ```
@@ -84,6 +84,8 @@ Search #15
 </details>
 
 ## 2. General notes
+
+This document contains search strings for finding publications related to the actions in the SDG 14 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 14 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Thus, the fishery-related targets (14.4, 14.6 and 14.b) are currently not limited using the *marine terms* below. All other areas are.
 
@@ -227,7 +229,7 @@ SO =
 >
 > 14.1.1 (a) Index of coastal eutrophication; and (b) plastic debris density
 
-This target is interpreted to cover research about the prevention and reduction of marine pollution We consider the establishment/improvement of pollution monitoring to fall under prevention.
+This target is interpreted to cover research about the prevention and reduction of marine pollution. We consider the establishment/improvement of pollution monitoring to fall under prevention.
 
 <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f3)</a> was used to supplement with marine pollution types, as well as types mentioned in relation to the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities <a id="marinepollUN">[UN Environment Programme, n.d.](#f4)</a>. The `NOT PM.2.5 OR PM10` expression at the end was included to remove aspects of atmospheric pollution which can include terms for coast.
 
@@ -1140,11 +1142,11 @@ TS =
 
 * v2019.12: CSA, ML, SRM
 
-* v2022.xx: CSA (Feb-May 2022)
+* v 1.0.0 CSA (Feb-Jun 2022)
 
 * Internal review: ML, HMB (March 2022)
 
-Specialist input: KE (Associate professor of fisheries at UiB; review of v2019.12 in 2019). CSA holds a PhD in marine biology.
+Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
 ## 6. Footnotes
 
