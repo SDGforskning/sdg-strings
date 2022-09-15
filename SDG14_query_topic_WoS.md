@@ -219,97 +219,54 @@ TS=
 >
 > 14.2.1 Number of countries using ecosystem-based approaches to managing marine areas
 
-Target 14.2 is interpreted to cover research about a) sustainable management of marine/coastal ecosystems, b) protection of these ecosystems, which would include establishment and management of marine protected areas (MPAs), and c) restoring these ecosystems. Note, the interpretation of protection to include establishment of MPAs means that this target also encompasses 14.5.
+Target 14.2 is interpreted to cover research about a) sustainable management of marine/coastal ecosystems, b) protection of these ecosystems, which would cover marine protected areas (MPAs), and c) restoration of these ecosystems. Note, the interpretation of protection to include MPAs means that this target also encompasses 14.5.
 
-This query consists of 3 phrases. Phrase 1 covers the establishment/management of protected areas. Phrase 2 covers the establishment/improvement of sustainable management approaches. Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems.
+This query consists of 2 phrases. Phrase 1 covers protected areas and sustainable management approaches. Phrase 2 covers research about restoring, protecting, conserving or managing marine ecosystems.
 
 ##### Phrase 1
 
-This phrase covers the establishment/management of protected areas. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+This phrase covers protected areas and sustainable management approaches. The general structure is *protected areas/management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA` had to be removed in the topic approach as it is used in other contexts - results should hopefully be caught by `protected NEAR area`.
 
 ```Ceylon =
 TS=
 (
-  ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
-  OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
-  OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "planned" OR "planning"
-  OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
-  OR "enforce" OR "enforcement" OR "enforcing"
-  OR "strengthen" OR "improv*"
-  )
-  NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
-      OR
-        (
-          ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
-          NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
-        )
-      OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
-      )
+  "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+  OR "particularly sensitive sea area$"
+  OR
+    (
+      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
+      NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
+    )
+   OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
+   OR "marine spatial planning" OR "spatial management"
+   OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
+   OR "coastal resources management"
+   OR "community based management"
+   OR "locally managed marine area$" OR "LMMA$"
+   OR "resilience based management"
+   OR "herbivore management area$"
+   OR ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
+   OR
+     (
+       ("ecosystem-based" OR "area-based")
+       NEAR/5 ("manag*" OR "approach*" OR "govern*")
+     )
 )
 ```
 
 ##### Phrase 2
 
-Phrase 2 covers the establishment/improvement of sustainable management approaches.  The general structure is *action + sustainable management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-```Ceylon =
-TS=
-(
-  ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
-  OR "design" OR "designing" OR "create" OR "creation" OR "creating"
-  OR "establish*" OR "propos*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance"
-  OR "enforce" OR "enforcement" OR "enforcing"
-  OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*" OR "support*"
-  )
-  NEAR/5
-      ("marine spatial planning" OR "spatial management"
-      OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
-      OR "coastal resources management"
-      OR "community based management"
-      OR "locally managed marine area$" OR "LMMA$"
-      OR "resilience based management"
-      OR "herbivore management area$"
-      OR ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
-      OR
-        (
-          ("ecosystem-based" OR "area-based")
-          NEAR/5 ("manag*" OR "approach*" OR "govern*")
-        )
-      )
-)
-```
-
-##### Phrase 3
-
-Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *action + marine ecosystems or elements*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, we have action terms that are clear verbs for manage/protect etc., but combine other forms of these words with other actions (establishing, improving etc).
+Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *management/conservation + marine ecosystems or elements*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
 ```Ceylon =
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore"
-  OR
-    (
-      ("designat*" OR "placement" OR "expand*" OR "extend"
-      OR "design" OR "designing" OR "create" OR "creation" OR "creating"
-      OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
-      OR "enforce" OR "enforcement" OR "enforcing"
-      OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
-      OR "preserv*" OR "support*" OR "ensur*"
-      )
-      NEAR/5
-        ("management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
-    )
+  ("manage" OR "conserve" OR "protect" OR "protecting" OR "restore" OR "restoring"
+  OR "management" OR "conservation" OR "protection" OR "restoration"
   )
   NEAR/15
       ("ecosystem$" OR "habitat$" OR "communit*"
