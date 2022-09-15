@@ -329,7 +329,7 @@ TS=
 >
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
-This target is interpreted to cover research about improving energy intensity (phrase 1,2), and research about improving energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we hold our interpretation within this topic.
+This target is interpreted to cover research about energy intensity (phrase 1,2), and research about energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we held our interpretation within this topic for the action approach. However, for the topic approach, we include the concepts of `energy conservation` and `energy sufficiency`, given that it is closely tied to efficiency and energy justice which are themes within this SDG.
 
 Energy intensity definition from the European Environment Agency:
 >"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" (<a id="EEA2016">[EEA, 2016](#f6)</a>).
@@ -338,25 +338,14 @@ This query consists of 3 phrases.
 
 ##### Phrase 1
 
-This phrase finds research about improving energy intensity. The general structure is *energy intensity + action + energy terms*.
+This phrase finds research about improving energy intensity. The general structure is *energy intensity + energy terms*.
 
-The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts. The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>).
+The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts.
 
 ```Ceylon =
 TS=
 (
-  ("energy intensity"
-  NEAR/5
-      ("reduc*" OR "decreas*" OR "lower"
-      OR "improv*" OR "enhanc*" OR "better" OR "more efficient"
-      OR "policy" OR "policies" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
-      OR "initiative$" OR "intervention$"
-      OR "incentive$" OR "investment$" OR "investing" OR "invest" OR "green bond$" OR "climate bond$"
-      OR  (("energy" OR "green") NEAR/2 "certificat*")
-      OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-      OR "sustainable development" OR "energy sustainability"
-      )
-  )
+  ("energy intensity")
   AND
       ("energy consum*" OR "sustainab*" OR "energy efficiency"
       OR "GDP" OR "economic" OR "economy" OR "economies"
@@ -368,7 +357,7 @@ TS=
 ```
 
 ##### Phrase 2
-This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The general structure is *energy consumption + action + economy*.
+This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The general structure is *energy consumption + action + economy*. This action needs to be retained for the context, since energy consumption is a very general term.
 
 ```Ceylon =
 TS=
@@ -382,7 +371,7 @@ TS=
 
 ##### Phrase 3
 
-This phrase finds research about increasing energy efficiency. The general structure is *energy efficiency/loss + action + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances).
+This phrase finds research about energy efficiency. The general structure is *energy efficiency/loss + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances). These actions are retained even in this topic approach, because without them energy efficiency is too broad/noisy.
 
 *sector terms* were built around generic terms (e.g. `residential` will find "residential water heating"), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
 
@@ -392,13 +381,7 @@ The *action terms* include a number of mechanisms by which changes can be brough
 TS=
 (
     (
-      (
-        (
-          ("energy efficien*" OR "energy utili$ation efficiency" OR "energy saving")
-          NEAR/5 ("increase$" OR "increasing" OR "improv*" OR "double" OR "enhanc*" OR "better" OR "more efficient" OR "higher")
-        )
-        OR ("energy loss" NEAR/5 ("reduc*" OR "decreas*" OR "limit" OR "prevent*"))
-      )
+      ("energy efficien*" OR "energy utili$ation efficiency" OR "energy saving" OR "energy loss" OR "energy conservation")
       NEAR/15
           ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
           OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
@@ -411,9 +394,9 @@ TS=
           )
     )
     OR
-      ("energy efficiency"
+      (("energy efficiency" OR "energy conservation")
       NEAR/5
-            ("policy" OR "policies" OR "framework$" OR "legislation" OR "strateg*" OR "management" OR "planning" OR "plan" OR "plans"
+            ("policy" OR "policies" OR "framework$" OR "legislation" OR "management" OR "planning" OR "plan" OR "plans"
             OR "initiative$" OR "intervention$" OR "incentive$" OR "investment$" OR "investing" OR "invest"
             )
       )
@@ -428,6 +411,20 @@ TS=
             )
       )
 )
+```
+
+##### Phrase 4
+
+This phrase covers energy sufficiency. We interpret the 7.3 target to cover research about energy intensity (phrase 1,2), and research about energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we held our interpretation within this topic for the action approach. However, for the topic approach, we include the concept of `energy sufficiency`, given that it is closely tied to efficiency and energy justice which are themes within this SDG.
+
+```
+TS=
+  ("energy sufficiency"
+  AND
+      ("electric*" OR "energy generat*" OR "energy service$" OR "energy sector" OR "energy system$"
+      OR "power system$" OR "energy security" OR "renewable energy"
+      )
+  )
 ```
 
 ## Target 7.a
