@@ -470,23 +470,17 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *action + education + sustainability/GCED*.
+The basic structure is *education + sustainability/GCED*.
 
- <a id="unescogced">[UNESCO (n.d.b)](#f8)</a> was used as a source of terms. The search term `GCED` for Global Citizenship Education was tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED.
+ <a id="unescogced">[UNESCO (n.d.b)](#f8)</a> was used as a source of terms. The search term `GCED` for Global Citizenship Education was tested, but only returned irrelevant hits from medical, mathematical and chemical research. The phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED.
 
 ```Ceylon =
 TS=
 (
   (
-    ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*"
-    OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*" OR "empower*" OR "facilitat*"
-    )
-    NEAR/5
-        ("educat*" OR "curricul*"
-        OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training"
-        OR "online learning" OR "professional learning"
-        OR ("learn*" NEAR/5 "student*")
-        )
+    ("educat*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR "online learning" OR "professional learning" 
+     OR ("learn*" NEAR/5 "student*")
+   )
   )
   NEAR/5
       ("sustainable development" OR "sustainable lifestyle$"
@@ -499,42 +493,38 @@ TS=
               ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological"
               OR "participation" OR "agency" OR "responsibility"
               OR "ethic*" OR "wicked problem$" OR "complexity"
-              OR "capacity for change" OR "transition$"
-              )
+              OR "capacity for change" OR "transition$")
           )
-      )
+  )
 )
 ```
 
 ##### Phrase 2:
 
-The basic structure is *action + ESD*.
+The basic structure is *ESD*.
 
 The search phrase `ESD` for Education for Sustainable Development was tested, but used alone returned too many irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD).
 
 ```Ceylon =
 TS=
 (
-  ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
-  NEAR/5
-      ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
-      OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
-      )
+  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
+    OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
+   )
 )
 ```
 
 ##### Phrase 3:
 
-This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is *culture + contribution + sustainable development*.
+This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is *culture + sustainable development*.
 
 ```Ceylon =
 TS=
 (
   (
     ("culture*" OR "cultural")
-    NEAR/5 ("contribut*" OR "influen*" OR "impact*")
-  )
-  NEAR/5 "sustainable development"
+    NEAR/5 "sustainable development"
+  )    
 )
 ```
 
