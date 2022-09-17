@@ -348,61 +348,48 @@ TS=
 > 4.5.1 Parity indices (female/male, rural/urban, bottom/top wealth quintile and others such as disability status, indigenous peoples and conflict-affected, as data become available) for all education indicators on this list that can be disaggregated
 
 This target is interpreted to cover research about
-* Reducing gender disparities in education
-* Securing access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
+* Gender disparities in education
+* Access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
 
 This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *action + gender equality + education*
+The basic structure is *gender equality + education*
 
 ```Ceylon =
 TS=
 (
-  (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "support*")
-    NEAR/5
-        (
-          ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-          NEAR/5
-              ("equit*" OR "equal*" OR "balanc*")
-        )
-    ) 	
-    NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
+ (
+  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+   NEAR/5
+   ("equit*" OR "equal*" OR "balanc*")
+ ) 	
+   NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
 ##### Phrase 2:
 
-In this phrase, the basic structure is similar to phrase 1, but reversed to search for reduction of disparity: *action + gender disparity + education*
+In this phrase, the basic structure is similar to phrase 1, but reversed to search for disparity: *gender disparity + education*
 
 ```Ceylon =
 TS=
 (
-  (
-    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
-    OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
-    OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-    OR "improv*"
-    )
-    NEAR/5
-      (
-        ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-        NEAR/5
-            ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
-            OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*"
-            )
-      )
+ (
+  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+   NEAR/5
+   ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
+    OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
   )
-  NEAR/5
-      ("school*" OR "educat*" OR "vocational training" OR "student*")
+   NEAR/5
+   ("school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
 ##### Phrase 3:
 
-The basic structure is *action + access + education + vulnerable groups*
+The basic structure is *access + education + vulnerable groups*
 
 "Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
 
@@ -411,41 +398,22 @@ TS=
 (
   (
     (
-      (
-        ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "support*")
-        NEAR/5
-            ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*"
-            OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*"
-            )
-      )
-    OR
-      (
-        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
-        OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
-        OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-        OR "improv*"
-        )
-        NEAR/5
-            ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"
-            OR "barrier*" OR "obstacle*"
-            )
-      )
+     ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*")
+      OR
+      ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
     )
     NEAR/5 ("school*" OR "educat*" OR "vocational training")
   )
   NEAR/15
       (
         (
-          ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
+         ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
           NEAR/3
               ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
-              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*"
-              )
+              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*")
         )
-     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor"
-     OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*"
-     OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
+     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
      )
 )
 ```
