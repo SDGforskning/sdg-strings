@@ -424,7 +424,7 @@ TS=
 >
 > 4.6.1 Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex
 
-This target is interpreted to cover research about achieving minimal or functional proficiency in literacy and numeracy skills.
+This target is interpreted to cover research about minimal or functional proficiency in literacy and numeracy skills.
 
 This is closely related to target 4.1, however, with the second phrase, we find more results about literacy and numeracy level, but not with school / educational system.
 
@@ -432,18 +432,14 @@ This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The first phrase finds research about improving skills. The basic structure is *action + level + skills*.
+The first phrase finds research about skills. The basic structure is *level + skills*.
 
 ```Ceylon =
 TS=
 (
     (
-      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
-      NEAR/5
-        (
-          ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
-        )
+      ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
+        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
     )
     NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
 )
@@ -451,18 +447,11 @@ TS=
 
 ##### Phrase 2:
 
-In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is *decrease + illiteracy*. 
+In the second phrase we search for research about illiteracy, innumeracy and analphabetism. The basic structure is *illiteracy/innumeracy*. 
 
 ```Ceylon =
 TS=
-(
-  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting"
-  OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lowers" OR "lowered" OR "fight*" OR "combat*" OR "eliminat*"
-  OR "improv*"
-  )
-  NEAR/3
-      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
-)
+ ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
 ```
 
 ## Target 4.7
