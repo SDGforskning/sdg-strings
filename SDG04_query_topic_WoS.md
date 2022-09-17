@@ -546,34 +546,27 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-This phrase finds research on ensuring safe and inclusive schools and education facilities. The basic structure is *action + school + safe and inclusive*.
+This phrase finds research on safe and inclusive schools and education facilities. The basic structure is *school + safe and inclusive*.
 
 ```Ceylon =
 TS=
 (
-  ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
+ ("school*" OR "education facilit*")
   NEAR/5
-      (
-        ("school*" OR "education facilit*")
-        NEAR/5
-            ("safe*" OR "secure*" OR "non-violen*" OR "inclus*"
-            OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
-            )
-      )
+    ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
+  )
 )
 ```
 
 ##### Phrase 2:
 
-This phrase focuses on effective learning environments in schools. The basic structure is *provide + effective learning environment + school*.
+This phrase focuses on effective learning environments in schools. The basic structure is *effective learning environment + school*.
 
 ```Ceylon =
 TS=
 (
   (
-    ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
-    NEAR/5
-        ("learning environment*" NEAR/5 "effective")
+    ("learning environment*" NEAR/5 "effective")
   )
   AND
     ("primary school*" OR "elementary school*" OR "primary educat*"
@@ -585,26 +578,19 @@ TS=
 
 ##### Phrase 3:
 
-This phrase focuses on improving access to basic services in schools. The basic structure is *action + access + basic services + schools*.
+This phrase focuses on access to basic services in schools. The basic structure is *schools + access + basic services*.
 
 The terms for basic services in schools are taken and adapted from <a id="unescotcg">[UNESCO Institute for statistics (2018)](#f11)</a>
 
 ```Ceylon =
 TS=
 (
- (
-  ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
-  NEAR/3
-    ("access*"
+ ("school*" OR "education* facility" OR "education* facilities") 
+    NEAR/15  ("access*"
     NEAR/5
-      ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR 
-      "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
-      OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-     )
+     ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR "adapted material*" OR    "universal design" OR ("infrastructure" NEAR/5 "disab*") OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
   )
-  NEAR/15
-  ("school*" OR "education* facility" OR "education* facilities")
- ) 
+) 
 ```
 
 ## Target 4.b
