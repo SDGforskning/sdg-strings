@@ -477,33 +477,25 @@ OR TS=
 >
 > 14.7.1 Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries
 
-This target is interpreted to include research about increasing economic benefits to LDCs and SIDS via sustainable use of marine resources. This target specifically only concerns least-developed countries and SIDS, but this is a bit inconsistent with the indicator which concerns all countries. This makes a large difference to the results. As the target is clearly focused on SIDS and LDCs, we retain this limit.
+This target is interpreted to include research about economic benefits to LDCs and SIDS via sustainable use of marine resources. This target specifically only concerns least-developed countries and SIDS, but this is a bit inconsistent with the indicator which concerns all countries. This makes a large difference to the results. As the target is clearly focused on SIDS and LDCs, we retain this limit.
 
-This query consists of 1 phrase. The general structure is *action + economic benefits + sustainable use/instruments + LDCs/SIDS*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+This query consists of 1 phrase. The general structure is *economic benefits + sustainable use/instruments + LDCs/SIDS*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 *economic benefits* is interpreted to also include e.g. livelihoods, blue growth, and ecosystem services. The `Nairobi Convention` is included, which refers to the Nairobi Convention for the Protection, Management, and Development of the Coastal and Marine Environment of the Eastern Africa region, as well as other instruments to do with sustainable use/fisheries.
+
+The terms for Senegal and Anguilla here are truncated differently than standard due to salmon bacteria names including these terms.
 
 ``` Ceylon =
 TS =
 (
-    (
-      ("increase" OR "increasing" OR "increased" OR "increases"
-      OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better"
-      OR "scal* up" OR "build* capacity" OR "capacity building"
-      OR "expand" OR "expansion*" OR "develop" OR "developing" OR "development"
-      OR "plans" OR "plan" OR "planned" OR "planning"
-      OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance"
-      )
-      NEAR/5
-          ("econom*" OR "GDP" OR "wealth"
-          OR "exploit*" OR "goods and services" OR "ecosystem service$"
-          OR "socio economic" OR "socioeconomic"
-          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-          OR "trade" OR "trading" OR "market$"
-          OR "monetary" OR "moneti*" OR "investor$"
-          OR "bio-econom*" OR "bioeconom*"            
-          OR "blue growth" OR "blue econom*" OR "blue bond$"
-          )
+    ("econom*" OR "GDP" OR "wealth"
+    OR "exploit*" OR "goods and services" OR "ecosystem service$"
+    OR "socio economic" OR "socioeconomic"
+    OR "livelihood$" OR "job$" OR "income$" OR "profit*"
+    OR "trade" OR "trading" OR "market$"
+    OR "monetary" OR "moneti*" OR "investor$"
+    OR "bio-econom*" OR "bioeconom*"            
+    OR "blue growth" OR "blue econom*" OR "blue bond$"
     )
     AND
       ("sustainab*"
@@ -523,8 +515,8 @@ TS =
       )
     AND
       ("least developed countr*" OR "least developed nation$"  OR "small island developing state$" OR "Pacific island*"
-      OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
+      OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal" OR "Senegalese" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+      OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla" OR "anguillan" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
       )
 )
 
@@ -538,7 +530,7 @@ TS =
 
 This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could cover a lot of marine research. We interpret it to cover:
 * research about transfer of marine technology (phrase 1 and phrase 2)
-* research about developing marine research capacity/infrastructure (phrase 2)
+* research about marine research capacity/infrastructure (phrase 2)
 * research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
@@ -555,34 +547,38 @@ TS= ("transfer of marine technolog*" OR "marine technology transfer")
 
 This phrase covers research about improving scientific knowledge, research capacity and transfer of marine technology. Research about advancing marine science in considered enough to be included.
 
-The general structure is *action + marine science*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *action/sharing + marine science*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 The *marine science* terms include generic terms for ocean science, terms for research knowledge/tools++, terms for data infrastructures, and terms for citizen science and monitoring. The IOC Criteria and Guidelines on Transfer of Marine Technology are relevant for this target, wherein marine technology includes information and data, guidelines, equipment for sampling, study and observation (both remote and in the lab), computer and modelling equipment/software, and expertise/skills in marine research (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.a.1)](#f9)</a>).
 
-The terms `build* OR develop*` in the first section covers capacity building/development.
+The terms `build* OR develop*` in the first section covers capacity building/development, development aid etc.
 
 ``` Ceylon =
 TS=
 (
-      ("provide" OR "provision"
-      OR "develop*" OR "establish*" OR "build*" OR "implement*" OR "propos*" OR "design"
-      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrade" OR "accelerate" OR "prioriti*"
-      OR "invest" OR "investing" OR "fund" OR "funding" OR "financing" OR "financial support" OR "financial resources"
-      OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
-      OR "ODA" OR "cooperation fund$"
-      OR (("international" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$"))
-      OR (("international" OR "development") NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"))
-      OR
-        (
+      ("establish*" OR "build*" OR "develop*" OR "implement*" OR "propos*" OR "design" OR "provide" OR "provision"
+      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrad*" OR "accelerat*" OR "prioriti*" OR "promot*" OR "enabl*"
+      OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+      OR "open data" OR "data sharing" OR "open science"
+      OR(
           ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
           NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
         )
+      OR "invest" OR "investing" OR "fund" OR "funding" OR "financing" OR "financial support" OR "financial resources"
+      OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "aid"))
+      OR "ODA" OR "cooperation fund$"
+      OR(
+          ("international" OR "foreign" OR "development")
+          NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "network$")
+        )
       OR "plan" OR "planned" OR "planning"
       OR "policy" OR "policies" OR "initiative$" OR "framework" OR "governance" OR "strategy" OR "programme$" OR "agenda"
+      OR "innovation"
       )
       NEAR/5
-          ("ocean science" OR "ocean research" OR "marine research" OR "marine science"
-          OR "taxonomic research" OR "genetic research" OR "biodiversity research" OR "diversity research" OR "taxonomic science"
+          ("taxonomic research" OR "genetic research" OR "biodiversity research" OR "diversity research" OR "taxonomic science" OR "fisheries science"
+          OR "citizen science"
+          OR (("ocean" OR "marine") NEAR/1 ("research" OR "science"))
           OR
             (
               ("research" OR "scientific" OR "science" OR "technology" OR "biotech*"
@@ -599,10 +595,8 @@ TS=
                   )
             )
           OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean" OR "modelling technique$"
-          OR "citizen science"
-          OR "observ* network$" OR "observ* system$" OR "observ* facilities"
+          OR "observ* network$" OR "observ* system$" OR "observ* facilities" OR "monitoring network$" OR "biomonitoring"
           OR "remote sensing equipment" OR "tide gauges"
-          OR "monitoring network$" OR "biomonitoring"
           OR
             (
               ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity" OR "environmental")
