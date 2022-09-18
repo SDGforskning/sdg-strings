@@ -26,7 +26,7 @@ Not ready yet
 
 This document contains search strings for finding publications related to the topics in SDG 14 targets and indicators ("topic approach"; focus on recall, larger result set). We also have a version which finds publications related to the actions in SDG 14 targets and indicators ("action approach"; focus on precision, smaller result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
-This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Thus, the fishery-related targets (14.4, 14.6 and 14.b) are currently not limited using the *marine terms* below. All other areas are.
+This SDG is interpreted to be about the marine environment; however, certain topics are difficult to limit to only this environment without missing large numbers of works. In particular, fisheries research may not always use clear marine words, or may concern both marine and freshwater environments. Some important species move between freshwater and marine habitats (e.g. eel, salmon). Thus, the fishery-related targets (14.4, 14.6 and 14.b) are currently not limited using the *marine terms* below. All other areas are.
 
 A source of keywords for several targets was OECDs "Marine Protected Areas: Economics, Management and Effective Policy Mixes" (<a id="OECD">[OECD, 2017](#f5)</a>), and FAOs "State of World Fisheries and Aquaculture" (<a id="FAOfish">[FAO, 2018](#f8)</a>). In addition, during editing of this string (2021), we have consulted two other sets of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f5)</a> and <a id="Els">[Rivest et al. (2021)](#f6)</a>.
 
@@ -323,7 +323,7 @@ TS =
     OR "sensitiv*" OR "vulnerab*" OR "threat*"
     OR "resilience" OR "adaptive capacity" OR "coping" OR "toleranc*"
     OR "calcif*" OR "decalcif*" OR "calcium carbonate"
-    OR "aragonite" OR "calcite" OR "carbonate saturation" 
+    OR "aragonite" OR "calcite" OR "carbonate saturation"
     OR "extinction$" OR "adaptation" OR "adaptive capacity"
     OR "competition" OR "recruitment" OR "survival" OR "reproduction"
     )
@@ -343,29 +343,23 @@ TS =
 > 14.4.1 Proportion of fish stocks within biologically sustainable levels
 
 This target is interpreted to cover research about:
-* ending overfishing, illegal/unreported fishing (IUU fishing), destructive fishing  (phrase 1 & 2)
-* implementation of science-based fisheries management (phrase 3)
+* overfishing, illegal/unreported fishing (IUU fishing), destructive fishing  (phrase 1)
+* science-based fisheries management (phrase 2)
 
 Whether specific fishing types should be included as a "destructive" practice is difficult as the meaning and scope of this term varies - see discussion in <a id="destructive">[Willer et al. (2022)](#f10)</a>. In general, we focus in our strings on including terms for "destructive", leaving the classification up to the authors themselves. However, these authors did find that blast and poison fishing are practices mentioned very often in conjunction with "destructive", and thus we include these concepts in our strings. Bottom trawling is a more difficult and debated type to place, although commonly linked to destructive fishing, particularly with variations in terminology (see discussion in the paper). We therefore combine trawling with terms for damage or destruction.
 
-We also consider abandoned, lost and discarded gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life related to fishing activities. `bycatch` is discarded/unwanted catch; we have included it here as it can contribute to overfishing or harm to engangered species. Fishery `collapse OR closure$` are also included as relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
+We also consider abandoned, lost and discarded gear to lie under destructive fishing - even though it is not fishing per se, it is damage to marine life related to fishing activities. `bycatch` is discarded/unwanted catch; we have included it here as it can contribute to overfishing or harm to endangered species. Fishery `collapse OR closure$` are also included as relevant to overfishing; even when overfishing is not the primary cause, they are related to science-based management (also covered by this target).
 
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
 ##### Phrase 1:
 
-The basic structure is *generic action + overfishing/illegal/destructive fishing*. The *overfishing* terms are the same in phrase 1 and phrase 2, but the action terms differ and are added at a closer distance in phrase 1.
+The basic structure is *overfishing/illegal/destructive fishing*.
 
 ``` Ceylon =
 TS=
 (
-  ("prevent*" OR "avoid*" OR "stop*" OR "end" OR "ending"
-  OR "tackling" OR "tackle" OR "restrict*" OR "combat*"
-  OR "reduc*" OR "decreas*" OR "minimi*" OR "mitigat*" OR "remov*" OR "limit$" OR "limiting" OR "limited"
-  OR "manag*" OR "regulat*" OR "solution$" OR "monitor*"
-  )
-  NEAR/5
-      ("overfish*"
+      "overfish*"
       OR "bycatch" OR "by-catch"
       OR "IUU fishing"
       OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
@@ -377,81 +371,34 @@ TS=
           )
           NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
         )
-      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))
-      )       
+      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))    
 )
 ```
 
 ##### Phrase 2:
 
-The basic structure is *instrument actions + overfishing/illegal/destructive fishing*. The *overfishing* terms are the same in phrase 1 and phrase 2, but the action terms differ and are added at a closer distance in phrase 1.
+The basic structure is *management/restoration + fisheries*. This phrase differs to phrases 1 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
 
-In this phrase, relevant legislation and organisations which have a focus on reducing illegal/overfishing included as actions, as legislation is a way of inducing action. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.
+`manag*` will find a number of terms, e.g. "science-based management", "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *management* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the max. sustainable yield.
 
 ``` Ceylon =
 TS=
 (
-  ("marine stewardship council"
+  ("manag*" OR "plan" OR "planning" OR "governance"
+  OR "restor*" OR "stock recovery"
+  OR "sustainab*"
+  OR "EBFM" OR "ecosystem approach*"
+  OR "maximum sustainable yield*" OR "MSY"
+  OR "marine stewardship council"
   OR "regional fisheries management organi?ation$" OR "RFMOs"
   OR "UNCLOS" OR "convention on the law of the sea"
   OR "fish stocks agreement"
   OR "code of conduct for responsible fisheries" OR "CCRF"
-  OR "port state measures agreement" OR "PSMA"
+  OR "port state measures agreement"
   OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-  OR "common fisheries policy"
   OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+  OR "common fisheries policy"
   OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
-  OR "criminali*" OR "catch documentation" OR "surveillance" OR "regulation$" OR "regulated" OR "regulating" OR "enforc*"
-  )
-  NEAR/15
-      ("overfish*"
-      OR "bycatch" OR "by-catch"
-      OR "IUU fishing"
-      OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-      OR "ghost fishing" OR "ghost nets" OR "ALDFG" OR "poison fishing"
-      OR
-        (
-          ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
-          OR "illegal*" OR "unreport*" OR "unregulated" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
-          )
-          NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
-        )
-      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))
-      )       
-)
-```  
-
-##### Phrase 3:
-
-The basic structure is *action + management/restoration actions + fisheries*. This phrase differs to phrases 1 and 2 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
-
-`management` will find a number of terms, e.g. "science-based management", "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *action* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the max. sustainable yield.
-
-``` Ceylon =
-TS=
-(
-  (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
-    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis"
-    OR "negotiat*" OR "reform*" OR "improv*" OR "better"         
-    )
-    NEAR/15
-      ("manag*" OR "plan" OR "planning" OR "governance"
-      OR "restor*" OR "stock recovery"
-      OR "sustainab*"
-      OR "EBFM" OR "ecosystem approach*"
-      OR "maximum sustainable yield*" OR "MSY"
-      OR "marine stewardship council"
-      OR "regional fisheries management organi?ation$" OR "RFMOs"
-      OR "UNCLOS" OR "convention on the law of the sea"
-      OR "fish stocks agreement"
-      OR "code of conduct for responsible fisheries" OR "CCRF"
-      OR "port state measures agreement"
-      OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-      OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-      OR "common fisheries policy"
-      OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
-      )
   )
   NEAR/15
       ("fishery" OR "fisheries" OR "fishing"
@@ -461,6 +408,7 @@ TS=
       )
 )
 ```
+
 ## Target 14.5
 
 > **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
