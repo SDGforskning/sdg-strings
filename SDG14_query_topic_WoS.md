@@ -415,33 +415,23 @@ TS=
 >
 > 14.5.1 Coverage of protected areas in relation to marine areas
 
-The target is interpreted to cover research about the establishment and management of marine protected areas. This provides overlap with 14.2 - while 14.2 is not explicitly about marine protected areas, "protect" is stated as one of the actions, suggesting that research on the establishment/maintenance of MPAs falls under 14.2 as well as 14.5.
+The target is interpreted to cover research about marine protected areas. This provides overlap with 14.2 - while 14.2 is not explicitly about marine protected areas, "protect" is stated as one of the actions, suggesting that research on MPAs falls under 14.2 as well as 14.5.
 
-This query consists of 1 phrase. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. The phrase is identical to 14.2 phrase 1.
+This query consists of 1 phrase. The general structure is *protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise.
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
 
 ``` Ceylon =
 TS=
 (
-  ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
-  OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
-  OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-  OR "plans" OR "plan" OR "planned" OR "planning"
-  OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
-  OR "enforce" OR "enforcement" OR "enforcing"
-  OR "strengthen" OR "improv*"
-  )
-  NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
-      OR
-        (
-          ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
-          NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
-        )
-      OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
-      )
+  "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+  OR "particularly sensitive sea area$"
+  OR
+    (
+      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
+      NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
+    )
+  OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
 )
 ```
 
