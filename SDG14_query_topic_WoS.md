@@ -529,8 +529,8 @@ TS =
 > 14.a.1 Proportion of total research budget allocated to research in the field of marine technology
 
 This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could cover a lot of marine research. We interpret it to cover:
-* research about transfer of marine technology (phrase 1 and phrase 2)
-* research about marine research capacity/infrastructure (phrase 2)
+* research about transfer of marine technology and sharing (phrase 1 and phrase 2)
+* research about the development and state of marine research capacity/infrastructure (phrase 2)
 * research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
@@ -545,7 +545,7 @@ TS= ("transfer of marine technolog*" OR "marine technology transfer")
 
 ##### Phrase 2:
 
-This phrase covers research about improving scientific knowledge, research capacity and transfer of marine technology. Research about advancing marine science in considered enough to be included.
+This phrase covers research about the state/improving scientific knowledge, research capacity and sharing/transfer of marine technology. Research about advancing marine science in considered enough to be included.
 
 The general structure is *action/sharing + marine science*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
@@ -649,7 +649,7 @@ TS=
     OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
     OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
     OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"
     )
 )
 ```
@@ -660,47 +660,24 @@ TS=
 >
 > 14.b.1 Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries
 
-This target is interpreted to cover research about ensuring access to small scale fisheries (SSF) resources/markets. We interpret this to include the fishing grounds themselves, with concepts such as SSF control and rights, as "access" is controlled by many structures (e.g. territorial control, common property; phrase 1). We also consider it to cover governance and legislation for SSFs (phrase 2). This interpretation is supported as "Appropriate legal, regulatory and policy frameworks" are included as a key feature of an enabling environment for this indicator in the indicator metadata (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.b.1)](#f9)</a>).
+This target is interpreted to cover research about access to small scale fisheries (SSF) resources/markets. We interpret this to include the fishing grounds themselves, with concepts such as SSF control and rights, as "access" is controlled by many structures (e.g. territorial control, common property; phrase 1). We also consider it to cover governance and legislation for SSFs (phrase 2). This interpretation is supported as "Appropriate legal, regulatory and policy frameworks" are included as a key feature of an enabling environment for this indicator in the indicator metadata (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 14.b.1)](#f9)</a>).
 
 This query consists of 2 phrases.  Again, here, specific fish species as search terms are not needed because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species.
 
 #### Phrase 1
 
-The general structure is *action + access/rights/control + small scale + fishing*. `right$` covers "territorial use rights in fisheries" (TURFs), "territorial rights", "usage rights" etc.. `resource$` (under `access`) covers "marine resources". We do not include `traditional` alone because "traditional fisheries management" normally refers to the management traditions, rather than traditional fisheries.
+The general structure is *access/rights/control + small scale + fishing*. `right$` covers "territorial use rights in fisheries" (TURFs), "territorial rights", "usage rights" etc.. `resource$` (under `access`) covers "marine resources". We do not include `traditional` alone because "traditional fisheries management" normally refers to the management traditions, rather than traditional fisheries.
 
 ``` Ceylon =
 TS =
 (
-  (
-    (
-      ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "expand*" OR "promot*" OR "implement*" OR "establish*"
-      OR "attain" OR "achiev*" OR "provide" OR "providing" OR "provision"
-      OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
-      OR "improv*" OR "support*" OR "advoca*" OR "address*" OR "fight*" OR "tackle"
-      OR "grant*" OR "transform*" OR "transition*" OR "reform*"
-      OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*" OR "legislat*" OR "governance"
-      )
-      NEAR/5
-        ("access*" OR "right$"
-        OR "commons" OR "common property" OR "common fishing ground$" OR "ownership" OR "inheritance"
-        )
-    )
-    OR
-    (
-      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
-      OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
-      OR "prevent*" OR "avoid*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-      OR "improv*" OR "manag*"
-      OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*" OR "legislat*" OR "governance"
-      )
-      NEAR/5
-          ("conflict$" OR "dispute$" OR "contested" OR "competition"
-          OR "inequitab*"OR "marginali*" OR "criminali*" OR "appropriation$"
-          )
-    )
-    OR "blue injustice" OR "blue justice" OR "distributional justice"
+  ("access*" OR "right$"
+  OR "commons" OR "common property" OR "common fishing ground$" OR "ownership" OR "inheritance"
+  OR "conflict$" OR "dispute$" OR "contested" OR "competition"
+  OR "inequitab*" OR "marginali*" OR "criminali*" OR "appropriation$"
+  OR "blue injustice" OR "blue justice" OR "distributional justice"
   )
-  NEAR/15
+  AND
       ("traditional fishing"
       OR
         (
@@ -738,23 +715,25 @@ TS =
 >
 > 14.c.1 Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources
 
-This target is interpreted to cover research about the implementation and development of international law for conservation and sustainable use of the oceans.
+This target is interpreted to cover research about implementation of international law for conservation and sustainable use of the oceans, or about international instruments related to sustainability/conservation.
 
 This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
 
 ##### Phrase 1
-The general structure is *action + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *implementation + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
 
 ``` Ceylon =
 TS =
 (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
-    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*"
-    OR "negotiat*" OR "reform*" OR "improv*" OR "better"    
+    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrat*" OR "design*" OR "propos*" OR "develop*"
+    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*" OR "negotiat*"
+    OR "reform*" OR "improv*" OR "better"
+    OR "national policy" OR "national legislat*" OR "local policy" OR "regional policy" OR "ocean governance"
+    OR "conservation" OR "sustainable"
     )
-    NEAR/5
+    NEAR/15
         ("law of the sea" OR "UNCLOS"
         OR "the future we want"
         OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
@@ -784,22 +763,15 @@ TS =
 
 ##### Phrase 2
 
-The general structure is *action + international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
 
 ``` Ceylon =
 TS =
 (
-  (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrate" OR "integrating" OR "design*" OR "propos*" OR "develop*"
-    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*"
-    OR "negotiat*" OR "reform*" OR "improv*" OR "better"  
-    )
-    NEAR/5
-        ("international"
-        NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
-        )
+  ("international"
+  NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
   )
   NEAR/15
     ("conservation" OR "sustainab*" OR "ecosystem restoration"
