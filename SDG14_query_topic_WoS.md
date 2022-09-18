@@ -443,34 +443,25 @@ TS=
 >
 >  14.6.1 Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing
 
-This target is interpreted to cover research about reducing/eliminating fisheries subsidies that contribute to negative outcomes (overcapacity, overfishing, and IUU finishing). We also consider relevant research about development assistance and fisheries, and works talking about WTO and other instruments in the context of fisheries.
+This target is interpreted to cover research about fisheries subsidies that contribute to negative outcomes (overcapacity, overfishing, and IUU finishing). We also consider relevant research about development assistance and fisheries, and works talking about WTO and other instruments in the context of fisheries.
 
-This query consists of 1 phrase. The general structure is *action + subsidies + fisheries // international instruments + fisheries*
+This query consists of 1 phrase. The general structure is *subsidies + fisheries // international instruments + fisheries*
 
-`larval subsidi*` is a term to do with fish population dynamics and is removed.
+`"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded.
 
 ``` Ceylon =
 TS =
 (
-  (
-    (
-      ("reduc*" OR "limit" OR "minimi*"
-      OR "prohibit*" OR "eliminat*" OR "ban" OR "banning" OR "banned" OR "cut*"
-      OR "remov*" OR "end" OR "ending" OR "prevent*" OR "stop*" OR "halt*"
-      )
-      NEAR/5 "subsid*"
-    )
-    NEAR/15
-        ("fishing" OR "fisher*" OR "overfishing"
-        OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
-        )  
+  ("subsid*"
+  NEAR/15
+      ("fishing" OR "fisher*" OR "overfishing"
+      OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
+      )  
   )
-  NOT "larval subsidi*"
+  NOT ("larval subsidi*" OR "recruitment subsidi*")
 )
 
-OR
-
-TS=
+OR TS=
 (
   ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
   NEAR/15
