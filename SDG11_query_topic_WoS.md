@@ -248,12 +248,8 @@ This query consists of 1 phrase. The basic structure is *action + management/pro
 ```Ceylon =
 TS=
 (
-  (
-    ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "increas*")   
-    NEAR/5
-        ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves"
+    ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves"
         OR "preserv*" OR "sustain" OR "protect*" OR "safeguard*"
-        )
   )
   NEAR/15
     ("cultur* heritage" OR "cultural landscape$"
