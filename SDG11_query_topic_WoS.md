@@ -551,17 +551,12 @@ TS=
 >
 > 11.b.2 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This query consists of 1 phrase. The basic structure is *action + disaster/climate plans + cities*.
+This query consists of 1 phrase. The basic structure is *disaster/climate plans + cities*.
 
 ```Ceylon =
-
-
 TS=
 (
-  (
-    ("establish*" OR "propos*" OR "implement*" OR "adopt*" OR "introduc*" OR "roadmap" OR "towards" OR "way to" OR "preparing" OR "prepare")
-    NEAR/5
-        ("sendai framework" OR "disaster risk reduction"
+   ("sendai framework" OR "disaster risk reduction"
         OR "cancun adapation framework"
         OR "readiness and preparatory support programme" OR "readiness programme"
         OR
@@ -570,14 +565,12 @@ TS=
             NEAR/3 ("disaster$" OR "risk$" OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate" OR "climate action" OR "climate mitigation")
           )
         )
-  )
   NEAR/15
       ("city" OR "cities" OR "urban*" OR "metropolitan" OR "town$" OR "village$"
       OR "built-up area$" OR "neighbourhood$" OR "neighborhood$" OR "settlement$"
       OR "rural area$" OR "rural development"
       )
 )
-
 ```
 
 ## Target 11.c
