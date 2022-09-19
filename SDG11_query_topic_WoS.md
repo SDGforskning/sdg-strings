@@ -279,7 +279,7 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-This phrase covers research about reducing mortality from disasters. The basic structure is *disasters + mortality + action + vulnerable people*.
+This phrase covers research about reducing mortality from disasters. The basic structure is *disasters + mortality*.
 
 ```Ceylon =
 TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
@@ -308,14 +308,12 @@ OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
 )  )AND
       (
         ("death$" OR "casualt*" OR "mortalit*" OR "fatal*" OR "missing")
-        NEAR/15
-            ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
-      ))
+))
 ```
 
 ##### Phrase 2:
 
-This phrase covers research about increasing survival after disasters. The basic structure is *disasters + survival + action + vulnerable people*
+This phrase covers research about increasing survival after disasters. The basic structure is *disasters + survival*
 
 ```Ceylon =
 TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
@@ -342,15 +340,13 @@ OR "financial crash*" OR "financial shock$" OR "financial disaster$"
 OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
 
 )  )  AND
-    (
-      (mortality NEAR/5 improv*)
-      OR (surviv* NEAR/15 (improv* OR increas* or enhanc*))
-    ))
+    (mortality OR surviv*)
+)
 ```
 
 ##### Phrase 3:
 
-This phrase covers research about reducing the effect of disasters on global GDP.
+This phrase covers research about reducing the effect of disasters on global GDP. The basic structure is *disasters + GDP + loss*
 
 ```Ceylon =
 TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
