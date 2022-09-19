@@ -186,7 +186,7 @@ TS=
     (
       ("provide*" OR "improv*" OR "increase*" OR "enhanc*" OR "reduc*" OR "develop*")
       NEAR/5
-          ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*")
+          ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*" "accident*")
     )
     NEAR/5
         ("traffic*" OR "road*" OR "highway$" OR "motorway$" OR "street*"
