@@ -286,7 +286,7 @@ TS= (
             OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
             OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
             OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
-            OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
+            OR "equity" OR "equitable" OR "justice" OR "injustice"
             )
             NEAR/5
                 ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
@@ -297,7 +297,7 @@ TS= (
         OR
           (
             ("barrier$" OR "obstacle$"
-            OR ("distribution*" NEAR/5 "injustice")
+            OR "injustice"
             OR "land grab*" OR "tenure insecurity"
             )
             NEAR/5

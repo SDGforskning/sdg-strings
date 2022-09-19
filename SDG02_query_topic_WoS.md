@@ -222,9 +222,8 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
       OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
       OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
       OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
-      OR ("distribution*" NEAR/5 ("equity" OR "equitable" OR "justice" OR "injustice"))
+      OR "equity" OR "equitable" OR "justice" OR "injustice"
       OR "barrier$" OR "obstacle$"
-      OR ("distribution*" NEAR/5 "injustice")
       OR "land grab*" OR "tenure insecurity"
       )
       AND
