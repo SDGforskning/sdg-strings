@@ -212,33 +212,24 @@ This query consists of two phrases.
 
 ##### Phrase 1:
 
-This phrase covers urbanization. The basic structure is *action + sustainble/inclusive + urbanization*.
+This phrase covers urbanization. The basic structure is *sustainble/inclusive + urbanization*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
-    NEAR/15 ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
-  )
+  ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
   NEAR/15 ("urbani?ation" OR "urban development")
 )
 ```
 ##### Phrase 2:
 
-This phrase covers settlement planning. The basic structure is *action + settlement planning + process terms*.
+This phrase covers settlement planning. The basic structure is *settlement planning + process terms*.
 
 ```Ceylon =
 TS=
 (
-    (
-      ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "integrated")
-      NEAR/15
-          (
-            ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
-            NEAR/3 ("plan*" OR "manag*")
-          )
-    )
+    ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
+    NEAR/3 ("plan*" OR "manag*")
   NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
 )
 
