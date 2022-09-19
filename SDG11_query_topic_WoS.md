@@ -526,28 +526,21 @@ TS=
 
 This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string.
 
-This query consists of 1 phrase. The basic structure is *action + planning*.
+This query consists of 1 phrase. The basic structure is *planning*.
 
 Limited truncation of `planning` to avoid e.g. "plants".
 
 ```Ceylon =
 TS=
 (
-  (
-    ("strengthen*" OR "implement*" OR "expand*" OR "improv*" OR "ensur*" OR "capacity")
-    NEAR/15
-        (
-          ("national" OR "regional")
+  ("national" OR "regional")
           NEAR/3 ("plan" OR "planning" OR "plans" OR "strateg*" OR "framework$" OR "program" OR "programs" OR "policy" OR "policies" OR "cooperat*")
-        )
-  )
-  NEAR/15
+ NEAR/15
       ("city" OR "cities" OR "urban*" OR "town$" OR "village$"
       OR "built-up area$" OR "neighbourhood$" OR "neighborhood$" OR "settlement$"
       OR "rural area$" OR "rural development"
       )
 )
-
 ```
 
 ## Target 11.b
