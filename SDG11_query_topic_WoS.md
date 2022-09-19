@@ -180,7 +180,7 @@ TS=
 (
   (
      (
-          ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*")
+          ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*" OR "accident*")
     )
     NEAR/5
         ("traffic*" OR "road*" OR "highway$" OR "motorway$" OR "street*"
