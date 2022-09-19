@@ -396,52 +396,38 @@ This query consists of 4 phrases: 1 phrase "reducing the environmental impact of
 
 ##### Phrase 1:
 
-This phrase covers research about reducing the general environmental impact of cities. The basic structure is *action + environmental impact + cities*.
+This phrase covers research about reducing the general environmental impact of cities. The basic structure is *environmental impact + cities*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*"
-    OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
-    OR "collect*" OR "manag*" OR "treat*"
-    )
-    NEAR/5 ("environment* impact*" OR "footprint$" OR "foot print$")
-  )
-  NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
+  ("environment* impact*" OR "footprint$" OR "foot print$")
+   NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
 )
 ```
 
 ##### Phrase 2:
 
-This phrase finds research about improving air quality in cities. The basic structure is *action + air pollution + cities // action + clean air + cities*.
+This phrase finds research about improving air quality in cities. The basic structure is *air pollution + cities // clean air + cities*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("decreas*"OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "mitigat*"
-    OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
-    OR "collect*" OR "manag*" OR "treat*"
-    )
-    NEAR/5 ("smog*" OR "air pollution" OR "suspended particles" OR "particulate matter" OR "pm2.5" OR "pm10")
-  )
+  ("smog*" OR "air pollution" OR "suspended particles" OR "particulate matter" OR "pm2.5" OR "pm10")
   NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
 )
 OR
 TS=
 (
-  (
-    ("improv*" OR "enhanc*")
-    NEAR/5 ("clean air" OR "air quality")
-  )
-  NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
+   ("clean air" OR "air quality")
+   NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
 )
+
 ```
 
 ##### Phrase 3:
 
-The basic structure is *action + waste*.
+The basic structure is *waste*.
 
 This phrase finds research about reducing waste, while phrase 4 deals with waste collection/management and uses some different action terms, as waste management and waste are different concepts. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
@@ -449,11 +435,7 @@ This phrase finds research about reducing waste, while phrase 4 deals with waste
 
 TS=
 (
-  (
-    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
-    OR "mitigat*" OR "degrad*" OR "tackl*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
-    )
-    NEAR/15
+    (
       ("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste"
       OR "MSW"
       OR ("waste" NEAR/15 ("end of life" OR "eol" OR "end of chain" OR "eoc"))
@@ -466,7 +448,7 @@ TS=
 
 ##### Phrase 4:
 
-The basic structure is *action + environmental impact + waste management*.
+The basic structure is *environmental impact + waste management*.
 
 This phrase finds research about improving waste collection/management, while phrase 3 is about waste reduction. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
@@ -475,14 +457,8 @@ Split query to search for waste management or waste collection as its own query?
 ```Ceylon =
 TS=
 (
-  (
-    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*"
-    OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
-    OR "improv*" OR "ameliorat*" OR "better*"
-    )
-    NEAR/5 ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
-  )
-  NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*"))
+   ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
+    NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*"))
 )
 ```
 
