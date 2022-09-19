@@ -194,7 +194,7 @@ TS=
         OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "pedestrian$"
         OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$"
         OR "driver$" OR "driving"
-        OR "speed limit*" OR "accident*"
+        OR "speed limit*" 
         )
   )
   NOT ("air traffic*" OR "food*")
