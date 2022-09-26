@@ -10,12 +10,13 @@ Currently, we are working on 10/17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 
 
 ### When will the strings be ready to use?
 
-We aim to finish the current version of 9 SDGs within October 2022, when a version will be published on Zenodo. We consider this a version, rather than a finished product - there will likely come improvements after testing and over time. SDG 12 will come later in the year. 
+We aim to finish the current version of 9 SDGs within October 2022, when a version will be published on Zenodo. We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will come later in the year. 
 
 ### How are these strings different to existing mappings?
 
 - These strings allow mapping of research to individual SDG targets ("target-level"), instead of whole SDGs ("goal-level"). This is useful for identifying where research focuses within an SDG. 
-- We attempt to document openly:
+- We do not only use terminology from the SDG target/indicator language, but expand with synonyms and related concepts.  Some other mappings also do this.
+- We attempt to document openly and :
   - How we have interpreted which research themes should be considered "relevant" to each SDG target
   - Sources we have used to identify search terms and/or define terminology
   - Choices we have made regarding inclusion/exclusion, interpretations or other technical limitations (e.g. truncation)
@@ -26,11 +27,11 @@ This depends on which version of the strings you use:
 
 **"Action" strings** : The "action" approach aims to find research closely related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
-You can therefore expect to find a **smaller** set of research than you might when using methods which identify research by seeing if it mentions certain topics, or is publishing in certain journals, or is mapped to a specific subject cluster.  
+You might therefore expect to find a **smaller** set of research than when using methods which identify research by seeing if it mentions certain topics, is published in certain journals, or is mapped to a citation cluster (depending of course on the individual parameters used).  
 
 **"Topic" strings** : The "topic" approach aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
 This is done by looking for works which mention the topic, *e.g. "malnutrition", "school completion"; "rights of small-scale fishers"*.
-You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find by using a very wide interpretation for "relatedness" (for example, an even larger set would be found if you consider all medical research as relevant for SDG3). 
+You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find by using a very wide interpretation for "relatedness" (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
 
 There are occasional exceptions to these approaches, as we are reliant on language and some ambiuous words. For example, some terms have to remain combined to "action" terms to ensure relevance, even in the topic approach. Please see the documentation on the individual files. 
 
