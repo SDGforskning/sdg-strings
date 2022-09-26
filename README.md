@@ -45,7 +45,7 @@ You are also welcome to translate them into other database syntax or tools, or e
 
 ### Who has written these strings?
 
-You can find contributor information at the bottom of each file. 
+You can find contributor information at the bottom of each file. This lists the main authors, and any specialists who have given input.
 
 This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
 
