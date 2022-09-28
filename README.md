@@ -50,6 +50,10 @@ You can find contributor information at the bottom of each file. This lists the 
 
 This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
 
+### How have the strings been tested?
+
+We have currently only tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in Q1 2023. The orignal versions (v2019.1) were only tested for precision; we plan to test this new version for both precision and recall. 
+
 ### License
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
