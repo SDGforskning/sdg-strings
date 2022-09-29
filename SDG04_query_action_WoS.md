@@ -760,38 +760,49 @@ AND
 > 4.c.1 Proportion of teachers with the minimum required qualifications, by education level
 
 This target is interpreted to include research about
-* Increasing the number of qualified teachers
+* Increasing the number of qualified teachers and reducing teacher attrition / shortage
 * Increasing/improving teacher training in developing countries, including via international cooperation for teacher training
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
 The basic structure is *action + qualified/certified teachers*.
 
-This phrase finds research about increasing the number of qualified teachers. However, neither "qualified teacher*" nor "professional development" are included in the search as they predominantly return hits about how teachers who are already qualified can improve, whereas the target is interpreted to concern increasing the number who attain the minimum required qualification.
+This phrase finds research about increasing the number of qualified teachers.
 
 ```Ceylon =
 TS=
 (
   (
-    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up")
+    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "supply")
+    OR
+    ("enough" OR "sufficient")
+   )
     NEAR/5
-      ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
+      ("teach* qualification$" OR "teach* certific*" OR "certified teacher$" OR "qualified teacher$"
       OR "teacher recruitment" OR "teacher training"
       OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
-      )
-  )
-OR
-  (
-    ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
-    NEAR/5
-       ("unqualified teacher$" OR "teacher attrition" OR "teacher shortage$")
-  )   
+   )
 )
 ```
 
 ##### Phrase 2:
+
+The basic structure is *action + unqualified teachers / teacher shortage*.
+
+This phrase finds research about reducing teacher turnover, attrition and shortage
+
+```Ceylon =
+TS=
+(
+  ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
+   NEAR/5
+   ("unqualified teacher$" OR "teacher turnover" OR "teacher attrition" OR "teacher shortage$") 
+)
+```
+
+##### Phrase 3:
 
 This phrase finds articles about teacher education in developing countries, international cooperation for teacher education. Much research is concerned with globalization and internationalization as aspects of teacher education, therefore program is specified. The basic structure is *action + teacher education + countries*.
 
