@@ -647,35 +647,21 @@ This target is interpreted to include research about
 * Increasing the number of qualified teachers and reducing teacher attrition / shortage
 * Increasing/improving teacher training in developing countries, including via international cooperation for teacher training
 
-This query consists of 3 phrases.
+This query consists of 2 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *qualified/certified teachers*.
-
-This phrase finds research about share of qualified teachers. 
+This phrase finds research about teacher supply, shortage etc. Without action terms many of the search terms used in the action approach mainly produce noise. Therefore this search is built using phrases rather than the NEAR operator. 
 
 ```Ceylon =
-TS=
-(
-  ("supply" or "enough" OR "sufficient")
-  NEAR/5
-     ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
-      OR "teacher recruitment" OR "teacher training"
-      OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
-      )
-    )
+TS= 
+  (
+    ("teacher supply" OR  "supply of teacher$" OR "teacher coverage"  OR "teacher recruit*" OR "recruit* of teacher$" OR "teacher retention" OR "lack of teacher$" OR 
+    "teacher turnover" OR "teacher shortage") 
   )
 ```
 
 ##### Phrase 2:
-
-```Ceylon =
-TS=
- ("teacher turnover" OR "teacher attrition" OR "teacher shortage$")
-```
-
-##### Phrase 3:
 
 This phrase finds articles about improving teacher education in developing countries. There are not many hits, and they are assumed to include research on international cooperation for teacher education. The basic structure is *action + teacher education + countries*.
 
