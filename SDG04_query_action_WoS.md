@@ -775,14 +775,13 @@ This phrase finds research about increasing the number of qualified teachers.
 TS=
 (
   (
-    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "supply")
-    OR
-    ("enough" OR "sufficient")
-   )
-    NEAR/5
-      ("teach* qualification$" OR "teach* certific*" OR "certified teacher$" OR "qualified teacher$"
-      OR "teacher recruitment" OR "teacher training"
-      OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
+    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "ensur*" OR "address*")
+        NEAR/5
+        ("supply" OR "coverage" OR "enough" OR "quantity" OR "recruit*" OR "retention" OR "lack of" OR "turnover" OR "shortage" OR "share of")
+   ) 
+   NEAR/5 
+   (
+   ("teacher$")OR("qualif*" NEAR/3 "teach*")
    )
 )
 ```
