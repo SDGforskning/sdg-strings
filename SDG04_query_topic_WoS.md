@@ -644,38 +644,38 @@ AND
 > 4.c.1 Proportion of teachers with the minimum required qualifications, by education level
 
 This target is interpreted to include research about
-* Increasing the number of qualified teachers
+* Increasing the number of qualified teachers and reducing teacher attrition / shortage
 * Increasing/improving teacher training in developing countries, including via international cooperation for teacher training
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-The basic structure is *action + qualified/certified teachers*.
+The basic structure is *qualified/certified teachers*.
 
-This phrase finds research about increasing the number of qualified teachers. However, neither "qualified teacher*" nor "professional development" are included in the search as they predominantly return hits about how teachers who are already qualified can improve, whereas the target is interpreted to concern increasing the number who attain the minimum required qualification.
+This phrase finds research about share of qualified teachers. 
 
 ```Ceylon =
 TS=
 (
-  (
-    ("increas*" OR "expand*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up")
-    NEAR/5
-      ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
+  ("supply" or "enough" OR "sufficient")
+  NEAR/5
+     ("teach* qualification$" OR "teach* certific*" OR "certified teacher$"
       OR "teacher recruitment" OR "teacher training"
       OR ("teacher$" NEAR/3 ("level of qualification*" OR "qualification level"))
       )
+    )
   )
-OR
-  (
-    ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
-    NEAR/5
-       ("unqualified teacher$" OR "teacher attrition" OR "teacher shortage$")
-  )   
-)
 ```
 
 ##### Phrase 2:
+
+```Ceylon =
+TS=
+ ("teacher turnover" OR "teacher attrition" OR "teacher shortage$")
+```
+
+##### Phrase 3:
 
 This phrase finds articles about improving teacher education in developing countries. There are not many hits, and they are assumed to include research on international cooperation for teacher education. The basic structure is *action + teacher education + countries*.
 
