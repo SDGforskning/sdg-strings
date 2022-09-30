@@ -644,8 +644,8 @@ AND
 > 4.c.1 Proportion of teachers with the minimum required qualifications, by education level
 
 This target is interpreted to include research about
-* Increasing the number of qualified teachers and reducing teacher attrition / shortage
-* Increasing/improving teacher training in developing countries, including via international cooperation for teacher training
+* The supply of qualified teachers 
+* International cooperation on teacher training in developing countries
 
 This query consists of 2 phrases.
 
