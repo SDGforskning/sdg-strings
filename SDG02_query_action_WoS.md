@@ -14,9 +14,9 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/4e12caa9-b453-40b9-9c49-3df0c3b89075-481db7c0/relevance/1 (no filters, all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters, all years)
 
-Results for Norway from 01.2014-05.2022 can be viewed here: https://www.webofscience.com/wos/woscc/summary/ec8adce0-bc7a-429f-8d25-8f52e100ce14-481dbbee/relevance/1
+Results for Norway from 01.2014-05.2022 can be viewed here: 
 
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG2</summary>
@@ -1056,7 +1056,7 @@ TS=
 
 * v1.0.0, second draft: CSA (April-Aug 2022)
 
-Specialist input: 
+Specialist input: Awaiting specialist input. 
 
 ## 5. Footnotes
 

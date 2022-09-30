@@ -2,7 +2,7 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string is currently being converted from the action version, unstable/not yet working as intended. Issues translating 2.4 phrase 3, and many in 2.5.
+**Current status**: This string is currently being converted from the action version, unstable/not yet working as intended.
 
 **Contents**
 
@@ -874,7 +874,7 @@ TS=
 
 * v1.0.0, second draft: CSA (April-Aug 2022)
 
-Specialist input: 
+Specialist input: Awaiting specialist input.
 
 ## 5. Footnotes
 

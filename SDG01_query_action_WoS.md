@@ -13,9 +13,9 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/46016f81-a6f4-41b0-975d-1918396fe206-481a7695/relevance/1 (no filters; all years).
+Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years).
 
-Results for Norway from 01.2014-05.2022 can be viewed here: https://www.webofscience.com/wos/woscc/summary/80aaa861-2d32-4ffa-9446-6204dba35b86-481aafb3/relevance/1
+Results for Norway from 01.2014-05.2022 can be viewed here: 
 
 <details>
   <summary>Click to show the final copy-pasteable full query for SDG 1</summary>
@@ -613,11 +613,13 @@ TS=
 
 * v2019.12: ML, CSA, SRM
 
-* v2022.xx, first draft: ML (Oct 2021-Feb 2022)
+* v1.0.0, first draft: ML (Oct 2021-Feb 2022)
 
 * Internal review: HMB, CSA (March 2022)
 
-* v2022.xx,, second draft: ML, CSA (April-June 2022)
+* v1.0.0,, second draft: ML, CSA (April-Sep 2022)
+
+Specialist input: Awaiting specialist input.
 
 ## 5. Footnotes
 

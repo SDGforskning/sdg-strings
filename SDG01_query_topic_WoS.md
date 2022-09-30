@@ -482,13 +482,13 @@ TS=
 
 * v2019.12: ML, CSA, SRM
 
-* v2022.xx, first draft: ML (Oct 2021-Feb 2022)
+* v1.0.0, first draft: ML (Oct 2021-Feb 2022)
 
 * Internal review: HMB, CSA (March 2022)
 
-* v2022.xx,, second draft: CSA, ML (April-Aug 2022)
+* v1.0.0,, second draft: ML, CSA (April-Sep 2022)
 
-Specialist input:
+Specialist input: Awaiting specialist input.
 
 ## 5. Footnotes
 
