@@ -803,16 +803,25 @@ TS=
 
 ##### Phrase 3:
 
-This phrase finds articles about teacher education in developing countries, international cooperation for teacher education. Much research is concerned with globalization and internationalization as aspects of teacher education, therefore program is specified. The basic structure is *action + teacher education + countries*.
+This phrase finds research about improving teacher education programs in developing countries, including through international cooperation.
+The basic structure is *action + cooperation + teacher education + countries*.
 
 ```Ceylon =
-This phrase finds articles about improving teacher education in developing countries. There are not many hits, and they are assumed to include research on international cooperation for teacher education. The basic structure is *action + teacher education + countries*.
-
-```Ceylon =
-TS= 
+TS=
 (
-("increas*" OR "improve*" OR "strengthen*" OR "better*" OR "more*" OR "enhanc*" OR "upgrad*" OR "scal* up" )NEAR/5("teacher training" OR "teacher education")
-    AND
+  (
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up"
+    OR
+      (
+        ("international" OR "development")
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")
+      )
+     OR "international teacher education program*" OR "international teacher training program*"
+    )
+    NEAR/5
+      ("teacher training" OR "teacher education" OR "teacher qualification*" OR "qualifi* teacher$")
+  )
+  AND
     ("least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
