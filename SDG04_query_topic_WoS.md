@@ -663,12 +663,25 @@ TS=
 
 ##### Phrase 2:
 
-This phrase finds articles about improving teacher education in developing countries. There are not many hits, and they are assumed to include research on international cooperation for teacher education. The basic structure is *action + teacher education + countries*.
+The basic structure is *international collaboration + teacher education + countries*.
+
+This phrase finds articles about international collaborations and programs for teacher education in developing countries. There are few hits, but using more general search terms like "international*", "global*" etc. without limitations leads to much noise, finding research about aims and aspects of teacher education in the global north, which we think have little relevance for the target. 
 
 ```Ceylon =
-TS= 
+TS=
 (
-("increas*" OR "improve*" OR "strengthen*" OR "better*" OR "more*" OR "enhanc*" OR "upgrad*" OR "scal* up" )NEAR/5("teacher training" OR "teacher education")
+ ( 
+  (
+    ("international*" OR "global*" OR "cross*")
+    NEAR/3
+    ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" OR "program$") 
+   )    
+    NEAR/5
+      ("teacher training" OR "teacher education" OR "teacher qualification*" OR "qualifi* teacher$")
+  )
+  OR 
+   ("international teacher education program*" OR "international teacher training program*")
+ )
     AND
     ("least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
@@ -686,6 +699,8 @@ TS=
     OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaises" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "maganese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"
     )
 )
+
+
 ```
 
 
