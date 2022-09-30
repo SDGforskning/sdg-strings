@@ -814,7 +814,7 @@ TS=
     OR
       (
         ("international" OR "development")
-        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" OR "program$")
       )
      OR "international teacher education program*" OR "international teacher training program*"
     )
