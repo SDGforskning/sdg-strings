@@ -113,12 +113,14 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food supply + action + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
+The general structure is *food supply/value + action + humans*. 
+
+This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>). Note that `food supply` will also find works about the food supply chain etc. 
 
 ``` Ceylon =
 TS=
  (
-    ("food supply"
+    ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")
       NEAR/5
          ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
          OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
@@ -380,9 +382,9 @@ TS=
             )
           OR
             (
-              ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$")
+              ("production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")
               NEAR/5
-                ("improve*" OR "increase*" OR "enhanc*" OR "stimulat*"
+                ("improv*" OR "increas*" OR "enhanc*" OR "stimulat*"
                 OR "more efficie*" OR "better" OR "raise" OR "bolster" OR "strengthen*"
                 )
             )
@@ -682,7 +684,7 @@ This query consists of 5 phrases.
 
 The general structure is *agricultural diversity/landraces + action* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
 
-Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc.
+Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. 
 
 ``` Ceylon =
 TS=
@@ -691,8 +693,12 @@ TS=
     OR "landrace$" OR "wild relative$"
     OR  
       (
-        ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-        NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+        ("local" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+        NEAR/1 
+          ("breed$" OR "variet*" OR "cultivar$" 
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
+          )
       )
     OR "plant genetic resource$" OR "animal genetic resource$"
     )
@@ -909,7 +915,7 @@ TS =
 
 This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries.
 
-This query consists of 1 phrase. The general structure is *investment/cooperation + rural infrastructure/technology*
+This query consists of 1 phrase. The general structure is *investment/cooperation + rural infrastructure/technology*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive.
 
 ``` Ceylon =
 TS =
@@ -967,7 +973,7 @@ TS =
 
 This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
 
-This query consists of 2 phrases.
+This query consists of 2 phrases. Note that these phrases do not contain an action element as it was considered too difficult/restrictive.
 
 #### Phrase 1:
 
@@ -977,8 +983,7 @@ The basic structure is *export subsidies + agriculture/food*.
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
-  AND
-      ("agricultur*" OR "agrifood" OR "food")
+  AND ("agricultur*" OR "agrifood" OR "food")
 )
 ```
 
@@ -1008,7 +1013,7 @@ TS=
 >
 > 2.c.1 Indicator of food price anomalies
 
-This target is interpreted to cover research about preventing price volatility in food/agriculture, and about stable food commodity markets. It consists of two phrases, where the basic structure is *action + volatility/stability + agricultural markets/prices*.
+This target is interpreted to cover research about preventing price volatility in food/agriculture, and about ensuring stable food commodity markets. The basic structure is *action + volatility/stability + agricultural markets/prices*.
 
 #### Phrase 1:
 
@@ -1021,7 +1026,7 @@ TS=
       OR "stabiliz*" OR "stabilis*" OR "intervention$" OR "counteract"
       OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulat*"
       )
-      NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$")
+      NEAR/5 ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$" OR "price spike$" OR "inflation")
     )
   OR
     (
@@ -1045,12 +1050,13 @@ TS=
 
 * v2019.12: CSA, ML, SRM
 
-* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+* v1.0.0, first draft: CSA (Oct 2021-Feb 2022)
 
 * Internal review: EHS, ML (March 2022)
 
-* v2022.xx,, second draft: CSA (April-June 2022)
+* v1.0.0, second draft: CSA (April-Aug 2022)
 
+Specialist input: 
 
 ## 5. Footnotes
 
