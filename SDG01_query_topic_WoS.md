@@ -68,11 +68,11 @@ This query consists of 1 phrase. The elements of the phrase are: *poverty/the po
 ```Ceylon =
 TS=
 (
-	("anti-poverty" OR "out of poverty"
-	OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-	OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-	)
-	NOT "species poor"
+  ("anti-poverty" OR "out of poverty"
+  OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+  )
+  NOT "species poor"
 )
 ```
 
@@ -97,9 +97,9 @@ As the *social protection* terms include a systemic element (systems, services) 
 ```Ceylon =
 TS=
 (
-	"welfare system$" OR "welfare service$" OR "social security system"
-	OR "basic social service$" OR "social assistance service$" OR "social floor$"
-	OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
+  "welfare system$" OR "welfare service$" OR "social security system"
+  OR "basic social service$" OR "social assistance service$" OR "social floor$"
+  OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
 )
 ```  
 
@@ -174,23 +174,23 @@ For the *poor and vulnerable* terms, we use general terms for poverty/low income
 TS= ("financial inclusion" OR "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$")
 OR TS=
 (
-	(
-		("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-		OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-		OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-		OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
-		OR "unaffordab*" OR "expensive"
-		OR "unbanked"
-		)
-		NEAR/15
-			("banks" OR "a bank" OR "banking" OR "bank account$"
-			OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-			OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
-			OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
-			)
-	)
-	AND
-		("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+  (
+    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+    OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+    OR "unaffordab*" OR "expensive"
+    OR "unbanked"
+    )
+    NEAR/15
+      ("banks" OR "a bank" OR "banking" OR "bank account$"
+      OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+      OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+      OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+      )
+  )
+  AND
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
     OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
     OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
     OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
