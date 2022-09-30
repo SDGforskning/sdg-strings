@@ -49,17 +49,17 @@ During editing of this string (2021), we have consulted two other sets of querie
 > 2.1.2 Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
 
 This target is interpreted to cover research about
-* Hunger/lack of food, food insecurity
-* Access to food and food supply systems
-* Safety and nutritional value of the food
+* Hunger/lack of food and food insecurity
+* Access/right to food, food supplies and food supply chains
+* Safety and nutritional value of food
 
 It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
 #### Phrase 1
 
-The general structure is *hunger*
+The elements of the phrase are: *hunger*
 
-Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
+Hunger is still used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
 
 ```Ceylon =
 TS=
@@ -74,7 +74,7 @@ TS=
 
 #### Phrase 2
 
-The general structure is *food access/safety/nutrition*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
+The elements of the phrase are: *food access/safety/nutrition*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
 ``` Ceylon =
 TS=
@@ -87,12 +87,12 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food supply + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
+The elements of the phrase are: *food supply/nutrient content + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ``` Ceylon =
 TS=
  (
-    ("food supply")  
+    ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")  
     AND
         ("humans" OR "humanity" OR "human" OR "people" OR "person$"
         OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
@@ -121,7 +121,7 @@ This query consists of 3 phrases. Phrase 3 is for terms which need to be combine
 
 #### Phrase 1
 
-The general structure is *malnutrition*
+The elements of the phrase are: *malnutrition*
 
 `dietary NEAR/3 deficiency` finds a number of specific deficiencies (e.g. dietary selenium deficiency, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `undernutrition` and other terms are included in phrase 3.
 
@@ -150,9 +150,9 @@ TS=
 
 #### Phrase 2
 
-The general structure is *nutritional access/quality/status of specific groups*
+The elements of the phrase are: *nutritional access/quality OR nutrition + specific groups*
 
-Research about the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about the nutritional of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
 
 ``` Ceylon =
 TS=
@@ -173,7 +173,7 @@ TS=
 
 #### Phrase 3
 
-The general structure is *undernutrition/food supply + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
+The elements of the phrase are: *undernutrition/food supply + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ``` Ceylon =
 TS=
@@ -204,9 +204,9 @@ TS=
 
 This target is interpreted to include research about productivity and income of small-scale food producers (terrestrial and aquatic). Specific ways to improve this are mentioned (securing access, rights, and opportunities for non-farm employment/value addition), so these are included too.
 
-This query consists of 1 phrase. The basic structure is *productivity/access etc. + small-scale food producers*
+This query consists of 1 phrase. The elements of the phrase are: *productivity/access etc. + small-scale food producers*
 
- For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. The phrase may seem complex, but adding the specific types of crops with `production` etc. adds around 300 results over the last 5 years. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+ For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. "Root crops" are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
  In the *productivity/access etc. terms*:
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
@@ -274,7 +274,7 @@ This query consists of 6 phrases.
 
 #### Phrase 1
 
-The general structure is *food production systems + production*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+The elements of the phrase are: *food production systems + productivity*. 
 
 ``` Ceylon =
 TS=
@@ -294,10 +294,7 @@ TS=
         )      
       )
       NEAR/15
-          (
-            ("intensification" NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*"))
-          OR "production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
-          )  
+          ("intensification" OR "production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")  
   )
   NOT ("solar farm*" OR "wind farm*" OR "power farm*")
 )
@@ -310,7 +307,7 @@ Phrase 2 and 3 concern vulnerability / resilience. They have the same terms for 
 Resilience in terms of food production has been described by FAO as:
 > " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014, p.28](#f7)</a>)
 
-The basic structure of phrase 2 is *food production systems + resilience/vulnerability*.
+The elements of the phrase are: *food production systems + resilience/vulnerability*.
 
 In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
 
@@ -345,7 +342,7 @@ TS=
 
 #### Phrase 3
 
-The basic structure of phrase 3 is *food production systems + adaptation/coping/preparedness + disaster/climate change*.
+The elements of the phrase are: *food production systems + adaptation/coping/preparedness + disaster/climate change*.
 
 The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
 
@@ -400,7 +397,7 @@ TS=
 
 #### Phrase 4
 
-The general structure is *ecoagriculture // food production systems + sustainability*.
+The elements of the phrase are: *ecoagriculture // food production systems + sustainability*.
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
@@ -443,7 +440,7 @@ TS=
 
 #### Phrase 5
 
-The general structure is *food production systems + ecosystems and soil*. - this phrase covers "positives", phrase 6 covers "negatives". Some terms are already covered in phrase 4 (e.g. reduced tillage)
+The elements of the phrase are: *food production systems + ecosystems and soil*. - this phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degredation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage)
 
 ``` Ceylon =
 TS=
@@ -472,7 +469,7 @@ TS=
 
 #### Phrase 6
 
-The general structure is *food production systems + ecosystems and soil*. - this phrase covers "negatives", phrase 5 covers "positives".
+The elements of the phrase are: *food production systems + ecosystems and soil* - this phrase covers "negatives" (loss, degredation etc.), phrase 5 covers "positives" (soil health, diversity, fertility etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage).
 
 Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>).
 
@@ -533,9 +530,11 @@ This query consists of 5 phrases.
 
 #### Phrase 1
 
-The general structure is *agricultural diversity/landraces* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
+The elements of the phrase are: *agricultural diversity // traditional varieties/specific species + agriculture // landraces + diversity/conservation* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
 
-Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc.
+Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). 
+
+`landraces` and `varieties` are treated slightly differently here than the other terms: `varieties`is combined with agriculture as "traditional varieties" could refer to varieties of language, art etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. `landraces` is connected to diversity terms to try and avoid technical works on e.g. sperm motility which use landrace/landrace-cross species. 
 
 ``` Ceylon =
 TS=
@@ -547,12 +546,13 @@ TS=
         NEAR/3 ("breed$" OR "cultivar$")
       )
     OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
-    OR "wild relative$"
     OR  
       (
         (
-          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-          NEAR/3 ("variet*")
+          ("local" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+          NEAR/1 
+            ("variet*" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*")
         )
         AND "agricult*"
       )
@@ -560,7 +560,7 @@ TS=
       ("landrace$"
       NEAR/5
         ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
-        OR "Convention on biological diversity"
+        OR "diversity" OR "genomic variation" OR "genetic variation"
         OR "loss" OR "extinction" OR "declin*" OR "disappear*"
         )    
       )    
@@ -569,9 +569,9 @@ TS=
 
 #### Phrase 2
 
-The general structure is *diversity + agriculture* - this phrase covers diversity terms which can be used outside the context of agricultural diversity. Complement to phrase 1.
+The elements of the phrase are: *diversity + agriculture* - this phrase covers diversity terms which can be used outside the context of agricultural diversity. Complement to phrase 1.
 
-Publications about groups and using terms which also include wild species (e.g. agricultural "seeds", cultivated "plants", farmed "fish") should be fdound by their use of `"agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmed" OR "farmer$" OR "cultiva*"`.
+Publications about groups and using terms which also include wild species (e.g. agricultural "seeds", cultivated "plants", farmed "fish") should be found by their use of `"agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmed" OR "farmer$" OR "cultiva*"`.
 
 Terminology to do with breeding programmes could be included here, but we want research that is about programmes for genetic diversity, and this should already be covered by *diversity* - the inclusion of breeding programmes alone finds results about programmes for other objectives (e.g. increased productivity). It also introduces noise around the *use* of genetic resources *for* breeding programmes, whereas we want research about breeding programs *for* genetic diversity. `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
 
@@ -586,7 +586,7 @@ TS=
             OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
             OR "aquaculture"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
+            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
             OR "landrace$" OR "wild relative$"
             OR
               (
@@ -599,7 +599,7 @@ TS=
 
 #### Phrase 3
 
-The general structure is *gene banks/ex situ + diversity/protection/policy + agriculture*
+The elements of the phrase are: *gene banks/ex situ + diversity/protection/policy + agriculture*
 
 The *diversity/protection/policy* terms are included to help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...). They ensure that the work relates to conservation, genetic diversity, or gene bank policies in some way. Action terms are not used because multiple angles can be relevant - research about establishment of gene banks for maintaining diversity, research about farmers' use of gene banks, research about how best to store samples in gene banks, etc.
 
@@ -645,7 +645,7 @@ TS=
 
 #### Phrase 4
 
-The general structure is *resources/knowledge + sharing/access + agriculture/food*.
+The elements of the phrase are: *resources/knowledge + sharing/access + agriculture/food*.
 
 For the *resource/knowledge* terms, `traditional NEAR knowledge` etc. will cover variations such as "traditional agricultural knowledge". The string is set up so that we do not have to define the benefits. Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>).
 
@@ -690,7 +690,7 @@ TS=
 
 #### Phrase 5
 
-Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The general structure is *resources/knowledge/rights + agriculture/food + instruments/specific issues*. In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
+Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The elements of the phrase are: *resources/knowledge/rights + agriculture/food + instruments/specific issues*. In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
 
 ``` Ceylon =
 TS =
@@ -737,7 +737,7 @@ TS =
 
 This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries.
 
-This query consists of 1 phrase. The general structure is *investment/cooperation + rural infrastructure/technology*
+This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural infrastructure/technology*.
 
 ``` Ceylon =
 TS =
@@ -799,20 +799,19 @@ This query consists of 2 phrases.
 
 #### Phrase 1:
 
-The basic structure is *export subsidies + agriculture/food*.
+The elements of the phrase are: *export subsidies + agriculture/food*.
 
 ``` Ceylon =
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
-  AND
-      ("agricultur*" OR "agrifood" OR "food")
+  AND ("agricultur*" OR "agrifood" OR "food")
 )
 ```
 
 #### Phrase 2:
 
-The basic structure is *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
+The elements of the phrase are: *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
 
 ```Ceylon =
 TS=
@@ -836,14 +835,14 @@ TS=
 >
 > 2.c.1 Indicator of food price anomalies
 
-This target is interpreted to cover research about price volatility in food/agriculture, and about stable food commodity markets. It consists of two phrases, where the basic structure is *volatility/stability + agricultural markets/prices*.
+This target is interpreted to cover research about food prices and markets, stable food prices, and stable food markets. The elements of the phrase are: *volatility/stability + agricultural markets/prices OR food prices + markets*.
 
 #### Phrase 1:
 
 ```Ceylon =
 TS=
 (
-    ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$"
+    ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$" OR "price spike$" OR "inflation"
     OR "stability" OR "stable" OR "functioning"
     OR (("stabiliz*" OR "stabilis*") NEAR/5 ("price$" OR "market$"))
     )
@@ -854,18 +853,28 @@ TS=
             ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
         )
 )
+OR 
+TS=
+(
+  ("price$"
+  NEAR/3
+    ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
+  ) 
+  AND ("food market$" OR "agrifood market$" OR "agricultural market$" OR "commodity market$" OR "market information" OR "grain market$" OR "rice market$" OR "wheat market$")
+)
 ```
 
 ## 4. Contributions
 
 * v2019.12: CSA, ML, SRM
 
-* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+* v1.0.0, first draft: CSA (Oct 2021-Feb 2022)
 
 * Internal review: EHS, ML (March 2022)
 
-* v2022.xx,, second draft: CSA (April-June 2022)
+* v1.0.0, second draft: CSA (April-Aug 2022)
 
+Specialist input: 
 
 ## 5. Footnotes
 
