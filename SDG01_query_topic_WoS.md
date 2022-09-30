@@ -42,7 +42,7 @@ During editing of this string (2021), we have also consulted of queries from the
 
 This target is interpreted as to cover research about extreme poverty. Here we consider relevance limited to research about absolute poverty, vs. target 1.2 which is about poverty generally.
 
-This query consists of 1 phrase. The basic structure is *extreme/global poverty*.
+This query consists of 1 phrase. The elements of the phrase are: *extreme/global poverty*.
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line.
 
@@ -61,16 +61,18 @@ TS=
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
+This target is interpreted as to cover research about poverty. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below. We have added the term `NOT species poor` to remove biology results found by the combination of `poor` with `communit*`.
 
-This query consists of 1 phrase. The general structure is *poverty/the poor*
+This query consists of 1 phrase. The elements of the phrase are: *poverty/the poor*
 
 ```Ceylon =
 TS=
 (
-  "anti-poverty" OR "out of poverty"
-  OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+	("anti-poverty" OR "out of poverty"
+	OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
+	OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
+	)
+	NOT "species poor"
 )
 ```
 
@@ -80,9 +82,7 @@ TS=
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 
-This target is interpreted as to cover research about the implementation of, or access to/coverage of social protection systems and social floors.
-
-**Or should it cover all research mentioning social protection systems??**
+This target is interpreted as to cover research social protection systems and social floors.
 
 To aid interpretation of "social protection" and find terms, we used a guide to terminology and types from the Governance and Social Development Resource Centre <a id="gsdrc">([Carter et al. 2019](#f9))</a>. We interpreted social floors according to the ILO, as including basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>.
 
@@ -90,30 +90,23 @@ This query consists of 2 phrases. Some of the terms for services/systems work we
 
 ##### Phrase 1
 
-This phrase is about access to, coverage of and establishment of floors/protection systems/welfare systems. The basic structure is *coverage/access + social protection systems*.
+This phrase is about floors, protection systems and welfare systems. The elements of the phrase are: *social protection systems*.
 
 As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
 ```Ceylon =
 TS=
 (
-  ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*" OR "propose$"
-  OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*"
-  OR "coverage" OR "covered" OR "covering" OR "access*"
-  OR "barrier$" OR "obstacle$"
-  )
-  NEAR/5
-      ("welfare system$" OR "welfare service$" OR "social security system"
-      OR "basic social service$" OR "social assistance service$" OR "social floor$"
-      OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
-      )
+	"welfare system$" OR "welfare service$" OR "social security system"
+    OR "basic social service$" OR "social assistance service$" OR "social floor$"
+    OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
 )
 ```  
 
 
 ##### Phrase 2
 
-This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The basic structure is *coverage/access + social protection/social floors + poor/vulnerable*.
+This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The elements of the phrase are:*social protection/social floors + poor/vulnerable*.
 
 For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). `"social care service$" OR "social service$"` are sometimes considered a part of social protection <a id="gsdrc">([Carter et al. 2019](#f9))</a> - we include them here, although they do introduce noise as there are many works which mention them as a factor (e.g. a health study that discusses whether participants had access to social care).
 
@@ -121,41 +114,33 @@ For the *poor and vulnerable* terms, we use general terms for poverty/low income
 ```Ceylon =
 TS=
 (
-  (
-    ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*" OR "propose$"
-    OR "plan" OR "plans" OR "planned" OR "planning" OR "build*" OR "architect" OR "design*" OR "develop*"
-    OR "coverage" OR "covered" OR "covering" OR "access*"
-    OR "barrier$" OR "obstacle$"
+    ("social protection$" OR "social security" OR "social benefits" OR "social insurance"
+	OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
+    OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
+    OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
+    OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "paid medical leave" OR "sickness allowance"
+    OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
+    OR "child benefit$" OR "child tax credit$" OR "child allowance"
+    OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
+    OR "social care service$" OR "social service$"
     )
-    NEAR/5
-          ("social protection$" OR "social security" OR "social benefits" OR "social insurance"
-          OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
-          OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
-          OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
-          OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "paid medical leave" OR "sickness allowance"
-          OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
-          OR "child benefit$" OR "child tax credit$" OR "child allowance"
-          OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
-          OR "social care service$" OR "social service$"
-          )
-  )
-  AND
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
-    )
+	AND
+		("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+		OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+		OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+		OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+		OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+		OR "disabled" OR "disabilities" OR "disability"
+		OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+		OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+		OR "women" OR "woman" OR "girls" OR "girl"
+		OR "pregnant" OR "pregnancy" OR "maternity"
+		OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+		OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+		OR "living with HIV" OR "living with AIDS"
+		OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+		OR "indigenous group$"
+		)
 )
 ```
 
@@ -168,7 +153,7 @@ TS=
 > 1.4.2 Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
 
 This target is interpreted to cover research about:
-* Access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
+* Access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about microfinance, and access to digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
 * Rights and access to economic resources and land/property/inheritance/natural resources (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land, natural resources and technology, but could also include human capital/labour (e.g. access to employment).
 * Access to basic services
 
@@ -179,31 +164,32 @@ those from low-income households [...]
 Although the target states for "all men and women", we target the results to this SDG by combining the phrases also to an element about "the poor and the vulnerable". We do this because a) some of the search terms are quite general (for example, appear in general economic research), and b) because other SDGs refer to access to specific basic services (e.g. modern energy in SDG 7, essential healthcare in SDG 3); thus we assume that the most relevant research for this target should also be somewhat related to poverty/poor/vulnerable.
 
 ##### Phrase 1
-This phrase covers access and rights to financial services. The basic structure is *access/rights + financial services + poor/vulnerable*.
+This phrase covers access and rights to financial services. The elements of the phrase are: *inclusion/microfinance // access + financial services + poor/vulnerable*.
 
-Sources of terms for *financial services* included <a id="DESA">[Department of Economic and Social Affairs (2009)](#f7)</a> and a digital financial inclusion report from the <a id="sgsa">[UNSGSA et al. (2018)](#f8)</a>. For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a while can, on a global scale, be considered poorer or more vulnerable).   
+Sources of terms for *financial services* included <a id="DESA">[Department of Economic and Social Affairs (2009)](#f7)</a> and a digital financial inclusion report from the <a id="sgsa">[UNSGSA et al. (2018)](#f8)</a>. For the topic approach, we allow some terms which are already closely related to the idea of access to stand alone without being connected to access or rights explicitly; this includes microfinance types (where access is a primary objective) and `financial inclusion`. 
+
+For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a whole can, on a global scale, be considered poorer or more vulnerable).   
 
 ```Ceylon =
-TS=
+TS= ("financial inclusion" OR "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$")
+OR TS=
 (
-  (
-    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-    OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
-    OR "unaffordab*" OR "expensive"
-    OR "unbanked"
-    )      
-    NEAR/15
-          ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
-          OR "banks" OR "a bank" OR "banking" OR "bank account$"
-          OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-          OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
-          OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
-          OR "financial inclusion"
-          )
-  )
-  AND
+	(
+		("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+		OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+		OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+		OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+		OR "unaffordab*" OR "expensive"
+		OR "unbanked"
+		)      
+		NEAR/15
+			("banks" OR "a bank" OR "banking" OR "bank account$"
+			OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+			OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+			OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+			)
+	)
+	AND
       ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
       OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
@@ -226,9 +212,9 @@ TS=
 
 ##### Phrase 2
 
-This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is *access/rights + resources + poor/vulnerable*.
+This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The elements of the phrase are: *access/rights + resources + poor/vulnerable*.
 
-"security" is used in phrases because otherwise there are many results about food security. For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a while can, on a global scale, be considered poorer or more vulnerable).   
+"security" is used in phrases because otherwise there are many results about food security. For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a whole can, on a global scale, be considered poorer or more vulnerable).   
 
 ```Ceylon =
 TS=
@@ -271,7 +257,7 @@ TS=
 
 ##### Phrase 3
 
-Phrase 3 covers access to basic services. The basic structure is *access + basic services + poor/vulnerable*.
+Phrase 3 covers access to basic services. The elements of the phrase are: *access + basic services + poor/vulnerable*.
 
 *Basic services* terms were gathered from documentation for indicator 1.4.1 in the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f11)</a>) and a presentation from UNESCAP/UN Habitat (<a id="UNhabitat">[Njiru, 2018](#f15)</a>).
 
@@ -345,25 +331,25 @@ The target is limited to "the poor and those in vulnerable situations". For the 
 
 We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal.
 
-This query consists of 1 phrase. The basic structure is *disaster + poor/vulnerable*.
+This query consists of 1 phrase. The elements of the phrase are: *disaster + poor/vulnerable*.
 
 ```Ceylon =
 TS=
 (
   (
-    ("protect" OR "protecting" OR "safeguard*"  
+    ("protect*" OR "safeguard*"  
     OR "safety net$" OR "social protection$" OR "social floor$" OR "social security"
     OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "protection" OR "early warning"
     OR "impact$" OR "vulnerab*" OR "exposure"
     OR
       (
         ("disaster$" OR "risk$")
-            NEAR/3
-                ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief"
-                OR "manag*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "medical response$"
-                )
+        NEAR/3
+            ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief"
+            OR "manag*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "medical response$"
+            )
       )
-    OR "Sendai Framework"
+    OR "Sendai"
     )
     NEAR/15
         ("disaster$" OR "catastrophe$"
@@ -421,7 +407,7 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about international investment and poverty in developing countries. This query consists of 1 phrase. The basic structure is *International financing/cooperation + poverty + developing countries*.
+This target is interpreted to cover research about international investment and poverty in developing countries. This query consists of 1 phrase. The elements of the phrase are: *international financing/cooperation + poverty + developing countries*. 
 
 ```Ceylon =
 TS=
@@ -464,7 +450,9 @@ TS=
 >
 > 1.b.1 Pro-poor public social spending
 
-This target is interpreted to cover research about policies and investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about international and national policies and poverty reduction. The general structure is *Policy + antipoverty*.
+This target is interpreted to cover research about policies that can stimulate investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about international and national policies and poverty reduction.
+
+The elements of the phrase are: *policy + antipoverty*. Note that this phrase is the same as the action approach.
 
 ``` Ceylon =
 TS=
@@ -498,7 +486,9 @@ TS=
 
 * Internal review: HMB, CSA (March 2022)
 
-* v2022.xx,, second draft: ML, CSA (April-June 2022)
+* v2022.xx,, second draft: CSA, ML (April-Aug 2022)
+
+Specialist input:
 
 ## 5. Footnotes
 
