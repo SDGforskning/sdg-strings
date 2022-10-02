@@ -45,15 +45,15 @@ During editing of this string (2021), we have consulted another set of queries f
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about resilience to climate-related hazards and natural disasters. Strategies dealing with climate-related hazards and natural disasters and how to minimize impact of climate-related hazards and natural disasters are considered to be a method to improve resilience, and improve the indicator 13.1.1.
+This target is interpreted to cover research about resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research mentioning disaster/risk strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
 
-This query consists of 1 phrase. The basic structure is *resilience/impacts/plans + disasters*. For the topic approach, actions are retained only for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
+This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. migitation) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
 
 Under actions, we considered including the Paris agreement as article 7 is relevant to this target. However, most results were not relevant (e.g. results about what would happen to rainfall under the Paris Agreement goal of 1.5...).
 
 The terms for disasters contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
 
-``` Ceylon =
+```jsx
 TS=
 (
   (
@@ -99,24 +99,24 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research which mention national policies, strategies and planning and also:
-  - climate change or greenhouse gases (phrase 1)
-  - the indicators of climate change & their mitigation or impacts (phrase 2)
-  - international frameworks for climate change measures (phrase 3)
+This target is interpreted to cover research about:
+  - climate change, climate action, mitigation and adaptation (including greenhouse gases), and national policy++ (phrase 1)
+  - the indicators/impacts of climate change and national policy++ (phrase 2)
+  - international climate frameworks and national policy++ (phrase 3)
 
-Under "national policies, strategies and planning", we consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications as a form. `sectoral plans` is also included - although sectoral =/= national, it may be used to refer to a plan on a national level for the sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
+We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral =/= national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
-This query consists of 3 phrases.
+This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach has been merged here - all results will be covered by phrase 1 under.
 
 ##### Phrase 1:
 
-This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The general structure is *climate change/GHGs + national plans + climate*.
+This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
 
-We include reduction of greenhouse gases as a mitigation action (national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+We include reduction of greenhouse gases as a mitigation action as national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
-``` Ceylon =
+```jsx
 TS=
 (
   ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
@@ -146,11 +146,11 @@ TS=
 
 ##### Phrase 2:
 
-This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The general structure is *climate change indicators + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature).
+This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
 
 Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
-``` Ceylon =
+```jsx
 TS=
 (
   (
@@ -177,15 +177,15 @@ TS=
 
 ##### Phrase 3:
 
-This phrase covers national policies, strategies and planning related to specific "action frameworks" for mitigation and adaptation. The general structure is *action frameworks + national plans*. Compared to the action approach, an element generally about climate change has been removed because these results will now be covered by phrase 1.
+This phrase covers national policies, strategies and planning related to specific frameworks for mitigation and adaptation. The elements of the phrase are: *frameworks + national plans*. Compared to the action approach, an element generally about climate change has been removed because these results will now be covered by phrase 1.
 
 Some of the frameworks for action (e.g. COP) pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general.
 
-``` Ceylon =
+```jsx
 TS=
 (
   ("Kyoto protocol" OR "Paris Agreement"
-  OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "COP 25" OR "COP25" OR "COP 26" OR "COP26"
+  OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "COP 25" OR "COP25" OR "COP 26" OR "COP26" OR "COP 27" OR "COP27"
   OR "UNFCCC" OR "United Nations Framework Convention on Climate Change"
   OR "Cancun adaptation framework"
   )
@@ -208,7 +208,7 @@ TS=
 
 This target is considered to cover research about education, awareness and capacity about climate change mitigation, adaptation, impact reduction and early warning.
 
-This query consists of 1 phrase. The general structure is *education/awareness/capacity + climate mit/adapt/warning*
+This query consists of 1 phrase. The elements of the phrase are: *education/awareness/capacity + climate mit/adapt/warning*
 
 Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
 * Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
@@ -217,7 +217,7 @@ Interpretation of what should be considered as contributing to raising "human an
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-``` Ceylon =
+```jsx
 TS=
 (
   ("capacity" OR "capabilit*"
@@ -266,11 +266,11 @@ TS=
 
 This target is interpreted to cover research about the international supply of climate financing. This covers research about climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
 
-This query consists of 1 phrase. The general structure is *transparancy/aspects of provision/countries + climate financing + climate*.
+This query consists of 1 phrase. The elements of the phrase are: *transparancy/aspects of provision/countries + climate financing + climate*.
 
 The term `investment$ OR investing` were tried, but created mostly noise from climate being used metaphorically ("investment climate"). The *climate* terms at the end of the phrase are added to try and reduce these. We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
 
-``` Ceylon =
+```jsx
 TS=
 (
   (
@@ -293,7 +293,7 @@ TS=
     OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
     OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
     OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
-    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia*"
+    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia*"
     )
     NEAR/15
         ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
@@ -328,7 +328,7 @@ This target is considered to cover research about least developed countries and 
 * managing climate change
 * capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
-This target consists of 1 phrase. The basic structure is *(climate planning/management // capacity + climate management) + LDCs/SIDS*
+This target consists of 1 phrase. The elements of the phrase are: *(climate planning/management funding // capacity + climate management) + LDCs/SIDS*
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
