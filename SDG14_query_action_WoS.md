@@ -804,7 +804,7 @@ TS =
 This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could be interpreted to mean that all marine research is relevant. However we take a more meta-interpretation, and interpret it to cover:
 * research about transfer of marine technology and sharing (phrase 1 and phrase 2)
 * research about developing and sharing marine research capacity/infrastructure (phrase 2)
-* research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
+* research about use/benefits of biodiversity in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
 
@@ -881,35 +881,43 @@ TS=
 
 ##### Phrase 3:
 
-The general structure is *biodiversity + development/benefits + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The general structure is *(blue growth / bioresources/biodiversity + bioeconomy/uses) + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-This phrase covers research about biodiversity and development. "Development" is interpreted widely to include activities and benefits. This includes impacts on the economy (taken from 14.7), but also direct products of diversity, such as bioprospecting and biotechnology. `development` is not used alone because it is used in many other contexts (e.g. developmental biology). 
+This phrase covers research about the "use/benefits of biodiversity". However, this is difficult to build an accurate string for, particularly an "action approach" string. A good number of publications talk about biodiversity together with sustainable development, usage or ecosystem services, without necessarily being about how biodiversity contributes to these (for example, "sustainable use can protect biodiversity", or generic statements about fisheries and biodiversity, but not about how it can contribute). Therefore we keep this string at a topic level, but narrow in this action-approach verison by focusing on terms clearly related to the bioeconomy or bioresources. In the topic approach, we broaden it out slightly with a wider range of terms for uses (under the *bioeconomy/uses* terms), combined with biodiversity. 
 
-The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
-
-We did not include action terms here because "increase the benefits of biodiversity..." felt too restrictive. If research is talking about biodiversity plus benefits/tourism/livelihoods, we assume that it can be used to help inform how to increase these benefits. 
+`blue growth`, `blue economy` and `marine economy` are used alone with `sustainable` because these terms indicate a use of marine resources for development/economic benefit. `development` is not used alone because it is used in many other contexts (e.g. developmental biology). The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
 
 ``` Ceylon =
 TS=
 (
   (
-    ("biodivers*" OR "diversity" OR "bioresource$" OR "biological resource$" OR "genetic resource$")
-    NEAR/5
-        ("benefit$"
-        OR ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
-        OR "bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*"
-        OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
-        OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-        OR "aquaculture" OR "fish farm*"
-        OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-        OR "exploit*" OR "goods and services" OR "ecosystem service$"
-        OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-        OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
-        OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-        OR "trade" OR "trading" OR "market$"
-        OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$"
-        OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
-        )
+    (("blue growth" OR "blue econom*" OR "marine economy") AND "sustainab*")
+    OR
+    (
+      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources"
+      OR "biodivers*" OR "biological diversity" OR "BBNJ" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity"
+      )
+      AND
+          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
+          OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR "marine economy"
+          )
+    )
+    OR
+    (
+      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources")
+      NEAR/15
+          ("benefit$"
+          OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
+          OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
+          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
+          OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+          OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
+          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
+          OR "trade" OR "trading" OR "market$"
+          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+          )
+    )
   )
   AND
     ("least developed countr*" OR "least developed nation$"
