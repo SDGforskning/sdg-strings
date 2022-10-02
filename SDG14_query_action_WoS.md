@@ -20,67 +20,6 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 Not ready yet
 
-Search #1
-```
-
-```
-Search #2
-```
-
-```
-Search #3
-```
-
-```
-Search #4
-```
-
-```
-Search #5
-```
-
-```
-Search #6
-```
-
-```
-Search #7
-```
-
-```
-Search #8
-```
-
-```
-Search #9
-```
-
-```
-Search #10
-```
-
-```
-Search #11
-```
-
-```
-Search #12
-```
-
-```
-Search #13
-```
-
-```
-Search #14
-```
-
-```
-Search #15
-```
-
-```
-
 </details>
 
 ## 2. General notes
@@ -97,11 +36,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 ## 3. Marine terms: String for limiting certain phrases to the marine environment
 
-This string is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets (14.4, 14.6 and 14.b). It does not work perfectly, as a number of publications may be about e.g. freshwater habitats, but still mention marine habitats in a comparative way. This is difficult to avoid.
+This string is referred to as **marine terms**, and should be combined with various other sets with `AND` (when instructed) to limit the results to the marine environment. It is not combined with fishery targets (14.4, 14.6 and 14.b). It does not work perfectly, as a number of publications may be about e.g. freshwater habitats, but still mention marine habitats in a comparative way. "Coastal" is also a tricky term, as is often used for terrestrial habitats. This is difficult to avoid.
 
-The first part (`TS=`) consists of marine habitats, physical features, and terms to do with the coast. The second part (`SO=`) consists of marine journal titles. Journal search is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
+The first part (`TS=`) consists of generic terms, marine ecosystems/habitats, and terms to do with the coast/harbours. `seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `reef` is used rather than `coral` as additions only due to the latter are mostly non-relevant ("coral-like structures".) `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is combined with other terms due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
 
-`seaweed$` and `macroalga*` are combined with other terms to prevent inclusion based on mentions of seaweeds (e.g. seaweed extracts used in industrial processes). `reef` is used rather than `coral` as additions only due to the latter are mostly non-relevant ("coral-like structures".) `coast` and `sea` are combined with other terms to avoid results that are not really about the ocean (e.g. terrestrial work in "Mediterranean Sea countries"). `harbour` is  combined due to its use as a verb, and `port` due to use in other fields (e.g. electronics).
+The second part (`SO=`) consists of marine journal titles. Journal search is used as not all publications use marine words in their abstract, title or keywords (e.g. if they are discussing a specifc marine species for an audience who knows it is marine). Journals were not included if they had non-marine elements in the title (e.g. Freshwater or Atmospheric). List gathered from Master journal list in Web of Science. The first line of this segment will find journals that begin with `"marine*" OR "ocean*" OR "estuar*" OR "deep sea*"`.
 
 I considered adding the 25 most common marine fisheries species (<a id="FAOfish">[FAO, 2018](#f8)</a>), however this gave few extra relevant results. It introduced a lot more noise with the use of `MPA` in 14.2/14.5, as this is commonly used as a unit of pressure (MPa) when discussing the processing of these species for food. Relevant species include: `"theragra chalcogramma" OR "engraulis ringens" OR "katsuwonus pelamis" OR "sardinella" OR "trachurus" OR "clupea harengus" OR "scomber japonicus" OR "thunnus albacares" OR "gadus morhua" OR "engraulis japonicus" OR "decapterus" OR "sardina pilchardus" OR "trichiurus lepturus" OR "micromesistius poutassou" OR "scomber scombrus" OR "scomberomorus" OR "dosidicus gigas" OR "nemipterus" OR "brevoortia patronus" OR "sprattus sprattus" OR "portunus trituberculatus" OR "acetes japonicus" OR "sardinops melaonstictus" OR "scomber colias" OR "rastrelliger kanagurta"`.
 
@@ -111,47 +50,45 @@ TS=
   "ocean$" OR "oceanogra*"
   OR "marine" OR "submarine"
   OR "seas"
-  OR "seabed"
-  OR "seamount$"
-  OR "hydrothermal vent$" OR "cold seep$"
+  OR "seabed" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$"
   OR "subtidal" OR "intertidal" OR "deep sea" OR "bathyal" OR "abyssal"
   OR "rocky shore$" OR "beach*"
   OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
   OR "estuar*" OR "fjord$"
   OR "sea ice"
 
+  OR "sea life" OR "sealife"
   OR "mangrove$"
-  OR "kelp bed$" OR "kelp forest$"
+  OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
   OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
-  OR "seagrass*"
   OR "sponge ground$" OR "organic fall$"
   OR "reef" OR "reefs"
 
   OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$"
-  OR "coastal water$"
+  OR "coastal water$" OR "coastal current$" OR "tidal current$"
   OR "coastal communit*" OR "coastal zone management"
-  OR (
+  OR 
+    (
       ("coast*" OR "*tidal")
-      NEAR/15
+      AND
           ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
-          OR "offshore" OR "current$"
-          OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
+          OR "offshore" OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
           )
-     )
-     OR (
-         ("sea")
-         NEAR/15
-             ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
-             OR "offshore" OR "ship*"
-             OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
-             OR "*tidal" OR "pelagic"
-             )
-        )
-      OR (
-          ("harbour$" OR "port" OR "ports")
-          NEAR/15
-              ("sea" OR "coast*" OR "gulf" OR "ship*" OR "maritime")
-         )
+    )
+  OR 
+    ("sea"
+      AND
+          ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
+          OR "offshore" OR "ship*"
+          OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
+          OR "*tidal" OR "pelagic"
+          )
+    )
+  OR
+    (
+      ("harbour$" OR "harbor$" OR "port" OR "ports")
+      NEAR/15 ("sea" OR "coast*" OR "gulf" OR "ship*" OR "maritime")
+    )
 )
 
 OR
@@ -221,6 +158,7 @@ SO =
 )
 
 ```
+
 ## 4. Targets
 
 ## Target 14.1
