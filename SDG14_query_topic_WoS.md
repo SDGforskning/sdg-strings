@@ -542,7 +542,7 @@ TS =
 This target is difficult to interpret, particularly as "increase scientific knowledge to [...]" could be interpreted to mean that all marine research is relevant. However we take a more meta-interpretation, and interpret it to cover:
 * research about transfer of marine technology and sharing (phrase 1 and phrase 2)
 * research about the development and state of marine research capacity/infrastructure (phrase 2)
-* research about biodiversity and its use/benefits in developing countries, LDCs and SIDS (phrase 3)
+* research about use/benefits of biodiversity in developing countries, LDCs and SIDS (phrase 3)
 
 This query consists of 3 phrases.
 
@@ -619,33 +619,61 @@ TS=
 
 ##### Phrase 3:
 
-The general structure is *biodiversity + development/benefits + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The elements of the phrase are: *(blue growth / biodiversity/bioresources + bioeconomy/uses) + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-This phrase covers research about biodiversity and development. "Development" is interpreted widely to include activities and benefits. This includes impacts on the economy (taken from 14.7), but also direct products of diversity, such as bioprospecting and biotechnology.
+This phrase covers research about the "use/benefits of biodiversity". However, this is difficult to build an accurate string for. A good number of publications talk about biodiversity together with sustainable development, usage or ecosystem services, without necessarily being about how biodiversity contributes to these (for example, "sustainable use can protect biodiversity", or generic statements about fisheries AND biodiversity, but not about how it can contribute). We have tried to avoid this by combining the terms with bioreosurces more loosely, but those with biodiversity more tightly.
 
-`development` is not used alone because it is used in many other contexts (e.g. developmental biology). The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
+This phrase covers research about the "use/benefits of biodiversity". However, this is difficult to build an accurate string for; a good number of publications talk about biodiversity together with sustainable development, usage or ecosystem services, without necessarily being about how biodiversity contributes to these (for example, "sustainable use can protect biodiversity", or generic statements about fisheries and biodiversity, but not about how it can contribute). The action-approach version of this phrase attemted to increase precision by focusing on terms clearly related to the bioeconomy or bioresources. In this version (the topic approach), we broaden it out slightly with a wider range of terms for uses (under the *bioeconomy/uses* terms), combined with biodiversity. 
+
+`blue growth`, `blue economy` and `marine economy` are used alone with `sustainable` because these terms indicate a use of marine resources for development/economic benefit. `development` is not used alone because it is used in many other contexts (e.g. developmental biology). The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
 
 ```jsx
 TS=
 (
   (
-    ("biodivers*" OR "diversity" OR "bioresource$" OR "biological resource$" OR "genetic resource$")
-    NEAR/5
-        ("benefit$"
-        OR ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
-        OR "bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*"
-        OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
-        OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-        OR "aquaculture" OR "fish farm*"
-        OR "fisher*" OR "fishing" OR "harvest*" OR "aquarium trade"
-        OR "exploit*" OR "goods and services" OR "ecosystem service$"
-        OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-        OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
-        OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-        OR "trade" OR "trading" OR "market$"
-        OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$"
-        OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
-        )
+    (("blue growth" OR "blue econom*" OR "marine economy") AND "sustainab*")
+    OR
+    (
+      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources"
+      OR "biodivers*" OR "biological diversity" OR "BBNJ" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity"
+      )
+      AND
+          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
+          OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR "marine economy"
+          )
+    )
+    OR
+    (
+      ("biodivers*" OR "biological diversity" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity")
+      NEAR/5
+          ("benefit$"
+          OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
+          OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
+          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
+          OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+          OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
+          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
+          OR "trade" OR "trading" OR "market$"
+          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+          )
+    )
+    OR
+    (
+      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources")
+      NEAR/15
+          ("benefit$"
+          OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
+          OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
+          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
+          OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
+          OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
+          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
+          OR "trade" OR "trading" OR "market$"
+          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+          )
+    )
   )
   AND
     ("least developed countr*" OR "least developed nation$"
@@ -677,9 +705,9 @@ This query consists of 2 phrases.  Again, here, specific fish species as search 
 
 #### Phrase 1
 
-The general structure is *access/rights/control + small scale + fishing*. `right$` covers "territorial use rights in fisheries" (TURFs), "territorial rights", "usage rights" etc.. `resource$` (under `access`) covers "marine resources". We do not include `traditional` alone because "traditional fisheries management" normally refers to the management traditions, rather than traditional fisheries.
+The elements of the phrase are: *access/rights/control + small scale + fishing*. `right$` covers "territorial use rights in fisheries" (TURFs), "territorial rights", "usage rights" etc.. `resource$` (under `access`) covers "marine resources". We do not include `traditional` alone because "traditional fisheries management" normally refers to the management traditions, rather than traditional fisheries.
 
-``` Ceylon =
+```jsx
 TS =
 (
   ("access*" OR "right$"
@@ -702,9 +730,9 @@ TS =
 
 #### Phrase 2
 
-The general structure is *regulation + fishing + small scale*.
+The elements of the phrase are: *regulation + fishing + small scale*.
 
-```Ceylon =
+```jsx
 TS =
 (
   ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "strateg*" OR "legislat*" OR "law" OR "laws" OR "regulations")
@@ -726,59 +754,52 @@ TS =
 >
 > 14.c.1 Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources
 
-This target is interpreted to cover research about implementation of international law for conservation and sustainable use of the oceans, or about international instruments related to sustainability/conservation.
+This target is interpreted to cover research about international law for conservation and sustainable use of the oceans, or about international instruments related to sustainability/conservation.
 
 This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
 
 ##### Phrase 1
-The general structure is *implementation + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+The elements of the phrase are: *international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
 
-``` Ceylon =
+```jsx
 TS =
 (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrat*" OR "design*" OR "propos*" OR "develop*"
-    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*" OR "negotiat*"
-    OR "reform*" OR "improv*" OR "better"
-    OR "national policy" OR "national legislat*" OR "local policy" OR "regional policy" OR "ocean governance"
-    OR "conservation" OR "sustainable"
-    )
-    NEAR/15
-        ("law of the sea" OR "UNCLOS"
-        OR "the future we want"
-        OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-        OR "BBNJ"
-        OR "common fisheries policy"
-        OR "marine stewardship council"
-        OR "regional fisheries management organi?ation$" OR "RFMOs"
-        OR "fish stocks agreement"
-        OR "code of conduct for responsible fisheries" OR "CCRF"
-        OR "port state measures agreement"
-        OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-        OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-        OR ("directive$" NEAR/3 "marine spatial planning")
-        OR "habitats directive" OR "convention on biological diversity"
-        OR "Convention on International Trade in Endangered Species"
-        OR "Regional seas programme"
-        OR "Water framework directive"
-        OR "OSPAR convention"
-        OR "Marine strategy framework directive" OR "MSFD"
-        OR "Barcelona convention"
-        OR "Global Programme of Action for the Protection of the Marine Environment"
-        OR "MARPOL" OR "prevention of pollution from ships"
-        OR "Conservation of Antarctic Living Marine Resources"
-        )
+  "law of the sea" OR "UNCLOS"
+  OR "the future we want"
+  OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
+  OR "BBNJ"
+  OR "common fisheries policy"
+  OR "marine stewardship council"
+  OR "regional fisheries management organi?ation$" OR "RFMOs"
+  OR "fish stocks agreement"
+  OR "code of conduct for responsible fisheries" OR "CCRF"
+  OR "port state measures agreement"
+  OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+  OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+  OR ("directive$" NEAR/3 "marine spatial planning")
+  OR "habitats directive" OR "convention on biological diversity"
+  OR "Convention on International Trade in Endangered Species"
+  OR "Regional seas programme"
+  OR "Water framework directive"
+  OR "OSPAR convention"
+  OR "Marine strategy framework directive" OR "MSFD"
+  OR "Barcelona convention"
+  OR "Global Programme of Action for the Protection of the Marine Environment"
+  OR "MARPOL" OR "prevention of pollution from ships"
+  OR "Conservation of Antarctic Living Marine Resources"
 )
 ```
 
 ##### Phrase 2
 
-The general structure is *international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+The elements of the phrase are: *international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
 
-``` Ceylon =
+```jsx
 TS =
 (
   ("international"
