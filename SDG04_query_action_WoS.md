@@ -803,7 +803,7 @@ TS=
 
 ##### Phrase 3:
 
-This phrase finds research about improving teacher education programs in developing countries, including through international cooperation.
+This phrase finds research about improving teacher education programs in developing countries, including through international cooperation. As there are few hits, we use a wide version of action terms in this string, not strictly limited to verbs.
 The basic structure is *action + cooperation + teacher education + countries*.
 
 ```Ceylon =
@@ -813,13 +813,18 @@ TS=
     ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up"
     OR
       (
-        ("international" OR "development")
-        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" OR "program$")
+       (
+        ("international" OR "development" OR "global" OR "cross")
+         NEAR/3
+         ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" OR "program$")
+         OR
+         ("study abroad*" OR "exchange" OR "mobility")
+       )
       )
      OR "international teacher education program*" OR "international teacher training program*"
-    )
-    NEAR/5
-      ("teacher training" OR "teacher education" OR "teacher qualification*" OR "qualifi* teacher$")
+   )
+   NEAR/5
+     ("teacher training" OR "teacher education" OR "teacher qualification*" OR "qualifi* teacher$")
   )
   AND
     ("least developed countr*" OR "least developed nation$"
