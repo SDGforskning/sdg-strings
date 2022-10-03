@@ -59,16 +59,16 @@ Other abbreviations:
 
 This target is interpreted to cover research about:
 * Clean fuels and clean technology in households (phrases 1 & 2). Clean cooking is a central part of clean fuels/tech in this context (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). In v2019.11 this target was interpreted more broadly to cover clean technologies generally, but the indicator metadata is about households, with focus on heating, lighting and cooking technologies (<a id="SDGindmetadata">[indicator 7.1.2, Statistics Division, 2021b](#f4)</a>).
-* The use of non-clean fuels in households (phrase 3)
+* Non-clean fuels in households (phrase 3)
 * Access to modern energy services, including electricity. This includes concepts such as energy justice, energy security and fuel poverty (phrases 4 & 5)
-* The affordability and reliability of energy services (phrase 6)
+* The affordability, stability, and reliability of energy services (phrase 6)
 
 <a id="IEAaccess">[IEA (2020)](#f5)</a> and <a id="UNThemereport">[UN (2021)](#f9)</a> were used as a source of terms for this target. This query consists of 6 phrases.
 
 ##### Phrase 1
-The basic structure is *clean fuels/tech + households*. *Household terms* are included as terms such as `fuel$` are broad. Compared to the action approach, a couple of terms were removed as they created noise (`home OR community`). "Clean technology" in household contexts should be covered by `clean` NEAR `cooking`, `fuels` etc. or by the general term `energy transition$`.
+The elements of the phrase are: *energy transitions/clean fuels/tech + households*. *Household terms* are included as terms such as `fuel$` are broad. Compared to the action approach, a couple of terms were removed as they created noise (`home OR community`). "Clean technology" in household contexts should be covered by the terms for `cooking`, `stove$`, `fuels` etc. or by the general term `energy transition$`.
 
-```Ceylon =
+```jsx
 TS=
 (
   (
@@ -89,9 +89,9 @@ TS=
 ```
 ##### Phrase 2:
 
-The basic structure is *clean household energy activities*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
+The elements of the phrase are: *clean household energy activities*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
 
-```Ceylon =
+```jsx
 TS=
 (
   "solar cooker$" OR "solar box cooker$" OR "solar cooking"
@@ -101,9 +101,9 @@ TS=
 
 ##### Phrase 3:
 
-The basic structure is *"dirty" fuels + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. The household terms are slightly edited compared to the action string to reduce noise (`slum OR slums`, and removed `village$`).
+The elements of the phrase are: *"dirty" fuels + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. The household terms are slightly edited compared to the action string to reduce noise (`slum OR slums`, and removed `village$`).
 
-```Ceylon =
+```jsx
 TS=
 (
   ("kerosene" OR "solid fuel$" OR "coal"
@@ -130,9 +130,9 @@ TS=
 
 This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
-The general structure is *energy security/access phrases*. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
+The elements of the phrase are: *energy security/access phrases*. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
 
-```Ceylon =
+```jsx
 TS=
 (
   "energy poverty" OR "energy vulnerability" OR "fuel poverty"
@@ -143,9 +143,9 @@ TS=
 
 ##### Phrase 5
 
-This phrase is about improving access to energy services and electricity. The general structure is *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). Regions include generic terms for developing and least developed countries, as well as specific least developed countries, SIDS, landlocked developing countries and rural areas.
+This phrase is about improving access to energy services and electricity. The elements of the phrase are: *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). For *regions*, we include generic terms for developing, least developed countries and rural areas, as well as specific least developed countries, SIDS, landlocked developing countries.
 
-```Ceylon =
+```jsx
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
 OR
 TS=
@@ -189,16 +189,16 @@ TS=
       OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
       OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
       OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-      OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*" OR "turkish" OR "turkey"
+      OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
       )
 )
 ```
 
 ##### Phrase 6
 
-This phrase finds works about affordability and reliability of energy services. The general structure is *afford/stable + energy*. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+This phrase finds works about affordability and reliability of energy services. The elements of the phrase are: *afford/stable + energy*. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
 
-```Ceylon =
+```jsx
 TS=
 (
   ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap"
@@ -229,31 +229,51 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
-This target is interpreted to cover research about use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
+One could interpret this target in two ways according to the topic approach:
+1. This target is interpreted to cover research about the use and uptake of renewable energy, or
+2. This target is interpreted to cover research about renewable energy. 
+These two different interpretations make a large difference to the number of results, given (2) will find a large number of technical publications about renewable energy technology (gives ca. 3.5x the number of results as interpretation (1)). For the moment, we have decided to use interpretation (1). This means that the strings attempt to find publications focusing on renewable energy use and uptake, including works that talk about the share, transitions, policies, commercialisation, scaling up, and investment in renewable energy, and research about reliance on and consumption of fossil fuels.
 
 This query consists of 3 phrases.
 
 ##### Phrase 1
 
-This phrase covers the general terms of transitioning and transforming to renewable energy. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam).
+This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renwables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). Compared to the action approach, a wider distance is used between elements.
 
-```Ceylon =
+```jsx
 TS=
 (
-  ("renewable" NEAR/5 ("energy transition$" OR "sector transformation$" OR "energy transformation$"))
-  OR ("renewable energy" NEAR/5 "substitut*")
+  ("renewable" AND ("energy transition$" OR "sector transformation$" OR "energy transformation$"))
+  OR ("renewable energy" NEAR/15 ("substitut*" OR "uptake"))
 )
 ```
 
 ##### Phrase 2
 
-This phrase covers terms renewable energy. The general structure is *renewable energy*.
+This phrase covers terms renewable energy. The elements of the phrase are: *use/share/adoption/investing/barriers/promotional actions + renewable energy*.
 
 In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy) - these have been narrowed slightly in the topic approach compared to the action approach (particularly biomass was causing issues). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results referring to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
 
-```Ceylon =
+```jsx
 TS=
 (
+  ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation" OR "uptake" 
+  OR "contribution" OR "proportion" OR "share" OR "expansion"
+  OR "feasibility" OR "attractiveness" OR "incentive$" OR "initiative$"
+  OR "affordab*" OR "inexpensive" OR "low cost" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
+  OR "investment$" OR "subsidies" OR "subsidi$ation" OR "financing" OR "funding" OR "commerciali?ation"
+  OR "energy service$" OR "energy sector" OR "generation" OR "capacity"
+  OR "global energy" OR "global electricity" OR "energy mix" OR "market share$"
+  OR "barrier$" OR "obstacle$"
+  OR "implement" OR "adopt" OR "incentivi*"
+  OR "energy transition$" OR "renewable transition$" OR "transition* to"
+  OR ("certificat*" NEAR/2 ("energy" OR "green"))
+  OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
+  OR "subsidi$e" OR "investing" OR "invest" OR "green bond$" OR "climate bond$" OR "feed-in tariff$"
+  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "roll out" OR "rollout"
+  OR "sustainable development" OR "sustainable energy development"
+  )
+  NEAR/15
       ("non conventional energy"
       OR
         (
@@ -278,7 +298,7 @@ TS=
       OR "biofuel$" OR "bioenergy" OR "biodiesel"
       OR
         (
-          ("biomass" OR "wind" OR "solar")
+          ("biomass" OR "wind" OR "solar" OR "ammonia")
           NEAR/10
               ("electric*" OR "energy generat*" OR "energy service$" OR "energy sector"
               OR "energy system$" OR "power system$"
@@ -297,9 +317,9 @@ TS=
 
 ##### Phrase 3
 
-This phrase covers reduction in fossil fuels. The general structure is *fossil fuels + reliance/energy mix*. Action terms are retained for "oil" because it is used to generally (e.g. consuption of fish oil, reliance of technology for oil drilling etc.)
+This phrase covers reliance on and consumption of fossil fuels. The elements of the phrase are: *fossil fuels + reliance/energy mix*. Action terms are retained for "oil" because it is used to generally (e.g. consuption of fish oil, reliance of technology for oil drilling etc.)
 
-```Ceylon =
+```jsx
 TS=
 (
   ("fossil fuel$" OR "coal" OR "natural gas" OR "grey hydrogen" OR "conventional energy"
@@ -329,7 +349,7 @@ TS=
 >
 > 7.3.1 Energy intensity measured in terms of primary energy and GDP
 
-This target is interpreted to cover research about energy intensity (phrase 1,2), and research about energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we held our interpretation within this topic for the action approach. However, for the topic approach, we include the concepts of `energy conservation` and `energy sufficiency`, given that it is closely tied to efficiency and energy justice which are themes within this SDG.
+This target is interpreted to cover research about energy intensity (phrase 1,2), and research about energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is specifically about energy efficiency. Therefore we held our interpretation within this theme for the action approach. However, for the topic approach, we include the concepts of `energy conservation` (phrase 3) and `energy sufficiency` (phrase 4), given that they are closely tied to efficiency, as well as energy justice which is a theme in this SDG.
 
 Energy intensity definition from the European Environment Agency:
 >"Energy intensity is the ratio between gross inland energy consumption (GIEC) and gross domestic product (GDP), calculated for a calendar year. GIEC is calculated as the sum of the gross inland consumption of the five sources of energy: solid fuels, oil, gas, nuclear and renewable sources" (<a id="EEA2016">[EEA, 2016](#f6)</a>).
@@ -338,11 +358,11 @@ This query consists of 3 phrases.
 
 ##### Phrase 1
 
-This phrase finds research about improving energy intensity. The general structure is *energy intensity + energy terms*.
+This phrase finds research about improving energy intensity. The elements of the phrase are: *energy intensity + energy terms*.
 
 The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts.
 
-```Ceylon =
+```jsx
 TS=
 (
   ("energy intensity")
@@ -357,13 +377,13 @@ TS=
 ```
 
 ##### Phrase 2
-This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The general structure is *energy consumption + action + economy*. This action needs to be retained for the context, since energy consumption is a very general term.
+This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The elements of the phrase are: *energy consumption + action + economy*. This action needs to be retained for the context, since energy intensity is about the coupling of energy consumption with GDP.
 
-```Ceylon =
+```jsx
 TS=
 (
   ("energy consum*"
-  NEAR/5 ("decouple*" OR "de couple*")
+  NEAR/5 ("decoupl*" OR "de coupl*")
   )
   NEAR/5 ("econom*" OR "GDP")
 )
@@ -371,13 +391,13 @@ TS=
 
 ##### Phrase 3
 
-This phrase finds research about energy efficiency. The general structure is *energy efficiency/loss + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances). These actions are retained even in this topic approach, because without them energy efficiency is too broad/noisy.
+This phrase finds research about energy efficiency. The elements of the phrase are: *energy efficiency/loss + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances). These actions are retained even in this topic approach, because without them energy efficiency is too broad/noisy.
 
 *sector terms* were built around generic terms (e.g. `residential` will find "residential water heating"), and supplemented with terms from the IEA webpages and IEAs energy efficiency indicators manual (<a id="IEAmanual">[IEA, 2014](#f8)</a>). Household consumption sources (p. 40), service sector terms (p. 69) and transport terms (p. 128) were taken from this manual, but not all (e.g. `buses` removed due to being used in context with voltages; including specific industries (e.g. steel) did not improve results). `lighting`, `applicances`, `data centres` and `data networks` were added as they have their own recent efficiency tracking reports from the IEA (https://www.iea.org/analysis/all?topic=energy-efficiency&type=report). `smart` is a very general term, but when paired with energy efficiency finds many different types of system/device (smart windows, grids, thermostats etc.).
 
 The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>). `increase$ OR increasing` is used to avoid "increasingly".
 
-```Ceylon =
+```jsx
 TS=
 (
     (
@@ -415,9 +435,9 @@ TS=
 
 ##### Phrase 4
 
-This phrase covers energy sufficiency. We interpret the 7.3 target to cover research about energy intensity (phrase 1,2), and research about energy efficiency (phrase 3). While some might consider a reduction in energy consumption, or degrowth, to be essential to sustainable energy, the target is quite specifically about energy efficiency. Therefore we held our interpretation within this topic for the action approach. However, for the topic approach, we include the concept of `energy sufficiency`, given that it is closely tied to efficiency and energy justice which are themes within this SDG.
+This phrase covers energy sufficiency. The elements of the phrase are: *energy sufficiency + energy terms*
 
-```
+```jsx
 TS=
   ("energy sufficiency"
   AND
@@ -444,10 +464,9 @@ Here, "clean" is interpreted to include also low-carbon due to the specific ment
 This target consists of 2 phrases.
 
 ##### Phrase 1
+The elements of the phrase are: *sharing/investing/cooperation + clean energy research/tech*.
 
-The general structure is *sharing/investing/cooperation + clean energy research/tech*.
-
-```Ceylon =
+```jsx
 TS=
 (
   ("ODA" OR "development spending" OR "cooperation fund"
@@ -463,7 +482,7 @@ TS=
   OR  
     (
       ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
-      NEAR/3 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
+      NEAR/5 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
     )
   OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
   OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
@@ -471,7 +490,7 @@ TS=
   OR "green bond$" OR "climate bond$"
   )
   NEAR/15
-      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$"
+      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
       OR
         (
           ("technolog*" OR "innovation$" OR "R&D")
@@ -487,9 +506,9 @@ TS=
 
 ##### Phrase 2
 
-The general structure is *investment + energy infrastructure/renewable energy*.
+The elements of the phrase are: *investment + energy infrastructure/renewable energy*.
 
-```Ceylon =
+```jsx
 TS=
 (
   ("ODA" OR "development spending" OR "cooperation fund"
@@ -529,7 +548,7 @@ TS=
 
 This target is interpreted to cover research about infrastructure for sustainable and modern energy services in developing countries. The focus is on infrastructure and supply. We interpret this to cover electricity generation, power grids, storage, and energy services. The general structure is *action/modern/sustainable + infrastructure/technology/services + developing countries*. This string has been converted from the topic approach by retaining the action terms, but adding to them to additionally include works generally talking about modern and sustainable services.
 
-```Ceylon =
+```jsx
 TS=
 (
   (
@@ -572,7 +591,7 @@ TS=
     OR
     "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
     OR
-    "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia"
+    "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia"
     )
 )      
 ```
@@ -585,7 +604,7 @@ TS=
 
 * Internal review: HMB, ML (March 2022)
 
-* v 1.0.0, second draft: CSA, ML (Apr-Jul 2022)
+* v 1.0.0, second draft: CSA, ML (Apr-Sep 2022)
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
