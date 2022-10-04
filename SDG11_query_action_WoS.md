@@ -550,9 +550,9 @@ TS=
   )
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
+      OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
+	OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+     )
 )
 
 ```
