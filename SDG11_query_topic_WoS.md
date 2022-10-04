@@ -36,9 +36,9 @@ Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+I
 
 This target interpreted to cover research on
 
-- Improving access to adequate, safe and affordable housing and basic services
+- Access to adequate, safe and affordable housing and basic services
 
-- Upgrading slums.  
+- Slums.  
 
 Search terms are partly based on definitions of basic services, housing standards and slums found in SDG indicator metadata repository for indicators 11.1.1 and 1.4.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).  
 
@@ -46,19 +46,13 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-This phrase covers research about improving access, affordability, safety etc. of housing. The basic structure is *action + access + safe/affordable + housing*.
+This phrase covers research about access, affordability, safety etc. of housing. The basic structure is *access + safe/affordable + housing*.
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
 ```Ceylon =
 TS=
 (
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
-OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
-)
-NEAR/5
 ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
 )
 NEAR/15
@@ -74,7 +68,7 @@ NEAR/5 ("housing" OR "settlements" OR "living conditions")
 
 ##### Phrase 2:
 
-Phrase 2 covers access to basic services. The basic structure is *action + access + basic services + housing*.
+Phrase 2 covers access to basic services. The basic structure is *access + basic services + housing*.
 
 Basic services terms were gathered from documentation for indicator 1.4.1 in the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat (<a id="UNhabitat">[Njiru, 2018](#f3)</a>).
 
@@ -82,14 +76,8 @@ Basic services terms were gathered from documentation for indicator 1.4.1 in the
 
 ```Ceylon =
 TS=
-(
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
-OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
-)
-NEAR/5
+    (
 ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
 )
     NEAR/15
@@ -118,22 +106,17 @@ NEAR/5
     )
     NEAR ("housing" OR "settlements" OR "living conditions")
 )
+
 ```
 
 ##### Phrase 3:
 
-This phrase covers research about upgrading slums. The basic structure is *action + slums*.
+This phrase covers research about upgrading slums. The basic structure is *slums*.
 
 ```Ceylon =
 TS=
-(
-  ("strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up"
-  OR "expand*" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-  OR "legislat*" OR "govern*" OR "strateg*" OR "policy*" OR "policies" OR "framework$" OR "program*"
-  )
-  NEAR/15
-      ("slum" OR "slums" OR "shanty town$" OR "informal settlement*")
-)	 
+("slum" OR "slums" OR "shanty town$" OR "informal settlement*")
+	 
 ```
 
 ## Target 11.2
@@ -214,7 +197,7 @@ TS=
 >
 > 11.3.2 Proportion of cities with a direct participation structure of civil society in urban planning and management that operate regularly and democratically
 
-This target is interpreted to cover research about making urbanization processes more inclusive and sustainable, and improving human settlement planning and management with regards to participation, integration and sustainability. There are two key aspects: urbanization, and settlement planning and management. Terms from indicators are not included in phrases, as they are very measurement specific and assumed to be included in results from the more general phrases.
+This target is interpreted to cover research about inclusive and sustainable urbanization processes, and human settlement planning and management with regards to participation, integration and sustainability. There are two key aspects: urbanization, and settlement planning and management. Terms from indicators are not included in phrases, as they are very measurement specific and assumed to be included in results from the more general phrases.
 
 This query consists of two phrases.
 
@@ -249,9 +232,9 @@ TS=
 >
 > 11.4.1 Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)
 
-This target is interpreted to cover research on strengthening the protection of cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Cultural Statistics (<a id="unescoculturalstats">[UNESCO Institute for Statistics, 2009](#f4)</a>). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc.
+This target is interpreted to cover research on the protection of cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Cultural Statistics (<a id="unescoculturalstats">[UNESCO Institute for Statistics, 2009](#f4)</a>). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc.
 
-This query consists of 1 phrase. The basic structure is *action + management/protection + cultural heritage*.
+This query consists of 1 phrase. The basic structure is *management/protection + cultural heritage*.
 
 ```Ceylon =
 TS=
@@ -277,7 +260,7 @@ TS=
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This target is interpreted to cover research on reducing deaths/missing people caused by (natural??) disasters (on poor people and people in vulnerable situations) and the impact on economic losses, specifically tied to the GGDP. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
+This target is interpreted to cover research on deaths/missing people caused by (natural??) disasters (on poor people and people in vulnerable situations) and the impact on economic losses, specifically tied to the GGDP. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
 
 Terms were gathered from the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>), the Sendai Framework as presented on prevetionweb (<a id="sendai">[UN Office for Disaster Risk Reduction, n.d.](#f6)</a>) and the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). Terms were also added from a standardised list of disasters we created to be used across SDG search strings, which was based on hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a>.
 
@@ -398,13 +381,13 @@ OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
 >
 > 11.6.2 Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)
 
-This target is interpreted to mean reducing the environmental impact of cities, including improving air quality and waste management.
+This target is interpreted to cover research on the environmental impact of cities, including air quality and waste management.
 
-This query consists of 4 phrases: 1 phrase "reducing the environmental impact of cities", 1 phrase for "air quality" and 2 phrases for "waste management".
+This query consists of 4 phrases: 1 phrase for "environmental impact of cities", 1 phrase for "air quality" and 2 phrases for "waste management".
 
 ##### Phrase 1:
 
-This phrase covers research about reducing the general environmental impact of cities. The basic structure is *environmental impact + cities*.
+This phrase covers research about the general environmental impact of cities. The basic structure is *environmental impact + cities*.
 
 ```Ceylon =
 TS=
@@ -416,7 +399,7 @@ TS=
 
 ##### Phrase 2:
 
-This phrase finds research about improving air quality in cities. The basic structure is *air pollution + cities // clean air + cities*.
+This phrase finds research about air quality in cities. The basic structure is *air pollution + cities // clean air + cities*.
 
 ```Ceylon =
 TS=
@@ -437,7 +420,7 @@ TS=
 
 The basic structure is *waste*.
 
-This phrase finds research about reducing waste, while phrase 4 deals with waste collection/management and uses some different action terms, as waste management and waste are different concepts. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
+This phrase finds research about waste, while phrase 4 deals with waste collection/management and uses some different action terms, as waste management and waste are different concepts. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
 ```Ceylon =
 
@@ -458,7 +441,7 @@ TS=
 
 The basic structure is *environmental impact + waste management*.
 
-This phrase finds research about improving waste collection/management, while phrase 3 is about waste reduction. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
+This phrase finds research about waste collection/management, while phrase 3 is about waste in general. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
 Split query to search for waste management or waste collection as its own query? Combine phrase 2 and 3? Include specific waste management activities as recycling, incinerate etc?
 
@@ -479,7 +462,7 @@ TS=
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically.
+This target is interpreted as to cover research on green and public spaces universally available to all, including safe areas, inclusive and universally accessible areas. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically.
 
 This query consists of 2 phrases.
 
@@ -524,7 +507,7 @@ TS=
 >
 > 11.a.1 Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space
 
-This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string.
+This target is interpreted as to cover research on links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string.
 
 This query consists of 1 phrase. The basic structure is *planning*.
 
