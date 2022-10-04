@@ -476,24 +476,16 @@ This target is interpreted as to cover research on making green and public space
 This query consists of 2 phrases.
 
 ##### Phrase 1:
-This phrase is about increasing/improving safe/accessible spaces and access to spaces. The basic structure is *action + safety/access + public spaces*.
+This phrase is about safe/accessible spaces and access to spaces. The basic structure is *safety/access + public spaces*.
 
 ```Ceylon =
 TS=
 (
-  (
-    ("increas*" OR "improv*" OR "expand*" OR "enlarg*" OR "enhanc*"
-    OR "provi*" OR "build*" OR "create" OR "creation" OR "creating"
-    OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*"
-    )
-    NEAR/15
-        ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
-  )
+  ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
+      OR "community garden$" OR "allotment garden$" OR "urban allotment$" OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+)
 )
 
 ```
