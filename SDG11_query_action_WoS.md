@@ -46,31 +46,35 @@ This query consists of 3 phrases.
 
 ##### Phrase 1:
 
-This phrase covers research about improving access, affordability, safety etc. of housing. The basic structure is *action + safe/affordable + housing*.
+This phrase covers research about improving access, affordability, safety etc. of housing. The basic structure is *action + access + safe/affordable + housing*.
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
 ```Ceylon =
 TS=
 (
-    ("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*"
-    OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-    )
-    NEAR/15
-        (
-          ("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive"
-          OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security"
-          OR "tenure"
-          )
-          NEAR/5 ("housing" OR "settlements" OR "living conditions")
-        )
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
+OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+)
+NEAR/5
+("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+)
+NEAR/15
+(
+("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive"
+OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security"
+OR "tenure"
+)
+NEAR/5 ("housing" OR "settlements" OR "living conditions")
+)
 )
 ```
 
 ##### Phrase 2:
 
-Phrase 2 covers access to basic services. The basic structure is *action + basic services + housing*.
+Phrase 2 covers access to basic services. The basic structure is *action + access + basic services + housing*.
 
 Basic services terms were gathered from documentation for indicator 1.4.1 in the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>) and a presentation from UNESCAP/UN Habitat (<a id="UNhabitat">[Njiru, 2018](#f3)</a>).
 
@@ -80,10 +84,14 @@ Basic services terms were gathered from documentation for indicator 1.4.1 in the
 TS=
 (
   (
-    ("access*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*"
-    OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-    )
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
+OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+)
+NEAR/5
+("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+)
     NEAR/15
         (
           ("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
