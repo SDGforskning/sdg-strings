@@ -6,11 +6,11 @@ File names consist of the SDG and the approach used (topic vs. action). The appr
 
 ### Which SDGs are covered? 
 
-Currently, we are working on 10/17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
+Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
 ### How are these strings different to other mappings?
 
-- These strings allow mapping of research to individual SDG targets ("target-level"), instead of whole SDGs ("goal-level"). This is useful for identifying where a research set is focused within an SDG. 
+- These strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
 - The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords).
 - For each string, we document :
   - How we have interpreted which research themes should be considered "relevant" to each SDG target
