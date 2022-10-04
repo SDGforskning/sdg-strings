@@ -48,7 +48,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 >
 > 3.1.2 Proportion of births attended by skilled health personnel
 
-The target is interpreted as reducing the maternal mortality rate. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
+The target is interpreted as covering research about reducing the maternal mortality rate. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
 
 This query consists of 1 phrase.
 
@@ -135,7 +135,7 @@ TS=
 
 ##### Phrase 2
 
-Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/babies* + *survival* + *action* + *excluding livestock*.
+Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. reduce mortality = increase survival). The basic structure is *children/babies* + *survival* + *action* + *excluding livestock*. The term "survivor" is a bit tricky, as it is used about reducing mortality (e.g. "cancer survivors") but also in the context of abuse ("child abuse survivor"). Thus results around this topic may also be included; we did not consider them far enough from the interpretation to warrant using a NOT search that could potentially lose relevant results.
 
 ```Ceylon =
 TS=
@@ -169,7 +169,7 @@ TS=
 >
 > 3.3.5 Number of people requiring interventions against neglected tropical diseases
 
-The target is interpreted to include research which talks about combating / end epidemics of communicable and waterborne diseases. We interpret "ending epidemics", to include research on ending pandemics, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, and thus include action terms such as `prevent OR treat OR control` and research about better prevention and treatment (e.g. development of vaccines and drugs). We add these as many researchers may consider that it goes without saying that e.g. research on new treatments for chagas are a form of "combating" chagas.
+The target is interpreted to include research which talks about combating / end epidemics of communicable and waterborne diseases. We interpret "ending epidemics", to include research on ending epidemics/pandemics, along with general works about controlling spread/transmission. We interpret "combating" to mean reducing the occurrence and effects of these diseases, i.e. research about improving control, reducing transmission, preventing, treating, and developing novel treatments/vaccines. 
 
 This query consists of 3 phrases.
 
@@ -177,7 +177,7 @@ Action terms: `limited` was removed from the action terms, as it was used often 
 
 ##### Phrase 1
 
-This covers communicable diseases as a category. The basic structure is *"communicable diseases"* + *action / action + epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
+This covers communicable diseases as a category. The basic structure is *communicable diseases + (action // action + epidemics/interventions)*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
 `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
@@ -200,7 +200,7 @@ TS =
             ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "increas*" OR "promot*"
             OR "program*" OR "develop*" OR "research*" OR "novel" OR "new"
             )
-            NEAR/5 ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*")
+            NEAR/5 ("medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*" OR "detection" OR "diagnosis")
           )
         )
   )
@@ -210,7 +210,7 @@ TS =
 
 ##### Phrase 2
 
-The general structure is *communicable diseases + generic action*. This phrase is a complement to phrase 1, where "communicable diseases" as a category was covered.
+The general structure is *communicable diseases + generic action*. In this phrase, specific diseases and groups of diseases are covered. The *disease* terms are the same as in phrase 3.
 
 In the *communicable disease* terms, specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
 - The first section covers communicable and waterborne diseases as a category (see also Phrase 1).
@@ -303,7 +303,7 @@ TS =
 
 ##### Phrase 3
 
-The general structure is *communicable diseases + action + epidemics/interventions*. This phrase is a complement to phrase 3, where *generic actions* are covered. The action terms in this phrase were separated out as they can be combined with `AND` rather than needing `NEAR`. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
+The general structure is *communicable diseases + action + epidemics/interventions*. This phrase is a complement to phrase 2, where the same diseases but *generic actions* are covered. This phrase is separated from phrase 2 because the *epidemic/intervention* can be combined with `AND` rather than needing `NEAR`. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 ``` Ceylon =
 TS =
@@ -408,11 +408,9 @@ TS =
 >
 > 3.4.2 Suicide mortality rate
 
-This target is interpreted to cover research about reducing mortality from non-communicable diseases. In contrast to 3.3, here there is an explicit focus on reducing mortality in the target, indicators and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). It also covers research about improving mental health and wellbeing, where we include both by treatment and via health promotion.
+This target is interpreted to cover research about reducing mortality from non-communicable diseases. In contrast to 3.3, here there is an explicit focus on reducing mortality in the target, indicators and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>), therefore we limit our interpretation to this. We interpret it also to cover research about treating/improving treatment for mental health disorders and promoting/improving support services for well-being.
 
-This query consists of 3 phrases.
-* Phrase 1 focuses on the "non-communicable diseases" part.
-* Phrases 2 and 3 focus on the "promote mental health and well-being" part.
+This query consists of 3 phrases. Phrase 1 focuses on the "non-communicable diseases" part. Phrases 2 and 3 focus on the "promote mental health and well-being" part.
 
 ##### Phrase 1
 
@@ -505,7 +503,7 @@ TS=
 
 ##### Phrase 3
 
-This phrase focuses on the promotion of well-being. The general structure is *well-being* + *promotion*.
+This phrase focuses on the promotion of well-being. The general structure is *well-being* + *promoting/action+services*.
 
 `wellbeing` is used alone, rather than qualified with "mental" - well-being seems to be used to convey a sense of overall health, which should include the mental/psychosocial aspect. `quality of life` was tested, but this adds a lot of results which seem to be more medical (i.e.  quality of life could be improved after intervention x for condition y). `increas*` was removed as an action term for `mental health` as it tends to be used in other ways (e.g. "increasing demand for services", "increasingly in focus").
 
@@ -569,7 +567,7 @@ TS=
       OR "khat"
       OR "tobacco"
       )
-      NEAR/3
+      NEAR/5
           ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
           OR
             (
@@ -605,7 +603,7 @@ TS=
       OR "khat"
       OR "tobacco"
       )
-      NEAR/3
+      NEAR/5
           ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
           OR
             (
@@ -634,19 +632,19 @@ TS=
 >
 > 3.6.1 Death rate due to road traffic injuries
 
-This target is interpreted to cover research about reducing deaths and injuries from road traffic accidents. The prevention of accidents and improvement to road/vehicle safety is not considered relevant unless it is connected to health - the reducing injury/death focus is evident in the target and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). Improving road safety generally is covered in SDG 11.2.
+This target is interpreted to cover research about reducing deaths and injuries from road traffic accidents. Improvement to road/vehicle safety generally is not considered relevant unless it is connected to health - the reducing injury/death focus is evident in the target and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). Improving road safety generally is covered in SDG 11.2.
 
 This query consists of 1 phrase. Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife).
 
 The basic structure is *traffic/road users + mortality/morbidity + action*
 
-In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y").
+In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y"). `intersection$` was considered but removed as it mostly added noise from metaphorical use of intersection (e.g. between two subject areas).
 
 ``` Ceylon =
 TS =
 (
   (
-      ("traffic" OR "road" OR "roads" OR "roadway$" OR "street$" OR "intersection$" OR "roundabout$" OR "highway$" OR "motorway$"
+      ("traffic" OR "road" OR "roads" OR "roadway$" OR "street$" OR "roundabout$" OR "highway$" OR "motorway$"
       OR "cycling lane$" OR "cycle path$" OR "bicycle lane$" OR "walkway$" OR "walking path$" OR "sidewalk$" OR "pavement$"
       OR "bicycle$" OR "motorcycle$" OR "motorbike$" OR "automobile$" OR "buses" OR "bus" OR "lorry" OR "lorries" OR "truck$" OR "HGV$" OR "SUV$"
       OR "pedestrian$" OR "cyclist$"
@@ -695,7 +693,7 @@ This query consists of 2 phrases.
 
 ##### Phrase 1
 
-The basic structure is *reproductive health + access + action*
+The basic structure is *reproductive health/education + access + action*
 
 Originally, *reproductive health* terms were combined with *service/information* terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. When *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unnecessary restriction.
 
@@ -708,7 +706,7 @@ TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
   OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR (("reproduct*" OR "sex*") NEAR/5 ("education" OR "inform*"))
+  OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy"))
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health for all"
@@ -746,7 +744,7 @@ TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
   OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR (("reproduct*" OR "sex*") NEAR/5 ("education" OR "inform*"))
+  OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy"))
   )
   NEAR/15
     (
@@ -851,9 +849,9 @@ TS =
 
 This query consists of 2 phrases. The phrases are similar, but phrase 2 includes terms which need to be limited to humans.
 
-The target is interpreted to cover research about reducing deaths and illness due to pollution/contamination of water, air or soil with chemicals/substances or pathogens. In light of indicator 3.9.2, we also include due to poor sanitation (whether it be directly due to contamination in the water source, or spread of disease between people due to lack of WASH facilities).
+The target is interpreted to cover research about reducing deaths and illnesses due to pollution/contamination of water, air or soil with chemicals/substances or pathogens. In light of indicator 3.9.2, we also include research about deaths and illnesses and poor sanitation (e.g. contamination in the water source, or spread of disease between people due to lack of WASH facilities).
 
-Unsure whether food poisoning/contaminated food should be included - it is not air, soil or water, but is related to hygiene/sanitation. So far, it is included. The High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>) mentions food in reference to WASH:
+We were slightly unsure whether food poisoning/contaminated food should be included - it is not air, soil or water, but is related to hygiene/sanitation. So far, it is included. The High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>) mentions food in reference to WASH:
 >"These services need to be accompanied by adequate hygiene practices such as handwashing after defecation or before food preparation and intake..."
 
 ##### Phrase 1:
@@ -879,15 +877,13 @@ TS =
     OR
     (
       ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
-      NEAR/15
-          ("pollution" OR "poisoning$")
+      NEAR/15 ("pollution" OR "poisoning$")
     )
     OR "smoke pollution" OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
     OR
     (         
       ("drinking water" OR "potable water" OR "water source$")
-      NEAR/3
-          ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "pollut*" OR "clean")
+      NEAR/3 ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "pollut*" OR "clean")
     )
     OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
     OR "handwashing"
@@ -896,21 +892,14 @@ TS =
     OR
     (
       ("food" OR "foods")
-      NEAR/3
-          ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
+      NEAR/3 ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
     )
     OR "food poisoning$" OR "foodborne pathogens"
-    OR
-      ("poisoning$"
-      NEAR/3
-          ("unintentional" OR "accidental")
-      )
+    OR ("poisoning$" NEAR/3 ("unintentional" OR "accidental"))
   )
   NEAR/15
       (
-        ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity"
-        OR "poisoning$"
-        )
+        ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning$")
         NEAR/5
           ("prevent*" OR "combat*" OR "tackl*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limiting" OR "limit" OR "eliminat*" OR "alleviat*" OR "avoid*"
           OR "treat*" OR "remov*" OR "clean up" OR "cleanup"
@@ -935,24 +924,24 @@ Specific chemicals were added from the WHO list of chemicals of major public hea
 TS =
 (
   (
-      ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$"
-      OR "pollution"
-      OR "soil contamination" OR "contamination of soil$"
-      OR "water contamination" OR "contamination of water"
-      OR "arsenic"
-      OR "asbestos"
-      OR "benzene"
-      OR "cadmium"
-      OR "dioxin$"
-      OR "mercury"
-      OR "fluoride"
-      OR "pesticide$"
-      OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
-      OR "radioactive waste$"
-      OR "persistent organic pollutant$"
-      OR "sanitation"
-      )
-      NEAR/15
+    ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$"
+    OR "pollution"
+    OR "soil contamination" OR "contamination of soil$"
+    OR "water contamination" OR "contamination of water"
+    OR "arsenic"
+    OR "asbestos"
+    OR "benzene"
+    OR "cadmium"
+    OR "dioxin$"
+    OR "mercury"
+    OR "fluoride"
+    OR "pesticide$"
+    OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
+    OR "radioactive waste$"
+    OR "persistent organic pollutant$"
+    OR "sanitation"
+    )
+    NEAR/15
         (
           ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity"
           OR "*toxicity" OR "poisoning$" OR "poisoned" OR "fluorosis"
@@ -982,7 +971,7 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This target is interpreted to cover research about strenghtening/implementing reduction of tobacco use and production, or the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+This target is interpreted to cover research about reducing of tobacco use and production, or implementing the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
 This query consists of 3 phrases.
 
@@ -996,9 +985,9 @@ TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 
 #### Phrase 2
 
-This phrase finds works about strengthening/implementing reduction and preventative measures around tobacco use. The basic structure is *tobacco + reduction/control + action*
+This phrase finds works about strengthening/implementing reduction and preventative measures around tobacco. The basic structure is *tobacco + reduction/control + action*
 
-We do not limit to tobacco "use", as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` will cover many terms here (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
+We do not limit terminology to tobacco "use", as the FCTC also refers to tobacco control and reduction in supply, advertising, packaging regulation etc. `tobacco OR smoking OR cigarette$` will cover many terms here (e.g. cigarette packaging, smoking cessation, tobacco use/consumption/advertising).
 
 `reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as some may discuss this without being combined with the "implement" terms, but `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant). Phrase 3 deals with tobacco production in more depth.
 
@@ -1039,7 +1028,7 @@ This phrase covers research about alternatives to tobacco production. The basic 
 ```Ceylon =
 TS=
 (
-  ("tobacco farm*" OR "tobacco production" OR "tobacco growing")
+  ("tobacco farm*" OR "tobacco production" OR "tobacco growing" OR "tobacco grower$")
   AND
     (
       ("diversif*" OR "alternative crop$" OR "crop substitution"
@@ -1073,7 +1062,7 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-The general structure is *support + vaccine/medicine development + developing countries*. Note that here, `development` is combined within phrases (e.g. `development aid OR development fund`) because it is also a part of "vaccine development".
+The general structure is *support + vaccine/medicine development + developing countries*. Under *support* we include terms for financial resources, development partnerships, assistance and sharing. Note that here, `development` is combined within phrases (e.g. `development aid OR development fund`) because it is also a part of "vaccine development".
 
 ``` Ceylon =
 TS =
@@ -1101,12 +1090,33 @@ TS =
       )
       NEAR/5
           (
-            ("develop*" OR "research*" OR "novel" OR "new")
+            ("develop*" OR "research*" OR "R&D" OR "novel" OR "new")
             NEAR/5 ("medicine$" OR "medication$" OR "therapy" OR "therapies" OR "therapeutic$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
           )
   )
   AND
-    ("neglected tropical disease$" OR "buruli ulcer" OR "chagas" OR "dengue" OR "chikungunya" OR "dracunculiasis" OR "guinea-worm disease" OR "echinococcosis" OR "foodborne trematodiases" OR "human african trypanosomiasis" OR "sleeping sickness" OR "leishmaniasis" OR "leprosy" OR "lymphatic filariasis" OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses" OR "onchocerciasis" OR "river blindness" OR "rabies" OR "scabies" OR "schistosomiasis" OR "soil-transmitted helminthiases" OR "snakebite envenoming" OR "taeniasis" OR "cysticercosis" OR "trachoma" OR "yaws"
+    ("neglected tropical disease$"
+    OR "buruli ulcer"
+    OR "chagas"
+    OR "dengue"
+    OR "chikungunya"
+    OR "dracunculiasis" OR "guinea-worm disease"
+    OR "echinococcosis"
+    OR "foodborne trematodiases"
+    OR "human african trypanosomiasis" OR "sleeping sickness"
+    OR "leishmaniasis"
+    OR "leprosy"
+    OR "lymphatic filariasis"
+    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
+    OR "onchocerciasis" OR "river blindness"
+    OR "rabies"
+    OR "scabies"
+    OR "schistosomiasis"
+    OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
+    OR "snakebite envenoming"
+    OR "taeniasis" OR "cysticercosis"
+    OR "trachoma"
+    OR "yaws"
     OR "least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
@@ -1163,7 +1173,7 @@ This query consists of 2 phrases.
 
 The basic structure is *action + retention/training + health workers + countries*
 
-Types of healthcare worker are expanded using MeSH terms. `training` and `education` are separated out as there are many results about "training to improve outcomes..." rather than improving the training itself. Types of health worker were supplemented from the subcategories under the MeSH category "Health Personnel" (MeSH ID D006282).
+Types of health worker were supplemented from the subcategories under the MeSH category "Health Personnel" (MeSH ID D006282). `training` and `education` are separated out as there are many results about "training to improve outcomes..." rather than improving the training itself.
 
 ``` Ceylon =
 TS =
@@ -1214,7 +1224,7 @@ TS =
 
 #### Phrase 2
 
-The basic structure is *action + health financing + countries*. This is difficult to get accurate with action terms as there are a lot of results about e.g. funding improving coverage.
+The basic structure is *action + financing + health sector + countries*. This is difficult to get accurate with action terms as there are a lot of results about e.g. funding improving coverage.
 
 ``` Ceylon =
 TS =
@@ -1321,11 +1331,11 @@ TS =
 
 * v2019.12: CSA, ML, SRM
 
-* v2022.xx, first draft: CSA (Oct 2021-Feb 2022)
+* v1.0.0, first draft: CSA (Oct 2021-Feb 2022)
 
 * Internal review: HMB, ML (March 2022)
 
-* v2022.xx,, second draft: CSA (April-June 2022)
+* v1.0.0, second draft: CSA (April-Sep 2022)
 
 
 ## 5. Footnotes
