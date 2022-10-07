@@ -47,7 +47,7 @@ During editing of this string (2021), we have consulted another set of queries f
 
 This target is interpreted to cover research about resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research mentioning disaster/risk strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
 
-This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. migitation) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
+This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. mitigation) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
 
 Under actions, we considered including the Paris agreement as article 7 is relevant to this target. However, most results were not relevant (e.g. results about what would happen to rainfall under the Paris Agreement goal of 1.5...).
 
@@ -106,9 +106,9 @@ This target is interpreted to cover research about:
 
 We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral =/= national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of GHG) but in order to be consistent with our  interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of green house gases / GHG) but in order to be consistent with our interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
-This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach has been merged here - all results will be covered by phrase 1 under.
+This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here - all results will be covered by phrase 1 under.
 
 ##### Phrase 1:
 
@@ -266,7 +266,7 @@ TS=
 
 This target is interpreted to cover research about the international supply of climate financing. This covers research about climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
 
-This query consists of 1 phrase. The elements of the phrase are: *transparancy/aspects of provision/countries + climate financing + climate*.
+This query consists of 1 phrase. The elements of the phrase are: *transparency/aspects of provision/countries + climate financing + climate*.
 
 The term `investment$ OR investing` were tried, but created mostly noise from climate being used metaphorically ("investment climate"). The *climate* terms at the end of the phrase are added to try and reduce these. We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
 
@@ -328,7 +328,7 @@ This target is considered to cover research about least developed countries and 
 * managing climate change
 * capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
 
-This target consists of 1 phrase. The elements of the phrase are: *(climate planning/management funding // capacity + climate management) + LDCs/SIDS*
+This query consists of 1 phrase. The elements of the phrase are: *(climate planning/management funding // capacity + climate management) + LDCs/SIDS*
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
