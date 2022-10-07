@@ -1,14 +1,16 @@
-# Information about these files - SDGstrings_wos
+# Information about these files
 
 The files in this repository contain search strings to find publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**.
 
 File names consist of the SDG and the approach used (topic vs. action). The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets ("action"), or research more broadly related to the topics in the targets ("topic"). You can read more about these below. **The strings are a work-in-progress, and are at different stages of development - within each file there is a description of its current status at the top.** 
 
-### Which SDGs are covered? 
+## Which SDGs and platforms are covered? 
 
 Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-### How are these strings different to other mappings?
+The strings available at the moment are formatted in Web of Science syntax (Core collection); these have "WoS" at the end of the file name. We are also working on a version in Python which can be run against any list of works in csv format. 
+
+## How are these strings different to other mappings?
 
 - These strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
 - The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords).
@@ -17,7 +19,7 @@ Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 
   - Sources we have used to identify search terms and/or define terminology
   - Choices we have made regarding inclusion/exclusion, interpretations or syntax (e.g. truncation)
 
-### What kind of results should I expect when using these strings?
+## What kind of results should I expect when using these strings?
 
 This depends on which version of the strings you use:
 
@@ -33,28 +35,30 @@ We have tried to be consistent in the approaches, but there are occasional excep
 
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
-### When will the strings be ready to use?
-We aim to finish the current version of 9 SDGs within October 2022, when a version will be published on Zenodo. We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will come later in the year. 
+## When will the strings be ready to use?
+We aim to finish a version of Web of Science strings for 9 of the SDGs within October 2022, when a version will be published on Zenodo. We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will come later in the year. 
 
-### How do I use and cite these strings? 
+## How do I use and cite these strings? 
 
-Each file contains a search string for a specific SDG, broken up into phrases by target. The strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
+Each file contains a search string for a specific SDG, broken up into phrases by target. 
+
+The "WoS" strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
 
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used them! Our email is on the project homepage.
 
 When the strings are published in Zenodo, a citation file will be added to the repository. 
 
-### Who has written these strings?
+## Who has written these strings?
 
 You can find contributor information at the bottom of each file. This lists the main authors, and any specialists who have given input.
 
 This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
 
-### How have the strings been tested?
+## How have the strings been tested?
 
 We have currently only tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in Q1 2023. The orignal versions (v2019.1) were only tested for precision; we plan to test this new version for both precision and recall. 
 
-### License
+## License
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
