@@ -6,7 +6,7 @@
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG 11
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
@@ -24,11 +24,15 @@
 
 ## 2. General notes
 
-Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[UN Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+This document contains search strings for finding publications related to the topics in SDG 11 targets and indicators ("topic approach"; focus on recall, larger result set). We also have a version which finds publications related to the actions in SDG 11 targets and indicators ("action approach"; focus on precision, smaller result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
+
+Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
+
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f22)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 ## 3. Targets
 
-## Target 11.1
+### Target 11.1
 
 > **11.1 By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums**
 >
@@ -44,29 +48,29 @@ Search terms are partly based on definitions of basic services, housing standard
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 This phrase covers research about access, affordability, safety etc. of housing. The basic structure is *access + safe/affordable + housing*.
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
-```Ceylon =
+```r
 TS=
 (
-("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-)
-NEAR/15
-(
-("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive"
-OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security"
-OR "tenure"
-)
-NEAR/5 ("housing" OR "settlements" OR "living conditions")
-)
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+  )
+  NEAR/15
+      (
+        ("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive"
+        OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security"
+        OR "tenure"
+        )
+        NEAR/5 ("housing" OR "settlements" OR "living conditions")
+      )
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 Phrase 2 covers access to basic services. The basic structure is *access + basic services + housing*.
 
@@ -74,12 +78,12 @@ Basic services terms were gathered from documentation for indicator 1.4.1 in the
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
-```Ceylon =
+```r
 TS=
+(
   (
-    (
-("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-)
+    ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+    )
     NEAR/15
         (
           ("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
@@ -103,47 +107,44 @@ TS=
           OR "basic mobility" OR "urban mobility" OR "rural mobility" OR "all-season road$"
           OR ("transport*" NEAR/2 ("service$" OR "infrastructure" OR "system$" OR "public"))
         )
-    )
-    NEAR ("housing" OR "settlements" OR "living conditions")
+  )
+  NEAR/15 ("housing" OR "settlements" OR "living conditions")
 )
-
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 This phrase covers research about upgrading slums. The basic structure is *slums*.
 
-```Ceylon =
+```r
 TS=
 ("slum" OR "slums" OR "shanty town$" OR "informal settlement*")
-	 
 ```
 
-## Target 11.2
+### Target 11.2
 
 > **11.2 By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons**
 >
 > 11.2.1 Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about improving safe sustainable transport of humans in cities and improving road safety.
+This target is interpreted to cover research about safe sustainable transport of humans in cities and road safety.
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
-The basic structure is safe + transport systems + cities*
+The basic structure is *safe + transport systems + cities*
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by limiting the search with terms concerning land transport. It is also difficult to exclude freight transport. (We could focus on transport, not transport systems.)
 
-```Ceylon =
+```r
 TS=
 (
-   (
-      ("safe*" OR "secure*" OR "risk*" OR "sustainab*"
-          OR "access*"  OR "availab*" OR "reliab*"
-          OR "afford*" OR "low cost*" OR "expensive" OR "cost-effective*"
-          )
-    
+  (
+    ("safe*" OR "secure*" OR "risk*" OR "sustainab*"
+    OR "access*"  OR "availab*" OR "reliab*"
+    OR "afford*" OR "low cost*" OR "expensive" OR "cost-effective*"
+    )
     NEAR/15 ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
   )
   AND
@@ -156,23 +157,17 @@ TS=
       OR "travel*" OR "journey*"
       )
 )
-
 ```
 
+#### Phrase 2
 
+This phrase covers research about road safety. The basic structure is *safety + road*.
 
-##### Phrase 2:
-
-This phrase covers research about improving road safety. The basic structure is *safety + road*.
-
-```Ceylon =
-
+```r
 TS=
 (
   (
-     (
-          ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*" OR "accident*")
-    )
+    ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*" OR "accident*")
     NEAR/5
         ("traffic*" OR "road*" OR "highway$" OR "motorway$" OR "street*"
         OR "cycling lanes" OR "cyclist$"
@@ -186,10 +181,7 @@ TS=
 )
 ```
 
-
-
-
-## Target 11.3
+### Target 11.3
 
 > **11.3 By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries**
 >
@@ -201,32 +193,35 @@ This target is interpreted to cover research about inclusive and sustainable urb
 
 This query consists of two phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 This phrase covers urbanization. The basic structure is *sustainble/inclusive + urbanization*.
 
-```Ceylon =
+```r
 TS=
 (
   ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
   NEAR/15 ("urbani?ation" OR "urban development")
 )
 ```
-##### Phrase 2:
+
+#### Phrase 2
 
 This phrase covers settlement planning. The basic structure is *settlement planning + process terms*.
 
-```Ceylon =
+```r
 TS=
 (
+  (
     ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
     NEAR/3 ("plan*" OR "manag*")
+  )
   NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
 )
 
 ```
 
-## Target 11.4
+### Target 11.4
 
 > **11.4 Strengthen efforts to protect and safeguard the world’s cultural and natural heritage**
 >
@@ -236,11 +231,11 @@ This target is interpreted to cover research on the protection of cultural and n
 
 This query consists of 1 phrase. The basic structure is *management/protection + cultural heritage*.
 
-```Ceylon =
+```r
 TS=
 (
-    ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves"
-        OR "preserv*" OR "sustain" OR "protect*" OR "safeguard*"
+  ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves"
+  OR "preserv*" OR "sustain" OR "protect*" OR "safeguard*"
   )
   NEAR/15
     ("cultur* heritage" OR "cultural landscape$"
@@ -252,7 +247,7 @@ TS=
 )
 ```
 
-## Target 11.5
+### Target 11.5
 
 > **11.5 By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations**
 >
@@ -260,117 +255,86 @@ TS=
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This target is interpreted to cover research on deaths/missing people caused by (natural??) disasters (on poor people and people in vulnerable situations) and the impact on economic losses, specifically tied to the GGDP. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
+This target is interpreted to cover research on deaths/missing people caused by disasters and the impact of disasters on GDP/GGDP. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
 
 Terms were gathered from the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>), the Sendai Framework as presented on prevetionweb (<a id="sendai">[UN Office for Disaster Risk Reduction, n.d.](#f6)</a>) and the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). Terms were also added from a standardised list of disasters we created to be used across SDG search strings, which was based on hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a>.
 
-Added people groups to phrase 1 and 2, big difference and otherwise relevant articles get excluded, but achieves manageable number of results. Phrase 3 edited to include prevent.
-
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
-This phrase covers research about reducing mortality from disasters. The basic structure is *disasters + mortality*.
+This phrase covers research about reducing mortality/increasing survival and disasters. The basic structure is *disasters + mortality + action*. Disaster terms to do with disease (`pandemic$`, `epidemic$`, `outbreak$`) were not included as the results were dominated by these, and these are really much more related to SDG3 (or animal health, in the case of `outbreak`) - this string may need additional work to narrow down to humans, OR a more city-settelement oriented context. 
 
-```Ceylon =
-TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-  OR "drought$" OR "flood*" 
-  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
-OR (  ("anthropogenic" 
-         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-         OR "chemical" OR "heavy metal$" OR "pesticide$"
-         OR "biological" OR "disease" OR "zoonotic"
-         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-         ) 
-         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
-      ) 
-OR "outbreak$" OR "pandemic$" OR "epidemic$"
-OR "war" OR "wars" OR "armed conflict$"
-OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-
-)  )AND
+```r
+TS=
+(
+  ( 
+    ("disaster$" OR "catastrophe$" 
+    OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+    OR (("natural" OR "climat*") NEAR/5 "hazard$")
+    OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+    OR "drought$" OR "flood*" 
+    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+    OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+    OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+    OR 
       (
-        ("death$" OR "casualt*" OR "mortalit*" OR "fatal*" OR "missing")
-))
-```
-
-##### Phrase 2:
-
-This phrase covers research about increasing survival after disasters. The basic structure is *disasters + survival*
-
-```Ceylon =
-TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-  OR "drought$" OR "flood*" 
-  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
-OR (  ("anthropogenic" 
-         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-         OR "chemical" OR "heavy metal$" OR "pesticide$"
-         OR "biological" OR "disease" OR "zoonotic"
-         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-         ) 
-         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
+        ("anthropogenic" 
+        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+        OR "chemical" OR "heavy metal$" OR "pesticide$"
+        OR "biological" OR "disease" OR "zoonotic"
+        OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+        ) 
+        NEAR/3 ("hazard$")
       ) 
-OR "outbreak$" OR "pandemic$" OR "epidemic$"
-OR "war" OR "wars" OR "armed conflict$"
-OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-
-)  )  AND
-    (mortality OR surviv*)
+    OR "war" OR "wars" OR "armed conflict$"
+    OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+    OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+    )  
+  )
+  AND ("death$" OR "casualt*" OR "mortalit*" OR "fatal*" OR "missing people" OR "missing person$" OR "surviv*")
 )
 ```
 
-##### Phrase 3:
+#### Phrase 2
 
-This phrase covers research about reducing the effect of disasters on global GDP. The basic structure is *disasters + GDP + loss*
+This phrase covers research about disasters and GDP. The general structure is *disasters + GDP*. 
 
-```Ceylon =
-TS=(( ( ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-  OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-  OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-  OR "drought$" OR "flood*" 
-  OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-  OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-  OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-  OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-  OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) OR "disaster$" OR "catastrophe$"
-OR (  ("anthropogenic" 
-         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-         OR "chemical" OR "heavy metal$" OR "pesticide$"
-         OR "biological" OR "disease" OR "zoonotic"
-         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-         ) 
-         NEAR/3 ("hazard$" OR "catastrophe$" OR "disaster$")
-      ) 
-OR "outbreak$" OR "pandemic$" OR "epidemic$"
-OR "war" OR "wars" OR "armed conflict$"
-OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-
-)  )  AND
+```r
+TS=
+(
+  ( 
+    ("disaster$" OR "catastrophe$" 
+    OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
+    OR (("natural" OR "climat*") NEAR/5 "hazard$")
+    OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
+    OR "drought$" OR "flood*" 
+    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
+    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
+    OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
+    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
+    OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
+    OR 
       (
-        ("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$")
-        NEAR/15
-   ("loss" or "losses")
-            )
-      )
-
+        ("anthropogenic" 
+        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+        OR "chemical" OR "heavy metal$" OR "pesticide$"
+        OR "biological" OR "disease" OR "zoonotic"
+        OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
+        ) 
+        NEAR/3 ("hazard$")
+      ) 
+    OR "war" OR "wars" OR "armed conflict$"
+    OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
+    OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
+    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
+    )  
+  )
+  AND ("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$")
+)
 ```
 
 ## Target 11.6
@@ -648,9 +612,11 @@ TS=
 
 ## 4. Contributions
 
-* v2022.xx: HMB, IG, KH (Oct 2021-Jun 2022)
+* v1.1.0 first draft: HMB, IG, KH (Oct 2021-Mar 2022)
 
-* Internal review: EHS, CSA (March 2022)
+* Internal review: EHS, CSA (Mar 2022)
+
+* v1.1.0 second draft: HMB, IG (Apr 2021-Sep 2022)
 
 Specialist input:
 
@@ -664,7 +630,7 @@ Specialist input:
 
 <a id="f7"></a> United Nations (2018). *Tracking progress towards inclusive, safe, resilient and sustainable cities and human settlements*. High Level Political Forum 2018. http://uis.unesco.org/sites/default/files/documents/sdg11-synthesis-report-2018-en.pdf
 
-<a id="f8"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
+<a id="f22"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
 
 <a id="f6"></a> UN Office for Disaster Risk Reduction (n.d.). *Sendai Framework at a Glance*. PreventionWeb. https://www.preventionweb.net/sendai-framework/sendai-framework-at-a-glance [↩](#sendai)
 
