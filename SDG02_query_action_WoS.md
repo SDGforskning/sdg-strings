@@ -143,9 +143,9 @@ TS=
 
 > **2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons.**
 >
-> 2.2.1 Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age
+> 2.2.1 Prevalence of stunting (height for age less than -2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age
 >
-> 2.2.2 Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)
+> 2.2.2 Prevalence of malnutrition (weight for height more than +2 or less than -2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
@@ -251,7 +251,7 @@ TS=
       OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
       OR "adult$" OR "women" OR "men" OR "woman" OR "man"
       OR "agricultur*" OR "food security" OR "poverty"
-      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
       OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
       OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
       )
