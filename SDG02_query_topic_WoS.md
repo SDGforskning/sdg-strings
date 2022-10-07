@@ -59,7 +59,7 @@ It consists of 3 phrases. Phrase 3 uses terms which need to be combined with hum
 
 The elements of the phrase are: *hunger*
 
-Hunger is still used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
+Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
 
 ```Ceylon =
 TS=
@@ -152,7 +152,7 @@ TS=
 
 The elements of the phrase are: *nutritional access/quality OR nutrition + specific groups*
 
-Research about the nutritional of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
 
 ``` Ceylon =
 TS=
@@ -210,7 +210,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
 
  In the *productivity/access etc. terms*:
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
-- Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however I have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
+- Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however we have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ``` Ceylon =
   TS=
@@ -302,7 +302,7 @@ TS=
 
 #### Phrase 2
 
-Phrase 2 and 3 concern vulnerability / resilience. They have the same terms for food production systems, but differ in the terms for resilience: phrase 2 is linked to general terms for resilience, while phrase 3 covers terms need to be connected to disasters/shocks/risks.
+Phrase 2 and 3 concern vulnerability / resilience. They have the same terms for food production systems, but differ in the terms for resilience: phrase 2 is linked to general terms for resilience, while phrase 3 covers terms that need to be connected to disasters/shocks/risks.
 
 Resilience in terms of food production has been described by FAO as:
 > " In the context of sustainable food and agriculture, resilience is the capacity of agro-ecosystems, farming communities, households or individuals to maintain or enhance system productivity by preventing, mitigating or coping with risks, adapting to change, and recovering from shocks" (<a id="FAO2014">[FAO, 2014, p.28](#f7)</a>)
@@ -397,7 +397,7 @@ TS=
 
 #### Phrase 4
 
-The elements of the phrase are: *ecoagriculture // food production systems + sustainability*.
+The elements of the phrase are: *ecoagriculture / food production systems + sustainability*.
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
@@ -440,7 +440,7 @@ TS=
 
 #### Phrase 5
 
-The elements of the phrase are: *food production systems + ecosystems and soil*. - this phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degredation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage)
+The elements of the phrase are: *food production systems + ecosystems and soil*. This phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage)
 
 ``` Ceylon =
 TS=
@@ -469,7 +469,7 @@ TS=
 
 #### Phrase 6
 
-The elements of the phrase are: *food production systems + ecosystems and soil* - this phrase covers "negatives" (loss, degredation etc.), phrase 5 covers "positives" (soil health, diversity, fertility etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage).
+The elements of the phrase are: *food production systems + ecosystems and soil*. This phrase covers "negatives" (loss, degradation etc.), phrase 5 covers "positives" (soil health, diversity, fertility etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage).
 
 Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>).
 
@@ -530,7 +530,7 @@ This query consists of 5 phrases.
 
 #### Phrase 1
 
-The elements of the phrase are: *agricultural diversity // traditional varieties/specific species + agriculture // landraces + diversity/conservation* - this phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
+The elements of the phrase are: *agricultural diversity / traditional varieties/specific species + agriculture / landraces + diversity/conservation*. This phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
 
 Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). 
 
@@ -649,7 +649,7 @@ The elements of the phrase are: *resources/knowledge + sharing/access + agricult
 
 For the *resource/knowledge* terms, `traditional NEAR knowledge` etc. will cover variations such as "traditional agricultural knowledge". The string is set up so that we do not have to define the benefits. Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>).
 
-In the *sharing/access* terms, the more generic terms are combined with actions (e.g. increase access) while terms that are more specific to this issues are not (e.g. governance, justice), because it might be unnatural to write about e.g. "increasing justice". `access OR accessing OR accessib*` is used here to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
+`access OR accessing OR accessib*` is used to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
 
 
 ``` Ceylon =
