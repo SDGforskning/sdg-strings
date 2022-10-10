@@ -2,7 +2,7 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string is currently being converted from the action version, unstable/not yet working as intended.
+**Current status**: This string is currently undergoing review, some changes can occur.
 
 **Contents**
 
