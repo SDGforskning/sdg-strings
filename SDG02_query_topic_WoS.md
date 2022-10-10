@@ -40,7 +40,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 
 ## 3. Targets
 
-## Target 2.1
+### Target 2.1
 
 > **2.1 By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.**
 >
@@ -61,7 +61,7 @@ The elements of the phrase are: *hunger*
 
 Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
 
-```Ceylon =
+```py
 TS=
 (
   ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
@@ -76,7 +76,7 @@ TS=
 
 The elements of the phrase are: *food access/safety/nutrition*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
-``` Ceylon =
+```py
 TS=
 (
   "right to food" OR "right to adequate food" OR "food sovereignty"
@@ -89,7 +89,7 @@ TS=
 
 The elements of the phrase are: *food supply/nutrient content + humans*. This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
-``` Ceylon =
+```py
 TS=
  (
     ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")  
@@ -105,7 +105,7 @@ TS=
 )
 ```
 
-## Target 2.2
+### Target 2.2
 
 > **2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons.**
 >
@@ -125,7 +125,7 @@ The elements of the phrase are: *malnutrition*
 
 `dietary NEAR/3 deficiency` finds a number of specific deficiencies (e.g. dietary selenium deficiency, dietary Zn deficiency). `minerals` is not used - it only adds a few results, and many are from agriculture. `undernutrition` and other terms are included in phrase 3.
 
-```Ceylon =
+```py
 TS=
 (
   ("malnutrition" OR "malnourish*"
@@ -154,7 +154,7 @@ The elements of the phrase are: *nutritional access/quality OR nutrition + speci
 
 Research about the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
 
-``` Ceylon =
+```py
 TS=
 (
   ("nutritio*" NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability"))
@@ -175,7 +175,7 @@ TS=
 
 The elements of the phrase are: *undernutrition/food supply + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
-``` Ceylon =
+```py
 TS=
 (
   ("protein deficiency"
@@ -194,7 +194,7 @@ TS=
 
 ```
 
-## Target 2.3
+### Target 2.3
 
 > **2.3 By 2030, double the agricultural productivity and incomes of small-scale food producers, in particular women, indigenous peoples, family farmers, pastoralists and fishers, including through secure and equal access to land, other productive resources and inputs, knowledge, financial services, markets and opportunities for value addition and non-farm employment.**
 >
@@ -212,7 +212,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
 - Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however we have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
-``` Ceylon =
+```py
   TS=
   (
     (
@@ -253,7 +253,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
 )
 ```   
 
-## Target 2.4
+### Target 2.4
 
 > **2.4 By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality.**
 >
@@ -276,7 +276,7 @@ This query consists of 6 phrases.
 
 The elements of the phrase are: *food production systems + productivity*. 
 
-``` Ceylon =
+```py
 TS=
 (
   (
@@ -313,7 +313,7 @@ In the *food production system* terms, production systems and species are includ
 
 In the *resilience* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
 
-``` Ceylon =
+```py
 TS=
 (
   (
@@ -348,7 +348,7 @@ The *food production system* terms are the same as phrase 2.  These *disaster/cl
 
 The *disaster* terms were taken from a standardised list we used across the SDGs, which was developed based on selected hazards listed in <a id="Murray">[Murray et al. (2021)](#f15)</a>.
 
-``` Ceylon =
+```py
 TS=
 (
   (
@@ -403,7 +403,7 @@ The elements of the phrase are: *ecoagriculture / food production systems + sust
 
 Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
-``` Ceylon =
+```py
 TS=
   ("ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
   OR "conservation agriculture" OR "conservation farming"
@@ -442,7 +442,7 @@ TS=
 
 The elements of the phrase are: *food production systems + ecosystems and soil*. This phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage)
 
-``` Ceylon =
+```py
 TS=
 (
     ("food production" OR "food grower$" OR "agri food"
@@ -473,7 +473,7 @@ The elements of the phrase are: *food production systems + ecosystems and soil*.
 
 Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)</a> and (<a id="SDGindmetadata">[Statistics Division, 2021b (Indicator 2.4.1)](#f9)</a>).
 
-``` Ceylon =
+```py
 TS=
 (
   ("food production" OR "food grower$" OR "agri food"
@@ -509,7 +509,7 @@ TS=
 )
 ```  
 
-## Target 2.5
+### Target 2.5
 
 > **2.5 By 2020, maintain the genetic diversity of seeds, cultivated plants and farmed and domesticated animals and their related wild species, including through soundly managed and diversified seed and plant banks at the national, regional and international levels, and promote access to and fair and equitable sharing of benefits arising from the utilization of genetic resources and associated traditional knowledge, as internationally agreed.**
 >
@@ -536,7 +536,7 @@ Conserving wild relatives and traditional varieties is considered maintaining ge
 
 `landraces` and `varieties` are treated slightly differently here than the other terms: `varieties`is combined with agriculture as "traditional varieties" could refer to varieties of language, art etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. `landraces` is connected to diversity terms to try and avoid technical works on e.g. sperm motility which use landrace/landrace-cross species. 
 
-``` Ceylon =
+```py
 TS=
 (
     "plant genetic resource$" OR "animal genetic resource$"
@@ -575,7 +575,7 @@ Publications about groups and using terms which also include wild species (e.g. 
 
 Terminology to do with breeding programmes could be included here, but we want research that is about programmes for genetic diversity, and this should already be covered by *diversity* - the inclusion of breeding programmes alone finds results about programmes for other objectives (e.g. increased productivity). It also introduces noise around the *use* of genetic resources *for* breeding programmes, whereas we want research about breeding programs *for* genetic diversity. `conserv*` will cover e.g. conservation breeding, on-farm conservation etc..
 
-``` Ceylon =
+```py
 TS=
 (
         ("genetic diversity" OR "genetic resource$"
@@ -605,7 +605,7 @@ The *diversity/protection/policy* terms are included to help to filter out publi
 
 For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are included as in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). For the *agriculture terms*, `domestic*` was removed from this phrase as results were mostly about domestic cats. A `NOT` expression was added for `seed banks` as these can be both human storage of seeds but also natural seed banks in the soil.
 
-``` Ceylon =
+```py
 TS=
 (
   (
@@ -652,7 +652,7 @@ For the *resource/knowledge* terms, `traditional NEAR knowledge` etc. will cover
 `access OR accessing OR accessib*` is used to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
 
 
-``` Ceylon =
+```py
 TS=
 (
   (
@@ -692,7 +692,7 @@ TS=
 
 Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The elements of the phrase are: *resources/knowledge/rights + agriculture/food + instruments/specific issues*. In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
 
-``` Ceylon =
+```py
 TS =
 (
     ("genetic resource$" OR "agrobiodiversity"
@@ -727,7 +727,7 @@ TS =
 ```
 
 
-## Target 2.a
+### Target 2.a
 
 > **2.a Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries.**
 >
@@ -739,7 +739,7 @@ This target is interpreted to cover research about investment and international 
 
 This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural infrastructure/technology*.
 
-``` Ceylon =
+```py
 TS =
 (
       ("Agriculture Orientation Index for Government Expenditure$"
@@ -787,7 +787,7 @@ TS =
 
 ```
 
-## Target 2.b
+### Target 2.b
 
 > **2.b Correct and prevent trade restrictions and distortions in world agricultural markets, including through the parallel elimination of all forms of agricultural export subsidies and all export measures with equivalent effect, in accordance with the mandate of the Doha Development Round.**
 >
@@ -801,7 +801,7 @@ This query consists of 2 phrases.
 
 The elements of the phrase are: *export subsidies + agriculture/food*.
 
-``` Ceylon =
+```py
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
@@ -813,7 +813,7 @@ TS=
 
 The elements of the phrase are: *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
 
-```Ceylon =
+```py
 TS=
 (
   ("distort*" OR "price-fixing" OR "dumping"
@@ -829,7 +829,7 @@ TS=
 )
 ```
 
-## Target 2.c
+### Target 2.c
 
 > **2.c Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility.**
 >
@@ -839,7 +839,7 @@ This target is interpreted to cover research about food prices and markets, stab
 
 #### Phrase 1:
 
-```Ceylon =
+```py
 TS=
 (
     ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$" OR "price spike$" OR "inflation"

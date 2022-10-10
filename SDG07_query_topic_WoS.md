@@ -49,7 +49,7 @@ Other abbreviations:
 
 ## 3. Targets
 
-## Target 7.1
+### Target 7.1
 
 > **7.1 By 2030, ensure universal access to affordable, reliable and modern energy services**
 >
@@ -65,10 +65,10 @@ This target is interpreted to cover research about:
 
 <a id="IEAaccess">[IEA (2020)](#f5)</a> and <a id="UNThemereport">[UN (2021)](#f9)</a> were used as a source of terms for this target. This query consists of 6 phrases.
 
-##### Phrase 1
+#### Phrase 1
 The elements of the phrase are: *energy transitions/clean fuels/tech + households*. *Household terms* are included as terms such as `fuel$` are broad. Compared to the action approach, a couple of terms were removed as they created noise (`home OR community`). "Clean technology" in household contexts should be covered by the terms for `cooking`, `stove$`, `fuels` etc. or by the general term `energy transition$`.
 
-```jsx
+```py
 TS=
 (
   (
@@ -87,11 +87,11 @@ TS=
       )      
 )
 ```
-##### Phrase 2:
+#### Phrase 2
 
 The elements of the phrase are: *clean household energy activities*. It is similar to phrase 1, but the terms used here are more specific (e.g. `solar cookers`) so do not require "household" terms.
 
-```jsx
+```py
 TS=
 (
   "solar cooker$" OR "solar box cooker$" OR "solar cooking"
@@ -99,11 +99,11 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 The elements of the phrase are: *"dirty" fuels + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. The household terms are slightly edited compared to the action string to reduce noise (`slum OR slums`, and removed `village$`).
 
-```jsx
+```py
 TS=
 (
   ("kerosene" OR "solid fuel$" OR "coal"
@@ -126,13 +126,13 @@ TS=
 )
 ```
 
-##### Phrase 4
+#### Phrase 4
 
 This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
 The elements of the phrase are: *energy security/access phrases*. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
 
-```jsx
+```py
 TS=
 (
   "energy poverty" OR "energy vulnerability" OR "fuel poverty"
@@ -141,11 +141,11 @@ TS=
 )
 ```
 
-##### Phrase 5
+#### Phrase 5
 
 This phrase is about improving access to energy services and electricity. The elements of the phrase are: *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). For *regions*, we include generic terms for developing, least developed countries and rural areas, as well as specific least developed countries, SIDS, landlocked developing countries.
 
-```jsx
+```py
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
 OR
 TS=
@@ -194,11 +194,11 @@ TS=
 )
 ```
 
-##### Phrase 6
+#### Phrase 6
 
 This phrase finds works about affordability and reliability of energy services. The elements of the phrase are: *afford/stable + energy*. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
 
-```jsx
+```py
 TS=
 (
   ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap"
@@ -223,7 +223,7 @@ TS=
 )
 ```
 
-## Target 7.2
+### Target 7.2
 
 > **7.2 By 2030, increase substantially the share of renewable energy in the global energy mix**
 >
@@ -236,11 +236,11 @@ These two different interpretations make a large difference to the number of res
 
 This query consists of 3 phrases.
 
-##### Phrase 1
+#### Phrase 1
 
 This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renwables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). Compared to the action approach, a wider distance is used between elements.
 
-```jsx
+```py
 TS=
 (
   ("renewable" AND ("energy transition$" OR "sector transformation$" OR "energy transformation$"))
@@ -248,13 +248,13 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 This phrase covers terms renewable energy. The elements of the phrase are: *use/share/adoption/investing/barriers/promotional actions + renewable energy*.
 
 In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy) - these have been narrowed slightly in the topic approach compared to the action approach (particularly biomass was causing issues). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results referring to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
 
-```jsx
+```py
 TS=
 (
   ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation" OR "uptake" 
@@ -315,11 +315,11 @@ TS=
 )
 ```
 
-##### Phrase 3
+#### Phrase 3
 
 This phrase covers reliance on and consumption of fossil fuels. The elements of the phrase are: *fossil fuels + reliance/energy mix*. Action terms are retained for "oil" because it is used to generally (e.g. consuption of fish oil, reliance of technology for oil drilling etc.)
 
-```jsx
+```py
 TS=
 (
   ("fossil fuel$" OR "coal" OR "natural gas" OR "grey hydrogen" OR "conventional energy"
@@ -343,7 +343,7 @@ TS=
 )   
 ```
 
-## Target 7.3
+### Target 7.3
 
 > **7.3 By 2030, double the global rate of improvement in energy efficiency**
 >
@@ -356,13 +356,13 @@ Energy intensity definition from the European Environment Agency:
 
 This query consists of 3 phrases.
 
-##### Phrase 1
+#### Phrase 1
 
 This phrase finds research about improving energy intensity. The elements of the phrase are: *energy intensity + energy terms*.
 
 The *energy terms* contains terms that help avoid publications using "energy intensity" in other contexts.
 
-```jsx
+```py
 TS=
 (
   ("energy intensity")
@@ -376,10 +376,10 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 This phrase covers research about energy intensity via the decoupling of energy consumption and economic growth. The elements of the phrase are: *energy consumption + action + economy*. This action needs to be retained for the context, since energy intensity is about the coupling of energy consumption with GDP.
 
-```jsx
+```py
 TS=
 (
   ("energy consum*"
@@ -389,7 +389,7 @@ TS=
 )
 ```
 
-##### Phrase 3
+#### Phrase 3
 
 This phrase finds research about energy efficiency. The elements of the phrase are: *energy efficiency/loss + sectors* OR *energy efficiency + action*. As "energy efficiency" can be used in other subject areas (e.g. biology, medicine) it is either a) combined with various sectors/items processes that account for energy use (first part), or b) used only with action terms that are relevant to the energy sector (second part, with varying NEAR distances). These actions are retained even in this topic approach, because without them energy efficiency is too broad/noisy.
 
@@ -397,7 +397,7 @@ This phrase finds research about energy efficiency. The elements of the phrase a
 
 The *action terms* include a number of mechanisms by which changes can be brought about, such as investments and incentives (as in other targets of this SDG), but also terms for mechanisms specific for energy efficiency, such as `energy labelling` (<a id="IEAenergylabelling">[IEA, 2021](#f7)</a>). `increase$ OR increasing` is used to avoid "increasingly".
 
-```jsx
+```py
 TS=
 (
     (
@@ -433,11 +433,11 @@ TS=
 )
 ```
 
-##### Phrase 4
+#### Phrase 4
 
 This phrase covers energy sufficiency. The elements of the phrase are: *energy sufficiency + energy terms*
 
-```jsx
+```py
 TS=
   ("energy sufficiency"
   AND
@@ -447,7 +447,7 @@ TS=
   )
 ```
 
-## Target 7.a
+### Target 7.a
 
 > **7.a By 2030, enhance international cooperation to facilitate access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology, and promote investment in energy infrastructure and clean energy technology**
 >
@@ -463,10 +463,10 @@ Here, "clean" is interpreted to include also low-carbon due to the specific ment
 
 This target consists of 2 phrases.
 
-##### Phrase 1
+#### Phrase 1
 The elements of the phrase are: *sharing/investing/cooperation + clean energy research/tech*.
 
-```jsx
+```py
 TS=
 (
   ("ODA" OR "development spending" OR "cooperation fund"
@@ -504,11 +504,11 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 The elements of the phrase are: *investment + energy infrastructure/renewable energy*.
 
-```jsx
+```py
 TS=
 (
   ("ODA" OR "development spending" OR "cooperation fund"
@@ -540,7 +540,7 @@ TS=
 )
 ```
 
-## Target 7.b
+### Target 7.b
 
 > **7.b By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States and landlocked developing countries, in accordance with their respective programmes of support**
 >
@@ -548,7 +548,7 @@ TS=
 
 This target is interpreted to cover research about infrastructure for sustainable and modern energy services in developing countries. The focus is on infrastructure and supply. We interpret this to cover electricity generation, power grids, storage, and energy services. The general structure is *action/modern/sustainable + infrastructure/technology/services + developing countries*. This string has been converted from the topic approach by retaining the action terms, but adding to them to additionally include works generally talking about modern and sustainable services.
 
-```jsx
+```py
 TS=
 (
   (

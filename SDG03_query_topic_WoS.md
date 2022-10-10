@@ -40,7 +40,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 
 ## 3. Targets
 
-## Target 3.1
+### Target 3.1
 
 > **3.1 By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births.**
 >
@@ -52,7 +52,7 @@ The target is interpreted as covering research about the maternal mortality rate
 
 This query consists of 1 phrase.
 
-##### Phrase 1
+#### Phrase 1
 
 The elements of the phrase are: *mothers/birth* + *mortality* + *excluding livestock*. Originally, a second phrase was added for "survival", but this mostly added noise - many results were about babies rather than mothers, and others were about "maternal" effects in animals.
 
@@ -60,7 +60,7 @@ Some of the *mothers/birth* terms may find results concerning newborn mortality,
 
 A double `NOT` expression is included to help remove results referring to mortality of livestock, but retain those referring to these animals as models for humans. Rats and mice are not in the `NOT` statement as these are usually animal models for humans.
 
-```jsx
+```py
 TS=
 (
   (   
@@ -76,7 +76,7 @@ TS=
 )
 ```
 
-## Target 3.2
+### Target 3.2
 
 > **3.2 By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under‑5 mortality to at least as low as 25 per 1,000 live births**
 >
@@ -88,11 +88,11 @@ This target is interpreted to cover research about mortality for young children 
 
 This query consists of 2 phrases.
 
-##### Phrase 1
+#### Phrase 1
 
 The elements of the phrase are: *children/babies* + *mortality* + *excluding livestock*. `preterm` and `premature` are not used, as they generally (when used without reference to births/newborns) refer to "premature death".
 
-```jsx
+```py
 TS=
 (
   (   
@@ -107,11 +107,11 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 Phrase 2 finds publications using the opposite terminology of phrase 1 (i.e. mortality = survival). The elements of the phrase are: *children/babies* + *survival* +  *excluding livestock*. The term "survivor" is a bit tricky, as it is used about reducing mortality (e.g. "cancer survivors") but also in the context of abuse ("child abuse survivor"). Thus results around this topic may also be included; we did not consider them far enough from the interpretation to warrant using a NOT search that could potentially lose relevant results.
 
-```jsx
+```py
 TS=
 (
   (   
@@ -127,7 +127,7 @@ TS=
 ```
 
 
-## Target 3.3
+### Target 3.3
 
 > **3.3 By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases.**
 >
@@ -148,11 +148,11 @@ For the moment, we are using interpretation (1). Thus we interpret "ending epide
 
 This query consists of 3 phrases.
 
-##### Phrase 1
+#### Phrase 1
 
 This covers communicable diseases as a category. The elements of the phrase are: *communicable diseases + combating/epidemics/interventions*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
-```jsx
+```py
 TS =
 (
   (
@@ -169,7 +169,7 @@ TS =
 )
 ``` 
 
-##### Phrase 2
+#### Phrase 2
 
 The elements of the phrase are: *communicable diseases + prevention/treatment*. In this phrase, specific diseases and groups of diseases are covered. The*disease* terms are the same as in phrase 3.
 
@@ -182,7 +182,7 @@ In the *communicable disease* terms, specific diseases were added from sources o
 A number of these diseases also occur in animals (e.g. Feline/Simian Acquired Immunodeficiency Syndrome, Canine hepatitis, Avian malaria, Bovine tuberculosis). We do not attempt to exclude them, as it is considered that work on them can inform human prevention/treatment, or prevent zoonotic transmission. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
 
-```jsx
+```py
 TS =
 (
   (
@@ -262,11 +262,11 @@ TS =
 
 ```   
 
-##### Phrase 3
+#### Phrase 3
 
 The general structure is *communicable diseases + epidemics/interventions*. This phrase uses the same disease terms as phrase 2, but is separated because the *epidemic/intervention* can be combined with `AND` rather than needing `NEAR`.
 
-```jsx
+```py
 TS =
 (
   (
@@ -346,7 +346,7 @@ TS =
 
 ``` 
 
-## Target 3.4
+### Target 3.4
 
 > **3.4 By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being.**
 >
@@ -360,11 +360,11 @@ This query consists of 3 phrases.
 * Phrase 1 focuses on the "non-communicable diseases" part.
 * Phrases 2 and 3 focus on the "promote mental health and well-being" part.
 
-##### Phrase 1
+#### Phrase 1
 
 The elements of the phrase are: *non-communicable diseases + mortality*. We added diseases from the WHO factsheet on non-communicable diseases (<a id="WHOFSnoncomm">[WHO, 2018](#f4)</a>) and a WHO factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>). Cancer terms were based on "The Cancer Dictionary" in the WHO Cancer Mortality Database (<a id="WHOcancer">[International Agency for Research on Cancer, 2019](#f5)</a>) and using nomenclature as explained by the U.S. National Cancer Institute SEER training modules (<a id="NIHcancer">[National Cancer Institute, n.d.](#f6)</a>).
 
-```jsx
+```py
 TS=
 (
   (
@@ -389,13 +389,13 @@ TS=
 
 ```  
 
-##### Phrase 2
+#### Phrase 2
 
 This phrase focuses on the prevention and treatment of non-communicable mental illnesses/diseases. The elements of the phrase are: *disease + prevention/treatment*.
 
 Generic categories and specific conditions are included. `suicid*` was mentioned specifically in the indicators. We used WHO factsheets to add types of mental disorders (<a id="WHOFSmental">[WHO, 2019a](#f7)</a>). As the focus this phrase is illness, we did not include developmental disorders.
 
-```jsx
+```py
 TS=
 (
   ("mental health disorder$" OR "mental illness*"
@@ -415,7 +415,7 @@ TS=
 )
 ```
 
-##### Phrase 3
+#### Phrase 3
 
 This phrase focuses on the promotion of and services for well-being. The elements of the phrase are: *well-being + promotion/services*.
 
@@ -434,7 +434,7 @@ TS=
 )
 ```  
 
-## Target 3.5
+### Target 3.5
 
 > **3.5 Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol.**
 >
@@ -526,7 +526,7 @@ TS=
 )
 ```
 
-## Target 3.6
+### Target 3.6
 
 > **3.6 By 2020, halve the number of global deaths and injuries from road traffic accidents.**
 >
@@ -540,7 +540,7 @@ The elements of the phrase are: *traffic/road users + mortality/morbidity*
 
 In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y"). `intersection$` was considered but removed as it mostly added noise from metaphorical use of intersection (e.g. between two subject areas).
 
-```jsx
+```py
 TS =
 (
   (
@@ -561,7 +561,7 @@ TS =
 ```
 
 
-## Target 3.7
+### Target 3.7
 
 > **3.7 By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes**
 >
@@ -576,7 +576,7 @@ This target is interpreted to cover research about:
 
 This query consists of 2 phrases.
 
-##### Phrase 1
+#### Phrase 1
 
 The elements of the phrase are: *reproductive health/education + access*
 
@@ -586,7 +586,7 @@ Terms such as `reproductive health` will cover `reproductive health care / healt
 
 Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>).
 
-```jsx
+```py
 TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
@@ -602,11 +602,11 @@ TS =
 )       
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 The elements of the phrase are: *reproductive health + national programmes*. Here we have included LMICs and LDCs as "synonyms" for national; this provides over double the number of relevant results, as works often refer to e.g. "...implementation of a reproductive health programme in Tunisia".
 
-```jsx
+```py
 TS =
 (
   ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
@@ -626,7 +626,7 @@ TS =
 
 ```
 
-## Target 3.8
+### Target 3.8
 
 > **3.8 Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all**
 >
@@ -636,11 +636,11 @@ TS =
 
 This target is interpreted to include research about 1) universal health coverage and access to healthcare, 2) financial obstacles/hardship in healthcare, including access to essential medicines and vaccines
 
-##### Phrase 1
+#### Phrase 1
 
 This phrase covers universal health coverage. The elements of the phrase are: *universal health coverage*.
 
-```jsx
+```py
 TS =
 (
   ("universal health coverage" OR "universal healthcare" OR "universal health care")
@@ -648,13 +648,13 @@ TS =
 
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 This phrase covers access to healthcare, essential medicines and vaccines. The elements of the phrase are: *health care/medications + access/affordability/quality*
 
 `treatment` is not used alone, as there are technical biomedical works about e.g. barrier treatments. Under *access* terms, we have included `health equity` and `vaccine equity`, as we consider it to cover the idea of "medicines and vaccines for all".
 
-```jsx
+```py
 TS =
 (
   ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
@@ -674,7 +674,7 @@ TS =
 )
 ```
 
-## Target 3.9
+### Target 3.9
 
 > **3.9 By 2030, substantially reduce the number of deaths and illnesses from hazardous chemicals and air, water and soil pollution and contamination**
 >
@@ -691,7 +691,7 @@ We were slightly unsure whether food poisoning/contaminated food should be inclu
 
 This query consists of 2 phrases. The phrases are similar, but phrase 2 includes terms which need to be limited to humans.
 
-##### Phrase 1:
+#### Phrase 1
 
 The elements of the phrase are: *contamination/toxins* + *disease/mortality*.
 
@@ -706,7 +706,7 @@ The combination of gases with `NEAR/15 "pollution" OR "poisoning$"` is necessary
 `hygiene` is not used alone as there are many results about oral hygiene which are probably too broad (not to do with pollution/contamination). `sanitation` is also limited here, to remove animal results, and included more broadly in phrase 2.
 
 
-```jsx
+```py
 TS =
 (
   ("air pollution" OR "PM2.5" OR "PM10" OR "particulate matter" OR "ozone"
@@ -739,7 +739,7 @@ TS =
 
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The elements of the phrase are: *pollutants/contamination + disease/mortality + humans*.
 
@@ -750,7 +750,7 @@ Specific chemicals were added from the WHO list of chemicals of major public hea
 `poisoning$ OR poisoned` and `*toxicity` (covers gene/neuro/gonadotoxicity) were added to the mortality terms, as, in combination with the human terms, they are mostly used in the context of human illnesses. `fluorosis`, is a disease from excess fluoride.
 
 
-```jsx
+```py
 TS =
 (
   (
@@ -789,7 +789,7 @@ TS =
 
 ```
 
-## Target 3.a
+### Target 3.a
 
 > **3.a Strengthen the implementation of the World Health Organization Framework Convention on Tobacco Control in all countries, as appropriate**
 >
@@ -803,7 +803,7 @@ This query consists of 3 phrases.
 
 This phrase finds works referring to the FCTC.
 
-```jsx
+```py
 TS = ("Framework convention on tobacco control" OR "WHO FCTC")
 ```
 
@@ -815,7 +815,7 @@ We do not limit terminology to tobacco "use", as the FCTC also refers to tobacco
 
 `reduc* tobacco` etc. will find both reducing tobacco use and production. It is added as a phrase as `reduc*` + `tobacco` alone is too broad (e.g. "tobacco reduces lung function" - not relevant). Phrase 3 deals with tobacco production in more depth.
 
-```jsx
+```py
 TS =
 (
   (
@@ -840,7 +840,7 @@ TS =
 
 This phrase covers research about alternatives to tobacco production. The elements of the phrase are: *tobacco farming + alternatives*.
 
-```jsx
+```py
 TS=
 (
   ("tobacco farm*" OR "tobacco production" OR "tobacco growing" OR "tobacco grower$")
@@ -852,7 +852,7 @@ TS=
 ```
 
 
-## Target 3.b
+### Target 3.b
 
 > **3.b Support the research and development of vaccines and medicines for the communicable and non‑communicable diseases that primarily affect developing countries, provide access to affordable essential medicines and vaccines, in accordance with the Doha Declaration on the TRIPS Agreement and Public Health, which affirms the right of developing countries to use to the full the provisions in the Agreement on Trade-Related Aspects of Intellectual Property Rights regarding flexibilities to protect public health, and, in particular, provide access to medicines for all**
 >
@@ -927,7 +927,7 @@ This phrase concerns access to essential medicines and vaccines. The TRIPS agree
 
 The elements of the phrase are: *agreements/IPR + medicines + access // vaccine equity*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a  term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
 
-```jsx
+```py
 TS =
 (
   ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property" OR "TRIPS agreement")
@@ -944,7 +944,7 @@ TS =
 OR TS=("vaccine equity" OR "vaccine inequity")
 ```
 
-## Target 3.c
+### Target 3.c
 
 > **3.c Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries, especially in least developed countries and small island developing States**
 >
@@ -1005,7 +1005,7 @@ TS =
 
 The elements of the phrase are: *financing + health sector + countries*. 
 
-```jsx
+```py
 TS =
 (
   (
@@ -1041,7 +1041,7 @@ TS =
 )
 ```
 
-## Target 3.d
+### Target 3.d
 
 > **3.d Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks**
 >
@@ -1058,7 +1058,7 @@ This query consists of 1 phrase. The elements of the phrase are: *health emergen
 
 `national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
-```jsx
+```py
 TS =
 (
   (

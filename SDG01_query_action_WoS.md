@@ -38,7 +38,7 @@ During editing of this string (2021), we have also consulted of queries from the
 
 ## 3. Targets
 
-## Target 1.1
+### Target 1.1
 
 > **1.1 By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day**
 >
@@ -50,7 +50,7 @@ This query consists of 1 phrase. The basic structure is *extreme/global poverty 
 
 `(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line.
 
-```Ceylon =
+```py
 TS=
 (
   ("extreme poverty" OR "severe poverty" OR "deep poverty" OR "abject poverty" OR "absolute poverty" OR "destitution"
@@ -65,7 +65,7 @@ TS=
 )  
 ```
 
-## Target 1.2
+### Target 1.2
 
 > **1.2 By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions**
 >
@@ -77,7 +77,7 @@ This target is interpreted as to cover research about poverty reduction. Researc
 
 This query consists of 1 phrase. The general structure is *poverty/the poor + action*
 
-```Ceylon =
+```py
 TS=
 (
   "anti-poverty" OR "out of poverty"
@@ -96,7 +96,7 @@ TS=
 )
 ```
 
-## Target 1.3
+### Target 1.3
 
 > **1.3 Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable**
 >
@@ -108,13 +108,13 @@ To aid interpretation of "social protection" and find terms, we used a guide to 
 
 This query consists of 2 phrases. Some of the terms for services/systems work well without groups of people (phrase 1), but some need to be combined with "the poor and the vulnerable" to get relevant results (phrase 2).
 
-##### Phrase 1
+#### Phrase 1
 
 This phrase is about access to, coverage of and establishment of floors/protection systems/welfare systems. The basic structure is *action + social protection systems*.
 
 As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
-```Ceylon =
+```py
 TS=
 (
   ("implement*" OR "establish*" OR "improv*" OR "enhanc*" OR "strengthen" OR "expand*"
@@ -145,14 +145,14 @@ TS=
 ```  
 
 
-##### Phrase 2
+#### Phrase 2
 
 This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The basic structure is *action + social protection/social floors + poor/vulnerable*.
 
 For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). `"social care service$" OR "social service$"` are sometimes considered a part of social protection <a id="gsdrc">([Carter et al. 2019](#f9))</a> - we include them here, although they do introduce noise as there are many works which mention them as a factor (e.g. a health study that discusses whether participants had access to social care).
 
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -207,7 +207,7 @@ TS=
 )
 ```
 
-## Target 1.4
+### Target 1.4
 
 > **1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance**
 >
@@ -226,12 +226,12 @@ those from low-income households [...]
 
 Although the target states for "all men and women", we target the results to this SDG by combining the phrases also to an element about "the poor and the vulnerable". We do this because a) some of the search terms are quite general (for example, appear in general economic research), and b) because other SDGs refer to access to specific basic services (e.g. modern energy in SDG 7, essential healthcare in SDG 3); thus we assume that the most relevant research for this target should also be somewhat related to poverty/poor/vulnerable.
 
-##### Phrase 1
+#### Phrase 1
 This phrase covers ensuring access and rights to financial services. The basic structure is *action + access/rights + financial services + poor/vulnerable*.
 
 Sources of terms for *financial services* included <a id="DESA">[Department of Economic and Social Affairs (2009)](#f7)</a> and a digital financial inclusion report from the <a id="sgsa">[UNSGSA et al. (2018)](#f8)</a>. For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a whole can, on a global scale, be considered poorer or more vulnerable).   
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -291,13 +291,13 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is *action + access/rights + resources + poor/vulnerable*.
 
 "security" is used in phrases because otherwise there are many results about food security. For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We include least developed countries also (on the assumption that the population there as a whole can, on a global scale, be considered poorer or more vulnerable).   
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -355,7 +355,7 @@ TS=
 )
 ```
 
-##### Phrase 3
+#### Phrase 3
 
 Phrase 3 covers access to basic services. The basic structure is *action + access + basic services + poor/vulnerable*.
 
@@ -363,7 +363,7 @@ Phrase 3 covers access to basic services. The basic structure is *action + acces
 
 For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>).
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -422,7 +422,7 @@ TS=
 )
 ```
 
-## Target 1.5
+### Target 1.5
 
 > **1.5 By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters**
 >
@@ -442,7 +442,7 @@ We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f4
 
 This query consists of 1 phrase. The basic structure is *action + disaster + poor/vulnerable*.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -520,7 +520,7 @@ TS=
 )
 ```
 
-## Target 1.a
+### Target 1.a
 
 > **1.a Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions.**
 >
@@ -530,7 +530,7 @@ TS=
 
 This target is interpreted to cover research about international investment for poverty reduction in developing countries. This query consists of 1 phrase. The basic structure is *international financing/cooperation + anti-poverty + developing countries*.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -575,7 +575,7 @@ TS=
 )
 ```  
 
-## Target 1.b
+### Target 1.b
 
 > **1.b Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions**
 >
@@ -585,7 +585,7 @@ This target is interpreted to cover research about policies that can stimulate i
 
 The general structure is *policy + antipoverty*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive.
 
-``` Ceylon =
+```py
 TS=
 (
   ("law$" OR "legislat*"

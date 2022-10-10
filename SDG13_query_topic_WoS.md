@@ -12,7 +12,6 @@ Take urgent action to combat climate change and its impacts.
 4. Contributions
 5. Footnotes
 
-
 ## 1. Full query
 
 <details>
@@ -35,7 +34,7 @@ During editing of this string (2021), we have consulted another set of queries f
 
 ## 3.Targets
 
-## Target 13.1
+### Target 13.1
 
 > **13.1 Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries**
 >
@@ -53,7 +52,7 @@ Under actions, we considered including the Paris agreement as article 7 is relev
 
 The terms for disasters contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
 
-```jsx
+```py
 TS=
 (
   (
@@ -91,7 +90,7 @@ TS=
 
 ```
 
-## Target 13.2
+### Target 13.2
 
 > **13.2 Integrate climate change measures into national policies, strategies and planning**
 >
@@ -110,13 +109,13 @@ Carbon capture/storage technology can contribute to climate mitigation (i.e. red
 
 This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here - all results will be covered by phrase 1 under.
 
-##### Phrase 1:
+#### Phrase 1
 
 This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
 
 We include reduction of greenhouse gases as a mitigation action as national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
-```jsx
+```py
 TS=
 (
   ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
@@ -144,13 +143,13 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
 
 Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
-```jsx
+```py
 TS=
 (
   (
@@ -175,13 +174,13 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 This phrase covers national policies, strategies and planning related to specific frameworks for mitigation and adaptation. The elements of the phrase are: *frameworks + national plans*. Compared to the action approach, an element generally about climate change has been removed because these results will now be covered by phrase 1.
 
 Some of the frameworks for action (e.g. COP) pick up some results to do with energy transitions, but generally as related to climate. We do not include nationally determined contributions etc. when combining with frameworks for action as these terms are from these frameworks - as such, the results can be very general.
 
-```jsx
+```py
 TS=
 (
   ("Kyoto protocol" OR "Paris Agreement"
@@ -200,7 +199,7 @@ TS=
 )
 ```
 
-## Target 13.3								
+### Target 13.3								
 
 > **13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning**
 >
@@ -217,7 +216,7 @@ Interpretation of what should be considered as contributing to raising "human an
 
 For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
 
-```jsx
+```py
 TS=
 (
   ("capacity" OR "capabilit*"
@@ -258,7 +257,7 @@ TS=
 
 ```
 
-## Target 13.a								
+### Target 13.a								
 
 > **13.a Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible**
 >
@@ -270,7 +269,7 @@ This query consists of 1 phrase. The elements of the phrase are: *transparency/a
 
 The term `investment$ OR investing` were tried, but created mostly noise from climate being used metaphorically ("investment climate"). The *climate* terms at the end of the phrase are added to try and reduce these. We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
 
-```jsx
+```py
 TS=
 (
   (
@@ -317,7 +316,7 @@ TS=
 )
 ```
 
-## Target 13.b
+### Target 13.b
 
 > **13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities**
 >
@@ -332,7 +331,7 @@ This query consists of 1 phrase. The elements of the phrase are: *(climate plann
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
-``` Ceylon =
+```py
 TS=
 (
   (

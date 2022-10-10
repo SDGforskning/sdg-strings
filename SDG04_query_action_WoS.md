@@ -7,11 +7,10 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 **Contents**
 
 1. Full query in copy-pasteable format
-2. General notes about method for SDG 4
+2. General notes
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
-
 
 ## 1. Full query
 
@@ -26,13 +25,15 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 2. General notes
 
+This document contains search strings for finding publications related to the actions in the SDG 4 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 4 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
+
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f10)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters). For African countries (target 4.b), we adapted a filter developed by <a id="Africancountries">[Pienaar et al. (2011)](#f9)</a>.
 
 ## 3. Targets
 
-## Target 4.1
+### Target 4.1
 
 > **4.1 By 2030, ensure that all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes**
 >
@@ -48,13 +49,13 @@ This target is interpreted to cover research about
 
 This query consists of 4 phrases. Phrase 1 and 2 are concerned with increasing completion and reducing dropout rates respectively. Phrase 3 is about ensuring access to free and equitable primary and secondary education, and phrase 4 about achieving minimal proficiency in reading and mathematics.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + completion + school education*.
 
 In many medical and other studies that are not concerned with education as such, having completed a specific level of education is used as a parameter. To reduce the number of such studies, we have used many variants of the verb complete, but avoided "completed" and "complete*".
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -70,13 +71,13 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The basic structure is *action + dropout + school education*.
 
 In this phrase we reverse the concept of increasing school completion, and focus on reducing dropouts.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -91,7 +92,7 @@ TS=
       )
 )
 ```
-##### Phrase 3:
+#### Phrase 3
 
 The basic structure is *action + access + school + free/equitable/quality*.
 
@@ -100,7 +101,7 @@ The basic structure is *action + access + school + free/equitable/quality*.
 
 These are all addressed in the subsequent targets, therefore "quality education" is not elaborated on further here.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -120,13 +121,13 @@ TS=
       )
 )  
 ```
-#### Phrase 4:
+#### Phrase 4
 
 The basic structure is *action + level + skill + reading and mathematics*.
 
 We considered including terms for primary and secondary education, but too many relevant hits were excluded, and we deem the delimitation unnecessary.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -144,7 +145,7 @@ TS=
 )
 ```
 
-## Target 4.2
+### Target 4.2
 
 > **4.2 By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre‑primary education so that they are ready for primary education**
 >
@@ -159,13 +160,13 @@ This target is interpreted to cover research about
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + access + early care*.
 
 The search term "care" is not used alone as it would give too many hits that are only indirectly relevant to readiness for and participation in organized learning. Variants of daycare were considered, but returned too many hits not considered relevant to the target. The basic structure is improve access / remove obstacles + early childhood education and care. Some agricultural terms which occur in combinations with "nurser*" had to be excluded with NOT.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -185,11 +186,11 @@ NOT
 TS= ("pig*" OR "plant*" OR "fish*")
 
 ```
-##### Phrase 2:
+#### Phrase 2
 
 The basic structure is *school readiness // child development + school entry*.
 
-```Ceylon =
+```py
 TS=
 (
   "school readiness"
@@ -207,7 +208,7 @@ TS=
 )
 ```
 
-## Target 4.3
+### Target 4.3
 
 > **4.3 By 2030, ensure equal access for all women and men to affordable and quality technical, vocational and tertiary education, including university**
 >
@@ -220,11 +221,11 @@ We have interpreted the target widely, and included search terms to identify res
 
 This query consists of 3 phrases. The first two phrases contain many of the same terms, but they are combined differently to reduce noise. In particular, combinations of `access` with `university or education` can result in a large quantity of articles about open access publishing and universities, which are not relevant here. To avoid this, in phrase 1 "access" is limited by the inclusion of action terms, and the condition that `university` must be near `admission$ OR enrol*`. In phrase 2, "access" is limited by its combination with terms to do with equality/discrimination, allowing us to also find publications that do not mention enrolment or admission specifically.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + access + higher education*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -256,11 +257,11 @@ TS=
 )
 
 ```
-##### Phrase 2:
+#### Phrase 2
 
 The basic structure is *action + equality + higher education*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -294,13 +295,13 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
-```Ceylon =
+```py
 TS= "inclusive higher education"
 ```
 
-## Target 4.4
+### Target 4.4
 
 > **4.4 By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship**
 >
@@ -313,11 +314,11 @@ This target is interpreted to cover research about
 
 This query consists of 4 phrases. The first two cover skills at an overriding level, the third core skills as defined by the UN International Labor Organisation, and the fourth ICT skills. In order to limit the search to research concerning opportunities for employment, and avoid articles about employees/employers and their (needs for) development in jobs and workplaces, only "employability" and "employment" are used alongside jobs and entrepreneurship. The term "work" is not included as it gives too much noise.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + skills + employability/entrepreneurship*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -328,11 +329,11 @@ TS=
   NEAR/5 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
 ```
-##### Phrase 2:
+#### Phrase 2
 
 This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *action + unemployment + skills*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -344,13 +345,13 @@ TS=
  )
  ```
 
-##### Phrase 3:
+#### Phrase 3
 
 The basic structure is *core and transferable skills + employability*
 
 Types of skills included here are taken from an ILO publication on youth skills for employability (<a id="iloskills">[Brewer 2013](#f4)</a>). Employment is omitted as a search term here, as it leads to irrelevant results concerned with the use (="employment") of the skills.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -368,13 +369,13 @@ TS=
   NEAR/15 "employability"
 )
 ```
-##### Phrase 4:
+#### Phrase 4
 
 The basic structure is *action + ICT + skill + employability*.
 
 Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omitted here to reduce noise from research having to do with conditions within enterprises more generally, and not specifically with individuals' skills or employability
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -390,7 +391,7 @@ TS=
 )
 ```
 
-## Target 4.5
+### Target 4.5
 
 > **4.5 By 2030, eliminate gender disparities in education and ensure equal access to all levels of education and vocational training for the vulnerable, including persons with disabilities, indigenous peoples and children in vulnerable situations**
 >
@@ -402,11 +403,11 @@ This target is interpreted to cover research about
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + gender equality + education*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -422,11 +423,11 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 In this phrase, the basic structure is similar to phrase 1, but reversed to search for reduction of disparity: *action + gender disparity + education*
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -449,13 +450,13 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 The basic structure is *action + access + education + vulnerable groups*
 
 "Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -499,7 +500,7 @@ TS=
 )
 ```
 
-## Target 4.6
+### Target 4.6
 
 > **4.6 By 2030, ensure that all youth and a substantial proportion of adults, both men and women, achieve literacy and numeracy**
 >
@@ -511,11 +512,11 @@ This is closely related to target 4.1, however, with the second phrase, we find 
 
 This query consists of 2 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The first phrase finds research about improving skills. The basic structure is *action + level + skills*.
 
-```Ceylon =
+```py
 TS=
 (
     (
@@ -530,11 +531,11 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 In the second phrase we reverse the question and search for research about decreasing illiteracy, innumeracy and analphabetism. The basic structure is *decrease + illiteracy*. 
 
-```Ceylon =
+```py
 TS=
 (
   ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting"
@@ -546,7 +547,7 @@ TS=
 )
 ```
 
-## Target 4.7
+### Target 4.7
 
 > **4.7 By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture’s contribution to sustainable development**
 >
@@ -560,13 +561,13 @@ This target is interpreted to cover research about
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + education + sustainability/GCED*.
 
  <a id="unescogced">[UNESCO (n.d.b)](#f8)</a> was used as a source of terms. The search term `GCED` for Global Citizenship Education was tested, but only returned irrelevant hits from medical, mathematical and chemical research. After action terms, the phrase includes a wide range of terms concerning arenas and aspects of formalized education and learning, such as curriculum, teacher education etc. These are called frameworks in the interpretation above, but the term "framework" is not used in the search, as it leads to too much noise. As does "policy". The last part entails more and less detailed content of ESD and GCED.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -598,13 +599,13 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The basic structure is *action + ESD*.
 
 The search phrase `ESD` for Education for Sustainable Development was tested, but used alone returned too many irrelevant hits from other research fields. This phrase contains variants of education for sustainable development (ESD).
 
-```Ceylon =
+```py
 TS=
 (
   ("increas*" OR "ensur*" OR "enhanc*" OR "improv*" OR "develop*" OR "secur*" OR "attain*" OR "achiev*" OR "promot*" OR "implement*" OR "establish*")
@@ -615,11 +616,11 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 This phrase is related to searches in SDG 11 about cultural heritage, and likely to have some overlap, yet it is included here as culture's contribution to sustainable development is directly addressed in the target. The basic structure is *culture + contribution + sustainable development*.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -631,7 +632,7 @@ TS=
 ```
 
 
-## Target 4.a
+### Target 4.a
 
 > **4.a Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, non-violent, inclusive and effective learning environments for all**
 >
@@ -646,11 +647,11 @@ We understand the target to be concerned chiefly with facilities for primary and
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 This phrase finds research on ensuring safe and inclusive schools and education facilities. The basic structure is *action + school + safe and inclusive*.
 
-```Ceylon =
+```py
 TS=
 (
   ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
@@ -665,11 +666,11 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 This phrase focuses on effective learning environments in schools. The basic structure is *provide + effective learning environment + school*.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -685,13 +686,13 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 This phrase focuses on improving access to basic services in schools. The basic structure is *action + access + basic services + schools*.
 
 The terms for basic services in schools are taken and adapted from <a id="unescotcg">[UNESCO Institute for statistics (2018)](#f11)</a>
 
-```Ceylon =
+```py
 TS=
 (
  (
@@ -709,7 +710,7 @@ TS=
  ) 
 ```
 
-## Target 4.b
+### Target 4.b
 
 > **4.b By 2020, substantially expand globally the number of scholarships available to developing countries, in particular least developed countries, small island developing States and African countries, for enrolment in higher education, including vocational training and information and communications technology, technical, engineering and scientific programmes, in developed countries and other developing countries**
 >
@@ -719,13 +720,13 @@ This target is interpreted to cover research about the availability of scholarsh
 
 This query consists of 1 phrase.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *scholarships + student/education + developing countries/African countries*.
 
 There are no actions terms included, as there are so few results they are considered to be of potential interest even without action terms. Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -753,7 +754,7 @@ AND
 )
 ```
 
-## Target 4.c
+### Target 4.c
 
 > **4.c By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing States**
 >
@@ -765,13 +766,13 @@ This target is interpreted to include research about
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The basic structure is *action + qualified/certified teachers*.
 
 This phrase finds research about increasing the number of qualified teachers.
 
-```Ceylon =
+```py
 TS=
 (
   (
@@ -786,13 +787,13 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The basic structure is *action + unqualified teachers / teacher shortage*.
 
 This phrase finds research about reducing teacher turnover, attrition and shortage
 
-```Ceylon =
+```py
 TS=
 (
   ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
@@ -801,12 +802,12 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 This phrase finds research about improving teacher education in developing countries, including through international cooperation. As there are few hits, and they are hard to capture, we use a wide version of action terms in this string, not strictly limited to verbs.
 The basic structure is *action OR cooperation + teacher education + countries*.
 
-```Ceylon =
+```py
 TS=
 (
  (
@@ -844,9 +845,11 @@ TS=
 
 ## 4. Contributions
 
-* v2022.xx: EHS (Oct 2021-Jun 2022)
+* v1.0.0: EHS (Oct 2021-Jun 2022)
 
 * Internal reviews: HMB, CSA (Jan 2022); CSA, ML (March 2022)
+
+* v1.0.0: EHS (Jun 2021-Oct 2022)
 
 Specialist input: KHH (Professor in Climate change, Sustainability and Education; Jan 2022). Workshops (Feb 2022, Jun 2022).
 
