@@ -44,7 +44,7 @@ The second part (`SO=`) consists of marine journal titles. Journal search is use
 
 I considered adding the 25 most common marine fisheries species (<a id="FAOfish">[FAO, 2018](#f8)</a>), however this gave few extra relevant results. It introduced a lot more noise with the use of `MPA` in 14.2/14.5, as this is commonly used as a unit of pressure (MPa) when discussing the processing of these species for food. Relevant species include: `"theragra chalcogramma" OR "engraulis ringens" OR "katsuwonus pelamis" OR "sardinella" OR "trachurus" OR "clupea harengus" OR "scomber japonicus" OR "thunnus albacares" OR "gadus morhua" OR "engraulis japonicus" OR "decapterus" OR "sardina pilchardus" OR "trichiurus lepturus" OR "micromesistius poutassou" OR "scomber scombrus" OR "scomberomorus" OR "dosidicus gigas" OR "nemipterus" OR "brevoortia patronus" OR "sprattus sprattus" OR "portunus trituberculatus" OR "acetes japonicus" OR "sardinops melaonstictus" OR "scomber colias" OR "rastrelliger kanagurta"`.
 
-```Ceylon =
+```py
 TS=
 (
   "ocean$" OR "oceanogra*"
@@ -160,7 +160,7 @@ SO =
 ```
 ## 4. Targets
 
-## Target 14.1
+### Target 14.1
 
 > **14.1 By 2025, prevent and significantly reduce marine pollution of all kinds, in particular from land-based activities, including marine debris and nutrient pollution**
 >
@@ -180,7 +180,7 @@ Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste
 
 The lack of action terms means that in the topic approach, `plastic` had to be combined with other terms (due to e.g. "plastic flow", "plastic development") - anything still talking about "plastic pollution" will still be caught by `pollut*`
 
-```jsx
+```py
 TS=
 (
   ("pollut*"
@@ -211,7 +211,7 @@ TS=
 
 ```
 
-## Target 14.2
+### Target 14.2
 
 > **14.2 By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience, and take action for their restoration in order to achieve healthy and productive oceans**
 >
@@ -227,13 +227,13 @@ It is possible that this interpretation should be widened to cover research abou
 
 This query consists of 2 phrases. Phrase 1 covers research mentioning protected areas and sustainable management approaches. Phrase 2 covers research about the restoration, protection, conservation, or management of marine ecosystems.
 
-##### Phrase 1
+#### Phrase 1
 
 This phrase covers protected areas and sustainable management approaches. The elements of the phrase are: *protected areas/management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. If comparing to the action approach: phrases 1 and 2 there are both covered by this phrase.
 
 For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA` had to be removed in the topic approach as it is used in other contexts - results should hopefully be caught by `protected NEAR area`.
 
-```jsx
+```py
 TS=
 (
   "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
@@ -260,13 +260,13 @@ TS=
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The elements of the phrase are: *management/conservation + marine ecosystems or elements*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Under the *management/conservation* terms we do not include "conserved" or "restored" because they are too generic (e.g. used in genetics); they also do not add many additional relevant results. Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
-```jsx
+```py
 TS=
 (
   ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring"
@@ -304,7 +304,7 @@ TS=
 )
 ```
 
-## Target 14.3
+### Target 14.3
 
 > **14.3 Minimize and address the impacts of ocean acidification, including through enhanced scientific cooperation at all levels**
 >
@@ -318,7 +318,7 @@ The elements of the phrase are: *impacts + acidification*.
 
 *Impact terms*: General impact terms are included (e.g. `impact*`). In addition, in this topic approach we also include major biological processes that can be impacted by acidification, e.g. calcification.
 
-```jsx
+```py
 TS =
 (
   (
@@ -340,7 +340,7 @@ TS =
 )
 ```   
 
-## Target 14.4
+### Target 14.4
 
 > **14.4 By 2020, effectively regulate harvesting and end overfishing, illegal, unreported and unregulated fishing and destructive fishing practices and implement science-based management plans, in order to restore fish stocks in the shortest time feasible, at least to levels that can produce maximum sustainable yield as determined by their biological characteristics**
 >
@@ -356,11 +356,11 @@ We also consider abandoned, lost and discarded gear to lie under destructive fis
 
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
-##### Phrase 1:
+#### Phrase 1
 
 The elements of this phrase are: *overfishing/illegal/destructive fishing*.
 
-```jsx
+```py
 TS=
 (
       "overfish*"
@@ -379,13 +379,13 @@ TS=
 )
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 The elements of this phrase are: *management/restoration + fisheries*. This phrase differs to phrases 1 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
 
 `manag*` will find a number of terms, e.g. "science-based management", "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *management* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the max. sustainable yield.
 
-```jsx
+```py
 TS=
 (
   ("manag*" OR "plan" OR "planning" OR "governance"
@@ -413,7 +413,7 @@ TS=
 )
 ```
 
-## Target 14.5
+### Target 14.5
 
 > **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
 >
@@ -425,7 +425,7 @@ This query consists of 1 phrase. The elements in the phrase are: *protected area
 
 Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
 
-``` Ceylon =
+```py
 TS=
 (
   "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
@@ -439,7 +439,7 @@ TS=
 )
 ```
 
-## Target 14.6
+### Target 14.6
 
 > **14.6 By 2020, prohibit certain forms of fisheries subsidies which contribute to overcapacity and overfishing, eliminate subsidies that contribute to illegal, unreported and unregulated fishing and refrain from introducing new such subsidies, recognizing that appropriate and effective special and differential treatment for developing and least developed countries should be an integral part of the World Trade Organization fisheries subsidies negotiation***
 >
@@ -451,12 +451,12 @@ This target is interpreted to cover research about fisheries subsidies that cont
 
 This query consists of 2 phrases. 
 
-##### Phrase 1
+#### Phrase 1
 The general structure is *subsidies + fisheries*. 
 
 The generic trm `fishing` will find "IUU fishing". `"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded.
 
-```jsx
+```py
 TS =
 (
   ("subsid*"
@@ -469,11 +469,11 @@ TS =
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 The general structure is *ODA/mandates/WTO + fisheries*. 
 
-```jsx
+```py
 TS=
 (
   ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
@@ -484,7 +484,7 @@ TS=
 )
 ```
 
-## Target 14.7
+### Target 14.7
 
 > **14.7 By 2030, increase the economic benefits to small island developing States and least developed countries from the sustainable use of marine resources, including through sustainable management of fisheries, aquaculture and tourism**
 >
@@ -498,7 +498,7 @@ This query consists of 1 phrase. The elements of the phrase are: *economic benef
 
 The terms for Senegal and Anguilla here are truncated differently than standard due to salmon bacteria names including these terms.
 
-```jsx
+```py
 TS =
 (
     ("econom*" OR "GDP" OR "wealth"
@@ -535,7 +535,7 @@ TS =
 
 ```
 
-## Target 14.a
+### Target 14.a
 
 > **14.a Increase scientific knowledge, develop research capacity and transfer marine technology, taking into account the Intergovernmental Oceanographic Commission Criteria and Guidelines on the Transfer of Marine Technology, in order to improve ocean health and to enhance the contribution of marine biodiversity to the development of developing countries, in particular small island developing States and least developed countries**
 >
@@ -548,15 +548,15 @@ This target is difficult to interpret, particularly as "increase scientific know
 
 This query consists of 3 phrases.
 
-##### Phrase 1:
+#### Phrase 1
 
 The elements of this phrase are: *transfer of technology*. This is such a specific term that any publications using it are likely to be highly relevant to the target.
 
-```jsx
+```py
 TS= ("transfer of marine technolog*" OR "marine technology transfer")
 ```
 
-##### Phrase 2:
+#### Phrase 2
 
 This phrase covers research about improving, sharing, collaboration or funding for marine scientific knowledge, research capacity & technology. Research about advancing marine science in considered enough to be included.
 
@@ -566,7 +566,7 @@ The *marine science* terms include generic terms for ocean science, terms for re
 
 The terms `build* OR develop*` in the first section covers capacity building/development, development aid etc.
 
-```jsx
+```py
 TS=
 (
       ("establish*" OR "build*" OR "develop*" OR "implement*" OR "propos*" OR "design" OR "provide" OR "provision"
@@ -619,7 +619,7 @@ TS=
 )
 ```
 
-##### Phrase 3:
+#### Phrase 3
 
 The elements of the phrase are: *(blue growth / biodiversity/bioresources + bioeconomy/uses) + developing countries*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
@@ -627,7 +627,7 @@ This phrase covers research about the "use/benefits of biodiversity". However, t
 
 `blue growth`, `blue economy` and `marine economy` are used alone with `sustainable` because these terms indicate a use of marine resources for development/economic benefit. `development` is not used alone because it is used in many other contexts (e.g. developmental biology). The `Nagoya protocol` is related to the convention on biological diversity (Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity).
 
-```jsx
+```py
 TS=
 (
   (
@@ -693,7 +693,7 @@ TS=
 )
 ```
 
-## Target 14.b
+### Target 14.b
 
 > **14.b Provide access for small-scale artisanal fishers to marine resources and markets**
 >
@@ -707,7 +707,7 @@ This query consists of 2 phrases.  Again, here, specific fish species as search 
 
 The elements of the phrase are: *access/rights/control + small scale + fishing*. `right$` covers "territorial use rights in fisheries" (TURFs), "territorial rights", "usage rights" etc.. `resource$` (under `access`) covers "marine resources". We do not include `traditional` alone because "traditional fisheries management" normally refers to the management traditions, rather than traditional fisheries.
 
-```jsx
+```py
 TS =
 (
   ("access*" OR "right$"
@@ -732,7 +732,7 @@ TS =
 
 The elements of the phrase are: *regulation + fishing + small scale*.
 
-```jsx
+```py
 TS =
 (
   ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "strateg*" OR "legislat*" OR "law" OR "laws" OR "regulations")
@@ -748,7 +748,7 @@ TS =
 
 ```
 
-## Target 14.c
+### Target 14.c
 
 > **14.c Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in the United Nations Convention on the Law of the Sea, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph 158 of “The future we want”**
 >
@@ -758,13 +758,13 @@ This target is interpreted to cover research about international law for conserv
 
 This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
 
-##### Phrase 1
+#### Phrase 1
 
 The elements of the phrase are: *international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
 
-```jsx
+```py
 TS =
 (
   "law of the sea" OR "UNCLOS"
@@ -793,13 +793,13 @@ TS =
 )
 ```
 
-##### Phrase 2
+#### Phrase 2
 
 The elements of the phrase are: *international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
 Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
 
-```jsx
+```py
 TS =
 (
   ("international"
