@@ -1,7 +1,7 @@
 
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
 
-**Current status**: This string is a first draft. It is awaiting specialist input. It is undergoing technical review.*
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Oct 2022).
 
 **Contents**
 
@@ -54,7 +54,7 @@ This phrase covers research about improving access, affordability, safety etc. o
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
-```r
+```py
 TS=
 (
   (
@@ -88,7 +88,7 @@ Basic services terms were gathered from documentation for indicator 1.4.1 in the
 
 "homes" is not included as a search term as it mostly adds noise from health research about care homes/nursing homes.
 
-```r
+```py
 TS=
 (
   (
@@ -136,7 +136,7 @@ TS=
 
 This phrase covers research about upgrading slums. The basic structure is *action + slums*.
 
-```r
+```py
 TS=
 (
   ("strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up"
@@ -164,7 +164,7 @@ The basic structure is *improve + safe + transport systems + cities*
 
 Challenge: The term "transport system" is used in several subjects as biology, chemistry and transport of oil. This is solved by limiting the search with terms concerning land transport. It is also difficult to exclude freight transport. (We could focus on transport, not transport systems.)
 
-```r
+```py
 TS=
 (
   (
@@ -196,7 +196,7 @@ TS=
 
 This phrase covers research about improving road safety. The basic structure is *action + safety + road*.
 
-```r
+```py
 TS=
 (
   (
@@ -221,7 +221,7 @@ TS=
 
 This phrase finds research about expanding public transport. The basic structure is *action + public transport*.
 
-```r
+```py
 TS=
 (
   ("provide*" OR "improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*" OR "build*"
@@ -248,7 +248,7 @@ This query consists of two phrases.
 
 This phrase covers urbanization. The basic structure is *action + sustainble/inclusive + urbanization*.
 
-```r
+```py
 TS=
 (
   (
@@ -263,7 +263,7 @@ TS=
 
 This phrase covers settlement planning. The basic structure is *action + settlement planning + process terms*.
 
-```r
+```py
 TS=
 (
   (
@@ -288,7 +288,7 @@ This target is interpreted to cover research on strengthening the protection of 
 
 This query consists of 1 phrase. The basic structure is *action + management/protection + cultural heritage*.
 
-```r
+```py
 TS=
 (
   (
@@ -326,7 +326,7 @@ This query consists of 3 phrases.
 
 This phrase covers research about reducing mortality/increasing survival and disasters. The basic structure is *disasters + mortality + action*. Disaster terms to do with disease (`pandemic$`, `epidemic$`, `outbreak$`) were not included as the results were dominated by these, and these are really much more related to SDG3 (or animal health, in the case of `outbreak`) - this string may need additional work to narrow down to humans, OR a more city-settelement oriented context. 
 
-```r
+```py
 TS=
 (
   ( 
@@ -373,7 +373,7 @@ TS=
 
 This phrase covers research about disasters and GDP loss. The general structure is *disasters + GDP + loss*. 
 
-```r
+```py
 TS=
 (
   ( 
@@ -427,7 +427,7 @@ This query consists of 4 phrases: 1 phrase "reducing the environmental impact of
 
 This phrase covers research about reducing the general environmental impact of cities. The basic structure is *action + environmental impact + cities*.
 
-```R
+```py
 TS=
 (
   (
@@ -445,7 +445,7 @@ TS=
 
 This phrase finds research about improving air quality in cities. The basic structure is *action + air pollution + cities // action + clean air + cities*.
 
-```R
+```py
 TS=
 (
   (
@@ -474,7 +474,7 @@ The basic structure is *action + waste*.
 
 This phrase finds research about reducing waste, while phrase 4 deals with waste collection/management and uses some different action terms, as waste management and waste are different concepts. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
-```R
+```py
 TS=
 (
   (
@@ -500,7 +500,7 @@ This phrase finds research about improving waste collection/management, while ph
 
 Split query to search for waste management or waste collection as its own query? Combine phrase 2 and 3? Include specific waste management activities as recycling, incinerate etc?
 
-```R
+```py
 TS=
 (
   (
@@ -514,7 +514,6 @@ TS=
 )
 ```
 
-
 ### Target 11.7
 
 > **11.7 By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, in particular for women and children, older persons and persons with disabilities**
@@ -523,14 +522,14 @@ TS=
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Adding terms relating to indicators produced little results, so not included. Action terms reduce number of results dramatically.
+This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. 
 
 This query consists of 2 phrases.
 
 #### Phrase 1
 This phrase is about increasing/improving safe/accessible spaces and access to spaces. The basic structure is *action + safety/access + public spaces*.
 
-```R
+```py
 TS=
 (
   (
@@ -538,22 +537,20 @@ TS=
     OR "provi*" OR "build*" OR "create" OR "creation" OR "creating"
     OR "legislat*" OR "govern*" OR "strateg*" OR "polic*" OR "framework$" OR "program*"
     )
-    NEAR/15
-        ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
+    NEAR/15 ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
   )
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
       OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
-	OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-     )
+      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      )
 )
 ```
 
 #### Phrase 2
-
 This phrase is about exclusion or justice and public spaces. The basic structure is *exclusion/justice terms + public spaces*.
 
-```R
+```py
 TS=
 (
   ("restrict*" OR "inaccess*" OR "equal access"
@@ -574,13 +571,13 @@ TS=
 >
 > 11.a.1 Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space
 
-This target is interpreted as to cover research on strengthening links between urban and rural areas through better national and regional development planning. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string.
+This target is interpreted as to cover research on better national and regional planning related to cities and rural development. Different approaches possible, but main focus is on planning and cooperation. Indicator is partly included in search string.
 
 This query consists of 1 phrase. The basic structure is *action + planning*.
 
 Limited truncation of `planning` to avoid e.g. "plants".
 
-```R
+```py
 TS=
 (
   (
@@ -607,9 +604,11 @@ TS=
 >
 > 11.b.2 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
+This target is interpreted to cover research about the implementation of disaster/climate change planning and human settlements/cities. One could consider if it should strictly be interpreted as plans, or if research about vulnerability and preparedness should be included too. The target focuses on implementation of plans so we retain this at the moment.
+
 This query consists of 1 phrase. The basic structure is *action + disaster/climate plans + cities*.
 
-```r
+```py
 TS=
 (
   (
@@ -639,73 +638,31 @@ TS=
 >
 > No suitable replacement indicator was proposed. The global statistical community is encouraged to work to develop an indicator that could be proposed for the 2025 comprehensive review. See E/CN.3/2020/2, paragraph 23.
 
-This target is interpreted to cover research about LDCs and local building materials or LDCs and their construction industry. It is about providing financial or technical assistance for the building and construction industry in order for them to use local materials. Local materials are defined as: ..."“local building material”, the term is used to refer to materials of which the entire production process takes place within the same region."
+This target is interpreted to cover research about assistance/support for a) LDCs (least developed countries) and local building materials or b) LDCs and sustainable or resilient construction. We interpret "local materials" to be local building materials, i.e. materials where the entire production process takes place within the region.
 
-Terms were taken from the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). Our classification of countries as least developed countries (LDCs) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f8)</a>).
-
-This query consists of 2 phrases.
-
-"Construction" and "Building" are widely used (in general) to describe other activities than construction materials, or the building industry - these search terms should not be used on its own. (Very high precision, perhaps not good?)
+Terms were taken from the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). "Construction" and "building" are widely used to describe other activities than construction materials, or the building industry, thus they had to be combined with other terms. 
 
 #### Phrase 1
 
-Phrase 1 doc
+The basic structure is: *action/support + local materials/sustainable buildings/resilient construction + LEDCs*.
 
-```R
-TS=
-(
-  (
-    ("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS"
-    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-  )
-  AND
-    (
-      (("local*" OR "native*" OR "construction" OR "building") NEAR/3 "material*")
-      OR (("regional*" OR "region" OR "regions") NEAR/5 "material*")
-    )
-  AND
-    (
-      (("economic*" or "financial*" or "monetary" or "technical*") NEAR/3 ("support*" or "assist*"))
-      OR "know how" or "expertise"
-    )
-)
-```
-##### Phrase 2:
-
-```r
-TS=
-(
-  (
-    ("least develop*" NEAR/3 ("state*" OR "nation$" OR "countr*")) OR "LDC" OR "LDCS"
-    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-  )
-  AND
-      (("construction" OR "building") NEAR/3 ("industry" OR "industries" OR "company" OR "companies" or "sector$"))
-  AND
-    (
-      (("economic*" or "financial*" or "monetary" or "technical*") NEAR/3 ("support*" or "assist*"))
-      OR "know how" or "expertise"
-    )
-)
-
-```
-
-A possibility. "building" not used alone because there are many references to metaphorical building. Structure *action + local materials/resilient construction + LDCs*.
-
-```r
+```py
 TS=
 (
   ("sharing" OR "shared" OR "share" OR "transfer" OR "cooperat*" OR "collaborat*" OR "partnership$"
-  OR "invest*" OR "fund$" OR "funding" OR "support*" or "assist*"
+  OR "invest*" OR "fund$" OR "funding" OR "finance" OR "financing" 
+  OR "support*" OR "assist*"
   )
   AND
     ("local building material$" OR "local construction material$"
+    OR "sustainable architecture" OR "resilient architecture"
     OR
        (
-         ("buildings" OR "sustainable building" OR "architect*" OR "masonry"
+         ("buildings" OR "sustainable building" OR "masonry"
          OR
-            (("construction" OR "building")
-            NEAR/5 ("material$" OR "method$" OR "technique$" OR "industry" OR "industries" OR "company" OR "companies" OR "home$" OR "house$" OR "residential")
+            (
+              ("construction" OR "building")
+              NEAR/5 ("material$" OR "method$" OR "technique$" OR "industry" OR "industries" OR "company" OR "companies" OR "home$" OR "house$" OR "residential" OR "sector")
             )
          )
          NEAR/15
@@ -725,11 +682,11 @@ TS=
 
 * v1.1.0 first draft: HMB, IG, KH (Oct 2021-Mar 2022)
 
-* Internal review: EHS, CSA (Mar 2022)
+* Internal review: EHS, CSA (Mar, Oct 2022)
 
 * v1.1.0 second draft: HMB, IG (Apr 2021-Sep 2022)
 
-Specialist input:
+Specialist input: Awaiting
 
 ## 5. Footnotes
 
