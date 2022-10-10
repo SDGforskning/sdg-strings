@@ -223,6 +223,8 @@ Target 14.2 is interpreted to cover research about
 * restoration of these ecosystems
 Note, interpreting "protect" to include MPAs means that relevant research for this target includes research considered relevant to target 14.5.
 
+It is possible that this interpretation should be widened to cover research about changes to ecosystems and biodiversity (see also 15.4), but this is not done at present. 
+
 This query consists of 2 phrases. Phrase 1 covers research mentioning protected areas and sustainable management approaches. Phrase 2 covers research about the restoration, protection, conservation, or management of marine ecosystems.
 
 ##### Phrase 1
