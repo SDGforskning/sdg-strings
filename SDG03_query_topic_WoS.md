@@ -2,7 +2,7 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string is currently being converted from the action version, unstable/not yet working as intended.
+**Current status**: This string is currently being reviewed, some changes may occur.
 
 **Contents**
 
