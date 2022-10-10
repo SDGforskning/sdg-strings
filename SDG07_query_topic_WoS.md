@@ -1,6 +1,6 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen topic-approach.
 
-**Current status**: This string is currently being converted from the action version, unstable/not yet working as intended.
+**Current status**: This string is currently being reviewed, some changes may occur.
 
 **Contents**
 
