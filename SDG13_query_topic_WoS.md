@@ -32,7 +32,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 During editing of this string (2021), we have consulted another set of queries for reference: <a id="Aurora">[Aurora Universities network (2020)](#f4)</a>.
 
-## 3.Targets
+## 3. Targets
 
 ### Target 13.1
 
