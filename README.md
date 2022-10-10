@@ -4,20 +4,25 @@ The files in this repository contain search strings to find publications related
 
 File names consist of the SDG and the approach used (topic vs. action). The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets ("action"), or research more broadly related to the topics in the targets ("topic"). You can read more about these below. **The strings are a work-in-progress, and are at different stages of development - within each file there is a description of its current status at the top.** 
 
+## Why are we building strings? How do they differ to existing mappings?
+
+Previous research has shown that mappings of SDG-"related" research do not match up very well ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071); [Purnell 2022](https://doi.org/10.1162/qss_a_00215)). We believe this is unsurprising when you consider that there are different ways to interpret what an SDG covers, different viewpoints on which research themes should be counted as "related", different mapping methods, and different datasources (see our previous work, [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071)). For example, should *SDG 3 Good health* cover all medical research? Does *SDG 13 Climate Action* cover basic climate science? You will get different answers depending on who you ask.
+
+Instead of trying to find the "right" answer, we think it is best with mulitple mappings which can capture different views of "relatedness". But in order for these to have any meaning, methods must be documented to explain to the user a) how the SDG was interpreted; what research approach is supposed to cover, and b) how it is done. We are writing our own strings because we believe there is currently a gap for this kind of mapping (please let us know if this is not the case!). In short:
+
+- Our strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
+- We provide two strings: an "action" and "topic" approach, which have different interpretations of "relevance"
+- The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords). The benefit of this is that it is easier to understand why a result is in or out, but sacrifices potential additional recall provided by machine learning.
+- For each string and target, we document :
+  - How we have interpreted which research themes should be considered "relevant" to each SDG target
+  - Sources we have used to identify search terms and/or define terminology
+  - Choices we have made regarding inclusion/exclusion, interpretations or syntax (e.g. truncation)
+  
 ## Which SDGs and platforms are covered? 
 
 Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
 The strings available at the moment are formatted in Web of Science syntax (Core collection); these have "WoS" at the end of the file name. We are also working on a version in Python which can be run against any list of works in csv format. 
-
-## How are these strings different to other mappings?
-
-- These strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
-- The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords).
-- For each string, we document :
-  - How we have interpreted which research themes should be considered "relevant" to each SDG target
-  - Sources we have used to identify search terms and/or define terminology
-  - Choices we have made regarding inclusion/exclusion, interpretations or syntax (e.g. truncation)
 
 ## What kind of results should I expect when using these strings?
 
