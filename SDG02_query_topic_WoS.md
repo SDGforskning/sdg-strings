@@ -206,7 +206,7 @@ This target is interpreted to include research about productivity and income of 
 
 This query consists of 1 phrase. The elements of the phrase are: *productivity/access etc. + small-scale food producers*
 
- For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. "Root crops" are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+ For the *small-scale food prodcer terms*, `small scale`+ `farm*` will cover types of farming in two words e.g. forest farming. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Adding different farming types/crops/livestock adds complexity but improves the results. Some specific types are covered by generic terms: e.g. "Root crops" are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
  In the *productivity/access etc. terms*:
  - `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
@@ -397,7 +397,7 @@ TS=
 
 #### Phrase 4
 
-The elements of the phrase are: *ecoagriculture / food production systems + sustainability*.
+The elements of the phrase are: *ecoagriculture OR (food production systems + sustainability)*.
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
@@ -530,7 +530,7 @@ This query consists of 5 phrases.
 
 #### Phrase 1
 
-The elements of the phrase are: *agricultural diversity / traditional varieties/specific species + agriculture / landraces + diversity/conservation*. This phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
+The elements of the phrase are: *agricultural diversity/local breeds OR (traditional varieties/species + agriculture) OR (landraces + diversity/conservation)*. This phrase covers terms which are used in the context of agricultural diversity. Phrase 2 expands with generic terms for diversity that must be combined with agricultural terms.
 
 Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). 
 
@@ -690,7 +690,9 @@ TS=
 
 #### Phrase 5
 
-Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The elements of the phrase are: *resources/knowledge/rights + agriculture/food + instruments/specific issues*. In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
+Phrase 5 is similar to phrase 4, with a focus on research that mentions instruments/treaties related to benefit sharing/access of genetic resources and traditional knowledge. The elements of the phrase are: *resources/knowledge/rights + agriculture/food + instruments/specific issues*. This phrase is the same as the action approach - action terms were not included there as we assumed that works mentioning specific policy instruments are likely action-oriented. 
+
+In this phrase, "rights" was added to `traditional NEAR knowledge` as this worked well with the combination with specific policy instruments.
 
 ```py
 TS =
@@ -723,9 +725,7 @@ TS =
         OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"
         )
 )
-
 ```
-
 
 ### Target 2.a
 
