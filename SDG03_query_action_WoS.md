@@ -177,7 +177,7 @@ Action terms: `limited` was removed from the action terms, as it was used often 
 
 #### Phrase 1
 
-This covers communicable diseases as a category. The basic structure is *communicable diseases + (action // action + epidemics/interventions)*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
+This covers communicable diseases as a category. The basic structure is *communicable diseases + (action OR action + epidemics/interventions)*. The search terms here are difficult, as `communicable` will also find `non communicable`, thus this term is covered in its own phrase where a double `NOT` expression is used to remove publications mentioning non-communciable disease without also mentioning infectious, communicable and tropical diseases ("non communicable" seems to be the term causing the most problems; others, such as `non-infectious` seem to be used in papers about both, i.e. together with `infectious` - these are covered in phrase 2). This cuts the results for the last 5 years by about 75 %, compared to allowing "non-communicable" to be found.
 
 `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
@@ -538,7 +538,7 @@ TS=
 
 This target was interpreted to include research about strengthening the prevention and treatment of harmful uses of alcohol and drugs. It does not cover all use of alcohol/drugs. We also interpret this to be mainly limited to works about reducing use, rather than e.g. controlling supply of illicit drugs.
 
-This query consists of 1 phrase. The basic structure is *harmful use + action/prevention // harmful use + action + treatment*.
+This query consists of 1 phrase. The basic structure is *harmful use + action/prevention OR harmful use + action + treatment*.
 
 Terms were added from the National Institutes of Health "Commonly Used Drugs Charts" (although this is a USA-centric source we assume it will cover many types; <a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>). Drug/substances were also expanded using MeSH terms:
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.

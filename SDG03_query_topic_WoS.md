@@ -421,7 +421,7 @@ This phrase focuses on the promotion of and services for well-being. The element
 
 `wellbeing` is used alone, rather than qualified with "mental" - well-being seems to be used to convey a sense of overall health, which should include the mental/psychosocial aspect. `quality of life` was tested, but this adds a lot of results which seem to be more medical (i.e.  quality of life could be improved after intervention x for condition y).
 
-``` jsx
+```py
 TS=
 (
   ("mental health" OR "well being" OR "wellbeing")
@@ -444,7 +444,7 @@ TS=
 
 This target was interpreted to include research about the prevention and treatment of harmful uses of alcohol and drugs. It does not cover all use of alcohol/drugs. We also interpret this to be mainly limited to works about use, rather than e.g. controlling supply of illicit drugs.
 
-This query consists of 1 phrase. The elements of the phrase are: *harmful use + prevention/treating // harmful use + treatment*.  A wider NEAR distance is used compared to the action approach.
+This query consists of 1 phrase. The elements of the phrase are: *(harmful use + prevention/treating) OR (harmful use + treatment)*.  A wider NEAR distance is used compared to the action approach.
 
 Terms were added from the National Institutes of Health "Commonly Used Drugs Charts" (although this is a USA-centric source we assume it will cover many types; <a id="NIHdrugs">[National Institute on Drug Abuse, 2020](#f14)</a>). Drug/substances were also expanded using MeSH terms:
 * Under "opioid-related disorders" (D000079524), `heroin`, `morphine`, `opiate` and `opium` are listed.
@@ -454,7 +454,7 @@ Terms were added from the National Institutes of Health "Commonly Used Drugs Cha
 
 `therapy OR therapies` rather than `therap*` was used to prevent results regarding the therapeutic uses of these drugs/substances. The broad term `services` is used due to the variety of services involved (social, specialist, alcoholism, treatment, residential...). `treatment$` should cover not only treatment, but also treatment centres. `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention.
 
-``` jsx
+```py
 TS=
 (
   ("binge drinking" OR "binge drinker$" OR "alcoholism" OR "excessive drinking" OR "problematic drinking"
@@ -872,7 +872,7 @@ This query consists of 2 phrases.
 
 The elements of the phrase are: *vaccine/medicine development + developing countries*. Note that here, `development` is combined within phrases (e.g. `development aid OR development fund`) because it is also a part of "vaccine development".
 
-``` jsx
+```py
 TS =
 (
   (
@@ -925,7 +925,7 @@ TS =
 This phrase concerns access to essential medicines and vaccines. The TRIPS agreement is the Agreement on Trade-Related Aspects of Intellectual Property Rights for all members of the WTO. The Doha declaration was an interpretative statement for TRIPS, added later in 2001, which covers several aspects of its implementation. This includes "compulsory licensing", which can be used to produce medicines without the agreement of the patent holder under certain circumstances. About health, from <a id="WTOdoha">[World Trade Organization, n.d.](#f17)</a>:
 > "In the declaration, ministers stress that it is important to implement and interpret the TRIPS Agreement in a way that supports public health — by promoting both access to existing medicines and the creation of new medicines.[...]. It emphasizes that the TRIPS Agreement does not and should not prevent member governments from acting to protect public health."
 
-The elements of the phrase are: *agreements/IPR + medicines + access // vaccine equity*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a  term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
+The elements of the phrase are: *(agreements/IPR + medicines + access) OR vaccine equity*. `patents` is used in the plural as when singular it tends to have specific/biomedical uses. `vaccine inequity` is included as a  term that often refers to inequity in access to vaccines on a global scale (particularly in reference to covid19).
 
 ```py
 TS =
@@ -960,7 +960,7 @@ The elements of the phrase are: *retention/training + health workers + countries
 
 Types of health worker were supplemented from the subcategories under the MeSH category "Health Personnel" (MeSH ID D006282). `training` and `education` are separated out as there are many results about "training to improve outcomes..." rather than improving the training itself.
 
-``` jsx
+```py
 TS =
 (
   (

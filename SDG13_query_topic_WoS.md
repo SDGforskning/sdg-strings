@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently being reviewed, some changes may occur.
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Oct 2022).
 
 **Contents**
 
@@ -46,11 +46,9 @@ During editing of this string (2021), we have consulted another set of queries f
 
 This target is interpreted to cover research about resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research mentioning disaster/risk strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
 
-This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. mitigation) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
+This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. `mitigat*`) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
 
-Under actions, we considered including the Paris agreement as article 7 is relevant to this target. However, most results were not relevant (e.g. results about what would happen to rainfall under the Paris Agreement goal of 1.5...).
-
-The terms for disasters contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
+The terms for *disasters* contain both general terms and specific disaster types. We have used the hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a> to make a list of disasters based on their classification of hazards into hydrological/meteorological, geohazards, environmental, chemical, biological, technological, and societal. We have included the hydrological and geohazards under "natural" disasters.
 
 ```py
 TS=
@@ -103,9 +101,9 @@ This target is interpreted to cover research about:
   - the indicators/impacts of climate change and national policy++ (phrase 2)
   - international climate frameworks and national policy++ (phrase 3)
 
-We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral =/= national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
+We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral is not the same as national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
-Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of green house gases / GHG) but in order to be consistent with our interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
+Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of green house gases (GHG)) but in order to be consistent with our interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
 This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here - all results will be covered by phrase 1 under.
 
