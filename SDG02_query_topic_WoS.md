@@ -864,6 +864,42 @@ TS=
 )
 ```
 
+### Works mentioning the SDG
+
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym or use `goal 2` from the Millennium development goals.
+
+```py
+TS=
+("SDG 2" OR "SDGs 2" OR "SDG2" OR "sustainable development goal$ 2"
+OR ("sustainable development goal$" AND "goal 2")
+OR 
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 2")
+    AND ("zero hunger")
+  )
+OR
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 2")
+    NEAR/15 ("hunger" OR "food")
+  )
+)
+NOT 
+  TS=("secoisolariciresinol diglycoside"
+  OR "secoisolariciresinol diglucoside"
+  OR "SD-stearic acid"
+  OR "SD-HPMC"
+  OR "short-duration grazing (SDG)"
+  OR "short-duration group (SDG)"
+  OR "set domain group (SDG)"
+  OR "spleen-derived growth factor (SDG)"
+  OR "steel design guide series (SDG)"
+  OR "steel design guide (SDG)"
+  OR "spray-dried gelatin (SDG)"
+  OR "single-display groupware (SDG)"
+  OR "Millennium Development Goal 2"
+  )
+```
+
 ## 4. Contributions
 
 * v2019.12: CSA, ML, SRM

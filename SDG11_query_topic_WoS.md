@@ -556,6 +556,41 @@ TS=
 )
 ```
 
+### Works mentioning the SDG
+
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym.
+
+```py
+TS=
+("SDG 11" OR "SDGs 11" OR "SDG11" OR "sustainable development goal$ 11"
+OR ("sustainable development goal$" AND "goal 11")
+OR
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 11")
+  AND ("sustainable cities")
+  )
+OR 
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 11")
+    NEAR/15 ("cities")
+  )
+)
+NOT 
+  TS=("secoisolariciresinol diglycoside"
+  OR "secoisolariciresinol diglucoside"
+  OR "SD-stearic acid"
+  OR "SD-HPMC"
+  OR "short-duration grazing (SDG)"
+  OR "short-duration group (SDG)"
+  OR "set domain group (SDG)"
+  OR "spleen-derived growth factor (SDG)"
+  OR "steel design guide series (SDG)"
+  OR "steel design guide (SDG)"
+  OR "spray-dried gelatin (SDG)"
+  OR "single-display groupware (SDG)"
+  )
+```
+
 ## 4. Contributions
 
 * v1.1.0 first draft: HMB, IG, KH (Oct 2021-Mar 2022)

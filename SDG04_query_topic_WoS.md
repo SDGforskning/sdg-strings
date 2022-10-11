@@ -694,6 +694,45 @@ TS=
 )
 ```
 
+### Works mentioning the SDG
+
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. This was a particularly challenging goal to construct this string for as the term "education" is so broad, therefore "education" is currently combined in phrases. The string includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym. We also attempt to limit the noise from including `learning` by excluding works on machine learning that do not also specifically mention SDG 4.
+
+```py
+TS=
+("SDG 4" OR "SDGs 4" OR "SDG4" OR "sustainable development goal$ 4"
+OR ("sustainable development goal$" AND "goal 4")
+OR
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 4")
+    AND ("quality education")
+  )
+OR 
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 4")
+    NEAR/15 
+        ("learning" OR "teaching" OR "teacher$" OR "early childhood" OR "child development" 
+        OR "education for sustainable" OR "global citizenship education" OR "transdisciplinary education" OR "inclusive education" 
+        OR "formal education" OR "primary education" OR "secondary education" OR "tertiary education" OR "higher education" OR "right$ to education" OR "access to education" OR "education for all" OR "education sector$"
+        )
+  )
+)
+NOT 
+  TS=("secoisolariciresinol diglycoside"
+  OR "secoisolariciresinol diglucoside"
+  OR "SD-stearic acid"
+  OR "SD-HPMC"
+  OR "short-duration grazing (SDG)"
+  OR "short-duration group (SDG)"
+  OR "set domain group (SDG)"
+  OR "spleen-derived growth factor (SDG)"
+  OR "steel design guide series (SDG)"
+  OR "steel design guide (SDG)"
+  OR "spray-dried gelatin (SDG)"
+  OR "single-display groupware (SDG)"
+  OR (("machine learning" OR "deep learning") NOT ("quality education" OR "SDG 4" OR "SDG4"))
+  )
+```
 
 ## 4. Contributions
 
