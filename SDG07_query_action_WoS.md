@@ -1,6 +1,6 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen action-approach.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
+**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
 
 **Contents**
 
@@ -332,7 +332,7 @@ TS=
 
 #### Phrase 2
 
-This phrase covers specific terms for increasing the share of renewable energy, including a wider set of terms for renewables. The general structure is *(action + use/share/adoption/investing/barriers // promotional actions) + renewable energy*.
+This phrase covers specific terms for increasing the share of renewable energy, including a wider set of terms for renewables. The general structure is *(action + use/share/adoption/investing/barriers OR promotional actions) + renewable energy*.
 
 The *promotional actions* include several terms that work alone and we assume, when referred to in a scientific work, indicate an action-like orientation, such as policies, subsidies, commercialisation, rollout, or sustainable development. 
 
