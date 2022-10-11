@@ -1287,13 +1287,48 @@ NOT
 TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
+### Works mentioning the SDG
+
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym.
+
+```py
+TS=
+("SDG 15" OR "SDGs 15" OR "SDG15" OR "sustainable development goal$ 15"
+OR ("sustainable development goal$" AND "goal 15")
+OR
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 15")
+    AND ("life on land")
+  )
+OR 
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal 15")
+    NEAR/15 ("mountain$" OR "terrestrial" OR "forest$" OR "dryland$" OR "grassland$")
+  )
+)
+NOT 
+  TS=("secoisolariciresinol diglycoside"
+  OR "secoisolariciresinol diglucoside"
+  OR "SD-stearic acid"
+  OR "SD-HPMC"
+  OR "short-duration grazing (SDG)"
+  OR "short-duration group (SDG)"
+  OR "set domain group (SDG)"
+  OR "spleen-derived growth factor (SDG)"
+  OR "steel design guide series (SDG)"
+  OR "steel design guide (SDG)"
+  OR "spray-dried gelatin (SDG)"
+  OR "single-display groupware (SDG)"
+  )
+```
+
 ## 5. Contributions
 
-* First draft: LB (Dec-May 2022)
+* v1.0.0, first draft: LB (Dec-May 2022)
 
 * Internal review: CSA (May 2022)
 
-* Second draft: LB (May-Sep 2022)
+* v1.0.0, second draft: LB (May-Sep 2022)
 
 Specialist input: Awaiting
 
