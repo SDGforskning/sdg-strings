@@ -1429,13 +1429,13 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 ## 5. Contributions
 
-* First draft: LB (Dec-May 2022)
+* v1.0.0, first draft: LB (Dec-May 2022)
 
 * Internal review: CSA (May 2022)
 
-* Second draft: LB (May-Sep 2022)
+* v1.0.0, second draft: LB (May-Sep 2022)
 
-Specialist input: Awaiting input
+Specialist input: Awaiting
 
 ## 6. Footnotes
 
