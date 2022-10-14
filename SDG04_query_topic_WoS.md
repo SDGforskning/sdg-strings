@@ -107,6 +107,7 @@ TS=
       )
       NEAR/5 ("free" OR "equit*" OR "quality")
     )
+ )
 )  
 ```
 #### Phrase 4
