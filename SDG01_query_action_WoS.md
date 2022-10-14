@@ -75,7 +75,7 @@ TS=
 
 This target is interpreted as to cover research about poverty reduction. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
 
-This query consists of 1 phrase. The general structure is *poverty/the poor + action*
+This query consists of 1 phrase. The general structure is *poverty + action*
 
 ```py
 TS=
@@ -83,9 +83,7 @@ TS=
   "anti-poverty" OR "out of poverty"
   OR
   (
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor"
-    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*"))
-    )
+    ("poverty")
     NEAR/5
         ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
         OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
@@ -93,6 +91,34 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )
   )
+) 
+```
+
+This string originally also contained a section using other terminology around the words "poor" and "poorest". However, this is taken out at the moment - many results seem to be not necessarily to be directly related to reducing poverty. For example, a good number of results are about about access to services for poor communities, which is covered in a later target. In addition, `the poor` is a difficult phrase - it is used often in a poverty context (perhaps more historically), but is also part of very common sentence structure ("the poor uptake of micronutrients..."). Therefore, works using `the poor` or `the poorest` should also contain at least one other *poverty* term.
+
+The string is retained here for future reference, but **is not currently included**. These terms are however included in the topic approach. 
+
+```
+TS=
+(
+  (  
+    ("the poor" OR "the poorest" OR "pro poor"
+    OR "rural poor" OR "urban poor" OR "working poor" 
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children"))
+    )
+    NEAR/5
+        (
+          (("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*") NEAR/5 ("proportion"))
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*" OR "mitigat*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" 
+        OR "relief" OR "help*" OR "aid" OR "aiding" OR "improv*"
+        )
+  ) 
+  AND
+    ("poverty" OR "poor law" OR "rural poor" OR "urban poor" OR "working poor" 
+    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children" OR "relief"))
+    OR "income" OR "rich" OR "inequality"
+    )
 )
 ```
 
@@ -581,7 +607,7 @@ TS=
 >
 > 1.b.1 Pro-poor public social spending
 
-This target is interpreted to cover research about policies that can stimulate investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about international and national policies and poverty reduction. 
+This target is interpreted to cover research about policies that can stimulate investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about policies and poverty reduction. 
 
 The general structure is *policy + antipoverty*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive.
 
@@ -589,11 +615,7 @@ The general structure is *policy + antipoverty*. Note that this phrase does not 
 TS=
 (
   ("law$" OR "legislat*"
-  OR (
-      ("national" OR "government*" OR "regional" OR "local" OR "international")
-      NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$")
-     )
-  OR "investment policy" OR "investment policies"
+  OR "program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"
   )
   NEAR/15
       ("anti-poverty" OR "out of poverty" OR "pro poor"
