@@ -32,11 +32,11 @@ This depends on which version of the strings you use:
 
 **"Action" strings** : The "action" approach aims to find research related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
-You might therefore expect to find a **smaller** set of research than when using methods which identify research by seeing if it mentions certain topics, is published in certain journals, or is mapped to a citation cluster (depending of course on the individual parameters used).  
+You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be a **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used).  
 
 **"Topic" strings** : The "topic" approach aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
 This is done by looking for works which mention the topic, *e.g. "malnutrition"; "school completion"; "rights of small-scale fishers"*.
-You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find by using a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
+You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find in other mappings that use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
 
 We have tried to be consistent in the approaches, but there are occasional exceptions in the way that we apply these approaches at the string-level, as we are reliant on language - some terms are ambiguous and thus difficult to apply a hard set of rules to. For example, terms such as "energy" could be to do with energy technology... or could be to do with astrophysics, or biology, or medicine; thus the string construction must be adapted to avoid excessive noise. Please see the documentation on the individual files. 
 
