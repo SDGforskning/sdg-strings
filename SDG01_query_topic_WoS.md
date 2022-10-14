@@ -10,17 +10,9 @@
 4. Contributions
 5. Footnotes
 
-
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 1</summary>
-
-```
-Not ready yet
-```
-
-</details>
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/99f37634-d075-4220-8eff-7c871aea0672-55eef9dd/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -460,10 +452,7 @@ The elements of the phrase are: *policy + antipoverty*. Note that this phrase is
 TS=
 (
   ("law$" OR "legislat*"
-  OR (
-      ("national" OR "government*" OR "regional" OR "local" OR "international")
-      NEAR/3 ("program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$")
-     )
+  OR "program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"
   OR "investment policy" OR "investment policies"
   )
   NEAR/15
