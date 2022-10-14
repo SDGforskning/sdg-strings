@@ -128,7 +128,7 @@ TS=
 
 #### Phrase 4
 
-This phrase finds works about improving energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
+This phrase finds works about energy access and security. This phrase uses established phrases for these concepts; other phrases use broader terms for affordability and access.
 
 The elements of the phrase are: *energy security/access phrases*. `energy NEAR/3 (dignity OR care)` was tested but there were few relevant results at this time in this combination.
 
@@ -143,7 +143,7 @@ TS=
 
 #### Phrase 5
 
-This phrase is about improving access to energy services and electricity. The elements of the phrase are: *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). For *regions*, we include generic terms for developing, least developed countries and rural areas, as well as specific least developed countries, SIDS, landlocked developing countries.
+This phrase is about access to energy services and electricity. The elements of the phrase are: *electrification / access + energy + households / access + energy + regions*. The reason for the two part approach is that `energy services` is specialised enough to stand alone with `access`, while `electricity` and `energy` are too broad (can be used in many contexts, e.g. an industrial process). Thus these terms are combined either in phrases, or with regions, or with certain technologies (e.g. `microgrids`). For *regions*, we include generic terms for developing, least developed countries and rural areas, as well as specific least developed countries, SIDS, landlocked developing countries.
 
 ```py
 TS= ("universal electrification" OR "rural electrification" OR "national electrification")
