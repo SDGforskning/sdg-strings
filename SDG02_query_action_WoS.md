@@ -14,18 +14,7 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters, all years)
-
-Results for Norway from 01.2014-05.2022 can be viewed here: 
-
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG2</summary>
-
-```
-Not ready yet
-```
-
-</details>
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/b3b8d55f-4112-42a3-9c12-de4dc95f8a76-55efa21b/relevance/1 (no filters, all years)
 
 ## 2. General notes
 
@@ -69,10 +58,10 @@ Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding r
 TS=
 (
   (
-      ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
-      OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
-      OR "food insecurity" OR "nutritional insecurity"
-      )
+    ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
+    OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
+    OR "food insecurity" OR "nutritional insecurity"
+    )
     NEAR/5
         (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
             OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
@@ -120,7 +109,8 @@ This phrase covers improving food supply, and is combined with "human terms" to 
 ```py
 TS=
  (
-    ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")
+    (
+      ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")
       NEAR/5
          ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
          OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
@@ -251,12 +241,11 @@ TS=
       OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
       OR "adult$" OR "women" OR "men" OR "woman" OR "man"
       OR "agricultur*" OR "food security" OR "poverty"
-      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group" OR "marginali$ed groups" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
       OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
       OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
       )
 )
-
 ```
 
 ### Target 2.3

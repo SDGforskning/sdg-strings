@@ -14,14 +14,7 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG2</summary>
-
-```
-Not ready yet
-```
-
-</details>
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/68a40973-0972-49f4-848b-cf9452aab0f3-55f01ea3/relevance/1 (no filters, all years)
 
 ## 2. General notes
 
@@ -98,7 +91,7 @@ TS=
         OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
         OR "adult$" OR "women" OR "men" OR "woman" OR "man"
         OR "agricultur*" OR "food security" OR "poverty"
-        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group" OR "marginali$ed groups" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
         OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
         OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
         )
