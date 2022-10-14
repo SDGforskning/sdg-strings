@@ -13,18 +13,8 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years).
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/87a66058-d936-4eae-ae37-1939c9c5fa71-55eeab25/relevance/1 (no filters; all years)
 
-Results for Norway from 01.2014-05.2022 can be viewed here: 
-
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 1</summary>
-
-```
-Not ready yet
-```
-
-</details>
 
 ## 2. General notes
 
