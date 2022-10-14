@@ -48,7 +48,7 @@ During editing of this string (2021), we have consulted two other sets of querie
 >
 > 3.1.2 Proportion of births attended by skilled health personnel
 
-The target is interpreted as covering research about the maternal mortality rate. The interpretation is limited to mortality as this is what is stated in both targets, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
+The target is interpreted as covering research about the maternal mortality rate. The interpretation is limited to mortality, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
 
 This query consists of 1 phrase.
 
@@ -1056,7 +1056,7 @@ There are also 19 technical areas from the Joint External Evaluation tool, which
 
 This query consists of 1 phrase. The elements of the phrase are: *health emergencies + preparedness*
 
-`national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
+`national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so is here limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
 ```py
 TS =
