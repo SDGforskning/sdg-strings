@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Oct 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -14,13 +14,7 @@ Take urgent action to combat climate change and its impacts.
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG13 </summary>
 
-```
-Not complete yet
-```
-</details>
 
 ## 2. General notes
 
@@ -451,13 +445,11 @@ TS=
 
 ## 4. Contributions
 
-* v2019.12: ML, CSA, SRM
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* v 1.0.0, first draft: ML (Oct 2021-Feb 2022)
+* v1.0.0: Marta Lorenz (Oct 2021-Apr 2022), Caroline S. Armitage (Apr-Sep 2022)
 
-* Internal review: EHS, CSA (March 2022)
-
-* v 1.0.0, second draft: CSA, ML (April-June 2022)
+* Internal review: Eli Heldaas Seland, Caroline S. Armitage (March 2022)
 
 Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022), Marta Lorenz (PhD in climate geoscience).
 

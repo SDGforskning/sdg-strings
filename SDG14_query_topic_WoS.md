@@ -2,7 +2,7 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -15,12 +15,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 14</summary>
 
-Not ready yet
-
-</details>
 
 ## 2. General notes
 
@@ -864,11 +859,11 @@ NOT
 
 ## 5. Contributions
 
-* v2019.12: CSA, ML, SRM
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* v 1.0.0 CSA (Feb-Jun 2022)
+* v1.0.0 Caroline S. Armitage (Nov 2021-Sep 2022)
 
-* Internal review: ML, HMB (March 2022)
+* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022), Håkon Magne Bjerkan (minor review Sep 2022)
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 

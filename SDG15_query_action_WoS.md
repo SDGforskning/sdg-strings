@@ -3,7 +3,7 @@
 
 Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -16,14 +16,7 @@ Protect, restore and promote sustainable use of terrestrial ecosystems, sustaina
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 15</summary>
 
-```
-  Not ready yet
-```
-
-</details>
 
 ## 2. General notes
 
@@ -1429,11 +1422,9 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 ## 5. Contributions
 
-* v1.0.0, first draft: LB (Dec-May 2022)
+* v1.0.0: Leena Byholm (Dec 2021-Sep 2022)
 
-* Internal review: CSA (May 2022)
-
-* v1.0.0, second draft: LB (May-Sep 2022)
+* Internal review: Caroline S. Armitage (May 2022)
 
 Specialist input: Awaiting
 
