@@ -2,7 +2,7 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -1036,15 +1036,15 @@ TS=
 
 ## 4. Contributions
 
-* v2019.12: CSA, ML, SRM
+## 4. Contributions
 
-* v1.0.0, first draft: CSA (Oct 2021-Feb 2022)
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* Internal review: EHS, ML (March 2022)
+* v1.0.0 Caroline S. Armitage (Oct 2021-Oct 2022)
 
-* v1.0.0, second draft: CSA (April-Aug 2022)
+* Internal review: Eli Heldaas Seland, Marta Lorenz (March 2022)
 
-Specialist input: Awaiting specialist input. 
+Specialist input: Awaiting specialist input.
 
 ## 5. Footnotes
 

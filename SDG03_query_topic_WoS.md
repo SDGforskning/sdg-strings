@@ -2,7 +2,7 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string is currently being reviewed, some changes may occur.
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -15,14 +15,6 @@ Ensure healthy lives and promote well-being for all at all ages.
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 3</summary>
-
-```
-Not complete yet
-```
-
-</details>
 
 ## 2. General notes
 
@@ -1121,14 +1113,13 @@ NOT
 
 ## 4. Contributions
 
-* v2019.12: CSA, ML, SRM
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* v1.0.0, first draft: CSA (Oct 2021-Feb 2022)
+* v1.0.0 Caroline S. Armitage (Oct 2021-Oct 2022)
 
-* Internal review: HMB, ML (March 2022)
+* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022); Håkon Magne Bjerkan (minor review Oct 2022)
 
-* v1.0.0, second draft: CSA (April-Sep 2022)
-
+Specialist input: Awaiting
 
 ## 5. Footnotes
 

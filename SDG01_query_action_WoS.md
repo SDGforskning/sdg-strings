@@ -1,6 +1,6 @@
 # Search query for SDG 01 - No Poverty, Bergen action-approach.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Aug 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -623,13 +623,12 @@ TS=
 
 ## 4. Contributions
 
-* v2019.12: ML, CSA, SRM
 
-* v1.0.0, first draft: ML (Oct 2021-Feb 2022)
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* Internal review: HMB, CSA (March 2022)
+* v1.0.0: Marta Lorenz (Sep 2021-Apr 2022), Caroline S. Armitage (May 2022-Oct 2022)
 
-* v1.0.0,, second draft: ML, CSA (April-Sep 2022)
+* Internal review: Håkon Magne Bjerkan, Caroline S. Armitage (March 2022)
 
 Specialist input: Awaiting specialist input.
 
