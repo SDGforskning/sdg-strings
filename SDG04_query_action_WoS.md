@@ -2,7 +2,7 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is a first draft. It is being finalised after technical review.*
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -14,14 +14,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 4</summary>
 
-```
-  Test
-```
-
-</details>
 
 ## 2. General notes
 
@@ -839,19 +832,15 @@ TS=
     OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "maganese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"
     )
 )
-
 ```
-
 
 ## 4. Contributions
 
-* v1.0.0: EHS (Oct 2021-Jun 2022)
+* v1.0.0: Eli Heldaas Seland (Oct 2021-Oct 2022)
 
-* Internal reviews: HMB, CSA (Jan 2022); CSA, ML (March 2022)
+* Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022)
 
-* v1.0.0: EHS (Jun 2021-Oct 2022)
-
-Specialist input: KHH (Professor in Climate change, Sustainability and Education; Jan 2022). Workshops (Feb 2022, Jun 2022).
+Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 
 ## 5. Footnotes
 <a id="f5"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)

@@ -3,7 +3,7 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is a first draft. Conversion from action to topic approach is currently being done*
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -16,14 +16,6 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 4</summary>
-
-```
-  Test
-```
-
-</details>
 
 ## 2. General notes
 
@@ -737,13 +729,11 @@ NOT
 
 ## 4. Contributions
 
-* v1.0.0: EHS (Oct 2021-Jun 2022)
+* v1.0.0: Eli Heldaas Seland (Oct 2021-Oct 2022)
 
-* Internal reviews: HMB, CSA (Jan 2022); CSA, ML (March 2022)
+* Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022), Håkon Magne Bjerkan (minor review Oct 2022)
 
-* v1.0.0: EHS (Jun 2021-Oct 2022)
-
-Specialist input: KHH (Professor in Climate change, Sustainability and Education; Jan 2022). Workshops (Feb 2022, Jun 2022).
+Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 
 ## 5. Footnotes
 <a id="f5"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)

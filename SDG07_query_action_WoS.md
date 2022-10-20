@@ -1,6 +1,6 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen action-approach.
 
-**Current status**: Minor edits can still occur, but the string is mostly a finished version (Sep 2022).
+**Current status**: This string is currently a finished version (1.0.0).
 
 **Contents**
 
@@ -12,12 +12,7 @@
 
 ## 1. Full query
 
-<details>
-  <summary>Click to show the final copy-pasteable full query for SDG 7</summary>
-```
-Not ready yet
-```
-</details>
+
 
 ## 2. General notes
 
@@ -701,13 +696,11 @@ TS=
 
 ## 4. Contributions
 
-* v2019.12: ML, CSA, SRM
+* v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
-* v 1.0.0, first draft: CSA (Oct 2021-Feb 2022)
+* v1.0.0: Caroline S. Armitage (Oct 2021-Oct 2022), Marta Lorenz (Oct 2021-Apr 2022)
 
-* Internal review: HMB, ML (March 2022)
-
-* v 1.0.0, second draft: CSA, ML (Apr-Sep 2022)
+* Internal review: Håkon Magne Bjerkan, Marta Lorenz (March 2022)
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
