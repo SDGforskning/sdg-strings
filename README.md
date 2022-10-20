@@ -53,7 +53,7 @@ The "WoS" strings are formatted to be copied and pasted into the "advanced searc
 
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used them! Our email is on the project homepage.
 
-When the strings are published in Zenodo, a citation file will be added to the repository. 
+Please see the citation file. 
 
 ## Who has written these strings?
 
