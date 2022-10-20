@@ -1,0 +1,36 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Search strings for finding SDG-related research, Bergen-approach.
+message: >-
+  If you use these strings, please cite using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Caroline S
+    family-names: Armitage
+    email: caroline.s.armitage@gmail.com
+    affiliation: University of Bergen
+    orcid: 'https://orcid.org/0000-0003-2826-5935'
+  - given-names: Håkon Magne
+    family-names: Bjerkan
+    affiliation: University of Stavanger
+  - given-names: Leena Pirit
+    family-names: Byholm
+    email: leena.byholm@luke.fi
+    affiliation: Natural Resources Institute Finland (Luke)
+    orcid: 'https://orcid.org/0000-0003-1000-2125'
+  - given-names: Inger
+    family-names: Gåsemyr
+    affiliation: University of Stavanger
+  - given-names: Marta
+    family-names: Lorenz
+    orcid: 'https://orcid.org/0000-0001-8927-5948'
+    affiliation: University of Bergen
+  - given-names: Eli Heldaas
+    family-names: Seland
+    email: eli.seland@uib.no
+    orcid: 'https://orcid.org/0000-0001-9666-6197'
+    affiliation: Western Norway University of Applied Sciences
