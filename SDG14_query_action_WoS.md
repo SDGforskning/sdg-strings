@@ -47,13 +47,10 @@ I considered adding the 25 most common marine fisheries species (<a id="FAOfish"
 ```py
 TS=
 (
-  "ocean$" OR "oceanogra*"
-  OR "marine" OR "submarine"
-  OR "seas"
-  OR "seabed" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$"
+  "ocean$" OR "oceanogra*" OR "marine" OR "submarine" OR "seas"
+  OR "seabed" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$" OR "continental shelf" OR "continental shelves" OR "continental slope"
   OR "subtidal" OR "intertidal" OR "deep sea" OR "bathyal" OR "abyssal"
-  OR "rocky shore$" OR "beach*"
-  OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
+  OR "rocky shore$" OR "beach*" OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
   OR "estuar*" OR "fjord$"
   OR "sea ice"
 
@@ -181,7 +178,7 @@ The pollution terms and structure are mostly the same between the three phrases;
 
 Action terms: `tackle` is not included as an action term as it could be a type of marine debris.
 
-Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms. This phrase does not include `waste management` like the others because it does not fit with these action terms.
+Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms. Currently chemical symbols for these metals are not included as it is diffiult to avoid noise, but this can be reconsidered (and they are included in the topic approach). This phrase does not include `waste management` like the others because it does not fit with these action terms.
 
 ```py
 TS=
@@ -193,7 +190,7 @@ TS=
     OR "remediate" OR "remediation" OR "cleanup" OR "clean up"
     )  
     NEAR/5
-        (  "pollut*"
+        ("pollut*"
         OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
         OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrient$"
         OR "effluent$" OR "nutrient runoff" OR "nutrient run off"
@@ -208,10 +205,12 @@ TS=
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$" OR "mining" OR "mine tailing$" OR "oil")
-            NEAR/15 "contamination"         
+            ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+            )
+            NEAR/15 "contamination"   
           )
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "bioconcentrat*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
@@ -220,7 +219,6 @@ TS=
   )
   NOT ("PM2.5" OR "PM10" OR "leaf litter")
 )
-
 ```
 
 #### Phrase 2
@@ -268,10 +266,12 @@ TS=
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
         OR
           (
-            ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$" OR "mining" OR "mine tailing$" OR "oil")
+            ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+            )
             NEAR/15 "contamination"          
           )
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "bioconcentrat*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
@@ -324,10 +324,9 @@ TS=
         OR "litter" OR "littering" OR "garbage patch"
         OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
-        OR "heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$"
-        OR "mining" OR "mine tailing$"
-        OR "oil"
-        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
+        OR "heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+        OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+        OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "bioconcentrat*" OR "ecotox*" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "Pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
@@ -335,7 +334,6 @@ TS=
   )
   NOT ("PM2.5" OR "PM10")
 )
-
 ```
 
 ### Target 14.2

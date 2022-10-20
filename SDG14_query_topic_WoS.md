@@ -47,13 +47,10 @@ I considered adding the 25 most common marine fisheries species (<a id="FAOfish"
 ```py
 TS=
 (
-  "ocean$" OR "oceanogra*"
-  OR "marine" OR "submarine"
-  OR "seas"
-  OR "seabed" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$"
+  "ocean$" OR "oceanogra*" OR "marine" OR "submarine" OR "seas"
+  OR "seabed" OR "seafloor" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$" OR "continental shelf" OR "continental shelves" OR "continental slope"
   OR "subtidal" OR "intertidal" OR "deep sea" OR "bathyal" OR "abyssal"
-  OR "rocky shore$" OR "beach*"
-  OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
+  OR "rocky shore$" OR "beach*" OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
   OR "estuar*" OR "fjord$"
   OR "sea ice"
 
@@ -178,7 +175,7 @@ The elements of the phrase are: *pollution*. **This phrase should be combined wi
 
 Pollution terms: `pollution` covers various kinds (e.g. noise pollution). `waste OR discharge` are limited to certain fields as they are such general words (e.g. fish waste, heat waste). In this phrase, some pollutants (e.g. `mercury`) need to be combined with `contamination`, because there are papers discussing their removal from e.g. gases in industrial processes using marine organisms.
 
-The lack of action terms means that in the topic approach, `plastic` had to be combined with other terms (due to e.g. "plastic flow", "plastic development") - anything still talking about "plastic pollution" will still be caught by `pollut*`
+The lack of action terms means that in the topic approach, `plastic` had to be combined with other terms (due to e.g. "plastic flow", "plastic development") - anything still talking about "plastic pollution" will still be caught by `pollut*`. Likewise, `contaminated` also had to be combined (to avoid e.g. "contaminated samples"). Metal chemical symbols are combined with the full names to avoid noise from other uses of these two-letter terms (with "As" for arsenic avoided entirely).
 
 ```py
 TS=
@@ -197,10 +194,17 @@ TS=
   OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" OR "plastic waste" OR ("plastic$" NEAR/3 ("problem" OR "debris"))
   OR
     (
-      ("heavy metal$" OR "organotin$" OR "tributyltin" OR "TBT" OR "mercury" OR "toxic metal$" OR "mining" OR "mine tailing$" OR "oil")
-      NEAR/15 "contamination"         
+      ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+      OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+      )
+      NEAR/15 ("contamination" OR "contaminated")   
     )
-  OR "contaminated" OR "contaminant$" OR "bioaccumula*" OR "ecotox*" OR "toxic chemical$"
+  OR
+    (
+      (("cd" OR "ch" OR "cu" OR "ni" OR "pb" OR "hg") NEAR/15 ("contamination" OR "contaminated")) 
+      AND ("arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" OR "lead" OR "mercury")
+    )
+  OR "contaminant$" OR "bioaccumula*" OR "bioconcentrat*" OR "ecotox*" OR "toxic chemical$"
   OR "endocrine disrupting chemical$"
   OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
   OR "polycyclic aromatic hydrocarbon$" OR "PAH"
@@ -208,7 +212,6 @@ TS=
   )
   NOT ("PM2.5" OR "PM10" OR "leaf litter")
 )
-
 ```
 
 ### Target 14.2
