@@ -863,7 +863,7 @@ NOT
 
 * v1.0.0 Caroline S. Armitage (Nov 2021-Sep 2022)
 
-* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022), Håkon Magne Bjerkan (minor review Sep 2022)
+* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022), Inger Gåsemyr (minor review Sep 2022)
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
