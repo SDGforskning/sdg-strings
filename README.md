@@ -1,17 +1,19 @@
 # Information about these files
 
-The files in this repository contain search strings to find publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**.
+These files contain search strings to find publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). 
 
-File names consist of the SDG and the approach used (topic vs. action). The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets ("action"), or research more broadly related to the topics in the targets ("topic"). You can read more about these below. **The strings are a work-in-progress, and are at different stages of development - within each file there is a description of its current status at the top.** 
+This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**. This project is led by the University of Bergen Library, partnered with the libraries at Western Norway University of Applied Sciences and the University of Stavanger. Natural Resources Institute Finland (Luke) has contributed with search strings for two SDGs as an external collaborator.
+
+File names in this set consist of the SDG and the approach used (topic vs. action), as well as the platform/syntax for the string. The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets (*action*), or research more broadly related to the topics in the targets (*topic*). *You can read more about these below*. Stable versions are saved as "releases"; in between releases, there may be changes to the strings. A status message at the top of each file gives information.
 
 ## Why are we building strings? How do they differ to existing mappings?
 
-Previous research has shown that mappings of SDG-"related" research do not match up very well ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071); [Purnell 2022](https://doi.org/10.1162/qss_a_00215)). We believe this is unsurprising when you consider that there are different ways to interpret what an SDG covers, different viewpoints on which research themes should be counted as "related", different mapping methods, and different datasources (see our previous work, [Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071)). For example, should *SDG 3 Good health* cover all medical research? Does *SDG 13 Climate Action* cover basic climate science? You will probably get different answers depending on who you ask.
+Previous research has shown that mappings of SDG-"related" research do not match up very well ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071); [Purnell 2022](https://doi.org/10.1162/qss_a_00215)). This is perhaps unsurprising when you consider that there are different ways to interpret what an SDG covers, different viewpoints on which research themes should be counted as "related", different mapping methods, and different data sources (see our previous work, [Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071)). For example, should *SDG 3 Good health* cover all medical research? Does *SDG 13 Climate Action* cover basic climate science? You will probably get different answers depending on who you ask.
 
-Instead of trying to find the "right" answer, we think it is best with mulitple mappings which can capture different views of "relatedness". But in order for these to have any meaning, methods must be documented to explain to the user a) how the SDG was interpreted; what research approach is supposed to cover, and b) how it is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
+Instead of trying to find the "right" answer, we propose multiple mappings which can capture different views of relatedness. But in order for these to have any meaning, documentation must explain a) how the SDG was interpreted and what research approach is considered relevant, and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
 
 - Our strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
-- We provide two strings: an "action" and "topic" approach, which have different interpretations of "relevance"
+- We provide two types of strings: *action* and *topic* approaches, which have different interpretations of "relevance"
 - The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords). The benefit of this is that it is easier to understand why a result is in or out, but sacrifices potential additional recall provided by machine learning.
 - For each string and target, we document :
   - How we have interpreted which research themes should be considered "relevant" to each SDG target
@@ -22,19 +24,19 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 ## Which SDGs and platforms are covered? 
 
-Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
+Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator from Natural Resources Institute Finland is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at the moment are formatted in Web of Science syntax (Core collection); these have "WoS" at the end of the file name. We are also working on a version in Python which can be run against any list of works in csv format. 
+The strings available at this time (Oct 2022) are formatted in Web of Science syntax (Core collection); these have "WoS" at the end of the file name. We are also working on a version in Python which can be run against any list of works in csv format. 
 
 ## What kind of results should I expect when using these strings?
 
 This depends on which version of the strings you use:
 
-**"Action" strings** : The "action" approach aims to find research related to the actions mentioned in the SDG targets and indicators. 
+**"Action" strings** : The *action approach* aims to find research related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
 You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be a **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used).  
 
-**"Topic" strings** : The "topic" approach aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
+**"Topic" strings** : The *topic approach* aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
 This is done by looking for works which mention the topic, *e.g. "malnutrition"; "school completion"; "rights of small-scale fishers"*.
 You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find in other mappings that use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
 
@@ -43,27 +45,25 @@ We have tried to be consistent in the approaches, but there are occasional excep
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## When will the strings be ready to use?
-We aim to finish a version of Web of Science strings for 9 of the SDGs within October 2022, when a version will be published on Zenodo. We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will come later in the year. 
+We have finished a version 1 of the Web of Science strings for 9 of the SDGs in October 2022 (see "Releases"). We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
+
+We are also working on a version of the topic approach in Python which can be run against any list of works in csv format, this will be released in late 2022/early 2023. 
 
 ## How do I use and cite these strings? 
 
-Each file contains a search string for a specific SDG, broken up into phrases by target. 
-
-The "WoS" strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
+Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (Clarivate), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. While these strings are built for the Web of Science platform, this work is not affiliated with Web of Science/Clarivate.
 
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used them! Our email is on the project homepage.
 
-Please see the citation file. 
-
-## Who has written these strings?
-
-You can find contributor information at the bottom of each file. This lists the main authors, and any specialists who have given input.
-
-This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
+For citing - please see the citation file. 
 
 ## How have the strings been tested?
 
-We have currently only tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in Q1 2023. The orignal versions (v2019.1) were only tested for precision; we plan to test this new version for both precision and recall. 
+We have currently only tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in Q1 2023.  
+
+## Related works
+
+This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
 
 ## License
 
