@@ -1036,8 +1036,6 @@ TS=
 
 ## 4. Contributions
 
-## 4. Contributions
-
 * v2019.12: Marta Lorenz, Caroline S. Armitage, Susanne Mikki
 
 * v1.0.0 Caroline S. Armitage (Oct 2021-Oct 2022)
