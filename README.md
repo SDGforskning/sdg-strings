@@ -10,7 +10,7 @@ File names in this set consist of the SDG and the approach used (topic vs. actio
 
 Previous research has shown that mappings of SDG-"related" research do not match up very well ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071); [Purnell 2022](https://doi.org/10.1162/qss_a_00215)). This is perhaps unsurprising when you consider that there are different ways to interpret what an SDG covers, different viewpoints on which research themes should be counted as "related", different mapping methods, and different data sources (see our previous work, [Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071)). For example, should *SDG 3 Good health* cover all medical research? Does *SDG 13 Climate Action* cover basic climate science? You will probably get different answers depending on who you ask.
 
-Instead of trying to find the "right" answer, we propose multiple mappings which can capture different views of relatedness. But in order for these to have any meaning, documentation must explain a) how the SDG was interpreted and what research approach is considered relevant, and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
+Instead of trying to find the "right" answer, we think multiple mappings (which can capture different views of relatedness) are a good idea. But in order for these to have meaning, documentation must explain a) what it is supposed to find (i.e. how the SDG was interpreted and what research is considered relevant), and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
 
 - Our strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
 - We provide two types of strings: *action* and *topic* approaches, which have different interpretations of "relevance"
@@ -44,22 +44,24 @@ We have tried to be consistent in the approaches, but there are occasional excep
 
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
-## When will the strings be ready to use?
-We have finished a version 1 of the Web of Science strings for 9 of the SDGs in October 2022 (see "Releases"). We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
+## Are the strings ready to be used?
+We finished a version 1 for nine of the SDGs (Web of Science syntax) in October 2022 (see "Releases"). We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
 
 We are also working on a version of the topic approach in Python which can be run against any list of works in csv format, this will be released in late 2022/early 2023. 
 
-## How do I use and cite these strings? 
+## How do I use these strings? 
 
 Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (Clarivate), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. While these strings are built for the Web of Science platform, this work is not affiliated with Web of Science/Clarivate.
 
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used them! Our email is on the project homepage.
 
-For citing - please see the citation file. 
+## How should I cite?
+
+Please see the suggested citation in Zenodo. 
 
 ## How have the strings been tested?
 
-We have currently only tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in Q1 2023.  
+We have currently tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in early 2023.  
 
 ## Related works
 
