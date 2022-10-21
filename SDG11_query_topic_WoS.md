@@ -13,6 +13,7 @@
 
 ## 1. Full query
 
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/c2f5cce4-b4f9-46f7-9033-bda684f39d7b-57bc10ff/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -515,11 +516,9 @@ TS=
 
 This target is interpreted to cover research about a) LDCs (least developed countries) and local building materials or b) LDCs and sustainable or resilient construction. We interpret "local materials" to be local building materials, i.e. materials where the entire production process takes place within the region.
 
-Terms were taken from the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). "Construction" and "building" are widely used to describe other activities than construction materials, or the building industry, thus they had to be combined with other terms. 
-
-#### Phrase 1
-
 The basic structure is: *local materials/sustainable buildings/resilient construction + LEDCs*.
+
+Terms were taken from the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). "Construction" and "building" are widely used to describe other activities than construction materials, or the building industry, thus they had to be combined with other terms. 
 
 ```py
 TS=
