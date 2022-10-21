@@ -14,7 +14,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/433e2561-fc3b-472e-b8c2-b1466fb72766-57b893e7/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -97,7 +97,6 @@ These are all addressed in the subsequent targets, therefore "quality education"
 ```py
 TS=
 (
-  (
     (
       ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
       OR "scal* up" OR "build*" OR "expand"  OR "accelerat*"
@@ -761,7 +760,7 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-The basic structure is *action + qualified/certified teachers*.
+The basic structure is *action + teachers/qualified teachers*.
 
 This phrase finds research about increasing the number of qualified teachers.
 
@@ -773,16 +772,13 @@ TS=
         NEAR/5
         ("supply" OR "coverage" OR "enough" OR "quantity" OR "recruit*" OR "retention" OR "lack of" OR "turnover" OR "shortage" OR "share of")
    ) 
-   NEAR/5 
-   (
-   ("teacher$")OR("qualif*" NEAR/3 "teach*")
-   )
+   NEAR/5 ("teacher$" OR ("qualif*" NEAR/3 "teach*"))
 )
 ```
 
 #### Phrase 2
 
-The basic structure is *action + unqualified teachers / teacher shortage*.
+The basic structure is *action + unqualified teachers/teacher shortage*.
 
 This phrase finds research about reducing teacher turnover, attrition and shortage
 
@@ -790,8 +786,8 @@ This phrase finds research about reducing teacher turnover, attrition and shorta
 TS=
 (
   ("reduc*" OR "decreas*" OR "avoid*" OR "prevent*")
-   NEAR/5
-   ("unqualified teacher$" OR "teacher turnover" OR "teacher attrition" OR "teacher shortage$") 
+  NEAR/5
+      ("teacher$" NEAR/3 ("unqualified" OR "turnover" OR "attrition" OR "shortage$"))
 )
 ```
 
