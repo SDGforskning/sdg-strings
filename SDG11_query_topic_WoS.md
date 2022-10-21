@@ -13,7 +13,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/c2f5cce4-b4f9-46f7-9033-bda684f39d7b-57bc10ff/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/755cb875-89fb-4121-b0c9-948308d24712-57d2813a/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -256,13 +256,12 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase covers research about reducing mortality/increasing survival and disasters. The basic structure is *disasters + mortality + action*. Disaster terms to do with disease (`pandemic$`, `epidemic$`, `outbreak$`) were not included as the results were dominated by these, and these are really much more related to SDG3 (or animal health, in the case of `outbreak`) - this string may need additional work to narrow down to humans, OR a more city-settelement oriented context. 
+This phrase covers research about reducing mortality/increasing survival and disasters. The basic structure is *disasters + mortality + humans/settlements*. Disaster terms to do with disease (`pandemic$`, `epidemic$`, `outbreak$`) were not included as the results were dominated by these, and these are more related to SDG3 (or animal health, in the case of `outbreak`). The *human/settlement* terms are generic terms for humans and settlements, plus terms from the lists of vulnerable peoples created for SDG 1 (see documentation there). Terms such as `communit*`are not included to try and avoid ecological works (e.g. plant communities and forest fires).
 
 ```py
 TS=
 (
-  ( 
-    ("disaster$" OR "catastrophe$" 
+  ( "disaster$" OR "catastrophe$" 
     OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
     OR (("natural" OR "climat*") NEAR/5 "hazard$")
     OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
@@ -277,7 +276,7 @@ TS=
         ("anthropogenic" 
         OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
         OR "chemical" OR "heavy metal$" OR "pesticide$"
-        OR "biological" OR "disease" OR "zoonotic"
+        OR "biological" OR "zoonotic"
         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
         ) 
         NEAR/3 ("hazard$")
@@ -285,11 +284,35 @@ TS=
     OR "war" OR "wars" OR "armed conflict$"
     OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
     OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-    )  
+    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"  
   )
-  AND ("death$" OR "casualt*" OR "mortalit*" OR "fatal*" OR "missing people" OR "missing person$" OR "surviv*")
-)
+  AND
+    (
+      ("death$" OR "casualt*" OR "survivors" OR "fatal*" OR "missing people" OR "missing person$")
+      OR 
+        (
+          ("surviv*" OR "mortalit*")
+          AND 
+            ("people" OR "human$" OR "patient$" OR "victim$" OR "civilian$"
+            OR "city" OR "cities" OR "urban" OR "municipalit*" OR "town*" OR "village*" OR "populated area*" OR "neighbo$rhood*" OR "public*" 
+            OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+            OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
+            OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+            OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+            OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+            OR "disabled" OR "disabilities" OR "disability"
+            OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+            OR "unemployed"
+            OR "women" OR "woman" OR "girls" OR "girl"
+            OR "pregnant" OR "pregnancy" OR "maternity" OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+            OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+            OR "living with HIV" OR "living with AIDS"
+            OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+            OR "indigenous group$"
+            )
+        )
+    )
+) NOT TS=("death$" NEAR/3 ("tree" OR "trees" OR "leaf" OR "cell"))
 ```
 
 #### Phrase 2
