@@ -16,7 +16,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8edb65c8-ce51-42d4-8464-5aff8bb396a3-57b9f125/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/2e99ec3f-2c5d-43c1-ad9d-d57d55757152-57cbd9db/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
