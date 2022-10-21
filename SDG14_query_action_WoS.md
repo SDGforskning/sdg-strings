@@ -15,7 +15,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8d851a1e-d98d-41de-a91e-3dbec467564e-57be146f/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -1102,7 +1102,7 @@ TS =
 
 * v1.0.0 Caroline S. Armitage (Nov 2021-Sep 2022)
 
-* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022, minor review Sep 2022)
+* Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022)
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
