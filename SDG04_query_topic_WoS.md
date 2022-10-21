@@ -16,6 +16,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8edb65c8-ce51-42d4-8464-5aff8bb396a3-57b9f125/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
@@ -651,8 +652,9 @@ This phrase finds research about teacher supply, shortage etc. Without action te
 ```py
 TS= 
   (
-    ("teacher supply" OR  "supply of teacher$" OR "teacher coverage"  OR "teacher recruit*" OR "recruit* of teacher$" OR "teacher retention" OR "lack of teacher$" OR 
-    "teacher turnover" OR "teacher shortage") 
+    ("teacher supply" OR  "supply of teacher$" OR "teacher coverage" 
+    OR "teacher recruit*" OR "recruit* of teacher$" 
+    OR "lack of teacher$" OR "teacher turnover" OR "teacher shortage" OR "teacher retention" OR "teacher attrition") 
   )
 ```
 
