@@ -14,7 +14,7 @@ Take urgent action to combat climate change and its impacts.
 
 ## 1. Full query
 
-
+Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/3076f4d0-c53c-4eeb-ba03-800560d5e7de-57bc98bc/relevance/1 (no filters; all years)
 
 ## 2. General notes
 
