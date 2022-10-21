@@ -13,8 +13,8 @@ Previous research has shown that mappings of SDG-"related" research do not match
 Instead of trying to find the "right" answer, we think multiple mappings (which can capture different views of relatedness) are a good idea. But in order for these to have meaning, documentation must explain a) what it is supposed to find (i.e. how the SDG was interpreted and what research is considered relevant), and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
 
 - Our strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
-- We provide two types of strings: *action* and *topic* approaches, which have different interpretations of "relevance"
-- The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords). The benefit of this is that it is easier to understand why a result is in or out, but sacrifices potential additional recall provided by machine learning.
+- We provide two types of strings: *action* and *topic* approaches, which have different interpretations of "relevance".
+- The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords). The benefit of this is that it is easier to understand why a result is in or out, the drawback that we sacrifice potential additional recall provided by machine learning.
 - For each string and target, we document :
   - How we have interpreted which research themes should be considered "relevant" to each SDG target
   - Sources we have used to identify search terms and/or define terminology
@@ -40,12 +40,12 @@ You might therefore expect to find a "core" set of SDG-related research, directl
 This is done by looking for works which mention the topic, *e.g. "malnutrition"; "school completion"; "rights of small-scale fishers"*.
 You can therefore expect to find a **larger** set of research than the action approach. However, this set may still be smaller than you would find in other mappings that use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
 
-We have tried to be consistent in the approaches, but there are occasional exceptions in the way that we apply these approaches at the string-level, as we are reliant on language - some terms are ambiguous and thus difficult to apply a hard set of rules to. For example, terms such as "energy" could be to do with energy technology... or could be to do with astrophysics, or biology, or medicine; thus the string construction must be adapted to avoid excessive noise. Please see the documentation on the individual files. 
+We have tried to be consistent in the approaches, but there are occasional exceptions in the way that we apply these approaches at the string-level, as we are reliant on language. Some terms are ambiguous and thus difficult to apply a hard set of rules to. For example, terms such as "energy" could be to do with energy technology, or with astrophysics, or biology, or medicine; thus the string construction must be adapted to avoid excessive noise. Please see the documentation on the individual files. 
 
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Are the strings ready to be used?
-We finished a version 1 for nine of the SDGs (Web of Science syntax) in October 2022 (see "Releases"). We consider this a "version", rather than a finished product - it will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
+We finished a version 1 for nine of the SDGs (Web of Science syntax) in October 2022 (see "Releases"). We consider this a "version", rather than a finished product. It will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
 
 We are also working on a version of the topic approach in Python which can be run against any list of works in csv format, this will be released in late 2022/early 2023. 
 
