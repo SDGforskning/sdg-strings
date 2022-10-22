@@ -22,15 +22,17 @@ Instead of trying to find the "right" answer, we think multiple mappings (which 
 
 For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (2021)](https://doi.org/10.31235/osf.io/yfqbd)
 
-## Which SDGs and platforms are covered? 
+## Which SDGs, platforms and languages are covered? 
 
-Currently, we are working on 10 of the 17 SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for 8 of these, while an external collaborator from Natural Resources Institute Finland is working on the other two. If you like our method and could consider contributing, you are welcome to get in touch.
+Currently, we are working on ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at this time (Oct 2022) are formatted in Web of Science syntax (Core collection); these have "WoS" at the end of the file name. We are also working on a version in Python which can be run against any list of works in csv format. 
+The strings available at this time (Oct 2022) are formatted in Web of Science syntax (and can be run against the Web of Science Core collection from Clarivate); these have "WoS" at the end of the file name. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
+
+We are currently working on a version in Python which can be run against any list of works in csv format. This version will be in English and Norwegian.
 
 ## What kind of results should I expect when using these strings?
 
-This depends on which version of the strings you use:
+This depends on which string you use:
 
 **"Action" strings** : The *action approach* aims to find research related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
@@ -44,26 +46,22 @@ We have tried to be consistent in the approaches, but there are occasional excep
 
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
-## Are the strings ready to be used?
-We finished a version 1 for nine of the SDGs (Web of Science syntax) in October 2022 (see "Releases"). We consider this a "version", rather than a finished product. It will likely be necessary with improvements after testing and over time. SDG 12 will be added later. 
+## Current status and planned changes?
+We have finished a version 1 that can be used for nine of the SDGs (Web of Science syntax) (see "Releases"). SDG 12 will be added later. We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in Q1 2023.  
 
-We are also working on a version of the topic approach in Python which can be run against any list of works in csv format, this will be released in late 2022/early 2023. 
+We are currently working on a topic approach set of strings in Python, which can be run against any list of works in csv format. This will be released in late 2022/early 2023. 
 
 ## How do I use these strings? 
 
-Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (Clarivate), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in the Web of Science Core Collection. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the Web of Science interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. While these strings are built for the Web of Science platform, this work is not affiliated with Web of Science/Clarivate.
+Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (hereafter WoS), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in WoS. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the WoS interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
 
-You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used them! Our email is on the project homepage.
+You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used or adapted them! You are also welcome to contact is with feedback. Our email can be found on the [project homepage](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
 
 ## How should I cite?
 
 Please see the suggested citation in Zenodo for the doi.
 
 Suggested citation: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach [*number of the version you used*]. doi: *doi from Zenodo*
-
-## How have the strings been tested?
-
-We have currently tested the strings in an informal way while building. We plan to carry out and make available the results of more formal testing in early 2023.  
 
 ## Related works
 
