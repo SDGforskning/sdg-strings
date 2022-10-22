@@ -61,7 +61,7 @@ You are welcome to translate the strings into other database syntax or tools, or
 
 Please see the suggested citation in Zenodo for the doi.
 
-Suggested citation: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach [*number of the version you used*]. doi: *doi from Zenodo*
+Suggested citation: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach (v1.0.0). doi: *doi from Zenodo*
 
 ## Related works
 
