@@ -6,7 +6,7 @@ Ensure sustainable consumption and production patterns
 
 **Contents**
 
-1. Full query in copy-pasteable format
+1. Full query
 2. General notes about method for SDG 12
 3. Documentation and string sections for each target
 4. Authorship and review
