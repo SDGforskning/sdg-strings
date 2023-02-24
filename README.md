@@ -26,9 +26,9 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 Currently, we are working on ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at this time (Oct 2022) are formatted in Web of Science syntax (and can be run against the Web of Science Core collection from Clarivate); these have "WoS" at the end of the file name. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
+The strings available at this time (Feb 2023) are formatted in Web of Science syntax (and can be run against the Web of Science Core collection from Clarivate); these have "WoS" at the end of the file name. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
 
-We are currently working on a version in Python which can be run against any list of works in csv format. This version will be in English and Norwegian.
+We are releasing a version in Python soon which can be run against any list of works in csv format. This will be in English and Norwegian.
 
 ## What kind of results should I expect when using these strings?
 
@@ -47,9 +47,9 @@ We have tried to be consistent in the approaches, but there are occasional excep
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Current status and planned changes?
-We have finished a version 1 that can be used for nine of the SDGs (Web of Science syntax) (see "Releases"). SDG 12 will be added later. We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in Q1 2023.  
+We have finished a version that can be used for ten of the SDGs (Web of Science syntax) (see "Releases"). We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in Q2-Q3 2023.  
 
-We are currently working on a topic approach set of strings in Python, which can be run against any list of works in csv format. This will be released in late 2022/early 2023. 
+We are currently working on a topic approach set of strings in Python, which can be run against any list of works in csv format. This will be released in shortly. 
 
 ## How do I use these strings? 
 
@@ -59,7 +59,7 @@ You are welcome to translate the strings into other database syntax or tools, or
 
 ## How should I cite?
 
-Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.0.0: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach (v1.0.0). doi: https://doi.org/10.5281/zenodo.7241690
+Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.1.0: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach (v1.1.0). doi: https://doi.org/10.5281/zenodo.7241690
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7241690.svg)](https://doi.org/10.5281/zenodo.7241690)
 
