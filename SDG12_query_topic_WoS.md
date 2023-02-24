@@ -1411,7 +1411,7 @@ NOT
 
 ## 4. Authorship and review
 
-* First draft: Leena Byholm (Jan. 2023)
+* First draft (v. 1.1.0): Leena Byholm (Jan. 2023)
 * Internal review: Internal review currently only carried out on action approach.
 * Specialist input: Terhi Latvala (D.Sc. Agricultural Economics)
 
