@@ -3,7 +3,7 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is currently a finished version (1.0.0).
+**Current status**: This string is currently a finished version.
 
 **Contents**
 

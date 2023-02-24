@@ -1,7 +1,7 @@
 
 # Search query for SDG 11 -Sustainable cities and communities, Bergen topic-approach.
 
-**Current status**: This string is currently a finished version (1.0.0).
+**Current status**: This string is currently a finished version.
 
 **Contents**
 

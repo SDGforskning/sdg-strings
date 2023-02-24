@@ -2,7 +2,7 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: This string is currently a finished version (1.0.0).
+**Current status**: This string is currently a finished version.
 
 **Contents**
 

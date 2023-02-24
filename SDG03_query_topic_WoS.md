@@ -2,7 +2,7 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string is currently a finished version (1.0.0).
+**Current status**: This string is currently a finished version.
 
 **Contents**
 
