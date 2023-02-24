@@ -1471,7 +1471,7 @@ TS=
 
 * First draft: Leena Byholm (Nov. 2022)
 * Internal review: Caroline S. Armitage (Dec. 2022)
-* Second draft (v. 1.1): Leena Byholm (Jan. 2023)
+* Second draft (v. 1.1.0): Leena Byholm (Jan. 2023)
 * Specialist input: Terhi Latvala (D.Sc. Agricultural Economics)
 
 
