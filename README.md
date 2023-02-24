@@ -59,9 +59,10 @@ You are welcome to translate the strings into other database syntax or tools, or
 
 ## How should I cite?
 
-Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.1.0: Armitage, C. S., Bjerkan, H. M., Byholm, L. P., Gåsemyr, I., Lorenz, M., & Seland, E. H. (2022). Search strings for finding SDG-related research, Bergen-approach (v1.1.0). doi: https://doi.org/10.5281/zenodo.7241690
+Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.1.0: Armitage, Caroline S, Bjerkan, Håkon Magne, Byholm, Leena Pirit, Gåsemyr, Inger, Lorenz, Marta, & Seland, Eli Heldaas. (2023). Search strings for finding SDG-related research, Bergen-approach. (v.1.1.0). Zenodo. https://doi.org/10.5281/zenodo.7674694
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7241690.svg)](https://doi.org/10.5281/zenodo.7241690)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7674694.svg)](https://doi.org/10.5281/zenodo.7674694)
+
 
 ## Related works
 
