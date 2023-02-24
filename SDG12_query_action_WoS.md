@@ -61,9 +61,6 @@ Abbreviations used:
 
 This target is interpreted to cover research about implementing programmes and policies to advance sustainable consumption and production, according to the UN's 10-Year Framework of Programmes (10YFP). We interpret this target to be about all countries taking action, and have not included a phrase for supporting the development or capabilities of developing countries here. Target 12.a is specifically about this.
 
-
-#### Phrase 1:
-
 This phrase aims to find research about implementing/promoting programmes and policies on sustainable consumption and production. 
 
 The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned int the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
@@ -186,7 +183,7 @@ Sources used for definitions and specifying terms:
 * UNEP Topic pages for *Resource efficiency* (<a id="UNEPRes">[UNEP Resource efficiency](#f6)</a>) and the RMB_strategy2020.pdf found on this page. 
 * UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>)
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about promoting sustainable management of natural resources, such as forests, oceans, land, water, minerals and fuels. A specific sentence for sustainable forest management, used in SDG 15 target 15.2, is included in the phrase. 
 
@@ -253,7 +250,7 @@ TS=
 
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about promoting sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4. 
 
@@ -315,7 +312,7 @@ TS=
 
 ```
 
-#### Phrase 3:
+#### Phrase 3
 
 This phrase aims to find research about promoting efficient use of natural resources, including e.g. circular economy, recycling materials and material footprint analyses. It also searches for saving/conserving natural resources, eco-labelling and environmental certification included. 
 
@@ -396,7 +393,7 @@ TS=
 
 ```
 
-#### Phrase 4:
+#### Phrase 4
 
 This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
 
@@ -436,7 +433,7 @@ TS=
 )
 
 ```
-#### Phrase 5:
+#### Phrase 5
 
 This phrase aims to find research about resisting unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. A specific sentence for sustainable forest management, used in SDG 15 target 15.2, is included in the phrase. 
 
@@ -511,7 +508,7 @@ Although the target specifies levels where food loss happens (production, supply
 `food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. The majority of articles contributing to the topics of this target are published after 2015. 
 
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about reducing food loss and waste on all levels. Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf
 
@@ -539,7 +536,7 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about instruments involved in food waste. The instruments included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
 
@@ -579,7 +576,7 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 ```
 
 
-#### Phrase 3:
+#### Phrase 3
 
 This phrase aims to find research about preventing waste in food production/processing/supply chains/retail/consumption. 
 
@@ -634,7 +631,7 @@ UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals 
 Some specifying terms for wastes were found from the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and specifying terms for waste management from the UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
 
-#### Phrase 1:
+#### Phrase 1
 
 The aim of this phrase is to find research about promoting sustainable management of chemicals thoughout their lifecycle, and about research promoting international agreements on chemical management. 
 
@@ -672,7 +669,7 @@ TS=
 )
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 The aim of this phrase is to find research about advancing sustainable waste management including recycling, and about research promoting international agreements on hazardous wastes mentioned in the metadata for indicator 12.4.1. (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-04-01.pdf. 
 
@@ -719,7 +716,7 @@ TS=
 )
 ```
 
-#### Phrase 3:
+#### Phrase 3
 
 This phrase aims to find research about reducing releases of chemicals and wastes into the environment.
 
@@ -745,7 +742,7 @@ TS=
 
 ```
 
-#### Phrase 4:
+#### Phrase 4
 
 This phrase aims to find research about reducing/controling/assessing risks which chemicals and all wastes cause to human health and environment.
 
@@ -774,7 +771,7 @@ TS=
 )
 ```
 
-#### Phrase 5:
+#### Phrase 5
 
 The aim of this phrase is to find research about resisting unsustainable management of chemicals thoughout their lifecycle as well as unsustainable waste management. 
 
@@ -825,7 +822,7 @@ This target is interpreted to cover research about reducing household, municipal
 
 The themes of this target are also addressed in target **12.2 phrases 3 and 4** about efficient use of natural resources and reducing waste involved in using them, as well as in target **12.3 phrases 1 and 3** about reducing food loss and waste in food production. Promoting recycling of wastes is also included in target **12.4 phrase 2**.
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about reducing household, municipal and industrial waste.
 
@@ -855,7 +852,7 @@ TS=
 
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about promoting recycling, reuse, circular economy and utilizing sidestreams.
 
@@ -986,7 +983,7 @@ TS=
 ```
 
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about encouraging companies to report their sustainability information. The phrase looks for reporting or publishing sustainability information in any form, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
 
@@ -1025,8 +1022,6 @@ TS=
 > 12.7.1 Degree of sustainable public procurement policies and action plan implementation
 
 This target is interpreted to cover research about promoting a) national policies and actions plans for sustainable procurements and b) the implementation of them (<a id="UNEPSPP">[UNEP, 2022](#f13)</a>), i.e. promoting sustainable public procurements.
-
-#### Phrase 1:
 
 This phrase aims to find research about promoting/developing national practices/policies for sustainable procurements. Some of the terms used as variations of practices/policies are from UNEP *One planet SSP Index Calculation Methodology* (<a id="UNEPSPP">[UNEP, 2022](#f13)</a>). 
 
@@ -1080,7 +1075,7 @@ By the definition in the UNEP publication *ABC of SDP* (<a id="ABC">[UNEP, 2010]
 We interpret this target to be also about promoting sustainable consumer behavior and added phrase 2 for finding research about this, i.e. promoting sustainable consumption and choices. 
 
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about promoting dissimination of information, education and awareness raising on sustainable development, including consumer education. 
 
@@ -1159,7 +1154,7 @@ TS=
 This target is interpreted to cover research about promoting the scientific and technological capabilities of developing countries regarding sustainable consumption and production patterns. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
 
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about promoting the scientific and technological capabilites (including finance and incentives) of developing countries regarding sustainable consumption and production patterns.
 
@@ -1282,7 +1277,7 @@ TS=("least developed countr*" OR "least developed nation$"
 
 
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about promoting the scientific and technological capabilites of developing countries regarding power generation by renewable energy sources.
 
@@ -1370,10 +1365,7 @@ This target is interpreted to cover research about developing monitoring of the 
 The definition of sustainable tourism according to UNWTO *Sustainable Tourism for Development Guidebook* (<a id="UNWTO">[UNWTO, 2013](#f14)</a>) is:
 > *“Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”*. 
 
-#### Phrase 1:
-
 This phrase aims to find research about developing monitoring of the impacts of sustainable tourism. Impacts include economic, social and environmental impacts. Some specifying terms for these were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
-
 
 The elements of the phrase are *action(develop) + monitoring/regulating/accounting + impacts + sustainable+tourism*
 
@@ -1421,7 +1413,7 @@ UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable D
 
 Both production and consumption of fossil fuels are included in the phrases as both are mentioned in the metadata for indicator 12.c.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0c-01.pdf.
 
-#### Phrase 1:
+#### Phrase 1
 
 This phrase aims to find research about rationalizing/removing subsidies from the production and consumption of fossil fuels. 
 
@@ -1447,7 +1439,7 @@ TS=
 )
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 This phrase aims to find research about restructuring/improving the taxation of fossil fuels production and consumption.
 
