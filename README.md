@@ -28,8 +28,8 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 Currently, we are working on ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
 The strings available at this time (March 2023) are available for two platforms.
-* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
-* Files with "python" in the file name are python scripts (one version as an .ipynb notebook, one version as a .md markdown file). Here, all covered SDGs are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms.
+* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15 are available. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
+* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs (1, 2, 3, 4, 7, 11, 13, 14, 15) are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. SDG12 is still under development.
 
 ## What kind of results should I expect when using these strings?
 
