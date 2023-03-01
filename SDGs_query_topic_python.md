@@ -1,6 +1,6 @@
 # Search queries for all currently covered SDGs - topic approach. English and Norwegian.
 
-This file contains a method for searching for SDG relevant works within a dataset based on title. For SDG14, journal/series title is also used.
+This file contains a method for searching for SDG relevant works within a dataset based on title (here, `result_title`). For SDG14, journal/series title (`journal`) is also used in the section "Marine terms". The script refers to an additional field, `result_id`, when displaying the results.
 
 This search is an adaptation of the topic searches for individual SDGs which were originally constructed in search syntax for the database Web of Science (WOS; Clarivate). A full documented version of these WOS searches can be found here https://doi.org/10.5281/zenodo.7241689. We have tried to retain a common structure between the WOS and python versions of the searches by dividing into the same "phrases" (i.e. target 1.4 phrase 2 here corresponds to target 1.4 phrase 2 in the WOS syntax searches, unless otherwise noted). Differences between the WOS and python versions are mainly:
 - Adaptation to title search, rather than also being able to search in the abstract and keywords. For this reason, some searches have been simplified/broadened slightly.
