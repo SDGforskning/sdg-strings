@@ -267,6 +267,8 @@ We include general terms about climate change mitigation/ adaption/ impact reduc
 
 In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investing as an "action" in the sense that it can drive action (e.g. cooperation fund for education). We have also included specialist funds such as the [Green climate fund](https://www.greenclimate.fund/).
 
+A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
+
 
 ```py
 TS=

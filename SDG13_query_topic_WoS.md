@@ -210,6 +210,8 @@ Interpretation of what should be considered as contributing to raising "human an
 
 We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
+A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
+
 ```py
 TS=
 (   
