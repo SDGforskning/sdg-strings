@@ -216,11 +216,11 @@ TS=
     (
       ("climate" 
       OR "climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
-      OR "climate emergency" OR "climate smart"
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
       OR "sea level rise" OR "rising sea level$"
       )
       NEAR/5  
-          ("action$" OR "mitigat*" OR "resilien*" OR "climate adapt*"
+          ("action$" OR "mitigat*" OR "resilien*" OR "climate adapt*" OR "adaptive capacity" OR "capacity to adapt"
           OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
           OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
           OR "solutions" OR "problems"
@@ -234,7 +234,7 @@ TS=
     OR
     (
       ("climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
-      OR "climate emergency" OR "climate smart"
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
       OR "sea level rise" OR "rising sea level$"
       )
       NEAR/5 ("sustainab*" OR "adapt*" OR "cope" OR "coping")
@@ -263,13 +263,13 @@ TS=
             OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
             )
       )
-      AND ("climate change" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
+    AND ("climate change" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$" OR "climate emergency" OR "climate smart" OR "climate crisis")
     )  
 )
 NOT 
 TS=
   (
-    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate") 
+    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate") 
     NOT("climate change" OR "climate crisis" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
   )
 ```
