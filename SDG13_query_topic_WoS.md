@@ -197,7 +197,9 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about education, awareness and capacity about climate change mitigation, adaptation, impact reduction and early warning.
+This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning.
+
+In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
 
 This query consists of 1 phrase. The elements of the phrase are: *climate mit/adapt/warning*
 
@@ -206,9 +208,7 @@ Interpretation of what should be considered as contributing to raising "human an
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 * "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
 
-In the first revision (v1.0.0), we tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.)with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now, in the topic approach, dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
-
-For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
 ```py
 TS=
