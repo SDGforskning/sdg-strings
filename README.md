@@ -4,18 +4,19 @@ These files contain search strings to find publications related to certain [Sust
 
 This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**. This project is led by the University of Bergen Library, partnered with the libraries at Western Norway University of Applied Sciences and the University of Stavanger. Natural Resources Institute Finland (Luke) has contributed with search strings for two SDGs as an external collaborator.
 
-File names in this set consist of the SDG and the approach used (topic vs. action), as well as the platform/syntax for the string. The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets (*action*), or research more broadly related to the topics in the targets (*topic*). *You can read more about these below*. Stable versions are saved as "releases"; in between releases, there may be changes to the strings. A status message at the top of each file gives information.
+File names in this set consist of the SDG and the approach used (topic vs. action), as well as the platform/syntax for the string. The approach relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets (*action*), or research more broadly related to the topics in the targets (*topic*). *You can read more about these below*. Stable versions are saved as "releases"; in between releases, there may be changes to the strings.
 
 ## Why are we building strings? How do they differ to existing mappings?
 
 Previous research has shown that mappings of SDG-"related" research do not match up very well ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071); [Purnell 2022](https://doi.org/10.1162/qss_a_00215)). This is perhaps unsurprising when you consider that there are different ways to interpret what an SDG covers, different viewpoints on which research themes should be counted as "related", different mapping methods, and different data sources (see our previous work, [Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071)). For example, should *SDG 3 Good health* cover all medical research? Does *SDG 13 Climate Action* cover basic climate science? You will probably get different answers depending on who you ask.
 
-Instead of trying to find the "right" answer, we think multiple mappings (which can capture different views of relatedness) are a good idea. But in order for these to have meaning, documentation must explain a) what it is supposed to find (i.e. how the SDG was interpreted and what research is considered relevant), and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. In short:
+Instead of trying to find the "right" answer, we think multiple mappings (which can capture different views of relatedness) are a good idea. But in order for these to have meaning, documentation must explain a) what it is supposed to find (i.e. how the SDG was interpreted and what research is considered relevant), and b) how the mapping is done. We have written our own strings because we believe there is currently a gap for this kind of mapping. We also wanted to provide a database-independent version via Python, which could search in more than English. In short:
 
 - Our strings allow mapping of research to individual SDG targets ("target-level"). This is useful for identifying where a research set is focused within an SDG. They can be combined to examine the whole SDGs ("goal-level").
 - We provide two types of strings: *action* and *topic* approaches, which have different interpretations of "relevance".
 - The strings are manually curated. They map at the publication-level (rather than journal or subject cluster), using traditional search methods (e.g. matching terms in the titles, abstracts and keywords). The benefit of this is that it is easier to understand why a result is in or out, the drawback that we sacrifice potential additional recall provided by machine learning.
-- For each string and target, we document :
+- The strings allow finding of research in both English and Norwegian.
+- For each string and target, we document:
   - How we have interpreted which research themes should be considered "relevant" to each SDG target
   - Sources we have used to identify search terms and/or define terminology
   - Choices we have made regarding inclusion/exclusion, interpretations or syntax (e.g. truncation)
@@ -26,9 +27,9 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 Currently, we are working on ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at this time (Feb 2023) are formatted in Web of Science syntax (and can be run against the Web of Science Core collection from Clarivate); these have "WoS" at the end of the file name. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
-
-We are releasing a version in Python soon which can be run against any list of works in csv format. This will be in English and Norwegian.
+The strings available at this time (March 2023) are available for two platforms.
+* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15 are available. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
+* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs (1, 2, 3, 4, 7, 11, 13, 14, 15) are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. SDG12 is still under development.
 
 ## What kind of results should I expect when using these strings?
 
@@ -47,22 +48,19 @@ We have tried to be consistent in the approaches, but there are occasional excep
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Current status and planned changes?
-We have finished a version that can be used for ten of the SDGs (Web of Science syntax) (see "Releases"). We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in Q2-Q3 2023.  
-
-We are currently working on a topic approach set of strings in Python, which can be run against any list of works in csv format. This will be released in shortly. 
+We have finished a version that can be used for ten of the SDGs (Web of Science syntax), and nine of the SDGs in Python (see "Releases"). We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in 2023. 
 
 ## How do I use these strings? 
 
 Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (hereafter WoS), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in WoS. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the WoS interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
 
+Python: Download the ipynb notebook to run on your own data.
+
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used or adapted them! You are also welcome to contact is with feedback. Our email can be found on the [project homepage](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
 
 ## How should I cite?
 
-Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.1.0: Armitage, Caroline S, Bjerkan, Håkon Magne, Byholm, Leena Pirit, Gåsemyr, Inger, Lorenz, Marta, & Seland, Eli Heldaas. (2023). Search strings for finding SDG-related research, Bergen-approach. (v.1.1.0). Zenodo. https://doi.org/10.5281/zenodo.7674694
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7674694.svg)](https://doi.org/10.5281/zenodo.7674694)
-
+Please see the suggested citation in Zenodo for the doi for your version. Suggested citation v1.2.0: Armitage, Caroline S, Bjerkan, Håkon Magne, Byholm, Leena Pirit, Gåsemyr, Inger, Lorenz, Marta, & Seland, Eli Heldaas. (2023). Search strings for finding SDG-related research, Bergen-approach. (v.1.2.0). Zenodo. https://doi.org/10.5281/zenodo.7241689
 
 ## Related works
 
