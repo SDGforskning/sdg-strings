@@ -1,6 +1,6 @@
 # Information about these files
 
-These files contain search strings to find publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). 
+These files contain search strings to find academic publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). 
 
 This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**. This project is led by the University of Bergen Library, partnered with the libraries at Western Norway University of Applied Sciences and the University of Stavanger. Natural Resources Institute Finland (Luke) has contributed with search strings for two SDGs as an external collaborator.
 
