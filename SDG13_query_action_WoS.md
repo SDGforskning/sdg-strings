@@ -273,7 +273,7 @@ A double `NOT` phrase is added at the end to remove unrelated works using "clima
 ```py
 TS=
 (
-    ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build*" OR "strengthen*" OR "raise" OR "raising"
+    ("improv*" OR "increase" OR "better" OR "enhanc*" OR "build" OR "building" OR "strengthen*" OR "raise" OR "raising"
     OR "develop" OR "developing" OR "create" OR "creation" OR "implement*" OR "integrat*" OR "adopt*"
     OR "invest" OR "investing" OR "fund$" OR "funding"
     OR "development assistance" OR "development aid" OR "development fund*" OR "foreign aid" OR "international aid" OR "cooperation fund*"
