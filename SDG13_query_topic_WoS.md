@@ -197,56 +197,83 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about education, awareness and capacity about climate change mitigation, adaptation, impact reduction and early warning.
+This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning.
 
-This query consists of 1 phrase. The elements of the phrase are: *education/awareness/capacity + climate mit/adapt/warning*
+In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
+
+This query consists of 1 phrase. The elements of the phrase are: *climate mit/adapt/warning*
 
 Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
 * Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 * "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
 
-For the *climate* terms, we include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation).
+We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+
+A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
 
 ```py
 TS=
-(
-  ("capacity" OR "capabilit*"
-  OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
-  OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
-  OR "awareness" OR "responsibilit*"
-  OR "infrastructure$" OR "technolog*" OR "early warning system$"
-  OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
-  OR "economic resources" OR "financial resources" OR "human resource$"
-  OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
-  )  
-  NEAR/15      
-      (
-        (
-          ("climate" OR "global warming" OR "climatic change$" OR "sea level rise")
-          NEAR/5  
-              ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
-              OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
-              OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
-              OR "solutions" OR "problems"
-              OR
-                (
-                  ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-                  NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
-                )
-              )
-        )
-        OR
-          (
-            ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
-            OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-            )
-              NEAR/5
-                  ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
-          )   
+(   
+    (
+      ("climate" 
+      OR "climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
+      OR "sea level rise" OR "rising sea level$"
       )
+      NEAR/5  
+          ("action$" OR "mitigat*" OR "resilien*" OR "climate adapt*" OR "adaptive capacity" OR "capacity to adapt"
+          OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
+          OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
+          OR "solutions" OR "problems"
+          OR
+            (
+              ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+              NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
+            )
+          )
+    )
+    OR
+    (
+      ("climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
+      OR "sea level rise" OR "rising sea level$"
+      )
+      NEAR/5 ("sustainab*" OR "adapt*" OR "cope" OR "coping")
+    )
+    OR
+    (
+      ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+      OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+      OR "capture" OR "storage" OR "sequestration"
+      )
+      NEAR/5
+          ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
+    )
+    OR 
+    (
+      (
+        ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+        OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+        OR "capture" OR "storage" OR "sequestration"
+        )
+        NEAR/3
+            ("methane" OR "CH4" 
+            OR "nitrous oxide" OR "NOX" OR "N2O" 
+            OR "carbon dioxide" OR "CO2" 
+            OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" 
+            OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
+            )
+      )
+    AND ("climate change" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$" OR "climate emergency" OR "climate smart" OR "climate crisis")
+    )  
 )
-
+NOT 
+TS=
+  (
+    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate") 
+    NOT("climate change" OR "climate crisis" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
+  )
 ```
 
 ### Target 13.a								
