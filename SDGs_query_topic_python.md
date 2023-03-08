@@ -10175,82 +10175,111 @@ test.iloc[0:5, ]
 
 ### SDG 13.3
 
-#### Phrase 1
-
 ```
 TS=
-(
-  ("capacity" OR "capabilit*"
-  OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
-  OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
-  OR "awareness" OR "responsibilit*"
-  OR "infrastructure$" OR "technolog*" OR "early warning system$"
-  OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
-  OR "economic resources" OR "financial resources" OR "human resource$"
-  OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
-  )  
-  NEAR/15      
-      (
-        (
-          ("climate" OR "global warming" OR "climatic change$" OR "sea level rise")
-          NEAR/5  
-              ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
-              OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
-              OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
-              OR "solutions" OR "problems"
-              OR
-                (
-                  ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-                  NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
-                )
-              )
-        )
-        OR
-          (
-            ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
-            OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-            )
-              NEAR/5
-                  ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
-          )   
+(   
+    (
+      ("climate" 
+      OR "climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
+      OR "sea level rise" OR "rising sea level$"
       )
+      NEAR/5  
+          ("action$" OR "mitigat*" OR "resilien*" OR "climate adapt*" OR "adaptive capacity" OR "capacity to adapt"
+          OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
+          OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
+          OR "solutions" OR "problems"
+          OR
+            (
+              ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
+              NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
+            )
+          )
+    )
+    OR
+    (
+      ("climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
+      OR "climate emergency" OR "climate smart" OR "climate crisis"
+      OR "sea level rise" OR "rising sea level$"
+      )
+      NEAR/5 ("sustainab*" OR "adapt*" OR "cope" OR "coping")
+    )
+    OR
+    (
+      ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+      OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+      OR "capture" OR "storage" OR "sequestration"
+      )
+      NEAR/5
+          ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
+    )
+    OR 
+    (
+      (
+        ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
+        OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
+        OR "capture" OR "storage" OR "sequestration"
+        )
+        NEAR/3
+            ("methane" OR "CH4" 
+            OR "nitrous oxide" OR "NOX" OR "N2O" 
+            OR "carbon dioxide" OR "CO2" 
+            OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" 
+            OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
+            )
+      )
+    AND ("climate change" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$" OR "climate emergency" OR "climate smart" OR "climate crisis")
+    )  
 )
+NOT 
+TS=
+  (
+    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate") 
+    NOT("climate change" OR "climate crisis" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
+  )
 ```
 
 
 ```python
 # Term lists
-termlist13_3a = ["capacity", "capabilit", "educat", "curriculum", "curricula", "teacher training", "climate literacy", "research", "knowledge", "skills",
-                 "tools", "competenc", "expertise", "training", "awareness", "responsibilit", "infrastructure", "technolog", "early warning system",
-                 "communication", "collaboration", "cooperation", "co operation", "social network", "information network", 
-                 "economic resources", "financial resources", "human resource",
-                 
-                 "kapasitet", "evne", "utdann", "pensum", "læreplan", "fagplan", "emneplan", "studieplan", "lærerutdann", "lærarutdann",
-                 "klimakompetanse", "forskning", "forsking", "kunnskap", "ferdighet", "ferdigheit",
-                 "verktøy", "kompetanse", "ekspertise", "bevisst", "medvett", "medvit", "ansvar", "infrastruktur", "teknolog", 
-                 "tidlig varsling", "tidleg varsling", "varslingssystem"
-                 "kommunikasjon", "samarbeid", "sosiale nettverk", "informasjonsnettverk",
-                 "økonomiske ressurs", "finansielle ressurs", "menneskelige ressurser", "menneskelege ressursar"]
-termlist13_3b = ["institutional", "administrativ", "policy", "governance",
-                 "institusjonell", "politikk", "styring", "ledelse", "leiing"] 
-termlist13_3c = ["structure", "values", "practices", "arrangement", "resources",
-                 "struktur", "verdi", "praksis", "ressurs"]
-termlist13_3d = ["climate", "global warming", "climatic change", "sea level rise",
-                 "klima", "global oppvarming", "klimaendring", "klimaforandring", "havnivåstigning"]
-termlist13_3e = ["action", "sustainab", "mitigat", "adapt", "cope", "coping", "resilien", "early warning", "warning system", "preparedness", "risk", "vulnerab", "awareness", 
+termlist13_3a = ["climate", "climatic change", "global warming", 
+                 "sea level rise", "rising sea level",
+ 
+                 "klima", "global oppvarming", 
+                 "havnivåstigning"]
+termlist13_3b = ["action", "mitigat", "adaptive capacity", "capacity to adapt", "resilien", "early warning", "warning system", "preparedness", "risk", "vulnerab", "awareness", 
                  "climate education", "climate sensitive education", "climate change education", "climate literacy", "solutions", "problem"
-                 "handl", "bærekraft", "berekraft", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme", 
+                 
+                 "handl", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme", 
                  "tidlig varsling", "tidleg varsling", "varslingssystem",
                  "forbered", "førebu", "risik", "sårbar", "bevisst", "oppmerks",
                  "klimautdann", "klimaopplær", "klimakomp", "løsning", "løysing"]
+
+termlist13_3d = ["climate change", "climate warming", "warming climate", "climatic change", "global warming", 
+                 "climate emergency", "climate smart", "climate crisis",
+                 "sea level rise", "rising sea level",
+                 
+                 "klima", "global oppvarming", "klimaendring", "klimaforandring", 
+                 "klimakrise", "klimasmart",
+                 "havnivåstigning"]
+termlist13_3e = ["sustainab", "adapt", "cope", "coping", 
+                 "bærekraft", "berekraft"]
+
 termlist13_3f = ["reduc", "minimi", "decreas", "limit", "alleviat",
                  "reduser", "reduksjon", "minimer", "mink", "grens", "lett"]
 termlist13_3g = ["impact", "effect", "consequence",
                  "innflytelse", "innvirkning", "innverknad", "påvirk", "påverk", "betydning", "effekt", "konsekvens", "følge", "følgje"]
+
 termlist13_3h = ["reduc", "minimi", "limit",  "decreas", "lower", "mitigat", "alleviat", "tackl", "combat", "prevent", "stop", "avoid",
                  "reduser", "reduksjon", "minimer", "mink", "grens", "lett", "takl", "klare", "greie", "fikse", "overkomme", "kjempe", "hindr", "stopp", "stogg", "unngå"]
 termlist13_3i = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission",
-                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbonutsl", "karbondioksidutsl", "co2-utsl"]            
+                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbonutsl", "karbondioksidutsl", "co2-utsl"]          
+termlist13_3c = ["methane", "CH4", "nitrous oxide", "NOX", "N2O", "carbon dioxide", "CO2", 
+                 "hydrofluorocarbons","HFCs", "perfluorocarbons", "PFCs", "sulphur hexafluoride", "sulfur hexafluoride", "SF6",
+                 "metan", "nitrogenoksid", "karbondioksid",
+                 "hydrofluorkarbon", "perfluorkarbon", "svovelheksafluorid"
+                ]   
+termlist13_3not = ["motivational climate", "organisational climate", "organizational climate", "safety climate", "learning climate", "education climate"]
 
 phrasedefault13_3a = r'(?:{})'.format('|'.join(termlist13_3a))
 phrasedefault13_3b = r'(?:{})'.format('|'.join(termlist13_3b))
@@ -10261,46 +10290,43 @@ phrasedefault13_3f = r'(?:{})'.format('|'.join(termlist13_3f))
 phrasedefault13_3g = r'(?:{})'.format('|'.join(termlist13_3g))
 phrasedefault13_3h = r'(?:{})'.format('|'.join(termlist13_3h))
 phrasedefault13_3i = r'(?:{})'.format('|'.join(termlist13_3i))
+phrasedefault13_3not = r'(?:{})'.format('|'.join(termlist13_3not))
 ```
 
 
 ```python
 ## Search 13_3abcdefghi
 Data.loc[(
-    ( 
-      (Data['result_title'].str.contains(phrasedefault13_3a, na=False, case=False))|
-      (
-         (Data['result_title'].str.contains(phrasedefault13_3b, na=False, case=False))
-         &
-         (Data['result_title'].str.contains(phrasedefault13_3c, na=False, case=False))
-      )
-    )
-    &
-     (
+    (
         ( 
-         (Data['result_title'].str.contains(phrasedefault13_3d, na=False, case=False))
-           &
+            (Data['result_title'].str.contains(phrasedefault13_3a, na=False, case=False))
+            & 
             (
-              (Data['result_title'].str.contains(phrasedefault13_3e, na=False, case=False))
-            |
-              (
-                (Data['result_title'].str.contains(phrasedefault13_3f, na=False, case=False))
-                &
-                (Data['result_title'].str.contains(phrasedefault13_3g, na=False, case=False))
-              )  
-            )   
-          |
-          (
-              (Data['result_title'].str.contains(phrasedefault13_3h, na=False, case=False))
-               &
-              (Data['result_title'].str.contains(phrasedefault13_3i, na=False, case=False))
-          )
+                (Data['result_title'].str.contains(phrasedefault13_3b, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault13_3f, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault13_3g, na=False, case=False)))
+            )
         )
-       )
+        |
+        (
+            (Data['result_title'].str.contains(phrasedefault13_3d, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3e, na=False, case=False))
+        )
+        |
+        (
+            (Data['result_title'].str.contains(phrasedefault13_3h, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3i, na=False, case=False))
+        )
+        |
+        (
+            (Data['result_title'].str.contains(phrasedefault13_3h, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3c, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3d, na=False, case=False))
+        )
+    )
+    & (~Data['result_title'].str.contains(phrasedefault13_3not, na=False, case=False))
 ),"tempsdg13_03"] = "SDG13_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_03 == "SDG13_03")]))
-
 ```
 
 
