@@ -282,7 +282,7 @@ TS=
     OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund"
     OR "strategy" OR "initiative$"
     )  
-    NEAR/5  
+    NEAR/15  
         (      
           (
             ("climate" 
