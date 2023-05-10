@@ -1,6 +1,6 @@
 # Search query for SDG 01 - No Poverty, Bergen topic-approach.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently undergoing editing.
 
 **Contents**
 
@@ -12,7 +12,8 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/99f37634-d075-4220-8eff-7c871aea0672-55eef9dd/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: 
+(no filters; all years)
 
 ## 2. General notes
 
