@@ -1,7 +1,7 @@
 
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
 
-**Current status**: This string is currently a finished version
+**Current status**: This string is currently undergoing testing and editing.
 
 **Contents**
 
@@ -13,7 +13,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8cb9b370-c31c-40b0-a24a-8bbda13f3374-57d2733a/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
 
 ## 2. General notes
 
