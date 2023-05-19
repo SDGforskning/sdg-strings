@@ -3,7 +3,7 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently undergoing testing and revision.
 
 **Contents**
 
@@ -16,7 +16,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/2e99ec3f-2c5d-43c1-ad9d-d57d55757152-57cbd9db/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
 
 ## 2. General notes
 
