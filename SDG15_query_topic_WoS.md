@@ -2,7 +2,7 @@
 
 Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently being edited after testing.
 
 **Contents**
 
@@ -15,7 +15,7 @@ Protect, restore and promote sustainable use of terrestrial ecosystems, sustaina
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/a44070d0-d047-4a17-88f4-caa1d96eb22c-57c0170f/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
 
 ## 2. General notes
 
