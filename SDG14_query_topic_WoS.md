@@ -2,7 +2,7 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently being edited after testing.
 
 **Contents**
 
@@ -15,7 +15,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/493fca38-35da-455c-8dca-e3f4b75c3bf6-57becf3d/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
 
 ## 2. General notes
 
