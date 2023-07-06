@@ -2,7 +2,7 @@
 
 Ensure sustainable consumption and production patterns
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently being edited after testing.
 
 **Contents**
 
@@ -14,7 +14,7 @@ Ensure sustainable consumption and production patterns
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/dafe85dd-6929-4d47-aa0e-7da85ddc6554-733582d0/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
 
 ## 2. General notes
 
