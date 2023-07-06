@@ -2,7 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently being edited after testing.
 
 **Contents**
 
@@ -14,7 +14,7 @@ Take urgent action to combat climate change and its impacts.
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/cc89491e-8ca6-4f5a-a7d8-bc9ce863e370-772a8a51/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
 
 ## 2. General notes
 
