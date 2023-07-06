@@ -1,6 +1,6 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen topic-approach.
 
-**Current status**: This string is currently a finished version.
+**Current status**: This string is currently being edited after testing.
 
 **Contents**
 
@@ -12,7 +12,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/d154b0d3-89dc-465a-84c8-ec84a0fe5854-57bae169/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
 
 ## 2. General notes
 
