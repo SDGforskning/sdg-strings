@@ -965,7 +965,7 @@ TS =
 >
 > 2.b.1 Agricultural export subsidies
 
-This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
+This target is interpreted to cover research about subsidies (and equivalents), trade restrictions and distortions for world agricultural/food markets/trade. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
 
 This query consists of 2 phrases. Note that these phrases do not contain an action element as it was considered too difficult/restrictive.
 
@@ -983,19 +983,20 @@ TS=
 
 #### Phrase 2
 
-The basic structure is *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
+The basic structure is *distortions + agricultural markets/exports/imports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
 
 ```py
 TS=
 (
   ("distort*" OR "price-fixing" OR "dumping"
-  OR "trade restrict*" OR "Doha" OR "food aid"
+  OR "trade restrict*" OR "sanction$"
+  OR "Doha" OR "food aid"
   OR "state support*" OR "state financial support"
   OR "WTO dispute$"
   )
   NEAR/15
       (
-        ("trade" OR "trading" OR "market$" OR "export$")
+        ("trade" OR "trading" OR "market$" OR "export$" OR "import$")
         NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
       )
 )
