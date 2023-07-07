@@ -220,7 +220,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
       OR "land grab*" OR "tenure insecurity"
       )
       AND
-          ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
+          ("smallhold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
           OR
             (
               ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
@@ -571,8 +571,7 @@ Terminology to do with breeding programmes could be included here, but we want r
 ```py
 TS=
 (
-        ("genetic diversity" OR "genetic resource$"
-        )
+        ("genetic diversity" OR "genetic resource$")
         NEAR/15
             ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
             OR "cropping system$" OR "orchard$"

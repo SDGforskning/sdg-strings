@@ -269,7 +269,9 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 ```py
 TS= (
       (
-        ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
+          ("intensification" 
+            NEAR/5 ("smallhold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "sustainable" OR "agroecolog*" OR "ecolog*")
+          )  
         OR
           (
             ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
@@ -296,9 +298,9 @@ TS= (
                 OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulate"
                 )
           )
-        )
-        AND
-          ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
+      )
+      AND
+          ("smallhold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
           OR
             (
               ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
@@ -315,8 +317,7 @@ TS= (
                     ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
                     OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                     )
-                    NEAR/5
-                        ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
+                    NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
                   )
                 )
             )
