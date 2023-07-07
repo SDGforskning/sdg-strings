@@ -736,27 +736,26 @@ TS =
 >
 > 2.a.2 Total official flows (official development assistance plus other official flows) to the agriculture sector
 
-This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries.
+This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries. Investment/finance is kept broad - it is interpreted to cover international, private, public or individual investment/finance.
 
-This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural infrastructure/technology*.
+This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural infrastructure/technology + LMICs*. Various terms are specified for `invest*` and `financ*` instead of allowing free truncation - this is to avoid e.g. "investigation", "financial sector", "financial performance". `expenditure` and `spending` are combined as these are often used for individual farmers' expenses.
 
 ```py
 TS =
 (
       ("Agriculture Orientation Index for Government Expenditure$"
       OR
-        (
-          (
-            ("government" OR "public")
-            NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
-          )
+        ("investm*" OR "investing" OR "invest" OR "finance" OR "financial support" OR "financing" OR "funding"
         OR "ODA" OR "cooperation fund$" OR "development spending"
+        OR (("research" OR "governm*" OR "public" OR "sector") NEAR/3 ("expenditure" OR "spending"))
         OR
           (
-            ("international" OR "development" OR "foreign")
+            ("international" OR "development" OR "foreign" OR "intercontinental"
+            OR "european" OR "asian" OR "africa*" OR "latin america*" OR "pacific"
+            )
             NEAR/3
                 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "financial support" OR "financial resources"
+                OR "aid" OR "assistance" OR "fund$" OR "grant$" OR "financial resources"
                 )
           )
         )
@@ -767,7 +766,7 @@ TS =
             OR
               (
                 ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/3 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
+                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
               )                  
             )
       )
