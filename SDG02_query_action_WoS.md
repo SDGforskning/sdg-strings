@@ -396,7 +396,7 @@ The basic structure of phrase 2 is *food production systems + resilience/vulnera
 
 In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
 
-In the *resilience* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
+In the *resilience* terms, `climate smart agriculture` is a term used for an approach specifically addressing climate change.
 
 ```py
 TS=
@@ -420,7 +420,8 @@ TS=
           (
             (
               ("climate smart agriculture" OR "resilien*"
-              OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*"))
+              OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*" OR "program*"))
+              OR "risk reduction"
               )
               NEAR/5
                   ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*" OR "create" OR "creating"
@@ -449,6 +450,8 @@ The basic structure of phrase 3 is *food production systems + adaptation/coping/
 
 The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
 
+In the *adaptation/coping/preparedness* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). 
+
 The *disaster* terms were taken from a standardised list we used across the SDGs, which was developed based on selected hazards listed in <a id="Murray">[Murray et al. (2021)](#f15)</a>.
 
 ```py
@@ -471,11 +474,12 @@ TS=
     )
     NEAR/15
       (
-        ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
-        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+        ("mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
+        OR "sendai" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "programme$"
+        OR "adapt*"
         OR
           (
-            ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
+            ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning" OR "manag*" OR "relief")
             NEAR/5
               ("implement*" OR "establish*" OR "build*" OR "develop"
               OR "improv*" OR "increase" OR "increasing" OR "maintain*"

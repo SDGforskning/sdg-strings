@@ -305,7 +305,7 @@ The elements of the phrase are: *food production systems + resilience/vulnerabil
 
 In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
 
-In the *resilience* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
+In the *resilience* terms, `climate smart agriculture` is a term used for an approach specifically addressing climate change.
 
 ```py
 TS=
@@ -327,7 +327,8 @@ TS=
       )
       NEAR/15
             ("climate smart agriculture" OR "resilien*"
-            OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*"))
+            OR "risk reduction"
+            OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*" OR "program*"))
             OR "vulnerability"
             )  
   )
@@ -340,6 +341,8 @@ TS=
 The elements of the phrase are: *food production systems + adaptation/coping/preparedness + disaster/climate change*.
 
 The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
+
+In the *adaptation/coping/preparedness* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). 
 
 The *disaster* terms were taken from a standardised list we used across the SDGs, which was developed based on selected hazards listed in <a id="Murray">[Murray et al. (2021)](#f15)</a>.
 
@@ -363,9 +366,9 @@ TS=
       )
       NEAR/15
           (
-            ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
-            OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
-            OR "cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning"
+            ("mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*" OR "preparedness" OR "early warning"
+            OR "sendai" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "programme$"
+            OR "cope" OR "coping" OR "tolera*" OR "adapt*" OR "manag*" OR "relief"
             )
             NEAR/5
                 ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
