@@ -459,7 +459,7 @@ TS=
       )      
     )
     NEAR/15
-          ("soil conservation"
+          ("soil conservation" OR "soil improv*"
           OR "soil structure" OR "soil fertility" OR "soil health"
           OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
           OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"

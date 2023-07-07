@@ -592,7 +592,7 @@ TS=
       )      
     )
     NEAR/15
-          ("soil conservation"
+          ("soil conservation" OR "soil improv*"
           OR
             (
               ("soil structure" OR "soil fertility" OR "soil health"
