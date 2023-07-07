@@ -534,16 +534,18 @@ Conserving wild relatives and traditional varieties is considered maintaining ge
 
 `landraces` and `varieties` are treated slightly differently here than the other terms: `varieties`is combined with agriculture as "traditional varieties" could refer to varieties of language, art etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. `landraces` is connected to diversity terms to try and avoid technical works on e.g. sperm motility which use landrace/landrace-cross species. 
 
+The use of `NEAR/1` is due to that this becomes very noisy when the distance is increased. 
+
 ```py
 TS=
 (
     "plant genetic resource$" OR "animal genetic resource$"
+    OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
     OR  
       (
         ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
         NEAR/3 ("breed$" OR "cultivar$")
       )
-    OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
     OR  
       (
         (
@@ -576,11 +578,13 @@ Terminology to do with breeding programmes could be included here, but we want r
 ```py
 TS=
 (
-        ("genetic diversity" OR "genetic resource$")
+        ("genetic resource$"
+        OR ("genetic" NEAR/2 "diversity")
+        )
         NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
+            ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*"
             OR "smallhold*" OR "small hold*"
-            OR "cropping system$" OR "orchard$"
+            OR "permaculture" OR "cropping system$" OR "orchard$"
             OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
             OR "aquaculture"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -599,7 +603,7 @@ TS=
 
 The elements of the phrase are: *gene banks/ex situ + diversity/protection/policy + agriculture*
 
-The *diversity/protection/policy* terms are included to help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...). They ensure that the work relates to conservation, genetic diversity, or gene bank policies in some way. Action terms are not used because multiple angles can be relevant - research about establishment of gene banks for maintaining diversity, research about farmers' use of gene banks, research about how best to store samples in gene banks, etc.
+The *diversity/protection/policy* terms are included to help to filter out publications which mention genebanks that were used in research (i.e. samples were taken from...). They ensure that the work relates to conservation, genetic diversity, or gene bank policies in some way. This is less of an issue for some of the *genebank* terms when used as plurals, and so these are included alone.
 
 For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are included as in vitro methods of conservation of diversity (<a id="FAO2015">[Commission on Genetic Resources for Food and Agriculture Assessments, 2015](#f11)</a>). For the *agriculture terms*, `domestic*` was removed from this phrase as results were mostly about domestic cats. A `NOT` expression was added for `seed banks` as these can be both human storage of seeds but also natural seed banks in the soil.
 
@@ -607,11 +611,11 @@ For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are
 TS=
 (
   (
-      ("cryoconservation"
+      ("cryoconservation" OR "genebanks" OR "gene banks" OR "germplasm banks" OR "cryobanks"
       OR
         (
           ("plant bank$" OR "seed bank$"
-          OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          OR "gene bank" OR "genebank" OR "germplasm bank" OR "cryobank"
           OR "ex situ" OR "cryopreserv*"
           )
           NEAR/15
@@ -624,9 +628,9 @@ TS=
         )
       )  
       NEAR/15
-          ("agricultur*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
+          ("agricultur*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
           OR "smallhold*" OR "small hold*"
-          OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+          OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
           OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
           OR "aquaculture"
           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -666,14 +670,14 @@ TS=
         ("governance" OR "justice" OR "ownership"
         OR "biopiracy" OR "inequitable" OR "inequity"
         OR "material transfer agreement$" OR "informed consent"
-        OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$"
+        OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "availability" OR "right$"
         )
   )    
   AND
       ("food"
-      OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultivar$" OR "permaculture"
+      OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultivar$"
       OR "smallhold*" OR "small hold*"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+      OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture"
       OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -703,9 +707,9 @@ TS =
     )
     AND
         ("food"
-        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
+        OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*"
         OR "smallhold*" OR "small hold*"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+        OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
         OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
         OR "aquaculture"
         OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"

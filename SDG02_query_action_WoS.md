@@ -681,10 +681,13 @@ The general structure is *agricultural diversity/landraces/local breeds + action
 
 Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. 
 
+The use of `NEAR/1` is due to that this becomes very noisy when the distance is increased. 
+
 ```py
 TS=
 (
-    ("agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
+    ("plant genetic resource$" OR "animal genetic resource$"
+    OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
     OR "landrace$" OR "wild relative$"
     OR  
       (
@@ -695,7 +698,6 @@ TS=
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
           )
       )
-    OR "plant genetic resource$" OR "animal genetic resource$"
     )
     NEAR/5
         ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
@@ -728,25 +730,28 @@ TS=
         ("increase genetic diversity" OR "improve genetic diversity"
         OR
           (       
-             ("genetic diversity" OR "genetic resource$")
+             ("genetic resource$"
+             OR ("genetic" NEAR/2 "diversity")
+             )
              NEAR/10
                   ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
                   OR
-                      (
-                        ("loss" OR "extinction" OR "declin*" OR "disappear*")
-                        NEAR/5
+                    (
+                      ("loss" OR "extinction" OR "declin*" OR "disappear*")
+                      NEAR/5
                           ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
                           OR "lowering" OR "lower$" OR "lowered" OR "combat*"
                           OR "stop*" OR "end" OR "ending" OR "halt"
                           OR "avoid*" OR "prevent*"
                           )
-                      )
+                    )
                   )
           )
         )
         NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-            OR "cropping system$" OR "orchard$"
+            ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+            OR "smallhold*" OR "small hold*"
+            OR "permaculture" OR "cropping system$" OR "orchard$"
             OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
             OR "aquaculture"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -773,11 +778,11 @@ For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are
 TS=
 (
   (
-      ("cryoconservation"
+      ("cryoconservation" OR "gene bank" OR "genebank" OR "germplasm bank" OR "cryobank"
       OR
         (
           ("plant bank$" OR "seed bank$"
-          OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          OR "gene bank" OR "genebank" OR "germplasm bank" OR "cryobank"
           OR "ex situ" OR "cryopreserv*"
           )
           NEAR/15
@@ -790,8 +795,9 @@ TS=
         )
       )  
       NEAR/15
-          ("agricultur*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-          OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+          ("agricultur*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+          OR "smallhold*" OR "small hold*"
+          OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
           OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
           OR "aquaculture"
           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -833,7 +839,7 @@ TS=
         OR "material transfer agreement$" OR "informed consent"
         OR
           (
-            ("sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$")
+            ("sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "availability" OR "right$")
             NEAR/5
                 ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
                 OR "better" OR "strengthen*" OR "empower" OR "empowering"
@@ -845,8 +851,9 @@ TS=
   )    
   AND
       ("food"
-      OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultivar$" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+      OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultivar$" 
+      OR "smallhold*" OR "small hold*"
+      OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture"
       OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -876,8 +883,9 @@ TS =
     )
     AND
         ("food"
-        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+        OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+        OR "smallhold*" OR "small hold*"
+        OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
         OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
         OR "aquaculture"
         OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
