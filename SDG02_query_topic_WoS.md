@@ -253,10 +253,10 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-*  productivity of food production systems (phrase 1)
+* productivity of food production systems (phrase 1)
 * resilient food production systems/agricultural practices, including adaptation and preparedness of food production systems/species to climate change and disasters (phrases 2,3)
 * sustainable food production systems/practices (outside of resilience; phrase 4)
-* food production systems and soil quality/ecosystems (phrase 5,6)
+* food production systems and soil quality/ecosystem health (phrase 5,6)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
@@ -425,7 +425,7 @@ TS=
       )      
     )
     NEAR/15
-        ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
+        ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach" OR "ecosystem based" 
         OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
         OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
         OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
@@ -439,7 +439,7 @@ TS=
 
 #### Phrase 5
 
-The elements of the phrase are: *food production systems + ecosystems and soil*. This phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage)
+The elements of the phrase are: *food production systems + ecosystems and soil*. This phrase covers mostly "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage). `ecosystem` is such a widely-used word, so it was combined with terms that indicate the work is about ecosystem health in light of agriculture. 
 
 ```py
 TS=
@@ -462,7 +462,8 @@ TS=
           ("soil conservation" OR "soil improv*"
           OR "soil structure" OR "soil fertility" OR "soil health"
           OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
-          OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
+          OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "pollinator$"
+          OR ("ecosystem$" NEAR/3 ("health*" OR "resilien*" OR "function*" OR "restor*" OR "quality" OR "stability" OR "impact$" OR "effect$" OR "affect*"))
           )     
 )
 ```
@@ -492,6 +493,7 @@ TS=
   )
   NEAR/15
       ("desertification"
+      OR "environmental impact$" OR "environmental footprint"
       OR
         ("soil$"
         NEAR/5
@@ -504,7 +506,7 @@ TS=
       OR
         (
           ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-          NEAR/5 ("loss" OR "degradation" OR "depletion")
+          NEAR/5 ("loss" OR "degradation" OR "depletion" OR "vulnerab*")
         )
       )
 )
