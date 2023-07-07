@@ -270,7 +270,7 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 TS= (
       (
           ("intensification" 
-            NEAR/5 ("smallhold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "sustainable" OR "agroecolog*" OR "ecolog*")
+            NEAR/5 ("smallhold*" OR "small hold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "sustainable" OR "agroecolog*" OR "ecolog*")
           )  
         OR
           (
@@ -300,7 +300,7 @@ TS= (
           )
       )
       AND
-          ("smallhold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
+          ("smallhold*" OR "small hold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
           OR
             (
               ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
@@ -340,7 +340,7 @@ This target is interpreted to cover research about
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
 
-Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Thus concepts such as food sovereignty are too wide. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>) - unless they are connected to agriculture under umbrella terms such as `agrifood`. Thus concepts such as food sovereignty are too wide. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
 This query consists of 6 phrases.
 
@@ -352,8 +352,9 @@ The general structure is *food production systems + production + action*. `inten
 TS=
 (
   (
-      ("food production" OR "food grower$"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+      ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+      OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+      OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fish farm*"
@@ -401,8 +402,9 @@ In the *resilience* terms, `tolera*` is a particularly influential term that inc
 TS=
 (
   (
-      ("food production" OR "food grower$" OR "agro food"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+      ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+      OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+      OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fisher*" OR "fish farm*"
@@ -453,8 +455,9 @@ The *disaster* terms were taken from a standardised list we used across the SDGs
 TS=
 (
   (
-    ("food production" OR "food grower$" OR "agro food"
-    OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+    OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*"
@@ -529,8 +532,8 @@ OR
 TS=
 (
   (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*"
@@ -570,8 +573,9 @@ The general structure is *food production systems + ecosystems and soil + action
 ```py
 TS=
 (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*" OR "permaculture"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+    OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*"
@@ -610,8 +614,9 @@ Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)<
 ```py
 TS=
 (
-  ("food production" OR "food grower$" OR "agri food"
-  OR "farm*" OR "agricultur*" OR "permaculture"
+  ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+  OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+  OR "permaculture"
   OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
   OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
   OR "aquaculture" OR "fisher*" OR "fish farm*"
@@ -934,7 +939,7 @@ TS =
             OR
               (
                 ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/3 ("agricultur*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
+                NEAR/3 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
               )                  
             )
       )
