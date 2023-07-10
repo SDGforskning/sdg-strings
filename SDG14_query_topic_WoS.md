@@ -807,7 +807,7 @@ TS =
     ("international" OR "high seas" OR "ABNJ" OR "UN" 
     OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"
     )
-    NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
+    NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention" OR "framework$" OR "instrument$")
   )
   NEAR/15
     ("conservation" OR "sustainab*" OR "ecosystem restoration"
