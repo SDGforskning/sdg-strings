@@ -364,8 +364,8 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
+      ("marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+      OR "particularly sensitive sea area$" OR "LSMPA$" 
       OR
         (
           ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
@@ -680,8 +680,8 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
+      ("marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+      OR "particularly sensitive sea area$" OR "LSMPA$" 
       OR
         (
           ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")

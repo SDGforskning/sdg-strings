@@ -235,8 +235,8 @@ For our interpretation of "protection" we include several types of protected are
 ```py
 TS=
 (
-  "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-  OR "particularly sensitive sea area$"
+  "marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+  OR "particularly sensitive sea area$" OR "LSMPA$" 
   OR (("MPA" OR "MPAs") AND "marine")
   OR
     (
@@ -428,8 +428,8 @@ Conserving areas of the ocean is considered widely to include several types of p
 ```py
 TS=
 (
-  "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-  OR "particularly sensitive sea area$"
+  "marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+  OR "particularly sensitive sea area$" OR "LSMPA$" 
   OR (("MPA" OR "MPAs") AND "marine")
   OR
     (
