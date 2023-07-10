@@ -350,7 +350,7 @@ This query consists of 3 phrases. Phrase 1 covers the establishment/management o
 
 This phrase covers the establishment/management of protected areas. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
+For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this is much more of an issue in the topic approach, but the same change is implemented here for consistency. 
 
 ```py
 TS=
@@ -373,6 +373,22 @@ TS=
         )
       OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
       )
+)
+OR 
+TS=
+(
+  (
+    ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
+    OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
+    OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
+    OR "plans" OR "plan" OR "planned" OR "planning"
+    OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
+    OR "enforce" OR "enforcement" OR "enforcing"
+    OR "strengthen" OR "improv*"
+    )
+    NEAR/5 ("MPA" OR "MPAs")
+  )
+  AND "marine"
 )
 ```
 
@@ -639,6 +655,7 @@ TS=
       )
 )
 ```
+
 ### Target 14.5
 
 > **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
@@ -649,7 +666,7 @@ The target is interpreted to cover research about the establishment and manageme
 
 This query consists of 1 phrase. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. The phrase is identical to 14.2 phrase 1.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise.
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise. `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this is much more of an issue in the topic approach, but the same change is implemented here for consistency. 
 
 ```py
 TS=
@@ -663,7 +680,7 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      ("LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
       OR "particularly sensitive sea area$"
       OR
         (
@@ -672,6 +689,22 @@ TS=
         )
       OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
       )
+)
+OR 
+TS= 
+(
+  (
+    ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
+    OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
+    OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
+    OR "plans" OR "plan" OR "planned" OR "planning"
+    OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
+    OR "enforce" OR "enforcement" OR "enforcing"
+    OR "strengthen" OR "improv*"
+    )
+    NEAR/5 ("MPA" OR "MPAs")
+  ) 
+  AND "marine"
 )
 ```
 

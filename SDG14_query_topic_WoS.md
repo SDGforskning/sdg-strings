@@ -230,13 +230,14 @@ This query consists of 2 phrases. Phrase 1 covers research mentioning protected 
 
 This phrase covers protected areas and sustainable management approaches. The elements of the phrase are: *protected areas/management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. If comparing to the action approach: phrases 1 and 2 there are both covered by this phrase.
 
-For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA` had to be removed in the topic approach as it is used in other contexts - results should hopefully be caught by `protected NEAR area`.
+For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this change removes many of these, but does sacrifice (comparatively) few works where authors use MPA without the full term anywhere.
 
 ```py
 TS=
 (
   "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
   OR "particularly sensitive sea area$"
+  OR (("MPA" OR "MPAs") AND "marine")
   OR
     (
       ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
@@ -422,13 +423,14 @@ The target is interpreted to cover research marine protected areas (MPAs). This 
 
 This query consists of 1 phrase. The elements in the phrase are: *protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this change removes many of these, but does sacrifice (comparatively) few works where authors use MPA without the full term anywhere.
 
 ```py
 TS=
 (
-  "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+  "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
   OR "particularly sensitive sea area$"
+  OR (("MPA" OR "MPAs") AND "marine")
   OR
     (
       ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
