@@ -310,7 +310,7 @@ TS= (
                   OR "agricultur*" OR "farm*" OR "permaculture"
                   OR "cropping system$" OR "orchard$" OR "arable land$"
                   OR "pasture$" OR "pastoral*" OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-                  OR "aquaculture" OR "fisher*" OR "fish farm*"
+                  OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
                   )
                 OR
                   (
@@ -357,7 +357,7 @@ TS=
       OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fish farm*"
+      OR "aquaculture" OR "fish farm*" OR "mariculture"
       OR
         (
           ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -411,7 +411,7 @@ TS=
       OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
+      OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
       OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
       OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
       OR
@@ -467,7 +467,7 @@ TS=
     OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
     OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
     OR
@@ -544,7 +544,7 @@ TS=
     OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR
       (
         ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -586,7 +586,7 @@ TS=
     OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR
       (
         ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -628,7 +628,7 @@ TS=
   OR "permaculture"
   OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
   OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-  OR "aquaculture" OR "fisher*" OR "fish farm*"
+  OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
   OR   
     (
       ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
@@ -763,7 +763,7 @@ TS=
             OR "smallhold*" OR "small hold*"
             OR "permaculture" OR "cropping system$" OR "orchard$"
             OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-            OR "aquaculture"
+            OR "aquaculture" OR "mariculture"
             OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
             OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
             OR "landrace$" OR "wild relative$"
@@ -809,7 +809,7 @@ TS=
           OR "smallhold*" OR "small hold*"
           OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
           OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-          OR "aquaculture"
+          OR "aquaculture" OR "mariculture"
           OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
           OR "landrace$" OR "wild relative$"
@@ -865,7 +865,7 @@ TS=
       OR "smallhold*" OR "small hold*"
       OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture"
+      OR "aquaculture" OR "mariculture"
       OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
       OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
       OR "landrace$" OR "wild relative$"
@@ -897,7 +897,7 @@ TS =
         OR "smallhold*" OR "small hold*"
         OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
         OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture"
+        OR "aquaculture" OR "mariculture"
         OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         OR "landrace$" OR "wild relative$"
@@ -956,7 +956,7 @@ TS =
             OR
               (
                 ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
+                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "aquaculture" OR "mariculture")
               )                  
             )
       )
@@ -1065,6 +1065,8 @@ TS=
 * v1.0.0 Caroline S. Armitage (Oct 2021-Oct 2022)
 
 * Internal review: Eli Heldaas Seland, Marta Lorenz (March 2022)
+
+* Revision after testing: Caroline S. Armitage (July 2023)
 
 Specialist input: Awaiting specialist input.
 
