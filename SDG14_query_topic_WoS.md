@@ -771,7 +771,7 @@ TS =
   "law of the sea" OR "UNCLOS"
   OR "the future we want"
   OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-  OR "BBNJ"
+  OR "BBNJ" OR "high seas treaty"
   OR "common fisheries policy"
   OR "marine stewardship council"
   OR "regional fisheries management organi?ation$" OR "RFMOs"
@@ -803,8 +803,11 @@ Phrase 2 includes general phrases for international law, where sustainable use a
 ```py
 TS =
 (
-  (("international" OR "UN" OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic")
-  NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
+  (
+    ("international" OR "high seas" OR "ABNJ" OR "UN" 
+    OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"
+    )
+    NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
   )
   NEAR/15
     ("conservation" OR "sustainab*" OR "ecosystem restoration"
@@ -817,10 +820,11 @@ TS =
     OR "herbivore management area$"
     OR "ecosystem approach*"
     OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine protected area$"
-    OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-    OR "marine conservation zone$"
+    OR "marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine park$"
+    OR "marine conservation zone$" OR "marine sanctuar*"
     OR "particularly sensitive sea areas$"
     OR "blue growth" OR "blue econom*"
+    OR "biodiversity" OR "biological diversity"
     )
 )
 ```
