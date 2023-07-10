@@ -332,10 +332,10 @@ TS= (
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-* increasing the productivity of food production systems (phrase 1)
+* increasing the productivity/yield of food production systems (phrase 1)
 * implementation of resilient food production systems/agricultural practices, including strengthening adaptation and preparedness of food production systems/species to climate change and disasters (phrases 2,3)
 * increasing sustainable food production systems/practices (outside of resilience; phrase 4)
-* how food production systems can improve/maintain soil quality and ecosystems (phrase 5,6)
+* how food production systems can improve/maintain soil quality and ecosystem health (phrase 5,6)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
@@ -346,7 +346,7 @@ This query consists of 6 phrases.
 
 #### Phrase 1
 
-The general structure is *food production systems + production + action*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+The general structure is *food production systems + production + action*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself. `grain yield$` is included as a phrase, rather than being combined with NEAR, because otherwise this results in a high number of results from metallurgy. `yield$` is included in 2 parts of the string, meaning that mentioning e.g. "rice yields" is enough to be included. 
 
 ```py
 TS=
@@ -364,13 +364,17 @@ TS=
           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
+        )  
+      OR
+        (
+          ("crop$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
+          NEAR/5 "yield$"
+        )     
+      OR "grain yield$"     
       )
       NEAR/15
           (
-            ("intensification"
-            NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*")
-            )
+            ("intensification" NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*"))
           OR
             (
               ("production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")

@@ -253,7 +253,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-* productivity of food production systems (phrase 1)
+* productivity/yield of food production systems (phrase 1)
 * resilient food production systems/agricultural practices, including adaptation and preparedness of food production systems/species to climate change and disasters (phrases 2,3)
 * sustainable food production systems/practices (outside of resilience; phrase 4)
 * food production systems and soil quality/ecosystem health (phrase 5,6)
@@ -267,7 +267,7 @@ This query consists of 6 phrases.
 
 #### Phrase 1
 
-The elements of the phrase are: *food production systems + productivity*. 
+The elements of the phrase are: *food production systems + productivity*. Here, in contrast to the action approach, `intensification` is allowed to stand alone (without `"sustainable" OR "agroecolog*" OR "ecolog*"`). `grain yield$` is included as a phrase, rather than being combined with NEAR, because otherwise this results in a high number of results from metallurgy. `yield$` is included in 2 parts of the string, meaning that mentioning e.g. "rice yields" is enough to be included. 
 
 ```py
 TS=
@@ -285,10 +285,18 @@ TS=
           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
+        )  
+      OR
+        (
+          ("crop$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
+          NEAR/5 "yield$"
+        )     
+      OR "grain yield$"
       )
       NEAR/15
-          ("intensification" OR "production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")  
+          ("intensification" OR "production" OR "productivity" OR "efficiency" 
+          OR "yield$" OR "agricultural output$" OR "farm output$"
+          )  
   )
   NOT ("solar farm*" OR "wind farm*" OR "power farm*")
 )
