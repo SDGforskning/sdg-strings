@@ -305,6 +305,7 @@ TS=
     OR "Barcelona convention"
     OR "Global Programme of Action for the Protection of the Marine Environment"
     OR "MARPOL" OR "prevention of pollution from ships"
+    OR "Stockholm convention"
     )
     AND
         (  "pollut*"
@@ -1083,12 +1084,17 @@ TS =
         OR "Convention on International Trade in Endangered Species"
         OR "Regional seas programme"
         OR "Water framework directive"
-        OR "OSPAR convention"
+        OR "Stockholm convention"
+        OR "OSPAR convention" OR "Convention for Protection of the Marine Environment of the North-East Atlantic"
         OR "Marine strategy framework directive" OR "MSFD"
         OR "Barcelona convention"
         OR "Global Programme of Action for the Protection of the Marine Environment"
         OR "MARPOL" OR "prevention of pollution from ships"
         OR "Conservation of Antarctic Living Marine Resources"
+        OR "Agreement on the Conservation of Polar Bears"
+        OR "World Heritage Convention"
+        OR "Bern convention" OR "Convention on the Conservation of European Wildlife and Natural Habitats" 
+        OR "Bonn convention" OR "Convention on the Conservation of Migratory Species of Wild Animals" 
         )
 )
 ```
