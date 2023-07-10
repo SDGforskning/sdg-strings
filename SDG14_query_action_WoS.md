@@ -364,7 +364,7 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
+      ("LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
       OR "particularly sensitive sea area$"
       OR
         (
