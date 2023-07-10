@@ -944,7 +944,7 @@ TS=
           OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
           OR "livelihood$" OR "job$" OR "income$" OR "profit*"
           OR "trade" OR "trading" OR "market$"
-          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+          OR "utili$ation" OR "sustainab* use" OR "using sustainab*" OR "sustainab* usage"
           )
     )
   )
