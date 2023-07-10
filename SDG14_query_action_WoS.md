@@ -1063,7 +1063,7 @@ TS =
 
 The general structure is *action + international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
+Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  Regions are added as synonyms for "international" - this seems to result in better recall (catching works about regional cooperation/instruments). Some regions are not included as too noisy (`america$`, `atlantic`). `africa$` is slightly noisy due to South Africa, but also finds several relevant works.
 
 ```py
 TS =
@@ -1074,7 +1074,7 @@ TS =
     OR "reform*" OR "improv*" OR "better"  
     )
     NEAR/5
-        ("international"
+        (("international" OR "UN" OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic")
         NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
         )
   )
