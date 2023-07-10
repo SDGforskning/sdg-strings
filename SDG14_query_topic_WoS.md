@@ -637,7 +637,7 @@ TS=
       OR "biodivers*" OR "biological diversity" OR "BBNJ" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity"
       )
       AND
-          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
+          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" OR "bioactive$"
           OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR "marine economy"
           )
     )
