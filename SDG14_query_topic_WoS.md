@@ -310,13 +310,13 @@ TS=
 >
 > 14.3.1 Average marine acidity (pH) measured at agreed suite of representative sampling stations
 
-The target is interpreted to cover research about the impacts of ocean acidification (OA). We also interpret this to cover research about resilience and vulnerability to OA.
+The target is interpreted to cover research about the impacts of ocean acidification (OA). We also interpret this to cover research about resilience and vulnerability to OA. 
 
 The elements of the phrase are: *impacts + acidification*.
 
 *Acidification* terms: `ph` returns results from industrial processes, thus is combined in phrases. `OA` is a common abbreviation (e.g. osteoarthritis) and will find "okadeic acid" (shellfish poisoning) if used alone, hence the `AND ocean$` term (marine is not included, as often use "marine toxin"). Using all the marine terms (minus "marine") vs. just using `AND ocean$` actually only adds few extra results, many not relevant; likely because "ocean acidification" is such a well-established term.  
 
-*Impact terms*: General impact terms are included (e.g. `impact*`). In addition, in this topic approach we also include major biological processes that can be impacted by acidification, e.g. calcification.
+*Impact terms*: General impact terms are included (e.g. `impact*`). In addition, in the topic approach we also include major biological processes that can be impacted by acidification, e.g. calcification.
 
 ```py
 TS =

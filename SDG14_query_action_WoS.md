@@ -488,7 +488,7 @@ TS=
 >
 > 14.3.1 Average marine acidity (pH) measured at agreed suite of representative sampling stations
 
-The target is interpreted to cover research that focuses on minimising the impacts of ocean acidification (OA). We interpret "address" also as a term meaning to limit/combat, and consider research about improving resilience/reducing vulnerability to OA as relevant, as well as research about what decreases resilience. Note that this is quite a strict interpretation - there is much research about understanding and documenting the effects of ocean acidification, but research about *reducing* these effects may be much less. The topic approach covers a wider interpretation. 
+The target is interpreted to cover research that focuses on minimising the impacts of ocean acidification (OA), which includes research about what improves/reduces resilience/vulnerability to OA. We interpret "address" to mean that research about monitoring the impacts of OA is relevant too. Note that this is quite a strict interpretation - there is much research about understanding and documenting the effects of ocean acidification, but research about *reducing* these effects may be much less. The topic approach covers a wider interpretation. 
 
 The general structure is *action + impacts + acidification*.
 
@@ -504,7 +504,8 @@ TS =
       (
         ("decreas*" OR "minimi*" OR "reduc*" OR "limit" OR "mitigat*" OR "alleviat*"
         OR "fight*" OR "combat*" OR "tackl*" OR "resist*"
-        OR "stop*" OR "avoid*" OR "prevent*" OR "halt*"       
+        OR "stop*" OR "avoid*" OR "prevent*" OR "halt*" 
+        OR "monitor*"      
         )
         NEAR/5
           ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
