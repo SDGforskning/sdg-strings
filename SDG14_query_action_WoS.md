@@ -351,7 +351,7 @@ This query consists of 3 phrases. Phrase 1 covers the establishment/management o
 
 This phrase covers the establishment/management of protected areas. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this is much more of an issue in the topic approach, but the same change is implemented here for consistency. 
+For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine protected area$` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa)) - the abbreviation is still included as a search term in the action approach however, as it often occurs together with action terms (after being defined earlier in the abstract, for example). 
 
 ```py
 TS=
@@ -389,7 +389,7 @@ TS=
     )
     NEAR/5 ("MPA" OR "MPAs")
   )
-  AND "marine"
+  AND "marine protected area$"
 )
 ```
 
@@ -668,7 +668,7 @@ The target is interpreted to cover research about the establishment and manageme
 
 This query consists of 1 phrase. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. The phrase is identical to 14.2 phrase 1.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise. `MPA OR MPAs` is combined with `marine` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa), Model predication across scales (MPAS)) - this is much more of an issue in the topic approach, but the same change is implemented here for consistency. 
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise. `MPA OR MPAs` is combined with `marine protected area$` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa)) - the abbreviation is still included as a search term in the action approach however, as it often occurs together with action terms (after being defined earlier in the abstract, for example). 
 
 ```py
 TS=
@@ -706,7 +706,7 @@ TS=
     )
     NEAR/5 ("MPA" OR "MPAs")
   ) 
-  AND "marine"
+  AND "marine protected area$"
 )
 ```
 
