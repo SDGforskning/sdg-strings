@@ -436,7 +436,7 @@ Under the *marine ecosystems/elements*, we include habitats, elements of ocean h
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore"
+  ("manage" OR "conserve" OR "protect" OR "restore" OR "rehabilitate"
   OR
     (
       ("designat*" OR "placement" OR "expand*" OR "extend"
@@ -448,7 +448,7 @@ TS=
       OR "preserv*" OR "support*" OR "ensur*"
       )
       NEAR/5
-        ("management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
+        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable")
     )
   )
   NEAR/15
@@ -633,7 +633,7 @@ TS=
     )
     NEAR/15
       ("manag*" OR "plan" OR "planning" OR "governance"
-      OR "restor*" OR "stock recovery"
+      OR "restor*" OR "stock recovery" OR "rehabilita*"
       OR "sustainab*"
       OR "EBFM" OR "ecosystem approach*"
       OR "maximum sustainable yield*" OR "MSY"
