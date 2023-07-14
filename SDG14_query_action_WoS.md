@@ -791,6 +791,7 @@ TS =
       NEAR/5
           ("econom*" OR "GDP" OR "wealth"
           OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "marine resources" OR "biological resources" OR "genetic resources"
           OR "socio economic" OR "socioeconomic"
           OR "livelihood$" OR "job$" OR "income$" OR "profit*"
           OR "trade" OR "trading" OR "market$"
@@ -800,7 +801,7 @@ TS =
           )
     )
     AND
-      ("sustainab*"
+      ("sustainab*" OR "marine conservation"
       OR "marine spatial planning" OR "MSP"
       OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
       OR "area based management" OR "resilience based management" OR "community based management"
@@ -808,7 +809,7 @@ TS =
       OR "coastal resources management"
       OR "locally managed marine area$" OR "LMMA$"
       OR "marine protected area$" OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "marine conservation zone$" OR "particularly sensitive sea areas$"
+      OR "particularly sensitive sea areas$"
       OR "regional fisheries management organi?ation$" OR "RFMOs"
       OR "port state measures agreement"
       OR "fish stocks agreement" OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
