@@ -446,19 +446,19 @@ TS=
 >
 >  14.6.1 Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing
 
-This target is interpreted to cover research about fisheries subsidies that contribute to negative outcomes (overcapacity, overfishing, and IUU finishing). We also consider relevant research about development assistance and fisheries, and works talking about WTO and other instruments in the context of fisheries.
+This target is interpreted to cover research about fisheries subsidies. We also consider research about fisheries and development assistance, fisheries and the WTO, or fisheries and the mandates mentioned in the target to be relevant.
 
 This query consists of 2 phrases. 
 
 #### Phrase 1
 The general structure is *subsidies + fisheries*. 
 
-The generic trm `fishing` will find "IUU fishing". `"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded.
+The generic trm `fishing` will find "IUU fishing". `"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded. `subsidy` and other terms are written out rather than truncated due to "subsidence" and "subsideded".
 
 ```py
 TS =
 (
-  ("subsid*"
+  (("subsidy" OR "subsidies" OR "subsidiz*" OR "subsidis*")
     NEAR/15
         ("fishing" OR "fisher*" OR "overfishing" OR "bycatch" OR "trawling"
         OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
@@ -475,7 +475,9 @@ The general structure is *ODA/mandates/WTO + fisheries*.
 ```py
 TS=
 (
-  ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
+  ("ODA" OR "development assistance" OR "development aid" OR "development intervention$" OR "foreign aid" 
+  OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO"
+  )
   NEAR/15
       ("fishing" OR "fisher*" OR "overfishing"
       OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
