@@ -427,11 +427,11 @@ TS=
 
 #### Phrase 3
 
-Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *action + marine ecosystems or elements*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *action + conservation/management + marine ecosystems/protection instruments*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, verbs for manage/protect etc. are used alone, but other forms of these words are combined with other actions (e.g. establishing management, improving protection etc).
+The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, verbs for manage/protect etc. are used alone, but other forms of these words are combined with actions (e.g. establishing management, improving protection etc).
 
-Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are assumed to be about protection/management.
+Under the *marine ecosystems/protection instruments*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are assumed to be about protection/management.
 
 ```py
 TS=
@@ -448,11 +448,11 @@ TS=
       OR "preserv*" OR "support*" OR "ensur*"
       )
       NEAR/5
-        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable")
+        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
     )
   )
   NEAR/15
-      ("ecosystem$" OR "habitat$" OR "communit*"
+      ("ecosystem$" OR "habitat$" OR "ecological communit*"
       OR "mangrove$" OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
       OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
       OR "sponge ground$" OR "reef" OR "reefs" OR "coral$"
