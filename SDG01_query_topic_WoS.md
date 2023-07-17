@@ -88,14 +88,14 @@ This query consists of 2 phrases. Some of the terms for services/systems work we
 
 This phrase is about floors, protection systems and welfare systems. The elements of the phrase are: *social protection systems*.
 
-As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
+As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `social assistance` seems to work better alone - works were missed when combined with `services`. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
 ```py
 TS=
 (
-  "welfare system$" OR "welfare service$" OR "social security system"
-  OR "basic social service$" OR "social assistance service$" OR "social floor$"
-  OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
+  "welfare system$" OR "welfare service$" 
+  OR "social security system" OR "social service$" OR "social assistance" OR "social floor$" OR "social protection program*" OR "social insurance program*" 
+  OR "social safety net$" OR "safety net program*"
 )
 ```  
 
@@ -110,7 +110,7 @@ For the *poor and vulnerable* terms, we use general terms for poverty/low income
 ```py
 TS=
 (
-  ("social protection$" OR "social security" OR "social benefits" OR "social insurance"
+  ("social protection$" OR "social security" OR "social benefits" OR "social insurance" OR "social care service$"
   OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
   OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
   OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
@@ -118,7 +118,6 @@ TS=
   OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
   OR "child benefit$" OR "child tax credit$" OR "child allowance"
   OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
-  OR "social care service$" OR "social service$"
   )
   AND
     ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
