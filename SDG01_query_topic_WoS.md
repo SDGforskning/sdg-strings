@@ -37,7 +37,7 @@ This target is interpreted as to cover research about extreme poverty. Here we c
 
 This query consists of 1 phrase. The elements of the phrase are: *extreme/global poverty*.
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line.
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line. `global poverty` is a slightly messy term which gives some less relevant results, but is the term used by the World Bank who are the custodians of 1.1 and set the limit of $1.25 ($2.15 as of Sep 2022) for the global poverty line (<a id="globalpoverty">[World Bank, 2022](#f16)</a>).
 
 ```py
 TS=
@@ -538,3 +538,5 @@ Specialist input: Awaiting specialist input.
 <a id="f3"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/ [↩](#UNLDCs)
 
 <a id="f14"></a> United Nations (n.d.) *Fight racism. Vulnerable groups, who are they?*. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022). [↩](#UNracism)
+
+<a id="f16"></a> World Bank (2022) *Fact Sheet: An Adjustment to Global Poverty Lines*. https://www.worldbank.org/en/news/factsheet/2022/05/02/fact-sheet-an-adjustment-to-global-poverty-lines (accessed Jul 2023). [↩](#globalpoverty)
