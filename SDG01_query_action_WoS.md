@@ -64,9 +64,13 @@ TS=
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty reduction. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
+This target is interpreted as to cover research about poverty reduction. 
+
+Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below.
 
 This query consists of 1 phrase. The general structure is *poverty + action*
+
+This string originally also contained terminology around the words "poor" and "poorest" (e.g. "poor families"). However, this is here taken out of the *action* approach - many results were not necessarily directly related to reducing poverty. For example, many results were about about access to services for poor communities, which is covered in a later target. In addition, `the poor` is a difficult phrase - it is used often in a poverty context (perhaps more historically), but is also part of very common sentence structure ("the poor uptake of micronutrients..."). These terms are therefore included in the *topic* approach only. 
 
 ```py
 TS=
@@ -85,33 +89,6 @@ TS=
 ) 
 ```
 
-This string originally also contained a section using other terminology around the words "poor" and "poorest". However, this is taken out at the moment - many results seem to be not necessarily to be directly related to reducing poverty. For example, a good number of results are about about access to services for poor communities, which is covered in a later target. In addition, `the poor` is a difficult phrase - it is used often in a poverty context (perhaps more historically), but is also part of very common sentence structure ("the poor uptake of micronutrients..."). Therefore, works using `the poor` or `the poorest` should also contain at least one other *poverty* term.
-
-The string is retained here for future reference, but **is not currently included**. These terms are however included in the topic approach. 
-
-```
-TS=
-(
-  (  
-    ("the poor" OR "the poorest" OR "pro poor"
-    OR "rural poor" OR "urban poor" OR "working poor" 
-    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children"))
-    )
-    NEAR/5
-        (
-          (("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*") NEAR/5 ("proportion"))
-        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*" OR "mitigat*"
-        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" 
-        OR "relief" OR "help*" OR "aid" OR "aiding" OR "improv*"
-        )
-  ) 
-  AND
-    ("poverty" OR "poor law" OR "rural poor" OR "urban poor" OR "working poor" 
-    OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children" OR "relief"))
-    OR "income" OR "rich" OR "inequality"
-    )
-)
-```
 
 ### Target 1.3
 

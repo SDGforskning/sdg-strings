@@ -54,18 +54,19 @@ OR "global poverty" OR "international poverty"
 >
 > 1.2.2 Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
 
-This target is interpreted as to cover research about poverty and poor communities/groups. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below. 
+This target is interpreted as to cover research about poverty and poor communities/groups. Research about `decent work` was considered for inclusion, as this is highlighted as a route out of poverty in the High level political forum document <a id="HLPF2017">([UN 2017](#f2))</a>. However we have not included it as a term - it is not necessarily linked to poverty, and articles linking this topic with poverty reduction can be expected to be covered by the phrase below. 
 
 This query consists of 1 phrase. The elements of the phrase are: *poverty/the poor*. 
 
-We have added the term `NOT species poor` to remove biology results found by the combination of `poor` with `communit*`.
+We have added the term `NOT species poor` to remove biology results found by `poor communit*`. `poor` is used in phrases - when combined with NEAR there are many medical results (e.g. "children with poor eyesight").
 
 ```py
 TS=
 (
   ("anti-poverty" OR "antipoverty" OR "out of poverty"
   OR "poverty" OR "rural poor" OR "urban poor" OR "working poor"
-  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children" OR "relief"))
+  OR ("poorest" NEAR/3 ("household$" OR "people" OR "children" OR "families" OR "communit*" OR "relief"))
+  OR "poor household$" OR "poor people" OR "poor children" OR "poor families" OR "poor communities" OR "poor relief"
   )
   NOT "species poor"
 )
