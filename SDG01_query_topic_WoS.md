@@ -63,7 +63,7 @@ We have added the term `NOT species poor` to remove biology results found by the
 ```py
 TS=
 (
-  ("anti-poverty" OR "out of poverty"
+  ("anti-poverty" OR "antipoverty" OR "out of poverty"
   OR "poverty" OR "rural poor" OR "urban poor" OR "working poor"
   OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children" OR "relief"))
   )
@@ -418,7 +418,7 @@ TS=
               )
         )    
     )
-    NEAR/15 ("anti-poverty" OR "out of poverty" OR "pro poor" OR "poverty")
+    NEAR/15 ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor" OR "poverty")
   )
   AND
       ("least developed countr*" OR "least developed nation$"
@@ -457,7 +457,7 @@ TS=
   OR "investment policy" OR "investment policies"
   )
   NEAR/15
-      ("anti-poverty" OR "out of poverty" OR "pro poor"
+      ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor"
       OR  ("poverty"
           NEAR/3
               ("minimi*" OR "reduc*" OR "mitigat*"

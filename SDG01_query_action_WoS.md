@@ -71,7 +71,7 @@ This query consists of 1 phrase. The general structure is *poverty + action*
 ```py
 TS=
 (
-  "anti-poverty" OR "out of poverty"
+  "anti-poverty" OR "antipoverty" OR "out of poverty"
   OR
   (
     ("poverty")
@@ -562,7 +562,7 @@ TS=
         )    
     )
     NEAR/15
-        ("anti-poverty" OR "out of poverty" OR "pro poor"
+        ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor"
         OR  ("poverty"
             NEAR/5
                 ("minimi*" OR "reduc*" OR "mitigat*"
@@ -609,7 +609,7 @@ TS=
   OR "program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"
   )
   NEAR/15
-      ("anti-poverty" OR "out of poverty" OR "pro poor"
+      ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor"
       OR  ("poverty"
           NEAR/3
               ("minimi*" OR "reduc*" OR "mitigat*"
