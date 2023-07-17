@@ -402,23 +402,34 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about international investment and poverty in developing countries. This query consists of 1 phrase. The elements of the phrase are: *international financing/cooperation + poverty + developing countries*. 
+This target is interpreted to cover research about investment in and cooperation for poverty eradication in developing countries. We do not include individual flows of money (e.g. remittances) in this interpretation. This query consists of 1 phrase. The elements of the phrase are: *financing/cooperation + poverty alleviation + developing countries*. 
+
+`FDI` refers to "foreign direct investment". Using `"UN" OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"` as terms for international (in `"international" OR "development" OR "foreign"`) was tested, but mostly resulted in noise from South Africa.  Note that this string is the same as the *action approach* string.
 
 ```py
 TS=
 (
   (
-    ("ODA" OR "development spending" OR "cooperation fund"
+    ("ODA" OR "development spending" OR "cooperation fund*" OR "FDI"
+    OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$"
+    OR "fund$" OR "funding" OR "grant$" OR "investment$" OR "investing" OR "financing" OR "capital flow$"
+    OR "financial resources" OR "domestic resources"  OR "fiscal resources" OR "economic resources" OR "mobili$e resources"
     OR  (
-          ("international" OR "development" OR "foreign")
-          NEAR/3
-              ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-              OR "aid" OR "assistance"
-              OR "fund$" OR "funding" OR "grant$" OR "investment$" OR "investing" OR "financing" OR "financial support" OR "financial resources" OR "capital flow$"
-              )
+          ("international" OR "development" OR "foreign" OR "global")
+          NEAR/3 ("network$" OR "aid" OR "assistance")
         )    
     )
-    NEAR/15 ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor" OR "poverty")
+    NEAR/15
+        ("anti-poverty" OR "antipoverty" OR "out of poverty" OR "pro poor"
+        OR  ("poverty"
+            NEAR/5
+                ("minimi*" OR "reduc*" OR "mitigat*"
+                OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+                OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+                OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
+                )
+            )
+        )
   )
   AND
       ("least developed countr*" OR "least developed nation$"
