@@ -37,7 +37,7 @@ This target is interpreted as to cover research about extreme poverty. Here we c
 
 This query consists of 1 phrase. The elements of the phrase are: *extreme/global poverty*.
 
-`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line. `global poverty` is a slightly messy term which gives some less relevant results, but is the term used by the World Bank who are the custodians of 1.1 and set the limit of $1.25 ($2.15 as of Sep 2022) for the global poverty line (<a id="globalpoverty">[World Bank, 2022](#f16)</a>).
+`(("liv*" OR "surviv*" ) NEAR/5 "$1.25 "))` was taken out as adds irrelevant hits (picks up random numbers from abstracts). `international poverty` will cover international poverty line. `global poverty` is a slightly messy term which gives many relevant but some less relevant results, but is the term used by the World Bank who are the custodians of 1.1 and set the limit of $1.25 ($2.15 as of Sep 2022) for the global poverty line (<a id="globalpoverty">[World Bank, 2022](#f16)</a>).
 
 ```py
 TS=
@@ -77,7 +77,7 @@ TS=
 >
 > 1.3.1 Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
 
-This target is interpreted as to cover research social protection systems and social floors.
+This target is interpreted as to cover research about social protection systems and social floors.
 
 To aid interpretation of "social protection" and find terms, we used a guide to terminology and types from the Governance and Social Development Resource Centre <a id="gsdrc">([Carter et al. 2019](#f9))</a>. We interpreted social floors according to the ILO, as including basic health care and basic income security for certain groups (children, elderly, unemployed or unable to work) <a id="socialfloors">([International Labour Organization n.d.](#f5))</a>.
 
