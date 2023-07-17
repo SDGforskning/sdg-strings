@@ -598,7 +598,7 @@ TS=
 >
 > 1.b.1 Pro-poor public social spending
 
-This target is interpreted to cover research about policies that can stimulate investment in antipoverty actions. This is however very difficult to build a search string for, as the terms are used for more than one aspect (*policy* to encourage investment in anti-poverty *policies*). Therefore we expanded the interpretation to include research about policies and poverty reduction. 
+This target is about policies that can stimulate investment in antipoverty actions, however, we interpret it more widely to cover **research about policies and poverty reduction**. This is because "policies for investment" is very difficult to build a search string for, as the terms can be used for more than one aspect (e.g. policy to encourage investment in anti-poverty actions, investment in anti-poverty policies). 
 
 The general structure is *policy + antipoverty*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive.
 
