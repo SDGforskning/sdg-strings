@@ -371,7 +371,9 @@ TS=
       NEAR/5
           ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal" OR "empower*" OR "inclusion"
           OR "ownership" OR "right$"
+          OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
           OR "affordab*" OR "inexpensive" OR "low cost" OR "pro poor" OR "free of charge" OR "free service$"
+          OR "unaffordab*"
           )
     )
     NEAR/10
