@@ -47,7 +47,7 @@ This target is interpreted to cover research about
 * Access/right to food, food security, and food safety (phrase 2)
 * Food supplies and food supply chains (phrase 3)
 
-Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security or free school meals may cover both areas (i.e. address that people have enough food, and that it is of good nutritional quality).
+Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
 
 It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
@@ -55,14 +55,14 @@ It consists of 3 phrases. Phrase 3 uses terms which need to be combined with hum
 
 The elements of the phrase are: *hunger/food insecurity*
 
-Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
+Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply. `undernourishment` is used here as it is soley about meeting energy requirements from food (i.e. hunger), while wider terms such as "malnourishment" may refer also to the nutrient balance.
 
 ```py
 TS=
 (
   ("end hunger" OR "ending hunger" OR "ends hunger" 
   OR "world hunger" OR "child* hunger"
-  OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
+  OR "hunger and poverty" OR "poverty and hunger" OR "famine$" OR "undernourishment"
   OR "food insecurity" OR "nutritional insecurity"
   )
   NOT ("feast and famine" OR "feast-famine")    
@@ -116,7 +116,7 @@ This target is interpreted to cover research about
 - the nutritional quality of food
 - malnutrition, and the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
 
-Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security or free school meals may cover both areas (i.e. address that people have enough food, and that it is of good nutritional quality).
+Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
 
 This query consists of 3 phrases. Phrase 3 is for terms which need to be combined with human terms.
 
