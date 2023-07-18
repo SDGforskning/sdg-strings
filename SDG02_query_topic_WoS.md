@@ -71,7 +71,7 @@ TS=
 
 #### Phrase 2
 
-The elements of the phrase are: *food access/security/safety*. `food` (NEAR *access* terms) should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food.
+The elements of the phrase are: *food access/security/safety*. `food` (combined with *access* etc.) should cover mechanisms such as food banks, food stamps, food credits, and phrases such as "access to nutritious food". Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food.
 
 ```py
 TS=
