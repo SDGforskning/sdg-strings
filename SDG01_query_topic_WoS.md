@@ -111,13 +111,17 @@ For the *poor and vulnerable* terms, we use general terms for poverty/low income
 TS=
 (
   ("social protection$" OR "social security" OR "social benefits" OR "social insurance" OR "social care service$"
-  OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
-  OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
+  OR "basic income" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
+  OR "cash benefit$" OR "cash transfer$" OR "cash plus program*"
+  OR "school feeding" OR "free school meals" OR "food stamp program*" OR "nutrition assistance program*" OR "food assistance program*" OR "WIC program*" OR "WIC benefits"
+  OR "labour market program*" OR "labor market program*" OR "labour market polic*" OR "labor market polic*" OR "labour market intervention$" OR "labor market intervention$" OR "public works program*"
+  OR "unemployment benefit$" OR "unemployment allowance" OR "unemployment insurance" OR "unemployment compensation" 
   OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
-  OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "paid medical leave" OR "sickness allowance"
-  OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
-  OR "child benefit$" OR "child tax credit$" OR "child allowance"
-  OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
+  OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sickness allowance" OR "sick pay" OR "paid sick leave" OR "paid medical leave"
+  OR "maternity benefit$" OR "maternity allowance" OR "maternity insurance" OR "paid matern* leave" OR "maternity pay" 
+  OR "parental benefit$" OR "family leave tax credit$" OR "parental leave tax credit$" OR "paid parental leave" OR "paid family leave" 
+  OR "child allowance" OR "child benefit$" OR "child tax credit$"
+  OR "pension benefit$" OR "pension$ insurance" OR "pension plan$" OR "public pension$" OR "state pension$"
   )
   AND
     ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
