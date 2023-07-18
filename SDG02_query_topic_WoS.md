@@ -55,7 +55,7 @@ It consists of 3 phrases. Phrase 3 uses terms which need to be combined with hum
 
 The elements of the phrase are: *hunger/food insecurity*
 
-Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply. `undernourishment` is used here as it is soley about meeting energy requirements from food (i.e. hunger), while wider terms such as "malnourishment" may refer also to the nutrient balance.
+Hunger is used in phrases in this approach (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant). `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply. `undernourishment` is used here as it is soley about meeting energy requirements from food (i.e. hunger), while wider terms such as "malnourishment" may refer also to the nutrient balance.
 
 ```py
 TS=
@@ -71,7 +71,7 @@ TS=
 
 #### Phrase 2
 
-The elements of the phrase are: *food access/security/safety*. `food` (NEAR *access* terms) should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security and reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food.
+The elements of the phrase are: *food access/security/safety*. `food` (NEAR *access* terms) should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food.
 
 ```py
 TS=
@@ -152,7 +152,7 @@ TS=
 
 The elements of the phrase are: *nutritional access/quality OR nutrition + specific groups*
 
-Research about the nutritional status of the groups mentioned in the target is included here, along with research about nutrition quality. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about the nutritional status of the groups mentioned in the target is included here, along with research about nutrition quality. `nutritio*` (combined with *access* etc.) should cover terms such as "access to nutritional care". `nutrition* quality` finds some results about animal feed, but a number of them connect their work to food security and reducing food loss, so it is safer to keep this term. `baby` is not used as it only adds noise about "baby mustard".
 
 ```py
 TS=

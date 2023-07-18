@@ -80,7 +80,7 @@ TS=
 
 #### Phrase 2
 
-The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
+The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
 ```py
 TS=
@@ -185,7 +185,7 @@ TS=
 
 The general structure is *(nutritional access/quality OR status + specific groups) + action*
 
-Research about improving the nutritional status of the groups mentioned in the target is included here, along with research about improving nutrition quality. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about improving the nutritional status of the groups mentioned in the target is included here, along with research about improving nutrition quality. `nutritio*` (combined with *access* etc.) should cover terms such as "access to nutritional care". `nutrition* quality` finds some results about animal feed, but a number of them connect their work to food security and reducing food loss, so it is safer to keep this term. `baby` is not used as it only adds noise about "baby mustard".
 
 ```py
 TS=
