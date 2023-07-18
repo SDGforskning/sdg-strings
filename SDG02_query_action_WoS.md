@@ -42,55 +42,52 @@ During editing of this string (2021), we have consulted two other sets of querie
 > 2.1.2 Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
 
 This target is interpreted to cover research about
-* Ending/reducing hunger/lack of food, reducing food insecurity
-* Increasing access to food and improving food supply systems
-* Increasing the safety and nutritional value of the food available.
+* Ending/reducing hunger and food insecurity (phrase 1)
+* Improving access/right to food and food safety (phrase 2)
+* Improving food supplies and food supply chains (phrase 3)
+
+Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security or free school meals may cover both areas (i.e. address that people have enough food, and that it is of good nutritional quality).
 
 It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
 #### Phrase 1
 
-The general structure is *hunger + action*
+The general structure is *hunger/food insecurity + action*
 
-Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
+Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant). `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
 
 ```py
 TS=
 (
   (
-    ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
+    ("end hunger" OR "ending hunger" OR "ends hunger" 
+    OR "world hunger" OR "child* hunger"
     OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
     OR "food insecurity" OR "nutritional insecurity"
     )
     NEAR/5
-        (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
-            OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
-            OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-            OR "prevent*" OR "avoid*"
-            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
-            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+        OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
+        OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "prevent*" OR "avoid*"
+        OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
+        OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
         )
   )
-  NOT (("feast and famine" OR "feast-famine") NOT ("end* hunger" OR "malnutrition"))    
+  NOT ("feast and famine" OR "feast-famine")    
 )
 ```
 
 #### Phrase 2
 
-The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
+The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
 ```py
 TS=
 (
-  ("right to food" OR "right to adequate food" OR "food sovereignty"
-  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
-  OR
-    ("food"
-    NEAR/5
-        ("access" OR "safety" OR "unsafe" OR "secure" OR "security"
-        OR "reliable" OR "reliability"    
-        )
-    )
+  ("right to food" OR "right to adequate food" OR "food sovereignty" OR "nutrition* security"
+  OR ("food" NEAR/5 ("access" OR "safety" OR "unsafe" OR "secure" OR "security" OR "reliable" OR "reliability"))
+  OR "school feeding" OR "free school meals" OR "food stamp program*" OR "nutrition assistance" OR "food assistance"
   )
   NEAR/5
      ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
@@ -102,20 +99,19 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food supply/value + action + humans*. 
+The general structure is *food supply + action + humans*. 
 
 This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>). Note that `food supply` will also find works about the food supply chain etc. 
 
 ```py
 TS=
  (
-    (
-      ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")
-      NEAR/5
-         ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-         OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
-         OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-         )
+    ("food supply"
+    NEAR/5
+        ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+        OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
+        OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+        )
     )  
     AND
         ("humans" OR "humanity" OR "human" OR "people" OR "person$"
@@ -139,7 +135,11 @@ TS=
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
-This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+This target is interpreted to cover research about 
+- improving the nutritional quality of food
+- reducing malnutrition, and improving nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+
+Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security or free school meals may cover both areas (i.e. address that people have enough food, and that it is of good nutritional quality).
 
 This query consists of 3 phrases. Phrase 3 is for terms which need to be combined with human terms.
 
@@ -159,8 +159,7 @@ TS=
       OR
         (
           ("deficien*" OR "inadequa*")
-          NEAR/3
-              ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
+          NEAR/3 ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
         )
       OR
         (
@@ -184,18 +183,15 @@ TS=
 
 #### Phrase 2
 
-The general structure is *nutritional access/quality/status of specific groups + action*
+The general structure is *(nutritional access/quality OR status + specific groups) + action*
 
-Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about improving the nutritional status of the groups mentioned in the target is included here, along with research about improving nutrition quality. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
 
 ```py
 TS=
 (
-  (
-    ("nutritio*"
-      NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability")
-    )
-  OR "diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  ("diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  OR ("nutritio*" NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability"))
   OR
     (
       ("nutritio*" OR "folate status" OR "micronutrient$")
@@ -205,18 +201,19 @@ TS=
           OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
           )
     )
+  OR ("nutrition*" NEAR/15 ("school feeding" OR "free school meals" OR "food stamp program*" OR "food assistance"))  
   )
   NEAR/5
-     ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-     OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
-     OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-     )
+    ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+    OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
+    OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+    )
 )
 ```
 
 #### Phrase 3
 
-The general structure is *undernutrition/food supply + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
+The general structure is *undernutrition/nutritional value + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ```py
 TS=
@@ -233,6 +230,15 @@ TS=
            OR "prevent*" OR "avoid*"
            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+          )
+    )
+  OR
+    (
+      ("nutritional value" OR "nutrient content" OR "nutritional content")
+      NEAR/5
+          ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "better"
+          OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*"
+          OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
           )
     )
   )
