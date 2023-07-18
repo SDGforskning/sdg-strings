@@ -46,7 +46,7 @@ This target is interpreted to cover research about
 * Improving access/right to food and food safety (phrase 2)
 * Improving food supplies and food supply chains (phrase 3)
 
-Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
+Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nutritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
 
 It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
@@ -139,7 +139,7 @@ This target is interpreted to cover research about
 - improving the nutritional quality of food
 - reducing malnutrition, and improving nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
 
-Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nuritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
+Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *quality*); 2.1 is interpreted to focus on access-related issues (e.g. nutritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address that people have enough food, and that it is of sufficient nutritional quality).
 
 This query consists of 3 phrases. Phrase 3 is for terms which need to be combined with human terms.
 
