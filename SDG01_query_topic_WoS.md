@@ -88,7 +88,7 @@ This query consists of 2 phrases. Some of the terms for services/systems work we
 
 This phrase is about floors, protection systems and welfare systems. The elements of the phrase are: *social protection systems*.
 
-As the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `social assistance` seems to work better alone - works were missed when combined with `services`. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
+As most of the *social protection* terms include a systemic element (systems, services) they do not need to be combined with groups of people. `social assistance` seems to work better alone - works were missed when combined with `services`. `welfare state` was considered but excluded as it leads mostly to papers about early welfare states and the history of those.
 
 ```py
 TS=
@@ -104,7 +104,7 @@ TS=
 
 This phrase is also about social floors and systems, but includes the terms which work better when combined with groups of people. The elements of the phrase are:*social protection/social floors + poor/vulnerable*.
 
-For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). `"social care service$" OR "social service$"` are sometimes considered a part of social protection <a id="gsdrc">([Carter et al. 2019](#f9))</a> - we include them here, although they do introduce noise as there are many works which mention them as a factor (e.g. a health study that discusses whether participants had access to social care).
+For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). `"social care service$"` are sometimes considered a part of social protection <a id="gsdrc">([Carter et al. 2019](#f9))</a> - we include them here, although they do introduce noise as there are works which mention them as a factor (e.g. a health study that discusses whether participants had access to social care).
 
 
 ```py
@@ -320,7 +320,7 @@ TS=
 >
 > 1.5.4 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about resilience and impacts of disasters for the poor and those in vulnerable situations. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters.
+This target is interpreted to cover research about resilience and impacts of disasters for the poor and those in vulnerable situations. This includes works about disaster plans, and about social safety nets and disasters. We consider "climate-related extreme events and other economic, social and environmental shocks and disasters" to cover all kinds of disasters.
 
 The target is limited to "the poor and those in vulnerable situations". For the *poor and vulnerable* terms, we use general terms for poverty/low income, plus terms for "vulnerable" groups from indicator 1.3.1. We used UN sources to find additional terms and groups that can be considered "vulnerable" (<a id="Blanchard">[Blanchard et al., 2017](#f12)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f13)</a>; <a id="UNracism">[United Nations, n.d.](#f14)</a>). We have also included least-developed countries, small-island developing states and group-terms for developing countries, based on the assumption that these populations may be considered more vulnerable when it comes to disasters. `social capital` is also included as a term in this section - while this term does not correspond directly to *poor and vulnerable*, works using this term often refer to relevant populations. 
 
@@ -412,9 +412,9 @@ TS=
 >
 > 1.a.2 Proportion of total government spending on essential services (education, health and social protection)
 
-This target is interpreted to cover research about investment in and cooperation for poverty eradication in developing countries. We do not include individual flows of money (e.g. remittances) in this interpretation. This query consists of 1 phrase. The elements of the phrase are: *financing/cooperation + poverty alleviation + developing countries*. 
+This target is interpreted to cover research about investment in and cooperation for poverty eradication in developing countries. We do not include individual flows of money (e.g. remittances) in this interpretation. This query consists of 1 phrase. The elements of the phrase are: *financing/cooperation + poverty alleviation + developing countries*. Note that this string is the same as the *action approach* string.
 
-`FDI` refers to "foreign direct investment". Using `"UN" OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"` as terms for international (in `"international" OR "development" OR "foreign"`) was tested, but mostly resulted in noise from South Africa.  Note that this string is the same as the *action approach* string.
+`FDI` refers to "foreign direct investment". Using `"UN" OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"` as terms for international (in `"international" OR "development" OR "foreign"`) was tested, but mostly resulted in noise from South Africa.  
 
 ```py
 TS=
@@ -468,7 +468,7 @@ TS=
 
 This target is about policies that can stimulate investment in antipoverty actions, however, we interpret it more widely to cover **research about policies and poverty reduction**. This is because "policies for investment" is very difficult to build a search string for, as the terms are used for more than one aspect (e.g. policy to encourage investment in anti-poverty actions, investment in anti-poverty policies). 
 
-The elements of the phrase are: *policy + antipoverty*. Note that this phrase is the same as the action approach.
+The elements of the phrase are: *policy + antipoverty*. Note that this string is the same as the *action approach* string.
 
 ```py
 TS=
