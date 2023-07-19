@@ -23,7 +23,7 @@ This document contains search strings for finding publications related to the **
 
 SDG 15 is interpreted to be about ending environmental decline of terrestrial and inland freshwater ecosystems and restoring them. Special emphasis is on forests and the sustainable management of them, on wetlands, mountains and drylands, halting land degradation and desertification, protecting biodiversity, preventing the extinction of threatened species and the spreading of invasive alien species, as well as preventing wildlife trafficking. The consequences of ecosystem degradation and wildlife trafficking on human survival and well-being (e.g. spreading of zoonotic diseases) is included in UN SDG reports (<a id="Life2020">[SDG 15 Life on land](#f17)</a>; https://unstats.un.org/sdgs/report/2020/goal-15/; <a id="Life2021">[SDG 15 Life on land](#f18)</a>; https://unstats.un.org/sdgs/report/2021/goal-15/), but not specified in the targets.
 
-The attempt to limit the search to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms either directly with `AND` or indirectly with `NOT marine` – unless a terrestrial or freshwater term is mentioned (see **Terrestrial and freshwater terms** below). However, in aquatic ecosystems the division between freshwater and marine is sometimes artificial (e.g. migratory fish). Some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about `seagrass meadows` and `coasts` can be marine coastal areas but also e.g. river delta coastal areas. According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) mangroves in tidal zones are included in forests regardless of whether this area is classified as land area or not. Therefore, tight limiting to freshwater environments would leave out also relevant papers.
+The attempt to limit the search to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms either directly with `AND` or indirectly with `NOT marine` – unless a terrestrial or freshwater term is mentioned (see **Terrestrial and freshwater terms** below). However, in aquatic ecosystems the division between freshwater and marine is sometimes artificial (e.g. migratory fish). Some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about `seagrass meadows` and `coasts` can be marine coastal areas but also e.g. river delta coastal areas. According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) mangroves in tidal zones are included in forests regardless of whether this area is classified as land area or not. Therefore, tight limiting to freshwater environments would leave out also relevant works.
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[UN Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
@@ -46,21 +46,21 @@ Term `mangrove` is added only when the string is used with `NOT marine`.
 
 Although mentioned in the definition for inland waters in the SDG indicator metadata for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf), the terms `reservoirs` `canals` `dams` are not included in the string. Combined with management and water, they would be likely to bring many irrelevant results on water supply management etc.
 
-Terms `land` and `fields` were initially in the phrase, but were removed to exclude many irrelevant results due to the broad meaning and use of these terms (e.g. *scientific fields, magnetic field, Netherlands, England*).
-
-`fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out.
+Terms `land` and `fields` were initially in the phrase, but were removed to exclude many irrelevant results due to the broad meaning and use of these terms (e.g. scientific fields, magnetic field, Netherlands, England). `fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out. `heathland$` and `moorland$` are used rather than "heath" and "moor" because these words lead to a lot of irrelevant results (due to being names, typos in "health", historical groups).
 
 ```py
 TS=
 (
   "terrestrial" OR "soil" OR "soils"  
-  OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$"
+  OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$"
   OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal"
   OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$"
   OR "bush*" OR "shrub*" OR "meadow*"
-  OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$"
+  OR "moorland$" OR "heathland$"
+  OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe"
   OR "dryland$" OR "dry land" OR "desert*"
-  OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland")
+  OR "lowland$"
+  OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$"
   OR "tundra"
 
   OR "freshwater" OR "limnic" OR "inland fish*"
