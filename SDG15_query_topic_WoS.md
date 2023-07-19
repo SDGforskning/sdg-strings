@@ -284,7 +284,7 @@ This target is interpreted to cover research about sustainable forest management
 
 Specific forest management terms (methods, etc.) were found mainly from FAO’s Agrovoc thesaurus (<a id="agrovoc">[FAO, n.d.](#f15)</a>) and from a search query prepared in an earlier project for capturing forestry literature (<a id="stateforest">[Päivinen et al. (2021); International Status of Finnish Forest Research, Tapio research](#f16)</a>). 
 
-This query consists of 3 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.2.
+This query consists of 3 phrases. 
 
 #### Phrase 1
 
@@ -367,30 +367,28 @@ OR TS=("afforest*" OR "reforest*")
 >
 > 15.3.1 Proportion of land that is degraded over total land area
 
-This target is interpreted to cover research about desertifiction and about degradation of land and soil. It also covers research about land degradation neutrality (LDN). Land degradation neutrality is defined in the SDG indicator metadata for indicator 15.3.1:
-> "a state whereby the amount and quality of land resources necessary to support ecosystem functions and services and enhance food security remain stable or increase within specified temporal and spatial scales and ecosystems" (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
+This target is interpreted to cover research about desertifiction, and about degradation of land and soil. It also covers research about land degradation neutrality (LDN) and maintenance of soil health. Definitions according to the SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf):
+> "Land degradation is defined as the reduction or loss of the biological or economic productivity and complexity of rain fed cropland, irrigated cropland, or range, pasture, forest and woodlands resulting from a combination of pressures, including land use and management practices."
+> "Land Degradation Neutrality (LDN) is defined as a state whereby the amount and quality of land resources necessary to support ecosystem functions and services and enhance food security remain stable or increase within specified temporal and spatial scales and ecosystems (decision 3/COP12)"
 
-It is somewhat unclear to us whether the phrases should cover all land degradation or just land degradation related to deserification, drought and floods. Our interpretation on this is done separetely for each phrase. Phrase 2 is more tightly limited to searching for lands degraded by desertification, drought or floods, whereas phrase 3 includes the degradation of all lands. Phrase 4 is limited only to drylands conserning soil productivity but to all lands conserning LDN.
+Given these definitions, we interpret the target to include research about all types of land (not just lands affected by desertification, drought or flooding). This means that these strings may pick up some works about soil erosion in built-up areas as well as "natural" areas. 
 
-Sources used for definitions and specifying terms for deserts and drylands (in phrases 3 & 4): 
+Sources used for definitions and specifying terms include: 
 * 2018 UN HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>) 
 * CBD web pages for Dry and Sub-humid Lands (<a id="drylands">[CBD, Jun 2022](#f8)</a>)
 * UN topic page for Desertification, Land degradation and Drought (<a id="desertification">[CBD, Jun 2022](#f6)</a>)
 
-This query consists of 4 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.3.
+This query consists of 4 phrases. 
 
 #### Phrase 1
 
-This phrase aims to find research about desertification. The elements of the phrase are *desertification // UN agreements to combat desertification*.
+This phrase aims to find research about desertification. The elements of the phrase are *desertification/UN agreements to combat desertification*.
 
 ```py
 TS=
 (
-  (
-        ("desertif*"
-        OR (("increas*" OR "expand*") NEAR/5 ("desert$" OR "dryland$"))
-        )
-  )
+  "desertif*"
+  OR (("increas*" OR "expan*") NEAR/5 ("desert$" OR "dryland$"))
   OR "United Nations Convention to Combat Desertification"
   OR "UN Convention to Combat Desertification"
   OR "UNCCD"
@@ -399,29 +397,27 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about land and soil degraded by desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + degraded land or soils/quality of soil*.
+This phrase aims to find research about land and soil affected by desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + land or soil degredation/quality*.
 
 In addition to articles about the effects agriforestry has on soils, this phrase also returns some articles about the effect of soil quality on agricultural productivity. These may still be concidered relevant to the target, since LDN by definition covers also land resources necessary for enhancing food security.
 
 ```py
 TS=
 (
-  ("desert$" OR "desertif*" OR "drought" OR "flood$" OR "dryland$")
+  ("desert$" OR "desertif*" OR "drought$" OR "flood*" OR "dryland$")
   NEAR/15
-      ("soil structure" OR "soil fertility" OR "soil health"
-      OR ("quality" NEAR/5 ("soil$" OR "land"))
+      ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" 
       OR ("degrad*" NEAR/3 ("land$" OR "soil$"))
-      OR (("erosion" OR "eroded") NEAR/5 ("land$" OR "soil$"))
+      OR (("erosion" OR "eroded" OR "quality") NEAR/5 ("land$" OR "soil$"))
       )
 )
 ```
 
 #### Phrase 3
 
-This phrase aims to find research about land degradation processes and effects. The terms for degradation processes are picked mainly from the SDG indicator metadata description for 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
+This phrase aims to find research about land degradation processes and effects. The elements of the phrase are *land degradation processes // effects of land degradation + land/soil*.
 
-The elements of the phrase are *land degradation processes OR effects of land degradation + deserts/drylands/soils*.
-
+The terms for degradation processes are picked mainly from the SDG indicator metadata description for 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf). Note that this phrase also finds a number of results about groundwater changes - we consider this as a part of land/soil health. 
 
 ```py
 TS=
@@ -445,17 +441,16 @@ TS=
       (
         ("decline" OR "decreas*" OR "reduc*" OR "degrad*" OR "lower$" OR "lowered" OR "lowering" OR "loss")
         NEAR/15
-            ("biodiversity"
+            ("biodiversity" OR "biological diversity"
             OR ("vegetation" NEAR/3 ("cover" OR "communit*" OR "biomass"))
             OR ("soil$" NEAR/3 ("fertility" OR "quality"))
             )
       )
-      OR (("chang*" OR "reduc*" OR "decreas*") NEAR/3 ("groundwater" NEAR/3 ("level$" OR "quality")))  
+      OR (("chang*" OR "reduc*" OR "decreas*") NEAR/3 "groundwater")  
   )    
-  NEAR/15
-      ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-      OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-      OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
+  AND
+      ("desertif*" OR "land degradation"
+      OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land" OR "lands"))
       OR "soil$"
       )
 )
@@ -463,18 +458,16 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about land degradation neutrality (LDN) of all lands, and land productivity of dry lands. There is uncertainty about whether this phrase should cover LDN on drylands only, and whether land productivity should be covered for all lands of limited to drylands only. The phrase is now limited only to drylands when searching for soil productivity but to all lands when searching for LDN.
-
-The elements of the phrase are *deserts/drylands + land productivity OR Land Degradation Neutrality*.
+This phrase aims to find research about land degradation neutrality (LDN) and protecting soil productivity/fertility. The elements of the phrase are *protecting soil health // Land Degradation Neutrality*.
 
 ```py
 TS=
 (
-  ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-  OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-  OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
+  ("protect*" OR "conserv*" OR "preserv*"
+  OR "promoting" OR "promote" OR "improv*" OR "enhanc*" OR "strengthen*" OR "maintain*"
+  OR "restor*" OR "rehabilita*" 
   )
-  NEAR/15 (("soil" OR "land") NEAR/3 ("productivity" OR "fertility"))
+  NEAR/5 ("soil" NEAR/3 ("productivity" OR "fertility" OR "structure" OR "health"))
 )
 OR
 TS=
