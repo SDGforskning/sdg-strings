@@ -87,19 +87,23 @@ TS=
 >
 > 15.1.2 Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type
 
-This target is interpreted to cover research about a) conservation of terrestrial and inland freshwater ecosystems, b) restoring these ecosystems and c) using these ecosystems and their services sustainably. Sustainable management is understood to be a part of sustainable use. The action approach versions of these phrases are directed more towards promoting/implementing/increasing the protection of ecosystems, whereas the aim of the topic approach versions is towards any papers about protection of ecosystems. The topic here is considered to be `protection/conservation of ecosystems´, not just anything about ecosystems. 
+This target is interpreted to cover research about a) conservation of terrestrial and inland freshwater ecosystems, b) restoring these ecosystems and c) using these ecosystems and their services sustainably. Sustainable management is understood to be a part of sustainable use. The action approach versions of these phrases are directed more towards promoting/implementing/increasing the conservation(++) of ecosystems, whereas the aim of the topic approach versions is towards any works about conservation(++) of ecosystems. 
 
 Even though forests, wetlands, mountains and drylands are highlighted in the target description, they are not specified in the phrases since they are already included in the **Terrestrial and freshwater terms**, which are combined with all the phrases of this target either directly with `AND` or indirectly with `NOT marine` unless a terrestrial or freshwater habitat is mentioned.
 
-This query consists of 5 phrases. Phrases 1 and 2 cover research about protecting habitats and ecosystems. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more stricktly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. Phrase 3 covers research about managing, protecting and restoring ecosystems, communities and biodiversity. Phrase 4 covers sustainable management approaches. Phrase 5 aims to find research specifically related to the international agreements on conservation/restoration of terrestrial and freshwater ecosystems.
-
-While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
+This query consists of 5 phrases. 
+* Phrases 1 and 2 cover protecting and restoring habitats and ecosystems. The phrases are similar, but differ in how strictly they are connected to **terrestrial or freshwater terms**. 
+* Phrase 3 also covers research about protecting and restoring, but adds elements of management, for ecosystems, communities and biodiversity. 
+* Phrase 4 covers sustainable management approaches for ecosystems and their services
+* Phrase 5 aims to find research specifically related to the international agreements on conservation/restoration of terrestrial and freshwater ecosystems.
 
 #### Phrase 1
 
-This phrase aims to find research outputs about the protection of habitats and biotopes, and protected areas. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research outputs about the protection of habitats and biotopes, and protected areas. 
 
-The elements of the phrase are *protected areas/protection + habitats*.
+The elements of the phrase are *protected areas/conservation/restoration + habitats*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which lead to irrelevant results. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more strictly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. 
+
+While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
 
 ```py
 TS=
@@ -111,7 +115,7 @@ TS=
     (
       ("protect*" OR "preserve" OR "preservation" OR "preserved"
       OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-      OR "reforest*" OR "rehabilit*"
+      OR "reforest*" OR "rehabilit*" OR "restor*"
       )
       NEAR/5 ("habitat$" OR "biotope$")
     )
@@ -125,7 +129,9 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 This phrase aims to find research outputs about protecting ecosystems and specific habitats.
 
-The elements of the phrase are *protect + ecosystem/habitats/areas*. In order to specify to the terrestrial and freshwater ecosystems the phrase is combined with **Terrestrial and freshwater terms** with `AND`.
+The elements of the phrase are *conservation/restoration + ecosystems/areas*. In order to specify to the terrestrial and freshwater ecosystems the phrase is combined with **Terrestrial and freshwater terms** with `AND`. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more strictly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. 
+
+While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
 
 ```py
 TS=
@@ -133,7 +139,7 @@ TS=
   (
     ("protect*" OR "preserve" OR "preservation" OR "preserved"
     OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-    OR "reforest*" OR "rehabilit*"
+    OR "reforest*" OR "rehabilit*" OR "restor*"
     )
     NEAR/5
       ("ecosystem$" OR "area*" OR "zone*" OR "environment*" 
@@ -154,24 +160,19 @@ Under the ecosystems/elements, we include diversity at various levels (important
 
 As the use of term `ecosystem` by others than natural sciences brings irrelevant results, it was combined with terms refering to species and habitats.
 
-The elements of this phrase are *conservation + ecosystems/elements*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `double NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+The elements of this phrase are *conservation/restoration + ecosystems/diversity*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `double NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore" OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
+  ("manage" OR "conserve" OR "protect" OR "restore" 
+  OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable"
+  )
   NEAR/15
     ("habitat$"
-    OR
-      ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-      ) 
-    OR 
-      ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$")
-      )
+    OR (("communit*") NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
+    OR (("ecosystem$" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")) 
     OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-    OR 
-      ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")
-      )
     OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
     )
 )
@@ -183,7 +184,9 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 This phrase aims to retrieve research about the sustainable use of terrestrial and freshwater ecosystems and their services. For better recall, some ecosystem services are specified, most of these found from the UN HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>), UN topic page for Forests (<a id="forests">[UN DESA n.d.a](#f5)</a>) and SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
 
-The elements of this phrase are *sustainability/sustainable use + natural resources/ecosystem services*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. `KBAs` are combined with a string of species terms to exclude other meanings of the acronym KBA.
+The elements of this phrase are *sustainable use approaches OR sustainable use + ecosystems/ecosystem services*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. 
+
+The acronym `KBA` (for key biodiversity area) was removed as it only causes noise.
 
 Some ecosystem services mentioned in indicator 15.3.1 metadata were not included in the phrase because they would be likely to return many results which are not relevant to the SDG 15:
 * Cultural heritage
@@ -202,35 +205,34 @@ Some ecosystem services mentioned in indicator 15.3.1 metadata were not included
 ```py
 TS=
 (  
-    ("long term management plan"
-    OR "agro-ecological knowledge" OR "agro ecological knowledge"
-    OR "bidiversity" OR "biological diversity"
-    OR "key biodiversity area$" 
-    OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR 		"tree$" OR "grassland$" OR "pollinator$"))
-    OR "important sites for biodiversity"
-    OR "biodiversity of food systems" OR "agrobiodiversity"
-    OR "soil biodiversity"
-    OR "ecotourism"
-    OR (("sustainab*" OR "responsible") NEAR/5 ("ecosystem service$" OR "natural resource$" OR "soil" OR "freshwater" OR "groundwater"))
-    OR
-      (
+  "key biodiversity area$" OR "important sites for biodiversity" 
+  OR "agro-ecological"
+  OR "ecotourism"
+  OR 
+    (
+      ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
+      NEAR/5 ("grazing" OR "forestry" OR "fishing" OR "fisher*" OR "hunter$" OR "hunting" OR "trapping")
+    )
+  OR
+    (  
+      ("long term management"
+      OR
         (
           ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
-          NEAR/3
-              ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning"
-              OR "fishing" OR "fisher*" OR "hunter$" OR "hunting" OR "trapping"
-              OR "forestry"
-              OR (("recreation*" OR "tourism") NEAR/5 ("nature" OR "ecologic*"))
-              OR "grazing"
-              OR "fuel wood" OR "fire wood" OR "firewood"
-              )
-        )
-        NEAR/15
-            ("ecosystem service$" OR "natural resource$" OR "groundwater"
-            OR "fisher*" OR "game" OR "forest$"
-            OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
+          NEAR/5
+            ("manag*" OR "use" OR "using" OR "development" 
+            OR "govern*" OR "administrat*" OR "planning" OR "policies" OR "policy" OR "approach*" OR "strateg*"
+            OR "recreation*" OR "tourism"
+            OR "fuel wood" OR "fire wood" OR "firewood"
             )
+        )
       )
+      NEAR/15
+          ("ecosystem service$" OR "natural resource$" OR "groundwater"
+          OR "biodiversity" OR "biological diversity" OR "agrobiodiversity"
+          OR "fisher*" OR "hunting" OR "trapping"
+          OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal"  OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
+          )
     )
 )
 NOT
