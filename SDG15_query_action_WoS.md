@@ -340,7 +340,7 @@ TS=
         OR
           (
             ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
           )
         OR
           (
@@ -359,12 +359,11 @@ TS=
                 OR "Forest under certification"
                 OR "Certified forest area"
                 )
-            )
-          OR ("protected" NEAR/3 "forest*")
-          OR ("reserved" NEAR/3 "forest*")
-          OR "UN Strategic Plan for Forests" OR "UNSPF"
-          OR "Global Forest Goals" OR "GFG$"
           )
+        OR (("protected" OR "reserved") NEAR/3 "forest*")
+        OR "UN Strategic Plan for Forests" OR "UNSPF"
+        OR "Global Forest Goals" OR "GFG$"
+        )
   )
   NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
 )
@@ -372,7 +371,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about halting forest loss and degradation. The elements of this phrase are *action + forests + loss*. 
+This phrase aims to find research about halting forest loss and degradation. The elements of this phrase are *action + deforestation/forest + loss**. 
 
 REDD is not limited with action terms since REDD is an action itself (Reducing Emissions from Deforestation and forest Degradation).
 
@@ -383,8 +382,6 @@ TS=
     ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "prevent*" OR "combat*" OR "halt*" OR "resist*")
     NEAR/5
         ("deforest*"
-        OR ("*forest*" NEAR/3 ("loss" OR "degrad*"))
-        OR ("lost" NEAR/3 "forest area")
         OR
           (
             ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
@@ -392,7 +389,7 @@ TS=
           )
         )
   )
-OR ("REDD" NEAR/15 ("UN" OR "United Nations"))
+OR ("REDD" NEAR/15 ("UN" OR "United Nations" OR "*forest*"))
 )
 ```
 
@@ -406,7 +403,7 @@ TS=
   (
     (
       (
-        ("increas*" OR "expand*" OR "restor*" OR "rehabilitate")
+        ("increas*" OR "expand*" OR "restore" OR "rehabilitate")
         NEAR/5 ("cover*" OR "area$" OR "zone$" OR "*land$" OR "silvicultur*")
       )
       OR "restore" OR "rehabilitate"
@@ -417,7 +414,7 @@ TS=
   (
     ("promot*" OR "prioriti*" OR "enabl*" OR "increase" OR "expand" OR "establish*" OR "implement*" OR "ensur*" OR "assure")
     NEAR/5
-        ("afforestr*" OR "reforestr*"
+        ("afforest*" OR "reforest*"
         OR (("restor*" OR "rehabilita*") NEAR/5 ("*forest*" OR "woodland$"))
         )
   )

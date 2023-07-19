@@ -294,55 +294,51 @@ This phrase aims to find research about sustainable forest management, with some
 TS=
 (
   (
-        ("sustainable forest*" OR "sustainable woodland$" OR "sustainable silvicultur*" OR "sustainable arboricultur*"
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+    "sustainable forest*" OR "sustainable woodland$" OR "sustainable silvicultur*" OR "sustainable arboricultur*"
+    OR
+      (
+        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
+      )
+    OR
+      (
+        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/5
+          ("practice$" OR "method$" OR "forestry operation$"
+          OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
+          OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
+          OR "rotation"
+          OR "regeneration" OR ("tree$" NEAR/3 "planting") 
+          OR "drainage"
+          OR "Forest area change"
+          OR "Above-ground biomass in forest"
+          OR ("proportion" NEAR/3 "protected areas")
+          OR ("proportion" NEAR/3 "long-term management plan")
+          OR "Forest under certification"
+          OR "Certified forest area"
           )
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/5
-                ("practice$" OR "method$" OR "forestry operation$"
-                OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                OR "rotation"
-                OR "regeneration" OR ("tree$" NEAR/3 "planting") 
-                OR "drainage"
-                OR "Forest area change"
-                OR "Above-ground biomass in forest"
-                OR ("proportion" NEAR/3 "protected areas")
-                OR ("proportion" NEAR/3 "long-term management plan")
-                OR "Forest under certification"
-                OR "Certified forest area"
-                )
-            )
-          OR ("protected" NEAR/3 "forest*")
-          OR ("reserved" NEAR/3 "forest*")
-          OR "UN Strategic Plan for Forests" OR "UNSPF"
-          OR "Global Forest Goals" OR "GFG$"
-          )
+      )
+      OR (("protected" OR "reserved") NEAR/3 "forest*")
+      OR "UN Strategic Plan for Forests" OR "UNSPF"
+      OR "Global Forest Goals" OR "GFG$"
   )
   NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
 )
 ```
 #### Phrase 2
 
-This phrase aims to find research about forest loss and degradation. The elements of the phrase are *forests + loss*. REDD is Reducing Emissions from Deforestation and forest Degradation.
+This phrase aims to find research about forest loss and degradation. The elements of the phrase are *deforestation/forest + loss*. REDD is Reducing Emissions from Deforestation and forest Degradation.
 
 ```py
 TS=
 (
   "deforest*"
-  OR ("*forest*" NEAR/3 ("loss" OR "degrad*"))
-  OR ("lost" NEAR/3 "forest area")
   OR
     (
       ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
       NEAR/5 ("decreas*" OR "reduc*" OR "degrad*" OR "mitigat*" OR "disappear*" OR "lost" OR "loss")
     )
-  OR ("REDD" NEAR/15 ("UN" OR "United Nations"))
+  OR ("REDD" NEAR/15 ("UN" OR "United Nations" OR "*forest*"))
 )
 ```
 
@@ -355,15 +351,14 @@ TS=
 (
   (
     (
-      ("increas*" OR "expand*" OR "restor*" OR "rehabilitate")
+      ("increas*" OR "expand*" OR "restor*" OR "rehabilitat*")
       NEAR/5 ("cover*" OR "area$" OR "zone$" OR "*land$" OR "silvicultur*")
     )
-  OR "restore" OR "restoration" OR "rehabilitat*"
   OR "restor*" OR "rehabilita*"
   )
   NEAR/5 ("*forest*" OR "woodland$")
 )
-OR TS=("afforestr*" OR "reforestr*")
+OR TS=("afforest*" OR "reforest*")
 ```
 
 ### Target 15.3
