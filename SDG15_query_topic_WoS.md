@@ -23,8 +23,6 @@ This document contains search strings for finding publications related to the **
 
 SDG 15 is interpreted to be about ending environmental decline of terrestrial and inland freshwater ecosystems and restoring them. Special emphasis is on forests and the sustainable management of them, on wetlands, mountains and drylands, halting land degradation and desertification, protecting biodiversity, preventing the extinction of threatened species and the spreading of invasive alien species, as well as preventing wildlife trafficking. The consequences of ecosystem degradation and wildlife trafficking on human survival and well-being (e.g. spreading of zoonotic diseases) is included in UN SDG reports (<a id="Life2020">[SDG 15 Life on land](#f17)</a>; https://unstats.un.org/sdgs/report/2020/goal-15/; <a id="Life2021">[SDG 15 Life on land](#f18)</a>; https://unstats.un.org/sdgs/report/2021/goal-15/), but not specified in the targets.
 
-The attempt to limit the search to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms either directly with `AND` or indirectly with `NOT marine` – unless a terrestrial or freshwater term is mentioned (see **Terrestrial and freshwater terms** below). However, in aquatic ecosystems the division between freshwater and marine is sometimes artificial (e.g. migratory fish). Some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about `seagrass meadows` and `coasts` can be marine coastal areas but also e.g. river delta coastal areas. According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) mangroves in tidal zones are included in forests regardless of whether this area is classified as land area or not. Therefore, tight limiting to freshwater environments would leave out also relevant works.
-
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[UN Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
 Abbreviations used:
@@ -34,15 +32,24 @@ Abbreviations used:
 * CBD - Convention on Biological Diversity
 * CITES - Convention on International Trade in Endangered Species of Wild Fauna and Flora
 
+### What is life on *land*?
+
+The attempt to limit the results to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms. However:
+
+* In principle, the division between freshwater and marine is somewhat artificial for some species (e.g. migratory fish) or aquatic ecosystems; some habitats may span the marine and terrestrial environments (e.g. mangroves). These works should not be excluded.
+* On a practical level, some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about "seagrass meadows", `forests` about "kelp forests", and `coasts` can be marine coastal areas but also river delta coastal areas. 
+
+We therefore attempt to limit to terrestrial or freshwater works, without being overly strict. This is mostly achieved by using two methods of combining the strings with terrestrial and freshwater terms - either directly with `AND` (works must mention a terrestrial term) or indirectly with `NOT marine` (which removes works mentioning marine terms unless a terrestrial term is also mentioned). See **Terrestrial and freshwater terms** below.
+
 ## 3. Terrestrial and freshwater terms: String for limiting certain phrases to the terrestrial and freshwater environment
 
-This string is referred to as **terrestrial and freshwater terms**, and is used in sets **15.1, 15.5, 15.6, 15.7, 15.8, 15.9, 15.a** and **15.c** to limit the results to terrestrial and freshwater environment.
+This string is referred to as **terrestrial and freshwater terms** and is used in many of the strings below to limit the results to terrestrial and freshwater environment.
 
 In some phrases, these terms are combined to the string with `AND` while in others a double `NOT` is used (`NOT marine NOT terrestrial/freshwater`). 
 - Phrases which consist of more general terms are more likely to return results about topics irrelevant to the targets of SDG15 or natural environments, so these were combined with terrestrial/freshwater terms with `AND` to focus only on works which mention one of the terrestrial or freshwater terms. 
 - Phrases which contain more specific ecological terms are more likely to already be focused on works about either marine, terrestrial or freshwater habitats/organisms, and only the pure marine works need to be excluded. `NOT marine NOT terrestrial/freshwater` was used for these as it excludes works using marine terms *unless* they also contain one of the terrestrial of freshwater terms. This "double NOT" strategy is commonly employed in the medical sciences to find human studies and exclude animal studies, while ensuring that animal studies are still included if they *also* mention humans. We use this strategy when possible as it has slightly better recall - for example, a work may be about a species of grass, but not use generic terms for terrestrial habitats - this work would likely be caught by the double `NOT` strategy, but be missed by the `AND` strategy. 
 
-Term `mangrove` is added only when the string is used with `NOT marine`.
+According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) *mangroves* in tidal zones are included in forests regardless of whether this area is classified as land area or not, and are therefore included in our definition of "life on land".
 
 Although mentioned in the definition for inland waters in the SDG indicator metadata for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf), the terms `reservoirs` `canals` `dams` are not included in the string. Combined with management and water, they would be likely to bring many irrelevant results on water supply management etc.
 
@@ -97,7 +104,8 @@ The elements of the phrase are *protected areas/protection + habitats*.
 ```py
 TS=
 (
-  ("protected area$" OR "conservation area$" OR "conservation zone$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Habitat management area$" OR "Species management area$" OR "Protected landscape$"
+  ("protected area$"  OR "Protected landscape$" OR "conservation area$" OR "conservation zone$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" 
+  OR "Habitat management area$" OR "Species management area$"
   OR "conserv* ecosystem" OR "conserv* ecosystems" OR "protect* ecosystem" OR "protect* ecosystem$"
   OR
     (
@@ -122,13 +130,14 @@ The elements of the phrase are *protect + ecosystem/habitats/areas*. In order to
 ```py
 TS=
 (
- 	(
+  (
     ("protect*" OR "preserve" OR "preservation" OR "preserved"
     OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
     OR "reforest*" OR "rehabilit*"
     )
     NEAR/5
-      ("ecosystem$" OR "area*" OR "zone*" OR "environment*" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
+      ("ecosystem$" OR "area*" OR "zone*" OR "environment*" 
+      OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
       )
   )
 )
