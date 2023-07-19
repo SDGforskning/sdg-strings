@@ -427,8 +427,15 @@ TS=
 >
 > 15.3.1 Proportion of land that is degraded over total land area
 
-This target is interpreted to cover research about resisting desertifiction, reducing land and soil degredation, and about restoring land and soil that has been degraded. It also covers research about promoting land degradation neutrality (LDN) and maintenance of soil health. Definitions according to the SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf):
+This target is interpreted to cover research about:
+- resisting desertifiction (phrase 1)
+- restoring/maintaining land and soil quality in connection with floods, desertification and drought (phrase 2)
+- reducing land and soil degredation (phrase 3)
+- promoting land degradation neutrality (LDN) and maintenance of soil health (phrase 4) 
+
+Definitions according to the SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf):
 > "Land degradation is defined as the reduction or loss of the biological or economic productivity and complexity of rain fed cropland, irrigated cropland, or range, pasture, forest and woodlands resulting from a combination of pressures, including land use and management practices."
+
 > "Land Degradation Neutrality (LDN) is defined as a state whereby the amount and quality of land resources necessary to support ecosystem functions and services and enhance food security remain stable or increase within specified temporal and spatial scales and ecosystems (decision 3/COP12)"
 
 Given these definitions, we interpret the target to include research about all types of land (not just lands affected by desertification, drought or flooding). This means that these strings may pick up some works about soil erosion in built-up areas as well as "natural" areas. 
@@ -465,7 +472,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about restoring land and soil which has been affected by desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + action + land or soil degredation/quality*.
+This phrase aims to find research about restoring/protecting land and soil health which has been affected by desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + action + land or soil quality*.
 
 In addition to articles about the effects agriforestry has on soils, this phrase also returns some articles about the effect of soil quality on agricultural productivity. These may still be concidered relevant to the target, since LDN by definition covers also land resources necessary for enhancing food security.
 
@@ -478,12 +485,7 @@ TS=
         ("restor*" OR "rehabilita*" OR "improv*" OR "enhanc*" OR "strengthen*"
         OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
         )
-        NEAR/15
-            (
-              ("degrad*" NEAR/3 ("land$" OR "soil$"))
-              OR (("erosion" OR "eroded" OR "quality") NEAR/5 ("land$" OR "soil$"))
-              OR "soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" 
-            )
+        NEAR/15 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
       )
 )
 ```
@@ -500,6 +502,8 @@ TS=
   ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "halt*"
   OR "avoid*" OR "prevent*" OR "combat*" OR "resist" OR "increas* resistance"
   OR "reduc*" OR "decreas*" OR "minimi*" OR "tackle*" OR "control"
+  OR "restor*" OR "rehabilita*" OR "improv*" OR "enhanc*" OR "strengthen*"
+  OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
   )
   NEAR/5
       ("aridificat*"
