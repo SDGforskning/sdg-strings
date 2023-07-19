@@ -582,11 +582,9 @@ TS=
 >
 > 15.4.2 Mountain Green Cover Index
 
-This target is interpreted to cover research about conserving and improving conservation of mountain ecosystems and their biodiversity. We consider conservation to also cover research about management, restoration and protection of these. It is also considered to cover research about promoting sustainable use of ecosystem services (benefits) provided by mountain ecosystems as defined on the UN topic page for Mountains (<a id="mountains">[UN DESA, n.d.c](#f5)</a>) in the context of sustainable development.
+This target is interpreted to cover research about conserving/managing/restoring and improving conservation/management/restoration for mountain ecosystems and their biodiversity. It is also considered to cover research about promoting the sustainable use of ecosystem services (benefits) provided by mountain ecosystems as defined on the UN topic page for Mountains (<a id="mountains">[UN DESA, n.d.c](#f5)</a>) in the context of sustainable development.
 
 Specifying terms for the Mountain Green Cover Index are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf) and terms for Coverage by protected areas in the SDG metadata for indicator 15.4.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-01.pdf).
-
-`fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out. 
 
 The phrases return some articles which mention `mountain` in a name of a species (e.g. Mountain hare, Mountain zebra, Mountain tapir). Some of these articles might not be about mountains, but identifying and excluding them without losing relevant articles would be quite challenging.
 
@@ -594,7 +592,9 @@ This query consists of 2 phrases. Terrestrial and freshwater terms are **not** c
 
 #### Phrase 1
 
-This phrase aims to find research about conserving and improving conservation of mountain ecosystems and their biodiversity. It includes research about establishing/managing protected areas, key biodiversity areas and vegetation covered areas of the mountains (Mountain Green Cover Index). Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
+This phrase aims to find research about conserving/managing/restoring and improving conservation/management/restoration of mountain ecosystems and their biodiversity. It includes research about establishing/managing protected areas, key biodiversity areas and vegetation covered areas of the mountains (Mountain Green Cover Index). 
+
+Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
 
 The elements of this phrase are *(conserving OR action + management/conservation/protected areas/instruments) + ecosystem/biodiversity + mountains*
 
@@ -602,41 +602,38 @@ The elements of this phrase are *(conserving OR action + management/conservation
 TS=
 (
   (
-      ("manage" OR "conserve" OR "protect" OR "restore"
-      OR
-        (
-          ("designat*" OR "placement" OR "expand*" OR "extend"
-          OR "design" OR "designing" OR "create" OR "creation" OR "creating"
-          OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e" OR "promote"
-          OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
-          OR "enforce" OR "enforcement" OR "enforcing"
-          OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
-          OR "preserv*" OR "support*" OR "ensur*"
-          )
-          NEAR/5
-              ("management" OR "conservation" OR "protection" OR "restoration" OR "sustainable"
-              OR "Protected area$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$"
-              OR "Natural monument$" OR "Natural feature$"
-              OR "Habitat management area$" OR "Species management area$"
-              OR "Protected landscape$"
-              OR "key biodiversity area$" OR "KBA" OR "KBAs"
-              OR "important sites for biodiversity"
-              OR "Mountain Partnership"
-              OR "Mountain Green Cover Index"
-              OR "Convention on Biological Diversity" OR "CBD"
-              OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" OR "CITES"
-              )
+    ("manage" OR "conserve" OR "protect" OR "restore" OR "rehabilitate"
+    OR
+      (
+        ("designat*" OR "placement" OR "expand*" OR "extend"
+        OR "design" OR "designing" OR "create" OR "creation" OR "creating"
+        OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e" OR "promote"
+        OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
+        OR "enforce" OR "enforcement" OR "enforcing"
+        OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
+        OR "preserv*" OR "support*" OR "ensur*"
         )
-      )
-      NEAR/15
-            ("ecosystem$" OR "habitat$"
-            OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-            OR (("diversity" OR "communit*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-            OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-            OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$"))
+        NEAR/5
+            ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*" OR "sustainable"
+            OR "Protected area$" OR "Protected landscape$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$"
+            OR "Habitat management area$" OR "Species management area$"
+            OR "key biodiversity area$" OR "KBA" OR "KBAs" OR "important sites for biodiversity"
+            OR "Mountain Partnership"
+            OR "Mountain Green Cover Index"
+            OR "Convention on Biological Diversity" OR "CBD"
+            OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" OR "CITES"
             )
+      )
+    )
+    NEAR/15
+        ("ecosystem$" OR "habitat$"
+        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+        OR ("cover*" NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$"))
+        )
   )
-AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
+AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland") OR "montane")
 )
 ```
 
@@ -649,22 +646,21 @@ TS=
 (
   (
     (
-      ("promot*" OR "enable" OR "increase" OR "establish" OR "implement*" OR "assure")
+      ("promot*" OR "enable" OR "increase" OR "establish*" OR "implement*" OR "ensur*")
       NEAR/5
           (
-            ("sustainabl*" OR "environmental*" OR "ecological*")
-            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
+            ("sustainabl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
+            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
           )
     )
     NEAR/15
         ("ecosystem$" OR "habitat$"
-        OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR (("communit*" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
         )
   )
-  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
+  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland") OR "montane")
 )
 ```
 
