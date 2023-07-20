@@ -794,9 +794,9 @@ NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kel
 >
 > 15.6.1 Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits
 
-This target is interpreted to cover research about promoting the sharing of benefits arising from genetic resources of terrestrial and freshwater organisms, as well as improving access to these resources. Benefits are defined according to the CBD factsheet on Access and Benefit-Sharing (ABS) (<a id="abs">[CBD, n.d.](#f10)</a>). They range from basic research to development of products. By the definition of the CBD, benefit sharing applies also to benefits arising from the use of traditional knowledge of indigenous and local communities associated with genetic resources.
+This target is interpreted to cover research about improving sharing/access/fairness in relation to benefits of using a) genetic resources of terrestrial and freshwater organisms or their benefits, or b) traditional knowledge associated with these resources. 
 
-*The Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity* is an essential agreement related to this target. CBD webpages on Nagoya protocol (<a id="nagoya">[CBD, Aug 2022](#f9)</a>) were used to define the aims and scope of this target.
+Benefits are defined according to the CBD factsheet on Access and Benefit-Sharing (ABS) (<a id="abs">[CBD, n.d.](#f10)</a>). They range from basic research to development of products. By the definition of the CBD, benefit sharing applies also to benefits arising from the use of traditional knowledge of indigenous and local communities associated with genetic resources. *The Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity* is an essential agreement related to this target. CBD webpages on Nagoya protocol (<a id="nagoya">[CBD, Aug 2022](#f9)</a>) were used to define the aims and scope of this target.
 
 In addition to papers about the use of terrestrial and freshwater resources, this query also returns some agricultural papers. They are not excluded from the results since the indicator 15.6.1 includes "Countries that are contracting Parties to the International Treaty on Plant Genetic Resources for Food and Agriculture (PGRFA)" (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-06-01.pdf).
 
@@ -804,7 +804,7 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about promoting the sharing of genetic resources, including traditional knowledge of the indigenous and local communities. The elements of the phrase are *action + sharing/access + resources/knowledge*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about promoting the sharing of genetic resources, including traditional knowledge of the indigenous and local communities. The elements of the phrase are *action + sharing/access + resources/knowledge + ecosystems/organisms/bioresources*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
@@ -814,14 +814,18 @@ TS=
       ("promot*" OR "improv*" OR "enhanc*" OR "strengthen*"
       OR "increas*" OR "expand*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
       )
-      NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
+      NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
     )
     NEAR/15
         ("genetic resource$" OR "gene resources"
         OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
         )
   )
-  AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "species" OR "plant*" OR "animal$" OR "organism$" OR ("genetic resource$" NOT "human"))
+  AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "biological diversity" OR "species" OR "plant*" OR "animal$" OR "organism$" 
+      OR (("genetic resource$" OR "bioresource$" OR "biological resource$") NOT ("human" OR "patient$" OR "clinical" OR "protein" OR "microbiology")) 
+      OR "gene resources"
+      OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*"
+      )
 )
 NOT
 TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
@@ -829,7 +833,7 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 #### Phrase 2
 
-This phrase aims to find research about promoting the sharing of benefits derived from utilizing genetic resources, including traditional knowledge of the indigenous and local communities. The elements of the phrase are *action + sharing/access + resources/knowledge + use + benefits*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about promoting the sharing of benefits derived from utilizing genetic resources. The elements of the phrase are *action + sharing/access + resources + benefits*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 While testing the phrase, it was noticed that `knowledge` combined with `local` or `traditional` brings some irrelevant results about various fields (transport, business, education).
 
@@ -840,26 +844,18 @@ TS=
     ("promot*" OR "improv*" OR "enhanc*" OR "strengthen*"
     OR "increas*" OR "expand*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
     )
-    NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
+    NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
   )
+  AND ("genetic resource$" OR "gene resource$")
   AND
-    (
-      (
-          ("genetic resource$" OR "gene resource$"
-          OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-          )
-          NEAR/5 ("use$" OR "using" OR "utiliz*" OR "utilis*")
+      ("benefit$"
+      OR ("results" NEAR/3 ("research" OR "development"))
+      OR ("transfer*" NEAR/3 "technolog*")
+      OR ("participat*" NEAR/3 "research activit*")
+      OR ("develop*" NEAR/3 "product$")
+      OR "fair compensation" OR "just compensation"
+      OR "bioprospect*"
       )
-      AND
-          ("benefit$"
-          OR ("results" NEAR/3 ("research" OR "development"))
-          OR ("transfer*" NEAR/3 "technolog*")
-          OR ("participat*" NEAR/3 "research activit*")
-          OR ("develop*" NEAR/3 "product$")
-          OR (("monetary" OR "royalties") NEAR/3 ("benefit$" OR "compensat*"))
-          OR "bioprospect*"
-          )
-    )
 )
 NOT
 TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
