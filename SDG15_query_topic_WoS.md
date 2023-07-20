@@ -1212,9 +1212,7 @@ TS=
 >
 > 15.c.1 Proportion of traded wildlife that was poached or illicitly trafficked
 
-This target is interpreted to cover research about combatting poaching and trafficking of protected species, including research about capacity and poaching (e.g. education, collaboration). It also covers research about poaching of protected animals in relation to the local communities' opportunities for sustainable livelihood. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. In the phrases, we have limited poaching to protected/endangered species.
-
-This interpretation is the same as the action approach, and the strings are currently identical. This may need to be revisited, for example, should the topic approach cover all research about poaching?
+This target is interpreted to cover research about poaching and a) capacity and support (e.g. education, collaboration), or b) local communities' or opportunities for sustainable livelihood. We settled on this interpretation as it covers a slightly more specific aspect than 15.7, which is more widely about combatting poaching. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
 
 Some particularly susceptible species were added to the phrases for better recall. The source for these was The UN's World Wildlife Crime Report (<a id="wwc">[UNODC, 2020](#f13)</a>).
 
@@ -1222,47 +1220,38 @@ This query consists of 2 phrases. Both phrases are limited by the exclusion of `
 
 #### Phrase 1
 
-The elements of the phrase are *action/capacity building/instruments + poaching/trafficking + protected species*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
-
-This phrase is similar to target 15.7 phrase 1, but is focused on finding research about the support and capacity building (including financing) to fight against poaching and trafficking of protected species. As in target 15.7, the combination of `trafficking` and `animal` return some irrelevant results about animal physiology (receptor trafficking, etc.). These are hard to exclude without losing relevant results. 
+The elements of the phrase are *capacity/instruments + poaching/trafficking + species*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results (particularly here, `traffick*` + `animal` is problematic in cell biology without NOT terms).
 
 ```py
 TS=
 (
   (
-    ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "halt*"
-    OR "resist*" OR "reduc*" OR "decreas*" OR "minimi*" OR "tackle*" OR "control*" OR "prevent*" OR "combat*"
-    OR "anti-poaching"
-    OR "capacity building" OR "capacity development" OR "capacity"
-    OR "cooperation" OR "collaboration" OR "network$" OR "support"
-    OR "policy" OR "policies" OR "empower*"
-    OR "knowledge transfer*"
-    OR (("raise" OR "raising") NEAR/3 ("awareness" OR "knowledge"))
-    OR ("disseminat*" NEAR/3 "information")
+    ("capacity building" OR "capacity development" OR "capacity"
+    OR "cooperation" OR "collaboration" OR "support" OR "international agreement$"
+    OR "policy" OR "policies" OR "empower*" OR "invest" OR "investing" OR "investment$"
+    OR "knowledge transfer*" OR "rais* awareness"
+    OR (("poach*" OR "local") NEAR/3 ("awareness" OR "knowledge" OR "information"))
     OR "educat*"
     OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" OR "CITES"
-    OR "Landscapes for People, Food and Nature partnership"
+    OR "Landscapes for People, Food and Nature partnership" 
+    OR "anti poach* measures" OR "patrol$" OR "detection"
     )
     NEAR/15 ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
   )
   AND
-    (
-      ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-      NEAR/5
-          ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-          OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-          )
+    ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
+    OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "cell*" OR "*membrane*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about poaching and trafficking of protected species in relation to sustainable livelihood opportunities of the local communities. `CITES` is added as an alternative to poaching or trafficking of protected species because often the implications to the local communities follow from the application of CITES decisions (<a id="cites">[CITES & General Secretariat of the Organization of American States, 2015](#f14)</a>).
+This phrase aims to find research about poaching and trafficking of species in relation to sustainable livelihood opportunities of the local communities. `CITES` is added as an alternative to poaching or trafficking of species because often the implications to the local communities follow from the application of CITES decisions (<a id="cites">[CITES & General Secretariat of the Organization of American States, 2015](#f14)</a>).
 
-The elements of the phrase are *CITES/poaching/trafficking + protected species + livelihood of local communities*. In order to specify to the terrestrial and freshwater species, the phrase is combined with **Terrestrial and freshwater terms** with `AND`.
+The elements of the phrase are *CITES/poaching/trafficking + species + livelihoods/local communities*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned).
 
 ```py
 TS=
@@ -1279,12 +1268,8 @@ TS=
     (
       ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
       AND
-        (
-          ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-          NEAR/5
-              ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-              OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-              )
+        ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
+        OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
         )
     )
   )
