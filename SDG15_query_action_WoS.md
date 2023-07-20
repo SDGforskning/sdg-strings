@@ -304,6 +304,7 @@ TS=
       )
     OR "Nagoya Protocol"
     OR "Treaty on Plant Genetic Resources for Food and Agriculture" OR "International Seed Treaty" OR "Plant Treaty" OR "ITPGRFA"
+    OR "Ramsar convention"
     )
 )
 NOT
