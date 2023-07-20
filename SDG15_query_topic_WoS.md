@@ -169,7 +169,7 @@ TS=
   OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable"
   )
   NEAR/15
-    ("habitat$"
+    ("habitat$" OR "nature conservation"
     OR (("communit*") NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
     OR (("ecosystem$" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")) 
     OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
@@ -461,16 +461,18 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about land degradation neutrality (LDN) and protecting soil productivity/fertility. The elements of the phrase are *protecting soil health // Land Degradation Neutrality*.
+This phrase aims to find research about land degradation neutrality (LDN) and protecting soil productivity/fertility. The elements of the phrase are *soil conservation/protecting soil health // Land Degradation Neutrality*.
 
 ```py
 TS=
 (
-  ("protect*" OR "conserv*" OR "preserv*"
+  ("protect*" OR "conserv*" OR "preserv*" OR "restor*" OR "rehabilita*"
   OR "promoting" OR "promote" OR "improv*" OR "enhanc*" OR "strengthen*" OR "maintain*"
-  OR "restor*" OR "rehabilita*" 
   )
-  NEAR/5 ("soil" NEAR/3 ("productivity" OR "fertility" OR "structure" OR "health"))
+  NEAR/5 
+      ("soil" 
+      NEAR/3 ("productivity" OR "fertility" OR "structure" OR "health" OR "protect*" OR "conserv*" OR "preserv*" OR "restor*" OR "rehabilita*")
+      )
 )
 OR
 TS=
@@ -533,7 +535,7 @@ TS=
       OR "CITES"
       ) 
       AND
-        ("ecosystem$" OR "habitat$"
+        ("ecosystem$" OR "habitat$" OR "nature conservation"
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
         OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
