@@ -812,7 +812,7 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.7.1 Proportion of traded wildlife that was poached or illicitly trafficked
 
-This target is interpreted to cover research about poaching and trafficking of protected terrestrial and freshwater species. The target also covers the research about the markets or trade for illegal wildlife products. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. In the phrases, we have limited poaching to protected/endangered species.
+This target is interpreted to cover research about poaching and trafficking of terrestrial and freshwater species. The target also covers the research about the markets or trade for illegal wildlife products. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
 
 Some particularly susceptible species were added to the phrase for better recall. The source for these was The UN's World Wildlife Crime Report (<a id="wwc">[UNODC, 2020](#f13)</a>).
 
@@ -820,47 +820,42 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about poaching and trafficking of protected species.
+This phrase aims to find research about poaching and trafficking of species.
 
-While testing the phrase it was noticed that the combination of `trafficking` and `animal` returns some irrelevant results about animal physiology (receptor trafficking, etc.). These are hard to exclude without losing relevant results.
-
-The elements of the phrase are *poaching/trafficking + protected species*. It is limited by the exclusion of marine habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+The elements of the phrase are *poaching/trafficking + species*. It is limited by the exclusion of marine habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results (particularly here, `traffick*` + `animal` is problematic in cell biology without NOT terms). 
 
 ```py
 TS=
 (
   ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*")
   NEAR/15
-      (
-        ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-        NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
-       
+      ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+      OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "cell*" OR "*membrane*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
 This phrase aims to find research about the markets/trade for illegal wildlife products. In the action approach version of this phrase no action terms are combined with the markets (reduced demand & supply). Therefore this phrase is similar to the action approach version of it, but a wider NEAR distance/AND is used.
 
-The elements of the phrase are *protected species + illegal products + markets*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+The elements of the phrase are *species + illegal products + markets*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
 (
   (
-    (
-      ("protected" OR "endanger*" OR "threatened*" OR "extinct*" OR "vulnerable")   
-      NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
+    ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+    OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
     )
     AND
         (
           ("illegal*" OR "illicit*" OR "criminal" OR "crime")
           NEAR/15
               ("product$" OR "manufact*" OR "merchandise$" OR "artifact*" OR "fabricat*" OR "handicraft$" OR "handiwork$"
-              OR "market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livlihood$"
+              OR "market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livelihood$"
               )
         )
   )
@@ -872,24 +867,23 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 #### Phrase 3
 
-This phrase aims to find research about protected/endangered species mentioning *The Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)*. The elements of the phrase are *protected species + CITES*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about species also mentioning *The Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)*. The elements of the phrase are *species + CITES*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 No action terms are combined with the action approach version of this phrase since it could be assumed that articles mentioning protected/endangered species and CITES are action-oriented. Hence this phrase is identical to the action approach version of it.
 
-The phrase is quite broad and return also some articles which are more about target 15.5 (protection of threatened species) than about the trade on them.
+The phrase is quite broad and return also some articles which are more about target 15.5 (protection of threatened species) than about the trade on them. 
 
-The term `CITES` is combined to a string of species terms in order to exclude irrelevant articles which use cite as a verb. Even still, some such articles are retrived by this phrase.
+The term `CITES` is combined with a couple of NOT terms to try and remove "cite" as a verb. Even still, some such articles are retrived by this phrase. However, if `CITES` is combined, even with many species/animal terms, we lose many relevant works.
 
 ```py
 TS=
 (
-  (
-    ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-    NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
+  ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+  OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
   )
   AND 
     ("Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-    OR ("CITES" NEAR/15 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"))
+    OR ("CITES" NEAR/15 ("article cites" OR "review cites"))
     )
 )
 NOT
