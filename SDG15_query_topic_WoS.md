@@ -1044,15 +1044,13 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.a.1 (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
 
-This target is interpreted to cover research about financing the conservation and sustainable use of biodiversity and ecosystems. Financial resources include development assistance and finance mobilized from economic instruments, including incentives mentioned in the SDG metadata for indicator 15.a.1  (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-0a-01.pdf) and financial instruments or capacity building initiatives mentioned in the HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>).
+This target is interpreted to cover research about financing the conservation and sustainable use of biodiversity and ecosystems. 
+
+Financial resources include development assistance and finance mobilized from economic instruments, including incentives mentioned in the SDG metadata for indicator 15.a.1  (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-0a-01.pdf) and financial instruments or capacity building initiatives mentioned in the HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>).
 
 We assume that all research about financial resources for conserving and sustainable use of biodiversity and ecosystem is relatively action-oriented. Hence, no additional action terms (such as increase, enhance, etc.) were combined with this query and thus this topic version is the same as the action version. 
 
-This query consists of 1 phrase. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
-
-#### Phrase 1
-
-The elements of this phrase are *protection/sustainable use + ecosystem/biodiversity + financing/instruments*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `species` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+This query consists of 1 phrase. The elements of this phrase are *protection/sustainable use + ecosystem/biodiversity + financing/instruments*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `species` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 As the use of term `ecosystem` by others than natural sciences brings irrelevant results, it was combined with a string of species and habitat terms. Terms `community` `area` and `zone` were left out from the phrase in order to exclude irrelevant results.
 
@@ -1060,8 +1058,8 @@ As the use of term `ecosystem` by others than natural sciences brings irrelevant
 TS=
 (
   (
-    ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-    OR "promoting" OR "promote" OR "improv*" OR "restor*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
+    ("protect*" OR "conserv*" OR "restor*" OR "rehabilit*"
+    OR "promot*" OR "improv*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
     OR
       (
         ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
@@ -1069,12 +1067,13 @@ TS=
       )
     )
     NEAR/15
-        (
-          ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
+        ("nature conservation" 
+        OR ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
           ) 
+        OR "ecosystem services" OR "ecosystem restoration"
         OR "habitat$" OR "biotope$"
         OR "biodiversity" OR "biological diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
+        OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
         OR "Rio marker$"
         )
   )
@@ -1083,7 +1082,7 @@ TS=
       OR "financial support" OR "financial resources"
       OR
         (
-          ("incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e")
+          ("incentive$" OR "taxes" OR "tax" OR "fee$" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e")
           NEAR/5 ("biodiversity" OR "biological diversity")
         )
       OR "ODA" OR "cooperation fund$" OR "development spending"
