@@ -416,7 +416,7 @@ TS=
 (
   (
     (
-      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious")
+      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious" OR "auto immune" OR "autoimmune")
       NEAR/5
           ("disease$" OR "illness*")
     )
