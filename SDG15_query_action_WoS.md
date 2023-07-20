@@ -672,7 +672,11 @@ TS=
 >
 > 15.5.1 Red List Index
 
-This target is interpreted to cover research about resisting the degradation of terrestrial and freshwater habitats and their biodiversity, and about restoring and protecting them. It also covers research about protecting threatened species as a part of that.
+This target is interpreted to cover research about: 
+- Reducing the degradation of terrestrial and freshwater habitats (phrase 1)
+- Reducing the loss of biodiversity in these habitats (phrase 2)
+- Conserving/managing or improving the management/conservation of biodiversity (phrase 3)
+- Preventing extinction of threatened species (phrase 4)
 
 All phrases of target 15.5. are combined with **Terrestrial and freshwater terms** either with `AND` or by excluding `marine` habitats, except when a **terrestrial or freshwater term is mentioned**. Because phrases 1 and 2 consist of more general terms, they are combined to **Terrestrial and freshwater terms** with `AND`. For phrases 3 and 4, which consist of terms used primarily in ecology, exclusion of `marine` habitats (except when a terrestrial or freshwater term is mentioned) and some other terms which were detected to bring irrelevant results was found sufficient.
 
@@ -711,13 +715,13 @@ TS=
 (
   ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "prevent*" OR "combat*" OR "halt*" OR "resist*" OR "reduc*" OR "decreas*" OR "minimi*" OR "tackle*")
   NEAR/5
-        (
-          ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
-          NEAR/5
-              ("biodiversity" OR "biological diversity"
-              OR (("diversity" OR "species") NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-              )
-        )
+      (
+        ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
+        NEAR/5
+            ("biodiversity" OR "biological diversity"
+            OR (("diversity" OR "species") NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+            )
+      )
 )
 AND
 TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
@@ -725,7 +729,7 @@ TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" O
 
 #### Phrase 3
 
-This phrase aims to find research about promoting biodiversity and research about protecting threatened species.
+This phrase aims to find research about managing/conserving biodiversity.
 
 The concept of *threatened species* is interpreted according to the classification of the SDG metadata for indicator 15.5.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-05-01.pdf): 
 > "Threatened species are those listed on The IUCN Red List of Threatened Species in the categories Vulnerable, Endangered, or Critically Endangered (i.e., species that are facing a high, very high, or extremely high risk of extinction in the wild in the medium-term future)."
@@ -735,18 +739,16 @@ The elements of the phrase are *protecting / action + conservation/key biodivers
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore" OR "promote"
+  ("manage" OR "conserve" OR "protect" OR "restore" OR "promote" OR "rehabilitate"
   OR
     (
-      ("promot*" OR "restor*" OR "rehabilita*" OR "support*" OR "ensur*" OR "prioriti$e"
-      OR "improv*" OR "enhanc*" OR "strengthen*" OR "increas*"
+      ("promot*" OR "support*" OR "ensur*" OR "prioriti$e" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "facilitat*"
       OR "maintain*"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*"
       OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
-      OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
       )
       NEAR/5
-          ("management" OR "conservation" OR "protection" OR "restoration"
+          ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation"
           OR "key biodiversity area$" OR "KBA$"
           OR "important sites for biodiversity"
           )
@@ -754,13 +756,13 @@ TS=
   )
   NEAR/5
       ("biodiversity" OR "biological diversity"
-      OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
       OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
       OR "Red List Index"
       OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
       )
 )
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "microbiome$" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 4
@@ -775,8 +777,7 @@ TS=
     OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "tackle*"
     OR "reduc*" OR "decreas*" OR "minimi*"
     )
-    NEAR/5
-        ("extinction" OR "loss" OR "going extinct")
+    NEAR/5 ("extinction" OR "loss" OR "going extinct")
   )
   NEAR/15
         (

@@ -583,7 +583,11 @@ TS=
 >
 > 15.5.1 Red List Index
 
-This target is interpreted to cover research about the degradation of terrestrial and freshwater habitats and their biodiversity. It also covers research about changes in biodiversity, and the extinction of threatened species.
+This target is interpreted to cover research about: 
+- Degradation of terrestrial and freshwater habitats (phrase 1)
+- Loss of biodiversity in these habitats (phrase 2)
+- Management and conservation of biodiversity, or changes in biodiversity (phrase 3)
+- Extinction of threatened species (phrase 4)
 
 All phrases of target 15.5. are combined with **Terrestrial and freshwater terms** either with `AND` or by excluding `marine` habitats, except when a **terrestrial or freshwater term is mentioned**. Because phrases 1 and 2 consist of more general terms, they are combined to **Terrestrial and freshwater terms** with `AND`. For phrases 3 and 4, which consist of terms used primarily in ecology, exclusion of `marine` habitats (except when a terrestrial or freshwater term is mentioned) and some other terms which were detected to bring irrelevant results was found sufficient.
 
@@ -613,10 +617,10 @@ This phrase aims to find research about the loss of biodiversity. The elements o
 ```py
 TS=
 (
-    ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
-    NEAR/5
+  ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
+  NEAR/5
       ("biodiversity" OR "biological diversity"
-      OR (("diversity" OR "species") NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR (("diversity" OR "species") NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
       )
 )
 AND
@@ -638,37 +642,42 @@ The elements of the phrase are *action + biodiversity/key biodiversity areas/thr
 TS=
 (
   (
-    ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "restore" OR "restoring"
-    OR "management" OR "conservation" OR "protection" OR "restoration" OR "rehabilit*" OR "preserve" OR "preservation" OR "preserved"
+    ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*" OR "preserv*"
     ) 
     AND 
         ("biodiversity" OR "biological diversity" 
-        OR "key biodiversity area$" 
-        OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "important sites for biodiversity" 
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
+        OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR 
+          (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") 
+          NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+          )
         OR "Red List Index"
         OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
         )
   )
 OR
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+    OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
+    OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
+    OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
+    OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
     ) 
     NEAR/5 
       ("biodiversity" OR "biological diversity" 
-      OR "key biodiversity area$" 
-      OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR "important sites for biodiversity" 
-      OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
+      OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR 
+        (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") 
+        NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+        )
       OR "Red List Index"
       OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
       )
   )
+OR "key biodiversity area$" 
+OR "important sites for biodiversity" 
 )
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "microbiome$" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 4
@@ -678,12 +687,23 @@ This phrase aims to find research about the extinction of threatened species. Th
 ```py
 TS=
 (
-  ("extinction" OR "loss" OR "going extinct")
-  NEAR/15
+  (
+    ("extinction" OR "loss" OR "going extinct")
+    AND
         (
           ("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*")
           NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
         )
+  )
+  OR
+  (
+    ("loss")
+    NEAR/5
+        (
+          ("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*")
+          NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+        )
+  )
 )
 NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
