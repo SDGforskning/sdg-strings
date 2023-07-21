@@ -1105,102 +1105,59 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.b.1 (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
 
-This target is interpreted to cover research about financing sustainable forest management. It also covers research about incentives to developing countries for advancing sustainable forest management, conservation of forests and reforestation.
+This target is interpreted to cover research about financing/investments/incentives and either sustainable forest management, forest conservation or reforestatio. This will cover research that considers both positive and negative effects of financing.
 
-This query consists of 2 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.b.
+The elements of the phrase are *financing/incentives/instruments + sustainable use/conservation/reforestation + forests*. 
 
-#### Phrase 1
-
-This phrase aims to find research about financing and incentives for sustainable forest management. The elements of the phrase are *financing/incentives/instruments + sustainable use/practises/strategies/goals + forests*. Part of the phrase (aiming for sustainable forest management) is similar to the 15.2 phrase 1, but the specified management practises are left out of the phrase to exclude results which might be less about sustainability and more about forestry as a business. 
+Part of the phrase (aiming for sustainable forest management) is similar to the 15.2 phrase 1, but the specified management practises are left out of the phrase to exclude results which might be less about sustainability and more about forestry as a business. Terms `planting trees` are added to this string, but not used in the strings of 15.2. In the context of this phrase these terms are likely to return relevant results. Whereas in the strings of 15.2 without the connection to incentives, they might bring noise.
 
 ```py
 TS=
 (
-
   ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
   OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" OR "payment$"
   OR "ODA" OR "cooperation fund$" OR "development spending"
   OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
   )
   AND
     (
       (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
-      )
-    OR
-      (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/15
-            ("practice$" OR "method$" OR "forestry operation$"
-            OR "policy" OR "policies"
-            OR "Forest area change"
-            OR "Above-ground biomass in forest"
-            OR ("Proportion" NEAR/3 "protected areas")
-            OR ("Proportion" NEAR/3 "long-term management plan")
-            OR "Forest under certification"
-            OR "Certified forest area"
+        ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/5 
+            ("manag*" OR "use" OR "using" OR "forestry" OR "practice$" OR "method$"
+            OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies"
+            OR "Forest area change" OR "Above-ground biomass in forest"
             )
       )
-    OR ("protected" NEAR/3 "forest*")
-    OR ("reserved" NEAR/3 "forest*")
-    OR "UN Strategic Plan for Forests" OR "UNSPF"
-    OR "Global Forest Goals" OR "GFG$"
-    )
-  AND 
-    ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-)
-```
-
-#### Phrase 2
-
-This phrase aims to find research about incentives to developing countries for reforestation and conservation of forests. The elements of the phrase are *financing/incentives/instruments + reforestation/conservation + forests + developing countries*.
-
-Terms `planting trees` and `tree plantations` are added to this string, but not used in the strings of 15.2. In the context of this phrase these terms are likely to return relevant results. Whereas in the strings of 15.2 without the connection to incentives, they might bring noise.
-
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
-
-```py
-TS=
-(
-  ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-  OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-  OR "ODA" OR "cooperation fund$" OR "development spending"
-  OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-  )
-  AND
-  (
-    ("afforestr*" OR "reforestr*"
+    OR
+      ("*forest*"
+      NEAR/5 ("manag*" OR "govern*" OR "administrat*" OR "planning" OR "practice$" OR "policy" OR "policies")
+      )
+    OR "Certified forest$" OR "Forest under certification" OR "forest certification"
+    OR "long-term management plan*"
+    OR
+      (
+        ("restor*" OR "rehabilita*" OR "conserv*" OR "protect*" OR "maintain*" OR "preserv*" ) 
+        NEAR/5 ("*forest*" OR "woodland$")
+      )
+    OR "protected areas$" OR ("protected" NEAR/3 "forest*")
+    OR  "forest reserves" OR ("reserved" NEAR/3 "forest*")
+    OR "afforestr*" OR "reforestr*"
+    OR (("planting" OR "plant") NEAR/3 "tree$")
     OR
       (
         ("increas*" OR "expand*")
         NEAR/5
-          ("woodland$" OR "silvicultur*" OR "arboricultur*"
-          OR ("*forest*" NEAR/3 ("cover*" OR "area$" OR "zone$" OR "*land$"))
-          )
+            ("woodland$" OR "silvicultur*" OR "arboricultur*"
+            OR ("*forest*" NEAR/3 ("cover*" OR "area$" OR "zone$" OR "*land$"))
+            )
       )
-    OR
-      (
-        ("restor*" OR "rehabilita*" OR "conservation" OR "protect*" OR "maintain*" OR "preserv*" ) 
-        NEAR/5 ("*forest*" OR "woodland$")
-      )
-    OR "UN-REDD" OR "UN REDD" OR "United Nations REDD" 
-	  OR (("planting" OR "plant" OR "plantation") NEAR/3 "tree$")
+    OR "UN REDD" OR "United Nations REDD" OR "REDD plus" OR "REDD+"
+    OR "UN Strategic Plan for Forests" OR "UNSPF"
+    OR "Global Forest Goals" OR "GFG$"
     )
-  )
   AND ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-  AND
-    ("least developed countr*" OR "least developed nation$"
-    OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
-    OR "less developed countr*" OR "less developed nation$" OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$"
-    OR "middle income countr*" OR "middle income nation$"
-    OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
-    OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
-    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-    OR  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"      OR  "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"      OR  "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"      OR   "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"  OR "turkey" OR "georgia"
-    )
 )
 ```
 
