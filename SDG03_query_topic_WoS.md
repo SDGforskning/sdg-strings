@@ -652,7 +652,7 @@ TS =
 (
   ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
   OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "vaccine$" OR "immuni$ation"
+  OR "vaccine$" OR "vaccination$" OR "immuni$ation"
   OR (("essential" OR "basic" OR "life saving" OR "necessary" OR "emergency") NEAR/3 ("medicines" OR "medication$" OR "treatment*" OR "therap*"))
   OR "treatment access" OR "access to treatment$"
   )
