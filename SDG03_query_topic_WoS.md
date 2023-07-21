@@ -1055,7 +1055,7 @@ This query consists of 1 phrase. The elements of the phrase are: *health emergen
 TS =
 (
   (
-    ("national health risk$" OR "international health risk$" OR "global health risk$"
+    ("national health risk$" OR "international health risk$" OR "global health risk$" OR "public health risk$"
     OR "pandemic$" OR "epidemic$" OR "outbreak$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
