@@ -1225,16 +1225,15 @@ TS=
             )
       )
     OR
-      ("*forest*"
-      NEAR/5 ("manag*" OR "govern*" OR "administrat*" OR "planning" OR "practice$" OR "policy" OR "policies")
+      (
+        ("*forest*" OR "woodland$")
+        NEAR/5 
+            ("manag*" OR "govern*" OR "administrat*" OR "planning" OR "practice$" OR "policy" OR "policies"
+            OR "restor*" OR "rehabilita*" OR "conserv*" OR "protect*" OR "maintain*" OR "preserv*"
+            )
       )
     OR "Certified forest$" OR "Forest under certification" OR "forest certification"
     OR "long-term management plan*"
-    OR
-      (
-        ("restor*" OR "rehabilita*" OR "conserv*" OR "protect*" OR "maintain*" OR "preserv*" ) 
-        NEAR/5 ("*forest*" OR "woodland$")
-      )
     OR "protected areas$" OR ("protected" NEAR/3 "forest*")
     OR  "forest reserves" OR ("reserved" NEAR/3 "forest*")
     OR "afforestr*" OR "reforestr*"
