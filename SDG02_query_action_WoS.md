@@ -1033,8 +1033,6 @@ TS=
 
 This target is interpreted to cover research about preventing price volatility in food/agriculture, and about ensuring stable food commodity markets. The basic structure is *action + volatility/stability + agricultural markets/prices*.
 
-#### Phrase 1
-
 ```py
 TS=
 (

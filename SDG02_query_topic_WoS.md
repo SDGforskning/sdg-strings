@@ -823,7 +823,7 @@ This target is interpreted to cover research about subsidies (and equivalents), 
 
 This query consists of 2 phrases.
 
-#### Phrase 1:
+#### Phrase 1
 
 The elements of the phrase are: *export subsidies + agriculture/food*.
 
@@ -835,7 +835,7 @@ TS=
 )
 ```
 
-#### Phrase 2:
+#### Phrase 2
 
 The elements of the phrase are: *distortions + agricultural markets/exports/imports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
 
@@ -863,8 +863,6 @@ TS=
 > 2.c.1 Indicator of food price anomalies
 
 This target is interpreted to cover research about food prices and markets, stable food prices, and stable food markets. The elements of the phrase are: *volatility/stability + agricultural markets/prices OR food prices + markets*.
-
-#### Phrase 1:
 
 ```py
 TS=
