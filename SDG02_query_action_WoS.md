@@ -320,7 +320,7 @@ TS= (
                   )
                 OR
                   (
-                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
                     OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                     )
                     NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
@@ -366,14 +366,14 @@ TS=
       OR "aquaculture" OR "fish farm*" OR "mariculture"
       OR
         (
-          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
         )  
       OR
         (
-          ("crop$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
+          ("crop$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
           NEAR/5 "yield$"
         )     
       OR "grain yield$"     
@@ -418,7 +418,7 @@ TS=
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
-      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "legume$"
       OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
       OR
         (
@@ -474,7 +474,7 @@ TS=
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
-    OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+    OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "legume$"
     OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
     OR
       (
@@ -553,7 +553,7 @@ TS=
     OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -595,7 +595,7 @@ TS=
     OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -637,7 +637,7 @@ TS=
   OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
   OR   
     (
-      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
       OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
       )
       NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -710,7 +710,7 @@ TS=
         ("local" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
         NEAR/1 
           ("breed$" OR "variet*" OR "cultivar$" 
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
           )
       )
@@ -770,7 +770,7 @@ TS=
             OR "permaculture" OR "cropping system$" OR "orchard$"
             OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
             OR "aquaculture" OR "mariculture"
-            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
             OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
             OR "landrace$" OR "wild relative$"
             OR
@@ -816,7 +816,7 @@ TS=
           OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
           OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
           OR "aquaculture" OR "mariculture"
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
           OR "landrace$" OR "wild relative$"
           OR
@@ -872,7 +872,7 @@ TS=
       OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
       OR "aquaculture" OR "mariculture"
-      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
       OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
       OR "landrace$" OR "wild relative$"
       OR
@@ -904,7 +904,7 @@ TS =
         OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
         OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
         OR "aquaculture" OR "mariculture"
-        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         OR "landrace$" OR "wild relative$"
         OR
@@ -1020,7 +1020,7 @@ TS=
   NEAR/15
       (
         ("trade" OR "trading" OR "market$" OR "export$" OR "import$")
-        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
+        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
       )
 )
 ```
@@ -1059,7 +1059,7 @@ TS=
         (
           ("price$" OR "market$")
           NEAR/5
-            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
+            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
         )
 )
 ```
