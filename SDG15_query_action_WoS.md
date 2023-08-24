@@ -1261,7 +1261,7 @@ TS=
 >
 > 15.c.1 Proportion of traded wildlife that was poached or illicitly trafficked
 
-This target is interpreted to cover research about poaching and a) capacity and support (e.g. education, collaboration), or b) local communities' or opportunities for sustainable livelihood. We settled on this interpretation as it covers a slightly more specific aspect than 15.7, which is more widely about combatting poaching. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
+This target is interpreted to cover research about poaching and a) capacity and support (e.g. education, collaboration), or b) local communities or sustainable livelihoods. We settled on this interpretation as it covers a slightly more specific aspect than 15.7, which is more widely about combatting poaching. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
 
 This string is currently the same as the *topic approach* - no specific action terms are included. Works about e.g. "capacity building" are likely already quite action-oriented.
 
