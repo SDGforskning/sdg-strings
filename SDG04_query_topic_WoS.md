@@ -170,7 +170,7 @@ TS=
   "school readiness"
   OR
     (
-      ("ready" OR "readiness" OR "prepared*")
+      ("ready" OR "readiness" OR "prepared*" OR "transition")
       NEAR/5
         ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
     )
