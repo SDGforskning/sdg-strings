@@ -167,7 +167,7 @@ TS=
     OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
     )
     NEAR/5
-      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*")
   )
   NEAR/5
       ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
@@ -224,7 +224,7 @@ TS=
     (
       ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
       NEAR/5
-        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*" OR "afford*")
     )
   OR
     (
@@ -234,7 +234,7 @@ TS=
       OR "improv*" OR "manag*"
       )
       NEAR/5
-        ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
+        ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
     )
   )
   NEAR/15
@@ -261,7 +261,7 @@ TS=
         (
           ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
           NEAR/5
-              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*")
         )
       OR
         (
@@ -271,7 +271,7 @@ TS=
           OR "improv*" OR "manag*"
           )
           NEAR/5
-              ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
+              ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
         )
     )
     NEAR/15 ("access")
@@ -432,7 +432,7 @@ TS=
       (
         ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
         NEAR/5
-            ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
+            ("inequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
             OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*"
             )
       )
@@ -468,7 +468,7 @@ TS=
         OR "improv*"
         )
         NEAR/5
-            ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"
+            ("discriminat*" OR "non-discriminat*" OR "inequit*" OR "disparit*"
             OR "barrier*" OR "obstacle*"
             )
       )
