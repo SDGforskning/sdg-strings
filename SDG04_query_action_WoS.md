@@ -708,7 +708,7 @@ TS=
 >
 > 4.b.1 Volume of official development assistance flows for scholarships by sector and type of study
 
-This target is interpreted to cover research about the availability of scholarships to students from developing countries and African countries.
+This target is interpreted to cover research about scholarships to students from developing countries and African countries.
 
 This query consists of 1 phrase.
 
