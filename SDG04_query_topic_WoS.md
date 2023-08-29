@@ -611,7 +611,7 @@ TS=
   (
     ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
     NEAR/15
-        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility")
+        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility" OR "study abroad" OR "overseas stud*")
   )
 AND
   ("least developed countr*" OR "least developed nation$"
