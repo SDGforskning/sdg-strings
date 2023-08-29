@@ -205,7 +205,7 @@ TS=
   (
     ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
     OR
-    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+    ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
   )
   NEAR/5
       ("higher education"
@@ -230,7 +230,7 @@ TS=
       ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
       OR
       (
-       ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+       ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
       )
     )
     NEAR/15 ("access")
