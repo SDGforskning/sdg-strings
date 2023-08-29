@@ -149,7 +149,7 @@ The search term "care" is not used alone as it would give too many hits that are
 TS=
 (
  (
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*")
  )
   NEAR/5
       ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
@@ -203,9 +203,9 @@ The basic structure is *access/barriers + higher education*
 TS=
 (
   (
-    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*" OR "afford*")
     OR
-    ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
+    ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
   )
   NEAR/5
       ("higher education"
@@ -227,10 +227,10 @@ TS=
 (
   (
     (
-      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*")
       OR
       (
-       ("barrier$" OR "obstacle$" OR "non-equitab*" OR "inequal*" OR "discriminat*")
+       ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*"  OR "discriminat*")
       )
     )
     NEAR/15 ("access")
@@ -375,7 +375,7 @@ TS=
  (
   ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
    NEAR/5
-   ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
+   ("inequit*" OR " OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
     OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
   )
    NEAR/5
@@ -396,7 +396,7 @@ TS=
     (
      ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*")
       OR
-      ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
+      ("discriminat*" OR "non-discriminat*" OR "inequit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
     )
     NEAR/5 ("school*" OR "educat*" OR "vocational training")
   )
