@@ -152,7 +152,7 @@ TS=
   ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
  )
   NEAR/5
-      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
+      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
       OR (("early childhood" OR "under five$") NEAR/3 "education")
   )
 )
