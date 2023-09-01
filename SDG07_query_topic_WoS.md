@@ -362,7 +362,7 @@ TS=
 (
   ("energy intensity")
   AND
-      ("energy consum*" OR "sustainab*" OR "energy efficiency"
+      ("energy consum*" OR "energy-saving" OR "sustainab*" OR "energy efficiency"
       OR "GDP" OR "economic" OR "economy" OR "economies"
       OR "industry" OR "industrial" OR "manufacturing"
       OR ("emission$" NEAR/5 ("carbon" OR "co2"))
