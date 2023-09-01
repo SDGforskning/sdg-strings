@@ -273,10 +273,12 @@ The basic structure is *skills + employability/entrepreneurship*
 TS=
 (
   (
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
+   ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
   )
-  NEAR/5
+  NEAR/15
   ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+)
+OR TS=(("entrepreneur* education")
 )
 ```
 #### Phrase 2
@@ -292,6 +294,11 @@ TS=
   NEAR/5 
   ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
  )
+OR TS= (
+("unemploy*" OR "underemploy*") NEAR/15
+("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" OR "training program*" OR "vocational training" OR "skills training" OR "new skills")
+)
+
  ```
 
 #### Phrase 3
@@ -314,7 +321,8 @@ TS=
     OR ("leader*" NEAR/5 ("skills" OR "effectiv*"))
     OR ("follow*" NEAR/3 "supervis*")
     OR ("transfer*" NEAR/3 "skills")
-  )
+    OR "education"
+    OR "professional development" OR "adult education" OR "adult learning" OR "lifelong learning" OR "life long learning" OR "employee development" OR "new skills")
   NEAR/15 "employability"
 )
 ```
