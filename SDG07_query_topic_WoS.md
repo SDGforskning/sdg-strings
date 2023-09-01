@@ -520,7 +520,7 @@ TS=
   OR "green bond$" OR "climate bond$"  
   )
   NEAR/15
-      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
+      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply" OR "clean energy"
       OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
       OR "community energy" OR "community renewable energy"
       OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
