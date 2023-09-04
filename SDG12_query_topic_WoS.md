@@ -344,14 +344,9 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
+This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them. The elements of the phrase are *action(reduce) + material footprint OR use/waste + natural resources/fossil fuels*. The phrase is identical to the corresponding action approach phrase (BAA 12.2 phrase 4).
 
-The phrase is identical to the corresponding action approach phrase (BAA 12.2 phrase 4).
-
-Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise.
-
-
-The elements of the phrase are *action(reduce) + material footprint / use/waste + natural resources/fossil fuels*
+Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise (e.g. "land use" OR "marine habitat use").
 
 ```py 
 TS=
@@ -363,19 +358,19 @@ TS=
       (
         ("use" OR "use" OR "using" OR "usage" OR "utili*" OR "extract*" OR "consumption" OR "consume$" 
         OR "depletion" OR "deplete$" OR "exploit*"
-        OR "waste$" OR "loss" OR "lossed" OR "losses" OR "litter" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-        OR "emission$" OR "effluent$" OR "pollution" OR "pollute$" OR "sewege$" OR "sludge"
+        OR "waste$"
         ) 
         NEAR/5 
             (
-              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$") NEAR/5 ("resource$" OR "material$")) 
+              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$" OR "land" OR "soil$") 
+              NEAR/5 ("resource$" OR "material$")
+              ) 
               OR "natural capital" 
               OR "raw material$" 
               OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*"  
               OR "fishery" OR "fisheries" OR "fish farm$"  
               OR "wildlife" OR "hunt*"
               OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
-              OR "land" OR "soil$" 
               OR "metal$" OR "ore$" 
               OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel" OR "gasoline" OR "kerosene" OR "petroleum"
             ) 
