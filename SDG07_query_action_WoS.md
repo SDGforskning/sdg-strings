@@ -273,7 +273,7 @@ TS=
   (
     (
       ("improv*" OR "increas*" OR "ensur*" OR "implement*")
-      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap")  
+      NEAR/5 ("stable" OR "stability" OR "secur*" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap")  
     )
     OR
     (

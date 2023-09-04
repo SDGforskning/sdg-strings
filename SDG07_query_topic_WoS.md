@@ -196,7 +196,7 @@ This phrase finds works about affordability and reliability of energy services. 
 ```py
 TS=
 (
-  ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap"
+  ("stable" OR "stability" OR "reliab*" OR "secur*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap"
   OR "unstable" OR "instability" OR "unreliab*" OR "unafford*" OR "costly" OR "energy cost$" OR "expensive"
   )
   NEAR/15
