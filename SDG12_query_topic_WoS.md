@@ -117,12 +117,12 @@ TS=
                       OR "sorting" OR "sort$" OR "sorted"
                       )
                 ) 
-              OR "cleaner production"
               )
         ) 
         OR "ecobuilding$" 
         OR "ecotourism" 
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
+        OR "cleaner production"
         OR 
           (
             ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
