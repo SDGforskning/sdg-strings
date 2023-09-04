@@ -71,7 +71,7 @@ Some of the terms used in this phrase are central to the focus of this target, b
 
 The elements of the phrase are *action(implement) + programmes/policies + sustainable+consumption/production / elements of SCP*
 
-`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method").
+`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 ```py 
 TS=
@@ -102,7 +102,6 @@ TS=
               OR "consumption" OR "consume$" OR "consumer$" 
               OR "retail" OR "retailer$" OR "trade" OR "market*"
               OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$" 
-              OR "lifestyle$" OR "life style$" 
               OR "procurement$" OR "acquisition$" OR "purchas*" OR "investment$" 
               OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
               OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
@@ -130,6 +129,7 @@ TS=
         OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
         OR "cleaner production"
+        OR "sustainable lifestyle$" OR "sustainable life style$" OR "green lifestyle$" OR "eco lifestyle$" OR "environmental lifestyle$"
         OR 
           (
             ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
@@ -1200,7 +1200,6 @@ TS=
             OR "consumption" OR "consume$" OR "consumer$" 
             OR "retail" OR "retailer$" OR "trade" OR "market*"
             OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$" 
-            OR "lifestyle$" OR "life style$" 
             OR "procurement$" OR "acquisition$" OR "purchas*" OR "investment$" 
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
             OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
@@ -1228,6 +1227,7 @@ TS=
         OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
         OR "cleaner production"
+        OR "sustainable lifestyle$" OR "sustainable life style$" OR "green lifestyle$" OR "eco lifestyle$" OR "environmental lifestyle$"
         OR 
           (
             ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
