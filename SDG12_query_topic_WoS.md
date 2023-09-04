@@ -69,25 +69,22 @@ Terms used for policy instruments are paralelled with programmes and were found 
 
 Some of the terms used in this phrase are central to the focus of this target, but also so generally used that they bring results about research which is not relevant to the targets of SDG 12. For example `resource efficiency` is used in computing sciences, human resources management and when discussing health and social services. `Reuse of resources` can refer to e.g. reuse of data resources and `sustainable housing` can also be about e.g. affordable housing. Also term `green` even when combined the specific terms of the phrase brings results which mention green e.g. as a colour or a name of a person.    
 
-
 The elements of the phrase are *programmes/policies + sustainable+consumption/production / elements of SCP*
+
+`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method").
 
 ```py
 TS=
 (
-  (
-        ("10 Year Framework of Programmes" OR "10-Year Framework of Programmes" OR "10YFP" 
-        OR 
-          ("policy" OR "policies" OR "governmental" OR "governance" OR "action plan$" 
-          OR "regulation" OR "regulatory" OR "legal" OR "law$" OR "standard$" OR "code$ of conduct" 
-          OR "accounting" OR "reporting" 
-          OR 
-            (
-              ("national*" OR "regional*" OR "sector*" OR "international*" OR "multi-level") 
-              NEAR/3 ("strateg*" OR "framework$" OR "programme$" OR "program$" OR "plan" OR "planning" OR "plans" OR "target$" OR "goal$" OR "instruments")
-            )
-          )
-        )
+  ("10 Year Framework of Programmes" OR "10-Year Framework of Programmes" OR "10YFP" 
+  OR "policy" OR "policies" OR "governmental" OR "governance" OR "action plan$" 
+  OR "regulation" OR "regulatory" OR "legal" OR "law$" OR "standards" OR "code$ of conduct" 
+  OR "accounting" OR "reporting" 
+  OR 
+    (
+      ("national*" OR "regional*" OR "sector*" OR "international*" OR "multi-level") 
+      NEAR/3 ("strateg*" OR "framework$" OR "programme$" OR "program$" OR "plan" OR "planning" OR "plans" OR "target$" OR "goal$" OR "instruments" OR "standard$")
+    )
   )
   AND 
       (
