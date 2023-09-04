@@ -500,7 +500,12 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 
 > 12.4.2 (a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment
 
-This target is interpreted to cover research about a) sustainable/environmentally sound management of chemicals thoughout their life cycle, and research about international agreements on chemical management. The target also covers b) research about sustainable management of all wastes and c) reducing their release to air, water and soil, as well as research about international agreements on management of hazardous wastes. 
+This target is interpreted to cover research about:
+- sustainable/environmentally sound management of chemicals throughout their life cycle, including international agreements on chemical management (phrase 1 and 2)
+- sustainable management of all wastes, including international agreements on management of hazardous wastes (phrase 2)
+- reducing the release of chemicals and hazardous wastes to the air, water and soil (phrase 3)
+- reducing the risks of chemicals and hazardous wastes to human health or the environment (phrase 4)
+- unsustainable management of chemicals and waste (phrase 5)
 
 UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphesise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
 
@@ -520,10 +525,10 @@ TS=
 (
   (
     (
-      ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe") 
+      ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
       NEAR/5 
           ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
-          OR "disposal" OR "transport*" OR "process*" OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
+          OR "disposal" OR "transport*" OR "process*" OR "storage" OR "storing" OR "stored" OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
           ) 
     )
     NEAR/5 
