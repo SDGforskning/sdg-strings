@@ -480,26 +480,48 @@ Although the target specifies levels where food loss happens (production, supply
 
 #### Phrase 1
 
-This phrase aims to find research about reducing food loss and waste on all levels. Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf
+This phrase aims to find research about reducing food loss and waste on all levels. The elements of the phrase are *action + food/harvest loss OR capacity + food/harvest loss*.
 
-Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
+The *capacity* terms included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf. Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
 
 Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition. 
-
-The elements of the phrase are *action(reduce) + food loss*
 
 
 ```py 
 TS=
 (
   (
-    ("reduc*" OR "minim*" OR "decreas*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
-    OR "avoid*" OR "prevent*" OR "combat*" OR "tackl*" OR "halt*" OR "resist*" OR "lowering" OR "lower$" OR "lowered"
-    ) 
-    NEAR/5 
-      ("food loss" OR "food losses" 
-      OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+    (
+      ("reduc*" OR "minim*" OR "decreas*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
+      OR "avoid*" OR "prevent*" OR "combat*" OR "tackl*" OR "halt*" OR "resist*" OR "lowering" OR "lower$" OR "lowered"
       )
+      NEAR/5
+          ("food loss" OR "food losses" 
+          OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+          OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
+          )
+    )
+  OR
+    (
+      ("campaign$" OR "educat*" OR "awareness" OR "training" OR "knowledge"
+      OR "communication" OR ("dissiminat*" NEAR/3 "information") 
+      OR "collaboration$" OR "partnership$" 
+      OR "policy" OR "policies" OR "strateg*" OR "programme$" OR "program$" OR "initiative$" OR "governance"
+      OR (("cost-benefit" OR "cost benefit") NEAR/3 ("analy?is" OR "analy?es" OR "analy?e")) 
+      OR "intervention$" 
+      OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
+      OR "financial support" OR "financial resources"
+      OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+      OR "ODA" OR "cooperation fund$" OR "development spending"
+      OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
+      OR (("technical*" OR "managerial") NEAR/3 "support*") 
+      ) 
+      NEAR/15 
+          ("food loss" OR "food losses" 
+          OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+          OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
+          )
+    )
   ) 
 NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
 )
@@ -508,54 +530,12 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 
 #### Phrase 2
 
-This phrase aims to find research about instruments involved in food waste. The instruments included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
-
-The instruments are combined to food loss, but not to reducing it, i.e. this phrase has no action terms. We assume that articles about the instruments combined with food loss are relevant to reducing food waste.
-
-Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition.
-
-
-The elements of the phrase are *instruments/capasity building + food loss*
-
-```py
-TS=
-(
-  (
-    ("campaign$" OR "educat*" OR "awareness" OR "training" OR "knowledge"
-    OR "communication" OR ("dissiminat*" NEAR/3 "information") 
-    OR "collaboration$" OR "partnership$" 
-    OR "policy" OR "policies" OR "strateg*" OR "programme$" OR "program$" OR "initiative$" OR "governance"
-    OR (("cost-benefit" OR "cost benefit") NEAR/3 ("analy?is" OR "analy?es" OR "analy?e")) 
-    OR "intervention$" 
-    OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-    OR "financial support" OR "financial resources"
-    OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-    OR "ODA" OR "cooperation fund$" OR "development spending"
-    OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-    OR (("technical*" OR "managerial") NEAR/3 "support*") 
-    )
-    NEAR/15
-        ("food loss" OR "food losses" 
-        OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")) 
-        OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
-        )
-  ) 
-NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
-)
-
-```
-
-
-#### Phrase 3
-
-This phrase aims to find research about preventing waste in food production/processing/supply chains/retail/consumption. 
+This phrase aims to find research about preventing waste in food production/processing/supply chains/retail/consumption. The elements of the phrase are *action(prevent) + waste/loss + food production/processing/supply chains/retail/consumption*.
 
 The metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf was used to find most of the specifying terms for food commodities and levels of handling food (harvest, slaughter, storage, transportation, processing, packaging, retail). Terms for food handling were found also from UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
 Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition.
 
-
-The elements of the phrase are *action(prevent) + waste/loss + food+production/processing/supply chains/retail/consumption*
 
 ```py 
 TS=
