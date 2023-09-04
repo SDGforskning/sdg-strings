@@ -220,7 +220,7 @@ TS=
     OR 
       (
           ("sustainabl*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "long-term management plan")
-          NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging") 
+          NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging" OR "mining") 
       )
     OR ("water" NEAR/3 ("sustainabl$" NEAR/3 "use")) 
     OR "Global Forest Goals"  
@@ -229,10 +229,50 @@ TS=
     OR "International Resource Panel"
   )    
 )
-
 ```
 
 #### Phrase 2
+
+This phrase aims to find research about unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. The elements of the phrase are *unsustainable use/practises + natural resources*.
+
+Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results. Term `water` does not appeare as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
+
+```py 
+TS=
+( 
+  (
+    (
+      (
+        ("unsustainab*" OR "irresponsib*" OR "unecological*")
+        NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+      ) 
+      OR ("inefficien*" NEAR/3 ("use" OR "using" OR "usage" OR "utili*"))
+    )
+    NEAR/15
+        (
+          (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
+          OR "natural capital" 
+          OR "raw material$" 
+          OR "*forest*" OR "woodland$"
+          OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
+          OR "fishery" OR "fisheries" OR "fish farm$" 
+          OR "wildlife" OR "hunt*"
+          OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater" OR "water management"
+          OR "land" OR "soil$" 
+          OR "mineral$" OR "metal$" OR "ore$"
+          OR "fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
+        )
+  )
+  OR 
+  (
+    ("unsustainabl*" OR "irresponsib*" OR "unecological*")
+    NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging" OR "mining") 
+  )
+  OR ("water" NEAR/3 "unsustainable us*")      
+)
+```
+
+#### Phrase 3
 
 This phrase aims to find research about sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4. 
 
@@ -278,7 +318,7 @@ TS=
 
 ```
 
-#### Phrase 3
+#### Phrase 4
 
 This phrase aims to find research about efficient use of natural resources, including e.g. circular economy, recycling materials and material footprint analyses. It also searches for saving/conserving natural resources, eco-labelling and environmental certification included. 
 
@@ -354,7 +394,7 @@ TS=
 
 ```
 
-#### Phrase 4
+#### Phrase 5
 
 This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
 
@@ -395,64 +435,6 @@ TS=
     )
 )
 
-```
-#### Phrase 5
-
-This phrase aims to find research about unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. A specific sentence for sustainable forest management, used in SDG 15 target 15.2, is included in the phrase. 
-
-Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results.
-
-Term `water` does not appeare as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
-
-The elements of the phrase are *unsustainable use/practises + natural resources*.
-
-```py 
-TS=
-( 
-      (
-        (
-          (
-            (
-              ("unsustainab*" OR "irresponsib*" OR "unecological*")
-                NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
-            ) 
-            OR ("inefficien*" NEAR/3 ("use" OR "using" OR "usage" OR "utili*"))
-          )
-        NEAR/15
-          (
-            (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
-            OR "natural capital" 
-            OR "raw material$" 
-            OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
-            OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
-            OR "fishery" OR "fisheries" OR "fish farm$" 
-            OR "wildlife" OR "hunt*"
-            OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater" OR "water management"
-            OR "land" OR "soil$" 
-            OR "mineral$" OR "metal$" OR "ore$"
-            OR "fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
-          )
-        )
-        OR 
-        (
-          ("unsustainabl*" OR "irresponsib*" OR "unecological*")
-          NEAR/5
-              (
-                ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*") 
-                NEAR/5 
-                  ("practice$" OR "method$" OR "forestry operation$"
-                  OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                  OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                  OR "rotation"
-                  OR "regeneration" OR ("tree$" NEAR/3 "planting") 
-                  OR "drainage"
-                  OR ("proportion" NEAR/3 "long-term management plan")
-                  )
-                )
-        )
-        OR ("water" NEAR/3 ("unsustainable us*"))      
-      )
-)
 ```
 
 
