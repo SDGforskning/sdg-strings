@@ -209,7 +209,7 @@ TS=
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
         NEAR/3 
-            ("manag*" OR "extract*" OR "resource us*" OR "usage" OR "practice$"
+            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$"
             OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
             )
       )
@@ -259,7 +259,7 @@ TS=
           (
             (
               ("unsustainab*" OR "irresponsib*" OR "unecological*")
-                NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+              NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "consume$" OR "consumer$" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
             ) 
             OR ("inefficien*" NEAR/3 ("use" OR "using" OR "usage" OR "utili*"))
           )
@@ -289,6 +289,124 @@ TS=
 ```
 
 #### Phrase 3
+
+This phrase aims to find research about promoting efficient use of natural resources, including e.g. circular economy, recycling materials and material footprint analyses. It also searches for saving/conserving natural resources, eco-labelling and environmental certification included. 
+
+By the indicators of this target, it was interpreted to urge to understand the material footprint of commodities. This is why we have not linked `material/product lifecycles` to natural resources, but left them to be found independently. Term `footprint analysis`, however, is linked with natural resources in order to exclude irrelevant results about e.g. analysis of human feet. The footprint/lifecycles sentence is in two parts to reduce noise which in other phrases about footprint/lifecycle analysis (12.1.1&2, 12.5.2, 12.8.2 and 12.a.1) is controlled by linkage to `sustainability`. Even still, `lifecycles` brings some irrelevant results about e.g. lifecycles of animals.  
+
+After a discussion with a specialist we concluded that `circular economy` does not need to be combined with `natural resources` since (as far as we understand) circular economy is always about using (either renewable on nonrenewable) natural resources one way or another. Terms refering to `recycling` are linked to a set of related terms in order to exclude results from fields not relevant to SDG 12.
+
+The elements of the phrase are *action(promote) + circularity/recycling/material lifecycles/ecolabelling OR efficient use/sustainable consumption/footprint + natural resources*
+
+`mining` is not used here as in phrases 1 and 2, as it mostly returns irrelevant extra results about e.g. pattern mining, opinion mining.
+
+```py 
+TS=
+(
+  ("promote" OR "enable" OR "increase" OR "establish*" OR "develop" OR "development"
+  OR "propose*" OR "proposal$" OR "implement*" OR "prioriti?e" 
+  OR "ensur*" OR "assure" OR "strengthen" OR "improv*" OR "advance"
+  )
+  NEAR/5 
+    (
+      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+      OR 
+        (
+          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
+          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
+          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
+          OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+          OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
+          ) 
+          NEAR/5 
+              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
+              OR "packaging" OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              OR "resource$" OR "material$" OR "matter" OR "biomass" 
+              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewege$" OR "sludge"
+              )
+        )
+      OR 
+        (
+          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
+          NEAR/5 ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$")
+        ) 
+      OR
+        (
+          (
+            (
+              ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
+              NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+            )
+          OR (("saving" OR "save$" OR "conserv*" OR "efficien*") NEAR/5 ("use" OR "using" OR "usage" OR "utili*" OR "consumption"))   
+          OR ("footprint" NEAR/3 ("analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"))      
+          OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
+          OR 
+            (
+              ("certification" OR "certificate$" OR "label$" OR "labelling") 
+              NEAR/5 ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green")
+            ) 
+          )
+          NEAR/5 
+            (
+              (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
+              OR "natural capital" 
+              OR "raw material$" 
+              OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
+              OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
+              OR "fishery" OR "fisheries" OR "fish farm$"  
+              OR "wildlife" OR "hunt*"
+              OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
+              OR "land" OR "soil$" 
+              OR "mineral$" OR "metal$" OR "ore$"
+            )    
+        ) 
+    )
+)
+
+```
+
+#### Phrase 4
+
+This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
+
+Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise.
+
+
+The elements of the phrase are *action(reduce) + material footprint / use/waste + natural resources/fossil fuels*
+
+```py 
+TS=
+(
+  ("reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "avoid*") 
+  NEAR/5 
+    ("material footprint" OR "domestic material consumption" OR "ecological footprint" OR "resource footprint"
+    OR
+      (
+        ("use" OR "use" OR "using" OR "usage" OR "utili*" OR "extract*" OR "consumption" OR "consume$" 
+        OR "depletion" OR "deplete$" OR "exploit*"
+        OR "waste$" OR "loss" OR "lossed" OR "losses" OR "litter" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
+        OR "emission$" OR "effluent$" OR "pollution" OR "pollute$" OR "sewege$" OR "sludge"
+        ) 
+        NEAR/5 
+            (
+              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$") NEAR/5 ("resource$" OR "material$")) 
+              OR "natural capital" 
+              OR "raw material$" 
+              OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*"  
+              OR "fishery" OR "fisheries" OR "fish farm$"  
+              OR "wildlife" OR "hunt*"
+              OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
+              OR "land" OR "soil$" 
+              OR "metal$" OR "ore$" 
+              OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel" OR "gasoline" OR "kerosene" OR "petroleum"
+            ) 
+      )
+    )
+)
+
+```
+
+#### Phrase 5
 
 This phrase aims to find research about promoting sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4. 
 
@@ -346,128 +464,6 @@ TS=
         )   
   )
   NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
-)
-
-```
-
-#### Phrase 4
-
-This phrase aims to find research about promoting efficient use of natural resources, including e.g. circular economy, recycling materials and material footprint analyses. It also searches for saving/conserving natural resources, eco-labelling and environmental certification included. 
-
-By the indicators of this target, it was interpreted to urge to understand the material footprint of commodities. This is why we have not linked `material/product lifecycles` to natural resources, but left them to be found independently. Term `footprint analysis`, however, is linked with natural resources in order to exclude irrelevant results about e.g. analysis of human feet. The footprint/lifecycles sentence is in two parts to reduce noise which in other phrases about footprint/lifecycle analysis (12.1.1&2, 12.5.2, 12.8.2 and 12.a.1) is controlled by linkage to `sustainability`. Even still, `lifecycles` brings some irrelevant results about e.g. lifecycles of animals.  
-
-After a discussion with a specialist we concluded that `circular economy` does not need to be combined with `natural resources` since (as far as we understand) circular economy is always about using (either renewable on nonrenewable) natural resources one way or another. Terms refering to `recycling` are linked to a set of related terms in order to exclude results from fields not relevant to SDG 12.
-
-
-The elements of the phrase are *action(promote) + circularity/recycling/material lifecycles/ecolabelling OR efficient use/sustainable consumption/footprint + natural resources*
-
-```py 
-TS=
-(
-  ("promote" OR "enable" OR "increase" OR "establish*" OR "develop" OR "development"
-  OR "propose*" OR "proposal$" OR "implement*" OR "prioriti?e" 
-  OR "ensur*" OR "assure" OR "strengthen" OR "improv*" OR "advance"
-  )
-  NEAR/5 
-    (
-      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
-      OR 
-        (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
-          OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
-          ) 
-          NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
-              OR "packaging" OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
-              OR "resource$" OR "material$" OR "matter" OR "biomass" 
-              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewege$" OR "sludge"
-              )
-        )
-      OR 
-        (
-          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
-          NEAR/5 ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$")
-        ) 
-      OR "ecolabel*" OR "eco-label*" OR "environmental label$"
-      OR 
-        (
-          ("certification" OR "certificate$" OR "label$" OR "labelling") 
-          NEAR/5 ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green")
-        )
-      OR
-        (
-          (
-            (
-              ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-              NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
-            )
-          OR (("saving" OR "save$" OR "conserv*" OR "efficien*") NEAR/5 ("use" OR "using" OR "usage" OR "utili*" OR "consumption"))   
-          OR 
-            (
-              ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-              NEAR/5 ("consumption" OR "consume$" OR "consumer$" OR "design*" OR "technolog*")
-            ) 
-          OR ("footprint" NEAR/3 ("analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"))      
-          )
-          NEAR/5 
-            (
-              (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
-              OR "natural capital" 
-              OR "raw material$" 
-              OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
-              OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
-              OR "fishery" OR "fisheries" OR "fish farm$"  
-              OR "wildlife" OR "hunt*"
-              OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
-              OR "land" OR "soil$" 
-              OR "mineral$" OR "metal$" OR "ore$"
-            )    
-        ) 
-    )
-)
-
-```
-
-#### Phrase 5
-
-This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
-
-Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise.
-
-
-The elements of the phrase are *action(reduce) + material footprint / use/waste + natural resources/fossil fuels*
-
-```py 
-TS=
-(
-  ("reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "avoid*") 
-  NEAR/5 
-    ("material footprint" OR "domestic material consumption" OR "ecological footprint" OR "resource footprint"
-    OR
-      (
-        ("use" OR "use" OR "using" OR "usage" OR "utili*" OR "extract*" OR "consumption" OR "consume$" 
-        OR "depletion" OR "deplete$" OR "exploit*"
-        OR "waste$" OR "loss" OR "lossed" OR "losses" OR "litter" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-        OR "emission$" OR "effluent$" OR "pollution" OR "pollute$" OR "sewege$" OR "sludge"
-        ) 
-        NEAR/5 
-            (
-              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$") NEAR/5 ("resource$" OR "material$")) 
-              OR "natural capital" 
-              OR "raw material$" 
-              OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*"  
-              OR "fishery" OR "fisheries" OR "fish farm$"  
-              OR "wildlife" OR "hunt*"
-              OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
-              OR "land" OR "soil$" 
-              OR "metal$" OR "ore$" 
-              OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel" OR "gasoline" OR "kerosene" OR "petroleum"
-            ) 
-      )
-    )
 )
 
 ```
