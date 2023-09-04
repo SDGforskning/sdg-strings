@@ -197,14 +197,17 @@ TS=
     (
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-        NEAR/3 ("manag*" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies")
+        NEAR/3 
+            ("manag*" OR "extract*" OR "resource us*" OR "usage" OR "practice$"
+            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+            )
       )
       NEAR/15
           (
             (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
             OR "natural capital" 
             OR "raw material$" 
-            OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
+            OR "*forest*" OR "woodland$"
             OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
             OR "fishery" OR "fisheries" OR "fish farm$"  
             OR "wildlife" OR "hunt*"
@@ -217,18 +220,7 @@ TS=
     OR 
       (
           ("sustainabl*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "long-term management plan")
-            NEAR/5
-              (
-                ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*") 
-                NEAR/5 
-                  ("practice$" OR "method$" OR "forestry operation$"
-                  OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                  OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                  OR "rotation"
-                  OR "regeneration" OR "planting"
-                  OR "drainage"
-                  )
-              )
+          NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging") 
       )
     OR ("water" NEAR/3 ("sustainabl$" NEAR/3 "use")) 
     OR "Global Forest Goals"  
