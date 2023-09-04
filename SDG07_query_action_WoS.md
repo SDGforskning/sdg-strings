@@ -265,7 +265,7 @@ TS=
 
 #### Phrase 6
 
-This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system. We considered including "insecur*" alongside "unstable", "unreliab*" etc. but decided not to as it added too much noise.
 
 ```py
 TS=
