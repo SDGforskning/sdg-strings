@@ -71,7 +71,7 @@ Some of the terms used in this phrase are central to the focus of this target, b
 
 The elements of the phrase are *action(implement) + programmes/policies + sustainable+consumption/production / elements of SCP*
 
-`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
+`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 ```py 
 TS=
@@ -1165,6 +1165,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 The elements of the phrase are *action(develop) + capacity/scientific/technical/skills + sustainable consumption & production + developing countries*
 
+`lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 ```py 
 TS=

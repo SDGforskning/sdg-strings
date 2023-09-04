@@ -71,7 +71,7 @@ Some of the terms used in this phrase are central to the focus of this target, b
 
 The elements of the phrase are *programmes/policies + sustainable+consumption/production / elements of SCP*
 
-`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
+`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 ```py
 TS=
@@ -1078,6 +1078,8 @@ The specific programme areas `consumer information` `sustainable lifestyles and 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 The elements of the phrase are *capacity/scientific/technical/skills + sustainable consumption & production + developing countries*
+
+`lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 
 ```py 
