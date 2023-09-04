@@ -119,8 +119,8 @@ TS=
                 ) 
               )
         ) 
-        OR "ecobuilding$" 
-        OR "ecotourism" 
+        OR "ecobuilding$"OR "eco-building$"
+        OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
         OR "cleaner production"
         OR 
@@ -132,7 +132,7 @@ TS=
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
             ) 
             NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
               OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
               OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
@@ -322,7 +322,7 @@ TS=
           ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
           NEAR/5 ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$")
         ) 
-      OR "ecolabelling" OR "ecolabel$" OR "environmental label$" 
+      OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
       OR 
         (
           ("certification" OR "certificate$" OR "label$" OR "labelling") 
@@ -895,17 +895,17 @@ TS=
               OR "consumption" OR "consume$" OR "efficien*"
               OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
               OR "Sustainable Building and Construction Initiative" OR "SBCI" 
-              OR "cleaner production"
               OR "certification" OR "certificate$" OR "label$" OR "labelling"
               )
           ) 
+          OR "cleaner production"
           OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
           OR 
             (
               ("footprint" OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle") 
               NEAR/3 ("product$" OR "service$" OR "material$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
             ) 
-          OR "ecobuildin$" 
+          OR "ecobuildin$" OR "eco-building*"
           OR "environmentally sound technologies" 
           OR (("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") NEAR/3 ("green" OR "eco" OR "sustainab*")) 
     )
@@ -1048,7 +1048,7 @@ TS=
       ) 
       NEAR/5
       ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "responsible"
-      OR "ecolabelling" OR "ecolabel$" OR "ecobuildin$" 
+      OR "ecolabel*" OR "eco-label*" OR "ecobuilding$" OR "eco-building$" 
       OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
       OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
       OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
@@ -1132,12 +1132,12 @@ TS=
                     OR "sorting" OR "sort$" OR "sorted"
                     )
               ) 
-            OR "cleaner production"
             )
         ) 
-        OR "ecobuilding$" 
-        OR "ecotourism" 
+        OR "ecobuilding$" OR "eco-building$"
+        OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
+        OR "cleaner production"
         OR 
           (
             ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
@@ -1147,7 +1147,7 @@ TS=
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
             ) 
             NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
               OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
               OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
