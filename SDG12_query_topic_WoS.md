@@ -523,15 +523,21 @@ The elements of the phrase are *sustainable + management + chemicals / internati
 ```py 
 TS=
 (
+  "Dubai Declaration on International Chemicals Management" 
+  OR "Strategic Approach to International Chemicals Management" OR "SAICM"
+  OR
   (
-    (
-      ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
-      NEAR/5 
-          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
-          OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
-          OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
-          OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
-          ) 
+    ("cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
+    OR
+      (
+        ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
+        NEAR/5 
+            ("lifecycle$" OR "life cycle$" OR "end of life" 
+            OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
+            OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
+            OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
+            )
+      ) 
     )
     NEAR/5 
       ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" 
@@ -541,8 +547,6 @@ TS=
       OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
       )  
   )
- OR "Dubai Declaration on International Chemicals Management" 
- OR "Strategic Approach to International Chemicals Management" OR "SAICM"
 )
 ```
 
@@ -563,11 +567,12 @@ TS=
       ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
       OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "repurpos*" OR "re-purpos*" 
       OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"
+      OR "cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
       OR
         (
           ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
           NEAR/5 
-              ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
+              ("lifecycle$" OR "life cycle$" OR "end of life"
               OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
               OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
               OR "incinerat*" OR "combust*" OR "collect*" OR "treatment" OR "sorting" OR "sorted"
