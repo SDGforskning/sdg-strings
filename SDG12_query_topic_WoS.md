@@ -514,11 +514,11 @@ Some specifying terms for wastes were found from the UN topic page for *Chemical
 
 #### Phrase 1
 
-The aim of this phrase is to find research about sustainable management of chemicals thoughout their lifecycle, and about international agreements on chemical management. 
+The aim of this phrase is to find research about sustainable management of chemicals and plastic thoughout their lifecycle, and about international agreements on chemical management. 
 
 International agreements included in the phrase are mentioned on the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>). 
 
-The elements of the phrase are *sustainable+management + chemicals / international agreements*
+The elements of the phrase are *sustainable + management + chemicals / international agreements*
 
 ```py 
 TS=
@@ -527,8 +527,10 @@ TS=
     (
       ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
       NEAR/5 
-          ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
-          OR "disposal" OR "transport*" OR "process*" OR "storage" OR "storing" OR "stored" OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
+          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
+          OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
+          OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
+          OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
           ) 
     )
     NEAR/5 
@@ -546,42 +548,38 @@ TS=
 
 #### Phrase 2
 
-The aim of this phrase is to find research about sustainable waste management including recycling, and about international agreements on hazardous wastes mentioned in the metadata for indicator 12.4.1. (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-04-01.pdf. 
+The aim of this phrase is to find research about sustainable waste management including recycling, and about international agreements on hazardous wastes. The elements of the phrase are *international agreements / recycling/sustainable+management + wastes*.
+
+International agreements were taken from the metadata for indicator 12.4.1. (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-04-01.pdf. 
 
 `Recycling` terms are not restricted by sustainability string since recycling is understood as sustainable waste management in itself. According to metadata for indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf `composting` and `codigestion` are included in recycling, but `combustion`not. The structure of this phrase reflects this definition.
-
-The elements of the phrase are *international agreements / recycling/sustainable+management + wastes*
 
 ```py 
 TS=
 (
-      ("Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal" OR "Basel Convention" 
-      OR "Rotterdam Convention on the prior informed consent procedure for certain hazardous  chemicals and pesticides in international trade" OR "Rotterdam Convention" 
-      OR "Stockholm Convention on Persistent Organic Pollutants" OR "Stockholm Convention" 
-      OR "Montreal Protocol on Substances that Deplete the Ozone Layer" OR "Montreal Protocol" 
-      OR "Minamata Convention on Mercury" OR "Minamata Convention" 
-      OR "Bamako Convention on the Ban of the Import into Africa and the Control of Transboundary Movement and Management of Hazardous Wastes within Africa" OR "Bamako Convention"
+  "Basel Convention" OR "Rotterdam Convention" OR "Stockholm Convention" OR "Montreal Protocol" OR "Minamata Convention" OR "Bamako Convention"
+  OR
+    (
+      ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
+      OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "repurpos*" OR "re-purpos*" 
+      OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"
       OR
         (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co?digest*" 
-          OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re  using" OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "refurbish*" OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*"
-          OR
-            (
-              ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe") 
-                NEAR/5 
-                  ("management" OR "handling" OR "packaging" OR "labelling" OR "storing" OR "disposal" OR "dispose$" OR "incinerat*" OR "combust*" OR "collection" OR "collect$" OR "collected" OR "transport*" OR "treatment" OR "processing" OR "processed" OR "end of life" OR "end of chain" 
-                  OR "sorting" OR "sort$" OR "sorted"
-                  ) 
-            )
-          ) 
+          ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
           NEAR/5 
-              ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
-              OR "street sweepings" 
-              OR "construction debris" OR "demolition debris"
+              ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
+              OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
+              OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
+              OR "incinerat*" OR "combust*" OR "collect*" OR "treatment" OR "sorting" OR "sorted"
               ) 
-        )
+        ) 
       )
+    ) 
+    NEAR/5 
+      ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+      OR "street sweepings" 
+      OR "construction debris" OR "demolition debris"
+      ) 
 )
 ```
 
