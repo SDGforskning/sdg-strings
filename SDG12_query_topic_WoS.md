@@ -729,7 +729,7 @@ This phrase aims to find research about recycling, reuse, circular economy and u
 
 Because terms `recycle` `reuse` and `resource efficiency` have various meanings in fields irrelevant to this target, they are combined with a string of terms related to the target (e.g. production, consumption, bioeconomy, waste). Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
 
-Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2. We include `zero-waste` as a stand-alone term, since it refers to the idea of preventing waste products in the first place (i.e. waste generation).
+Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2. We include `zero-waste` as a stand-alone term, since it refers to the idea of preventing waste products in the first place (i.e. waste generation). Terms such as `material efficiency` are combined with *waste* terms because alone they are more relevant to 12.2 - however, the ideas within could still be relevant to reducing waste. 
 
 ```py
 TS=
