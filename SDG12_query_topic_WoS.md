@@ -679,86 +679,109 @@ TS=
 > 
 > 12.5.1 National recycling rate, tons of material recycled
 
-This target is interpreted to cover research about household, municipal and industrial waste generation and about recycling. We interpret circular economy and using sidestreams to be included in in this target. As defined in the metadata for indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf  `construction waste` and `agricultural waste` are not included in the phrases of this target. Some specifying terms for waste generators are picked from the indicator 12.5.1.
+This target is interpreted to cover research about reducing/preventing waste (mucicipal, commercial, etc.), about waste generation and about recycling. We consider this to also cover research about the circular economy and sidestreams.  Some specifying terms for waste generators are picked from the indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf.
 
 The themes of this target are also addressed in target **12.2 phrases 3 and 4** about efficient use of natural resources and reducing waste involved in using them, as well as in target **12.3 phrases 1 and 3** about food loss and waste in food production. Recycling of wastes is also included in target **12.4 phrase 2**.
 
 #### Phrase 1
 
-This phrase aims to find research about household, municipal and industrial waste.
-
-The elements of the phrase are *wastes + generation/households/municipal/industry*
+This phrase aims to find research about reducing waste and waste generation. The elements of the phrase are *reducing + wastes / waste generation/households/municipal/industry*. Some terms are combined with *household/municipal/industry* terms because they are used generically (e.g. economic waste; waste of time; garbage logic). 
 
 ```py 
 TS=
 (
-      (
-        ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-        OR "sewage$" OR "sludge" 
-        OR "street sweepings"
-        ) 
-        NEAR/5 
-            ("generation" OR "generated" 
-            OR "household$" OR "domestic" OR "residential"
-            OR "commerce" OR "commercial" OR "trade" OR "business*" OR "office$" 
-            OR "institution$" OR "schools" OR "hospital$" OR "municipal*" 
-            OR "industrial" OR "industry" OR "hotel$" OR "restaurant$" 
-            )
+  ("reduc*" OR "minim*" OR "decreas*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*"
+  OR "avoid*" OR "prevent*" OR "combat*" OR "tackl*" OR "halt*" OR "resist" OR "resisting" OR "lowering" OR "lower$" OR "lowered"
+  ) 
+  NEAR/5 
+      ("agrowaste" OR "solid waste$" OR "bio-waste" OR "biowaste$" 
+      OR "ewaste$" OR "e waste$" OR "electronic waste$" 
+      OR "rubbish" OR "sewage$" OR "street sweepings"
+      OR
+        (
+          ("waste$" OR "sludge" OR "litter" OR "trash" OR "garbage") 
+          NEAR/5 
+              ("generation" OR "generated" 
+              OR "household$" OR "domestic" OR "residential"
+              OR "commerce" OR "commercial" OR "trade" OR "business*" OR "office$" 
+              OR "institution$" OR "schools" OR "hospital$" OR "municipal*" OR "urban" OR "cities"
+              OR "industr*" OR "manufacturing" OR "hotel$" OR "restaurant$" 
+              )
+        )
       )
+)
+OR
+TS=
+(
+  ("waste$" OR "sludge" OR "litter" OR "trash" OR "garbage"
+  OR "agrowaste" OR "solid waste$" OR "bio-waste" OR "biowaste$" 
+  OR "ewaste$" OR "e waste$" OR "electronic waste$" 
+  OR "rubbish" OR "sewage$" OR "street sweepings"
+  )
+  NEAR/5 ("generation" OR "generated")
 )
 
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams.
+This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams. The elements of the phrase are *recycling/cleaner production + waste // reycling + production // circular economy // using sidestreams // lifecycle analysis*.
 
-Because terms `recycle` `reuse` and `resource efficiency` have various meanings in fields irrelevant to this target, they are combined with a string of terms related to the target: *bioeconomy/production/consumption/materials/waste*. Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
+Because terms `recycle` `reuse` and `resource efficiency` have various meanings in fields irrelevant to this target, they are combined with a string of terms related to the target (e.g. production, consumption, bioeconomy, waste). Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
 
-Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2 phrase 3.
-
-The elements of the phrase are *recycling/reuse/circular economy/using sidestreams*
+Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2. We include `zero-waste` as a stand-alone term, since it refers to the idea of preventing waste products in the first place (i.e. waste generation).
 
 ```py
 TS=
 (
-      (
-        (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "codigest*" OR "co digest*" OR "co-digest*" 
-          OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
-          ) 
-          NEAR/5 
-            ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
-            OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
-            OR "resource$" OR "material$" OR "matter" OR "biomass" 
-            OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-            OR "sewage$" OR "sludge"
-            )
+    (
+      ("recycl*" OR "re cycl*" OR "reuse$" OR "re use$" OR "reusing" OR "re using" 
+      OR "re furbish*" OR "remanufactur*" OR "re manufactur*" OR "repurpos*" OR "re purpos" 
+      OR "codigest*" OR "co digest*"
+      OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
+      OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "material footprint" OR "resource footprint"
+      OR "cleaner production"
+      ) 
+      NEAR/15 
+        ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+        OR "waste$" OR "agrowaste" OR "solid waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
+        OR "sewage$" OR "sludge"
         )
-        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+    )
+  OR
+    (
+      ("recycl*" OR "re cycl*"
+      OR "re furbish*" OR "remanufactur*" OR "re manufactur*" OR "repurpos*" OR "re purpos" 
+      OR "cradle to cradle" OR "cradle-to-cradle"
+      ) 
+      NEAR/5 
+        ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+        OR "matter" OR "biomass" OR "resource$" OR "material$" 
+        )
+    )
+  OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+  OR 
+    (
+      ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
+      NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+    )   
+  OR 
+    (
+      ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "bioeconom*") 
+      NEAR/15 
+        ("recycl*" OR "re cycl*" 
         OR 
           (
-            ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-            NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
-          ) 
-        OR "cleaner production"  
-        OR 
-          (
-            ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
+            ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
             NEAR/5 
-              (
-                ("lifecycle$" OR ("life" NEAR/3 "cycle$") OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
-                NEAR/5 
-                  ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"
-                  )
-              )
+                ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging"
+                OR "analys*" OR "assessment$" OR "assess" OR "assessed"
+                )
           )
-      )
+        )
+    )
+  OR "zero waste"
 )
-
 ```
 
 
