@@ -105,7 +105,7 @@ TS=
   )    
   NEAR/15
       ("household$" OR "homes" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" 
       OR "residential heating" OR "central heating" OR "winter heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
       )      
 )
@@ -115,7 +115,7 @@ TS=
   ("coal")    
   NEAR/15
       ("household$" OR "homes" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" 
       OR "heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
       )      
 )
