@@ -112,7 +112,7 @@ TS=
 OR
 TS=
 (
-  ("coal")    
+  ("kerosene" OR "solid fuel$")    
   NEAR/15
       ("household$" OR "homes" OR "house" OR "houses" OR "housing"
       OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" 

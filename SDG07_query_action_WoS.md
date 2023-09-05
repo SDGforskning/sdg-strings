@@ -160,7 +160,7 @@ TS=
 OR
 TS=
 (
-  ("coal"
+  ("kerosene" OR "solid fuel$"
   NEAR/5
       ("transition*" OR "substitut*" OR "switch" OR "coal to electricity" OR "intervention$" OR "initiative$"
       OR "encourag*" OR "incentive$" OR "investing" OR "invest"
