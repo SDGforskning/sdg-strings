@@ -649,28 +649,26 @@ In order to exclude irrelevant articles where `lead` is used as a verb, a NOT se
 TS=
 (
   (
-      (
-          (
-            ("unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe") 
-            NEAR/5 
-                ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "disposal" OR "transport*" OR "process*" 
-                OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
-                OR "handling" OR "transport*" OR "packaging" 
-                OR "dispose$" OR "incinerat*" OR "combust*" 
-                OR "collection" OR "collect$" OR "collected" OR "treatment" OR "processing" OR "processed" 
-                OR "sorting" OR "sort$" OR "sorted" OR "labelling" 
-                ) 
+    (
+      ("unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe") 
+      NEAR/5 
+          ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "disposal" OR "transport*" OR "process*" 
+          OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
+          OR "handling" OR "transport*" OR "packaging" 
+          OR "dispose$" OR "incinerat*" OR "combust*" 
+          OR "collection" OR "collect$" OR "collected" OR "treatment" OR "processing" OR "processed" 
+          OR "sorting" OR "sort$" OR "sorted" OR "labelling" 
           ) 
-          NEAR/5 
-            ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
-            OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
-            OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
-            OR "street sweepings" 
-            OR "construction debris" OR "demolition debris"
-            )  
-      ) 
-  )
-  NOT ("lead" NEAR/5 ("unsafe" OR "irresponsibl*"))
+    ) 
+    NEAR/5 
+      ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
+      OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
+      OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+      OR "street sweepings" 
+      OR "construction debris" OR "demolition debris"
+      )  
+  ) 
+  NOT ("lead to")
 )
 ```
 

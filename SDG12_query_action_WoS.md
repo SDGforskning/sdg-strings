@@ -759,7 +759,7 @@ TS=
             )  
       ) 
   )
-  NOT ("lead" NEAR/5 ("unsafe" OR "irresponsibl*"))
+  NOT ("lead to")
 )
 ```
 
