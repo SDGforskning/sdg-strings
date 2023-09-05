@@ -514,11 +514,9 @@ Some specifying terms for wastes were found from the UN topic page for *Chemical
 
 #### Phrase 1
 
-The aim of this phrase is to find research about sustainable management of chemicals and plastic thoughout their lifecycle, and about international agreements on chemical management. 
+The aim of this phrase is to find research about sustainable management of chemicals and plastic thoughout their lifecycle, and about international agreements on chemical management. The elements of the phrase are *sustainable + management + chemicals / international agreements*.
 
 International agreements included in the phrase are mentioned on the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>). 
-
-The elements of the phrase are *sustainable + management + chemicals / international agreements*
 
 ```py 
 TS=
@@ -590,11 +588,9 @@ TS=
 
 #### Phrase 3
 
-This phrase aims to find research about reducing releases of chemicals and wastes into the environment.
+This phrase aims to find research about reducing releases of chemicals and wastes into the environment. The elements of the phrase are *action + releases/emissions + chemicals/wastes*.
 
 This phrase is identical to the corresponding action approach phrase (BAA 12.4 phrase 3).
-
-The elements of the phrase are *action(reduce) + releases/emissions + chemicals/wastes*
 
 ```py
 TS=
@@ -618,11 +614,9 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about reducing/controling/assessing risks which chemicals and all wastes cause to human health and environment.
+This phrase aims to find research about reducing/controling/assessing risks which chemicals and all wastes cause to human health and environment. The elements of the phrase are *action + risks/hazards + health/environment + chemicals/wastes*
 
 The phrase is identical to the corresponding action approach phrase (BAA 12.4 phrase 4).
-
-The elements of the phrase are *action(reduce) + risks/hazards + health/environment + chemicals/wastes *
 
 ```py
 TS=
@@ -633,12 +627,10 @@ TS=
   NEAR/5 
     (
       (
-        ("risk$" OR "hazard$" OR "danger*" 
-          OR "advers*" OR "negativ*" OR "harmful*"
-        ) 
+        ("risk$" OR "hazard$" OR "danger*" OR "advers*" OR "negativ*" OR "harmful*") 
         NEAR/5 ("health" OR "wellbeing" OR "well being" OR "environment")
       ) 
-        NEAR/15 
+      NEAR/15 
         ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
         OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$" 
         OR "waste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
@@ -649,12 +641,9 @@ TS=
 
 #### Phrase 5
 
-The aim of this phrase is to find research about unsustainable management of chemicals thoughout their lifecycle as well as unsustainable waste management. 
+The aim of this phrase is to find research about unsustainable management of chemicals thoughout their lifecycle as well as unsustainable waste management. The elements of the phrase are *unsustainable+management + chemicals/waste*.
 
 In order to exclude irrelevant articles where `lead` is used as a verb, a NOT sentence is added to the phrase.
-
-
-The elements of the phrase are *unsustainable+management + chemicals/waste*
 
 ```py 
 TS=
