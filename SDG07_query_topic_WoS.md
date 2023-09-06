@@ -334,6 +334,7 @@ TS=
     OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
     OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
     OR "global energy" OR "global electricity" OR "energy mix"
+    OR "phase out" OR "phasing out" OR "transition*" 
     )
 )   
 ```
