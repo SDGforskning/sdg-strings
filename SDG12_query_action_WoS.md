@@ -881,22 +881,22 @@ TS=
 > 
 > 12.6.1 Number of companies publishing sustainability reports
 
-This target is interpreted to cover research about encouraging companies to a) adopt sustainable practices and sustainable production in general, and to b) report their sustainability information. 
+This target is interpreted to cover research about a) encouraging companies and sustainable practices/production, and b) encouraging companies reporting their sustainability information. 
 
-The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphesises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research.   
+The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphesises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. 
+
+Reporting or publishing sustainability information in any form is considered relevant, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
 
 The concept of economical sustainability is used broadly and in some cases we found it hard to interpret which papers about financial sustainability are relevant to target 12.6. 
 
 
 #### Phrase 1
 
-This phrase aims to find research about encouraging companies to adopt sustainable practices as well as sustainable production patterns and measures. 
+This phrase aims to find research about encouraging companies to adopt sustainable practices as well as sustainable production patterns and measures. The elements of the phrase are *action(promote) + sustainable + practices/production + companies/producers*.
 
 The practices are mentioned in the metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf (e.g. `procurements` `sourcing`). 
 
 Terms for sustainable production and its elements e.g. `sustainable buildings and construction` and `product lifecycle` were found from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). Some concepts are from the UNEP publication *ABC to SCP* subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`. 
-
-The elements of the phrase are *action(promote) + sustainable + practices/production + companies/producers*
 
 ```py 
 TS=
@@ -919,39 +919,35 @@ TS=
               OR "retail" OR "retailer$" OR "trade" OR "market*"
               OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$"
 
-              OR "consumption" OR "consume$" OR "efficien*"
-              OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
+              OR "consumption" OR "consume$" 
+              OR "efficien*"
               OR "Sustainable Building and Construction Initiative" OR "SBCI" 
               OR "certification" OR "certificate$" OR "label$" OR "labelling"
               )
+        ) 
+        OR "cleaner production"
+        OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco label$" OR "environmental label$" 
+        OR 
+          (
+            ("footprint" OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle") 
+            NEAR/3 ("product$" OR "service$" OR "material$" OR "analys*" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
           ) 
-          OR "cleaner production"
-          OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
-          OR 
-            (
-              ("footprint" OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle") 
-              NEAR/3 ("product$" OR "service$" OR "material$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
-            ) 
-          OR "ecobuildin$" OR "eco-building*"
-          OR "environmentally sound technologies" 
-          OR (("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") NEAR/3 ("green" OR "eco" OR "sustainab*")) 
+        OR "ecobuildin$" OR "eco-building*"
+        OR "environmentally sound technologies" 
+        OR (("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") NEAR/3 ("green" OR "eco" OR "sustainab*")) 
     )
   )
   AND 
-    ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" 
-    OR "producer$" OR "industry" OR "industries" OR "manufacturer$"
+    ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" OR "corporate"
+    OR "producer$" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$" OR "commercial sector$" OR "logistics sector$" OR "manufacturing sector$"
     OR "institutions"
     ) 
 )
-
 ```
-
 
 #### Phrase 2
 
-This phrase aims to find research about encouraging companies to report their sustainability information. The phrase looks for reporting or publishing sustainability information in any form, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
-
-The elements of the phrase are *action(encourage) + sustainability/responsibility + reporting + companies/producers*
+This phrase aims to find research about encouraging companies to report their sustainability information. The elements of the phrase are *action(encourage) + sustainability/responsibility + reporting + companies/producers*.
 
 ```py 
 TS=
@@ -971,8 +967,8 @@ TS=
         )
   )
   NEAR/15 
-      ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" 
-      OR "producer$" OR "industry" OR "industries" OR "manufacturer$"
+      ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" OR "corporate"
+      OR "producer$" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$" OR "commercial sector$" OR "logistics sector$" OR "manufacturing sector$"
       OR "institution$"
       )
 )
