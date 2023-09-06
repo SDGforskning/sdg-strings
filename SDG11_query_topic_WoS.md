@@ -170,7 +170,7 @@ TS=
         OR "speed limit*"
         )
   )
-  NOT ("air traffic*" OR "food*")
+  NOT ("air traffic*" OR "food*" OR "trauma*")
 )
 ```
 
