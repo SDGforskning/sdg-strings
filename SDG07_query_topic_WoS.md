@@ -377,7 +377,7 @@ TS=
         )
   )
 )
-NOT TS=("palm oil" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "cooking oil" OR "fish oil" OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil")
+NOT TS=("palm oil" OR "oil palm" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "eucalyptus oil" OR "cooking oil" OR "fish oil" OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil")
 ```
 
 ### Target 7.3
