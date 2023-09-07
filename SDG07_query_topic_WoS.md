@@ -224,18 +224,12 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
-One could interpret this target in two ways according to the topic approach:
-1. This target is interpreted to cover research about the use and uptake of renewable energy, or
-2. This target is interpreted to cover research about renewable energy. 
-These two different interpretations make a large difference to the number of results, given (2) will find a large number of technical publications about renewable energy technology (gives ca. 3.5x the number of results as interpretation (1)). For the moment, we have decided to use interpretation (1). This means that the strings attempt to find publications focusing on renewable energy use and uptake, including works that talk about the share, transitions, policies, commercialisation, scaling up, and investment in renewable energy, and research about reliance on and consumption of fossil fuels.
-
-
 This target is interpreted to cover research about the use and uptake of renewable energy (including sustainable batteries). We consider this to include research about:
 
 -	the transition of energy systems to renewables (e.g. research discussing energy transitions, access/barriers to renewables, incentives such as certificates, and policies)
 -	the use/share of renewables (e.g. adoption, works about share in the energy sector)
 -	mechanisms that incentivise renewable energy technology (e.g. commercialisation, scaling-up, investment)
--	reliance on and consumption of fossil fuels
+-	reliance on and use of fossil fuels
 
 Research on renewable energy technology alone, without a use/uptake element, is not included.
 
@@ -245,7 +239,7 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renwables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). Compared to the action approach, a wider distance is used between elements.
+This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renewables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). Compared to the action approach, a wider distance is used between elements.
 
 ```py
 TS=
@@ -324,32 +318,9 @@ TS=
 
 #### Phrase 3
 
-This phrase covers reliance on and consumption of fossil fuels. The elements of the phrase are: *fossil fuels + reliance/energy mix*. Action terms are retained for "oil" because it is used to generally (e.g. consuption of fish oil, reliance of technology for oil drilling etc.)
+This phrase covers reliance on and reduction in use of fossil fuels. Many of the same action terms as in the action approached are used here. The general structure is *fossil fuels + reliance OR promotional action / actions*. Some phrases with `oil` are exluded with NOT to avoid irrelevant hits about uses of e.g. palm oil and fish oil.
 
 ```py
-TS=
-(
-  ("fossil fuel$" OR "coal" OR "natural gas" OR "grey hydrogen" OR "conventional energy"
-  OR
-    (
-      ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
-      OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-      OR "transition*" OR "substitut*" OR "intervention$"
-      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-      )
-      NEAR/5
-          ("oil")
-    )
-  )
-  NEAR/15
-    ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-    OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
-    OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
-    OR "global share" OR "global electricity" OR "energy mix"
-    OR "phase out" OR "phasing out" OR "transition*" 
-    )
-)   
-
 (
   TS=
   (

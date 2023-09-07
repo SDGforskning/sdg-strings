@@ -309,14 +309,13 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
-This target is interpreted to cover research about increasing the use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
 
 This target is interpreted to cover research about increasing use and uptake of renewable energy (including sustainable batteries). We consider this to include research about:
 
 -	the transition of energy systems to renewables (e.g. research discussing energy transitions, improving access/removing barriers to renewables, incentives such as certificates, and policies)
 -	increasing the use/share of renewables (e.g. increasing adoption and share in the energy sector)
 -	mechanisms that incentivise renewable energy technology (e.g. commercialisation, scaling-up, increasing investment)
--	reducing reliance on and consumption of fossil fuels
+-	reducing reliance on and use of fossil fuels
 
 Research on renewable energy technology alone, without a use/uptake element, is not included.
 
@@ -325,7 +324,7 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renwables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). While there are no typical action terms, the term "energy transition" itself relates to the shift, so we assume works talking about this are related to the change in the share of renewables. 
+This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renewables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). While there are no typical action terms, the term "energy transition" itself relates to the shift, so we assume works talking about this are related to the change in the share of renewables. 
 
 ```py
 TS=
@@ -414,28 +413,9 @@ TS=
 
 #### Phrase 3
 
-This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `consumption` is used in phrases as in combination with "oil" it causes issues (e.g. fish oil).
+This phrase covers reduction in fossil fuels. The general structure is *fossil fuels + action OR promotional action + use/reliance*. Some phrases with `oil` are exluded with NOT to avoid irrelevant hits about uses of e.g. palm oil and fish oil.
 
 ```py
-TS=
-(
-  (
-    ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
-    OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-    OR "transition*" OR "substitut*" OR "intervention$"
-    OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-    )
-    NEAR/5
-        ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
-  )
-  NEAR/15
-    ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-    OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
-    OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
-    OR "global energy" OR "global electricity" OR "energy mix"
-    )
-)   
-
 (
 TS=
   (
