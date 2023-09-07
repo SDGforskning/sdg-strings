@@ -593,12 +593,12 @@ TS=
         )
   )
   NEAR/15
-      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
+      ("energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
       OR
         (
           ("technolog*" OR "innovation$" OR "R&D")
           NEAR/3
-              ("clean" OR "cleaner" OR "green" OR "greener"
+              ("clean* energy" OR "green* energy"
               OR "decarboni*" OR "low carbon" OR "energy efficien*"  
               OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine energy" OR "tidal energy" OR "wave energy"
               )
