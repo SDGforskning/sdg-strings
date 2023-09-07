@@ -311,6 +311,16 @@ TS=
 
 This target is interpreted to cover research about increasing the use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
 
+This target is interpreted to cover research about increasing use and uptake of renewable energy (including sustainable batteries). We consider this to include research about:
+
+-	the transition of energy systems to renewables (e.g. research discussing energy transitions, improving access/removing barriers to renewables, incentives such as certificates, and policies)
+-	increasing the use/share of renewables (e.g. increasing adoption and share in the energy sector)
+-	mechanisms that incentivise renewable energy technology (e.g. commercialisation, scaling-up, increasing investment)
+-	reducing reliance on and consumption of fossil fuels
+
+Research on renewable energy technology alone, without a use/uptake element, is not included.
+
+
 This query consists of 3 phrases.
 
 #### Phrase 1
@@ -425,6 +435,25 @@ TS=
     OR "global energy" OR "global electricity" OR "energy mix"
     )
 )   
+
+(
+TS=
+  (
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+    NEAR/5
+      (
+        ("reduc*" OR "decreas*" OR "improv*" OR "support" OR "encourag*" OR "intervention$" OR "policy" OR "policies" OR "legislation" OR "incentiv*")
+        NEAR/5 ("use" OR "usage" OR "relian*" OR "consumption" OR "transition$" OR "substitut*" OR "primary source$")
+      )
+  )
+OR 
+TS=
+  (
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+    NEAR/15 ("phase out" OR "phasing out" OR "energy transition*" OR "energy strateg*" OR "energy management" OR "energy planning" OR "energy policy")
+  )
+)
+NOT TS=("palm oil" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "cooking oil" OR "fish oil" OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil")
 ```
 
 ### Target 7.3

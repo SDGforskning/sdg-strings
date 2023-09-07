@@ -229,6 +229,18 @@ One could interpret this target in two ways according to the topic approach:
 2. This target is interpreted to cover research about renewable energy. 
 These two different interpretations make a large difference to the number of results, given (2) will find a large number of technical publications about renewable energy technology (gives ca. 3.5x the number of results as interpretation (1)). For the moment, we have decided to use interpretation (1). This means that the strings attempt to find publications focusing on renewable energy use and uptake, including works that talk about the share, transitions, policies, commercialisation, scaling up, and investment in renewable energy, and research about reliance on and consumption of fossil fuels.
 
+
+This target is interpreted to cover research about the use and uptake of renewable energy (including sustainable batteries). We consider this to include research about:
+
+-	the transition of energy systems to renewables (e.g. research discussing energy transitions, access/barriers to renewables, incentives such as certificates, and policies)
+-	the use/share of renewables (e.g. adoption, works about share in the energy sector)
+-	mechanisms that incentivise renewable energy technology (e.g. commercialisation, scaling-up, investment)
+-	reliance on and consumption of fossil fuels
+
+Research on renewable energy technology alone, without a use/uptake element, is not included.
+
+
+
 This query consists of 3 phrases.
 
 #### Phrase 1
@@ -333,10 +345,39 @@ TS=
     ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
     OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
     OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
-    OR "global energy" OR "global electricity" OR "energy mix"
+    OR "global share" OR "global electricity" OR "energy mix"
     OR "phase out" OR "phasing out" OR "transition*" 
     )
 )   
+
+(
+  TS=
+  (
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+    NEAR/5
+      ("relian*" OR "consumption" OR "transition$" OR "substitut*"
+      OR "policy" OR "policies" OR "legislation" OR "incentiv*" 
+      OR
+        (
+          ("reduc*" OR "decreas*" OR "improv*" OR "support" OR "encourag*" OR "intervention$")
+          NEAR/5 ("use" OR "usage")
+        )
+      )
+  )
+  OR 
+  TS=
+  (
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+    NEAR/15
+        ("phase out" OR "phasing out" OR "energy transition*"
+        OR "energy strateg*" OR "energy management" OR "energy planning" OR "energy policy" 
+        OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies" OR "energy generation"
+        OR "global share" OR "global electricity" OR "energy mix" 
+        OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$" OR "primary source$" 
+        )
+  )
+)
+NOT TS=("palm oil" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "cooking oil" OR "fish oil" OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil")
 ```
 
 ### Target 7.3
