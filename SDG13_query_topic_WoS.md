@@ -90,10 +90,10 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about:
-  - climate change, climate action, mitigation and adaptation (including greenhouse gases), and national policy++ (phrase 1)
-  - the indicators/impacts of climate change and national policy++ (phrase 2)
-  - international climate frameworks and national policy++ (phrase 3)
+This target is interpreted to cover research about national policies, strategies and planning relating to::
+  - climate change, climate action, mitigation and adaptation (including greenhouse gases)(phrase 1)
+  - the indicators/impacts of climate change (phrase 2)
+  - international climate frameworks (phrase 3)
 
 We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral is not the same as national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 

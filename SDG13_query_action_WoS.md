@@ -101,11 +101,11 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about:
-  - integration of climate change into national policy++ (phrase 1)
-  - climate change, climate action, mitigation and adaptation (including reduction of greenhouse gases), and national policy++ (phrase 2)
-  - reducing the indicators/impacts of climate change and national policy++ (phrase 3)
-  - international climate frameworks and national policy++ (phrase 4)
+This target is interpreted to cover research about
+  - integration of climate change into national policy, strategies and planning (phrase 1)
+  - national policies, strategies and planning relating to climate change, climate action, mitigation and adaptation (including reduction of greenhouse gases) (phrase 2)
+  - national policies, strategies and planning for reducing the indicators/impacts of climate change (phrase 3)
+  - national policies, strategies and planning relating to international climate frameworks (phrase 4)
 
 Strictly speaking, the interpretation could be limited to "research which is about integration of climate change into national policies". However, here we are taking a slightly more relaxed interpretation of the action approach. As research about national policies is already likely to be quite action orientated, we felt like it was too strong of a restriction to only consider works talking about integration as relevant. 
 
@@ -406,7 +406,7 @@ OR (("mitigat*" OR "green")
 ```
 #### Phrase 3
 
-This phrase finds research about financing of, and investments in, climate action, mitigation etc. in specific (groups of) countries. The general structure is *countries + financing/funds/aid/investment + climate change/climate action etc.*
+This phrase finds research about financing of, and investments in, climate action, mitigation etc. in specific (groups of) countries.) The general structure is *countries + financing/funds/aid/investment + climate change/climate action etc.*
 
 ```py
 TS = 
