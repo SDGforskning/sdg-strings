@@ -252,22 +252,30 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about improving climate change mitigation, adaptation, impact reduction and early warning. 
+This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning.
+
+We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases, also via carbon sequestration.
+
+«Climate Change Mitigation refers to efforts to reduce or prevent emission of greenhouse gases. Mitigation can mean using new technologies and renewable energies, making older equipment more energy efficient, or changing management practices or consumer behaviour» (<a id="UNEPmitigation">[UNEP n.d.](#f9)</a>).
+
+We consider research about vulnerability to climate changes to be relevant, as it can be seen as knowledge required to inform adaptation, impact reduction and early warning.
+
+In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+
+In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investing as an "action" in the sense that it can drive action (e.g. cooperation fund for education). We have also included specialist funds such as the [Green climate fund](https://www.greenclimate.fund/).
+
+A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
+
+This query consists of 1 phrase. The structure of the phrase is: *action + climate mit/adapt/warning*
+
+Documentation of the history of development for this string:
 
 In the first revision (v1.0.0), this target was originally considered to cover research about improving **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
-
-This query consists of 1 phrase. The general structure is *action + climate mit/adapt/warning*
 
 Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
 * Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
 * "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
-
-We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
-
-In the *action* terms, `increase` is not truncated as there are many works that begin with generic phrases such as "there is an increasing awareness of [research issue]". We include investing as an "action" in the sense that it can drive action (e.g. cooperation fund for education). We have also included specialist funds such as the [Green climate fund](https://www.greenclimate.fund/).
-
-A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
 
 
 ```py
@@ -539,5 +547,7 @@ Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 20
 <a id="f8"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f2"></a> United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] [↩](#UNDGcapacity)
+
+<a id="f9"></a> United Nations Environment Program (n.d.) Topics, Climate Action, Mitigation, UNEP Resources. https://www.unep.org/explore-topics/climate-action/what-we-do/mitigation [accessed 12.09.2023] [↩](#UNEPmitigation) 
 
 <a id="f7"></a> World Meteorological Organization (2021) State of the Global Climate 2020. https://library.wmo.int/doc_num.php?explnum_id=10618 [accessed 19.02.2022] [↩](#wmo)
