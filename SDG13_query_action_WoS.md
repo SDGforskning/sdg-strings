@@ -38,7 +38,7 @@ During editing of this string (2021), we have consulted another set of queries f
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about improving resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research about the implementation of disaster/risk strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
+This target is interpreted to cover research about improving resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research about the implementation of disaster/risk strategies, plans and programmes, and climate-related hazards/natural disasters (including risk assessment) is also considered relevant, related to indicator 13.1.3.
 
 This query consists of 1 phrase. The basic structure is *action + resilience/mitigation/plans + disasters*
 
@@ -69,7 +69,7 @@ TS=
           (
             ("disaster$" OR "risk$")
             NEAR/3
-                ("plan" OR "plans" OR "planning" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
+                ("plan" OR "plans" OR "planning" OR "assess" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
                 OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
                 )
           )
