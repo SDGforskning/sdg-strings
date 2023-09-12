@@ -322,7 +322,7 @@ TS=
           (
             ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
             OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-            OR "capture" OR "storage" OR "sequestration"
+            OR "captur*" OR "storage$" OR "store$" OR "storing" OR "sequestrat*"
             )
             NEAR/5 ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
           )
@@ -331,12 +331,12 @@ TS=
             (
               ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
               OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-              OR "capture" OR "storage" OR "sequestration"
+              OR "captur*" OR "storage$" OR "store$" OR "storing" OR "sequestrat*"
               )
               NEAR/3
                   ("methane" OR "CH4" 
                   OR "nitrous oxide" OR "NOX" OR "N2O" 
-                  OR "carbon dioxide" OR "CO2" 
+                  OR "carbon dioxide" OR "CO2" OR "carbon"
                   OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" 
                   OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
                   )
