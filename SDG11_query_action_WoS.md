@@ -527,7 +527,7 @@ TS=
     )
     NEAR/5 ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
   )
-  NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*"))
+  NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*" OR "compost*" OR "recycle*" OR "reuse*" OR "biologic* degrad*" OR "combust*" OR "heat*" OR "energ*" OR "deposit*"))
 )
 ```
 
