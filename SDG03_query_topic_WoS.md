@@ -158,7 +158,7 @@ TS =
         OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*"
         )
   )
-  NOT ("non communicable" NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "communicable and non communicable"))
+  NOT (("non communicable" OR "noncommunicable) NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "noncommunicable and communicable" OR "communicable and non communicable" OR "communicable and noncommunicable))
 )
 ``` 
 

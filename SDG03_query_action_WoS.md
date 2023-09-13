@@ -197,7 +197,7 @@ TS =
           )
         )
   )
-  NOT ("non communicable" NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "communicable and non communicable"))
+  NOT (("non communicable" OR "noncommunicable") NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "noncommunicable and communicable" OR "communicable and non communicable" OR "communcicable and noncommunicable"))
 )
 ```  
 
