@@ -794,7 +794,7 @@ For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are
 TS=
 (
   (
-      ("cryoconservation" OR "gene bank" OR "genebank" OR "germplasm bank" OR "cryobank"
+      ("cryoconservation" OR "gene banks" OR "genebanks" OR "germplasm banks" OR "cryobanks"
       OR
         (
           ("plant bank$" OR "seed bank$"
