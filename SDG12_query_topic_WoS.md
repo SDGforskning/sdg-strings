@@ -883,15 +883,13 @@ TS=
 > 
 > 12.7.1 Degree of sustainable public procurement policies and action plan implementation
 
-This target is interpreted to cover research about national policies and actions plans for sustainable procurements.
+This target is interpreted to cover research about sustainable public procurements.
 
-This phrase aims to find research about sustainable public/national procurements. 
+Some of the terms used as variations of practices/policies are from UNEP *One planet SSP Index Calculation Methodology* (<a id="UNEPSPP">[UNEP, 2022](#f13)</a>). Terms `fair trade` `human rights` `employment of minorities` `Best value for Money` `Life-cycle costing`and `Most Economically Advantageous Tender` are mentioned as concepts of sustainable procurements in the metadata for indicator 12.7.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf. 
 
-Terms `fair trade` `human rights` `employment of minorities` `Best value for Money` `Life-cycle costing`and `Most Economically Advantageous Tender` are mentioned as concepts of sustainable procurements in the metadata for indicator 12.7.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf.
+Terms `sustainable` and `investments` are used in many fields, and bring some irrelevant results about e.g. sustainable investements/procurements in health care. These have not been excluded as the exclusion of them would not be possible without losing many articles relevant to the topics of target 12.7.
 
-Terms `sustainable` `responsible` and `investments` are used in many fields, and bring some irrelevant results about e.g. sustainable investements/procurements in health care. These have not been excluded as the exclusion of them would not be possible without losing many articles relevant to the topics of target 12.7.
-
-The elements of the phrase are *sustainable+procurements + countries/national*
+The elements of the phrase are *sustainable + procurements + public/national*
 
 ```py 
 TS=
