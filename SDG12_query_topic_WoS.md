@@ -956,6 +956,32 @@ TS=
       )
 )
 
+
+TS=
+(
+  (  
+    ("information" OR "knowledge" OR "awareness" OR "aware"
+    OR "educat*" OR "guide$" OR "teach*" OR "instruct*" OR "learn*" 
+    #OR "action$" OR "choice$" OR "behavior$" OR "behaviour$" OR "attitude$" OR "psycholog*" OR "intention" OR "motivation"
+    )
+    NEAR/5 
+        ("sustainability" OR "sustainable development" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "socially responsible" OR "social responsib*"
+        OR (("responsib*" OR "sustainable" OR "circular") NEAR/5 ("consumption" OR "life-style$" OR "lifestyle$"))
+        OR "ecolabel*" OR "eco-label*" OR "ecobuilding$" OR "eco-building$" 
+        OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
+        OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
+        OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
+        OR "repurpos*" OR "re-purpos*" OR "re purpos" 
+        OR "compost*"
+        )
+  )
+  AND 
+    ("consumer$" OR "tourist$" OR "citizen$" OR "children" OR "public" 
+    OR "purchas*" OR "buying" OR "habit$"
+    OR (("responsib*" OR "sustainable" OR "green" OR "circular" OR "eco" OR "environmental*") NEAR/5 ("consumption" OR "life-style$" OR "lifestyle$"))
+    )
+)
+NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness" OR "education"))
 ```
 
 #### Phrase 2
