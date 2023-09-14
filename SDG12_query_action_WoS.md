@@ -1001,19 +1001,19 @@ TS=
   OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
   ) 
   NEAR/5 
-      ("sustainable public procurement$"
+      ("sustainable public procurement$" OR "circular public procurement$" OR "green public procurement$"
       OR
         (
-          ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green"
+          ("sustainab*" OR "socially responsible" OR "social responsibilit*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "circular"
           OR "fair trade" OR "human rights"
           OR "Best value for Money" 
           OR "lifecycle$" OR "life cycle$" 
           OR "employment of minorities" OR "employment of minority" 
           OR "Most Economically Advantageous Tender"
           )  
-          NEAR/5  
+          NEAR/15  
             (
-              ("procurement$" OR "acquisition$" OR "purchas*" OR "contract$" OR "tender")      
+              ("procurement$" OR "acquisition$" OR "purchas*" OR "contract$" OR "tender$")      
               NEAR/5 ("national" OR "country" OR "countries" OR "domestic" OR "government*" OR "administrat*" OR "public" OR "local authorit*")
             )
         )
