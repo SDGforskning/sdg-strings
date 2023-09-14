@@ -958,12 +958,15 @@ TS=
     OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
     ) 
     NEAR/5 
-        (
-          ("sustainab*" OR "responsib*" OR "environmental performance") 
-          NEAR/5 
-            ("report$" OR "reporting" OR "accounting" 
-            OR ("publish*" NEAR/3 ("information" OR "data"))
-            ) 
+        ("environmental information disclosure$" 
+        OR
+          (
+            ("sustainab*" OR "responsib*" OR "environmental performance") 
+            NEAR/5 
+                ("report$" OR "reporting" OR "accounting" 
+                OR (("publish*" OR "disclos*") NEAR/3 ("information" OR "data"))
+                ) 
+          )
         )
   )
   NEAR/15 

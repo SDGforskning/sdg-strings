@@ -859,14 +859,15 @@ This phrase aims to find research about companies reporting their sustainability
 ```py 
 TS=
 (
-  (
-        (
-          ("sustainab*" OR "responsib*" OR "environmental performance") 
-          NEAR/5 
-            ("report$" OR "reporting" OR "accounting" 
-            OR ("publish*" NEAR/3 ("information" OR "data"))
-            ) 
-        )
+  ("environmental information disclosure$" 
+  OR
+    (
+      ("sustainab*" OR "responsib*" OR "environmental performance") 
+      NEAR/5 
+        ("report$" OR "reporting" OR "accounting" 
+        OR (("publish*" OR "disclos*") NEAR/3 ("information" OR "data"))
+        ) 
+    )
   )
   NEAR/15 
       ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" OR "corporate"
