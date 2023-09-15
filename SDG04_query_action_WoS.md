@@ -519,15 +519,18 @@ The first phrase finds research about improving skills. The basic structure is *
 ```py
 TS=
 (
+  ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
+   NEAR/5 (
+  ("core literacy" OR "functional literacy" OR "basic literacy")
+  OR
+   (
     (
-      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
-      NEAR/5
-        (
-          ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
-        )
+     ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
+      NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
     )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+      NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+     )
+   )
 )
 ```
 
