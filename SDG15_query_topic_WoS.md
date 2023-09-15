@@ -1105,7 +1105,7 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.b.1 (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
 
-This target is interpreted to cover research about financing/investments/incentives and either sustainable forest management, forest conservation or reforestatio. This will cover research that considers both positive and negative effects of financing.
+This target is interpreted to cover research about financing/investments/incentives and either sustainable forest management, forest conservation or reforestation. This will cover research that considers both positive and negative effects of financing.
 
 The elements of the phrase are *financing/incentives/instruments + sustainable use/conservation/reforestation + forests*. 
 
