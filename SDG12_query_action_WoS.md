@@ -1110,19 +1110,15 @@ TS=
 > 
 > 12.a.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-
-This target is interpreted to cover research about promoting the scientific and technological capabilities of developing countries regarding sustainable consumption and production patterns. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
-
+This target is interpreted to cover research about the promoting capacity of developing countries for sustainable consumption and production. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
 
 #### Phrase 1
 
-This phrase aims to find research about promoting the scientific and technological capabilites (including finance and incentives) of developing countries regarding sustainable consumption and production patterns.
+This phrase aims to find research about the capacity of developing countries regarding sustainable consumption and production. The elements of the phrase are *action + capacity + sustainable consumption & production + developing countries*.
 
 The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned int the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
-
-The elements of the phrase are *action(develop) + capacity/scientific/technical/skills + sustainable consumption & production + developing countries*
 
 `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
@@ -1130,25 +1126,22 @@ The elements of the phrase are *action(develop) + capacity/scientific/technical/
 TS=
 (
   (
-    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build" OR "capacity building" OR "advance" OR "advancing" 
+    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build" OR "building" OR "advance" OR "advancing" 
     OR "establish*" OR "address" OR "consider*" OR "assess*"
     )
     NEAR/5
-      ("capacity" 
-      OR "infrastructure$" OR "technolog*" OR "facilities" OR "tools"  
-      OR "technical support" OR "managerial support"
-      OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" 
-      OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
+      ("institutional capacity" OR "human capacity" OR "financial capacity" OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" OR "scientific capacity"
+      OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+      OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+      OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+      OR "awareness" OR "disseminat*" OR "educat*" OR "training"
+      OR "cooperation" OR "collaboration" OR "partnership$" 
+      OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+      OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
       OR "financial support" OR "financial resources"
       OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-      OR "ODA" OR "cooperation fund$" OR "development spending"
-      OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-      OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
-      OR "cooperation" OR "collaboration" OR "network$" OR "support" OR "partnership$" 
-      OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
-      OR "knowledge transfer*" 
-      OR "awareness" OR "knowledge" OR "disseminat*" 
-      OR "educat*" OR "awareness" OR "training"
+      OR "ODA" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+      OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$"
       ) 
   )
   NEAR/15 
@@ -1235,54 +1228,45 @@ TS=("least developed countr*" OR "least developed nation$"
     )
 ```
 
-
-
-
 #### Phrase 2
 
-This phrase aims to find research about promoting the scientific and technological capabilites of developing countries regarding power generation by renewable energy sources.
+This phrase aims to find research about the capacity of developing countries regarding power generation by renewable energy sources. The elements of the phrase are *action + capacity + renewable energy + developing countries*. 
 
 Most of the renewable energy sources specified are mentioned in the metadata for indicator 12.a.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0a-01.pdf. 
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
-The action terms in this phrase are combined with capacity building.
-
-The elements of the phrase are *action/development/capacity building + scientific/technical/skills + power generation+renewable energy sources + developing countries* 
-
-
-
-
 ```py
 TS=
 (
   (
-    ( "develop" OR "development" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build*" OR "advance" OR "advancing" OR "establish*" OR "support" OR "empower*" 
-    OR "policy" OR "policies" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
-    OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
-    OR "knowledge transfer*" OR "knowledge exchange" OR "transfer of technolog*" OR "technological transfer" 
-    OR "cooperation" OR "collaboration" OR "network$" OR "partnership$" 
-    OR "incentive$" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-    OR "ODA" OR "cooperation fund$" OR "development spending" 
-    OR "expenditure" OR "investment$" OR "invest" OR "investing" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" 
-    OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
+    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build" OR "building" OR "advance" OR "advancing" 
+    OR "establish*" OR "address" OR "consider*" OR "assess*"
     )
     NEAR/5
-      ("infrastructure$" OR "facilities" OR "tools" 
-      OR "skills" OR "competenc*" OR "expertise" OR "knowledge" 
-      OR "technical" OR "research" OR "scientific" OR "R&D" OR "technolog*" OR "innovation$" 
-      OR "cleantech" OR "energy transition$" 
-      )
+        ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+        OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
+        OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+        OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+        OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+        OR "awareness" OR "disseminat*" OR "educat*" OR "training"
+        OR "cooperation" OR "collaboration" OR "partnership$" 
+        OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
+        OR "financial support" OR "financial resources"
+        OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+        OR "ODA" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+        OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
+        ) 
   ) 
   AND         
-      
-      (
+      ("energy transition" OR "photovoltaic$" OR "solar PV" OR "hydropower"
+      OR
         ( 
-          ("power station$" OR "*power generation" OR "energy generation" OR "electricity generation" OR "generation capacity" OR "generation technolog*" OR "electricity supply" OR "power supply"
-          ) 
+          ("power" OR "electricity" OR "energy") 
           NEAR/5
-              ("modern" OR "clean" OR "sustainable" OR "renewable$" 
-              OR "solar" OR "photovoltaic" OR "thermal energy" OR "solar thermal"
+              ("clean" OR "sustainable" OR "renewable$" 
+              OR "solar" OR "photovoltaic" OR "thermal energy" OR "solar thermal" 
               OR "wind" 
               OR "geothermal" 
               OR "hydrothermal" 
@@ -1290,16 +1274,7 @@ TS=
               OR "bioenergy" OR "biofuel$" OR "bioenergy" OR "biodiesel"
               )
         ) 
-        OR "geothermal heat pump$" OR "ground source heat pump$"
-        OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
-        OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
-        OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
-        OR "solar thermal"
-        OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories"
-        OR "tidal turbine$" OR "stream turbine$" OR "current turbine$" OR "tidal power" OR "tidal energy" OR "marine energy"
-        OR "wave energy" 
       )
-      
 ) 
 AND 
 TS=("least developed countr*" OR "least developed nation$"
