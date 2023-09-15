@@ -441,11 +441,12 @@ The first phrase finds research about skills. The basic structure is *level + sk
 ```py
 TS=
 (
-    (
+    ((
       ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
+        NEAR/15 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
     )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate"))
+OR ("core literacy" OR "functional literacy" OR "basic literacy")
 )
 ```
 
@@ -455,7 +456,13 @@ In the second phrase we search for research about illiteracy, innumeracy and ana
 
 ```py
 TS=
- ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+(
+ ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*") 
+OR 
+(
+("illitera*") NEAR/10 (“read” OR “reading” OR “mathematic*” OR “math” OR “maths” OR “numeracy” OR “numerate”)
+)
+)
 ```
 
 ### Target 4.7
