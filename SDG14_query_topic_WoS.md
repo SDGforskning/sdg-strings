@@ -165,7 +165,7 @@ This target is interpreted to cover research about marine pollution. We consider
 
 It consists of 1 phrase. If comparing to the action approach, all 3 phrases in the action string are covered by this one.
 
-#### Phrase 1
+#### Phrase 1/2/3
 
 The elements of the phrase are: *pollution*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
@@ -224,9 +224,9 @@ Note, interpreting "protect" to include MPAs means that relevant research for th
 
 It is possible that this interpretation should be widened to cover research about changes to ecosystems and biodiversity (see also 15.4), but this is not done at present. 
 
-This query consists of 2 phrases. Phrase 1 covers research mentioning protected areas and sustainable management approaches. Phrase 2 covers research about the restoration, protection, conservation, or management of marine ecosystems.
+This query consists of 2 phrases. Phrase 1/2 covers research mentioning protected areas and sustainable management approaches (if comparing to the action approach: phrases 1 and 2 there are both covered by this phrase.). Phrase 3 covers research about the restoration, protection, conservation, or management of marine ecosystems.
 
-#### Phrase 1
+#### Phrase 1/2
 
 This phrase covers protected areas and sustainable management approaches. The elements of the phrase are: *protected areas/management*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. If comparing to the action approach: phrases 1 and 2 there are both covered by this phrase.
 
@@ -259,9 +259,9 @@ TS=
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
-Phrase 2 covers research about restoring, protecting, conserving or managing marine ecosystems. The elements of the phrase are: *management/conservation + marine ecosystems/protection instruments*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. It corresponds to phrase 3 in the action approach.
+Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The elements of the phrase are: *management/conservation + marine ecosystems/protection instruments*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. It corresponds to phrase 3 in the action approach.
 
 Under the *management/conservation* terms we do not include "conserved" or "restored" because they are too generic (e.g. used in genetics); they also do not add many additional relevant results. Under the *marine ecosystems/protection instruments*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are likely to be about protection/management.
 
