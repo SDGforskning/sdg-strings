@@ -884,7 +884,7 @@ TS=
   )
   AND 
     ("Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-    OR ("CITES" NEAR/15 ("article cites" OR "review cites"))
+    OR ("CITES" NOT ("article cites" OR "review cites" OR "author cites" OR "it cites" OR "work cites"))
     )
 )
 NOT
