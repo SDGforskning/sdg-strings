@@ -766,7 +766,7 @@ This phrase aims to find research about sharing of/access to benefits from genet
 TS=
 (
   (
-    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy")
+    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
     AND ("genetic resource$" OR "gene resource$")
     AND 
         ("benefit$"
