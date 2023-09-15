@@ -355,9 +355,9 @@ We also consider abandoned, lost and discarded gear to lie under destructive fis
 
 Specific fish species as search terms are not needed in this query because the focus is on fisheries (fisherpeople, fishermen, fishing, fishery, fisheries), not the biology of individual fish species outside of fisheries. Therefore, even publications on specific fish species must use the terms fishery etc.
 
-#### Phrase 1
+#### Phrase 1/2
 
-The elements of this phrase are: *overfishing/illegal/destructive fishing*.
+The elements of this phrase are: *overfishing/illegal/destructive fishing*. It corresponds to phrases 1 and 2 in the action approach.
 
 ```py
 TS=
@@ -378,9 +378,9 @@ TS=
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
-The elements of this phrase are: *management/restoration + fisheries*. This phrase differs to phrases 1 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
+The elements of this phrase are: *management/restoration + fisheries*. This phrase differs to phrase 1/2 in that it focuses on sustainable management, rather than  overfishing or IUU fishing.
 
 `manag*` will find a number of terms, e.g. "science-based management", "ecosystem based (fisheries) management" (EBFM), "area based management", "fisheries management policy" etc. Policies and frameworks which call for good management are included among the *management* terms; <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. Research about both the establishment and avoidance of fishery closures is considered to be relevant to implementing good management, as is research about the max. sustainable yield.
 
