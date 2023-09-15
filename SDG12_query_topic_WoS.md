@@ -1199,6 +1199,7 @@ This target is interpreted to cover research about monitoring sustainable touris
 
 The definition of sustainable tourism according to UNWTO *Sustainable Tourism for Development Guidebook* (<a id="UNWTO">[UNWTO, 2013](#f14)</a>) is:
 > *“Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”*. 
+
 Some specifying terms were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
 
 ```py 
