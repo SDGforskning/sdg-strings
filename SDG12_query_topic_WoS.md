@@ -1195,32 +1195,16 @@ TS=("least developed countr*" OR "least developed nation$"
 > 
 > 12.b.1 Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability
 
-This target is interpreted to cover research about monitoring of the economic, social and environmental impacts of sustainable tourism. Creating jobs and promoting local cultures and products are interpreted as impacts of sustainable tourism. 
+This target is interpreted to cover research about monitoring sustainable tourism. Creating jobs and promoting local cultures and products via sustainable tourism should be covered by this, if connected to monitoring. The elements of the phrase are *monitoring/regulating/accounting + sustainable + tourism*.
 
 The definition of sustainable tourism according to UNWTO *Sustainable Tourism for Development Guidebook* (<a id="UNWTO">[UNWTO, 2013](#f14)</a>) is:
 > *“Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”*. 
-
-This phrase aims to find research about monitoring the impacts of sustainable tourism. Impacts include economic, social and environmental impacts. Some specifying terms for these were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
-
-The elements of the phrase are *monitoring/regulating/accounting + impacts + sustainable+tourism*
+Some specifying terms were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
 
 ```py 
 TS=
 (
-  (
-        (
-          ("monitor*" OR "reporting" OR "report$" OR "accounting" OR "control*" OR "measur*" OR "assess*" OR "evaluat*") 
-          NEAR/5 
-              ("impact$" OR "effect$"
-              OR (("local" OR "indigenous") NEAR/3 ("community" OR "communities" OR "culture$" OR "people$")) 
-              OR "waste" OR "litter" OR "effluent$" OR "pollution" OR "pollute$"
-              OR "job$" OR "employment" OR "enterprice$" OR "livelihood$" OR "income$" OR "profit*" 
-              OR "econom*" OR "GDP" OR "wealth" OR "poverty" 
-              OR "trade" OR "trading" OR "market$" 
-              OR "environment*" OR "ecosystem$" OR "biodiversity" OR "wildlife" OR "flora" OR "fauna" OR "nature" 
-              )
-        )
-  )
+  ("monitor*" OR "reporting" OR "report$" OR "accounting" OR "control*" OR "measur*" OR "assess*" OR "evaluat*" OR "survey*") 
   NEAR/15 
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
