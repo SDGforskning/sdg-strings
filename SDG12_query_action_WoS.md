@@ -1327,56 +1327,50 @@ TS=
 > 
 > 12.c.1 Amount of fossil-fuel subsidies (production and consumption) per unit of GDP
 
-This target is interpreted to cover research about rationalizing/removing subsidies from the production and consumption of fossil fuels, and about restructuring/improving taxation of the production and consumption of fossil fuels. Developing countries are not specified as rationalizing subsidies and restructuring taxation of the use of fossil fuels is interpreted to address all countries. 
+This target is interpreted to cover research about rationalizing/removing subsidies from fossil fuels, and about restructuring/improving taxation of fossil fuels. Developing countries are not specified as rationalizing subsidies and restructuring taxation of the use of fossil fuels is interpreted to address all countries. Because of the themes and terms, some works about e.g. subsidies for renewable energy or carbon taxes may be in the results, if the works compare these with or look at effects on fossil fuel use.
 
 UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) is used for definitions of fossil fuels and subsidies. According to the UNEP report fossils fuels do not include nuclear fuel, renewable energy and biofuels. The report recommends including also non-energy uses of fossil fuels (e.g. use for production of plastic) in the scope of SDG (p. 14). For this reason the phrases are built to search for any use of fossil fuels. 
 
-Both production and consumption of fossil fuels are included in the phrases as both are mentioned in the metadata for indicator 12.c.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0c-01.pdf.
+We do not specify either production or consumption of fossil fuels as both are mentioned in the metadata for indicator 12.c.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0c-01.pdf.
 
 #### Phrase 1
 
-This phrase aims to find research about rationalizing/removing subsidies from the production and consumption of fossil fuels. 
+This phrase aims to find research about rationalizing/removing subsidies from fossil fuels. The elements of the phrase are *action + subsidies + fossil fuels*.
 
 Most of the terms for subsidies were found from the UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) table 6 p. 19 - and for fossil fuels from table 5 p. 13.
-
-The elements of the phrase are *action(rationalize) + subsidies + fossil fuels*
 
 ```py 
 TS=
 (
-  ("rationali?e$" OR "rationali?ing" OR "remov*" OR "reduce" OR "decreas*" OR "phase out" OR "phasing out" OR "substitut*" OR "transition*" OR "reform*") 
-  NEAR/5 
-      (
-        ("subsidies" OR "fiscal incentive$" 
+  (
+    ("rationali?e$" OR "rationali?ing" OR "reform*" OR "transition*" OR "remov*" OR "reduce" OR "decreas*" OR "phase out" OR "phasing out" OR "substitut*") 
+    NEAR/5 
+        ("subsidies" OR "subsidy" OR "fiscal incentive$" 
         OR "price support*" OR "underpricing" OR "underprice$" OR "under-pricing" OR "under-price$" OR "under pricing" OR "under price$" 
         OR ("below market" NEAR/3 ("lending" OR "loan$")) 
         OR (("credit$" OR "loan$" OR "debt$") NEAR/3 ("support*" OR "guarantee$" OR "restructur*" OR "cancel*"))
         OR ("market$" NEAR/3 "distor*")
         OR ("government*" NEAR/3 ("spending" OR "fund*" OR "ownership" OR "payment$"))
-        ) 
-        NEAR/5 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum") 
-      )
+        )
+  )
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum") 
 )
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about restructuring/improving the taxation of fossil fuels production and consumption.
-
-The elements of the phrase are *action(restructure) + taxation + fossil fuels*
-
+This phrase aims to find research about restructuring/improving the taxation of fossil fuels. The elements of the phrase are *action + taxation + fossil fuels*.
 
 ```py
 TS=
 (
-  ("restructur*" OR "reform*" OR "rationali?e$" OR "rationali?ing" OR "transition*" OR "transform*" OR "renew*") 
-  NEAR/5 
-    (
-      ("taxation" OR "taxes" OR "tax" OR "taxed" OR "tariff$" OR "duty" OR "fees" OR "fee") 
-      NEAR/5 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum")   
-    )
+  (
+    ("rationali?e$" OR "rationali?ing" OR "restructur*" OR "reform*" OR "transition*" OR "transform*" OR "renew") 
+    NEAR/5 ("taxation" OR "taxes" OR "tax" OR "taxed" OR "tariff$" OR "duty" OR "fees" OR "fee") 
+  )
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum")   
 )
-
+NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 ```
 
 ## 4. Authorship and review
