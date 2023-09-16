@@ -113,7 +113,7 @@ We considered including terms for primary and secondary education, but too many 
 TS=
 (
   (
-    ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+    ("fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
     NEAR/10 
     ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
   )
