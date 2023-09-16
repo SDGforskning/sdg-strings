@@ -127,7 +127,7 @@ TS=
       ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
       NEAR/5
         (
-          ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+          ("fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
           NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
         )
     )
