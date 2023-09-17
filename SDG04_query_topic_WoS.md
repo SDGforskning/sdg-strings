@@ -577,13 +577,19 @@ This phrase focuses on effective learning environments in schools. The basic str
 TS=
 (
   (
-    ("learning environment*" NEAR/5 "effective")
+    ("learning environment*" NEAR/5 "effective") OR
+ (
+(("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
+ AND
+ ("learn*" OR "result*" OR "perform*" OR "atten*")
+)
+OR 
+("physical learning environment*")
   )
-  AND
+  AND   
     ("primary school*" OR "elementary school*" OR "primary educat*"
     OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "education" OR "learner*"
-    )
+    OR "school" OR "learner*" )
 )
 ```
 
