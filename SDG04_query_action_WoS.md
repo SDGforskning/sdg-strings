@@ -678,14 +678,21 @@ TS=
 (
   (
     ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
-    NEAR/5
-        ("learning environment*" NEAR/5 "effective")
+     NEAR/5
+        ("learning environment*" NEAR/5 "effective") OR
+        (
+          (("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
+          AND
+           ("learn*" OR "result*" OR "perform*" OR "atten*")
+        )
+        OR
+        ("physical learning environment*")
   )
-  AND
-    ("primary school*" OR "elementary school*" OR "primary educat*"
-    OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "education" OR "learner*"
-    )
+AND
+   ("primary school*" OR "elementary school*" OR "primary educat*"
+     OR "middle school*" OR "secondary school*" OR "secondary educat*"
+     OR "school" OR "learner*"
+   )
 )
 ```
 
