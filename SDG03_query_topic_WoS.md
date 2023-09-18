@@ -862,7 +862,7 @@ TS=
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
 This target is interpreted to cover research about:
-* The development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect. (phrase 1).
+* The development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect, but we have used a list of diseases found in (<a id="GBD">[Coates et al., 2021](#31)</a>) - from results and Appendix table 6 over disease occurence/fatalities in richest vs. poorest, and generic terms for developing countries (phrase 1).
 * Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
@@ -880,27 +880,53 @@ TS =
   )
   AND
     ("neglected tropical disease$"
+    OR "African trypanosomiasis"  
+    OR "AIDS"
+    OR "appendicitis"
     OR "buruli ulcer"
     OR "chagas"
-    OR "dengue"
     OR "chikungunya"
+    OR "dengue"
+    OR "diarrheal disease$"
+    OR "diphteria"
     OR "dracunculiasis" OR "guinea-worm disease"
+    OR "ebola"    
     OR "echinococcosis"
-    OR "foodborne trematodiases"
+    OR "foodborne trematodiases" OR "food-borne trematodiases"
+    OR "hemolytic disease"
+    OR "hepatitis B"
+    OR "HIV"
     OR "human african trypanosomiasis" OR "sleeping sickness"
     OR "leishmaniasis"
     OR "leprosy"
+    OR "lower respiratory infections"
     OR "lymphatic filariasis"
+    OR "malaria"
+    OR "maternal hemorrhage"
+    OR "maternal sepsis"    
+    OR "measles"
     OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
+    OR "neonatal encephalopathy"
+    OR "neonatal sepsis"
+    OR "neural tube defect$"
     OR "onchocerciasis" OR "river blindness"
+    OR "pertussis"
     OR "rabies"
+    OR "rheumatic heart disease"
     OR "scabies"
     OR "schistosomiasis"
+    OR "sickle cell"
     OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
     OR "snakebite envenoming"
+    OR "syphilis"
     OR "taeniasis" OR "cysticercosis"
-    OR "trachoma"
+    OR "tetanus"
+    OR "trachoma" 
+    OR "trichuriasis"
+    OR "tuberculosis"
+    OR "typhoid fever"
     OR "yaws"
+    OR "yellow fever"
     OR "least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
@@ -911,10 +937,6 @@ TS =
     OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
     OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
     OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-    OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-    OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
-    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"  OR "turkey"
     )
 )
 ```
@@ -1133,6 +1155,9 @@ Specialist input: Awaiting
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
 <a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
+
+<a id="f31"></a> Coates MM, Ezzati M, Robles Aguilar G, Kwan GF, Vigo D, et al. (2021) Burden of disease among the world’s poorest billion people:
+ An expert-informed secondary analysis of Global Burden of Disease estimates. *PLOS ONE 16*(8): e0253073. https://doi.org/10.1371/journal.pone.0253073 [↩](#GBD)
 
 <a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] (#HLPF)
 
