@@ -527,9 +527,11 @@ TS=
 
 This target is interpreted to cover research about deaths and injuries from road traffic accidents. Improvement to road/vehicle safety generally is not considered relevant unless it is connected to health - the injury/death focus is evident in the target and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). Improving road safety generally is covered in SDG 11.2.
 
-This query consists of 1 phrase. Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife).
+This query consists of 1 phrase. Originally, a second phrase was included about improving `survival`, however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or wildlife). 
 
-The elements of the phrase are: *traffic/road users + mortality/morbidity*
+We also considered using terms for wildlife roadkills, biodiversity etc. in the NOT-phrase to exclude results about the impact of traffic accidents on animals, but it proved too hard to isolate them from accidents that also (potentially) affect humans. 
+
+The elements of the phrase are: *traffic/road users + mortality/morbidity* + *accidents etc.*
 
 In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y"). `intersection$` was considered but removed as it mostly added noise from metaphorical use of intersection (e.g. between two subject areas).
 
@@ -545,11 +547,15 @@ TS =
       OR (("vehicle$" OR "driver$" OR "driving" OR "car" OR "cars") NEAR/15 ("accident$" OR "crash*" OR "collision$" OR "traffic" OR "RTI" OR "RTIs"))
       )
       AND
-          ("mortality" OR "death$" OR "fatalities" OR "fatal" OR "deadly"
-          OR "morbidity" OR "injury" OR "injuries" OR "road trauma$" OR "RTI" OR "RTIs"
+          ("mortality" OR "death$" OR "fatal*" OR "deadly"
+          OR "morbidity" OR "injur*" OR "road trauma$" OR "RTI" OR "RTIs"
           )
+      AND
+          ("accident$" OR "crash*" OR "collision$" OR "traffic incident$" OR
+          (("driver" OR "road" OR "cycling" OR "cyclist$" OR "bicycle$" OR "pedestrian$" OR "vehicle$") 
+          NEAR/3 ("injur*" OR "fatalit*" OR "death$")) OR "driving injur*" OR "RTI" OR "RTIs" OR "safety")
   )
-  NOT ("air traffic" OR "boat traffic")
+    NOT ("air traffic" OR "boat traffic")
 )
 ```
 
