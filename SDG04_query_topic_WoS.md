@@ -366,10 +366,10 @@ TS=
 (
  (
   ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-   ("equit*" OR "equal*" OR "balanc*")
- ) 	
-   NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
+  NEAR/5
+  ("equit*" OR "equal*" OR "balanc*")
+)
+  NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
