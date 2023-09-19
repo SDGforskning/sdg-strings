@@ -381,13 +381,19 @@ In this phrase, the basic structure is similar to phrase 1, but reversed to sear
 TS=
 (
  (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+ ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
    NEAR/5
-   ("inequit*" OR " OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
-    OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
-  )
-   NEAR/5
-   ("school*" OR "educat*" OR "vocational training" OR "student*")
+  ("inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*"
+   OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$" OR "gaps in education"
+   OR "gender parity" OR "parity with" OR "educational parity" OR 
+     (
+      (" difference$" OR "discrepan*") NEAR/5
+      ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
+     )
+   )
+   )
+    NEAR/10
+    ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
