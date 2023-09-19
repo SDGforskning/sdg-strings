@@ -1309,14 +1309,14 @@ There are also 19 technical areas from the Joint External Evaluation tool, which
 
 This query consists of 1 phrase. The general structure is *health emergencies + preparedness + action*
 
-`national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
+Pandemic is a challenging search term, as there is so much research about societal, economic etc. impact of the COVID-19 pandemic. To avoid some noise, we have chosen to combine `pandemic` with "health terms". `national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
 ```py
 TS =
 (
   (
     ("national health risk$" OR "international health risk$" OR "global health risk$" OR "public health risk$"
-    OR "pandemic$" OR "epidemic$" OR "outbreak$"
+    OR "epidemic$" OR "outbreak$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
     OR "chemical event$" OR "chemical emergenc*"
@@ -1324,6 +1324,8 @@ TS =
     OR "food safety" OR "foodborne event$"
     OR "biosecurity event$" OR "biosecurity emergenc*"
     OR "antimicrobial resistan*" OR "antibiotic resistan*" OR "antifungal resistan*"
+    OR "pandemic$" NEAR/5 ("influenza" OR "flu" OR "health" OR "hospital*"
+    OR "clinic*" OR "ward*" OR "care" OR "nurs*" OR "pharmac*" OR "medic*" OR "vaccin*")
     )
     NEAR/15  
       (
