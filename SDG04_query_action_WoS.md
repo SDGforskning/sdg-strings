@@ -419,7 +419,7 @@ TS=
               ("equit*" OR "equal*" OR "balanc*")
         )
     ) 	
-    NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
+    NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
