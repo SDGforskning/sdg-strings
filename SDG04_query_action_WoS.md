@@ -486,7 +486,7 @@ TS=
             )
       )
     )
-    NEAR/5 ("school*" OR "educat*" OR "vocational training")
+    NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
   )
   NEAR/15
       (
