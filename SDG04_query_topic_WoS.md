@@ -353,7 +353,7 @@ TS=
 
 This target is interpreted to cover research about
 * Gender disparities in education
-* Access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
+* Access to and inclusivity in education, in special education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
 
 This query consists of 3 phrases.
 
@@ -393,32 +393,42 @@ TS=
 
 #### Phrase 3
 
-The basic structure is *access + education + vulnerable groups*
+The basic structure is *access + education + vulnerable groups*. In revision September 2023, added a new part: *access + special education*.
 
-"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
-
+"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included. After revision September 2023, added terms for the 13 disability categories from the US Individuals with Disabilities Education Act (IDEA): <a href="https://www.understood.org/en/articles/conditions-covered-under-idea"> 13 disability categories under IDEA</a>      
 ```py
 TS=
 (
+ (
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR
+   "non-discriminat*" OR "equitab*" OR “education for all” OR "Rights of Persons with Disabilities" OR
+   "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR “unequit*” OR "disparit*"OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
+
+  NEAR/5 ("school*" OR "educat*" OR "vocational training")
+)
+NEAR/15
+ (
   (
-    (
-     ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*")
-      OR
-      ("discriminat*" OR "non-discriminat*" OR "inequit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
-    )
-    NEAR/5 ("school*" OR "educat*" OR "vocational training")
+   ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")
+    NEAR/3
+     ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly" OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR
+      "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" OR "specific learning disabilit*" OR "SLD" OR
+      "other health impairment*” OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*" OR
+      "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness" OR
+      "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
   )
-  NEAR/15
-      (
-        (
-         ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
-          NEAR/3
-              ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
-              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*")
-        )
-     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
-     )
+  OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+  OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural" OR "special educational needs" OR "SEN"
+)
+)
+OR
+TS=
+(
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR
+   "education for all" OR "Rights of Persons with Disabilities" OR "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR
+   “unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
+  )
+   NEAR/5 ("special educat*" OR "special needs educat*" OR "special educational support" OR "inclusive education" OR "aided education")
 )
 ```
 
