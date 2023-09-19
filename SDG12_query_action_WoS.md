@@ -1028,55 +1028,32 @@ TS=
 > 
 > 12.8.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is interpreted to cover research about advacing dissimination of information, education and awareness raising on sustainable development. The indicator for this target is a shared indicator with **target 4.7** and **13.3**. However the phrases for 12.8 are more focused on environmental sustainability to reflect the mentioning of "lifestyles in harmony with nature" in the target. "Lifestyles in harmony with nature" is not incorporated in the phrase as a term, to focus on the means to achive this goal.
+This target is interpreted to cover research about promoting education, awareness or information, with respect to sustainable development, sustainable consumption and production, or sustainable lifestyles. The indicator for this target is a shared indicator with **target 4.7** and **13.3**. However, the phrases for 12.8 are more focused on environmental sustainability to reflect the mentioning of "lifestyles in harmony with nature" in the target. By the definition in the UNEP publication *ABC of SDP* (<a id="ABC">[UNEP, 2010](#f1)</a>) "*Education for Sustainable Development (ESD) concerns all levels of education and all social contexts (family, school, workplace, community)*". For this reason, we do not restrict to only formal education.
 
-By the definition in the UNEP publication *ABC of SDP* (<a id="ABC">[UNEP, 2010](#f1)</a>) "*Education for Sustainable Development (ESD) concerns all levels of education and all social contexts (family, school, workplace, community)*". For this reason, phrase 1 is focused on all dissemination of information and not restricted to only formal education.
-
-We interpret this target to be also about promoting sustainable consumer behavior and added phrase 2 for finding research about this, i.e. promoting sustainable consumption and choices. 
-
+In an earlier version we had also interpreted this to include research about behaviour and motivation, but on review have decided this is too indirect for the education and awareness focus of the target.
 
 #### Phrase 1
 
-This phrase aims to find research about promoting dissimination of information, education and awareness raising on sustainable development, including consumer education. 
+The elements of the phrase are *action + education for sustainable development*.
 
-Term `education` by itself brings many results which are irrelevant to this target. To remove these `education`  is combined with `consumers` or `citizens`. 
-
-Term `responsiblity` is used only as combined with consumer choises in order to reduce noise. Still, practically all terms for disseminating information/raising awareness/teaching/learning combined with sustainability/environmental/enviroment tend to bring irrelevant results about e.g. learning environment or health education. These are hard to exclud from the results without losing the core of relevant results.
-
-The elements of the phrase are *action(promote) + dissimination of information + sustainability*
+The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these `education` is specifically used in phrases targeting "education for sustainable development" here. 
 
 ```py 
-TS=
+TS= 
 (
   ("encourag*" OR "promote" OR "advance" OR "increase" OR "ensure" OR "improv*" 
-  OR "implement" OR "adopt*" OR "apply" OR "enforce" OR "establish*" OR "propose*" OR "design*" OR "plan" OR "planning" 
+  OR "implement" OR "develop*" OR "adopt*" OR "apply" OR "enforce" OR "establish*" OR "propose*" OR "design*" OR "plan" OR "plans" OR "planned" OR "planning" 
   OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
-  ) 
-  NEAR/5 
-      ("education for sustainable development"
-      OR
-        (
-          (
-            (("disseminat*" OR "raise" OR "raising" OR "consumer$" OR "citizen$" OR "public") NEAR/3 ("information" OR "knowledge" OR "awareness")) 
-            OR (("educat*" OR "guide$" OR "teach*" OR "instruct*" OR "learn*") NEAR/3 ("consumer$" OR "citizen$")) 
-          )
-          NEAR/5 
-              ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" 
-              OR ("responsib*" NEAR/5 ("consumer$" OR "consumption"))
-              )
-        )
-      )
+  )
+  NEAR/5 ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education")
 )
-
 ```
 
 #### Phrase 2
 
-This phrase aims to find reserach about promoting sustainable consumer choices and behavior.
+The elements of the phrase are *action + education + sustainability/SCP + people/consumers/lifestyles*.
 
-Some concepts from the UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>) are used as specifying terms: `eco-labelling` `product footprint` and `recycling`.
-
-The elements of the phrase are *action(promote) + consumer+choices + sustainability/practises*
+The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these `education` and most of the other *education terms* are combined with consumer/person groups. Still, terms for disseminating information/raising awareness/teaching/learning combined with sustainability/environmental/environment tend to bring irrelevant results about e.g. learning environment or health education. These are hard to exclude from the results without losing the core of relevant results - the `NOT` part aims to remove some of these (particularly medical works which may study "environmental factors"). Many of the *sustainability/SCP* terms are taken from 12.1, with some concepts from the UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>) are used as specifying terms: `eco-labelling` `product footprint` and `recycling`.
 
 ```py 
 TS=
@@ -1084,24 +1061,39 @@ TS=
   ("encourag*" OR "promote" OR "advance" OR "increase" OR "ensure" OR "improv*" 
   OR "implement" OR "develop*" OR "adopt*" OR "apply" OR "enforce" OR "establish*" OR "propose*" OR "design*" OR "plan" OR "plans" OR "planned" OR "planning" 
   OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
-  ) 
-  NEAR/5 
-    (
+  )
+  NEAR/5
       (
-        ("consumer$" OR "consumption" OR "citizen$" OR "public" OR "child*" OR "people")
-        NEAR/5 ("action$" OR "choice$" OR "behavior$" OR "behaviour$" OR "awareness" OR "aware" OR "attitude$" OR "psycholog*" OR "purchase$" OR "habit$" OR "intention" OR "motivation")
-      ) 
-      NEAR/5
-      ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "responsible"
-      OR "ecolabel*"  OR "eco-label*" OR "ecobuilding$" OR "eco-building$" 
-      OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
-      OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-      OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-      OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-      OR "compost*"
-      )  
-    )
+        ("awareness" OR "lifelong learning" 
+        OR
+          (
+            ("information" OR "knowledge" OR "aware" OR "guide$" OR "instruct*" OR "learn*" OR "educat*" OR "teach*")
+            NEAR/15
+              ("consumer$" OR "customer$" OR "resident$" OR "visitor$" OR "guest$" OR "tourist$" OR "employee$" OR "farmer$"
+              OR "citizen$" OR "children" OR "teenager$" OR "adolescent$" OR "the elderly" OR "public" OR "student$" OR "adult$" OR "people" OR "women" OR "men"
+              OR "purchas*" OR "buying" OR "habit$"
+              OR (("responsib*" OR "sustainable" OR "green" OR "circular" OR "eco" OR "environmental*") NEAR/5 ("consumption" OR "life-style$" OR "lifestyle$"))
+              )
+          )
+        )
+        NEAR/5
+            ("sustainability" OR "sustainable development" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "socially responsible" OR "social responsib*"
+            OR (("responsib*" OR "sustainable" OR "circular") NEAR/3 ("tourism" OR "production" OR "consumption" OR "life-style$" OR "lifestyle$" OR "purchas*" OR "waste")) 
+            OR (("circular*" OR "sustainab*") NEAR/5 ("econom*" OR "bioeconom*" OR "produce$" OR "product$" OR "consume$" OR "consumer$"))
+            OR "cleaner production"
+            OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" OR "energy efficiency"
+            OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
+            OR "ecobuilding$" OR "eco-building$" 
+            OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
+            OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
+            OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
+            OR "repurpos*" OR "re-purpos*" OR "re purpos" 
+            OR "compost*"
+            OR "renewable energy"
+            )   
+      )     
 )
+NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness" OR "education"))
 ```
 
 ### Target 12.a
