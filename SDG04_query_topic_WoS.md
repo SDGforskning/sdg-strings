@@ -410,7 +410,7 @@ TS=
    "non-discriminat*" OR "equitab*" OR “education for all” OR "Rights of Persons with Disabilities" OR
    "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR “unequit*” OR "disparit*"OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
 
-  NEAR/5 ("school*" OR "educat*" OR "vocational training")
+  NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
 )
 NEAR/15
  (
