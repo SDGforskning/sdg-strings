@@ -274,7 +274,7 @@ TS=
     OR 
       (
         ("anthropogenic" 
-        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+        OR "environmental" OR "deforestation" OR "desertification" OR "degradation" OR "pollution" OR "erosion"
         OR "chemical" OR "heavy metal$" OR "pesticide$"
         OR "biological" OR "zoonotic"
         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
