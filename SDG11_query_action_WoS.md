@@ -248,7 +248,7 @@ TS=
     ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
     NEAR/15 ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
   )
-  NEAR/15 ("urbani?ation" OR "urban development")
+  NEAR/15 ("urbani?ation" OR "urban development" OR "urban planning" OR "human settlement planning")
 )
 ```
 
@@ -264,7 +264,7 @@ TS=
     NEAR/15
         (
           ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
-          NEAR/3 ("plan*" OR "manag*")
+          NEAR/3 ("plan" OR "plans" OR "plann*" OR "manag*")
         )
   )
   NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
@@ -309,7 +309,7 @@ TS=
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This target is interpreted to cover research on reducing deaths/missing people caused by disasters and the impact of disasters on GDP/GGDP losses. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
+This target is interpreted to cover research on reducing deaths, missing and affected people caused by disasters and the impact of disasters on GDP/GGDP losses. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
 
 Terms were gathered from the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>), the Sendai Framework as presented on prevetionweb (<a id="sendai">[UN Office for Disaster Risk Reduction, n.d.](#f6)</a>) and the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). Terms were also added from a standardised list of disasters we created to be used across SDG search strings, which was based on hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a>.
 
@@ -352,7 +352,11 @@ TS=
   AND
     (
       (
-        ("casualt*" OR "death$" OR "fatal*" OR "missing people" OR "missing person$")
+        (
+         (("casualt*" OR "death$" OR "fatal*"))
+         OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$")
+          )
+        )
         NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
       )
     OR 
@@ -539,7 +543,8 @@ TS=
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. 
+This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Public space definitions partly based on UN Habitat Public Space" training module (<a id="UNhabitat-publicspace">[UN-Habitat, 2018](#f10)</a>)
+Public commercial spaces are not included, as these are not included in the target indicators.
 
 This query consists of 2 phrases.
 
@@ -556,12 +561,12 @@ TS=
     )
     NEAR/15 ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
   )
-  NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
       OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
-)
+      OR (("park$" OR "street$" OR "avenue$" OR "square$" OR "beach$" OR "waterfront" OR "riverbank$" ) NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "boulevard$" OR "public playground$"
+      OR "public library" OR "public libraries" OR "civic center$" OR "civic centre$" OR "community centre$"OR "community center$" OR "public facilit*" OR "public market$"	
+      ))
 ```
 
 #### Phrase 2
@@ -576,8 +581,10 @@ TS=
   )
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolotan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
+      OR (("park$" OR "street$" OR "avenue$" OR "square$" OR "beach$" OR "waterfront" OR "riverbank$" ) NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "boulevard$" OR "public playground$"
+      OR "public library" OR "public libraries" OR "civic center$" OR "civic centre$" OR "community centre$"OR "community center$" OR "public facilit*" OR "public market$"	
       )
 )
 ```
@@ -718,4 +725,7 @@ Specialist input: Awaiting
 <a id="f1"></a> UN Statistics Division (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
 <a id="f2"></a> UN Statistics Division (2022). SDG Indicators Metadata Repository. https://unstats.un.org/sdgs/metadata
+
+<a id="f10"></a> UN-Habitat (2018). SDG Indicator 11.7.1 Training Module: Public Space. United Nations Human Settlement
+Programme (UN-Habitat). https://unhabitat.org/sites/default/files/2020/07/indicator_11.7.1_training_module_public_space.pdf (accessed Sep 2023).[↩](#UNhabitat-publicspace)
 
