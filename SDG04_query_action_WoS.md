@@ -234,7 +234,7 @@ TS=
       OR "improv*" OR "manag*"
       )
       NEAR/5
-        ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
+        ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
     )
   )
   NEAR/15
@@ -271,7 +271,7 @@ TS=
           OR "improv*" OR "manag*"
           )
           NEAR/5
-              ("barrier$" OR "obstacle$" OR "inequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
+              ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
         )
     )
     NEAR/15 ("access")
