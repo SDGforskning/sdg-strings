@@ -361,7 +361,7 @@ TS=
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
 This target is interpreted to cover research about climate funding or investment/financing of climate mitigation (e.g. the green climate fund); or research about climate change and green investment/financing (e.g. investment in green innovation for low-carbon technology). These topics are considered relevant if they are:
-- connected to low- and middle-income countries, annex II parties or international flows
+- connected to low- and middle-income countries, annex II parties or international flows OR
 - connected to allocation, transparency, capitalisation or contributions
 
 This query consists of 3 phrases. Note that here we do not include a specific action, as the target is a little difficult to boil down to a concrete action - it could be increase mobilisation of funds; ensure implementation of commitments; address the needs of developing countries; ensure transparency; increase capitalization, but we have chosen to take a topic-like approach for this target. 
