@@ -149,7 +149,7 @@ The search term "care" is not used alone as it would give too many hits that are
 TS=
 (
  (
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*")
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*" OR "unequit*")
  )
   NEAR/5
       ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
