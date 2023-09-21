@@ -167,7 +167,7 @@ TS=
     OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
     )
     NEAR/5
-      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*")
+      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*" OR "unequit*")
   )
   NEAR/5
       ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
