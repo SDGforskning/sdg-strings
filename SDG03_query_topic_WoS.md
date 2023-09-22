@@ -1092,12 +1092,11 @@ TS =
     OR "food safety" OR "foodborne event$"
     OR "biosecurity event$" OR "biosecurity emergenc*"
     OR "antimicrobial resistan*" OR "antibiotic resistan*" OR "antifungal resistan*" 
-    OR "pandemic$" NEAR/5 ("influenza" OR "flu" OR "health" OR "hospital*"
-    OR "clinic*" OR "ward*" OR "care" OR "nurs*" OR "pharmac*" OR "medic*" OR "vaccin*")
+    OR ("pandemic$" NEAR/15 ("influenza" OR "flu" OR "health" OR "hospital*" OR "clinic*" OR "ward*" OR "care" OR "nurs*" OR "pharmac*" OR "medic*" OR "vaccin*"))
+    OR "pandemic preparedness" OR "pandemic polic*"
    )
- )
     NEAR/15  
-      ("capacity" OR "early warning*" OR "surveillance" OR "monitoring system$"
+      ("capacity" OR "early warning*" OR "early detection" OR "surveillance" OR "monitoring system$"
       OR "laboratory reporting" OR "laboratory infrastructure" OR "laboratory quality" OR "laboratory system$"
       OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
       OR "risk reduction" OR "risk management" OR "risk communication"
@@ -1107,8 +1106,7 @@ TS =
       OR "international health regulations" OR "national focal point$" OR "national action plan*"
       )
   )
-  NOT
-      ("blight" OR "plant pathogen$" OR "plant disease$")
+  NOT ("blight" OR "plant pathogen$" OR "plant disease$")
 )
 ```
 
