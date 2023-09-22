@@ -135,9 +135,13 @@ TS=
 > 3.3.5 Number of people requiring interventions against neglected tropical diseases
 
 This target could be interpreted two ways in the topic approach:
-1. It covers research about the combating and ending of communicable and waterborne diseases
-2. It covers all research about communicable and waterborne diseases
-For the moment, we are using interpretation (1). Thus we interpret "ending epidemics", to include research on epidemics/pandemics, along with general works about transmission, prevalence, and risks.  We interpret "combating" to mean reducing occurrence and effects of these diseases, thus covering research about control, transmission, prevention, treatment, medicines, vaccines etc. 
+
+1. It covers research about the combating and ending of communicable and waterborne diseases, and research about epidemics of communicable diseases
+2. It covers any research about communicable and waterborne diseases (including e.g. effects on health, effects on society and finance, etc.)
+
+For the moment, we are using interpretation (1). We include research on epidemics/pandemics, along with general works about transmission, prevalence, and risks.  We interpret "combating" to mean reducing occurrence and effects of these diseases, thus covering research about control, transmission, prevention, treatment, medicines, vaccines etc. 
+
+However, due to the covid-19 pandemic there has been an explosion of literature using the terms "covid" (or synonyms) + pandemic/outbreak/epidemics. A good amount of this research is not necessarily to do with treating covid or ending the pandemic - but to do with for example effects on education, care, business, and society. We consider these outside our interpretation, but they are difficult to remove without losing relevant results. We have however implemented a change in phrase 3 to try and filter out some of these results - terms for *covid-19* are separated out, and combined with the *treatment/pandemic* terms in a slightly more constrained way. See notes on phrase 3.  
 
 This query consists of 3 phrases.
 
@@ -164,7 +168,7 @@ TS =
 
 #### Phrase 2
 
-The elements of the phrase are: *communicable diseases + prevention/treatment*. In this phrase, specific diseases and groups of diseases are covered. The*disease* terms are the same as in phrase 3.
+The elements of the phrase are: *communicable diseases + prevention/treatment*. In this phrase, specific diseases and groups of diseases are covered. The*disease* terms are the same as in phrase 3. This phrase is the same as the action approach - we keep the focus on prevention/treatment.
 
 In the *communicable disease* terms, specific diseases were added from sources outlined below, plus a WHOs factsheet on leading causes of death in 2019 (<a id="WHOFStop10">[WHO, 2020c](#f23)</a>).
 - The first section covers communicable and waterborne diseases as a category (see also Phrase 1).
@@ -183,8 +187,7 @@ TS =
       ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
       OR "contagious" OR "transmissible" OR "infectious"
       )
-      NEAR/5
-          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
+      NEAR/5 ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
     )
     OR "hepatitis"
     OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
@@ -257,7 +260,9 @@ TS =
 
 #### Phrase 3
 
-The general structure is *communicable diseases + epidemics/interventions*. This phrase uses the same disease terms as phrase 2, but is separated because the *epidemic/intervention* can be combined with `AND` rather than needing `NEAR`.
+The general structure is *communicable diseases + epidemics/interventions // covid-19 + interventions/ending epidemics*. This phrase uses the same disease terms as phrase 2, but is separated because the *epidemic/intervention* can be combined with `AND` rather than needing `NEAR`.
+
+Due to the covid-19 pandemic there has been an explosion of literature using the terms "covid" (or synonyms) + pandemic/outbreak/epidemics. A good amount of this research is not necessarily to do with treating covid or ending the pandemic - but to do with for example effects on education, care, business, and society. We consider these outside our interpretation, but they are difficult to remove without losing relevant results. We have however implemented a change in phrase 3 to try and filter out some of these results - terms for *covid-19* are separated out, and combined with the *treatment/pandemic* terms in a slightly more constrained way. The *treatment* terms are left as is, but `pandemic OR outbreak OR epidemic` are combined with *ending* terms. 
 
 ```py
 TS =

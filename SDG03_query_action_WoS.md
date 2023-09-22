@@ -222,8 +222,7 @@ TS =
       ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
       OR "contagious" OR "transmissible" OR "infectious"
       )
-      NEAR/5
-          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
+      NEAR/5 ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
     )
     OR "hepatitis"
     OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
