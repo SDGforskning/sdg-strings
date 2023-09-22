@@ -182,7 +182,7 @@ TS =
     NEAR/15
         ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
         OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
+        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
         OR
           (
             ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
@@ -288,7 +288,7 @@ TS =
   NEAR/5
       ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
+      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
       )
 )
 
@@ -374,7 +374,7 @@ TS =
         (
           ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
           OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-          OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
+          OR "stop" OR "stopped" OR "stopping" OR "control" OR "contain" OR "treat" OR "vaccinate"
           )
           NEAR/3
               ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
