@@ -888,7 +888,7 @@ TS=
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
 This target is interpreted to cover research about:
-* The development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect, but we have used a list of diseases found in (<a id="GBD">[Coates et al., 2021](#31)</a>) - from results and Appendix table 6 over disease occurence/fatalities in richest vs. poorest, and generic terms for developing countries (phrase 1).
+* The development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect, but we have used a list of diseases found in (<a id="GBD">[Coates et al., 2021](#f31)</a>) - from results and Appendix table 6 over disease occurence/fatalities in richest vs. poorest, and generic terms for developing countries (phrase 1).
 * Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
