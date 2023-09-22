@@ -197,32 +197,24 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning.
+This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning. We also consider research about vulnerability to climate change to be relevant, as it can be seen as knowledge required to inform adaptation, impact reduction and early warning.
 
-We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases, also via carbon sequestration.
+In addition to general terms for climate change mitigation, adaption, impact reduction, and early warning, we also include terms for the reduction of greenhouse gases, including via sequestration/storage. This is based on a definition of climate change mitigation which covers greenhouse gas prevention/reduction. 
 
-«Climate Change Mitigation refers to efforts to reduce or prevent emission of greenhouse gases. Mitigation can mean using new technologies and renewable energies, making older equipment more energy efficient, or changing management practices or consumer behaviour» (<a id="UNEPmitigation">[UNEP n.d.](#f9)</a>).
+>«Climate Change Mitigation refers to efforts to reduce or prevent emission of greenhouse gases. Mitigation can mean using new technologies and renewable energies, making older equipment more energy efficient, or changing management practices or consumer behaviour» (<a id="UNEPmitigation">[UNEP n.d.](#f9)</a>).
 
-We consider research about vulnerability to climate changes to be relevant, as it can be seen as knowledge required to inform adaptation, impact reduction and early warning.
+This query consists of 1 phrase. The elements of the phrase are: *climate mitigation/adaptation/warning*.
 
-In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction). A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
 
-A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
-
-This query consists of 1 phrase. The elements of the phrase are: *climate mit/adapt/warning*
-
-Documentation of the history of development for this string:
-
-In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
-
-Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
-* Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
-* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
-* "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
-
-
-
-
+>Documentation of the history of development for this string:
+>
+>In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
+>
+>Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
+>* Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+>* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+>* "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
 
 ```py
 TS=
@@ -259,8 +251,7 @@ TS=
       OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
        OR "captur*" OR "storage$" OR "store$" OR "storing" OR "sequestrat*"
       )
-      NEAR/5
-          ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
+      NEAR/5 ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
     )
     OR 
     (
