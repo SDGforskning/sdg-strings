@@ -90,20 +90,20 @@ TS=
 >
 >13.2.2 Total greenhouse gas emissions per year		
 
-This target is interpreted to cover research about national policies, strategies and planning relating to:
-  - climate change, climate action, mitigation and adaptation (including greenhouse gases)(phrase 1)
-  - the indicators/impacts of climate change (phrase 2)
-  - international climate frameworks (phrase 3)
+This target is interpreted to cover research about:
+  - national policies, strategies and planning relating to climate change, climate action, mitigation and adaptation (including greenhouse gases) (phrase 1/2)
+  - national policies, strategies and planning and action/impacts of climate change (phrase 3)
+  - international climate frameworks (phrase 4)
 
 We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral is not the same as national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of green house gases (GHG)) but in order to be consistent with our interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
-This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here - all results will be covered by phrase 1 under.
+This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here into phrase 1/2.
 
-#### Phrase 1
+#### Phrase 1/2
 
-This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
+This phrase covers national policies, strategies and planning related to climate change, including mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
 
 We include reduction of greenhouse gases as a mitigation action as national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
@@ -135,9 +135,9 @@ TS=
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
-This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
+This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + action/impacts + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
 
 Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
@@ -166,7 +166,7 @@ TS=
 )
 ```
 
-#### Phrase 3
+#### Phrase 4
 
 This phrase covers national policies, strategies and planning related to specific frameworks for mitigation and adaptation. The elements of the phrase are: *frameworks + national plans*. Compared to the action approach, an element generally about climate change has been removed because these results will now be covered by phrase 1.
 

@@ -103,7 +103,7 @@ TS=
 
 This target is interpreted to cover research about
   - integration of climate change into national policy, strategies and planning (phrase 1)
-  - national policies, strategies and planning relating to climate change, climate action, mitigation and adaptation (including reduction of greenhouse gases) (phrase 2)
+  - national policies, strategies and planning relating to climate action, mitigation and adaptation (including reduction of greenhouse gases) (phrase 2)
   - national policies, strategies and planning for reducing the indicators/impacts of climate change (phrase 3)
   - national policies, strategies and planning relating to international climate frameworks (phrase 4)
 
@@ -182,7 +182,7 @@ TS=
 
 #### Phrase 3
 
-This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The general structure is *climate change indicators + action + national plans*.
+This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The general structure is *climate change indicators + action/reduce impacts + national plans*.
 
 Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
