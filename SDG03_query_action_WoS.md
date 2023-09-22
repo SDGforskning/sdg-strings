@@ -182,7 +182,7 @@ TS =
     NEAR/15
         ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
         OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
+        OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
         OR
           (
             ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
@@ -288,7 +288,7 @@ TS =
   NEAR/5
       ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
+      OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
       )
 )
 

@@ -153,7 +153,7 @@ TS =
     NEAR/15
         ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
         OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
+        OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
         OR "epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"
         OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*"
         )
@@ -249,7 +249,7 @@ TS =
   NEAR/5
       ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control" OR "contain"
+      OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
       )
 )
 
