@@ -289,7 +289,7 @@ TS =
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
     OR "lower respiratory infection$" OR "respiratory tract infection$"
-    OR "coronavirus" OR "covid" OR "covid19" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
+    OR "middle east respiratory syndrome" OR "MERS"
     OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
     OR "ebola"
     OR "plague"
@@ -334,6 +334,27 @@ TS =
       ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"
       OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
       OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
+      )
+)
+OR 
+TS=
+(
+  ("coronavirus" OR "covid" OR "covid19" OR "severe acute respiratory syndrome" OR "SARS")
+  AND 
+      (    
+        (
+          ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
+          OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
+          OR "stop" OR "stopped" OR "stopping" OR "control" OR "contain" OR "treat" OR "vaccinate"
+          )
+          NEAR/3 ("epidemic$" OR "pandemic$" OR "outbreak$")
+        )
+      OR
+        ("spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$" 
+        OR "pandemic response" OR "epidemic response" OR "outbreak response"
+        OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
+        OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
+        )
       )
 )
 
