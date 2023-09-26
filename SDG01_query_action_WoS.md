@@ -548,7 +548,7 @@ TS=
   (
     ("ODA" OR "development spending" OR "cooperation fund" OR "FDI"
     OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$"
-    OR "fund$" OR "funding" OR "grant$" OR "investment$" OR "investing" OR "financing" OR "capital flow$"
+    OR "fund$" OR "funding" OR "grant$" OR "invest" OR "investment$" OR "investing" OR "financing" OR "capital flow$"
     OR "financial resources" OR "domestic resources"  OR "fiscal resources" OR "economic resources" OR "mobili$e resources"
     OR  (
           ("international" OR "development" OR "foreign" OR "global")
