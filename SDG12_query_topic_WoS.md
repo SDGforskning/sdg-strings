@@ -735,23 +735,23 @@ Term `compost` is removed from the phrase to focus on articles about reducing wa
 TS=
 (
     (
-      ("recycl*" OR "re cycl*" OR "reuse$" OR "re use$" OR "reusing" OR "re using" 
-      OR "re furbish*" OR "remanufactur*" OR "re manufactur*" OR "repurpos*" OR "re purpos" 
-      OR "codigest*" OR "co digest*"
+      ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+      OR "refurbish" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" OR "repurpos*" OR "re-purpos" 
+      OR "codigest*" OR "co-digest*"
       OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
-      OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "material footprint" OR "resource footprint"
+      OR "lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "material footprint" OR "resource footprint"
       OR "cleaner production"
       ) 
       NEAR/15 
-        ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
-        OR "waste$" OR "agrowaste" OR "solid waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
+        ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
+        OR "waste$" OR "agrowaste" OR "solid waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
         OR "sewage$" OR "sludge"
         )
     )
   OR
     (
-      ("recycl*" OR "re cycl*"
-      OR "re furbish*" OR "remanufactur*" OR "re manufactur*" OR "repurpos*" OR "re purpos" 
+      ("recycl*" OR "re-cycl*"
+      OR "refurbish" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" OR "repurpos*" OR "re-purpos" 
       OR "cradle to cradle" OR "cradle-to-cradle"
       ) 
       NEAR/5 
@@ -763,13 +763,13 @@ TS=
   OR 
     (
       ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-      NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+      NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
     )   
   OR 
     (
       ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "bioeconom*") 
       NEAR/15 
-        ("recycl*" OR "re cycl*" 
+        ("recycl*" OR "re-cycl*" 
         OR 
           (
             ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
