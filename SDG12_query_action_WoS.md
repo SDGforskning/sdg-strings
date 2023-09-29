@@ -275,7 +275,7 @@ TS=
                 OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater" OR "water management"
                 OR "land" OR "soil$" 
                 OR "mineral$" OR "metal$" OR "ore$"
-                OR "fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
+                OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
               )
         )
         OR 
@@ -312,22 +312,22 @@ TS=
       ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
       OR 
         (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+          ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+          OR "re-furbish*" OR "refurbish*" OR "remanufactur*" OR "re-manufactur*" 
+          OR "repurpos*" OR "re-purpos*"  
+          OR "compost*" OR "codigest*" OR "co-digest*" 
           OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
           ) 
           NEAR/5 
               ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
-              OR "packaging" OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              OR "packaging" OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
               OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
               )
         )
       OR 
         (
-          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
+          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "footprint") 
           NEAR/5 ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$")
         ) 
       OR
@@ -335,7 +335,7 @@ TS=
           (
             (
               ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-              NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+              NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
             )
           OR (("saving" OR "save$" OR "conserv*" OR "efficien*") NEAR/5 ("use" OR "using" OR "usage" OR "utili*" OR "consumption"))   
           OR ("footprint" NEAR/3 ("analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"))      
