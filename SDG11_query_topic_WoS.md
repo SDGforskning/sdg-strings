@@ -422,13 +422,18 @@ The basic structure is *environmental impact + waste management*.
 This phrase finds research about waste collection/management, while phrase 3 is about waste in general. These are related to other indicators (1.4.1, 6.3.1, 12.3.1.b, 12.5.1). Terms were gathered from the SDG indicator metadata repository for indicator 11.6.1 (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>).
 
 ```py
-
-
 TS=
 (
-    ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
-  )
-  NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*" OR "compost*" OR "recycle*" OR "reuse*" OR "biologic* degrad*" OR "combust*" OR "heat*" OR "energ*" OR "deposit*"))
+  ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
+  NEAR/15 
+      (
+        ("waste" OR "garbage" OR "rubbish") 
+        NEAR/3 
+            ("manag*" OR "collect*" 
+            OR "compost*" OR "recycle*" OR "reuse*" OR "biological degrad*" 
+            OR "combust*" OR "heat*" OR "energ*" OR "deposit*"
+            )
+      )
 )
 ```
 
