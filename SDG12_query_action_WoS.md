@@ -574,8 +574,6 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 
 > 12.4.2 (a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment
 
-This target is interpreted to cover research about promoting a) sustainable/environmentally sound management of chemicals throughout their life cycle, and about research which promotes international agreements about chemical management. The target also covers b) advancing sustainable management of all wastes and c) reducing their release to air, water and soil, as well as research which promotes international agreements on management of hazardous wastes. 
-
 This target is interpreted to cover research about:
 - promoting sustainable/environmentally sound management of chemicals throughout their life cycle, including international agreements on chemical management (phrase 1 and 2)
 - promoting sustainable management of all wastes, including international agreements on management of hazardous wastes (phrase 2)
