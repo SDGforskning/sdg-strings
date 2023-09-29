@@ -650,7 +650,7 @@ TS=
       ("Basel Convention" OR "Rotterdam Convention" OR "Stockholm Convention" OR "Montreal Protocol" OR "Minamata Convention" OR "Bamako Convention"
       OR
         (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
+          ("recycl*" OR "re-cycl*" OR "compost*" OR "codigest*" OR "co-digest*" 
           OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "repurpos*" OR "re-purpos*" 
           OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"
           OR "cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
@@ -666,7 +666,7 @@ TS=
             )
           ) 
           NEAR/5 
-              ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+              ("waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
               OR "street sweepings" 
               OR "construction debris" OR "demolition debris"
               ) 
