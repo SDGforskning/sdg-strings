@@ -322,8 +322,7 @@ This phrase covers research about reducing mortality/increasing survival and dis
 ```py
 TS=
 (
-  ( 
-    ("disaster$" OR "catastrophe$" 
+  ( "disaster$" OR "catastrophe$" 
     OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
     OR (("natural" OR "climat*") NEAR/5 "hazard$")
     OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
@@ -347,25 +346,21 @@ TS=
     OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
     OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
     OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-    )  
-  )
+  )  
   AND
     (
       (
-        (
-         (("casualt*" OR "death$" OR "fatal*"))
-         OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$")
-          )
+        ("casualt*" OR "death$" OR "fatal*"
+        OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$"))
         )
         NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
       )
     OR 
       (
         (
-          ("mortalit*" NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
-          )
-        OR ("mortality" NEAR/5 "improv*")
-        OR ("surviv*" NEAR/15 ("improv*" OR "increas*" or "enhanc*"))
+          ("mortalit*" NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
+          OR ("mortality" NEAR/5 "improv*")
+          OR ("surviv*" NEAR/15 ("improv*" OR "increas*" or "enhanc*"))
         )
         AND 
             ("people" OR "human$" OR "patient$" OR "victim$" OR "civilian$" 

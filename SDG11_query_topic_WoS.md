@@ -288,9 +288,9 @@ TS=
   )
   AND
     (
-       (("casualt*" OR "death$" OR "fatal*"))
-       OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$")
-       )
+      ("casualt*" OR "death$" OR "fatal*"
+      OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$"))
+      )
       OR 
         (
           ("surviv*" OR "mortalit*")
