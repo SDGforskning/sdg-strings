@@ -1083,9 +1083,9 @@ TS=
             OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
             OR "ecobuilding$" OR "eco-building$" 
             OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
-            OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-            OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-            OR "repurpos*" OR "re-purpos*" OR "re purpos" 
+            OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+            OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" 
+            OR "repurpos*" OR "re-purpos*" 
             OR "compost*"
             OR "renewable energy"
             )   
