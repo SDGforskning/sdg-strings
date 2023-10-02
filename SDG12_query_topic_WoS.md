@@ -125,31 +125,31 @@ TS=
         OR "cleaner production"
         OR 
           (
-            ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-            OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-            OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-            OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+            ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+            OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" 
+            OR "repurpos*" OR "re-purpos*"  
+            OR "compost*" OR "codigest*" OR "co-digest*" 
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
             ) 
             NEAR/5 
               ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
-              OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
-              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
+              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
               )
           )
-        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
         OR 
           (
             ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-            NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+            NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
           ) 
         OR 
           (
             ("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") 
             NEAR/3 ("green" OR "eco" OR "sustainab*")
           ) 
-        OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
+        OR "ecolabelling" OR "ecolabel$" OR "eco-labelling" OR "eco-labels" OR "environmental label$" 
         OR 
           (
             ("certification" OR "certificate$" OR "label$" OR "labelling") 
@@ -235,7 +235,7 @@ TS=
 
 This phrase aims to find research about unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. The elements of the phrase are *unsustainable use/practises + natural resources*.
 
-Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results. Term `water` does not appeare as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
+Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results. Term `water` does not appear as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
 
 ```py 
 TS=
@@ -287,7 +287,7 @@ The elements of the phrase are *circularity/recycling/material lifecycles/ecolab
 ```py 
 TS=
 (
-      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
       OR 
         (
           ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "refurbish*" 
@@ -297,7 +297,7 @@ TS=
           OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
           ) 
           NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
               OR "packaging" OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
               OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
@@ -401,7 +401,7 @@ TS=
     ("food production" OR "food grower$" OR "agri food"
     OR "farm*" OR "agricultur*"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+    OR "agroforest*" OR "agro-forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*"
     OR
       (
@@ -507,7 +507,7 @@ This target is interpreted to cover research about:
 - reducing the risks of chemicals and hazardous wastes to human health or the environment (phrase 4)
 - unsustainable management of chemicals and waste (phrase 5)
 
-UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphesise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
+UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphasise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
 
 Some specifying terms for wastes were found from the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and specifying terms for waste management from the UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
@@ -525,7 +525,7 @@ TS=
   OR "Strategic Approach to International Chemicals Management" OR "SAICM"
   OR
   (
-    ("cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
+    ("cradle to cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
     OR
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
@@ -562,10 +562,10 @@ TS=
   "Basel Convention" OR "Rotterdam Convention" OR "Stockholm Convention" OR "Montreal Protocol" OR "Minamata Convention" OR "Bamako Convention"
   OR
     (
-      ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
+      ("recycl*" OR "re-cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
       OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "repurpos*" OR "re-purpos*" 
       OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"
-      OR "cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
+      OR "cradle to cradle" OR "lifecycle analysis" OR "life cycle analysis" OR "lifecycle assessment" OR "life cycle assessment"
       OR
         (
           ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
@@ -579,7 +579,7 @@ TS=
       )
     ) 
     NEAR/5 
-      ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+      ("waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
       OR "street sweepings" 
       OR "construction debris" OR "demolition debris"
       ) 
@@ -633,7 +633,7 @@ TS=
       NEAR/15 
         ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
         OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$" 
-        OR "waste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
+        OR "waste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
         ) 
     )
 )
