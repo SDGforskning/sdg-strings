@@ -1343,7 +1343,11 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 * v1.0.0: Leena Byholm (Dec 2021-Sep 2022)
 
-* Internal review: Caroline S. Armitage (May 2022)
+* Internal review: Caroline S. Armitage (May 2022, minor review Oct 2022)
+
+* Testing v1.2.2: See documentation https://doi.org/10.5281/zenodo.8386611
+
+* v1.3.0: Caroline S. Armitage (Aug-Sep 2023)
 
 Specialist input: Awaiting
 
