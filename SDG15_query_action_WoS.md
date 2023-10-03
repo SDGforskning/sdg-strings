@@ -125,7 +125,7 @@ TS=
       (
         ("protect*" OR "preserve" OR "preservation" OR "preserved"
         OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-        OR "reforest*" OR "rehabilit*" OR "restor*
+        OR "reforest*" OR "rehabilit*" OR "restor*"
         )
         NEAR/5 ("habitat$" OR "biotope$")
       )
