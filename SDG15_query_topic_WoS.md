@@ -15,7 +15,7 @@ Protect, restore and promote sustainable use of terrestrial ecosystems, sustaina
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; publishing year = last 5 years): https://www.webofscience.com/wos/woscc/summary/2da6b840-1d8f-4993-8584-567417a86a46-a7f6dc18/relevance/1
 
 ## 2. General notes
 
