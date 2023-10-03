@@ -25,11 +25,11 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 ## Which SDGs, platforms and languages are covered? 
 
-Currently, we are working on ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group is responsible for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
+Currently, we have strings for ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group are primary contributors for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at this time (March 2023) are available for two platforms.
-* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15 are available. These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate.
-* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs (1, 2, 3, 4, 7, 11, 13, 14, 15) are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. SDG12 is still under development.
+The strings available at this time (October 2023) are available for two platforms.
+* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate. These files contain most of the documentation expaining how we have interpreted the strings and chosen search terms.
+* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. The python searches are a simplified version of the WOS *topic approach* (see below), designed for result titles. They only contain documentation specific to conversion to python - see the WOS files for documentation expaining how we have interpreted the strings and chosen search terms.
 
 ## What kind of results should I expect when using these strings?
 
@@ -37,22 +37,26 @@ This depends on which string you use:
 
 **"Action" strings** : The *action approach* aims to find research related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
-You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be a **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used).  
+You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be a **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used). It focuses on precision over recall. 
 
 **"Topic" strings** : The *topic approach* aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
 This is done by looking for works which mention the topic, *e.g. "malnutrition"; "school completion"; "rights of small-scale fishers"*.
 You can therefore expect to find a **larger** set of research than when using the *action approach* (baseline testing indicates that result sets from the *topic approach* are 3-5x larger than when using the *action approach*, depending on SDG). However, the results set you find using the *topic approach* may still be smaller than you would find in other mappings which use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
+
+The python searches are a simplified version of the WOS *topic approach*, designed for result titles. 
 
 We have tried to be consistent in the approaches, but there are occasional exceptions in the way that we apply these approaches at the string-level, as we are reliant on language. Some terms are ambiguous and thus difficult to apply a hard set of rules to. For example, terms such as "energy" could be to do with energy technology, or with astrophysics, or biology, or medicine; thus the string construction must be adapted to avoid excessive noise. Please see the documentation on the individual files. 
 
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Current status and planned changes?
-We have finished a version that can be used for ten of the SDGs (Web of Science syntax), and nine of the SDGs in Python (see "Releases"). We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved after testing and feedback, and may require changes over time. We have currently tested the strings in an informal way while building and plan to carry out more formal testing in 2023. 
+We have finished a version that can be used for ten of the SDGs (in Web of Science search syntax, and in Python) - see "Releases". We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved with feedback, and may require changes over time. 
+
+We test the strings in an informal way while building and carried out formal testing of v1.2.2 in August 2023, documented in Zenodo (Caroline S Armitage, Håkon Magne Bjerkan, Leena Pirit Byholm, Inger Gåsemyr, Eli Heldaas Seland, & Lise Vik-Haugen. (2023). Testing the Bergen-approach search strings for SDG research mapping (v. 1.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8386611). The current version (v1.3.0) includes changes made after this testing. 
 
 ## How do I use these strings? 
 
-Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (hereafter WoS), you can view the total SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in WoS. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the WoS interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
+Web of Science syntax strings ("WoS" files): Each file contains a search string for a specific SDG, broken up into phrases by target. If you have access to Web of Science Core Collection (hereafter WoS), you can view the SDG results by clicking the link at the top of each file. If you want to examine individual targets/phrases, the strings are formatted to be copied and pasted into the "advanced search" interface in WoS. You can copy strings using the "copy" icon (two squares) that appears in the top right corner of each code block when holding the mouse over it, and paste it directly into the search box of Web of Science advanced search. You can then combine several phrase searches in the WoS interface by selecting those you have searched for in the history, and combining them with `OR`. The majority of strings use the "topic" field in WoS - title, abstract, author keywords, and Keywords Plus(R) - and thus begin with the code `TS`. In SDG14, the field "journal title" (`SO`) is used also. 
 
 Python: Download the ipynb notebook to run on your own data.
 
@@ -64,7 +68,9 @@ Please see the suggested citation in Zenodo for your version: https://doi.org/10
 
 ## Related works
 
-This work is a continuation of the strings developed for the work [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
+This work is a continuation of the strings developed in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). The release v.2019-12 contains strings for SDGs 1,2,3,7,13 & 14 developed for this work during 2019, and should be the same as those deposited openly on publication (tab format, published May 2020) which can be found in DataverseNO at https://doi.org/10.18710/98CMDR.
+
+Documentation and testing data of v1.2.2 can be found at in Zenodo at https://doi.org/10.5281/zenodo.8386611 (Caroline S Armitage, Håkon Magne Bjerkan, Leena Pirit Byholm, Inger Gåsemyr, Eli Heldaas Seland, & Lise Vik-Haugen. (2023). Testing the Bergen-approach search strings for SDG research mapping (v. 1.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8386611). 
 
 ## License
 
