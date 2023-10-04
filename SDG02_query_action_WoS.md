@@ -406,7 +406,7 @@ The basic structure of phrase 2 is *food production systems + resilience/vulnera
 
 In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
 
-In the *resilience* terms, `climate smart agriculture` is a term used for an approach specifically addressing climate change.
+In the *resilience* terms, `climate smart agriculture` is a term used for an approach specifically addressing climate change. `risk reduction` and `disaster reduction` are used instead of acccing `reduc*` to the NEAR combination because there are many works about risks that are not disasters (e.g. reducing health risks of chemicals on farms).
 
 ```py
 TS=
@@ -431,7 +431,7 @@ TS=
             (
               ("climate smart agriculture" OR "resilien*"
               OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*" OR "program*"))
-              OR "risk reduction"
+              OR "risk reduction" OR "diaster reduction"
               )
               NEAR/5
                   ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*" OR "create" OR "creating"
