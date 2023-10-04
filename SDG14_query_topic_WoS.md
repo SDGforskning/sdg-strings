@@ -758,35 +758,28 @@ TS =
 
 This target is interpreted to cover research about international law for conservation and sustainable use of the oceans, or about international instruments related to sustainability/conservation.
 
-This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
+This query consists of 3 phrases. Phrase 1 and 2 contain specific instruments (divided by whether they need to be combined with marine terms or not), while phrase 3 contains generic terms for international law.
 
 #### Phrase 1
 
-The elements of the phrase are: *international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
-
-This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
+The elements of the phrase are: *international law*. This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.  
 
 ```py
 TS =
 (
   "law of the sea" OR "UNCLOS"
-  OR "the future we want"
   OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
   OR "BBNJ" OR "high seas treaty"
   OR "common fisheries policy"
   OR "marine stewardship council"
   OR "regional fisheries management organi?ation$" OR "RFMOs"
   OR "fish stocks agreement"
-  OR "code of conduct for responsible fisheries" OR "CCRF"
+  OR "code of conduct for responsible fisheries"
   OR "port state measures agreement"
   OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
   OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
   OR ("directive$" NEAR/3 "marine spatial planning")
-  OR "habitats directive" OR "convention on biological diversity"
-  OR "Convention on International Trade in Endangered Species"
   OR "Regional seas programme"
-  OR "Water framework directive"
-  OR "Stockholm convention"
   OR "OSPAR convention" OR "Convention for Protection of the Marine Environment of the North-East Atlantic"
   OR "Marine strategy framework directive" OR "MSFD"
   OR "Barcelona convention"
@@ -794,13 +787,30 @@ TS =
   OR "MARPOL" OR "prevention of pollution from ships"
   OR "Conservation of Antarctic Living Marine Resources"
   OR "Agreement on the Conservation of Polar Bears"
+)
+```
+
+#### Phrase 2
+
+The elements of the phrase are: *international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+This phrase contains specific international laws relevant to conservation and sustainable use, that need to be combined with *marine terms*. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb. 
+
+ ```py
+TS =
+(
+  "the future we want"
+  OR "habitats directive" OR "convention on biological diversity"
+  OR "Convention on International Trade in Endangered Species"
+  OR "Water framework directive"
+  OR "Stockholm convention"
   OR "World Heritage Convention"
   OR "Bern convention" OR "Convention on the Conservation of European Wildlife and Natural Habitats" 
   OR "Bonn convention" OR "Convention on the Conservation of Migratory Species of Wild Animals" 
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
 The elements of the phrase are: *international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
@@ -877,6 +887,10 @@ NOT
 * v1.0.0 Caroline S. Armitage (Nov 2021-Sep 2022)
 
 * Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022), Inger Gåsemyr (minor review Sep 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Lise Vik Haugen.
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
