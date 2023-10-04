@@ -2,8 +2,6 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string is currently being edited after testing.
-
 **Contents**
 
 1. Full query
@@ -14,7 +12,7 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years):
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/60d089aa-b5e3-47e5-bc1c-609481d45120-a8382a58/relevance/1
 
 ## 2. General notes
 
