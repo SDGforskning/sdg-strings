@@ -15,7 +15,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publishing year = last 5 years): https://www.webofscience.com/wos/woscc/summary/e859b1f4-bfb4-4f2c-80b4-5b23826d9aed-a830b02a/relevance/1
 
 ## 2. General notes
 
