@@ -24,7 +24,7 @@ The definition of sustainable consumption and production according to the UNEP p
 > *The use of services and related products, which respond to basic needs and bring a better quality of life while minimising the use of natural resources and toxic
 > materials as well as the emissions of waste and pollutants over the life cycle of the service or product so as not to jeopardise the needs of future generations*
 
-In these phrases SDG 12 is interpreted to be about tools and policies for promoting sustainable production and consumption, about sustainable management and efficient use of natural resources, and about reducing food waste and waste in general as well as managing the life cycle of all wastes (chemical waste in particular) thus reducing pollution and harmful releases to humans and the environment. SDG 12 is about implementing e.g. circular economy approaches, reusing and recycling materials and resources, promoting sustainable public procurements, adopting sustainable practises and reporting on company level and implementing sustainability programs on national and regional level. It also addresses the globally uneven distribution of sustainable consumption and production patterns (with special attention on the developing countries), raising consumer awareness and developing monitoring methods for the impacts of sustainable development as well as removing incentives which encourige wasteful consumption. 
+In these phrases SDG 12 is interpreted to be about tools and policies for promoting sustainable production and consumption, about sustainable management and efficient use of natural resources, and about reducing food waste and waste in general as well as managing the life cycle of all wastes (chemical waste in particular) thus reducing pollution and harmful releases to humans and the environment. SDG 12 is about implementing e.g. circular economy approaches, reusing and recycling materials and resources, promoting sustainable public procurements, adopting sustainable practises and reporting on company level and implementing sustainability programs on national and regional level. It also addresses the globally uneven distribution of sustainable consumption and production patterns (with special attention on the developing countries), raising consumer awareness and developing monitoring methods for the impacts of sustainable development as well as removing incentives which encourage wasteful consumption. 
 
 Sustainable consumption and production is about *promoting social and economic development within the carrying capacity of ecosystems by delinking economic growth and environmental degradation* (<a id="ABC">[UNEP, 2010](#f1)</a>). Thus, advancing social equity and reducing poverty are essential goals of sustainable consumption and production, as well as addressing climate and other ecological challenges . However, these terms are usually not included in our search queries, since we have focused the queries on the **means to achieve these goals**. Still, in many of the phrases terms `environmental*` `eco` and `green` are used as a variation of `sustainable` to broaden the scope towards e.g. environmentally friendly production, eco-friendly products or green consumption.
 
@@ -82,7 +82,7 @@ TS=
     OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
     ) 
     NEAR/5 
-        ("10 Year Framework of Programmes" OR "10-Year Framework of Programmes" OR "10YFP" 
+        ("10 Year Framework of Programmes" OR "10YFP" 
         OR "policy" OR "policies" OR "governmental" OR "governance" OR "action plan$" 
         OR "regulation" OR "regulatory" OR "legal" OR "law$" OR "standards" OR "code$ of conduct" 
         OR "accounting" OR "reporting" 
@@ -176,7 +176,7 @@ TS=
 
 > 12.2.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
-This target is interpreted to cover research about a) promoting sustainable management and use of natural resources, including sustainable food production and b) advancing efficient use of natural resources, with emphesis on efficient material use, including green technologies & design, circularity, footprint and lifecycle analysis. We interpret this target to also be about reducing the use of natural resources and conserving them, e.g. by advancing ecolabelling and environmental certifications.
+This target is interpreted to cover research about a) promoting sustainable management and use of natural resources, including sustainable food production and b) advancing efficient use of natural resources, with emphasis on efficient material use, including green technologies & design, circularity, footprint and lifecycle analysis. We interpret this target to also be about reducing the use of natural resources and conserving them, e.g. by advancing ecolabelling and environmental certifications.
 
 Sources used for definitions and specifying terms:
 
@@ -581,14 +581,14 @@ This target is interpreted to cover research about:
 - reducing the risks of chemicals and hazardous wastes to human health or the environment (phrase 4)
 - reducing unsustainable management of chemicals and waste (phrase 5)
 
-UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphesise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
+UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphasise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
 
 Some specifying terms for wastes were found from the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and specifying terms for waste management from the UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
 
 #### Phrase 1
 
-The aim of this phrase is to find research about promoting sustainable management of chemicals and plastic thoughout their lifecycle, and about research promoting international agreements on chemical management. The elements of the phrase are *action + sustainable + management + chemicals / international agreements*.
+The aim of this phrase is to find research about promoting sustainable management of chemicals and plastic thoughout their life cycle, and about research promoting international agreements on chemical management. The elements of the phrase are *action + sustainable + management + chemicals / international agreements*.
 
 International agreements included in the phrase are mentioned on the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>). 
 
