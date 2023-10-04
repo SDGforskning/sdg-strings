@@ -1282,9 +1282,9 @@ NOT
 
 * Internal review: Caroline S. Armitage (May 2022, minor review Oct 2022)
 
-* Testing v1.2.2: See documentation https://doi.org/10.5281/zenodo.8386611
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023)
+* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Awaiting
 
