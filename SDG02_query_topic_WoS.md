@@ -600,24 +600,24 @@ Terminology to do with breeding programmes could be included here, but we want r
 ```py
 TS=
 (
-        ("genetic resource$"
-        OR ("genetic" NEAR/2 "diversity")
+  ("genetic resource$"
+  OR ("genetic" NEAR/2 "diversity")
+  )
+  NEAR/15
+      ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*"
+      OR "smallhold*" OR "small hold*"
+      OR "permaculture" OR "cropping system$" OR "orchard$"
+      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+      OR "aquaculture" OR "mariculture"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
+      OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
+      OR "landrace$" OR "wild relative$"
+      OR
+        (
+          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+          NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
         )
-        NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*"
-            OR "smallhold*" OR "small hold*"
-            OR "permaculture" OR "cropping system$" OR "orchard$"
-            OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-            OR "aquaculture" OR "mariculture"
-            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
-            OR "landrace$" OR "wild relative$"
-            OR
-              (
-                ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-                NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-              )
-            )
+      )
 )
 ```
 
@@ -675,7 +675,6 @@ The elements of the phrase are: *resources/knowledge + sharing/access + agricult
 For the *resource/knowledge* terms, `traditional NEAR knowledge` etc. will cover variations such as "traditional agricultural knowledge". The string is set up so that we do not have to define the benefits. Within the CBD/Nagoya protocol, benefits can be monetary/non-monetary (e.g. research results, royalties), related to using/commercialisation of genetic resources. "Using" includes research on genetics/biochemistry, development and biotechnology. (<a id="Garforth">[Garforth, 2018, p.3](#f12)</a>).
 
 `access OR accessing OR accessib*` is used to prevent "accessions". `biopiracy` is the unfair exploitation of biological resources/traditional knowledge.
-
 
 ```py
 TS=

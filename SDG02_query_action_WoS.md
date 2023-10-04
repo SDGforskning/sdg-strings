@@ -743,42 +743,42 @@ Terminology to do with breeding programmes could be included here, but we want r
 ```py
 TS=
 (
-        ("increase genetic diversity" OR "improve genetic diversity"
+  ("increase genetic diversity" OR "improve genetic diversity"
+  OR
+    (       
+      ("genetic resource$"
+      OR ("genetic" NEAR/2 "diversity")
+      )
+      NEAR/10
+        ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
         OR
-          (       
-             ("genetic resource$"
-             OR ("genetic" NEAR/2 "diversity")
-             )
-             NEAR/10
-                  ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
-                  OR
-                    (
-                      ("loss" OR "extinction" OR "declin*" OR "disappear*")
-                      NEAR/5
-                          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                          OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                          OR "stop*" OR "end" OR "ending" OR "halt"
-                          OR "avoid*" OR "prevent*"
-                          )
-                    )
-                  )
+          (
+            ("loss" OR "extinction" OR "declin*" OR "disappear*")
+            NEAR/5
+              ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+              OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+              OR "stop*" OR "end" OR "ending" OR "halt"
+              OR "avoid*" OR "prevent*"
+              )
           )
         )
-        NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
-            OR "smallhold*" OR "small hold*"
-            OR "permaculture" OR "cropping system$" OR "orchard$"
-            OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-            OR "aquaculture" OR "mariculture"
-            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
-            OR "landrace$" OR "wild relative$"
-            OR
-              (
-                ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-                NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-              )
-            )
+    )
+  )
+  NEAR/15
+      ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+      OR "smallhold*" OR "small hold*"
+      OR "permaculture" OR "cropping system$" OR "orchard$"
+      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+      OR "aquaculture" OR "mariculture"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
+      OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
+      OR "landrace$" OR "wild relative$"
+      OR
+        (
+          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+          NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+        )
+      )
 )
 ```
 
