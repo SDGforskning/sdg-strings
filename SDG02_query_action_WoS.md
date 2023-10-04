@@ -939,37 +939,37 @@ This query consists of 1 phrase. The general structure is *investment/cooperatio
 ```py
 TS =
 (
-      ("Agriculture Orientation Index for Government Expenditure$"
-      OR
-        ("investm*" OR "investing" OR "invest" OR "finance" OR "financial support" OR "financing" OR "funding"
-        OR "ODA" OR "cooperation fund$" OR "development spending"
-        OR (("research" OR "governm*" OR "public" OR "sector") NEAR/3 ("expenditure" OR "spending"))
-        OR "international development"
-        OR
-          (
-            ("international" OR "development" OR "foreign" OR "global" OR "intercontinental"
-            OR "european" OR "asian" OR "africa*" OR "latin america*" OR "pacific"
-            )
-            NEAR/3
-                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance" OR "fund$" OR "grant$" OR "financial resources"
-                )
-          )
+  ("Agriculture Orientation Index for Government Expenditure$"
+  OR
+    ("investm*" OR "investing" OR "invest" OR "finance" OR "financial support" OR "financing" OR "funding"
+    OR "ODA" OR "cooperation fund$" OR "development spending"
+    OR (("research" OR "governm*" OR "public" OR "sector") NEAR/3 ("expenditure" OR "spending"))
+    OR "international development"
+    OR
+      (
+        ("international" OR "development" OR "foreign" OR "global" OR "intercontinental"
+        OR "european" OR "asian" OR "africa*" OR "latin america*" OR "pacific"
         )
-        NEAR/15
-            ("rural infrastructure" OR "rural tech*" 
-            OR ("rural development" AND ("agri*" OR "agro*" OR "smallhold*" OR "farm*"))
-            OR "agricultur* development" OR "development of agriculture"
-            OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
-            OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
-            OR
-              (
-                ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "agrofood" OR "aquaculture" OR "mariculture")
-              )                  
+        NEAR/3
+            ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+            OR "aid" OR "assistance" OR "fund$" OR "grant$" OR "financial resources"
             )
       )
-      AND
+    )
+    NEAR/15
+      ("rural infrastructure" OR "rural tech*" 
+      OR ("rural development" NEAR/15 ("agri*" OR "agro*" OR "smallhold*" OR "farm*"))
+      OR "agricultur* development" OR "development of agriculture"
+      OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
+      OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+      OR
+        (
+          ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
+          NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "agrofood" OR "aquaculture" OR "mariculture")
+        )                  
+      )
+  )
+  AND
       ("least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
       OR "less developed countr*" OR "less developed nation$" OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$"
