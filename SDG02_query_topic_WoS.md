@@ -764,7 +764,7 @@ TS =
 
 This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries. Investment/finance is kept broad - it is interpreted to cover international, private, public or individual investment/finance.
 
-This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural infrastructure/technology + LMICs*. Various terms are specified for `invest*` and `financ*` instead of allowing free truncation - this is to avoid e.g. "investigation", "financial sector", "financial performance". `expenditure` and `spending` are combined as these are often used for individual farmers' expenses.
+This query consists of 1 phrase. The elements of the phrase are: *investment/cooperation + rural/agricultural infrastructure/technology + LMICs*. Various terms are specified for `invest*` and `financ*` instead of allowing free truncation - this is to avoid e.g. "investigation", "financial sector", "financial performance". `expenditure` and `spending` are combined as these are often used for individual farmers' expenses. `rural development` is limited with *agricultural terms* as it is wider than our interpretation (e.g. it can refer to poverty alleviation in rural areas, whereas we interpret this target to be focused on agriculture). 
 
 ```py
 TS =
@@ -774,6 +774,7 @@ TS =
         ("investm*" OR "investing" OR "invest" OR "finance" OR "financial support" OR "financing" OR "funding"
         OR "ODA" OR "cooperation fund$" OR "development spending"
         OR (("research" OR "governm*" OR "public" OR "sector") NEAR/3 ("expenditure" OR "spending"))
+        OR "international development"
         OR
           (
             ("international" OR "development" OR "foreign" OR "intercontinental"
@@ -786,13 +787,15 @@ TS =
           )
         )
         AND
-            ("rural infrastructure"
+            ("rural infrastructure" OR "rural tech*"
+            OR ("rural development" AND ("agri*" OR "agro*" OR "smallhold*" OR "farm*"))
+            OR "agricultur* development" OR "development of agriculture"
             OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
             OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
             OR
               (
                 ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "aquaculture" OR "mariculture")
+                NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "agrofood" OR "aquaculture" OR "mariculture")
               )                  
             )
       )
