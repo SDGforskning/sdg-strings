@@ -69,7 +69,7 @@ TS=
           (
             ("disaster$" OR "risk$")
             NEAR/3
-                ("plan" OR "plans" OR "planning" OR "assess" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
+                ("plan" OR "plans" OR "planning" OR "assess*" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
                 OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
                 )
           )

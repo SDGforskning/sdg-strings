@@ -58,7 +58,7 @@ TS=
     (
       ("disaster$" OR "risk$")
       NEAR/3
-        ("plan" OR "plans" OR "planning" OR "assess" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
+        ("plan" OR "plans" OR "planning" OR "assess*" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
         OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
         )
     )
@@ -316,7 +316,7 @@ TS =
             ("mitigat*" OR "green" OR "climate")
             NEAR/15
               ("financing" OR "fund" OR "funds" OR "funding" OR "investment$" OR "invest" OR "investor$" OR "investing"
-              OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
+              OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "resources"))
               OR "ODA" OR "cooperation fund$" OR "development spending"
               OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
               )
