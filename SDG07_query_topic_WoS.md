@@ -251,7 +251,7 @@ TS=
 
 #### Phrase 2
 
-This phrase covers terms renewable energy. The elements of the phrase are: *use/share/adoption/investing/barriers/promotional actions + renewable energy*.
+This phrase covers terms for renewable energy. The elements of the phrase are: *use/share/adoption/investing/barriers/promotional actions + renewable energy*.
 
 In the *renewable energy terms*, `biomass`, `wind` and `solar` are generally combined with other terms to prevent results from other subject areas (e.g. astronomy) - these have been narrowed slightly in the topic approach compared to the action approach (particularly biomass was causing issues). Energy storage and smart grids to deal with fluctuations in supply can be considered part of renewable energy transition (<a id="HLPF2018">[UN High level political forum on Sustainable Development, 2018](#f3)</a>). We include the term `green` energy/power etc. - a potential problem is that some may use this term very widely to include non-renewables (see discussion under "General Notes"). However a test demonstrated that this is not a large issue - of over 1200 results referring to green energy/power/electricity, only around 35 referred to "natural gas" and 30 to "nuclear".
 
