@@ -1,7 +1,5 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen topic-approach.
 
-**Current status**: This string is currently being edited after testing.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -646,6 +644,10 @@ NOT
 * v1.0.0: Caroline S. Armitage (Oct 2021-Oct 2022), Marta Lorenz (Oct 2021-Apr 2022)
 
 * Internal review: Håkon Magne Bjerkan, Marta Lorenz (March 2022), Håkon Magne Bjerkan (minor review Oct 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v1.3.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
