@@ -10,7 +10,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years):
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/2889314a-02f0-4be1-b77e-9f61555babbf-a8635838/relevance/1
 
 ## 2. General notes
 
