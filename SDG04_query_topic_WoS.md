@@ -401,7 +401,7 @@ TS=
 
 The basic structure is *access + education + vulnerable groups* OR *access + special education*.
 
-"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included. The 13 disability categories have been taken from the US Individuals with Disabilities Education Act (IDEA): <a href="https://www.understood.org/en/articles/conditions-covered-under-idea"> 13 disability categories under IDEA</a>.      
+"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included. The 13 disability categories have been taken from the US Individuals with Disabilities Education Act (IDEA) (<a id="IDEA">[Lee, n.d.](#f12)</a>).    
 ```py
 TS=
 (
@@ -779,7 +779,7 @@ Specialist input: Various academic staff from Western Norway University of Appli
 
 <a id="f4"></a> Brewer, L. (2013). *Enhancing youth employability: What? Why? and How? Guide to core work skills*. International Labour Office, Skills and Employability Department. https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf [↩](#iloskills)
 
-<a id=     Lee, A. M. I. (n.d.). *The 13 Disability Categories under IDEA*. Understood. https://www.understood.org/en/articles/conditions-covered-under-idea [accessed 28 September 2023]
+<a id="f12"></a> Lee, A. M. I. (n.d.). *The 13 Disability Categories under IDEA*. Understood. https://www.understood.org/en/articles/conditions-covered-under-idea [accessed 28 September 2023] [↩](#IDEA)
 
 <a id="f6"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 
