@@ -10,10 +10,9 @@ Ensure healthy lives and promote well-being for all at all ages.
 4. Contributions
 5. Footnotes
 
-
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/8b780ba2-ed2c-475f-b687-2bba67a2aabc-a8657354/relevance/1
 
 ## 2. General notes
 
@@ -1153,7 +1152,7 @@ TS =
     OR "middle income countr*" OR "middle income nation$"
     OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
     OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
-    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$" "
+    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
    )
 )
 ```
