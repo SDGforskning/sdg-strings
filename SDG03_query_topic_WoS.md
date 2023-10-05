@@ -10,10 +10,9 @@ Ensure healthy lives and promote well-being for all at all ages.
 4. Contributions
 5. Footnotes
 
-
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years):
 
 ## 2. General notes
 
@@ -42,8 +41,6 @@ During editing of this string (2021), we have consulted two other sets of querie
 The target is interpreted as covering research about the maternal mortality rate. The interpretation is limited to mortality, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
 
 This query consists of 1 phrase.
-
-#### Phrase 1
 
 The elements of the phrase are: *mothers/birth* + *mortality* + *excluding livestock*. Originally, a second phrase was added for "survival", but this mostly added noise - many results were about babies rather than mothers, and others were about "maternal" effects in animals.
 

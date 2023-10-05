@@ -42,8 +42,6 @@ The target is interpreted as covering research about reducing the maternal morta
 
 This query consists of 1 phrase.
 
-#### Phrase 1
-
 The basic structure is *mothers/birth* + *mortality* + *action* + *excluding livestock*. Originally, a second phrase was added for "improve survival", but this mostly added noise - many results were about babies rather than mothers, and others were about "maternal" effects in animals.
 
 Some of the *mothers/birth* terms may find results concerning newborn mortality, this is difficult to avoid and may lead to some overlap with 3.2. Many works also talk about both maternal and neonatal mortality together. As both are in the same SDG this should not be an issue for SDG sets.
