@@ -12,7 +12,7 @@ Ensure healthy lives and promote well-being for all at all ages.
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years):
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/c0f3bf13-25ea-4f6f-a51a-34277ddad5bd-a866555f/relevance/1
 
 ## 2. General notes
 
