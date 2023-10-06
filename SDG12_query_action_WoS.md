@@ -7,7 +7,7 @@ Ensure sustainable consumption and production patterns
 1. Full query
 2. General notes about method for SDG 12
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 ## 1. Full query
@@ -1357,7 +1357,7 @@ TS=
 NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 ```
 
-## 4. Authorship and review
+## 4. Contributions
 
 * First draft: Leena Byholm (Nov 2022)
 

@@ -7,7 +7,7 @@ Ensure sustainable consumption and production patterns
 1. Full query
 2. General notes about method for SDG 12
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 ## 1. Full query
@@ -1248,7 +1248,7 @@ NOT
 ```
 
 
-## 4. Authorship and review
+## 4. Contributions
 
 * First draft (v. 1.1.0): Leena Byholm (Jan 2023)
 
