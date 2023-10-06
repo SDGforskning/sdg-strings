@@ -12,7 +12,7 @@ Ensure sustainable consumption and production patterns
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here:  (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/b965a48b-e335-4650-b51f-655bcb015208-a89b0781/relevance/1
 
 ## 2. General notes
 

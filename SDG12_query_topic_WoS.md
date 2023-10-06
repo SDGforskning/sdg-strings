@@ -12,7 +12,7 @@ Ensure sustainable consumption and production patterns
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/41ea8b1b-8145-4092-afae-aac7103f209d-a89c8b3e/relevance/1
 
 ## 2. General notes
 
@@ -937,7 +937,7 @@ The elements of the phrase are *education + sustainability/SCP + people/consumer
 
 The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these `education` and most of the other *education terms* are combined with consumer/person groups. Still, terms for disseminating information/raising awareness/teaching/learning combined with sustainability/environmental/environment tend to bring irrelevant results about e.g. learning environment or health education. These are hard to exclude from the results without losing the core of relevant results - the `NOT` part aims to remove some of these (particularly medical works which may study "environmental factors"). Many of the *sustainability/SCP* terms are taken from 12.1, with some concepts from the UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>) are used as specifying terms: `eco-labelling` `product footprint` and `recycling`.
 
-```py 
+```py
 TS=
 (
   ("awareness" OR "lifelong learning" 
@@ -955,7 +955,7 @@ TS=
   NEAR/5
       ("sustainability" OR "sustainable development" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "socially responsible" OR "social responsib*"
       OR (("responsib*" OR "sustainable" OR "circular") NEAR/3 ("tourism" OR "production" OR "consumption" OR "life-style$" OR "lifestyle$" OR "purchas*" OR "waste")) 
-      OR (("circular*" OR "sustainab*") NEAR/5 ("econom*" OR "bioeconom*" OE "bio-econom*" OR "produce$" OR "product$" OR "consume$" OR "consumer$"))
+      OR (("circular*" OR "sustainab*") NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "produce$" OR "product$" OR "consume$" OR "consumer$"))
       OR "cleaner production"
       OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" OR "energy efficiency"
       OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
