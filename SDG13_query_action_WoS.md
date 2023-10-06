@@ -384,7 +384,7 @@ TS =
             ("mitigat*" OR "green" OR "climate")
             NEAR/15
               ("financ*" OR "fund" OR "funds" OR "funding" OR "investment$" OR "invest" OR "investor$" OR "investing"
-              OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
+              OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "resources"))
               OR "ODA" OR "cooperation fund$" OR "development spending"
               OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
               )
