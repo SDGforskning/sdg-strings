@@ -789,18 +789,17 @@ TS=
 > 
 > 12.6.1 Number of companies publishing sustainability reports
 
-This target is interpreted to cover research about a) companies and sustainable practices/production, and b) companies reporting their sustainability information. 
+This target is interpreted to cover research about a) companies/organisations and sustainable practices/production, and b) companies/organisations reporting their sustainability information. 
 
-The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphasises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. 
+The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphasises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. We also include `institutions` and `"organi?ation"`, even though these may not only apply to companies.
 
 Reporting or publishing sustainability information in any form is considered relevant, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
 
 The concept of economical sustainability is used broadly and in some cases we found it hard to interpret which papers about financial sustainability are relevant to target 12.6. 
 
-
 #### Phrase 1
 
-This phrase aims to find research about companies adopting sustainable practices as well as sustainable production patterns and measures. The elements of the phrase are *sustainable + practices/production + companies/producers*.
+This phrase aims to find research about companies and sustainable practices, sustainable production patterns or measures. The elements of the phrase are *sustainable + practices/production + companies/producers*.
 
 The practices are mentioned in the metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf (e.g. `procurements` `sourcing`). 
 
