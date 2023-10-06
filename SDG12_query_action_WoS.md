@@ -385,14 +385,14 @@ TS=
         ) 
         NEAR/5 
             (
-              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$") NEAR/5 ("resource$" OR "material$")) 
+              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$" OR "land" OR "soil$") 
+              NEAR/5 ("resource$" OR "material$")) 
               OR "natural capital" 
               OR "raw material$" 
               OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*"  
               OR "fishery" OR "fisheries" OR "fish farm$"  
               OR "wildlife" OR "hunt*"
               OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
-              OR "land" OR "soil$" 
               OR "metal$" OR "ore$" 
               OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel" OR "gasoline" OR "kerosene" OR "petroleum"
             ) 
