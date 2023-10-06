@@ -927,7 +927,7 @@ In an earlier version we had also interpreted this to include research about beh
 
 The elements of the phrase are *education for sustainable development*.
 
-The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these `education` is specifically used in phrases targeting "education for sustainable development" here. 
+The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these, "education" is used in phrases specific to education for sustainable development. 
 
 ```py 
 TS= ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education")
@@ -960,7 +960,7 @@ TS=
       OR (("circular*" OR "sustainab*") NEAR/5 ("econom*" OR "bioeconom*" OE "bio-econom*" OR "produce$" OR "product$" OR "consume$" OR "consumer$"))
       OR "cleaner production"
       OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" OR "energy efficiency"
-      OR "ecolabelling" OR "ecolabel$" OR "eco-labelling" OR "eco-labels" OR "environmental label$" 
+      OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
       OR "ecobuilding$" OR "eco-building$" 
       OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
       OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
