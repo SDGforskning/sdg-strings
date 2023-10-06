@@ -979,15 +979,15 @@ NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness
 > 
 > 12.a.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about the capacity of developing countries for sustainable consumption and production. We consider this to include research about renewable energy in developing countries, given the indicator.
+This target is interpreted to cover research about the capacity of low- and middle-income countries for sustainable consumption and production. We consider this to include research about renewable energy in these countries, given the indicator.
+
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 #### Phrase 1
 
 This phrase aims to find research about the capacity of developing countries regarding sustainable consumption and production. The elements of the phrase are *capacity + sustainable consumption & production + developing countries*.
 
 The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned in the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
-
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 `lifestyle$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
@@ -1098,8 +1098,6 @@ TS=("least developed countr*" OR "least developed nation$"
 This phrase aims to find research about the capacity of developing countries for renewable energy. The elements of the phrase are *capacity + renewable energy + developing countries*. 
 
 Most of the renewable energy sources specified are mentioned in the metadata for indicator 12.a.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0a-01.pdf. 
-
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 ```py
 TS=
