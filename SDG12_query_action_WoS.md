@@ -471,12 +471,11 @@ TS=
 > 
 > 12.3.1 (a) Food loss index and (b) food waste index
 
-This target is interpreted to cover research about reducing food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover advaning capasity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
+This target is interpreted to cover research about reducing food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover advancing capacity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
 
-Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrases 1 or 2 with these. It would narrow down the result because not all relevant articles about food loss mention any of those terms. Phrase 3 searches for preventing waste on specified levels of food production/retail/consumption. 
+Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrase 1 with these. It would narrow down the results because not all relevant articles about food loss mention any of those terms. Phrase 2 searches for preventing waste on specified levels of food production/retail/consumption. 
 
-`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. The majority of articles contributing to the topics of this target are published after 2015. 
-
+`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even so, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. 
 
 #### Phrase 1
 
@@ -485,7 +484,6 @@ This phrase aims to find research about reducing food loss and waste on all leve
 The *capacity* terms included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf. Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
 
 Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition. 
-
 
 ```py 
 TS=

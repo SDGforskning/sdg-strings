@@ -432,12 +432,11 @@ TS=
 > 
 > 12.3.1 (a) Food loss index and (b) food waste index
 
-This target is interpreted to cover research about food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover capasity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
+This target is interpreted to cover research about food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover capacity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
 
-Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrases 1 or 2 with these. It would narrow down the result because not all relevant articles about food loss mention any of those terms. Phrase 3 searches for waste on specified levels of food production/retail/consumption. 
+Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrase 1 with these. It would narrow down the results because not all relevant articles about food loss mention any of those terms. Phrase 2 searches for waste on specified levels of food production/retail/consumption. 
 
-`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. The majority of articles contributing to the topics of this target are published after 2015. 
-
+`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. 
 
 #### Phrase 1
 
@@ -510,7 +509,6 @@ This target is interpreted to cover research about:
 UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphasise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
 
 Some specifying terms for wastes were found from the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and specifying terms for waste management from the UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
-
 
 #### Phrase 1
 
