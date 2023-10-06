@@ -677,13 +677,13 @@ TS=
 > 
 > 12.5.1 National recycling rate, tons of material recycled
 
-This target is interpreted to cover research about reducing/preventing waste (municipal, commercial, etc.), about waste generation and about recycling. We consider this to also cover research about the circular economy and sidestreams.  Some specifying terms for waste generators are picked from the indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf.
+This target is interpreted to cover research about reducing/preventing waste (municipal, commercial, etc.), about waste generation, and about recycling. We consider this to also cover research about the circular economy and sidestreams. Some terms for waste generators are taken from indicator 12.5.1 documentation (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf.
 
 The themes of this target are also addressed in target **12.2 phrases 3 and 4** about efficient use of natural resources and reducing waste involved in using them, as well as in target **12.3 phrases 1 and 3** about food loss and waste in food production. Recycling of wastes is also included in target **12.4 phrase 2**.
 
 #### Phrase 1
 
-This phrase aims to find research about reducing waste and waste generation. The elements of the phrase are *reducing + wastes / waste generation/households/municipal/industry*. Some terms are combined with *household/municipal/industry* terms because they are used generically (e.g. economic waste; waste of time; garbage logic). 
+This phrase aims to find research about reducing waste, and about waste generation. The elements of the phrase are *action + wastes/waste generation/types of waste // waste generation*. The action element was retained for wastes in the topic approach, as all research about any kind of waste was too broad given our interpretation - however, the phrase is broader than the action approach in that research about waste generation requires no action. Some terms are combined with *household/municipal/industry* terms because they are used generically (e.g. economic waste; waste of time; garbage logic). 
 
 ```py 
 TS=
@@ -723,9 +723,9 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams. The elements of the phrase are *recycling/cleaner production + waste // reycling + production // circular economy // using sidestreams // lifecycle analysis*.
+This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams. The elements of the phrase are a list of various activities that could reduce waste, and these terms are combined with terms for waste/sidestreams, terms for consumption and production, or terms for sustainability.
 
-Because terms `recycle` `reuse` and `resource efficiency` have various meanings in fields irrelevant to this target, they are combined with a string of terms related to the target (e.g. production, consumption, bioeconomy, waste). Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
+Because terms for many activities that can reduce waste (e.g. `recycle` `reuse` and `resource efficiency`) have meanings in fields not relevant to this target, they are combined with a string of terms related to the target (e.g. production, consumption, bioeconomy, waste). Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
 
 Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2. We include `zero-waste` as a stand-alone term, since it refers to the idea of preventing waste products in the first place (i.e. waste generation). Terms such as `material efficiency` are combined with *waste* terms because alone they are more relevant to 12.2 - however, the ideas within could still be relevant to reducing waste. 
 
