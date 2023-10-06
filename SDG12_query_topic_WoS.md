@@ -995,7 +995,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 ```py 
 TS=
 (
-  ("institutional capacity" OR "human capacity" OR "financial capacity" OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" OR "scientific capacity"
+  ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+  OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
   OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
   OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
   OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
