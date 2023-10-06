@@ -979,7 +979,7 @@ NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness
 > 
 > 12.a.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about the capacity of developing countries for sustainable consumption and production. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
+This target is interpreted to cover research about the capacity of developing countries for sustainable consumption and production. We consider this to include research about renewable energy in developing countries, given the indicator.
 
 #### Phrase 1
 
@@ -1094,7 +1094,7 @@ TS=("least developed countr*" OR "least developed nation$"
 
 #### Phrase 2
 
-This phrase aims to find research about the capacity of developing countries regarding power generation by renewable energy sources. The elements of the phrase are *capacity + renewable energy + developing countries*. 
+This phrase aims to find research about the capacity of developing countries for renewable energy. The elements of the phrase are *capacity + renewable energy + developing countries*. 
 
 Most of the renewable energy sources specified are mentioned in the metadata for indicator 12.a.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0a-01.pdf. 
 

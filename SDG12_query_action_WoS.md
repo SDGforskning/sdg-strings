@@ -1097,11 +1097,11 @@ NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness
 > 
 > 12.a.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-This target is interpreted to cover research about the promoting capacity of developing countries for sustainable consumption and production. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
+This target is interpreted to cover research about improving the capacity of developing countries for sustainable consumption and production. We consider this to include research about increasing/developing renewable energy in developing countries, given the indicator.
 
 #### Phrase 1
 
-This phrase aims to find research about the capacity of developing countries regarding sustainable consumption and production. The elements of the phrase are *action + capacity + sustainable consumption & production + developing countries*.
+This phrase aims to find research about improving the capacity of developing countries regarding sustainable consumption and production. The elements of the phrase are *action + capacity + sustainable consumption & production + developing countries*.
 
 The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned in the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
 
@@ -1217,7 +1217,7 @@ TS=("least developed countr*" OR "least developed nation$"
 
 #### Phrase 2
 
-This phrase aims to find research about the capacity of developing countries regarding power generation by renewable energy sources. The elements of the phrase are *action + capacity + renewable energy + developing countries*. 
+This phrase aims to find research about improving the capacity of developing countries for renewable energy sources. The elements of the phrase are *action + capacity + renewable energy + developing countries*. 
 
 Most of the renewable energy sources specified are mentioned in the metadata for indicator 12.a.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0a-01.pdf. 
 
