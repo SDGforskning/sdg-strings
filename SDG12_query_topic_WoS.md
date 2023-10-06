@@ -2,8 +2,6 @@
 
 Ensure sustainable consumption and production patterns
 
-**Current status**: This string is currently being edited after testing.
-
 **Contents**
 
 1. Full query
@@ -1190,7 +1188,7 @@ We do not specify either production or consumption of fossil fuels as both are m
 
 This phrase aims to find research about subsidies and fossil fuels. The elements of the phrase are *subsidies + fossil fuels*.
 
-Most of the terms for subsidies were found from the UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) table 6 p. 19 - and for fossil fuels from table 5 p. 13.
+Most of the terms for subsidies were found in the UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) table 6 p. 19 - and for fossil fuels from table 5 p. 13.
 
 ```py 
 TS=
@@ -1252,9 +1250,17 @@ NOT
 
 ## 4. Authorship and review
 
-* First draft (v. 1.1.0): Leena Byholm (Jan. 2023)
+* First draft (v. 1.1.0): Leena Byholm (Jan 2023)
+
 * Internal review: Internal review currently only carried out on action approach.
-* Specialist input: Terhi Latvala (D.Sc. Agricultural Economics)
+
+* Second draft (v. 1.1.0): Leena Byholm (Jan 2023)
+
+* Testing v1.2.2: Project group & Leena Byholm; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+
+Specialist input: Terhi Latvala (D.Sc. Agricultural Economics), v1.1.0
 
 
 ## 5. Footnotes

@@ -2,8 +2,6 @@
 
 Ensure sustainable consumption and production patterns
 
-**Current status**: This string is currently being edited after testing.
-
 **Contents**
 
 1. Full query
@@ -1361,10 +1359,17 @@ NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 
 ## 4. Authorship and review
 
-* First draft: Leena Byholm (Nov. 2022)
-* Internal review: Caroline S. Armitage (Dec. 2022)
-* Second draft (v. 1.1.0): Leena Byholm (Jan. 2023)
-* Specialist input: Terhi Latvala (D.Sc. Agricultural Economics)
+* First draft: Leena Byholm (Nov 2022)
+
+* Internal review: Caroline S. Armitage (Dec 2022)
+
+* Second draft (v. 1.1.0): Leena Byholm (Jan 2023)
+
+* Testing v1.2.2: Project group & Leena Byholm; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+
+Specialist input: Terhi Latvala (D.Sc. Agricultural Economics), v1.1.0
 
 
 ## 5. Footnotes
