@@ -831,7 +831,7 @@ The elements of the phrase are: *export subsidies + agriculture/food*.
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
-  AND ("agricultur*" OR "agrifood" OR "food")
+  AND ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture")
 )
 ```
 
@@ -851,7 +851,7 @@ TS=
   NEAR/15
       (
         ("trade" OR "trading" OR "market$" OR "export$" OR "import$")
-        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
+        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
       )
 )
 ```
@@ -875,7 +875,7 @@ TS=
         (
           ("price$" OR "market$")
           NEAR/5
-            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
+            ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
         )
 )
 OR 
@@ -883,7 +883,7 @@ TS=
 (
   ("price$"
   NEAR/3
-    ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
+    ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
   ) 
   AND ("food market$" OR "agrifood market$" OR "agricultural market$" OR "commodity market$" OR "market information" OR "grain market$" OR "rice market$" OR "wheat market$")
 )
