@@ -407,8 +407,8 @@ TS=
 (
  (
   ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR
-   "non-discriminat*" OR "equitab*" OR “education for all” OR "Rights of Persons with Disabilities" OR
-   "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR “unequit*” OR "disparit*"OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
+   "non-discriminat*" OR "equitab*" OR "education for all" OR "Rights of Persons with Disabilities" OR
+   "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
 
   NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
 )
@@ -419,7 +419,7 @@ NEAR/15
     NEAR/3
      ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly" OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR
       "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" OR "specific learning disabilit*" OR "SLD" OR
-      "other health impairment*” OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*" OR
+      "other health impairment*" OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*" OR
       "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness" OR
       "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
   )
@@ -432,7 +432,7 @@ TS=
 (
   ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR
    "education for all" OR "Rights of Persons with Disabilities" OR "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR
-   “unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
+   "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
   )
    NEAR/5 ("special educat*" OR "special needs educat*" OR "special educational support" OR "inclusive education" OR "aided education")
 )
