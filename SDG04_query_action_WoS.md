@@ -445,8 +445,8 @@ TS=
             OR
              (
             (" difference$" OR "discrepan*") NEAR/5
-            ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*" OR
-            "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
+            ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*"
+            OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
              )
            )
      )
