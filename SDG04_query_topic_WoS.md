@@ -406,9 +406,9 @@ The basic structure is *access + education + vulnerable groups* OR *access + spe
 TS=
 (
  (
-  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR
-   "non-discriminat*" OR "equitab*" OR "education for all" OR "Rights of Persons with Disabilities" OR
-   "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*"
+  OR "non-discriminat*" OR "equitab*" OR "education for all" OR "Rights of Persons with Disabilities" OR "CRPD"
+  OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
 
   NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
 )
@@ -417,11 +417,11 @@ NEAR/15
   (
    ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")
     NEAR/3
-     ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly" OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR
-      "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" OR "specific learning disabilit*" OR "SLD" OR
-      "other health impairment*" OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*" OR
-      "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness" OR
-      "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
+     ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly" OR "poor" OR "poorest" OR "poverty" OR "disadvantaged"
+      OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" OR "specific learning disabilit*" OR "SLD"
+      OR "other health impairment*" OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*"
+      OR "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness"
+      OR "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
   )
   OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
   OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural" OR "special educational needs" OR "SEN"
@@ -430,9 +430,9 @@ NEAR/15
 OR
 TS=
 (
-  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR
-   "education for all" OR "Rights of Persons with Disabilities" OR "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR
-   "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*"
+  OR "education for all" OR "Rights of Persons with Disabilities" OR "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*"
+  OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
   )
    NEAR/5 ("special educat*" OR "special needs educat*" OR "special educational support" OR "inclusive education" OR "aided education")
 )
@@ -476,7 +476,7 @@ TS=
  ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*") 
 OR 
 (
-("illitera*") NEAR/10 (“read” OR “reading” OR “mathematic*” OR “math” OR “maths” OR “numeracy” OR “numerate”)
+("illitera*") NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
 )
 )
 ```
