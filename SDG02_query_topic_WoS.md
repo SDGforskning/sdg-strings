@@ -213,7 +213,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
 - Originally `"access*" OR "barrier$"` was combined with many other terms (e.g. access to credit, financial services, markets...) - however we have now cut this combination, as the target is so broad in what should be accessible. So now, papers talking about improving access to anything should be covered. A few irrelevant results are included due to the abstract including an "open access" publishing statement; and a couple from open access to e.g. satellite data. This is hard to exclude as we want "open access fisheries", for example. (Original combination: `"farmland$" OR "land" OR "resources" OR "financial service$" OR "banking" OR "microfinance" OR "credit" OR "microcredit" OR "insurance" OR "microinsurance" OR "market$" OR "marketing" OR "traders" OR "trade" OR "agricultur* input$" OR "farm input$" OR "water" OR "machinery" OR "equipment" OR "technology" OR "farm* experience" OR "information" OR "training" OR "equitab*" OR "inequitab*"`)
 
 ```py
-  TS=
+TS=
   (
     (
       ("intensification" NEAR/5 ("smallhold*" OR "small hold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
@@ -244,8 +244,7 @@ This query consists of 1 phrase. The elements of the phrase are: *productivity/a
                     ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
                     OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                     )
-                    NEAR/5
-                        ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
+                    NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
                   )
                 )
             )
@@ -415,7 +414,9 @@ The elements of the phrase are: *ecoagriculture OR (food production systems + su
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
-Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
+*Agricultural terms*: The standard terms used in other phrases are repeated here, but `"fodder" OR "animal feed" OR "fish feed"` are also added, as sustainable fodder research does not always use a term for agriculture.
+
+*Sustainbility terms*: `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
 ```py
 TS=
@@ -431,6 +432,7 @@ TS=
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
     OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+    OR "fodder" OR "animal feed" OR "fish feed"
     OR
       (
         ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
