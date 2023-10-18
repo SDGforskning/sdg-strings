@@ -448,7 +448,11 @@ TS=
 (
   (
       ("food loss" OR "food losses" 
-      OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+      OR 
+        (
+          ("food" OR "fodder" OR "animal feed" OR "fish feed") 
+          NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")
+        )
       )
   ) 
 NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
@@ -466,23 +470,22 @@ Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude 
 ```py 
 TS=
 (
-      (
+  (
+    ("waste$" OR "loss" OR "losses" OR "lost" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*") 
+    NEAR/5 
         (
-          ("waste$" OR "loss" OR "losses" OR "lost" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*") 
+          ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "legume$"
+          OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+          OR "dairy waste" OR "discard* milk"
+          OR "harvest*" OR "slaughter*"
+          ) 
           NEAR/5 
-              (
-                ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-                OR "dairy waste" OR "discard* milk"
-                OR "harvest*" OR "slaughter*"
-                ) 
-                NEAR/5 
-                  ("production" OR "processing" OR "handling" OR "storage" OR "transport*" OR "distribution" OR "market*" OR "packaging" OR "supply chain$" 
-                  OR "retail" OR "food service" OR "foodservice" OR "restaurant*" OR "household" OR "consumer$" OR "consumption" OR "consume$"
-                  OR "harvest*" OR "slaughter*"
-                  )
+              ("production" OR "processing" OR "handling" OR "storage" OR "transport*" OR "distribution" OR "market*" OR "packaging" OR "supply chain$" 
+              OR "retail" OR "food service" OR "foodservice" OR "restaurant*" OR "household" OR "consumer$" OR "consumption" OR "consume$"
+              OR "harvest*" OR "slaughter*"
               )
         )
-      )
+  )
 NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
 )
 

@@ -477,7 +477,7 @@ Although the target specifies levels where food loss happens (production, supply
 
 #### Phrase 1
 
-This phrase aims to find research about reducing food loss and waste on all levels. The elements of the phrase are *action + food/harvest loss OR capacity + food/harvest loss*.
+This phrase aims to find research about reducing food loss and waste on all levels. The elements of the phrase are *action + food loss OR capacity + food/harvest loss*.
 
 The *capacity* terms included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf. Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
 
@@ -493,8 +493,11 @@ TS=
       )
       NEAR/5
           ("food loss" OR "food losses" 
-          OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
-          OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
+          OR 
+            (
+              ("food" OR "fodder" OR "animal feed" OR "fish feed") 
+              NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")
+            )
           )
     )
   OR
@@ -514,7 +517,11 @@ TS=
       ) 
       NEAR/15 
           ("food loss" OR "food losses" 
-          OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+          OR 
+            (
+              ("food" OR "fodder" OR "animal feed" OR "fish feed") 
+              NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")
+            )
           OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
           )
     )
@@ -545,7 +552,8 @@ TS=
           ("waste$" OR "loss" OR "losses" OR "lost" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*") 
           NEAR/5 
               (
-                ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+                ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "legume$"
+                OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                 OR "dairy waste" OR "discard* milk"
                 OR "harvest*" OR "slaughter*"
                 ) 
