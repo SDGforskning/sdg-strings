@@ -402,11 +402,11 @@ TS=
 
 #### Phrase 5
 
-This phrase aims to find research about promoting sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4. 
+This phrase aims to find research about promoting sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4 - documentation for the agricultural terms can be found there. 
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
-Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
+*Sustainability terms*: `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
 The elements of the phrase are *(ecoagriculture + action) OR (food production systems + sustainability + action)*
 
@@ -427,14 +427,15 @@ OR
 TS=
 (
   (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+    OR "fodder" OR "animal feed" OR "fish feed"
     OR
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -442,7 +443,7 @@ TS=
     )
     NEAR/15
         (
-          ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
+          ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach" OR "ecosystem based"
           OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
           OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
           OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
@@ -459,7 +460,6 @@ TS=
   )
   NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
-
 ```
 
 
