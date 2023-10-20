@@ -883,7 +883,7 @@ TS=
 > 
 > 12.6.1 Number of companies publishing sustainability reports
 
-This target is interpreted to cover research about a) encouraging sustainable practices/production within companies/organisations, and b) encouraging companies/organisations to report their sustainability information. 
+This target is interpreted to cover research about a) encouraging sustainable practices/production within companies/organisations, and b) encouraging companies/organisations to report their sustainability/environmental information. 
 
 The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphasises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. We also include `institutions` and `"organi?ation"`, even though these may not only apply to companies.
 
@@ -962,7 +962,7 @@ TS=
         ("environmental information disclosure$" 
         OR
           (
-            ("sustainab*" OR "responsib*" OR "environmental performance") 
+            ("sustainab*" OR "responsib*" OR "environmental") 
             NEAR/5 
                 ("report$" OR "reporting" OR "accounting" 
                 OR (("publish*" OR "disclos*") NEAR/3 ("information" OR "data"))
