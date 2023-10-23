@@ -1205,7 +1205,7 @@ TS=
   OR ("market$" NEAR/3 "distor*")
   OR ("government*" NEAR/3 ("spending" OR "fund*" OR "ownership" OR "payment$"))
   ) 
-  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum") 
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "conventional energy") 
 )
 ```
 
@@ -1217,7 +1217,7 @@ This phrase aims to find research about taxation and fossil fuels. The elements 
 TS=
 ( 
   ("taxation" OR "taxes" OR "tax" OR "taxed" OR "tariff$" OR "duty" OR "fees" OR "fee") 
-  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum")   
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "conventional energy")   
 )
 NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 
