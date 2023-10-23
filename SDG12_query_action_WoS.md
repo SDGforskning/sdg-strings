@@ -1252,17 +1252,20 @@ TS=
         ) 
   ) 
   AND         
-      ("energy transition" OR "photovoltaic$" OR "solar PV" OR "hydropower"
+      ("energy transition" 
+      OR "geothermal heat pump$" OR "ground source heat pump$" 
+      OR "solar PV" OR "photovoltaic$" OR "solar cell$" OR "solar panel$" OR "solar array" OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$" 
+      OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$" 
+      OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories" 
+      OR "hydropower*" OR "hydroelectric" OR "hydro-electric" OR "tidal turbine$" OR "stream turbine$" OR "current turbine$" OR "tidal power" OR "tidal energy" OR "marine energy" OR "wave energy"
       OR
         ( 
           ("power" OR "electricity" OR "energy") 
           NEAR/5
               ("clean" OR "sustainable" OR "renewable$" 
-              OR "solar" OR "photovoltaic" OR "thermal energy" OR "solar thermal" 
-              OR "wind" 
-              OR "geothermal" 
-              OR "hydrothermal" 
-              OR "hydroelectric" OR "hydro-electric" OR "hydropower" OR "hydrokinetic" OR "marine" OR "tidal" OR "wave energy" OR "ocean energy" 
+              OR "solar" OR "wind" 
+              OR "geothermal" OR "hydrothermal" 
+              OR "hydrokinetic" OR "marine" OR "tidal" OR "ocean energy" 
               OR "bioenergy" OR "biofuel$" OR "biodiesel"
               )
         ) 
