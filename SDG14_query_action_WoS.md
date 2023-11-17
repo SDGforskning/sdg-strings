@@ -474,6 +474,7 @@ TS=
       OR ("no-take" NEAR/3 ("area*" OR "zone*"))
       OR "Habitats directive"
       OR "CBD" OR "HELCOM" OR "OSPAR" OR "UNEP"
+      OR "marine conservation"
       OR "Conservation of Antarctic Marine Living Resources" OR "CCAMLR"
       OR "Lima convention" OR "Nairobi convention" OR "Noumea convention" OR "Barcelona convention" OR "World heritage convention"
       OR "International coral reef initiative"
@@ -1133,8 +1134,8 @@ TS =
     )
     NEAR/5
         (
-          ("international" OR "high seas" OR "ABNJ" OR "UN" 
-          OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "*arctic"
+          ("international" OR "high seas" OR "beyond national jurisdiction" OR "ABNJ" OR "UN" 
+          OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "south america$" OR "*arctic"
           )
           NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention" OR "framework$" OR "instrument$")
         )
