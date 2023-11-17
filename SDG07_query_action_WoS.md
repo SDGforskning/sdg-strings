@@ -431,7 +431,11 @@ TS=
     NEAR/15 ("phase out" OR "phasing out" OR "energy transition*" OR "energy strateg*" OR "energy management" OR "energy planning" OR "energy policy")
   )
 )
-NOT TS=("palm oil" OR "oil palm" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "eucalyptus oil" OR "cooking oil" OR "fish oil" OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil")
+NOT TS=
+  ("palm oil" OR "oil palm" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "eucalyptus oil" OR "cooking oil" OR "fish oil" OR "liver oil" 
+  OR "nutrition" OR "cholesterol" OR "obes*" OR "human consum*"
+  OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil"
+  )
 ```
 
 ### Target 7.3
