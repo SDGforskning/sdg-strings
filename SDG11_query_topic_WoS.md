@@ -122,7 +122,7 @@ TS=
 
 This target is interpreted to cover research about safe sustainable transport of humans in cities and road safety.
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 #### Phrase 1
 
@@ -171,6 +171,21 @@ TS=
         )
   )
   NOT ("air traffic*" OR "food*")
+)
+```
+
+#### Phrase 3
+
+This phrase finds research about expanding public transport. The basic structure is *action + public transport*. We use NEAR/10 to expand from action approach phrase (NEAR/5).
+
+```py
+TS=
+(
+  ("provide*" OR "improv*" OR "moderni*" OR "reduc*" OR "increas*" OR "expand*" OR "build*"
+  OR "boost*" OR "raise*" OR "escalat*"
+  OR "extend*" OR "develop*" OR "implement*" OR "establish*" OR "enhanc*"
+  )
+  NEAR/10 ("public transport*")  
 )
 ```
 
