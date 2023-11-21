@@ -625,7 +625,9 @@ This query consists of 1 phrase. Originally, a second phrase was included about 
 
 We also considered using terms for wildlife roadkills, biodiversity etc. in the NOT-phrase to exclude results about the impact of traffic accidents on animals, but it proved too hard to isolate them from accidents that also (potentially) affect humans. 
 
-The basic structure is *traffic/road users + mortality/morbidity + action + accidents etc.* 
+The basic structure is *traffic/road users + mortality/morbidity + action + accidents* 
+
+The final `AND` combination is to limit to works that mention accidents or deaths of road-users - the reason for this is because otherwise there are many results concerning deaths and injuries from air pollution from roads. 
 
 In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y"). `intersection$` was considered but removed as it mostly added noise from metaphorical use of intersection (e.g. between two subject areas).
 
@@ -653,19 +655,14 @@ TS =
                 OR
                   (
                       ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "research*" OR "novel" OR "new")  
-                      NEAR/5
-                          ("treatment$" OR "intervention$" OR "therapy" OR "therapies" OR "first aid")
+                      NEAR/5 ("treatment$" OR "intervention$" OR "therapy" OR "therapies" OR "first aid")
                   )
                 )
           )
       AND 
-          (
-            "accident$" OR "crash*" OR "collision$" OR "traffic incident$" OR
-            (
-              ("driver" OR "road" OR "cycling" OR "cyclist$" OR "bicycle$" OR "pedestrian$" OR "vehicle$")
-               NEAR/3 
-              ("injur*" OR "fatalit*" OR "death$")
-            ) OR "driving injur*" OR "RTI" OR "RTIs" OR "safety")
+          ("accident$" OR "crash*" OR "collision$" OR "traffic incident$" OR "driving injur*" OR "RTI" OR "RTIs" OR "safety"
+          OR (("driver" OR "road" OR "cycling" OR "cyclist$" OR "bicycle$" OR "pedestrian$" OR "vehicle$") NEAR/3 ("injur*" OR "fatalit*" OR "death$"))
+          )
   )
   NOT ("air traffic" OR "boat traffic")
 )
