@@ -680,7 +680,7 @@ TS=
   )
   AND
     ("local building material$" OR "local construction material$"
-    OR "sustainable architecture" OR "resilient architecture" OR ("Sustainable Building and Construction Initiative" OR ("SBCI" NEAR/3 "UNEP"))
+    OR "sustainable architecture" OR "resilient architecture" OR "Sustainable Building and Construction Initiative" OR ("SBCI" NEAR/3 "UNEP")
     OR
        (
          ("buildings" OR "sustainable building" OR "masonry"
