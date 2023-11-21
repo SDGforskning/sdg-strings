@@ -577,7 +577,7 @@ Terms were taken from the SDG 11 Synthesis Report from the 2018 High Level Polit
 TS=
 (
   ("local building material$" OR "local construction material$"
-  OR "sustainable architecture" OR "resilient architecture"
+  OR "sustainable architecture" OR "resilient architecture" OR "Sustainable Building and Construction Initiative" OR ("SBCI" NEAR/3 "UNEP")
   OR
     (
       ("buildings" OR "sustainable building" OR "masonry"
