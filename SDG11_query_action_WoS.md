@@ -351,7 +351,7 @@ TS=
     (
       (
         ("casualt*" OR "death$" OR "fatal*"
-        OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$"))
+        OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$" OR "civilian$" OR "women" OR "men" OR "child*"))
         )
         NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
       )
