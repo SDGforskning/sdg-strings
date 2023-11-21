@@ -691,7 +691,7 @@ TS=
             )
          )
          NEAR/15
-            ("sustainab*" OR "ecofriendly" OR "eco friendly" OR "environmentally friendly" OR "resilien*"
+            ("sustainab*" OR "green" OR "eco" OR "environmentally friendly" OR "resilien*"
             OR ("local*" NEAR/3 "materials") OR "locally available" OR "native" OR "traditional"
             )
        )          
