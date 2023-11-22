@@ -316,7 +316,7 @@ TS=
 
 #### Phrase 3
 
-This phrase covers reliance on and reduction in use of fossil fuels. Many of the same action terms as in the action approached are used here. The general structure is *fossil fuels + reliance OR promotional action / actions*. Some phrases with `oil` are exluded with NOT to avoid irrelevant hits about uses of e.g. palm oil and fish oil.
+This phrase covers reliance on and reduction in use of fossil fuels. The general structure is *fossil fuels + reliance/reduced use OR fossil fuels + phrase out/energy strategy*. This tructure is similar to the action approach, but extra *energy strategy* terms are included here. Some phrases with `oil` are exluded with NOT to avoid irrelevant hits about uses of e.g. palm oil and fish oil. `petroleum` is only used in the second combination as if used in the first there are many results about it's use as a material, rather than in an energy context.
 
 ```py
 (
@@ -336,7 +336,7 @@ This phrase covers reliance on and reduction in use of fossil fuels. Many of the
   OR 
   TS=
   (
-    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy" OR "petroleum")
     NEAR/15
         ("phase out" OR "phasing out" OR "energy transition*"
         OR "energy strateg*" OR "energy management" OR "energy planning" OR "energy policy" 
