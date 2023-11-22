@@ -315,12 +315,11 @@ TS=
 (
   (
     ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
-    NEAR/5
-      ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
+    NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
   )
   NEAR/15 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
-OR TS=(("entrepreneur* education"))
+OR TS=("entrepreneur* education")
 ```
 #### Phrase 2
 
@@ -331,15 +330,17 @@ TS=
 (
   (
     ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
-    NEAR/5
-        ("unemploy*" OR "underemploy*")
+    NEAR/5 ("unemploy*" OR "underemploy*")
   )
   NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
- )
+)
 OR TS=
 (
-("unemploy*" OR "underemploy*") NEAR/15
-("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" OR "training program*" OR "vocational training" OR "skills training" OR "new skills")
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs") 
+  NEAR/15
+      ("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" 
+      OR "training program*" OR "vocational training" OR "skills training" OR "new skills"
+      )
 )
 
  ```
@@ -383,8 +384,7 @@ TS=
     NEAR/5
       (
         ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-        NEAR/5
-            ("skill*" OR "competen*" OR "literac*")
+        NEAR/5 ("skill*" OR "competen*" OR "literac*")
       )
   )
   NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
@@ -415,11 +415,10 @@ TS=
     NEAR/5
         (
           ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-          NEAR/5
-              ("equit*" OR "equal*" OR "balanc*")
+          NEAR/5 ("equit*" OR "equal*" OR "balanc*")
         )
-    ) 	
-    NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
+  ) 	
+  NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
@@ -430,11 +429,12 @@ In this phrase, the basic structure is similar to phrase 1, but reversed to sear
 ```py
 TS=
 (
-  ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+  (
+    ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
     OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
     OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
     OR "improv*"
-  )
+    )
     NEAR/5
       (
         ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
@@ -443,15 +443,16 @@ TS=
             OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$"
             OR "gaps in education" OR "gender parity" OR "parity with" OR "educational parity"
             OR
-             (
-            (" difference$" OR "discrepan*") NEAR/5
-            ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*"
-            OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
-             )
+              (
+                ("difference$" OR "discrepan*") 
+                NEAR/5
+                    ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*"
+                    OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
+              )
            )
      )
-  NEAR/10
-  ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
+  )
+  NEAR/10 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
@@ -551,17 +552,18 @@ The first phrase finds research about improving skills. The basic structure is *
 TS=
 (
   ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
-   NEAR/5 (
-  ("core literacy" OR "functional literacy" OR "basic literacy")
-  OR
-   (
+  NEAR/5 
+  (
+    ("core literacy" OR "functional literacy" OR "basic literacy")
+    OR
     (
-     ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-      NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
-    )
+      (
+        ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
+        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
+      )
       NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
-     )
-   )
+    )
+  )
 )
 ```
 
@@ -577,7 +579,10 @@ TS=
   OR "improv*"
   )
   NEAR/3
-      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+      (
+        ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+        OR ("illitera*" NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate"))
+      )
 )
 ```
 
@@ -709,21 +714,22 @@ TS=
 (
   (
     ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
-     NEAR/5
-        ("learning environment*" NEAR/5 "effective") OR
+    NEAR/5
         (
-          (("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
-          AND
-           ("learn*" OR "result*" OR "perform*" OR "atten*")
+          ("learning environment*" NEAR/5 "effective") 
+          OR
+            (
+              (("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
+              NEAR/15 ("learn*" OR "result*" OR "perform*" OR "atten*")
+            )
+          OR "physical learning environment*"
         )
-        OR
-        ("physical learning environment*")
   )
-AND
-   ("primary school*" OR "elementary school*" OR "primary educat*"
-     OR "middle school*" OR "secondary school*" OR "secondary educat*"
-     OR "school" OR "learner*"
-   )
+  AND
+    ("primary school*" OR "elementary school*" OR "primary educat*"
+    OR "middle school*" OR "secondary school*" OR "secondary educat*"
+    OR "school" OR "learner*"
+    )
 )
 ```
 
@@ -736,19 +742,18 @@ The terms for basic services in schools are taken and adapted from <a id="unesco
 ```py
 TS=
 (
- (
-  ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
-  NEAR/3
-    ("access*"
-    NEAR/5
-      ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR 
-      "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
-      OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-     )
+  (
+    ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
+    NEAR/3
+      ("access*"
+      NEAR/5
+        ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" 
+        OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
+        OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
+      )
   )
-  NEAR/15
-  ("school*" OR "education* facility" OR "education* facilities")
- ) 
+  NEAR/15 ("school*" OR "education* facility" OR "education* facilities")
+) 
 ```
 
 ### Target 4.b
@@ -772,8 +777,7 @@ TS=
 (
   (
     ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
-    NEAR/15
-        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility" OR "study abroad" OR "overseas stud*" )
+    NEAR/15 ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility" OR "study abroad" OR "overseas stud*" )
   )
 AND
   ("least developed countr*" OR "least developed nation$"
@@ -884,6 +888,11 @@ TS=
 * v1.0.0: Eli Heldaas Seland (Oct 2021-Oct 2022)
 
 * Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Lise Vik Haugen (Aug-Oct 2023), minor review Eli Heldaas Seland.
+
 
 Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 

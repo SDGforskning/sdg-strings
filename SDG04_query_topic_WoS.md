@@ -272,15 +272,12 @@ The basic structure is *skills + employability/entrepreneurship*
 ```py
 TS=
 (
-  (
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
-  )
-  NEAR/15
-  ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
+  NEAR/15 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
-OR TS=(("entrepreneur* education")
-)
+OR TS=("entrepreneur* education")
 ```
+
 #### Phrase 2
 
 This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *unemployment + skills*
@@ -288,18 +285,18 @@ This phrase finds research talking about skills, competencies etc. in relation t
 ```py
 TS=
 (
-  (
-    ("unemploy*" OR "underemploy*")
-  )
-  NEAR/5 
-  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
- )
-OR TS= (
-("unemploy*" OR "underemploy*") NEAR/15
-("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" OR "training program*" OR "vocational training" OR "skills training" OR "new skills")
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs")
+  NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
 )
-
- ```
+OR 
+TS= 
+(
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs") 
+  NEAR/15
+      ("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" 
+      OR "training program*" OR "vocational training" OR "skills training" OR "new skills")
+)
+```
 
 #### Phrase 3
 
@@ -326,6 +323,7 @@ TS=
   NEAR/15 "employability"
 )
 ```
+
 #### Phrase 4
 
 The basic structure is *ICT + skill + employability*.
@@ -336,12 +334,10 @@ Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omit
 TS=
 (
   (
-   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-    NEAR/5
-    ("skill*" OR "competen*" OR "literac*")
+    ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
+    NEAR/5 ("skill*" OR "competen*" OR "literac*")
   )
-   NEAR/15
-   ("employab*" OR "employment" OR "job$" OR "decent work")
+  NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
 )
 ```
 
@@ -364,11 +360,10 @@ The basic structure is *gender equality + education*
 ```py
 TS=
 (
- (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-  NEAR/5
-  ("equit*" OR "equal*" OR "balanc*")
-)
+  (
+    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+    NEAR/5 ("equit*" OR "equal*" OR "balanc*")
+  )
   NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
@@ -380,20 +375,23 @@ In this phrase, the basic structure is similar to phrase 1, but reversed to sear
 ```py
 TS=
 (
- (
- ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-  ("inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*"
-   OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$" OR "gaps in education"
-   OR "gender parity" OR "parity with" OR "educational parity" OR 
-     (
-      (" difference$" OR "discrepan*") NEAR/5
-      ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
-     )
-   )
-   )
-    NEAR/10
-    ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
+  (
+    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+    NEAR/5
+        ("inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*"
+        OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$" OR "gaps in education"
+        OR "gender parity" OR "parity with" OR "educational parity" 
+        OR 
+          (
+            ("difference$" OR "discrepan*") 
+            NEAR/5 
+                ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" 
+                OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend"
+                )
+          )
+        )
+  )
+  NEAR/10 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
@@ -457,11 +455,13 @@ The first phrase finds research about skills. The basic structure is *level + sk
 ```py
 TS=
 (
-    ((
+  (
+    (
       ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-        NEAR/15 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
+      NEAR/15 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
     )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate"))
+  NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  )
 OR ("core literacy" OR "functional literacy" OR "basic literacy")
 )
 ```
@@ -473,11 +473,12 @@ In the second phrase we search for research about illiteracy, innumeracy and ana
 ```py
 TS=
 (
- ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*") 
-OR 
-(
-("illitera*") NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
-)
+  ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*") 
+  OR
+  (
+    ("illitera*") 
+    NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  )
 )
 ```
 
@@ -535,9 +536,8 @@ The search phrase `ESD` for Education for Sustainable Development was tested, bu
 ```py
 TS=
 (
-  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
-    OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
-   )
+  "education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
+  OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
 )
 ```
 
@@ -548,10 +548,8 @@ This phrase is related to searches in SDG 11 about cultural heritage, and likely
 ```py
 TS=
 (
-  (
     ("culture*" OR "cultural")
-    NEAR/5 "sustainable development"
-  )    
+    NEAR/5 "sustainable development"  
 )
 ```
 
@@ -579,9 +577,10 @@ This phrase finds research on safe and inclusive schools and education facilitie
 TS=
 (
  ("school*" OR "education facilit*")
-  NEAR/5
-    ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
-  )
+  NEAR/5 
+      ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" 
+      OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
+      )
 )
 ```
 
@@ -593,19 +592,19 @@ This phrase focuses on effective learning environments in schools. The basic str
 TS=
 (
   (
-    ("learning environment*" NEAR/5 "effective") OR
- (
-(("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
- AND
- ("learn*" OR "result*" OR "perform*" OR "atten*")
-)
-OR 
-("physical learning environment*")
+    ("learning environment*" NEAR/5 "effective") 
+    OR
+      (
+        ("indoor environmental quality" OR ("classroom" NEAR/5 "air quality"))
+        AND ("learn*" OR "result*" OR "perform*" OR "atten*")
+      )
+    OR "physical learning environment*"
   )
   AND   
     ("primary school*" OR "elementary school*" OR "primary educat*"
     OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "learner*" )
+    OR "school" OR "learner*"
+    )
 )
 ```
 
@@ -618,11 +617,15 @@ The terms for basic services in schools are taken and adapted from <a id="unesco
 ```py
 TS=
 (
- ("school*" OR "education* facility" OR "education* facilities") 
-    NEAR/15  ("access*"
-    NEAR/5
-     ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR "adapted material*" OR    "universal design" OR ("infrastructure" NEAR/5 "disab*") OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-  )
+  ("school*" OR "education* facility" OR "education* facilities") 
+  NEAR/15  
+      ("access*"
+      NEAR/5
+        ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" 
+        OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*") 
+        OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$"
+        )
+      )
 ) 
 ```
 
@@ -771,6 +774,10 @@ NOT
 * v1.0.0: Eli Heldaas Seland (Oct 2021-Oct 2022)
 
 * Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022), Håkon Magne Bjerkan (minor review Oct 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Lise Vik Haugen (Aug-Oct 2023), minor review Eli Heldaas Seland.
 
 Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 
