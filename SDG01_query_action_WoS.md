@@ -2,7 +2,7 @@
 
 **Contents**
 
-1. Full query in copy-pasteable format
+1. Full query
 2. General notes
 3. Documentation and string sections for each target
 4. Contributions
@@ -624,7 +624,7 @@ TS=
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Lise Vik Haugen.
+* v2.0.0: Caroline S. Armitage (Aug-Oct 2023), minor review Lise Vik Haugen.
 
 Specialist input: Awaiting specialist input.
 
