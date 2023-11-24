@@ -708,7 +708,7 @@ TS=
  
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v2.0.0: Håkon Magne Bjerkan (Aug-Oct 2023), minor review Caroline S. Armitage.
+* v2.0.0: Håkon Magne Bjerkan, Inger Gåsemyr (Aug-Oct 2023), minor review Caroline S. Armitage.
 
 Specialist input: Awaiting
 
