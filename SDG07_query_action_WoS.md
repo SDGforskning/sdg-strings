@@ -1,7 +1,5 @@
 # Search query for SDG 7 - Affordable and clean energy, Bergen action-approach.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -12,7 +10,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/a4886a8a-852f-459c-bdfe-9482c04d4ad7-57ba8ccd/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/3b375f0a-e953-4728-a2e8-ca3f66d5d8e3-b77748c4/relevance/1
 
 ## 2. General notes
 
@@ -137,7 +135,7 @@ TS=
 
 #### Phrase 3
 
-The basic structure is *"dirty" fuels + action + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase.
+The basic structure is *"dirty" fuels + action + households*. It is similar to phrase 1, but the negative side (e.g. phasing out). Within the WHO guidelines for indoor air quality (<a id="WHOair">[WHO, 2014, Executive summary and p.34-35](#f3)</a>), PM2.5 and carbon monoxide are identified in emissions targets, and unprocessed coal and kerosene should be avoided as fuels. We considerered adding "paraffin" as term for fuels that should be avoided, but it proved little useful (few, rather old hits), and with potential for much noise to do with other uses of paraffin than in households. Searching for coal + heating is challenging as lots of industrial results, hence the two parts of this phrase. "domestic use*" replaces "domestic" from phrase 1 to avoid research concerned with domestic in the sense locally produced / not imported (coal etc.).
 
 ```py
 TS=
@@ -154,13 +152,13 @@ TS=
         )
   )    
   NEAR/15 ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" 
       OR "residential heating" OR "central heating" OR "winter heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps")      
 )
 OR
 TS=
 (
-  ("coal"
+  ("kerosene" OR "solid fuel$"
   NEAR/5
       ("transition*" OR "substitut*" OR "switch" OR "coal to electricity" OR "intervention$" OR "initiative$"
       OR "encourag*" OR "incentive$" OR "investing" OR "invest"
@@ -172,7 +170,7 @@ TS=
   )    
   NEAR/15
       ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$" OR "women"
+      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" 
       OR "heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
       )      
 )
@@ -265,7 +263,7 @@ TS=
 
 #### Phrase 6
 
-This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system.
+This phrase finds works about improving affordability and reliability of energy services. The general structure is *action + afford/stable + energy*. in the action terms, `reduce` is not truncated due to chemical reduction. In the energy terms, `energy` and `power` are combined with other terms to avoid results from other subject areas (biological energy, mechanical power). `microgrids` etc. are included as these are specific technologies used in areas which may not have access to a centralised power grid system. We considered including "insecur*" alongside "unstable", "unreliab*" etc. but decided not to as it added too much noise.
 
 ```py
 TS=
@@ -273,7 +271,7 @@ TS=
   (
     (
       ("improv*" OR "increas*" OR "ensur*" OR "implement*")
-      NEAR/5 ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap")  
+      NEAR/5 ("stable" OR "stability" OR "secur*" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap")  
     )
     OR
     (
@@ -309,13 +307,22 @@ TS=
 >
 > 7.2.1 Renewable energy share in the total final energy consumption
 
-This target is interpreted to cover research about increasing the use of renewable energy. This includes research about the transition of energy systems to renewables (e.g. research discussing transitions, access, incentives, policies), research about increasing the use/share, research about bringing of technology into use (e.g. commercialisation, scaling up, investment), and research about reducing reliance on fossil fuels. Basic research on renewable energy technology is not included, unless it also discusses increasing the global share (or mechanisms to increase it).
+
+This target is interpreted to cover research about increasing use and uptake of renewable energy (including sustainable batteries). We consider this to include research about:
+
+-	the transition of energy systems to renewables (e.g. research discussing energy transitions, improving access/removing barriers to renewables, incentives such as certificates, and policies)
+-	increasing the use/share of renewables (e.g. increasing adoption and share in the energy sector)
+-	mechanisms that incentivise renewable energy technology (e.g. commercialisation, scaling-up, increasing investment)
+-	reducing reliance on and use of fossil fuels
+
+Research on renewable energy technology alone, without a use/uptake element, is not included.
+
 
 This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renwables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). While there are no typical action terms, the term "energy transition" itself relates to the shift, so we assume works talking about this are related to the change in the share of renewables. 
+This phrase covers the general terms of transitioning and transforming to renewable energy. The elements of the phrase are: *renewables + energy transitions/transformations/substitutions*. "energy transition" is not used alone as this does not necessarily mean renewables (e.g. one can talk about historical energy transitions from wood to steam). While there are no typical action terms, the term "energy transition" itself relates to the shift, so we assume works talking about this are related to the change in the share of renewables. 
 
 ```py
 TS=
@@ -373,7 +380,7 @@ TS=
               )    
         )
       OR "geothermal heat pump$" OR "ground source heat pump$"
-      OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
+      OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "photovoltaic$"
       OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
       OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
       OR ("solar thermal" NEAR/3 ("power" OR "technolog*" OR "collector$" OR "district"))
@@ -404,27 +411,31 @@ TS=
 
 #### Phrase 3
 
-This phrase covers reduction in fossil fuels. The general structure is *action + fossil fuels + reliance/energy mix*. `consumption` is used in phrases as in combination with "oil" it causes issues (e.g. fish oil).
+This phrase covers reduction in fossil fuels. The general structure is *fossil fuels + reliance/reduced use OR fossil fuels + phrase out/energy strategy*. Some phrases with `oil` are exluded with NOT to avoid irrelevant hits about uses of e.g. palm oil and fish oil. `petroleum` is only used in the second combination as if used in the first there are many results about it's use as a material, rather than in an energy context.
 
 ```py
-TS=
 (
+TS=
   (
-    ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
-    OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-    OR "transition*" OR "substitut*" OR "intervention$"
-    OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-    )
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
     NEAR/5
-        ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy")
+      (
+        ("reduc*" OR "decreas*" OR "improv*" OR "support" OR "encourag*" OR "intervention$" OR "policy" OR "policies" OR "legislation" OR "incentiv*")
+        NEAR/5 ("use" OR "usage" OR "relian*" OR "consumption" OR "transition$" OR "substitut*" OR "primary source$")
+      )
   )
-  NEAR/15
-    ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-    OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
-    OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
-    OR "global energy" OR "global electricity" OR "energy mix"
-    )
-)   
+OR 
+TS=
+  (
+    ("fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "grey hydrogen" OR "conventional energy" OR "petroleum")
+    NEAR/15 ("phase out" OR "phasing out" OR "energy transition*" OR "energy strateg*" OR "energy management" OR "energy planning" OR "energy policy")
+  )
+)
+NOT TS=
+  ("palm oil" OR "oil palm" OR "olive oil" OR "coconut oil" OR "vegetable oil" OR "eucalyptus oil" OR "cooking oil" OR "fish oil" OR "liver oil" 
+  OR "nutrition" OR "cholesterol" OR "obes*" OR "human consum*"
+  OR "cylinder oil" OR "lubricat*" OR "lube oil" OR "engine oil"
+  )
 ```
 
 ### Target 7.3
@@ -462,7 +473,7 @@ TS=
       )
   )
   AND
-      ("energy consum*" OR "sustainab*" OR "energy efficiency"
+      ("energy consum*" OR "energy-saving" OR "sustainab*" OR "energy efficiency"
       OR "GDP" OR "economic" OR "economy" OR "economies"
       OR "industry" OR "industrial" OR "manufacturing"
       OR ("emission$" NEAR/5 ("carbon" OR "co2"))
@@ -584,12 +595,12 @@ TS=
         )
   )
   NEAR/15
-      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
+      ("energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
       OR
         (
           ("technolog*" OR "innovation$" OR "R&D")
           NEAR/3
-              ("clean" OR "cleaner" OR "green" OR "greener"
+              ("clean* energy" OR "green* energy"
               OR "decarboni*" OR "low carbon" OR "energy efficien*"  
               OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine energy" OR "tidal energy" OR "wave energy"
               )
@@ -626,7 +637,7 @@ TS=
       )
   )
   NEAR/15
-      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
+      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply" OR "clean energy"
       OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
       OR "community energy" OR "community renewable energy"
       OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
@@ -701,6 +712,10 @@ TS=
 * v1.0.0: Caroline S. Armitage (Oct 2021-Oct 2022), Marta Lorenz (Oct 2021-Apr 2022)
 
 * Internal review: Håkon Magne Bjerkan, Marta Lorenz (March 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
