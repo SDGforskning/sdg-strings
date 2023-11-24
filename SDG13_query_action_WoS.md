@@ -2,10 +2,7 @@
 
 Take urgent action to combat climate change and its impacts.
 
-**Current status**: This string is currently being edited after testing.
-
 **Contents**
-
 1. Full query in copy-pasteable format
 2. General notes
 3. Documentation and string sections for each target
@@ -13,8 +10,7 @@ Take urgent action to combat climate change and its impacts.
 5. Footnotes
 
 ## 1. Full query
-
-Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication date = last 5 years): https://www.webofscience.com/wos/woscc/summary/2655b664-541f-4037-a891-80942ba9aed5-b77a0883/relevance/1
 
 ## 2. General notes
 
@@ -520,6 +516,10 @@ TS=
 * v1.0.0: Marta Lorenz (Oct 2021-Apr 2022), Caroline S. Armitage (Apr-Sep 2022)
 
 * Internal review: Eli Heldaas Seland, Caroline S. Armitage (March 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Eli Heldaas Seland (Aug-Oct 2023), minor review Caroline S. Armitage.
 
 Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022), Marta Lorenz (PhD in climate geoscience).
 
