@@ -2,8 +2,6 @@
 
 Ensure healthy lives and promote well-being for all at all ages.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -12,10 +10,9 @@ Ensure healthy lives and promote well-being for all at all ages.
 4. Contributions
 5. Footnotes
 
-
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/58bf1ebe-162b-4bb7-b3bf-6f640d7521cc-57b43974/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/8b780ba2-ed2c-475f-b687-2bba67a2aabc-a8657354/relevance/1
 
 ## 2. General notes
 
@@ -44,8 +41,6 @@ During editing of this string (2021), we have consulted two other sets of querie
 The target is interpreted as covering research about reducing the maternal mortality rate. The interpretation is limited to reducing mortality as this is what is stated in both targets, rather than care/health generally -  attendance of skilled health personnel is interpreted as one way to limit mortality, and should be covered if authors connect their work to this aim.
 
 This query consists of 1 phrase.
-
-#### Phrase 1
 
 The basic structure is *mothers/birth* + *mortality* + *action* + *excluding livestock*. Originally, a second phrase was added for "improve survival", but this mostly added noise - many results were about babies rather than mothers, and others were about "maternal" effects in animals.
 
@@ -182,7 +177,7 @@ TS =
     NEAR/15
         ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
         OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
+        OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
         OR
           (
             ("stop" OR "stopped" OR "stopping" OR "limit" OR "limiting")
@@ -197,7 +192,7 @@ TS =
           )
         )
   )
-  NOT ("non communicable" NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "communicable and non communicable"))
+  NOT (("non communicable" OR "noncommunicable") NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "noncommunicable and communicable" OR "communicable and non communicable" OR "communicable and noncommunicable"))
 )
 ```  
 
@@ -222,8 +217,7 @@ TS =
       ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
       OR "contagious" OR "transmissible" OR "infectious"
       )
-      NEAR/5
-          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
+      NEAR/5 ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
     )
     OR "hepatitis"
     OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
@@ -243,7 +237,7 @@ TS =
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
-    OR "lower respiratory infection$"
+    OR "lower respiratory infection$" OR "respiratory tract infection$"
     OR "coronavirus" OR "covid" OR "covid19" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
     OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
     OR "ebola"
@@ -288,7 +282,7 @@ TS =
   NEAR/5
       ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
       OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
+      OR "treat" OR "treating" OR "cure" OR "curing" OR "cured" OR "vaccinate" OR "control" OR "contain"
       )
 )
 
@@ -327,7 +321,7 @@ TS =
     OR "yellow fever"
     OR "sexually transmitted disease$" OR "sexually transmitted infection$"
     OR "syphilis"
-    OR "lower respiratory infection$"
+    OR "lower respiratory infection$" OR "respiratory tract infection$"
     OR "coronavirus" OR "covid" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
     OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
     OR "ebola"
@@ -374,7 +368,7 @@ TS =
         (
           ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "reduc*" OR "alleviat*" OR "mitigat*" OR "limit" OR "limiting" OR "decreas*"
           OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-          OR "stop" OR "stopped" OR "stopping" OR "control" OR "treat" OR "vaccinate"
+          OR "stop" OR "stopped" OR "stopping" OR "control" OR "contain" OR "treat" OR "vaccinate"
           )
           NEAR/3
               ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$")
@@ -416,7 +410,7 @@ TS=
 (
   (
     (
-      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious")
+      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious" OR "auto immune" OR "autoimmune")
       NEAR/5
           ("disease$" OR "illness*")
     )
@@ -627,9 +621,13 @@ TS=
 
 This target is interpreted to cover research about reducing deaths and injuries from road traffic accidents. Improvement to road/vehicle safety generally is not considered relevant unless it is connected to health - the reducing injury/death focus is evident in the target and the High-level Political Forum thematic review for SDG 3 (<a id="HLPF">[ECESA plus members, 2017](#f21)</a>). Improving road safety generally is covered in SDG 11.2.
 
-This query consists of 1 phrase. Originally, a second phrase was included about improving `survival` , however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife).
+This query consists of 1 phrase. Originally, a second phrase was included about improving `survival`, however the relevant results are minimal; the majority discussing `survival` are not about road traffic safety (instead about e.g. biomedical, or  wildlife).
 
-The basic structure is *traffic/road users + mortality/morbidity + action*
+We also considered using terms for wildlife roadkills, biodiversity etc. in the NOT-phrase to exclude results about the impact of traffic accidents on animals, but it proved too hard to isolate them from accidents that also (potentially) affect humans. 
+
+The basic structure is *traffic/road users + mortality/morbidity + action + accidents* 
+
+The final `AND` combination is to limit to works that mention accidents or deaths of road-users - the reason for this is because otherwise there are many results concerning deaths and injuries from air pollution from roads. 
 
 In the *action* terms, `limit$` is not included (only `limiting`) as mostly used for city limits or speed limits. `improv*` was added as an action term - although the focus is on reducing accidents, a number of works talk about e.g. "improving mortality outcomes". `prevent*` is not used to reduce results generally talking about "preventable deaths", rather than prevention. In the *traffic* terms, `vehicle OR driver OR car OR cars` are combined with `accident OR crash...` because these terms are used in a biomedical or general context not to do with traffic (e.g. "xyz works as a vehicle for delivery of the drug"; "car T cells"; "x is a driver of y"). `intersection$` was considered but removed as it mostly added noise from metaphorical use of intersection (e.g. between two subject areas).
 
@@ -646,8 +644,8 @@ TS =
       )
       AND
           (
-            ("mortality" OR "death$" OR "fatalities" OR "fatal" OR "deadly"
-            OR "morbidity" OR "injury" OR "injuries" OR "road trauma$" OR "RTI" OR "RTIs"
+            ("mortality" OR "death$" OR "fatal*" OR "deadly"
+            OR "morbidity" OR "injur*" OR "road trauma$" OR "RTI" OR "RTIs"
             )
             NEAR/5
                 ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "tackl*" OR "fight*"
@@ -657,14 +655,18 @@ TS =
                 OR
                   (
                       ("improv*" OR "better" OR "enhanc*" OR "more efficient" OR "research*" OR "novel" OR "new")  
-                      NEAR/5
-                          ("treatment$" OR "intervention$" OR "therapy" OR "therapies" OR "first aid")
+                      NEAR/5 ("treatment$" OR "intervention$" OR "therapy" OR "therapies" OR "first aid")
                   )
                 )
+          )
+      AND 
+          ("accident$" OR "crash*" OR "collision$" OR "traffic incident$" OR "driving injur*" OR "RTI" OR "RTIs" OR "safety"
+          OR (("driver" OR "road" OR "cycling" OR "cyclist$" OR "bicycle$" OR "pedestrian$" OR "vehicle$") NEAR/3 ("injur*" OR "fatalit*" OR "death$"))
           )
   )
   NOT ("air traffic" OR "boat traffic")
 )
+
 
 ```
 
@@ -690,9 +692,9 @@ The basic structure is *reproductive health/education + access + action*
 
 Originally, *reproductive health* terms were combined with *service/information* terms (`"support" OR "service$" OR "program*" OR "right$" OR "facility" OR "facilities" OR "hospital$" OR "clinic$" OR "treatment" OR "checkup$" OR "check up$" OR "healthcare" OR "care" OR "aftercare" OR "information" OR "education"`). However, a wide variety of terms are used, and sometimes no terms at all. When *reproductive health* terms are combined with *access* terms, the results are mostly discussing some sort of service/education/communication, so the *service/information* terms were dropped as an unnecessary restriction.
 
-Terms such as `reproductive health` will cover `reproductive health care / health services` etc.. `abortion` is included as part of reproductive health, according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
+Terms such as `reproductive health` will cover `reproductive health care / health services` etc. `abortion` is included as part of reproductive health, according to WHO ("Access to legal, safe and comprehensive abortion care, including post-abortion care, is essential for the attainment of the highest possible level of sexual and reproductive health"; (<a id="WHOabortion">[WHO, n.d. c](#f15)</a>).
 
-Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>).
+Here, `right$` is included as "right to reproductive health" encompasses access to services/education/information about this. `health equity` also covers ideas around access (from "Equity is the absence of avoidable, unfair, or remediable differences among groups of people, whether those groups are defined socially, economically, demographically or geographically or by other means of stratification. "Health equity” or “equity in health” implies that ideally everyone should have a fair opportunity to attain their full health potential and that no one should be disadvantaged from achieving this potential" (<a id="WHOequity">[WHO, n.d. d](#f8)</a>)). `Health for all` refers to a movement/strategy of WHO sometimes still referenced, and is wider than only the healthcare aspect, but involves the idea of bringing of health to everyone (<a id="WHOhealthforall">[WHO, 1981](#f16)</a>). These terms, and `health promotion`, need not be combined with action terms, as a form of action is already implied. 
 
 ```py
 TS =
@@ -702,7 +704,7 @@ TS =
   OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy"))
   )
   NEAR/15
-      ("health equity" OR "equity in health*" OR "health for all"
+      ("health equity" OR "equity in health*" OR "health for all" OR "health promotion"
       OR
         (
           ("access*" OR "right$" OR "coverage"
@@ -803,7 +805,7 @@ TS =
 (
   ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
   OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "vaccine$" OR "immuni$ation"
+  OR "vaccine$" OR "vaccination$" OR "immuni$ation"
   OR (("essential" OR "basic" OR "life saving" OR "necessary" OR "emergency") NEAR/3 ("medicines" OR "medication$" OR "treatment*" OR "therap*"))
   OR "treatment access" OR "access to treatment$"
   )
@@ -964,7 +966,7 @@ TS =
 >
 > 3.a.1 Age-standardized prevalence of current tobacco use among persons aged 15 years and older
 
-This target is interpreted to cover research about reducing of tobacco use and production, or implementing the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
+This target is interpreted to cover research about reducing use and production of tobacco, or implementing the WHO FCTC. WHO FCTC is a treaty from 2003 which aims to reduce tobacco use, via reducing supply and demand. There are several strands of tobacco control measures, including protecting public health policy from industry influence, tax measures, regulation of contents of tobacco products, regulation of packaging and labelling, warnings about risks, bans on advertising and sales to minors, support for those with addictions, support for alternatives for those who grow tobacco, and reductions in illicit trade of tobacco (<a id="WHOFCTC">[Regional Office for Europe, n.d.](#f16)</a>)
 
 This query consists of 3 phrases.
 
@@ -1048,7 +1050,7 @@ TS=
 > 3.b.3 Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
 
 This target is interpreted to cover research about:
-* Support for development of medicines/vaccines for diseases in developing countries or for diseases "primarily affecting" them. For the query, we have interpreted this as neglected tropical diseases. For other diseases it is harder to decide if they are neglected or who they primarily affect. We interpret "support" as financial support as well as cooperation and research partnerships  (phrase 1).
+* Support for development of medicines/vaccines for diseases "primarily affecting" developing countries. To decide which diseases to include, we have used neglected tropical diseases, and a list found in (<a id="GBD">[Coates et al., 2021](#f31)</a>) - from results and Appendix table 6 over disease occurence/fatalities in richest vs. poorest countries. We tested using individual country names in the string, but that resulted in noise from research on other diseases in these countries - not just those primarily affecting developing / low and middle income countries. We interpret "support" as financial support as well as cooperation and research partnerships  (phrase 1).
 * Access to affordable essential medicines and vaccines on a broad scale in accordance with Doha/TRIPS (phrase 2).
 
 This query consists of 2 phrases.
@@ -1089,27 +1091,53 @@ TS =
   )
   AND
     ("neglected tropical disease$"
+    OR "African trypanosomiasis"  
+    OR "AIDS"
+    OR "appendicitis"
     OR "buruli ulcer"
     OR "chagas"
-    OR "dengue"
     OR "chikungunya"
+    OR "dengue"
+    OR "diarrheal disease$"
+    OR "diphteria"
     OR "dracunculiasis" OR "guinea-worm disease"
+    OR "ebola"    
     OR "echinococcosis"
-    OR "foodborne trematodiases"
+    OR "foodborne trematodiases" OR "food-borne trematodiases"
+    OR "hemolytic disease"
+    OR "hepatitis B"
+    OR "HIV"
     OR "human african trypanosomiasis" OR "sleeping sickness"
     OR "leishmaniasis"
     OR "leprosy"
+    OR "lower respiratory infection$" OR "respiratory tract infection$"
     OR "lymphatic filariasis"
+    OR "malaria"
+    OR "maternal hemorrhage"
+    OR "maternal sepsis"    
+    OR "measles"
     OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
+    OR "neonatal encephalopathy"
+    OR "neonatal sepsis"
+    OR "neural tube defect$"
     OR "onchocerciasis" OR "river blindness"
+    OR "pertussis"
     OR "rabies"
+    OR "rheumatic heart disease"
     OR "scabies"
     OR "schistosomiasis"
+    OR "sickle cell"
     OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
     OR "snakebite envenoming"
+    OR "syphilis"
     OR "taeniasis" OR "cysticercosis"
-    OR "trachoma"
+    OR "tetanus"
+    OR "trachoma" 
+    OR "trichuriasis"
+    OR "tuberculosis"
+    OR "typhoid fever"
     OR "yaws"
+    OR "yellow fever"
     OR "least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
@@ -1120,11 +1148,7 @@ TS =
     OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
     OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
     OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-    OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-    OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
-    OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
-    OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey"
-    )
+   )
 )
 ```
 
@@ -1276,14 +1300,14 @@ There are also 19 technical areas from the Joint External Evaluation tool, which
 
 This query consists of 1 phrase. The general structure is *health emergencies + preparedness + action*
 
-`national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
+Pandemic is a challenging search term, as there is so much research about societal, economic etc. impact of the COVID-19 pandemic. To avoid some noise, we have chosen to combine `pandemic` with "health terms". `national action plan` is a term used in relation to antimicrobial resistance. `emergency response` covers emergency response plans, etc. `health risk` is a very general term, so here is limited to national and global health risks, as stated in the target. `health emergency` is more unambiguously about emergency situations, so is not limited. The `NOT` statement is required to eliminate results for e.g. crop epidemics.
 
 ```py
 TS =
 (
   (
-    ("national health risk$" OR "international health risk$" OR "global health risk$"
-    OR "pandemic$" OR "epidemic$" OR "outbreak$"
+    ("national health risk$" OR "international health risk$" OR "global health risk$" OR "public health risk$"
+    OR "epidemic$" OR "outbreak$"
     OR "medical disaster$" OR "health emergency" OR "health emergencies"
     OR "radiation emergenc*" OR "radiation event$"
     OR "chemical event$" OR "chemical emergenc*"
@@ -1291,10 +1315,12 @@ TS =
     OR "food safety" OR "foodborne event$"
     OR "biosecurity event$" OR "biosecurity emergenc*"
     OR "antimicrobial resistan*" OR "antibiotic resistan*" OR "antifungal resistan*"
+    OR ("pandemic$" NEAR/15 ("influenza" OR "flu" OR "health" OR "hospital*" OR "clinic*" OR "ward*" OR "care" OR "nurs*" OR "pharmac*" OR "medic*" OR "vaccin*"))
+    OR "pandemic preparedness" OR "pandemic polic*"
     )
     NEAR/15  
       (
-        ("capacity" OR "early warning*" OR "surveillance" OR "monitoring system$"
+        ("capacity" OR "early warning*" OR "early detection" OR "surveillance" OR "monitoring system$"
         OR "laboratory reporting" OR "laboratory infrastructure" OR "laboratory quality" OR "laboratory system$"
         OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
         OR "risk reduction" OR "risk management" OR "risk communication"
@@ -1314,8 +1340,7 @@ TS =
             )
       )
   )
-  NOT
-      ("blight" OR "plant pathogen$" OR "plant disease$")
+  NOT ("blight" OR "plant pathogen$" OR "plant disease$")
 )
 
 ```
@@ -1328,6 +1353,10 @@ TS =
 
 * Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022)
 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
+
 Specialist input: Awaiting
 
 ## 5. Footnotes
@@ -1335,6 +1364,9 @@ Specialist input: Awaiting
 <a id="f29"></a> Aurora Universities Network. (2020). *Search Queries for “Mapping Research Output to the Sustainable Development Goals (SDGs)”* v5.0. [Dataset]. doi:10.5281/zenodo.3817445. [↩](#Aurora)
 
 <a id="f13"></a> Centers for Disease Control and Prevention. (2021). *Waterborne Disease Prevention Branch*. https://www.cdc.gov/ncezid/dfwed/waterborne/ [Accessed 15.10.2021] [↩](#CDCwaterborne)
+
+<a id="f31"></a> Coates MM, Ezzati M, Robles Aguilar G, Kwan GF, Vigo D, et al. (2021) Burden of disease among the world’s poorest billion people:
+ An expert-informed secondary analysis of Global Burden of Disease estimates. *PLOS ONE 16*(8): e0253073. https://doi.org/10.1371/journal.pone.0253073 [↩](#GBD)
 
 <a id="f21"></a> ECESA plus members. (2017). *2017 HLPF Thematic Review of SDG3: Ensure healthy lives and promote well-being for all at all ages*. United Nations. https://sustainabledevelopment.un.org/content/documents/14367SDG3format-rev_MD_OD.pdf [accessed 12.11.2021] (#HLPF)
 
