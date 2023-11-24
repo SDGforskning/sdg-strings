@@ -1,5 +1,4 @@
 # Search query for SDG 15 - Life on Land, Bergen action-approach.
-
 Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.
 
 **Contents**
@@ -1344,7 +1343,7 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Awaiting
 
