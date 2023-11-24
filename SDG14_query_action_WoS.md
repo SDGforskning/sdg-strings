@@ -2,8 +2,6 @@
 
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -15,7 +13,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8d851a1e-d98d-41de-a91e-3dbec467564e-57be146f/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publishing year = last 5 years): https://www.webofscience.com/wos/woscc/summary/dadea7c9-674a-43bf-962f-ce659ad652ee-b78159c0/relevance/1
 
 ## 2. General notes
 
@@ -67,7 +65,8 @@ TS=
           OR "offshore" OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
           )
     )
-  OR 
+  OR "mariculture"
+  OR
     ("sea"
       AND
           ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
@@ -304,6 +303,7 @@ TS=
     OR "Barcelona convention"
     OR "Global Programme of Action for the Protection of the Marine Environment"
     OR "MARPOL" OR "prevention of pollution from ships"
+    OR "Stockholm convention"
     )
     AND
         (  "pollut*"
@@ -349,7 +349,7 @@ This query consists of 3 phrases. Phrase 1 covers the establishment/management o
 
 This phrase covers the establishment/management of protected areas. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones".
+For our interpretation of "protection" we include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". `MPA OR MPAs` is combined with `marine protected area$` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa)) - the abbreviation is still included as a search term in the action approach however, as it often occurs together with action terms (after being defined earlier in the abstract, for example). 
 
 ```py
 TS=
@@ -363,8 +363,8 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
+      ("marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+      OR "particularly sensitive sea area$" OR "LSMPA$" 
       OR
         (
           ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
@@ -372,6 +372,22 @@ TS=
         )
       OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
       )
+)
+OR 
+TS=
+(
+  (
+    ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
+    OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
+    OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
+    OR "plans" OR "plan" OR "planned" OR "planning"
+    OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
+    OR "enforce" OR "enforcement" OR "enforcing"
+    OR "strengthen" OR "improv*"
+    )
+    NEAR/5 ("MPA" OR "MPAs")
+  )
+  AND "marine protected area$"
 )
 ```
 
@@ -409,16 +425,16 @@ TS=
 
 #### Phrase 3
 
-Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *action + marine ecosystems or elements*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+Phrase 3 covers research about restoring, protecting, conserving or managing marine ecosystems. The general structure is *action + conservation/management + marine ecosystems/protection instruments*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, verbs for manage/protect etc. are used alone, but other forms of these words are combined with other actions (e.g. establishing management, improving protection etc).
+The *action terms* for this string are challenging because one can talk about "how to conserve the marine environment" (relevant), but could also just mention "the study was carried out in a conservation area" (less relevant). Therefore, verbs for manage/protect etc. are used alone, but other forms of these words are combined with actions (e.g. establishing management, improving protection etc).
 
-Under the *marine ecosystems/elements*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are assumed to be about protection/management.
+Under the *marine ecosystems/protection instruments*, we include habitats, elements of ocean health, elements of production, and some specific pieces of legislation to do with conservation/protection. Terms to do with ocean health include various terms to do with functioning ecosystems and services for humans, diversity at various levels (important for ecosystem functioning, resilience and services),  `key species` and `foundation species` (whose presence is important for ecosystem maintenance), and `water quality` (can be a driver of species loss).`BBNJ` is a concept most often used to highlight the difficulties conserving biodiversity beyond national waters, so any publications mentioning it are assumed to be about protection/management.
 
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore"
+  ("manage" OR "conserve" OR "protect" OR "restore" OR "rehabilitate"
   OR
     (
       ("designat*" OR "placement" OR "expand*" OR "extend"
@@ -430,11 +446,11 @@ TS=
       OR "preserv*" OR "support*" OR "ensur*"
       )
       NEAR/5
-        ("management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
+        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
     )
   )
   NEAR/15
-      ("ecosystem$" OR "habitat$" OR "communit*"
+      ("ecosystem$" OR "habitat$" OR "ecological communit*"
       OR "mangrove$" OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
       OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
       OR "sponge ground$" OR "reef" OR "reefs" OR "coral$"
@@ -458,6 +474,7 @@ TS=
       OR ("no-take" NEAR/3 ("area*" OR "zone*"))
       OR "Habitats directive"
       OR "CBD" OR "HELCOM" OR "OSPAR" OR "UNEP"
+      OR "marine conservation"
       OR "Conservation of Antarctic Marine Living Resources" OR "CCAMLR"
       OR "Lima convention" OR "Nairobi convention" OR "Noumea convention" OR "Barcelona convention" OR "World heritage convention"
       OR "International coral reef initiative"
@@ -471,7 +488,7 @@ TS=
 >
 > 14.3.1 Average marine acidity (pH) measured at agreed suite of representative sampling stations
 
-The target is interpreted to cover research that focuses on minimising the impacts of ocean acidification (OA). We interpret "address" also as a term meaning to limit/combat, and consider research about improving resilience/reducing vulnerability to OA as relevant, as well as research about what decreases resilience. Note that this is quite a strict interpretation - there is much research about understanding and documenting the effects of ocean acidification, but research about *reducing* these effects may be much less. The topic approach covers a wider interpretation. 
+The target is interpreted to cover research that focuses on minimising the impacts of ocean acidification (OA), which includes research about what improves/reduces resilience/vulnerability to OA. We interpret "address" to mean that research about monitoring the impacts of OA is relevant too. Note that this is quite a strict interpretation - there is much research about understanding and documenting the effects of ocean acidification, but research about *reducing* these effects may be much less. The topic approach covers a wider interpretation. 
 
 The general structure is *action + impacts + acidification*.
 
@@ -487,7 +504,8 @@ TS =
       (
         ("decreas*" OR "minimi*" OR "reduc*" OR "limit" OR "mitigat*" OR "alleviat*"
         OR "fight*" OR "combat*" OR "tackl*" OR "resist*"
-        OR "stop*" OR "avoid*" OR "prevent*" OR "halt*"       
+        OR "stop*" OR "avoid*" OR "prevent*" OR "halt*" 
+        OR "monitor*"      
         )
         NEAR/5
           ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
@@ -614,7 +632,7 @@ TS=
     )
     NEAR/15
       ("manag*" OR "plan" OR "planning" OR "governance"
-      OR "restor*" OR "stock recovery"
+      OR "restor*" OR "stock recovery" OR "rehabilita*"
       OR "sustainab*"
       OR "EBFM" OR "ecosystem approach*"
       OR "maximum sustainable yield*" OR "MSY"
@@ -638,6 +656,7 @@ TS=
       )
 )
 ```
+
 ### Target 14.5
 
 > **14.5 By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information**
@@ -648,7 +667,7 @@ The target is interpreted to cover research about the establishment and manageme
 
 This query consists of 1 phrase. The general structure is *action + protected areas*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**. The phrase is identical to 14.2 phrase 1.
 
-Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise.
+Conserving areas of the ocean is considered widely to include several types of protected areas (which have different degrees of protection); for example, `no take zone$`, `conservation zone$`, `marine protected area$`. The phrase `"protect*" OR "conservation" NEAR/3 "area*" or "zone"` will cover "marine protected areas" and "marine conservation zones". For the action terms, I tested with `("increas*" NEAR/3 ("cover" OR "area" OR "size" OR "extent" OR "coverage"))` but it mostly gave noise. `MPA OR MPAs` is combined with `marine protected area$` as without this there are issues with other acronyms (particularly marine predator algorithm (MPA), units of pressure (MPa)) - the abbreviation is still included as a search term in the action approach however, as it often occurs together with action terms (after being defined earlier in the abstract, for example). 
 
 ```py
 TS=
@@ -662,8 +681,8 @@ TS=
   OR "strengthen" OR "improv*"
   )
   NEAR/5
-      ("MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "particularly sensitive sea area$"
+      ("marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine sanctuar*" OR "marine park$"
+      OR "particularly sensitive sea area$" OR "LSMPA$" 
       OR
         (
           ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
@@ -671,6 +690,22 @@ TS=
         )
       OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
       )
+)
+OR 
+TS= 
+(
+  (
+    ("designat*" OR "placement" OR "delineat*" OR "expand*" OR "extend"
+    OR "design" OR "designing" OR "create" OR "creation" OR "creating" OR "develop" OR "development"
+    OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
+    OR "plans" OR "plan" OR "planned" OR "planning"
+    OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "governance" OR "manag*"
+    OR "enforce" OR "enforcement" OR "enforcing"
+    OR "strengthen" OR "improv*"
+    )
+    NEAR/5 ("MPA" OR "MPAs")
+  ) 
+  AND "marine protected area$"
 )
 ```
 
@@ -682,14 +717,14 @@ TS=
 >
 >  14.6.1 Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing
 
-This target is interpreted to cover research about reducing/eliminating fisheries subsidies that contribute to negative outcomes (overcapacity, overfishing, and IUU finishing). We also consider research about fisheries and development assistance, fisheries and the WTO, or fisheries and the mandates mentioned in the target to be relevant.
+This target is interpreted to cover research about reducing or reform of fisheries subsidies. We also consider research about fisheries and development assistance, fisheries and the WTO, or fisheries and the mandates mentioned in the target to be relevant.
 
 This query consists of 2 phrases. 
 
 #### Phrase 1
 The general structure is *action + subsidies + fisheries*. 
 
-The generic trm `fishing` will find "IUU fishing". `"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded.
+The generic trm `fishing` will find "IUU fishing". `"larval subsidi*" OR "recruitment subsidi*"` are terms to do with fish population dynamics and are excluded. `subsidy` and other terms are written out rather than truncated due to "subsidence" and "subsideded".
 
 ```py
 TS =
@@ -701,7 +736,7 @@ TS =
       OR "remov*" OR "end" OR "ending" OR "prevent*" OR "stop*" OR "halt*"
       OR "reform*"
       )
-      NEAR/5 "subsid*"
+      NEAR/5 ("subsidy" OR "subsidies" OR "subsidiz*" OR "subsidis*")
     )
     NEAR/15
         ("fishing" OR "fisher*" OR "overfishing" OR "bycatch" OR "trawling"
@@ -719,7 +754,9 @@ The general structure is *ODA/mandates/WTO + fisheries*. Note that this does not
 ```py
 TS=
 (
-  ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
+  ("ODA" OR "development assistance" OR "development aid" OR "development intervention$" OR "foreign aid" 
+  OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO"
+  )
   NEAR/15
       ("fishing" OR "fisher*" OR "overfishing"
       OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
@@ -755,6 +792,7 @@ TS =
       NEAR/5
           ("econom*" OR "GDP" OR "wealth"
           OR "exploit*" OR "goods and services" OR "ecosystem service$"
+          OR "marine resources" OR "biological resources" OR "genetic resources"
           OR "socio economic" OR "socioeconomic"
           OR "livelihood$" OR "job$" OR "income$" OR "profit*"
           OR "trade" OR "trading" OR "market$"
@@ -764,7 +802,7 @@ TS =
           )
     )
     AND
-      ("sustainab*"
+      ("sustainab*" OR "marine conservation"
       OR "marine spatial planning" OR "MSP"
       OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
       OR "area based management" OR "resilience based management" OR "community based management"
@@ -772,7 +810,7 @@ TS =
       OR "coastal resources management"
       OR "locally managed marine area$" OR "LMMA$"
       OR "marine protected area$" OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "marine conservation zone$" OR "particularly sensitive sea areas$"
+      OR "particularly sensitive sea areas$"
       OR "regional fisheries management organi?ation$" OR "RFMOs"
       OR "port state measures agreement"
       OR "fish stocks agreement" OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
@@ -891,7 +929,7 @@ TS=
       OR "biodivers*" OR "biological diversity" OR "BBNJ" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity"
       )
       AND
-          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
+          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" OR "bioactive$"
           OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR "marine economy"
           )
     )
@@ -902,13 +940,13 @@ TS=
           ("benefit$"
           OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
           OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
+          OR "fisher*" OR "fishing" OR "aquaculture" OR "mariculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
           OR "exploit*" OR "goods and services" OR "ecosystem service$"
           OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
           OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
           OR "livelihood$" OR "job$" OR "income$" OR "profit*"
           OR "trade" OR "trading" OR "market$"
-          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
+          OR "utili$ation" OR "sustainab* use" OR "using sustainab*" OR "sustainab* usage"
           )
     )
   )
@@ -1016,53 +1054,75 @@ TS =
 
 This target is interpreted to cover research about the implementation and development of international law for conservation and sustainable use of the oceans.
 
-This query consists of 2 phrases. Phrase 1 contains specific instruments, while phrase 2 contains generic terms for international law.
+This query consists of 3 phrases. Phrase 1 and 2 contain specific instruments (divided by whether they need to be combined with marine terms or not), while phrase 3 contains generic terms for international law.
 
 #### Phrase 1
-The general structure is *action + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb.
+The elements of the phrase are: *action + international law*. This phrase contains specific international laws relevant to conservation and sustainable use. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation.  
 
 ```py
 TS =
 (
-    ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrat*" OR "design*" OR "propos*" OR "develop*"
-    OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*" OR "negotiat*"
-    OR "reform*" OR "improv*" OR "better"
-    )
-    NEAR/5
-        ("law of the sea" OR "UNCLOS"
-        OR "the future we want"
-        OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-        OR "BBNJ"
-        OR "common fisheries policy"
-        OR "marine stewardship council"
-        OR "regional fisheries management organi?ation$" OR "RFMOs"
-        OR "fish stocks agreement"
-        OR "code of conduct for responsible fisheries" OR "CCRF"
-        OR "port state measures agreement"
-        OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-        OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-        OR ("directive$" NEAR/3 "marine spatial planning")
-        OR "habitats directive" OR "convention on biological diversity"
-        OR "Convention on International Trade in Endangered Species"
-        OR "Regional seas programme"
-        OR "Water framework directive"
-        OR "OSPAR convention"
-        OR "Marine strategy framework directive" OR "MSFD"
-        OR "Barcelona convention"
-        OR "Global Programme of Action for the Protection of the Marine Environment"
-        OR "MARPOL" OR "prevention of pollution from ships"
-        OR "Conservation of Antarctic Living Marine Resources"
-        )
+  ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrat*" OR "design*" OR "propos*" OR "develop*"
+  OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*" OR "negotiat*"
+  OR "reform*" OR "improv*" OR "better"
+  )
+  NEAR/5
+      ("law of the sea" OR "UNCLOS"
+      OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
+      OR "BBNJ" OR "high seas treaty"
+      OR "common fisheries policy"
+      OR "marine stewardship council"
+      OR "regional fisheries management organi?ation$" OR "RFMOs"
+      OR "fish stocks agreement"
+      OR "code of conduct for responsible fisheries"
+      OR "port state measures agreement"
+      OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
+      OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
+      OR ("directive$" NEAR/3 "marine spatial planning")
+      OR "Regional seas programme"
+      OR "OSPAR convention" OR "Convention for Protection of the Marine Environment of the North-East Atlantic"
+      OR "Marine strategy framework directive" OR "MSFD"
+      OR "Barcelona convention"
+      OR "Global Programme of Action for the Protection of the Marine Environment"
+      OR "MARPOL" OR "prevention of pollution from ships"
+      OR "Conservation of Antarctic Living Marine Resources"
+      OR "Agreement on the Conservation of Polar Bears"
+      )
 )
 ```
 
 #### Phrase 2
 
+The elements of the phrase are: *action + international law*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
+
+This phrase contains specific international laws relevant to conservation and sustainable use, that need to be combined with *marine terms*. These terms were taken from 14.1, 14.2 and 14.4. <a id="FAOfish">[FAO (2018)](#f8)</a> was used as a source of relevant legislation. `CITES` is not included as it is also a verb. 
+
+ ```py
+TS =
+(
+  ("implement*" OR "establish*" OR "introduc*" OR "adopt*" OR "integrat*" OR "design*" OR "propos*" OR "develop*"
+  OR "ensur*" OR "enforc*" OR "ratif*" OR "fulfill*" OR "into practice" OR "praxis" OR "support*" OR "negotiat*"
+  OR "reform*" OR "improv*" OR "better"
+  )
+  NEAR/5
+      ("the future we want"
+      OR "habitats directive" OR "convention on biological diversity"
+      OR "Convention on International Trade in Endangered Species"
+      OR "Water framework directive"
+      OR "Stockholm convention"
+      OR "World Heritage Convention"
+      OR "Bern convention" OR "Convention on the Conservation of European Wildlife and Natural Habitats" 
+      OR "Bonn convention" OR "Convention on the Conservation of Migratory Species of Wild Animals" 
+      )
+)
+```
+
+#### Phrase 3
+
 The general structure is *action + international law + sustainable use/conservation*. **This phrase should be combined with [marine terms](https://github.com/SDGforskning/SDGstrings_wos/blob/main/SDG14_query_action_WoS.md#3-marine-terms-string-for-limiting-certain-phrases-to-the-marine-environment) with `AND`**.
 
-Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  
+Phrase 2 includes general phrases for international law, where sustainable use and conservation must be specified to prevent results about e.g. shipping/territory disputes.  Regions are added as synonyms for "international" - this seems to result in better recall (catching works about regional cooperation/instruments). Some regions are not included as too noisy (`america$`, `atlantic`). `africa$` is slightly noisy due to South Africa, but also finds several relevant works.
 
 ```py
 TS =
@@ -1073,8 +1133,11 @@ TS =
     OR "reform*" OR "improv*" OR "better"  
     )
     NEAR/5
-        ("international"
-        NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
+        (
+          ("international" OR "high seas" OR "beyond national jurisdiction" OR "ABNJ" OR "UN" 
+          OR "europe*" OR "pacific" OR "asia$" OR "africa$" OR "latin america$" OR "south america$" OR "*arctic"
+          )
+          NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention" OR "framework$" OR "instrument$")
         )
   )
   NEAR/15
@@ -1088,10 +1151,11 @@ TS =
     OR "herbivore management area$"
     OR "ecosystem approach*"
     OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine protected area$"
-    OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-    OR "marine conservation zone$"
+    OR "marine reserve$" OR "ocean reserve$" OR "nature reserve$" OR "marine park$"
+    OR "marine conservation zone$" OR "marine sanctuar*"
     OR "particularly sensitive sea areas$"
     OR "blue growth" OR "blue econom*"
+    OR "biodiversity" OR "biological diversity"
     )
 )
 ```
@@ -1103,6 +1167,10 @@ TS =
 * v1.0.0 Caroline S. Armitage (Nov 2021-Sep 2022)
 
 * Internal review: Marta Lorenz, Håkon Magne Bjerkan (March 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Lise Vik Haugen.
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
