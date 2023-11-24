@@ -2,8 +2,6 @@
 
 Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query
@@ -15,15 +13,13 @@ Protect, restore and promote sustainable use of terrestrial ecosystems, sustaina
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/a44070d0-d047-4a17-88f4-caa1d96eb22c-57c0170f/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; publishing year = last 5 years): https://www.webofscience.com/wos/woscc/summary/2da6b840-1d8f-4993-8584-567417a86a46-a7f6dc18/relevance/1
 
 ## 2. General notes
 
 This document contains search strings for finding publications related to the **topics** in SDG 15 targets and indicators ("topic approach"; focus on recall, larger result set). We also have a version which finds publications related to the actions in SDG 15 targets and indicators ("action approach"; focus on precision, smaller result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 SDG 15 is interpreted to be about ending environmental decline of terrestrial and inland freshwater ecosystems and restoring them. Special emphasis is on forests and the sustainable management of them, on wetlands, mountains and drylands, halting land degradation and desertification, protecting biodiversity, preventing the extinction of threatened species and the spreading of invasive alien species, as well as preventing wildlife trafficking. The consequences of ecosystem degradation and wildlife trafficking on human survival and well-being (e.g. spreading of zoonotic diseases) is included in UN SDG reports (<a id="Life2020">[SDG 15 Life on land](#f17)</a>; https://unstats.un.org/sdgs/report/2020/goal-15/; <a id="Life2021">[SDG 15 Life on land](#f18)</a>; https://unstats.un.org/sdgs/report/2021/goal-15/), but not specified in the targets.
-
-The attempt to limit the search to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms either directly with `AND` or indirectly with `NOT marine` – unless a terrestrial or freshwater term is mentioned (see **Terrestrial and freshwater terms** below). However, in aquatic ecosystems the division between freshwater and marine is sometimes artificial (e.g. migratory fish). Some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about `seagrass meadows` and `coasts` can be marine coastal areas but also e.g. river delta coastal areas. According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) mangroves in tidal zones are included in forests regardless of whether this area is classified as land area or not. Therefore, tight limiting to freshwater environments would leave out also relevant papers.
 
 Targets and Indicators were found from the UN Statistics Division (<a id="SDGT+Is">[UN Statistics Division, 2021](#f1)</a>). This list includes "the global indicator framework as contained in A/RES/71/313, the refinements agreed by the Statistical Commission at its 49th session in March 2018 (E/CN.3/2018/2, Annex II) and 50th session in March 2019 (E/CN.3/2019/2, Annex II), changes from the 2020 Comprehensive Review (E/CN.3/2020/2, Annex II) and refinements (E/CN.3/2020/2, Annex III) from the 51st session in March 2020, and refinements from the 52nd session in March 2021 (E/CN.3/2021/2, Annex)". (https://unstats.un.org/sdgs/indicators/indicators-list/)
 
@@ -34,33 +30,42 @@ Abbreviations used:
 * CBD - Convention on Biological Diversity
 * CITES - Convention on International Trade in Endangered Species of Wild Fauna and Flora
 
+### What is life on *land*?
+
+The attempt to limit the results to terrestrial and freshwater environments only (as opposed to marine) is made by combining the search strings with terrestrial and freshwater terms. However:
+
+* In principle, the division between freshwater and marine is somewhat artificial for some species (e.g. migratory fish) or aquatic ecosystems; some habitats may span the marine and terrestrial environments (e.g. mangroves). These works should not be excluded.
+* On a practical level, some habitats pose particular challenges for separating freshwater from marine, e.g. term `meadow` retrieves also articles about "seagrass meadows", `forests` about "kelp forests", and `coasts` can be marine coastal areas but also river delta coastal areas. 
+
+We therefore attempt to limit to terrestrial or freshwater works, without being overly strict. This is mostly achieved by using two methods of combining the strings with terrestrial and freshwater terms - either directly with `AND` (works must mention a terrestrial term) or indirectly with `NOT marine` (which removes works mentioning marine terms unless a terrestrial term is also mentioned). See **Terrestrial and freshwater terms** below.
+
 ## 3. Terrestrial and freshwater terms: String for limiting certain phrases to the terrestrial and freshwater environment
 
-This string is referred to as **terrestrial and freshwater terms**, and is used in sets **15.1, 15.5, 15.6, 15.7, 15.8, 15.9, 15.a** and **15.c** to limit the results to terrestrial and freshwater environment.
+This string is referred to as **terrestrial and freshwater terms** and is used in many of the strings below to limit the results to terrestrial and freshwater environment.
 
 In some phrases, these terms are combined to the string with `AND` while in others a double `NOT` is used (`NOT marine NOT terrestrial/freshwater`). 
 - Phrases which consist of more general terms are more likely to return results about topics irrelevant to the targets of SDG15 or natural environments, so these were combined with terrestrial/freshwater terms with `AND` to focus only on works which mention one of the terrestrial or freshwater terms. 
 - Phrases which contain more specific ecological terms are more likely to already be focused on works about either marine, terrestrial or freshwater habitats/organisms, and only the pure marine works need to be excluded. `NOT marine NOT terrestrial/freshwater` was used for these as it excludes works using marine terms *unless* they also contain one of the terrestrial of freshwater terms. This "double NOT" strategy is commonly employed in the medical sciences to find human studies and exclude animal studies, while ensuring that animal studies are still included if they *also* mention humans. We use this strategy when possible as it has slightly better recall - for example, a work may be about a species of grass, but not use generic terms for terrestrial habitats - this work would likely be caught by the double `NOT` strategy, but be missed by the `AND` strategy. 
 
-Term `mangrove` is added only when the string is used with `NOT marine`.
+According to the SDG indicators metadata description for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf) *mangroves* in tidal zones are included in forests regardless of whether this area is classified as land area or not, and are therefore included in our definition of "life on land".
 
 Although mentioned in the definition for inland waters in the SDG indicator metadata for indicator 15.1.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-01-01.pdf), the terms `reservoirs` `canals` `dams` are not included in the string. Combined with management and water, they would be likely to bring many irrelevant results on water supply management etc.
 
-Terms `land` and `fields` were initially in the phrase, but were removed to exclude many irrelevant results due to the broad meaning and use of these terms (e.g. *scientific fields, magnetic field, Netherlands, England*).
-
-`fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out.
+Terms `land` and `fields` were initially in the phrase, but were removed to exclude many irrelevant results due to the broad meaning and use of these terms (e.g. scientific fields, magnetic field, Netherlands, England). `fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out. `heathland$` and `moorland$` are used rather than "heath" and "moor" because these words lead to a lot of irrelevant results (due to being names, typos in "health", historical groups).
 
 ```py
 TS=
 (
   "terrestrial" OR "soil" OR "soils"  
-  OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$"
+  OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$"
   OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal"
   OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$"
   OR "bush*" OR "shrub*" OR "meadow*"
-  OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$"
+  OR "moorland$" OR "heathland$"
+  OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe"
   OR "dryland$" OR "dry land" OR "desert*"
-  OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland")
+  OR "lowland$"
+  OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$"
   OR "tundra"
 
   OR "freshwater" OR "limnic" OR "inland fish*"
@@ -80,62 +85,67 @@ TS=
 >
 > 15.1.2 Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type
 
-This target is interpreted to cover research about a) conservation of terrestrial and inland freshwater ecosystems, b) restoring these ecosystems and c) using these ecosystems and their services sustainably. Sustainable management is understood to be a part of sustainable use. The action approach versions of these phrases are directed more towards promoting/implementing/increasing the protection of ecosystems, whereas the aim of the topic approach versions is towards any papers about protection of ecosystems. The topic here is considered to be `protection/conservation of ecosystems´, not just anything about ecosystems. 
+This target is interpreted to cover research about a) conservation of terrestrial and inland freshwater ecosystems, b) restoring these ecosystems and c) using these ecosystems and their services sustainably. Sustainable management is understood to be a part of sustainable use. The action approach versions of these phrases are directed more towards promoting/implementing/increasing the conservation(++) of ecosystems, whereas the aim of the topic approach versions is towards any works about conservation(++) of ecosystems. 
 
 Even though forests, wetlands, mountains and drylands are highlighted in the target description, they are not specified in the phrases since they are already included in the **Terrestrial and freshwater terms**, which are combined with all the phrases of this target either directly with `AND` or indirectly with `NOT marine` unless a terrestrial or freshwater habitat is mentioned.
 
-This query consists of 5 phrases. Phrases 1 and 2 cover research about protecting habitats and ecosystems. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more stricktly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. Phrase 3 covers research about managing, protecting and restoring ecosystems, communities and biodiversity. Phrase 4 covers sustainable management approaches. Phrase 5 aims to find research specifically related to the international agreements on conservation/restoration of terrestrial and freshwater ecosystems.
-
-While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
+This query consists of 5 phrases. 
+* Phrases 1 and 2 cover protecting and restoring habitats and ecosystems. The phrases are similar, but differ in how strictly they are connected to **terrestrial or freshwater terms**. 
+* Phrase 3 also covers research about protecting and restoring, but adds elements of management, for ecosystems, communities and biodiversity. 
+* Phrase 4 covers sustainable management approaches for ecosystems and their services
+* Phrase 5 aims to find research specifically related to the international agreements on conservation/restoration of terrestrial and freshwater ecosystems.
 
 #### Phrase 1
 
-This phrase aims to find research outputs about the protection of habitats and biotopes, and protected areas. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research outputs about the protection of habitats and biotopes, and protected areas. 
 
-The elements of the phrase are *protected areas/protection + habitats*.
+The elements of the phrase are *protected areas/conservation/restoration + habitats*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which lead to irrelevant results. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more strictly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. 
+
+While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
 
 ```py
 TS=
 (
-  ("protected area$" OR "conservation area$" OR "conservation zone$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Habitat management area$" OR "Species management area$" OR "Protected landscape$"
+  ("protected area$"  OR "Protected landscape$" OR "conservation area$" OR "conservation zone$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" 
+  OR "Habitat management area$" OR "Species management area$"
   OR "conserv* ecosystem" OR "conserv* ecosystems" OR "protect* ecosystem" OR "protect* ecosystem$"
   OR
     (
       ("protect*" OR "preserve" OR "preservation" OR "preserved"
       OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-      OR "reforest*" OR "rehabilit*"
+      OR "reforest*" OR "rehabilit*" OR "restor*"
       )
       NEAR/5 ("habitat$" OR "biotope$")
     )
   )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
 This phrase aims to find research outputs about protecting ecosystems and specific habitats.
 
-The elements of the phrase are *protect + ecosystem/habitats/areas*. In order to specify to the terrestrial and freshwater ecosystems the phrase is combined with **Terrestrial and freshwater terms** with `AND`.
+The elements of the phrase are *conservation/restoration + ecosystems/areas*. In order to specify to the terrestrial and freshwater ecosystems the phrase is combined with **Terrestrial and freshwater terms** with `AND`. Phrase 1 searches for protection of habitats limited only by the exclusion of marine habitats. Phrase 2 searches for conservation of ecosystems and more specific habitats. It is restricted more strictly to terrestrial habitats to exclude irrelevant results associated with the use of terms (e.g. `ecosystem`) on research areas other than natural sciences. 
+
+While testing the phrases it was noticed that marine papers mentioning `seagrass meadows` will appear in the results for phrases 1 & 2 despite of the `NOT marine` string. They are brought by the term `meadow` in the terrestrial string. Irrelevant results are brought also by terms like `lake` and `river` when they appear in names of places.
 
 ```py
 TS=
 (
- 	(
+  (
     ("protect*" OR "preserve" OR "preservation" OR "preserved"
     OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-    OR "reforest*" OR "rehabilit*"
+    OR "reforest*" OR "rehabilit*" OR "restor*"
     )
     NEAR/5
-      ("ecosystem$" OR "area*" OR "zone*" OR "environment*" OR "woodland$" OR "forest$" OR "taiga" OR "peatland$" OR "bog$"
-      OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*"
-      OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*"
-      OR "highland$" OR "alpine*" OR "tundra" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$"
+      ("ecosystem$" OR "area*" OR "zone*" OR "environment*" 
+      OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
       )
   )
 )
-AND TS=("terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
+AND TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
 ```
 
 #### Phrase 3
@@ -148,36 +158,33 @@ Under the ecosystems/elements, we include diversity at various levels (important
 
 As the use of term `ecosystem` by others than natural sciences brings irrelevant results, it was combined with terms refering to species and habitats.
 
-The elements of this phrase are *conservation + ecosystems/elements*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `double NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+The elements of this phrase are *conservation/restoration + ecosystems/diversity*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `double NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore" OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
+  ("manage" OR "conserve" OR "protect" OR "restore" 
+  OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable"
+  )
   NEAR/15
-    ("habitat$"
-    OR
-      ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-      ) 
-    OR 
-      ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$")
-      )
+    ("habitat$" OR "nature conservation"
+    OR (("communit*") NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
+    OR (("ecosystem$" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")) 
     OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-    OR 
-      ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")
-      )
     OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 4
 
 This phrase aims to retrieve research about the sustainable use of terrestrial and freshwater ecosystems and their services. For better recall, some ecosystem services are specified, most of these found from the UN HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>), UN topic page for Forests (<a id="forests">[UN DESA n.d.a](#f5)</a>) and SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
 
-The elements of this phrase are *sustainability/sustainable use + natural resources/ecosystem services*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. `KBAs` are combined with a string of species terms to exclude other meanings of the acronym KBA.
+The elements of this phrase are *sustainable use approaches OR sustainable use + ecosystems/ecosystem services*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. 
+
+The acronym `KBA` (for key biodiversity area) was removed as it only causes noise.
 
 Some ecosystem services mentioned in indicator 15.3.1 metadata were not included in the phrase because they would be likely to return many results which are not relevant to the SDG 15:
 * Cultural heritage
@@ -196,39 +203,38 @@ Some ecosystem services mentioned in indicator 15.3.1 metadata were not included
 ```py
 TS=
 (  
-    ("long term management plan"
-    OR "agro-ecological knowledge" OR "agro ecological knowledge"
-    OR "bidiversity" OR "biological diversity"
-    OR "key biodiversity area$" 
-    OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR 		"tree$" OR "grassland$" OR "pollinator$"))
-    OR "important sites for biodiversity"
-    OR "biodiversity of food systems" OR "agrobiodiversity"
-    OR "soil biodiversity"
-    OR "ecotourism"
-    OR (("sustainab*" OR "responsible") NEAR/5 ("ecosystem service$" OR "natural resource$" OR "soil" OR "freshwater" OR "groundwater"))
-    OR
-      (
+  "key biodiversity area$" OR "important sites for biodiversity" 
+  OR "agro-ecological"
+  OR "ecotourism"
+  OR 
+    (
+      ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
+      NEAR/5 ("grazing" OR "forestry" OR "fishing" OR "fisher*" OR "hunter$" OR "hunting" OR "trapping")
+    )
+  OR
+    (  
+      ("long term management"
+      OR
         (
           ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
-          NEAR/3
-              ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning"
-              OR "fishing" OR "fisher*" OR "hunter$" OR "hunting" OR "trapping"
-              OR "forestry"
-              OR (("recreation*" OR "tourism") NEAR/5 ("nature" OR "ecologic*"))
-              OR "grazing"
-              OR "fuel wood" OR "fire wood" OR "firewood"
-              )
-        )
-        NEAR/15
-            ("ecosystem service$" OR "natural resource$" OR "groundwater"
-            OR "fisher*" OR "game" OR "forest$"
-            OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
+          NEAR/5
+            ("manag*" OR "use" OR "using" OR "development" 
+            OR "govern*" OR "administrat*" OR "planning" OR "policies" OR "policy" OR "approach*" OR "strateg*"
+            OR "recreation*" OR "tourism"
+            OR "fuel wood" OR "fire wood" OR "firewood"
             )
+        )
       )
+      NEAR/15
+          ("ecosystem service$" OR "natural resource$" OR "groundwater"
+          OR "biodiversity" OR "biological diversity" OR "agrobiodiversity"
+          OR "fisher*" OR "hunting" OR "trapping"
+          OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal"  OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
+          )
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 5
@@ -260,10 +266,11 @@ TS=
       )
     OR "Nagoya Protocol"
     OR "Treaty on Plant Genetic Resources for Food and Agriculture" OR "International Seed Treaty" OR "Plant Treaty" OR "ITPGRFA"
+    OR "Ramsar convention"
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.2
@@ -276,7 +283,7 @@ This target is interpreted to cover research about sustainable forest management
 
 Specific forest management terms (methods, etc.) were found mainly from FAO’s Agrovoc thesaurus (<a id="agrovoc">[FAO, n.d.](#f15)</a>) and from a search query prepared in an earlier project for capturing forestry literature (<a id="stateforest">[Päivinen et al. (2021); International Status of Finnish Forest Research, Tapio research](#f16)</a>). 
 
-This query consists of 3 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.2.
+This query consists of 3 phrases. 
 
 #### Phrase 1
 
@@ -286,55 +293,51 @@ This phrase aims to find research about sustainable forest management, with some
 TS=
 (
   (
-        ("sustainable forest*" OR "sustainable woodland$" OR "sustainable silvicultur*" OR "sustainable arboricultur*"
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+    "sustainable forest*" OR "sustainable woodland$" OR "sustainable silvicultur*" OR "sustainable arboricultur*"
+    OR
+      (
+        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
+      )
+    OR
+      (
+        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/5
+          ("practice$" OR "method$" OR "forestry operation$"
+          OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
+          OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
+          OR "rotation"
+          OR "regeneration" OR ("tree$" NEAR/3 "planting") 
+          OR "drainage"
+          OR "Forest area change"
+          OR "Above-ground biomass in forest"
+          OR ("proportion" NEAR/3 "protected areas")
+          OR ("proportion" NEAR/3 "long-term management plan")
+          OR "Forest under certification"
+          OR "Certified forest area"
           )
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/5
-                ("practice$" OR "method$" OR "forestry operation$"
-                OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                OR "rotation"
-                OR "regeneration" OR ("tree$" NEAR/3 "planting") 
-                OR "drainage"
-                OR "Forest area change"
-                OR "Above-ground biomass in forest"
-                OR ("proportion" NEAR/3 "protected areas")
-                OR ("proportion" NEAR/3 "long-term management plan")
-                OR "Forest under certification"
-                OR "Certified forest area"
-                )
-            )
-          OR ("protected" NEAR/3 "forest*")
-          OR ("reserved" NEAR/3 "forest*")
-          OR "UN Strategic Plan for Forests" OR "UNSPF"
-          OR "Global Forest Goals" OR "GFG$"
-          )
+      )
+      OR (("protected" OR "reserved") NEAR/3 "forest*")
+      OR "UN Strategic Plan for Forests" OR "UNSPF"
+      OR "Global Forest Goals" OR "GFG$"
   )
   NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
 )
 ```
 #### Phrase 2
 
-This phrase aims to find research about forest loss and degradation. The elements of the phrase are *forests + loss*. REDD is Reducing Emissions from Deforestation and forest Degradation.
+This phrase aims to find research about forest loss and degradation. The elements of the phrase are *deforestation/forest + loss*. REDD is Reducing Emissions from Deforestation and forest Degradation.
 
 ```py
 TS=
 (
   "deforest*"
-  OR ("*forest*" NEAR/3 ("loss" OR "degrad*"))
-  OR ("lost" NEAR/3 "forest area")
   OR
     (
       ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
       NEAR/5 ("decreas*" OR "reduc*" OR "degrad*" OR "mitigat*" OR "disappear*" OR "lost" OR "loss")
     )
-  OR ("REDD" NEAR/15 ("UN" OR "United Nations"))
+  OR ("REDD" NEAR/15 ("UN" OR "United Nations" OR "*forest*"))
 )
 ```
 
@@ -347,15 +350,14 @@ TS=
 (
   (
     (
-      ("increas*" OR "expand*" OR "restor*" OR "rehabilitate")
+      ("increas*" OR "expand*" OR "restor*" OR "rehabilitat*")
       NEAR/5 ("cover*" OR "area$" OR "zone$" OR "*land$" OR "silvicultur*")
     )
-  OR "restore" OR "restoration" OR "rehabilitat*"
   OR "restor*" OR "rehabilita*"
   )
   NEAR/5 ("*forest*" OR "woodland$")
 )
-OR TS=("afforestr*" OR "reforestr*")
+OR TS=("afforest*" OR "reforest*")
 ```
 
 ### Target 15.3
@@ -364,30 +366,35 @@ OR TS=("afforestr*" OR "reforestr*")
 >
 > 15.3.1 Proportion of land that is degraded over total land area
 
-This target is interpreted to cover research about desertifiction and about degradation of land and soil. It also covers research about land degradation neutrality (LDN). Land degradation neutrality is defined in the SDG indicator metadata for indicator 15.3.1:
-> "a state whereby the amount and quality of land resources necessary to support ecosystem functions and services and enhance food security remain stable or increase within specified temporal and spatial scales and ecosystems" (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
+This target is interpreted to cover research about:
+- desertifiction (phrase 1)
+- land and soil quality in connection with floods, desertification and drought (phrase 2)
+- land and soil degredation (phrase 3)
+- land degradation neutrality (LDN) and maintenance of soil health (phrase 4) 
 
-It is somewhat unclear to us whether the phrases should cover all land degradation or just land degradation related to deserification, drought and floods. Our interpretation on this is done separetely for each phrase. Phrase 2 is more tightly limited to searching for lands degraded by desertification, drought or floods, whereas phrase 3 includes the degradation of all lands. Phrase 4 is limited only to drylands conserning soil productivity but to all lands conserning LDN.
+Definitions according to the SDG indicator metadata for indicator 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf):
+> "Land degradation is defined as the reduction or loss of the biological or economic productivity and complexity of rain fed cropland, irrigated cropland, or range, pasture, forest and woodlands resulting from a combination of pressures, including land use and management practices."
 
-Sources used for definitions and specifying terms for deserts and drylands (in phrases 3 & 4): 
+> "Land Degradation Neutrality (LDN) is defined as a state whereby the amount and quality of land resources necessary to support ecosystem functions and services and enhance food security remain stable or increase within specified temporal and spatial scales and ecosystems (decision 3/COP12)"
+
+Given these definitions, we interpret the target to include research about all types of land (not just lands affected by desertification, drought or flooding). This means that these strings may pick up some works about soil erosion in built-up areas as well as "natural" areas. 
+
+Sources used for definitions and specifying terms include: 
 * 2018 UN HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>) 
 * CBD web pages for Dry and Sub-humid Lands (<a id="drylands">[CBD, Jun 2022](#f8)</a>)
 * UN topic page for Desertification, Land degradation and Drought (<a id="desertification">[CBD, Jun 2022](#f6)</a>)
 
-This query consists of 4 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.3.
+This query consists of 4 phrases. 
 
 #### Phrase 1
 
-This phrase aims to find research about desertification. The elements of the phrase are *desertification // UN agreements to combat desertification*.
+This phrase aims to find research about desertification. The elements of the phrase are *desertification/UN agreements to combat desertification*.
 
 ```py
 TS=
 (
-  (
-        ("desertif*"
-        OR (("increas*" OR "expand*") NEAR/5 ("desert$" OR "dryland$"))
-        )
-  )
+  "desertif*"
+  OR (("increas*" OR "expan*") NEAR/5 ("desert$" OR "dryland$"))
   OR "United Nations Convention to Combat Desertification"
   OR "UN Convention to Combat Desertification"
   OR "UNCCD"
@@ -396,29 +403,23 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about land and soil degraded by desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + degraded land or soils/quality of soil*.
+This phrase aims to find research about land/soil quality connected to desertification, drought or floods. The elements of the phrase are *desertification/drought/flood + land or soil quality*.
 
 In addition to articles about the effects agriforestry has on soils, this phrase also returns some articles about the effect of soil quality on agricultural productivity. These may still be concidered relevant to the target, since LDN by definition covers also land resources necessary for enhancing food security.
 
 ```py
 TS=
 (
-  ("desert$" OR "desertif*" OR "drought" OR "flood$" OR "dryland$")
-  NEAR/15
-      ("soil structure" OR "soil fertility" OR "soil health"
-      OR ("quality" NEAR/5 ("soil$" OR "land"))
-      OR ("degrad*" NEAR/3 ("land$" OR "soil$"))
-      OR (("erosion" OR "eroded") NEAR/5 ("land$" OR "soil$"))
-      )
+  ("desert$" OR "desertif*" OR "drought$" OR "flood*" OR "dryland$")
+  NEAR/15 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
 )
 ```
 
 #### Phrase 3
 
-This phrase aims to find research about land degradation processes and effects. The terms for degradation processes are picked mainly from the SDG indicator metadata description for 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf).
+This phrase aims to find research about land degradation processes and effects. The elements of the phrase are *land degradation processes // effects of land degradation + land/soil*.
 
-The elements of the phrase are *land degradation processes OR effects of land degradation + deserts/drylands/soils*.
-
+The terms for degradation processes are picked mainly from the SDG indicator metadata description for 15.3.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-03-01.pdf). Note that this phrase also finds a number of results about groundwater changes - we consider this as a part of land/soil health. 
 
 ```py
 TS=
@@ -442,17 +443,16 @@ TS=
       (
         ("decline" OR "decreas*" OR "reduc*" OR "degrad*" OR "lower$" OR "lowered" OR "lowering" OR "loss")
         NEAR/15
-            ("biodiversity"
+            ("biodiversity" OR "biological diversity"
             OR ("vegetation" NEAR/3 ("cover" OR "communit*" OR "biomass"))
             OR ("soil$" NEAR/3 ("fertility" OR "quality"))
             )
       )
-      OR (("chang*" OR "reduc*" OR "decreas*") NEAR/3 ("groundwater" NEAR/3 ("level$" OR "quality")))  
+      OR (("chang*" OR "reduc*" OR "decreas*") NEAR/3 "groundwater")  
   )    
-  NEAR/15
-      ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-      OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-      OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
+  AND
+      ("desertif*" OR "land degradation"
+      OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land" OR "lands"))
       OR "soil$"
       )
 )
@@ -460,18 +460,18 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about land degradation neutrality (LDN) of all lands, and land productivity of dry lands. There is uncertainty about whether this phrase should cover LDN on drylands only, and whether land productivity should be covered for all lands of limited to drylands only. The phrase is now limited only to drylands when searching for soil productivity but to all lands when searching for LDN.
-
-The elements of the phrase are *deserts/drylands + land productivity OR Land Degradation Neutrality*.
+This phrase aims to find research about land degradation neutrality (LDN) and protecting soil productivity/fertility. The elements of the phrase are *soil conservation/protecting soil health // Land Degradation Neutrality*.
 
 ```py
 TS=
 (
-  ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-  OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-  OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
+  ("protect*" OR "conserv*" OR "preserv*" OR "restor*" OR "rehabilita*"
+  OR "promoting" OR "promote" OR "improv*" OR "enhanc*" OR "strengthen*" OR "maintain*"
   )
-  NEAR/15 (("soil" OR "land") NEAR/3 ("productivity" OR "fertility"))
+  NEAR/5 
+      ("soil" 
+      NEAR/3 ("productivity" OR "fertility" OR "structure" OR "health" OR "protect*" OR "conserv*" OR "preserv*" OR "restor*" OR "rehabilita*")
+      )
 )
 OR
 TS=
@@ -489,11 +489,9 @@ TS=
 >
 > 15.4.2 Mountain Green Cover Index
 
-This target is interpreted to cover research about the conservation of mountain ecosystems and their biodiversity, or research about changes in these. We consider this to also cover research about management, restoration and protection. It is also considered to cover research about sustainable use of ecosystem services (benefits) provided by mountain ecosystems as defined on the UN topic page for Mountains (<a id="mountains">[UN DESA, n.d.c](#f5)</a>) in the context of sustainable development.
+This target is interpreted to cover research about the conservation, restoration, and management of mountain ecosystems and their biodiversity, or research about changes in these (e.g. works about increases in biodiversity, or monitoring ecosystems). It is also considered to cover research about sustainable use of ecosystem services (benefits) provided by mountain ecosystems as defined on the UN topic page for Mountains (<a id="mountains">[UN DESA, n.d.c](#f5)</a>) in the context of sustainable development.
 
 Specifying terms for the Mountain Green Cover Index are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf) and terms for Coverage by protected areas in the SDG metadata for indicator 15.4.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-01.pdf).
-
-`fells` are combined with Lapland because independently they brought a lot of noise (*fell* has many other meanings). Initially they were also combined with Scotland, but due to many irrelevant results, Scotland was left out.
 
 The phrases return some articles which mention `mountain` in a name of a species (e.g. Mountain hare, Mountain zebra, Mountain tapir). Some of these articles might not be about mountains, but identifying and excluding them without losing relevant articles would be quite challenging.
 
@@ -501,51 +499,57 @@ This query consists of 2 phrases. Terrestrial and freshwater terms are **not** c
 
 #### Phrase 1
 
-This phrase aims to find research about the conservation/management of or changes in mountain ecosystems and their biodiversity. It includes research about protected areas, key biodiversity areas and vegetation covered areas of the mountains (Mountain Green Cover Index). Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
+This phrase aims to find research about the conservation, restoration, and management of mountain ecosystems and their biodiversity, or research about changes in these (e.g. works about increases in alpine biodiversity, or monitoring mountain ecosystems). It includes research about protected areas, key biodiversity areas and vegetation covered areas of the mountains (Mountain Green Cover Index). 
 
-Even though this is the topic approach version, the phrase still contains the element of action as the target is concidered to be `conservation of mountain ecosystems` not everything about mountain ecosystems. Compared to the action approach version, in this phrase the action terms which limit the management of mountain ecosystems (designat/placement/expand/) have been removed. The management/conservation string has not been removed to keep the topic about `conservation of ecosystems`. A string of action terms is added alongside with management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). 
+Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
 
-The elements of this phrase are: *(management/conservation + ecosystems/bidiversity OR action + ecosystems/bidiversity OR instruments) + mountains*. Protected areas/Natural monuments etc. are included in the first part of the phrase to combine them with ecosystem terms. The aim of this is to exclude protecting human communities, architecture etc.  
+Compared to the action approach, a string of action terms is added in addition to the existing management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). Many of the terms for Protected areas/Natural monuments etc. are combined with ecosystem terms - the aim of this is to exclude protecting human communities, architecture etc. 
+
+The elements of this phrase are: *(management/conservation/changes + ecosystems/bidiversity OR management/conservation/protected areas + ecosystems/bidiversity OR instruments) + mountains*.  
 
 ```py
 TS=
 (
   (
     (
-      ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring"
-      OR "management" OR "conservation" OR "protection" OR "restoration"
-      OR "Protected area$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$" OR "Protected landscape$"
-      OR "CITES"
+      ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*"
+      OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+      OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
+      OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
+      OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
+      OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
       ) 
-      AND 
+      NEAR/5 
         ("ecosystem$" OR "habitat$"
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
         OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
         )
     )
   OR 
     (
-      ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
+      ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation"
+      OR "Protected landscape$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$"
+      OR "CITES"
       ) 
-      NEAR/5 
-        ("ecosystem$" OR "habitat$"
+      AND
+        ("ecosystem$" OR "habitat$" OR "nature conservation"
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
         OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
         ) 
     ) 
+  OR "Protected area$" OR "Wilderness area$" 
   OR "Habitat management area$" OR "Species management area$"
-  OR "key biodiversity area$" OR "KBA" OR "KBAs"
-  OR "important sites for biodiversity"
+  OR "key biodiversity area$" OR "KBA" OR "KBAs" OR "important sites for biodiversity"
   OR "Mountain Partnership"
   OR "Mountain Green Cover Index"
   OR "Convention on Biological Diversity" OR "CBD"
   OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
   )
-  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
+  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland") OR "montane")
 )
 ```
 
@@ -558,18 +562,17 @@ TS=
 (
   (
     (
-      ("sustainabl*" OR "environmental*" OR "ecological*")
-      NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
+      ("sustainabl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
+      NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
     )
     NEAR/15
         ("ecosystem$" OR "habitat$"
-        OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR (("communit*" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
         )
   )
-  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
+  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland") OR "montane")
 )
 ```
 
@@ -579,7 +582,11 @@ TS=
 >
 > 15.5.1 Red List Index
 
-This target is interpreted to cover research about the degradation of terrestrial and freshwater habitats and their biodiversity. It also covers research about changes in biodiversity, and the extinction of threatened species.
+This target is interpreted to cover research about: 
+- Degradation of terrestrial and freshwater habitats (phrase 1)
+- Loss of biodiversity in these habitats (phrase 2)
+- Management and conservation of biodiversity, or changes in biodiversity (phrase 3)
+- Extinction of threatened species (phrase 4)
 
 All phrases of target 15.5. are combined with **Terrestrial and freshwater terms** either with `AND` or by excluding `marine` habitats, except when a **terrestrial or freshwater term is mentioned**. Because phrases 1 and 2 consist of more general terms, they are combined to **Terrestrial and freshwater terms** with `AND`. For phrases 3 and 4, which consist of terms used primarily in ecology, exclusion of `marine` habitats (except when a terrestrial or freshwater term is mentioned) and some other terms which were detected to bring irrelevant results was found sufficient.
 
@@ -599,7 +606,7 @@ TS=
       )
 )
 AND
-TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
+TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
 ```
 
 #### Phrase 2
@@ -609,14 +616,14 @@ This phrase aims to find research about the loss of biodiversity. The elements o
 ```py
 TS=
 (
-    ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
-    NEAR/5
+  ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
+  NEAR/5
       ("biodiversity" OR "biological diversity"
-      OR (("diversity" OR "species") NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR (("diversity" OR "species") NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
       )
 )
 AND
-TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
+TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
 ```
 
 #### Phrase 3
@@ -634,37 +641,42 @@ The elements of the phrase are *action + biodiversity/key biodiversity areas/thr
 TS=
 (
   (
-    ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "restore" OR "restoring"
-    OR "management" OR "conservation" OR "protection" OR "restoration" OR "rehabilit*" OR "preserve" OR "preservation" OR "preserved"
+    ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*" OR "preserv*"
     ) 
     AND 
         ("biodiversity" OR "biological diversity" 
-        OR "key biodiversity area$" 
-        OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "important sites for biodiversity" 
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
+        OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR 
+          (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") 
+          NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+          )
         OR "Red List Index"
         OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
         )
   )
 OR
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+    OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
+    OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
+    OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
+    OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
     ) 
     NEAR/5 
       ("biodiversity" OR "biological diversity" 
-      OR "key biodiversity area$" 
-      OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR "important sites for biodiversity" 
-      OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
+      OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR 
+        (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") 
+        NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+        )
       OR "Red List Index"
       OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
       )
   )
+OR "key biodiversity area$" 
+OR "important sites for biodiversity" 
 )
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "microbiome$" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 4
@@ -674,14 +686,25 @@ This phrase aims to find research about the extinction of threatened species. Th
 ```py
 TS=
 (
-  ("extinction" OR "loss" OR "going extinct")
-  NEAR/15
+  (
+    ("extinction" OR "loss" OR "going extinct")
+    AND
         (
           ("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*")
           NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
         )
+  )
+  OR
+  (
+    ("loss")
+    NEAR/5
+        (
+          ("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*")
+          NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
+        )
+  )
 )
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.6
@@ -690,9 +713,9 @@ NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kel
 >
 > 15.6.1 Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits
 
-This target is interpreted to cover research about the sharing of benefits arising from using genetic resources of terrestrial and freshwater organisms, as well as fair access to benefits from these resources. Benefits are defined according to the CBD factsheet on Access and Benefit-Sharing (ABS) (<a id="abs">[CBD, n.d.](#f10)</a>). They range from basic research to development of products. By the definition of the CBD, benefit sharing applies also to benefits arising from the use of traditional knowledge of indigenous and local communities associated with genetic resources.
+This target is interpreted to cover research about sharing/access/fairness/usage in relation to a) genetic resources of terrestrial and freshwater organisms/ecosystems or their benefits, or b) traditional knowledge associated with these organisms/ecosystems. (b) is wider than another possible stricter interpretation, which would only cover traditional knowledge about genetic resources; currently our string is wider, and would cover e.g. access to traditional knowledge about management of forests. 
 
-*The Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity* is an essential agreement related to this target. CBD webpages on Nagoya protocol (<a id="nagoya">[CBD, Aug 2022](#f9)</a>) were used to define the aims and scope of this target.
+Benefits are defined according to the CBD factsheet on Access and Benefit-Sharing (ABS) (<a id="abs">[CBD, n.d.](#f10)</a>). They range from basic research to development of products. By the definition of the CBD, benefit sharing applies also to benefits arising from the use of traditional knowledge of indigenous and local communities associated with genetic resources. *The Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity* is an essential agreement related to this target. CBD webpages on Nagoya protocol (<a id="nagoya">[CBD, Aug 2022](#f9)</a>) were used to define the aims and scope of this target.
 
 In addition to papers about the use of terrestrial and freshwater resources, this query also returns some agricultural papers. They are not excluded from the results since the indicator 15.6.1 includes "Countries that are contracting Parties to the International Treaty on Plant Genetic Resources for Food and Agriculture (PGRFA)" (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-06-01.pdf).
 
@@ -700,58 +723,62 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about sharing of genetic resources, including traditional knowledge of the indigenous and local communities. The elements of the phrase are *sharing/access + resources/knowledge*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about sharing/access/fairness/use and genetic resources or traditional knowledge. The elements of the phrase are *sharing/access/use + resources/knowledge + ecosystems/organisms/bioresources*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
 (
   (
-    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
-    NEAR/15
-        ("genetic resource$" OR "gene resources"
-        OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-        )
+    (
+      ("equitab*" OR "equal" OR "fair" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
+      AND
+          ("genetic resource$" OR "gene resources" OR "biological resource$"
+          OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
+          )
+    )
+    OR
+    (
+      ("share$" OR "sharing" OR "access" OR "accessing" OR "use$" OR "using" OR "utiliz*" OR "utilis*" OR "usage")
+      NEAR/5
+          ("genetic resource$" OR "gene resources" OR "biological resource$"
+          OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
+          )
+    )
   )
-  AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "species" OR "plant*" OR "animal$" OR "organism$" OR ("genetic resource$" NOT "human"))
+  AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "biological diversity" OR "species" OR "plant*" OR "animal$" OR "organism$" 
+      OR "biopiracy" OR "biocolonial*"
+      OR (("genetic resource$" OR "bioresource$" OR "biological resource$") NOT ("human" OR "patient$" OR "clinical" OR "protein" OR "microbiology")) 
+      OR "gene resources"
+      OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*"
+      )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about sharing of/access to benefits derived from utilizing genetic resources, including traditional knowledge of the indigenous and local communities. The elements of the phrase are *sharing/access + resources/knowledge + use + benefits*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
-
-While testing the phrase, it was noticed that `knowledge` combined with `local` or `traditional` brings some irrelevant results about various fields (transport, business, education).
-
+This phrase aims to find research about sharing of/access to benefits from genetic resources. The elements of the phrase are *sharing/access + resources + benefits*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
 (
   (
-    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
-    AND
-        (
-          (
-            ("genetic resource$" OR "gene resource$"
-            OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-            )
-            NEAR/5 ("use$" OR "using" OR "utiliz*" OR "utilis*")
-          )
-          AND
-            ("benefit$"
-            OR ("results" NEAR/3 ("research" OR "development"))
-            OR ("transfer*" NEAR/3 "technolog*")
-            OR ("participat*" NEAR/3 "research activit*")
-            OR ("develop*" NEAR/3 "product$")
-            OR (("monetary" OR "royalties") NEAR/3 ("benefit$" OR "compensat*"))
-            OR "bioprospect*"
-            )
+    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
+    AND ("genetic resource$" OR "gene resource$")
+    AND 
+        ("benefit$"
+        OR ("results" NEAR/3 ("research" OR "development"))
+        OR ("transfer*" NEAR/3 "technolog*")
+        OR ("participat*" NEAR/3 "research activit*")
+        OR ("develop*" NEAR/3 "product$")
+        OR "just compensation" OR "fair compensation"
+        OR "bioprospect*"
         )
   )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 3
@@ -769,13 +796,13 @@ TS=
   AND
       ("Nagoya Protocol"
       OR "Convention on biological diversity" OR ("CBD" NEAR/15 ("biological diversity" OR "biodiversity"))
-      OR "Access and benefit-sharing" OR "Access and benefit-sharing" OR "ABS"
+      OR "Access and benefit-sharing" OR "ABS"
       OR "Bonn Guidelines"
       OR "Plant Genetic Resources for Food and Agriculture" OR ("Plant Genetic Resources" NEAR/3 "FAO") OR "PGRFA"
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.7
@@ -784,7 +811,7 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.7.1 Proportion of traded wildlife that was poached or illicitly trafficked
 
-This target is interpreted to cover research about poaching and trafficking of protected terrestrial and freshwater species. The target also covers the research about the markets or trade for illegal wildlife products. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. In the phrases, we have limited poaching to protected/endangered species.
+This target is interpreted to cover research about poaching and trafficking of terrestrial and freshwater species. The target also covers the research about the markets or trade for illegal wildlife products. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
 
 Some particularly susceptible species were added to the phrase for better recall. The source for these was The UN's World Wildlife Crime Report (<a id="wwc">[UNODC, 2020](#f13)</a>).
 
@@ -792,80 +819,74 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about poaching and trafficking of protected species.
+This phrase aims to find research about poaching and trafficking of species.
 
-While testing the phrase it was noticed that the combination of `trafficking` and `animal` returns some irrelevant results about animal physiology (receptor trafficking, etc.). These are hard to exclude without losing relevant results.
-
-The elements of the phrase are *poaching/trafficking + protected species*. It is limited by the exclusion of marine habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+The elements of the phrase are *poaching/trafficking + species*. It is limited by the exclusion of marine habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results (particularly here, `traffick*` + `animal` is problematic in cell biology without NOT terms). 
 
 ```py
 TS=
 (
   ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*")
   NEAR/15
-      (
-        ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-        NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
-       
+      ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+      OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "cell*" OR "*membrane*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
 This phrase aims to find research about the markets/trade for illegal wildlife products. In the action approach version of this phrase no action terms are combined with the markets (reduced demand & supply). Therefore this phrase is similar to the action approach version of it, but a wider NEAR distance/AND is used.
 
-The elements of the phrase are *protected species + illegal products + markets*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+The elements of the phrase are *species + illegal products + markets*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
 (
   (
-    (
-      ("protected" OR "endanger*" OR "threatened*" OR "extinct*" OR "vulnerable")   
-      NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
+    ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+    OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
     )
     AND
         (
           ("illegal*" OR "illicit*" OR "criminal" OR "crime")
           NEAR/15
-              ("product$" OR "manufact*" OR "merchandise$" OR "artifact*" OR "fabricat*" OR "handicraft$" OR "handiwork$"
-              OR "market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livlihood$"
+              ("product$" OR "manufact*" OR "merchandise$" OR "artifact*" OR "fabricat*" OR "handicraft$" OR "handiwork$" OR "ivory"
+              OR "market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "import*" OR "export*" OR "purchas*" OR "livelihood$"
               )
         )
   )
-  AND ("market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livlihood$")
+  AND ("market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livelihood$")
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 3
 
-This phrase aims to find research about protected/endangered species mentioning *The Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)*. The elements of the phrase are *protected species + CITES*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about species also mentioning *The Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)*. The elements of the phrase are *species + CITES*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 No action terms are combined with the action approach version of this phrase since it could be assumed that articles mentioning protected/endangered species and CITES are action-oriented. Hence this phrase is identical to the action approach version of it.
 
-The phrase is quite broad and return also some articles which are more about target 15.5 (protection of threatened species) than about the trade on them.
+The phrase is quite broad and return also some articles which are more about target 15.5 (protection of threatened species) than about the trade on them. 
 
-The term `CITES` is combined to a string of species terms in order to exclude irrelevant articles which use cite as a verb. Even still, some such articles are retrived by this phrase.
+The term `CITES` is combined with a couple of NOT terms to try and remove "cite" as a verb. Even still, some such articles are retrived by this phrase. However, if `CITES` is combined, even with many species/animal terms, we lose many relevant works.
 
 ```py
 TS=
 (
-  (
-    ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-    NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
+  ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+  OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
   )
   AND 
     ("Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-    OR ("CITES" NEAR/15 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"))
+    OR ("CITES" NOT ("article cites" OR "review cites" OR "author cites" OR "it cites" OR "work cites"))
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.8
@@ -902,7 +923,7 @@ TS=
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
@@ -931,7 +952,7 @@ TS=
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 3
@@ -949,7 +970,7 @@ TS=
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 
@@ -961,61 +982,59 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 > Strategic Plan for Biodiversity 2011–2020 in their national biodiversity strategy and action plans and the progress reported towards these targets;
 > and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accountings
 
-This target is interpreted to cover research about national or local strategies/accounting/reporting and ecosystem values, conserving biodiversity, or the CBD Aichi Biodiversity Target 2 (CBD webpages; <a id="aichi">[CBD, Sep 2020](#f12)</a>). This covers research about national plans in context of *Aichi biodiversity targets* and *System of Environmental-Economic Accounting* which are mentioned in the SDG metadata for indicator 15.9.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-09-01.pdf). Biodiversity and ecosystem values are interpreted to be about protecting and conserving biodiversity and ecosystems. Even though the target specifies development processes and poverty reduction, `strategies` and `plans` in the phrases are not limited to just these. 
+This target is interpreted to cover research about national/local strategies/accounting/reporting and either a) ecosystem values/conserving ecosystems, b) conserving biodiversity, or c) the CBD Aichi Biodiversity Target 2 (CBD webpages; <a id="aichi">[CBD, Sep 2020](#f12)</a>). This covers research about national plans in context of *Aichi biodiversity targets* and *System of Environmental-Economic Accounting* which are mentioned in the SDG metadata for indicator 15.9.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-09-01.pdf). Biodiversity and ecosystem values are interpreted to be about protecting and conserving biodiversity and ecosystems. Even though the target specifies development processes and poverty reduction, `strategies` and `plans` in the phrases are not limited to just these. 
 
-Articles about ecosystem and biodiversity values in national planning were assumed to be related to promoting the implementation of these. Hence, no action terms (such as promote, enable, etc.) were combined with the action approach version of this phrase. This phrase is identical to the action approach phrase. 
+Articles about ecosystem and biodiversity values in national planning were assumed to be related to promoting the implementation of these. Hence, no action terms (such as promote/enable/etc.) were combined with the phrase of this target in the *action* approach, and the *topic* approach is identical.
 
-This query consists of 1 phrase. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. 
-
-#### Phrase 1
-
-The elements of this phrase are *Aichi/biodiversity values + conservation + ecosystem/biodiversity + national targets/strategies*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results, e.g. `public health` `epidemiology` `national health` `healthcare` `health effects` `archaeology` `architecture*`. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `biological` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+This query consists of 1 phrase. The elements of this phrase are *NBSAPs // (Aichi/biodiversity values / conservation + ecosystem/biodiversity) + national/local + strategies*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results, e.g. `public health` `epidemiology` `national health` `healthcare` `health effects` `archaeology` `architecture*`. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `biological` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 While testing the phrase it was noticed that the term `environment` will bring a lot noise due to its use on various fields (business environment, cultural environment, learning environment, etc.). To exclude these, `environment` was combined with a string of species & habitat terms.
 
 ```py
 TS=
 (
-  ("Aichi Biodiversity Target$" OR "Strategic Plan for Biodiversity" OR "ecosystem value$" OR "biodiversity value$"
+  ("National Biodiversity Strategy and Action Plan$"
   OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-      OR "improv*" OR "restor*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
+    ("Aichi Biodiversity Target$" OR "Strategic Plan for Biodiversity" OR "ecosystem value$" OR "biodiversity value$" OR "nature conservation"
+    OR
+      (
+        ("protect*" OR "conserv*" OR "improv*" OR "restor*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
+        )
+        NEAR/5
+            ("ecosystem$" OR "habitat$" OR "biotope$"
+            OR (("communit*"  OR "environment*") NEAR/5 ("ecolog*" OR "biological" OR "biodiversity" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+            )
       )
-      NEAR/5
-          ("ecosystem$" OR "habitat$" OR "biotope$"
-          OR (("communit*"  OR "environment*") NEAR/5 ("ecolog*" OR "biological" OR "biodiversity" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-          )
+    OR
+      (
+        ("protect*" OR "conserv*" OR "improv*" OR "restor*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support" OR "promot*" OR "enhanc*" OR "increase"
+        OR "System of Environmental-Economic Accounting" OR "SEEA"
+        )
+        NEAR/5
+            ("biodiversity" OR "biological diversity"
+            OR ("diversity" NEAR/5 ("ecolog*" OR "biological" OR "taxonom*" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+            )
+      )
     )
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-      OR "promoting" OR "promote" OR "improv*" OR "increase"
-      OR "restor*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
-      OR "System of Environmental-Economic Accounting" OR "SEEA"
+  AND
+    ("NBSAP$" OR "regional development"
+    OR
+      (
+        ("national" OR "local" OR "government*" OR "regional" OR "sectoral" OR "municipal" OR "federal" OR "multilevel" OR "multi level"
+        OR "urban" OR "settlement"
+        OR "poverty reduction" OR "reduc* poverty" OR "anti poverty" OR "antipoverty"
+        )
+        NEAR/5
+            ("target$" OR "goal$" OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "governance"
+            OR "plan" OR "planning" OR "plans" OR "action plan$" 
+            OR "accounting" OR "reporting"
+            )
       )
-      NEAR/5
-          ("biodiversity" OR "biological diversity"
-          OR ("diversity" NEAR/5 ("ecolog*" OR "biological" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-          )
     )
   )
-  AND
-      ("National Biodiversity Strategy and Action Plan"
-      OR ("NBSAP" NEAR/5 ("Convention on Biological Diversity" OR "CBD"))
-      OR
-        (
-          ("national" OR "local" OR "government*" OR "regional" OR "sectoral" OR "municipal" OR "federal" OR "poverty reduction" OR "reduc* poverty" OR "anti poverty" OR "antipoverty")
-          NEAR/5
-              ("target$" OR "goal$" OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "governance"
-              OR "plan" OR "planning" OR "plans" OR "action plan$" OR "development" OR "developing"
-              OR "accounting" OR "reporting"
-              )
-        )
-      )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.a
@@ -1024,15 +1043,13 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.a.1 (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
 
-This target is interpreted to cover research about financing the conservation and sustainable use of biodiversity and ecosystems. Financial resources include development assistance and finance mobilized from economic instruments, including incentives mentioned in the SDG metadata for indicator 15.a.1  (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-0a-01.pdf) and financial instruments or capacity building initiatives mentioned in the HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>).
+This target is interpreted to cover research about financing the conservation and sustainable use of biodiversity and ecosystems. 
+
+Financial resources include development assistance and finance mobilized from economic instruments, including incentives mentioned in the SDG metadata for indicator 15.a.1  (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-0a-01.pdf) and financial instruments or capacity building initiatives mentioned in the HLPF Background note for SDG 15 (<a>[UN-DESA/DSDG et al. 2018](#f4)</a>).
 
 We assume that all research about financial resources for conserving and sustainable use of biodiversity and ecosystem is relatively action-oriented. Hence, no additional action terms (such as increase, enhance, etc.) were combined with this query and thus this topic version is the same as the action version. 
 
-This query consists of 1 phrase. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
-
-#### Phrase 1
-
-The elements of this phrase are *protection/sustainable use + ecosystem/biodiversity + financing/instruments*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `species` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+This query consists of 1 phrase. The elements of this phrase are *protection/sustainable use + ecosystem/biodiversity + financing/instruments*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. A set of medical terms about human microbiome and diseases was also added to exclude noise found in some cases when `diversity` is combined with `species` etc. These were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 As the use of term `ecosystem` by others than natural sciences brings irrelevant results, it was combined with a string of species and habitat terms. Terms `community` `area` and `zone` were left out from the phrase in order to exclude irrelevant results.
 
@@ -1040,8 +1057,8 @@ As the use of term `ecosystem` by others than natural sciences brings irrelevant
 TS=
 (
   (
-    ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-    OR "promoting" OR "promote" OR "improv*" OR "restor*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
+    ("protect*" OR "conserv*" OR "restor*" OR "rehabilit*"
+    OR "promot*" OR "improv*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
     OR
       (
         ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
@@ -1049,12 +1066,13 @@ TS=
       )
     )
     NEAR/15
-        (
-          ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" 		OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
+        ("nature conservation" 
+        OR ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
           ) 
+        OR "ecosystem services" OR "ecosystem restoration"
         OR "habitat$" OR "biotope$"
         OR "biodiversity" OR "biological diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
+        OR ("diversity" NEAR/5 ("species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
         OR "Rio marker$"
         )
   )
@@ -1063,7 +1081,7 @@ TS=
       OR "financial support" OR "financial resources"
       OR
         (
-          ("incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e")
+          ("incentive$" OR "taxes" OR "tax" OR "fee$" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e")
           NEAR/5 ("biodiversity" OR "biological diversity")
         )
       OR "ODA" OR "cooperation fund$" OR "development spending"
@@ -1076,7 +1094,7 @@ TS=
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Target 15.b
@@ -1085,102 +1103,58 @@ TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-fo
 >
 > 15.b.1 (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
 
-This target is interpreted to cover research about financing sustainable forest management. It also covers research about incentives to developing countries for advancing sustainable forest management, conservation of forests and reforestation.
+This target is interpreted to cover research about financing/investments/incentives and either sustainable forest management, forest conservation or reforestation. This will cover research that considers both positive and negative effects of financing.
 
-This query consists of 2 phrases. Terrestrial and freshwater terms are **not** combined with the phrases 15.b.
+The elements of the phrase are *financing/incentives/instruments + sustainable use/conservation/reforestation + forests*. 
 
-#### Phrase 1
-
-This phrase aims to find research about financing and incentives for sustainable forest management. The elements of the phrase are *financing/incentives/instruments + sustainable use/practises/strategies/goals + forests*. Part of the phrase (aiming for sustainable forest management) is similar to the 15.2 phrase 1, but the specified management practises are left out of the phrase to exclude results which might be less about sustainability and more about forestry as a business. 
+Part of the phrase (aiming for sustainable forest management) is similar to the 15.2 phrase 1, but the specified management practises are left out of the phrase to exclude results which might be less about sustainability and more about forestry as a business. Terms `planting trees` are added to this string, but not used in the strings of 15.2. In the context of this phrase these terms are likely to return relevant results. Whereas in the strings of 15.2 without the connection to incentives, they might bring noise.
 
 ```py
 TS=
 (
-
   ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
   OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" OR "payment$"
   OR "ODA" OR "cooperation fund$" OR "development spending"
   OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
   )
   AND
     (
       (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
+        ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*")
+        NEAR/5 
+            ("manag*" OR "use" OR "using" OR "forestry" OR "practice$" OR "method$"
+            OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies"
+            OR "Forest area change" OR "Above-ground biomass in forest"
+            )
       )
     OR
       (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/15
-            ("practice$" OR "method$" OR "forestry operation$"
-            OR "policy" OR "policies"
-            OR "Forest area change"
-            OR "Above-ground biomass in forest"
-            OR ("Proportion" NEAR/3 "protected areas")
-            OR ("Proportion" NEAR/3 "long-term management plan")
-            OR "Forest under certification"
-            OR "Certified forest area"
+        ("*forest*" OR "woodland$")
+        NEAR/5 
+            ("manag*" OR "govern*" OR "administrat*" OR "planning" OR "practice$" OR "policy" OR "policies"
+            OR "restor*" OR "rehabilita*" OR "conserv*" OR "protect*" OR "maintain*" OR "preserv*"
             )
       )
-    OR ("protected" NEAR/3 "forest*")
-    OR ("reserved" NEAR/3 "forest*")
-    OR "UN Strategic Plan for Forests" OR "UNSPF"
-    OR "Global Forest Goals" OR "GFG$"
-    )
-  AND 
-    ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-)
-```
-
-#### Phrase 2
-
-This phrase aims to find research about incentives to developing countries for reforestation and conservation of forests. The elements of the phrase are *financing/incentives/instruments + reforestation/conservation + forests + developing countries*.
-
-Terms `planting trees` and `tree plantations` are added to this string, but not used in the strings of 15.2. In the context of this phrase these terms are likely to return relevant results. Whereas in the strings of 15.2 without the connection to incentives, they might bring noise.
-
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
-
-```py
-TS=
-(
-  ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-  OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-  OR "ODA" OR "cooperation fund$" OR "development spending"
-  OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-  )
-  AND
-  (
-    ("afforestr*" OR "reforestr*"
+    OR "Certified forest$" OR "Forest under certification" OR "forest certification"
+    OR "long-term management plan*"
+    OR "protected areas$" OR ("protected" NEAR/3 "forest*")
+    OR  "forest reserves" OR ("reserved" NEAR/3 "forest*")
+    OR "afforestr*" OR "reforestr*"
+    OR (("planting" OR "plant") NEAR/3 "tree$")
     OR
       (
         ("increas*" OR "expand*")
         NEAR/5
-          ("woodland$" OR "silvicultur*" OR "arboricultur*"
-          OR ("*forest*" NEAR/3 ("cover*" OR "area$" OR "zone$" OR "*land$"))
-          )
+            ("woodland$" OR "silvicultur*" OR "arboricultur*"
+            OR ("*forest*" NEAR/3 ("cover*" OR "area$" OR "zone$" OR "*land$"))
+            )
       )
-    OR
-      (
-        ("restor*" OR "rehabilita*" OR "conservation" OR "protect*" OR "maintain*" OR "preserv*" ) 
-        NEAR/5 ("*forest*" OR "woodland$")
-      )
-    OR "UN-REDD" OR "UN REDD" OR "United Nations REDD" 
-	  OR (("planting" OR "plant" OR "plantation") NEAR/3 "tree$")
+    OR "UN REDD" OR "United Nations REDD" OR "REDD plus" OR "REDD+"
+    OR "UN Strategic Plan for Forests" OR "UNSPF"
+    OR "Global Forest Goals" OR "GFG$"
     )
-  )
   AND ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-  AND
-    ("least developed countr*" OR "least developed nation$"
-    OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
-    OR "less developed countr*" OR "less developed nation$" OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$"
-    OR "middle income countr*" OR "middle income nation$"
-    OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$"
-    OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$"
-    OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$"
-    OR  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"      OR  "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"      OR  "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"      OR   "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"  OR "turkey" OR "georgia"
-    )
 )
 ```
 
@@ -1190,9 +1164,7 @@ TS=
 >
 > 15.c.1 Proportion of traded wildlife that was poached or illicitly trafficked
 
-This target is interpreted to cover research about combatting poaching and trafficking of protected species, including research about capacity and poaching (e.g. education, collaboration). It also covers research about poaching of protected animals in relation to the local communities' opportunities for sustainable livelihood. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. In the phrases, we have limited poaching to protected/endangered species.
-
-This interpretation is the same as the action approach, and the strings are currently identical. This may need to be revisited, for example, should the topic approach cover all research about poaching?
+This target is interpreted to cover research about poaching and a) capacity and support (e.g. education, collaboration), or b) local communities or sustainable livelihoods. We settled on this interpretation as it covers a slightly more specific aspect than 15.7, which is more widely about combatting poaching. It is somewhat unclear to us whether the target aims to cover all poaching or just poaching of protected species. We have decided to include all species - in practice, many works talk about illegal trade/poaching in wildlife without specifically refering to "protected" species. 
 
 Some particularly susceptible species were added to the phrases for better recall. The source for these was The UN's World Wildlife Crime Report (<a id="wwc">[UNODC, 2020](#f13)</a>).
 
@@ -1200,47 +1172,38 @@ This query consists of 2 phrases. Both phrases are limited by the exclusion of `
 
 #### Phrase 1
 
-The elements of the phrase are *action/capacity building/instruments + poaching/trafficking + protected species*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
-
-This phrase is similar to target 15.7 phrase 1, but is focused on finding research about the support and capacity building (including financing) to fight against poaching and trafficking of protected species. As in target 15.7, the combination of `trafficking` and `animal` return some irrelevant results about animal physiology (receptor trafficking, etc.). These are hard to exclude without losing relevant results. 
+The elements of the phrase are *capacity/instruments + poaching/trafficking + species*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results (particularly here, `traffick*` + `animal` is problematic in cell biology without NOT terms).
 
 ```py
 TS=
 (
   (
-    ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "halt*"
-    OR "resist*" OR "reduc*" OR "decreas*" OR "minimi*" OR "tackle*" OR "control*" OR "prevent*" OR "combat*"
-    OR "anti-poaching"
-    OR "capacity building" OR "capacity development" OR "capacity"
-    OR "cooperation" OR "collaboration" OR "network$" OR "support"
-    OR "policy" OR "policies" OR "empower*"
-    OR "knowledge transfer*"
-    OR (("raise" OR "raising") NEAR/3 ("awareness" OR "knowledge"))
-    OR ("disseminat*" NEAR/3 "information")
+    ("capacity building" OR "capacity development" OR "capacity"
+    OR "cooperation" OR "collaboration" OR "support" OR "international agreement$"
+    OR "policy" OR "policies" OR "empower*" OR "invest" OR "investing" OR "investment$"
+    OR "knowledge transfer*" OR "rais* awareness"
+    OR (("poach*" OR "local") NEAR/3 ("awareness" OR "knowledge" OR "information"))
     OR "educat*"
     OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" OR "CITES"
-    OR "Landscapes for People, Food and Nature partnership"
+    OR "Landscapes for People, Food and Nature partnership" 
+    OR "anti poach* measures" OR "patrol$" OR "detection"
     )
     NEAR/15 ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
   )
   AND
-    (
-      ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-      NEAR/5
-          ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-          OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-          )
+    ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
+    OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
     )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "cell*" OR "*membrane*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about poaching and trafficking of protected species in relation to sustainable livelihood opportunities of the local communities. `CITES` is added as an alternative to poaching or trafficking of protected species because often the implications to the local communities follow from the application of CITES decisions (<a id="cites">[CITES & General Secretariat of the Organization of American States, 2015](#f14)</a>).
+This phrase aims to find research about poaching and trafficking of species in relation to sustainable livelihood opportunities of the local communities. `CITES` is added as an alternative to poaching or trafficking of species because often the implications to the local communities follow from the application of CITES decisions (<a id="cites">[CITES & General Secretariat of the Organization of American States, 2015](#f14)</a>).
 
-The elements of the phrase are *CITES/poaching/trafficking + protected species + livelihood of local communities*. In order to specify to the terrestrial and freshwater species, the phrase is combined with **Terrestrial and freshwater terms** with `AND`.
+The elements of the phrase are *CITES/poaching/trafficking + species + livelihoods/local communities*. The phrase is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned).
 
 ```py
 TS=
@@ -1257,12 +1220,8 @@ TS=
     (
       ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
       AND
-        (
-          ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-          NEAR/5
-              ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-              OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-              )
+        ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
+        OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
         )
     )
   )
@@ -1277,7 +1236,7 @@ TS=
       )
 )
 NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
+TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
 ```
 
 ### Works mentioning the SDG
@@ -1320,6 +1279,10 @@ NOT
 * v1.0.0: Leena Byholm (Dec 2021-Sep 2022)
 
 * Internal review: Caroline S. Armitage (May 2022, minor review Oct 2022)
+
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Awaiting
 
