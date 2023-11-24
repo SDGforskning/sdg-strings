@@ -2,8 +2,6 @@
 
 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query
@@ -14,7 +12,7 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/b3b8d55f-4112-42a3-9c12-de4dc95f8a76-55efa21b/relevance/1 (no filters, all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/d09f9ac7-bf55-4e60-a600-c78342841d3c-b76c21c2/relevance/1
 
 ## 2. General notes
 
@@ -42,55 +40,52 @@ During editing of this string (2021), we have consulted two other sets of querie
 > 2.1.2 Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
 
 This target is interpreted to cover research about
-* Ending/reducing hunger/lack of food, reducing food insecurity
-* Increasing access to food and improving food supply systems
-* Increasing the safety and nutritional value of the food available.
+* Ending/reducing hunger and food insecurity (phrase 1)
+* Improving access/right to food and food safety (phrase 2)
+* Improving food supplies and food supply chains (phrase 3)
+
+Some of these topics may partially overlap with 2.2. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *value*); 2.1 is interpreted to focus on access-related issues (e.g. nutritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address the issue of whether people have enough food, and whether it is of sufficient nutritional quality).
 
 It consists of 3 phrases. Phrase 3 uses terms which need to be combined with human terms.
 
 #### Phrase 1
 
-The general structure is *hunger + action*
+The general structure is *hunger/food insecurity + action*
 
-Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant), and is used in a double NOT to avoid losing relevant results. `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply.
+Hunger is used in phrases (`ending hunger`, `world hunger`) to prevent finding results that are mostly medical/physiological. `feast and famine` refers to bioreactors/selective pressure in microbial cultures (not relevant). `Underfeeding` and `starvation` removed as seem to be used mostly in a medical/physiology context, rather than related to food security/supply. `undernourishment` is used here as it is soley about meeting energy requirements from food (i.e. hunger), while wider terms such as "malnourishment" may refer also to the nutrient balance.
 
 ```py
 TS=
 (
   (
-    ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
-    OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
+    ("end hunger" OR "ending hunger" OR "ends hunger" 
+    OR "world hunger" OR "child* hunger"
+    OR "hunger and poverty" OR "poverty and hunger" OR "famine$" OR "undernourishment"
     OR "food insecurity" OR "nutritional insecurity"
     )
     NEAR/5
-        (   "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
-            OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
-            OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-            OR "prevent*" OR "avoid*"
-            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
-            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting"
+        OR "alleviat*" OR "tackl*" OR "combat*" OR "fight*"
+        OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "prevent*" OR "avoid*"
+        OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
+        OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
         )
   )
-  NOT (("feast and famine" OR "feast-famine") NOT ("end* hunger" OR "malnutrition"))    
+  NOT ("feast and famine" OR "feast-famine")    
 )
 ```
 
 #### Phrase 2
 
-The general structure is *food access/safety/nutrition + action*. `food` should cover mechanisms such as food banks, food stamps, food credits, and descriptions such as good quality food etc. `nutrition* quality` does find some results about animal feed, but a number of them connect their work to food security, reducing food loss, so it is safer not to remove this term. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
+The general structure is *food access/safety/nutrition + action*. `food` (combined with *access* etc.) should cover mechanisms such as food banks, food stamps, food credits, and phrases such as "access to nutritious food". Some specific food assistance terms are also included, as these focus on ensuring that people have access to food. Here we are including `food sovereignty` as it encompasses the ideas of access to safe, adequate and nutritious food, so is included here.
 
 ```py
 TS=
 (
-  ("right to food" OR "right to adequate food" OR "food sovereignty"
-  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
-  OR
-    ("food"
-    NEAR/5
-        ("access" OR "safety" OR "unsafe" OR "secure" OR "security"
-        OR "reliable" OR "reliability"    
-        )
-    )
+  ("right to food" OR "right to adequate food" OR "food sovereignty" OR "nutrition* security"
+  OR ("food" NEAR/5 ("access" OR "safety" OR "unsafe" OR "secure" OR "security" OR "reliable" OR "reliability"))
+  OR "school feeding" OR "free school meals" OR "food stamp program*" OR "nutrition assistance" OR "food assistance"
   )
   NEAR/5
      ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
@@ -102,20 +97,19 @@ TS=
 
 #### Phrase 3
 
-The general structure is *food supply/value + action + humans*. 
+The general structure is *food supply + action + humans*. 
 
 This phrase covers improving food supply, and is combined with "human terms" to prevent biology/ecology results. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>). Note that `food supply` will also find works about the food supply chain etc. 
 
 ```py
 TS=
  (
-    (
-      ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")
-      NEAR/5
-         ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-         OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
-         OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-         )
+    ("food supply"
+    NEAR/5
+        ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+        OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*"
+        OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+        )
     )  
     AND
         ("humans" OR "humanity" OR "human" OR "people" OR "person$"
@@ -139,7 +133,11 @@ TS=
 >
 > 2.2.3 Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)
 
-This target is interpreted to cover research about reducing malnutrition and improving the nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+This target is interpreted to cover research about 
+- improving the nutritional quality of food
+- reducing malnutrition, and improving nutritional status for all people (including elements specific to children, girls, the elderly and pregnant women). Malnutrition includes both underweight and overweight (<a id="WHOmalnut">[WHO, 2021](#f4)</a>); this WHO factsheet was used to add terms, including specific micronutrients of worldwide importance (iodine, iron, vitamin A).
+
+Some of these topics partially overlap with 2.1, which covers access to food/food insecurity. Nutritional quality of food and nutritional status of people is covered in 2.2 (e.g. nutritional *value*); 2.1 is interpreted to focus on access-related issues (e.g. nutritional *security*). Research topics such as nutritional security, free school meals and undernutrition may cover both areas (i.e. address the issue of whether people have enough food, and whether it is of sufficient nutritional quality).
 
 This query consists of 3 phrases. Phrase 3 is for terms which need to be combined with human terms.
 
@@ -159,8 +157,7 @@ TS=
       OR
         (
           ("deficien*" OR "inadequa*")
-          NEAR/3
-              ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
+          NEAR/3 ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
         )
       OR
         (
@@ -184,18 +181,15 @@ TS=
 
 #### Phrase 2
 
-The general structure is *nutritional access/quality/status of specific groups + action*
+The general structure is *(nutritional access/quality OR status + specific groups) + action*
 
-Research about improving the nutritional status of the groups mentioned in the target is included here. `stability` is not used in combination with food/nutrition as there are results about nutritional stability in processed foods. `nutritio*` should cover terms such as "access to nutritional care". `baby` is not used as it only adds noise about "baby mustard".
+Research about improving the nutritional status of the groups mentioned in the target is included here, along with research about improving nutrition quality. `nutritio*` (combined with *access* etc.) should cover terms such as "access to nutritional care". `nutrition* quality` finds some results about animal feed, but a number of them connect their work to food security and reducing food loss, so it is safer to keep this term. `baby` is not used as it only adds noise about "baby mustard".
 
 ```py
 TS=
 (
-  (
-    ("nutritio*"
-      NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability")
-    )
-  OR "diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  ("diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
+  OR ("nutritio*" NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability"))
   OR
     (
       ("nutritio*" OR "folate status" OR "micronutrient$")
@@ -205,18 +199,19 @@ TS=
           OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
           )
     )
+  OR ("nutrition*" NEAR/15 ("school feeding" OR "free school meals" OR "food stamp program*" OR "food assistance"))  
   )
   NEAR/5
-     ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
-     OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
-     OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
-     )
+    ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "attain" OR "achiev*"
+    OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*" OR "manag*" OR "promote"
+    OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+    )
 )
 ```
 
 #### Phrase 3
 
-The general structure is *undernutrition/food supply + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` and `food supply` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
+The general structure is *undernutrition/nutritional value + actions + humans*. For the topics `"protein deficiency"  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"` there was a considerable number of papers from animals and therefore they had to be combined with *human terms*. The human terms include generic terms signifying a work is about humans as well as some "vulnerable" groups (based on UN sources) considered relevant for this topic (<a id="Blanchard">[Blanchard et al., 2017](#f16)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f17)</a>).
 
 ```py
 TS=
@@ -233,6 +228,15 @@ TS=
            OR "prevent*" OR "avoid*"
            OR "manag*" OR "treat*" OR "therapy" OR "therapies" OR "intervention$"
            OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
+          )
+    )
+  OR
+    (
+      ("nutritional value" OR "nutrient content" OR "nutritional content")
+      NEAR/5
+          ("improv*" OR "enhanc*" OR "increas*" OR "strengthen" OR "better"
+          OR "ensur*" OR "guarantee" OR "secure" OR "securing" OR "maintain*"
+          OR "legislat*" OR "policy" OR "policies" OR "strateg*" OR "framework$"
           )
     )
   )
@@ -269,7 +273,9 @@ This query consists of 1 phrase. The basic structure is *productivity/access etc
 ```py
 TS= (
       (
-        ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
+          ("intensification" 
+            NEAR/5 ("smallhold*" OR "small hold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "sustainable" OR "agroecolog*" OR "ecolog*")
+          )  
         OR
           (
             ("production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
@@ -296,9 +302,9 @@ TS= (
                 OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "regulate"
                 )
           )
-        )
-        AND
-          ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
+      )
+      AND
+          ("smallhold*" OR "small hold*" OR "small farm*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
           OR
             (
               ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
@@ -308,15 +314,14 @@ TS= (
                   OR "agricultur*" OR "farm*" OR "permaculture"
                   OR "cropping system$" OR "orchard$" OR "arable land$"
                   OR "pasture$" OR "pastoral*" OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-                  OR "aquaculture" OR "fisher*" OR "fish farm*"
+                  OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
                   )
                 OR
                   (
-                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
                     OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
                     )
-                    NEAR/5
-                        ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
+                    NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
                   )
                 )
             )
@@ -331,44 +336,49 @@ TS= (
 > 2.4.1 Proportion of agricultural area under productive and sustainable agriculture
 
 This target is interpreted to cover research about
-* increasing the productivity of food production systems (phrase 1)
+* increasing the productivity/yield of food production systems (phrase 1)
 * implementation of resilient food production systems/agricultural practices, including strengthening adaptation and preparedness of food production systems/species to climate change and disasters (phrases 2,3)
 * increasing sustainable food production systems/practices (outside of resilience; phrase 4)
-* how food production systems can improve/maintain soil quality and ecosystems (phrase 5,6)
+* how food production systems can improve/maintain soil quality and ecosystem health (phrase 5,6)
 
 Increasing productivity of all food production systems (i.e. without reference to sustainable/resilient practices) was not considered relevant in v1. However, the SDG indicator metadata clearly classes increased productivity as part of sustainability. Thus, it is included now.
 > "Maintaining or improving the output over time relative to the area of land used is an important aspect in  sustainability  for  a  range  of  reasons.  [...]. In a broader sense, an increase in the level of  land  productivity  enables  higher  production  while  reducing  pressure  on  increasingly  scarce  land  resources,  commonly  linked  to  deforestation  and  associated  losses  of  ecosystem  services  and biodiversity." (<a id="SDGindmetadata">[Statistics Division, 2021b, Indicator 2.4.1](#f9)</a>).
 
-Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>). Thus concepts such as food sovereignty are too wide. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
+Under "food production systems" we include types of agriculture, fishing and aquaculture. We do not include processing, storage, distribution, and markets, which can be considered part of a wider "sustainable food system" (<a id="SFS">[e.g. Annex 2, Annex 3 in One Planet network Sustainable Food Systems (SFS) Programme, 2020](#f8)</a>) - unless they are connected to agriculture under umbrella terms such as `agrifood`. Thus concepts such as food sovereignty are too wide. Types of farming system were expanded using MeSH (NIH) and Emtree (Embase database, Elsevier) subject vocabularies. Specific types of crops and livestock were further expanded using FAO statistical year book (<a id="FAO2013">[FAO, 2013](#f2)</a>). For crops, those listed as major crops or "important food crops" are included, while oil crops were excluded (not being food). Some specific types are covered by generic terms: e.g. Root crops are covered by `crops`, and terms such as `farm*` will cover types of farming in two words e.g. forest farms, family farms, fish farming.
 
 This query consists of 6 phrases.
 
 #### Phrase 1
 
-The general structure is *food production systems + production + action*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself.
+The general structure is *food production systems + production + action*. `intensification` implies increasing production, but results in some noise when used alone - it can be used in other contexts, and finds many results about the *effects* of agricultural intensification, thus it is combined with other terms which limit it better to works looking at the process itself. `grain yield$` is included as a phrase, rather than being combined with NEAR, because otherwise this results in a high number of results from metallurgy. `yield$` is included in 2 parts of the string, meaning that mentioning e.g. "rice yields" is enough to be included. 
 
 ```py
 TS=
 (
   (
-      ("food production" OR "food grower$"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+      ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+      OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+      OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fish farm*"
+      OR "aquaculture" OR "fish farm*" OR "mariculture"
       OR
         (
-          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
           )
           NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
+        )  
+      OR
+        (
+          ("crop$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
+          NEAR/5 "yield$"
+        )     
+      OR "grain yield$"     
       )
       NEAR/15
           (
-            ("intensification"
-            NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*")
-            )
+            ("intensification" NEAR/5 ("sustainable" OR "agroecolog*" OR "ecolog*"))
           OR
             (
               ("production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")
@@ -394,18 +404,19 @@ The basic structure of phrase 2 is *food production systems + resilience/vulnera
 
 In the *food production system* terms, production systems and species are included (i.e. species are split from production where possible so that both resilience for the species and the production system will be covered). Some species remain linked to production to avoid irrelevant results (e.g. vegetable intake and psychological resilience). `pastoral*` is limited in this phrase, as it finds results from other uses (pastoral care, religion studies).
 
-In the *resilience* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). `climate smart agriculture` is a term used for an approach specifically addressing climate change.
+In the *resilience* terms, `climate smart agriculture` is a term used for an approach specifically addressing climate change. `risk reduction` and `disaster reduction` are used instead of acccing `reduc*` to the NEAR combination because there are many works about risks that are not disasters (e.g. reducing health risks of chemicals on farms).
 
 ```py
 TS=
 (
   (
-      ("food production" OR "food grower$" OR "agro food"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+      ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+      OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+      OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
       OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
-      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+      OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "legume$"
       OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
       OR
         (
@@ -417,7 +428,8 @@ TS=
           (
             (
               ("climate smart agriculture" OR "resilien*"
-              OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*"))
+              OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*" OR "program*"))
+              OR "risk reduction" OR "diaster reduction"
               )
               NEAR/5
                   ("adopt*" OR "apply" OR "implement*" OR "establish*" OR "build*" OR "create" OR "creating"
@@ -446,18 +458,21 @@ The basic structure of phrase 3 is *food production systems + adaptation/coping/
 
 The *food production system* terms are the same as phrase 2.  These *disaster/climate change* terms include natural disasters, climate, market volatility, civil and political unrest (examples of risks in <a id="FAO2014">[FAO, 2014](#f7)</a>).
 
+In the *adaptation/coping/preparedness* terms, `tolera*` is a particularly influential term that increases results ("drought tolerance" of crops being a common research theme). 
+
 The *disaster* terms were taken from a standardised list we used across the SDGs, which was developed based on selected hazards listed in <a id="Murray">[Murray et al. (2021)](#f15)</a>.
 
 ```py
 TS=
 (
   (
-    ("food production" OR "food grower$" OR "agro food"
-    OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+    OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
-    OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+    OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "legume$"
     OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
     OR
       (
@@ -467,11 +482,12 @@ TS=
     )
     NEAR/15
       (
-        ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
-        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
+        ("mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
+        OR "sendai" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*" OR "programme$"
+        OR "adapt*"
         OR
           (
-            ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning")
+            ("cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning" OR "manag*" OR "relief")
             NEAR/5
               ("implement*" OR "establish*" OR "build*" OR "develop"
               OR "improv*" OR "increase" OR "increasing" OR "maintain*"
@@ -509,7 +525,9 @@ The general structure is *(ecoagriculture + action) OR (food production systems 
 
 `ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
-Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
+*Agricultural terms*: The standard terms used in other phrases are repeated here, but `"fodder" OR "animal feed" OR "fish feed"` are also added, as sustainable fodder research does not always use a term for agriculture.
+
+*Sustainbility terms*: `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
 ```py
 TS=
@@ -528,14 +546,15 @@ OR
 TS=
 (
   (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+    OR "fodder" OR "animal feed" OR "fish feed"
     OR
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -543,7 +562,7 @@ TS=
     )
     NEAR/15
         (
-          ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
+          ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach" OR "ecosystem based"
           OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
           OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
           OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
@@ -564,31 +583,33 @@ TS=
 
 #### Phrase 5
 
-The general structure is *food production systems + ecosystems and soil + action*. This phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage).
+The general structure is *food production systems + ecosystems and soil + action*. This phrase covers "positives" (soil health, diversity, fertility etc.), phrase 6 covers "negatives" (loss, degradation etc.). Some terms are already covered in phrase 4 (e.g. reduced tillage). `ecosystem` is such a widely-used word, so it was combined with terms that indicate the work is about ecosystem health in light of agriculture. 
 
 ```py
 TS=
 (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*" OR "permaculture"
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+    OR "permaculture"
     OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
     OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
     OR
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
         NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
       )      
     )
     NEAR/15
-          ("soil conservation"
+          ("soil conservation" OR "soil improv*"
           OR
             (
               ("soil structure" OR "soil fertility" OR "soil health"
               OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
-              OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
+              OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "pollinator$"
+              OR ("ecosystem$" NEAR/3 ("health*" OR "resilien*" OR "function*" OR "restor*" OR "quality" OR "stability" OR "impact$" OR "effect$" OR "affect*"))
               )
               NEAR/5
                 ("improv*" OR "restor*" OR "enhanc*" OR "strengthen*"
@@ -609,14 +630,15 @@ Types of land/soil degradation are taken from <a id="FAO2014">[FAO (2014)](#f7)<
 ```py
 TS=
 (
-  ("food production" OR "food grower$" OR "agri food"
-  OR "farm*" OR "agricultur*" OR "permaculture"
+  ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+  OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+  OR "permaculture"
   OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
   OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-  OR "aquaculture" OR "fisher*" OR "fish farm*"
+  OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
   OR   
     (
-      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
       OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
       )
       NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
@@ -625,6 +647,7 @@ TS=
   NEAR/15
       (
         ("desertification"
+        OR "environmental impact$" OR "environmental footprint"
         OR
           ("soil$"
           NEAR/5
@@ -637,7 +660,7 @@ TS=
         OR
           (
             ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-            NEAR/5 ("loss" OR "degradation" OR "depletion")
+            NEAR/5 ("loss" OR "degradation" OR "depletion" OR "vulnerab*")
           )
         )
         NEAR/5
@@ -675,21 +698,23 @@ The general structure is *agricultural diversity/landraces/local breeds + action
 
 Conserving wild relatives and traditional varieties is considered maintaining genetic diversity. `agrobiodiversity` is wider than only the species used in agriculture - it covers also the non-harvested species that support production and agro-ecosystems (e.g. pollinators, soil-organisms) (<a id="FAO2004">[FAO, 2004](#f10)</a>). It is considered relevant and included, as agrobiodiversity looks at the whole system (i.e. supporting diversity AND agricultural diversity). `conserv*` will cover e.g. conservation breeding, on-farm conservation etc. Note that `pigs` are excluded from the species list due to a large number of results about wild pig hunting in relation to their effect on agricultural land. 
 
+The use of `NEAR/1` is due to that this becomes very noisy when the distance is increased. 
+
 ```py
 TS=
 (
-    ("agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
+    ("plant genetic resource$" OR "animal genetic resource$"
+    OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
     OR "landrace$" OR "wild relative$"
     OR  
       (
         ("local" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
         NEAR/1 
           ("breed$" OR "variet*" OR "cultivar$" 
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
           )
       )
-    OR "plant genetic resource$" OR "animal genetic resource$"
     )
     NEAR/5
         ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
@@ -719,39 +744,42 @@ Terminology to do with breeding programmes could be included here, but we want r
 ```py
 TS=
 (
-        ("increase genetic diversity" OR "improve genetic diversity"
+  ("increase genetic diversity" OR "improve genetic diversity"
+  OR
+    (       
+      ("genetic resource$"
+      OR ("genetic" NEAR/2 "diversity")
+      )
+      NEAR/10
+        ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
         OR
-          (       
-             ("genetic diversity" OR "genetic resource$")
-             NEAR/10
-                  ("maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "secure" OR "securing"
-                  OR
-                      (
-                        ("loss" OR "extinction" OR "declin*" OR "disappear*")
-                        NEAR/5
-                          ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
-                          OR "lowering" OR "lower$" OR "lowered" OR "combat*"
-                          OR "stop*" OR "end" OR "ending" OR "halt"
-                          OR "avoid*" OR "prevent*"
-                          )
-                      )
-                  )
+          (
+            ("loss" OR "extinction" OR "declin*" OR "disappear*")
+            NEAR/5
+              ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "mitigat*"
+              OR "lowering" OR "lower$" OR "lowered" OR "combat*"
+              OR "stop*" OR "end" OR "ending" OR "halt"
+              OR "avoid*" OR "prevent*"
+              )
           )
         )
-        NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-            OR "cropping system$" OR "orchard$"
-            OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-            OR "aquaculture"
-            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
-            OR "landrace$" OR "wild relative$"
-            OR
-              (
-                ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-                NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-              )
-            )
+    )
+  )
+  NEAR/15
+      ("agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+      OR "smallhold*" OR "small hold*"
+      OR "permaculture" OR "cropping system$" OR "orchard$"
+      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+      OR "aquaculture" OR "mariculture"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
+      OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"      
+      OR "landrace$" OR "wild relative$"
+      OR
+        (
+          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
+          NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
+        )
+      )
 )
 ```
 
@@ -767,11 +795,11 @@ For the *gene bank/ex situ* terms, `cryoconservation` and `cryopreservation` are
 TS=
 (
   (
-      ("cryoconservation"
+      ("cryoconservation" OR "gene banks" OR "genebanks" OR "germplasm banks" OR "cryobanks"
       OR
         (
           ("plant bank$" OR "seed bank$"
-          OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+          OR "gene bank" OR "genebank" OR "germplasm bank" OR "cryobank"
           OR "ex situ" OR "cryopreserv*"
           )
           NEAR/15
@@ -784,11 +812,12 @@ TS=
         )
       )  
       NEAR/15
-          ("agricultur*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-          OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+          ("agricultur*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+          OR "smallhold*" OR "small hold*"
+          OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
           OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-          OR "aquaculture"
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+          OR "aquaculture" OR "mariculture"
+          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
           OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
           OR "landrace$" OR "wild relative$"
           OR
@@ -827,7 +856,7 @@ TS=
         OR "material transfer agreement$" OR "informed consent"
         OR
           (
-            ("sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$")
+            ("sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "availability" OR "right$")
             NEAR/5
                 ("improv*" OR "increase" OR "increasing" OR "enhanc*" OR "promot*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
                 OR "better" OR "strengthen*" OR "empower" OR "empowering"
@@ -839,11 +868,12 @@ TS=
   )    
   AND
       ("food"
-      OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultivar$" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+      OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultivar$" 
+      OR "smallhold*" OR "small hold*"
+      OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
       OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture"
-      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+      OR "aquaculture" OR "mariculture"
+      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
       OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
       OR "landrace$" OR "wild relative$"
       OR
@@ -870,11 +900,12 @@ TS =
     )
     AND
         ("food"
-        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
+        OR "agricultur*" OR "domestic*" OR "farming" OR "farmed" OR "farm$" OR "farmer$" OR "cultiva*" 
+        OR "smallhold*" OR "small hold*"
+        OR "permaculture" OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
         OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture"
-        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
+        OR "aquaculture" OR "mariculture"
+        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
         OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         OR "landrace$" OR "wild relative$"
         OR
@@ -902,42 +933,44 @@ TS =
 >
 > 2.a.2 Total official flows (official development assistance plus other official flows) to the agriculture sector
 
-This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries.
+This target is interpreted to cover research about investment and international collaboration in rural infrastructure, agricultural research & technology, and gene banks in developing countries. Investment/finance is kept broad - it is interpreted to cover international, private, public or individual investment/finance.
 
-This query consists of 1 phrase. The general structure is *investment/cooperation + rural infrastructure/technology*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive.
+This query consists of 1 phrase. The general structure is *investment/cooperation + rural/agricultural infrastructure/technology + LMICs*. Note that this phrase does not contain an action element as it was considered too difficult/restrictive. Various terms are specified for `invest*` and `financ*` instead of allowing free truncation - this is to avoid e.g. "investigation", "financial sector", "financial performance". `expenditure` and `spending` are combined as these are often used for individual farmers' expenses.  `rural development` is limited with *agricultural terms* as it is wider than our interpretation (e.g. it can refer to poverty alleviation in rural areas, whereas we interpret this target to be focused on agriculture). 
 
 ```py
 TS =
 (
-      ("Agriculture Orientation Index for Government Expenditure$"
-      OR
-        (
-          (
-            ("government" OR "public")
-            NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
-          )
-        OR "ODA" OR "cooperation fund$" OR "development spending"
-        OR
-          (
-            ("international" OR "development" OR "foreign")
-            NEAR/3
-                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "financial support" OR "financial resources"
-                )
-          )
+  ("Agriculture Orientation Index for Government Expenditure$"
+  OR
+    ("investm*" OR "investing" OR "invest" OR "finance" OR "financial support" OR "financing" OR "funding"
+    OR "ODA" OR "cooperation fund$" OR "development spending"
+    OR (("research" OR "governm*" OR "public" OR "sector") NEAR/3 ("expenditure" OR "spending"))
+    OR "international development"
+    OR
+      (
+        ("international" OR "development" OR "foreign" OR "global" OR "intercontinental"
+        OR "european" OR "asian" OR "africa*" OR "latin america*" OR "pacific"
         )
-        NEAR/15
-            ("rural infrastructure"
-            OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
-            OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
-            OR
-              (
-                ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/3 ("agricultur*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
-              )                  
+        NEAR/3
+            ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
+            OR "aid" OR "assistance" OR "fund$" OR "grant$" OR "financial resources"
             )
       )
-      AND
+    )
+    NEAR/15
+      ("rural infrastructure" OR "rural tech*" 
+      OR ("rural development" NEAR/15 ("agri*" OR "agro*" OR "smallhold*" OR "farm*"))
+      OR "agricultur* development" OR "development of agriculture"
+      OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
+      OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
+      OR
+        (
+          ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
+          NEAR/5 ("agricultur*" OR "smallhold*" OR "small hold*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood" OR "agrofood" OR "aquaculture" OR "mariculture")
+        )                  
+      )
+  )
+  AND
       ("least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
       OR "less developed countr*" OR "less developed nation$" OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$"
@@ -959,7 +992,7 @@ TS =
 >
 > 2.b.1 Agricultural export subsidies
 
-This target is interpreted to cover research about export subsidies (and equivalents) for agricultural/food exports, and trade restrictions and distortions for world agricultural/food markets. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
+This target is interpreted to cover research about subsidies (and equivalents), trade restrictions and distortions for world agricultural/food markets/trade. A WTO agricultural export subsidy fact sheet (<a id="WTOexport">[Information and External Relations Division of the WTO Secretariat, n.d.](#f13)</a>) was used as a source of terms, where food aid is also a factor.
 
 This query consists of 2 phrases. Note that these phrases do not contain an action element as it was considered too difficult/restrictive.
 
@@ -971,26 +1004,27 @@ The basic structure is *export subsidies + agriculture/food*.
 TS=
 (
   ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
-  AND ("agricultur*" OR "agrifood" OR "food")
+  AND ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture")
 )
 ```
 
 #### Phrase 2
 
-The basic structure is *distortions + agricultural markets/exports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
+The basic structure is *distortions + agricultural markets/exports/imports*. Specific animals are not included due to results about restrictions in trade due to outbreaks of disease.
 
 ```py
 TS=
 (
   ("distort*" OR "price-fixing" OR "dumping"
-  OR "trade restrict*" OR "Doha" OR "food aid"
+  OR "trade restrict*" OR "sanction$"
+  OR "Doha" OR "food aid"
   OR "state support*" OR "state financial support"
   OR "WTO dispute$"
   )
   NEAR/15
       (
-        ("trade" OR "trading" OR "market$" OR "export$")
-        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
+        ("trade" OR "trading" OR "market$" OR "export$" OR "import$")
+        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$")
       )
 )
 ```
@@ -1002,8 +1036,6 @@ TS=
 > 2.c.1 Indicator of food price anomalies
 
 This target is interpreted to cover research about preventing price volatility in food/agriculture, and about ensuring stable food commodity markets. The basic structure is *action + volatility/stability + agricultural markets/prices*.
-
-#### Phrase 1
 
 ```py
 TS=
@@ -1029,7 +1061,7 @@ TS=
         (
           ("price$" OR "market$")
           NEAR/5
-            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
+            ("agricultur*" OR "agrifood" OR "food" OR "aquaculture" OR "mariculture" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$" OR "livestock")
         )
 )
 ```
@@ -1042,7 +1074,11 @@ TS=
 
 * Internal review: Eli Heldaas Seland, Marta Lorenz (March 2022)
 
-Specialist input: Awaiting specialist input.
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+
+Specialist input: Awaiting.
 
 ## 5. Footnotes
 
