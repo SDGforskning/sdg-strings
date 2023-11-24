@@ -27,7 +27,7 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 Currently, we have strings for ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group are primary contributors for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
-The strings available at this time (October 2023) are available for two platforms.
+The strings available at this time are available for two platforms.
 * Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate. These files contain most of the documentation expaining how we have interpreted the strings and chosen search terms.
 * Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. The python searches are a simplified version of the WOS *topic approach* (see below), designed for result titles. They only contain documentation specific to conversion to python - see the WOS files for documentation expaining how we have interpreted the strings and chosen search terms.
 
@@ -52,7 +52,7 @@ An early description of these approaches can be found in [Armitage, Lorenz & Mik
 ## Current status and planned changes?
 We have finished a version that can be used for ten of the SDGs (in Web of Science search syntax, and in Python) - see "Releases". We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved with feedback, and may require changes over time. 
 
-We test the strings in an informal way while building and carried out formal testing of v1.2.2 in August 2023, documented in Zenodo (Caroline S Armitage, Håkon Magne Bjerkan, Leena Pirit Byholm, Inger Gåsemyr, Eli Heldaas Seland, & Lise Vik-Haugen. (2023). Testing the Bergen-approach search strings for SDG research mapping (v. 1.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8386611). The current version (v1.3.0) includes changes made after this testing. 
+We test the strings in an informal way while building and carried out formal testing of v1.2.2 in August 2023, documented in Zenodo (Caroline S Armitage, Håkon Magne Bjerkan, Leena Pirit Byholm, Inger Gåsemyr, Eli Heldaas Seland, & Lise Vik-Haugen. (2023). Testing the Bergen-approach search strings for SDG research mapping (v. 1.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8386611). The next version (v2.0.0) and onwards include changes made after this testing. 
 
 ## How do I use these strings? 
 
