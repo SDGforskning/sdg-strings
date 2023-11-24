@@ -12,7 +12,7 @@ End hunger, achieve food security and improved nutrition and promote sustainable
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/0969ff8f-ca52-494b-bb44-a304810f5f92-a837ae09/relevance/1
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters, publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/d09f9ac7-bf55-4e60-a600-c78342841d3c-b76c21c2/relevance/1
 
 ## 2. General notes
 
@@ -1076,9 +1076,9 @@ TS=
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
 
-Specialist input: Awaiting specialist input.
+Specialist input: Awaiting.
 
 ## 5. Footnotes
 
