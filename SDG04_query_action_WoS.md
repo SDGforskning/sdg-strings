@@ -2,8 +2,6 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is currently undergoing testing and revision.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -764,11 +762,7 @@ TS=
 
 This target is interpreted to cover research about scholarships to students from developing countries and African countries.
 
-This query consists of 1 phrase.
-
-#### Phrase 1
-
-The basic structure is *scholarships + student/education + developing countries/African countries*.
+This query consists of 1 phrase. The basic structure is *scholarships + student/education + developing countries/African countries*.
 
 There are no actions terms included, as there are so few results they are considered to be of potential interest even without action terms. Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search.
 
