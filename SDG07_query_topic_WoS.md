@@ -10,7 +10,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/48102699-d0f9-4682-bd31-e7c58c425164-a8639e82/relevance/1
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/06eb82ec-0902-443f-8084-fad50929c260-b777977d/relevance/1
 
 ## 2. General notes
 
@@ -651,7 +651,7 @@ NOT
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
+* v2.0.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Shayan Shokrgozar (PhD candidate in energy transitions research, Jul 2022)
 
