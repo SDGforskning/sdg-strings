@@ -1,7 +1,4 @@
-
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
-
-**Current status**: This string is currently undergoing testing and editing
 
 **Contents**
 
@@ -13,7 +10,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication date = last 5 years): https://www.webofscience.com/wos/woscc/summary/9ab7d22a-f9b8-4390-98a5-51a81cd119aa-b778550d/relevance/1
 
 ## 2. General notes
 
@@ -708,6 +705,10 @@ TS=
 * v1.0.0: Håkon Magne Bjerkan, Inger Gåsemyr (Oct 2021-Oct 2022), Kari Hølland (Oct 2021-Mar 2022)
 
 * Internal review: Eli Heldaas Seland, Caroline S. Armitage (Mar 2022)
+ 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Håkon Magne Bjerkan (Aug-Oct 2023), minor review Caroline S. Armitage.
 
 Specialist input: Awaiting
 
