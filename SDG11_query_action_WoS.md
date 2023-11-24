@@ -1,7 +1,4 @@
-
 # Search query for SDG 11 -Sustainable cities and communities, Bergen action-approach.
-
-**Current status**: This string is currently a finished version.
 
 **Contents**
 
@@ -13,7 +10,7 @@
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/8cb9b370-c31c-40b0-a24a-8bbda13f3374-57d2733a/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication date = last 5 years): https://www.webofscience.com/wos/woscc/summary/9ab7d22a-f9b8-4390-98a5-51a81cd119aa-b778550d/relevance/1
 
 ## 2. General notes
 
@@ -206,7 +203,7 @@ TS=
         OR "speed limit*" 
         )
   )
-  NOT ("air traffic*" OR "food*")
+  NOT ("air traffic*" OR "food*" OR "trauma*")
 )
 ```
 
@@ -248,7 +245,7 @@ TS=
     ("improv*" OR "enhanc*" OR "better" OR "ensur*" OR "advanc*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*")
     NEAR/15 ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
   )
-  NEAR/15 ("urbani?ation" OR "urban development")
+  NEAR/15 ("urbani?ation" OR "urban development" OR "urban planning" OR "human settlement planning")
 )
 ```
 
@@ -264,7 +261,7 @@ TS=
     NEAR/15
         (
           ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
-          NEAR/3 ("plan*" OR "manag*")
+          NEAR/3 ("plan" OR "plans" OR "plann*" OR "manag*")
         )
   )
   NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
@@ -277,7 +274,7 @@ TS=
 >
 > 11.4.1 Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)
 
-This target is interpreted to cover research on strengthening the protection of cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Cultural Statistics (<a id="unescoculturalstats">[UNESCO Institute for Statistics, 2009](#f4)</a>). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc.
+This target is interpreted to cover research on strengthening the protection of cultural and natural heritage. There are a few challenges in determining scope and detail level, as cultural and natural heritage consists of a myriad of categories (churches, castles, rock art…) and also individual objects and sites (Notre Dame, Great Barrier Reef…). The search strings are initially focusing on top level terms, partly based on UNESCO Framework for Cultural Statistics (<a id="unescoculturalstats">[UNESCO Institute for Statistics, 2009](#f4)</a>). The indicator focuses on expenditure, but “strengthening efforts” also includes aspects like policy making, increasing knowledge and awareness, etc. The term "natural habitat" is used by UNESCO when describing natural heritage, but this term is excluded from the search strings as it mainly produces irrelevant results in this context.
 
 This query consists of 1 phrase. The basic structure is *action + management/protection + cultural heritage*.
 
@@ -295,7 +292,7 @@ TS=
     ("cultur* heritage" OR "cultural landscape$"
     OR "heritage object$" OR "heritage building$" OR "heritage site$"
     OR "museum$" OR "archaeological place$" OR "archaeological site$" OR "historical place$" OR "historical building$" OR "historical monument$" OR "historical artefact$"
-    OR "natural heritage" OR "nature formation$" OR "geopark$" OR "natural habitat$" OR "nature park$" OR "nature reserv*"
+    OR "natural heritage" OR "nature formation$" OR "geopark$" OR "nature park$" OR "nature reserv*"
     OR "zoo$" OR "zoological garden$" OR "botanical garden$" OR "aquarium$" OR "aquaria"
     )
 )
@@ -309,7 +306,7 @@ TS=
 >
 > 11.5.2 Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
 
-This target is interpreted to cover research on reducing deaths/missing people caused by disasters and the impact of disasters on GDP/GGDP losses. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
+This target is interpreted to cover research on reducing deaths, missing and affected people caused by disasters and the impact of disasters on GDP/GGDP losses. We include man-made or natural/ecological disasters, which includes water-related disasters such as drought and floods.
 
 Terms were gathered from the SDG Indicators Metadata Repository (<a id="SDGmetarep">[UN Statistics Division, 2022](#f2)</a>), the Sendai Framework as presented on prevetionweb (<a id="sendai">[UN Office for Disaster Risk Reduction, n.d.](#f6)</a>) and the SDG 11 Synthesis Report from the 2018 High Level Political Forum (<a id="hlpf2018">[United Nations, 2018](#f7)</a>). Terms were also added from a standardised list of disasters we created to be used across SDG search strings, which was based on hazards listed in <a id="disasters">[Murray et al., (2021)](#f5)</a>.
 
@@ -322,8 +319,7 @@ This phrase covers research about reducing mortality/increasing survival and dis
 ```py
 TS=
 (
-  ( 
-    ("disaster$" OR "catastrophe$" 
+  ( "disaster$" OR "catastrophe$" 
     OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
     OR (("natural" OR "climat*") NEAR/5 "hazard$")
     OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
@@ -336,7 +332,7 @@ TS=
     OR 
       (
         ("anthropogenic" 
-        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+        OR "environmental" OR "deforestation" OR "desertification" OR "degradation" OR "pollution" OR "erosion"
         OR "chemical" OR "heavy metal$" OR "pesticide$"
         OR "biological" OR "zoonotic"
         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
@@ -347,21 +343,21 @@ TS=
     OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
     OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
     OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-    )  
-  )
+  )  
   AND
     (
       (
-        ("casualt*" OR "death$" OR "fatal*" OR "missing people" OR "missing person$")
+        ("casualt*" OR "death$" OR "fatal*"
+        OR (("affected" OR "injured" OR "traumati$ed" OR "displaced" OR "missing") NEAR/3 ("people" OR "person$" OR "civilian$" OR "women" OR "men" OR "child*"))
+        )
         NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
       )
     OR 
       (
         (
-          ("mortalit*" NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*")
-          )
-        OR ("mortality" NEAR/5 "improv*")
-        OR ("surviv*" NEAR/15 ("improv*" OR "increas*" or "enhanc*"))
+          ("mortalit*" NEAR/15 ("prevent*" OR "reduc*" OR "decreas*" OR "minimi*" OR "lowering" OR "lowered" OR "limit" OR "limiting" OR "combat*" OR "tackl*" OR "eliminat*" OR "avoid*" OR "interven*"))
+          OR ("mortality" NEAR/5 "improv*")
+          OR ("surviv*" NEAR/15 ("improv*" OR "increas*" or "enhanc*"))
         )
         AND 
             ("people" OR "human$" OR "patient$" OR "victim$" OR "civilian$" 
@@ -407,7 +403,7 @@ TS=
     OR 
       (
         ("anthropogenic" 
-        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
+        OR "environmental" OR "deforestation" OR "desertification" OR "degradation" OR "pollution" OR "erosion"
         OR "chemical" OR "heavy metal$" OR "pesticide$"
         OR "biological" OR "disease" OR "zoonotic"
         OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
@@ -527,7 +523,15 @@ TS=
     )
     NEAR/5 ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
   )
-  NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*"))
+  NEAR/15 
+      (
+        ("waste" OR "garbage" OR "rubbish") 
+        NEAR/3 
+            ("manag*" OR "collect*" 
+            OR "compost*" OR "recycle*" OR "reuse*" OR "biological degrad*" 
+            OR "combust*" OR "heat*" OR "energ*" OR "deposit*"
+            )
+      )
 )
 ```
 
@@ -539,7 +543,8 @@ TS=
 >
 > 11.7.2 Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months
 
-This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. 
+This target is interpreted as to cover research on making green and public spaces universally available to all, by making the areas safer, inclusive and universally accessible. SDG11 focuses on urban and built-up areas, so natural parks and recreational areas in general are not included. Public space definitions partly based on UN Habitat Public Space" training module (<a id="UNhabitat-publicspace">[UN-Habitat, 2018](#f10)</a>)
+Public commercial spaces are not included, as these are not included in the target indicators.
 
 This query consists of 2 phrases.
 
@@ -556,12 +561,12 @@ TS=
     )
     NEAR/15 ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
   )
-  NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
       OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
-)
+      OR (("park$" OR "street$" OR "avenue$" OR "square$" OR "beach$" OR "waterfront" OR "riverbank$" ) NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "boulevard$" OR "public playground$"
+      OR "public library" OR "public libraries" OR "civic center$" OR "civic centre$" OR "community centre$"OR "community center$" OR "public facilit*" OR "public market$"	
+      ))
 ```
 
 #### Phrase 2
@@ -576,8 +581,10 @@ TS=
   )
   NEAR/15
       ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolotan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
+      OR (("park$" OR "street$" OR "avenue$" OR "square$" OR "beach$" OR "waterfront" OR "riverbank$" ) NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
+      OR "boulevard$" OR "public playground$"
+      OR "public library" OR "public libraries" OR "civic center$" OR "civic centre$" OR "community centre$"OR "community center$" OR "public facilit*" OR "public market$"	
       )
 )
 ```
@@ -670,7 +677,7 @@ TS=
   )
   AND
     ("local building material$" OR "local construction material$"
-    OR "sustainable architecture" OR "resilient architecture"
+    OR "sustainable architecture" OR "resilient architecture" OR "Sustainable Building and Construction Initiative" OR ("SBCI" NEAR/3 "UNEP")
     OR
        (
          ("buildings" OR "sustainable building" OR "masonry"
@@ -681,7 +688,7 @@ TS=
             )
          )
          NEAR/15
-            ("sustainab*" OR "ecofriendly" OR "eco friendly" OR "environmentally friendly" OR "resilien*"
+            ("sustainab*" OR "green" OR "eco" OR "environmentally friendly" OR "resilien*"
             OR ("local*" NEAR/3 "materials") OR "locally available" OR "native" OR "traditional"
             )
        )          
@@ -698,6 +705,10 @@ TS=
 * v1.0.0: Håkon Magne Bjerkan, Inger Gåsemyr (Oct 2021-Oct 2022), Kari Hølland (Oct 2021-Mar 2022)
 
 * Internal review: Eli Heldaas Seland, Caroline S. Armitage (Mar 2022)
+ 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Håkon Magne Bjerkan, Inger Gåsemyr (Aug-Oct 2023), minor review Caroline S. Armitage.
 
 Specialist input: Awaiting
 
@@ -718,4 +729,7 @@ Specialist input: Awaiting
 <a id="f1"></a> UN Statistics Division (2021). *Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development*. A/RES/71/313, E/CN.3/2018/2, E/CN.3/2019/2, E/CN.3/2020/2, E/CN.3/2021/2. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%202021%20refinement_Eng.pdf [accessed 8 August 2021] [↩](#SDGT+Is)
 
 <a id="f2"></a> UN Statistics Division (2022). SDG Indicators Metadata Repository. https://unstats.un.org/sdgs/metadata
+
+<a id="f10"></a> UN-Habitat (2018). SDG Indicator 11.7.1 Training Module: Public Space. United Nations Human Settlement
+Programme (UN-Habitat). https://unhabitat.org/sites/default/files/2020/07/indicator_11.7.1_training_module_public_space.pdf (accessed Sep 2023).[↩](#UNhabitat-publicspace)
 
