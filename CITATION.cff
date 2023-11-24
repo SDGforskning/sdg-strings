@@ -33,10 +33,14 @@ authors:
     family-names: Seland
     email: eli.h.seland@uib.no
     orcid: 'https://orcid.org/0000-0001-9666-6197'
+    affiliation: University of Bergen
+  - given-names: Lise
+    family-names: Vik Haugen
+    orcid: 'https://orcid.org/0009-0001-4744-4966'
     affiliation: Western Norway University of Applied Sciences
 url: "https://github.com/SDGforskning/sdg-strings"
 doi: 10.5281/zenodo.7241689
-version: 1.2.2
-date-released: 2023-03-09
+version: 2.0.0
+date-released: 2023-11
   
   
