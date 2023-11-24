@@ -317,7 +317,7 @@ TS=
     ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
     NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
   )
-  NEAR/15 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+  NEAR/15 ("employab*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
 OR TS=("entrepreneur* education")
 ```
@@ -367,7 +367,7 @@ TS=
     OR ("transfer*" NEAR/3 "skills")
     OR "education"
     OR "professional development" OR "adult education" OR "adult learning" OR "lifelong learning" OR "life long learning" OR "employee development" OR "new skills")
-  NEAR/15 "employability"
+  NEAR/15 ("employability" OR "employable graduate*")
 )
 ```
 #### Phrase 4
