@@ -1,5 +1,4 @@
 # Search query for SDG 14 - Life below water, Bergen topic-approach.
-
 Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
 
 **Contents**
@@ -13,7 +12,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/fe245c11-113a-4317-8ba3-0991fdf707e2-a8333217/relevance/1
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/f5bb6c7e-2b78-4623-a253-e1340bff5ca3-b781bdd9/relevance/1
 
 ## 2. General notes
 
@@ -889,7 +888,7 @@ NOT
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Lise Vik Haugen.
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Lise Vik Haugen.
 
 Specialist input: Katja Enberg (Associate professor of fisheries at UiB; review of v2019.12 in 2019), Caroline S. Armitage (PhD in marine ecology).
 
