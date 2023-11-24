@@ -2,8 +2,6 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -14,7 +12,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/433e2561-fc3b-472e-b8c2-b1466fb72766-57b893e7/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publishing year = last 5 years): https://www.webofscience.com/wos/woscc/summary/9e8d8fcd-f364-4b05-bf45-5a18f87f5db1-b77227d7/relevance/1
 
 ## 2. General notes
 
@@ -127,7 +125,7 @@ TS=
       ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*")
       NEAR/5
         (
-          ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+          ("fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
           NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
         )
     )
@@ -167,10 +165,10 @@ TS=
     OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
     )
     NEAR/5
-      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+      ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*" OR "unequit*")
   )
   NEAR/5
-      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
+      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
       OR (("early childhood" OR "under five$") NEAR/3 "education")
       )
 )
@@ -188,7 +186,7 @@ TS=
   "school readiness"
   OR
     (
-      ("ready" OR "readiness" OR "prepared*")
+      ("ready" OR "readiness" OR "prepared*" OR "transition")
       NEAR/5
         ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
     )
@@ -224,7 +222,7 @@ TS=
     (
       ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
       NEAR/5
-        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+        ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*" OR "afford*")
     )
   OR
     (
@@ -234,7 +232,7 @@ TS=
       OR "improv*" OR "manag*"
       )
       NEAR/5
-        ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+        ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
     )
   )
   NEAR/15
@@ -261,7 +259,7 @@ TS=
         (
           ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "ensur*" OR "secure" OR "initiative$" OR "intervention$")
           NEAR/5
-              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+              ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*")
         )
       OR
         (
@@ -271,7 +269,7 @@ TS=
           OR "improv*" OR "manag*"
           )
           NEAR/5
-              ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+              ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
         )
     )
     NEAR/15 ("access")
@@ -315,11 +313,11 @@ TS=
 (
   (
     ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "build*" OR "develop*")
-    NEAR/5
-      ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
+    NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
   )
-  NEAR/5 ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+  NEAR/15 ("employab*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
+OR TS=("entrepreneur* education")
 ```
 #### Phrase 2
 
@@ -330,11 +328,19 @@ TS=
 (
   (
     ("reduc*" OR "decreas*" OR "lower*"  OR "prevent*" OR "minimi*" OR "limit*" OR "eliminat*")
-    NEAR/5
-        ("unemploy*" OR "underemploy*")
+    NEAR/5 ("unemploy*" OR "underemploy*")
   )
   NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
- )
+)
+OR TS=
+(
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs") 
+  NEAR/15
+      ("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" 
+      OR "training program*" OR "vocational training" OR "skills training" OR "new skills"
+      )
+)
+
  ```
 
 #### Phrase 3
@@ -357,8 +363,9 @@ TS=
     OR ("leader*" NEAR/5 ("skills" OR "effectiv*"))
     OR ("follow*" NEAR/3 "supervis*")
     OR ("transfer*" NEAR/3 "skills")
-  )
-  NEAR/15 "employability"
+    OR "education"
+    OR "professional development" OR "adult education" OR "adult learning" OR "lifelong learning" OR "life long learning" OR "employee development" OR "new skills")
+  NEAR/15 ("employability" OR "employable graduate*")
 )
 ```
 #### Phrase 4
@@ -375,8 +382,7 @@ TS=
     NEAR/5
       (
         ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-        NEAR/5
-            ("skill*" OR "competen*" OR "literac*")
+        NEAR/5 ("skill*" OR "competen*" OR "literac*")
       )
   )
   NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
@@ -391,7 +397,7 @@ TS=
 
 This target is interpreted to cover research about
 * Reducing gender disparities in education
-* Securing access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
+* Securing access to and inclusivity in education, special education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
 
 This query consists of 3 phrases.
 
@@ -407,11 +413,10 @@ TS=
     NEAR/5
         (
           ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-          NEAR/5
-              ("equit*" OR "equal*" OR "balanc*")
+          NEAR/5 ("equit*" OR "equal*" OR "balanc*")
         )
-    ) 	
-    NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
+  ) 	
+  NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
@@ -432,22 +437,28 @@ TS=
       (
         ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
         NEAR/5
-            ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
-            OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*"
-            )
-      )
+            ("inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
+            OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$"
+            OR "gaps in education" OR "gender parity" OR "parity with" OR "educational parity"
+            OR
+              (
+                ("difference$" OR "discrepan*") 
+                NEAR/5
+                    ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" OR "enter*" OR "entry" OR "enroll*"
+                    OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend")
+              )
+           )
+     )
   )
-  NEAR/5
-      ("school*" OR "educat*" OR "vocational training" OR "student*")
+  NEAR/10 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
 #### Phrase 3
 
-The basic structure is *action + access + education + vulnerable groups*
+The basic structure is *action + access + education + vulnerable groups* OR *access + special education*. 
 
-"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
-
+"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included. The 13 disability categories have been taken from the US Individuals with Disabilities Education Act (IDEA) (<a id="IDEA">[Lee, n.d.](#f12)</a>).    
 ```py
 TS=
 (
@@ -457,7 +468,7 @@ TS=
         ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "support*")
         NEAR/5
             ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*"
-            OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*"
+            OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR “education for all” OR "Rights of Persons with Disabilities" OR "CRPD" 
             )
       )
     OR
@@ -468,12 +479,12 @@ TS=
         OR "improv*"
         )
         NEAR/5
-            ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"
-            OR "barrier*" OR "obstacle*"
+            ("discriminat*" OR "non-discriminat*" OR "unequit*" OR "inequit*" OR "disparit*"
+            OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
             )
       )
     )
-    NEAR/5 ("school*" OR "educat*" OR "vocational training")
+    NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
   )
   NEAR/15
       (
@@ -481,14 +492,41 @@ TS=
           ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
           NEAR/3
               ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
-              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*"
-              )
+              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" 
+              OR "specific learning disabilit*" OR "SLD" OR "other health impairment*” OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" 
+              OR "speech impairment*" OR "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness" 
+              OR "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
+              
         )
      OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor"
      OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
      OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*"
-     OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
+     OR "minorit*"  OR "marginal*" OR "slum*" OR "rural" OR "special educational needs" OR "SEN"
      )
+)
+OR TS=(
+    (
+      (
+        ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "ensure*" OR "secure" OR "support*"
+       )
+        NEAR/5
+            ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*"
+            OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR “education for all” OR "Rights of Persons with Disabilities" OR "CRPD")
+      )
+    OR
+      (
+        ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+        OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+        OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+        OR "improv*"
+        )
+        NEAR/5
+            ("discriminat*" OR "non-discriminat*" OR "inequit*" OR "unequit*" OR "disparit*"
+            OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
+            )
+      )
+    )
+    NEAR/5 ("special educat*" OR "special needs educat*" OR "special educational support" OR "inclusive education" OR "aided education")
 )
 ```
 
@@ -511,15 +549,19 @@ The first phrase finds research about improving skills. The basic structure is *
 ```py
 TS=
 (
+  ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
+  NEAR/5 
+  (
+    ("core literacy" OR "functional literacy" OR "basic literacy")
+    OR
     (
-      ("increas*" OR "enhanc*" OR "ensure" OR "secure" OR "improv*" OR "achiev*" OR "reach*")
-      NEAR/5
-        (
-          ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-          NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
-        )
+      (
+        ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
+        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
+      )
+      NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
     )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  )
 )
 ```
 
@@ -535,7 +577,10 @@ TS=
   OR "improv*"
   )
   NEAR/3
-      ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+      (
+        ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+        OR ("illitera*" NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate"))
+      )
 )
 ```
 
@@ -668,12 +713,20 @@ TS=
   (
     ("build*" OR "design*" OR "upgrad*" OR "establish*" OR "improv*" OR "ensur*" OR "provid*")
     NEAR/5
-        ("learning environment*" NEAR/5 "effective")
+        (
+          ("learning environment*" NEAR/5 "effective") 
+          OR
+            (
+              (("indoor environmental quality") OR ("classroom" NEAR/5 "air quality"))
+              NEAR/15 ("learn*" OR "result*" OR "perform*" OR "atten*")
+            )
+          OR "physical learning environment*"
+        )
   )
   AND
     ("primary school*" OR "elementary school*" OR "primary educat*"
     OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "education" OR "learner*"
+    OR "school" OR "learner*"
     )
 )
 ```
@@ -687,19 +740,18 @@ The terms for basic services in schools are taken and adapted from <a id="unesco
 ```py
 TS=
 (
- (
-  ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
-  NEAR/3
-    ("access*"
-    NEAR/5
-      ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR 
-      "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
-      OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-     )
+  (
+    ("improv*" OR "secur*" OR "ensur*" OR "provide" OR "build*")
+    NEAR/3
+      ("access*"
+      NEAR/5
+        ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" 
+        OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*")
+        OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
+      )
   )
-  NEAR/15
-  ("school*" OR "education* facility" OR "education* facilities")
- ) 
+  NEAR/15 ("school*" OR "education* facility" OR "education* facilities")
+) 
 ```
 
 ### Target 4.b
@@ -708,13 +760,9 @@ TS=
 >
 > 4.b.1 Volume of official development assistance flows for scholarships by sector and type of study
 
-This target is interpreted to cover research about the availability of scholarships to students from developing countries and African countries.
+This target is interpreted to cover research about scholarships to students from developing countries and African countries.
 
-This query consists of 1 phrase.
-
-#### Phrase 1
-
-The basic structure is *scholarships + student/education + developing countries/African countries*.
+This query consists of 1 phrase. The basic structure is *scholarships + student/education + developing countries/African countries*.
 
 There are no actions terms included, as there are so few results they are considered to be of potential interest even without action terms. Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search.
 
@@ -723,8 +771,7 @@ TS=
 (
   (
     ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
-    NEAR/15
-        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility")
+    NEAR/15 ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility" OR "study abroad" OR "overseas stud*" )
   )
 AND
   ("least developed countr*" OR "least developed nation$"
@@ -740,7 +787,7 @@ AND
   OR  "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
   OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands"
   OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
-  OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palastinian$" OR "yugoslavia*" OR "turkish"
+  OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish"
   OR "Africa*" OR "Algeria*" OR "Angola*" OR "Benin" OR "beninese" OR "Botswana*" OR "Burkina Faso" OR "Burkina Fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Cameroon*" OR "Canary Islands" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "Central African Republic" OR "Chad" OR "Congo" OR "congolese" OR "Djibouti*" OR "Egypt*" OR "Equatorial Guinea" OR "Eritrea*" OR "Ethiopia*" OR "Gabon*" OR "Gambia*" OR "Ghana*" OR "Guinea" OR "guinean$" OR "Guinea Bissau" OR "Ivory Coast" OR "Cote d’Ivoire" OR "Jamahiriya" OR "Kenya*" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Libya*" OR "Libia" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania" OR "mauritanian$" OR "Mauritius" OR "mauritian$" OR "Mayotte" OR "Morocco" OR "moroccan$" OR "Mozambique" OR "Mocambique" OR "mozambican$" OR "Namibia*" OR "Niger" OR "Nigeria*" OR "Principe" OR "Reunion" OR "Rwanda*" OR "Sao Tome" OR "Senegal*" OR "Seychelles" OR "seychellois*" OR "Sierra Leone*" OR "Somalia*" OR "South Africa*" OR "St Helena" OR "Sudan*" OR "Swaziland*" OR "Tanzania*" OR "Togo" OR "togolese" OR "tongan" OR "Tunisia*" OR "Uganda*" OR "Western Sahara" OR "Zaire" OR "Zambia*" OR "Zimbabwe*"
   )
 )
@@ -836,12 +883,19 @@ TS=
 
 * Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022)
 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Lise Vik Haugen (Aug-Oct 2023), minor review Eli Heldaas Seland.
+
+
 Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 
 ## 5. Footnotes
 <a id="f5"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)
 
 <a id="f4"></a> Brewer, L. (2013). *Enhancing youth employability: What? Why? and How? Guide to core work skills*. International Labour Office, Skills and Employability Department. https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf [↩](#iloskills)
+
+<a id="f12"></a> Lee, A. M. I. (n.d.). *The 13 Disability Categories under IDEA*. Understood. https://www.understood.org/en/articles/conditions-covered-under-idea [accessed 28 September 2023] [↩](#IDEA)
 
 <a id="f6"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 

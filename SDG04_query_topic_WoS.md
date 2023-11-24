@@ -3,8 +3,6 @@
 
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
-**Current status**: This string is currently a finished version.
-
 **Contents**
 
 1. Full query in copy-pasteable format
@@ -16,7 +14,7 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/2e99ec3f-2c5d-43c1-ad9d-d57d55757152-57cbd9db/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication date = last 5 years): https://www.webofscience.com/wos/woscc/summary/8000a63a-fb0c-4913-9ef7-a8c53b7bb953-b7731b0b/relevance/1
 
 ## 2. General notes
 
@@ -113,7 +111,7 @@ We considered including terms for primary and secondary education, but too many 
 TS=
 (
   (
-    ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
+    ("fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
     NEAR/10 
     ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
   )
@@ -149,10 +147,10 @@ The search term "care" is not used alone as it would give too many hits that are
 TS=
 (
  (
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equit*" OR "inequit*" OR "unequit*")
  )
   NEAR/5
-      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
+      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*" OR "ecec" 
       OR (("early childhood" OR "under five$") NEAR/3 "education")
   )
 )
@@ -170,7 +168,7 @@ TS=
   "school readiness"
   OR
     (
-      ("ready" OR "readiness" OR "prepared*")
+      ("ready" OR "readiness" OR "prepared*" OR "transition")
       NEAR/5
         ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
     )
@@ -203,9 +201,9 @@ The basic structure is *access/barriers + higher education*
 TS=
 (
   (
-    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
+    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*" OR "afford*")
     OR
-    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+    ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*")
   )
   NEAR/5
       ("higher education"
@@ -227,10 +225,10 @@ TS=
 (
   (
     (
-      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
+      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equit*" OR "equal*")
       OR
       (
-       ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
+       ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*"  OR "discriminat*")
       )
     )
     NEAR/15 ("access")
@@ -272,13 +270,12 @@ The basic structure is *skills + employability/entrepreneurship*
 ```py
 TS=
 (
-  (
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
-  )
-  NEAR/5
-  ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
+  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "upskill" OR "reskill")
+  NEAR/15 ("employab*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
 )
+OR TS=("entrepreneur* education")
 ```
+
 #### Phrase 2
 
 This phrase finds research talking about skills, competencies etc. in relation to reducing unemployment. The basic structure is *unemployment + skills*
@@ -286,13 +283,18 @@ This phrase finds research talking about skills, competencies etc. in relation t
 ```py
 TS=
 (
-  (
-    ("unemploy*" OR "underemploy*")
-  )
-  NEAR/5 
-  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
- )
- ```
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs")
+  NEAR/5 ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
+)
+OR 
+TS= 
+(
+  ("unemploy*" OR "underemploy*" OR "NEET" OR "NEETs") 
+  NEAR/15
+      ("reskill" OR "upskill" OR "continuing education" OR "lifelong learning" OR "life long learning" OR "adult learning" OR "adult education" 
+      OR "training program*" OR "vocational training" OR "skills training" OR "new skills")
+)
+```
 
 #### Phrase 3
 
@@ -314,10 +316,12 @@ TS=
     OR ("leader*" NEAR/5 ("skills" OR "effectiv*"))
     OR ("follow*" NEAR/3 "supervis*")
     OR ("transfer*" NEAR/3 "skills")
-  )
-  NEAR/15 "employability"
+    OR "education"
+    OR "professional development" OR "adult education" OR "adult learning" OR "lifelong learning" OR "life long learning" OR "employee development" OR "new skills")
+  NEAR/15 ("employability" OR "employable graduate*")
 )
 ```
+
 #### Phrase 4
 
 The basic structure is *ICT + skill + employability*.
@@ -328,12 +332,10 @@ Some terms used in Phrase 1, like `"abilit*"` and `"entrepreneurship$"` are omit
 TS=
 (
   (
-   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-    NEAR/5
-    ("skill*" OR "competen*" OR "literac*")
+    ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
+    NEAR/5 ("skill*" OR "competen*" OR "literac*")
   )
-   NEAR/15
-   ("employab*" OR "employment" OR "job$" OR "decent work")
+  NEAR/15 ("employab*" OR "employment" OR "job$" OR "decent work")
 )
 ```
 
@@ -345,7 +347,7 @@ TS=
 
 This target is interpreted to cover research about
 * Gender disparities in education
-* Access to education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
+* Access to and inclusivity in education, special education and vocational training for vulnerable persons, including persons with disabilities and indigenous peoples
 
 This query consists of 3 phrases.
 
@@ -356,12 +358,11 @@ The basic structure is *gender equality + education*
 ```py
 TS=
 (
- (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-   ("equit*" OR "equal*" OR "balanc*")
- ) 	
-   NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
+  (
+    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+    NEAR/5 ("equit*" OR "equal*" OR "balanc*")
+  )
+  NEAR/10 ("school*" OR "pre school" OR "preschool" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
@@ -372,45 +373,64 @@ In this phrase, the basic structure is similar to phrase 1, but reversed to sear
 ```py
 TS=
 (
- (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-   ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
-    OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
+  (
+    ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
+    NEAR/5
+        ("inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*" OR "obstacle*"
+        OR "barrier*" OR "hindrance*" OR "hinder*" OR "bias*" OR "gender gap$" OR "education* gap$" OR "gaps in education"
+        OR "gender parity" OR "parity with" OR "educational parity" 
+        OR 
+          (
+            ("difference$" OR "discrepan*") 
+            NEAR/5 
+                ("complet*" OR "result" OR "perform*" OR "success*" OR "achieve*" OR "access*" 
+                OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*" OR "graduation" OR "graduating" OR "attend"
+                )
+          )
+        )
   )
-   NEAR/5
-   ("school*" OR "educat*" OR "vocational training" OR "student*")
+  NEAR/10 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training" OR "student*")
 )
 ```
 
 #### Phrase 3
 
-The basic structure is *access + education + vulnerable groups*
+The basic structure is *access + education + vulnerable groups* OR *access + special education*.
 
-"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included.
-
+"Vulnerable groups" are mentioned in several SDGs, but can be difficult to define for a search string - who is considered vulnerable may depend on the context and situation. To get a general outline of who is considered "vulnerable" we have consulted several UN sources on the topic (<a id="Blanchard">[Blanchard et al., 2017](#f5)</a>; <a id="UNOHC">[Office of the High Commissioner, n.d.](#f6)</a>; <a id="UNracism">[United Nations, n.d.](#f7)</a>). Most terms were taken from these, and adapted so that the terms work combined with terms relevant for SDG4. `rural` was not a term included in the UN documents and need not signify vulnerability, but we found works suggesting that it is a potential hindrance to accessing education, and was therefore included. The 13 disability categories have been taken from the US Individuals with Disabilities Education Act (IDEA) (<a id="IDEA">[Lee, n.d.](#f12)</a>).    
 ```py
 TS=
 (
+ (
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*"
+  OR "non-discriminat*" OR "equitab*" OR "education for all" OR "Rights of Persons with Disabilities" OR "CRPD"
+  OR "discriminat*" OR "non-discriminat*" OR "inequit*" OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding")
+
+  NEAR/5 ("school*" OR "preschool*" OR "pre school*" OR "educat*" OR "vocational training")
+)
+NEAR/15
+ (
   (
-    (
-     ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*")
-      OR
-      ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
-    )
-    NEAR/5 ("school*" OR "educat*" OR "vocational training")
+   ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")
+    NEAR/3
+     ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly" OR "poor" OR "poorest" OR "poverty" OR "disadvantaged"
+      OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*" OR "specific learning disabilit*" OR "SLD"
+      OR "other health impairment*" OR "autism spectrum disorder*" OR "ASD" OR "emotional disturbance*" OR "speech impairment*"
+      OR "language impairment*" OR "visual impairment*" OR "blindness" OR "deafness" OR "hearing impairment*" OR "deaf-blindness"
+      OR "orthopedic impairment*" OR "intellectual disabilit*" OR "traumatic brain injur*" OR "multiple disabilit*")
   )
-  NEAR/15
-      (
-        (
-         ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
-          NEAR/3
-              ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
-              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*")
-        )
-     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
-     )
+  OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+  OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*" OR "marginal*" OR "slum*" OR "rural" OR "special educational needs" OR "SEN"
+)
+)
+OR
+TS=
+(
+  ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*"
+  OR "education for all" OR "Rights of Persons with Disabilities" OR "CRPD" OR "discriminat*" OR "non-discriminat*" OR "inequit*"
+  OR "unequit*" OR "disparit*" OR "barrier*" OR "obstacle*" OR "exclusion" OR "excluding"
+  )
+   NEAR/5 ("special educat*" OR "special needs educat*" OR "special educational support" OR "inclusive education" OR "aided education")
 )
 ```
 
@@ -433,11 +453,14 @@ The first phrase finds research about skills. The basic structure is *level + sk
 ```py
 TS=
 (
+  (
     (
       ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
+      NEAR/15 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*" OR "level")
     )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  )
+OR ("core literacy" OR "functional literacy" OR "basic literacy")
 )
 ```
 
@@ -447,7 +470,14 @@ In the second phrase we search for research about illiteracy, innumeracy and ana
 
 ```py
 TS=
- ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
+(
+  ("analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*") 
+  OR
+  (
+    ("illitera*") 
+    NEAR/10 ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
+  )
+)
 ```
 
 ### Target 4.7
@@ -504,9 +534,8 @@ The search phrase `ESD` for Education for Sustainable Development was tested, bu
 ```py
 TS=
 (
-  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
-    OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
-   )
+  "education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
+  OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
 )
 ```
 
@@ -517,10 +546,8 @@ This phrase is related to searches in SDG 11 about cultural heritage, and likely
 ```py
 TS=
 (
-  (
     ("culture*" OR "cultural")
-    NEAR/5 "sustainable development"
-  )    
+    NEAR/5 "sustainable development"  
 )
 ```
 
@@ -548,9 +575,10 @@ This phrase finds research on safe and inclusive schools and education facilitie
 TS=
 (
  ("school*" OR "education facilit*")
-  NEAR/5
-    ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
-  )
+  NEAR/5 
+      ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" 
+      OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
+      )
 )
 ```
 
@@ -562,12 +590,18 @@ This phrase focuses on effective learning environments in schools. The basic str
 TS=
 (
   (
-    ("learning environment*" NEAR/5 "effective")
+    ("learning environment*" NEAR/5 "effective") 
+    OR
+      (
+        ("indoor environmental quality" OR ("classroom" NEAR/5 "air quality"))
+        AND ("learn*" OR "result*" OR "perform*" OR "atten*")
+      )
+    OR "physical learning environment*"
   )
-  AND
+  AND   
     ("primary school*" OR "elementary school*" OR "primary educat*"
     OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "education" OR "learner*"
+    OR "school" OR "learner*"
     )
 )
 ```
@@ -581,11 +615,15 @@ The terms for basic services in schools are taken and adapted from <a id="unesco
 ```py
 TS=
 (
- ("school*" OR "education* facility" OR "education* facilities") 
-    NEAR/15  ("access*"
-    NEAR/5
-     ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR "adapted material*" OR    "universal design" OR ("infrastructure" NEAR/5 "disab*") OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-  )
+  ("school*" OR "education* facility" OR "education* facilities") 
+  NEAR/15  
+      ("access*"
+      NEAR/5
+        ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" 
+        OR "adapted infrastructure*" OR "adapted material*" OR "universal design" OR ("infrastructure" NEAR/5 "disab*") 
+        OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$"
+        )
+      )
 ) 
 ```
 
@@ -595,13 +633,9 @@ TS=
 >
 > 4.b.1 Volume of official development assistance flows for scholarships by sector and type of study
 
-This target is interpreted to cover research about the availability of scholarships to students from developing countries and African countries.
+This target is interpreted to cover research about scholarships to students from developing countries and African countries.
 
-This query consists of 1 phrase.
-
-#### Phrase 1
-
-The basic structure is *scholarships + student/education + developing countries/African countries*.
+This query consists of 1 phrase. The basic structure is *scholarships + student/education + developing countries/African countries*.
 
 Scholarships must be used in plural form, as it would otherwise also include "work done by scholars", which would confuse the logic of the search.
 
@@ -611,7 +645,7 @@ TS=
   (
     ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
     NEAR/15
-        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility")
+        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility" OR "study abroad" OR "overseas stud*")
   )
 AND
   ("least developed countr*" OR "least developed nation$"
@@ -735,12 +769,18 @@ NOT
 
 * Internal reviews: Håkon Magne Bjerkan, Caroline S. Armitage (Jan 2022); Caroline S. Armitage, Marta Lorenz (March 2022), Håkon Magne Bjerkan (minor review Oct 2022)
 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Lise Vik Haugen (Aug-Oct 2023), minor review Eli Heldaas Seland.
+
 Specialist input: Various academic staff from Western Norway University of Applied Sciences, including: A professor in Climate change, Sustainability and Education (Jan 2022); Workshops with 6 educational science academics (Feb 2022, Jun 2022).
 
 ## 5. Footnotes
 <a id="f5"></a> Blanchard et al. (2017). *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment*. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. [↩](#Blanchard)
 
 <a id="f4"></a> Brewer, L. (2013). *Enhancing youth employability: What? Why? and How? Guide to core work skills*. International Labour Office, Skills and Employability Department. https://www.ilo.org/wcmsp5/groups/public/@ed_emp/@ifp_skills/documents/publication/wcms_213452.pdf [↩](#iloskills)
+
+<a id="f12"></a> Lee, A. M. I. (n.d.). *The 13 Disability Categories under IDEA*. Understood. https://www.understood.org/en/articles/conditions-covered-under-idea [accessed 28 September 2023] [↩](#IDEA)
 
 <a id="f6"></a> Office of the High Commissioner (n.d.) *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). [↩](#UNOHC)
 
