@@ -1,8 +1,5 @@
 # Search query for SDG13 - Climate Action, Bergen topic-approach.
-
 Take urgent action to combat climate change and its impacts.
-
-**Current status**: This string is currently a finished version.
 
 **Contents**
 
@@ -13,8 +10,7 @@ Take urgent action to combat climate change and its impacts.
 5. Footnotes
 
 ## 1. Full query
-
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/41ee4671-f614-434e-9e53-788b55f981f9-772b7564/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication date = last 5 years): https://www.webofscience.com/wos/woscc/summary/97a21122-2949-43da-b49c-a7aa0f61195d-b77aba10/relevance/1
 
 ## 2. General notes
 
@@ -38,7 +34,7 @@ During editing of this string (2021), we have consulted another set of queries f
 >
 >13.1.3 Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
 
-This target is interpreted to cover research about resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research mentioning disaster/risk strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
+This target is interpreted to cover research about resilience, adapation and migitation of impacts for climate-related hazards and natural disasters. Research mentioning disaster/risk assessment, strategies, plans and programmes and climate-related hazards/natural disasters is also considered relevant, related to indicator 13.1.3.
 
 This query consists of 1 phrase. The elements of the phrase are: *resilience/mitigation/plans + disasters*. For the topic approach, some actions (e.g. `mitigat*`) are retained for the combination with `impacts or vulnerab`, since this target is interpreted to be about resilience and adaptation, not impacts in themselves.  
 
@@ -58,7 +54,7 @@ TS=
     (
       ("disaster$" OR "risk$")
       NEAR/3
-        ("plan" OR "plans" OR "planning" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
+        ("plan" OR "plans" OR "planning" OR "assess*" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
         OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
         )
     )
@@ -91,19 +87,19 @@ TS=
 >13.2.2 Total greenhouse gas emissions per year		
 
 This target is interpreted to cover research about:
-  - climate change, climate action, mitigation and adaptation (including greenhouse gases), and national policy++ (phrase 1)
-  - the indicators/impacts of climate change and national policy++ (phrase 2)
-  - international climate frameworks and national policy++ (phrase 3)
+  - national policies, strategies and planning relating to climate change, climate action, mitigation and adaptation (including greenhouse gases) (phrase 1/2)
+  - national policies, strategies and planning and action/impacts of climate change (phrase 3)
+  - international climate frameworks (phrase 4)
 
 We consider [nationally determined contributions](https://www.un.org/en/climatechange/all-about-ndcs) (Paris agreement) and adaptation communications to be a form of "national policies, strategies and planning". `sectoral plans` are also included - although sectoral is not the same as national, it may be used to refer to a plan on a national level for a sector. Similarly, `multi level` can be used in the literature to describe how policy/plans interact between levels, often including the national level.  
 
 Carbon capture/storage technology can contribute to climate mitigation (i.e. reduction of green house gases (GHG)) but in order to be consistent with our interpretation method, any papers concerning it must relate the work to climate mitigation or reductions of GHG to be included. The same would apply to reforestation or other mitigation measures. Thus these are not included as individual search terms but assumed to be included in the given phrases.
 
-This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here - all results will be covered by phrase 1 under.
+This query consists of 3 phrases. If comparing the action and topic approaches, note that phrases 1 and 2 of the action approach have been merged here into phrase 1/2.
 
-#### Phrase 1
+#### Phrase 1/2
 
-This phrase covers national policies, strategies and planning related to climate change mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
+This phrase covers national policies, strategies and planning related to climate change, including mitigation and adaptation. The elements of the phrase are: *climate change/GHGs + national plans + climate*.
 
 We include reduction of greenhouse gases as a mitigation action as national policies, strategies and planning related to reduction of GHGs are one of the main climate mitigation routes according to the 2014 IPCC Synthesis Report (<a id="IPCC2014">[IPCC 2014](#f3)</a>) UNEP definition. We use six main greenhouse gases (covered by the Kyoto Protocol) as search terms (<a id="IPCC2014">[IPCC 2014](#f3)</a>). The final `AND` phrase containing general *climate* terms is necessary as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
 
@@ -135,9 +131,9 @@ TS=
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
-This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
+This phrase covers national policies, strategies and planning related to climate change indicators and their impacts. The elements of the phrase are: *climate change indicators + action/impacts + national plans*. This string has been widened out from the action approach by removing terms to do with directions (i.e. rising sea-level, increasing temperature > sea-level, temperature).
 
 Indicators of climate change are changes that can be observed and measured (selected terms taken from <a id="wmo">[World Meteorological Organization (2021)](#f7)</a>: global mean surface temperature, global ocean heat content, state of ocean acidification, glacier mass balance, Arctic and Antarctic sea-ice extent, global CO2 fraction and global mean sea level).
 
@@ -166,7 +162,7 @@ TS=
 )
 ```
 
-#### Phrase 3
+#### Phrase 4
 
 This phrase covers national policies, strategies and planning related to specific frameworks for mitigation and adaptation. The elements of the phrase are: *frameworks + national plans*. Compared to the action approach, an element generally about climate change has been removed because these results will now be covered by phrase 1.
 
@@ -197,20 +193,17 @@ TS=
 >
 >13.3.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning.
+This target is considered to cover research about climate change mitigation, adaptation, impact reduction and early warning. We also consider research about vulnerability to climate change to be relevant, as it can be seen as knowledge required to inform adaptation, impact reduction and early warning.
 
-In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. 
+In addition to general terms for climate change mitigation, adaption, impact reduction, and early warning, we also include terms for the reduction of greenhouse gases, including via sequestration/storage. This is based on a definition of climate change mitigation which covers greenhouse gas prevention/reduction. 
 
-This query consists of 1 phrase. The elements of the phrase are: *climate mit/adapt/warning*
+>«Climate Change Mitigation refers to efforts to reduce or prevent emission of greenhouse gases. Mitigation can mean using new technologies and renewable energies, making older equipment more energy efficient, or changing management practices or consumer behaviour» (<a id="UNEPmitigation">[UNEP n.d.](#f9)</a>).
 
-Interpretation of what should be considered as contributing to raising "human and institutional capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions.
-* Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
-* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
-* "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>).
+This query consists of 1 phrase. The elements of the phrase are: *climate mitigation/adaptation/warning*.
 
-We include general terms about climate change mitigation/ adaption/ impact reduction/ early warning as well as the reduction of greenhouse gases (as a main method of climate change mitigation). In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction).
+In addition to generic terms for greenhouse gases, we use six main greenhouse gases (covered by the Kyoto Protocol; <a id="IPCC2014">[IPCC 2014](#f3)</a>), some of which are combined with *climate change* as these gases, when used alone with `reduc*`, find some chemical results (e.g. a reaction for methane reduction). A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
 
-A double `NOT` phrase is added at the end to remove unrelated works using "climate" in a metaphorical way (e.g. "motivational climate"), unrelated to climate change.
+>*Documentation of the history of development for this string*: In the first revision (v1.0.0), this target was originally considered to cover research about **capacity** for climate change mitigation, adaptation, impact reduction and early warning. We tried to limit to research about capacity by combining *capacity terms* (e.g. `education`, `infrastructure$`, `capacity`, `tools` etc.) with *climate mitigation/adapt/warning terms*. However, feedback and testing showed that this was a bit too restrictive. We lost a lot of relevant works about, for example, soil management to reduce emissions and capture carbon; adaptation of crop varieties to climate change; CO2 storage technologies. Therefore we have now dropped the terms around capacity, on the assumption that research itself generates capacity in the form of knowledge, tools, technologies and infrastructures. Capacity is covered more specifically in 13.b.
 
 ```py
 TS=
@@ -245,22 +238,21 @@ TS=
     (
       ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
       OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-      OR "capture" OR "storage" OR "sequestration"
+       OR "captur*" OR "storage$" OR "store$" OR "storing" OR "sequestrat*"
       )
-      NEAR/5
-          ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
+      NEAR/5 ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
     )
     OR 
     (
       (
         ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
         OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-        OR "capture" OR "storage" OR "sequestration"
+         OR "captur*" OR "storage$" OR "store$" OR "storing" OR "sequestrat*"
         )
         NEAR/3
             ("methane" OR "CH4" 
             OR "nitrous oxide" OR "NOX" OR "N2O" 
-            OR "carbon dioxide" OR "CO2" 
+            OR "carbon dioxide" OR "CO2" OR "carbon"
             OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" 
             OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
             )
@@ -271,7 +263,7 @@ TS=
 NOT 
 TS=
   (
-    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate") 
+    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate" OR "emotional climate" OR "family climate") 
     NOT("climate change" OR "climate crisis" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
   )
 ```
@@ -282,14 +274,28 @@ TS=
 >
 >13.a.1 Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
 
-This target is interpreted to cover research about the international supply of climate financing. This covers research about climate financing, including transparency and allocation. We also interpret it to include research about climate financing in relation to developing countries or donor countries.
+This target is interpreted to cover research about climate funding or investment/financing of climate mitigation (e.g. the green climate fund); or research about climate change and green investment/financing (e.g. investment in green innovation for low-carbon technology). These topics are considered relevant if they are:
+- connected to low- and middle-income countries, annex II parties or international flows OR
+- connected to allocation, transparency, capitalisation or contributions
 
-This query consists of 1 phrase. The elements of the phrase are: *transparency/aspects of provision/countries + climate financing + climate*.
+This query consists of 3 phrases. Note that for this target, the topic apporach is the same as the action approach. 
 
-The term `investment$ OR investing` were tried, but created mostly noise from climate being used metaphorically ("investment climate"). The *climate* terms at the end of the phrase are added to try and reduce these. We also tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
+We tested out including some aid agencies (e.g. DFID, USAid, GIZ, NORAD) but there were no results.
+
+#### Phrase 1 
+
+This phrase finds research on specific climate funds for LMICs.
 
 ```py
-TS=
+TS= ("green climate fund" OR "Least Developed Countries Fund" OR "Special Climate Change Fund")
+```
+
+#### Phrase 2
+
+This phrase finds research about transparency, accountability, negotiations or donations in relation to financing/ODA/investments related to climate change. The general structure is *transparency etc. + finance/ODA/investments + climate change*.
+
+```py
+TS = 
 (
   (
     ("transparency" OR "accountability" OR "governance" OR "allocation$" OR "misallocation" OR "corruption"
@@ -297,7 +303,37 @@ TS=
     OR "contribut*" OR "commitment$" OR "negotiation$"
     OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
     OR "donor$" OR "donation$" OR "donate"
-    OR "annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD"
+    )
+    NEAR/15
+        ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$" OR "climate investment$"
+        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
+        OR 
+          (
+            ("mitigat*" OR "green" OR "climate")
+            NEAR/15
+              ("financ*" OR "fund" OR "funds" OR "funding" OR "investment$" OR "invest" OR "investor$" OR "investing"
+              OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "resources"))
+              OR "ODA" OR "cooperation fund$" OR "development spending"
+              OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
+              )
+          )
+       )
+  )  
+  AND
+      ("climate change" OR "global warming" OR "climate action" OR "climate mitigation" OR "climate adaptation"
+      OR "climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
+      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*" OR "low carbon"
+      )
+)
+```
+#### Phrase 3
+
+This phrase finds research about financing of, and investments in, climate action, mitigation etc. in specific (groups of) countries. The general structure is *countries + financing/funds/aid/investment + climate change*.
+
+```py
+TS = 
+(
+    ("annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD"
     OR "least developed countr*" OR "least developed nation$"
     OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
     OR "less developed countr*" OR "less developed nation$"
@@ -313,25 +349,25 @@ TS=
     OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
     OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia*"
     )
-    NEAR/15
-        ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
-        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
-        OR
-          ("climat*"
-          NEAR/15
-              ("financing" OR "fund" OR "funds" OR "funding"
-              OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
-              OR "ODA" OR "cooperation fund$" OR "development spending"
-              OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
-              )
-          )
-        )
-  )
   AND
-      ("climate change" OR "global warming" OR "climate action" OR "climate mitigation" OR "climate adaptation"
-      OR "climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
-      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
+    ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$" OR "climate investment$"
+    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
+    OR 
+      (
+        ("mitigat*" OR "green" OR "climate")
+        NEAR/15
+          ("financing" OR "fund" OR "funds" OR "funding" OR "investment$" OR "invest" OR "investor$" OR "investing"
+          OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
+          OR "ODA" OR "cooperation fund$" OR "development spending"
+          OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
+          )
       )
+    )
+  AND
+    ("climate change" OR "global warming" OR "climate action" OR "climate mitigation" OR "climate adaptation"
+    OR "climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
+    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*" OR "low carbon"
+    )
 )
 ```
 
@@ -344,9 +380,14 @@ TS=
 This target is considered to cover research about least developed countries and small island developing states, about
 * planning for climate change
 * managing climate change
-* capacity for climate adaptation, mitigation, impact reduction, and early warning, as in 13.3; we also use that definition of capacity. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
+* capacity for climate adaptation, mitigation, impact reduction, and early warning
 
-This query consists of 1 phrase. The elements of the phrase are: *(climate planning/management funding // capacity + climate management) + LDCs/SIDS*
+Interpretation of what should be considered as contributing to raising "capacity" is challenging - according to the UNDG definition, it concerns anything that would increase the ability of people and institutions to successfully manage the situation. We have interpreted this to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. Awareness is included explicitly in some definitions. We consider research talking about funds specifically aimed at improving climate change adaptation/responses (e.g. the [Least developed countries fund](https://www.thegef.org/what-we-do/topics/least-developed-countries-fund-ldcf)) to be relevant.
+>* Definition of "capacity": "[...] the ability of people, organizations and society as a whole to manage their affairs successfully" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+>* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (<a id="UNDGcapacity">[United Nations Development Group 2017](#f2)</a>).
+>* "Awareness raising and knowledge building about the expected impacts of a changing climate and the need to adapt are normally starting point of capacity building efforts". (On capacity building for adaptation; <a id="climateADAPT">[Climate-ADAPT 2019](#f6)</a>). 
+
+This query consists of 1 phrase. The elements of the phrase are: *(climate planning/management funding // capacity + climate management) + LDCs/SIDS*.
 
 Terms such as `climat* NEAR/5 plan` should cover e.g. climate local action plan, climate education strategy for youth etc. We do not need to include terms for women, youth, marginalised communities because research about these groups should be included in the results anyway.
 
@@ -431,6 +472,10 @@ NOT
 
 * Internal review: Eli Heldaas Seland, Caroline S. Armitage (March 2022), Eli Heldaas Seland (minor review Oct 2022)
 
+* Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Eli Heldaas Seland (Aug-Oct 2023), minor review Caroline S. Armitage.
+
 Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 2022), Rafael Rosales (PhD candidate in urban climate governance; Jun 2022), Marta Lorenz (PhD in climate geoscience).
 
 ## 5. Footnotes
@@ -448,5 +493,7 @@ Specialist input: Camilla A. Borrevik (PhD in Pacific climate leadership; May 20
 <a id="f8"></a> United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/. [↩](#UNLDCs)
 
 <a id="f2"></a> United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] [↩](#UNDGcapacity)
+
+<a id="f9"></a> United Nations Environment Program (n.d.) Topics, Climate Action, Mitigation, UNEP Resources. https://www.unep.org/explore-topics/climate-action/what-we-do/mitigation [accessed 12.09.2023] [↩](#UNEPmitigation) 
 
 <a id="f7"></a> World Meteorological Organization (2021) State of the Global Climate 2020. https://library.wmo.int/doc_num.php?explnum_id=10618 [accessed 19.02.2022] [↩](#wmo)
