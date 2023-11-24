@@ -1,20 +1,17 @@
 # Search query for SDG 12 - Responsible Consumption and Production, Bergen topic-approach.
-
 Ensure sustainable consumption and production patterns
-
-**Current status**: This string is currently a finished version.
 
 **Contents**
 
 1. Full query
 2. General notes about method for SDG 12
 3. Documentation and string sections for each target
-4. Authorship and review
+4. Contributions
 5. Footnotes
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here: https://www.webofscience.com/wos/woscc/summary/b4442f7a-a2de-46b6-8a4f-609492d337e4-73367c13/relevance/1 (no filters; all years)
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/54c23e56-d4a2-4e57-b536-eb1694050d5b-b789b92c/relevance/1
 
 ## 2. General notes
 
@@ -24,7 +21,7 @@ The definition of sustainable consumption and production according to the UNEP p
 > *The use of services and related products, which respond to basic needs and bring a better quality of life while minimising the use of natural resources and toxic
 > materials as well as the emissions of waste and pollutants over the life cycle of the service or product so as not to jeopardise the needs of future generations*
 
-In these phrases SDG 12 is interpreted to be about tools and policies for sustainable production and consumption, about sustainable management and efficient use of natural resources, and about reducing food waste and waste in general as well as managing the life cycle of all wastes (chemical waste in particular) thus reducing pollution and harmful releases to humans and the environment. SDG 12 is about implementing e.g. circular economy approaches, reusing and recycling materials and resources, sustainable public procurements, sustainable practises and reporting on company level and sustainability programs on national and regional level. It also addresses the globally uneven distribution of sustainable consumption and production patterns (with special attention on the developing countries), consumer awareness and monitoring methods for the impacts of sustainable development as well as removing incentives which encourige wasteful consumption. 
+In these phrases SDG 12 is interpreted to be about tools and policies for sustainable production and consumption, about sustainable management and efficient use of natural resources, and about reducing food waste and waste in general as well as managing the life cycle of all wastes (chemical waste in particular) thus reducing pollution and harmful releases to humans and the environment. SDG 12 is about implementing e.g. circular economy approaches, reusing and recycling materials and resources, sustainable public procurements, sustainable practises and reporting on company level and sustainability programs on national and regional level. It also addresses the globally uneven distribution of sustainable consumption and production patterns (with special attention on the developing countries), consumer awareness and monitoring methods for the impacts of sustainable development as well as removing incentives which encourage wasteful consumption. 
 
 Sustainable consumption and production is about *promoting social and economic development within the carrying capacity of ecosystems by delinking economic growth and environmental degradation* (<a id="ABC">[UNEP, 2010](#f1)</a>). Thus, advancing social equity and reducing poverty are essential goals of sustainable consumption and production, as well as addressing climate and other ecological challenges . However, these terms are usually not included in our search queries, since we have focused the queries on the **means to achieve these goals**. Still, in many of the phrases terms `environmental*` `eco` and `green` are used as a variation of `sustainable` to broaden the scope towards e.g. environmentally friendly production, eco-friendly products or green consumption.
 
@@ -69,25 +66,22 @@ Terms used for policy instruments are paralelled with programmes and were found 
 
 Some of the terms used in this phrase are central to the focus of this target, but also so generally used that they bring results about research which is not relevant to the targets of SDG 12. For example `resource efficiency` is used in computing sciences, human resources management and when discussing health and social services. `Reuse of resources` can refer to e.g. reuse of data resources and `sustainable housing` can also be about e.g. affordable housing. Also term `green` even when combined the specific terms of the phrase brings results which mention green e.g. as a colour or a name of a person.    
 
-
 The elements of the phrase are *programmes/policies + sustainable+consumption/production / elements of SCP*
+
+`standards` is deliberately used in plural when not combined with `national OR regional...` to avoid generic use (e.g. "a standard method"). `lifestyles$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 ```py
 TS=
 (
-  (
-        ("10 Year Framework of Programmes" OR "10-Year Framework of Programmes" OR "10YFP" 
-        OR 
-          ("policy" OR "policies" OR "governmental" OR "governance" OR "action plan$" 
-          OR "regulation" OR "regulatory" OR "legal" OR "law$" OR "standard$" OR "code$ of conduct" 
-          OR "accounting" OR "reporting" 
-          OR 
-            (
-              ("national*" OR "regional*" OR "sector*" OR "international*" OR "multi-level") 
-              NEAR/3 ("strateg*" OR "framework$" OR "programme$" OR "program$" OR "plan" OR "planning" OR "plans" OR "target$" OR "goal$" OR "instruments")
-            )
-          )
-        )
+  ("10 Year Framework of Programmes" OR "10YFP" 
+  OR "policy" OR "policies" OR "governmental" OR "governance" OR "action plan$" 
+  OR "regulation" OR "regulatory" OR "legal" OR "law$" OR "standards" OR "code$ of conduct" 
+  OR "accounting" OR "reporting" 
+  OR 
+    (
+      ("national*" OR "regional*" OR "sector*" OR "international*" OR "multi-level") 
+      NEAR/3 ("strateg*" OR "framework$" OR "programme$" OR "program$" OR "plan" OR "planning" OR "plans" OR "target$" OR "goal$" OR "instruments" OR "standard$")
+    )
   )
   AND 
       (
@@ -98,7 +92,6 @@ TS=
               OR "consumption" OR "consume$" OR "consumer$" 
               OR "retail" OR "retailer$" OR "trade" OR "market*"
               OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$" 
-              OR "lifestyle$" OR "life style$" 
               OR "procurement$" OR "acquisition$" OR "purchas*" OR "investment$" 
               OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
               OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
@@ -108,7 +101,7 @@ TS=
               OR "agricultur*" OR "cropping system$" OR "agroforest*" OR "agro forest*" OR "aquaculture" OR "fisher*" OR "fish farm*" 
               OR 
                 (
-                  ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
+                  ("lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
                   NEAR/5 ("material$" OR "service$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
                 ) 
               OR 
@@ -120,39 +113,40 @@ TS=
                       OR "sorting" OR "sort$" OR "sorted"
                       )
                 ) 
-              OR "cleaner production"
               )
         ) 
-        OR "ecobuilding$" 
-        OR "ecotourism" 
+        OR "sustainable lifestyle$" OR "sustainable life style$" OR "green lifestyle$" OR "eco lifestyle$" OR "environmental lifestyle$"
+        OR "ecobuilding$"OR "eco-building$"
+        OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
+        OR "cleaner production"
         OR 
           (
-            ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-            OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-            OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-            OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+            ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+            OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" 
+            OR "repurpos*" OR "re-purpos*"  
+            OR "compost*" OR "codigest*" OR "co-digest*" 
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
             ) 
             NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
-              OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+              OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
-              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
+              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
               )
           )
-        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
         OR 
           (
             ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-            NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+            NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
           ) 
         OR 
           (
             ("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") 
             NEAR/3 ("green" OR "eco" OR "sustainab*")
           ) 
-        OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
+        OR "ecolabelling" OR "ecolabel$" OR "eco-labelling" OR "eco-labels" OR "environmental label$" 
         OR 
           (
             ("certification" OR "certificate$" OR "label$" OR "labelling") 
@@ -172,7 +166,7 @@ TS=
 
 > 12.2.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
-This target is interpreted to cover research about a) sustainable management and use of natural resources, including sustainable food production and b) efficient use of natural resources, with emphesis on efficient material use, including green technologies & design, circularity, footprint and lifecycle analysis. We interpret this target to also be about reducing the use of natural resources and conserving them, e.g. by advancing ecolabelling and environmental certifications.
+This target is interpreted to cover research about a) sustainable management and use of natural resources, including sustainable food production and b) efficient use of natural resources, with emphasis on efficient material use, including green technologies & design, circularity, footprint and lifecycle analysis. We interpret this target to also be about reducing the use of natural resources and conserving them, e.g. by advancing ecolabelling and environmental certifications.
 
 Sources used for definitions and specifying terms:
 
@@ -200,14 +194,17 @@ TS=
     (
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-        NEAR/3 ("manag*" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies")
+        NEAR/3 
+            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$"
+            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+            )
       )
       NEAR/15
           (
             (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
             OR "natural capital" 
             OR "raw material$" 
-            OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
+            OR "*forest*" OR "woodland$"
             OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
             OR "fishery" OR "fisheries" OR "fish farm$"  
             OR "wildlife" OR "hunt*"
@@ -220,18 +217,7 @@ TS=
     OR 
       (
           ("sustainabl*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "long-term management plan")
-            NEAR/5
-              (
-                ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*") 
-                NEAR/5 
-                  ("practice$" OR "method$" OR "forestry operation$"
-                  OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                  OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                  OR "rotation"
-                  OR "regeneration" OR "planting"
-                  OR "drainage"
-                  )
-              )
+          NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging" OR "mining") 
       )
     OR ("water" NEAR/3 ("sustainabl$" NEAR/3 "use")) 
     OR "Global Forest Goals"  
@@ -240,53 +226,47 @@ TS=
     OR "International Resource Panel"
   )    
 )
-
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4. 
+This phrase aims to find research about unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. The elements of the phrase are *unsustainable use/practises + natural resources*.
 
-`ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
+Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results. Term `water` does not appear as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
 
-Other terms suggesting research about sustainable agriculture were combined with the agricultural terms. `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
-
-The elements of the phrase are *ecoagriculture OR (food production systems + sustainability + action)*
-
-```py
+```py 
 TS=
-  ("ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
-  OR "conservation agriculture" OR "conservation farming"
-  )
-OR
-TS=
-(
+( 
   (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*"
-    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
-    OR
+    (
       (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-        )
-        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-      )      
+        ("unsustainab*" OR "irresponsib*" OR "unecological*")
+        NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "consume$" OR "consumer$" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+      ) 
+      OR ("inefficien*" NEAR/3 ("use" OR "using" OR "usage" OR "utili*"))
     )
     NEAR/15
-        ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
-        OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
-        OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
-        OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
-        OR "reduced tillage" OR "mulch" OR "mulching"
-        OR "water conservation"       
-        )   
+        (
+          (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
+          OR "natural capital" 
+          OR "raw material$" 
+          OR "*forest*" OR "woodland$"
+          OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
+          OR "fishery" OR "fisheries" OR "fish farm$" 
+          OR "wildlife" OR "hunt*"
+          OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater" OR "water management"
+          OR "land" OR "soil$" 
+          OR "mineral$" OR "metal$" OR "ore$"
+          OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
+        )
   )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
+  OR 
+  (
+    ("unsustainabl*" OR "irresponsib*" OR "unecological*")
+    NEAR/5 ("forestry" OR "silvicultur*" OR "arboricultur*" OR "logging" OR "mining") 
+  )
+  OR ("water" NEAR/3 "unsustainable us*")      
 )
-
 ```
 
 #### Phrase 3
@@ -297,54 +277,49 @@ By the indicators of this target, it was interpreted to urge to understand the m
 
 After a discussion with a specialist we concluded that `circular economy` does not need to be combined with `natural resources` since (as far as we understand) circular economy is always about using (either renewable on nonrenewable) natural resources one way or another. Terms refering to `recycling` are linked to a set of related terms in order to exclude results from fields not relevant to SDG 12.
 
-
 The elements of the phrase are *circularity/recycling/material lifecycles/ecolabelling OR efficient use/sustainable consumption/footprint + natural resources*
+
+`mining` is not used here as in phrases 1 and 2, as it mostly returns irrelevant extra results about e.g. pattern mining, opinion mining.
 
 ```py 
 TS=
 (
-    (
-      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+      ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
       OR 
         (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+          ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using"
+          OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"  
+          OR "repurpos*" OR "re-purpos*" 
+          OR "compost*" OR "codigest*" OR "co-digest*" 
           OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
           ) 
           NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
-              OR "packaging" OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" 
+              OR "packaging" OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
-              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewege$" OR "sludge"
+              OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
               )
         )
       OR 
         (
-          ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
+          ("lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
           NEAR/5 ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$")
         ) 
-      OR "ecolabelling" OR "ecolabel$" OR "environmental label$" 
-      OR 
-        (
-          ("certification" OR "certificate$" OR "label$" OR "labelling") 
-          NEAR/5 ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green")
-        )
       OR
         (
           (
             (
               ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-              NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+              NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
             )
           OR (("saving" OR "save$" OR "conserv*" OR "efficien*") NEAR/5 ("use" OR "using" OR "usage" OR "utili*" OR "consumption"))   
+          OR ("footprint" NEAR/3 ("analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"))  
+          OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
           OR 
             (
-              ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-              NEAR/5 ("consumption" OR "consume$" OR "consumer$" OR "design*" OR "technolog*")
-            ) 
-          OR ("footprint" NEAR/3 ("analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"))      
+              ("certification" OR "certificate$" OR "label$" OR "labelling") 
+              NEAR/5 ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green")
+            )    
           )
           NEAR/5 
             (
@@ -360,21 +335,15 @@ TS=
               OR "mineral$" OR "metal$" OR "ore$"
             )    
         ) 
-    )
 )
 
 ```
 
 #### Phrase 4
 
-This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them.
+This phrase aims to find research about reducing the use and exploitation of natural resources and fossil fuels and the waste involved in the use of them. The elements of the phrase are *action(reduce) + material footprint OR use/waste + natural resources/fossil fuels*. The phrase is identical to the corresponding action approach phrase (BAA 12.2 phrase 4).
 
-The phrase is identical to the corresponding action approach phrase (BAA 12.2 phrase 4).
-
-Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise.
-
-
-The elements of the phrase are *action(reduce) + material footprint / use/waste + natural resources/fossil fuels*
+Some of the sources for natural resources (e.g. `marine` and `minerals`) are linked with terms `resources` or `materials` in order to reduce noise (e.g. "land use" OR "marine habitat use").
 
 ```py 
 TS=
@@ -386,86 +355,72 @@ TS=
       (
         ("use" OR "use" OR "using" OR "usage" OR "utili*" OR "extract*" OR "consumption" OR "consume$" 
         OR "depletion" OR "deplete$" OR "exploit*"
-        OR "waste$" OR "loss" OR "lossed" OR "losses" OR "litter" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-        OR "emission$" OR "effluent$" OR "pollution" OR "pollute$" OR "sewege$" OR "sludge"
+        OR "waste$"
         ) 
         NEAR/5 
             (
-              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$") NEAR/5 ("resource$" OR "material$")) 
+              (("natural" OR "renewable" OR "*newable" OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" OR "mineral$" OR "land" OR "soil$") 
+              NEAR/5 ("resource$" OR "material$")
+              ) 
               OR "natural capital" 
               OR "raw material$" 
               OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*"  
               OR "fishery" OR "fisheries" OR "fish farm$"  
               OR "wildlife" OR "hunt*"
               OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater"
-              OR "land" OR "soil$" 
               OR "metal$" OR "ore$" 
               OR "fossil fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel" OR "gasoline" OR "kerosene" OR "petroleum"
             ) 
       )
     )
 )
-
 ```
+
 #### Phrase 5
 
-This phrase aims to find research about unsustainable/irresponsible/inefficient management and use of natural resources, such as forests, oceans, land, water, minerals or fuels. A specific sentence for sustainable forest management, used in SDG 15 target 15.2, is included in the phrase. 
+This phrase aims to find research about sustainable food production. It is identical to the SDG 2 target 2.4 phrase 4 - documentation for the agricultural terms can be found there. 
 
-Term `irresponsible` is not combined with the use of `fossil fuels` and `energy sources` in order to avoid irrelevant results.
+`ecoagricultur*` is a relatively specialist term for ecology and agriculture and considered narrow enough to use alone.
 
-Term `water` does not appeare as a single standing term because e.g. "water use" is related to many phenomena which are not relevant to the SDG 12. 
+*Sustainability terms*: `agroecolog*` (agroecology, or the agroecological approach) is considered a relevant term for sustainable, being related to ecology and environmental stability as well as social and cultural dimensions (<a id="SFS">[One Planet network Sustainable Food Systems (SFS) Programme, 2020, p. 28](#f8)</a>). Other terms for practices/approaches that can be considered to contribute to "sustainable food production systems" were gathered from <a id="HLPE">[High Level Panel of Experts on Food Security and Nutrition (2019, Appendix 1 and p. 36)](#f14)</a>; some of these also are relevant for soil quality. Other terms from this source are included in other phrases: "sustainable intensification" is covered in phrase 1, "climate smart agriculture" in phrase 2. `organic` must be combined due to use in other contexts (e.g. soil organic matter, organic carbon).
 
-The elements of the phrase are *unsustainable use/practises + natural resources*.
+The elements of the phrase are *ecoagriculture OR (food production systems + sustainability + action)*
 
-```py 
+```py
 TS=
-( 
+  ("ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
+  OR "conservation agriculture" OR "conservation farming"
+  )
+OR
+TS=
+(
+  (
+    ("food production" OR "food grower$" OR "agro food" OR "agrifood" OR "agri food"
+    OR "farm*" OR "agricultur*" OR "smallhold*" OR "small hold*"
+    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
+    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
+    OR "aquaculture" OR "fisher*" OR "fish farm*" OR "mariculture"
+    OR "fodder" OR "animal feed" OR "fish feed"
+    OR
       (
-        (
-          (
-            (
-              ("unsustainab*" OR "irresponsib*" OR "unecological*")
-                NEAR/3 ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "consumption" OR "extract*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
-            ) 
-            OR ("inefficien*" NEAR/3 ("use" OR "using" OR "usage" OR "utili*"))
-          )
-        NEAR/15
-          (
-            (("natural" OR "renewable" OR "*newable") NEAR/3 ("resource$" OR "material$")) 
-            OR "natural capital" 
-            OR "raw material$" 
-            OR "*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*" 
-            OR "ocean$" OR "marine" OR "fresh water$" OR "lake$" OR "river$" OR "coastal" 
-            OR "fishery" OR "fisheries" OR "fish farm$" 
-            OR "wildlife" OR "hunt*"
-            OR "water supply" OR "water supplies" OR "water resource$" OR "freshwater resource$" OR "suppl* of freshwater" OR "water management"
-            OR "land" OR "soil$" 
-            OR "mineral$" OR "metal$" OR "ore$"
-            OR "fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "energy source$"
-          )
+        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "legume$"
+        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
         )
-        OR 
-        (
-          ("unsustainabl*" OR "irresponsib*" OR "unecological*")
-          NEAR/5
-              (
-                ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*") 
-                NEAR/5 
-                  ("practice$" OR "method$" OR "forestry operation$"
-                  OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                  OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                  OR "rotation"
-                  OR "regeneration" OR ("tree$" NEAR/3 "planting") 
-                  OR "drainage"
-                  OR ("proportion" NEAR/3 "long-term management plan")
-                  )
-                )
-        )
-        OR ("water" NEAR/3 ("unsustainable us*"))      
-      )
+        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
+      )      
+    )
+    NEAR/15
+        ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach" OR "ecosystem based" 
+        OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
+        OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
+        OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
+        OR "reduced tillage" OR "mulch" OR "mulching"
+        OR "water conservation"       
+        )   
+  )
+  NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
 )
 ```
-
 
 ### Target 12.3
 
@@ -473,108 +428,63 @@ TS=
 > 
 > 12.3.1 (a) Food loss index and (b) food waste index
 
-This target is interpreted to cover research about food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover capasity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
+This target is interpreted to cover research about food loss on all levels from food production, to supply chains, retail and consumer levels. We interpret it to also cover capacity building for preventing food loss as mentioned in the FAO *Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
 
-Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrases 1 or 2 with these. It would narrow down the result because not all relevant articles about food loss mention any of those terms. Phrase 3 searches for waste on specified levels of food production/retail/consumption. 
+Although the target specifies levels where food loss happens (production, supply chains, retail, consumer) we have not restricted phrase 1 with these. It would narrow down the results because not all relevant articles about food loss mention any of those terms. Phrase 2 searches for waste on specified levels of food production/retail/consumption. 
 
-`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. The majority of articles contributing to the topics of this target are published after 2015. 
-
+`food loss` or `food losses` are used as a fixed term in all phrases to avoid various irrelevant articles about animal nutrition and human health brought by `food` NEAR `loss`. Even still, the phrase returns some irrelevant articles about animal nutrition and human health. The irrelevant articles are found particularly from prior to 2015. 
 
 #### Phrase 1
 
-This phrase aims to find research about food loss and waste on all levels. Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf
+This phrase aims to find research about food loss and waste on all levels. The elements of the phrase are *food loss*.
 
-Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
+Terms for food loss are mostly from the metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf . Terms refering to `inedible parts` or `non-edible parts` were not included in the phrase - although they are mentioned in the metadata for UNEP 12.3.1 indicator  (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01B.pdf. The terms brought irrelevant results about animal feeding choises and a majority of relevant results would have been found with the term `waste` which is included in the search phrase.
 
 Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition. 
-
-The elements of the phrase are *food loss*
-
 
 ```py 
 TS=
 (
   (
       ("food loss" OR "food losses" 
-      OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable"))
+      OR 
+        (
+          ("food" OR "fodder" OR "animal feed" OR "fish feed") 
+          NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")
+        )
       )
   ) 
 NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
 )
-
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about instruments involved in food waste. The instruments included are mentioned as pillars of FAO *Global Initiative on Food Loss and Waste Reduction* (<a id="FAO">[FAO Global Initiative on Food Loss](#f9)</a>). 
-
-This phrase is identical to corresponding action approach phrase (BAA 12.3 phrase 2). 
-
-Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition.
-
-
-The elements of the phrase are *instruments/capasity building + food loss*
-
-```py
-TS=
-(
-  (
-    ("campaign$" OR "educat*" OR "awareness" OR "training" OR "knowledge"
-    OR "communication" OR ("dissiminat*" NEAR/3 "information") 
-    OR "collaboration$" OR "partnership$" 
-    OR "policy" OR "policies" OR "strateg*" OR "programme$" OR "program$" OR "initiative$" OR "governance"
-    OR (("cost-benefit" OR "cost benefit") NEAR/3 ("analy?is" OR "analy?es" OR "analy?e")) 
-    OR "intervention$" 
-    OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-    OR "financial support" OR "financial resources"
-    OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-    OR "ODA" OR "cooperation fund$" OR "development spending"
-    OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-    OR (("technical*" OR "managerial") NEAR/3 "support*") 
-    )
-    NEAR/15
-        ("food loss" OR "food losses" 
-        OR ("food" NEAR/3 ("lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*" OR "perishable")) 
-        OR (("harvest$") NEAR/3 ("loss" OR "losses" OR "lost" OR "waste$" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*"))
-        )
-  ) 
-NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
-)
-
-```
-
-
-#### Phrase 3
-
-This phrase aims to find research about waste in food production/processing/supply chains/retail/consumption. 
+This phrase aims to find research about waste in food production/processing/supply chains/retail/consumption. The elements of the phrase are *waste/loss + food production/processing/supply chains/retail/consumption*.
 
 The metadata for FAO indicator 12.3.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-03-01A.pdf was used to find most of the specifying terms for food commodities and levels of handling food (harvest, slaughter, storage, transportation, processing, packaging, retail). Terms for food handling were found also from UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
 Terms `weight loss` and `obesity` are added in the phrase with `NOT` to exclude irrelevant results about food & weight loss, as well as `insecurity` to exclude articles about food insecurity (loss of lives close to "food") and `food intake` and `body weight` to exclude articles about animal nutrition.
 
-
-The elements of the phrase are *waste/loss + food+production/processing/supply chains/retail/consumption*
-
 ```py 
 TS=
 (
-      (
+  (
+    ("waste$" OR "loss" OR "losses" OR "lost" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*") 
+    NEAR/5 
         (
-          ("waste$" OR "loss" OR "losses" OR "lost" OR "spoiled" OR "discard*" OR "incinerat*" OR "combust*") 
+          ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "legume$"
+          OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
+          OR "dairy waste" OR "discard* milk"
+          OR "harvest*" OR "slaughter*"
+          ) 
           NEAR/5 
-              (
-                ("cereal$" OR "pulses" OR "fruit$" OR "berry" OR "berries" OR "vegetable$" OR "root crop$" OR "oil bearing crop$" OR "soybean$" OR "lentil$" OR "chickpea$" OR "crop$" OR "grain$" OR "rice" OR "wheat" OR "maize" OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-                OR "dairy waste" OR "discard* milk"
-                OR "harvest*" OR "slaughter*"
-                ) 
-                NEAR/5 
-                  ("production" OR "processing" OR "handling" OR "storage" OR "transport*" OR "distribution" OR "market*" OR "packaging" OR "supply chain$" 
-                  OR "retail" OR "food service" OR "foodservice" OR "restaurant*" OR "household" OR "consumer$" OR "consumption" OR "consume$"
-                  OR "harvest*" OR "slaughter*"
-                  )
+              ("production" OR "processing" OR "handling" OR "storage" OR "transport*" OR "distribution" OR "market*" OR "packaging" OR "supply chain$" 
+              OR "retail" OR "food service" OR "foodservice" OR "restaurant*" OR "household" OR "consumer$" OR "consumption" OR "consume$"
+              OR "harvest*" OR "slaughter*"
               )
         )
-      )
+  )
 NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obesity" OR "insecurity" OR ("food" NEAR/3 "intake")) NOT ("food loss" OR "food waste"))
 )
 
@@ -588,31 +498,41 @@ NOT (("weightloss" OR "weight loss" OR "loss of weight" OR "body weight" OR "obe
 
 > 12.4.2 (a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment
 
-This target is interpreted to cover research about a) sustainable/environmentally sound management of chemicals thoughout their life cycle, and research about international agreements on chemical management. The target also covers b) research about sustainable management of all wastes and c) reducing their release to air, water and soil, as well as research about international agreements on management of hazardous wastes. 
+This target is interpreted to cover research about:
+- sustainable/environmentally sound management of chemicals throughout their life cycle, including international agreements on chemical management (phrase 1 and 2)
+- sustainable management of all wastes, including international agreements on management of hazardous wastes (phrase 2)
+- reducing the release of chemicals and hazardous wastes to the air, water and soil (phrase 3)
+- reducing the risks of chemicals and hazardous wastes to human health or the environment (phrase 4)
+- unsustainable management of chemicals and waste (phrase 5)
 
-UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphesise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
+UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021, p. 65](#f11)</a>) as well as *Basel Convention Annex VIII* (<a id="UNEPBasel">[UNEP Basel Convention](#f12)</a>) and UNEP webpage *Persistent Organic Pollutants (POPs) and Pesticides* (<a id="UNEPPOPs">[UNEP POPs](#f17)</a>) were used as a source for terms and definitions. Some chemicals were also found from the Finnish Food Authority Chemical webpages https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-of-food-safety/chemistry/. The indicators for 12.4 emphasise hazardous wastes and chemicals. For this reason the focus is on terms for hazardous chemicals (e.g. POPs) and household wastes (paints, polish, cleaning products, engine oil).
 
 Some specifying terms for wastes were found from the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>) and specifying terms for waste management from the UNEP *Global Chemicals and Waste Indicator Review Document* (<a id="UNEPchemicals">[UNEP, 2021](#f11)</a>).
 
-
 #### Phrase 1
 
-The aim of this phrase is to find research about sustainable management of chemicals thoughout their lifecycle, and about international agreements on chemical management. 
+The aim of this phrase is to find research about sustainable management of chemicals and plastic thoughout their life cycle, and about international agreements on chemical management. The elements of the phrase are *sustainable + management + chemicals / international agreements*.
 
 International agreements included in the phrase are mentioned on the UN topic page for *Chemicals and waste* (<a id="chemicals">[UN Topics Chemicals and waste](#f10)</a>). 
-
-The elements of the phrase are *sustainable+management + chemicals / international agreements*
 
 ```py 
 TS=
 (
+  "Dubai Declaration on International Chemicals Management" 
+  OR "Strategic Approach to International Chemicals Management" OR "SAICM"
+  OR
   (
-    (
-      ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe") 
-      NEAR/5 
-          ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "cradle to cradle" OR "cradle-to-cradle" OR "end of life" 
-          OR "disposal" OR "transport*" OR "process*" OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
-          ) 
+    ("cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life-cycle analysis" OR "lifecycle assessment" OR "life-cycle assessment"
+    OR
+      (
+        ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
+        NEAR/5 
+            ("lifecycle$" OR "life-cycle$" OR "end of life" 
+            OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
+            OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
+            OR "use$" OR "using" OR "utilisa*" OR "utiliza*" OR "production"
+            )
+      ) 
     )
     NEAR/5 
       ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" 
@@ -622,59 +542,52 @@ TS=
       OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
       )  
   )
- OR "Dubai Declaration on International Chemicals Management" 
- OR "Strategic Approach to International Chemicals Management" OR "SAICM"
 )
 ```
 
 #### Phrase 2
 
-The aim of this phrase is to find research about sustainable waste management including recycling, and about international agreements on hazardous wastes mentioned in the metadata for indicator 12.4.1. (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-04-01.pdf. 
+The aim of this phrase is to find research about sustainable waste management including recycling, and about international agreements on hazardous wastes. The elements of the phrase are *international agreements / recycling/sustainable+management + wastes*.
+
+International agreements were taken from the metadata for indicator 12.4.1. (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-04-01.pdf. 
 
 `Recycling` terms are not restricted by sustainability string since recycling is understood as sustainable waste management in itself. According to metadata for indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf `composting` and `codigestion` are included in recycling, but `combustion`not. The structure of this phrase reflects this definition.
-
-The elements of the phrase are *international agreements / recycling/sustainable+management + wastes*
 
 ```py 
 TS=
 (
-      ("Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal" OR "Basel Convention" 
-      OR "Rotterdam Convention on the prior informed consent procedure for certain hazardous  chemicals and pesticides in international trade" OR "Rotterdam Convention" 
-      OR "Stockholm Convention on Persistent Organic Pollutants" OR "Stockholm Convention" 
-      OR "Montreal Protocol on Substances that Deplete the Ozone Layer" OR "Montreal Protocol" 
-      OR "Minamata Convention on Mercury" OR "Minamata Convention" 
-      OR "Bamako Convention on the Ban of the Import into Africa and the Control of Transboundary Movement and Management of Hazardous Wastes within Africa" OR "Bamako Convention"
+  "Basel Convention" OR "Rotterdam Convention" OR "Stockholm Convention" OR "Montreal Protocol" OR "Minamata Convention" OR "Bamako Convention"
+  OR
+    (
+      ("recycl*" OR "re-cycl*" OR "compost*" OR "codigest*" OR "co digest*" 
+      OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" OR "repurpos*" OR "re-purpos*" 
+      OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*"
+      OR "cradle to cradle" OR "cradle-to-cradle" OR "lifecycle analysis" OR "life-cycle analysis" OR "lifecycle assessment" OR "life-cycle assessment"
       OR
         (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "compost*" OR "codigest*" OR "co?digest*" 
-          OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re  using" OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "refurbish*" OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*"
-          OR
-            (
-              ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe") 
-                NEAR/5 
-                  ("management" OR "handling" OR "packaging" OR "labelling" OR "storing" OR "disposal" OR "dispose$" OR "incinerat*" OR "combust*" OR "collection" OR "collect$" OR "collected" OR "transport*" OR "treatment" OR "processing" OR "processed" OR "end of life" OR "end of chain" 
-                  OR "sorting" OR "sort$" OR "sorted"
-                  ) 
-            )
-          ) 
+          ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "safe" OR "safety" OR "safely") 
           NEAR/5 
-              ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
-              OR "street sweepings" 
-              OR "construction debris" OR "demolition debris"
+              ("lifecycle$" OR "life-cycle$" OR "end of life"
+              OR "management" OR "handling" OR "packaging" OR "labelling" OR "storage" OR "storing" OR "stored"
+              OR "disposal" OR "dispose$" OR "transport*" OR "process*" 
+              OR "incinerat*" OR "combust*" OR "collect*" OR "treatment" OR "sorting" OR "sorted"
               ) 
-        )
+        ) 
       )
+    ) 
+    NEAR/5 
+      ("waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+      OR "street sweepings" 
+      OR "construction debris" OR "demolition debris"
+      ) 
 )
 ```
 
 #### Phrase 3
 
-This phrase aims to find research about reducing releases of chemicals and wastes into the environment.
+This phrase aims to find research about reducing releases of chemicals and wastes into the environment. The elements of the phrase are *action + releases/emissions + chemicals/wastes*.
 
 This phrase is identical to the corresponding action approach phrase (BAA 12.4 phrase 3).
-
-The elements of the phrase are *action(reduce) + releases/emissions + chemicals/wastes*
 
 ```py
 TS=
@@ -698,11 +611,9 @@ TS=
 
 #### Phrase 4
 
-This phrase aims to find research about reducing/controling/assessing risks which chemicals and all wastes cause to human health and environment.
+This phrase aims to find research about reducing/controling/assessing risks which chemicals and all wastes cause to human health and environment. The elements of the phrase are *action + risks/hazards + health/environment + chemicals/wastes*
 
 The phrase is identical to the corresponding action approach phrase (BAA 12.4 phrase 4).
-
-The elements of the phrase are *action(reduce) + risks/hazards + health/environment + chemicals/wastes *
 
 ```py
 TS=
@@ -713,15 +624,13 @@ TS=
   NEAR/5 
     (
       (
-        ("risk$" OR "hazard$" OR "danger*" 
-          OR "advers*" OR "negativ*" OR "harmful*"
-        ) 
+        ("risk$" OR "hazard$" OR "danger*" OR "advers*" OR "negativ*" OR "harmful*") 
         NEAR/5 ("health" OR "wellbeing" OR "well being" OR "environment")
       ) 
-        NEAR/15 
+      NEAR/15 
         ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
         OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$" 
-        OR "waste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
+        OR "waste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
         ) 
     )
 )
@@ -729,39 +638,34 @@ TS=
 
 #### Phrase 5
 
-The aim of this phrase is to find research about unsustainable management of chemicals thoughout their lifecycle as well as unsustainable waste management. 
+The aim of this phrase is to find research about unsustainable management of chemicals thoughout their life cycle as well as unsustainable waste management. The elements of the phrase are *unsustainable+management + chemicals/waste*.
 
 In order to exclude irrelevant articles where `lead` is used as a verb, a NOT sentence is added to the phrase.
-
-
-The elements of the phrase are *unsustainable+management + chemicals/waste*
 
 ```py 
 TS=
 (
   (
-      (
-          (
-            ("unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe") 
-            NEAR/5 
-                ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "disposal" OR "transport*" OR "process*" 
-                OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
-                OR "handling" OR "transport*" OR "packaging" 
-                OR "dispose$" OR "incinerat*" OR "combust*" 
-                OR "collection" OR "collect$" OR "collected" OR "treatment" OR "processing" OR "processed" 
-                OR "sorting" OR "sort$" OR "sorted" OR "labelling" 
-                ) 
+    (
+      ("unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe") 
+      NEAR/5 
+          ("management" OR "life cycle" OR ("life" NEAR/3 "cycle$") OR "disposal" OR "transport*" OR "process*" 
+          OR "storage" OR "storing" OR "stored" OR "use" OR "use$" OR "using" OR "utilie$" OR "production"
+          OR "handling" OR "transport*" OR "packaging" 
+          OR "dispose$" OR "incinerat*" OR "combust*" 
+          OR "collection" OR "collect$" OR "collected" OR "treatment" OR "processing" OR "processed" 
+          OR "sorting" OR "sort$" OR "sorted" OR "labelling" 
           ) 
-          NEAR/5 
-            ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
-            OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
-            OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
-            OR "street sweepings" 
-            OR "construction debris" OR "demolition debris"
-            )  
-      ) 
-  )
-  NOT ("lead" NEAR/5 ("unsafe" OR "irresponsibl*"))
+    ) 
+    NEAR/5 
+      ("chemical$" OR "paint$" OR "polish*" OR "cleaning product$" OR "engine oil" OR "plastic$" OR "microplastic$" OR "nanoplastic$" OR "nanomaterial$" OR "pesticide$" OR "herbicide$" OR "insecticide$" OR "fungicide$" OR "solvent$" OR "etching solutions" OR "battery" OR "batteries" OR "accumulator$" OR "medicinal residues" OR "toxic moulds" 
+      OR "Antimony" OR "Arsenic" OR "Beryllium" OR "Cadmium" OR "Lead" OR "Mercury" OR "Selenium" OR "Tellurium" OR "Thallium" OR "Zinc" OR "Jarosite" OR "Hematite" OR "Copper" OR "cupric chloride" OR "organohalogen$" OR "heavy metals" OR "toxic metal$" OR "acrylamide$" OR "persistent organic pollutants" OR "POP compounds" OR "aldrin" OR "chlordane" OR "DDT" OR "dieldrin" OR "endrin" OR "heptachlor" OR "hexachlorobenzen" OR "mirex" OR "polychlorinated biphenyls" OR "polychlorinated dibenzo-p-dioxins" OR "polychlorinated dibenzofurans" OR "toxaphen" OR "neonicotinoid$"
+      OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge" 
+      OR "street sweepings" 
+      OR "construction debris" OR "demolition debris"
+      )  
+  ) 
+  NOT ("lead to")
 )
 ```
 
@@ -772,86 +676,109 @@ TS=
 > 
 > 12.5.1 National recycling rate, tons of material recycled
 
-This target is interpreted to cover research about household, municipal and industrial waste generation and about recycling. We interpret circular economy and using sidestreams to be included in in this target. As defined in the metadata for indicator 12.5.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf  `construction waste` and `agricultural waste` are not included in the phrases of this target. Some specifying terms for waste generators are picked from the indicator 12.5.1.
+This target is interpreted to cover research about reducing/preventing waste (municipal, commercial, etc.), about waste generation, and about recycling. We consider this to also cover research about the circular economy and sidestreams. Some terms for waste generators are taken from indicator 12.5.1 documentation (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-05-01.pdf.
 
 The themes of this target are also addressed in target **12.2 phrases 3 and 4** about efficient use of natural resources and reducing waste involved in using them, as well as in target **12.3 phrases 1 and 3** about food loss and waste in food production. Recycling of wastes is also included in target **12.4 phrase 2**.
 
 #### Phrase 1
 
-This phrase aims to find research about household, municipal and industrial waste.
-
-The elements of the phrase are *wastes + generation/households/municipal/industry*
+This phrase aims to find research about reducing waste, and about waste generation. The elements of the phrase are *action + wastes/waste generation/types of waste // waste generation*. The action element was retained for wastes in the topic approach, as all research about any kind of waste was too broad given our interpretation - however, the phrase is broader than the action approach in that research about waste generation requires no action. Some terms are combined with *household/municipal/industry* terms because they are used generically (e.g. economic waste; waste of time; garbage logic). 
 
 ```py 
 TS=
 (
-      (
-        ("waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-        OR "sewage$" OR "sludge" 
-        OR "street sweepings"
-        ) 
-        NEAR/5 
-            ("generation" OR "generated" 
-            OR "household$" OR "domestic" OR "residential"
-            OR "commerce" OR "commercial" OR "trade" OR "business*" OR "office$" 
-            OR "institution$" OR "schools" OR "hospital$" OR "municipal*" 
-            OR "industrial" OR "industry" OR "hotel$" OR "restaurant$" 
-            )
+  ("reduc*" OR "minim*" OR "decreas*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*"
+  OR "avoid*" OR "prevent*" OR "combat*" OR "tackl*" OR "halt*" OR "resist" OR "resisting" OR "lowering" OR "lower$" OR "lowered"
+  ) 
+  NEAR/5 
+      ("agrowaste" OR "solid waste$" OR "bio-waste" OR "biowaste$" 
+      OR "ewaste$" OR "e-waste$" OR "electronic waste$" 
+      OR "rubbish" OR "sewage$" OR "street sweepings"
+      OR
+        (
+          ("waste$" OR "sludge" OR "litter" OR "trash" OR "garbage") 
+          NEAR/5 
+              ("generation" OR "generated" 
+              OR "household$" OR "domestic" OR "residential"
+              OR "commerce" OR "commercial" OR "trade" OR "business*" OR "office$" 
+              OR "institution$" OR "schools" OR "hospital$" OR "municipal*" OR "urban" OR "cities"
+              OR "industr*" OR "manufacturing" OR "hotel$" OR "restaurant$" 
+              )
+        )
       )
+)
+OR
+TS=
+(
+  ("waste$" OR "sludge" OR "litter" OR "trash" OR "garbage"
+  OR "agrowaste" OR "solid waste$" OR "bio-waste" OR "biowaste$" 
+  OR "ewaste$" OR "e-waste$" OR "electronic waste$" 
+  OR "rubbish" OR "sewage$" OR "street sweepings"
+  )
+  NEAR/5 ("generation" OR "generated")
 )
 
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams.
+This phrase aims to find research about recycling, reuse, circular economy and utilizing sidestreams. The elements of the phrase are a list of various activities that could reduce waste, and these terms are combined with terms for waste/sidestreams, terms for consumption and production, or terms for sustainability.
 
-Because terms `recycle` `reuse` and `resource efficiency` have various meanings in fields irrelevant to this target, they are combined with a string of terms related to the target: *bioeconomy/production/consumption/materials/waste*. Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
+Because terms for many activities that can reduce waste (e.g. `recycle` `reuse` and `resource efficiency`) have meanings in fields not relevant to this target, they are combined with a string of terms related to the target (e.g. production, consumption, bioeconomy, waste). Unfortunately, limiting `recycling` like this leaves out many relevant papers which do not mention these terms but talk on a more specific level (e.g. recycling bottles, paper, etc.). And even with the limitation, some irrelevant papers about e.g. electronics and cell biology are still found by this phrase. 
 
-Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2 phrase 3.
-
-The elements of the phrase are *recycling/reuse/circular economy/using sidestreams*
+Term `compost` is removed from the phrase to focus on articles about reducing waste instead of articles about composting in general. Promoting circular use of natural resources, including composting, is covered by target 12.2. We include `zero-waste` as a stand-alone term, since it refers to the idea of preventing waste products in the first place (i.e. waste generation). Terms such as `material efficiency` are combined with *waste* terms because alone they are more relevant to 12.2 - however, the ideas within could still be relevant to reducing waste. 
 
 ```py
 TS=
 (
-      (
-        (
-          ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-          OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-          OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-          OR "codigest*" OR "co digest*" OR "co-digest*" 
-          OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
-          ) 
-          NEAR/5 
-            ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
-            OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
-            OR "resource$" OR "material$" OR "matter" OR "biomass" 
-            OR "waste$" OR "biowaste$" OR "ewaste$" OR "e waste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
-            OR "sewage$" OR "sludge"
-            )
+    (
+      ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+      OR "refurbish" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" OR "repurpos*" OR "re-purpos" 
+      OR "codigest*" OR "co-digest*"
+      OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
+      OR "lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "material footprint" OR "resource footprint"
+      OR "cleaner production"
+      ) 
+      NEAR/15 
+        ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
+        OR "waste$" OR "agrowaste" OR "solid waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" 
+        OR "sewage$" OR "sludge"
         )
-        OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+    )
+  OR
+    (
+      ("recycl*" OR "re-cycl*"
+      OR "refurbish" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" OR "repurpos*" OR "re-purpos" 
+      OR "cradle to cradle" OR "cradle-to-cradle"
+      ) 
+      NEAR/5 
+        ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+        OR "matter" OR "biomass" OR "resource$" OR "material$" 
+        )
+    )
+  OR ("circular*" NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$")) 
+  OR 
+    (
+      ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
+      NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
+    )   
+  OR 
+    (
+      ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "bioeconom*") 
+      NEAR/15 
+        ("recycl*" OR "re-cycl*" 
         OR 
           (
-            ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-            NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
-          ) 
-        OR "cleaner production"  
-        OR 
-          (
-            ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
+            ("lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
             NEAR/5 
-              (
-                ("lifecycle$" OR ("life" NEAR/3 "cycle$") OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
-                NEAR/5 
-                  ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed"
-                  )
-              )
+                ("material$" OR "product$" OR "production" OR "produce$" OR "service$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging"
+                OR "analys*" OR "assessment$" OR "assess" OR "assessed"
+                )
           )
-      )
+        )
+    )
+  OR "zero waste"
 )
-
 ```
 
 
@@ -861,23 +788,21 @@ TS=
 > 
 > 12.6.1 Number of companies publishing sustainability reports
 
-This target is interpreted to cover research about companies a) adopting sustainable practices and sustainable production in general, and b) reporting their sustainability information. 
+This target is interpreted to cover research about a) companies/organisations and sustainable practices/production, and b) companies/organisations reporting their sustainability/environmental information. 
 
-The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphesises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. 
+The phrases search for companies of all sizes, i.e. they are not focused to large ones even though the target emphasises them. Term `producers` is used as a synonym to companies/firms in order to broaden the search. It does, however, also bring some irrelevant results about e.g. ecological research. We also include `institutions` and `"organi?ation"`, even though these may not only apply to companies.
+
+Reporting or publishing sustainability information in any form is considered relevant, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
 
 The concept of economical sustainability is used broadly and in some cases we found it hard to interpret which papers about financial sustainability are relevant to target 12.6. 
 
-
-
 #### Phrase 1
 
-This phrase aims to find research about companies adopting sustainable practices as well as sustainable production patterns and measures. 
+This phrase aims to find research about companies and sustainable practices, sustainable production patterns or measures. The elements of the phrase are *sustainable + practices/production + companies/producers*.
 
 The practices are mentioned in the metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf (e.g. `procurements` `sourcing`). 
 
 Terms for sustainable production and its elements e.g. `sustainable buildings and construction` and `product lifecycle` were found from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). Some concepts are from the UNEP publication *ABC to SCP* subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`. 
-
-The elements of the phrase are *sustainable + practices/production + companies/producers*
 
 ```py 
 TS=
@@ -895,27 +820,27 @@ TS=
               OR "retail" OR "retailer$" OR "trade" OR "market*"
               OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$"
 
-              OR "consumption" OR "consume$" OR "efficien*"
-              OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
+              OR "consumption" OR "consume$" 
+              OR "efficien*"
               OR "Sustainable Building and Construction Initiative" OR "SBCI" 
-              OR "cleaner production"
               OR "certification" OR "certificate$" OR "label$" OR "labelling"
               )
+        ) 
+        OR "cleaner production"
+        OR "ecolabelling" OR "ecolabel$" OR "eco-labelling" OR "eco-label$" OR "environmental label$" 
+        OR 
+          (
+            ("footprint" OR "lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle") 
+            NEAR/3 ("product$" OR "service$" OR "material$" OR "analys*" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
           ) 
-          OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
-          OR 
-            (
-              ("footprint" OR "lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle") 
-              NEAR/3 ("product$" OR "service$" OR "material$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
-            ) 
-          OR "ecobuildin$" 
-          OR "environmentally sound technologies" 
-          OR (("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") NEAR/3 ("green" OR "eco" OR "sustainab*")) 
+        OR "ecobuildin$" OR "eco-building*"
+        OR "environmentally sound technologies" 
+        OR (("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") NEAR/3 ("green" OR "eco" OR "sustainab*")) 
     )
   )
   AND 
-    ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" 
-    OR "producer$" OR "industry" OR "industries" OR "manufacturer$"
+    ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" OR "corporate"
+    OR "producer$" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$" OR "commercial sector$" OR "logistics sector$" OR "manufacturing sector$"
     OR "institutions"
     ) 
 )
@@ -925,25 +850,24 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about companies reporting their sustainability information. The phrase looks for reporting or publishing sustainability information in any form, as according to metadata for indicator 12.6.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-06-01.pdf the reporting does not have to be a designated "sustainability report". 
-
-The elements of the phrase are *sustainability/responsibility + reporting + companies/producers*
+This phrase aims to find research about companies reporting their sustainability information. The elements of the phrase are *sustainability/responsibility + reporting + companies/producers*.
 
 ```py 
 TS=
 (
-  (
-        (
-          ("sustainab*" OR "responsib*" OR "environmental performance") 
-          NEAR/5 
-            ("report$" OR "reporting" OR "accounting" 
-            OR ("publish*" NEAR/3 ("information" OR "data"))
-            ) 
-        )
+  ("environmental information disclosure$" 
+  OR
+    (
+      ("sustainab*" OR "responsib*" OR "environmental") 
+      NEAR/5 
+        ("report$" OR "reporting" OR "accounting" 
+        OR (("publish*" OR "disclos*") NEAR/3 ("information" OR "data"))
+        ) 
+    )
   )
   NEAR/15 
-      ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" 
-      OR "producer$" OR "industry" OR "industries" OR "manufacturer$"
+      ("company" OR "companies" OR "organi?ation" OR "enterprise$" OR "firm$" OR "corporation$" OR "conglomerate$" OR "business" OR "businesses" OR "corporate"
+      OR "producer$" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$" OR "commercial sector$" OR "logistics sector$" OR "manufacturing sector$"
       OR "institution$"
       )
 )
@@ -956,32 +880,30 @@ TS=
 > 
 > 12.7.1 Degree of sustainable public procurement policies and action plan implementation
 
-This target is interpreted to cover research about national policies and actions plans for sustainable procurements.
+This target is interpreted to cover research about sustainable public procurements.
 
-This phrase aims to find research about sustainable public/national procurements. 
+Some of the terms used as variations of practices/policies are from UNEP *One planet SSP Index Calculation Methodology* (<a id="UNEPSPP">[UNEP, 2022](#f13)</a>). Terms `fair trade` `human rights` `employment of minorities` `Best value for Money` `Life-cycle costing`and `Most Economically Advantageous Tender` are mentioned as concepts of sustainable procurements in the metadata for indicator 12.7.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf. 
 
-Terms `fair trade` `human rights` `employment of minorities` `Best value for Money` `Life-cycle costing`and `Most Economically Advantageous Tender` are mentioned as concepts of sustainable procurements in the metadata for indicator 12.7.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf.
+Terms `sustainable` and `investments` are used in many fields, and bring some irrelevant results about e.g. sustainable investements/procurements in health care. These have not been excluded as the exclusion of them would not be possible without losing many articles relevant to the topics of target 12.7.
 
-Terms `sustainable` `responsible` and `investments` are used in many fields, and bring some irrelevant results about e.g. sustainable investements/procurements in health care. These have not been excluded as the exclusion of them would not be possible without losing many articles relevant to the topics of target 12.7.
-
-The elements of the phrase are *sustainable+procurements + countries/national*
+The elements of the phrase are *sustainable + procurements + public/national*
 
 ```py 
 TS=
 (
-      ("sustainable public procurement$"
+      ("sustainable public procurement$" OR "circular public procurement$" OR "green public procurement$"
       OR
         (
-          ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green"
+          ("sustainab*" OR "socially responsible" OR "social responsibilit*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "circular"
           OR "fair trade" OR "human rights"
           OR "Best value for Money" 
-          OR "lifecycle$" OR "life cycle$" 
+          OR "lifecycle$" OR "life-cycle$" 
           OR "employment of minorities" OR "employment of minority" 
           OR "Most Economically Advantageous Tender"
           )  
-          NEAR/5  
+          NEAR/15  
             (
-              ("procurement$" OR "acquisition$" OR "purchas*" OR "contract$" OR "tender")      
+              ("procurement$" OR "acquisition$" OR "purchas*" OR "contract$" OR "tender$")      
               NEAR/5 ("national" OR "country" OR "countries" OR "domestic" OR "government*" OR "administrat*" OR "public" OR "local authorit*")
             )
         )
@@ -996,70 +918,58 @@ TS=
 > 
 > 12.8.1 Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
 
-This target is interpreted to cover research about dissimination of information, education and awareness raising on sustainable development. The indicator for this target is a shared indicator with **target 4.7** and **13.3**. However, the phrases for 12.8 are more focused on environmental sustainability to reflect the mentioning of "lifestyles in harmony with nature" in the target. "Lifestyles in harmony with nature" is not incorporated in the phrase as a term, to focus on the means to achive this goal. 
+This target is interpreted to cover research about education, awareness or information, with respect to sustainable development, sustainable consumption and production, or sustainable lifestyles. The indicator for this target is a shared indicator with **target 4.7** and **13.3**. However, the phrases for 12.8 are more focused on environmental sustainability to reflect the mentioning of "lifestyles in harmony with nature" in the target. By the definition in the UNEP publication *ABC of SDP* (<a id="ABC">[UNEP, 2010](#f1)</a>) "*Education for Sustainable Development (ESD) concerns all levels of education and all social contexts (family, school, workplace, community)*". For this reason, we do not restrict to only formal education.
 
-By the definition in the UNEP publication *ABC of SDP* (<a id="ABC">[UNEP, 2010](#f1)</a>) "*Education for Sustainable Development (ESD) concerns all levels of education and all social contexts (family, school, workplace, community)*". For this reason, phrase 1 is focused on all dissemination of information and not restricted to only formal education.
-
-We interpret this target to be also about sustainable consumer behavior and added phrase 2 for finding research about this. 
-
+In an earlier version we had also interpreted this to include research about behaviour and motivation, but on review have decided this is too indirect for the education and awareness focus of the target.
 
 #### Phrase 1
 
-This phrase aims to find research about dissimination of information, education and awareness raising on sustainable development, including consumer education. 
+The elements of the phrase are *education for sustainable development*.
 
-Term `education` by itself brings many results which are irrelevant to this target. To remove these `education`  is combined with `consumers` or `citizens`. 
-
-Term `responsiblity` is used only as combined with consumer choises in order to reduce noise. Still, practically all terms for disseminating information/raising awareness/teaching/learning combined with sustainability/environmental/enviroment tend to bring irrelevant results about e.g. learning environment or health education. These are hard to exclud from the results without losing the core of relevant results.
-
-The elements of the phrase are *dissimination of information + sustainability*
+The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these, "education" is used in phrases specific to education for sustainable development. 
 
 ```py 
-TS=
-(
-      ("education for sustainable development"
-      OR
-        (
-          (
-            (("disseminat*" OR "raise" OR "raising" OR "consumer$" OR "citizen$" OR "public") NEAR/3 ("information" OR "knowledge" OR "awareness")) 
-            OR (("educat*" OR "guide$" OR "teach*" OR "instruct*" OR "learn*") NEAR/3 ("consumer$" OR "citizen$")) 
-          )
-          NEAR/5 
-              ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" 
-              OR ("responsib*" NEAR/5 ("consumer$" OR "consumption"))
-              )
-        )
-      )
-)
-
+TS= ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education")
 ```
 
 #### Phrase 2
 
-This phrase aims to find reserach about sustainable consumer choices and behavior.
+The elements of the phrase are *education + sustainability/SCP + people/consumers/lifestyles*.
 
-Some concepts from the UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>) are used as specifying terms: `eco-labelling` `product footprint` and `recycling`.
+The term `education` by itself brings many results which are irrelevant to this target, even when combined with sustainability (e.g. sustainability in higher education institutions). To remove these `education` and most of the other *education terms* are combined with consumer/person groups. Still, terms for disseminating information/raising awareness/teaching/learning combined with sustainability/environmental/environment tend to bring irrelevant results about e.g. learning environment or health education. These are hard to exclude from the results without losing the core of relevant results - the `NOT` part aims to remove some of these (particularly medical works which may study "environmental factors"). Many of the *sustainability/SCP* terms are taken from 12.1, with some concepts from the UNEP publication *ABC to SCP* (<a id="ABC">[UNEP, 2010](#f1)</a>) are used as specifying terms: `eco-labelling` `product footprint` and `recycling`.
 
-The elements of the phrase are *consumer+choices + sustainability/practises*
-
-```py 
+```py
 TS=
 (
+  ("awareness" OR "lifelong learning" 
+  OR
     (
-      (
-        ("consumer$" OR "consumption" OR "citizen$" OR "public" OR "child*" OR "people")
-        NEAR/5 ("action$" OR "choice$" OR "behavior$" OR "behaviour$" OR "awareness" OR "aware" OR "attitude$" OR "psycholog*" OR "purchase$" OR "habit$" OR "intention" OR "motivation")
-      ) 
-      NEAR/5
-      ("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "responsible"
-      OR "ecolabelling" OR "ecolabel$" OR "ecobuildin$" 
-      OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
-      OR "recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-      OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-      OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-      OR "compost*"
-      )  
+      ("information" OR "knowledge" OR "aware" OR "guide$" OR "instruct*" OR "learn*" OR "educat*" OR "teach*")
+      NEAR/15
+          ("consumer$" OR "customer$" OR "resident$" OR "visitor$" OR "guest$" OR "tourist$" OR "employee$" OR "farmer$"
+          OR "citizen$" OR "children" OR "teenager$" OR "adolescent$" OR "the elderly" OR "public" OR "student$" OR "adult$" OR "people" OR "women" OR "men"
+          OR "purchas*" OR "buying" OR "habit$"
+          OR (("responsib*" OR "sustainable" OR "green" OR "circular" OR "eco" OR "environmental*") NEAR/5 ("consumption" OR "life-style$" OR "lifestyle$"))
+          )
     )
+  )
+  NEAR/5
+      ("sustainability" OR "sustainable development" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "socially responsible" OR "social responsib*"
+      OR (("responsib*" OR "sustainable" OR "circular") NEAR/3 ("tourism" OR "production" OR "consumption" OR "life-style$" OR "lifestyle$" OR "purchas*" OR "waste")) 
+      OR (("circular*" OR "sustainab*") NEAR/5 ("econom*" OR "bioeconom*" OR "bio-econom*" OR "produce$" OR "product$" OR "consume$" OR "consumer$"))
+      OR "cleaner production"
+      OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" OR "energy efficiency"
+      OR "ecolabel*" OR "eco-label*" OR "environmental label$" 
+      OR "ecobuilding$" OR "eco-building$" 
+      OR "footprint$" OR "cradle to cradle" OR "cradle-to-cradle"
+      OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+      OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" 
+      OR "repurpos*" OR "re-purpos*" 
+      OR "compost*"
+      OR "renewable energy"
+      )        
 )
+NOT TS=(("environmental factor$" OR "environmental constraint$") NOT ("awareness" OR "education"))
 ```
 
 ### Target 12.a
@@ -1068,41 +978,35 @@ TS=
 > 
 > 12.a.1 Installed renewable energy-generating capacity in developing countries (in watts per capita)
 
-
-This target is interpreted to cover research about the scientific and technological capabilities of developing countries regarding sustainable consumption and production patterns. By the indicator of this target, special interest is understood to be on the capacities related to renewable energy sources.
-
-
-#### Phrase 1
-
-This phrase aims to find research about the scientific and technological capabilites (including finance and incentives) of developing countries regarding sustainable consumption and production patterns.
-
-The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned int the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
+This target is interpreted to cover research about the capacity of low- and middle-income countries for sustainable consumption and production. We consider this to include research about renewable energy in these countries, given the indicator.
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
-The elements of the phrase are *capacity/scientific/technical/skills + sustainable consumption & production + developing countries*
+#### Phrase 1
+
+This phrase aims to find research about the capacity of developing countries regarding sustainable consumption and production. The elements of the phrase are *capacity + sustainable consumption & production + developing countries*.
+
+The specific programme areas `consumer information` `sustainable lifestyles and education` `sustainable public procurement` `sustainable buildings and construction` `sustainable tourism` `sustainable food systems` and the definitions of them are from the UN DESA publication *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)* (<a id="UNDESA2014">[UN DESA, 2014](#f2)</a>). The concepts `resource efficiency` and `product lifecycle` are also mentioned in the 10YFP. Some concepts, even though not mentioned in the 10YFP, are included from the UNEP publication *ABC to SCP*, subtitled *Towards a 10-Year Framework of Programmes on Sustainable Consumption and Production* (<a id="ABC">[UNEP, 2010](#f1)</a>): `waste management` `cleaner production` `sustainable transport` `eco-labelling and certification` `sustainable marketing` `design for sustainability` `ecodesign` `environmentally sound technologies`.
+
+`lifestyle$` is combined in fixed phrases (e.g. `sustainable lifestyle$`) as a NEAR combination with e.g. "environmental" added irrelevant results from medicine (e.g. "environmental and lifestyle factors in this disease").
 
 
 ```py 
 TS=
 (
-  (
-      ("capacity" 
-      OR "infrastructure$" OR "technolog*" OR "facilities" OR "tools"  
-      OR "technical support" OR "managerial support"
-      OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" 
-      OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-      OR "financial support" OR "financial resources"
-      OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-      OR "ODA" OR "cooperation fund$" OR "development spending"
-      OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-      OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
-      OR "cooperation" OR "collaboration" OR "network$" OR "support" OR "partnership$" 
-      OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
-      OR "knowledge transfer*" 
-      OR "awareness" OR "knowledge" OR "disseminat*" 
-      OR "educat*" OR "awareness" OR "training"
-      ) 
+  ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+  OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
+  OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+  OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+  OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+  OR "awareness" OR "disseminat*" OR "educat*" OR "training"
+  OR "cooperation" OR "collaboration" OR "partnership$" 
+  OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+  OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
+  OR "financial support" OR "financial resources"
+  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+  OR "ODA" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+  OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
   )
   NEAR/15 
     (
@@ -1113,7 +1017,6 @@ TS=
             OR "consumption" OR "consume$" OR "consumer$" 
             OR "retail" OR "retailer$" OR "trade" OR "market*"
             OR "handling" OR "storage" OR "transport*" OR "distribution" OR "packaging" OR "supply chain$" 
-            OR "lifestyle$" OR "life style$" 
             OR "procurement$" OR "acquisition$" OR "purchas*" OR "investment$" 
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency" 
             OR ("energy efficien*" NEAR/5 ("housing" OR "building$" OR "construction$")) 
@@ -1123,35 +1026,36 @@ TS=
             OR "agricultur*" OR "cropping system$" OR "agroforest*" OR "agro forest*" OR "aquaculture" OR "fisher*" OR "fish farm*" 
             OR 
               (
-                ("lifecycle$" OR "life cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
+                ("lifecycle$" OR "life-cycle$" OR "cradle to cradle" OR "cradle-to-cradle" OR "footprint") 
                 NEAR/5 ("material$" OR "service$" OR "analy?is" OR "analy?es" OR "analy?e" OR "assessment$" OR "assess" OR "assessed")
               ) 
             OR 
               (
-                ("waste$" OR "biowaste$" OR "ewaste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge") 
+                ("waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge") 
                 NEAR/5 
                     ("management" OR "handling" OR "packaging" OR "labelling" OR "storing" OR "disposal" OR "dispose$" OR "incinerat*" OR "combust*" 
                     OR "collection" OR "collect$" OR "collected" OR "transport*" OR "treatment" OR "processing" OR "processed" OR "end of life" OR "end of chain" 
                     OR "sorting" OR "sort$" OR "sorted"
                     )
               ) 
-            OR "cleaner production"
             )
         ) 
-        OR "ecobuilding$" 
-        OR "ecotourism" 
+        OR "ecobuilding$" OR "eco-building$"
+        OR "ecotourism" OR "eco-tourism"
         OR ("responsib*" NEAR/3 ("tourist$" OR "tourism" OR "consumer$" OR "consumption")) 
+        OR "cleaner production"
+        OR "sustainable lifestyle$" OR "sustainable life style$" OR "green lifestyle$" OR "eco lifestyle$" OR "environmental lifestyle$"
         OR 
           (
-            ("recycl*" OR "re-cycl*" OR "re cycl*" OR "reuse$" OR "re-use$" OR "re use$" OR "reusing" OR "re-using" OR "re using" 
-            OR "re-furbish*" OR "re furbish*" OR "remanufactur*" OR "re-manufactur*" OR "re manufactur*" 
-            OR "repurpos*" OR "re-purpos*" OR "re purpos" 
-            OR "compost*" OR "codigest*" OR "co digest*" OR "co-digest*" 
+            ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using"  
+            OR "refurbish*" OR "re-furbish*" OR "remanufactur*" OR "re-manufactur*" 
+            OR "repurpos*" OR "re-purpos*" 
+            OR "compost*" OR "codigest*" OR "co-digest*" 
             OR "resource efficiency" OR "resource use efficiency" OR "material efficiency" OR "material use efficiency"
             ) 
             NEAR/5 
-              ("bioeconom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
-              OR "sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$" 
+              ("bioeconom*" OR "bio-econom*" OR "production" OR "produce$" OR "product$" OR "consumption" OR "consume$" OR "consumer$" OR "packaging" 
+              OR "sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$" 
               OR "resource$" OR "material$" OR "matter" OR "biomass" 
               OR "waste$" OR "biowaste$" OR "ewaste$" OR "e-waste$" OR "garbage" OR "trash" OR "trashes" OR "litter" OR "rubbish" OR "sewage$" OR "sludge"
               )
@@ -1160,14 +1064,14 @@ TS=
         OR 
           (
             ("utili*" OR "use" OR "using" OR "usage" OR "design" OR "designed" OR "designing") 
-            NEAR/5 ("sidestream$" OR "side-stream$" OR "side stream$" OR "byproduct$" OR "by-product$")
+            NEAR/5 ("sidestream$" OR "side-stream$" OR "byproduct$" OR "by-product$")
           ) 
         OR 
           (
             ("design*" OR "technolog*" OR "housing" OR "building$" OR "construction$") 
             NEAR/3 ("green" OR "eco" OR "sustainab*")
           ) 
-        OR "ecolabelling" OR "ecolabel$" OR "eco labelling" OR "eco labels" OR "environmental label$" 
+        OR "ecolabelling" OR "ecolabel$" OR "eco-labelling" OR "eco-labels" OR "environmental label$" 
         OR 
           (
             ("certification" OR "certificate$" OR "label$" OR "labelling") 
@@ -1188,71 +1092,48 @@ TS=("least developed countr*" OR "least developed nation$"
     )
 ```
 
-
-
-
 #### Phrase 2
 
-This phrase aims to find research about promoting the scientific and technological capabilites of developing countries regarding power generation by renewable energy sources.
+This phrase aims to find research about the capacity of developing countries for renewable energy. The elements of the phrase are *capacity + renewable energy + developing countries*. 
 
 Most of the renewable energy sources specified are mentioned in the metadata for indicator 12.a.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0a-01.pdf. 
-
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f4)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
-
-Since in the action approach version of this phrase used a combination of action and capacity building terms, excluding action terms from the topic approach phrase would narrow down the results found. Hence, this phrase is identical to the corresponding action approach phrase (BAA 12.a phrase 2).
-
-The elements of the phrase are *action/development/capacity building + scientific/technical/skills + power generation+renewable energy sources + developing countries* 
-
-
-
 
 ```py
 TS=
 (
-  (
-    ( "develop" OR "development" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build*" OR "advance" OR "advancing" OR "establish*" OR "support" OR "empower*" 
-    OR "policy" OR "policies" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
-    OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
-    OR "knowledge transfer*" OR "knowledge exchange" OR "transfer of technolog*" OR "technological transfer" 
-    OR "cooperation" OR "collaboration" OR "network$" OR "partnership$" 
-    OR "incentive$" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-    OR "ODA" OR "cooperation fund$" OR "development spending" 
-    OR "expenditure" OR "investment$" OR "invest" OR "investing" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" 
-    OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-    )
-    NEAR/5
-      ("infrastructure$" OR "facilities" OR "tools" 
-      OR "skills" OR "competenc*" OR "expertise" OR "knowledge" 
-      OR "technical" OR "research" OR "scientific" OR "R&D" OR "technolog*" OR "innovation$" 
-      OR "cleantech" OR "energy transition$" 
-      )
+  ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+  OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
+  OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+  OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+  OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+  OR "awareness" OR "disseminat*" OR "educat*" OR "training"
+  OR "cooperation" OR "collaboration" OR "partnership$" 
+  OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+  OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
+  OR "financial support" OR "financial resources"
+  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+  OR "ODA" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+  OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
   ) 
   AND         
-      
-      (
+      ("energy transition" 
+      OR "geothermal heat pump$" OR "ground source heat pump$" 
+      OR "solar PV" OR "photovoltaic$" OR "solar cell$" OR "solar panel$" OR "solar array" OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$" 
+      OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$" 
+      OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories" 
+      OR "hydropower*" OR "hydroelectric" OR "hydro-electric" OR "tidal turbine$" OR "stream turbine$" OR "current turbine$" OR "tidal power" OR "tidal energy" OR "marine energy" OR "wave energy"
+      OR
         ( 
-          ("power station$" OR "*power generation" OR "energy generation" OR "electricity generation" OR "generation capacity" OR "generation technolog*" OR "electricity supply" OR "power supply"
-          ) 
+          ("power" OR "electricity" OR "energy") 
           NEAR/5
-              ("modern" OR "clean" OR "sustainable" OR "renewable$" 
-              OR "solar" OR "photovoltaic" OR "thermal energy" OR "solar thermal"
-              OR "wind" 
-              OR "geothermal" 
-              OR "hydrothermal" 
-              OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "hydrokinetic" OR "marine" OR "tidal" OR "wave energy" OR "ocean energy" 
-              OR "bioenergy" OR "biofuel$" OR "bioenergy" OR "biodiesel"
+              ("clean" OR "sustainable" OR "renewable$" 
+              OR "solar" OR "wind" 
+              OR "geothermal" OR "hydrothermal" 
+              OR "hydrokinetic" OR "marine" OR "tidal" OR "ocean energy" 
+              OR "bioenergy" OR "biofuel$" OR "biodiesel"
               )
         ) 
-        OR "geothermal heat pump$" OR "ground source heat pump$"
-        OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
-        OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
-        OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
-        OR "solar thermal"
-        OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories"
-        OR "tidal turbine$" OR "stream turbine$" OR "current turbine$" OR "tidal power" OR "tidal energy" OR "marine energy"
-        OR "wave energy" 
       )
-      
 ) 
 AND 
 TS=("least developed countr*" OR "least developed nation$"
@@ -1274,36 +1155,21 @@ TS=("least developed countr*" OR "least developed nation$"
 > 
 > 12.b.1 Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability
 
-This target is interpreted to cover research about monitoring of the economic, social and environmental impacts of sustainable tourism. Creating jobs and promoting local cultures and products are interpreted as impacts of sustainable tourism. 
+This target is interpreted to cover research about monitoring sustainable tourism. Creating jobs and promoting local cultures and products via sustainable tourism should be covered by this, if connected to monitoring. The elements of the phrase are *monitoring/regulating/accounting + sustainable + tourism*.
 
 The definition of sustainable tourism according to UNWTO *Sustainable Tourism for Development Guidebook* (<a id="UNWTO">[UNWTO, 2013](#f14)</a>) is:
 > *“Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”*. 
 
-This phrase aims to find research about monitoring the impacts of sustainable tourism. Impacts include economic, social and environmental impacts. Some specifying terms for these were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
-
-The elements of the phrase are *monitoring/regulating/accounting + impacts + sustainable+tourism*
+Some specifying terms were found from the UNWTO guidebook (<a id="UNWTO">[UNWTO, 2013](#f14)</a>). 
 
 ```py 
 TS=
 (
-  (
-        (
-          ("monitor*" OR "reporting" OR "report$" OR "accounting" OR "control*" OR "measur*" OR "assess*" OR "evaluat*") 
-          NEAR/5 
-              ("impact$" OR "effect$"
-              OR (("local" OR "indigenous") NEAR/3 ("community" OR "communities" OR "culture$" OR "people$")) 
-              OR "waste" OR "litter" OR "effluent$" OR "pollution" OR "pollute$"
-              OR "job$" OR "employment" OR "enterprice$" OR "livelihood$" OR "income$" OR "profit*" 
-              OR "econom*" OR "GDP" OR "wealth" OR "poverty" 
-              OR "trade" OR "trading" OR "market$" 
-              OR "environment*" OR "ecosystem$" OR "biodiversity" OR "wildlife" OR "flora" OR "fauna" OR "nature" 
-              )
-        )
-  )
+  ("monitor*" OR "reporting" OR "report$" OR "accounting" OR "control*" OR "measur*" OR "assess*" OR "evaluat*" OR "survey*") 
   NEAR/15 
       (
         ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-        NEAR/3 ("tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "air travel" OR "hotel$")
+        NEAR/3 ("tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "hotel$")
       )
 )
 
@@ -1316,59 +1182,43 @@ TS=
 > 
 > 12.c.1 Amount of fossil-fuel subsidies (production and consumption) per unit of GDP
 
-This target is interpreted to cover research about rationalizing/removing subsidies for the production and consumption of fossil fuels, and about restructuring/improving taxation of the production and consumption of fossil fuels. Developing countries are not specified as this target is interpreted to address all countries. 
+This target is interpreted to cover research about subsidies and fossil fuels, and about taxation and fossil fuels. Developing countries are not specified as this target is interpreted to address all countries. Because of the themes and terms, some works about e.g. subsidies for renewable energy or carbon taxes may be in the results, if the works compare these with or look at effects on fossil fuel use.
 
 UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) is used for definitions of fossil fuels and subsidies. According to the UNEP report fossils fuels do not include nuclear fuel, renewable energy and biofuels. The report recommends including also non-energy uses of fossil fuels (e.g. use for production of plastic) in the scope of SDG (p. 14). For this reason the phrases are built to search for any use of fossil fuels. 
 
-Both production and consumption of fossil fuels are included in the phrases as both are mentioned in the metadata for indicator 12.c.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0c-01.pdf.
+We do not specify either production or consumption of fossil fuels as both are mentioned in the metadata for indicator 12.c.1 (<a id="UNstats2021">[UN Statistics division, 2021](#f3)</a>) https://unstats.un.org/sdgs/metadata/files/Metadata-12-0c-01.pdf.
 
 #### Phrase 1
 
-This phrase aims to find research about rationalizing/removing subsidies for the production and consumption of fossil fuels. 
+This phrase aims to find research about subsidies and fossil fuels. The elements of the phrase are *subsidies + fossil fuels*.
 
-Most of the terms for subsidies were found from the UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) table 6 p. 19 - and for fossil fuels from table 5 p. 13.
-
-The phrase is identical to the corresponding action approach phrase (BAA 12.c phrase 1).
-
-The elements of the phrase are *action(rationalize) + subsidies + fossil fuels*
+Most of the terms for subsidies were found in the UNEP report *Measuring Fossil Fuel Subsidies in the Context of the Sustainable Development Goals* (<a id="UNEPfossil">[UNEP, 2019](#f16)</a>) table 6 p. 19 - and for fossil fuels from table 5 p. 13.
 
 ```py 
 TS=
 (
-  ("rationali?e$" OR "rationali?ing" OR "remov*" OR "reduce" OR "decreas*" OR "phase out" OR "phasing out" OR "substitut*" OR "transition*" OR "reform*") 
-  NEAR/5 
-      (
-        ("subsidies" OR "fiscal incentive$" 
-        OR "price support*" OR "underpricing" OR "underprice$" OR "under-pricing" OR "under-price$" OR "under pricing" OR "under price$" 
-        OR ("below market" NEAR/3 ("lending" OR "loan$")) 
-        OR (("credit$" OR "loan$" OR "debt$") NEAR/3 ("support*" OR "guarantee$" OR "restructur*" OR "cancel*"))
-        OR ("market$" NEAR/3 "distor*")
-        OR ("government*" NEAR/3 ("spending" OR "fund*" OR "ownership" OR "payment$"))
-        ) 
-        NEAR/5 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum") 
-      )
+  ("subsidies" OR "subsidy" OR "fiscal incentive$" 
+  OR "price support*" OR "underpricing" OR "underprice$" OR "under-pricing" OR "under-price$" 
+  OR ("below market" NEAR/3 ("lending" OR "loan$")) 
+  OR (("credit$" OR "loan$" OR "debt$") NEAR/3 ("support*" OR "guarantee$" OR "restructur*" OR "cancel*"))
+  OR ("market$" NEAR/3 "distor*")
+  OR ("government*" NEAR/3 ("spending" OR "fund*" OR "ownership" OR "payment$"))
+  ) 
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "conventional energy") 
 )
 ```
 
 #### Phrase 2
 
-This phrase aims to find research about restructuring/improving the taxation of the production and consumption of fossil fuels. 
-
-The phrase is identical to the corresponding action approach phrase (BAA 12.c phrase 2).
-
-The elements of the phrase are *action(restructure) + taxation + fossil fuels*
-
+This phrase aims to find research about taxation and fossil fuels. The elements of the phrase are *taxation + fossil fuels*.
 
 ```py
 TS=
-(
-  ("restructur*" OR "reform*" OR "rationali?e$" OR "rationali?ing" OR "transition*" OR "transform*" OR "renew*") 
-  NEAR/5 
-    (
-      ("taxation" OR "taxes" OR "tax" OR "taxed" OR "tariff$" OR "duty" OR "fees" OR "fee") 
-      NEAR/5 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum")   
-    )
+( 
+  ("taxation" OR "taxes" OR "tax" OR "taxed" OR "tariff$" OR "duty" OR "fees" OR "fee") 
+  NEAR/15 ("fossil fuel$" OR "fossil-fuel$" OR "coal" OR "oil" OR "natural gas" OR "peat" OR "diesel fuel" OR "gasoline" OR "kerosene" OR "petroleum" OR "conventional energy")   
 )
+NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 
 ```
 
@@ -1402,11 +1252,19 @@ NOT
 ```
 
 
-## 4. Authorship and review
+## 4. Contributions
 
-* First draft (v. 1.1.0): Leena Byholm (Jan. 2023)
+* First draft (v. 1.1.0): Leena Byholm (Jan 2023)
+
 * Internal review: Internal review currently only carried out on action approach.
-* Specialist input: Terhi Latvala (D.Sc. Agricultural Economics)
+
+* Second draft (v. 1.1.0): Leena Byholm (Jan 2023)
+
+* Testing v1.2.2: Project group & Leena Byholm; see documentation https://doi.org/10.5281/zenodo.8386611
+
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+
+Specialist input: Terhi Latvala (D.Sc. Agricultural Economics), v1.1.0
 
 
 ## 5. Footnotes
