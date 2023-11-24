@@ -1355,7 +1355,7 @@ TS =
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
+* v2.0.0: Eli Heldaas Seland (Aug-Sep 2023), minor review Håkon Magne Bjerkan.
 
 Specialist input: Awaiting
 
