@@ -12,7 +12,7 @@ Ensure sustainable consumption and production patterns
 
 ## 1. Full query
 
-Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/b965a48b-e335-4650-b51f-655bcb015208-a89b0781/relevance/1
+Results of the full search in its current state can be viewed on Web of Science by clicking here (no filters; publication year = last 5 years): https://www.webofscience.com/wos/woscc/summary/faf20e6e-8318-4f98-a8e9-f362fef77301-b7876d67/relevance/1
 
 ## 2. General notes
 
@@ -1378,7 +1378,7 @@ NOT TS=("heavy duty" OR "light duty" OR "medium duty")
 
 * Testing v1.2.2: Project group & Leena Byholm; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v1.3.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
+* v2.0.0: Caroline S. Armitage (Aug-Sep 2023), minor review Eli Heldaas Seland.
 
 Specialist input: Terhi Latvala (D.Sc. Agricultural Economics), v1.1.0
 
