@@ -1,21 +1,21 @@
 # Search queries for all currently covered SDGs - topic approach. English and Norwegian.
 
-This file contains a method for searching for SDG relevant works within a dataset based on title (here, `result_title`). For SDG14, journal/series title (`journal`) is also used in the section "Marine terms". The script refers to an additional field, `result_id`, when displaying the results.
+This file contains a method for searching for SDG relevant academic works within a dataset based on title (here, `result_title`). For SDG14, journal/series title (`journal`) is also used in the section "Marine terms". The script refers to an additional field, `result_id`, when displaying the results.
 
-It currently covers SDGs 1, 2, 3, 4, 7, 11, 13, 14, and 15. This search is an adaptation of the topic searches for individual SDGs which were originally constructed in search syntax for the database Web of Science (WOS; Clarivate). A full documented version of these WOS searches can be found here https://doi.org/10.5281/zenodo.7241689. We have tried to retain a common structure between the WOS and python versions of the searches by dividing into the same "phrases" (i.e. target 1.4 phrase 2 here corresponds to target 1.4 phrase 2 in the WOS syntax searches, unless otherwise noted). Differences between the WOS and python versions are mainly:
-- Adaptation to title search, rather than also being able to search in the abstract and keywords. For this reason, some searches have been simplified/broadened slightly.
-- Additional language search. This file will search for SDG-related works written in both English and Norwegian. The English search terms are always provided first, with the Norwegian translated terms on a new line. By translations, we mean direct translations as well as country-specific terminology. Note that in some cases, adjustments are made to the search to deal with specifically Norwegian isses (for example, large amounts of research on salmon anaemia causing noise in a search for human anaemia); these are commented on. In documentation and notes, "(NO)" signifies it is a Norwegian search term being discussed.
+It currently covers SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14, and 15. This search is an adaptation of the topic searches for individual SDGs which were originally constructed in search syntax for the database Web of Science (WOS, Clarivate). A full documented version of these WOS searches can be found in Github (https://github.com/SDGforskning/sdg-strings) or Zenodo (https://doi.org/10.5281/zenodo.7241689). We have tried to retain a common structure between the WOS and python versions of the searches by dividing into the same "phrases" (i.e. target 1.4 phrase 2 here corresponds to target 1.4 phrase 2 in the WOS syntax searches, unless otherwise noted). Differences between the WOS and python versions are mainly:
+- Adaptation to title search, rather than also being able to search in the abstract and keywords. For this reason, some searches have been simplified/broadened. This does not mean that the searches cannot be run on abstracts/longer texts as well, but the results may be noisier. 
+- Additional language search. This file will search for SDG-related works written in both English and Norwegian. The English search terms are always provided first, with the Norwegian translated terms on a new line. By translations, we mean direct translations as well as country-specific terminology. Note that in some cases, adjustments are made to the search to deal with specifically Norwegian isses (for example, large amounts of research on salmon anaemia causing noise in a search for human anaemia); these are commented on. In documentation and notes, "(NO)" signifies it is a Norwegian search term being discussed. Because the Norwegian terms have been optimised to find as much SDG-related research as possible for Norway (e.g. including country-specific terminology), care should be taken if the goal of mapping publications is to compare with other countries - for that purpose, we would suggest using the Web of Science strings or only the English terms in this script. 
 
 The general structure of this file is 
 1. Import
 2. Country sets - searches to identify results mentioning certain countries, used later in searches where the targets refer to certain groups of countries.
-3. Searches, split by SDG and target. Under each target, you will find the target text (English and Norwegian), any general notes, a copy of the WOS phrase used as an original starting point (these generally begin with "TS="), lists of search terms ("termlist_xx"), a search, and a preview of results. Note that occasionally, for efficiency, termlists may be re-used within a target (from an earlier phrase).
+3. Searches, split by SDG and target. Under each target, you will find the target text (English and Norwegian), any general notes, lists of search terms ("termlist_xx"), a search, and a preview of results. Note that occasionally, for efficiency, termlists may be re-used within a target (from an earlier phrase).
 4. Code to combine all of the labels created in the above part into two columns: SDG-level results (e.g. whether a result can be related to SDG4) and target-level results (e.g. whether a result can be related to target 4.1).  
 5. Cleaning
 
-Documentation included in this file is specific to a) implementation of the search in python, b) adaptation to a title search, or c) Norwegian search terms. For documentation of original English term sources, interpretations of SDG targets, relevance choices, and contributor information, see the documentation within the original Web of Science syntax files at the doi above.
+Documentation included in this file is specific to a) implementation of the search in python, b) adaptation to a title search, or c) Norwegian search terms. For documentation of original English term sources, interpretations of SDG targets, relevance choices, and contributor information, see the documentation within the original Web of Science syntax files at the urls above.
 
-Because the Norwegian terms have been optimised to find as much SDG-related research as possible for Norway (e.g. including country-specific terminology), care should be taken if the goal of mapping publications is to compare with other countries. For that purpose, we would suggest using the Web of Science strings. 
+To cite, please see the suggested citation in Zenodo for your version: https://doi.org/10.5281/zenodo.7241689
 
 
 ```python
@@ -29,6 +29,7 @@ Use file of all results, already pre-labelled with other methods if applicable.
 
 
 ```python
+#Check data
 Data.head(2)
 ```
 
@@ -47,7 +48,7 @@ pd.set_option('display.max_colwidth', 1)
 
 This section creates columns (T/F) for results that mention groups/combinations of these groups of countries. These are used later in the searches if a topic should be limited to a group of countries. It is done in this way to reduce search time (searches for long country lists only need to be done once, rather than for each target that needs it).
 
-LDC = least-developed countries; SIDS = small-island developing states; LDS = landlocked developing states; LMICs = Low- and middle-income countries. See WOS files for documentation and sources. 
+LDC = least-developed countries; SIDS = small-island developing states; LDS = landlocked developing states; LMICs = Low- and middle-income countries. Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters). Translations to Norwegian were done by the project group. 
 
 
 ```python
@@ -224,13 +225,6 @@ print("Number of results mentioning LDCs or SIDS = ", len(Data.loc[Data['LDCSIDS
 
 *Innen 2030 utrydde all ekstrem fattigdom*
 
-```
-TS=
-("extreme poverty" OR "severe poverty" OR "deep poverty" OR "abject poverty" OR "absolute poverty" OR "destitution" 
-OR "global poverty" OR "international poverty"
-)  
-```
-
 
 ```python
 #Term lists
@@ -243,7 +237,7 @@ phrasedefault1_1 = r'(?:{})'.format('|'.join(termlist1_1))
 
 
 ```python
-#Search 1
+#Search
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault1_1, na=False, case=False))
     ),"tempsdg01_01"] = "SDG01_01"
@@ -265,21 +259,10 @@ test.iloc[0:5, ]
 *Innen 2030 minst halvere andelen menn, kvinner og barn i alle aldre som lever i fattigdom, i henhold til nasjonale definisjoner*
 
 
-```
-TS=
-(
-  ("anti-poverty" OR "out of poverty"
-  OR "poverty" OR "rural poor" OR "urban poor" OR "working poor"
-  OR (("poor" OR "poorest") NEAR/3 ("household$" OR "people" OR "communit*" OR "children" OR "relief"))
-  )
-  NOT "species poor"
-)
-```
-
 
 ```python
 #Termlists
-termlist1_2a = ["anti-poverty", "out of poverty", "poverty", "rural poor", "urban poor", "working poor",
+termlist1_2a = ["anti-poverty", "antipoverty", "out of poverty", "poverty", "rural poor", "urban poor", "working poor",
               "fattigdom"
               ]
 
@@ -332,66 +315,30 @@ Here the phrases used in WOS syntax have been merged. In the title and abstract 
 We have also included some Norwegian-specific terminology/names for social support schemes, such as "frikort", "folketrygd" and "NAV" (Norwegian Labour and Welfare Administration; https://www.nav.no/en/home/about-nav/what-is-nav).
 
 
-```
-TS=
-(
-  "welfare system$" OR "welfare service$" OR "social security system"
-  OR "basic social service$" OR "social assistance service$" OR "social floor$"
-  OR "social protection program*" OR "social insurance program*" OR "social safety net$" OR "safety net program*"
-)
-
-TS=
-(
-  ("social protection$" OR "social security" OR "social benefits" OR "social insurance"
-  OR "basic income" OR "cash benefit$" OR "income security" OR "guaranteed income$" OR "living allowance" OR "housing assistance"
-  OR "unemployment benefit$" OR "unemployment compensation" OR "unemployment insurance" OR "unemployment allowance" OR "labour market program*" OR "labor market program*" OR "public works program*"
-  OR "disability benefit$" OR "disability allowance" OR "disability pension$" OR "disability tax credit$" OR "disability insurance"
-  OR "health care benefit$" OR "sickness benefit$" OR "sick benefit" OR "sick pay" OR "paid sick leave" OR "paid medical leave" OR "sickness allowance"
-  OR "paid matern* leave" OR "maternity pay" OR "maternity insurance" OR "maternity benefit$" OR "maternity allowance" OR "parental benefit$" OR "paid parental leave" OR "paid family leave" OR "family leave tax credit$" OR "parental leave tax credit$"
-  OR "child benefit$" OR "child tax credit$" OR "child allowance"
-  OR "pension$ insurance" OR "pension plan$" OR "pension benefit$" OR "public pension$" OR "state pension$"
-  OR "social care service$" OR "social service$"
-  )
-  AND
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
-    )
-)
-```
-
 
 ```python
 #Termlists
-termlist1_3a = ["welfare system", "welfare service", "social security", "basic social service", "social assistance service", "social floor", 
-                "social protection program", "social insurance program", "social safety net", "safety net program",
-                "social protection", "social benefits" , "social insurance",
-                "basic income" , "cash benefit" , "income security" , "guaranteed income" , "living allowance" , "housing assistance",
-                "unemployment benefit" , "unemployment compensation" , "unemployment insurance" , "unemployment allowance" , "labour market program" , "labor market program" , "public works program",
+termlist1_3a = ["welfare system", "welfare service", "social security", "social service", "social assistance", "social floor", 
+                "social safety net", "safety net program",
+                "social protection", "social benefits" , "social insurance", "social care service",
+                "basic income" , "income security" , "guaranteed income" , "living allowance" , "housing assistance",
+                "cash benefit" , "cash transfer", "cash plus program",
+                "school feeding" , "free school meal" , "food stamp program" , "nutrition assistance program" , "food assistance program" , "WIC program" , "WIC benefits",
+                "labour market polic" , "labor market polic" , "labour market intervention" , "labor market intervention", "labour market program" , "labor market program" , "public works program",
+                "unemployment benefit" , "unemployment compensation" , "unemployment insurance" , "unemployment allowance" , 
                 "disability benefit" , "disability allowance" , "disability pension" , "disability tax credit" , "disability insurance", 
                 "health care benefit" , "sickness benefit" , "sick benefit" , "sick pay" , "paid sick leave" , "paid medical leave" , "sickness allowance",
-                "paid maternity leave" , "maternity pay" , "maternity insurance" , "maternity benefit" , "maternity allowance" , "parental benefit" , "paid parental leave" , "paid family leave" , "family leave tax credit" , "parental leave tax credit",
+                "maternity pay" , "maternity insurance" , "maternity benefit" , "maternity allowance" , "paid maternity leave" , 
+                "parental benefit" , "paid parental leave" , "paid family leave" , "family leave tax credit" , "parental leave tax credit",
                 "child benefit" , "child tax credit" , "child allowance",
                 "pension insurance" , "pension plan" , "pension benefit" , "public pension" , "state pension",
-                "social care service" , "social service", 
                 
                 "velferdssystem", "velferdstjeneste", "velferdsteneste", "velferdsgode", "velferdsordning", "velferdsmodell", "velferdspolitikk", 
-                "folketrygd", "trygdeordning", "sikkerhetsnett", 
+                "folketrygd", "trygdeordning", "sikkerhetsnett", "trygderett", 
                 "sosialpolitiske ordning", "sosialhjelp",
+                "gratis skolemat", "gratis skolemåltid",
                 "arbeidsledighetstrygd", "arbeidsløysetrygd", "alderspensjon", "uførepensjon", "sykepenger", "sjukepengar", "frikort",
-                "barnetrygd", "foreldrepermisjon", "foreldrefradrag", "foreldrefrådrag"
+                "barnetrygd", "foreldrepermisjon", "svangerskapspermisjon", "foreldrefradrag", "foreldrefrådrag", "foreldrepenger", "fedrekvote", "mødrekvote"
               ]
 #"sikkerhetsnett"(NO) is quite a general term but works ok
 
@@ -428,94 +375,6 @@ test.iloc[0:5, ]
 *Innen 2030 sikre at alle menn og kvinner, særlig fattige og sårbare, har lik rett til økonomiske ressurser og tilgang til grunnleggende tjenester, til å eie og kontrollere jord og andre former for eiendom, og til arv, naturressurser, ny teknologi og finansielle tjenester, inkludert mikrofinansiering*
 
 Like 1.3, many of the terms in the target were quite general. So although the target interpretation was for all people, to make the string find relevant results in an abstract search we combined all 3 phrases with "poor and vulnerable" groups (see documentation in the WOS strings for how these were established). However, here, with the title search, we do not think that this restriction is needed, and therefore is removed. 
-
-```
-#Phrase 1
-TS= ("financial inclusion" OR "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$")
-OR TS=
-(
-  (
-    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-    OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
-    OR "unaffordab*" OR "expensive"
-    OR "unbanked"
-    )
-    NEAR/15
-      ("banks" OR "a bank" OR "banking" OR "bank account$"
-      OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-      OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
-      OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
-      )
-  )
-
-#Phrase 2
-  (
-    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-    OR "ownership" OR "control" OR "right$"
-    OR "affordab*" OR "pro poor"
-    OR "empower*" OR "inclusion" OR "sharing"
-    OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
-    OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
-    )      
-    NEAR/5
-        ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-        OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
-        OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
-        )
-  )
-
-#Phrase 3
-  (
-    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal" OR "empower*" OR "inclusion"
-    OR "ownership" OR "right$"
-    OR "affordab*" OR "inexpensive" OR "low cost" OR "pro poor" OR "free of charge" OR "free service$"
-    )
-    NEAR/10
-        (
-          ("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
-        OR
-          (("drinking water" OR "sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
-          NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
-          )
-        OR "improved drinking water" OR "improved source$ of drinking water" OR "clean drinking water" OR "clean water"
-        OR (("waste" OR "garbage" OR "rubbish") NEAR/2 ("service$" OR "facility" OR "facilities"))
-        OR (("health" OR "medical") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "essential" OR "primary" OR "care"))
-        OR "healthcare"
-        OR (("education*" OR "school*") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "primary"))
-        OR
-          (("basic information" OR "telecommunication" OR "basic communication" OR "ICT")
-          	NEAR/2 ("service$" OR "facility" OR "facilities" OR "infrastructure")
-          )
-        OR "electricity service$" OR "energy service$" OR "modern energy" OR "clean fuel$" OR "clean energy"
-        OR "public open space$" OR "public space$"
-        OR "basic mobility" OR "urban mobility" OR "rural mobility" OR "all-season road$"
-        OR ("transport*" NEAR/2 ("service$" OR "infrastructure" OR "system$" OR "public"))
-        )
-  )
-
-  AND
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
-    OR "least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-    )
-)
-```
 
 #### Phrase 1
 
@@ -561,7 +420,7 @@ phrasedefault1_4c = r'(?:{})'.format('|'.join(termlist1_4c))
 #Search 1
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault1_4a, na=False, case=False))
-    | ((Data['result_title'].str.contains(phrasedefault1_4b, na=False, case=True)) & (Data['result_title'].str.contains(phrasedefault1_4c, na=False, case=True)))
+    | ((Data['result_title'].str.contains(phrasedefault1_4b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault1_4c, na=False, case=False)))
     ),"tempsdg01_04"] = "SDG01_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg01_04 == "SDG01_04")])) 
@@ -599,7 +458,7 @@ termlist1_4e = ["economic resource.*", "natural resources",
                 "farmland.*", "land resources", "farm", "farms", "tenure", "property", "home ownership",
 
                 "finansielle ressurs.*", "økonomiske ressurs.*", "naturressurs.*",
-                "lønnet arbeid", "løna arbeid", "anstendig arbeid.*", "arbeidsmark.*", "inntekt", "løn", "levebrød", "underhold", "underhald", "rikdom", "arv", "arving",
+                "lønnet arbeid", "løna arbeid", "anstendig arbeid.*", "arbeidsmark.*", "inntekt", "lønn", "levebrød", "underhold", "underhald", "rikdom", "arv", "arving",
                 "gård", "småbruk", "familiegård", "gårdsbruk", "gardsbruk", "dyrket mark", "dyrka mark", "dyrkamark", "kultivert mark", "landsressurs.*", 
                 "eiendom.*", "eigedom.*", "forpakting"
                 ]
@@ -628,7 +487,8 @@ Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault1_4f, na=False, case=False))
         |((Data['result_title'].str.contains(phrasespecific1_4e, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault1_4d, na=False, case=False)))
-    ) & (~Data['result_title'].str.contains(phrasedefault1_4g, na=False, case=False))
+    ) 
+    & (~Data['result_title'].str.contains(phrasedefault1_4g, na=False, case=False))
 ),"tempsdg01_04"] = "SDG01_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg01_04 == "SDG01_04")])) 
@@ -715,74 +575,8 @@ test.iloc[0:5, ]
 
 *Innen 2030 bygge opp motstandskraften til fattige og personer i utsatte situasjoner, slik at de blir mindre utsatt for og mindre sårbare for klimarelaterte ekstremhendelser og andre økonomiske, sosiale og miljømessige påkjenninger og katastrofer*
 
-Here under terms for indigenous and minorities, we have included Norwegian-specific groups (Sami people and Norwegian official minorities (source: Utdanningsdirektoratet (n.d.) Nasjonale minoriteter. https://www.udir.no/laring-og-trivsel/nasjonale-minoriteter/hva-er-en-nasjonal-minoritet/ (accessed Nov 2022)))
+Here under terms for indigenous and minority groups, we have included Norwegian-specific groups (source: Utdanningsdirektoratet (n.d.) Nasjonale minoriteter. https://www.udir.no/laring-og-trivsel/nasjonale-minoriteter/hva-er-en-nasjonal-minoritet/ (accessed Nov 2022))
 
-
-```
-TS=
-(
-  (
-    ("protect*" OR "safeguard*"  
-    OR "safety net$" OR "social protection$" OR "social floor$" OR "social security"
-    OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "preparedness" OR "protection" OR "early warning"
-    OR "impact$" OR "vulnerab*" OR "exposure"
-    OR
-      (
-        ("disaster$" OR "risk$")
-        NEAR/3
-            ("plan" OR "plans" OR "planning" OR "strateg*" OR "reduc*" OR "relief"
-            OR "manag*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "medical response$"
-            )
-      )
-    OR "Sendai"
-    )
-    NEAR/15
-        ("disaster$" OR "catastrophe$"
-        OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-        OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-        OR "drought$" OR "flood*"
-        OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-        OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-        OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-        OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-        OR (  
-              ("anthropogenic" OR "natural" OR "climat*"
-              OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-              OR "chemical" OR "heavy metal$" OR "pesticide$"
-              OR "biological" OR "disease" OR "zoonotic"
-              OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-              )
-              NEAR/3 ("hazard$")
-           )
-        OR "outbreak$" OR "pandemic$" OR "epidemic$"
-        OR "war" OR "wars" OR "armed conflict$"
-        OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-        OR "financial crash*" OR "financial shock$" OR "financial disaster$"
-        OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-        )
-  )
-  AND
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-      OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-      OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-      OR "disabled" OR "disabilities" OR "disability"
-      OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-      OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-      OR "women" OR "woman" OR "girls" OR "girl"
-      OR "pregnant" OR "pregnancy" OR "maternity"
-      OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-      OR "living with HIV" OR "living with AIDS"
-      OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-      OR "indigenous group$"
-      OR ***least developed countries***
-    )  
-)
-
-```
 
 
 ```python
@@ -835,6 +629,7 @@ termlist1_5c = ["war", "wars",
                 "krig", "ras"]  #terms from 5b where we need to prevent truncation (lots of "etterkrigstid"(NO))
 
 termlist1_5d = ["poverty", "rural poor", "urban poor", "working poor", "destitute", "low income", "low-income", "poor households", "poorest households", "poor communit", "poorest communit", 
+                "social capital",
                 "disadvantaged", "marginalis", "marginalized", "vulnerable", "discriminated",
                 "slum", "shanty town", "informal settlement", "homeless",
                 "patient", "disabled", "disabilities", "disability",
@@ -843,6 +638,15 @@ termlist1_5d = ["poverty", "rural poor", "urban poor", "working poor", "destitut
                 "women", "woman", "girl", "pregnan", "maternity", "child", "baby", "babies", "newborn", "toddler", "youth", "infant",
                 "indigenous", "minorities", "minority", "refugee", "asylum", "immigrant",
                 "trans people", "transgender", "lgbt", "lesbian", "gay", "bisexual", "intersex",
+                "least developed countr", "least developed nation", "developing countr", "developing nation", "developing states", "island developing state", "developing world", 
+                "less developed countr", "less developed nation", 
+                "under developed countr", "under developed nation", "underdeveloped countr", "underdeveloped nation",
+                "underserved countr", "underserved nation", "deprived countr", "deprived nation",
+                "middle income countr", "middle income nation", "middle-income countr", "middle-income nation", 
+                "low income countr", "low income nation", "lower income countr", "lower income nation", "low-income countr", "low-income nation", "lower-income countr", "lower-income nation", 
+                "poor countr", "poor nation", "poorer countr", "poorer nation", 
+                "third world", "global south", "transitional countr", "emerging economies", "emerging nation", 
+
  
                 "fattig", "lavinntekt", "lav inntekt", "låginntekt", "låg inntekt",
                 "sårbar", "diskrimin",
@@ -853,6 +657,11 @@ termlist1_5d = ["poverty", "rural poor", "urban poor", "working poor", "destitut
                 "kvinne", "jente", "gravid", "barn", "born", "babier", "nyfødt","nyfødd",
                 "urfolk", "urinnvånarar", "urbefolkning", "urinnvånere", "sápmi", "sami", "minoritet", "jøder", "jådar", "kvener", "kvenar", "norskfinn", "skogfinn", "romani", "tatere", "taterar", "asylsøk", "flyktning", "innvandrer", "innvandrar",
                 "transperson", "lesbisk", "homofile", "bifile", "lbht", "interkjønn",
+                "utviklingsland", "u-land", "uland", "underutviklede land", "underutvikla land", "lavinntektsland", "låginntektsland",
+                "underpriviligerte land", "mellominntektsland", "ressurssvake land", "tredje verd", "fattige land", 
+                "globale sør", "overgangsøkonomi", "fremvoksende økonomier", "framvoksende økonomier", "framveksande økonomi"
+                "framvoksende land", "fremvoksende land", "framveksande land", "bistandsland", "minst utviklede land", "små utviklingsøystat", "små øystat",
+                "kystløse utviklingsland",
                 ] 
 #The term "same" (NO, for Sami people) is difficult to include because of the English word "same".
 
@@ -894,35 +703,13 @@ test.iloc[0:5, ]
 *Sikre en betydelig mobilisering av ressurser fra ulike kilder, blant annet gjennom økt utviklingssamarbeid, for å gi utviklingslandene, særlig de minst utviklede landene, tilstrekkelige og forutsigbare midler til å gjennomføre programmer og politikk for å utrydde alle former for fattigdom*
 
 
-```
-TS=
-(
-  (
-    ("ODA" OR "development spending" OR "cooperation fund"
-    OR  (
-          ("international" OR "development" OR "foreign")
-          NEAR/3
-              ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-              OR "aid" OR "assistance"
-              OR "fund$" OR "funding" OR "grant$" OR "investment$" OR "investing" OR "financing" OR "financial support" OR "financial resources" OR "capital flow$"
-              )
-        )    
-    )
-    NEAR/15 ("anti-poverty" OR "out of poverty" OR "pro poor" OR "poverty")
-  )
-  AND
-      (****LMICs****
-      )
-)
-```
-
-Here a change in structure is suggested - as this is a title search, a simplification, where some terms count as relevant without needing to mention "poverty". While a work about "cooperation" would still need to mention "poverty", works are included if terms such as "official development aid" (termlist_aaalt) are in the title.
+Here a change in structure is suggested - as this is a title search, a simplification, where some terms count as relevant without needing to mention "poverty". While a work about "cooperation" would still need to mention "poverty", works are included if terms such as "official development aid" (termlist_aaalt) are in the title. We also allow just poverty to be in the title, rather than poverty alleviation specifically. 
 
 
 ```python
 #Termlists
-termlist1_aa = ["oda", "development spending", 
-                "aid", "assistance", "funding", "grant", "invest", "investment.*", "investing", "financial support", "financing", "resources", "capital flow",
+termlist1_aa = ["oda", "development spending", "fdi", 
+                "aid", "assistance", "funding", "grant", "invest", "investment.*", "investing", "financial support", "financing", "resources", "capital flow.*",
                 "cooperation", "co-operation", "collaboration.*", "network.*", "partnership.*"
 
                 "utviklingssamarbeid.*", "utviklingsstøtte", "utviklingsstønad", "utviklingshjelp", "u-hjelp",
@@ -932,16 +719,17 @@ termlist1_aa = ["oda", "development spending",
               #Here specifying truncation because "ODA", "aid", invest" etc. need word boundaries
 
 #Alternative option - some terms may find relevant results without using the word poverty (e.g. "development spending")?
-termlist1_aaalt = ["oda", "development spending", "development assistance", 
+termlist1_aaalt = ["oda", "development spending", "development assistance",
                    "bistand.*",  "utviklingssamarbeid.*", "utviklingsstøtte", "utviklingsstønad", "utviklingshjelp", "u-hjelp"
                    ]
-termlist1_aaalt2 = ["aid", "assistance", "funding", "grant", "invest", "investment.*", "investing", "financial support", "financing", "resources", "capital flow",
+termlist1_aaalt2 = ["fdi", "aid", "assistance", "funding", "grant", "invest", "investment.*", "investing", "financial support", "financing", "resources", "capital flow.*",
                     "cooperation", "co-operation", "collaboration.*", "network.*", "partnership.*"
+                    
                     "midlar", "økonomiske ressurs.*", "finansiel.*", "ressurs.*", "investering", "nødhjelp", "naudhjelp","kapitalstrøm",              
-                    "samarbeidsfond.*", "samarbeid.*", "nettverk", "partnerskap.*", "partnarskap.*"
+                    "samarbeidsfond.*", "samarbeid.*", "nettverk.*", "partnerskap.*", "partnarskap.*"
                    ]
 
-termlist1_ab = ["poverty", "pro-poor",
+termlist1_ab = ["poverty", "pro-poor", "antipoverty",
                 "fattig"
                 ]
 
@@ -969,7 +757,7 @@ print("Number of results = ", len(Data.loc[(Data.tempsdg01_a == "SDG01_0a")]))
 ```python
 #Results
 test=Data.loc[(Data.tempsdg01_a == "SDG01_0a"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:7, ]
 ```
 
 ### SDG 1.b
@@ -977,27 +765,6 @@ test.iloc[0:5, ]
 *1.b Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions*
 
 *Opprette gode politiske rammeverk på nasjonalt, regionalt og internasjonalt nivå basert på utviklingsstrategier som gagner de fattige og ivaretar kjønnsperspektivet, med sikte på å øke investeringer i tiltak som bekjemper fattigdom*
-
-```
-TS=
-(
-  ("law$" OR "legislat*"
-  OR "program*" OR "strateg*" OR "policy" OR "policies" OR "plan" OR "framework$" OR "initiative$"
-  OR "investment policy" OR "investment policies"
-  )
-  NEAR/15
-      ("anti-poverty" OR "out of poverty" OR "pro poor"
-      OR  ("poverty"
-          NEAR/3
-              ("minimi*" OR "reduc*" OR "mitigat*"
-              OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-              OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
-              OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"  
-              )
-          )
-      )
-)
-```
 
 
 ```python
@@ -1009,8 +776,7 @@ termlist1_ba_trunc = ["law", "laws", "plan", "plans"]
 termlist1_bb = ["anti poverty", "anti-poverty", "antipoverty"]
 
 termlist1_bc = ["poverty", 
-                "fattig"
-                ]
+                "fattig"]
 
 termlist1_bd = ["minimi", "reduc", "mitigat", "alleviat", "tackl", "fight", "combat",
                 "ending", "eliminat", "eradicat", "prevent", "out of", "overcom", "escap", "relief",
@@ -1040,7 +806,7 @@ Data.loc[(
         & ((Data['result_title'].str.contains(phrasedefault1_bd, na=False, case=False))| (Data['result_title'].str.contains(phrasespecific1_bd_trunc, na=False, case=False)))
       )
     )
-    ),"tempsdg01_b"] = "SDG01_b"
+),"tempsdg01_b"] = "SDG01_b"
 
 print("Number of results = ", len(Data[(Data.tempsdg01_b == "SDG01_b")])) 
 ```
@@ -1059,31 +825,6 @@ Works mentioning SDG1.
 Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 "SDG" was also not searched for case-sensitive, as it seems to work ok without.
-
-```
-TS=
-("SDG 1" OR "SDGs 1" OR "SDG1" OR "sustainable development goal$ 1"
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 1")
-    NEAR/50 "poverty"
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-```
 
 
 ```python
@@ -1148,51 +889,17 @@ test.iloc[0:5, ]
 
 *Innen 2030 utrydde sult og sikre alle mennesker, særlig fattige og personer i utsatte situasjoner, inkludert spedbarn, tilgang til nok, trygg og sunn mat hele året*
 
-```
-#Phrase 1
-TS=
-(
-  ("end hunger" OR "ending hunger" OR "ends hunger" OR "world hunger"
-  OR "hunger and poverty" OR "poverty and hunger" OR "famine$"
-  OR "food insecurity" OR "nutritional insecurity"
-  )
-  NOT (("feast and famine" OR "feast-famine") NOT ("end* hunger" OR "malnutrition"))    
-)
-
-#Phrase 2
-TS=
-(
-  "right to food" OR "right to adequate food" OR "food sovereignty"
-  OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
-  OR ("food" NEAR/5 ("access" OR "safety" OR "unsafe" OR "secure" OR "security" OR "reliable" OR "reliability"))
-)
-
-#Phrase 3
-TS=
- (
-    ("food supply" OR "nutritional value" OR "nutrient content" OR "nutritional content")  
-    AND
-        ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
-        OR "adult$" OR "women" OR "men" OR "woman" OR "man"
-        OR "agricultur*" OR "food security" OR "poverty"
-        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali$ed group" OR "marginali$ed groups" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-        OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-        OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
-        )
-)
-```
-
 #### Phrase 1
 
 
 ```python
 #Term lists
-termlist2_1a = ["end hunger", "ending hunger", "ends hunger", "world hunger", "hunger and poverty", "poverty and hunger", "famine",
-               "food insecurity", "nutritional insecurity",
+termlist2_1a = ["end hunger", "ending hunger", "ends hunger", "world hunger", "hunger and poverty", "poverty and hunger", "child hunger", 
+                "famine", "undernourish"
+                "food insecurity", "nutritional insecurity",
                 
-               "utrydde sult", "utrydde svolt", "utrydje svolt", "utrydda svolt", "utrydja svolt", "bekjempe sult", "bekjempe svolt", 
-               "sult og fattigdom", "fattigdom og sult", "svolt og fattigdom", "fattigdom og svolt", "global sult", "global svolt", 
+                "utrydde sult", "utrydde svolt", "utrydje svolt", "utrydda svolt", "utrydja svolt", "bekjempe sult", "bekjempe svolt", "sultne barn", "barn sult", "barnesult",
+                "sult og fattigdom", "fattigdom og sult", "svolt og fattigdom", "fattigdom og svolt", "global sult", "global svolt", 
                 "hungersnød", "hungersnaud", "matusikkerhet", "matmangel"
               ]
 
@@ -1223,18 +930,20 @@ test.iloc[0:5, ]
 #Term lists
 
 termlist2_1b = ["right to food", "right to adequate food", "food sovereignty",
-                "nutrition security", "nutritional security", "nutritional quality", "nutrition sensitive agriculture",
+                "nutrition security", "nutritional security", 
                 "access to food", "food access", "food safety", "safe food", "food security",
+                "school feeding", "free school meal", "food stamp program", "nutrition assistance", "food assistance",
                 
                 "tilgang til mat", "matforsyning",
-                "nok mat",  "tilstrekkelig mat", "trygg mat", "sunn mat", "sunne mat", "matsikkerhet"
+                "nok mat",  "tilstrekkelig mat", "trygg mat", "mattrygghet", "sunn mat", "sunne mat", "matsikkerhet",
+                "gratis skolemat", "gratis skolemåltid"
               ]
               
 termlist2_1c = ["Norwegian Scientific Committee for Food Safety"]
 #This term list is specific for Norway and can be dropped for works from other countries.
 #There are lots of reports from VKM Norwegian Scientific Committee for Food Safety found in this string. 
 #These are mostly very specialised, for example risk assessments of certain substances. Therefore removed for now, but this could be discussed.
-#Note that this does not remove all VKM reports, but does exclude those with "opinion of the Norwegian..." in the title. A number of more general reports from VKM are still there.
+#Note that this does not remove all VKM reports, but does exclude those with "opinion of the Norwegian Scientific Committee for Food Safety..." in the title. A number of more general reports from VKM are still there.
 
 phrasedefault2_1b = r'(?:{})'.format('|'.join(termlist2_1b))
 phrasedefault2_1c = r'(?:{})'.format('|'.join(termlist2_1c))
@@ -1266,10 +975,8 @@ test.iloc[0:5, ]
 ```python
 #Term lists
 
-termlist2_1d = ["food supply", "nutritional value", "nutrient content", "nutritional content", 
-                "næringsinnhold", "næringsinnhald"
-              ]
-              #We did include "næringstoff"(NO), but nearly all results were about leaching of nutrients into water bodies, and not about human nutrition
+termlist2_1d = ["food supply"]
+              #Note that this can result in some noise from biological works (e.g. food supply in a certain habitat), but it mostly gets relevant results in our dataset.
 
 phrasedefault2_1d = r'(?:{})'.format('|'.join(termlist2_1d))
 ```
@@ -1281,7 +988,7 @@ Data.loc[(
     (Data['result_title'].str.contains(phrasedefault2_1d, na=False, case=False))
     ),"tempsdg02_01"] = "SDG02_01"
 
-print("Number of results = ", len(Data[(Data.tempsdg02_01 == "SDG02_01")])) 
+print("Number of results = ", len(Data[(Data.tempsdg02_01 == "SDG02_01")]))   
 ```
 
 
@@ -1297,64 +1004,6 @@ test.iloc[0:5, ]
 
 *Innen 2030 utrydde alle former for feilernæring, og innen 2025 nå de internasjonalt avtalte målene som omhandler veksthemming og avmagring hos barn under fem år, og ivareta ernæringsbehovene til unge jenter, gravide, ammende kvinner og eldre personer*
 
-```
-#Phrase 1
-TS=
-(
-  ("malnutrition" OR "malnourish*"
-  OR "kwashiorkor" OR "marasmus"
-  OR "anaemia" OR "anemia"
-  OR
-    (
-      ("deficien*" OR "inadequa*")
-      NEAR/3
-          ("nutritional" OR "dietary" OR "vitamin$" OR "micronutrient$" OR "iron" OR "iodine")
-    )
-  OR  
-    (
-      ("stunting" OR "stunted" OR "wasting" OR "underweight")
-      NEAR/15 ("child*" OR "infant$" OR "under five$" OR "babies" OR "toddler$" OR "girl$" OR "boy$")
-    )
-  OR "obesity" OR "overweight" OR "obese"
-  )
-  NOT ("salmon anemia")    
-)
-
-#Phrase 2
-TS=
-(
-  ("nutritio*" NEAR/5 ("access" OR "safe" OR "unsafe" OR "secure" OR "reliable" OR "reliability"))
-  OR "diet* quality" OR "nutrition* security" OR "nutrition* quality" OR "nutrition sensitive agriculture"
-  OR
-    (
-      ("nutritio*" OR "folate status" OR "micronutrient$")
-      NEAR/5
-          ("women" OR "mother$" OR "pregnancy"
-          OR "child*" OR "under five$" OR "infant$" OR "toddler$" OR "girl$" OR "boy$" OR "babies" OR "perinatal"
-          OR "old* persons" OR "old* people" OR "elderly" OR "older adult$"
-          )
-    )
-)
-
-#Phrase 3
-TS=
-(
-  ("protein deficiency"
-  OR "undernourish*" OR "under-nourish*" OR "undernutrition" OR "under-nutrition"
-  )
-  AND
-      ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-      OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "youth$" OR "girls" OR "boys"
-      OR "adult$" OR "women" OR "men" OR "woman" OR "man"
-      OR "agricultur*" OR "food security" OR "poverty"
-      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-      OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-      OR "rural" OR "urban" OR "countr*" OR "nation$" OR "develop* state$"
-      )
-)
-
-```
-
 #### Phrase 1
 
 
@@ -1368,16 +1017,13 @@ termlist2_2a = ["malnutrition", "malnourish", "kwashiorkor", "marasmus", "anaemi
                 "feilernæring", "underernær", "ernæringsproblem", "jernmangel", "anemi",
                 "ernæringsmangel", "kostholdsmangel", 
                 "vitamin mangel", "vitaminmangel", "avitaminosis",
-                "overvekt", "fedme"
-              ]
+                "overvekt", "fedme"]
 
 termlist2_2b = ["stunting", "stunted", "wasting", "underweight",
-                "veksthemm", "avmagring", "undervekt"       
-              ]
+                "veksthemm", "avmagring", "undervekt"]
 
 termlist2_2c = ["child", "infant", "under five", "under-five", "babies", "baby", "toddler", "girl", "boy",
-                "barn", "jenter", "gutter", "gutar"
-              ]
+                "barn", "jenter", "gutter", "gutar"]
 
 termlist2_not = ["salmon anaemia", "salmon anemia", "lakseanemi"] 
 #Norwegian specific term list for a NOT search - removed as much Norwegian research on these topics, that is not relevant to human health
@@ -1417,21 +1063,20 @@ test.iloc[0:5, ]
 termlist2_2d = ["nutrition security", "nutritional security", "nutritional quality", "nutrition sensitive agriculture", "nutritional quality", "dietary quality",
                 "safe nutrition", "access to nutrition", "reliable nutrition",
 
-                "næringssikkerhet", "næringskvalitet", "tilgang til næring", "trygg næring"
-              ]
+                "næringssikkerhet", "næringskvalitet", "tilgang til næring", "trygg næring"]
 
 termlist2_2e = ["nutrition", "folate", "micronutrient",
-                "ernæring", "næringsstoff", "næringsrik", "folsyre", "folacin", "folat", "mikronæring"
-                ]
+                "ernæring", "næringsstoff", "næringsrik", "folsyre", "folacin", "folat", "mikronæring"]
 
 termlist2_2f = ["child", "infant", "under five", "under-five", "babies", "baby", "toddler", "girl", "boy", "perinatal", "prenatal",
                 "older person", "old person", "old people", "elderly", "older adult",
                 "women", "mother", "pregnan",
+                "school feeding", "free school meal", "food stamp program", "nutrition assistance", "food assistance",
 
                 "barn", "jenter", "gutter", "gutar",
                 "gammel person", "eldre", "de gamle",
-                "kvinne", "gravid"
-              ]
+                "kvinne", "gravid",
+                "gratis skolemat", "gratis skolemåltid"]
               #We use "eldre" (NO) but not "gamle" (NO) alone because the latter is more likely to be used for non-humans (buildings etc.)
 
 termlist2_2g = ["næringsliv", "næringsdrivend"]
@@ -1448,7 +1093,7 @@ phrasedefault2_2g = r'(?:{})'.format('|'.join(termlist2_2g))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault2_2d, na=False, case=False))
-        & ((Data['result_title'].str.contains(phrasedefault2_2e, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault2_2f, na=False, case=False)))
+        | ((Data['result_title'].str.contains(phrasedefault2_2e, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault2_2f, na=False, case=False)))
     ) 
     & (~Data['result_title'].str.contains(phrasedefault2_2g, na=False, case=False))
 ),"tempsdg02_02"] = "SDG02_02"
@@ -1468,9 +1113,8 @@ test.iloc[0:5, ]
 
 ```python
 #Termlists
-termlist2_2h = ["undernutrition", "under-nutrition", "undernourish", "protein deficien", 
-                "underernær", "proteinmangel"
-              ]
+termlist2_2h = ["undernutrition", "under-nutrition", "undernourish", "under-nourish", "protein deficien", "nutritional value", "nutrient content", "nutritional content",
+                "underernær", "proteinmangel", "næringsinnhold", "næringsinnhald"]
 
 phrasedefault2_2h = r'(?:{})'.format('|'.join(termlist2_2h))
 ```
@@ -1498,47 +1142,6 @@ test.iloc[0:5, ]
 
 *Innen 2030 doble produktiviteten og inntektene til småskala matprodusenter, særlig kvinner, urfolk, familiebruk, husdyrnomader og fiskere, blant annet gjennom sikker og lik tilgang til jord, andre produksjonsressurser og innsatsmidler, kunnskap, finansielle tjenester, markeder og muligheter for verdiøkning og for sysselsetting utenfor landbruket*
 
-```
-  TS=
-  (
-    (
-      ("intensification" NEAR/5 ("smallhold*" OR "sustainable" OR "agroecolog*" OR "ecolog*"))  
-      OR "production" OR "productivity" OR "yield$" OR "agricultural output$" OR "farm output$"
-      OR "livelihood$" OR "income$" OR "profit*" OR "revenue" OR "economic viability"
-      OR "value addition" OR "diversification" OR "non-farm employment" OR "off-farm employment" OR "off farm income"
-      OR "access*" OR "empowerment" OR "benefit$" OR "tenure"
-      OR ("right$" NEAR/5 ("farmland$" OR "land" OR "property" OR "tenure"))
-      OR "equity" OR "equitable" OR "justice" OR "injustice"
-      OR "barrier$" OR "obstacle$"
-      OR "land grab*" OR "tenure insecurity"
-      )
-      AND
-          ("smallhold*" OR "family farm*" OR "family run farm*" OR "family owned farm*" OR "home gardening"
-          OR
-            (
-              ("small-scale" OR "indigenous" OR "homestead*" OR "subsistence")
-              NEAR/5
-                (
-                  ("food producer$" OR "food production" OR "food grower$" OR "agro food$"
-                  OR "agricultur*" OR "farm*" OR "permaculture"
-                  OR "cropping system$" OR "orchard$" OR "arable land$"
-                  OR "pasture$" OR "pastoral*" OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-                  OR "aquaculture" OR "fisher*" OR "fish farm*"
-                  )
-                OR
-                  (
-                    ("crop$" OR "produce" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-                    OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-                    )
-                    NEAR/5
-                        ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding")
-                  )
-                )
-            )
-          )
-)
-```
-
 
 ```python
 #Termlists
@@ -1553,36 +1156,32 @@ termlist2_3a = ["intensification", "production", "productivity", "yield", "outpu
                 "intensivering", "produksjon", "avling", "høsting", "produksjonsressurs",
                 "levebrød", "inntekt", "avkastning", "økonomi", "finansielle tjenester", "innsatsmidl",
                 "verdiøkning", "verdiauke", "sysselsetting utenfor", "sysselsette utenfor", "sysselsetting utafor", "sysselsette utafor",
-                "sysselsette utanfor", "sysselsetting utanfor"
-                "tilgang", "myndiggjør", "fordel", "eierskap", "eigarskap"
+                "sysselsette utanfor", "sysselsetting utanfor",
+                "tilgang", "myndiggjør", "fordel", "eierskap", "eigarskap",
                 "landrett",  "rettigheter til land", "eiendomsrett", "eigedomsrett", "landrike", "landfattig", "jordleie",
-                "likestilling", "ulikhet", "ulikskap", "rettferd", "rettighet", "ekskludering", "marginali"
-              ]
+                "likestilling", "ulikhet", "ulikskap", "rettferd", "rettighet", "ekskludering", "marginali"]
               #I have added ownership and production resources here. "tilgang/access" (NO) will cover access to land, knowledge, financial services etc.
 
-termlist2_3b = ["smallhold", "family farm", "family run farm", "family owned farm", "home gardening",
-                "småbruk", "familiegård", "familiegard", "familiebruk", "kjøkkenhage", "grønnsakshage", "reindrift", "husdyrnomad"
-                ]
+termlist2_3b = ["smallhold", "small-hold", "small holding", "small farm", "family farm", "family-run farm", "family run farm", "family-owned farm", "family owned farm", "home gardening",
+                "småbruk", "familiegård", "familiegard", "familiebruk", "kjøkkenhage", "grønnsakshage", "reindrift", "husdyrnomad"]
                 #"reindrift" (NO, reindeer herding) added, often small-scale.
 
 termlist2_3c = ["small-scale", "indigenous", "homestead", "subsistence",
-                "småskal", "urfolk", "urbefolk", "sami", "sapmi", "samer", "subsistens"
-                ]
+                "småskal", "urfolk", "urbefolk", "sami", "sapmi", "samer", "subsistens"]
                 #"Sami" was added as an indigenous group relevant for Norway. "Sami" will cover "samisk" (NO)
 
 termlist2_3d = ["food-produc", "food produc", "grower", "agro food", "agri-food", "agro-food",
                 "agricultur", "farm", "permacultur", "cropping", "orchard", "arable land",
                 "pasture", "pastoral", "agroforest", "agro-forest", "silvopastur", "silvopastoral",
-                "aquacultur", "fisher", "fish farm", "herding",
-                "crop", "grain", "vegetable", "fruit", "cereal", "rice", "wheat", "maize", "pulses", 
+                "aquacultur", "maricultur", "fisher", "fish farm", "herding",
+                "crop", "grain", "vegetable", "fruit", "cereal", "rice", "wheat", "maize", "pulses", "legume",
                 "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
                 
                 "matproduksjon", "matprodusent",
                 "gård", "gard", "landbruk", "jordbruk", "gårdsbruk", "gardsbruk", "dyrket mark", "dyrkamark", "dyrka mark", "kultivert mark",
                 "beite", "dyreproduksjon", "meieri",
-                "fiskeoppdrett", "lakseoppdrett",
-                "grønnsak", "grønsak", "frukt", "fisk", "laks", "sau", "storfe", "svin", "fjærkre", "rein"
-                ]
+                "fiskeoppdrett", "lakseoppdrett", "havbruk",
+                "grønnsak", "grønsak", "belgfrukt", "frukt", "fisk", "laks", "sauedrift", "sauehold", " sau", "storfe", " svin", "fjærkre", " rein", "reindrift"]
                 #reindeer was added as a specific species, as was salmon, to adapt to Norwegian research.
 
 phrasedefault2_3a = r'(?:{})'.format('|'.join(termlist2_3a))
@@ -1621,60 +1220,35 @@ test.iloc[0:5, ]
 *Innen 2030 sikre at det fSDG02_04innes bærekraftige systemer for matproduksjon, og innføre robuste metoder som gir økt produktivitet og produksjon, som bidrar til å opprettholde økosystemene, som styrker evnen til tilpasning til klimaendringer, ekstremvær, tørke, oversvømmelse og andre katastrofer, og som gradvis bedrer arealenes og jordas kvalitet*
 
 #### Phrase 1
-```
-TS=
-(
-  (
-      ("food production" OR "food grower$"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fish farm*"
-      OR
-        (
-          ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-          )
-          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
-      )
-      NEAR/15
-          ("intensification" OR "production" OR "productivity" OR "efficiency" OR "yield$" OR "agricultural output$" OR "farm output$")  
-  )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*")
-)
-```
 
 
 ```python
 #Termlists
-termlist2_4a = ["food-produc", "food produc", "grower", "agro food", "agri-food", "agro-food", 
-                "agricultur", "farm", "smallhold", "permacultur", "cropping", "orchard", "arable land",
+termlist2_4a = ["food-produc", "food produc", "grower", "agrifood", "agri-food", "agro-food", "agro food",
+                "agricultur", "farm", "smallhold", "small-hold", "permacultur", "cropping", "orchard", "arable land",
                 "pasture", "pastoral", "agroforest", "agro-forest", "silvopastur", "silvopastoral",
-                "aquacultur", "fisher", "fish farm", "herding",
-                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", 
+                "aquacultur", "maricultur", "fisher", "fish farm", "herding",
+                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", "legume",
                 "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
+                "fodder", "animal feed ", "fish feed ",
                 
                 "matproduksjon", "matprodusent",
                 "gård", "gard", "landbruk", "jordbruk", "gårdsbruk", "gardsbruk", "småbruk", "familiebruk", "dyrket mark", "dyrkamark",
                 "dyrka mark", "kultivert mark",
                 "beite", "dyreproduksjon", "meieri",
-                "fiskeoppdrett", "lakseoppdrett",
-                "grønnsak", "grønsak", "frukt", "fiske", "laks", "sau", "storfe", "svin", "fjærkre", "rein"
-                ]
-                #I put a space before " rice" to avoid "price". Note that "agricultur" will also cover e.g. "ecoagriculture"
-
+                "fiskeoppdrett", "lakseoppdrett", "havbruk",
+                "grønnsak", "grønsak", "belgfrukt", "frukt", "fiske", "laks", " sau ", "sauedrift", "sauehold", "storfe", " svin", "fjærkre", " rein",
+                "bærekraftig fôr", "berekraftig fôr", "dyrefôr", "dyrefor ", "fiskefôr", "fiskefor "]
+                #Space before " rice" to avoid "price", similarly "sau/svin" (NO) and after "xxxfor" (NO, to avoid "forbund" etc.). Note that "agricultur" will also cover e.g. "ecoagriculture"
+    
 termlist2_4b = ["intensif", "productivity", "efficiency", "yield", "agricultural output", "farm output",
-                "produktivitet", "effektivitet", "avling"
-                ]
+                "produktivitet", "effektivitet", "avling"]
 
 termlist2_4c = ["production", "produksjon"]
 
 termlist2_4d = ["increas", "improv",
-                "økt", "øke", "auke", "auka"
-                ]
+                "økt", "øke", "auke", "auka"]
                 #"production" is combined with "increasing" because a lot of the results were too irrelevant when alone.
-
 
 phrasedefault2_4a = r'(?:{})'.format('|'.join(termlist2_4a))
 phrasedefault2_4b = r'(?:{})'.format('|'.join(termlist2_4b))
@@ -1704,38 +1278,13 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-  (
-      ("food production" OR "food grower$" OR "agro food"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
-      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
-      OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
-      OR
-        (
-          ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
-          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
-      )
-      NEAR/15
-            ("climate smart agriculture" OR "resilien*"
-            OR (("disaster$" OR "risk$") NEAR/3 ("plan*" OR "strateg*" OR "relief" OR "manag*"))
-            OR "vulnerability"
-            )  
-  )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*" OR "wild pig$")
-)
-```
 
 
 ```python
 #Termlists
 termlist2_4e = ["climate smart", "climate-smart", "resilien", "vulnerability", 
-                "disaster plan", "disaster management", "disaster strateg", "disaster relief", "risk plan", "risk management", "risk strate", "risk reduction", "manage risk"
+                "risk reduction", "disaster reduction",
+                "disaster plan", "disaster management", "disaster strateg", "disaster relief", "disaster program", "risk plan", "risk management", "risk strate", "manage risk", "risk program",
                 
                 "klimasmart", "sårbar",
                 "risikoplan", "katastrofe", "beredskap"
@@ -1766,52 +1315,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  (
-      ("food production" OR "food grower$" OR "agro food"
-      OR "farm*" OR "agricultur*" OR "ecoagricultur*" OR "eco agricultur*" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoralist$"
-      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture" OR "fisher*" OR "fish farm*"
-      OR "crop$" OR "cereal$" OR "rice" OR "wheat" OR "maize"
-      OR "livestock" OR "cattle" OR "sheep" OR "poultry" OR "chicken$" OR "pig$" OR "goat$"
-      OR
-        (
-          ("grain$" OR "vegetable$" OR "fruit$" OR "pulses" OR "fish" OR "buffalo*" OR "duck$")
-          NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-        )      
-      )
-      NEAR/15
-          (
-            ("adapt*" OR "mitigat*" OR "protect*" OR "avoid*" OR "limit" OR "prevent*"
-            OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
-            OR "cope" OR "coping" OR "tolera*" OR "preparedness" OR "early warning"
-            )
-            NEAR/5
-                ("climate change" OR "climatic change$" OR "global warming" OR "changing climate"
-                OR "disaster$" OR "catastroph*"
-                OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-                OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-                OR "drought$" OR "flood*"
-                OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-                OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-                OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-                OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-                OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-                OR "tipping point$"  
-                OR "outbreak$" OR "pandemic$" OR "epidemic$"
-                OR "war" OR "wars" OR "armed conflict$"
-                OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-                OR "financial crash*" OR "financial shock$" OR "financial disaster$"
-                OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-                )
-          )
-  )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*" OR "wild pig$")
-)
-```
 
 
 ```python
@@ -1823,9 +1326,7 @@ termlist2_4f = ["adapt", "mitigat", "protect", "avoid", "limit", "prevent", "man
 
                 "tilpass", "forbered", "førebu", "beskytt", "unngå", "begrens", "hindr", "forebygg", "førebygg" ,"håndter",
                 "planer", "planlegging", "handlingsplan", "rammeverk", "politikk", "retningslin", "styring", "ledelse", "leiing", "lovgiv", 
-                "katastrofeplanlegging", "risikoreduksjon", "strategi", "krisehåndtering", 
-                "tåle", "beredskap", "varsling", "varsel"                
-                ]
+                "katastrofeplanlegging", "risikoreduksjon", "strategi", "krisehåndtering", "tåle", "beredskap", "varsling", "varsel"]
               
 termlist2_4g = ["climate change", "changing climate", "global warming",
                 "disaster", "catastrophe", "hazard",
@@ -1856,11 +1357,10 @@ termlist2_4g = ["climate change", "changing climate", "global warming",
                  "havnivåstigning", "stormflo", 
                  "pandemi", "epidemi", "utbrudd", "utbrot",
                  "politisk ustabilitet", "væpnede konflikter", "væpnet konflikt", "væpna konflikt", "borgerkrig", "borgarkrig", "fremmedkrig", "finanskrise", "finanssjokk", 
-                 "finanskatastrofe", "finanskræsj", "økonomisk nedgang", "økonomisk sjokk", "økonomisk katastrofe"
-                ] 
+                 "finanskatastrofe", "finanskræsj", "økonomisk nedgang", "økonomisk sjokk", "økonomisk katastrofe"]
+
 termlist2_4h = ["war", "wars", 
                 "krig", "ras"]  
-
 
 phrasedefault2_4f = r'(?:{})'.format('|'.join(termlist2_4f))
 phrasedefault2_4g = r'(?:{})'.format('|'.join(termlist2_4g))
@@ -1887,42 +1387,8 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 4
-The following report from NIBIO was used to help with Norwegian sustainable agriculture terms https://nibio.brage.unit.no/nibio-xmlui/bitstream/handle/11250/2638984/NIBIO_RAPPORT_2020_6_4.pdf?sequence=1&isAllowed=y
+The following report from NIBIO was used to help with Norwegian sustainable agriculture terms: Bøe et al. (2020) Fangvekster som klimatiltak i Norge. Egnet dyrkingsareal, potensiale for klimagassbesparelse, kostnader, barrierer og virkemiddel. NIBIO Report. http://hdl.handle.net/11250/2638984
 
-```
-TS=
-  ("ecoagricultur*" OR "eco-agricultur*" OR "permaculture"
-  OR "conservation agriculture" OR "conservation farming"
-  )
-OR
-TS=
-(
-  (
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*"
-    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
-    OR
-      (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-        )
-        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-      )      
-    )
-    NEAR/15
-        ("sustainab*" OR "agroecolog*" OR "eco-friendly" OR "environmentally friendly" OR "ecosystem approach"
-        OR ("organic" NEAR/3 ("farm*" OR "agricultur*" OR "cultivation" OR "gardening" OR "production" OR "orchard$" OR "pasture$" OR "aquaculture"))
-        OR "natural pest control" OR "natural pest management" OR "biological pest control" OR "intergrated pest management"
-        OR "intercropping" OR "cover crop$" OR "crop rotation" OR "polyculture$" OR "permaculture"
-        OR "reduced tillage" OR "mulch" OR "mulching"
-        OR "water conservation"       
-        )   
-  )
-  NOT ("solar farm*" OR "wind farm*" OR "power farm*")  
-)
-```
 
 
 ```python
@@ -1931,19 +1397,19 @@ termlist2_4i = ["ecoagricultur", "eco-agricultur", "agroecolog", "permaculture",
                 "organic farm", "organic agricult", "organic crop", "organic orchard", "organic arable", "organic pasture",
                 "organic aquacultur", "organic salmon", "organic pig", "organic poultry", "organic dairy", "organic reindeer",
 
-                "økolandbruk", "økojordbruk", "permakultur"           
+                "økolandbruk", "økojordbruk", "permakultur"     
                 ]
                 #"organic" is not used alone, but is instead combined in phrases to avoid e.g. organic acids, organic matter. Moved to this part rather than 4j as it can stand alone.
+                #"bærekraftig fôr" (NO) is added specifically due to it's inclusion as a priority area ("samfunnsoppdrag") in the governments Long-term plan.
               
-termlist2_4j = ["sustainab", "eco-friendly", "environmentally friendly", "ecosystem approach",
+termlist2_4j = ["sustainab", "eco-friendly", "environmentally friendly", "ecosystem approach", "ecosystem based",
                 "natural pest control", "natural pest management", "biological pest control", "intergrated pest management",
                 "intercropping", "cover crop", "crop rotation", "polyculture", "permaculture", 
                 "reduced tillage", "mulch", "mulching",
                 "water conservation",
 
-                "bærekraftig", "berekraftig", "selvbærende", "sjølvberande", "miljøvennlig", "miljøvennleg", "miljøvenleg", "miljøbevisst", 
-                "miljømedveten", "miljømedviten", "økosystem", "økologisk", "biologisk bekjempelse", "biologisk nedkjemping", "biologisk skadedyrkontroll", 
-                "integrert skadedyrkontroll", "integrert ugrasbekjempelse", "integrert plantevern",
+                "bærekraftig", "berekraftig", "selvbærende", "sjølvberande", "miljøvennlig", "miljøvennleg", "miljøvenleg", "miljøbevisst", "miljømedveten", "miljømedviten", "økosystem", 
+                "økologisk", "biologisk bekjempelse", "biologisk nedkjemping", "biologisk skadedyrkontroll", "integrert skadedyrkontroll", "integrert ugrasbekjempelse", "integrert plantevern",
                 "vekstskifte", "grønngjødsling", "dekkvekst", "underkultur", "underså", "ettervekster", "polykultur", "permakultur",
                 "redusert jordarbeiding", "gjødselplanlegging",
                 "vannsparing"                
@@ -1972,32 +1438,7 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 5
-The following NIBIO report was used to help with relevant Norwegian terms around soil management: https://hdl.handle.net/11250/2738064
-
-```
-TS=
-(
-    ("food production" OR "food grower$" OR "agri food"
-    OR "farm*" OR "agricultur*" OR "permaculture"
-    OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-    OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-    OR "aquaculture" OR "fisher*" OR "fish farm*"
-    OR
-      (
-        ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-        )
-        NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-      )      
-    )
-    NEAR/15
-          ("soil conservation"
-          OR "soil structure" OR "soil fertility" OR "soil health"
-          OR ("quality" NEAR/5 ("soil" OR "land" OR "farmland"))
-          OR "biodiversity" OR "agrobiodiversity" OR "species diversity" OR "ecosystem$" OR "pollinator$"
-          )     
-)
-```
+The following NIBIO report was used to help with relevant Norwegian terms around soil management: Bardalen et al. (2021). Jordvernets begrunnelser Kunnskapsgrunnlag for revidert jordvernstrategi. NIBIO Report. https://hdl.handle.net/11250/2738064
 
 
 ```python
@@ -2033,59 +1474,21 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 6
-The following NIBIO report was used to help with relevant Norwegian terms around soil management: https://hdl.handle.net/11250/2738064
-
-```
-TS=
-(
-  ("food production" OR "food grower$" OR "agri food"
-  OR "farm*" OR "agricultur*" OR "permaculture"
-  OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$" OR "pastoral*"
-  OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-  OR "aquaculture" OR "fisher*" OR "fish farm*"
-  OR
-    (
-      ("crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-      OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-      )
-      NEAR/5 ("production" OR "producer$" OR "grower$" OR "herder$" OR "herding" OR "ranch*" OR "plantation$")
-    )      
-  )
-  NEAR/15
-      ("desertification"
-      OR
-        ("soil$"
-        NEAR/5
-            ("loss" OR "degradation" OR "depletion" OR "nutrient imbalance$"
-            OR "erosion" OR "compaction" OR "waterlogging"
-            OR "salinization" OR "salinisation" OR "acidification"
-            OR "chemical pollution" OR "contamination"
-            )
-        )
-      OR
-        (
-          ("ecosystem$" OR "biodiversity" OR "land" OR "species" OR "pollinator$")
-          NEAR/5 ("loss" OR "degradation" OR "depletion")
-        )
-      )
-)
-```
+The following NIBIO report was used to help with relevant Norwegian terms around soil management: Bardalen et al. (2021). Jordvernets begrunnelser Kunnskapsgrunnlag for revidert jordvernstrategi. NIBIO Report. https://hdl.handle.net/11250/2738064
 
 
 ```python
 #Termlists
 #Note that we don't need biodiversity/pollinator terms here because they are already covered in phrase 5
-termlist2_4l = ["desertification", "land degradation",
-                "vannknapphet", "ørkenspredning", "ørkenspreiing", "forørkning", "landforringelse", "jordforringelse"]
+termlist2_4l = ["desertification", "land degradation", "environmental impact", "environmental footprint",
+                "vannknapphet", "ørkenspredning", "ørkenspreiing", "forørkning", "landforringelse", "jordforringelse", "miljøpåvirk", "fotavtrykk"]
 
 termlist2_4m = ["soil", "cropland", "farmland", "arable land", "cultivated land", "agricultural land",
-                "jord", "dyrket mark", "dyrka mark", "dyrkamark", "dyrket land", "dyrka land"
-                ]
+                "jord", "dyrket mark", "dyrka mark", "dyrkamark", "dyrket land", "dyrka land"]
                 #"land" had some noise if used alone, for example "Greenland"
 
-termlist2_4n = ["loss", "degradation", "depletion", "erosion", "compaction", "waterlogging", "salinization", "salinisation", "acidifi", "pollut", "contaminat",
-                "forring", "forverr", "næringsfattig", "avrenning", "jordtap", "erosjon", "forsalting", "jordpakking", "forsuring", "forurensing", "forureining"
-                ]
+termlist2_4n = ["loss", "degradation", "depletion", "erosion", "compaction", "waterlogging", "salinization", "salinisation", "acidifi", "pollut", "contaminat", "vulnerab",
+                "forring", "forverr", "næringsfattig", "avrenning", "jordtap", "erosjon", "forsalting", "jordpakking", "forsuring", "forurensing", "forureining", "sårbar"]
 
 phrasedefault2_4l = r'(?:{})'.format('|'.join(termlist2_4l))
 phrasedefault2_4m = r'(?:{})'.format('|'.join(termlist2_4m))
@@ -2121,58 +1524,6 @@ test.iloc[0:5, ]
 
 #### Phrase 1 & 2
 These two are combined here because it was difficult to find completely non-overlapping terms in Norwegian. Phrase 1 deals with terms quite specific to animal and plant genetic diversity in agriculture, while phrase 2 deals with genetic resources generally combined with agriculture. In practice, here the approach for these became so similar that I combined them. 
-```
-#Phrase 1
-TS=
-(
-    "plant genetic resource$" OR "animal genetic resource$"
-    OR  
-      (
-        ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-        NEAR/3 ("breed$" OR "cultivar$")
-      )
-    OR "agricultural diversity" OR "agricultural biodiversity" OR "agrobiodiversity"
-    OR  
-      (
-        (
-          ("local" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-          NEAR/1 
-            ("variet*" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*")
-        )
-        AND "agricult*"
-      )
-    OR
-      ("landrace$"
-      NEAR/5
-        ("maintain*" OR "conserv*" OR "preserv*" OR "protect*"
-        OR "diversity" OR "genomic variation" OR "genetic variation"
-        OR "loss" OR "extinction" OR "declin*" OR "disappear*"
-        )    
-      )    
-)
-
-#Phrase 2
-TS=
-(
-        ("genetic diversity" OR "genetic resource$"
-        )
-        NEAR/15
-            ("agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-            OR "cropping system$" OR "orchard$"
-            OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-            OR "aquaculture"
-            OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-            OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"
-            OR "landrace$" OR "wild relative$"
-            OR
-              (
-                ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-                NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-              )
-            )
-)
-```
 
 
 ```python
@@ -2193,29 +1544,26 @@ termlist2_5a = ["plant genetic resource", "animal genetic resource",
                 "biologisk mangfold for mat","biologisk mangfold for landbruk","biologisk mangfold for jordbruk",
                 "biologisk diversitet for mat","biologisk diversitet for landbruk","biologisk diversitet for jordbruk",
                 "biomangfold for mat","biomangfold for landbruk","biomangfold for jordbruk",
-                "ville slekt",      
-                "gamle eplesort", "gamle eplevariant", "tradisjonelle eplesort", "tradisjonelle eplevariant"       
-                ]
+                "ville slekt", "villslekt",
+                "gamle eplesort", "gamle eplevariant", "tradisjonelle eplesort", "tradisjonelle eplevariant"]
                 #Apples are added in Norwegian as this seems to be a specific focus area
 
-termlist2_5b = ["heirloom", "wild relative", "genetic resource","genetic diversity",
-                "mangfold", "mangfald", "ville", "viltvoks", "viltvaks", "tradisjonelle", "genetiske ressurs", "genressurs", "genetikk diversit"
-                ]
+termlist2_5b = ["heirloom", "wild relative", "genetic resource", "genetic diversity",
+                "mangfold", "mangfald", "ville", "viltvoks", "viltvaks", "tradisjonelle", "genetiske ressurs", "genressurs", "genetikk diversit"]
 
-termlist2_5c = ["food-produc", "food produc", "grower", "agro food", "agri-food", "agro-food", 
-                "agricultur", "farm", "smallhold", "permacultur", "cropping", "orchard", "arable land",
+termlist2_5c = ["food-produc", "food produc", "grower", "agrifood", "agri-food", "agro-food", "agro food",
+                "agricultur", "farm", "smallhold", "small-hold", "permacultur", "cropping", "orchard", "arable land",
                 "pasture", "pastoral", "agroforest", "agro-forest", "silvopastur", "silvopastoral",
-                "aquacultur", "fisher", "fish farm", "herding",
-                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", 
+                "aquacultur", "maricultur", "fisher", "fish farm", "herding",
+                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", "legume",
                 "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
                 
                 "matproduksjon", "matprodusent",
                 "landbruk", "jordbruk", "gårdsbruk", "gardsbruk", "småbruk", "familiebruk", "dyrket mark", "dyrkamark", "dyrka mark", "kultivert mark",
                 "beite", "dyreproduksjon", "meieri",
-                "fiskeoppdrett", "lakseoppdrett",
-                "grønnsak", "grønsak", "frukt", "laks", "sau", "storfe", "svin", "fjærkre", "rein",
-                "eplesort", "epler", "epledyrk"
-                ]
+                "fiskeoppdrett", "lakseoppdrett", "havbruk",
+                "grønnsak", "grønsak", "frukt", "laks", " sau", "storfe", " svin", "fjærkre", " rein",
+                "eplesort", "epler", "epledyrk"]
                 #"husdyr" (NO) was tested but mostly brought noise about household fauna
                 #"gård" (NO) was also removed as mostly were results with place names (e.g Oppegård)
                 #"fish" is changed to "fisher" here to avoid fish diversity works
@@ -2243,50 +1591,12 @@ print("Number of results = ", len(Data[(Data.tempsdg02_05 == "SDG02_05")]))
 ```python
 #Results
 test=Data.loc[(Data.tempsdg02_05 == "SDG02_05"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[20:30, ]
 ```
 
 #### Phrase 3
 
 Here we have simplified (to adapt from abstract to title search) - drop the terms starting `"diversity" OR "genetic resources"...` so it is enough for the title to mention cryoconservation / genebanks. In the abstract the more detialed approach was necessary becaue many works mention that they *used* a gene bank in the methods, but are not about gene banks. 
-
-```
-TS=
-(
-  (
-      ("cryoconservation"
-      OR
-        (
-          ("plant bank$" OR "seed bank$"
-          OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
-          OR "ex situ" OR "cryopreserv*"
-          )
-          NEAR/15
-              ("diversity" OR "genetic resources" OR "agricultural biodiversity"
-              OR "maintain*" OR "conserv*" OR "preserv*" OR "protect*" OR "extinct*" OR "endangered"
-              OR "collection$ management" OR "collection$ development"
-              OR "funding" OR "fund" OR "invest" OR "investing" OR "investment$"
-              OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "strateg*" OR "framework$" OR "governance" OR "legislat*"
-              )
-        )
-      )  
-      NEAR/15
-          ("agricultur*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-          OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
-          OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-          OR "aquaculture"
-          OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-          OR "livestock" OR "poultry" OR "cattle" OR "sheep" OR "pig$" OR "goat$" OR "chicken$" OR "duck$" OR "buffalo*"     
-          OR "landrace$" OR "wild relative$"
-          OR
-            (
-              ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-              NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-            )
-          )
-  ) NOT ("soil seed bank$" OR "weed seed bank$" OR "dung seed bank$")        
-)
-```
 
 
 ```python
@@ -2294,12 +1604,8 @@ TS=
 termlist2_5d = ["cryoconserv", 
                 "kryo-bevaring", "kryobevaring"] 
 
-termlist2_5e = ["plant bank", "seed bank", "genebank", "germplasm bank", 
-                "cryobank","ex-situ", "cryopreserv", 
-                
-                "frøhvelv", "frøkvelv", "plantebank", "frøbank", "genbank", "genbevaring", "genressurssenter", "kimplasmabank", "kimplasmabevaring",
-                "kryopreserv"
-                ]
+termlist2_5e = ["plant bank", "seed bank", "genebank", "germplasm bank", "cryobank", "ex-situ", "cryopreserv", 
+                "frøhvelv", "frøkvelv", "plantebank", "frøbank", "genbank", "genbevaring", "genressurssenter", "kimplasmabank", "kimplasmabevaring", "kryopreserv"]
 
 phrasedefault2_5d = r'(?:{})'.format('|'.join(termlist2_5d))
 phrasedefault2_5e = r'(?:{})'.format('|'.join(termlist2_5e))
@@ -2309,10 +1615,8 @@ phrasedefault2_5e = r'(?:{})'.format('|'.join(termlist2_5e))
 ```python
 #Search 1
 Data.loc[(
-   (Data['result_title'].str.contains(phrasedefault2_5c, na=False, case=False)) 
-    & (
-        (Data['result_title'].str.contains(phrasedefault2_5d, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault2_5e, na=False, case=False))
-      )
+    (Data['result_title'].str.contains(phrasedefault2_5c, na=False, case=False)) 
+    & ((Data['result_title'].str.contains(phrasedefault2_5d, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault2_5e, na=False, case=False)))
     ),"tempsdg02_05"] = "SDG02_05"
 
 print("Number of results = ", len(Data[(Data.tempsdg02_05 == "SDG02_05")])) 
@@ -2326,108 +1630,33 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 4 & 5
-```
-TS=
-(
-  (
-    ("genetic resource$" OR "agrobiodiversity"
-    OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$"
-    OR "cryobank$" OR "ex situ" OR "cryopreserv*" OR "germplasm"
-    OR "seed commons"
-    OR "bioprospecting"
-    OR (("traditional" OR "indigenous" OR "autochthonous") NEAR/3 ("knowledge"))
-    )
-    NEAR/15
-        ("governance" OR "justice" OR "ownership"
-        OR "biopiracy" OR "inequitable" OR "inequity"
-        OR "material transfer agreement$" OR "informed consent"
-        OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$"
-        )
-  )    
-  AND
-      ("food"
-      OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultivar$" OR "permaculture"
-      OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
-      OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-      OR "aquaculture"
-      OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-      OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-      OR "landrace$" OR "wild relative$"
-      OR
-        (
-          ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-          NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-        )
-      )                 
-)   
-
-TS =
-(
-    ("genetic resource$" OR "agrobiodiversity"
-    OR "bioprospecting"
-    OR (("traditional" OR "indigenous" OR "autochthonous") NEAR/3 ("knowledge" OR "right$"))
-    )
-    AND
-        ("food"
-        OR "agricultur*" OR "domestic*" OR "farming" OR "farm$" OR "farmer$" OR "cultiva*" OR "permaculture"
-        OR "cropping system$" OR "orchard$" OR "arable land$" OR "pasture$"
-        OR "agroforest*" OR "agro forest*" OR "silvopastur*" OR "silvopastoral*"
-        OR "aquaculture"
-        OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses"
-        OR "livestock" OR "fish" OR "cattle" OR "sheep" OR "poultry" OR "pig$" OR "goat$" OR "chicken$" OR "buffalo*" OR "duck$"
-        OR "landrace$" OR "wild relative$"
-        OR
-          (
-            ("local*" OR "traditional" OR "heirloom" OR "wild" OR "indigenous" OR "autochthonous")
-            NEAR/3 ("breed$" OR "variet*" OR "cultivar$")
-          )
-        )
-    AND
-        ("Convention on biological diversity" OR "CBD"
-        OR "Nagoya Protocol"
-        OR "International Seed Treaty"
-        OR "biopiracy"
-        OR "Global Plan of Action for Animal Genetic Resources"
-        OR "Plant Genetic Resources for Food and Agriculture" OR "PGRFA"
-        )
-)
-```
 
 
 ```python
 #Termlists
 termlist2_5f = ["genetic resource", "agrobiodiversity",
-                "plant bank", "seed bank", "genebank", "germplasm bank", "cryobank",
-                "ex-situ", "cryopreserv", 
+                "plant bank", "seed bank", "genebank", "germplasm bank", "cryobank", "ex-situ", "cryopreserv", 
                 "seed commons",
                 "bioprospect", 
                 "traditional knowledge", "local knowledge", "indigenous knowledge","autochthonous knowledge", 
                 
                 "genetiske ressurs", "genressurs", 
-                "frøhvelv", "frøkvelv","plantebank", "frøbank", "genbank", "genbevaring", "kimplasmabevaring", "kimplasmabank", "kimplasmaressurs",
-                "kryopreserv",
+                "frøhvelv", "frøkvelv","plantebank", "frøbank", "genbank", "genbevaring", "kimplasmabevaring", "kimplasmabank", "kimplasmaressurs",  "kryopreserv",
                 "frøallmenning",
                 "bioprospekt",
-                "tradisjonelle kunnskap", "tradisjonell kunnskap", "urfolkskunnskap", "urfolksperspektiv"
-                ]
+                "tradisjonelle kunnskap", "tradisjonell kunnskap", "urfolkskunnskap", "urfolksperspektiv"]
               
 termlist2_5g = ["governance", "justice", "ownership",
                 "biopira", "inequit", 
-                "material transfer", "consent",
-                "sharing", "equitab", "equal", "fair", "access", "right",
-                "Convention on biological diversity", "CBD", 
-                "Nagoya", 
+                "material transfer", "consent", "sharing", "equitab", "equal", "fair", "access", "right", "availab",
+                "Convention on biological diversity", "CBD", "Nagoya", 
 
                 "myndig", "styring", "ledelse", "leiing", "rettferd", "eierskap", "eigarskap",
-                "avtale",
-                "deling", "deler", "tilgang", "rett",
-                "Konvensjonen om biologisk mangfold"
-                ] 
+                "avtale", "deling", "deler", "tilgang", "tilgjeng", "rett",
+                "Konvensjonen om biologisk mangfold"] 
 
-termlist2_5h = ["International Seed Treaty", 
-                "Global Plan of Action for Animal Genetic Resources", "Plant Genetic Resources for Food and Agriculture", "PGRFA",
-                "Den internasjonale plantetraktaten"
-                ]
+termlist2_5h = ["International Seed Treaty", "Global Plan of Action for Animal Genetic Resources", "Plant Genetic Resources for Food and Agriculture", "PGRFA",
+                "Den internasjonale plantetraktaten"]
 
 phrasedefault2_5f = r'(?:{})'.format('|'.join(termlist2_5f))
 phrasedefault2_5g = r'(?:{})'.format('|'.join(termlist2_5g))
@@ -2462,69 +1691,36 @@ test.iloc[0:5, ]
 
 *Blant annet gjennom bedre internasjonalt samarbeid øke investeringene i infrastruktur på landsbygda, i forskning og veiledningstjenester innenfor landbruket, i teknologiutvikling og i genbanker for planter og husdyr, med sikte på å forbedre produksjonskapasiteten i landbruket i utviklingsland, særlig i de minst utviklede landene*
 
-```
-TS =
-(
-      ("Agriculture Orientation Index for Government Expenditure$"
-      OR
-        (
-          (
-            ("government" OR "public")
-            NEAR/3 ("expenditure" OR "invest*" OR "financ*" OR "spending")
-          )
-        OR "ODA" OR "cooperation fund$" OR "development spending"
-        OR
-          (
-            ("international" OR "development" OR "foreign")
-            NEAR/3
-                ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-                OR "aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "financial support" OR "financial resources"
-                )
-          )
-        )
-        AND
-            ("rural infrastructure"
-            OR "agronom*" OR "agroecolog*" OR "agro ecolog*" OR "agricultural sector"
-            OR "plant bank$" OR "seed bank$" OR "gene bank$" OR "genebank$" OR "germplasm bank$" OR "cryobank$"
-            OR
-              (
-                ("infrastructure" OR "technolog*" OR "biotech*" OR "research" OR "science$" OR "innovation" OR "R&D")
-                NEAR/3 ("agricultur*" OR "farm*" OR "irrigation" OR "agri food" OR "agrifood")
-              )                  
-            )
-      )
-      AND ****LMICs****
-)
-```
-
 
 ```python
 #Termlists
 termlist2_aa = ["Agriculture Orientation Index for Government Expenditure"]
 
 termlist2_ab = ["government expenditure", "government spending", "public expenditure", "public spending",
-                "investment", "financing", "fund", "grant", "financial resource",
-                "ODA", "cooperation fund", "co-operation fund", "development spending",
+                "investment", "investing", "invest ", "finance", "financing", "fund", "grant", "financial resource",
+                "cooperation fund", "co-operation fund", "development spending", 
                 "international cooperation", "international co-operation", "international collaboration", "international network", "international partnership", "international aid", "international assistance",
-                "development cooperation", "development co-operation", "development collaboration", "development network", "development partnership", "development aid", "development assistance",
+                "international development", "development cooperation", "development co-operation", "development collaboration", "development network", "development partnership", "development aid", "development assistance",
                 "foreign cooperation", "foreign co-operation", "foreign collaboration", "foreign network", "foreign partnership", "foreign aid", "foreign assistance",
 
                 "statsbudsjett", "statsstøtte", "offentlig støtte", 
                 "finansiel", "midlar", "økonomiske ressurs",
                 "samarbeidsfond", "utviklingsstøtte", "utviklingsstønad", "bistand", "utviklingshjelp", "u-hjelp",
-                "utviklingssamarbeid", "internasjonalt samarbeid", "internasjonale samarbeid"
-                ]
+                "utviklingssamarbeid", "internasjonalt samarbeid", "internasjonale samarbeid"]
 
-termlist2_ac = ["rural infrastructure", "agronom", "agroecolog", "agricultural sector",
+termlist2_ab_trunc = ["ODA"]
+
+termlist2_ac = ["rural infrastructure", "rural infrastructure", "rural techn", "rural development",
+                "agronom", "agroecolog", "agro-ecolog", "agricultural sector",
                 "plant bank", "seed bank", "gene bank", "genebank", "germplasm bank", "cryobank",
-                "agricultur", "farm", "irrigat", "agrifood", "agri food", "agri-food",
+                "agricultur", "farm", "smallhold", "small-hold", "irrigat", "agrofood", "agrifood", "agri food", "agri-food", "aquacultur", "maricultur",
 
                 "frøhvelv", "frøkvelv", "plantebank", "frøbank", "genbank", "genbevaring", "genressurssenter", "kimplasmabank", "kimplasmabevaring",
-                "jordbruk", "landbruk", "gård", "gard", "småbruk", "familiebruk", "matprodusent", "matproduksjon"
-                ]
+                "jordbruk", "landbruk", "gård", "gard", "småbruk", "familiebruk", "matprodusent", "matproduksjon", "akvakultur", "havbruk"]
 
 phrasedefault2_aa = r'(?:{})'.format('|'.join(termlist2_aa))
 phrasedefault2_ab = r'(?:{})'.format('|'.join(termlist2_ab))
+phrasespecific2_ab = r'\b(?:{})\b'.format('|'.join(termlist2_ab_trunc))
 phrasedefault2_ac = r'(?:{})'.format('|'.join(termlist2_ac))
 ```
 
@@ -2536,7 +1732,7 @@ Data.loc[(
       (Data['result_title'].str.contains(phrasedefault2_aa, na=False, case=False)) 
       |
         (
-            (Data['result_title'].str.contains(phrasedefault2_ab, na=False, case=False)) 
+            ((Data['result_title'].str.contains(phrasedefault2_ab, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific2_ab, na=False, case=False)))
             & (Data['result_title'].str.contains(phrasedefault2_ac, na=False, case=False)) 
         )
     )
@@ -2550,7 +1746,7 @@ print("Number of results = ", len(Data[(Data.tempsdg02_a == "SDG02_0a")]))
 ```python
 #Results
 test=Data.loc[(Data.tempsdg02_a == "SDG02_0a"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:15, ]
 ```
 
 ### SDG 2.b
@@ -2559,68 +1755,39 @@ test.iloc[0:5, ]
 
 *Korrigere og hindre handelsrestriksjoner og vridninger på verdens landbruksmarkeder, blant annet gjennom en parallell avvikling av alle former for eksportsubsidier på landbruksvarer og alle eksporttiltak med tilsvarende effekt, i samsvar med mandatet for Doha-runden*
 
-```
-TS=
-(
-  ("export subsid*" OR "export credit$" OR "export financ*" OR "export competition" OR "export support$")
-  AND ("agricultur*" OR "agrifood" OR "food")
-)
-
-TS=
-(
-  ("distort*" OR "price-fixing" OR "dumping"
-  OR "trade restrict*" OR "Doha" OR "food aid"
-  OR "state support*" OR "state financial support"
-  OR "WTO dispute$"
-  )
-  NEAR/15
-      (
-        ("trade" OR "trading" OR "market$" OR "export$")
-        NEAR/5 ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses")
-      )
-)
-
-```
-
 
 ```python
 #Termlists
 termlist2_ba = ["export subsid","export credit","export financ","export competition","export support",
-                "eksportsubsidi", "eksporttiltak", "eksportrestriksjon", "markeds-forstyrrende subsidi"
-                ]
+                "eksportsubsidi", "eksporttiltak", "eksportrestriksjon", "markeds-forstyrrende",]
 
-termlist2_bb = ["food", "agricultur", 
-                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", 
+termlist2_bb = ["food", "agricultur", "aquacult", "maricult", 
+                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", "legume", 
                 "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
                 
-                "matprod", "gård", "landbruk", "jordbruk",
-                "fiskeoppdrett", "lakseoppdrett",
-                "grønnsak", "grønsak", "frukt", "fisk", "laks", "sau", "storfe", "svin", "fjærkre", "rein"
-                ]
+                "matprod", "gård", "landbruk", "jordbruk", "fiskeoppdrett", "lakseoppdrett", "havbruk", "akvakultur",
+                "grønnsak", "grønsak", "frukt", "fisk", "laks", " sau", "storfe", " svin", "fjærkre", "rein"]
 
-termlist2_bc = ["distort","price-fixing","dumping","trade restrict","Doha","food aid",
-                "state support","state financial support",
+termlist2_bc = ["distort", "price-fixing", "dumping", "trade restrict", "sanction", "Doha", "food aid", "state support","state financial support",
                 "WTO dispute",
 
-                "vridning", "handelsrestriksjon", "matbistand",
-                "verdens handelsorganisasjon", "verdas handelsorganisasjon", "handelsreform"
-                ]
+                "vridning", "handelsrestriksjon", "matbistand", 
+                "verdens handelsorganisasjon", "verdas handelsorganisasjon", "handelsreform"]
 
-termlist2_bd = ["trade", "trading", "market", "export",         
-                "handel", "marked", "marknad", "eksport"
-                ]
+#termlist2_bd = ["trade", "trading", "market", "export", "import",       
+#                "handel", "marked", "marknad", "eksport"]
 
 phrasedefault2_ba = r'(?:{})'.format('|'.join(termlist2_ba))
 phrasedefault2_bb = r'(?:{})'.format('|'.join(termlist2_bb))
 phrasedefault2_bc = r'(?:{})'.format('|'.join(termlist2_bc))
-phrasedefault2_bd = r'(?:{})'.format('|'.join(termlist2_bd))
-
+#phrasedefault2_bd = r'(?:{})'.format('|'.join(termlist2_bd))
 ```
 
 
 ```python
 #Search 1
 #Note that although the WOS phrase would be a&b|b&c&d, here in the title search d is not as necessary. Removing it adds 1 more result.
+
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault2_bb, na=False, case=False)) 
     & 
@@ -2637,7 +1804,7 @@ print("Number of results = ", len(Data[(Data.tempsdg02_b == "SDG02_b")]))
 ```python
 #Results
 test=Data.loc[(Data.tempsdg02_b == "SDG02_b"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:6, ]
 ```
 
 ### SDG 2.c
@@ -2646,71 +1813,39 @@ test.iloc[0:5, ]
 
 *Vedta tiltak for å sikre at råvare- og derivatmarkedene for matvarer er velfungerende og legge til rette for rask tilgang til markedsinformasjon, blant annet om matreserver, for å begrense ekstreme svingninger i matvareprisene*
 
-```
-TS=
-(
-    ("volatil*" OR "instability" OR "unstable" OR "anomalies" OR "price shock$" OR "price spike$" OR "inflation"
-    OR "stability" OR "stable" OR "functioning"
-    OR (("stabiliz*" OR "stabilis*") NEAR/5 ("price$" OR "market$"))
-    )
-    NEAR/15
-        (
-          ("price$" OR "market$")
-          NEAR/5
-            ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
-        )
-)
-OR 
-TS=
-(
-  ("price$"
-  NEAR/3
-    ("agricultur*" OR "agrifood" OR "food" OR "crop$" OR "grain$" OR "vegetable$" OR "fruit$" OR "cereal$" OR "rice" OR "wheat" OR "maize" OR "pulses" OR "livestock")
-  ) 
-  AND ("food market$" OR "agrifood market$" OR "agricultural market$" OR "commodity market$" OR "market information" OR "grain market$" OR "rice market$" OR "wheat market$")
-)
-```
-
 
 ```python
 #Termlists
-termlist2_ca = ["food", "agricultur", 
-                " crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", 
+termlist2_ca = ["food", "agricultur", "aquacultur", "maricultur",
+                " crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", "legume",
                 "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
                 
                 "matprod", "gård", "gard", "landbruk", "jordbruk",
-                "fiskeoppdrett", "lakseoppdrett",
-                "grønnsak", "grønsak", "frukt", "fisk", "laks", "sau", "storfe", "svine", "fjærkre", "rein"
-                ]
+                "fiskeoppdrett", "lakseoppdrett", "havbruk", "akvakultur", 
+                "grønnsak", "grønsak", "frukt", "fisk", "laks", " sau", "storfe", "svine", "fjærkre", "rein"]
                 #"food" will find agrifood etc.
                 #I've added a space before "crop" and "rice" to prevent "macro" and "price"
                 #using "svine"(NO) here instead of svin, because we expect it to talk about svineprodukt, but also because it only adds 1 noisy result
 
 termlist2_cb = ["price", "market", "trade", "trading",
-                "pris", "kostnad", "marked", "marknad", "verdenshandel", "verdshandel", "internasjonal handel", "internasjonale handel"
-                ]
+                "pris", "kostnad", "marked", "marknad", "verdenshandel", "verdshandel", "internasjonal handel", "internasjonale handel"]
 
 termlist2_cc = ["volatil","anomalies","price shock","price spike","inflation","stabil","stable","function",
-                
-                "sving", "forutsig", "forutsei", "prishopp","prissjokk","inflasjon","funksjon"
-                ]
+                "sving", "forutsig", "forutsei", "prishopp","prissjokk","inflasjon","funksjon"]
                 #"stabil" will find stabilis/ze, stability, instability, and the Norwegian term for stable/unstable (stabil, NO). 
                 #"Volatil" will find the Norwegian word too.
 
 termlist2_cd = ["price", 
-                "pris", "kostnad"
-                ]
+                "pris", "kostnad"]
 
 termlist2_ce = ["market", "marknad", "trading", "trading", 
-                "marked", "verdenshandel", "verdshandel", "internasjonal handel", "internasjonale handel"
-                ]
+                "marked", "verdenshandel", "verdshandel", "internasjonal handel", "internasjonale handel"]
 
 phrasedefault2_ca = r'(?:{})'.format('|'.join(termlist2_ca))
 phrasedefault2_cb = r'(?:{})'.format('|'.join(termlist2_cb))
 phrasedefault2_cc = r'(?:{})'.format('|'.join(termlist2_cc))
 phrasedefault2_cd = r'(?:{})'.format('|'.join(termlist2_cd))
 phrasedefault2_ce = r'(?:{})'.format('|'.join(termlist2_ce))
-
 ```
 
 
@@ -2739,50 +1874,17 @@ test.iloc[0:5, ]
 
 Works mentioning the SDG
 
-```
-TS=
-("SDG 2" OR "SDGs 2" OR "SDG2" OR "sustainable development goal$ 2"
-OR ("sustainable development goal$" AND "goal 2")
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 2")
-    AND ("zero hunger")
-  )
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 2")
-    NEAR/15 ("hunger" OR "food")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  OR "Millennium Development Goal 2"
-  )
-```
-
 
 ```python
 #Termlists
-
 termlist_sdg_a = ["SDG 2", "SDGs 2", "SDG2", "sustainable development goal 2", 
-               "bærekraftsmål 2"]
+                  "bærekraftsmål 2"]
 termlist_sdg_b = ["sustainable development goal", 
-               "bærekraftsmål"]
+                  "bærekraftsmål"]
 termlist_sdg_c = ["goal 2",
-               "mål 2"]
+                  "mål 2"]
 termlist_sdg_d = ["sustainable development goal.*", "SDG", "goal 2", 
-               "bærekraftsmål.*", "mål 2"]
+                  "bærekraftsmål.*", "mål 2"]
 termlist_sdg_e = ["hunger", "food", 
                   "utrydde sult"]
 
@@ -2804,16 +1906,8 @@ Right truncation on SDG2 is prevented to avoid the course code SDG214 (Norway-sp
 #Search 1
 Data.loc[(
       (Data['result_title'].str.contains(phrasespecific_sdg_a, na=False, case=False))
-      |
-      (
-        (Data['result_title'].str.contains(phrasedefault_sdg_b, na=False, case=False))
-        & (Data['result_title'].str.contains(phrasedefault_sdg_c, na=False, case=False))
-      )
-      |
-      (
-         (Data['result_title'].str.contains(phrasespecific_sdg_d, na=False, case=False))
-         & (Data['result_title'].str.contains(phrasedefault_sdg_e, na=False, case=False))
-      )
+      |((Data['result_title'].str.contains(phrasedefault_sdg_b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault_sdg_c, na=False, case=False)))
+      |((Data['result_title'].str.contains(phrasespecific_sdg_d, na=False, case=False))& (Data['result_title'].str.contains(phrasedefault_sdg_e, na=False, case=False)))
     ),"tempmentionsdg02"] = "SDG02"
 
 print("Number of results = ", len(Data[(Data.tempmentionsdg02 == "SDG02")])) 
@@ -2827,9 +1921,7 @@ test.iloc[0:5, ]
 
 ## SDG 3
 
-Webpages about SDG targets from the UN Association of Norway were used to help with Norwegian terms (https://www.fn.no/om-fn/fns-baerekraftsmaal/god-helse-og-livskvalitet).
-
-Have also used "Realfagstermer", a controlled vocabulary for scientific terms from the University of Oslo and University of Bergen - https://app.uio.no/ub/emnesok/realfagstermer/search
+To help with sourcing Norwegian terms, we used webpages about SDG targets from the UN Association of Norway (https://www.fn.no/om-fn/fns-baerekraftsmaal/god-helse-og-livskvalitet) and  "Realfagstermer", a controlled vocabulary for scientific terms from the University of Oslo and University of Bergen (https://app.uio.no/ub/emnesok/realfagstermer/search).
 
 ### SDG 3.1
 
@@ -2838,23 +1930,7 @@ Have also used "Realfagstermer", a controlled vocabulary for scientific terms fr
 *Innen 2030 redusere mødredødeligheten i verden til under 70 per 100 000 levendefødte*
 
 
-```
-TS=
-(
-  (   
-    ("pregnan*" OR "post partum" OR "postpartum" OR "peripartum" OR "obstetric$"
-    OR "childbirth" OR "child-birth" OR "birth" OR "births"
-    OR "premature deliver*" OR "preterm deliver*" OR "preterm labor" OR "preterm labour"
-    OR "maternal" OR "mothers"
-    )
-    NEAR/15
-        ("mortality" OR "death$")
-  )
-  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
-)
-```
-
-Because this is a title search, it is less important with the NOT search (it does not seem to cause as much noise). It may be more important for use on other research sets which have large amounts of agricultural research. 
+Because this is a title search, it is less important with the NOT search implemented in the WoS strings (it does not seem to cause as much noise). It may be more important for use on research sets which have large amounts of agricultural research. 
 
 
 ```python
@@ -2909,34 +1985,7 @@ test.iloc[0:5, ]
 
 *Innen 2030 få slutt på dødsfall som kan forhindres blant nyfødte og barn under fem år, med et felles mål for alle land om å redusere dødeligheten blant nyfødte til høyst 12 per 1 000 levendefødte og til høyst 25 per 1 000 levendefødte blant barn under fem år*
 
-Phrase 1 & Phrase 2
-```
-TS=
-(
-  (   
-    ("child*" OR "infant$" OR "toddler$" OR "under-five$"
-    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
-    OR "perinatal" OR "prenatal" OR "antenatal"
-    )
-    NEAR/15
-        ("mortality" OR "death$" OR "stillbirth$" OR "still-birth$")
-  )
-  NOT (("pigs" OR "cows" OR "sheep" OR "cattle" OR "poultry") NOT ("human" OR "model"))    
-)
-
-TS=
-(
-  (   
-    ("child*" OR "infant$" OR "toddler$" OR "under-five$"
-    OR "baby" OR "babies" OR "newborn$" OR "neonatal" OR "neonate$"
-    OR "perinatal" OR "prenatal" OR "antenatal"
-    )
-    NEAR/15
-      ("surviv*")
-  )
-  NOT (("pigs" OR "porcine" OR "cows" OR "sheep" OR "cattle" OR "poultry" OR "newborn cell") NOT ("human" OR "model"))   
-)
-```
+Phrases 1 and 2 are combined here.
 
 
 ```python
@@ -2950,11 +1999,10 @@ termlist3_2a = ["child","infant","toddler","under-five",
               ]
               #"føds" (NO) is used to capture both "fødsel" and  "fødsler" etc.
               #In Norwegian, "for tidlig født" (NO) can be used for premature babies. It is not included in english specifically because
-              #it would be strange not to include the words "baby", "newborn" etc. together with premature.
+              #it would be strange not to include the words "baby", "newborn" etc. together with premature (?).
 
 termlist3_2b = ["mortality","death","stillbirth","still-birth", "surviv",
-                "mortalitet", "død", "overleve"
-                ]
+                "mortalitet", "død", "overleve"]
 
 phrasedefault3_2a = r'(?:{})'.format('|'.join(termlist3_2a))
 phrasedefault3_2b = r'(?:{})'.format('|'.join(termlist3_2b))
@@ -2984,47 +2032,34 @@ test.iloc[0:5, ]
 *Innen 2030 stanse epidemiene av aids, tuberkulose, malaria og neglisjerte tropiske sykdommer, og bekjempe hepatitt, vannbårne sykdommer og andre smittsomme sykdommer*
 
 #### Phrase 1
-```
-TS =
-(
-  (
-    ("communicable disease$" OR "communicable illness*")
-    NEAR/15
-        ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
-        OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-        OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
-        OR "epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"
-        OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$" OR "intervention$" OR "therap*"
-        )
-  )
-  NOT ("non communicable" NOT ("infectious disease$" OR "tropical disease$" OR "non communicable and communicable" OR "communicable and non communicable"))
-)
-```
 
 
 ```python
 #Termlists
 termlist3_3a = ["communicable disease", "communicable illness",
                 "overførbar sykdom", "overførbare sykdommer", "smittsom sykdom", "smittsomme sykdommer", "smittsam sjukdom", "smittsame sjukdommar"] 
+
 termlist3_3b = ["prevent","combat","fight","tackl","reduc","alleviat","mitigat",
                 "eradicat","eliminat","end","ended","ending",
                 "treat","cure","vaccin","control",
                 "epidemic","pandemic","outbreak","spread","transmission","occurrence","incidence","prevalence","risk","rate",
-                "medicine","drug","intervention","therap"
+                "medicine","drug","intervention","therap",
                 
                 "hindr", "forebygg", "førebygg", "kjemp", "takl", "reduser", "reduksjon", "lett", "mink",
                 "utrydd", "eliminer", "stopp", "stogg",
-                "behandl", "kurer", "vaksine", "kontroll"
+                "behandl", "kurer", "vaksine", "kontroll",
                 "epidemi", "pandemi", "utbrudd", "utbrot", "spre", "smitte", "overføring", "forekom", "førekom", "tilfelle", "utbre", "risik",
-                "medisin", "legemid", "intervensjon", "terap"]
+                "medisin", "legemid", "intervensjon", "terap"
+               ]
+
 termlist3_3c = ["non-communicable disease", "non-communicable illness", "noncommunicable disease", "noncommunicable illness", 
-                "ikke smittsom sykdom", "ikke-smittsom sykdom", "ikke-smittsomme sykdom", "ikkje-smittsam sjukdom", "ikkje smittsame sjukdom" ]
+                "ikke smittsom sykdom", "ikke-smittsom sykdom", "ikke-smittsomme sykdom", "ikkje-smittsam sjukdom", "ikkje smittsame sjukdom"]
+
 termlist3_3d = ["infectious disease", "tropical illness",
-                "non communicable and communicable","communicable and non communicable","non-communicable and communicable","communicable and non-communicable",
-                "noncommunicable and communicable","communicable and noncommunicable",
+                "non communicable and communicable","communicable and non communicable","non-communicable and communicable","communicable and non-communicable", "noncommunicable and communicable","communicable and noncommunicable",
+                
                 "overførbar", "tropisk sykdom", "tropiske sykdom", "tropesykdom", "tropisk sjukdom", "tropiske sjukdom", "tropesjukdom", 
-                "ikke-smittsom og smittsom", "ikke-smittsomme og smittsomme", "smittsom og ikke-smittsom", "smittsomme og ikke-smittsomme",
-                "ikkje-smittsam og smittsam", "ikkje-smittsame og smittsame", "smittsam og ikkje-smittsam", "smittsame og ikkje-smittsame"]            
+                "ikke-smittsom og smittsom", "ikke-smittsomme og smittsomme", "smittsom og ikke-smittsom", "smittsomme og ikke-smittsomme","ikkje-smittsam og smittsam", "ikkje-smittsame og smittsame", "smittsam og ikkje-smittsam", "smittsame og ikkje-smittsame"]            
 
 phrasedefault3_3a = r'(?:{})'.format('|'.join(termlist3_3a))
 phrasedefault3_3b = r'(?:{})'.format('|'.join(termlist3_3b))
@@ -3052,166 +2087,7 @@ test=Data.loc[(Data.tempsdg03_03 == "SDG03_03"), ("result_id", "result_title")]
 test.iloc[0:10, ]
 ```
 
-#### Phrase 2 & 3
-
-
-```
-Phrase 2
-TS =
-(
-  (
-    (
-      ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
-      OR "contagious" OR "transmissible" OR "infectious"
-      )
-      NEAR/5
-          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
-    )
-    OR "hepatitis"
-    OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
-    OR "tuberculosis"
-    OR "malaria"
-    OR "cholera"
-    OR "meningitis"
-    OR "influenza" OR "avian influenza" OR "H5N1"
-    OR "rubella"
-    OR "diphtheria"
-    OR "japanese encephalitis"
-    OR "measles"
-    OR "mumps"
-    OR "tetanus"
-    OR "pertussis"
-    OR "polio*"
-    OR "yellow fever"
-    OR "sexually transmitted disease$" OR "sexually transmitted infection$"
-    OR "syphilis"
-    OR "lower respiratory infection$"
-    OR "coronavirus" OR "covid" OR "covid19" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
-    OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
-    OR "ebola"
-    OR "plague"
-    OR "rift valley fever"
-    OR "zika virus"
-
-    OR "amebiasis"
-    OR "cryptosporidiosis" OR "cryptosporidium infection$"
-    OR "giardiasis" OR "giardia infection$"
-    OR "shigellosis"
-    OR "cronobacter infection$"
-    OR "acanthamoeba"
-    OR "balamuthia"
-    OR "naegleria"
-    OR "sappinia"
-    OR "typhoid"
-
-    OR "neglected tropical disease$"
-    OR "buruli ulcer"
-    OR "chagas"
-    OR "dengue"
-    OR "chikungunya"
-    OR "dracunculiasis" OR "guinea-worm disease"
-    OR "echinococcosis"
-    OR "foodborne trematodiases"
-    OR "human african trypanosomiasis" OR "sleeping sickness"
-    OR "leishmaniasis"
-    OR "leprosy"
-    OR "lymphatic filariasis"
-    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
-    OR "onchocerciasis" OR "river blindness"
-    OR "rabies"
-    OR "scabies"
-    OR "schistosomiasis"
-    OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
-    OR "snakebite envenoming"
-    OR "taeniasis" OR "cysticercosis"
-    OR "trachoma"
-    OR "yaws"
-  )
-  NEAR/5
-      ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "fight*" OR "tackl*" OR "reduc*" OR "alleviat*" OR "mitigat*"
-      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending"
-      OR "treat" OR "cure" OR "cured" OR "vaccinate" OR "control"
-      )
-)
-
-Phrase 3
-TS =
-(
-  (
-    (
-      ("water borne" OR "waterborne" OR "water-borne" OR "water-related" OR "diarrhoea*" OR "diarrhea*"
-      OR "contagious" OR "transmissible" OR "infectious"
-      )
-      NEAR/5
-          ("disease$" OR "infection$" OR "epidemic$" OR "illness*")
-    )
-    OR "hepatitis"
-    OR "acquired immune deficiency syndrome" OR "acquired immuno-deficiency syndrome"  OR "acquired immunodeficiency syndrome" OR "Human Immunodeficiency Virus" OR "HIV" OR "prevent aids"
-    OR "tuberculosis"
-    OR "malaria"
-    OR "cholera"
-    OR "meningitis"
-    OR "influenza" OR "avian influenza" OR "H5N1"
-    OR "rubella"
-    OR "diphtheria"
-    OR "japanese encephalitis"
-    OR "measles"
-    OR "mumps"
-    OR "tetanus"
-    OR "pertussis"
-    OR "polio*"
-    OR "yellow fever"
-    OR "sexually transmitted disease$" OR "sexually transmitted infection$"
-    OR "syphilis"
-    OR "lower respiratory infection$"
-    OR "coronavirus" OR "covid" OR "covid19" OR "middle east respiratory syndrome" OR "MERS" OR "severe acute respiratory syndrome" OR "SARS"
-    OR "crimean-congo haemorrhagic fever" OR "viral haemorrhagic fever$"
-    OR "ebola"
-    OR "plague"
-    OR "rift valley fever"
-    OR "zika virus"
-
-    OR "amebiasis"
-    OR "cryptosporidiosis" OR "cryptosporidium infection$"
-    OR "giardiasis" OR "giardia infection$"
-    OR "shigellosis"
-    OR "cronobacter infection$"
-    OR "acanthamoeba"
-    OR "balamuthia"
-    OR "naegleria"
-    OR "sappinia"
-    OR "typhoid"
-
-    OR "neglected tropical disease$"
-    OR "buruli ulcer"
-    OR "chagas"
-    OR "dengue"
-    OR "chikungunya"
-    OR "dracunculiasis" OR "guinea-worm disease"
-    OR "echinococcosis"
-    OR "foodborne trematodiases"
-    OR "human african trypanosomiasis" OR "sleeping sickness"
-    OR "leishmaniasis"
-    OR "leprosy"
-    OR "lymphatic filariasis"
-    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
-    OR "onchocerciasis" OR "river blindness"
-    OR "rabies"
-    OR "scabies"
-    OR "schistosomiasis"
-    OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
-    OR "snakebite envenoming"
-    OR "taeniasis" OR "cysticercosis"
-    OR "trachoma"
-    OR "yaws"
-  )
-  AND
-      ("epidemic$" OR "pandemic$" OR "outbreak$" OR "spread" OR "transmission" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"
-      OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
-      OR "antimalarial$" OR "antiviral$" OR "antibiotic$" OR "antiparasitic$" OR "antihelminthic$" OR "antihelmintic$"
-      )
-)
-```
+#### Phrase 2
 
 
 
@@ -3219,14 +2095,17 @@ TS =
 #Termlists 
 termlist3_3e = ["water borne", "waterborne", "water-borne", "water-related", "diorrhea", "diarrhea", "contagious", "transmissible", "infectious",
                 "vannbår", "vassbår", "vassbor", "vannrelatert", "diare", "smittsom", "smittsam", "smitte", "overførbar"]
+
 termlist3_3f = ["disease", "infection", "epidemic", "illness", 
                 "sykdom", "sjukdom", "infeksjon", "epidemi"]
+
 termlist3_3g = ["hepatitis", "acquired immune deficiency syndrome", "acquired immuno-deficiency syndrome", "acquired immunodeficiency syndrome", "Human Immunodeficiency Virus", "prevent aids",
                 "tuberculosis", "malaria", "cholera", "meningitis", "influenza", "avian influenza", "h5n1", "rubella", "diphteria", "japanese encephalitis", "measles", "mumps", "tetanus",
-                "pertussis", "polio", "yellow fever", "sexually transmitted disease", "sexually transmitted infection", "syphilis", "lower respiratory infection",
-                "coronavirus", "covid", "covid19", "middle east respiratory syndrome", "severe acute respiratory syndrome",
+                "pertussis", "polio", "yellow fever", "sexually transmitted disease", "sexually transmitted infection", "syphilis", 
+                "lower respiratory infection", "respiratory tract infection",
+                "coronavirus", "covid", "sars-cov", "middle east respiratory syndrome", "severe acute respiratory syndrome",
                 "crimean-congo haemorrhagic fever", "viral haemorrhagic fever", "ebola", "plague", "rift valley fever", "zika virus",
-                "amebiasis", "cryptosporidiosis", "cryptosporidium infection", "giardiasis", "giardia infection", "shigellosis", "cronobacter infection"
+                "amebiasis", "cryptosporidiosis", "cryptosporidium infection", "giardiasis", "giardia infection", "shigellosis", "cronobacter infection",
                 "acanthamoeba", "balamuthia", "naegleria", "sappinia", "typhoid", 
                 "neglected tropical disease", "buruli ulcer", "chagas", "dengue", "chikungunya", "dracunculiasis", "guinea-worm disease", "echinococcosis", "foodborne trematodiases",
                 "human african trypanosomiasis", "sleeping sickness", "leishmaniasis", "leprosy", "lymphatic filariasis", "mycetom", "chromoblastomycosis", "deep mycoses",
@@ -3236,7 +2115,9 @@ termlist3_3g = ["hepatitis", "acquired immune deficiency syndrome", "acquired im
                 
                 "hepatitt", "ervervet immunsvikt syndrom-virus", "humant immunsviktvirus", "hindre aids",
                 "tuberkulose", "kolera", "meningitt", "influensa", "røde hunder", "difteri", "japansk encefalitt", "meslinger", "kusma", "stivkrampe",
-                "kikhoste", "gulfeber", "seksuelt overførbar", "syfilis", "luftveisinfeksjon", "koronavirus", 
+                "kikhoste", "gulfeber", "seksuelt overførbar", "syfilis", 
+                "luftveisinfeksjon", 
+                "koronavirus", 
                 "krimfeber", "rift valley-feber", "zikavirus",
                 "amøbiasis", "kryptosporidiose", "giardiainfeksjon", "shigellose", "enterobakterieinfeksjon", "tyfoidfeber",         
                 "neglisjert tropesykdom", "neglisjerte tropesjukdom", "neglisjert tropesjukdom", "negliserte tropesjukdom", "burulisår", "ekinokkokose", "trematodeinfeksjon",
@@ -3244,25 +2125,16 @@ termlist3_3g = ["hepatitis", "acquired immune deficiency syndrome", "acquired im
                 "onkocerkose", "skabb", "helmintiasis", "jordoverført helminthiasis", "hakeorm", "rundorm", "guineaorm", 
                 "taeniainfeksjon", "cysticerkose", "trakom", "frambøsi"
                 ]
-termlist3_3h = ["pest"]                
+# "pest" (NO, = "plague" EN) is difficult to include as "pest" + "control" is noisy. 
 termlist3_3i = ["HIV", "AIDS", "MERS", "SARS"]
-termlist3_3j = ["prevent", "combat", "fight", "tackl", "reduc", "alleviat", "mitigat", "eradicat", "eliminat", "treat", "cure", "vaccinate", "control",
+termlist3_3j = ["prevent", "combat", "fight", "tackl", "reduc", "alleviat", "mitigat", "eradicat", "eliminat", "treat", "cure", "curing", "vaccinate", "control", "contain",
                 "hindr", "forebygg", "førebygg", "nedkjemp", "takl", "overvinn", "lette", "utrydde", "elimin", "stopp", "stogg", "behandl", "kurer", "vaksiner", "kontroll"]
-termlist3_3k = ["epidemi", "pandemi", "outbreak", "spread", "transmission", "occurrence", "incidence", "prevalence", "risk", "rate",
-                "medicine", "drug", "treatment", "drug", "intervention", "therap", 
-                "antimalaria", "antiviral", "antibioti", "antiparasitic", "antihelminthic", 
-
-                "utbrudd", "spredning", "spreiing", "smitte", "overføring", "forekomst", "førekomst", "hendelse", "hending", "utbredelse", "utbreiing", "risik",
-                "medisin", "legemiddel", "medikament", "intervensjon", "terap", "antihelminti"
-               ]
 
 phrasedefault3_3e = r'(?:{})'.format('|'.join(termlist3_3e))
 phrasedefault3_3f = r'(?:{})'.format('|'.join(termlist3_3f))
 phrasedefault3_3g = r'(?:{})'.format('|'.join(termlist3_3g))
-phrasespecific3_3h = r'(?:{})\b'.format('|'.join(termlist3_3h))
 phrasedefault3_3i = r'(?:{})'.format('|'.join(termlist3_3i))
 phrasedefault3_3j = r'(?:{})'.format('|'.join(termlist3_3j))
-phrasedefault3_3k = r'(?:{})'.format('|'.join(termlist3_3k))
 
 ```
 
@@ -3272,24 +2144,16 @@ phrasedefault3_3k = r'(?:{})'.format('|'.join(termlist3_3k))
 Data.loc[(
     (
         (
-            (Data['result_title'].str.contains(phrasedefault3_3e, na=False, case=False))&
-            (Data['result_title'].str.contains(phrasedefault3_3f, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault3_3e, na=False, case=False))
+            &(Data['result_title'].str.contains(phrasedefault3_3f, na=False, case=False))
         )
     |
-     (
-      (Data['result_title'].str.contains(phrasedefault3_3g, na=False, case=False))
-      |
-      (Data['result_title'].str.contains(phrasespecific3_3h, na=False, case=False))
-      |
-      (Data['result_title'].str.contains(phrasedefault3_3i, na=False, case=True))
-     )
+        (
+            (Data['result_title'].str.contains(phrasedefault3_3g, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasedefault3_3i, na=False, case=True))
+        )
     )
-    &
-     (
-         (Data['result_title'].str.contains(phrasedefault3_3j, na=False, case=False))|
-         (Data['result_title'].str.contains(phrasedefault3_3k, na=False, case=False))
-      
-     )
+    & (Data['result_title'].str.contains(phrasedefault3_3j, na=False, case=False))
     ),"tempsdg03_03"] = "SDG03_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_03 == "SDG03_03")])) 
@@ -3301,6 +2165,110 @@ test=Data.loc[(Data.tempsdg03_03 == "SDG03_03"), ("result_id", "result_title")]
 test.iloc[0:5, ]
 ```
 
+#### Phrase 3
+
+
+```python
+#Termlists 
+termlist3_3k = ["hepatitis", "acquired immune deficiency syndrome", "acquired immuno-deficiency syndrome", "acquired immunodeficiency syndrome", "Human Immunodeficiency Virus", "prevent aids",
+                "tuberculosis", "malaria", "cholera", "meningitis", "influenza", "avian influenza", "h5n1", "rubella", "diphteria", "japanese encephalitis", "measles", "mumps", "tetanus",
+                "pertussis", "polio", "yellow fever", "sexually transmitted disease", "sexually transmitted infection", "syphilis", 
+                "lower respiratory infection", "respiratory tract infection",
+                "middle east respiratory syndrome", 
+                "crimean-congo haemorrhagic fever", "viral haemorrhagic fever", "ebola", "plague", "rift valley fever", "zika virus",
+                "amebiasis", "cryptosporidiosis", "cryptosporidium infection", "giardiasis", "giardia infection", "shigellosis", "cronobacter infection",
+                "acanthamoeba", "balamuthia", "naegleria", "sappinia", "typhoid", 
+                "neglected tropical disease", "buruli ulcer", "chagas", "dengue", "chikungunya", "dracunculiasis", "guinea-worm disease", "echinococcosis", "foodborne trematodiases",
+                "human african trypanosomiasis", "sleeping sickness", "leishmaniasis", "leprosy", "lymphatic filariasis", "mycetom", "chromoblastomycosis", "deep mycoses",
+                "onchocerciasis", "river blindness", "rabies", "scabies", "schistosomiasis", "soil-transmitted helminthiasis", "hookworm", "roundworm", "whipworm", "ascaris lumbricoides",
+                "trichuris trichiura", "necator americanus", "ancylostoma duodenale", "snakebite envenoming", "taeniasis", "cysticercosis", "trachoma", "yaws",
+                "trichuris", "necator", "ancylostoma",
+                
+                "hepatitt", "ervervet immunsvikt syndrom-virus", "humant immunsviktvirus", "hindre aids",
+                "tuberkulose", "kolera", "meningitt", "influensa", "røde hunder", "difteri", "japansk encefalitt", "meslinger", "kusma", "stivkrampe",
+                "kikhoste", "gulfeber", "seksuelt overførbar", "syfilis", 
+                "luftveisinfeksjon", 
+                "krimfeber", "rift valley-feber", "zikavirus",
+                "amøbiasis", "kryptosporidiose", "giardiainfeksjon", "shigellose", "enterobakterieinfeksjon", "tyfoidfeber",         
+                "neglisjert tropesykdom", "neglisjerte tropesjukdom", "neglisjert tropesjukdom", "negliserte tropesjukdom", "burulisår", "ekinokkokose", "trematodeinfeksjon",
+                "afrikansk trypanosomiasis", "lepra", "lymfatisk filariasis", "mykose", "kromomykose",
+                "onkocerkose", "skabb", "helmintiasis", "jordoverført helminthiasis", "hakeorm", "rundorm", "guineaorm", 
+                "taeniainfeksjon", "cysticerkose", "trakom", "frambøsi"
+                ]
+termlist3_3k_caps = ["HIV", "AIDS", "MERS"]
+
+termlist3_3l = ["epidemi", "pandemi", "outbreak", 
+                "spread", "transmission", "occurrence", "incidence", "prevalence", "risk", "rate",
+                "medicine", "vaccin", "cure", "treatment", "drug", "intervention", "therap",
+                "antimalaria", "antiviral", "antibioti", "antiparasitic", "antihelminthic",
+
+                "utbrudd", "utbrot", "spredning", "spreiing", "smitte", "overføring", "forekomst", "førekomst", "hendelse", "hending", "utbredelse", "utbreiing", "risik",
+                "medisin", "vaksin", "behandl", "legemiddel", "medikament", "intervensjon", "terap", "antihelminti"
+               ]
+
+termlist3_3m = ["coronavirus", "covid", "sars-cov", "severe acute respiratory syndrome",
+                "koronavirus"]
+termlist3_3m_caps = ["SARS"]
+
+termlist3_3n = ["epidemi", "pandemi", "outbreak",
+                "utbrudd", "utbrot"]
+
+termlist3_3o = ["pandemic response", "epidemic response", "outbreak response",
+                "spread", "transmission", "occurrence", "incidence", "prevalence", "risk", " rate",
+                "medicine", "vaccin", "cure", "treatment", "drug", "intervention", "therap",
+                "antimalaria", "antiviral", "antibioti", "antiparasitic", "antihelminthic",
+
+                "utbrudd", "utbrot", 
+                "spredning", "spreiing", "smitte", "overføring", "forekomst", "førekomst", "hendelse", "hending", "utbredelse", "utbreiing", "risik",
+                "medisin", "vaksin", "behandl", "legemiddel", "medikament", "intervensjon", "terap", "antihelminti"
+               ]
+# space before "rate" (EN) is intentional to avoid "generate"
+
+phrasedefault3_3k = r'(?:{})'.format('|'.join(termlist3_3k))
+phrasedefault3_3k_caps = r'(?:{})'.format('|'.join(termlist3_3k_caps))
+phrasedefault3_3l = r'(?:{})'.format('|'.join(termlist3_3l))
+phrasedefault3_3m = r'(?:{})'.format('|'.join(termlist3_3m))
+phrasedefault3_3m_caps = r'(?:{})'.format('|'.join(termlist3_3m_caps))
+phrasedefault3_3n = r'(?:{})'.format('|'.join(termlist3_3n))
+phrasedefault3_3o = r'(?:{})'.format('|'.join(termlist3_3o))
+```
+
+
+```python
+#Search 
+#in this search, some termlists from the previous search (phrase 2), are reused: termlist3_3e, termlist3_3f, termlist3_3h, termlist3_3j
+Data.loc[(
+    (
+        (
+            ((Data['result_title'].str.contains(phrasedefault3_3e, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_3f, na=False, case=False)))
+            |(Data['result_title'].str.contains(phrasedefault3_3k, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasedefault3_3k_caps, na=False, case=True))
+        )
+    & (Data['result_title'].str.contains(phrasedefault3_3l, na=False, case=False)) 
+    )
+    |
+    (
+        (
+            (Data['result_title'].str.contains(phrasedefault3_3m, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasedefault3_3m_caps, na=False, case=True))
+        )
+        &
+        (
+            ((Data['result_title'].str.contains(phrasedefault3_3j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_3n, na=False, case=False)))
+            |(Data['result_title'].str.contains(phrasedefault3_3o, na=False, case=False))
+        )
+    )
+),"tempsdg03_03"] = "SDG03_03"
+
+print("Number of results = ", len(Data[(Data.tempsdg03_03 == "SDG03_03")])) 
+```
+
+
+```python
+test=Data.loc[(Data.tempsdg03_03 == "SDG03_03"), ("result_id", "result_title")]
+test.iloc[0:10, ]
+```
+
 ### SDG 3.4
 
 *By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being.*
@@ -3309,39 +2277,17 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  (
-    (
-      ("non communicable" OR "noncommunicable" OR "non transmissible" OR "non infectious" OR "noninfectious")
-      NEAR/5
-          ("disease$" OR "illness*")
-    )
-    OR "cardiovascular disease$" OR "heart disease" OR "heart attack$" OR "stroke$"
-    OR "diabetes"
-    OR "chronic respiratory disease$" OR "asthma"  OR "emphysema" OR "chronic obstructive pulmonary disease$" OR "COPD" OR "chronic obstructive airway disease$" OR "chronic bronchitis"
-    OR (("chronic") NEAR/3 ("lung" OR "pulmonary"))
-    OR "cancer$" OR "*sarcoma" OR "sarcoma$" OR "*carcinoma" OR "carcinoma$" OR "*blastoma" OR "blastoma$" OR "myeloma$" OR "lymphoma$" OR "leukaemia" OR "leukemia" OR "mesothelioma$" OR "melanoma$"  
-    OR (("malignant" OR "incurable") NEAR/3 ("neoplasm$" OR "tumour$" OR "tumor$"))
-    OR "kidney disease$"
-    OR "alzheimer*" OR "dementia"
-    OR "cirrhosis"
-  )
-  NEAR/15
-      ("mortality" OR "death$" OR "surviv*")
-)
-```
-
-
 
 ```python
 #Termlists 
 termlist3_4a = ["non communicable", "noncommunicable", "non-communicable", "non transmissible", "nontransmissible", "non-transmissible", 
-                "non infectious", "noninfectious", "non-infectious",
-                "ikke-smittsom", "ikkje-smittsam", "ikke smittsom", "ikkje smittsam"]
+                "non infectious", "noninfectious", "non-infectious", "auto immun", "autoimmun", "auto-immun",
+                
+                "ikke-smittsom", "ikkje-smittsam", "ikke smittsom", "ikkje smittsam"
+               ]
 termlist3_4b = ["disease", "illness", 
-                "sykdom", "sjukdom"]
+                "sykdom", "sjukdom"
+               ]
 termlist3_4c = ["cardiovascular disease", "heart disease", "heart attack", "stroke", "diabetes",
                 "chronic respiratory disease", "asthma", "emphysema", "chronic obstructive pulmonary disease",
                 "COPD", "chronic obstructive airway disease", "chronic bronchitis", 
@@ -3352,10 +2298,12 @@ termlist3_4c = ["cardiovascular disease", "heart disease", "heart attack", "stro
                 "hjertesykdom", "hjartesjukdom", "hjerteinfarkt", "hjarteinfarkt", "hjerteanfall", "hjarteanfall", "hjerteattakk", "hjarteattakk", "slag",
                 "kronisk luftvei", "astma", "emfysem", "kronisk obstruktiv lungesykdom", "kronisk obstruktiv lungesjukdom", "kols", "kronisk bronkitt",
                 "kreft", "sarkom", "karsinom", "blastom", "lymfom", "leukemi",
-                "mesoteliom", "nyresykdom", "nyresjukdom", "demens"]
+                "mesoteliom", "nyresykdom", "nyresjukdom", "demens"
+               ]
 termlist3_4d = ["chronic", 
                 "kronisk"]
-termlist3_4e = ["lung", "pulmonar"]    
+termlist3_4e = ["lung", 
+                "pulmonar"]    
 termlist3_4f = ["malignant", "incurable", "malign", 
                 "ondart", "vondarta", "uhelbredelig"] 
 termlist3_4g = ["neoplasm", "tumour", 
@@ -3378,54 +2326,25 @@ phrasedefault3_4h = r'(?:{})'.format('|'.join(termlist3_4h))
 #Search 
 Data.loc[(
     (
-        (
-            ( 
-              (Data['result_title'].str.contains(phrasedefault3_4a, na=False, case=False))&
-              (Data['result_title'].str.contains(phrasedefault3_4b, na=False, case=False)) 
-            )
-            |
-          (Data['result_title'].str.contains(phrasedefault3_4c, na=False, case=False))
-            |
-          (  
-           (Data['result_title'].str.contains(phrasedefault3_4d, na=False, case=False))&
-           (Data['result_title'].str.contains(phrasedefault3_4e, na=False, case=False))  
-           ) 
-            |
-          (
-              (Data['result_title'].str.contains(phrasedefault3_4f, na=False, case=False))&
-              (Data['result_title'].str.contains(phrasedefault3_4g, na=False, case=False))
-          )
-        )
-        &
-     (Data['result_title'].str.contains(phrasedefault3_4h, na=False, case=False))
+        ((Data['result_title'].str.contains(phrasedefault3_4a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_4b, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault3_4c, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault3_4d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_4e, na=False, case=False))) 
+        |((Data['result_title'].str.contains(phrasedefault3_4f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_4g, na=False, case=False)))
     )
-    ),"tempsdg03_04"] = "SDG03_04"
+    & (Data['result_title'].str.contains(phrasedefault3_4h, na=False, case=False))
+),"tempsdg03_04"] = "SDG03_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_04 == "SDG03_04")]))
 
 ```
 
+
+```python
+test=Data.loc[(Data.tempsdg03_04 == "SDG03_04"), ("result_id", "result_title")]
+test.iloc[0:10, ]
+```
+
 #### Phrase 2
-```
-TS=
-(
-  ("mental health disorder$" OR "mental illness*"
-  OR "suicid*"
-  OR "depression" OR "depressive disorder$"
-  OR "bipolar affective disorder"
-  OR "schizophrenia"
-  OR "psychosis" OR "psychoses"
-  )
-  NEAR/15
-      ("prevent*" OR "combat*" OR "fight*" OR "reduc*" OR "alleviat*" OR "eradicat*" OR "eliminat*" OR "tackl*"
-      OR "treat" OR "cure" OR "cured"
-      OR "epidemic$" OR "occurrence" OR "incidence" OR "prevalence" OR "risk$" OR "rate$"
-      OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
-      OR "outreach" OR "services" OR "support" OR "counseling" OR "counselling"
-      )
-)
-  
-```
 
 
 ```python
@@ -3434,7 +2353,8 @@ termlist3_4h = ["mental health disorder", "mental illness", "suicid", "depressio
                 "bipolar affective disorder", "schizophrenia", "psychosis", "psychoses",
                 
                 "psykisk lidelse", "psykisk liding", "psykisk syk", "psykisk sjuk", "selvmord", "sjølmord", "sjølvmord", "depresjon", "depressiv lid",
-                "bipolar lid", "schizofreni", "psykose"]
+                "bipolar lid", "schizofreni", "psykose"
+               ]
 termlist3_4i = ["prevent", "combat", "fight", "reduc", "alleviat", "eradicat", "eliminat", "tackl", "treat", "cure",
                 "epidemi", "occurrence", "incidence", "prevalence", "risk", "rate",
                 "medicine", "vaccin", "drug", "treatment", "intervention", "therap",
@@ -3443,7 +2363,8 @@ termlist3_4i = ["prevent", "combat", "fight", "reduc", "alleviat", "eradicat", "
                 "hindr", "forebygg", "førebygg", "kjemp", "reduser", "reduksjon", "utrydd", "eliminer", "takl", "behandl", "kurer", 
                 "forekom", "førekom", "hendelse", "hending", "tilfelle", "utbre", "risik",
                 "medisin", "vaksin", "legemid", "medikament", "behandling", "intervensjon", "terap",
-                "støtte", "stønad", "tjeneste", "teneste", "rådgiv", "rådgjev"]       
+                "støtte", "stønad", "tjeneste", "teneste", "rådgiv", "rådgjev"
+               ]       
                             
 phrasedefault3_4h = r'(?:{})'.format('|'.join(termlist3_4h))
 phrasedefault3_4i = r'(?:{})'.format('|'.join(termlist3_4i))
@@ -3453,8 +2374,8 @@ phrasedefault3_4i = r'(?:{})'.format('|'.join(termlist3_4i))
 ```python
 #Search 3_4hi
 Data.loc[(
-        (Data['result_title'].str.contains(phrasedefault3_4h, na=False, case=False)) &
-        (Data['result_title'].str.contains(phrasedefault3_4i, na=False, case= False)) 
+    (Data['result_title'].str.contains(phrasedefault3_4h, na=False, case=False)) 
+    & (Data['result_title'].str.contains(phrasedefault3_4i, na=False, case= False)) 
     ),"tempsdg03_04"] = "SDG03_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_04 == "SDG03_04")])) 
@@ -3462,32 +2383,21 @@ print("Number of results = ", len(Data[(Data.tempsdg03_04 == "SDG03_04")]))
 
 #### Phrase 3
 
-```
-TS=
-(
-  ("mental health" OR "well being" OR "wellbeing")
-  NEAR/15
-      ("promot*" OR "strengthen*" OR "improv*" OR "enhanc*"
-      OR (("reduc*" OR "decreas*") NEAR/5 "problem$")
-      OR "medicine$" OR "vaccin*" OR "drug$" OR "cures" OR "cure" OR "treatment$" OR "drug$" OR "intervention$" OR "therap*"
-      OR "outreach" OR "services" OR "support" OR "counseling" OR "counselling"
-      )  
-)
-```
-
-
 
 ```python
 #Termlists
-termlist3_4j = ["mental health", "well being", "wellbeing", 
-                "mental helse", "velvære", "god helse"]
+termlist3_4j = ["mental health", "well being", "wellbeing", "well-being",
+                "mental helse", "velvære", "god helse"
+               ]
 termlist3_4k = ["promot", "strengthen", "improv", "enhanc", "medicine", "vaccin", "drug", "cure", "treatment", "intervention", 
                 "therap", "outreach", "services", "support", "counselling", "counseling",
 
                 "fremme", "fremje", "styrke", "bedre", "betre", "øke", "auke", "medisin", "vaksine", "medikament", "legemid", "kurer", "behandl", "intervensjon"
-                "terap", "tjeneste", "teneste", "støtte", "stønad", "rådgi", "rådgje"]
+                "terap", "tjeneste", "teneste", "støtte", "stønad", "rådgi", "rådgje"
+               ]
 termlist3_4l = ["reduc", "decreas", 
-                "reduser", "mink"]
+                "reduser", "mink"
+               ]
 termlist3_4m = ["problem"]     
 
 
@@ -3502,16 +2412,16 @@ phrasedefault3_4m = r'(?:{})'.format('|'.join(termlist3_4m))
 #Search
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault3_4j, na=False, case=False)) 
-     &
+    &
     (
         (Data['result_title'].str.contains(phrasedefault3_4k, na=False, case=False))
         |
         (
-         (Data['result_title'].str.contains(phrasedefault3_4l, na=False, case=False))&
-         (Data['result_title'].str.contains(phrasedefault3_4m, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault3_4l, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault3_4m, na=False, case=False))
         )
     )  
-    ),"tempsdg03_04"] = "SDG03_04"
+),"tempsdg03_04"] = "SDG03_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_04 == "SDG03_04")])) 
 ```
@@ -3529,97 +2439,35 @@ test.iloc[0:5, ]
 *Styrke forebygging og behandling av rusmiddelmisbruk, blant annet misbruk av narkotiske stoffer og skadelig bruk av alkohol*
 
 
-```
-TS=
-(
-  ("binge drinking" OR "binge drinker$" OR "alcoholism" OR "excessive drinking" OR "problematic drinking"
-  OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
-  OR "opioid epidemic"
-  OR
-    (
-      ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
-      OR "alcohol"
-      OR "amphetamine$" OR "methamphetamine$" OR "MDMA" OR "ecstasy"
-      OR "cocaine"
-      OR "inhalant$" OR "amyl nitrite"
-      OR "marijuana" OR "cannabis"
-      OR "opioid$" OR "opiate$" OR "heroin" OR "morphine"
-      OR "phencyclidine" OR "LSD" OR "psilocybin" OR "dimethyltriptamine"
-      OR "khat"
-      OR "tobacco"
-      )
-      NEAR/15
-          ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
-          OR
-            (
-              ("use" OR "uses" OR "usage" OR "consumption")
-              NEAR/3 ("harmful" OR "problematic" OR "excessive" OR "disorder$")    
-            )
-          )
-    )
-  )
-  NEAR/5
-      ("prevent$" OR "preventing" OR "prevention" OR "prevented" OR "combat*" OR "tackl*" OR "fight* against"
-      OR "reduc*" OR "decreas*" OR "minimi*" OR "limit" OR "limiting" OR "alleviat*" OR "mitigat*"
-      OR "eradicat*" OR "eliminat*" OR "end" OR "ended" OR "ending" OR "stop" OR "stopped" OR "stopping"
-      OR "treat" OR "cure" OR "cured" OR "control"
-      )
-)
-OR
-TS=
-(
-  ("binge drinking" OR "binge drinker$" OR "alcoholism" OR "excessive drinking" OR "problematic drinking"
-  OR "substance use" OR "illicit drug$" OR "people who inject drugs" OR "PWID"
-  OR "opioid epidemic"
-  OR
-    (
-      ("drug$" OR "narcotic$" OR "narcotic$" OR "substance"
-      OR "alcohol"
-      OR "amphetamine$" OR "methamphetamine$" OR "MDMA" OR "ecstasy"
-      OR "cocaine"
-      OR "inhalant$" OR "amyl nitrite"
-      OR "marijuana" OR "cannabis"
-      OR "opioid$" OR "opiate$" OR "heroin" OR "morphine"
-      OR "phencyclidine" OR "LSD" OR "psilocybin" OR "dimethyltriptamine"
-      OR "khat"
-      OR "tobacco"
-      )
-      NEAR/15
-          ("abuse" OR "misuse" OR "dependence" OR "addict*" OR "overdose$"
-          OR
-            (
-              ("use" OR "uses" OR "usage" OR "consumption")
-              NEAR/3 ("harmful" OR "problematic" OR "excessive" OR "disorder$")    
-            )
-          )
-    )
-  )
-  NEAR/15
-      ("medicine$" OR "cures" OR "cure" OR "treatment$" OR "intervention$" OR "therapy" OR "therapies"
-      OR "outreach" OR "services" OR "support" OR "rehabilitat*" OR "aftercare" OR "counseling" OR "counselling"
-      )
-)
-```
-
 
 ```python
 #Termlists
-termlist3_5a = ["binge drinking", "binge drinker", "alcohol", "excessive drinking", "problematic drinking", 
+termlist3_5a = ["binge drinking", "binge drinker", "alcohol", "excessive drinking", "problematic drinking", "problem drinking",
                 "substance use", "illicit drugs", "people who inject drugs", "PWID", "opiod epidemic",
-                "alkohol", "periodedrank", "periodedrikk", "narkotikamisbruk", "stoffmisbruk", "opioidepidemi"]
-termlist3_5atrunk = ["fyll"]              
+                
+                "alkohol", "periodedrank", "periodedrikk", "narkotikamisbruk", "stoffmisbruk", "opioidepidemi"
+               ]
+termlist3_5atrunk = ["fyll"]  
+
 termlist3_5b = ["drug", "narcotic", "substance", "alcohol", "amphetamine", "metamphetamine", "MDMA", "ecstacy", "cocaine", "inhalant", "amyl nitrate",
                 "marijuana", "cannabis", "opioid", "opiat", "heroin", "morphine", "phencyclidine", "LSD", "psilocybin", "dimethyltriptamin", "khat", "tobacco",
+                
                 "rusmid", "narkotik", "stoff", "alkohol", "amfetamin", "metamfetamin", "kokain", "inhalasjon", "inhalering", "amylnitrat", 
-                "marihuana", "hasj", "morfin", "fensyklidin", "tobakk"]
+                "marihuana", "hasj", "morfin", "fensyklidin", "tobakk"
+               ]
+
 termlist3_5c = ["abuse", "misuse", "dependence", "addict", 
                 "overdose", "misbruk", "avheng"]
+
 termlist3_5d = ["use", "usage", "consumption",
                 "bruk", "forbruk"]
+
 termlist3_5e = ["harmful", "problematic", "excessive", "disorder",
-                "skadelig", "skadeleg", "problematisk", "overdreven", "overdriven", "lidelse", "liding"]                               
+                "skadelig", "skadeleg", "problematisk", "overdreven", "overdriven", "lidelse", "liding"]  
+
 termlist3_5f = ["prevent", "combat", "tackl", "fight against", "reduc", "decrease", "minimi", "limit", "alleviat", "mitigat", "eradicat", "eliminat", "stop", "treat", "control",
                 "hindr", "forebygg", "førebygg", "takl", "kjemp", "reduser", "reduksjon", "grens", "utrydd", "eliminer", "kontroll"]
+
 termlist3_5g = ["medicine", "cure", "treatment", "intervention", "therapy", "therapies", "outreach", "services", "support", "rehabilitat", "aftercare", "counseling", "counselling",
                 "medisin", "kurer", "behandl", "intervensjon", "terapi", "tjeneste", "teneste", "støtte", "stønad", "rehabiliter", "rådgi", "rådgje"]                
                 
@@ -3637,30 +2485,25 @@ phrasedefault3_5g = r'(?:{})'.format('|'.join(termlist3_5g))
 ```python
 #Search 3_5abcdefg
 Data.loc[(
-         (
-            (
-              (Data['result_title'].str.contains(phrasedefault3_5a, na=False, case=False))
-              |
-              (Data['result_title'].str.contains(phrasespecific3_5atrunk, na=False, case=False))
-            )  
-            |
+    (
+        (Data['result_title'].str.contains(phrasedefault3_5a, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific3_5atrunk, na=False, case=False))
+        |
         (
-          (Data['result_title'].str.contains(phrasedefault3_5b, na=False, case=False)) &
-           (
-              (Data['result_title'].str.contains(phrasedefault3_5c, na=False, case=False))|
-              (
-                  (Data['result_title'].str.contains(phrasedefault3_5d, na=False, case=False))&
-                  (Data['result_title'].str.contains(phrasedefault3_5e, na=False, case=False))
-              )
-           )   
-         )
+            (Data['result_title'].str.contains(phrasedefault3_5b, na=False, case=False)) 
+            &
+            (
+                (Data['result_title'].str.contains(phrasedefault3_5c, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault3_5d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_5e, na=False, case=False)))
+            )   
         )
-        &
-     (
-     (Data['result_title'].str.contains(phrasedefault3_5f, na=False, case=False))|
-     (Data['result_title'].str.contains(phrasedefault3_5g, na=False, case=False))
-     )
-    ),"tempsdg03_05"] = "SDG03_05"
+    )
+    &
+    (
+        (Data['result_title'].str.contains(phrasedefault3_5f, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasedefault3_5g, na=False, case=False))
+    )
+),"tempsdg03_05"] = "SDG03_05"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_05 == "SDG03_05")]))
 ```
@@ -3681,71 +2524,67 @@ test.iloc[0:5, ]
 In the Web of science search, "air traffic" and "boat traffic" were excluded using NOT, but that does not seem necessary in this search. A few hits with metaphorical use of terms like "road" and "death" are hard to avoid.
 
 
-```
-TS =
-(
-  (
-      ("traffic" OR "road" OR "roads" OR "roadway$" OR "street$" OR "roundabout$" OR "highway$" OR "motorway$"
-      OR "cycling lane$" OR "cycle path$" OR "bicycle lane$" OR "walkway$" OR "walking path$" OR "sidewalk$" OR "pavement$"
-      OR "bicycle$" OR "motorcycle$" OR "motorbike$" OR "automobile$" OR "buses" OR "bus" OR "lorry" OR "lorries" OR "truck$" OR "HGV$" OR "SUV$"
-      OR "pedestrian$" OR "cyclist$"
-      OR "driving fatalities"
-      OR (("vehicle$" OR "driver$" OR "driving" OR "car" OR "cars") NEAR/15 ("accident$" OR "crash*" OR "collision$" OR "traffic" OR "RTI" OR "RTIs"))
-      )
-      AND
-          ("mortality" OR "death$" OR "fatalities" OR "fatal" OR "deadly"
-          OR "morbidity" OR "injury" OR "injuries" OR "road trauma$" OR "RTI" OR "RTIs"
-          )
-  )
-  NOT ("air traffic" OR "boat traffic")
-)
-
-```
-
 
 ```python
 #Termlists
-termlist3_6a = ["traffic", "roadway", "street", "roundabout", "highway", "motorway", "cycling lane", "cycle path", "bicycle lane", 
-                "walkway", "walking path", "sidewalk", "pavement", "bicycles", "motorcycles", "motorbike", "automobile", "lorry", "lorries",
-                "truck", "pedestrian", "cyclist", "driving fatalities",
-                
-                "trafikk", "rundkjøring", "rundkøyring", "motorvei", "motorveg", "sykkelsti", "sykkelve", 
-                "gangve", "fortau", "sykkel", "sykler", "syklar", "motorsykkel", "motorsykler", "motorsyklar", "buss", "fotgjenger", "syklist", "trafikkdød", "trafikkulykke", 
-                "trafikkulukke", "bilulykke", "bilulukke"]
-termlist3_6btrunk = ["bus", "buses", "HGV", "HGVs", "SUV", "SUVs", "road", "roads", 
+termlist3_6a = ["traffic", "roadway", "street", "roundabout", "highway", "motorway", "cycling lane", "cycle path", "bicycle lane",
+                "walkway", "walking path", "sidewalk", "pavement", "bicycles", "motorcycles", "motorbike", "automobile", "lorry", "lorries", "truck", "pedestrian", "cyclist", 
+                "driving fatalit",
+
+                "trafikk", "rundkjøring", "rundkøyring", "motorvei", "motorveg", "sykkelsti", "sykkelve",
+                "gangve", "fortau", "sykkel", "sykler", "syklar", "motorsykkel", "motorsykler", "motorsyklar", "buss", "fotgjenger", "syklist", "syklende", "syklande", 
+                "trafikkdød", "trafikkulykke", "trafikkulukke", "bilulykke", "bilulukke"]
+
+termlist3_6atrunk = ["bus", "buses", "HGV", "HGVs", "SUV", "SUVs", "road", "roads",
                      "vei", "veier", "veg", "veger", "vegar", "gående", "gåande"]
-termlist3_6b = ["vehicle", "driver", "driving", "car", 
-                "kjøretøy", "køyretøy", "fører", "førar", "sjåfør", "kjøring", "køyring", "bil"] 
-termlist3_6c = ["accident", "crash", "collision", "traffic", 
-                "ulykke", "ulukke", "kræsj", "kollisjon", "trafikk"]
+
+termlist3_6btrunk = ["vehicle.*", "driver.*", "driving", "car", "cars",
+                     "kjøretøy.*", "køyretøy.*", ".*fører", ".*førar", ".*sjåfør.*", "kjøring", "køyring", "bil", "biler", "bilar"]
+
+termlist3_6c = ["accident", "crash", "collision", "incident",
+                "ulykke", "ulukke", "kræsj", "kollisjon", "traffikhend"]
+
+termlist3_6c_case = ["RTI", "RTIs"]
+
 termlist3_6d = ["mortal", "death", "fatal", "deadly", "morbidity", "injury", "injuries", "injured", "road trauma",
-                "dødelig", "dødeleg", "døyeleg", "død", "skade", "skadd"] 
-termlist3_6e = ["air traffic", "boat traffic"]
-  
+                "dødelig", "dødeleg", "døyeleg", "død", "skade", "skadd"]
+
+termlist3_6e = ["driver", "road", "cycling", "cyclist", "bicycle", "pedestrian", "vehicle"
+                
+                "fører", "førar", "sjåfør", "vei", "veier", "veg", "veger", "vegar", "sykler", "syklar", "syklist", "syklende", "syklande", "sykkel",
+                "fotgjenger", "fotgjengar", "gående", "gåande", "kjøretøy", "køyretøy"]
+
+#termlist3_6f = ["air traffic", "boat traffic"]
+
 phrasedefault3_6a = r'(?:{})'.format('|'.join(termlist3_6a))
+phrasespecific3_6atrunk = r'\b(?:{})\b'.format('|'.join(termlist3_6atrunk))
 phrasespecific3_6btrunk = r'\b(?:{})\b'.format('|'.join(termlist3_6btrunk))
-phrasedefault3_6b = r'(?:{})'.format('|'.join(termlist3_6b))
 phrasedefault3_6c = r'(?:{})'.format('|'.join(termlist3_6c))
+phrasespecific3_6c_case = r'\b(?:{})\b'.format('|'.join(termlist3_6c_case))
 phrasedefault3_6d = r'(?:{})'.format('|'.join(termlist3_6d))
 phrasedefault3_6e = r'(?:{})'.format('|'.join(termlist3_6e))
+#phrasedefault3_6f = r'(?:{})'.format('|'.join(termlist3_6f))
 ```
 
 
 ```python
-#Search 3_6
+#Search 3_6Prenatal and childhood exposure to air pollution and traffic and the risk of liver injury in European children 	
 Data.loc[(
     (
-        (
-            (Data['result_title'].str.contains(phrasedefault3_6a, na=False, case=False))
-            |(Data['result_title'].str.contains(phrasespecific3_6btrunk, na=False, case=False))
-        )
+        (Data['result_title'].str.contains(phrasedefault3_6a, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific3_6atrunk, na=False, case=False))
         |
         (
-            (Data['result_title'].str.contains(phrasedefault3_6b, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault3_6c, na=False, case=False))
+            (Data['result_title'].str.contains(phrasespecific3_6btrunk, na=False, case=False)) 
+            & ((Data['result_title'].str.contains(phrasedefault3_6c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific3_6c_case, na=False, case=True)))
         )
     )
-    & (Data['result_title'].str.contains(phrasedefault3_6d, na=False, case=False))     
+    & ((Data['result_title'].str.contains(phrasedefault3_6d, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific3_6c_case, na=False, case=True)))
+    & 
+    (
+        ((Data['result_title'].str.contains(phrasedefault3_6c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific3_6c_case, na=False, case=True)))
+        |((Data['result_title'].str.contains(phrasedefault3_6d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_6e, na=False, case=False)))
+    )
 ),"tempsdg03_06"] = "SDG03_06"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_06 == "SDG03_06")]))
@@ -3765,34 +2604,25 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS =
-(
-  ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy"))
-  )
-  NEAR/15
-      ("health equity" OR "equity in health*" OR "health for all"
-      OR "access*" OR "right$" OR "coverage"
-      OR "afford" OR "affordab*" OR "low cost" OR "free of charge" OR "free service$" OR "subsidi*"
-      OR "barrier$" OR "obstacle$" OR "impediment$" OR "unaffordab*" OR "expensive"
-      )
-)       
-```
-
 
 ```python
 #Termlists
 termlist3_7a = ["reproductive health", "sexual health", "family planning", "planned pregnanc", "contracept", "abortion",
                 "reproduksjonshelse", "reproduktiv helse", "seksuell helse", "familieplanlegging", "planlagt graviditet", "prevensjon", "abort"]
+
 termlist3_7b = ["reproduct", "sex", 
                 "reproduk"]
+
 termlist3_7c = ["education", "inform", "health literacy", 
                 "utdann", "opplær", "opplys", "kompetanse"]
-termlist3_7d = ["health equity", "equality in health", "health for all", "access", "right", "coverage", "afford", "low cost", "free of charge", "free service", "subsidi",
+
+termlist3_7d = ["health equity", "equality in health", "health for all", "health promotion",
+                "access", "right", "coverage", "afford", "low cost", "free of charge", "free service", "subsidi",
                 "barrier", "obstacle", "impediment", "unaffordab", "expensive",
-                "rettferdig helse", "tilgang", "adgang", "åtgang", "rett", "dekning", "rimelig", "rimeleg", "billig", "billeg", "gratis", "hindr", "hinder", "dyr", "kostbar"]
+                
+                "rettferdig helse", "helsefrem",
+                "tilgang", "adgang", "åtgang", "rett", "dekning", "rimelig", "rimeleg", "billig", "billeg", "gratis", "hindr", "hinder", "dyr", "kostbar"
+               ]
 
 phrasedefault3_7a = r'(?:{})'.format('|'.join(termlist3_7a))
 phrasedefault3_7b = r'(?:{})'.format('|'.join(termlist3_7b))
@@ -3804,15 +2634,12 @@ phrasedefault3_7d = r'(?:{})'.format('|'.join(termlist3_7d))
 ```python
 #Search 1
 Data.loc[(
-            (
-              (Data['result_title'].str.contains(phrasedefault3_7a, na=False, case=False))|
-               (
-                (Data['result_title'].str.contains(phrasedefault3_7b, na=False, case=False))&
-                (Data['result_title'].str.contains(phrasedefault3_7c, na=False, case=False))
-               )  
-          )
-         & (Data['result_title'].str.contains(phrasedefault3_7d, na=False, case=False)) 
-    ),"tempsdg03_07"] = "SDG03_07"
+    (
+        (Data['result_title'].str.contains(phrasedefault3_7a, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault3_7b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_7c, na=False, case=False)))  
+    )
+    & (Data['result_title'].str.contains(phrasedefault3_7d, na=False, case=False)) 
+),"tempsdg03_07"] = "SDG03_07"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_07 == "SDG03_07")]))
 ```
@@ -3826,36 +2653,21 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS =
-(
-  ("reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "family planning" OR "planned pregnanc*" OR "contracept*" OR "abortion$"
-  OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy"))
-  )
-  NEAR/15
-    (
-      ("policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*")
-      NEAR/5
-          ("national" OR "state" OR "federal"
-          OR ***LMICS***
-          )
-    )
-)
-```
-
-
 
 ```python
 #Termlists  
 termlist3_7e = ["reproductive health", "sexual health", "family planning", "planned pregnanc", "contracept", "abortion",
                 "reproduksjonshelse", "reproduktiv helse", "seksuell helse", "familieplanlegging", "planlagt graviditet", "prevensjon", "abort"]
+
 termlist3_7f = ["reproduct", "sex", 
                 "reproduk"]
+
 termlist3_7g = ["education", "inform", "health literacy", 
                 "utdann", "opplær", "opplys", "kompetanse"]
-termlist3_7h = ["policy", "policies", "initiativ", "framework", "program",
-                "strateg", "politikk", "retningslin", "rammeverk"]
+
+termlist3_7h = ["policy", "policies", "initiativ", "framework", "program", "plan ",
+                "strateg", "politikk", "retningslin", "rammeverk", "planlegg"]
+
 termlist3_7i = ["national", "state", "federal", 
                 "nasjonal", "stat"]
 
@@ -3864,7 +2676,6 @@ phrasedefault3_7f = r'(?:{})'.format('|'.join(termlist3_7f))
 phrasedefault3_7g = r'(?:{})'.format('|'.join(termlist3_7g))
 phrasedefault3_7h = r'(?:{})'.format('|'.join(termlist3_7h))
 phrasedefault3_7i = r'(?:{})'.format('|'.join(termlist3_7i))
-
 ```
 
 
@@ -3873,14 +2684,14 @@ phrasedefault3_7i = r'(?:{})'.format('|'.join(termlist3_7i))
 Data.loc[(
     (
        (Data['result_title'].str.contains(phrasedefault3_7e, na=False, case=False))
-       |
-         (
-            (Data['result_title'].str.contains(phrasedefault3_7f, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault3_7g, na=False, case=False))
-         )
+       |((Data['result_title'].str.contains(phrasedefault3_7f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_7g, na=False, case=False)))
     )
     & (Data['result_title'].str.contains(phrasedefault3_7h, na=False, case=False))
-    & ((Data['LMICs']==True)|(Data['result_title'].str.contains(phrasedefault3_7i, na=False, case=False)))
+    & 
+    (
+        (Data['LMICs']==True)
+        |(Data['result_title'].str.contains(phrasedefault3_7i, na=False, case=False))
+    )
 ),"tempsdg03_07"] = "SDG03_07"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_07 == "SDG03_07")])) 
@@ -3902,18 +2713,11 @@ test.iloc[0:5, ]
 #### Phrase 1
 
 
-```
-TS =
-(
-  ("universal health coverage" OR "universal healthcare" OR "universal health care")
-)
-```
-
-
 ```python
 #Termlists
-termlist3_8a = ["universal health coverage", "universal healthcare", "universal health care", 
-                "universell helsedekning", "allmenn dekning av helsetenester", "allmenn dekning av helsetjenester", "allmenn tilgang til helsetjenester", 
+termlist3_8a = ["universal health coverage", "universal healthcare", "universal health care",
+                
+                "universell helsedekning", "allmenn dekning av helsetenester", "allmenn dekning av helsetjenester", "allmenn tilgang til helsetjenester",
                 "allmenn tilgang til helsetenester", "allment tilgjengelige helsetjenester", "allment tilgjengelege helsetenester",
                 "helsetjenester for alle", "helsetenester for alle"]
 
@@ -3930,28 +2734,14 @@ Data.loc[(
 print("Number of results = ", len(Data[(Data.tempsdg03_08 == "SDG03_08")])) 
 ```
 
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg03_08 == "SDG03_08"), ("result_id", "result_title")]
+test.iloc[0:10, ]
+```
+
 #### Phrase 2
-
-
-```
-TS =
-(
-  ("health care" OR "healthcare" OR "health service$" OR "medical service$" OR "medical care" OR "health coverage"
-  OR "family planning" OR "reproductive health" OR "sexual health" OR "reproductive healthcare" OR "sexual healthcare"
-  OR "vaccine$" OR "immuni$ation"
-  OR (("essential" OR "basic" OR "life saving" OR "necessary" OR "emergency") NEAR/3 ("medicines" OR "medication$" OR "treatment*" OR "therap*"))
-  OR "treatment access" OR "access to treatment$"
-  )
-  NEAR/15
-      ("health equity" OR "equity in health*" OR "health care equity" OR "equity in healthcare" OR "health for all" OR "vaccine equity"
-      OR "access*" OR "barrier$" OR "obstacle$"
-      OR "afford" OR "affordab*" OR "low cost" OR "inexpensive" OR "free service$" OR "free of charge" OR "voucher$"
-      OR "unaffordab*" OR "high price$" OR "costly" OR "debt" OR "financial risk$" OR "financial burden$" OR "financial hardship" OR "household expenditure$" OR "medical expenditure$" OR "medical expenses" OR "medical bill$" OR "medical cost$" OR "out of pocket"
-      OR "microinsurance"
-      OR "quality medicines" OR "quality care" OR "quality of care" OR "quality health care"
-      )
-)
-```
 
 
 
@@ -3961,17 +2751,22 @@ termlist3_8b = ["health care", "healthcare", "health service", "medical service"
                 "vaccin", "immunisation", "immunization", "treatment access", "access to treatment",
                 
                 "helsehjelp", "helsetjeneste", "helseteneste", "omsorgstjeneste", "omsorgsteneste", "helsedekning", "familieplanlegging", "reproduksjonshelse", "reproduktiv helse", 
-                "seksuell helse", "vaksine", "immunisering", "tilgang til behandling"]
+                "seksuell helse", "vaksin", "immunisering", "tilgang til behandling"]
+
 termlist3_8c = ["essential", "basic", "life saving", "necessary", "emergency",
                 "essensiell", "nødvendig", "grunnlegg", "livred", "nødvendig", "naudsynt", "nødstilfelle", "naudstilfelle"]
+
 termlist3_8d = ["medicines", "medication", "treatment", "therap",
                 "medisin", "behandl", "terap"]
-termlist3_8e = ["health equity", "equity in health", "health care equity", "equity in healthcare", "health for all", "vaccine equity", "access", "barrier", "obstacle", 
+
+termlist3_8e = ["health equity", "equity in health", "health care equity", "equity in healthcare", "health for all", "vaccine equity", 
+                "access", "barrier", "obstacle", 
                 "afford", "low cost", "inexpensive", "free service", "free of charge", "voucher", "high price", "costly", "debt", "financial risk", "financial burden",
                 "financial hardship", "household expenditure", "medical expenditure", "medical expenses", "medical bill", "medical cost", "out of pocket", "microinsurance",
                 "quality medicines", "quality care", "quality of care", "quality health care",
 
-                "rettferdig helse", "rettferdig vaksine", "tilgang", "adgang", "åtgang", "hindr", "hinder", "rimelig", "rimeleg", "billig", "billeg", "gratis", "høy pris", "høg pris",
+                "rettferdig helse", "rettferdig vaksine", 
+                "tilgang", "adgang", "åtgang", "hindr", "hinder", "rimelig", "rimeleg", "billig", "billeg", "gratis", "høy pris", "høg pris",
                 "kostbar", "økonomisk risiko", "økonomisk byrde", "økonomisk besvær", "økonomisk vansk", "økonomiske vansk", "husholdningsutgift", "hushaldningsutgift", 
                 "medisinsk utgift", "medisinske utgift", "helseutgift", "legeregning", "legerekning", "sykehusregning", "sjukehusrekning", "behandlingsutgift", "mikroforsikring"]                    
     
@@ -3986,12 +2781,8 @@ phrasedefault3_8e = r'(?:{})'.format('|'.join(termlist3_8e))
 #Search 1
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault3_8b, na=False, case=False)) |
-      (
-        (Data['result_title'].str.contains(phrasedefault3_8c, na=False, case=False)) 
-        & (Data['result_title'].str.contains(phrasedefault3_8d, na=False, case=False)) 
-      ) 
-
+        (Data['result_title'].str.contains(phrasedefault3_8b, na=False, case=False)) 
+        |((Data['result_title'].str.contains(phrasedefault3_8c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_8d, na=False, case=False))) 
     )
     & (Data['result_title'].str.contains(phrasedefault3_8e, na=False, case=False))  
 ),"tempsdg03_08"] = "SDG03_08"
@@ -4013,68 +2804,50 @@ test.iloc[0:5, ]
 
 
 #### Phrase 1
-```
-TS =
-(
-  ("air pollution" OR "PM2.5" OR "PM10" OR "particulate matter" OR "ozone"
-  OR
-    (
-      ("nitrogen dioxide" OR "sulfur dioxide" OR "sulphur dioxide" OR "carbon monoxide" OR "volatile organic compounds")
-      NEAR/15 ("pollution" OR "poisoning$")
-    )
-  OR "smoke pollution" OR "secondhand smok*" OR "second hand smok*" OR "involuntary smoking" OR "passive smoking"
-  OR
-    (         
-      ("drinking water" OR "potable water" OR "water source$")
-      NEAR/3 ("unsafe" OR "safe" OR "contaminated" OR "contamination" OR "pollut*" OR "clean")
-    )
-  OR "poor hygiene" OR "good hygiene" OR "hand hygiene" OR "personal hygiene" OR "hygiene practice$" OR "hygiene intervention$"
-  OR "handwashing"
-  OR "poor sanitation" OR "*adequate sanitation" OR "good sanitation" OR "sanitation facilities"
-  OR "water, sanitation and hygiene"
-  OR
-    (
-      ("food" OR "foods")
-      NEAR/3 ("unsafe" OR "contaminated" OR "contamination" OR "sanitation")
-    )
-  OR "food poisoning$" OR "foodborne pathogens"
-  OR ("poisoning$" NEAR/3 ("unintentional" OR "accidental"))
-  )
-  NEAR/15
-      ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity" OR "poisoning$")
-)      
-
-```
 
 
 ```python
 #Termlists
 termlist3_9a = ["air pollution", "particular matter", "ozon", 
                 "luftforurensing", "luftforurensning", "luftforureining", "partik"]
+
 termlist3_9b = ["PM2.5", "PM10"]
+
 termlist3_9c = ["nitrogen dioxide", "sulfur dioxide", "sulphur dioxide", "carbon monoxide", "volatile organic compounds",
                 "nitrogendioksid", "svoveldioksid", "karbonmonoksid", "flyktig organisk forbindelse", "flyktige organiske forbindelse"]
+
 termlist3_9d = ["pollution", "poisoning", 
-                "forurensing", "forurensning", "forureining", "forgift" ]
+                "forurensing", "forurensning", "forureining", "forgift"]
+
 termlist3_9e = ["smoke pollution", "secondhand smok", "second hand smok", "involuntarily smoking", "passive smoking", 
                 "røykforurensning", "røykforurensing", "røykforureining", "passiv røyk"]
+
 termlist3_9f = ["drinking water", "potable water", "water source", 
                 "drikkevann", "drikkevatn", "drikkevass", "vannkilde", "vasskjelde"]
+
 termlist3_9g = ["unsafe", "safe", "contaminated", "contamination", "pollut", "clean", 
                 "tryg", "forurens", "forurein", "ren", "rein"]
+
 termlist3_9h = ["poor hygiene", "good hygiene", "hand hygiene", "personal hygiene", "hygiene practice", "hygiene intervention", "handwashing", "poor sanitation",
                 "adequate sanitation", "good sanitation", "sanitation facilities", "water sanitation and hygiene",
+                
                 "dårlig hygien", "god hygien", "håndhygien", "handhygien", "personlig hygien", "personleg hygien", "hygien", "håndvask", "handvask", "sanitær"]
+
 termlist3_9i = ["food",
                 "mat", "føde"]
+
 termlist3_9j = ["unsafe", "contaminated", "contamination", "sanitation", 
                 "utryg", "forurens", "forurein", "sanitet", "sanitær"]
+
 termlist3_9k = ["food poisoning", "foodborne pathogens", 
                 "matforgift", "matbår"]
+
 termlist3_9l = ["poisoning", 
                 "forgift"]
+
 termlist3_9m = ["unintentional", "accidental", 
                 "ikke-intendert", "uintendert", "tilfeldig"]    
+
 termlist3_9n = ["mortality", "death", "illness", "disease", "morbidity", "poisoning", 
                 "død", "dau", "sykdom", "sjukdom", "forgift"]             
 
@@ -4097,34 +2870,17 @@ phrasedefault3_9n = r'(?:{})'.format('|'.join(termlist3_9n))
 
 ```python
 #Search 1
-
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault3_9a, na=False, case=False))
         |(Data['result_title'].str.contains(phrasedefault3_9b, na=False, case=False))
-        |
-           (
-             (Data['result_title'].str.contains(phrasedefault3_9c, na=False, case=False))
-             &(Data['result_title'].str.contains(phrasedefault3_9d, na=False, case=False))
-           )
+        |((Data['result_title'].str.contains(phrasedefault3_9c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_9d, na=False, case=False)))
         |(Data['result_title'].str.contains(phrasedefault3_9e, na=False, case=False))
-        |
-            (
-                (Data['result_title'].str.contains(phrasedefault3_9f, na=False, case=False))
-                &(Data['result_title'].str.contains(phrasedefault3_9g, na=False, case=False)) 
-            )
+        |((Data['result_title'].str.contains(phrasedefault3_9f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_9g, na=False, case=False)) )
         |(Data['result_title'].str.contains(phrasedefault3_9h, na=False, case=False))       
-        | 
-            (
-                (Data['result_title'].str.contains(phrasedefault3_9i, na=False, case=False)) 
-                &(Data['result_title'].str.contains(phrasedefault3_9j, na=False, case=False))
-            )
+        |((Data['result_title'].str.contains(phrasedefault3_9i, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_9j, na=False, case=False)))
         |(Data['result_title'].str.contains(phrasedefault3_9k, na=False, case=False)) 
-        |
-            (
-                (Data['result_title'].str.contains(phrasedefault3_9l, na=False, case=False))
-                &(Data['result_title'].str.contains(phrasedefault3_9m, na=False, case=False))
-            )
+        |((Data['result_title'].str.contains(phrasedefault3_9l, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_9m, na=False, case=False)))
     )          
     & (Data['result_title'].str.contains(phrasedefault3_9n, na=False, case=False))      
 ),"tempsdg03_09"] = "SDG03_09"
@@ -4140,60 +2896,26 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS =
-(
-  (
-    ("hazardous chemical$" OR "hazardous material$" OR "hazardous substance$" OR "hazardous waste$"
-    OR "pollution"
-    OR "soil contamination" OR "contamination of soil$" 
-    OR "water contamination" OR "contamination of water"
-    OR "arsenic"
-    OR "asbestos"
-    OR "benzene"
-    OR "cadmium"
-    OR "dioxin$"
-    OR "mercury"
-    OR "fluoride"
-    OR "pesticide$"
-    OR "lead poison*" OR "lead *toxicity" OR "lead mediated *toxicity" OR "lead induced *toxicity" OR "lead exposure" OR "lead carcinogen*" OR "blood lead"
-    OR "radioactive waste$"
-    OR "persistent organic pollutant$"
-    OR "sanitation"
-    )
-    NEAR/15
-        ("mortality" OR "death$" OR "illness*" OR "disease$" OR "morbidity"
-        OR "*toxicity" OR "poisoning$" OR "poisoned" OR "fluorosis"
-        )
-  )
-  AND
-      ("humans" OR "humanity" OR "human" OR "people" OR "person$"
-        OR "children" OR "child" OR "under fives" OR "infant$" OR "toddler$" OR "babies" OR "teenager$" OR "adolescent$" OR "girls" OR "boys"
-        OR "elderly" OR "adult$" OR "women" OR "men" OR "woman" OR "man" OR "girls" OR "boys"
-        OR "rural" OR "urban" OR "city" OR "cities" OR "town$" OR "village$" OR "countr*" OR "nation$" OR "develop* state$"
-        OR "patient$" OR "hospital*"
-        OR "premature death$" OR "premature mortality"
-        OR "neglected tropical disease$" OR "diarrhoea*" OR "diarrhea*"
-      )
-)
-```
-
 In this search it proved hard to exclude noise eg. from articles concerning animals. We could not use "human" terms to delimit the search as we did in Web of Science, as this excluded too many relevant hits. Sometimes articles which have animal names in the title, are ultimately concerned with issues relating to human conditions, therefore they shoud be included. It is also hard to specify species to include/exclude, as we cannot know or predict which may be used in what context.
 
 
 ```python
 #Termlists
-termlist3_9o = ["hazardous chemical", "hazardous material", "hazardous substance", "hazardous waste", "pollution", "soil contamination", "contamination of soils", "water contamination",
-                "contamination of water", "arsenic", "asbestos", "benzen", "cadmium", "dioxin", "mercury", "fluoride", "pesticide", "lead poison", "lead toxicity", "lead mediated toxicity",
-                "lead induced toxicity", "lead exposure", "lead carcinogen", "blood lead", "radioactive waste", "persistent organic pollutant", "sanitation",
+termlist3_9o = ["hazardous chemical", "hazardous material", "hazardous substance", "hazardous waste", "pollution", 
+                "soil contamination", "contamination of soils", "water contamination","contamination of water", 
+                "arsenic", "asbestos", "benzen", "cadmium", "dioxin", "mercury", "fluoride", "pesticide", 
+                "lead poison", "lead toxicity", "lead-mediated toxicity", "lead-induced toxicity", "lead exposure", "lead carcinogen", "blood lead", 
+                "radioactive waste", "persistent organic pollutant", "sanitation",
 
-                "farlige kjemikalier", "farlege kjemikaliar", "farlige materialer", "farlege materialar", "farlige stoff", "farlege stoff", "farlig avfall", "farleg avfall", "forurensing",
-                "forurensning", "forureining", "forurenset grunn", "forureina grunn", "arsenikk", "asbest", "kadmium", "dioksin", "kvikksølv", "fluor", "pesticid", "blyforgift", 
-                "blyeksponering", "radioaktivt avfall"
+                "farlige kjemikalier", "farlege kjemikaliar", "farlige materialer", "farlege materialar", "farlige stoff", "farlege stoff", "farlig avfall", "farleg avfall", 
+                "forurensing", "forurensning", "forureining", "forurenset grunn", "forureina grunn", 
+                "arsenikk", "asbest", "kadmium", "dioksin", "kvikksølv", "fluor", "pesticid", "plantevernmiddel",
+                "blyforgift", "blyeksponering", 
+                "radioaktivt avfall", "miljøgift"
                ]
 
 termlist3_9p = ["mortality", "death", "illness", "disease", "morbidity", "toxicity", "poisoning", "poisoned", "fluorosis",
-                "dødelighet", "dødelegheit", "død", "daud", "sykdom", "sjukdom", "toksisitet", "gift", "forgift", "fluorose"
+                "dødelighet", "dødelegheit", "død", "daud", "sykdom", "sjukdom", "toksisitet", "forgift", "fluorose"
                ]
 #termlist3_9q = ["human", "humanity", "people", "person", "child", "under fives", "infant", "toddler", "babies", "teenager", "adolescent", "girls", "boys", "elderly", "adult", "women", 
 #                "woman", "rural", "urban", "cities", "town", "village", "countr", "nation", "developed state", "developing state",
@@ -4231,16 +2953,11 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS = ("Framework convention on tobacco control" OR "WHO FCTC")
-```
-
-
 
 ```python
 #Termlists
 termlist3_a1 = ["framework convention on tobacco control", 
-                "tobakkskonvensjon", "Verdens helseorganisasjons rammekonvensjon om forebygging av tobakksskad"]
+                "tobakkskonvensjon", "konvensjon om forebygging av tobakksskad"]
 termlist3_a2 = ["FCTC"]                
               
 phrasedefault3_a1 = r'(?:{})'.format('|'.join(termlist3_a1))
@@ -4268,59 +2985,39 @@ test.iloc[0:5, ]
 
 When searching only titles, the approach used in the Web of Science search proved too restrictive. Many articles talk about smoke cessation etc. without mentioning "tobacco", therefore we have built the search without "tobacco" as a necessary term, even though this leads to some noise. 
 
-```
-TS =
-(
-  (
-    (
-      ("tobacco" OR "smoking" OR "cigarette$")
-      NEAR/5
-          ("reduc*" OR "control" OR "ban" OR "bans" OR "banning" OR "prohibiting" OR "prohibit"
-          OR "legislation" OR "policy" OR "policies" OR "regulat*" OR "law" OR "strateg*" OR "intervention$"
-          OR "tax" OR "taxes" OR "taxation"
-          OR "health warning$"
-          OR "smoking cessation" OR "quitting" OR "services" OR "cessation service" OR "cessation program*" OR "alternative$"
-          )
-    )
-  OR "reduc* tobacco" OR "reduc* smoking" OR "decreas* tobacco"
-  OR "reduce dependence on"
-  )
-  AND ("tobacco")
-)
-```
-
-
 
 ```python
 #Termlists
 termlist3_a3 = ["tobacco", "smoking", "cigarette", 
                 "tobakk", "røyking", "sigarett"]
+
 termlist3_a4 = ["reduc", "control", "ban", "prohibit", "legislation", "policy", "policies", "regulat", "law", "strateg", "intervention", "tax", "health warning",
-                "smoking cessation", "quitting", "services", "cessation service", "cessation program", "alternativ"
+                "smoking cessation", "quitting", "services", "cessation service", "cessation program", "alternativ",
                 
                 "reduser", "reduksjon", "kontroll", "forby", "forbud", "forbod", "lovgivning", "lovgiving", "politikk", "retningslin", "reguler", "lov", "strategi", "intervensjon", "inngrip",
                 "skatt", "helseadvarsel", "helseåtvaring", "røykeslutt", "røykestopp", "slutt", "stopp", "tjeneste", "teneste"]
+
 termlist3_a5 = ["reduce tobacco", "reduce smoking", "decrease tobacco", "reduce dependence on tobacco", 
                 "redusere avhengig"]    
-termlist3_a6 = ["tobacco", 
-                "tobakk"]            
+
+#termlist3_a6 = ["tobacco", "tobakk"]            
+#Not used, see comment over
 
 phrasedefault3_a3 = r'(?:{})'.format('|'.join(termlist3_a3))
 phrasedefault3_a4 = r'(?:{})'.format('|'.join(termlist3_a4))
 phrasedefault3_a5 = r'(?:{})'.format('|'.join(termlist3_a5))
-phrasedefault3_a6 = r'(?:{})'.format('|'.join(termlist3_a6))
+#phrasedefault3_a6 = r'(?:{})'.format('|'.join(termlist3_a6))
 ```
 
 
 ```python
 Data.loc[(
-              (
-                (Data['result_title'].str.contains(phrasedefault3_a3, na=False, case=False))&
-                (Data['result_title'].str.contains(phrasedefault3_a4, na=False, case=False))
-              )
-              |
-                (Data['result_title'].str.contains(phrasedefault3_a5, na=False, case=False))             
-    ),"tempsdg03_a"] = "SDG03_0a"
+    (
+        (Data['result_title'].str.contains(phrasedefault3_a3, na=False, case=False))
+        & (Data['result_title'].str.contains(phrasedefault3_a4, na=False, case=False))
+    )
+    |(Data['result_title'].str.contains(phrasedefault3_a5, na=False, case=False))             
+),"tempsdg03_a"] = "SDG03_0a"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_a == "SDG03_0a")])) 
 ```
@@ -4334,24 +3031,13 @@ test.iloc[0:5, ]
 #### Phrase 3
 
 
-```
-TS=
-(
-  ("tobacco farm*" OR "tobacco production" OR "tobacco growing" OR "tobacco grower$")
-  AND
-    ("diversif*" OR "alternative crop$" OR "crop substitution"
-    OR "alternative livelihood$" OR "alternative sustainable livelihood$"
-    )
-)
-```
-
-
 
 ```python
 #Termlists 
 termlist3_a7 = ["tobacco farm", "tobacco production", "tobacco growing", "tobacco grower", 
                 "tobakksproduksjon", "produksjon av tobakk", "tobakksdyrk", "dyrking av tobakk", "tobakksbonde", "tobakksbønder"]
-termlist3_a8 = ["alternativ", "diversif", "alternative crop", "crop substitution", "alternative livelihood", "alternative sustainable livelihood",
+
+termlist3_a8 = ["alternativ", "diversif", "alternative crop", "crop substitution", "alternative livelihood", "sustainable livelihood",
                 "divers", "alternativt jordbruk", "alternativ avling", "alternativt levebrød", "alternative inntektsk", "bærekraftig levebrød", "berekraftig levebrød"]
 
 phrasedefault3_a7 = r'(?:{})'.format('|'.join(termlist3_a7))
@@ -4362,12 +3048,11 @@ phrasedefault3_a8 = r'(?:{})'.format('|'.join(termlist3_a8))
 ```python
 #search
 Data.loc[(
-        (Data['result_title'].str.contains(phrasedefault3_a7, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault3_a8, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault3_a7, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault3_a8, na=False, case=False))
     ),"tempsdg03_a"] = "SDG03_0a"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_a == "SDG03_0a")])) 
-
 ```
 
 
@@ -4384,79 +3069,46 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS =
-(
-  (
-    ("develop*" OR "research*" OR "R&D" OR "novel" OR "new")
-    NEAR/5 ("medicine$" OR "medication$" OR "therapy" OR "therapies" OR "therapeutic$" OR "vaccin*" OR "drug$" OR "cures" OR "treatment$")
-  )
-  AND
-    ("neglected tropical disease$"
-    OR "buruli ulcer"
-    OR "chagas"
-    OR "dengue"
-    OR "chikungunya"
-    OR "dracunculiasis" OR "guinea-worm disease"
-    OR "echinococcosis"
-    OR "foodborne trematodiases"
-    OR "human african trypanosomiasis" OR "sleeping sickness"
-    OR "leishmaniasis"
-    OR "leprosy"
-    OR "lymphatic filariasis"
-    OR "mycetoma" OR "chromoblastomycosis" OR "deep mycoses"
-    OR "onchocerciasis" OR "river blindness"
-    OR "rabies"
-    OR "scabies"
-    OR "schistosomiasis"
-    OR "soil-transmitted helminthias*" OR "hookworm$" OR "roundworm$" OR "whipworm$" OR "Ascaris lumbricoides" OR "Trichuris trichiura" OR "Necator americanus" OR "Ancylostoma duodenale"
-    OR "snakebite envenoming"
-    OR "taeniasis" OR "cysticercosis"
-    OR "trachoma"
-    OR "yaws"
-    OR ***LMICS***
-    )
-)
-```
-
-
 
 ```python
 #Termlists
-termlist3_b1 = ["develop", "research", "r&d",
-                "utvikl", "forskning", "FOU"]
-termlist3_b1a = ["new", "novel", 
-                 " ny"]
-termlist3_b2 = ["medicine", "medication", "therap", "vaccin", "drug", "cures", "treatment", 
-                "medisin", "medikament", "terap", "vaksin", "legemid", "behandl"]
-#We tried two approaches here; one where "new" and "medicine" were separate. But this was noisy. Therefore we use those below.
-termlist3_b2a = ["new medicine", "novel medicin", "new medicatio", "novel medication", "new therap", "novel therap",
-                 "new vaccin", "novel vaccin", "vaccine development",
-                 "new drug", "novel drug", "new cure", "novel cure", "new treatment", "novel treatment",
+#termlist3_b1 = ["develop", "research", "r&d", "r & d",
+#                "utvikl", "forskning", "FOU"]
 
-                 "ny medisin", "nytt medikament", "nye medikament", "ny terap",
-                 "ny vaksine", "vaksineutvikling", "utvikling av vaksin", "nytt legemiddel", "nye legemid",
-                 "ny behandling"]
-termlist3_b3 = ["neglected tropical disease", "buruli ulcer", "chagas", "dengue", "chikungunya", "dracunculiasis", "guinea-worm disease", "echinococcosis", "foodborne trematodiases",
-                "human african trypanosomiasis", "sleeping sickness", "leishmaniasis", "leprosy", "lymphatic filariasis", "mycetom", "chromoblastomycosis", "deep mycoses",
-                "onchocerciasis", "river blindness", "rabies", "scabies", "schistosomiasis", "soil-transmitted helminthiasis", "hookworm", "roundworm", "whipworm", "ascaris lumbricoides",
-                "trichuris trichiura", "necator americanus", "ancylostoma duodenale", "snakebite envenoming", "taeniasis", "cysticercosis", "trachoma", "yaws",
-                
-                "neglisjert tropesykdom", "neglisjerte tropesykdom", "neglisjert tropesjukdom", "neglisjerte tropesjukdom", "burulisår", "ekinokkokose", "trematodeinfeksjon",             
-                "afrikansk trypanosomiasis", "lepra", "lymfatisk filariasis", "mykose", "kromomykose",
-                "onkocerkose", "skabb", "helmintiasis", "jordoverført helminthiasis", "hakeorm", "rundorm", "guineaorm", 
-                "trichuris", "necator", "ancylostoma", "taeniainfeksjon", "cysticerkose", "trakom", "frambøsi",
-                
-                "virus", "epidemi", "pandemi", "infectious", "communicable", 
+termlist3_b2 = ["new medicine", "novel medicin", "new medicatio", "novel medication", "new therap", "novel therap",
+                "new vaccin", "novel vaccin", "vaccine development",
+                "new drug", "novel drug", "drug development", "drug discovery", "new cure", "novel cure", "new treatment", "novel treatment",
+
+                "ny medisin", "nye medisin", "nytt medikament", "nye medikament", "ny terap", "nye terapie",
+                "ny vaksine", "nye vaksine", "vaksineutvikling", "utvikling av vaksin", 
+                "nytt legemiddel", "nye legemid", "ny behandling"]
+#We tried having "new" and "medicine"(++) in two separate term lists combined by AND, but it was noisy, hence use of phrases in termlist b2
+
+termlist3_b3 = ["neglected tropical disease", 
+                "african trypanosomiasis", "aids", "hiv", "appendicitis", "buruli ulcer", "chagas", "chikungunya", "dengue", "diarrheal disease", "diphteria", "dracunculiasis", "ebola", 
+                "guinea-worm disease", "echinococcosis", "foodborne trematodiases", "hemolytic disease", "hepatitis B", "human african trypanosomiasis", "sleeping sickness", "leishmaniasis", "leprosy", 
+                "lower respiratory infection", "respiratory tract infection", "lymphatic filariasis","malaria", 
+                "maternal hemorrage", "maternal sepsis", "measles", "mycetom", "chromoblastomycosis", "deep mycoses", "neonatal encephalopathy", "neural tube defect",
+                "onchocerciasis", "river blindness", "pertussis", "rabies", "rheumatic heart disease", "scabies", "schistosomiasis", "sickle cell", 
+                "soil-transmitted helminthiasis", "hookworm", "roundworm", "whipworm", "ascaris lumbricoides",
+                "trichuris trichiura", "necator americanus", "ancylostoma duodenale", "snakebite envenoming", "taeniasis", "cysticercosis", "tetanus", "trachoma", 
+                "trichuriasis", "tuberculosis", "typhiod fever", "yaws", "yellow fever",
+
+                "neglisjert tropesykdom", "neglisjerte tropesykdom", "neglisjert tropesjukdom", "neglisjerte tropesjukdom", 
+                "afrikansk trypanosomiasis", "apendisitt", "blindtarmbetennelse", "burulisår", "diare", "difteri", "ekinokkokose", "trematodeinfeksjon",
+                "hemolytisk", "hepatitt B", "lepra", "luftveisinfeksjon", "lymfatisk filariasis", "meslinger", "mykose", "kromomykose",
+                "onkocerkose", "kikhoste", "skabb", "sigdcelle", 
+                "helmintiasis", "jordoverført helminthiasis", "hakeorm", "rundorm", "guineaorm", "trichuris", "necator", "ancylostoma", 
+                "taeniainfeksjon", "cysticerkose", "trakom", "tuberkulose", "tyfoid", "frambøsi", "gulfeber",
+
+                "virus", "epidemi", "pandemi", "infectious", "communicable",
                 "smittsom", "overførbar",
                 ]
  #a few general terms ("virus", "epidemi" etc.) not originally included in the Web of Science were added to termlist3_b3 
  #as very few hits resulted from the title search when using only the names of specific diseases
 
-phrasedefault3_b1 = r'(?:{})'.format('|'.join(termlist3_b1))
-phrasespecific3_b1a = r'\b(?:{})\b'.format('|'.join(termlist3_b1a))
+#phrasedefault3_b1 = r'(?:{})'.format('|'.join(termlist3_b1))
 phrasedefault3_b2 = r'(?:{})'.format('|'.join(termlist3_b2))
-phrasedefault3_b2a = r'(?:{})'.format('|'.join(termlist3_b2a))
 phrasedefault3_b3 = r'(?:{})'.format('|'.join(termlist3_b3))
 ```
 
@@ -4465,7 +3117,7 @@ phrasedefault3_b3 = r'(?:{})'.format('|'.join(termlist3_b3))
 #Search 1 - in LMICs data
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault3_b2a, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault3_b2, na=False, case=False))
         & ((Data['LMICs']==True)|(Data['result_title'].str.contains(phrasedefault3_b3, na=False, case=False)))
     )
 ),"tempsdg03_b"] = "SDG03_b"
@@ -4482,39 +3134,25 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS =
-(
-  ("Doha declaration" OR "compulsory licens*" OR "patents" OR "intellectual property" OR "TRIPS agreement")
-  AND
-    ("pharmaceuticals" OR "medicine$" OR "vaccine$" OR "immuni$ation" OR "essential drug$" OR "medication$"
-    OR (("essential" OR "life saving" OR "emergency" OR "health" OR "medical") NEAR/3 ("treatment*" OR "therap*"))
-    OR "treatment access" OR "access to treatment$"
-    )
-  AND
-    ("access" OR "accessibility"
-    OR "affordab*" OR "low cost" OR "inexpensive" OR "free of charge" OR "unaffordab*" OR "expensive"
-    )
-)
-OR TS=("vaccine equity" OR "vaccine inequity")
-```
-
-
 
 ```python
 #Termlists
 termlist3_b4 = ["doha declaration", "compulsory licens", "patent", "intellectual property", "TRIPS agreement",
                 "doha-erklæring", "tvangslisens", "immaterielle rett", "intellektuell eiendom", "TRIPS-avtal"]
+
 termlist3_b5 = ["pharmaceuticals", "medicine", "vaccine", "immunisation", "immunization", "essential drug", "medication", "treatment access", "access to therapy", 
-                "legemid", "medisin", "vaksine", "immunisering", "essensiell medisin", "livsnødvendig medisin", "behandlingstilgang", "tilgang til behandling",
-                "adgang til behandling", "åtgang til behandling"]
+                "legemid", "medisin", "medikament", "vaksine", "immunisering", "essensiell medisin", "livsnødvendig medisin", "behandlingstilgang", "tilgang til behandling", "adgang til behandling", "åtgang til behandling"]
+
 termlist3_b6 = ["essential", "life saving", "life-saving", "emergency", "health", "medical",
                 "essensiel", "livred", "livsviktig", "krise", "akutt", "helse", "medisinsk"]
+
 termlist3_b7 = ["treatment", "therapy", 
                 "behandling", "terapi"]
+
 termlist3_b8 = ["access", "affordab", "low cost", "low-cost", "inexpensive", "free of charge", "expensive", 
                 "tilgang", "adgang", "åtgang", "rimelig", "rimeleg", "billig", "billeg", "gratis"]
-termlist3_b9 = ["vaccine equity", "vaccine inequity", 
+
+termlist3_b9 = ["vaccine equity", "vaccine inequit", 
                 "vaksinefordeling", "fordeling av vaksiner"]
 
 phrasedefault3_b4 = r'(?:{})'.format('|'.join(termlist3_b4))
@@ -4527,30 +3165,21 @@ phrasedefault3_b9 = r'(?:{})'.format('|'.join(termlist3_b9))
 
 
 ```python
-#Search 2
-
+#Search 1
+# This search (vaccine equity OR trips/doha + medicines OR medicines + access) is wider than the WOS search (vaccine equity OR trips/doha AND medicines AND access) - adaptation to titles, where
+# we were missing results about access in for certain countries. It adds a few noisy results about individual-level access to medicines (which are perhaps more relevant in 3.8 than 3.b).
 Data.loc[(
-      (
-          (
-          (Data['result_title'].str.contains(phrasedefault3_b4, na=False, case=False)) &
-          (Data['result_title'].str.contains(phrasedefault3_b5, na=False, case=False))
-          )
-          |
-          (Data['result_title'].str.contains(phrasedefault3_b9, na=False, case=False))
-      )
-      |
-         (
-          (
-             (Data['result_title'].str.contains(phrasedefault3_b5, na=False, case=False)) |
-               (
-                  (Data['result_title'].str.contains(phrasedefault3_b6, na=False, case=False))&
-                  (Data['result_title'].str.contains(phrasedefault3_b7, na=False, case=False))  
-               ) 
-          )
-            &
-            (Data['result_title'].str.contains(phrasedefault3_b8, na=False, case=False))
-      )
-    ),"tempsdg03_b"] = "SDG03_b"
+    (Data['result_title'].str.contains(phrasedefault3_b9, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault3_b4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_b5, na=False, case=False)))
+    |
+    (
+        (
+            (Data['result_title'].str.contains(phrasedefault3_b5, na=False, case=False)) 
+            |((Data['result_title'].str.contains(phrasedefault3_b6, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_b7, na=False, case=False))) 
+        )
+        & (Data['result_title'].str.contains(phrasedefault3_b8, na=False, case=False))
+    )
+),"tempsdg03_b"] = "SDG03_b"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_b == "SDG03_b")])) 
 ```
@@ -4568,50 +3197,27 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS =
-(
-  (
-    (
-      ("recruitment" OR "professional development" OR "retention" OR "capacity building" OR "capacity development"
-      OR "increase training" OR "improv* training" OR "enhanc* training"
-      OR "increase education" OR "improv* education" OR "enhanc* education"
-      OR "train more" OR "recruit more" OR "increase trained" OR "increase the number of"
-      OR "human capital flight" OR "brain drain" OR "emigration" OR "turnover" OR "intention to leave"
-      )
-    )
-    NEAR/15
-        (
-           (
-             ("health" OR "healthcare" OR "medical")
-             NEAR/3 ("workforce" OR "professional$" OR "worker$" OR "personnel" OR "practitioner$" OR "human resources" OR "student$")
-           )
-           OR "nurse$" OR "doctor$" OR "physician$"
-           OR "Anesthetist$" OR "Audiologist$" OR "Dental Staff" OR "Dentist$" OR "Doula$" OR "Emergency Medical Dispatcher$" OR "Health Educator$" OR "Health Facility Administrator$" OR "Infection Control Practitioner$" OR "Medical Chaperone$" OR "Medical Laboratory Personnel" OR "Nutritionist$" OR "Therapist$" OR "Optometrist$" OR "Pharmacist$" OR "Allergist$" OR "Anesthesiolog*" OR "Cardiolog*" OR "Dermatolog*" OR "Endocrinolog*" OR "Gastroenterolog*" OR "General Practic*" OR "Geriatrician$" OR "gynecologist$" OR "Hospitalist$" OR "Nephrolog*" OR "Neurolog*" OR "Oncolog*" OR "Ophthalmolog*" OR "Otolaryngolog*" OR "midwives" OR "Pathologist$" OR "Pediatric*" OR "Physiatrist$" OR "Pulmonolog*" OR "Radiolog*" OR "Rheumatolog*" OR "surgeon$" OR "Urologist$"
-       )
-  )
-  AND
-      (***LMICs***   
-      )
-)
-```
-
-
 
 ```python
 #Termlists
 termlist3_c1 = ["recruitment", "professional development", "retention", "capacity building", "capacity development", "train more", "recruit more", "increase trained",
                 "increase the number of", "human capital flight", "brain drain", "emigration", "turnover", "intention to leave",
+                
                 "rekruttering", "fagutvikl", "faglig utvikl", "fagleg utvikl", "bevaring", "kapasitetsbygging", "kapasitetsutvikling", "trene fle", "rekruttere fle",
                 "øke trente", "auke trente", "øke antallet", "øke tallet", "auke talet", "hjerneflukt", "emigrasjon", "utskifting", "gjennom"]
+
 termlist3_c2 = ["increase", "improv", "enhanc", 
                 "øk", "auk", "bedr", "betr", "styrk", "utvid"]
+
 termlist3_c3 = ["training", "education",
                 "trening", "opplæring", "utdanning"]
+
 termlist3_c4 = ["health", "medical", 
                 "helse", "medisinsk"]
+
 termlist3_c5 = ["workforce", "professional", "worker", "personnel", "practitioner", "human resources", "student", 
                 "arbeidsstyrke", "profesjonell", "arbeider", "arbeidar", "personell", "personale", "utøver", "utøvar", "menneskelige ressurs", "menneskelege ressurs"]
+
 termlist3_c6 = ["nurse", "doctor", "physician", "anesthetist", "audiologist", "dental staff", "dentist", "doula", "emergency medical dispatcher", "health educator",
                 "health facility administrator", "infection control practitioner", "medical chaperone", "medical laboratory personnel", "nutritionist",
                 "therapist", "optometrist", "pharmacist", "allergist", "anesthesiolog", "cardiolog", "dermatolog", "endocrinolog", "gastroenterolog", "general practic",
@@ -4637,22 +3243,15 @@ Data.loc[(
     (
         (
             (Data['result_title'].str.contains(phrasedefault3_c1, na=False, case=False))
-            |
-            (
-                (Data['result_title'].str.contains(phrasedefault3_c2, na=False, case=False))
-                & (Data['result_title'].str.contains(phrasedefault3_c3, na=False, case=False))
-            )
+            |((Data['result_title'].str.contains(phrasedefault3_c2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_c3, na=False, case=False)))
         )
         & 
         (
-            ( 
-                (Data['result_title'].str.contains(phrasedefault3_c4, na=False, case=False))
-                & (Data['result_title'].str.contains(phrasedefault3_c5, na=False, case=False))
-            )
-            | (Data['result_title'].str.contains(phrasedefault3_c6, na=False, case=False))
+            ((Data['result_title'].str.contains(phrasedefault3_c4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_c5, na=False, case=False)))
+            |(Data['result_title'].str.contains(phrasedefault3_c6, na=False, case=False))
         )    
     )
-    &(Data['LMICs']==True)
+    & (Data['LMICs']==True)
 ),"tempsdg03_c"] = "SDG03_c"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_c == "SDG03_c")]))  
@@ -4661,57 +3260,35 @@ print("Number of results = ", len(Data[(Data.tempsdg03_c == "SDG03_c")]))
 #### Phrase 2
 
 
-```
-TS =
-(
-  (
-    ("financing" OR "invest" OR "investment$" OR "investing" OR "funding" OR "funds"
-    OR "health spending" OR "health care spending" OR "health budget" OR "public spending" OR "government spending"
-    OR "financial assist*" OR "economic assist*" OR "financial support" OR "financial resources"
-    OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-    OR "ODA" OR "cooperation fund$" OR "development spending"
-    OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$"))
-    )
-    NEAR/15
-        ("health sector" OR "health financing" OR "health budget" OR "health spending"
-        OR "health service$" OR "healthcare" OR "health care" OR "medical care"
-        OR "medical research" OR "health research" OR "health R&D" OR "medical R&D"
-        )   
-  )
-  AND
-    (****LMICs****)
-)
-```
-
-
-
 
 ```python
 #Termlists
-termlist3_c8 = ["financing", "invest", "fund", "health spending", "health care spending", "health budget", "public spending", "government spending",
+termlist3_c8 = ["financing", "investment", "investing", "fund", "health spending", "health care spending", "health budget", "public spending", "government spending",
                 "financial assist", "economic assist", "financial support", "financial resources", "subsidy", "subsidies", "subsidis", "subsidiz",
-                "ODA", "cooperation fund", "development spending",
+                "cooperation fund", "development spending",
 
                 "finansie", "fond", "helseutgift", "helsebudsjett", "offentlige utgifter", "offentlege utgifter", "finansiell assistanse", "økonomisk assistanse", 
-                "finansiell støtte", "finansiell stønad", "finansielle ressurs", "subsidi", "offentlig utviklings", "offentleg utviklings", "offisiell utviklings", "samarbeidsfond"
-               ]
+                "finansiell støtte", "finansiell stønad", "finansielle ressurs", "subsidi", "offentlig utviklings", "offentleg utviklings", "offisiell utviklings", "samarbeidsfond"]
+
+termlist3_c8_case = ["ODA", "invest", "Invest"]
+
 termlist3_c9 = ["international", "development", "foreign", 
-                "internasjonal", "utvikling", "utenlands", "utanlands"
-               ]
+                "internasjonal", "utvikling", "utenlands", "utanlands"]
+
 termlist3_c10 = ["aid", "assistance", "finance", "grant", 
-                 "hjelp", "støtte", "stønad", "bistand", "assistanse", "finansie"
-                ]
+                 "hjelp", "støtte", "stønad", "bistand", "assistanse", "finansie"]
+
 termlist3_c11 = ["health sector", "health financing", "health budget", "health spending", "health service", "healthcare", "health care", "medical care",
                  "medical research", "health research", "health R&D", "medical R&D",
+                 
                  "helsesektor", "helsefinansiering", "helsebudjett", "helseøkonomi", "helseutgift", "helsetjeneste", "helseteneste", "omsorgstjeneste", "omsorgsteneste", 
-                 "medisinsk forskning", "medisinsk forsking", "helseforskning", "helseforsking"
-                ]
+                 "medisinsk forskning", "medisinsk forsking", "helseforskning", "helseforsking"]
 
 phrasedefault3_c8 = r'(?:{})'.format('|'.join(termlist3_c8))
+phrasespecific3_c8_case = r'\b(?:{})\b'.format('|'.join(termlist3_c8_case))
 phrasedefault3_c9 = r'(?:{})'.format('|'.join(termlist3_c9))
 phrasedefault3_c10 = r'(?:{})'.format('|'.join(termlist3_c10))
 phrasedefault3_c11 = r'(?:{})'.format('|'.join(termlist3_c11))
-
 ```
 
 
@@ -4720,11 +3297,8 @@ phrasedefault3_c11 = r'(?:{})'.format('|'.join(termlist3_c11))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault3_c8, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault3_c9, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault3_c10, na=False, case=False))
-        )
+        |(Data['result_title'].str.contains(phrasespecific3_c8_case, na=False, case=True))
+        |((Data['result_title'].str.contains(phrasedefault3_c9, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_c10, na=False, case=False)))
     )
     & (Data['result_title'].str.contains(phrasedefault3_c11, na=False, case=False)) 
     & (Data['LMICs']==True)
@@ -4744,79 +3318,62 @@ test.iloc[0:5, ]
 
 *Styrke kapasiteten i alle land, særlig i utviklingsland, for tidligvarsling, risikoredusering og håndtering av nasjonale og globale helserisikoer*
 
-#### Phrase 1
-
-```
-TS =
-(
-  (
-    ("national health risk$" OR "international health risk$" OR "global health risk$"
-    OR "pandemic$" OR "epidemic$" OR "outbreak$"
-    OR "medical disaster$" OR "health emergency" OR "health emergencies"
-    OR "radiation emergenc*" OR "radiation event$"
-    OR "chemical event$" OR "chemical emergenc*"
-    OR "zoonotic event$" OR "zoonotic emergenc*"
-    OR "food safety" OR "foodborne event$"
-    OR "biosecurity event$" OR "biosecurity emergenc*"
-    OR "antimicrobial resistan*" OR "antibiotic resistan*" OR "antifungal resistan*"
-    )
-    NEAR/15  
-      ("capacity" OR "early warning*" OR "surveillance" OR "monitoring system$"
-      OR "laboratory reporting" OR "laboratory infrastructure" OR "laboratory quality" OR "laboratory system$"
-      OR "preparedness" OR "medical preparedness" OR "disaster planning" OR "national health emergency framework" OR "emergency risk assessment$"
-      OR "risk reduction" OR "risk management" OR "risk communication"
-      OR "emergency management" OR "emergency response" OR "personnel deployment" OR "security authorities"
-      OR "vaccination program*" OR "vaccination framework$" OR "immuni$ation program*"
-      OR "legislation" OR "policy" OR "policies" OR "financing"
-      OR "international health regulations" OR "national focal point$" OR "national action plan*"
-      )
-  )
-  NOT
-      ("blight" OR "plant pathogen$" OR "plant disease$")
-)
-```
-
-
-
 
 ```python
 #Termlists
-termlist3_d1 = ["national health risk", "global health risk", "pandemi", "epidemic", "outbreak", "medical disaster", "health emergenc", "radiation emergenc", "radiation event"
-                "chemical event", "chemical emergenc", "zoonotic event", "zoonotic emergenc", "food safety", "foodborne event", "biosecurity event", "biosecurity emergenc"
-                "antimicrobial resistan", "antibiotic resistan", "antifungal resistan",
+termlist3_d1 = ["national health risk", "global health risk", "public health risk", 
+                "pandemic preparedness", "pandemic polic", "epidemic", "outbreak", "medical disaster", "health emergenc", 
+                "radiation emergenc", "radiation event", "chemical event", "chemical emergenc", "zoonotic event", "zoonotic emergenc", 
+                "food safety", "foodborne event", "biosecurity event", "biosecurity emergenc",
+                "antimicrobial resistan", "antibiotic resistan", "resistance to antibiotics", "antifungal resistan",
                 
-                "helserisiko", "epidemisk", "epidemier", "epidemien", "utbrudd", "utbrot", "medisinsk katastrofe", "strålingsulykke", 
-                "kjemikalieulykke", "zoonotisk", "matsikkerhe", "matbåren", "biosikkerhe", "antimikrobiell resistens",
-                "antibiotikaresistens", "antimykotisk"]  
-termlist3_d1trunk = ["epidemi"]                
-termlist3_d2 = ["capacity", "early warning", "surveillance", "monitoring system", "laboratory reporting", "laboratory infrastructure", "laboratory quality", "laboratory system",
-                "preparedness", "disaster planning", "national health emergency framework", "emergency risk assessment", "risk reduction", "risk management", "risk communication",
-                "emergency management", "emergency response", "personnel deployment", "security authorities", "vaccination program", "vaccination framework", "immunisation program", 
-                "immunization program", "legislation", "polic", "financing", "international health regulation", "national focal point", "national action plan",
-                
-                "kapasitet", "tidligvarsling", "tidlig varsling", "tidlegvarsling", "tidleg varsling", "overvåk", "overvaking", "laboratorie", 
-                "forberedt", "førebudd", "katastrofeplan", "kriseplan", "nasjonal helseberedskapsplan", "risikovurdering", "risikoreduksjon", "risikohåndtering", "risikokommunikasjon", 
-                "krisehåndtering", "kriserespons", "sikkerhetsmyndighet", "tryggingsorgan", "vaksinasjonsprogram", "vaksinasjonsrammeverk", "immuniseringsprogram",
+                "helserisiko", "epidemisk", "epidemier", "epidemien", "utbrudd", "utbrot", 
+                "medisinsk katastrofe", 
+                "strålingsulykke", "kjemikalieulykke", 
+                "zoonotisk", "matsikkerhe", "matbåren", "biosikkerhe", 
+                "antimikrobiell resistens", "antibiotikaresistens", "antimykotisk"]
+
+termlist3_d1trunk = ["epidemi"]
+
+termlist3_d2 = ["capacity", "early warning", "early detection", "surveillance", "monitoring system", "laboratory reporting", "laboratory infrastructure", "laboratory quality", "laboratory system",
+                "preparing", "prepare", "disaster planning", "national health emergency framework", "emergency risk assessment", "risk reduction", "risk management", "risk communication",
+                "emergency management", "emergency response", "personnel deployment", "security authorities", 
+                "vaccination program", "vaccination framework", "immunisation program", "immunization program", 
+                "legislation", "polic", "financing", "international health regulation", "national focal point", "national action plan",
+
+                "kapasitet", "tidligvarsling", "tidlig varsling", "tidlegvarsling", "tidleg varsling", "tidlig oppdag", "tidleg oppdag", "overvåk", "overvaking", "laboratorie",
+                "forberedt", "førebudd", "katastrofeplan", "kriseplan", "nasjonal helseberedskapsplan", "risikovurdering", "risikoreduksjon", "risikohåndtering", "risikokommunikasjon",
+                "krisehåndtering", "kriserespons", "sikkerhetsmyndighet", "tryggingsorgan", 
+                "vaksinasjonsprogram", "vaksinasjonsrammeverk", "immuniseringsprogram",
                 "lovgivning", "lovgiving", "politikk", "retningslin", "finansiering", "internasjonalt helsereglement", "internasjonale helsereglement", "nasjonal handlingsplan"]
-termlist3_d3 = ["blight", "plant pathogen", "plant disease" ]       
+
+#termlist3_d3 = ["blight", "plant pathogen", "plant disease" ]       
 # for a title search, it was not necessary to exlude the terms in termslist 3_d3 with a NOT search         
+
+termlist3_d4 = ["pandemi"]
+
+termlist3_d5 = ["influenza", "health", "hospital", "clinic", "ward", "care", "nurs", "pharmac", "medic", "vaccin",
+                "influensa", "helse", "sykehus", "sjukehus", "avdeling", "klinikk", "omsorg", "farmas", "medisin", "vaksin"]
 
 phrasedefault3_d1 = r'(?:{})'.format('|'.join(termlist3_d1))
 phrasespecific3_d1trunk = r'\b(?:{})\b'.format('|'.join(termlist3_d1trunk))
 phrasedefault3_d2 = r'(?:{})'.format('|'.join(termlist3_d2))
-phrasedefault3_d3 = r'(?:{})'.format('|'.join(termlist3_d3))
+#phrasedefault3_d3 = r'(?:{})'.format('|'.join(termlist3_d3))
+phrasedefault3_d4 = r'(?:{})'.format('|'.join(termlist3_d4))
+phrasedefault3_d5 = r'(?:{})'.format('|'.join(termlist3_d5))
 ```
 
 
 ```python
 #search
 Data.loc[(
-     (
-         (Data['result_title'].str.contains(phrasedefault3_d1, na=False, case=False))|
-         (Data['result_title'].str.contains(phrasespecific3_d1trunk, na=False, case=False))
-     )
-     & (Data['result_title'].str.contains(phrasedefault3_d2, na=False, case=False)) 
-    ),"tempsdg03_d"] = "SDG03_d"
+    (
+        (Data['result_title'].str.contains(phrasedefault3_d1, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific3_d1trunk, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault3_d4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_d5, na=False, case=False)))
+    )
+    & (Data['result_title'].str.contains(phrasedefault3_d2, na=False, case=False))
+),"tempsdg03_d"] = "SDG03_d"
 
 print("Number of results = ", len(Data[(Data.tempsdg03_d == "SDG03_d")])) 
 ```
@@ -4828,34 +3385,6 @@ test.iloc[0:5, ]
 ```
 
 ### SDG 3 mentions
-
-```
-TS=
-("SDG 3" OR "SDGs 3" OR "SDG3" OR "sustainable development goal$ 3"
-OR ("sustainable development goal$" AND "goal 3")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 3")
-    NEAR/50 ("health")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  OR (("soil health" OR "ecosystem health" OR "coastal health" OR ("ocean$" NEAR/5 "health")) NOT ("human health"))
-  )
-  ```
- Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 
 ```python
@@ -4886,19 +3415,11 @@ phrasedefault3_6 = r'(?:{})'.format('|'.join(termlist3_6))
 ```python
 #search
 Data.loc[(
-      (Data['result_title'].str.contains(phrasedefault3_1, na=False, case=False))|
-        (
-          (Data['result_title'].str.contains(phrasedefault3_2, na=False, case=False))&
-          (Data['result_title'].str.contains(phrasedefault3_3, na=False, case=False))
-        )
-       |
-       (
-         (Data['result_title'].str.contains(phrasedefault3_4, na=False, case=False))&
-         (Data['result_title'].str.contains(phrasedefault3_5, na=False, case=False))
-       )
-       |
-       (Data['result_title'].str.contains(phrasedefault3_6, na=False, case=False))
-    ),"tempmentionsdg03"] = "SDG03"
+    (Data['result_title'].str.contains(phrasedefault3_1, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault3_2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_3, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault3_4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault3_5, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault3_6, na=False, case=False))
+),"tempmentionsdg03"] = "SDG03"
 
 print("Number of results = ", len(Data[(Data.tempmentionsdg03 == "SDG03")])) 
 ```
@@ -4916,60 +3437,6 @@ By 2030, ensure that all girls and boys complete free, equitable and quality pri
 
 *Innen 2030 sikre at alle jenter og gutter fullfører gratis og likeverdig grunnskole og videregående opplæring av høy kvalitet som kan gi dem et relevant og reelt læringsutbytte*
 
-```
-TS=
-(
- ("complete" OR "completing" OR "completes" OR "completion" OR "school completion" OR "finish*" OR "graduate" OR "graduation")
-  NEAR/5
-      ("primary school*" OR "elementary school*" OR "primary educat*"
-      OR "middle school*" OR "secondary school*" OR "secondary education*"
-      OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
-      )
-)
-
-
-TS=
-(
- ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving")
-   NEAR/5
-      ("primary school*" OR "elementary school*" OR "primary educat*"
-      OR "middle school*" OR "secondary school*" OR "secondary education*"
-      OR (("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*"))
-      )
-)
-
-
-TS=
-(
- (
-  ("access*" OR "enter*" OR "entry" OR "enroll*" OR "admission" OR "admit*")
-  NEAR/15
-   (
-     ("primary school*" OR "elementary school*" OR "primary educat*"
-        OR "middle school*" OR "secondary school*" OR "secondary education"
-      )
-      NEAR/5 ("free" OR "equit*" OR "quality")
-    )
- )
-)  
-
-
-TS=
-(
-  (
-    ("basic" OR "fundamental*" OR "minim*" OR "basic*" OR "core" OR "elementary")
-    NEAR/10 
-    ("proficienc*" OR "skill*" OR "comprehen*" OR "literac*" OR "read*" OR "mathematic*" OR "math" OR "maths" OR "numera*")
-  )
-    NEAR/15
-    ("read" OR "reading" OR "mathematic*" OR "math" OR "maths" OR "numera*")
-    AND 
-    ("school" OR "student$" OR "boys" OR "girls" OR "kids" OR "child*")
-)
-
-
-```
-
 #### Phrase 1
 
 
@@ -4979,6 +3446,7 @@ termlist4_1_1a = ["complet", "school completion", "finish", "graduat",
                   "fullfør", "gjennomføring"]
                   
 termlist4_1_1b = ["primary school", "elementary school", "primary educat", "middle school", "secondary school", "secondary education",
+                  
                   "barnesk", "grunnskulen", "grunnskolen", "grunnutdann", "grunnopplæring", "ungdomssk", "vidaregåande skule", "videregående skole", "vidaregåande opplæring", "videregående opplæring",
                   "yrkesskule", "yrkesopplæring"]
                   
@@ -5002,18 +3470,13 @@ phrasespecific4_1_1e = r'\b(?:{})'.format('|'.join(termlist4_1_1e))
 #Search 
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault4_1_1a, na=False, case=False))
-     & 
+    & 
     (
-        (
-        (Data['result_title'].str.contains(phrasedefault4_1_1b, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_1e, na=False, case=False))
-        )
-    |
-        (
-         (Data['result_title'].str.contains(phrasedefault4_1_1c, na=False, case=False)) &
-         (Data['result_title'].str.contains(phrasespecific4_1_1d, na=False, case=False))
-         )
+        (Data['result_title'].str.contains(phrasedefault4_1_1b, na=False, case=False)) 
+        | (Data['result_title'].str.contains(phrasespecific4_1_1e, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasedefault4_1_1c, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific4_1_1d, na=False, case=False)))
     )
-    ),"tempsdg04_01"] = "SDG04_01"
+),"tempsdg04_01"] = "SDG04_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_01 == "SDG04_01")])) 
 ```
@@ -5030,9 +3493,10 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 termlist4_1_2a = ["dropout", "drop-out", "drop out", "dropping out", "early school-leaving", 
-                  "droppe ut", "frafall", "fråfall", "falle ut"]
+                  "droppe ut", "dropper ut", "frafall", "fråfall", "falle ut"]
                  
 termlist4_1_2b = ["primary school", "elementary school", "primary educat", "middle school", "secondary school", "secondary education",
+                  
                   "barnesk", "grunnskulen", "grunnskolen", "grunnutdann", "grunnopplæring", "ungdomssk", "vidaregåande skule", "videregående skole", "vidaregåande opplæring", "videregående opplæring",
                   "yrkesskule", "yrkesopplæring"]
                 
@@ -5060,20 +3524,16 @@ phrasespecific4_1_2f = r'\b(?:{})'.format('|'.join(termlist4_1_2f))
 #Search 
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault4_1_2a, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_2e, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault4_1_2a, na=False, case=False)) 
+        |(Data['result_title'].str.contains(phrasespecific4_1_2e, na=False, case=False))
     )
-  & 
+    & 
     (
-        (
-            (Data['result_title'].str.contains(phrasedefault4_1_2b, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_2f, na=False, case=False))
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault4_1_2c, na=False, case=True)) 
-            & (Data['result_title'].str.contains(phrasespecific4_1_2d, na=False, case=False))
-        )
+        (Data['result_title'].str.contains(phrasedefault4_1_2b, na=False, case=False)) 
+        |(Data['result_title'].str.contains(phrasespecific4_1_2f, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault4_1_2c, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific4_1_2d, na=False, case=False)))
     )
-    ),"tempsdg04_01"] = "SDG04_01"
+),"tempsdg04_01"] = "SDG04_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_01 == "SDG04_01")])) 
 ```
@@ -5095,18 +3555,17 @@ termlist4_1_3a = ["access", "entry", "enroll", "admission", "admit",
                   "tilgang", "adgang", "tillating", "tillatelse", "løyve", "høve"]
             
 termlist4_1_3b = ["primary school", "elementary school", "primary educat", "middle school", "secondary school", "secondary education",
-                "barnesk", "grunnskule", "grunnskole", "grunnutdann", "grunnopplæring", "ungdomssk", 
-                "vidaregåande skule", "videregående skole", "vidaregåande opplæring", "videregående opplæring",
-                "yrkesskule", "yrkesopplæring"]                 
+                  
+                  "barnesk", "grunnskule", "grunnskole", "grunnutdann", "grunnopplæring", "ungdomssk", 
+                  "vidaregåande skule", "videregående skole", "vidaregåande opplæring", "videregående opplæring",
+                  "yrkesskule", "yrkesopplæring"]                 
 
 termlist4_1_3c = ["enter"]
-                 #Turns off truncation to avoid "STUDENTER"(NO)
-
+#Turns off truncation to avoid "STUDENTER"(NO)
 
 phrasedefault4_1_3a = r'(?:{})'.format('|'.join(termlist4_1_3a))
 phrasedefault4_1_3b = r'(?:{})'.format('|'.join(termlist4_1_3b))
 phrasespecific4_1_3c = r'\b(?:{})\b'.format('|'.join(termlist4_1_3c))
-
 ```
 
 
@@ -5114,7 +3573,8 @@ phrasespecific4_1_3c = r'\b(?:{})\b'.format('|'.join(termlist4_1_3c))
 #Search 
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault4_1_3a, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_3c, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault4_1_3a, na=False, case=False)) 
+        |(Data['result_title'].str.contains(phrasespecific4_1_3c, na=False, case=False))
     )
     & (Data['result_title'].str.contains(phrasedefault4_1_3b, na=False, case=False))    
 ),"tempsdg04_01"] = "SDG04_01"
@@ -5142,12 +3602,13 @@ termlist4_1_4b = ["proficienc", "skill", "comprehen", "literac", "mathematic", "
 termlist4_1_4c = ["basisferdighe", "basiskompetanse", "kjerneferdighe", "kjernekompetanse"]
                          
 termlist4_1_4d = ["reading", "mathematic", "math", "maths", "numera",
-                  "les", "regneferdigh", "rekneferdigh", "talforstå", "tallforstå", "talferdigh", "tallferdigh", "matematikk", "rekning", "regning"]
+                  "regneferdigh", "rekneferdigh", "talforstå", "tallforstå", "talferdigh", "tallferdigh", "matematikk", "rekning", "regning"]
 
 termlist4_1_4e = ["school", "student", "boys", "girls", "kids", "child", 
                   "skole", "skule", "gut", "jente", "born", "barn", "elever", "elevar" ]
                  
-termlist4_1_4f = ["read"]
+termlist4_1_4f = ["read",
+                 "les"]
                                    
                  
 phrasedefault4_1_4a = r'(?:{})'.format('|'.join(termlist4_1_4a))
@@ -5163,17 +3624,23 @@ phrasespecific4_1_4f = r'\b(?:{})'.format('|'.join(termlist4_1_4f))
 #Search 
 Data.loc[(
     (
-      (
-          (Data['result_title'].str.contains(phrasedefault4_1_4a, na=False, case=False)) 
-          & (
-              (Data['result_title'].str.contains(phrasedefault4_1_4b, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_4f, na=False, case=False))
+        (
+            (Data['result_title'].str.contains(phrasedefault4_1_4a, na=False, case=False)) 
+            & 
+            (
+                (Data['result_title'].str.contains(phrasedefault4_1_4b, na=False, case=False)) 
+                |(Data['result_title'].str.contains(phrasespecific4_1_4f, na=False, case=False))
             )
-      )
-      |(Data['result_title'].str.contains(phrasedefault4_1_4c, na=False, case=False))
+        )
+        |(Data['result_title'].str.contains(phrasedefault4_1_4c, na=False, case=False))
     )
-    & ((Data['result_title'].str.contains(phrasedefault4_1_4d, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_1_4f, na=False, case=False)))
+    & 
+    (
+        (Data['result_title'].str.contains(phrasedefault4_1_4d, na=False, case=False)) 
+        | (Data['result_title'].str.contains(phrasespecific4_1_4f, na=False, case=False))
+    )
     & (Data['result_title'].str.contains(phrasedefault4_1_4e, na=False, case=False))
-    ),"tempsdg04_01"] = "SDG04_01"
+),"tempsdg04_01"] = "SDG04_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_01 == "SDG04_01")]))
 ```
@@ -5189,62 +3656,22 @@ By 2030, ensure that all girls and boys have access to quality early childhood d
 
 *Innen 2030 sikre alle jenter og gutter mulighet for god tidlig utvikling og omsorg og tilgang til førskole, slik at de er forberedt på å begynne i grunnskolen*
 
-```
-Phrase 1:
-
-TS=
-(
- (
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
- )
-  NEAR/5
-      ("early childhood care" OR "kindergarten" OR "pre-kindergarten*" OR "nurser*" OR "pre-primary*" OR "pre school*" OR "preschool*"
-      OR (("early childhood" OR "under five$") NEAR/3 "education")
-  )
-)
-NOT
-TS= ("pig*" OR "plant*" OR "fish*")
-
-Phrase 2:
-TS=
-(
-  "school readiness"
-  OR
-    (
-      ("ready" OR "readiness" OR "prepared*")
-      NEAR/5
-        ("primary education*" OR "primary school*" OR "elementary school*" OR "first grade" OR "1st grade*")
-    )
-  OR
-    (
-      ("development*" NEAR/5 ("children*" OR "under-five*" OR "early childhood"))
-      NEAR/5 "school entry"
-   )
-)
-
-
-```
-
-
 #### Phrase 1
 
 
 ```python
 #Termlists
-termlist4_2_1a = ["access", "obstacle", "barrier", "hinder", "hindrance", "equitab", "non-equit",  
-                "tilgang", "adgang", "tilgjenge", "barrier", "hindring", "hinder", "hindre"
-                ]
+termlist4_2_1a = ["access", "obstacle", "barrier", "hinder", "hindrance", "equit", 
+                "tilgang", "adgang", "tilgjenge", "barrier", "hindring", "hinder", "hindre"]
 
-
-termlist4_2_1b = ["early childhood care", "kindergarten", "pre-kindergarten", "nurser", "pre-primary education", "pre school education", "preschool education", 
-                  "førsk", "barnehage", "tidlig utvikling", "tidleg utvikling"
-                ]
+termlist4_2_1b = ["early childhood care", "kindergarten", "pre-kindergarten", "nurser", "pre-primary education", "pre school education", "preschool education", "pre-school education", "ECEC",
+                  "førsk", "barnehage", "tidlig utvikling", "tidleg utvikling"]
 
 termlist4_2_1c = ["early childhood", "under five", "under-five"]
 
 termlist4_2_1d = ["education"]
 
-termlist4_2_1e = ["barnehagedekning", "barnehageplass", "tilbud om barnehage", "tilbod om barnehage", "barnehageopptak"]
+termlist4_2_1e = ["barnehagedekning", "barnehageplass", "tilbud om barnehage", "tilbod om barnehage", "barnehageopptak", "opptak i barnehage", "opptak til barnehage"]
 
 
 phrasedefault4_2_1a = r'(?:{})'.format('|'.join(termlist4_2_1a))
@@ -5252,7 +3679,6 @@ phrasedefault4_2_1b = r'(?:{})'.format('|'.join(termlist4_2_1b))
 phrasedefault4_2_1c = r'(?:{})'.format('|'.join(termlist4_2_1c))
 phrasedefault4_2_1d = r'(?:{})'.format('|'.join(termlist4_2_1d))
 phrasedefault4_2_1e = r'(?:{})'.format('|'.join(termlist4_2_1e))
-
 ```
 
 
@@ -5261,7 +3687,8 @@ phrasedefault4_2_1e = r'(?:{})'.format('|'.join(termlist4_2_1e))
 Data.loc[(
     (          
         (Data['result_title'].str.contains(phrasedefault4_2_1a, na=False, case=False))
-        & (
+        & 
+        (
             (Data['result_title'].str.contains(phrasedefault4_2_1b, na=False, case=False))
             |((Data['result_title'].str.contains(phrasedefault4_2_1c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_2_1d, na=False, case=False)))
         )
@@ -5283,28 +3710,27 @@ test.iloc[0:5, ]
 
 ```python
 #Termlists
-termlist4_2_2a = ["school ready", "school-ready", "school readiness", "school-readiness", 
+termlist4_2_2a = ["school ready", "school-ready", "school readiness", "school-readiness",
                 "skolemoden", "skulemoden", "skulemogen"]
 
-termlist4_2_2b = ["ready", "readiness", "prepared", 
+termlist4_2_2b = ["ready", "readiness", "prepared", "transition",
                  "moden", "mogen", "forberedt", "førebudd", "overgang"]
-                                  
-termlist4_2_2c = ["primary education", "primary school", "elementary school", "first grade", "1st grade", 
+
+termlist4_2_2c = ["primary education", "primary school", "elementary school", "first grade", "1st grade",
                 "første klass", "fyrste klass", "6-åring", "seksåring", "fyrsteklass", "førsteklass", "skole", "skule", "barnehage"]
 
-termlist4_2_2d = ["development", 
+termlist4_2_2d = ["development",
                 "utvikling"]
 
 termlist4_2_2e = ["child", "under-five", "early childhood",
                 "barn", "tidlig barndom", "tidleg barndom"]
-                
-termlist4_2_2f= ["school entry",
+
+termlist4_2_2f= ["school entry", "start school", "start school",
                 "skolestart", "skulestart"]
 
 termlist4_2_2g = ["klar", "klare", "klår", "klåre"]
-                  
+
 termlist4_2_2h = ["ungdomssk", "videregående", "vidaregåande", "høgskule", "høgskole", "universitet", "voksen", "vaksen", "arbeid", "jobb", "yrke"]
-                  
                 
 phrasedefault4_2_2a = r'(?:{})'.format('|'.join(termlist4_2_2a))
 phrasedefault4_2_2b = r'(?:{})'.format('|'.join(termlist4_2_2b))
@@ -5351,54 +3777,6 @@ By 2030, ensure equal access for all women and men to affordable and quality tec
 
 *Innen 2030 sikre kvinner og menn lik tilgang til god teknisk og yrkesfaglig opplæring og høyere utdanning, inkludert universitetsutdanning, til en overkommelig pris*
 
-```
-TS=
-(
-  (
-    ("access*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*" OR "afford*")
-    OR
-    ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-  )
-  NEAR/5
-      ("higher education"
-      OR 
-       (("university" OR "universities" OR "college$") NEAR/5 ("admission$" OR "enrol*"))
-      OR
-        (("technic*" OR "vocation*" OR "tertiar*" OR "university" OR "postsecondary" OR "post secondary")
-         NEAR/3 ("education" OR "training" OR "school*" OR "learning")
-        )
-     )
-)
-
-
-TS=
-(
-  (
-    (
-      ("inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*" OR "equal*")
-      OR
-      (
-       ("barrier$" OR "obstacle$" OR "non-equitiab*" OR "inequal*" OR "discriminat*")
-      )
-    )
-    NEAR/15 ("access")
-  )
-  NEAR/15
-      ("university" OR "universities" OR "higher education" OR "college$"
-      OR
-        (
-          ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
-          NEAR/3 ("education" OR "training" OR "school*" OR "learning")
-        )
-   )
-)
-
-
-TS= "inclusive higher education"
-
-
-
-
 #### Phrase 1 & Phrase 2
 Due to title search, phrase 1 and phrase 2 from WoS are here combined into one phrase. To a great extent, in WoS, the two phrases contain the same terms. We have included *Access* in termlist e) -  which is searched in AND-combination with termlist d) *University* - in order to include some more hits.
 
@@ -5406,8 +3784,9 @@ Due to title search, phrase 1 and phrase 2 from WoS are here combined into one p
 
 ```python
 #Termlists
-termlist4_3_1a = ["access", "inclusion", "inclusiv", "equitab", "equal", "afford", "barrier", "obstacle", "discriminat",
-                "tilgang", "tilgjenge", "adgang", "inkluder", "rettferdig", "rettvis", 
+termlist4_3_1a = ["access", "inclusion", "inclusiv", "equit", "equal", "afford", "barrier", "obstacle", "discriminat",
+                  
+                "tilgang", "tilgjenge", "adgang", "inkluder", "rettferdig", "rettvis",
                 "ikkje råd", "ikke råd", "barrier", "hindring", "hinder", "diskrimin", "utesteng"]
                 
 termlist4_3_1c = ["higher education",
@@ -5447,15 +3826,8 @@ Data.loc[(
     &
     (
         (Data['result_title'].str.contains(phrasedefault4_3_1c, na=False, case=False)) 
-        |(
-            (Data['result_title'].str.contains(phrasedefault4_3_1d, na=False, case=False)) 
-            & (Data['result_title'].str.contains(phrasedefault4_3_1e, na=False, case=False))
-         )
-        | 
-         (
-          (Data['result_title'].str.contains(phrasedefault4_3_1f, na=False, case=False)) 
-            & (Data['result_title'].str.contains(phrasedefault4_3_1g, na=False, case=False))
-         )
+        |((Data['result_title'].str.contains(phrasedefault4_3_1d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_3_1e, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault4_3_1f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_3_1g, na=False, case=False)))
     )
     & (~Data['result_title'].str.contains(phrasedefault4_3_1h, na=False, case=False))
 ),"tempsdg04_03"] = "SDG04_03"
@@ -5475,8 +3847,10 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 
-termlist4_3_3a = ["inclusive", "inclusion", "inkluder"]
-termlist4_3_3b = ["higher education", 
+termlist4_3_3a = ["inclusive", "inclusion", 
+                  "inkluder"]
+
+termlist4_3_3b = ["higher education",
                   "høgare utdann", "høyere utdann", "universitetsutdann", "høgskuleutdann", "høgskoleutdann", "tertiærutdann"]
 
 phrasedefault4_3_3a = r'(?:{})'.format('|'.join(termlist4_3_3a))
@@ -5487,7 +3861,7 @@ phrasedefault4_3_3b = r'(?:{})'.format('|'.join(termlist4_3_3b))
 ```python
 #Search 
 Data.loc[(
-        (Data['result_title'].str.contains(phrasedefault4_3_3a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_3_3b, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault4_3_3a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_3_3b, na=False, case=False))
     ),"tempsdg04_03"] = "SDG04_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_03 == "SDG04_03")])) 
@@ -5504,84 +3878,33 @@ By 2030, substantially increase the number of youth and adults who have relevant
 
 *Innen 2030 oppnå en betydelig økning i antall unge og voksne som har kompetanse, blant annet i tekniske fag og yrkesfag, som er relevant for sysselsetting, anstendig arbeid og entreprenørskap*
 
-```
-TS=
-(
-  (
-   ("skill$" OR "abilit*" OR "competenc*" OR "literac*")
-  )
-  NEAR/5
-  ("employability*" OR "employment" OR "decent job$" OR "decent work" OR "entrepreneurship$")
-)
-
-
-TS=
-(
-  (
-    ("unemploy*" OR "underemploy*")
-  )
-  NEAR/5 
-  ("skill$" OR "abilit*" OR "competenc*" OR "literac*" OR "literate")
- )
-
-
-
- TS=
-(
-  (
-    "read*" OR "writ*" OR "comput*" OR "literacy" OR "numeracy"
-    OR (("basic technolog*" OR "speciali$ed") NEAR/3 ("skills" OR "knowledge"))
-    OR "learn and adapt"
-    OR (("listen*" OR "communicat*") NEAR/3 ("skills" OR "effective*"))
-    OR "think creatively" OR "creative thinking" OR "solve problem$" OR "problem-solv*"
-    OR ("interact*" NEAR/3 ("co-work*" OR "colleague$"))
-    OR (("work" OR "working") NEAR/3 ("team*" OR "group*"))
-    OR ("leader*" NEAR/5 ("skills" OR "effectiv*"))
-    OR ("follow*" NEAR/3 "supervis*")
-    OR ("transfer*" NEAR/3 "skills")
-  )
-  NEAR/15 "employability"
-)
-
-
-
-TS=
-(
-  (
-   ("information and communication technology" OR "ICT" OR "vocational" OR "technical" OR "technolog*" OR "comput*" OR "data*" OR "digital*" OR "information")
-    NEAR/5
-    ("skill*" OR "competen*" OR "literac*")
-  )
-   NEAR/15
-   ("employab*" OR "employment" OR "job$" OR "decent work")
-)
-
-
-``` 
-
-
 #### Phrase 1
 
 
 ```python
 #Termlists
-termlist4_4_1a = ["skill", "abilit", "competenc", "literac"
+termlist4_4_1a = ["skill", "abilit", "competenc", "literac",
                   "ferdigh", "kompetanse", "dugleik", "dyktighe",   
                 ]
+#"skill" covers "upskill" and "reskill" etc.
               
 termlist4_4_1b = ["employability", "employment", "decent job", "decent work", "entrepreneurship",
                  "ansettelse", "sysselset", "tilset", "anstendig arbeid", "anstendig jobb", "jobb", "entreprenørskap" ]
 
+termlist4_4_1c = ["entrepreneurship education", "entrepreneur education", "entrepreneurial education"]
+
 phrasedefault4_4_1a = r'(?:{})'.format('|'.join(termlist4_4_1a))
 phrasedefault4_4_1b = r'(?:{})'.format('|'.join(termlist4_4_1b))
+phrasedefault4_4_1c = r'(?:{})'.format('|'.join(termlist4_4_1c))
 ```
 
 
 ```python
 #Search 
 Data.loc[(
-    (Data['result_title'].str.contains(phrasedefault4_4_1a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_1b, na=False, case=False))
-    ),"tempsdg04_04"] = "SDG04_04"
+    ((Data['result_title'].str.contains(phrasedefault4_4_1a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_1b, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault4_4_1c, na=False, case=False))
+),"tempsdg04_04"] = "SDG04_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_04 == "SDG04_04")]))  
 ```
@@ -5597,15 +3920,20 @@ test.iloc[0:5, ]
 
 ```python
 #Termlists
-termlist4_4_2a = ["unemploy", "underemploy", 
-                  "arbeidsledig", "langtidsledig", "arbeidslau", "arbeidslø", "utan arbeid", "uten arbeid", "utan jobb", "uten jobb",
-                  "ikkje i arbeid", "ikke i arbeid"
-                ]
-              
-termlist4_4_2b = ["skill", "abilit", "competenc", "litera", 
-                  "ferdigh", "kompetanse", "evne", "dugleik", "dyktighe", "kyndig",]
+termlist4_4_2a = ["unemploy", "underemploy", "out of work", "not in work", 
+                  "arbeidsledig", "langtidsledig", "arbeidslau", "arbeidslø", "utan arbeid", "uten arbeid", "utan jobb", "uten jobb", "ikkje i arbeid", "ikke i arbeid"]
+  
+termlist4_4_2acaps = ["NEET", "NEETs"]
+    
+termlist4_4_2b = ["skill", " abilit", "employability", "competenc", "litera", 
+                  "continuing education", "lifelong learning", "life long learning", "adult learning", "adult education", "training program", "vocational training", "new skills",
+                  
+                  "ferdigh", "kompetanse", "evne", "dugleik", "dyktighe", "kyndig", 
+                  "videreutdanning", "vidareutdanning", "livslang læring", "voksenopplæring", "vaksenopplæring", "opplæringsprogram", "yrkesopplæring"]
+#" ability" is used with a space before to avoid many works about "disability" which are not to do with training/skills
 
 phrasedefault4_4_2a = r'(?:{})'.format('|'.join(termlist4_4_2a))
+phrasespecific4_4_2acaps = r'\b(?:{})'.format('|'.join(termlist4_4_2acaps))
 phrasedefault4_4_2b = r'(?:{})'.format('|'.join(termlist4_4_2b))
 ```
 
@@ -5613,7 +3941,8 @@ phrasedefault4_4_2b = r'(?:{})'.format('|'.join(termlist4_4_2b))
 ```python
 #Search 
 phrase4_4_2 = Data.loc[(
-    (Data['result_title'].str.contains(phrasedefault4_4_2a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_2b, na=False, case=False))
+    ((Data['result_title'].str.contains(phrasedefault4_4_2a, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_4_2acaps, na=False, case=False)))
+    & (Data['result_title'].str.contains(phrasedefault4_4_2b, na=False, case=False))
     ),"tempsdg04_04"] = "SDG04_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_04 == "SDG04_04")])) 
@@ -5631,43 +3960,46 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 termlist4_4_3a = ["read", "writ", "comput", "literacy", "numeracy",
-                  "lese", "skrive", "digital kompetanse", "digitale ferdigh", "tallferdighe", "talferdigh", "talforst", "tallforst", "regneferdigh", "rekneferdigh", "reknedugleik", 
+                  "lese", "skrive", "digital kompetanse", "digitale ferdigh", "tallferdighe", "talferdigh", "talforst", "tallforst", "regneferdigh", "rekneferdigh", "reknedugleik",
                   "basisferdigh", "grunnleggende ferdigh", "grunnleggjande ferdigh"
                  ]
-              
-termlist4_4_3b = ["basic technolog", "specialized", "specialised"] 
-                 
+
+termlist4_4_3b = ["basic technolog", "specialized", "specialised"]
+
 termlist4_4_3c = ["skills", "knowledge"]
-                  
+
 termlist4_4_3d = ["learn and adapt"]
-                                     
+
 termlist4_4_3e = ["listen", "communicat"]
-                                      
+
 termlist4_4_3f = ["skills", "effective"]
 
 termlist4_4_3g = ["kommunikasjonsferdigh", "lytteferdigh", "lederferdigh", "leiarferdigh", "lederkompetanse", "leiarkompetanse", "jobbkompetanse"]
-                          
+
 termlist4_4_3h = ["think creatively", "creative thinking", "solve problem", "problem-solv",
                   "problemlø"]
 
-termlist4_4_3i = ["interact", 
+termlist4_4_3i = ["interact",
                   "samhandl", "samarbeid"]
-                 
+
 termlist4_4_3j = ["co-work", "colleague",
                   "kollega"]
 
-termlist4_4_3k = ["work", 
+termlist4_4_3k = ["work",
                   "arbeid", "jobb"]
 
 termlist4_4_3l = ["team", "group",
                   "gruppe"]
 
+termlist4_4_3m = ["education", "professional development", "adult education", "adult learning", "lifelong learning", "life long learning", "employee development", "new skills",
+                  "utdanning", "voksenopplæring", "vaksenopplæring", "livslang læring"]
+
 termlist4_4_3n = ["leader"]
-                  
+
 
 termlist4_4_3o = ["follow",
                   "følge", "følgje", "motta", "ta imot"]
-                  
+
 termlist4_4_3p = ["supervi",
                   "veiled", "rettlei", "veglei"]
 
@@ -5677,7 +4009,7 @@ termlist4_4_3q = ["transfer",
 termlist4_4_3r = ["skills",
                   "ferdigh"]
 
-termlist4_4_3s = ["employability", "employable", 
+termlist4_4_3s = ["employability", "employable",
                   "ansettbar", "arbeidsevne", "syssels"]
 
 phrasedefault4_4_3a = r'(?:{})'.format('|'.join(termlist4_4_3a))
@@ -5692,6 +4024,7 @@ phrasedefault4_4_3i = r'(?:{})'.format('|'.join(termlist4_4_3i))
 phrasedefault4_4_3j = r'(?:{})'.format('|'.join(termlist4_4_3j))
 phrasedefault4_4_3k = r'(?:{})'.format('|'.join(termlist4_4_3k))
 phrasedefault4_4_3l = r'(?:{})'.format('|'.join(termlist4_4_3l))
+phrasedefault4_4_3m = r'(?:{})'.format('|'.join(termlist4_4_3m))
 phrasedefault4_4_3n = r'(?:{})'.format('|'.join(termlist4_4_3n))
 phrasedefault4_4_3o = r'(?:{})'.format('|'.join(termlist4_4_3o))
 phrasedefault4_4_3p = r'(?:{})'.format('|'.join(termlist4_4_3p))
@@ -5705,20 +4038,21 @@ phrasedefault4_4_3s = r'(?:{})'.format('|'.join(termlist4_4_3s))
 #Search 
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault4_4_3a, na=False, case=False)) 
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3c, na=False, case=False)))
-    | (Data['result_title'].str.contains(phrasedefault4_4_3d, na=False, case=False))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3e, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3f, na=False, case=False)))
-    | (Data['result_title'].str.contains(phrasedefault4_4_3g, na=False, case=False))
-    | (Data['result_title'].str.contains(phrasedefault4_4_3h, na=False, case=False))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3i, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3j, na=False, case=False)))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3k, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3l, na=False, case=False)))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3n, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3f, na=False, case=False)))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3o, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3p, na=False, case=False)))
-    | ((Data['result_title'].str.contains(phrasedefault4_4_3q, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3r, na=False, case=False)))
-)
+     (Data['result_title'].str.contains(phrasedefault4_4_3a, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3c, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault4_4_3d, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3e, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3f, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault4_4_3g, na=False, case=False))
+    |(Data['result_title'].str.contains(phrasedefault4_4_3h, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3i, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3j, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3k, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3l, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault4_4_3m, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3n, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3f, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3o, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3p, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault4_4_3q, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_3r, na=False, case=False)))
+    )
     & (Data['result_title'].str.contains(phrasedefault4_4_3s, na=False, case=False))
-    ),"tempsdg04_04"] = "SDG04_04"
+),"tempsdg04_04"] = "SDG04_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_04 == "SDG04_04")])) 
 ```
@@ -5726,7 +4060,7 @@ print("Number of results = ", len(Data[(Data.tempsdg04_04 == "SDG04_04")]))
 
 ```python
 test=Data.loc[(Data.tempsdg04_04 == "SDG04_04"), ("result_id", "result_title")]
-test.iloc[20:25, ] 
+test.iloc[0:5, ] 
 ```
 
 #### Phrase 4
@@ -5735,24 +4069,20 @@ test.iloc[20:25, ]
 ```python
 #Termlists
 termlist4_4_4a = ["information and communication technology", "ICT", "vocational", "technical", "technolog", "comput", "data", "digital", "information",
-                  "informasjonsteknologi", "IKT", "fagsk", "teknisk", "teknologi"                   
-                 ]
+                  "informasjonsteknologi", "IKT", "fagsk", "teknisk", "teknologi"]
 
 termlist4_4_4b = ["skill", "competen", "literac",
                   "ferdigh", "kompetanse", "evne", "dugleik", "dyktigh"]
 
-termlist4_4_4c = ["it-kompetanse", "it-ferdigh", "ikt-kompetanse", "ikt-ferdigh", "datakompetanse", "dataferdigh",
-                  "teknologikompetanse", "teknologiferdigh"]                  
+termlist4_4_4c = ["it-kompetanse", "it-ferdigh", "ikt-kompetanse", "ikt-ferdigh", "datakompetanse", "dataferdigh", "teknologikompetanse", "teknologiferdigh"]
 
-termlist4_4_4d = ["employ", "job", "decent work", 
-                   "ansett", "sysselset", "tilset", "anstendig arbeid", "anstendig jobb", "jobbrelevan", "arbeidsrelevan", "yrkesrelevan"]
+termlist4_4_4d = ["employ", "job", "decent work",
+                  "ansett", "sysselset", "tilset", "anstendig arbeid", "anstendig jobb", "jobbrelevan", "arbeidsrelevan", "yrkesrelevan"]
                   
-
 phrasedefault4_4_4a = r'(?:{})'.format('|'.join(termlist4_4_4a))
 phrasedefault4_4_4b = r'(?:{})'.format('|'.join(termlist4_4_4b))
 phrasedefault4_4_4c = r'(?:{})'.format('|'.join(termlist4_4_4c))
-phrasedefault4_4_4d = r'(?:{})'.format('|'.join(termlist4_4_4d))
-              
+phrasedefault4_4_4d = r'(?:{})'.format('|'.join(termlist4_4_4d))         
 ```
 
 
@@ -5760,12 +4090,11 @@ phrasedefault4_4_4d = r'(?:{})'.format('|'.join(termlist4_4_4d))
 #Search 
 Data.loc[(
     (
-      ((Data['result_title'].str.contains(phrasedefault4_4_4a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_4b, na=False, case=False)))
-    | (Data['result_title'].str.contains(phrasedefault4_4_4c, na=False, case=False))
+        ((Data['result_title'].str.contains(phrasedefault4_4_4a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_4_4b, na=False, case=False)))
+        | (Data['result_title'].str.contains(phrasedefault4_4_4c, na=False, case=False))
     )
-    &
-    (Data['result_title'].str.contains(phrasedefault4_4_4d, na=False, case=False))
-    ),"tempsdg04_04"] = "SDG04_04"
+    & (Data['result_title'].str.contains(phrasedefault4_4_4d, na=False, case=False))
+),"tempsdg04_04"] = "SDG04_04"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_04 == "SDG04_04")])) 
 ```
@@ -5781,76 +4110,21 @@ By 2030, eliminate gender disparities in education and ensure equal access to al
 
 *Innen 2030 avskaffe kjønnsforskjeller i utdanning og opplæring og sikre lik tilgang til alle nivåer innenfor utdanning og yrkesfaglig opplæring for sårbare grupper, inkludert personer med nedsatt funksjonsevne, urfolk og barn i utsatte situasjoner*
 
-```
-TS=
-(
- (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-   ("equit*" OR "equal*" OR "balanc*")
- ) 	
-   NEAR/5 ("school*" OR "educat*" OR "vocational training" OR "student*")
-)
-
-
-TS=
-(
- (
-  ("gender" OR "girl*" OR "woman*" OR "women*" OR "female*" OR "boy$" OR "man" OR "men" OR "male")
-   NEAR/5
-   ("non-equit*" OR "non-equal*" OR "inequal*" OR "unequal*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "discriminat*"
-    OR "obstacle*" OR "barrier*" OR "hindrance*" OR "hinder*")
-  )
-   NEAR/5
-   ("school*" OR "educat*" OR "vocational training" OR "student*")
-)
-
-
-TS=
-(
-  (
-    (
-     ("access" OR "admission*" OR "admit*" OR "attend*" OR "entry" OR "enrol*" OR "inclusion*" OR "inclusiv*" OR "non-discriminat*" OR "equitab*")
-      OR
-      ("discriminat*" OR "non-discriminat*" OR "non-equit*" OR "disparit*"OR "barrier*" OR "obstacle*") 
-    )
-    NEAR/5 ("school*" OR "educat*" OR "vocational training")
-  )
-  NEAR/15
-      (
-        (
-         ("person$" OR "people" OR "adult$" OR "child*" OR "student$" OR "youth$" OR "adolescent$")  
-          NEAR/3
-              ("disabled" OR "disabilit*" OR "unemployed" OR "older" OR "elderly"
-              OR "poor" OR "poorest" OR "poverty" OR "disadvantaged" OR "vulnerab*" OR "displaced" OR "marginali$ed" OR "developing countr*")
-        )
-     OR "disab*" OR "disadvantage*" OR "vulnerab*" OR "indigenous" OR "the poor" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-     OR "refugee$" OR "asylum*" OR "displaced" OR "migrant*" OR "low* income*" OR "minorit*"  OR "marginal*" OR "slum*" OR "rural"
-     )
-)
-
-
-```
-
-
 #### Phrase 1
 
 
 ```python
 #Termlists
 termlist4_5_1a = ["gender", "girl", "woman", "women", "female", "boy", "male",
-                "kjønn", "jente", "kvinne", "gut"
-                ]
+                "kjønn", "jente", "kvinne", "gut"]
 
 termlist4_5_1b = ["equit", "equal", "balanc",
-                  "rettferd", "rettvis", "jevnbyrdig", "likheit", "likhet", "likskap", "ulikskap", "skilnad", "balans" 
-                  ]
-                 
+                  "rettferd", "rettvis", "jevnbyrdig", "likheit", "likhet", "likskap", "ulikskap", "skilnad", "balans"]
+
 termlist4_5_1c = ["likestilling"]
 
 termlist4_5_1d = ["school", "educat", "vocational training", "student",
-                  "skole", "skule", "utdann", "undervisning", "undervising", "opplæring", "yrkesfag"
-                  ]
+                  "skole", "skule", "utdann", "undervisning", "undervising", "opplæring", "yrkesfag"]
 
 phrasedefault4_5_1a = r'(?:{})'.format('|'.join(termlist4_5_1a))
 phrasedefault4_5_1b = r'(?:{})'.format('|'.join(termlist4_5_1b))
@@ -5863,13 +4137,11 @@ phrasedefault4_5_1d = r'(?:{})'.format('|'.join(termlist4_5_1d))
 #Search 
 Data.loc[(
     (
-      ((Data['result_title'].str.contains(phrasedefault4_5_1a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_5_1b, na=False, case=False)))
-    |
-      (Data['result_title'].str.contains(phrasedefault4_5_1c, na=False, case=False))
+        ((Data['result_title'].str.contains(phrasedefault4_5_1a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_5_1b, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault4_5_1c, na=False, case=False))
     )
-    & 
-    (Data['result_title'].str.contains(phrasedefault4_5_1d, na=False, case=False))
-    ),"tempsdg04_05"] = "SDG04_05"
+    & (Data['result_title'].str.contains(phrasedefault4_5_1d, na=False, case=False))
+),"tempsdg04_05"] = "SDG04_05"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_05 == "SDG04_05")])) 
 ```
@@ -5886,26 +4158,32 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 termlist4_5_2a = ["gender", "girl", "woman", "women", "female", "boy", "male",
-                "kjønn", "jente", "kvinne", "gut"
-                ]
+                  "kjønn", "jente", "kvinne", "gut"]
 
-termlist4_5_2b = ["non-equit", "non-equal", "inequal", "unequal", "unbalanc", "imbalanc", "disparit", "discriminat", 
-                  "obstacle", "barrier", "hindrance", "hinder",
-                  "ulikhet", "ulikheit", "urett", "ubalans", "misforhold", "forskjell", "skilnad", "diskriminer", "hinder", "hindre", "barrier"
-                  ]
+termlist4_5_2b = ["non-equit", "non-equal", "inequal", "unequal", "unbalanc", "imbalanc", "disparit", "discriminat", "obstacle", "barrier", "hindrance", "hinder", "bias", "parity", "gap",
+                  "ulikhet", "ulikheit", "urett", "ubalans", "misforhold", "forskjell", "skilnad", "diskriminer", "hinder", "hindre", "barrier"]
 
-termlist4_5_2c = ["kjønnsdiskriminering", "kjønnsforskjell", "kjønnsskilnad"]
+termlist4_5_2c = ["gender gap", "gender parity",
+                  "kjønnsdiskriminering", "kjønnsforskjell", "kjønnsskilnad"]
 
 termlist4_5_2d = ["school", "educat", "vocational training", "student",
                   "skole", "skule", "utdann", "undervisning", "undervising", "opplæring", "yrkesfag"]
 
 termlist4_5_2e = ["mortality", "health", "wealth"]
 
+termlist4_5_2f = ["difference", "discrepan",
+                  "forskjell", "ulik", "skilnad"]
+
+termlist4_5_2g = ["complet", "result", "perform", "success", "achieve", "access", "enter", "entry", "enroll", "admission", "admit", "graduation", "graduating", "attend",
+                  "fullfør", "gjennomfør", "resultat", "suksess", "oppnå", "adgang", "opptak", "tilgang"]
+
 phrasedefault4_5_2a = r'(?:{})'.format('|'.join(termlist4_5_2a))
 phrasedefault4_5_2b = r'(?:{})'.format('|'.join(termlist4_5_2b))
 phrasedefault4_5_2c = r'(?:{})'.format('|'.join(termlist4_5_2c))
 phrasedefault4_5_2d = r'(?:{})'.format('|'.join(termlist4_5_2d))
 phrasedefault4_5_2e = r'(?:{})'.format('|'.join(termlist4_5_2e))
+phrasedefault4_5_2f = r'(?:{})'.format('|'.join(termlist4_5_2f))
+phrasedefault4_5_2g = r'(?:{})'.format('|'.join(termlist4_5_2g))
 ```
 
 
@@ -5914,12 +4192,19 @@ phrasedefault4_5_2e = r'(?:{})'.format('|'.join(termlist4_5_2e))
 Data.loc[(
     (
         (
-         (Data['result_title'].str.contains(phrasedefault4_5_2a, na=False, case=False)) 
-            & (Data['result_title'].str.contains(phrasedefault4_5_2b, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault4_5_2c, na=False, case=False))
+            |
+            (
+                (Data['result_title'].str.contains(phrasedefault4_5_2a, na=False, case=False)) 
+                &
+                (
+                    (Data['result_title'].str.contains(phrasedefault4_5_2b, na=False, case=False))
+                    |((Data['result_title'].str.contains(phrasedefault4_5_2f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_5_2g, na=False, case=False)))
+                )
+            )
         )
-        |(Data['result_title'].str.contains(phrasedefault4_5_2c, na=False, case=False)) 
+        & (Data['result_title'].str.contains(phrasedefault4_5_2d, na=False, case=False))
     )
-    & (Data['result_title'].str.contains(phrasedefault4_5_2d, na=False, case=False))
     & (~Data['result_title'].str.contains(phrasedefault4_5_2e, na=False, case=False))
 ),"tempsdg04_05"] = "SDG04_05"
 
@@ -5934,44 +4219,59 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
+Here under terms for vulnerable groups we have included Norwegian-specific indigenous and minority groups (source: Utdanningsdirektoratet (n.d.) Nasjonale minoriteter. https://www.udir.no/laring-og-trivsel/nasjonale-minoriteter/hva-er-en-nasjonal-minoritet/ (accessed Nov 2022))).
+
 
 ```python
 #Termlists
-termlist4_5_3a = ["access", "admission", "admit", "attend", "entry", "enrol", "inclusion", "inclusiv", "non-discriminat", "equitab", 
-                  "tilgang", "tilgjenge", "adkomst", "adgang", "opptak", "inkluder", "rettferd", "rettvis"
-                  ]
+termlist4_5_3a = ["access", "admission", "admit", "attend", "entry", "enrol", "inclusion", "inclusiv", "non-discriminat", "equitab",
+                  "education for all", "Rights of Persons with Disabilities", "CRPD",
+                  
+                  "tilgang", "tilgjenge", "adkomst", "adgang", "opptak", "inkluder", "rettferd", "rettvis", 
+                  "utdanning for alle", "rettigheter til personer med nedsatt funksjonsevne", "rettar til menneske med nedsett funksjonsevne"]
 
-termlist4_5_3b = ["discriminat", "non-discriminat", "non-equit", "disparit", "barrier", "obstacle",
-                  "diskriminer", "urettvis", "urettferd", "barrier", "hinder", "hindr"
-                  ]
+termlist4_5_3b = ["discriminat", "non-discriminat", "inequit", "unequit", "disparit", "barrier", "obstacle", "exclusion", "excluding",
+                  "diskriminer", "urettvis", "urettferd", "barrier", "hinder", "hindr", "eksklu"]
 
-termlist4_5_3c =  ["school", "educat", "vocational training", 
-                  "skole", "skule", "utdann", "undervis", "opplæring", "yrkesfagl"
-                  ]   
+termlist4_5_3c =  ["school", "educat", "vocational training",
+                  "skole", "skule", "utdann", "undervis", "opplæring", "yrkesfagl"]
 
 termlist4_5_3d =  ["person", "people", "adult", "child", "student", "youth", "adolescent",
-                   "menneske", "vaksne", "voksne", "elev", "ung", "tenåring", "barn", "born"
-                  ]        
-                   
+                   "menneske", "vaksne", "voksne", "elev", "ung", "tenåring", "barn", "born"]
+
 termlist4_5_3e = ["disabled", "disabilit", "unemployed", "older", "elderly", "poor", "poverty", "disadvantaged", "vulnerab", "displaced", "marginali", "developing countr",
-                 "uføre", "funksjonshem", "arbeidsl", "utan arbeid", "uten arbeid", "fattig", "lavinntekt", "låginntekt", "lav inntekt", "låg inntekt", "sårbar", "diskriminert", 
-                  "marginalisert", "utviklingsland", "u-land"]
-                  #Norwegian terms for OLDER are not included as they cause noise.
+                  "specific learning disabilit", "SLD", "other health impairment", "autism spectrum disorder", "ASD", "emotional disturbance", "speech impairment",
+                  "language impairment", "visual impairment", "blindness", "deafness", "hearing impairment", "deaf-blindness", "orthopedic impairment", "intellectual disabilit", "traumatic brain injur", "multiple disabilit",
                   
-termlist4_5_3f = ["disab", "disadvantage", "vulnerab", "indigenous", "the poor", "LGBT", "lesbian", "gay", "bisexual", "transgender", "refugee", "asylum", 
-                  "displaced", "migrant", "low income", "minorit", "marginal", "slum", "rural",
-                  "uføre", "funksjonshem", "sårbar", "hjemløs", "heimlaus", "urfolk", "urbefolkning", "urinnvån", "minoritet", 
-                  "sápmi", "sami", "minoritet", "jøder", "jådar", "kvener", "kvenar", "norskfinn", "skogfinn", "romani", "tatere", "taterar",
+                  "uføre", "funksjonshem", "arbeidsl", "utan arbeid", "uten arbeid", "fattig", "lavinntekt", "låginntekt", "lav inntekt", "låg inntekt", "sårbar", "diskriminert",
+                  "marginalisert", "utviklingsland", "u-land", "lærevansk", "særskilte behov", "autismespekter", "emosjonelle forstyrr", "talevansk", "språkvansk", "synsvansk", "blind", "døv", "hørsel",
+                  "ortopediske vansk", "intellektuelle vansk", "traumatisk hjerneskade"]
+                  #Norwegian terms for OLDER are not included as they cause noise.
+
+termlist4_5_3f = ["disab", "disadvantage", "vulnerab", "indigenous", "the poor",
+                  "refugee", "asylum", "displaced", "migrant", 
+                  "low income", "minorit", "marginal", "slum", "rural", "special educational needs",
+                  "LGBT", "lesbian", "gay", "bisexual", "transgender", 
+                  
+                  "uføre", "funksjonshem", "sårbar", "hjemløs", "heimlaus", "urfolk", "urbefolkning", "urinnvån", "minoritet",
+                  "sápmi", "sami", "minoritet", "jøder", "jødar", "kvener", "kvenar", "norskfinn", "skogfinn", "romani", "tatere", "taterar",
                   "asylsøk", "flyktning", "innvandr",
-                  "fattig", "lavinntekt", "låg inntekt", "låginntekt", "lav inntekt", "slum", 
+                  "fattig", "lavinntekt", "låg inntekt", "låginntekt", "lav inntekt", 
                   "transperson", "lesbisk", "homofile", "homoseksuell", "bifil", "lbht", "interkjønn", "innfød"]
-                 
+
+termlist4_5_3g = ["special educat", "special needs educat", "inclusive education", "aided education",
+                  "tilrettelagt undervisning", "spesialundervisning", "tilpasset opplæring", "tilpassa opplæring", "inkluderende opplæring", "inkluderande opplæring"]
+
+termlist4_5_3h = ["SEN"]
+
 phrasedefault4_5_3a = r'(?:{})'.format('|'.join(termlist4_5_3a))
 phrasedefault4_5_3b = r'(?:{})'.format('|'.join(termlist4_5_3b))
 phrasedefault4_5_3c = r'(?:{})'.format('|'.join(termlist4_5_3c))
 phrasedefault4_5_3d = r'(?:{})'.format('|'.join(termlist4_5_3d))
 phrasedefault4_5_3e = r'(?:{})'.format('|'.join(termlist4_5_3e))
 phrasedefault4_5_3f = r'(?:{})'.format('|'.join(termlist4_5_3f))
+phrasedefault4_5_3g = r'(?:{})'.format('|'.join(termlist4_5_3g))
+phrasespecific4_5_3h = r'\b(?:{})\b'.format('|'.join(termlist4_5_3h))
 ```
 
 
@@ -5979,18 +4279,25 @@ phrasedefault4_5_3f = r'(?:{})'.format('|'.join(termlist4_5_3f))
 #Search 
 Data.loc[(
     (
-        ((Data['result_title'].str.contains(phrasedefault4_5_3a, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault4_5_3b, na=False, case=False)))
-         & 
-        (Data['result_title'].str.contains(phrasedefault4_5_3c, na=False, case=False))
+        (
+            ((Data['result_title'].str.contains(phrasedefault4_5_3a, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault4_5_3b, na=False, case=False)))
+            & (Data['result_title'].str.contains(phrasedefault4_5_3c, na=False, case=False))
+        )
+        &
+        (
+            ((Data['result_title'].str.contains(phrasedefault4_5_3d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_5_3e, na=False, case=False)))
+            |(Data['result_title'].str.contains(phrasedefault4_5_3f, na=False, case=False)) 
+            |(Data['result_title'].str.contains(phrasespecific4_5_3h, na=False, case=True))
+        )
     )
-    &
+    |
     (
-        ((Data['result_title'].str.contains(phrasedefault4_5_3d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_5_3e, na=False, case=False)))
-        |(Data['result_title'].str.contains(phrasedefault4_5_3f, na=False, case=False))
+        ((Data['result_title'].str.contains(phrasedefault4_5_3a, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault4_5_3b, na=False, case=False)))
+        & (Data['result_title'].str.contains(phrasedefault4_5_3g, na=False, case=False))
     )
 ),"tempsdg04_05"] = "SDG04_05"
 
-print("Number of results = ", len(Data[(Data.tempsdg04_05 == "SDG04_05")]))  
+print("Number of results = ", len(Data[(Data.tempsdg04_05 == "SDG04_05")]))
 ```
 
 
@@ -6004,66 +4311,54 @@ By 2030, ensure that all youth and a substantial proportion of adults, both men 
 
 *Innen 2030 sikre at all ungdom og en betydelig andel voksne, både kvinner og menn, lærer å lese, skrive og regne*
 
-```
-TS=
-(
-    (
-      ("basic" OR "fundamental*" OR "minim*" OR "core" OR "elementary" OR "functional" OR "adequate*")
-        NEAR/10 ("proficienc*" OR "skill*" OR "comprehen*" OR "abilit*" OR "literac*")
-    )
-    NEAR/5 ("read" OR "reading" OR "literate" OR "mathematic*" OR "math" OR "maths" OR "numeracy" OR "numerate")
-)
-
-
-TS=
- ("illitera*" OR "analfabet*" OR "analphabet*" OR "innumeracy" OR "innumerate*")
- ```
-
 #### Phrase 1
-The phrase is simplified compared to topic search in WoS. In order to get more hits, *level* is not included in the search. The syntax of the search is *skills + reading/mathematics*.
+The phrase is simplified compared to topic search in WoS. The structure of the search is *skills + reading/mathematics*.
 
 
 
 ```python
 #Termlists                
-termlist4_6_1a = ["proficienc", "skill", "comprehension", "comprehend", "literac",  
-                  "ferdigh", "dyktighe", "kyndighe", "kompetanse", "evne", "dugleik", "forstå"
-                  ]
+termlist4_6_1a = ["proficienc", "skill", "comprehension", "comprehend", "literac",
+                  "ferdigh", "dyktighe", "kyndighe", "kompetanse", "evne", "dugleik", "forstå", "nivå", "grunnlegg"]
 
-termlist4_6_1b = ["ability", "abilities"]
+termlist4_6_1b = ["ability", "abilities", "level"]
 
 termlist4_6_1c =  ["reading", "literate", "mathematic", "maths", "mathematics", "numera", 
-                  "leseferdigh", "leseforstå", "lesekompetanse", "lesedugleik", 
+                   
+                   "leseferdigh", "leseforstå", "lesekompetanse", "lesedugleik",
                    "rekne", "rekna", "regneferdigh", "rekneferdigh", "reknedugleik",
-                   "talforstå", "tallforstå", "talferdigh", "tallferdigh", "matematikk"
-                  ]  
-termlist4_6_1d = ["read", "lese", "lesa", "lesing", "rekning", "regning"]                 
+                   "talforstå", "tallforstå", "talferdigh", "tallferdigh", "matematikk"]
 
-termlist4_6_1e = ["teacher", "readability", "readiness", "spread", "lærer", "lærar", "student", "skille", "mikropolitisk"]
-                 #Noisy terms, removed with NOT
+termlist4_6_1d = ["read", 
+                  "lese", "lesa", "lesing", "rekning", "regning"]                 
+
+termlist4_6_1e = ["teacher", "readability", "readiness", "spread", "information literacy",
+                  "lærer", "lærar", "student", "skille", "mikropolitisk"] #Noisy terms, removed with NOT
+
+termlist4_6_1f = ["core literacy", "functional literacy", "basic literacy"]
 
 phrasedefault4_6_1a = r'(?:{})'.format('|'.join(termlist4_6_1a))
 phrasespecific4_6_1b = r'\b(?:{})\b'.format('|'.join(termlist4_6_1b))
 phrasedefault4_6_1c = r'(?:{})'.format('|'.join(termlist4_6_1c))
 phrasespecific4_6_1d = r'\b(?:{})\b'.format('|'.join(termlist4_6_1d))
 phrasedefault4_6_1e = r'(?:{})'.format('|'.join(termlist4_6_1e))
+phrasedefault4_6_1f = r'(?:{})'.format('|'.join(termlist4_6_1f))
 ```
 
 
 ```python
 #Search 
 Data.loc[(
-         (
-             (Data['result_title'].str.contains(phrasedefault4_6_1a, na=False, case=False)) | 
-             (Data['result_title'].str.contains(phrasespecific4_6_1b, na=False, case=False))
-         )
-         &
-         (
-             (Data['result_title'].str.contains(phrasedefault4_6_1c, na=False, case=False)) |
-             (Data['result_title'].str.contains(phrasespecific4_6_1d, na=False, case=False))
-         )
-         & (~Data['result_title'].str.contains(phrasedefault4_6_1e, na=False, case=False))
-    ),"tempsdg04_06"] = "SDG04_06"
+    (Data['result_title'].str.contains(phrasedefault4_6_1f, na=False, case=False))
+    |
+    (
+        (
+             ((Data['result_title'].str.contains(phrasedefault4_6_1a, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_6_1b, na=False, case=False)))
+             & ((Data['result_title'].str.contains(phrasedefault4_6_1c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_6_1d, na=False, case=False)))
+        )
+    & (~Data['result_title'].str.contains(phrasedefault4_6_1e, na=False, case=False))
+    )
+),"tempsdg04_06"] = "SDG04_06"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_06 == "SDG04_06")]))
 ```
@@ -6079,10 +4374,15 @@ test.iloc[0:5, ]
 
 ```python
 #Termlists
-termlist4_6_2 = ["illitera", "analfabet", "analphabet", "innumeracy", "innumerate",
+termlist4_6_2 = ["illiterate child", "illiterate people", "illiterate user", 
+                 "analfabet", "analphabet", "innumeracy", "innumerate",
+                 
                  "analfabet", "lesekyn", "lesekunnig", "talkyn", "tallkyn", "talkunn", "talforståing", "tallforståelse"] 
+
+termlist4_6_2a = ["illitera"] 
                          
 phrasedefault4_6_2 = r'\b(?:{})'.format('|'.join(termlist4_6_2))
+phrasedefault4_6_2a = r'(?:{})'.format('|'.join(termlist4_6_2a))
 ```
 
 
@@ -6090,7 +4390,12 @@ phrasedefault4_6_2 = r'\b(?:{})'.format('|'.join(termlist4_6_2))
 #Search 
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault4_6_2, na=False, case=False))   
-    ),"tempsdg04_06"] = "SDG04_06"
+    |
+    (
+        (Data['result_title'].str.contains(phrasedefault4_6_2a, na=False, case=False)) 
+        & ((Data['result_title'].str.contains(phrasedefault4_6_1c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific4_6_1d, na=False, case=False)))
+    )
+),"tempsdg04_06"] = "SDG04_06"
 
 print("Number of results = ", len(Data[(Data.tempsdg04_06 == "SDG04_06")]))
 ```
@@ -6106,72 +4411,28 @@ By 2030, ensure that all learners acquire the knowledge and skills needed to pro
 
 *Innen 2030 sikre at alle elever og studenter tilegner seg den kompetansen som er nødvendig for å fremme bærekraftig utvikling, blant annet gjennom utdanning i bærekraftig utvikling og livsstil, menneskerettigheter, likestilling, fremme av freds- og ikkevoldskultur, globalt borgerskap og verdsetting av kulturelt mangfold og kulturens bidrag til bærekraftig utvikling*
 
-```
-TS=
-(
-  (
-    ("educat*" OR "curricul*" OR "student assess*" OR "teaching" OR "teacher education" OR "teacher training" OR "online learning" OR "professional learning" 
-     OR ("learn*" NEAR/5 "student*")
-   )
-  )
-  NEAR/5
-      ("sustainable development" OR "sustainable lifestyle$"
-      OR "global citizen*" OR "glocal*"
-      OR "human right*" OR "gender equality" OR "peace*" OR "non-violen*"
-      OR "cultural divers*" OR "toleran*"
-      OR
-          ("sustainability"
-          NEAR/5
-              ("interdisciplinar*" OR "transdisciplinar*" OR "crossdisciplinar*" OR "cultural" OR "economic" OR "ecological"
-              OR "participation" OR "agency" OR "responsibility"
-              OR "ethic*" OR "wicked problem$" OR "complexity"
-              OR "capacity for change" OR "transition$")
-          )
-  )
-)
-
-
-TS=
-(
-  ("education for sustainab*" OR "education in sustainab*" OR "education on sustainab*" OR "sustainable development education" OR "sustainability education"
-    OR (("whole school" OR "teaching") NEAR/5 (("sustainab*" OR "ESD") NEAR/5 "educat*"))
-   )
-)
-
-TS=
-(
-  (
-    ("culture*" OR "cultural")
-    NEAR/5 "sustainable development"
-  )    
-)
-
-
 #### Phrase 1
 
 
 ```python
 #Termlists
 termlist4_7_1a = ["educat", "curricul", "student assess", "teaching", "teacher education", "teacher training", "online learning", "professional learning", 
-                  "utdann", "opplæring", "pensum", "studieplan", "emneplan", "fagplan", "studentvurdering", "elevvurdering", "undervisning", "undervising", "nettbasert læring", "online læring", "profesjonslæring"
-                 ]  
+                  "utdann", "opplæring", "pensum", "studieplan", "emneplan", "fagplan", "studentvurdering", "elevvurdering", "undervisning", "undervising", "nettbasert læring", "online læring", "profesjonslæring"]  
                   
 termlist4_7_1b = ["learn",
-                  "læring"
-                 ]
+                  "læring"]
 
 termlist4_7_1c = ["vurdering"]
 
 termlist4_7_1d =  ["student",
-                   "elev"
-                  ]  
+                   "elev"]  
                  
 termlist4_7_1e = ["sustainable development", "sustainable lifestyle", "global citizen", "glocal", "human right", "gender equality", 
                   "peace", "non-violen", "cultural divers", "toleran",
+                  
                   "bærekraftig utvikling", "berekraftig utvikling", "berekraftig livsstil", "bærekraftig livsstil", 
                   "global borg", "globalt borg", "menneskerett", "likestilling", "ikkje-vald", "ikke-vold", "ikkevold", "ikkjevald", 
-                  "kulturelt mangfold", "kulturelt mangfald"
-                  ]
+                  "kulturelt mangfold", "kulturelt mangfald"]
                   
 termlist4_7_1f = ["sustainability",
                   "bærekraft", "berekraft"]
@@ -6179,6 +4440,7 @@ termlist4_7_1f = ["sustainability",
 termlist4_7_1g = ["interdisciplinar", "transdisciplinar", "crossdisciplinar", "cultural", "economic", "ecological", "participation", 
                   "agency", "responsibility", "ethic", "wicked problem", 
                   "complexity", "capacity for change", "transition",
+                  
                   "tverrfagl", "tverrvit", "kulturell", "økonomisk", "økologisk", "deltak", "handling", "ansvar", "etisk", 
                   "kompleks", "uløselig problem", "uløyseleg problem", "endring", "overgang"]
                   
@@ -6203,24 +4465,16 @@ phrasespecific4_7_1i = r'\b(?:{})'.format('|'.join(termlist4_7_1i))
 #Search 
 Data.loc[(
     (
-       (Data['result_title'].str.contains(phrasedefault4_7_1a, na=False, case=False)) 
-    | 
-        ((Data['result_title'].str.contains(phrasedefault4_7_1b, na=False, case=False))  
-         &(Data['result_title'].str.contains(phrasedefault4_7_1d, na=False, case=False))
-        )
-    |  
-        ((Data['result_title'].str.contains(phrasedefault4_7_1c, na=False, case=False)) 
-         &(Data['result_title'].str.contains(phrasedefault4_7_1d, na=False, case=False))
-        )
+        (Data['result_title'].str.contains(phrasedefault4_7_1a, na=False, case=False)) 
+        |((Data['result_title'].str.contains(phrasedefault4_7_1b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_7_1d, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault4_7_1c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_7_1d, na=False, case=False)))
     )
     &
     (
-     (Data['result_title'].str.contains(phrasedefault4_7_1e, na=False, case=False))
-     | (Data['result_title'].str.contains(phrasespecific4_7_1i, na=False, case=False))
-     | ((Data['result_title'].str.contains(phrasedefault4_7_1f, na=False, case=False)) 
-        &(Data['result_title'].str.contains(phrasedefault4_7_1g, na=False, case=False))
-       )
-     | (Data['result_title'].str.contains(phrasedefault4_7_1h, na=False, case=False)) 
+        (Data['result_title'].str.contains(phrasedefault4_7_1e, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasespecific4_7_1i, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasedefault4_7_1f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_7_1g, na=False, case=False)))
+        | (Data['result_title'].str.contains(phrasedefault4_7_1h, na=False, case=False)) 
     )
 ),"tempsdg04_07"] = "SDG04_07"
 
@@ -6239,12 +4493,14 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 termlist4_7_2a = ["education for sustainab", "education in sustainab", "education on sustainab", "sustainable development education", "sustainability education",
+                  
                   "utdanning for bærekraft", "utdanning for berekraft", "utdanning for en bærekraft", "utdanning for ei berekraft",
                   "opplæring for bærekraft", "opplæring for berekraft", "opplæring for en bærekraft", "opplæring for ei berekraft"
                  ]
                   
 
 termlist4_7_2b = ["whole school", "teaching",
+                  
                   "heilhetlig", "heilskapleg", "helhetlig", "helskole", "heilskule",
                   "undervisning", "undervising", "utdanning", "opplæring"]
 
@@ -6269,12 +4525,9 @@ Data.loc[(
     (Data['result_title'].str.contains(phrasedefault4_7_2a, na=False, case=False)) 
     | 
     (
-    (Data['result_title'].str.contains(phrasedefault4_7_2b, na=False, case=False))
-     & (
-        (Data['result_title'].str.contains(phrasedefault4_7_2c, na=False, case=False)) 
-        |(Data['result_title'].str.contains(phrasedespecific4_7_2c, na=False, case=True))  
-       )
-     & (Data['result_title'].str.contains(phrasedefault4_7_2d, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault4_7_2b, na=False, case=False))
+        & ((Data['result_title'].str.contains(phrasedefault4_7_2c, na=False, case=False)) | (Data['result_title'].str.contains(phrasedespecific4_7_2c, na=False, case=True)))
+        & (Data['result_title'].str.contains(phrasedefault4_7_2d, na=False, case=False))
     )
 ),"tempsdg04_07"] = "SDG04_07"
 
@@ -6284,7 +4537,7 @@ print("Number of results = ", len(Data[(Data.tempsdg04_07 == "SDG04_07")]))
 
 ```python
 test=Data.loc[(Data.tempsdg04_07 == "SDG04_07"), ("result_id", "result_title")]
-test.iloc[10:15, ]
+test.iloc[0:5, ]
 ```
 
 #### Phrase 3
@@ -6293,12 +4546,11 @@ test.iloc[10:15, ]
 ```python
 #Termlists
 termlist4_7_3a = ["culture", "cultural",
-                  "kultur"
-                 ]
+                  "kultur"]
                                 
 termlist4_7_3b = ["sustainable development",
-                  "bærekraft", "berekraft"
-                  ]
+                  "bærekraft", "berekraft"]
+
 termlist4_7_3c = ["kulturøkonomi", "kulturskole", "kulturskule"]
 
 phrasespecific4_7_3a = r'\b(?:{})'.format('|'.join(termlist4_7_3a))
@@ -6329,60 +4581,22 @@ Build and upgrade education facilities that are child, disability and gender sen
 
 *Etablere og oppgradere utdanningstilbud som er barnevennlige, og som ivaretar hensynet til kjønnsforskjeller og til personer med nedsatt funksjonsevne og sikrer trygge, ikke-voldelige, inkluderende og effektive læringsmiljø for alle*
 
-```
-TS=
-(
- ("school*" OR "education facilit*")
-  NEAR/5
-    ("safe*" OR "secure*" OR "non-violen*" OR "inclus*" OR ("sensitive" NEAR/5 ("child*" OR "disability" OR "gender"))
-  )
-)
-
-
-TS=
-(
-  (
-    ("learning environment*" NEAR/5 "effective")
-  )
-  AND
-    ("primary school*" OR "elementary school*" OR "primary educat*"
-    OR "middle school*" OR "secondary school*" OR "secondary educat*"
-    OR "school" OR "education" OR "learner*"
-    )
-)
-
-
-TS=
-(
- ("school*" OR "education* facility" OR "education* facilities") 
-    NEAR/15  ("access*"
-    NEAR/5
-     ("electricity" OR "electrical supply" OR "modern energy" OR "internet" OR "computer*" OR "ICT facilit*" OR "adapted infrastructure*" OR "adapted material*" OR    "universal design" OR ("infrastructure" NEAR/5 "disab*") OR "drinking water" OR "sanitation" OR "handwash*" OR "hand wash*" OR "WASH facilities" OR "toilet$")
-  )
-) 
-```
-
-
 #### Phrase 1
 
 
 ```python
 #Termlists
 termlist4_a_1a = ["school", "education facilit",
-                  "skole", "skule", "opplæring"
-                  ]
+                  "skole", "skule", "opplæring"]
                  
 termlist4_a_1b = ["safe", "secure", "non-violen", "inclusive", 
-                  "sikker", "sikre", "trygg", "barneven", "borneven", "ikke-vold", "ikkje-vald", "inkluder"
-                  ]
+                  "sikker", "sikre", "trygg", "barneven", "borneven", "ikke-vold", "ikkje-vald", "inkluder"]
 
 termlist4_a_1c =  ["sensitiv",
-                   "følsom", "hensyn", "omsyn"
-                  ]
+                   "følsom", "hensyn", "omsyn"]
 
 termlist4_a_1d = ["child", "disability", "gender",
-                  "barn", "born", "funksjonshem", "funksjonsevne", "kjønn"
-                  ]
+                  "barn", "born", "funksjonshem", "funksjonsevne", "kjønn"]
 
 termlist4_a_1e = ["taste sensitivity", "smak"]
 
@@ -6401,11 +4615,7 @@ Data.loc[(
     &
     (
         (Data['result_title'].str.contains(phrasedefault4_a_1b, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault4_a_1c, na=False, case=False)) 
-            &(Data['result_title'].str.contains(phrasedefault4_a_1d, na=False, case=False))
-        )     
+        | ((Data['result_title'].str.contains(phrasedefault4_a_1c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_a_1d, na=False, case=False)))     
     )
     & (~Data['result_title'].str.contains(phrasedefault4_a_1e, na=False, case=False))
 ),"tempsdg04_a"] = "SDG04_0a"
@@ -6420,21 +4630,20 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-Here we have chosen a more simple search than in WoS. *Effective* is not included here, as this gave 0 hits.The structure here is then *Learning environment + School.*
+Here we have chosen a more simple search than in WoS. *Effective* is not included here. The structure here is then *Learning environment + School.*
 
 
 ```python
 #Termlists
-termlist4_a_2a = ["learning environment", 
-                  "læringsmiljø"
-                  ]
- 
-termlist4_a_2b =  ["primary school", "elementary school", "primary educat", "middle school", "secondary school", "secondary educat", "school", "education", "learner",
-                    "skole", "skule", "utdann", "opplæring", "lærling"
-                  ]
+termlist4_a_2a = ["learning environment", "indoor environmental quality", "air quality",
+                  "læringsmiljø", "inneklima"]
 
-termlist4_a_2c = ["student", "universit", "higher education", "høyere utdanning", "høgare utdanning", "teacher education", "lærerutdanning", "lærarutdanning"]
-                  
+termlist4_a_2b =  ["primary school", "elementary school", "primary educat", "middle school", "secondary school", "secondary educat", "school", "education", "learner", "classroom",
+                   "skole", "skule", "utdann", "opplæring", "lærling", "klasserom"]
+
+termlist4_a_2c = ["student", "universit", "higher education", "teacher education", 
+                  "høyere utdanning", "høgare utdanning", "lærerutdanning", "lærarutdanning"]
+
 phrasedefault4_a_2a = r'(?:{})'.format('|'.join(termlist4_a_2a))
 phrasedefault4_a_2b = r'(?:{})'.format('|'.join(termlist4_a_2b))
 phrasedefault4_a_2c = r'(?:{})'.format('|'.join(termlist4_a_2c))
@@ -6459,25 +4668,24 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-The structure from topic search in WoS is a bit simplified, as this returned 0 hits. *Access* is  not included, and the structure here is: *School + Basic services*
+The structure from topic search in WoS is a bit simplified. *Access* is  not included, and the structure here is: *School + Basic services*
 
 
 ```python
 #Termlists
-
 termlist4_a_3a = ["school", "education", "skole", "skule", "opplæring", "utdanning"]
 
 termlist4_a_3b = ["basic services", "basic facilities", "basic infrastructure",
-                  "electricity", "electrical supply", "modern energy", "internet facilities", "computer facilities", "ICT facilit", 
-                  "adapted infrastructure", "adapted material", 
-                  "universal design", "drinking water", "sanitation", "handwash", "hand wash", "WASH facilities", "toilet",  
-                  
+                  "electricity", "electrical supply", "modern energy", "internet facilities", "computer facilities", "ICT facilit",
+                  "adapted infrastructure", "adapted material",
+                  "universal design", "drinking water", "sanitation", "handwash", "hand wash", "WASH facilities", "toilet",
+
                   "grunnleggende tjenester", "grunnleggjande tenester",
-                  "elektrisitet", "fasilitet", "infrastruktur", 
-                  "universell design", "universell utforming", 
+                  "elektrisitet", "fasilitet", "infrastruktur",
+                  "universell design", "universell utforming",
                   "drikkeva", "sanitær", "håndvask", "handvask", "vaskemuligh", "vaskemog", "toalett"
                  ]
-                    
+
 termlist4_a_3c = ["higher education"]
 
 phrasedefault4_a_3a = r'(?:{})'.format('|'.join(termlist4_a_3a))
@@ -6508,27 +4716,11 @@ By 2020, substantially expand globally the number of scholarships available to d
 
 *Innen 2020 oppnå en vesentlig økning globalt i antall stipender som er tilgjengelige for studenter fra utviklingsland, særlig de minst utviklede landene, små utviklingsøystater og afrikanske land, for å gi dem tilgang til høyere utdanning, blant annet yrkesfaglig opplæring og programmer for informasjons- og kommunikasjonsteknologi, teknikk, ingeniørfag og vitenskap, både i andre utviklingsland og i utviklede land*
 
-```
-TS=
-(
-  (
-    ("scholarships" OR "scholarship program*" OR "fellowship*" OR "sponsorship*" OR "exchange program*" OR "grant$")
-    NEAR/15
-        ("student*" OR "higher education" OR "trainee*" OR "student exchange$" OR "student mobility")
-  )
-AND
-  (****LMICS****
-  )
-)
-
-
-
-
 
 ```python
 #Termlists
 termlist4_ba = ["scholarships", "scholarship program", "fellowship", "exchange program", 
-                "student exchange", "student mobility", 
+                "student exchange", "student mobility", "study abroad", "overseas stud",
 
                 "stipend", "økonomisk støtte", "utveksling", "legat"]
                    
@@ -6552,10 +4744,7 @@ Data.loc[(
          (Data['result_title'].str.contains(phrasedefault4_ba, na=False, case=False)) 
          |
          (
-             (
-                 (Data['result_title'].str.contains(phrasespecific4_bbuntrunc, na=False, case=False)) 
-                 |(Data['result_title'].str.contains(phrasedefault4_bc, na=False, case=False)) 
-             )
+             ((Data['result_title'].str.contains(phrasespecific4_bbuntrunc, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault4_bc, na=False, case=False)))
              & (Data['result_title'].str.contains(phrasedefault4_bd, na=False, case=False))
          )
      )
@@ -6576,25 +4765,6 @@ By 2030, substantially increase the supply of qualified teachers, including thro
 
 *Innen 2030 oppnå en vesentlig økning i antall kvalifiserte lærere, blant annet gjennom internasjonalt samarbeid om lærerutdanning i utviklingsland, særlig i de minst utviklede landene og i små utviklingsøystater*
 
-```
-TS= 
-  (
-    ("teacher supply" OR  "supply of teacher$" OR "teacher coverage" 
-    OR "teacher recruit*" OR "recruit* of teacher$" 
-    OR "lack of teacher$" OR "teacher turnover" OR "teacher shortage" OR "teacher retention" OR "teacher attrition") 
-  )
-
-TS=
-(
- ( 
-  ("teacher training" OR "teacher education" OR "teacher qualification*" OR "qualifi* teacher$")
- )
-  AND
-    (****LMICs****
-  )
-)
-```
-
 #### Phrase 1
 
 
@@ -6602,6 +4772,7 @@ TS=
 #Termlists
 termlist4_c_1a = ["teacher supply", "supply of teacher", "teacher coverage", "teacher recruit", "recruitment of teacher", "recruiting of teacher", 
                  "lack of teacher", "teacher turnover", "teacher shortage", "teacher retention", "teacher attrition",
+                  
                  "lærerdekning", "lærardekning", "lærerrekruttering", "lærarrekruttering", "rekruttering av lær", 
                  "lærermangel", "lærarmangel", "lærarturnover", "lærerturnover", "turnover av lær", 
                  "lærerslitasje", "lærarslitasje"
@@ -6625,11 +4796,7 @@ phrasedefault4_c_1d = r'(?:{})'.format('|'.join(termlist4_c_1d))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault4_c_1a, na=False, case=False)) 
-        |
-        (
-            (Data['result_title'].str.contains(phrasespecific4_c_1b, na=False, case=False)) 
-            &(Data['result_title'].str.contains(phrasedefault4_c_1c, na=False, case=False))
-        )
+        | ((Data['result_title'].str.contains(phrasespecific4_c_1b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_c_1c, na=False, case=False)))
     )
     & (~Data['result_title'].str.contains(phrasedefault4_c_1d, na=False, case=False))
 ),"tempsdg04_c"] = "SDG04_c"
@@ -6649,6 +4816,7 @@ test.iloc[0:5, ]
 ```python
 #Termlists
 termlist4_c_2a = ["teacher training", "teacher education", "education of teacher", "teacher qualification", "qualified teacher", "teacher student", 
+                  
                   "lærarutdann", "lærerutdann", "utdanning av lærarar", "utdanning av lærere", "lærarstudent", "lærerstudent", 
                   "kvalifiserte lær", "lærarkompetanse", "lærerkompetanse", "lærerkvalifikasjon", "lærarkvalifikasjon"]
           
@@ -6668,11 +4836,7 @@ phrasedefault4_c_2c = r'(?:{})'.format('|'.join(termlist4_c_2c))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault4_c_2a, na=False, case=False)) 
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault4_c_2b, na=False, case=False)) 
-            & (Data['result_title'].str.contains(phrasedefault4_c_2c, na=False, case=False))
-        )
+        | ((Data['result_title'].str.contains(phrasedefault4_c_2b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault4_c_2c, na=False, case=False)))
     )
     & (Data['LMICs']==True)
 ),"tempsdg04_c"] = "SDG04_c"
@@ -6687,44 +4851,6 @@ test.iloc[0:5, ]
 ```
 
 ### SDG 4 mentions
-
-```
-TS=
-("SDG 4" OR "SDGs 4" OR "SDG4" OR "sustainable development goal$ 4"
-OR ("sustainable development goal$" AND "goal 4")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 4")
-    AND ("quality education")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 4")
-    NEAR/15 
-        ("learning" OR "teaching" OR "teacher$" OR "early childhood" OR "child development" 
-        OR "education for sustainable" OR "global citizenship education" OR "transdisciplinary education" OR "inclusive education" 
-        OR "formal education" OR "primary education" OR "secondary education" OR "tertiary education" OR "higher education" OR "right$ to education" OR "access to education" OR "education for all" OR "education sector$"
-        )
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  OR (("machine learning" OR "deep learning") NOT ("quality education" OR "SDG 4" OR "SDG4"))
-  )
-  ```
-  
-  Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 
 ```python
@@ -6749,8 +4875,9 @@ termlist_sdg4_f = ["learning", "teaching", "teacher", "early childhood", "child 
                   "education for sustainable", "global citizenship education", "transdisciplinary education", 
                   "inclusive education", "formal education", "primary education", "secondary education", "tertiary education", 
                   "higher education", "right to education", "access to education",  "education for all",  "education sector", 
-                 "utdann", "opplæring", "skolegang", "skulegang", "tidleg barndom", "tidlig barndom", 
-                 "barns utvikling", "borns utvikling"]
+                   
+                   "utdann", "opplæring", "skolegang", "skulegang", "tidleg barndom", "tidlig barndom", 
+                   "barns utvikling", "borns utvikling"]
 
 termlist_sdg4_g = ["quality education", "god utdanning"]
 
@@ -6768,21 +4895,9 @@ phrase_sdg4_g = r'(?:{})'.format('|'.join(termlist_sdg4_g))
 #Search 
 Data.loc[(
       (Data['result_title'].str.contains(phrase_sdg4_a, na=False, case=False))
-      |
-      (
-        (Data['result_title'].str.contains(phrase_sdg4_b, na=False, case=False))
-        & (Data['result_title'].str.contains(phrase_sdg4_c, na=False, case=False))
-      )
-      |
-      (
-         (Data['result_title'].str.contains(phrase_sdg4_d, na=False, case=False))
-         & (Data['result_title'].str.contains(phrase_sdg4_e, na=False, case=False))
-      )
-      |
-         (
-           (Data['result_title'].str.contains(phrase_sdg4_e, na=False, case=False))
-         & (Data['result_title'].str.contains(phrase_sdg4_f, na=False, case=False))
-         )
+      |((Data['result_title'].str.contains(phrase_sdg4_b, na=False, case=False)) & (Data['result_title'].str.contains(phrase_sdg4_c, na=False, case=False)))
+      |((Data['result_title'].str.contains(phrase_sdg4_d, na=False, case=False)) & (Data['result_title'].str.contains(phrase_sdg4_e, na=False, case=False)))
+      |((Data['result_title'].str.contains(phrase_sdg4_e, na=False, case=False)) & (Data['result_title'].str.contains(phrase_sdg4_f, na=False, case=False)))
       |(Data['result_title'].str.contains(phrase_sdg4_g, na=False, case=False))
 ),"tempmentionsdg04"] = "SDG04"
     
@@ -6792,7 +4907,7 @@ print("Number of results = ", len(Data[(Data.tempmentionsdg04 == "SDG04")]))
 
 ```python
 test=Data.loc[(Data.tempmentionsdg04 == "SDG04"), ("result_id", "result_title")]
-test.iloc[10:15, ]
+test.iloc[0:5, ]
 ```
 
 ## SDG 7
@@ -6805,38 +4920,20 @@ test.iloc[10:15, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  (
-    ("energy transition$" NEAR/5 ("household$" OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"))
-    OR
-      (
-        ("clean*" OR "modern*")
-        NEAR/5
-            ("fuel$" OR "energ*" OR "electric*"
-            OR "cooking" OR "stove$" OR "lighting" OR "lamps" OR "heating"
-            )
-      )
-  )    
-  AND ("household$" OR "homes" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic" OR "slum$" OR "village$" OR "women"
-      )      
-) 
-
-```
-
 
 ```python
 #Term lists
 termlist7_1a = ["energy transition", 
                 "energiomlegging", "energiomstilling"]
+
 termlist7_1b = ["household", "cooking", "stove", "lighting", "lamps", "heating",
                 "hushold", "hushald", "matlaging", "komfyr", "ovn", "lys", "lampe", "oppvarming"]
+
 termlist7_1c = ["clean fuel", "clean energy", "clean electricity", "clean cooking", "clean stove", "clean lighting", "clean lamp", "clean heating",
                 "modern fuel", "modern stove", "modern lighting", "modern lamps", "modern heating",
-                "rent brennstoff", "reint brennstoff", "rentbrennende", "reintbrennande", "ren energi", "rein energi", "ren strøm", "rein straum", "ren elektrisitet", "rein elektrisitet"
-               ]
+                
+                "rent brennstoff", "reint brennstoff", "rentbrennende", "reintbrennande", "ren energi", "rein energi", "ren strøm", "rein straum", "ren elektrisitet", "rein elektrisitet"]
+
 termlist7_1d = ["household", "homes", "house", "housing", "residential", "dwelling", "domestic", "slum", "village", "women", 
                 "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "landsby", "kvinne"]                                       
 
@@ -6871,19 +4968,11 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  "solar cooker$" OR "solar box cooker$" OR "solar cooking"
-  OR "improved cookstove$" OR "improved stove$" OR "modern cookstove$" OR "modern stove$"
-)
-```
-
 
 ```python
 #Term lists
-termlist7_1e = ["solar cook", "solar box cook", "improved cookstove", "improved stove", "modern cookstove", "modern stove"
-              "solkok", "solovn", "solcelleovn", "solfyr", "solgrill"]
+termlist7_1e = ["solar cook", "solar box cook", "improved cookstove", "improved stove", "modern cookstove", "modern stove",
+                "solkok", "solovn", "solcelleovn", "solfyr", "solgrill"]
 
 phrasedefault7_1e = r'(?:{})'.format('|'.join(termlist7_1e))
 ```
@@ -6906,51 +4995,42 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
-```
-TS=
-(
-  ("kerosene" OR "solid fuel$" OR "coal"
-  )    
-  NEAR/15
-      ("household$" OR "homes" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
-      OR "residential heating" OR "central heating" OR "winter heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
-      )      
-)
-OR
-TS=
-(
-  ("coal")    
-  NEAR/15
-      ("household$" OR "homes" OR "house" OR "houses" OR "housing"
-      OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "women"
-      OR "heating" OR "cooking" OR "stove$" OR "lighting" OR "lamps"
-      )      
-)
-```
-
 
 ```python
 #Term lists
-termlist7_1f = ["kerosene", "solid fuel.*", "coal"
-              "parafin.*", "fast bren.*", "koks"] 
-termlist7_1g = ["household", "home", "hous", "residential", "dwelling", "domestic use", "slum", "women", "residential heating", "central heating", "winter heating",
-                "heating", "cooking", "stove", "lighting", "lamps",
-                
-                "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "slum", "kvinne", 
-                "oppvarming", "varme", "fyre", "fyring", "matlaging", "ovn", "lys", "belysning", "ljos", "lampe"]     
-                #There is no Norwegian translation of the search term "coal" as it only returns noise, not really a common fuel in Norway         
+termlist7_1f = ["kerosene", "solid fuel.*", "coal",
+                "parafin.*", "fast bren.*", "koks"]
+termlist7_1f2 = ["kerosene", "solid fuel.*",
+                 "parafin.*", "fast bren.*", "koks"]
 
+termlist7_1g = ["household", "home", "hous", "residential", "dwelling", "domestic use", "slum", "residential heating", "central heating", "winter heating",
+                "cooking", "stove", "lighting", "lamps",
+
+                "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "slum",
+                "oppvarming", "varme", "fyre", "fyring", "matlaging", "ovn", "lys", "belysning", "ljos", "lampe"]
+                #There is no Norwegian translation of the search term "coal" as it only returns noise, not really a common fuel in Norway        
+
+termlist7_1g2 = ["heating"]
+    
 phrasespecific7_1f = r'\b(?:{})\b'.format('|'.join(termlist7_1f))
+phrasespecific7_1f2 = r'\b(?:{})\b'.format('|'.join(termlist7_1f2))
 phrasedefault7_1g = r'(?:{})'.format('|'.join(termlist7_1g))
+phrasedefault7_1g2 = r'(?:{})'.format('|'.join(termlist7_1g2))
 ```
 
 
 ```python
 #Search 7_1fg
 Data.loc[(
-    (Data['result_title'].str.contains(phrasespecific7_1f, na=False, case=False)) 
-    & (Data['result_title'].str.contains(phrasedefault7_1g, na=False, case=False)) 
+    (
+        (Data['result_title'].str.contains(phrasespecific7_1f, na=False, case=False)) 
+        & (Data['result_title'].str.contains(phrasedefault7_1g, na=False, case=False)) 
+    )
+    |
+    (
+        (Data['result_title'].str.contains(phrasespecific7_1f2, na=False, case=False)) 
+        & (Data['result_title'].str.contains(phrasedefault7_1g2, na=False, case=False)) 
+    )
 ),"tempsdg07_01"] = "SDG07_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_01 == "SDG07_01")])) 
@@ -6965,20 +5045,11 @@ test.iloc[0:8, ]
 #### Phrase 4
 
 
-```
-TS=
-(
-  "energy poverty" OR "energy vulnerability" OR "fuel poverty"
-  OR "energy democracy" OR "energy justice" OR "energy inequity"
-  OR "energy security" OR "energy insecurity"
-)
-```
-
 
 ```python
 #Term lists
-termlist7_1h = ["energy poverty", "energy vulnerability", "fuel poverty", "energy democracy", "energy justice", "energy inequity", "energy security", "energy insecurity" 
-              "energifattigdom", "energisårbarhet", "energidemokrati", "energirettferdighet", "energisikkerhet"] 
+termlist7_1h = ["energy poverty", "energy vulnerability", "fuel poverty", "energy democracy", "energy justice", "energy inequit", "energy security", "energy insecur",
+                "energifattigdom", "energisårbarhet", "energidemokrati", "energirettferdighet", "energisikkerhet"] 
 
 phrasedefault7_1h = r'(?:{})'.format('|'.join(termlist7_1h))
 ```
@@ -6987,7 +5058,7 @@ phrasedefault7_1h = r'(?:{})'.format('|'.join(termlist7_1h))
 ```python
 #Search 7_1h
 Data.loc[(
- (Data['result_title'].str.contains(phrasedefault7_1h, na=False, case=False)) 
+    (Data['result_title'].str.contains(phrasedefault7_1h, na=False, case=False)) 
 ),"tempsdg07_01"] = "SDG07_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_01 == "SDG07_01")]))  
@@ -7002,79 +5073,48 @@ test.iloc[0:5, ]
 #### Phrase 5
 
 
-```
-TS= ("universal electrification" OR "rural electrification" OR "national electrification")
-OR
-TS=
-(
-  ("access" OR "provision")
-  NEAR/5
-      ("energy service$" OR "electricity supply"
-      OR
-        (
-          ("energy" OR "power" OR "electric*")
-          NEAR/3
-              ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum$" OR "village$"
-              OR "sustainable" OR "green" OR "clean" OR "modern"
-              )            
-        )
-      )
-)
-OR
-TS=
-(
-  ("electrification" OR "grid extension$"
-  OR
-    (
-      ("access" OR "provision")
-      NEAR/5 ("energy" OR "electricity" OR "electrical supply" OR "power supply")
-    )
-  )
-  NEAR/15
-      ("rural"
-      OR ("remote" NEAR/3 ("region$" OR "area" OR "areas" OR "communities" OR "community"))
-      OR ****LMICs****
-      )
-)
-```
-
-
-
 
 ```python
 #Term lists - 
 termlist7_1i = ["electricity", "energy", "power", "universal electrification", "rural electrification", "national electrification", "electrification", "grid extension", "grid extensions",
                 "access to energy", "provision of energy", "energy provision", "provision of electricity", "electricity provision", "electricity supply", "electrical supply", "power supply",
+                
                 "elektrisitet", "strøm", "straum", "energi", "kraft", "elektrifisering", "elektrisering", "mikronett", "øydrift", "tilgang til energi", "tilgang på energi", "energitilgang",
                 "tilgang til elektrisitet", "tilgang på elektrisitet", "tilgang til strøm", "tilgang til straum", "tilgang på strøm", "tilgang på straum"]
+
 termlist7_1j = ["household", "home", "house", "housing", "residential", "dwelling", "domestic use", "slum", "village","sustainable", "green", "clean","modern",
                 "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "slum", "landsby","bærekraftig", "berekraftig", "grøn", "ren", "rein", "moderne"]
-termlist7_1k = ["rural", "remote region", "remote area", "remote communit", 
-                "landlig", "landsby",
-                ] 
-termlist7_1i2 = ["universal electrification", "rural electrification", "national electrification", 
+
+termlist7_1k = ["rural", "remote region", "remote area", "remote communit",
+                "landlig", "landsby"]
+
+termlist7_1i2 = ["universal electrification", "rural electrification", "national electrification",
                  "elektrifisering"]
-termlist7_1x = ["access", "provision", 
+
+termlist7_1x = ["access", "provision",
                 "tilgang", "tilbud", "tilbod"]
+
 termlist7_1xt = ["energy services", "energy supply",
                  "energitjeneste", "energiteneste", "energiforsyning", "strømforsyning", "straumforsyning", "kraftforsyning"]
-termlist7_1xtr = ["electric", "energy", "power", 
+
+termlist7_1xtr = ["electric", "energy", "power",
                   "elektris", "energi", "kraft"]
-termlist7_1xtra = ["electrification", "grid extension", 
+
+termlist7_1xtra = ["electrification", "grid extension",
                    "elektrifiser"]
-termlist7_1xtras = ["energy", "electricity", "electrical supply", "power supply", 
+
+termlist7_1xtras = ["energy", "electricity", "electrical supply", "power supply",
                     "elektris", "energi", "strømforsyning", "straumforsyning", "kraftforsyning"]
 
-phrasedefault7_1i = r'(?:{})'.format('|'.join(termlist7_1i)) 
-phrasedefault7_1j = r'(?:{})'.format('|'.join(termlist7_1j)) 
+phrasedefault7_1i = r'(?:{})'.format('|'.join(termlist7_1i))
+phrasedefault7_1j = r'(?:{})'.format('|'.join(termlist7_1j))
 phrasedefault7_1k = r'(?:{})'.format('|'.join(termlist7_1k))
-phrasedefault7_1i2 = r'(?:{})'.format('|'.join(termlist7_1i2)) 
-phrasedefault7_1x = r'(?:{})'.format('|'.join(termlist7_1x)) 
-phrasedefault7_1xt = r'(?:{})'.format('|'.join(termlist7_1xt)) 
+phrasedefault7_1i2 = r'(?:{})'.format('|'.join(termlist7_1i2))
+phrasedefault7_1x = r'(?:{})'.format('|'.join(termlist7_1x))
+phrasedefault7_1xt = r'(?:{})'.format('|'.join(termlist7_1xt))
 phrasedefault7_1xtr = r'(?:{})'.format('|'.join(termlist7_1xtr))
-phrasedefault7_1xtra = r'(?:{})'.format('|'.join(termlist7_1xtra)) 
-phrasedefault7_1xtras = r'(?:{})'.format('|'.join(termlist7_1xtras)) 
+phrasedefault7_1xtra = r'(?:{})'.format('|'.join(termlist7_1xtra))
+phrasedefault7_1xtras = r'(?:{})'.format('|'.join(termlist7_1xtras))
 ```
 
 
@@ -7087,19 +5127,15 @@ Data.loc[(
         (Data['result_title'].str.contains(phrasedefault7_1x, na=False, case=False))
         &
         (
-            (Data['result_title'].str.contains(phrasedefault7_1xt, na=False, case=False)) 
-            |
-            (
-                (Data['result_title'].str.contains(phrasedefault7_1xtr, na=False, case=False))
-                &(Data['result_title'].str.contains(phrasedefault7_1j, na=False, case=False))  
-            )
+            (Data['result_title'].str.contains(phrasedefault7_1xt, na=False, case=False))
+            |((Data['result_title'].str.contains(phrasedefault7_1xtr, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_1j, na=False, case=False)))
         )
     )
     |
     (
         (
             (Data['result_title'].str.contains(phrasedefault7_1xtra, na=False, case=False))
-            | ((Data['result_title'].str.contains(phrasedefault7_1x, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_1xtras, na=False, case=False)))
+            |((Data['result_title'].str.contains(phrasedefault7_1x, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_1xtras, na=False, case=False)))
         )
         & ((Data['LMICs']==True)|(Data['result_title'].str.contains(phrasedefault7_1k, na=False, case=False)))
     )
@@ -7119,64 +5155,44 @@ test.iloc[0:5, ]
 
 #### Phrase 6
 
-```
-TS= 
-(
-  ("stable" OR "stability" OR "reliab*" OR "resilien*" OR "afford*" OR "inexpensive" OR "low cost" OR "cheap"
-  OR "unstable" OR "instability" OR "unreliab*" OR "unafford*" OR "costly" OR "energy cost$" OR "expensive"
-  )
-  NEAR/15
-      ("energy service$" OR "electricity supply"
-      OR
-        (
-          ("energy" OR "power" OR "electric*")
-          NEAR/5
-              ("household$" OR "home$" OR "house" OR "houses" OR "housing"
-              OR "residential" OR "dwelling$" OR "domestic use*" OR "slum" OR "slums" OR "village$"
-              OR "sustainable"
-              )            
-        )
-      OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$"
-      OR "off grid solution$" OR "off-grid system$"
-      OR (("energy" OR "electricity") NEAR/3 ("infrastructure" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
-      OR "community energy" OR "community renewable energy"
-      )
-)      
-
-```
-
-
-
 
 ```python
 #Term lists
-termlist7_1l = ["stable", "stability", "reliable", "reliability" "resilient", "resilience", "affordable", "affordability", "inexpensive", "low cost", "cheap", 
+termlist7_1l = ["stable", "stability", "reliable", "reliability", "secur", "resilient", "resilience", "affordable", "affordability", "inexpensive", "low cost", "cheap",
                 "unstable", "instability", "unreliable", "unreliability", "unaffordable", "costly", "energy cost", "expensive",
+                
                 "stabil", "pålitelig", "påliteleg", "sikker", "robust", "rimelig", "rimeleg", "billig", "ustabil", "upålitelig", "upåliteleg", "kostbar", "dyr"]
-termlist7_1m = ["energy services", "electric supply", 
+
+termlist7_1m = ["energy services", "electric supply",
                 "energitjeneste", "energiteneste", "energiforsyning", "strømforsyning", "straumforsyning", "kraftforsyning"]
-termlist7_1n = ["energy", "power", "electricity", 
+
+termlist7_1n = ["energy", "power", "electricity",
                 "energi", "strøm", "straum", "kraft", "elektrisitet"]
-termlist7_1o = ["household", "home", "house", "housing", "residential", "dwelling", "domestic use", "slum", "village", "sustainable", 
-                "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "slum", "landsby", "bærekraftig", "berekraftig", 
+
+termlist7_1o = ["household", "home", "house", "housing", "residential", "dwelling", "domestic use", "slum", "village", "sustainable",
+                "hushold", "hushald", "hjem", "heim", "hus", "bolig", "bustad", "slum", "landsby", "bærekraftig", "berekraftig",
                 "forsyningssikkerhet", "forsyningssikkerheit"]
-termlist7_1p = ["microgrid", "micro grid", "minigrid", "mini grid", "off grid solution", "off-grid system", 
+
+termlist7_1p = ["microgrid", "micro grid", "minigrid", "mini grid", "off grid solution", "off-grid system",
                 "mikronett", "øydrift"]
+
 termlist7_1q = ["energy", "electricity",
                 "energi", "elektrisitet", "strøm", "straum", "kraft"]
-termlist7_1r = ["infrastructure", "off grid", "decentralised", "decentralized", "cooperative", 
-                "infrastruktur", "desentralisert", "kooperativ"] 
+
+termlist7_1r = ["infrastructure", "off grid", "decentralised", "decentralized", "cooperative",
+                "infrastruktur", "desentralisert", "kooperativ"]
+
 termlist7_1s = ["community energy", "community renewable energy",
                 "energisamfunn"]
 
 phrasedefault7_1l = r'(?:{})'.format('|'.join(termlist7_1l))
 phrasedefault7_1m = r'(?:{})'.format('|'.join(termlist7_1m))
 phrasedefault7_1n = r'(?:{})'.format('|'.join(termlist7_1n))
-phrasedefault7_1o = r'(?:{})'.format('|'.join(termlist7_1o)) 
+phrasedefault7_1o = r'(?:{})'.format('|'.join(termlist7_1o))
 phrasedefault7_1p = r'(?:{})'.format('|'.join(termlist7_1p))
 phrasedefault7_1q = r'(?:{})'.format('|'.join(termlist7_1q))
 phrasedefault7_1r = r'(?:{})'.format('|'.join(termlist7_1r))
-phrasedefault7_1s = r'(?:{})'.format('|'.join(termlist7_1s)) 
+phrasedefault7_1s = r'(?:{})'.format('|'.join(termlist7_1s))
 ```
 
 
@@ -7184,19 +5200,13 @@ phrasedefault7_1s = r'(?:{})'.format('|'.join(termlist7_1s))
 #Search 7_1lmnopqrs
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault7_1l, na=False, case=False))
-    & 
+    &
     (
-        (Data['result_title'].str.contains(phrasedefault7_1m, na=False, case=False)) 
-        |(
-            (Data['result_title'].str.contains(phrasedefault7_1n, na=False, case=False)) 
-            &(Data['result_title'].str.contains(phrasedefault7_1o, na=False, case=False))
-        )
-        |(Data['result_title'].str.contains(phrasedefault7_1p, na=False, case=False)) 
-        |(
-            (Data['result_title'].str.contains(phrasedefault7_1q, na=False, case=False)) 
-            &(Data['result_title'].str.contains(phrasedefault7_1r, na=False, case=False)) 
-        )
-        |(Data['result_title'].str.contains(phrasedefault7_1s, na=False, case=False)) 
+        (Data['result_title'].str.contains(phrasedefault7_1m, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_1n, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_1o, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault7_1p, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_1q, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_1r, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault7_1s, na=False, case=False))
     )
 ),"tempsdg07_01"] = "SDG07_01"
 
@@ -7217,29 +5227,24 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  ("renewable" AND ("energy transition$" OR "sector transformation$" OR "energy transformation$"))
-  OR ("renewable energy" NEAR/15 ("substitut*" OR "uptake"))
-)
-
-
 
 ```python
 # Term lists
-termlist7_2a = ["renewable", 
-                 "fornybar"]
-termlist7_2b = ["energy transition", "sector transformation", "energy transformation",
-                 "omstilling", "endring", "transform"]
-termlist7_2c = ["renewable energy", 
-                 "fornybar energi"]
-termlist7_2d = ["substitut", "uptake", 
-                 "erstat", "overgang"]
+termlist7_2a = ["renewable",
+                "fornybar"]
 
-phrasedefault7_2a = r'(?:{})'.format('|'.join(termlist7_2a)) 
+termlist7_2b = ["energy transition", "sector transformation", "energy transformation",
+                "omstilling", "endring", "transform"]
+
+termlist7_2c = ["renewable energy",
+                "fornybar energi"]
+
+termlist7_2d = ["substitut", "uptake",
+                "erstat", "overgang"]
+
+phrasedefault7_2a = r'(?:{})'.format('|'.join(termlist7_2a))
 phrasedefault7_2b = r'(?:{})'.format('|'.join(termlist7_2b))
-phrasedefault7_2c = r'(?:{})'.format('|'.join(termlist7_2c)) 
+phrasedefault7_2c = r'(?:{})'.format('|'.join(termlist7_2c))
 phrasedefault7_2d = r'(?:{})'.format('|'.join(termlist7_2d))
 ```
 
@@ -7247,15 +5252,8 @@ phrasedefault7_2d = r'(?:{})'.format('|'.join(termlist7_2d))
 ```python
 #Search 7_2abcd
 Data.loc[(
-  (
-    (Data['result_title'].str.contains(phrasedefault7_2a, na=False, case=False)) 
-    & (Data['result_title'].str.contains(phrasedefault7_2b, na=False, case=False)) 
-  )
- |
-  (
-    (Data['result_title'].str.contains(phrasedefault7_2c, na=False, case=False)) 
-    & (Data['result_title'].str.contains(phrasedefault7_2d, na=False, case=False)) 
-  )   
+    ((Data['result_title'].str.contains(phrasedefault7_2a, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2b, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault7_2c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2d, na=False, case=False)))   
 ),"tempsdg07_02"] = "SDG07_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_02 == "SDG07_02")])) 
@@ -7268,68 +5266,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-
-
-```
-TS=
-(
-  ("relian*" OR "primary use" OR "primary usage" OR "primary source$" OR "adopting" OR "adoption" OR "implementation" OR "uptake" 
-  OR "contribution" OR "proportion" OR "share" OR "expansion"
-  OR "feasibility" OR "attractiveness" OR "incentive$" OR "initiative$"
-  OR "affordab*" OR "inexpensive" OR "low cost" OR "economic feasibility" OR "economic viability" OR "cost-effectiveness" OR "cost-advantage$"
-  OR "investment$" OR "subsidies" OR "subsidi$ation" OR "financing" OR "funding" OR "commerciali?ation"
-  OR "energy service$" OR "energy sector" OR "generation" OR "capacity"
-  OR "global energy" OR "global electricity" OR "energy mix" OR "market share$"
-  OR "barrier$" OR "obstacle$"
-  OR "implement" OR "adopt" OR "incentivi*"
-  OR "energy transition$" OR "renewable transition$" OR "transition* to"
-  OR ("certificat*" NEAR/2 ("energy" OR "green"))
-  OR "policy" OR "policies" OR "legislation" OR "kyoto protocol" OR "strateg*" OR "energy management" OR "energy planning"
-  OR "subsidi$e" OR "investing" OR "invest" OR "green bond$" OR "climate bond$" OR "feed-in tariff$"
-  OR "upscale" OR "scale-up" OR "commercial development" OR "develop* commercially" OR "roll out" OR "rollout"
-  OR "sustainable development" OR "sustainable energy development"
-  )
-  NEAR/15
-      ("non conventional energy"
-      OR
-        (
-          ("electricity" OR "power" OR "powered" OR "energy")
-          NEAR/5
-              ("renewable$"  OR "sustainable" OR "green"
-              OR "hydrothermal" OR "geothermal"
-              OR "hydroelectric" OR "hydropower" OR "hydro"
-              OR "hydrokinetic"
-              )    
-        )
-      OR "geothermal heat pump$" OR "ground source heat pump$"
-      OR "solar cell$" OR "solar-cell$" OR "solar panel$" OR "solar-panel$" OR "solar power*" OR "solar array" OR "solar PV" OR "solar photovoltaic$"
-      OR "solar energy collector$" OR "solar farm$" OR "solar plant$" OR "solar park$"
-      OR "solar district heating" OR "solar district cooling" OR "solar air heating system$" OR "solar space heating system$"
-      OR ("solar thermal" NEAR/3 ("power" OR "technolog*" OR "collector$" OR "district"))
-      OR ("solar thermal energy" NEAR/15 ("power" OR "electric*" OR "water heating" OR "industrial process heat*"))
-      OR "wind farm$" OR "wind turbine$" OR "wind park$" OR "wind factory" OR "wind factories"
-      OR "tidal turbine$" OR "stream turbine$" OR "current turbine$"
-      OR "tidal power" OR "tidal energy" OR "marine energy"
-      OR ("wave energy" NEAR/5 ("converter$" OR "renewable" OR "power" OR "generat*" OR "energy harvesting"))
-      OR "biofuel$" OR "bioenergy" OR "biodiesel"
-      OR
-        (
-          ("biomass" OR "wind" OR "solar" OR "ammonia")
-          NEAR/10
-              ("electric*" OR "energy generat*" OR "energy service$" OR "energy sector"
-              OR "energy system$" OR "power system$"
-              OR "energy crop$" OR "energy security"
-              )
-        )
-      OR ("hydrogen" NEAR/10 ("renewable substitute$" OR "renewable source$" OR "green"))
-      OR
-        (
-          ("fuel cell$" OR "battery" OR "batteries" OR "lithium ion" OR "energy storage" OR "smart grid$")
-          NEAR/15 ("renewable" OR "sustainab*")
-        )
-      )
-)
-```
 
 
 
@@ -7362,7 +5298,7 @@ termlist7_2e = ["electricity", "power", "energy",
 termlist7_2f = ["renewable", "sustainable", "green", "hydrothermal", "geothermal", "hydroelectric", "hydropower", "hydro", "hydrokinetic",
                 "fornybar", "bærekraftig", "berekraftig", "grøn", "hydroterm", "varmekraft", "geoterm", "hydroelektris", "vannkraft", "vasskraft", "hydrokinetisk"]
 termlist7_2g = ["geothermal heat pump", "ground source heat pump", "solar cell", "solar-cell", "solar panel", "solar-panel", "solar power", "solar array", "solar PV", 
-                "solar photovoltaic", "solar energy collector", "solar farm", "solar plant", "solar park", "solar district heating", "solar district cooling", 
+                "photovoltaic", "solar energy collector", "solar farm", "solar plant", "solar park", "solar district heating", "solar district cooling", 
                 "solar air heating system", "solar space heating system", 
                 "varmepumpe", "solcelle", "solkraft", "solenergi", "fotovoltaisk", "solfang", "solsaml", "solvarm", "solpark", "solcellepark"] 
 termlist7_2h = ["solar thermal", 
@@ -7420,60 +5356,21 @@ phrasedefault7_2u = r'(?:{})'.format('|'.join(termlist7_2u))
 
 ```python
 Data.loc[(
-   (
-      (Data['result_title'].str.contains(phrasedefault7_2c, na=False, case=False))|
-      (Data['result_title'].str.contains(phrasespecific7_2c, na=False, case=False))
-   ) 
-   &
+    ((Data['result_title'].str.contains(phrasedefault7_2c, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific7_2c, na=False, case=False))) 
+    &
     (
         (Data['result_title'].str.contains(phrasedefault7_2d, na=False, case=False))
- | 
-    (
-      (Data['result_title'].str.contains(phrasespecific7_2e, na=False, case=False))
-      &
-      (Data['result_title'].str.contains(phrasedefault7_2f, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasespecific7_2e, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2f, na=False, case=False)))
+        | (Data['result_title'].str.contains(phrasedefault7_2g, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasedefault7_2h, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2i, na=False, case=False)))
+        | ((Data['result_title'].str.contains(phrasedefault7_2j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2k, na=False, case=False)))  
+        | (Data['result_title'].str.contains(phrasedefault7_2l, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasedefault7_2m, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2n, na=False, case=False)))
+        | (Data['result_title'].str.contains(phrasedefault7_2o, na=False, case=False)) 
+        | ((Data['result_title'].str.contains(phrasedefault7_2p, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2q, na=False, case=False)))  
+        | ((Data['result_title'].str.contains(phrasedefault7_2r, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2s, na=False, case=False)))   
+        | ((Data['result_title'].str.contains(phrasedefault7_2t, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_2u, na=False, case=False)))  
     )
-    
-  |
-    (Data['result_title'].str.contains(phrasedefault7_2g, na=False, case=False))
-  |
-     (
-       (Data['result_title'].str.contains(phrasedefault7_2h, na=False, case=False))& 
-       (Data['result_title'].str.contains(phrasedefault7_2i, na=False, case=False))  
-     )
-  |
-    (
-      (Data['result_title'].str.contains(phrasedefault7_2j, na=False, case=False))&
-      (Data['result_title'].str.contains(phrasedefault7_2k, na=False, case=False))
-    )   
-  |
-      
-    (
-       (
-          (Data['result_title'].str.contains(phrasedefault7_2l, na=False, case=False))|
-          (Data['result_title'].str.contains(phrasedefault7_2m, na=False, case=False))
-      )
-        &
-       (Data['result_title'].str.contains(phrasedefault7_2n, na=False, case=False))
-    )
-   |
-      (Data['result_title'].str.contains(phrasedefault7_2o, na=False, case=False)) 
-   |
-    (
-        (Data['result_title'].str.contains(phrasedefault7_2p, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault7_2q, na=False, case=False))
-    )  
-  |
-    (
-        (Data['result_title'].str.contains(phrasedefault7_2r, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault7_2s, na=False, case=False))
-    )   
-  |
-    (
-        (Data['result_title'].str.contains(phrasedefault7_2t, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault7_2u, na=False, case=False))
-    )  
-)
 ),"tempsdg07_02"] = "SDG07_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_02 == "SDG07_02")]))  
@@ -7487,56 +5384,46 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
-The Web of Science search proved very restricive, and a direct translation of it did not return many hits in the title search. Therefore we added "coal" and allowed "energy" to stand alone (as opposed to the WoS search where it is used in phrases like "energy service", "energy supply" etc). This results in some noise, but also returns considerable more relevant hits. 
-
-```
-TS=
-(
-  ("fossil fuel$" OR "coal" OR "natural gas" OR "grey hydrogen" OR "conventional energy"
-  OR
-    (
-      ("reduce" OR "decreas*" OR "phase out" OR "phasing out"
-      OR "improv*" OR "incentiv*" OR "support" OR "encourag*"
-      OR "transition*" OR "substitut*" OR "intervention$"
-      OR "policy" OR "policies" OR "legislation" OR "energy strateg*" OR "energy management" OR "energy planning"
-      )
-      NEAR/5
-          ("oil")
-    )
-  )
-  NEAR/15
-    ("relian*" OR "primary use" OR "primary usage" OR "primary source$"
-    OR "coal consumption" OR "fossil fuel consumption" OR "consumption of fossil fuel$"
-    OR "energy service$" OR "energy sector" OR "energy supply" OR "energy supplies"
-    OR "global energy" OR "global electricity" OR "energy mix"
-    )
-)   
-```
-
 
 ```python
 # Term lists
-termlist7_2m = ["fossil fuel", "natural gas", "grey hydrogen", "conventional energy", 
+termlist7_2m = ["fossil fuel", "natural gas", "grey hydrogen", "conventional energy",
                 "fossilt brensel", "fossile brensl", "fossilt brennstoff", "fossile brennstoff", "naturgass", "grått hydrogen", "konvensjonell energi"]
-termlist7_2mtrunk = ["coal", 
-                     "kull", "kol"]
-termlist7_2n = ["reduc", "decreas", "phase out", "phasing out", "improv", "incentiv", "support", "encourag", "transition", "substitut", 
-                "intervention", "policy", "policies", "legislation", 
-                "energy strateg", "energy management", "energy plan"
-                "reduser", "reduksjon", "mink", "utfas", "fase ut", "bedre", "betr", "insentiv", "støtte", "stønad", "oppmuntr", "oppmod", "omstill",
-                "erstat", "intervensjon", "inngrip", "politikk", "retningslin", "lovgiv", "energistrategi", "energiledelse", "energileiing", "energiplan"]
-termlist7_2o = ["olje"]
-termlist7_2otrunk = ["oil", "coal", 
-                     "kull", "kol"]
-termlist7_2p = ["relian", "primary use", "primary usage", "primary source", "consumption", "consumption of fossil fuel", "global electricity", "energy",
-                "avhengig", "primær bruk", "primærbruk", "primær kilde", "primær kjelde", "primærkilde", "primærkjelde", "forbruk", "global elektrisitet", "energi"]
-                                                
+termlist7_2mtrunk = ["coal", "oil",
+                     "kull", "kol", "olje", "råolje", "petroleum"]
+
+termlist7_2n = ["reduc", "decreas", "improv", "support", "encourag", "intervention", "policy", "policies", "legislation", "incentiv",
+                "reduser", "reduksjon", "mink", "bedre", "betr", "støtte", "stønad", "oppmuntr", "oppmod", "intervensjon", "inngrip", "politikk", "retningslin", "lovgiv", "insentiv"]
+
+termlist7_2o = ["reliance", "consumption", "transition", "substitut", "primary source",
+                "avhengig", "forbruk", "overgang", "erstat", "primærkilde"]
+
+termlist7_2ptrunk = ["use", "usage", 
+                     "bruk"]
+
+termlist7_2q = ["phase out", "phasing out", "energy transition", "energy strateg", "energy management", "energy planning", "energy policy",
+                "energy services", "energy sector", "energy supply", "energy supplies", "energy generation", "global share", "global electricity", "energy mix",
+                "coal consumption", "fossil fuel consumption", "consumption of fossil fuel", "primary source",
+                
+                "utfas", "fase ut", "energistrategi", "energiledelse", "energileiing", "energiplan", "energipolitikk", "energitjeneste", "energiteneste",
+                "global andel", "global elektrisitet", "energimiks", "forbruk", "primær kilde", "primær kjelde", "primærkilde", "primærkjelde"]
+
+termlist7_2r = ["fossil fuel", "natural gas", "grey hydrogen", "conventional energy", "petroleum",
+                "fossilt brensel", "fossile brensl", "fossilt brennstoff", "fossile brennstoff", "naturgass", "grått hydrogen", "konvensjonell energi"]
+
+termlist7_2NOT = ["palm oil", "oil palm", "olive oil", "coconut oil", "vegetable oil", "eucalyptus oil", "cooking oil", "fish oil", "liver oil",
+                  "nutrition", "cholesterol", "obes", "human consum",
+                  "cylinder oil", "lubricat", "lube oil", "engine oil"
+                 ] #Not an issue in Norwegian as "olje" is normally used as part of another word (e.g. "olivenolje")
+
 phrasedefault7_2m = r'(?:{})'.format('|'.join(termlist7_2m))
 phrasespecific7_2mtrunk = r'\b(?:{})\b'.format('|'.join(termlist7_2mtrunk))
 phrasedefault7_2n = r'(?:{})'.format('|'.join(termlist7_2n))
 phrasedefault7_2o = r'(?:{})'.format('|'.join(termlist7_2o))
-phrasespecific7_2otrunk = r'\b(?:{})\b'.format('|'.join(termlist7_2otrunk))
-phrasedefault7_2p = r'(?:{})'.format('|'.join(termlist7_2p))
+phrasespecific7_2ptrunk = r'\b(?:{})\b'.format('|'.join(termlist7_2ptrunk))
+phrasedefault7_2q = r'(?:{})'.format('|'.join(termlist7_2q))
+phrasedefault7_2r = r'(?:{})'.format('|'.join(termlist7_2r))
+phrasedefault7_2NOT = r'(?:{})'.format('|'.join(termlist7_2NOT))
 ```
 
 
@@ -7545,20 +5432,26 @@ phrasedefault7_2p = r'(?:{})'.format('|'.join(termlist7_2p))
 Data.loc[(
     (
         (
-            (Data['result_title'].str.contains(phrasedefault7_2m, na=False, case=False))
-            |(Data['result_title'].str.contains(phrasespecific7_2mtrunk, na=False, case=False))
-        )
-        |  
-        (
-            (Data['result_title'].str.contains(phrasedefault7_2n, na=False, case=False))     
-            & 
             (
-                (Data['result_title'].str.contains(phrasedefault7_2o, na=False, case=False))
-                |(Data['result_title'].str.contains(phrasespecific7_2otrunk, na=False, case=False))
+                (Data['result_title'].str.contains(phrasedefault7_2m, na=False, case=False))
+                |(Data['result_title'].str.contains(phrasespecific7_2mtrunk, na=False, case=False))
+            )
+        &
+            (
+                ((Data['result_title'].str.contains(phrasedefault7_2n, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific7_2ptrunk, na=False, case=False)))
+                | (Data['result_title'].str.contains(phrasedefault7_2o, na=False, case=False))
             )
         )
+    |
+        (
+            (
+                (Data['result_title'].str.contains(phrasedefault7_2r, na=False, case=False))
+                |(Data['result_title'].str.contains(phrasespecific7_2mtrunk, na=False, case=False))
+            )
+        & (Data['result_title'].str.contains(phrasedefault7_2q, na=False, case=False))
+        )
     )
-    & (Data['result_title'].str.contains(phrasedefault7_2p, na=False, case=False))
+    & (~Data['result_title'].str.contains(phrasedefault7_2NOT, na=False, case=False))
 ),"tempsdg07_02"] = "SDG07_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_02 == "SDG07_02")]))  
@@ -7567,7 +5460,7 @@ print("Number of results = ", len(Data[(Data.tempsdg07_02 == "SDG07_02")]))
 
 ```python
 test=Data.loc[(Data.tempsdg07_02 == "SDG07_02"), ("result_id", "result_title")]
-test.iloc[10:15, ]
+test.iloc[0:25, ]
 ```
 
 ### SDG 7.3
@@ -7577,38 +5470,17 @@ test.iloc[10:15, ]
 *Innen 2030 få forbedringen av energieffektivitet på verdensbasis til å gå dobbelt så fort*
 
 #### Phrase 1
-
-```
-TS=
-(
-  ("energy intensity")
-  AND
-      ("energy consum*" OR "sustainab*" OR "energy efficiency"
-      OR "GDP" OR "economic" OR "economy" OR "economies"
-      OR "industry" OR "industrial" OR "manufacturing"
-      OR ("emission$" NEAR/5 ("carbon" OR "co2"))
-      OR "footprint$"
-      )
-)
-```
+This search is simplified compared to the WOS search, to adapt to a title search.
 
 
 ```python
 # Term lists
 termlist7_3a = ["energy intensity", 
                 "energiintensitet" ]
-#termlist7_3b = ["energy consum", "sustainab", "energy efficiency", "GDP", "economic", "economy", "economies", "industr", "manufacturing", "footprint",
-#                "energiforbruk", "bærekraft", "berekraft", "BNP", "økonomi", "industri", "produksjon", "fotavtrykk"]
-#termlist7_3c = ["emission",
-#                "utslipp", "utslepp"]
-#termlist7_3d = ["carbon", "co2", 
-#                "karbon"]
+
 # As "energy intensity" is such a specialized term, we found it sufficient to search for it alone in the title search.
 
 phrasedefault7_3a = r'(?:{})'.format('|'.join(termlist7_3a))
-#phrasedefault7_3b = r'(?:{})'.format('|'.join(termlist7_3b))
-#phrasedefault7_3c = r'(?:{})'.format('|'.join(termlist7_3c))
-#phrasedefault7_3d = r'(?:{})'.format('|'.join(termlist7_3d))
 ```
 
 
@@ -7628,27 +5500,20 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-
-```
-TS=
-(
-  ("energy consum*"
-  NEAR/5 ("decoupl*" OR "de coupl*")
-  )
-  NEAR/5 ("econom*" OR "GDP")
-)
-``` 
-
+This search is simplified compared to the WOS search, to adapt to a title search.
 
 
 ```python
 # Term lists
 termlist7_3e = ["energy consum", 
                 "energiforbruk"]
+
 #termlist7_3f = ["decoupl", "de coupl", 
 #                "kobl", "kopl"]
+
 termlist7_3g = ["econom", "GDP", 
                 "økonomi", "BNP"]
+
 #In this phrase, searching with the same phrases and limitations as in Web of Science was quite restrictive. 
 #We therefore chose to simplify the search and accept a combination of "energy consum" and "econom" or "GDP" in the title as sufficient to be included (without "decoupling")
 
@@ -7662,7 +5527,7 @@ phrasedefault7_3g = r'(?:{})'.format('|'.join(termlist7_3g))
 ## Search 7_3eg 
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault7_3e, na=False, case=False))
-    &(Data['result_title'].str.contains(phrasedefault7_3g, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault7_3g, na=False, case=False))
 ),"tempsdg07_03"] = "SDG07_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_03 == "SDG07_03")]))  
@@ -7676,52 +5541,16 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
-```
-TS=
-(
-    (
-      ("energy efficien*" OR "energy utili$ation efficiency" OR "energy saving" OR "energy loss" OR "energy conservation")
-      NEAR/15
-          ("housing" OR "houses" OR "homes" OR "household" OR "domestic" OR "residential" OR "building$" OR "cities"
-          OR "service sector" OR "office$" OR "retail" OR "food services" OR "restaurants" OR "hotels" OR "warehouses"
-          OR "lighting" OR "lamps" OR "cooking" OR "appliances" OR "white goods"
-          OR "plug-in device$" OR "smart"
-          OR "space cooler$" OR "air condition*" OR "space heat*" OR "room heating" OR "district heating" OR "heat pump$" OR "HVAC"
-          OR "industry" OR "industrial" OR "manufacturing" OR "technolog*"
-          OR "transport" OR "transportation" OR "vehicles" OR "cars" OR "train$" OR "airplane$" OR "aeroplane$" OR "ship$" OR "shipping" OR "freight"
-          OR "telecomm*" OR "data centre$" OR "data center$" OR "data network$" OR "server" OR "servers" OR "wireless"
-          )
-    )
-    OR
-      (("energy efficiency" OR "energy conservation")
-      NEAR/5
-            ("policy" OR "policies" OR "framework$" OR "legislation" OR "management" OR "planning" OR "plan" OR "plans"
-            OR "initiative$" OR "intervention$" OR "incentive$" OR "investment$" OR "investing" OR "invest"
-            )
-      )
-    OR
-      ("energy efficiency"
-      NEAR/15
-            ("green bond$" OR "climate bond$"
-            OR ("certificat*" NEAR/2 ("energy" OR "green"))
-            OR "energy sustainability"
-            OR "minimum energy performance" OR "energy labelling" OR "energy standard$" OR "energy efficiency standard$"
-            OR "sustainable development"
-            )
-      )
-)
-```
-
-
 
 ```python
 # Term lists
 
 # A direct translation of the Web of Science search into Norwegian language gave barely any results. 
 # We therefore allowed a few terms for energy efficiency and energy saving in Norwegian to stand alone in order to capture some more relevant titles (list 3no below). 
-# This was not done in english because it produces noise.
+# This was not done in english because it is poor precision.
 termlist7_3h = ["energy efficien", "energy utilisation efficiency", "energy utilization efficiency", "energy saving", "energy loss", "energy conservation",
                 "energieffektiv", "effektiv energibruk", "energisparing", "energiøkonomisering", "energitap", "energirasjonering", "strømrasjonering"]
+
 termlist7_3i = ["housing", "houses", "homes", "household", "domestic", "residential", "building", "cities", "service sector", "office", "retail", "food services", "restaurant", 
                 "hotel", "warehouses", "lighting", "lamps", "cooking", "appliances", "white goods", "plug-in device", "smart", "space cooler", "air condition", "space heat", 
                 "room heating", "district heating", "heat pump", "HVAC", "industry", "industrial", "manufacturing", "technolog", "transport", 
@@ -7732,17 +5561,24 @@ termlist7_3i = ["housing", "houses", "homes", "household", "domestic", "resident
                 "kontor", "salg", "detaljhandel", "varehus", "kjøpesent", "lys", "ljos", "belysning", "lampe", "matlaging", "apparat", "maskin", "hvitevare", 
                 "smart", "kjøler", "klimaanlegg", "oppvarm", "varmepumpe", "VVS", "industri", "produksjon", "teknologi",
                 "kjøretøy", "køyretøy", "biler", "bilar", "tog", "fly", "skip", "frakt", "last", "telekomm", "datasent", "datanett", "trådløs"]
+
 termlist7_3j = ["energy efficien", "energy conservation", 
-                "energieffektiv", "energirasjonering", "strømrasjonering", "energisparing", "energiøkonomiser", "enøk"]        
+                "energieffektiv", "energirasjonering", "strømrasjonering", "energisparing", "energiøkonomiser", "enøk"]
+
 termlist7_3k = ["policy", "policies", "framework", "legislation", "management", "plan", "initiativ", "intervention", "incentive", "invest"
                 "politikk", "retningslin", "rammeverk", "lovgiv", "ledelse", "leiing", "intervensjon", "inngripen", "insentiv"]  
+
 termlist7_3l = ["energy efficien",
                 "energieffektiv"]
+
 termlist7_3m = ["green bond", "climate bond", "energy certificat", "green certificat", "energy sustainability", "minimum energy performance", "energy labelling", "energy standard", 
                 "energy efficiency standard", "sustainable development", 
+                
                 "grønne obligasjon", "grøne obligasjon", "klimaobligasjon", "energisertifi", "grøn sertifi", "grønt sertifi", "grønne sertifi", "energimerk", 
-                "energistandard", "energieffektivitetsstandard", "bærekraftig utvikling", "berekraftig utvikling"]   
-termlist7_3no = ["energieffektiv", "energispar", "energiøkonomiser"]
+                "energistandard", "energieffektivitetsstandard", "bærekraftig utvikling", "berekraftig utvikling"] 
+
+termlist7_3standalone = ["energy efficien", "energy utilisation efficiency", "energy utilization efficiency", "energy saving", "energy conservation",
+                         "energieffektiv", "effektiv energibruk", "energispar", "energiøkonomiser", "energirasjonering", "strømrasjonering"]
 
 phrasedefault7_3h = r'(?:{})'.format('|'.join(termlist7_3h))
 phrasedefault7_3i = r'(?:{})'.format('|'.join(termlist7_3i))
@@ -7750,30 +5586,25 @@ phrasedefault7_3j = r'(?:{})'.format('|'.join(termlist7_3j))
 phrasedefault7_3k = r'(?:{})'.format('|'.join(termlist7_3k))
 phrasedefault7_3l = r'(?:{})'.format('|'.join(termlist7_3l))
 phrasedefault7_3m = r'(?:{})'.format('|'.join(termlist7_3m))              
-phrasedefault7_3no = r'(?:{})'.format('|'.join(termlist7_3no))
+phrasedefault7_3standalone = r'(?:{})'.format('|'.join(termlist7_3standalone))
 ```
 
 
 ```python
 ## Search 7_3hijklmno 
+
+#Title and abstract search
+#Data.loc[(
+#    ((Data['result_title'].str.contains(phrasedefault7_3h, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3i, na=False, case=False)))
+#    |((Data['result_title'].str.contains(phrasedefault7_3j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3k, na=False, case=False)))
+#    |((Data['result_title'].str.contains(phrasedefault7_3l, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3m, na=False, case=False)))
+#),"tempsdg07_03"] = "SDG07_03"
+
+#Title search
 Data.loc[(
-  (
-      (
-          (Data['result_title'].str.contains(phrasedefault7_3h, na=False, case=False))
-          &(Data['result_title'].str.contains(phrasedefault7_3i, na=False, case=False))
-      )
-      |
-      (
-          (Data['result_title'].str.contains(phrasedefault7_3j, na=False, case=False))
-          &(Data['result_title'].str.contains(phrasedefault7_3k, na=False, case=False))
-      )
-      |
-      (
-          (Data['result_title'].str.contains(phrasedefault7_3l, na=False, case=False))
-          &(Data['result_title'].str.contains(phrasedefault7_3m, na=False, case=False))
-      )
-  )
-  | (Data['result_title'].str.contains(phrasedefault7_3no, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault7_3standalone, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault7_3h, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3i, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault7_3j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3k, na=False, case=False)))
 ),"tempsdg07_03"] = "SDG07_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_03 == "SDG07_03")])) 
@@ -7786,34 +5617,20 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 4
-We have simplified the search as we are only searching titles, and left out many specific energy terms. All that is required now is terms for "energy efficien" or "sufficien" to be combined with "energy sufficiency".
-
-```
-TS=
-  ("energy sufficiency"
-  AND
-      ("electric*" OR "energy generat*" OR "energy service$" OR "energy sector" OR "energy system$"
-      OR "power system$" OR "energy security" OR "renewable energy"
-      )
-  )
-```
-
+We have simplified the search as we are only searching titles, and left out specific energy terms. All that is required now is terms for "energy efficien" combined with "sufficien", or the title to contain "energy suffici*".
 
 
 ```python
 # Term lists
-termlist7_3n = ["energy sufficiency"]
-termlist7_3o = ["electric", "energy generat", "energy service", "energy sector", "energy system", "power system", "energy security", "renewable energy"]
-termlist7_3p = ["energy",
-                "energi"]
+termlist7_3n = ["energy suffici"]
+
 termlist7_3q = ["sufficien", "suffisien", 
                 "tilstrekkelig"]
+
 termlist7_3r = ["energy efficien", 
                 "energieffektiv"]
 
 phrasedefault7_3n = r'(?:{})'.format('|'.join(termlist7_3n))
-phrasedefault7_3o = r'(?:{})'.format('|'.join(termlist7_3o))
-phrasedefault7_3p = r'(?:{})'.format('|'.join(termlist7_3p))
 phrasedefault7_3q = r'(?:{})'.format('|'.join(termlist7_3q))
 phrasedefault7_3r = r'(?:{})'.format('|'.join(termlist7_3r))
 ```
@@ -7822,12 +5639,12 @@ phrasedefault7_3r = r'(?:{})'.format('|'.join(termlist7_3r))
 ```python
 ## Search 7_3nqr 
 Data.loc[(
-  (Data['result_title'].str.contains(phrasedefault7_3n, na=False, case=False))
-  |
-  (
-    (Data['result_title'].str.contains(phrasedefault7_3q, na=False, case=False)) 
-    &(Data['result_title'].str.contains(phrasedefault7_3r, na=False, case=False))  
-  )
+    (Data['result_title'].str.contains(phrasedefault7_3n, na=False, case=False))
+    |
+    (
+        (Data['result_title'].str.contains(phrasedefault7_3q, na=False, case=False)) 
+        &(Data['result_title'].str.contains(phrasedefault7_3r, na=False, case=False))  
+    )
 ),"tempsdg07_03"] = "SDG07_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_03 == "SDG07_03")])) 
@@ -7847,75 +5664,41 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  ("ODA" OR "development spending" OR "cooperation fund"
-  OR  
-    (
-      ("international" OR "development" OR "foreign")
-      NEAR/3
-          ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-          OR "aid" OR "assistance"
-          OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
-          )
-    )
-  OR  
-    (
-      ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
-      NEAR/5 ("access*" OR "capacity" OR "transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
-    )
-  OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
-  OR (("financial*" or "monetary") NEAR/3 ("support*" or "assist*"))
-  OR "economic support" OR "economic assistance"
-  OR "green bond$" OR "climate bond$"
-  )
-  NEAR/15
-      ("cleantech" OR "energy research" OR "energy efficiency research" OR "energy transition$" OR "energy technolog*"
-      OR
-        (
-          ("technolog*" OR "innovation$" OR "R&D")
-          NEAR/3
-              ("clean" OR "cleaner" OR "green" OR "greener"
-              OR "decarboni*" OR "low carbon" OR "energy efficien*"  
-              OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine energy" OR "tidal energy" OR "wave energy"
-              )
-        )      
-      )             
-)
-```
-
-
 
 ```python
 # Term lists
-termlist7_a1 = ["ODA", "development spending", "cooperation fund", 
+termlist7_a1 = ["development spending", "cooperation fund", 
                 "bistand", "utviklingshjelp", "u-hjelp", "samarbeidsfond"]
-termlist7_a2 = ["international", "development", "foreign", 
+termlist7_a1caps = ["ODA"]
+termlist7_a2 = ["international", "development", "foreign",
                 "internasjonal", "utvikling", "utland", "utenlandsk", "utanlands", "utalands"]
 termlist7_a3 = ["cooperat", "co-operat", "collaborat", "network", "partnership", "aid", "assistance", "fund", "grant", "financing", "financial resources", "capital flow",
                 "samarbeid", "felles", "nettverk", "partner", "hjelp", "bistand", "støtte", "stønad", "finans", "økonomi", "ressurs", "kapital"]
-termlist7_a4 = ["knowledge", "technolog", "technical", "research", "scientific", "R&D",  
+termlist7_a4 = ["knowledge", "technolog", "technical", "research", "scientific", "R&D",
                 "kunnskap", "teknolog", "teknisk", "forskning", "forsking", "vitenskapelig", "vitskapeleg", "FOU"]
 termlist7_a5 = ["access", "capacity", "transfer", "sharing", "share", "cooperat", "co-operat", "collaborat", "partnership",
                 "tilgang", "kapasitet", "overfør", "deling", "dele", "samarbeid", "koopera", "partner"]
 termlist7_a6 = ["invest", "financing", "funding", "financial resources", "economic support", "economic assistance", "green bond", "climate bond",
-                "finans", "økonomi", "støtte", "stønad", "grønne obligasjon", "grøne obligasjon", "klimaobligasjon"]        
+                "finans", "økonomi", "støtte", "stønad", "grønne obligasjon", "grøne obligasjon", "klimaobligasjon"]
 termlist7_a7 = ["financial", "monetary",
-                "finansiell", "monetær", "penge"] 
-termlist7_a8 = ["support", "assist", 
+                "finansiell", "monetær", "penge"]
+termlist7_a8 = ["support", "assist",
                 "støtte", "stønad"]
-termlist7_a9 = ["cleantech", "energy research", "energy efficiency research", "energy transition", "energy technolog",
-                "ren teknologi", "rein teknologi", "energiforskning", "energiforsking", "energiomstilling", "energiteknologi"] 
+
+termlist7_a9 = ["energy research", "energy efficiency research", "energy transition", "energy technolog",
+                "energiforskning", "energiforsking", "energiomstilling", "energiteknologi"]
+
 termlist7_a10 = ["technolog", "innovation", "R&D",
                  "teknologi", "innovasjon", "FOU"]
-termlist7_a11 = ["clean", "green", "decarboni", "low carbon", "energy efficien", "renewable", "solar", "wind", "geothermal", "hydroelectric", 
-                 "hydro electric", "hydro power", "marine energy", "tidal energy", "wave energy",
-                 "rein", "avkarboniser", "lavkarbon", "lågkarbon", "energieffektiv", "fornybar", "solcelle", "solkraft", "solenergi", "solcelle", 
-                 "solkraft", "solenergi", "vind", "geotermisk", 
-                 "hydroelektrisk", "vannkraft", "vasskraft", "havenergi", "tidevannsenergi", "tidvass", "bølgeenergi"]      
+
+termlist7_a11 = ["clean energy", "green energy", "decarboni", "low carbon", "energy efficien", "renewable", "solar", 
+                 "wind", "geothermal", "hydroelectric", "hydro electric", "hydro power", "marine energy", "tidal energy", "wave energy",
+                 
+                 "ren energi", "grønn energi", "avkarboniser", "lavkarbon", "lågkarbon", "energieffektiv", "fornybar", "solcelle", "solkraft", "solenergi", "solcelle", "solkraft", "solenergi", 
+                 "vind", "geotermisk", "hydroelektrisk", "vannkraft", "vasskraft", "havenergi", "tidevannsenergi", "tidvass", "bølgeenergi"]    
 
 phrasedefault7_a1 = r'(?:{})'.format('|'.join(termlist7_a1))
+phrasespecific7_a1caps = r'\b(?:{})\b'.format('|'.join(termlist7_a1caps))
 phrasedefault7_a2 = r'(?:{})'.format('|'.join(termlist7_a2))
 phrasedefault7_a3 = r'(?:{})'.format('|'.join(termlist7_a3))
 phrasedefault7_a4 = r'(?:{})'.format('|'.join(termlist7_a4))
@@ -7932,35 +5715,19 @@ phrasedefault7_a11 = r'(?:{})'.format('|'.join(termlist7_a11))
 ```python
 ## Search 7_a1234567891011
 Data.loc[(
- (
-  (Data['result_title'].str.contains(phrasedefault7_a1, na=False, case=False))
-  |
     (
-      (Data['result_title'].str.contains(phrasedefault7_a2, na=False, case=False))&
-      (Data['result_title'].str.contains(phrasedefault7_a3, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault7_a1, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific7_a1caps, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_a2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a3, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault7_a4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a5, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault7_a6, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_a7, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a8, na=False, case=False)))
     )
-  |
+    &
     (
-      (Data['result_title'].str.contains(phrasedefault7_a4, na=False, case=False))&
-      (Data['result_title'].str.contains(phrasedefault7_a5, na=False, case=False))
-    )
-  |
-    (Data['result_title'].str.contains(phrasedefault7_a6, na=False, case=False))
-  |
-    (
-      (Data['result_title'].str.contains(phrasedefault7_a7, na=False, case=False))& 
-      (Data['result_title'].str.contains(phrasedefault7_a8, na=False, case=False))
-    )
- )
- &
-  (
-      (Data['result_title'].str.contains(phrasedefault7_a9, na=False, case=False))
-  |
-    (
-       (Data['result_title'].str.contains(phrasedefault7_a10, na=False, case=False))&
-       (Data['result_title'].str.contains(phrasedefault7_a11, na=False, case=False))
-    )
-  ) 
+        (Data['result_title'].str.contains(phrasedefault7_a9, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_a10, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a11, na=False, case=False)))
+    ) 
 ),"tempsdg07_a"] = "SDG07_0a"
 
 print("Number of results = ", len(Data[(Data.tempsdg07_a == "SDG07_0a")]))  
@@ -7974,44 +5741,12 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  ("ODA" OR "development spending" OR "cooperation fund"
-  OR  (
-        ("international" OR "development" OR "foreign")
-        NEAR/3
-            ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-            OR "aid" OR "assistance"
-            OR "fund$" OR "grant$" OR "financing" OR "financial resources" OR "capital flow$"
-            )
-      )
-  OR "invest" OR "investing" OR "investment$" OR "financing" OR "funding" OR "financial resources"
-  OR (("financial*" or "monetary" OR "economic") NEAR/3 ("support*" or "assist*" OR "resources"))
-  OR "green bond$" OR "climate bond$"  
-  )
-  NEAR/15
-      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
-      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "cooperative$"))
-      OR "community energy" OR "community renewable energy"
-      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
-      OR "energy transition$"
-      OR
-        (
-          ("power station$" OR "power generation" OR "energy generation" OR "generator$")
-          NEAR/5
-              ("modern" OR "clean" OR "sustainable" OR "renewable$" OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy")
-        )             
-      )            
-)
-```
-
-
 
 ```python
 # Term lists
-termlist7_a12 = ["ODA", "development spending", "cooperation fund", 
+termlist7_a12 = ["development spending", "cooperation fund", 
                  "offisiell utviklingsbistand", "offentlig utviklingsbistand", "bistand", "utviklingshjelp", "u-hjelp", "samarbeidsfond"]
+termlist7_a1caps = ["ODA"]
 termlist7_a13 = ["international", "development", "foreign", 
                  "internasjonal", "utvikling", "utland", "utaland", "utanland", "utenlandsk"]
 termlist7_a14 = ["cooperat", "co-operat", "collaborat", "network", "partnership", "aid", "assistance", "fund", "grant", "financing", 
@@ -8024,11 +5759,12 @@ termlist7_a16 = ["financial", "monetary",
                  "finansiell", "monetær", "penge"] 
 termlist7_a17 = ["support", "assist", 
                  "støtte", "stønad", "assistanse"] 
-termlist7_a18 = ["energy service", "energy sector", "electrical infrastructure", "electricity supply", "power supply", "community energy", 
+
+termlist7_a18 = ["clean energy", "energy service", "energy sector", "electrical infrastructure", "electricity supply", "power supply", "community energy", 
                  "community renewable energy", "electrical grid", "power grid", "grid extension", "microgrid", "micro grid", "micro-grid", 
                  "minigrid", "mini grid", "mini-grid", "smartgrid", "smart grid", "smart-grid", "energy storage system", "energy transition",
                  
-                 "energitjeneste", "energiteneste", "energisektor", "energiinfrastruktur", "elektrisk infrastruktur", "energiforsyning",
+                 "ren energi", "rein energi", "energitjeneste", "energiteneste", "energisektor", "energiinfrastruktur", "elektrisk infrastruktur", "energiforsyning",
                  "strømforsyning", "straumforsyning", "kraftforsyning", "små kraftverk", "minikraftverk", "mikrokraftverk", 
                  "energisamfunn", "mikronett", "øydrift", "smartnett", "energilagring", "energiomstilling"]
 termlist7_a19 = ["energy", "electricity",
@@ -8039,10 +5775,11 @@ termlist7_a21 = ["power station", "power generation", "energy generation", "gene
                  "kraftstasjon", "kraftverk", "kraftproduksjon", "strømproduksjon", "straumproduksjon"]
 termlist7_a22 = ["modern", "clean", "sustainable", "renewable", "solar", "wind", "geothermal", "hydroelectric", "hydro electric", "hydropower", 
                  "marine", "tidal", "wave energy",
-                 "bærekraftig", "berekraftig", "fornybar", "sol", "vind", "geotermisk", "hydroelektrisk", "vannkraft", "vasskraft", 
+                 "rein", "bærekraftig", "berekraftig", "fornybar", "sol", "vind", "geotermisk", "hydroelektrisk", "vannkraft", "vasskraft", 
                  "hav", "tidevann", "tidvass", "bølgeenergi"]                                        
 
 phrasedefault7_a12 = r'(?:{})'.format('|'.join(termlist7_a12))
+phrasespecific7_a1caps = r'\b(?:{})\b'.format('|'.join(termlist7_a1caps))
 phrasedefault7_a13 = r'(?:{})'.format('|'.join(termlist7_a13))
 phrasedefault7_a14 = r'(?:{})'.format('|'.join(termlist7_a14))
 phrasedefault7_a15 = r'(?:{})'.format('|'.join(termlist7_a15))
@@ -8061,31 +5798,16 @@ phrasedefault7_a22 = r'(?:{})'.format('|'.join(termlist7_a22))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault7_a12, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault7_a13, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_a14, na=False, case=False))
-        )
+        |(Data['result_title'].str.contains(phrasespecific7_a1caps, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault7_a13, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a14, na=False, case=False)))
         |(Data['result_title'].str.contains(phrasedefault7_a15, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault7_a16, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_a17, na=False, case=False))
-        )  
+        |((Data['result_title'].str.contains(phrasedefault7_a16, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a17, na=False, case=False)))  
     ) 
     &
     (
         (Data['result_title'].str.contains(phrasedefault7_a18, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault7_a19, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_a20, na=False, case=False))
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault7_a21, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_a22, na=False, case=False)) 
-        )
+        |((Data['result_title'].str.contains(phrasedefault7_a19, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a20, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault7_a21, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_a22, na=False, case=False)) )
     )
 ),"tempsdg07_a"] = "SDG07_0a"
 
@@ -8104,52 +5826,28 @@ test.iloc[0:5, ]
 
 *Innen 2030 bygge ut infrastruktur og oppgradere teknologi for å tilby moderne og bærekraftige energitjenester til alle innbyggere i utviklingsland, særlig i de minst utviklede landene, små utviklingsøystater og kystløse utviklingsland, i samsvar med landenes respektive støtteprogram*
 
-```
-TS=
-(
-  (
-    ("modern*" OR "clean" OR "sustainable" OR "renewable$" OR "decarboni*" OR "low carbon"
-    OR "improv*" OR "increas*" OR "strengthen*" OR "enhanc*" OR "better"
-    OR "more efficient" OR "upgrad*" OR "scal* up"
-    OR "build" OR "expand*" OR "extend*" OR "deploy" OR "accelerat*" OR "prioriti$e"
-    OR "energy sector transform*"
-    )  
-    NEAR/5  
-      ("energy service$" OR "energy sector" OR "electrical infrastructure" OR "electricity supply" OR "power supply"
-      OR (("energy" OR "electricity") NEAR/5 ("infrastructure" OR "technolog*" OR "off grid" OR "decentrali$ed" OR "community" OR "cooperative$"))
-      OR "electrical grid$" OR "power grid$" OR "grid extension$" OR "microgrid$" OR "micro grid$" OR "minigrid$" OR "mini grid$" OR "smart grid$" OR "energy storage system$"
-      OR
-        (
-          ("power station$" OR "power generation" OR "energy generation" OR "generator$")
-          NEAR/5
-              ("modern*" OR "clean" OR "sustainable" OR "renewable$" OR "decarboni*" OR "low carbon"
-              OR "solar" OR "wind" OR "geothermal" OR "hydroelectric" OR "hydro electric" OR "hydropower" OR "marine" OR "tidal" OR "wave energy"
-              )
-        )             
-      )
-  )
-  AND  
-    (****LMICSs****
-    )
-)
-```
-      
-
 
 ```python
 # Term lists
-termlist7_b1 = ["energy service", "energy sector", "electrical infrastructure", "electricity supply", "power supply", "energy", "electricity",
+termlist7_b1 = ["energy service", "energy sector", "electrical infrastructure", 
+                "electricity supply", "power supply", "energy", "electricity",
+                
                 "energitjeneste", "energiteneste", "energisektor", "elektrisk infrastruktur", "energiinfrastruktur", "elektrisitetsforsyning", 
                 "strømforsyning", "straumforsyning", "kraftforsyning", "energi", "elektrisitet"]
+
 termlist7_b2 = ["infrastructure", "technolog", "off grid", "offgrid", "off-grid", "decentralised", "decentralized", "community", "cooperative", "co-operative",
                 "electrical grid", "power grid", "grid extension", 
                 "microgrid", "micro-grid", "micro grid", "minigrid", "mini-grid", "mini grid", "smartgrid", "smart grid", "smart-grid", "energy storage system",
+                
                 "infrastruktur", "teknologi", "mikronett", "desentral", "samfunn", "kooperativ", "strømnett", "straumnett", "kraftnett", "elnett", "små kraftverk", "minikraftverk",
                 "mikrokraftverk", "øydrift", "smartnett", "energilagring"]
+
 termlist7_b3 = ["power station", "power generation", "energy generation", "generator",
                 "kraftstasjon", "kraftverk", "kraftprod", "strømprod", "straumprod"]
+
 termlist7_b4 = ["modern", "clean", "sustainable", "renewable", "decarboni", "low carbon", "solar", "wind", "geothermal", 
                 "hydroelectric", "hydro electric", "hydropower", "marine", "tidal", "wave energy",
+                
                 "moderne", "bærekraftig", "berekraftig", "fornybar", "dekarboniser", "lavkarbon", "lågkarbon", "sol", "vind", "geotermisk", 
                 "hydroelektrisk", "vannkraft", "vasskraft", "hav", "tidevann", "tidvass", "bølgeenergi"]                 
 
@@ -8165,60 +5863,23 @@ phrasedefault7_b4 = r'(?:{})'.format('|'.join(termlist7_b4))
 #Search 1 - in SIDS and LDCs data
 Data.loc[(
     (
-        ( 
-            (Data['result_title'].str.contains(phrasedefault7_b1, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_b2, na=False, case=False))
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault7_b3, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault7_b4, na=False, case=False))
-        )
+        ((Data['result_title'].str.contains(phrasedefault7_b1, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_b2, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault7_b3, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_b4, na=False, case=False)))
     ) 
     & (Data['LMICs']==True)
 ),"tempsdg07_b"] = "SDG07_b"
+
+print("Number of results = ", len(Data[(Data.tempsdg07_b == "SDG07_b")])) 
 ```
 
 
 ```python
-print("Number of results = ", len(Data[(Data.tempsdg07_b == "SDG07_b")])) 
+test=Data.loc[(Data.tempsdg07_b == "SDG07_b"), ("result_id", "result_title")]
+test.iloc[0:5, ]
 ```
 
 ### SDG 7 mentions
 
-
-```
-TS=
-("SDG 7" OR "SDGs 7" OR "SDG7" OR "sustainable development goal$ 7"
-OR ("sustainable development goal$" AND "goal 7")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 7")
-    AND ("clean energy")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 7")
-    NEAR/15 ("energy")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-  ```
-  
-  Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 
 ```python
@@ -8249,19 +5910,10 @@ phrasedefault7_6 = r'(?:{})'.format('|'.join(termlist7_6))
 ```python
 ## Search 7_123456
 Data.loc[(
-       (Data['result_title'].str.contains(phrasedefault7_1, na=False, case=False))
-      |
-        (
-          (Data['result_title'].str.contains(phrasedefault7_2, na=False, case=False))&
-          (Data['result_title'].str.contains(phrasedefault7_3, na=False, case=False))
-        ) 
-      |
-        (
-         (Data['result_title'].str.contains(phrasedefault7_4, na=False, case=False))&
-         (Data['result_title'].str.contains(phrasedefault7_5, na=False, case=False))
-        )
-      |
-        (Data['result_title'].str.contains(phrasedefault7_6, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault7_1, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault7_2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_3, na=False, case=False))) 
+    |((Data['result_title'].str.contains(phrasedefault7_4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault7_5, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault7_6, na=False, case=False))
 ),"tempmentionsdg07"] = "SDG07"
 
 print("Number of results = ", len(Data[(Data.tempmentionsdg07 == "SDG07")]))
@@ -8284,29 +5936,16 @@ General note: For the Norwegian adaptation, we include some of the major cities 
 *Innen 2030 sikre at alle har tilgang til tilfredsstillende og trygge boliger og grunnleggende tjenester til en overkommelig pris, og bedre forholdene i slumområder*
 
 #### Phrase 1
-```
-TS=
-(
-  ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-  )
-  NEAR/15
-      (
-        ("adequa*" OR "inadequa*" OR "affordab*" OR "afford" OR "low cost" OR "inexpensive"
-        OR "safe" OR "unsafe" OR "safety" OR "secure" OR "insecure" OR "security"
-        OR "tenure"
-        )
-        NEAR/5 ("housing" OR "settlements" OR "living conditions")
-      )
-)
-```
 
 
 ```python
 #Termlists
 termlist11_1a = ["access", "obstacle", "barrier", "hinder", "hindrance", "equitab", "non-equit", "legislat", "govern", "strateg", "policy", "policies" , "framework" , "program",
                  "tilgang", "hindr", "rettferdig", "lovgiv", "lovgje" "politikk", "politisk", "reguler", "rettningslin", "strateg"]
+
 termlist11_1b = ["adequa", "inadequa", "afford", "low cost", "low-cost", "inexpensive", "unsafe", "safety", "secure", "security", "tenure",
                  "adekvat", "tilstrekkel", "høveleg", "dekkende", "dekkande", "billig", "billeg", "rimelig", "rimeleg", "trygg", "sikker"]
+
 termlist11_1c = ["housing", "settlements", "living conditions",
                  "bolig", "bustad", "bosetting", "busetjing", "boforhold"]
 
@@ -8334,46 +5973,12 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-  (
-    ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*" OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-    )
-    NEAR/15
-        (
-          ("basic" NEAR/2 ("service$" OR "facility" OR "facilities"))
-          OR
-            (
-              ("drinking water" OR "sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
-	            NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
-            )
-          OR "improved drinking water" OR "improved source$ of drinking water" OR "clean drinking water" OR "clean water"
-          OR (("waste" OR "garbage" OR "rubbish") NEAR/2 ("service$" OR "facility" OR "facilities"))
-          OR (("health" OR "medical") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "essential" OR "primary" OR "care"))
-          OR "healthcare"
-          OR (("education*" OR "school*") NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "primary"))
-          OR
-            (
-              ("basic information" OR "telecommunication" OR "basic communication" OR "ICT")
-	            NEAR/2 ("service$" OR "facility" OR "facilities" OR "infrastructure")
-            )
-          OR "electricity service$" OR "energy service$" OR "modern energy" OR "clean fuel$" OR "clean energy"
-          OR "public open space$" OR "public space$"
-          OR "basic mobility" OR "urban mobility" OR "rural mobility" OR "all-season road$"
-          OR ("transport*" NEAR/2 ("service$" OR "infrastructure" OR "system$" OR "public"))
-        )
-  )
-  NEAR/15 ("housing" OR "settlements" OR "living conditions")
-)
-```
 
 
 ```python
 #Termlists
 termlist11_1d = ["access", "obstacle", "barrier", "hinder", "hindrance", "equitab", "non-equit", "legislat", "governan", "strateg", "policy", "policies", "framework", "program",
-                 "tilgang", "hinder", "hindr", "rettferdig", "urettferdig", "lovgiv", "lovgje" "politikk", "politisk", "reguler", "strateg"
-                 ]
+                 "tilgang", "hinder", "hindr", "rettferdig", "urettferdig", "lovgiv", "lovgje" "politikk", "politisk", "reguler", "strateg"]
 
 termlist11_1e = ["basic service", "basic facilities", "essential service",
                 "drinking water", "sanitation", "basic hygiene", "hygiene service", "toilet", "handwashing", "sewage", "WASH facilities", 
@@ -8398,7 +6003,7 @@ termlist11_1e = ["basic service", "basic facilities", "essential service",
                 "offentlig transport", "offentlige transport", "offentleg transport", "offentlege transport", "kollektivtransport", "kollevktivtilb", "transport ordning", 
                 "mobilitet"
                 ]
-                #school is specified here to avoid in Norwegian university names, e.g. "Høyskole"
+                #"xxxxskole"(NO) is specified here to avoid in Norwegian university names, e.g. "Høyskole"
 
 termlist11_1r = ["housing", "settlements", "living conditions",
                  "cities", "megacit", "urban", "metropolitan", 
@@ -8414,13 +6019,12 @@ termlist11_1r = ["housing", "settlements", "living conditions",
                  "oslo", "bergen", "trondheim", "stavanger", "tromsø",
                  ]
 
-termlist11_1rtrunc = ["city"] #"city" is here due to capacity etc.
+termlist11_1rtrunc = ["city"] #"city" is prevented truncation due to "capacity" etc.
 
 phrasedefault11_1d = r'(?:{})'.format('|'.join(termlist11_1d))
 phrasedefault11_1e = r'(?:{})'.format('|'.join(termlist11_1e))
 phrasedefault11_1r = r'(?:{})'.format('|'.join(termlist11_1r))
 phrasespec11_1r_trunc = r'\b(?:{})\b'.format('|'.join(termlist11_1rtrunc))
-
 ```
 
 
@@ -8442,16 +6046,13 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-("slum" OR "slums" OR "shanty town$" OR "informal settlement*")
-```
 
 
 ```python
 #Termlists
 termlist11_1s = ["shanty town", "informal settlement",
-                 "uformell bosetning", "uformelle bosetninger", "uformell busetnad", "uformelle busetnad"]
+                 "uformell bosetning", "uformelle bosetning", "uformell busetn", "uformelle busetn"]
+
 termlist11_1strunk = ["slum", "slums"]
 
 phrasedefault11_1s = r'(?:{})'.format('|'.join(termlist11_1s))
@@ -8480,45 +6081,7 @@ test.iloc[0:5, ]
 
 *Innen 2030 sørge for at alle har tilgang til trygge, tilgjengelige og bærekraftige transportsystemer til en overkommelig pris og bedre sikkerheten på veiene*
 
-```
-#Phrase 1
-
-TS=
-(
-  (
-    ("safe*" OR "secure*" OR "risk*" OR "sustainab*"
-    OR "access*"  OR "availab*" OR "reliab*"
-    OR "afford*" OR "low cost*" OR "expensive" OR "cost-effective*"
-    )
-    NEAR/15 ("transport* system*" OR "transport* infrastructure*" OR "public transport*" OR "transport* network*" OR "urban* mobilit*")
-  )
-  AND
-      ("city" OR "cities" OR "urban*" OR "municipalit*" OR "town*" OR "neighbo$rhood*" OR "village*"
-      OR "infrastructure*" OR "public transport*"
-      OR "pedestrian*" OR "cycl*"
-      OR "road*" OR "railway*" OR "traffic*" OR "bus*" OR "taxi*"
-      OR "ferry" OR "ferries" OR  "vehicl*" OR "train$" OR "underground*" OR "tube*" OR "metro*"
-      OR "airport*"
-      OR "travel*" OR "journey*"
-      )
-)
-
-#Phrase 2
-TS=
-(
-  (
-    ("safe*" OR "secure*" OR "hazardous*" OR "dangerous*" OR "unsafe*" OR "risk*" OR "accident*")
-    NEAR/5
-        ("traffic*" OR "road*" OR "highway$" OR "motorway$" OR "street*"
-        OR "cycling lanes" OR "cyclist$"
-        OR "walkway*" OR "walking path*" OR "sidewalk*" OR "pavement*" OR "pedestrian$"
-        OR "intersection$" OR "roundabout$" OR "cars" OR "car safety" OR "motorcycle$" OR "automobile$" OR "vehicle$"
-        OR "driver$" OR "driving"
-        OR "speed limit*"
-        )
-  )
-  NOT ("air traffic*" OR "food*")
-```
+#### Phrase 1 & 2
 
 These two phrases are merged in this search. In addition we changed the structure - now, only terms that are ambiguous are combined with the "city" terms (e.g. "transport", "vehice", "driver")
 
@@ -8531,7 +6094,7 @@ termlist11_2a = ["safe", "secure", "hazardous","sustainab", "unsafe", "dangerous
                  "sikker", "trygg", "farlig", "farleg", "risiko", "bærekraftig", "berekraftig", "tilgjengelig", "pålitelig", "rimelig", "billig", "kostbar", "kostnadseffektiv"]
 termlist11_2a_trunc = ["risk", "risks", "risky"] 
 
-termlist11_2b = ["transport infrastructure", "public transport","urban mobilit", "traffic", "roadway", "street", "roundabout",
+termlist11_2b = ["transport infrastructure", "public transport", "urban mobilit", "traffic", "roadway", "street", "roundabout",
                  "highway", "motorway", "cycling lane", "cyclist", "cycle path", "bicycle lane", "walkway", "walking path", "sidewalk", "pavement","pedestrian","taxi", "ferry",
                  "the underground", "railway", "airport", 
                  "travel", "car safety", "driver safety", "safe driving", "motorcycle", "automobile", "speed limit",
@@ -8541,11 +6104,11 @@ termlist11_2b = ["transport infrastructure", "public transport","urban mobilit",
                  "t-bane", "bybane", "jernbane", "flyplass", "kortbane", 
                  "sikkerhet i bil", "motorsykkel", "sjåfør", "kjøring", "kjøyring", "fartsgrense"
                  ] 
-                 #"driving" combined as otherwise problematic
+                 #"driving" and "driver" combined as otherwise problematic
 
 termlist11_2b2 = ["transport system","transport network", "driver", "vehicl",
                   "reise"]
-                  #terms that need to be combined with city-terms
+                  #terms that need to be combined with city-terms, as they are used in e.g. biomedicine
                   #"reise" (NO) is moved here because often used in "reiseliv" (tourism)
 
 termlist11_2c = ["road", "roads", "car", "cars", "bus", "train", "tube", "journey",
@@ -8582,21 +6145,53 @@ phrasedefault11_2d = r'(?:{})'.format('|'.join(termlist11_2d))
 ```python
 #Search 1
 Data.loc[(
-    ((Data['result_title'].str.contains(phrasedefault11_2a, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific11_2atrunc, na=False, case=False)))
+    (
+        (Data['result_title'].str.contains(phrasedefault11_2a, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific11_2atrunc, na=False, case=False))
+    )
     &
     (
         (Data['result_title'].str.contains(phrasedefault11_2b, na=False, case=False))
         |(Data['result_title'].str.contains(phrasespecific11_2c, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault11_2b2, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault11_2d, na=False, case=False))
-        )
+        |((Data['result_title'].str.contains(phrasedefault11_2b2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_2d, na=False, case=False)))
     )
 ),"tempsdg11_02"] = "SDG11_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg11_02 == "SDG11_02")]))
+```
 
+
+```python
+test=Data.loc[(Data.tempsdg11_02 == "SDG11_02"), ("result_id", "result_title")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 3
+
+
+```python
+#Term lists
+termlist11_2e  = ["provide", "provision", "improv", "moderni", "reduc", "increas", "expand", "build", "boost", "rais", "extend", "implement", "establish", "develop", "strengthen", "enhanc",
+                 "tilbyr", "etablere", "forbedr", "styrk", "bedring", "betring", "reduser", "bygg", "utvikl", "oppgrad", "muliggjør"]  
+
+termlist11_2f  = ["public transport",
+                 "offentlig transport", "offentleg transport", "kollektivtransport"] 
+
+phrasedefault11_2e = r'(?:{})'.format('|'.join(termlist11_2e))
+phrasedefault11_2f = r'(?:{})'.format('|'.join(termlist11_2f))
+```
+
+
+```python
+#Search 1
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault11_2e, na=False, case=False))
+        &(Data['result_title'].str.contains(phrasedefault11_2f, na=False, case=False))
+    )
+),"tempsdg11_02"] = "SDG11_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg11_02 == "SDG11_02")]))
 ```
 
 
@@ -8613,19 +6208,12 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  ("sustainab*" OR "inclusiv*" OR "participatory" OR "participation")
-  NEAR/15 ("urbani?ation" OR "urban development")
-)
-```
-
 
 ```python
 #Termlists
 termlist11_3a = ["sustainab", "inclusiv", "participatory", "participation",
                  "bærekraft", "berekraft", "inkluder", "deltak", "deltag"]
+
 termlist11_3b = ["urbanisation", "urbanization", "urban development", "human settlement planning", "urban planning",
                  "urbanisering", "urban utvikling", "byutvikling", "byplan"]
 
@@ -8652,17 +6240,6 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  (
-    ("settlement*" OR "urban*" OR "city" OR "cities" OR "metropolitan" OR "regional" OR "local" OR "municipal*" OR "neighbourhood$" OR "neighborhood$")
-    NEAR/3 ("plan*" OR "manag*")
-  )
-  NEAR/15 ("democra*" OR "taking part" OR "sustainab*" OR "participatory" OR "participation" OR "stakeholder*")
-)
-```
-
 
 ```python
 #Termlists
@@ -8683,16 +6260,18 @@ termlist11_3c = ["settlement",
                  ]
 termlist11_3c_trunc = ["city"]
 
-termlist11_3d = ["plan", "manag",
-                 "lede", "leiing", "styring", "forvalt"
-                 ]
+termlist11_3d = ["manag",
+                 "planleg", "lede", "leiing", "styring", "forvalt"]
+
+termlist11_3d_trunc = ["plan","plans","planning"]  
+
 termlist11_3e = ["democra", "taking part", "sustainab", "participatory", "participation", "stakeholder",
-                 "demokrat", "delta", "bærekraft", "berekraft", "interessent"
-                 ]
+                 "demokrat", "delta", "bærekraft", "berekraft", "interessent"]
 
 phrasedefault11_3c = r'(?:{})'.format('|'.join(termlist11_3c))
 phrasedefault11_3c_trunc = r'\b(?:{})\b'.format('|'.join(termlist11_3c_trunc))
 phrasedefault11_3d = r'(?:{})'.format('|'.join(termlist11_3d))
+phrasedefault11_3d_trunc = r'\b(?:{})\b'.format('|'.join(termlist11_3d_trunc))
 phrasedefault11_3e = r'(?:{})'.format('|'.join(termlist11_3e))
 ```
 
@@ -8701,17 +6280,11 @@ phrasedefault11_3e = r'(?:{})'.format('|'.join(termlist11_3e))
 #Search 11_3
 phrase11_3cde = Data.loc[(
     ((Data['result_title'].str.contains(phrasedefault11_3c, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault11_3c_trunc, na=False, case=False)))
-    & (Data['result_title'].str.contains(phrasedefault11_3d, na=False, case=False))
+    & ((Data['result_title'].str.contains(phrasedefault11_3d, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault11_3d_trunc, na=False, case=False)))
     & (Data['result_title'].str.contains(phrasedefault11_3e, na=False, case=False))             
 ),"tempsdg11_03"] = "SDG11_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg11_03 == "SDG11_03")]))  
-```
-
-
-```python
-test=Data.loc[(Data.tempsdg11_03 == "SDG11_03"), ("result_id", "result_title")]
-test.iloc[0:5, ]
 ```
 
 ### SDG 11.4
@@ -8720,22 +6293,6 @@ test.iloc[0:5, ]
 
 *Styrke innsatsen for å verne og sikre verdens kultur- og naturarv*
 
-```
-TS=
-(
-  ("manag*" OR "maintain*" OR "conservation" OR "conserving" OR "conserve" OR "conserved" OR "conserves"
-  OR "preserv*" OR "sustain" OR "protect*" OR "safeguard*"
-  )
-  NEAR/15
-    ("cultur* heritage" OR "cultural landscape$"
-    OR "heritage object$" OR "heritage building$" OR "heritage site$"
-    OR "museum$" OR "archaeological place$" OR "archaeological site$" OR "historical place$" OR "historical building$" OR "historical monument$" OR "historical artefact$"
-    OR "natural heritage" OR "nature formation$" OR "geopark$" OR "natural habitat$" OR "nature park$" OR "nature reserv*"
-    OR "zoo$" OR "zoological garden$" OR "botanical garden$" OR "aquarium$" OR "aquaria"
-    )
-)
-```
-
 
 ```python
 #Termlists
@@ -8743,13 +6300,13 @@ termlist11_4a = ["manag", "maintain", "conservation", "conserving", "conserve", 
                  "forvalt", "vedlikeh", "bevar", "konserver", "ta vare på", "oppretthold", "oppretthald", "sikre", "beskytte", "verne", "verna", "vern av", "frede", "freda", "fredning", "freding",
                  ]
 
-termlist11_4b = ["cultural heritage", "culture heritage", "cultural landscape", "heritage object", "heritage building", "heritage site", "museum", 
-                 "archaeological place", "archaeological site", "historical place", "historical building", "historical monument", "historical artefact", 
-                 "natural heritage", "nature formation", "geopark", "natural habitat", "nature park", "nature reserv", "zoo", "zoological garden", "botanical garden", "aquarium", "aquaria",
+termlist11_4b = ["cultural heritage", "culture heritage", "cultural landscape", "heritage object", "heritage building", "heritage site", "museum",
+                 "archaeological place", "archaeological site", "historical place", "historical building", "historical monument", "historical artefact",
+                 "natural heritage", "nature formation", "geopark", "nature park", "nature reserv", "zoo", "zoological garden", "botanical garden", "aquarium", "aquaria",
 
-                 "kulturarv", "kulturlandskap", "kulturminne", "historisk bygning", "historisk sted", 
-                 "arkeologisk sted", "arkeologisk stad", "arkelogisk kulturminne", "fornminne", "arkeologisk område", "historisk monument", "historisk gjenstand", 
-                 "naturarv", "naturformasjon", "naturlig habitat", "naturleg habitat", "naturpark", "nasjonalpark", "naturreservat", "dyrehage", "zoologisk hage", "botanisk hage", "akvarium", "akvarie"
+                 "kulturarv", "kulturlandskap", "kulturminne", "historisk bygning", "historisk sted",
+                 "arkeologisk sted", "arkeologisk stad", "arkelogisk kulturminne", "fornminne", "arkeologisk område", "historisk monument", "historisk gjenstand",
+                 "naturarv", "naturformasjon", "naturpark", "nasjonalpark", "naturreservat", "dyrehage", "zoologisk hage", "botanisk hage", "akvarium", "akvarie"
                  ]
 
 phrasedefault11_4a = r'(?:{})'.format('|'.join(termlist11_4a))
@@ -8780,63 +6337,6 @@ test.iloc[0:5, ]
 *Innen 2030 oppnå en betydelig reduksjon i antall dødsfall og antall personer som rammes av katastrofer, inkludert vannrelaterte katastrofer, og i betydelig grad minske de direkte økonomiske tapene i verdens samlede bruttonasjonalprodukt som følge av slike katastrofer, med vekt på å beskytte fattige og personer i utsatte situasjoner*
 
 #### Phrase 1
-
-```
-TS=
-(
-  ( "disaster$" OR "catastrophe$" 
-    OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-    OR (("natural" OR "climat*") NEAR/5 "hazard$")
-    OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-    OR "drought$" OR "flood*" 
-    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-    OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-    OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
-    OR 
-      (
-        ("anthropogenic" 
-        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-        OR "chemical" OR "heavy metal$" OR "pesticide$"
-        OR "biological" OR "zoonotic"
-        OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-        ) 
-        NEAR/3 ("hazard$")
-      ) 
-    OR "war" OR "wars" OR "armed conflict$"
-    OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-    OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"  
-  )
-  AND
-    (
-      ("death$" OR "casualt*" OR "survivors" OR "fatal*" OR "missing people" OR "missing person$")
-      OR 
-        (
-          ("surviv*" OR "mortalit*")
-          AND 
-            ("people" OR "human$" OR "patient$" OR "victim$" OR "civilian$"
-            OR "city" OR "cities" OR "urban" OR "municipalit*" OR "town*" OR "village*" OR "populated area*" OR "neighbo$rhood*" OR "public*" 
-            OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-            OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*"))
-            OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-            OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-            OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-            OR "disabled" OR "disabilities" OR "disability"
-            OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-            OR "unemployed"
-            OR "women" OR "woman" OR "girls" OR "girl"
-            OR "pregnant" OR "pregnancy" OR "maternity" OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-            OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-            OR "living with HIV" OR "living with AIDS"
-            OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-            OR "indigenous group$"
-            )
-        )
-    )
-) NOT TS=("death$" NEAR/3 ("tree" OR "trees" OR "leaf" OR "cell"))
-```
 
 
 ```python
@@ -8889,10 +6389,18 @@ termlist11_5j = ["volatil", "unstable", "instability", "unrest",
                  "flyktig", "ustabil", "instabilitet", "uro"]
 termlist11_5k = ["political", "civil",
                  "politisk", "sivil"]
-termlist11_5l = ["death", "casualt", "survivors", "fatal", "missing people", "missing person",
-                 "død", "daud" "offer", "ofre", "overlevende", "overlevande", "savnede", "savnet", "sakna"]
+
+termlist11_5l = ["death", "casualt", "survivors", "fatal",
+                 "død", "daud" "offer", "ofre", "overlevende", "overlevande"]
+
+termlist11_5s = ["affected", "injur", "trauma", "displaced", "missing",
+                 "berørte", "skadde", "traumatisert", "fordrevne", "fordrivne", "savnede", "savnet", "sakna"]
+termlist11_5t = ["people", "person", "civilian", "women", "men", "child",
+                 "folk", "sivile", "kvinner", "menn", "barn", "born"]
+
 termlist11_5m = ["surviv", "mortalit",
                  "overlev", "død"]
+
 termlist11_5n = ["people", "human", "patient", "victim", "civilian", 
                  "city","cities", "megacit", "urban", "metropolitan", 
                  "town", "village", "suburb", 
@@ -8942,6 +6450,8 @@ phrasedefault11_5o = r'(?:{})'.format('|'.join(termlist11_5o))
 phrasedefault11_5p = r'(?:{})'.format('|'.join(termlist11_5p))
 phrasedefault11_5q = r'(?:{})'.format('|'.join(termlist11_5q))
 phrasedefault11_5r = r'(?:{})'.format('|'.join(termlist11_5r))
+phrasedefault11_5s = r'(?:{})'.format('|'.join(termlist11_5s))
+phrasedefault11_5t = r'(?:{})'.format('|'.join(termlist11_5t))
 #The NOT-part at the end of WoS string is not included, as probably not needed/useful in title searching
 ```
 
@@ -8951,44 +6461,23 @@ phrasedefault11_5r = r'(?:{})'.format('|'.join(termlist11_5r))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault11_5a, na=False, case=False))
-        |
-         (
-            (Data['result_title'].str.contains(phrasedefault11_5b, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_5c, na=False, case=False))
-         )
-        | 
-          (
-            (Data['result_title'].str.contains(phrasedefault11_5d, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_5e, na=False, case=False))  
-          )
-        | 
-          (
-            (Data['result_title'].str.contains(phrasedefault11_5j, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_5k, na=False, case=False))  
-          )          
-        | (Data['result_title'].str.contains(phrasedefault11_5f, na=False, case=False))
-        | (Data['result_title'].str.contains(phrasedefault11_5ftrunc, na=False, case=False))
-      
+        |((Data['result_title'].str.contains(phrasedefault11_5b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5c, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault11_5d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5e, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault11_5j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5k, na=False, case=False)))          
+        |(Data['result_title'].str.contains(phrasedefault11_5f, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasedefault11_5ftrunc, na=False, case=False))
     )
     &
     (
         (Data['result_title'].str.contains(phrasedefault11_5l, na=False, case=False))
-        |
-        (
+        |((Data['result_title'].str.contains(phrasedefault11_5s, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5t, na=False, case=False)))
+        |(
             (Data['result_title'].str.contains(phrasedefault11_5m, na=False, case=False))
             &
             ( 
-              (Data['result_title'].str.contains(phrasedefault11_5n, na=False, case=False))
-              |
-              (
-                (Data['result_title'].str.contains(phrasedefault11_5o, na=False, case=False))
-                & (Data['result_title'].str.contains(phrasedefault11_5p, na=False, case=False)) 
-              )
-              |
-              (
-                (Data['result_title'].str.contains(phrasedefault11_5q, na=False, case=False))
-                & (Data['result_title'].str.contains(phrasedefault11_5r, na=False, case=False)) 
-              )
+                (Data['result_title'].str.contains(phrasedefault11_5n, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault11_5o, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5p, na=False, case=False)))
+                |((Data['result_title'].str.contains(phrasedefault11_5q, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5r, na=False, case=False)))
             )
         )
     )        
@@ -9005,40 +6494,6 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  ( 
-    ("disaster$" OR "catastrophe$" 
-    OR ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-    OR (("natural" OR "climat*") NEAR/5 "hazard$")
-    OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-    OR "drought$" OR "flood*" 
-    OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-    OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-    OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-    OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-    OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$")) 
-    OR 
-      (
-        ("anthropogenic" 
-        OR "environmental" OR "deforestation" OR "desertification" OR "degredation" OR "pollution" OR "erosion"
-        OR "chemical" OR "heavy metal$" OR "pesticide$"
-        OR "biological" OR "disease" OR "zoonotic"
-        OR "technological" OR "radioactive" OR "nuclear" OR "cyber" OR "industrial" OR "construction" OR "transportation"
-        ) 
-        NEAR/3 ("hazard$")
-      ) 
-    OR "war" OR "wars" OR "armed conflict$"
-    OR (("volatil*" OR "unstable" OR "instability" OR "unrest") NEAR/5 ("political$" OR "civil"))
-    OR "financial crash*" OR "financial shock$" OR "financial disaster$" 
-    OR "economic downturn$" OR "economic shock$" OR "economic disaster$"
-    )  
-  )
-  AND ("domestic product$" or "gdp$" or "ggdp$" or "ggp$" or "gross global produc$")
-)
-```
-
 
 ```python
 #Termlists
@@ -9049,7 +6504,7 @@ termlist11_52ltrunc = ["gdp", "gpp", "ggdp"]
                                           
 phrasedefault11_52l = r'(?:{})'.format('|'.join(termlist11_52l))
 phrasedefault11_52ltrunc = r'\b(?:{})\b'.format('|'.join(termlist11_52ltrunc))
-#acronyms not truncated to avoid results on gdpr
+#acronyms have truncation prevented to avoid results on gdpr
 ```
 
 
@@ -9058,26 +6513,17 @@ phrasedefault11_52ltrunc = r'\b(?:{})\b'.format('|'.join(termlist11_52ltrunc))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault11_5a, na=False, case=False))
-        |
-         (
-            (Data['result_title'].str.contains(phrasedefault11_5b, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_5c, na=False, case=False))
-         )
-        | 
-          (
-            (Data['result_title'].str.contains(phrasedefault11_5d, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_5e, na=False, case=False))  
-          )
-        | (Data['result_title'].str.contains(phrasedefault11_5f, na=False, case=False))
-        | (Data['result_title'].str.contains(phrasedefault11_5ftrunc, na=False, case=False))
-      
+        |((Data['result_title'].str.contains(phrasedefault11_5b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5c, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault11_5d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5e, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault11_5j, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_5k, na=False, case=False)))          
+        |(Data['result_title'].str.contains(phrasedefault11_5f, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasedefault11_5ftrunc, na=False, case=False))
     )
     &
-          (
-            (Data['result_title'].str.contains(phrasedefault11_52l, na=False, case=False))
-          | (Data['result_title'].str.contains(phrasedefault11_52ltrunc, na=False, case=False))
-  
-          )    
+    (
+        (Data['result_title'].str.contains(phrasedefault11_52l, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasedefault11_52ltrunc, na=False, case=False))
+    )    
 ),"tempsdg11_05"] = "SDG11_05"
 
 print("Number of results = ", len(Data[(Data.tempsdg11_05 == "SDG11_05")])) 
@@ -9096,13 +6542,6 @@ test.iloc[0:5, ]
 *Innen 2030 redusere byenes og lokalsamfunnenes negative påvirkning på miljøet (målt per innbygger), med særlig vekt på luftkvalitet og avfallshåndtering i offentlig eller privat regi*
 
 #### Phrase 1
-```
-TS=
-(
-  ("environment* impact*" OR "footprint$" OR "foot print$")
-   NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
-)
-```
 
 
 ```python
@@ -9155,19 +6594,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-  ("smog*" OR "air pollution" OR "suspended particles" OR "particulate matter" OR "pm2.5" OR "pm10")
-  NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
-)
-OR
-TS=
-(
-   ("clean air" OR "air quality")
-   NEAR/15 ("city" OR "cities" OR "urban" OR "municipalit*" OR "human settlement*" OR "town*" OR "communit*" OR "village*" OR "populated area*" OR "public*")
-)
-```
 
 
 ```python
@@ -9185,11 +6611,11 @@ phrasedefault11_6not = r'(?:{})'.format('|'.join(termlist11_6not))
 ```python
 #Search 2
 Data.loc[(
-     (Data['result_title'].str.contains(phrasedefault11_6d, na=False, case=False))
-     & 
-      ((Data['result_title'].str.contains(phrasedefault11_6b, na=False, case=False))
-      |(Data['result_title'].str.contains(phrasedefault11_6c, na=False, case=False))
-      )
+    (Data['result_title'].str.contains(phrasedefault11_6d, na=False, case=False))
+    & 
+    ((Data['result_title'].str.contains(phrasedefault11_6b, na=False, case=False))
+     |(Data['result_title'].str.contains(phrasedefault11_6c, na=False, case=False))
+    )
     & (~Data['result_title'].str.contains(phrasedefault11_6not, na=False, case=False))
 ),"tempsdg11_06"] = "SDG11_06"
 
@@ -9203,17 +6629,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  ("solid waste" OR "bulky waste" OR "household waste" OR "domestic waste" OR "commercial waste" OR "industrial waste"
-  OR "MSW"
-  OR ("waste" NEAR/15 ("end of life" OR "eol" OR "end of chain" OR "eoc"))
-  OR "garbage" OR "rubbish"
-  )
-  AND ("waste" OR "garbage" OR "rubbish")
-)
-```
 
 
 ```python
@@ -9252,14 +6667,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 4
-```
-TS=
-(
-   ("environmental impact" OR "environmental assess*" OR "footprint*" OR "foot print*")
-    NEAR/15 (("waste" OR "garbage" OR "rubbish") NEAR/3 ("manag*" OR "collect*"))
-)
-```
-
 
 
 ```python
@@ -9269,13 +6676,10 @@ termlist11_6f = ["environmental impact", "impact on the environment", "impacts o
                  "miljøpåvirk", "fotavtrykk", "påvirke miljø", "påverke miljø", "miljøvurdering"]
   
 termlist11_6g = ["waste", "garbage", "rubbish", 
-                 "avfall", "søppel", "boss"
-                 ]
+                 "avfall", "søppel", "boss"]
 
-termlist11_6h = ["manag", "collect", "reuse", "re-use", "composting",
-                 "håndter", "handter", "innsamling", "gjennvin", "gjenbruk", "resirkuler", "renovasjon", "komposter",
-                 ] 
-
+termlist11_6h = ["manag", "collect", "reuse", "re-use", "composting", "biological degrad",
+                 "håndter", "handter", "innsamling", "samle inn", "gjennvin", "gjenbruk", "resirkuler", "renovasjon", "komposter", "forbrenn", "energi", "deponi"]
 
 phrasedefault11_6f = r'(?:{})'.format('|'.join(termlist11_6f))
 phrasedefault11_6g = r'(?:{})'.format('|'.join(termlist11_6g))
@@ -9285,7 +6689,6 @@ phrasedefault11_6h = r'\b(?:{})\b'.format('|'.join(termlist11_6h))
 
 ```python
 #Search 4
-
 phrase11_6fgh = Data.loc[(
     (Data['result_title'].str.contains(phrasedefault11_6f, na=False, case=False))
     & (Data['result_title'].str.contains(phrasedefault11_6g, na=False, case=False))
@@ -9309,18 +6712,6 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS=
-(
-  ("safe" OR "inclus*" OR "access*" OR "unrestrict*")
-  NEAR/15
-      ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$" 
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolitan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
-)
-```
-
 
 ```python
 #Termlists
@@ -9328,28 +6719,29 @@ termlist11_7a = ["safe", "inclus", "access", "unrestrict",
                  "trygg", "sikker", "inkluder", "inklus", "tilgang", "adgang", "uhindr", "ubegrens"]
 
 termlist11_7b = ["green space", "recreational area", 
-                 "public area", "public space", "public open space",
-                 "public facilit",
-                 "library area", "library space", "libraries", "community cent", "community space",
+                 "public area", "public space", "public open space", "public playground", 
+                 "public facilit", "boulevard", "public market",
+                 "library area", "library space", "libraries", "public library", "community cent", "community space", "civic cent",
                  "public garden", "community garden", "allotment garden", "urban allotment",
 
                  "grønne område", "grøntområde", "parkområde", "friluftsområde", "fritidsområde", 
-                 "offentleg område", "offentlig område" "offentlig sted", "offentleg stad", "offentlig plass", "offentleg plass", "byrom", 
+                 "offentleg område", "offentlig område" "offentlig sted", "offentleg stad", "offentlig plass", "offentleg plass", "byrom", "fellesrom",
                  "offentlig fasilit", "offentleg fasilit",
-                 "bibliotekareal", "bibliotekrom", "bibliotekbygg", "samfunnshus",
+                 "bibliotekareal", "bibliotekrom", "bibliotekbygg", "offentlig bibliotek", "samfunnshus", "forsamlingshus",
                  "bypark", "kolonihage", "parsellhage", "hageparsell", "felleshage"
                  ]
-termlist11_7c = ["park", "parks", 
-                 "parker"]
 
-termlist11_7d =  ["cities","city", "megacit", "urban", "metropolitan", 
+termlist11_7c = ["park", "parks", "street", "avenue", "square", "beach", "waterfront", "riverbank" 
+                 "gate", "torg", "strand", "vannkant", "elvebredd",]
+
+termlist11_7d =  ["cities","city", "megacit", "urban", "metropolitan",
                  "town", "village", "suburb", 
                  "municipal", "district", "region", "human settlement", "built-up area", "populated area",
                  "community", "neighborhood", "neighbourhood", 
 
                  "byer", "byar", "byen", "bydel", "byområde", "storby", "småby", "landsby", "kystby", "byplan", "byutvik", "bystruktur", "bymiljø", 
                  "bygd", "grend", "nærområde", "drabant",
-                 "kommun", "fylke", "distrikt", "befolka område", "befolket område", "tettsted", "tettstad",
+                 "kommun", "fylke", "distrikt", "befolka område", "befolket område", "tettsted", "tettstad", "offentlig lekeplass", "offentleg leikeplass",
                  "samfunn", "lokalsamfunn", "nabolag", 
                  "oslo", "bergen", "trondheim", "stavanger", "tromsø",
                  ]
@@ -9368,11 +6760,7 @@ Data.loc[(
     &
     (   
         (Data['result_title'].str.contains(phrasedefault11_7b, na=False, case=False))
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault11_7c, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault11_7d, na=False, case=False))
-        )
+        |((Data['result_title'].str.contains(phrasedefault11_7c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_7d, na=False, case=False)))
     )              
 ),"tempsdg11_07"] = "SDG11_07"
 
@@ -9382,37 +6770,23 @@ print("Number of results = ", len(Data[(Data.tempsdg11_07 == "SDG11_07")]))
 
 ```python
 test=Data.loc[(Data.tempsdg11_07 == "SDG11_07"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:25, ]
 ```
 
 #### Phrase 2
 
-```
-TS=
-(
-  ("restrict*" OR "inaccess*" OR "equal access"
-  OR "inequalit*" OR "inequit*" OR "equitab*" OR "justice" OR "injustice"
-  OR "discriminat*" OR "exclu*" OR "harass*" OR "assault*" OR "unsafe"
-  )
-  NEAR/15
-      ("green space$" OR "recreational area$" OR "public area$" OR "public space$" OR "public garden$"
-      OR "community garden$" OR "allotment garden$" OR "urban allotment$"
-      OR ("park$" NEAR/15 ("city" OR "cities" OR "metropolotan" OR "town$" OR "built-up area$" OR "urban*" OR "neighbourhood$" OR "neighborhood$"))
-      )
-)
-```
-
-Here, as it is a title search, we have decided to drop the combination of "parks" + "cities", so that "parks" can be alone.
+Here, as it is a title search, we have decided to drop the combination of "parks" + "cities", so that "parks" can be alone. May increase results about e.g. national parks.
 
 
 ```python
 #Termlists
-termlist11_7e = ["restrict", "inaccess", "equal access", "inequalit", "inequit", "equitab", "justice", "injustice", 
-                 "discriminat", "exclud", "harass", "assault", "unsafe"
+termlist11_7e = ["restrict", "inaccess", "equal access", "inequalit", "equit", "justice", 
+                 "discriminat", "exclud", "harass", "assault", "unsafe",
+                 
                  "restrik", "utilgjenge", "allmen tilgang", "allmenn adgang", "lik adgang", "lik tilgang", "uhindr", "ubegrens", "ulikhet", "rettferd", 
                  "diskrimin", "utesteng", "utenforskap", "eksklude", "trakasser", "mobb", "overfall", "angrep", "utrygg"
                  ]
-
+#"equit" will find "inequitable", "justice" will find "injustice" etc.
 phrasedefault11_7e = r'(?:{})'.format('|'.join(termlist11_7e))
 ```
 
@@ -9447,21 +6821,6 @@ test.iloc[0:5, ]
 
 *Støtte positive økonomiske, sosiale og miljømessige forbindelser mellom byområder, omland og spredtbygde områder ved  å styrke nasjonale og regionale planer*
 
-```
-TS=
-(
-  (
-    ("national" OR "regional")
-    NEAR/3 ("plan" OR "planning" OR "plans" OR "strateg*" OR "framework$" OR "program" OR "programs" OR "policy" OR "policies" OR "cooperat*")
-  )
-  NEAR/15
-      ("city" OR "cities" OR "urban*" OR "town$" OR "village$"
-      OR "built-up area$" OR "neighbourhood$" OR "neighborhood$" OR "settlement$"
-      OR "rural area$" OR "rural development"
-      )
-)
-```
-
 
 ```python
 #Termlists
@@ -9469,6 +6828,7 @@ termlist11_Aa = ["national", "regional",
                  "nasjonal", "landsdek"]
 termlist11_Ab = ["plan", "strateg", "framework", "program", "policy", "policies", "cooperat",
                  "rammeverk", "styring", "politikk", "politisk", "samarbeid", "koopera"]
+
 termlist11_Ac =   ["cities", "megacit", "urban", "metropolitan", 
                  "town", "village", "suburb", 
                  "municipal", "district", "settlement", "built-up area", "populated area",
@@ -9515,34 +6875,14 @@ test.iloc[0:5, ]
 
 *Innen 2020 oppnå en betydelig økning i antall byer og lokalsamfunn som vedtar en integrert politikk og gjennomfører planer med  sikte  på inkludering, bedre ressursbruk, begrensning av og tilpasning til klimaendringer samt evne til å stå imot og håndtere katastrofer, og dessuten utvikle og iverksette et helhetlig system for risikostyring og katastrofehåndtering på alle nivå, i tråd med Sendai-rammeverket for katastrofeberedskap for 2015–2030*
 
-```
-TS=
-(
-  ("sendai framework" OR "disaster risk reduction"
-  OR "cancun adapation framework"
-  OR "readiness and preparatory support programme" OR "readiness programme"
-  OR
-    (
-      ("plan" OR "plans" OR "planning" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance" OR "framework$")
-      NEAR/3 ("disaster$" OR "risk$" OR "climate change" OR "climatic change$" OR "global warming" OR "changing climate" OR "climate action" OR "climate mitigation")
-    )
-  )
-  NEAR/15
-      ("city" OR "cities" OR "urban*" OR "metropolitan" OR "town$" OR "village$"
-      OR "built-up area$" OR "neighbourhood$" OR "neighborhood$" OR "settlement$"
-      OR "rural area$" OR "rural development"
-      )
-)
-```
-
 
 ```python
 #Termlists
 termlist11_Ba = ["sendai", "disaster risk reduction", "cancun adapation framework", "readiness and preparatory support programme", "readiness programme",
                  "katastrofeforebygging", "cancun-avtal", "cancun avtal", "klimatilpas", "forebyggingstiltak"
                  ]
-termlist11_Bb = ["plan ", "plans", "planning", "strateg", "program", "policy", "policies", "governance", "framework",
-                 "rammeverk", "politikk", "politisk", "forvalt", "styring", "ledelse", "leiing", "retningslin"
+termlist11_Bb = ["plan ", "plans", "planning", "strateg", "program", "policy", "policies", "governance", "framework", "preparedness",
+                 "rammeverk", "politikk", "politisk", "forvalt", "styring", "ledelse", "leiing", "retningslin", "forebygg", "beredskap",
                  ]
                  #space after "plan" to prevent "plant"
 termlist11_Bc = ["disaster", "risk judgement", "climate change", "climatic change", "global warming", "changing climate", "climate action", "climate mitigation", 
@@ -9604,54 +6944,31 @@ test.iloc[0:5, ]
 
 
 
-```
-TS=
-(
-  ("local building material$" OR "local construction material$"
-  OR "sustainable architecture" OR "resilient architecture"
-  OR
-    (
-      ("buildings" OR "sustainable building" OR "masonry"
-      OR
-        (
-          ("construction" OR "building")
-           NEAR/5 ("material$" OR "method$" OR "technique$" OR "industry" OR "industries" OR "company" OR "companies" OR "home$" OR "house$" OR "residential" OR "sector")
-        )
-      )
-      NEAR/15
-          ("sustainab*" OR "ecofriendly" OR "eco friendly" OR "environmentally friendly" OR "resilien*"
-          OR ("local*" NEAR/3 "materials") OR "locally available" OR "native" OR "traditional"
-          )
-    )          
-  )
-  AND
-    (***LDCs***
-    )
-)
-```
-
 
 ```python
 #Term lists
 
-termlist11_6i = ["sustainable architecture","resilient architecture","sustainable building","sustainable construction",
+termlist11_Ca = ["sustainable architecture","resilient architecture","Sustainable Building and Construction Initiative","sustainable building","sustainable construction",
                  "local building material", "local construction material", "locally available building material",
+                 
                  "bærekraftig arkitektur","berekraftig arkitektur","bærekraftig bygning","berekraftig bygning","bærekraftig konstruksjon", "berekraftig konstruksjon",
-                 "lokale bygningsmatrial","lokale konstruksjonsmaterial"
-                 ] 
+                 "lokale bygningsmatrial","lokale konstruksjonsmaterial"] 
   
-termlist11_6j = ["sustainable", "eco-friendly", "ecofriendly", "environmentally friendly", "resili",
+termlist11_Cb = ["sustainable", "green", "eco-", "ecofriendly", "environmentally friendly", "resili",
                  "local material", "locally available", "native", "traditional",
-                 "bærekraftig", "berekraftig", "miljøven", "økoven", "tradisjonel", "lokal"
-                 ]
-termlist11_6k = ["construction", "buildings", "building material", "building technique", "building method", "building industry", "home building", "building homes",
-                 "konstruksjon", "bygge", "byggningsbransj", "byggebransj"
-                 ]
-                 #"building" causes issues (capacity building etc.)
+                 
+                 "bærekraftig", "berekraftig", "grøn", "miljøven", "økoven", "tradisjonel", "lokal"]
 
-phrasedefault11_6i = r'(?:{})'.format('|'.join(termlist11_6i))
-phrasedefault11_6j = r'(?:{})'.format('|'.join(termlist11_6j))
-phrasedefault11_6k = r'(?:{})'.format('|'.join(termlist11_6k))
+termlist11_Cc = ["construction", "buildings", "building material", "building technique", "building method", "building industry", "home building", "building homes",
+                 "konstruksjon", "bygge", "byggningsbransj", "byggebransj"]
+                 #"building" causes issues (capacity building etc.)
+    
+termlist11_Cd_case = ["SBCI"]
+
+phrasedefault11_Ca = r'(?:{})'.format('|'.join(termlist11_Ca))
+phrasedefault11_Cb = r'(?:{})'.format('|'.join(termlist11_Cb))
+phrasedefault11_Cc = r'(?:{})'.format('|'.join(termlist11_Cc))
+phrasedefault11_Cd_case = r'\b(?:{})\b'.format('|'.join(termlist11_Cd_case))
 ```
 
 
@@ -9659,55 +6976,25 @@ phrasedefault11_6k = r'(?:{})'.format('|'.join(termlist11_6k))
 #Search 1 - in LDCs
 Data.loc[(
     (
-      (Data['result_title'].str.contains(phrasedefault11_6i, na=False, case=False))
-      | 
-      (
-          (Data['result_title'].str.contains(phrasedefault11_6j, na=False, case=False))
-          & (Data['result_title'].str.contains(phrasedefault11_6k, na=False, case=False))
-      )
+        (Data['result_title'].str.contains(phrasedefault11_Ca, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault11_Cb, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault11_Cc, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault11_Cd_case, na=False, case=False))
     )
     & (Data['LDCs']==True)
 ),"tempsdg11_c"] = "SDG11_c"
+
+print("Number of results = ", len(Data[(Data.tempsdg11_c == "SDG11_c")]))
 ```
 
 
 ```python
-print("Number of results = ", len(Data[(Data.tempsdg11_c == "SDG11_c")]))
+test=Data.loc[(Data.tempsdg11_c == "SDG11_c"), ("result_id", "result_title")]
+test.iloc[0:5, ]
 ```
 
 ### SDG 11 mentions
 
-```
-TS=
-("SDG 11" OR "SDGs 11" OR "SDG11" OR "sustainable development goal$ 11"
-OR ("sustainable development goal$" AND "goal 11")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 11")
-  AND ("sustainable cities")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 11")
-    NEAR/15 ("cities")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-```
-  Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
+Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 
 ```python
@@ -9760,97 +7047,1642 @@ test=Data.loc[(Data.tempmentionsdg11 == "SDG11"), ("result_id", "result_title")]
 test.iloc[0:5, ]
 ```
 
+## SDG 12
+
+### SDG 12 - sutainable consumption and production string
+
+In SDG12, there is a string often re-used/modified to specify sustainable consumption and production. This is included here and reused in targets as needed (currently 4 targets, 12.1, 12.2, 12.6, 12.a, in an unmodified form). 
+
+
+```python
+#Term lists
+termlist12_scp1 = ["ecobuilding", "eco-building", "eco-housing", "eco-construct", "eco-design", "eco-technolog",
+                   "green building", "green housing", "green construct", "green design", "green technolog",
+                   "sustainable building", "sustainable housing", "sustainable construct", "sustainable design", "sustainable technolog",
+                   "Sustainable Building and Construction Initiative", "SCBI",
+                   "sustainable lifestyle" , "sustainable life style" , "green lifestyle" , "eco-lifestyle" , "environmental lifestyle",
+                   "ecolabel", "eco-label", 
+                   "ecotourism", "eco-tourism",
+                   "responsible consump", "cleaner production",
+                   "circular econom", "circular bioeconom", "circular product", "circular consumption",
+                   "lifecycle analys", "lifecycle assess", "material lifecycle",
+                   "cradle-to-cradle", "cradle to cradle",
+                   
+                   "bærekraftig liv", "berekraftig liv", "grønn livsstil", "miljøvennlig hverdag", "miljøvennlig liv",
+                   "miljømerk", "svanemerk",
+                   "økoturism",
+                   "ansvarlig forbruk", "ansvarleg forbruk", "renere produksjon",
+                   "sirkulær økonomi", "sirkulær bioøkonomi", "sirkulær produk", "sirkulær forbruk", 
+                   "livssyklusanalyse", "livsløpsvurdering",
+                   "vugge til vugge"
+                  ]
+# In Norwegian, the construction terms (translations of ecobuilding etc.) are added to the phrase below as it needs more flexibility in this language
+# Svanemerk is a Norwegian ecolabelling scheme
+
+termlist12_scp2_trunc = ["green", "eco", "eco-.*", "sustainab.*", "responsib.*", "environmental.*", "ecological.*",
+                         "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*"
+                        ]
+# truncated as "eco" causes noise if not
+#"Grønn" (NO) is truncated to avoid "grønnsak"
+termlist12_scp3 = ["consumer", 
+                   "certificat", "label",
+                   "tourism", "tourist", "travel", "hospitality", "leisure",
+                   
+                   "forbruk", "kunder",
+                   "stempel", "akkredit", "sertifi", "merke", "merking",
+                   "turism", "turist", "reise", "fritid",
+                   "bygg", "bolig", "materialer"]
+#will find e.g. "miljøsertifisering" (NO)
+
+termlist12_scp4_trunc = ["utili.*", "use", "usage", "using", "design.*",
+                         "bruk.*", "forbruk"]
+
+termlist12_scp5 = ["sidestream", "side-stream", "byproduct", "by-product"
+                  "sidestrøm", "biprodukt"]
+
+termlist12_scp6 = ["recycl", "reuse", "re-use", "reusing", "re-using", "refurbish", "re-furbish", "remanufactur", "re-manufactur", "repurpos", "re-purpos",
+                   "compost", "codigest", "co-digest",
+                   "resource efficien", "resource-use efficien", "material efficicen", "material-use efficien", "footprint",
+                   
+                   "resirkul", "gjenbruk", "ombruk",
+                   "kompost",
+                   "ressurseffektiv", "materialeffektiv", "effektiv bruk av material", "effektiv bruk av ressurs", "fotspor"]
+termlist12_scp7 = ["bioeconom", "bio-econom", "produc", "consum",
+                   "packaging",
+                   "sidestream", "side-stream", "byproduct", "by-product"
+                   "resource", "material", "matter", "biomass",
+                   "waste", "garbage", "trash",
+                   
+                   "bioøkonom", "produksj", "produkter", "forbruk",
+                   "innpakning", "emballasje", "emballering", 
+                   "sidestrøm", "biprodukt",
+                   "ressurs",
+                   "avfall", "søppel", "kloakk", " slam"]
+
+termlist12_scp8_trunc = ["green", "eco", "eco-.*", "sustainab.*", "environmental.*", "ecological.*",
+                         "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "miljø.*"]
+termlist12_scp9 = ["waste", "garbage", "trash", "rubbish", "litter", "sewage", "sludge",
+                   "avfall", "søppel", "kloakk", " slam"
+                  ]
+termlist12_scp10 = ["management", "handling", "collect", "transport", "storing", "dispos", "treatment", "processing", "sorting", "incinerat", "combust", 
+                    "end of life", "end of chain", "end-of-life", "end-of-chain",
+                    "packaging", "labelling", 
+                    
+                    "ledelse", "håndter", "samle", "samling", "oppbevar", "lagring", "avhend", "tømming", "prossess", "sortering", "sortere", "forbrenning",
+                    "innpakning", "emballasje", "emballering", "stempel", "akkredit", "sertifi", "merke", "merkering"]
+# "behandling" (NO) not included, as mostly seems to result in e.g. "miljøbehandling" in health
+termlist12_scp11 = ["footprint"
+                    "produc", "consum",
+                    "retail", "trade", "market",
+                    " handling", "storage", "transport", "distribution network", "packaging", "supply chain", "logistics",
+                    "procurement", "aquisition", "purchas", "investment",
+                    "resource efficien", "resource-use efficien", "material efficicen", "material-use efficien",
+                    "food system", "food production", "food consumption", "food security",
+                    "agricultur", "cropping system", "agroforest", "agro-forest", "aquaculture", "fisher", "fish farm",
+                    
+                    "forspor",
+                    "produksj", "forbruk",
+                    "marked", "detaljhandel", "faghandel", "dagligvare",
+                    "håndter", "innsaml", "samling", "oppbevar", "lagring", "innpakning", "emballasje", "emballering", "forsyningskjede", "logistikk",
+                    "anskaffels", "anbud", "innkjøp", "investering",
+                    "ressurseffektiv", "materialeffektiv", "effektiv bruk av material", "effektiv bruk av ressurs", 
+                    "matsystem", "matproduksjon", "matforbruk", "matsikkerhet",
+                    "jordbruk", "landbruk", "havbruk", "fiskeoppdrett"]
+# The space in front of "handling" (EN/NO) is necessary to prevent "behandling" in Norwegian. Not needed in other languages potentially.
+
+phrasedefault12_scp1 = r'(?:{})'.format('|'.join(termlist12_scp1))
+phrasespecific12_scp2 = r'\b(?:{})\b'.format('|'.join(termlist12_scp2_trunc))
+phrasedefault12_scp3 = r'(?:{})'.format('|'.join(termlist12_scp3))
+phrasespecific12_scp4 = r'\b(?:{})\b'.format('|'.join(termlist12_scp4_trunc))
+phrasedefault12_scp5 = r'(?:{})'.format('|'.join(termlist12_scp5))
+phrasedefault12_scp6 = r'(?:{})'.format('|'.join(termlist12_scp6))
+phrasedefault12_scp7 = r'(?:{})'.format('|'.join(termlist12_scp7))
+phrasespecific12_scp8 = r'\b(?:{})\b'.format('|'.join(termlist12_scp8_trunc))
+phrasedefault12_scp9 = r'(?:{})'.format('|'.join(termlist12_scp9))
+phrasedefault12_scp10 = r'(?:{})'.format('|'.join(termlist12_scp10))
+phrasedefault12_scp11 = r'(?:{})'.format('|'.join(termlist12_scp11))
+```
+
+
+```python
+#Search
+Data["scp"]=(
+    (Data['result_title'].str.contains(phrasedefault12_scp1, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasespecific12_scp2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_scp3, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasespecific12_scp4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_scp5, na=False, case=False)))
+    |((Data['result_title'].str.contains(phrasedefault12_scp6, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_scp7, na=False, case=False)))
+    |
+        (
+            (Data['result_title'].str.contains(phrasespecific12_scp8, na=False, case=False)) 
+            & 
+                ((Data['result_title'].str.contains(phrasedefault12_scp11, na=False, case=False))
+                 |((Data['result_title'].str.contains(phrasedefault12_scp9, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_scp10, na=False, case=False)))
+                )
+        )
+    )
+
+print("Number of results = ", len(Data.loc[Data['scp']])) 
+```
+
+
+```python
+#Results
+test=Data.loc[Data['scp']]
+test.iloc[0:5, [3,5,6,25,26]]
+```
+
+### SDG 12.1
+
+*12.1 Implement the 10‑Year Framework of Programmes on Sustainable Consumption and Production Patterns, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries*
+
+*Gjennomføre det tiårige handlingsprogrammet for bærekraftig forbruk og produksjon ved at alle land deltar, men slik at de utviklede landene går foran, samtidig som det tas hensyn til utviklingslandenes utviklingsnivå og muligheter*
+
+
+```python
+#Term lists
+#Here in the title search it is simplified, so that `national OR regional...` etc. is not included
+
+termlist12_1a = ["10 year framework of program", "10-year framework of program", "10YFP",
+                "handlingsprogrammet for bærekraftig forbruk og produksjon"]
+
+termlist12_1b_trunc = ["polic.*", "govern.*", "action plan.*", "regulat.*", "legal.*", "law", "laws", "legislat.*", "standards", "code of conduct.*", "accounting", "reporting",
+                       "politikk.*", "handlingsplan.*", "tiltaksplan.*", "regulasj.*", ".*lovverk.*", "lovgiv.*", "utredning.*", "utgreiing", "standarder", "retningslinje.*", "rapportering.*"]
+
+termlist12_1c_trunc = ["strateg.*", "framework", "program.*", "plan", "plans", "planning", "target.*", "goal.*", "instrument", "instruments", "national standard", "international standard",
+                       "rammeverk", "planer", "planar", "planlegg.*", "mål", "nasjonal standard", "internasjonal standard"]
+
+phrasedefault12_1a = r'(?:{})'.format('|'.join(termlist12_1a))
+phrasespecific12_1b = r'\b(?:{})\b'.format('|'.join(termlist12_1b_trunc))
+phrasespecific12_1c = r'\b(?:{})\b'.format('|'.join(termlist12_1c_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault12_1a, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific12_1b, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific12_1c, na=False, case=False))
+    )
+    &(Data['scp']==True)
+    ),"tempsdg12_01"] = "SDG12_01"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_01 == "SDG12_01")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_01 == "SDG12_01"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.2
+
+*12.2 By 2030, achieve the sustainable management and efficient use of natural resources*
+
+*Innen 2030 oppnå bærekraftig forvaltning og effektiv bruk av naturressurser*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+
+termlist12_2a_trunc = ["eco", "eco-.*", "green", "sustainab.*", "responsibl.*", "environmental.*", "ecological", "long-term management",
+                       "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*", "strategisk planlegging", "langsiktig planlegging", "langsiktig ledelse"]
+
+termlist12_2c_trunc = ["manag.*", "extract.*", "practice.*", "resource use", "usage", "consumption", "consume.*",
+                       "govern.*", "development", "administrat.*", "plan", "planning", "policy", "policies",
+                       
+                       "forvalt.*", "høsting", "praksis", "bærekraftig bruk", "berekraftig bruk", "ressursbruk", "bruk av ressurs", "forbruk",
+                       "strying.*", "utvikling", "handlingsplan.*", "tiltaksplan.*", "planer", "planar", "planlegg.*", "regulasj.*", "lovverk", "lovgiv.*", "utredning", "utgreiing", "rammeverk", "politikk.*"]
+
+#Terms that already indicate USE of resources (2d) - combined with sustainable/eco etc (2a)
+termlist12_2d = ["forestry", 'silvicult', "arboritcult", "logging",
+                 "mining",
+                 "fishery", "fisheries", "hunting",
+                 "water use", "use of water",
+                 
+                 "skogbruk", "skogskjøtsel", "skogpleie", "skogsvirke",
+                 "gruvedrift",
+                 "fiskeri", "jakt",
+                 "vannbruk", "bruk av ferskvann"]
+
+#Terms that are just resources (2e) - combined with sustainable/eco (2a) and management/extraction (2c).
+termlist12_2e = ["natural resource", "natural material", "renewable resource", "renewable material", "natural capital", "raw material", 
+                 "forest", "woodland", 
+                 "ocean", "marine", "fresh water", "lake", "river", "coastal", "wildlife", 
+                 "water supply", "water supplies", "water resource", "freshwater resource", "supply of freshwater", "water management",
+                 "mineral",
+                 
+                 "naturressurs", "naturlige materialer", "fornybar ressurs", "fornybare ressurs", "fornybar material", "fornybare material", "naturkapital", "råvare",
+                 "skog",
+                 "sjøen", "havet", "ferskvann", "innsjø", 
+                 "vannressurs", "vassdrag", "grunnvann", "vannforvalt",
+                 "landressurs", "jordressurs"]
+termlist12_2e_trunc = ["land", "soil", "soils", "metal", "metals", "ore", "ores",
+                       "sjø", "hav", "kyst", "kysten", "jord", ".*malm", "malmer"]
+
+termlist12_2f = ["global forest goals", "forest under certification", "certified forest area", "international resource panel",
+                "strategiske plan for skog", "sertifisering av skog", "skog sertifisering", "internasjonale ressurspanelet"]
+
+phrasespecific12_2a = r'\b(?:{})\b'.format('|'.join(termlist12_2a_trunc))
+phrasespecific12_2c = r'\b(?:{})\b'.format('|'.join(termlist12_2c_trunc))
+phrasedefault12_2d = r'(?:{})'.format('|'.join(termlist12_2d))
+phrasedefault12_2e = r'(?:{})'.format('|'.join(termlist12_2e))
+phrasespecific12_2e = r'\b(?:{})\b'.format('|'.join(termlist12_2e_trunc))
+phrasedefault12_2f = r'(?:{})'.format('|'.join(termlist12_2f))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_2f, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasespecific12_2a, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_2d, na=False, case=False)))
+    |
+    (
+        (Data['result_title'].str.contains(phrasespecific12_2a, na=False, case=False))
+        & (Data['result_title'].str.contains(phrasespecific12_2c, na=False, case=False))
+        & ((Data['result_title'].str.contains(phrasedefault12_2e, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_2e, na=False, case=False)))
+    )
+    ),"tempsdg12_02"] = "SDG12_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_02 == "SDG12_02")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_02 == "SDG12_02"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+#Here we reuse the natural resources and management/use terms from phrase 1 (but note that this phrase also includes terms for some unsustaibable natural resources)
+
+termlist12_2g = ["unsustainab", "irresponsib", "unecological", "inefficien",
+                 "ubærekraftig", "uansvarlig", "ueffektiv"]
+
+termlist12_2h_trunc = ["fossil fuel.*", "coal", "oil", "natural gas", "peat", "diesel", "gasoline", "kerosene", "petroleum", "energy resource.*",
+                       "fossilt brensel.*", "fossile brensl.*", "fossilt brennstoff.*", "fossile brennstoff.*", "kull", "olje", "naturgass", "parafin.*", "energiressurs.*"]
+
+phrasedefault12_2g = r'(?:{})'.format('|'.join(termlist12_2g))
+phrasespecific12_2h = r'\b(?:{})\b'.format('|'.join(termlist12_2h_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault12_2d, na=False, case=False))
+        |
+        (
+            (Data['result_title'].str.contains(phrasespecific12_2c, na=False, case=False))
+            & 
+            ((Data['result_title'].str.contains(phrasedefault12_2e, na=False, case=False))
+             |(Data['result_title'].str.contains(phrasespecific12_2e, na=False, case=False))
+             |(Data['result_title'].str.contains(phrasespecific12_2h, na=False, case=False))
+            )
+        )
+    )
+    & (Data['result_title'].str.contains(phrasedefault12_2g, na=False, case=False))
+    ),"tempsdg12_02"] = "SDG12_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_02 == "SDG12_02")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_02 == "SDG12_02"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 3
+
+
+```python
+#Termlists
+#Here we reuse the parts/all of the scp string, even though it is slightly wider than the original WoS combination string
+#In addition, there are two other new elements added:
+# "efficient use" (in WOS = ("saving" OR "save$" OR "conserv*" OR "efficien*") NEAR/5 ("use" OR "using" OR "usage" OR "utili*" OR "consumption"))
+# circular economy (stands alone without having to mention natural resources in WOS)
+#And combine it with the natural resources strings in phrase 1
+
+termlist12_2i = ["circular econom", "circular bioeconom", "circular product", "circular consumption",
+                 "material lifecycle", "material footprint",
+                 
+                 "sirkulær økonomi", "sirkulær bioøkonomi", "sirkulær produk", "sirkulær forbruk",
+                 "materialets livssyklus", "materialenes livssyklus"]
+
+termlist12_2j = ["efficient consum", "efficient us", "conservative us",
+                 "effektiv forbruk", "effektiv bruk", "sparsom"]
+
+phrasedefault12_2i = r'(?:{})'.format('|'.join(termlist12_2i))
+phrasedefault12_2j = r'(?:{})'.format('|'.join(termlist12_2j))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_2i, na=False, case=False))
+    | ((Data['result_title'].str.contains(phrasedefault12_scp6, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_scp7, na=False, case=False)))
+    |
+    (
+        ((Data['result_title'].str.contains(phrasedefault12_2d, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific12_2e, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasedefault12_2e, na=False, case=False))
+        )
+        & ((Data['scp']==True)|(Data['result_title'].str.contains(phrasedefault12_2j, na=False, case=False)))
+    )
+    ),"tempsdg12_02"] = "SDG12_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_02 == "SDG12_02")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_02 == "SDG12_02"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:10, ]
+```
+
+#### Phrase 4
+
+
+```python
+#Termlists
+#Here we reuse the natural resources strings in phrase 1/2, but some more of the terms are combined with "resources" 
+#(to avoid being too general, e.g. "loss + land" is forced to "loss + land + resources")
+
+#As this is a title search, we do not include the "reduce" element - so it is expanded to be about consumption generally
+
+termlist12_2k = ["resource", "material",
+                 "ressurs"]
+
+termlist12_2l_trunc = ["material footprint", "material consumption", "ecological footprint", "resource footprint",
+                       "reduce the us", "decrease the us", "reduce usage", "decrease usage",
+                       "extract", "extraction", "consum.*", 
+                       "deplet.*", "exploit.*", 
+                       "waste", "loss", 
+                       
+                       ".*fotspor", 
+                       "reduserer bruk",
+                       "ekstrak.*", "forbruk", "uttømm.*", 
+                       "svinn", "avfall", "tap"]
+#"using" caused a lot of noise, many results about for example "Examining resource x USING method y", and not actually about use of the resource.
+# Extraction is specified as "extracts" gives results from oil extracts
+
+phrasedefault12_2k = r'(?:{})'.format('|'.join(termlist12_2k))
+phrasespecific12_2l = r'\b(?:{})\b'.format('|'.join(termlist12_2l_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault12_2d, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault12_2e, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_2k, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasespecific12_2e, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_2k, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasespecific12_2h, na=False, case=False))
+    )
+    & (Data['result_title'].str.contains(phrasespecific12_2l, na=False, case=False))
+    ),"tempsdg12_02"] = "SDG12_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_02 == "SDG12_02")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_02 == "SDG12_02"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 5
+
+Note - this is identical to 2.4 phrase 4
+
+
+```python
+termlist12_2m = ["food-produc", "food produc", "grower", "agrifood", "agri-food", "agro-food", "agro food",
+                "agricultur", "farm", "smallhold", "small-hold", "permacultur", "cropping", "orchard", "arable land",
+                "pasture", "pastoral", "agroforest", "agro-forest", "silvopastur", "silvopastoral",
+                "aquacultur", "maricultur", "fisher", "fish farm", "herding",
+                "crop", "grain", "vegetable", "fruit", "cereal", " rice", "wheat", "maize", "pulses", "legume",
+                "livestock", "fish", "salmon", "cattle", "sheep", "poultry", "pigs", "goats", "chicken", "buffalo", "ducks", "reindeer",
+                "fodder", "animal feed ", "fish feed ",
+                
+                "matproduksjon", "matprodusent",
+                "gård", "gard", "landbruk", "jordbruk", "gårdsbruk", "gardsbruk", "småbruk", "familiebruk", "dyrket mark", "dyrkamark",
+                "dyrka mark", "kultivert mark",
+                "beite", "dyreproduksjon", "meieri",
+                "fiskeoppdrett", "lakseoppdrett", "havbruk",
+                "grønnsak", "grønsak", "belgfrukt", "frukt", "fiske", "laks", " sau ", "sauedrift", "sauehold", "storfe", " svin", "fjærkre", " rein",
+                "bærekraftig fôr", "berekraftig fôr", "dyrefôr", "dyrefor ", "fiskefôr", "fiskefor "]
+                #Space before " rice" to avoid "price", similarly "sau/svin" (NO) and after "xxxfor" (NO, to avoid "forbund" etc.). Note that "agricultur" will also cover e.g. "ecoagriculture"
+    
+termlist12_2n = ["ecoagricultur", "eco-agricultur", "agroecolog", "permaculture", "conservation agriculture", "conservation farming",
+                "organic farm", "organic agricult", "organic crop", "organic orchard", "organic arable", "organic pasture",
+                "organic aquacultur", "organic salmon", "organic pig", "organic poultry", "organic dairy", "organic reindeer",
+
+                "økolandbruk", "økojordbruk", "permakultur"]
+                #"organic" is not used alone, but is instead combined in phrases to avoid e.g. organic acids, organic matter. Moved to this part rather than 4j as it can stand alone.
+                #"bærekraftig fôr" (NO) is added specifically due to it's inclusion as a priority area ("samfunnsoppdrag") in the governments Long-term plan.
+              
+termlist12_2o = ["sustainab", "eco-friendly", "environmentally friendly", "ecosystem approach", "ecosystem based",
+                "natural pest control", "natural pest management", "biological pest control", "intergrated pest management",
+                "intercropping", "cover crop", "crop rotation", "polyculture", "permaculture", 
+                "reduced tillage", "mulch", "mulching",
+                "water conservation",
+
+                "bærekraftig", "berekraftig", "selvbærende", "sjølvberande", "miljøvennlig", "miljøvennleg", "miljøvenleg", "miljøbevisst", "miljømedveten", "miljømedviten", "økosystem", 
+                "økologisk", "biologisk bekjempelse", "biologisk nedkjemping", "biologisk skadedyrkontroll", "integrert skadedyrkontroll", "integrert ugrasbekjempelse", "integrert plantevern",
+                "vekstskifte", "grønngjødsling", "dekkvekst", "underkultur", "underså", "ettervekster", "polykultur", "permakultur",
+                "redusert jordarbeiding", "gjødselplanlegging",
+                "vannsparing"                ] 
+
+phrasedefault12_2m = r'(?:{})'.format('|'.join(termlist12_2m))
+phrasedefault12_2n = r'(?:{})'.format('|'.join(termlist12_2n))
+phrasedefault12_2o = r'(?:{})'.format('|'.join(termlist12_2o))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_2n, na=False, case=False)) 
+    | ((Data['result_title'].str.contains(phrasedefault12_2m, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_2o, na=False, case=False)))
+    ),"tempsdg12_02"] = "SDG12_02"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_02 == "SDG12_02")])) 
+```
+
+### SDG 12.3
+
+*12.3 By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses*
+
+*Innen 2030 halvere matsvinn per innbygger på verdensbasis, både i detaljhandelen og blant forbrukere, og redusere svinn i produksjons- og forsyningskjeden, inkludert svinn etter innhøsting*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+
+termlist12_3a = ["food", "fodder"
+                 "matvare", "matprodukt", "matsvinn", "matprodu", "bærekraftig fôr", "berekraftig fôr", "dyrefôr", "fiskefôr"]
+
+termlist12_3a_trunc = ["animal feed", "fish feed", 
+                       "mat", "dyrefor", "fiskefor"]
+
+termlist12_3b_trunc = ["loss", "losses", "lost", "waste", "wastage", "spoil.*", "discard.*", "incinerat.*", "perish.*",
+                       "matsvinn.*", "svinn.*", "tap", "tapt", "avfall", "søppel", "kaste.*", "går til spille", "går til grunne"]
+#This works ok without the NOT phrase in a title search
+
+phrasedefault12_3a = r'(?:{})'.format('|'.join(termlist12_3a))
+phrasespecific12_3a = r'\b(?:{})\b'.format('|'.join(termlist12_3a_trunc))
+phrasespecific12_3b = r'\b(?:{})\b'.format('|'.join(termlist12_3b_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_3a, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_3a, na=False, case=False)))
+    &(Data['result_title'].str.contains(phrasespecific12_3b, na=False, case=False))
+),"tempsdg12_03"] = "SDG12_03"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_03 == "SDG12_03")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_03 == "SDG12_03"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+#Re-use the "loss" terms from phrase 1 (phrasespecific12_3b)
+
+termlist12_3c = ["cereal", "pulses", "fruit", "berry", "berries", "vegetable", "soybean", "lentil", "chickpea", "legume",
+                 "grain", "wheat", "maize", "livestock", "cattle", "sheep", "poultry", "goat", "chicken", "buffalo",
+                 "dairy waste", "slaughter",
+                 "harvest", 
+                 
+                 "grønnsak", "grønsak", "frukt", 
+                 "oppdrettslaks", "oppdrett", "storfe", "fjærkre",
+                 "dyreproduksjon", "meieri", "slakt",
+                 "innhøst", "høsting"]
+
+termlist12_3c_trunc = ["crop", "crops", "rice", "fisher.*", "pig", "pigs", "duck", "milk",
+                       "sau", "sauer", "sauedrift", "geit", "geiter", "svin", "svinedrift", "rein", "reindrift", "melk", "fiske.*"]
+
+termlist12_3d = ["production", "processing", " handling", "storage", "transport", "distribution", "market", "packaging", "supply chain", "logistics",
+                 "retail", "food service", "food service", "restaurant", "household", "farm", 
+                 "consumer", "consumption", "consume", 
+                 "harvest", "slaughter",
+                 
+                 "produksjon", "håndter", "innsaml", "samling", "oppbevar", "lagring", "innpakning", "emballasje", "prossess", "innpakning", "emballasje", "emballering", "forsyningskjede", "logistikk",            
+                 "matindustri", "matvare", "dagligvare", "hushold", "gård",
+                 "forbruk",
+                 "innhøst", "høsting", "slakt"]
+
+phrasedefault12_3c = r'(?:{})'.format('|'.join(termlist12_3c))
+phrasespecific12_3c = r'\b(?:{})\b'.format('|'.join(termlist12_3c_trunc))
+phrasedefault12_3d = r'(?:{})'.format('|'.join(termlist12_3d))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_3c, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_3c, na=False, case=False)))
+    & (Data['result_title'].str.contains(phrasedefault12_3d, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasespecific12_3b, na=False, case=False))
+    ),"tempsdg12_03"] = "SDG12_03"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_03 == "SDG12_03")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_03 == "SDG12_03"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.4
+
+*12.4 By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment*
+
+*Innen 2020 oppnå en mer miljøvennlig forvaltning av kjemikalier og alle former for avfall gjennom hele livssyklusen, i samsvar med internasjonalt vedtatte rammeverk, og betydelig redusere utslipp av kjemikalier og avfall til luft, vann og jord for mest mulig å begrense skadevirkningene for folkehelsen og for miljøet*
+
+
+#### Phrase 1 (& 5)
+Note that this will also cover phrase 5 wos string, which uses the terms `"unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe"` (covered by truncation here).
+
+
+```python
+#Termlists
+
+termlist12_4a_trunc = [".*sustainab.*", ".*responsib.*", "environmental.*", ".*ecological.*", "eco", "eco-.*", "green", "safe", "unsafe", "safely", "safety",
+                       "bærekraft.*", "berekraft.*", "ubærekraftig", "ansvarlig.*", "uansvarlig", "grønne.*", "grønn", "øko", "miljø.*", "trygg", "utrygg", "sikker.*"]
+
+termlist12_4b_trunc = ["life cycle.*", "lifecycle.*", "end of life", "end of chain",
+                       "management", "handling", "packaging", "labelling", "storing", "storage", "stored",
+                       "disposal", "dispose", "transport.*", "process.*", "logistics",
+                       "use", "uses", "usage", "using", "utilis.*", "utiliz.*", "production",
+                       
+                       "livssyklus.*", "livløp.*", 
+                       "håndter.*", "innsaml.*", "samling", "innpakning", "emballasje", "emballering", "stempel", "merking", "akkredit.*", "sertifi.*", "oppbevar.*", "lagring", 
+                       "avhend.*", "tømming", "prossess", "forsyningskjede", "logistikk",
+                       "forbruk", "bruk", "produksjon"]
+
+termlist12_4b = ["life cycle analysis", "lifecycle analysis", "cradle to cradle", "cradle-to-cradle",
+                 "livssyklusanalyser", "livsløpsanalyser", "vugge til vugge"]
+
+termlist12_4c = ["chemical", "polish", "cleaning product", "engine oil", "plastic", "nanomaterial", 
+                 "pesticid", "herbicide", "insecticide", "fungicide",
+                 "solvent", "etching solution", "battery", "batteries", "accumulator",
+                 "medicinal residue", "toxic mould",
+                 "Antimony", "Arsenic", "Beryllium", "Cadmium", "Mercury", "Selenium", "Tellurium", "Thallium", "Zinc", "Jarosite", "Hematite", "Copper", "cupric chloride", "organohalogen", 
+                 "heavy metal", "toxic metal", "acrylamide", "persistent organic pollutant", "POP compounds", 
+                 "aldrin", "chlordane", "dieldrin", "heptachlor", "hexachlorobenzen", "mirex", "organochloride",
+                 "polychlorinated biphenyls", "polychlorinated dibenzo-p-dioxin", "polychlorinated dibenzofuran", "toxaphen", "neonicotinoid",
+                 
+                 "kjemikalie", "rengjøringsprodukt", "rengjøringsmid", "desinfeksjonsmid", "motorolje", "mikroplast", "plastpartik", "plastavfall",
+                 "insektmid", "plantevernmid", "batteri", "giftig", "maling", 
+                 "arsenikk", "kadmium", "kvikksølv", "kobber", "tallium",  
+                 "tungmetall", "persistente organiske miljøgift",
+                 "tinnorganiske", "organiske tinnforbindelse",
+                 "bioakkumuler", "dioksin", "neonikotinoid"]
+
+termlist12_4c_trunc = ["paint", "paints", "Lead", "DDT", "PCB",
+                       "bly", "plast", "endrin"]
+
+termlist12_4d = ["Dubai Declaration on International Chemicals Management", "Strategic Approach to International Chemicals Management", "SAICM" ]
+
+termlist12_4not = ["herbicide tolerant" ]
+#This is a specific phrase included for the Norwegian searches - there are a number of reports with risk assessments for "herbicide tolerant" GM crops
+
+phrasespecific12_4a = r'\b(?:{})\b'.format('|'.join(termlist12_4a_trunc))
+phrasespecific12_4b = r'\b(?:{})\b'.format('|'.join(termlist12_4b_trunc))
+phrasedefault12_4b = r'(?:{})'.format('|'.join(termlist12_4b))
+phrasedefault12_4c = r'(?:{})'.format('|'.join(termlist12_4c))
+phrasespecific12_4c = r'\b(?:{})\b'.format('|'.join(termlist12_4c_trunc))
+phrasedefault12_4d = r'(?:{})'.format('|'.join(termlist12_4d))
+phrasedefault12_4not = r'(?:{})'.format('|'.join(termlist12_4not))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault12_4d, na=False, case=False))
+        |
+        (
+            (
+                ((Data['result_title'].str.contains(phrasespecific12_4a, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific12_4b, na=False, case=False)))
+                | (Data['result_title'].str.contains(phrasedefault12_4b, na=False, case=False))
+            )
+            & ((Data['result_title'].str.contains(phrasedefault12_4c, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_4c, na=False, case=False)))
+        )
+    ) & (~Data['result_title'].str.contains(phrasedefault12_4not, na=False, case=False))
+),"tempsdg12_04"] = "SDG12_04"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_04 == "SDG12_04")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_04 == "SDG12_04"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2 (& 5)
+Note that this will also cover phrase 5 wos string, which uses the terms `"unsustainab*" OR "irresponsib*" OR "unecological*" OR "unsafe"` (covered by truncation here).
+
+
+```python
+#Termlists
+# Reuse 4a from above (sustainable OR responsible etc.)
+
+termlist12_4e_trunc = ["life cycle.*", "lifecycle.*",
+                       "management", "handling", "packaging", "labelling", "storing", "storage", "stored",
+                       "disposal", "dispose", "transport.*", "process.*", "logistics",
+                       "incinerat.*", "combust.*", "collect.*", "treatment", "processing", "processed", "sorting", "sorted",
+                       
+                       "livssyklus.*", "livløp.*", 
+                       "håndter.*", "innpakning", "emballasje", "emballering", "stempel", "merking", "akkredit.*", "sertifi.*", "oppbevar.*", "lagring", 
+                       "avhend.*", "tømming", "prossess", "forsyningskjede", "logistikk",
+                       "innsaml.*", "samling", "behand.*", "prossess.*", "sorter.*", "forbrenning"]
+                      
+termlist12_4f = ["waste", "garbage", "trash", "litter ", "rubbish", "sewage", "sludge", "street sweepings", "construction debris", "demolition debris",
+                 "avfall", "søppel", "kloakk", " slam", "byggrester"]
+# The space after "litter " is intentional to stop "litteratur" (NO)
+
+termlist12_4g = ["recycl", "reuse", "re-use", "reusing", "re-using",
+                "refurbish", "re-furbish", "remanufactur", "re-manufactur", "repurpos", "re-purpos",
+                "compost", "codigest", "co-digest",
+                "footprint", "cradle to cradle", "cradle-to-cradle", "end of life", "end of chain", "life cycle analysis", "lifecycle analysis", 
+                 
+                 "resirkul", "gjenbruk", "ombruk", 
+                 "kompost",
+                 "forspør", "vugge til vugge", "livssyklusanalyser", "livsløpsanalyser"]
+
+termlist12_4h = ["Basel Convention", "Rotterdam Convention", "Stockholm Convention", "Montreal Protocol", "Minamata Convention", "Bamako Convention",
+                 "Baselkonvensjonen", "Rotterdamkonvensjonen", "Stockholmkonvensjonen", "Minamatakonvensjonen", "Bamakokonvensjonen",
+                 "Basel-konvensjonen", "Rotterdam-konvensjonen", "Stockholm-konvensjonen", "Minamata-konvensjonen", "Bamako-konvensjonen"]
+
+phrasespecific12_4e = r'\b(?:{})\b'.format('|'.join(termlist12_4e_trunc))
+phrasedefault12_4f = r'(?:{})'.format('|'.join(termlist12_4f))
+phrasedefault12_4g = r'(?:{})'.format('|'.join(termlist12_4g))
+phrasedefault12_4h = r'(?:{})'.format('|'.join(termlist12_4h))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_4f, na=False, case=False))
+    &
+        (
+            (Data['result_title'].str.contains(phrasedefault12_4g, na=False, case=False))
+            |((Data['result_title'].str.contains(phrasespecific12_4a, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific12_4e, na=False, case=False)))
+        )
+    )
+    |(Data['result_title'].str.contains(phrasedefault12_4h, na=False, case=False))
+    ),"tempsdg12_04"] = "SDG12_04"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_04 == "SDG12_04")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_04 == "SDG12_04"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 3
+
+
+```python
+#Termlists
+# Reuse phrasedefault12_4f, phrasedefault12_4c and phrasespecific12_4c from phrases 1 and 2 (wastes and chemicals)
+
+termlist12_4i = ["reduc", "minim", "decreas", "stopping", "avoid", "prevent", "combat", "tackl", "resist", "lowering", "lowered", "prohibit", "cleanup", "clean up",
+                 "reduse", "unngå", "hinder", "hindre", "kjempe", "lavere", "forby", "rengjør", "rydde opp"]
+
+termlist12_4i_trunc = ["stop", "end", "ends", "ending", "ended", "halt", "halting", "lower",
+                       "stoppe", "avta", "avtar"]
+                      
+termlist12_4j = ["releas", "emission", "effluent", "discharge", "pollut", "contaminat",
+                 "utslipp", "forurens", "forurein", "kontamin"]
+
+phrasedefault12_4i = r'(?:{})'.format('|'.join(termlist12_4i))
+phrasespecific12_4i = r'\b(?:{})\b'.format('|'.join(termlist12_4i_trunc))
+phrasedefault12_4j = r'(?:{})'.format('|'.join(termlist12_4j))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_4i, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific12_4i, na=False, case=False)))
+    & (Data['result_title'].str.contains(phrasedefault12_4j, na=False, case=False))
+    & 
+    (
+        (Data['result_title'].str.contains(phrasedefault12_4c, na=False, case=False)) 
+        | (Data['result_title'].str.contains(phrasespecific12_4c, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasedefault12_4f, na=False, case=False))
+    )
+    ),"tempsdg12_04"] = "SDG12_04"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_04 == "SDG12_04")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_04 == "SDG12_04"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 4
+
+
+```python
+#Termlists
+# Reuse phrasedefault12_4f, phrasedefault12_4c and phrasespecific12_4c from phrases 1 and 2 (wastes and chemicals)
+
+termlist12_4k = ["reduc", "minim", "decreas", "avoid", "prevent", "combat", "tackl", "resist", "lowering", "lowered", "control", "assess", "evaluat", "monitor",
+                 "reduse", "unngå", "hinder", "hindre", "kjempe", "lavere", "forby","kontroll", "vurder", "evaluering", "overvåk"]
+
+termlist12_4k_trunc = ["stop", "stopping", "lower", 
+                       "stoppe"]
+                      
+termlist12_4l = ["health", "wellbeing", "well-being", "risk", "hazard", "danger", "effect",
+                 "helse", "risiko", "farlig", "miljøfare", "effekt", "påvirk"]
+
+phrasedefault12_4k = r'(?:{})'.format('|'.join(termlist12_4k))
+phrasespecific12_4k = r'\b(?:{})\b'.format('|'.join(termlist12_4k_trunc))
+phrasedefault12_4l = r'(?:{})'.format('|'.join(termlist12_4l))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_4k, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific12_4k, na=False, case=False)))
+    & (Data['result_title'].str.contains(phrasedefault12_4l, na=False, case=False))
+    & 
+    (
+        (Data['result_title'].str.contains(phrasedefault12_4c, na=False, case=False)) 
+        | (Data['result_title'].str.contains(phrasespecific12_4c, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasedefault12_4f, na=False, case=False))
+    )
+    ),"tempsdg12_04"] = "SDG12_04"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_04 == "SDG12_04")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_04 == "SDG12_04"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.5
+
+*12.5 By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse*
+
+*Innen 2030 redusere avfallsmengden betydelig gjennom forebygging, reduksjon, materialgjenvinning og ombruk*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+
+termlist12_5a = ["waste", "sludge", "garbage", "trash", "litter "]
+# Waste terms with multiple meanings. The space after "litter " is intentional to stop "litteratur" (NO)
+
+termlist12_5b = ["agrowaste", "solid waste", "bio-waste", "biowaste",
+                 "ewaste", "e-waste", "electronic waste",
+                 "rubbish", "sewage",  "street sweepings", "construction debris",  
+                 
+                 "avfall", "søppel", "kloakk", " slam", "byggrester"]
+#Waste terms which are generally to do with physical/chemical waste. Most Norwegian terms are covered by "avfall" (e.g. spesialavfall, landbruksavfall) and don't needs specifying.
+
+termlist12_5c = ["household", "domestic", "residential", 
+                 "commerce", "commercial", "trade", "business", "office", 
+                 "institution", "schools", "hospital", "municipal", "urban", "cities",
+                 "industr", "manufacturing", "hotel", "restaurant",
+                 
+                 "hushold", "domestik", "privat",
+                 "kommersiel", "bedrift", "kontor", "byggeplass"
+                 "institusjon", "skole", "sykehus", "sjukehus", "kommunal", "byer"]
+
+termlist12_5d = ["generation", "generated",                
+                 "generer"]   
+
+termlist12_5e_trunc = ["reduc.*" , "minimi.*" , "decreas.*" , "stop" , "end" , "ends" , "ended" , "ending" , "eliminat.*",
+                       "avoid.*" , "prevent.*" , "combat.*" , "tackl.*" , "halt.*" , "resist" , "resisting" , "lowering" , "lower" , "lowered"]
+
+phrasedefault12_5a = r'(?:{})'.format('|'.join(termlist12_5a))
+phrasedefault12_5b = r'(?:{})'.format('|'.join(termlist12_5b))
+phrasedefault12_5c = r'(?:{})'.format('|'.join(termlist12_5c))
+phrasedefault12_5d = r'(?:{})'.format('|'.join(termlist12_5d))
+phrasespecific12_5e = r'\b(?:{})\b'.format('|'.join(termlist12_5e_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        ((Data['result_title'].str.contains(phrasedefault12_5a, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault12_5b, na=False, case=False)))
+        & (Data['result_title'].str.contains(phrasedefault12_5d, na=False, case=False))
+    )
+    |
+    (
+        (Data['result_title'].str.contains(phrasespecific12_5e, na=False, case=False))
+        & 
+            (
+                (Data['result_title'].str.contains(phrasedefault12_5b, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault12_5a, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_5c, na=False, case=False)))
+            )
+    )
+),"tempsdg12_05"] = "SDG12_05"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_05 == "SDG12_05")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_05 == "SDG12_05"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+
+termlist12_5f = ["recycl", "reuse", "re-use", "reusing", "re-using",
+                "refurbish", "re-furbish", "remanufactur", "re-manufactur", "repurpos", "re-purpos",
+                "compost", "codigest", "co-digest",
+                "resource efficien", "resource-use efficien", "material efficicen", "material-use efficien",
+                "life cycle", "lifecycle", "footprint", "cradle to cradle", "cradle-to-cradle",
+                "cleaner production",
+                 
+                "resirkul", "gjenbruk", "ombruk",
+                "kompost",
+                "ressurseffektiv", "materialeffektiv", "effektiv bruk av material", "effektiv bruk av ressurs",
+                "livssyklusanalyse", "livsløpsvurdering", "fotspor", "vugge til vugge"]
+
+termlist12_5g = ["sidestream", "side-stream", "byproduct", "by-product",
+                "waste", "garbage", "trash", "litter", "rubbish", "sewage", "sludge", "street sweepings", "construction debris",  
+                 
+                "sidestrøm", "biprodukt",
+                "avfall", "søppel", "kloakk", " slam", "byggrester"]
+
+termlist12_5h = ["recycl", "reuse", "re-use", "reusing", "re-using",
+                "refurbish", "re-furbish", "remanufactur", "re-manufactur", "repurpos", "re-purpos",
+                "compost", "codigest", "co-digest",
+                "cradle to cradle", "cradle-to-cradle",
+                 
+                "resirkul", "gjenbruk", "ombruk",
+                "kompost",
+                "vugge til vugge"]
+
+termlist12_5i = ["bioeconom", "bio-econom", 
+                 "produc", "consum", "packaging", 
+                 "resource", "material", "matter", "biomass",
+                 
+                 "bioøkonomi", "produksj", "forbruk",
+                 "innpakning", "emballasje", "emballering", 
+                 "ressurs"]
+
+termlist12_5j = ["circular econom", "circular bioeconom", "circular product", "circular consumption", "zero waste",
+                 "sirkulær økonomi", "sirkulær bioøkonomi", "sirkulær produk", "sirkulær forbruk", "null avfall", "null svinn"]
+
+termlist12_scp4_trunc = ["utili.*", "use", "usage", "design.*",
+                         "bruk.*", "forbruk"]
+termlist12_scp5 = ["sidestream", "side-stream", "byproduct", "by-product",
+                   "sidestrøm", "biprodukt"]
+
+termlist12_scp2_trunc = ["green", "eco", "sustainab.*", "responsib.*", "environmental.*", "ecological.*",
+                         "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*"]
+
+termlist12_5k = ["footprint", "lifecycle analys", "lifecycle assess", "material lifecycle", "cradle to cradle", "cradle-to-cradle",
+                 "livssyklusanalyse", "livsløpsvurdering", "fotspor", "vugge til vugge"]
+
+termlist12_5l = ["recycl", "reuse",                 
+                "resirkul", "gjenbruk"]
+                                        
+phrasedefault12_5f = r'(?:{})'.format('|'.join(termlist12_5f))
+phrasedefault12_5g = r'(?:{})'.format('|'.join(termlist12_5g))
+phrasedefault12_5h = r'(?:{})'.format('|'.join(termlist12_5h))
+phrasedefault12_5i = r'(?:{})'.format('|'.join(termlist12_5i))
+phrasedefault12_5j = r'(?:{})'.format('|'.join(termlist12_5j))
+phrasespecific12_scp4 = r'\b(?:{})\b'.format('|'.join(termlist12_scp4_trunc))
+phrasedefault12_scp5 = r'(?:{})'.format('|'.join(termlist12_scp5))
+phrasespecific12_scp2 = r'\b(?:{})\b'.format('|'.join(termlist12_scp2_trunc))
+phrasedefault12_5k = r'(?:{})'.format('|'.join(termlist12_5k))
+phrasedefault12_5l = r'(?:{})'.format('|'.join(termlist12_5l))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_5f, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_5g, na=False, case=False)))
+    | ((Data['result_title'].str.contains(phrasedefault12_5h, na=False, case=False)) &  (Data['result_title'].str.contains(phrasedefault12_5i, na=False, case=False)))
+    | (Data['result_title'].str.contains(phrasedefault12_5j, na=False, case=False))
+    | ((Data['result_title'].str.contains(phrasespecific12_scp4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_scp5, na=False, case=False)))
+    | 
+    (
+        (Data['result_title'].str.contains(phrasespecific12_scp2, na=False, case=False)) 
+        & 
+            (
+                (Data['result_title'].str.contains(phrasedefault12_5k, na=False, case=False))
+                |(Data['result_title'].str.contains(phrasedefault12_5l, na=False, case=False))
+            )
+    )
+    ),"tempsdg12_05"] = "SDG12_05"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_05 == "SDG12_05")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_05 == "SDG12_05"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.6
+
+*12.6 Encourage companies, especially large and transnational companies, to adopt sustainable practices and to integrate sustainability information into their reporting cycle*
+
+*Stimulere selskaper, særlig store og flernasjonale selskaper, til å ta i bruk bærekraftige metoder og integrere informasjon om egen  bærekraft i sine rapporteringsrutiner*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+
+#Here we use the whole scp phrase, and supplement with 6a + scp2
+
+termlist12_scp2_trunc = ["green", "eco", "sustainab.*", "responsib.*", "environmental.*", "ecological.*",
+                         "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*"]
+
+termlist12_6a = ["practic", "procedure", "custom", "culture", "praxis", "method", "policy", "policies", "standard", "code of conduct",
+                 "praksis", "kultur", "metoder", "politikk", "retningslinje"]
+
+termlist12_6c = ["company", "companies", "organisation", "organization", "corporation", "conglomerate", "business", "corporate",
+                 "producer", "industry", "industries", "industrial sector", "manufacturer", "manufacturing sector", "commercial sector",
+                 "institution",
+                 
+                 "bedrift", "kontor", "organisasjon", "selskap", "konglomerat",
+                 "industrier", "industrien", "industri ", "industrisektor", "produsent", "produksjonssektor", "kommersiell sektor", "kommersielle sektor", 
+                 "institusjon"] 
+termlist12_6c_trunc = ["firms", "firm"] 
+# "Industri" (NO) has a space after to prevent "industriasliert" but allow e.g. "kjemikalieindustri"
+
+phrasespecific12_scp2 = r'\b(?:{})\b'.format('|'.join(termlist12_scp2_trunc))
+phrasedefault12_6a = r'(?:{})'.format('|'.join(termlist12_6a))
+phrasedefault12_6c = r'(?:{})'.format('|'.join(termlist12_6c))
+phrasespecific12_6c = r'\b(?:{})\b'.format('|'.join(termlist12_6c_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['scp']==True)
+        |((Data['result_title'].str.contains(phrasespecific12_scp2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_6a, na=False, case=False)))
+    )
+    & ((Data['result_title'].str.contains(phrasedefault12_6c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific12_6c, na=False, case=False)))
+    ),"tempsdg12_06"] = "SDG12_06"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_06 == "SDG12_06")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_06 == "SDG12_06"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+# Reuse lists phrasespecific12_6c and phrasedefault12_6c from phrase 1 for companies terms
+
+termlist12_6d = ["sustainab", "responsib", "environmental",
+                "bærekraft", "berekraft", "ansvarlig", "miljøvurder", "miljøprestasjon", "miljøstyring", "miljøsertifiser", "miljøinformasjon"]
+#"environmental" works ok alone in English, but in Norwegian (miljø) creates some noise. 
+
+termlist12_6e = ["report", "accounting", "publish", "disclos",
+                 "rapport", "regnskap", "publiser", "avslør", "offentliggjør", "offentleggj"]
+
+termlist12_6f = ["environmental information disclos"]
+
+phrasedefault12_6d = r'(?:{})'.format('|'.join(termlist12_6d))
+phrasedefault12_6e = r'(?:{})'.format('|'.join(termlist12_6e))
+phrasedefault12_6f = r'(?:{})'.format('|'.join(termlist12_6f))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        ((Data['result_title'].str.contains(phrasedefault12_6d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_6e, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault12_6f, na=False, case=False))
+    )
+    & ((Data['result_title'].str.contains(phrasedefault12_6c, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific12_6c, na=False, case=False)))
+    ),"tempsdg12_06"] = "SDG12_06"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_06 == "SDG12_06")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_06 == "SDG12_06"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.7
+
+*12.7 Promote public procurement practices that are sustainable, in accordance with national policies and priorities*
+
+*Fremme bærekraftige ordninger for offentlige anskaffelser, i samsvar med de enkelte landenes politikk og prioriteringer*
+
+
+
+```python
+#Termlists
+
+#termlist12_7a = ["sustainable public procurement", "circular public procurement", "green public procurement",
+#                 "bærekraftige offentlige anskaffelse", "bærekraftig offentlig anskaffelse", "bærekraftige anskaffelse", "bærekraftig anskaffelse", "bærekraftig fellesavtale", "bærekraftige fellesavtale",
+#                 "berekraftige offentlige anskaffelse", "berekraftig offentlig anskaffelse", "berekraftige anskaffelse", "berekraftig anskaffelse", "berekraftig fellesavtale", "berekraftige fellesavtale", 
+#                ]
+#Not needed
+
+termlist12_scp2_trunc = ["green", "eco", "eco-.*", "sustainab.*", "responsib.*", "environmental.*", "ecological.*", "circular",
+                         "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*", "sirkulær"]
+
+termlist12_7b = ["fair trade", "human rights",
+                 "lifecycle", "life cycle", 
+                 "employment of minorities", "employment of minority",
+                 "Best value for Money", "Most Economically Advantageous Tender",
+                 
+                 "rettferdig handel", "menneskerettigheter",
+                 "livssyklus", "livsløps",
+                 "likestilt rekruttering", "ansette minoriteter", "ansette etniske minoriteter",
+                 "økonomisk mest fordelaktige"]
+
+termlist12_7c = ["procurement", "aquisition", "purchas", "contract", "tender",
+                 "anskaffels", "anbud", "innkjøp", "kontrakt", "tilbudet"] 
+
+#termlist12_7d = ["national", "countr", "domestic", "government", "administrat", "public", "authorit"] 
+#We have not included 7d in the final search as it lost relevant results in a title search. A few less relevant creep in (about e.g. consumer purchasing), but more relevant are lost.
+
+#phrasedefault12_7a = r'(?:{})'.format('|'.join(termlist12_7a))
+phrasespecific12_scp2 = r'\b(?:{})\b'.format('|'.join(termlist12_scp2_trunc))
+phrasedefault12_7b = r'(?:{})'.format('|'.join(termlist12_7b))
+phrasedefault12_7c = r'(?:{})'.format('|'.join(termlist12_7c))
+#phrasedefault12_7d = r'(?:{})'.format('|'.join(termlist12_7d))
+```
+
+
+```python
+#Search
+Data.loc[(
+    #(Data['result_title'].str.contains(phrasedefault12_7a, na=False, case=False))
+    #|
+    (
+        ((Data['result_title'].str.contains(phrasespecific12_scp2, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault12_7b, na=False, case=False)))
+        & (Data['result_title'].str.contains(phrasedefault12_7c, na=False, case=False))
+        #& (Data['result_title'].str.contains(phrasedefault12_7d, na=False, case=False))
+    )
+    ),"tempsdg12_07"] = "SDG12_07"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_07 == "SDG12_07")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_07 == "SDG12_07"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.8
+
+*12.8 By 2030, ensure that people everywhere have the relevant information and awareness for sustainable development and lifestyles in harmony with nature*
+
+*Innen 2030 sikre at alle mennesker i hele verden har relevant informasjon om og forståelse av bærekraftig utvikling og et levesett som er i harmoni med naturen*
+
+
+#### Phrase 1 & 2
+
+
+```python
+#Termlists
+
+termlist12_8a = ["education for sustainable", "education in sustainable", "sustainable development educat", "sustainability educat", 
+                 "utdanning for bærekraft", "utdanning for berekraft", "bærekraftig utvikling utdann", "berekraftig utvikling utdann"]
+
+termlist12_8b = ["awareness", "lifelong learn", "life-long learn",
+                 "oppmerksom", "bevisst", "livslang læring"]
+
+termlist12_8c = ["inform", "knowledge", "aware", "educat", "guide", "instruct", "learn", "educat", "teach",
+                 "kunnskap", "kjennskap", "kjenne", "veiled", "undervis", "læring", "lære", "utdann", "kompetans", "engasj"] 
+
+termlist12_8g = ["consumer", "customer", "resident", "visitor", "guest", "tourist", "employee", "farmer",
+                 "citizen", "children", "teenager", "adolescent", "the elderly", "public", "student", "adult",
+                 "purchas", "buying", "habit",
+                 "consumption", "lifestyle", "life-style",
+                 
+                 "forbruk", "beboer", "bebuar", "besøkende", "besøkande", "gjest", "turist", "ansatt", "bonde",
+                 "borger", "folk", "barna", "barne", "tenåring", "de gamle", "offentlig", "voksne", "voksen", "vaksne", "vaksen",
+                 "kjøp", "vane"
+                 "livstil"] 
+
+termlist12_8d_trunc = ["green", "eco", "eco-.*", "sustainab.*", "environmental.*", "ecological.*", "social responsib", "socially responsib", "circular",
+                       "cleaner production",
+                       "resource efficien.*", "resource use efficiency" , "material efficiency" , "material use efficiency" , "energy efficiency",
+                       "eco-label.*", "ecolabel.*", "environmental label.*",
+                       "ecotouris.*", "eco-touris.*",
+                       "ecobuilding.*", "eco-building.*", "eco-housing", "eco-construct.*", "eco-design", "eco-technolog.*",
+                       "footprint", "cradle-to-cradle", "cradle to cradle",
+                       "recycl", "reuse", "re-use", "reusing", "re-using", "refurbish.*", "re-furbish.*", "remanufactur.*", "re-manufactur.*", "repurpos.*", "re-purpos.*", "compost.*",
+                       "renewable energy",
+                       
+                       "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "miljø.*", "sosial ansvar.*", "sosialt ansvar.*", "sirkulær.*",
+                       "renere produksjon.*",
+                       "ressurseffektiv.*", "materialeffektiv.*", "effektiv bruk av material", "effektiv bruk av ressurs.*", 
+                       "miljømerk.*", "svanemerk.*",
+                       "økoturism",
+                       "fotspor", "vugge til vugge",
+                       "resirkul", "gjenbruk", "ombruk", "kompost",
+                       "fornybar energi"] 
+
+termlist12_8e = ["responsible",
+                "ansvarlig", "ansvarleg"]
+
+termlist12_8f_trunc = ["consumer.*", "consumption", "tourism", "product", "lifestyle.*", "life-style.*", "purchas.*", "waste",
+                       "forbruk.*", "turist.*", "turism", "produksj.*", "produkt.*", "livstil.*", "kjøp", "avfall"]
+
+phrasedefault12_8a = r'(?:{})'.format('|'.join(termlist12_8a))
+phrasedefault12_8b = r'(?:{})'.format('|'.join(termlist12_8b))
+phrasedefault12_8c = r'(?:{})'.format('|'.join(termlist12_8c))
+phrasespecific12_8d = r'\b(?:{})\b'.format('|'.join(termlist12_8d_trunc))
+phrasedefault12_8e = r'(?:{})'.format('|'.join(termlist12_8e))
+phrasespecific12_8f = r'\b(?:{})\b'.format('|'.join(termlist12_8f_trunc))
+phrasedefault12_8g = r'(?:{})'.format('|'.join(termlist12_8g))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_8a, na=False, case=False))
+    |
+    (
+        ((Data['result_title'].str.contains(phrasedefault12_8b, na=False, case=False)) 
+         | ((Data['result_title'].str.contains(phrasedefault12_8c, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_8g, na=False, case=False)))
+        )
+        & 
+        (
+            (Data['result_title'].str.contains(phrasespecific12_8d, na=False, case=False))
+            |((Data['result_title'].str.contains(phrasedefault12_8e, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific12_8f, na=False, case=False)))
+        )
+    )
+    ),"tempsdg12_08"] = "SDG12_08"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_08 == "SDG12_08")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_08 == "SDG12_08"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.a
+
+*12.a Support developing countries to strengthen their scientific and technological capacity to move towards more sustainable patterns of consumption and production*
+
+*Støtte utviklingslandene i å styrke deres vitenskapelige og tekniske kapasitet til å innføre mer bærekraftige forbruks- og produksjonsmønstre*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+# Using the scp and country strings already created
+#Some terms are simplified for a title search - e.g. "managerial support" -> Support; "financial resources" -> financ; "institional capacity" -> capacity
+
+termlist12_a1 = ["capacity", "support", "resources"
+                 "infrastructure", "facilities", "tools", 
+                 "research", "scientific", "knowledge", "skills", "competenc", "expertise", "R&D", "innovation", "technolog", "cleantech",
+                 "communication", "social network", "information network", "campaign", 
+                 "awareness", "disseminat", "educat", "training",
+                 "cooperation", "collaboration", "partnership", 
+                 "transfer of technolog", "technological transfer", "technology transfer",               
+                 "expenditure", "investing", "investment", "financ", "spending", "funding", "funder", 
+                 "incentive", "subsidy", "subsidies", "subsidis", "subsidiz", 
+                 "development spending", "development aid", "development assistance", "foreign aid", "foreign assistance", "international aid", "international assistance", 
+                 "policy", "policies", "empower", "strateg", "program", "intervention", 
+                 
+                 "kapasitet", "hjelp", "bistand", "støtte", "stønad", "ressurs",
+                 "infrastruktur", "fasilitet", "verktøy",
+                 "forskning", "vitenskapelig", "kunnskap", "ferdighet", "kompetans", "ekspertis", "innovasjon", "teknologi",
+                 "kommunikasjon", "sosiale nettverk", "informasjonsnettverk", "kampanje",
+                 "bevisst", "utdanning", "opplær" 
+                 "samarbeid", "felles", "partner", 
+                 "teknologioverføring", "overfører teknologi", "overføre teknologi",
+                 "utgift", "invester", "finans", "pengebruk", "kapital",
+                 "insentiv", "subsider", 
+                 "bistand", "utviklingssamarbeid", "utviklingsstøtte", "utviklingsstønad", "utviklingshjelp", "u-hjelp", "samarbeidsfond",
+                 "politikk", "retningslin", "myndiggjør", "strategi", "intervensjon"]
+
+termlist12_a1_trunc = ["invest", "fund", "funds", "grant", "grants", "tax", "taxes", "fees", "ODA",
+                      "fond", "bevilgning", "midler", "skatt", "skatter", "FoU"]
+
+phrasedefault12_a1 = r'(?:{})'.format('|'.join(termlist12_a1))
+phrasespecific12_a1 = r'\b(?:{})\b'.format('|'.join(termlist12_a1_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    ((Data['result_title'].str.contains(phrasedefault12_a1, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_a1, na=False, case=False)))
+    & (Data['scp']==True)
+    & (Data["LMICs"]==True)
+    ),"tempsdg12_a"] = "SDG12_0a"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_a == "SDG12_0a")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_a == "SDG12_0a"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+# Using the country strings already created, and the capacity string from phrase 1
+
+termlist12_a2 = ["energy transition",  
+                 "geothermal heat pump", "ground source heat pump", 
+                 "solar PV", "photovoltaic", "solar cell", "solar-cell", "solar panel", "solar-panel", "solar array", "solar energy collector", "solar farm", "solar plant", "solar park", 
+                 "solar district heating", "solar district cooling", "solar air heating system", "solar space heating system", 
+                 "wind farm", "wind turbine", "wind park", "wind factory", "wind factories", 
+                 "hydropower", "hydroelectric", "hydro-electric", "tidal turbine", "stream turbine", "current turbine", "tidal power", "tidal energy", "marine energy", "wave energy", 
+                 
+                 "energiomstilling", 
+                 "geotermisk varmepump", 
+                 "solcelle", "solkraft", "solenergi", "fotovoltaisk", "solfang", "solsaml", "solvarm", "solpark", "solcellepark",
+                 "vindkraftverk", "vindturbin", "vindpark", "vindmøllepark", "havvind", "vindenergi",
+                 "vannkraft", "vasskraft", "hydroelektrisk", "tidevannsturbin", "havstrømturbin", "tidevannskraft", "tidevannsenergi", "bølgeenergi", "marin energi", "havenergi"]
+
+termlist12_a3 = ["power", "energy", "electricity",
+                 "kraft", "energi", "elektrisit"]
+                 
+termlist12_a4 = ["clean", "sustainab", "renewable",
+                 "solar", "thermal energy", "wind",
+                 "geothermal", "hydrothermal", 
+                 "hydrokinetic", "marine", "tidal", "wave energy", "ocean energy",
+                 "bioenergy", "biofuel", "biodiesel",
+                                 
+                 "ren energi", "bærekraftig", "berekraftig", "fornybar",
+                 "solcelle", "solkraft", "solenergi", "fotovoltaisk", "solfang", "solsaml", "solvarm", "solpark", "solcellepark",
+                 "geotermisk",
+                 "bioenergi", "biodrivstoff"]
+
+phrasedefault12_a2 = r'(?:{})'.format('|'.join(termlist12_a2))
+phrasedefault12_a3 = r'(?:{})'.format('|'.join(termlist12_a3))
+phrasedefault12_a4 = r'(?:{})'.format('|'.join(termlist12_a4))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (
+        (Data['result_title'].str.contains(phrasedefault12_a1, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific12_a1, na=False, case=False))
+    )
+    & 
+    (
+        (Data['result_title'].str.contains(phrasedefault12_a2, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault12_a3, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_a4, na=False, case=False)))
+    )
+    & (Data["LMICs"]==True)
+    ),"tempsdg12_a"] = "SDG12_0a"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_a == "SDG12_0a")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_a == "SDG12_0a"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.b
+
+*12.b Develop and implement tools to monitor sustainable development impacts for sustainable tourism that creates jobs and promotes local culture and products*
+
+*Utvikle og innføre metoder for å måle effekten av bærekraftig reiseliv som skaper arbeidsplasser og fremmer lokal kultur og lokale produkter*
+
+
+
+```python
+#Termlists
+#Simplified to remove the "effect" terms - not really needed 
+
+termlist12_b1 = ["monitor", "report", "account", "control", "measur", "assess", "evaluat", "survey",
+                 "overvåk", "rapport", "styring", "forvalt", "måling", "evaluer", "vurder", "undersøke"]
+
+termlist12_scp2_trunc = ["green", "eco", "eco-.*", "sustainab.*", "responsib.*", "environmental.*", "ecological.*",
+                        "grønne.*", "grønn", "øko", "bærekraft.*", "berekraft.*", "ansvarlig.*", "miljø.*"]
+
+termlist12_b2 = ["tourism", "tourist", "hospitality", "leisure", "air travel", "hotel",
+                 "turism", "turist", " reise", "fritid", "flyreise", "syden"]
+
+termlist12_b3 = ["ecotourism", 
+                 "økoturism"]
+
+phrasedefault12_b1 = r'(?:{})'.format('|'.join(termlist12_b1))
+phrasespecific12_scp2 = r'\b(?:{})\b'.format('|'.join(termlist12_scp2_trunc))
+phrasedefault12_b2 = r'(?:{})'.format('|'.join(termlist12_b2))
+phrasedefault12_b3 = r'(?:{})'.format('|'.join(termlist12_b3))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_b1, na=False, case=False))
+    &
+    (
+        (Data['result_title'].str.contains(phrasedefault12_b3, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasespecific12_scp2, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault12_b2, na=False, case=False)))
+    )
+    ),"tempsdg12_b"] = "SDG12_b"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_b == "SDG12_b")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_b == "SDG12_b"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12.c
+
+*12.c Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities*
+
+*Redusere ineffektive subsidier til fossilt brensel ved å fjerne markedsvridninger som oppmuntrer til overforbruk, i samsvar med nasjonale forhold, blant annet ved å legge om skatter og avgifter og avvikle skadelige subsidier der de finnes, slik at konsekvensene for miljøet avdekkes, og samtidig fullt ut ta hensyn til utviklingslandenes særlige behov og situasjon og begrense eventuelle negative konsekvenser for deres utvikling mest mulig og på en måte som beskytter de fattige og de berørte lokalsamfunnene*
+
+
+#### Phrase 1
+
+
+```python
+#Termlists
+termlist12_c2 = ["subsidi", "subsidy", "fiscal incentive", "price support", "underpricing", "underprice", "under-pricing", "under-price", "under pricing", "under price", 
+                 "below market lending", "below market loan", "below-market",
+                 "credit support", "credit guarantee", "credit restructur", "credit cancel", 
+                 "loan support", "loan guarantee", "loan restructur", "loan cancel", 
+                 "debt support", "debt guarantee", "debt restructur", "debt cancel", 
+                 "market distor", "price distortion",
+                 "government spending", "government funding", "government ownership", "government payment",
+                 
+                 "næringsstøtte", "insentiv", "prisstøtte", "prisstønad", "økonomisk støtte", "økonomisk stønad", "tilskudd", "tilskot", "prissetting",
+                 "kreditt", " lån", "gjeld",
+                 "vridning",
+                 "offentlige utgifter", "statlig eier", "offentlig forvalt", "statlig forvalt", "finansiell støtte", "finansiell stønad", "finansielle ressurs"]
+
+termlist12_c3 = ["fossil fuel", "natural gas", "diesel", "gasoline", "kerosene", "petroleum", "energy resource", "conventional energy",
+                 "fossilt brensel", "fossile brensl", "fossilt brennstoff", "fossile brennstoff", "naturgass", "energiressurs", "konvensjonell energi"]
+
+termlist12_c3_trunc = ["coal", "oil", "peat",
+                       "kull", "kol", "olje", "torv"]
+
+phrasedefault12_c2 = r'(?:{})'.format('|'.join(termlist12_c2))
+phrasedefault12_c3 = r'(?:{})'.format('|'.join(termlist12_c3))
+phrasespecific12_c3 = r'\b(?:{})\b'.format('|'.join(termlist12_c3_trunc))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault12_c2, na=False, case=False))
+    & ((Data['result_title'].str.contains(phrasedefault12_c3, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_c3, na=False, case=False)))
+    ),"tempsdg12_c"] = "SDG12_c"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_c == "SDG12_c")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_c == "SDG12_c"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
+
+
+```python
+#Termlists
+#reuse fossil fuels from phrase 1
+
+termlist12_c5_trunc = ["taxation", "tax", "taxes", "tariff.*", "duty", "duties", "fees", "fee",
+                       ".*skatt.*", ".*avgift.*", "gebyr.*"]
+
+termlist12_c6 = ["heavy duty", "light duty", "medium duty"]
+
+phrasespecific12_c5 = r'\b(?:{})\b'.format('|'.join(termlist12_c5_trunc))
+phrasedefault12_c6 = r'(?:{})'.format('|'.join(termlist12_c6))
+```
+
+
+```python
+#Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasespecific12_c5, na=False, case=False))
+    & ((Data['result_title'].str.contains(phrasedefault12_c3, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific12_c3, na=False, case=False)))
+    & (~Data['result_title'].str.contains(phrasedefault12_c6, na=False, case=False))
+    ),"tempsdg12_c"] = "SDG12_c"
+
+print("Number of results = ", len(Data[(Data.tempsdg12_c == "SDG12_c")])) 
+```
+
+
+```python
+#Results
+test=Data.loc[(Data.tempsdg12_c == "SDG12_c"), ("result_id", "subcategory", "result_title", "SDG_action", "mentionssdgno")]
+test.iloc[0:5, ]
+```
+
+### SDG 12 mentions
+
+Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
+
+
+```python
+#Termlists
+termlist12_1 = ["SDG 12", "SDGs 12", "SDG12", "sustainable development goal 12", 
+               "bærekraftsmål 12", "berekraftsmål 12"]
+termlist12_2 = ["sustainable development goal", 
+               "bærekraftsmål", "berekraftsmål"]
+termlist12_3 = ["goal 12", "mål 12"]
+termlist12_4 = ["sustainable development goal", "SDG", "goal 12", 
+               "bærekraftsmål", "berekraftsmål", "mål 12"]
+termlist12_5 = ["sustainable consumption", "responsible consumption",
+               "bærekraftig forbruk", "berekraftig forbruk", "ansvarlig forbruk", "ansvarleg forbruk"]
+#Possible search for the short titles of the SDGs, to be used in a title search
+
+phrasedefault12_1 = r'(?:{})'.format('|'.join(termlist12_1))
+phrasedefault12_2 = r'(?:{})'.format('|'.join(termlist12_2))
+phrasedefault12_3 = r'(?:{})'.format('|'.join(termlist12_3))
+phrasedefault12_4 = r'(?:{})'.format('|'.join(termlist12_4))
+phrasedefault12_5 = r'(?:{})'.format('|'.join(termlist12_5))
+```
+
+
+```python
+#search
+Data.loc[(
+      (Data['result_title'].str.contains(phrasedefault12_1, na=False, case=False))
+      |((Data['result_title'].str.contains(phrasedefault12_2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_3, na=False, case=False)))
+      |((Data['result_title'].str.contains(phrasedefault12_4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault12_5, na=False, case=False)))
+),"tempmentionsdg12"] = "SDG12"
+
+print("Number of results = ", len(Data[(Data.tempmentionsdg12 == "SDG12")]))
+```
+
+
+```python
+test=Data.loc[(Data.tempmentionsdg12 == "SDG12"), ("result_id", "result_title")]
+test.iloc[0:5, ]
+```
+
 ## SDG 13
 
 ### SDG 13.1
+13.1 Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries
 
+Styrkje evna til å stå imot og tilpasse seg til klimarelaterte farar og naturkatastrofar i alle land
 
-```
-TS=
-(
-  (
-    ("coping" OR "cope" OR "adapt*" OR "resilien*" OR "mitigat*" OR "risk reduction" OR "preparedness" OR "preparing" OR "preparation")
-    OR  
-      (
-        ("mitigat*" OR "prevent*" OR "reduc*" OR "decreas*" OR "minimis*" OR "minimiz*" OR "manag*")
-        NEAR/5 ("impact$" OR "vulnerab*")
-      )
-    OR
-    (
-      ("disaster$" OR "risk$")
-      NEAR/3
-        ("plan" OR "plans" OR "planning" OR "strateg*" OR "program$" OR "programme$" OR "policy" OR "policies" OR "governance"
-        OR "reduc*" OR "manag*" OR "medical response$" OR "relief"
-        )
-    )
-    OR "sendai framework"
-    OR "cancun adapation framework"
-    OR "readiness and preparatory support programme" OR "readiness programme"
-  )  
-  NEAR/15
-      (
-        ("extreme$" NEAR/3 ("climat*" OR "weather" OR "precipitation" OR "rain" OR "snow" OR "temperature$" OR "storm$" OR "wind$"))
-        OR (("natural" OR "climat*") NEAR/5 ("hazard$" OR "catastrophe$" OR "disaster$"))
-        OR "rogue wave$" OR "tsunami$" OR "tropical cyclone$" OR "typhoon$" OR "hurricane$" OR "tornado*"
-        OR "drought$" OR "flood*"
-        OR "avalanche$" OR "landslide$" OR "land-slide$" OR "rockslide$" OR "rock-slide$" OR "rockfall$" OR "surface collapse$" OR "mudflow$" OR "mud-flow$"
-        OR "cold spells" OR "cold wave$" OR "dzud$" OR "blizzard$" OR "heatwave$" OR "heat-wave$"
-        OR "earthquake$" OR "volcanic activity" OR "volcanic emission$" OR "volcanic eruption$" OR "ash fall" OR "tephra fall"
-        OR "wildfire*" OR "wild-fire*" OR "forest fire*" OR "forestfire*"
-        OR ("sea level" NEAR/3 ("chang*" OR "rising" OR "rise$"))
-      )
-)
-
-```
 
 
 ```python
 #Term lists
 termlist13_1a = ["coping", "cope", "adapt", "resilien", "mitigat", "risk reduction", "preparedness", "preparing", "preparation",
-                 "takl", "klare", "greie", "holde ut", "halde ut", "tåle", "tole", "utstå", "overkomme", "tilpas", "robust", 
+                 
+                 "takl", "klare", "greie", "holde ut", "halde ut", "tåle", "tole", "utstå", "overkomme", "tilpas", "robust",
                  "mink", "demp", "reduser", "reduksjon", "beredskap", "forbered", "førebu" ]
+
 termlist13_1b = ["mitigat", "prevent", "reduc", "decreas", "minimis", "minimiz", "manag",
-                 "mink", "demp", "forebygg", "førebygg", "reduser", "reduksjon", "minimer"]                
-termlist13_1c = ["impact", "vulnerab", 
+                 "mink", "demp", "forebygg", "førebygg", "reduser", "reduksjon", "minimer"]
+termlist13_1c = ["impact", "vulnerab",
                  "innflytelse", "innvirkning", "innverknad", "påvirk", "påverk", "betydning", "sårbar"]
-termlist13_1d = ["disaster", "risk", 
+
+termlist13_1d = ["disaster", "risk",
                  "katastrof", "risiko"]
-termlist13_1e = ["plan", "strateg", "program", "policy", "policies", "governance", "reduc", "manag", "medical response", "relief",
-                 "politikk", "retningslin", "styring", "ledelse", "leiing", "reduser", "reduksjon", "medisinsk", "bistand", "støtte", "stønad"]
+termlist13_1e = ["plan", "assess", "strateg", "program", "policy", "policies", "governance", "reduc", "manag", "medical response", "relief",
+                 "vurder", "politikk", "retningslin", "styring", "ledelse", "leiing", "reduser", "reduksjon", "medisinsk", "bistand", "støtte", "stønad"]
+
 termlist13_1f = ["sendai", "cancun", "readiness and preparatory support programme", "readiness programme",
-                 "beredskap", "katastrofe"]
+                 "beredskap"]
+
 termlist13_1g = ["extreme",
                  "ekstrem"]
 termlist13_1h = ["climat", "weather", "precipitation", "rain", "snow", "temperatur", "storm", "wind",
                  "klima", "vær", "ver", "nedbør", "regn", "snø", "vind"]
-termlist13_1i = ["natural", "climat", 
-                 "naturlig", "naturleg", "klima"]
-termlist13_1j = ["hazard", "catastroph", "disaster", 
-                 "fare", "risiko", "katastrof"]
-termlist13_1k = ["rogue wave", "tsunami", "cyclone", "typhoon", "hurricane", "tornado", 
-                 "drought", "flood", 
-                 "avalanche", "landslide", "land-slide", "land slide", "rockslide", "rock-slide", "rock slide", "rockfall", "surface collapse", "mudflow", "mud-flow", 
-                 "cold spell", "cold wave", "dzud", "blizzard", "snowstorm", 
-                 "heatwave", "heat-wave", 
-                 "earthquake", "volcan", "ash cloud", "ash fall", "tephra", 
-                 "wildfire", "wild-fire", "wild fire", "forest-fire", "forest fire", "forestfire", 
-                 "sea-level rise", "sea-level change", "rising sea-level", 
-                
-                 "tropisk lavtrykk", "tropisk lågtrykk", "flodbølg", "monsterbølg", "ekstrembølg", 
-                 "orkan",  "tyfon", "syklon", "snøstorm", 
-                 "flom", "flaum", "oversvøm", "ovefløym", "tørke", 
-                 "snøskred", "skred", "snøras", "lavine", "jordskred", "jordras", "sørpeskred", "leirras", "leirskred", "steinras", "steinskred", "synkehull", 
-                 "uvanlig kulde", "uvanlig kaldt", "uvanleg kulde", "uvanleg kaldt", "ekstrem kuld", "ekstremkuld", "kuldebølg", "snøstorm", 
-                 "varmebølg", "hetebølg", "ekstrem varm", "ekstremvarm", "uvanlig varm", "uvanleg varm", 
-                 "jordskjelv", "vulkan", "askenedfall", "oskenedfall", "askesky", "oskesky", 
-                 "skogbrann", "gressbrann", "grasbrann", "lyngbrann", 
-                 "havnivåstigning", "stormflo", 
-                ] 
 
-termlist13_1l = ["sea level", 
-                 "havflate", "havnivå"]     
-termlist13_1m = ["chang", "rise", "rising", 
-                 "forandr", "endr", "stig", "øk", "auke", "auking", "hev"]                                                            
+termlist13_1i = ["natural", "climat",
+                 "naturlig", "naturleg", "klima"]
+termlist13_1j = ["hazard", "catastroph", "disaster",
+                 "fare", "risiko", "katastrof"]
+
+termlist13_1k = ["rogue wave", "tsunami", "cyclone", "typhoon", "hurricane", "tornado",
+                 "drought", "flood",
+                 "avalanche", "landslide", "land-slide", "land slide", "rockslide", "rock-slide", "rock slide", "rockfall", "surface collapse", "mudflow", "mud-flow",
+                 "cold spell", "cold wave", "dzud", "blizzard", "snowstorm",
+                 "heatwave", "heat-wave",
+                 "earthquake", "volcan", "ash cloud", "ash fall", "tephra",
+                 "wildfire", "wild-fire", "wild fire", "forest-fire", "forest fire", "forestfire",
+                 "sea-level rise", "sea-level change", "rising sea-level",
+
+                 "tropisk lavtrykk", "tropisk lågtrykk", "flodbølg", "monsterbølg", "ekstrembølg",
+                 "orkan",  "tyfon", "syklon", "snøstorm",
+                 "flom", "flaum", "oversvøm", "ovefløym", "tørke",
+                 "snøskred", "skred", "snøras", "lavine", "jordskred", "jordras", "sørpeskred", "leirras", "leirskred", "steinras", "steinskred", "synkehull",
+                 "uvanlig kulde", "uvanlig kaldt", "uvanleg kulde", "uvanleg kaldt", "ekstrem kuld", "ekstremkuld", "kuldebølg", "snøstorm",
+                 "varmebølg", "hetebølg", "ekstrem varm", "ekstremvarm", "uvanlig varm", "uvanleg varm",
+                 "jordskjelv", "vulkan", "askenedfall", "oskenedfall", "askesky", "oskesky",
+                 "skogbrann", "gressbrann", "grasbrann", "lyngbrann",
+                 "havnivåstigning", "stormflo"]
+
+termlist13_1l = ["sea level",
+                 "havflate", "havnivå"]
+termlist13_1m = ["chang", "rise", "rising",
+                 "forandr", "endr", "stig", "øk", "auke", "auking", "hev"]
 
 phrasedefault13_1a = r'(?:{})'.format('|'.join(termlist13_1a))
 phrasedefault13_1b = r'(?:{})'.format('|'.join(termlist13_1b))
@@ -9871,40 +8703,19 @@ phrasedefault13_1m = r'(?:{})'.format('|'.join(termlist13_1m))
 ```python
 #Search 13_1abcdefghijklm
 Data.loc[(
-        (
-             (Data['result_title'].str.contains(phrasedefault13_1a, na=False, case=False))
-            |
-         (
-            (Data['result_title'].str.contains(phrasedefault13_1b, na=False, case=False))&
-            (Data['result_title'].str.contains(phrasedefault13_1c, na=False, case=False))
-         )
-            |
-         (
-           (Data['result_title'].str.contains(phrasedefault13_1d, na=False, case=False))&
-           (Data['result_title'].str.contains(phrasedefault13_1e, na=False, case=False))   
-         )
-            |
-          (Data['result_title'].str.contains(phrasedefault13_1f, na=False, case=False))
-        )
-           &
-      (
-        (
-            (Data['result_title'].str.contains(phrasedefault13_1g, na=False, case=False))&
-            (Data['result_title'].str.contains(phrasedefault13_1h, na=False, case=False))
-        )
-           |
-        (
-            (Data['result_title'].str.contains(phrasedefault13_1i, na=False, case=False))&
-            (Data['result_title'].str.contains(phrasedefault13_1j, na=False, case=False))
-        )
-          |
-          (Data['result_title'].str.contains(phrasedefault13_1k, na=False, case=False))
-          |
-       (
-          (Data['result_title'].str.contains(phrasedefault13_1l, na=False, case=False))&
-          (Data['result_title'].str.contains(phrasedefault13_1m, na=False, case=False))
-       )
-     )
+    (
+        (Data['result_title'].str.contains(phrasedefault13_1a, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault13_1b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_1c, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault13_1d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_1e, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault13_1f, na=False, case=False))
+    )
+    &
+    (
+        ((Data['result_title'].str.contains(phrasedefault13_1g, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_1h, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault13_1i, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_1j, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault13_1k, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault13_1l, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_1m, na=False, case=False)))
+    )
 ),"tempsdg13_01"] = "SDG13_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_01 == "SDG13_01")])) 
@@ -9917,69 +8728,46 @@ test.iloc[0:5, ]
 ```
 
 ### SDG 13.2
+13.2 Integrate climate change measures into national policies, strategies and planning
 
+Innarbeide tiltak mot klimaendringar i politikk, strategiar og planlegging på nasjonalt nivå
 
 #### Phrase 1
-
-```
-TS=
-(
-  ("climate change$" OR "global warming" OR "climatic change$" OR "changing climate"
-  OR "climate measures" OR "climate action" OR "climate adaptation" OR "climate mitigation" OR "climate resilience"
-  OR ("warming" NEAR/3 ("climat*" OR "atmospher*" OR "ocean"))
-  OR "GHG" OR "greenhouse gas" OR "greenhouse gases"
-  OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$"
-  OR "methane" OR "CH4" OR "nitrous oxide" OR "NOX" OR "N2O" OR "carbon dioxide" OR "CO2" OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
-  )
-  AND
-    (
-      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
-      NEAR/5
-          ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
-          OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
-          OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
-          )
-    )
-  AND
-    ("climate" OR "global warming" OR "climatic change$"
-    OR ("warming" NEAR/3 ("atmospher*" OR "ocean"))
-    OR "GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$"
-    OR "sea level rise"
-    )
-)
-```
-
-
 
 
 ```python
 # Term lists
-termlist13_2a = ["climate change", "global warming", "climatic change", "changing climate", "climate measures", "climate action", "climate adaptation", "climate mitigation", 
-                 "climate resilience",
+termlist13_2a = ["climate change", "global warming", "climatic change", "changing climate", "climate measures", "climate action", "climate adaptation", "climate mitigation", "climate resilience",
                  "klimaendring", "global oppvarming", "klima i endring", "klimamål", "klimahandling", "klimatilpas", "klimaforandring", "klimavariasjon", "klimatiltak"]
-termlist13_2b = ["warming", 
+
+termlist13_2b = ["warming",
                  "oppvarming"]
-termlist13_2j = ["climat", "atmospher", "ocean", 
+termlist13_2j = ["climat", "atmospher", "ocean",
                  "klima", "atmosfær", "hav"]
+
 termlist13_2k = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission", "methane", "ch4", "nitrous oxide", "nox", "n20", "carbon dioxide",
                  "co2", "hydrofluorocarbons", "hfcs", "perfluorocarbons", "pfcs", "sulphur hexafluoride", "sulfur hexafluoride", "sf6",
+                 
                  "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbondioksid", "karbonutslipp", "karbonutslepp", "co2-utslipp", "co2-utslepp", "metan", "dinitrogenoksid", "lystgass",
                  "hydrofluorkarbon", "perfluorkarbon", "svovelheksafluorid"]
-termlist13_2l = ["national", "state", "federal", "domestic", "sectoral", "multi level", "multilevel", 
-                 "nasjonal", "stat", "føderal", "delstat", "fylke", "innenlands", "innalands", "innanlands", "sektor", "kommun"]  
+
+termlist13_2l = ["national", "state", "federal", "domestic", "sectoral", "multi level", "multilevel",
+                 "nasjonal", "stat", "føderal", "delstat", "fylke", "innenlands", "innalands", "innanlands", "sektor", "kommun"]
+
 termlist13_2m = ["program", "strategy", "framework", "initiativ", "plan", "policy", "policies", "law", "legislat", "governance", "mandat",
                  "nationally determined contribution", "adaptation communication", "monitoring and evaluation", "adaptation committee",
+                 
                  "strategi", "rammeverk", "avtale", "overenskomst", "politikk", "retningslin", "lov", "lovgiv", "styring", "ledelse", "leiing",
-                 "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "nasjonalt fastsette bidrag", 
-                 "tilpasningskommunikasjon", "tilpassingskommunikasjon", "komite"]   
-termlist13_2n = ["climate", "global warming", "climatic change", 
+                 "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "nasjonalt fastsette bidrag", "tilpasningskommunikasjon", "tilpassingskommunikasjon", "komite"]
+
+termlist13_2n = ["climate", "global warming", "climatic change",
                  "klima", "global oppvarming"]
-termlist13_2o = ["warming", 
+termlist13_2o = ["warming",
                  "oppvarming"]
-termlist13_2p = ["atmosphere", "ocean", 
+termlist13_2p = ["atmosphere", "ocean",
                  "atmosfære", "hav"]
-termlist13_2q = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission", "sea level rise",
-                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbondioksid", "co2-utslipp", "co2-utslepp", "havnivåstigning"]                                              
+termlist13_2q = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission", "sea-level rise",
+                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbondioksid", "co2-utslipp", "co2-utslepp", "havnivåstigning"]                                             
 
 phrasedefault13_2a = r'(?:{})'.format('|'.join(termlist13_2a)) 
 phrasedefault13_2b = r'(?:{})'.format('|'.join(termlist13_2b))
@@ -9991,39 +8779,24 @@ phrasedefault13_2n = r'(?:{})'.format('|'.join(termlist13_2n))
 phrasedefault13_2o = r'(?:{})'.format('|'.join(termlist13_2o))
 phrasedefault13_2p = r'(?:{})'.format('|'.join(termlist13_2p)) 
 phrasedefault13_2q = r'(?:{})'.format('|'.join(termlist13_2q))
-
 ```
 
 
 ```python
 #Search 13_2abjklmnopq
 Data.loc[(
-(
-     (Data['result_title'].str.contains(phrasedefault13_2a, na=False, case=False))|
-     (
-        (Data['result_title'].str.contains(phrasedefault13_2b, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault13_2j, na=False, case=False))
-     )
-    |
-        (Data['result_title'].str.contains(phrasedefault13_2k, na=False, case=False))   
- )
-   & 
-   (
-     (
-        (Data['result_title'].str.contains(phrasedefault13_2l, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault13_2m, na=False, case=False))  
-     )
-   )
-   &
-   (
-        (Data['result_title'].str.contains(phrasedefault13_2n, na=False, case=False)) |
     (
-        (Data['result_title'].str.contains(phrasedefault13_2o, na=False, case=False))&
-        (Data['result_title'].str.contains(phrasedefault13_2p, na=False, case=False))
-    ) 
-  |
-        (Data['result_title'].str.contains(phrasedefault13_2q, na=False, case=False))
-   )   
+        (Data['result_title'].str.contains(phrasedefault13_2a, na=False, case=False))
+        |((Data['result_title'].str.contains(phrasedefault13_2b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_2j, na=False, case=False)))
+        |(Data['result_title'].str.contains(phrasedefault13_2k, na=False, case=False))   
+    )
+    & ((Data['result_title'].str.contains(phrasedefault13_2l, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault13_2m, na=False, case=False)))
+    &
+    (
+        (Data['result_title'].str.contains(phrasedefault13_2n, na=False, case=False)) 
+        |((Data['result_title'].str.contains(phrasedefault13_2o, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_2p, na=False, case=False))) 
+        |(Data['result_title'].str.contains(phrasedefault13_2q, na=False, case=False))
+    )   
 ),"tempsdg13_02"] = "SDG13_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_02 == "SDG13_02")]))  
@@ -10038,48 +8811,25 @@ test.iloc[0:5, ]
 #### Phrase 2
 
 
-```
-TS=
-(
-  (
-    ("global temperature" OR "surface temperature" OR "sea-level" OR "sea level"
-    OR "sea ice*" OR "sea-ice" OR "glacial" OR "glacier$" OR "permafrost"
-    OR "ocean acidification" OR "ocean heat content"
-    )
-    NEAR/15
-        ("action$" OR "sustainab*" OR "adapt*" OR "cope" OR "coping" OR "resilien*" OR "mitigat*"
-        OR "impact$" OR "effect$" OR "consequence$" OR "influence$" OR "vulnerab*"
-        )
-  )
-  AND
-      (
-        ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
-        NEAR/5
-            ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
-            OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
-            OR "nationally determined contribution$" OR "adaptation communication$" OR "monitoring and evaluation" OR "adaptation committee"
-            )
-      )
-)
-```
-
-
 
 ```python
 # Term lists
 termlist13_2c = ["global temperatur", "surface temperature", "sea-level", "sea level", "sea ice", "glacial", "glaciers", "permafrost", "ocean acidification", "ocean heat content",
-                 "global oppvarming", "overflatetemperatur", "havnivå", "havis", "glasial", "isbre", "havforsuring"]               
+                 "global oppvarming", "overflatetemperatur", "havnivå", "havis", "glasial", "isbre", "havforsuring"]
+
 termlist13_2d = ["action", "sustainab", "adapt", "cope", "coping", "resilience", "mitigat", "impact", "effect",  "consequence", "influence", "vulnerab",
-                 "handling", "bærekraft", "berekraft", "takl", "klare", "greie", "fikse", "overkomme", "tilpas", "mink", "demp", "reduser", "reduksjon", "innflytelse", "innvirkning", 
+                 
+                 "handling", "bærekraft", "berekraft", "takl", "klare", "greie", "fikse", "overkomme", "tilpas", "mink", "demp", "reduser", "reduksjon", "innflytelse", "innvirkning",
                  "innverknad", "påvirk", "påverk", "betydning", "effekt", "konsekvens", "sårbar"]
+
 termlist13_2e = ["national", "state", "federal", "domestic", "sectoral", "multi level", "multilevel",
                  "nasjonal", "stat", "føderal", "delstat", "fylke", "innenlands", "innalands", "innanlands", "sektor", "kommune"]
+
 termlist13_2f = ["program", "strategy", "framework", "initiativ", "plan", "policy", "policies", "law", "legislat", "governance", "mandat",
                  "nationally determined contribution", "adaptation communication", "monitoring and evaluation", "adaptation committee",
+                 
                  "strategi", "rammeverk", "politikk", "retningslin", "lov", "lovgiv", "styring", "ledelse", "leiing",
-                 "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "nasjonalt fastsette bidrag",
-                 "tilpasningskommunikasjon", "tilpassingskommunikasjon", "komite"]
-
+                 "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "nasjonalt fastsette bidrag", "tilpasningskommunikasjon", "tilpassingskommunikasjon", "komite"]
 
 phrasedefault13_2c = r'(?:{})'.format('|'.join(termlist13_2c))
 phrasedefault13_2d = r'(?:{})'.format('|'.join(termlist13_2d))
@@ -10091,10 +8841,10 @@ phrasedefault13_2f = r'(?:{})'.format('|'.join(termlist13_2f))
 ```python
 #Search13_2cdef
 Data.loc[(
-                  (Data['result_title'].str.contains(phrasedefault13_2c, na=False, case=False))&
-                  (Data['result_title'].str.contains(phrasedefault13_2d, na=False, case=False))&
-                  (Data['result_title'].str.contains(phrasedefault13_2e, na=False, case=False))&
-                  (Data['result_title'].str.contains(phrasedefault13_2f, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault13_2c, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault13_2d, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault13_2e, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault13_2f, na=False, case=False))
 ),"tempsdg13_02"] = "SDG13_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_02 == "SDG13_02")]))  
@@ -10108,37 +8858,23 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
-```
-TS=
-(
-  ("Kyoto protocol" OR "Paris Agreement"
-  OR "COP 21" OR "COP21" OR "COP 22" OR "COP22" OR "COP 23" OR "COP23" OR "COP 24" OR "COP24" OR "COP 25" OR "COP25" OR "COP 26" OR "COP26" OR "COP 27" OR "COP27"
-  OR "UNFCCC" OR "United Nations Framework Convention on Climate Change"
-  OR "Cancun adaptation framework"
-  )
-  AND
-    (
-      ("national*" OR "state" OR "federal" OR "domestic" OR "sectoral" OR "multi level" OR "multilevel")
-      NEAR/5
-          ("program$" OR "programme$" OR "strateg*" OR "framework$" OR "initiative$" OR "plan" OR "planning" OR "plans"
-          OR "policy" OR "policies" OR "law$" OR "legislat*" OR "governance" OR "mandate$"
-          )
-    )
-)
-```
-
 
 ```python
 # Term lists
 termlist13_2g = ["Kyoto protocol", "kyoto", "Paris agreement", "cop 21", "cop21", "cop 22", "cop22", "cop 23", "cop23",
-                 "cop 24", "cop24", "cop 25", "cop25", "cop 26", "cop26", "cop 27", "cop27",
-                 "unfccc", "United Nations Framework Convention on Climate Change", "Cancun adaptation framework",
-                 "kyotoprotokoll", "parisavtale", "paris-avtale", "parisavtala", "paris-avtala", "klimakonvensjon", "Cancun"]
-termlist13_2gtrunk = ["Paris"]                 
-termlist13_2h = ["national", "state", "federal", "domestic", "sectoral", "multi level", "multilevel" 
+                 "cop 24", "cop24", "cop 25", "cop25", "cop 26", "cop26", "cop 27", "cop27", "cop28",
+                 "unfccc", "United Nations Framework Convention on Climate Change", "Cancun", "adaptation framework",
+                 
+                 "kyotoprotokoll", "parisavtale", "paris-avtale", "parisavtala", "paris-avtala", "klimakonvensjon"]
+
+termlist13_2gtrunk = ["Paris"]
+
+termlist13_2h = ["national", "state", "federal", "domestic", "sectoral", "multi level", "multilevel"
                  "nasjonal", "stat", "føderal", "delstat", "fylke", "innenlands", "innalands", "innanlands", "sektor", "kommune"]
+
 termlist13_2i = ["program", "strategy", "framework", "initiativ", "plan", "policy", "policies", "law", "legislat", "governance", "mandat",
                  "nationally determined contribution", "adaptation communication", "monitoring and evaluation", "adaptation committee",
+                 
                  "strategi", "rammeverk", "politikk", "retningslin", "lov", "lovgiv", "styring", "ledelse", "leiing",
                  "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "tilpasningskommunikasjon", "komite"]
 
@@ -10146,22 +8882,17 @@ phrasedefault13_2g = r'(?:{})'.format('|'.join(termlist13_2g))
 phrasespecific13_2gtrunk = r'\b(?:{})\b'.format('|'.join(termlist13_2gtrunk))
 phrasedefault13_2h = r'(?:{})'.format('|'.join(termlist13_2h))
 phrasedefault13_2i = r'(?:{})'.format('|'.join(termlist13_2i))
-
 ```
 
 
 ```python
 #Search 13_2ghi
 Data.loc[(
-      (
-          (Data['result_title'].str.contains(phrasedefault13_2g, na=False, case=False))|
-          (Data['result_title'].str.contains(phrasespecific13_2gtrunk, na=False, case=False))
-      )
-      &
-        (
-          (Data['result_title'].str.contains(phrasedefault13_2h, na=False, case=False))&
-          (Data['result_title'].str.contains(phrasedefault13_2i, na=False, case=False))
-        )
+    (
+        (Data['result_title'].str.contains(phrasedefault13_2g, na=False, case=False))
+        |(Data['result_title'].str.contains(phrasespecific13_2gtrunk, na=False, case=False))
+    )
+    & ((Data['result_title'].str.contains(phrasedefault13_2h, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_2i, na=False, case=False)))
 ),"tempsdg13_02"] = "SDG13_02"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_02 == "SDG13_02")]))  
@@ -10175,122 +8906,51 @@ test.iloc[0:5, ]
 
 ### SDG 13.3
 
-```
-TS=
-(   
-    (
-      ("climate" 
-      OR "climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
-      OR "climate emergency" OR "climate smart" OR "climate crisis"
-      OR "sea level rise" OR "rising sea level$"
-      )
-      NEAR/5  
-          ("action$" OR "mitigat*" OR "resilien*" OR "climate adapt*" OR "adaptive capacity" OR "capacity to adapt"
-          OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
-          OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
-          OR "solutions" OR "problems"
-          OR
-            (
-              ("reduc*" OR "minimi*" OR "decreas*" OR "limit" OR "alleviat*")
-              NEAR/2 ("impact$" OR "effect$" OR "consequence$")        
-            )
-          )
-    )
-    OR
-    (
-      ("climate change" OR "climate warming" OR "warming climate" OR "global warming" OR "climatic change$" 
-      OR "climate emergency" OR "climate smart" OR "climate crisis"
-      OR "sea level rise" OR "rising sea level$"
-      )
-      NEAR/5 ("sustainab*" OR "adapt*" OR "cope" OR "coping")
-    )
-    OR
-    (
-      ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
-      OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-      OR "capture" OR "storage" OR "sequestration"
-      )
-      NEAR/5
-          ("GHG" OR "greenhouse gas" OR "greenhouse gases" OR "carbon footprint" OR "CO2 footprint" OR "carbon emission$" OR "CO2 emission$")
-    )
-    OR 
-    (
-      (
-        ("reduc*" OR "minimi*" OR "limit" OR "limiting" OR "decreas*" OR "lower" OR "mitigat*"
-        OR "alleviat*" OR "tackl*" OR "combat*" OR "prevent*" OR "stop*" OR "avoid*"
-        OR "capture" OR "storage" OR "sequestration"
-        )
-        NEAR/3
-            ("methane" OR "CH4" 
-            OR "nitrous oxide" OR "NOX" OR "N2O" 
-            OR "carbon dioxide" OR "CO2" 
-            OR "hydrofluorocarbons" OR "HFCs" OR "perfluorocarbons" OR "PFCs" 
-            OR "sulphur hexafluoride" OR "sulfur hexafluoride" OR "SF6"
-            )
-      )
-    AND ("climate change" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$" OR "climate emergency" OR "climate smart" OR "climate crisis")
-    )  
-)
-NOT 
-TS=
-  (
-    ("motivational climate" OR "organi$ational climate" OR "safety climate" OR "learning climate" OR "education climate") 
-    NOT("climate change" OR "climate crisis" OR "global warming" OR "climatic change$" OR "sea level rise" OR "rising sea level$")
-  )
-```
+13.3 Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning
+
+Styrkje evna enkeltpersonar og institusjonar har til å redusere klimagassutslepp, tilpasse seg til og redusere konsekvensane av klimaendringar og varsle tidleg, og dessutan styrkje utdanninga og bevisstgjeringa om dette.
 
 
 ```python
 # Term lists
-termlist13_3a = ["climate", "climatic change", "global warming", 
-                 "sea level rise", "rising sea level",
- 
-                 "klima", "global oppvarming", 
-                 "havnivåstigning"]
-termlist13_3b = ["action", "mitigat", "adaptive capacity", "capacity to adapt", "resilien", "early warning", "warning system", "preparedness", "risk", "vulnerab", "awareness", 
-                 "climate education", "climate sensitive education", "climate change education", "climate literacy", "solutions", "problem"
-                 
-                 "handl", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme", 
-                 "tidlig varsling", "tidleg varsling", "varslingssystem",
+termlist13_3a1 = ["climate", "climatic change", "global warming", "sea level rise", "rising sea level",
+                  "klima", "global oppvarming", "havnivåstigning"]
+
+termlist13_3b1 = ["action", "mitigat", "adaptive capacity", "capacity to adapt", "resilien", "early warning", "warning system", 
+                  "preparedness", "risk", "vulnerab", "awareness",
+                  "climate education", "climate sensitive education", "climate change education", "climate literacy", "solution", "problem",
+
+                 "handl", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme", "tidlig varsling", "tidleg varsling", "varslingssystem",
                  "forbered", "førebu", "risik", "sårbar", "bevisst", "oppmerks",
                  "klimautdann", "klimaopplær", "klimakomp", "løsning", "løysing"]
 
-termlist13_3d = ["climate change", "climate warming", "warming climate", "climatic change", "global warming", 
-                 "climate emergency", "climate smart", "climate crisis",
-                 "sea level rise", "rising sea level",
-                 
-                 "klima", "global oppvarming", "klimaendring", "klimaforandring", 
-                 "klimakrise", "klimasmart",
-                 "havnivåstigning"]
-termlist13_3e = ["sustainab", "adapt", "cope", "coping", 
-                 "bærekraft", "berekraft"]
-
-termlist13_3f = ["reduc", "minimi", "decreas", "limit", "alleviat",
+termlist13_3c1 = ["reduc", "minimi", "decreas", "limit", "alleviat",
                  "reduser", "reduksjon", "minimer", "mink", "grens", "lett"]
-termlist13_3g = ["impact", "effect", "consequence",
+termlist13_3d1 = ["impact", "effect", "consequence",
                  "innflytelse", "innvirkning", "innverknad", "påvirk", "påverk", "betydning", "effekt", "konsekvens", "følge", "følgje"]
 
-termlist13_3h = ["reduc", "minimi", "limit",  "decreas", "lower", "mitigat", "alleviat", "tackl", "combat", "prevent", "stop", "avoid",
-                 "reduser", "reduksjon", "minimer", "mink", "grens", "lett", "takl", "klare", "greie", "fikse", "overkomme", "kjempe", "hindr", "stopp", "stogg", "unngå"]
-termlist13_3i = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission",
-                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbonutsl", "karbondioksidutsl", "co2-utsl"]          
-termlist13_3c = ["methane", "CH4", "nitrous oxide", "NOX", "N2O", "carbon dioxide", "CO2", 
-                 "hydrofluorocarbons","HFCs", "perfluorocarbons", "PFCs", "sulphur hexafluoride", "sulfur hexafluoride", "SF6",
-                 "metan", "nitrogenoksid", "karbondioksid",
-                 "hydrofluorkarbon", "perfluorkarbon", "svovelheksafluorid"
-                ]   
-termlist13_3not = ["motivational climate", "organisational climate", "organizational climate", "safety climate", "learning climate", "education climate"]
+termlist13_3e1 = ["sustainab","adapt", "cope", "coping",
+                 "bærekraft", "berekraft", "tilpas", "takl", "klare", "greie", "fikse", "overkomme"]
 
-phrasedefault13_3a = r'(?:{})'.format('|'.join(termlist13_3a))
-phrasedefault13_3b = r'(?:{})'.format('|'.join(termlist13_3b))
-phrasedefault13_3c = r'(?:{})'.format('|'.join(termlist13_3c))
-phrasedefault13_3d = r'(?:{})'.format('|'.join(termlist13_3d))
-phrasedefault13_3e = r'(?:{})'.format('|'.join(termlist13_3e))
-phrasedefault13_3f = r'(?:{})'.format('|'.join(termlist13_3f))
-phrasedefault13_3g = r'(?:{})'.format('|'.join(termlist13_3g))
-phrasedefault13_3h = r'(?:{})'.format('|'.join(termlist13_3h))
-phrasedefault13_3i = r'(?:{})'.format('|'.join(termlist13_3i))
-phrasedefault13_3not = r'(?:{})'.format('|'.join(termlist13_3not))
+termlist13_3f1 = ["reduc", "minimi", "decreas", "limit", "alleviat", "lower", "mitigate", "tackl", "combat", "prevent", "stop", "avoid", "capture", "storage", "store", "storing", "sequestrat",
+                 "reduser", "reduksjon", "minimer", "mink", "grens", "lett", "takl", "klare", "greie", "fikse", "overkomme", "kjempe", "hindr", "stopp", "stogg", "unngå", "fang", "lagr", "isoler", "isolasjon"]
+termlist13_3g1 = ["GHG", "greenhouse gas", "carbon footprint", "CO2 footprint", "carbon emission", "CO2 emission",
+                 "drivhusgass", "klimagass", "karbonfotavtrykk", "karbonavtrykk", "karbonutsl", "karbondioksidutsl", "co2-utsl"]
+termlist13_3h1 = ["methane", "CH4", "nitrous oxide", "NOX", "N2O", "CO2", "carbon", "HFCs", "PFCs", "sulphur hexafluoride", "sulfur hexafluoride", "SF6",
+                  "metan", "nitrogenoksid", "karbon", "svovel"]
+
+termlist13_3inot = ["motivational climate", "organisational climate", "organizaional climate", "learning climate", "education climate", "emotional climate", "family climate",
+                  "motivasjonsklima", "organisasjonsklima", "arbeidsklima", "læringsklima", "følelsesmessig klima", "familieklima"]
+
+phrasedefault13_3a1 = r'(?:{})'.format('|'.join(termlist13_3a1))
+phrasedefault13_3b1 = r'(?:{})'.format('|'.join(termlist13_3b1))
+phrasedefault13_3c1 = r'(?:{})'.format('|'.join(termlist13_3c1))
+phrasedefault13_3d1 = r'(?:{})'.format('|'.join(termlist13_3d1))
+phrasedefault13_3e1 = r'(?:{})'.format('|'.join(termlist13_3e1))
+phrasedefault13_3f1 = r'(?:{})'.format('|'.join(termlist13_3f1))
+phrasedefault13_3g1 = r'(?:{})'.format('|'.join(termlist13_3g1))
+phrasedefault13_3h1 = r'(?:{})'.format('|'.join(termlist13_3h1))
+phrasedefault13_3inot = r'(?:{})'.format('|'.join(termlist13_3inot))
 ```
 
 
@@ -10299,127 +8959,122 @@ phrasedefault13_3not = r'(?:{})'.format('|'.join(termlist13_3not))
 Data.loc[(
     (
         ( 
-            (Data['result_title'].str.contains(phrasedefault13_3a, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault13_3a1, na=False, case=False))
             & 
             (
-                (Data['result_title'].str.contains(phrasedefault13_3b, na=False, case=False))
-                |((Data['result_title'].str.contains(phrasedefault13_3f, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault13_3g, na=False, case=False)))
+                (Data['result_title'].str.contains(phrasedefault13_3b1, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault13_3c1, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_3d1, na=False, case=False)))
             )
         )
+        |((Data['result_title'].str.contains(phrasedefault13_3a1, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_3e1, na=False, case=False)))
+        |((Data['result_title'].str.contains(phrasedefault13_3f1, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_3g1, na=False, case=False)))
         |
         (
-            (Data['result_title'].str.contains(phrasedefault13_3d, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault13_3e, na=False, case=False))
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault13_3h, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault13_3i, na=False, case=False))
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault13_3h, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault13_3c, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault13_3d, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault13_3a1, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3f1, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault13_3h1, na=False, case=False))
         )
     )
-    & (~Data['result_title'].str.contains(phrasedefault13_3not, na=False, case=False))
+    & (~Data['result_title'].str.contains(phrasedefault13_3inot, na=False, case=False))
 ),"tempsdg13_03"] = "SDG13_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_03 == "SDG13_03")]))
+
 ```
 
 
 ```python
 test=Data.loc[(Data.tempsdg13_03 == "SDG13_03"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:25, ]
 ```
 
 ### SDG 13.a
+13.a Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible.
 
-```
-TS=
-(
-  (
-    ("transparency" OR "accountability" OR "governance" OR "allocation$" OR "misallocation" OR "corruption"
-    OR "operationali*" OR "capitali*" OR "mobilis*" OR "mobiliz*"
-    OR "contribut*" OR "commitment$" OR "negotiation$"
-    OR ("financial mechanism" NEAR/15 ("UNFCCC" OR "convention"))
-    OR "donor$" OR "donation$" OR "donate"
-    OR "annex II party" OR "annex II parties" OR "developed countr*" OR "developed nation$" OR "OECD"
-    OR ****LMICS****
-    )
-    NEAR/15
-        ("climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
-        OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
-        OR
-          ("climat*"
-          NEAR/15
-              ("financing" OR "fund" OR "funds" OR "funding"
-              OR (("economic" OR "financial*" or "monetary") NEAR/3 ("support*" or "assist*" OR "resources"))
-              OR "ODA" OR "cooperation fund$" OR "development spending"
-              OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance" OR "finance" OR "grant$" OR "investment$"))
-              )
-          )
-        )
-  )
-  AND
-      ("climate change" OR "global warming" OR "climate action" OR "climate mitigation" OR "climate adaptation"
-      OR "climate financ*" OR "climate aid" OR "climate loan$" OR "climate fund*" OR "climate bond$"
-      OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund$" OR "adaptation financ*"
-      )
-)
+Gjennomføre forpliktingane som dei utvikla landa som er part i FNs rammekonvensjon om klimaendring, har teke på seg for å nå målet om i fellesskap å skaffe 100 milliardar dollar per år innan 2020 frå alle kjelder for å dekkje det behovet utviklingslanda har for å innføre føremålstenlege klimatiltak og gjennomføre dei på ein open måte, og fullt ut operasjonalisere Det grøne klimafondet ved at fondet så snart som mogleg blir tilført kapital.
+
+#### Phrase 1
+
+
+```python
+# term lists
+termlist13_1a = ["green climate fund", "least developed countries fund", "LDCF", "special climate change fund", "SCCF"
+                 "grønt fond", "klimafond",
+                 ]
+
+phrasedefault13_1a = r'(?:{})'.format('|'.join(termlist13_1a))
 ```
 
+
+```python
+# Search
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault13_1a, na=False, case=False))
+),"tempsdg13_a"] = "SDG13_0a"
+
+print("Number of results = ", len(Data[(Data.tempsdg13_a == "SDG13_0a")]))
+```
+
+
+```python
+test=Data.loc[(Data.tempsdg13_a == "SDG13_0a"), ("result_id", "result_title")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 2
 
 
 ```python
 # Term lists
-
-termlist13_a1 =  ["transparency", "accountability", "governance", "allocation", "misallocation", "corruption", "operationali", "capitali,", "mobilis", "mobiliz", "contribut",
-                "commitment", "negotiation", "donor", "donation", "donate", "annex II party", "annex II parties",
-                
+termlist13_a2 = ["transparency", "accountability", "governance", "allocation", "misallocation", "corruption", "operationali", "capitali,", "mobilis", "mobiliz", "contribut",
+                "commitment", "negotiation", "donor", "donation", "donate",
                 "transparen", "ansvarlig", "ansvarleg", "styring", "ledelse", "leiing", "korrupsjon", "muting", "bestikke", "tildel", "fordel", "utdel", "alloker", "operasjonaliser", "kapital", "mobiliser", "bidra",
-                "forplikt", "forhandl", "giver", "givar", "gjevar", "donasjon", "doner"
-               ]
-termlist13_a2 = ["financial mechanism", 
-                 "finansiering"]
-termlist13_a3 = ["UNFCCC", "convention", 
-                 "FN", "konvensjon"]
-termlist13_a4 = ["climate financ", "climate aid", "climate loan", "climate fund", "climate bond", "least developed countries fund", "LDCF", "special climate change fund", "SCCF",
-                 "adaptation fund", "adaptation financ",
-                 "klimafinans", "klimahjelp", "klimastø", "klimalån", "klimafond", "klimaobligasjon", "klimainvesteringsfond", "tilpasningsfond", "tilpassingsfond", 
-                 "tilpasningsfinans", "tilpassingsfinans"]
-termlist13_a5 = ["climate", 
-                 "klima"]
-termlist13_a6 = ["financing", "fund", 
-                 "finansier", "fond"]        
-termlist13_a7 = ["economic", "financial", "monetary", 
-                 "økonomi", "finansiell", "monetær", "penge"] 
-termlist13_a8 = ["support", "assist", "resources", 
-                 "støtte", "stønad", "hjelp", "assistanse", "ressurs"]
-termlist13_a9 = ["ODA", "cooperation fund", "development spending", 
-                 "samarbeidsfond", "bistand"] 
-termlist13_a10 = ["international", "development", "foreign", 
-                  "internasjonal", "utvikling", "utenlands", "utalands", "utanlands"]
-termlist13_a11 = ["aid", "assistance", "finance", "grant", "investment", 
-                  "hjelp", "assistanse", "finansier", "støtte", "stønad", "bidrag", "bistand", "invester"]      
-termlist13_a12 = ["climate", "global warming", 
-                  "green climate fund", "least developed countries fund", "LDCF", "special climate change fund", "SCCF", "adaptation fund", "adaptation financ",
-                  "klima", "global oppvarming", "tilpasningsfond", "tilpassingsfond"]
-                       
-phrasedefault13_a1 = r'(?:{})'.format('|'.join(termlist13_a1))
+                "forplikt", "forhandl", "giver", "givar", "gjevar", "donasjon", "doner"]
+
+termlist13_a3 = ["financial mechanism", "finansiering"]
+termlist13_a4 = ["UNFCC", "convention", "konvensjon"]
+
+termlist13_a5 = ["climate financ", "climate aid", "climate loan",  "climate fund", "climate bond", "climate investment", "green climate fund", "Least Developed Countries Fund",
+                "LDCF", "Special Climate Change Fund", "SCCF","adaptation fund", "adaptation financ",
+                 
+                "klimafinans", "klimahjelp", "klimastø", "klimalån", "klimafond", "klimaobligasjon", "klimainvesteringsfond", "grønt fond", "klimafond", "tilpasningsfond", "tilpassingsfond",
+                "tilpasningsfinans", "tilpassingsfinans"]
+
+termlist13_a6 = ["mitigat", "green", "climate",
+                "mink", "demp", "reduser", "reduksjon", "grøn", "klima"]
+
+termlist13_a7 = ["financ", "fund", "invest",
+                "finans", "fond"]
+termlist13_a8 = ["economic", "financial", "monetary",
+                  "økonomisk", "finans", "penge"]
+termlist13_a9 = ["support", "assist", "resource",
+                  "støtte", "stønad", "ressurs"]
+termlist13_a10 = ["ODA", "cooperation fund", "development spending",
+                  "samarbeidsfond", "bistandsutgift", "bistandsmid"]
+termlist13_a11 = ["international", "development", "foreign",
+                  "internasjonal", "utvikling", "bistand", "utenland", "utland", "utaland"]
+termlist13_a12 = ["aid", "assistance", "finance", "grant", "investment",
+                  "hjelp", "støtte", "stønad", "assistanse", "bistand", "finans", "bevilgning", "bevilling", "tilskudd", "tilskot", "invester"]
+
+termlist13_a13 = ["climate change", "global warming", "climate action", "climate mitigation", "climate adaptation", "climate financ", "climate aid", "climate loan", "climate fund", "climate bond",
+                  "green climate fund", "Least Developed Countries Fund",
+                  "LDCF", "Special Climate Change Fund", "SCCF","adaptation fund", "adaptation financ", "low carbon"
+                  
+                  "klimaendr", "global oppvarming", "klimahandling", "klimatilpas", "klimafinans", "klimahjelp", "klimastø", "klimalån", "klimafond", "klimaobligasjon", "grønt fond", "klimafond", "tilpasningsfond", "tilpassingsfond",
+                  "tilpasningsfinans", "tilpassingsfinans", "lavkarbon", "lågkarbon"]
+
 phrasedefault13_a2 = r'(?:{})'.format('|'.join(termlist13_a2))
 phrasedefault13_a3 = r'(?:{})'.format('|'.join(termlist13_a3))
 phrasedefault13_a4 = r'(?:{})'.format('|'.join(termlist13_a4))
 phrasedefault13_a5 = r'(?:{})'.format('|'.join(termlist13_a5))
-phrasedefault13_a6 = r'(?:{})'.format('|'.join(termlist13_a6)) 
+phrasedefault13_a6 = r'(?:{})'.format('|'.join(termlist13_a6))
 phrasedefault13_a7 = r'(?:{})'.format('|'.join(termlist13_a7))
 phrasedefault13_a8 = r'(?:{})'.format('|'.join(termlist13_a8))
 phrasedefault13_a9 = r'(?:{})'.format('|'.join(termlist13_a9))
 phrasedefault13_a10 = r'(?:{})'.format('|'.join(termlist13_a10))
-phrasedefault13_a11 = r'(?:{})'.format('|'.join(termlist13_a11))   
-phrasedefault13_a12 = r'(?:{})'.format('|'.join(termlist13_a12))                                                                                      
+phrasedefault13_a11 = r'(?:{})'.format('|'.join(termlist13_a11))
+phrasedefault13_a12 = r'(?:{})'.format('|'.join(termlist13_a12))
+phrasedefault13_a13 = r'(?:{})'.format('|'.join(termlist13_a13))                                                                                   
 ```
 
 
@@ -10427,37 +9082,73 @@ phrasedefault13_a12 = r'(?:{})'.format('|'.join(termlist13_a12))
 # Search
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault13_a1, na=False, case=False))
-        |(Data['LMICs']==True)
-        |
         (
             (Data['result_title'].str.contains(phrasedefault13_a2, na=False, case=False))
-            &(Data['result_title'].str.contains(phrasedefault13_a3, na=False, case=False))
+            |((Data['result_title'].str.contains(phrasedefault13_a3, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_a4, na=False, case=False)))
         )
-    )
-    &
-     (
-        (Data['result_title'].str.contains(phrasedefault13_a4, na=False, case=False))
-        |
+        &
+        (
+            (Data['result_title'].str.contains(phrasedefault13_a5, na=False, case=False))
+            |
             (
-                (Data['result_title'].str.contains(phrasedefault13_a5, na=False, case=False))
+                (Data['result_title'].str.contains(phrasedefault13_a6 , na=False, case=False))
                 &
                 (
-                    (Data['result_title'].str.contains(phrasedefault13_a6, na=False, case=False))
-                    |
-                    (
-                        (Data['result_title'].str.contains(phrasedefault13_a7, na=False, case=False))
-                        &(Data['result_title'].str.contains(phrasedefault13_a8, na=False, case=False))
-                    )
-                    |(Data['result_title'].str.contains(phrasedefault13_a9, na=False, case=False))
-                    |
-                    (
-                        (Data['result_title'].str.contains(phrasedefault13_a10, na=False, case=False))
-                        &(Data['result_title'].str.contains(phrasedefault13_a11, na=False, case=False))
-                    )
+                    (Data['result_title'].str.contains(phrasedefault13_a7 , na=False, case=False))
+                    |((Data['result_title'].str.contains(phrasedefault13_a8 , na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_a9 , na=False, case=False)))
+                    |(Data['result_title'].str.contains(phrasedefault13_a10 , na=False, case=False))
+                    |((Data['result_title'].str.contains(phrasedefault13_a11 , na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_a12, na=False, case=False)))
                 )
             )
-     )
+        )
+    )
+    & ((Data['result_title'].str.contains(phrasedefault13_a13, na=False, case=False)))
+),"tempsdg13_a"] = "SDG13_0a"
+
+print("Number of results = ", len(Data[(Data.tempsdg13_a == "SDG13_0a")])) 
+```
+
+
+```python
+test=Data.loc[(Data.tempsdg13_a == "SDG13_0a"), ("result_id", "result_title")]
+test.iloc[0:5, ]
+```
+
+#### Phrase 3
+
+
+```python
+termlist13_a14 = ["annex II party", "annex II parties", "developed contr", "developed nation", "oecd"]
+
+phrasedefault13_a14 = r'(?:{})'.format('|'.join(termlist13_a14))
+```
+
+
+```python
+# Search
+Data.loc[(
+    (
+        (
+            (Data['LMICs']==True)
+            |(Data['result_title'].str.contains(phrasedefault13_a14 , na=False, case=False))
+        )
+        &
+        (
+            (Data['result_title'].str.contains(phrasedefault13_a5, na=False, case=False))
+            |
+            (
+                (Data['result_title'].str.contains(phrasedefault13_a6 , na=False, case=False))
+                &
+                (
+                    (Data['result_title'].str.contains(phrasedefault13_a7 , na=False, case=False))
+                    |((Data['result_title'].str.contains(phrasedefault13_a8 , na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_a9 , na=False, case=False)))
+                    |(Data['result_title'].str.contains(phrasedefault13_a10 , na=False, case=False))
+                    |((Data['result_title'].str.contains(phrasedefault13_a11 , na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_a12, na=False, case=False)))
+                )
+            )
+        )
+    )
+    & ((Data['result_title'].str.contains(phrasedefault13_a13, na=False, case=False)))
 ),"tempsdg13_a"] = "SDG13_0a"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_a == "SDG13_0a")])) 
@@ -10470,74 +9161,44 @@ test.iloc[0:5, ]
 ```
 
 ### SDG 13.b
+13.b Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities.
 
-
-```
- TS=
-(
-  (
-    ("climat*" NEAR/5 ("strateg*" OR "policy" OR "policies" OR "plan" OR "planning" OR "plans" OR "management"¨OR "adaptation communication$"))
-    OR "nationally determined contribution$"
-    OR "green climate fund" OR "Least Developed Countries Fund" OR "LDCF" OR "Special Climate Change Fund" OR "SCCF" OR "adaptation fund" OR "adaptation financ*"
-    OR
-      (        
-        ("capacity" OR "capabilit*"
-        OR "educat*" OR "curriculum" OR "curricula" OR "teacher training" OR "climate literacy"
-        OR "research" OR "knowledge" OR "skills" OR "tools" OR "competenc*" OR "expertise" OR "training"
-        OR "awareness" OR "responsibilit*"
-        OR "infrastructure$" OR "technolog*" OR "early warning system$"
-        OR "communication" OR "collaboration" OR "cooperation" OR "co operation" OR "social network$" OR "information network$"
-        OR "economic resources" OR "financial resources" OR "human resource$"
-        OR (("institutional" OR "administrative" OR "policy" OR "governance") NEAR/5 ("structure$" OR "values" OR "practices" OR "arrangement$" OR "resources"))
-        )
-        AND
-            (
-              ("climat*" OR "global warming" OR "climatic change$" OR "sea level rise")
-              NEAR/5
-                  ("action$" OR "sustainab*" OR "mitigat*" OR "adapt*" OR "cope" OR "coping" OR "resilien*"
-                  OR "early warning" OR "warning system$" OR "preparedness" OR "risk$" OR "vulnerab*"
-                  OR "awareness" OR "climate education" OR "climate sensitive education" OR "climate change education" OR "climate literacy"
-                  OR "solutions" OR "problems" OR "manag*"
-                  )
-            )
-      )  
-  )   
-  AND
-  (****LDCs and SIDS**** )
-)
-```
-      
+Fremje mekanismar for å styrkje evna til effektiv klimarelatert planlegging og forvaltning i dei minst utvikla landa og små utviklingsøystatar, mellom anna med vekt på kvinner, ungdom og lokale og marginaliserte samfunn.
 
 
 ```python
-# Term lists
 termlist13_b1 = ["climate",
                  "klima"]
 termlist13_b2 = ["strateg", "policy", "policies", "plan", "management", "adaptation communication",
                  "politikk", "retningslin", "ledelse", "leiing", "styring", "tilpasningskommunikasjon", "tilpassingskommunikasjon"]
-termlist13_b3 = ["nationally determined contribution", "green climate fund", "least developed countries fund", "LDCF", "special climate change fund", "sccf", "adaptation fund",
-                 "adaptation financ", 
+
+termlist13_b3 = ["nationally determined contribution", "green climate fund", "least developed countries fund", "LDCF", "special climate change fund", "sccf", "adaptation fund", "adaptation financ",
                  "nasjonalt fastsatt bidrag", "nasjonalt fastsatte bidrag", "klimafond"]
+
 termlist13_b4 = ["capacity", "capabilit", "educat", "curriculum", "curricula", "teacher training", "climate literacy", "research", "knowledge", "skills",
                  "tools", "competenc", "expertise", "training", "awareness", "responsibilit", "infrastructure", "technolog", "early warning system",
-                 "communication", "collaboration", "cooperation", "co operation", "social network", "information network", 
+                 "communication", "collaboration", "cooperation", "co operation", "social network", "information network",
                  "economic resources", "financial resources", "human resource",
-                 
+
                  "kapasitet", "evne", "utdann", "opplær", "pensum", "læreplan", "fagplan", "emneplan", "studieplan", "lærerutdann", "lærarutdann", "klimakompetanse", "forskning", "forsking", "kunnskap", "ferdighet", "ferdigheit",
-                 "verktøy", "kompetanse", "ekspertise", "bevisst", "medvett", "medvit", "ansvar", "infrastruktur", "teknolog", "tidlig varsling", "tidleg varsling", "varslingssystem"
+                 "verktøy", "kompetanse", "ekspertise", "bevisst", "medvett", "medvit", "ansvar", "infrastruktur", "teknolog", "tidlig varsling", "tidleg varsling", "varslingssystem",
                  "kommunikasjon", "samarbeid", "sosiale nettverk", "informasjonsnettverk",
-                 "økonomiske ressurs", "finansielle ressurs", "menneskelige ressurser", "menneskelege ressursar"]               
-termlist13_b5 = ["institutional", "administrativ", "policy", "governance", 
+                 "økonomiske ressurs", "finansielle ressurs", "menneskelige ressurser", "menneskelege ressursar"]
+
+termlist13_b5 = ["institutional", "administrativ", "policy", "governance",
                  "institusjonell", "politikk", "retningslin", "ledelse", "leiing", "styring"]
-termlist13_b6 = ["structure", "values", "practices", "arrangement", "resources", 
+termlist13_b6 = ["structure", "values", "practices", "arrangement", "resources",
                  "struktur", "verdi", "praksis", "ressurs"]
-termlist13_b7 = ["climate", "global warming", "climatic change", "sea level rise", 
+
+termlist13_b7 = ["climate", "global warming", "climatic change", "sea level rise",
                  "klima", "global oppvarming", "havnivåstigning" ]
+
 termlist13_b8 = ["action", "sustainab", "mitigat", "adapt", "cope", "coping", "resilience", "early warning", "warning system", "preparedness", "risks", "vulnerab", "awareness",
                  "climate education", "climate sensitive education", "climate change education", "climate literacy", "solutions", "problem", "manag",
-                 "handl", "bærekraft", "berekraft", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme","tidlig varsling", "tidleg varsling", 
+                 
+                 "handl", "bærekraft", "berekraft", "mink", "demp", "reduser", "reduksjon", "tilpas", "takl", "klare", "greie", "fikse", "overkomme","tidlig varsling", "tidleg varsling",
                  "varslingssystem", "forbered", "førebu", "risik", "sårbar", "bevisst", "medvit", "medvett", "klimautdann", "klimakompet", "løsning", "løysing", "styring", "lede", "leie", "leiing"
-                ]          
+                ]
 
 phrasedefault13_b1 = r'(?:{})'.format('|'.join(termlist13_b1))
 phrasedefault13_b2 = r'(?:{})'.format('|'.join(termlist13_b2))
@@ -10555,31 +9216,19 @@ phrasedefault13_b8 = r'(?:{})'.format('|'.join(termlist13_b8))
 Data.loc[(
     (
         (
-            ( 
-              (Data['result_title'].str.contains(phrasedefault13_b1, na=False, case=False))&
-              (Data['result_title'].str.contains(phrasedefault13_b2, na=False, case=False))       
-            ) 
-          |
-            (Data['result_title'].str.contains(phrasedefault13_b3, na=False, case=False))
+            ((Data['result_title'].str.contains(phrasedefault13_b1, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_b2, na=False, case=False)))
+            |(Data['result_title'].str.contains(phrasedefault13_b3, na=False, case=False))
         )
-    |
+        |
         (
-          (
-            (Data['result_title'].str.contains(phrasedefault13_b4, na=False, case=False))
-          |
             (
-             (Data['result_title'].str.contains(phrasedefault13_b5, na=False, case=False))&
-             (Data['result_title'].str.contains(phrasedefault13_b6, na=False, case=False))
+                (Data['result_title'].str.contains(phrasedefault13_b4, na=False, case=False))
+                |((Data['result_title'].str.contains(phrasedefault13_b5, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_b6, na=False, case=False)))
             )
-          )
-          &
-           (  
-              (Data['result_title'].str.contains(phrasedefault13_b7, na=False, case=False))&
-              (Data['result_title'].str.contains(phrasedefault13_b8, na=False, case=False))
-           )      
-        )  
+            & ((Data['result_title'].str.contains(phrasedefault13_b7, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_b8, na=False, case=False)))
+        )
     )
-    &(Data['LDCSIDS']==True)
+    & (Data['LDCSIDS']==True)
 ),"tempsdg13_b"] = "SDG13_b"
 
 print("Number of results = ", len(Data[(Data.tempsdg13_b == "SDG13_b")]))
@@ -10592,39 +9241,6 @@ test.iloc[0:5, ]
 ```
 
 ### SDG 13 mentions
-
-
-```
-TS=
-("SDG 13" OR "SDGs 13" OR "SDG13" OR "sustainable development goal$ 13"
-OR ("sustainable development goal$" AND "goal 13")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 13")
-  AND ("climate action")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 13")
-    NEAR/15 ("climate")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-```
-  
 
 
 
@@ -10649,24 +9265,16 @@ phrasedefault13_3 = r'(?:{})'.format('|'.join(termlist13_3))
 phrasedefault13_4 = r'(?:{})'.format('|'.join(termlist13_4))
 phrasedefault13_5 = r'(?:{})'.format('|'.join(termlist13_5)) 
 phrasedefault13_6 = r'(?:{})'.format('|'.join(termlist13_6))     
-
 ```
 
 
 ```python
 ## Search 13_123456
 Data.loc[(
-       (Data['result_title'].str.contains(phrasedefault13_1, na=False, case=False))|
-     (
-      (Data['result_title'].str.contains(phrasedefault13_2, na=False, case=False))&
-      (Data['result_title'].str.contains(phrasedefault13_3, na=False, case=False))
-      ) |
-     (
-         (Data['result_title'].str.contains(phrasedefault13_4, na=False, case=False))&
-         (Data['result_title'].str.contains(phrasedefault13_5, na=False, case=False))
-     )
-     |
-      (Data['result_title'].str.contains(phrasedefault13_6, na=False, case=False))
+    (Data['result_title'].str.contains(phrasedefault13_1, na=False, case=False))
+    |((Data['result_title'].str.contains(phrasedefault13_2, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_3, na=False, case=False))) 
+    |((Data['result_title'].str.contains(phrasedefault13_4, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault13_5, na=False, case=False)))
+    |(Data['result_title'].str.contains(phrasedefault13_6, na=False, case=False))
 ),"tempmentionsdg13"] = "SDG13"
 
 print("Number of results = ", len(Data[(Data.tempmentionsdg13 == "SDG13")]))
@@ -10682,66 +9290,13 @@ test.iloc[5:10, ]
 
 Webpages about SDG targets from the UN Association of Norway were used to get target translations and to help with Norwegian terms (https://www.fn.no/om-fn/fns-baerekraftsmaal/livet-i-havet).
 
-Have also used "Realfagstermer", a controlled vocabulary for English and Norwegian scientific terms from the University of Oslo and University of Bergen - https://app.uio.no/ub/emnesok/realfagstermer/search
+We have also used "Realfagstermer", a controlled vocabulary for English and Norwegian scientific terms from the University of Oslo and University of Bergen - https://app.uio.no/ub/emnesok/realfagstermer/search
 
 A website with Norwegian and English names for international environmental agreements from the Norwegian Environment Agency was used to help translate international agreement/convention names (https://www.miljodirektoratet.no/regelverk/konvensjoner/; accessed 24/01/23)
 
 ### Marine terms
 
 Used together with most (but not all) targets to try and limit the results to the marine environment. Done by creating a T/F column ("marine_terms") that can be combined with other searches. T = contains a word indicating it is about the marine environment. 
-
-```
-TS=
-(
-  "ocean$" OR "oceanogra*" OR "marine" OR "submarine" OR "seas"
-  OR "seabed" OR "seafloor" OR "seamount$" OR "hydrothermal vent$" OR "cold seep$" OR "continental shelf" OR "continental shelves" OR "continental slope"
-  OR "subtidal" OR "intertidal" OR "deep sea" OR "bathyal" OR "abyssal"
-  OR "rocky shore$" OR "beach*" OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
-  OR "estuar*" OR "fjord$"
-  OR "sea ice"
-
-  OR "sea life" OR "sealife"
-  OR "mangrove$"
-  OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
-  OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
-  OR "sponge ground$" OR "organic fall$"
-  OR "reef" OR "reefs"
-
-  OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$"
-  OR "coastal water$" OR "coastal current$" OR "tidal current$"
-  OR "coastal communit*" OR "coastal zone management"
-  OR 
-    (
-      ("coast*" OR "*tidal")
-      AND
-          ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
-          OR "offshore" OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
-          )
-    )
-  OR 
-    ("sea"
-      AND
-          ("marsh*" OR "wetland$" OR "bay$" OR "gulf" OR "lagoon$"
-          OR "offshore" OR "ship*"
-          OR "fish*" OR "aquaculture" OR "shrimp" OR "shellfish"
-          OR "*tidal" OR "pelagic"
-          )
-    )
-  OR
-    (
-      ("harbour$" OR "harbor$" OR "port" OR "ports")
-      AND ("sea" OR "coast*" OR "gulf" OR "ship*" OR "maritime")
-    )
-)
-
-OR
-
-SO =
-(
-  "marine*" OR "ocean*" OR "estuar*" OR "deep sea*"
-  .....
-
-```
 
 
 ```python
@@ -10753,7 +9308,7 @@ termlist14_marine1 = ["marine", "mariculture", "barents sea", "norwegian sea",
                      "rocky shore", "beach", "salt marsh", "mud flat", "mudflat", "tidal flat",
                      "estuar", "fjord", 
                      "sea ice",
-                     "sea life", "sealife", "mangrove$", "kelp bed", "kelp forest", "seagrass", "seaweed", "macroalga", 
+                     "sea life", "sealife", "mangrove", "kelp bed", "kelp forest", "seagrass", "seaweed", "macroalga", 
                      "sponge ground", "organic fall", "reef", 
                      "coastal communit", "coastal zone management",
                      "offshore",
@@ -10765,8 +9320,7 @@ termlist14_marine1 = ["marine", "mariculture", "barents sea", "norwegian sea",
                       "havis", "sjødyr", "sjøgress", "sjøgras", "korall", 
                       "kystsamfunn", "kystson",
                       "utaskjærs",
-                      "skipsfart"                      
-                     ]
+                      "skipsfart"]
                      #Difficult because "Fjære"(NO) is also a local municipality
                      #"tidevann"(NO) will cover several other terms, like tidevannssonen
                      #"skipsfart"(NO) was added here as in Norwegian it is likely to be used in a marine context. In English, "ship" is combined with other terms.
@@ -10774,13 +9328,11 @@ termlist14_marine1 = ["marine", "mariculture", "barents sea", "norwegian sea",
                      #Also relevant geographic areas (e.g. Skagerrak), but some will be found by "havet"(NO) below (e.g. Barentshavet).
 
 termlist14_marine2 = ["ocean", "oceans", "oceanogra.*", "seas", 
-                      "marin", "oseanografi.*", "hav", "havet", "verdenshav", "sjø", "sjøen", "tang", "tare"
-                      ]
+                      "marin", "oseanografi.*", "hav", "havet", "verdenshav", "sjø", "sjøen", "tang", "tare"]
                       #"marin"(EN&NO), "tang" (NO), "tare"(NO) are added here instead of untruncated in termlist_marine1 because it is part of other words (e.g. marinate)
 
 termlist14_marine3 = ["sea", "coast", "coastal", "tidal",
-                      "sjø.*", "kyst.*", "tideva.*"
-                      ]
+                      "sjø.*", "kyst.*", "tideva.*"]
                       #"tideva"(NO) covers both tidevatn and tidevann while excluding "tide"
 
 termlist14_marine4 = ["habitat", "ecosystem", "dune", "wetland", "marsh", "bay", "lagoon", "gulf", "water", "current", "pelagi",
@@ -10789,8 +9341,7 @@ termlist14_marine4 = ["habitat", "ecosystem", "dune", "wetland", "marsh", "bay",
 
                       "leveområd", "økosystem", "våtmark", "sumpmark", "viker", "bukter", "strøm",
                       "fisk", "akvakultur", 
-                      "havn", "båt", "elvemunn"
-                     ] 
+                      "havn", "båt", "elvemunn"] 
                      #In the original string, "sea" and "coast" etc. were combined with this set to remove noise (i.e. coastal cities)
                      #However, in a title search, I think we lose more relevant than we get noise, so I do not combine with this set.
                         #"elvemunn"(NO) is moved here as used with rivers into lakes also
@@ -10798,8 +9349,7 @@ termlist14_marine4 = ["habitat", "ecosystem", "dune", "wetland", "marsh", "bay",
                         #"bay" and "ship" are potentially problematic with free truncation, but combined with the terms in marine3 don't seem to cause issues
 
 termlist14_marine5 = ["marine", "ocean", "oceans", "oceanogra.*", "estuar.*", "deep sea", "sea", 
-                      "havforsk.*", "havbruk.*"
-                      ] 
+                      "havforsk.*", "havbruk.*"] 
                       #Journal titles
                       #Using "hav"(NO) alone is difficult, even with no truncation, because in Norwegian it is so often in combined words
 
@@ -10813,11 +9363,11 @@ phrasespecific14_marine5 = r'\b(?:{})\b'.format('|'.join(termlist14_marine5))
 
 ```python
 Data["marine_terms"] = (
-(Data['result_title'].str.contains(phrasedefault14_marine1, na=False, case=False))
-|(Data['result_title'].str.contains(phrasespecific14_marine2, na=False, case=False))
-| (Data['result_title'].str.contains(phrasespecific14_marine3, na=False, case=False)) #& (Data['result_title'].str.contains(phrasedefault14_marine4, na=False, case=False)))
-| (Data['journal'].str.contains(phrasespecific14_marine5, na=False, case=False))
-)
+    (Data['result_title'].str.contains(phrasedefault14_marine1, na=False, case=False))
+    |(Data['result_title'].str.contains(phrasespecific14_marine2, na=False, case=False))
+    | (Data['result_title'].str.contains(phrasespecific14_marine3, na=False, case=False)) #& (Data['result_title'].str.contains(phrasedefault14_marine4, na=False, case=False)))
+    | (Data['journal'].str.contains(phrasespecific14_marine5, na=False, case=False))
+    )
 #In the original string, "sea" and "coast" etc. were combined with this set to remove noise (i.e. coastal cities)
 #However, in a title search, we seem to lose more relevant than we get noise, so we do not combine with this set (commented out above).
 
@@ -10837,43 +9387,7 @@ test.iloc[0:10, [0,4,5,6,8]]
 
 *Innen 2025 forhindre og i betydelig grad redusere alle former for havforurensning, særlig fra landbasert virksomhet, inkludert marin forsøpling og utslipp av næringssalter*
 
-```
-TS=
-(
-  ("pollut*"
-  OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
-  OR "eutrophicat*" OR "excess nutrient$" OR "excessive nutrient$"
-  OR "effluent$" OR "nutrient runoff" OR "nutrient run off"
-  OR
-    (
-      ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "radioactive")
-      NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off")          
-    )
-  OR "litter" OR "littering" OR "garbage patch"
-  OR ("debris" NEAR/5 ("coastal" OR "marine" OR "ocean*"))
-  OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" OR "plastic waste" OR ("plastic$" NEAR/3 ("problem" OR "debris"))
-  OR
-    (
-      ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
-      OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
-      )
-      NEAR/15 ("contamination" OR "contaminated")   
-    )
-  OR
-    (
-      (("cd" OR "ch" OR "cu" OR "ni" OR "pb" OR "hg") NEAR/15 ("contamination" OR "contaminated")) 
-      AND ("arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" OR "lead" OR "mercury")
-    )
-  OR "contaminant$" OR "bioaccumula*" OR "bioconcentrat*" OR "ecotox*" OR "toxic chemical$"
-  OR "endocrine disrupting chemical$"
-  OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-  OR "polycyclic aromatic hydrocarbon$" OR "PAH"
-  OR "oil spill$"
-  )
-  NOT ("PM2.5" OR "PM10" OR "leaf litter")
-)
-
-```
+#### Phrase 1/2/3
 
 
 ```python
@@ -10899,17 +9413,15 @@ termlist14_1a = ["pollut",
                  "tinnorganiske", "organiske tinnforbindelse", #"gruveavfall",
                  "bioakkumuler", "miljøtoksikologi",
                  "miljøgift", "hormonforstyr", "insektmiddel", "insektmidler", "plantevernmid",
-                 "oljesøl", "oljeutslipp"
-                 ]
+                 "oljesøl", "oljeutslipp"]
                  #Can add "wastewater","waste water" back again if "waste" is too general alone
                  #"pesticid" will find Norwegian-ifications of this word.
                  #"avfall" (NO), after testing, is ok to use alone, thus the specific terms are commented out above.
 
-termlist14_1b = ["PCB","DDT","PAH"] #can be searched for with case sensitive
+termlist14_1b_case = ["PCB","DDT","PAH"] 
 
 termlist14_1c = ["litter", 
-                 "bly", "arsen", "krom", "tinn", "plast"
-                 ]
+                 "bly", "arsen", "krom", "tinn", "plast"]
                  #"Litter" needs specific truncation because it is part of "litteratur" in Norwegian
                  #These Norwegian heavy metals are short words and need to prevent truncation
 
@@ -10921,7 +9433,7 @@ termlist14_1e = ["contamina", "toksis"]
 termlist14_1not = ["PM2.5","PM10","leaf litter"] 
 
 phrasedefault14_1a = r'(?:{})'.format('|'.join(termlist14_1a))
-phrasedefault14_1b = r'(?:{})'.format('|'.join(termlist14_1b))
+phrasedefault14_1b_case = r'(?:{})'.format('|'.join(termlist14_1b_case))
 phrasespecific14_1c = r'\b(?:{})\b'.format('|'.join(termlist14_1c))
 phrasespecific14_1d = r'\b(?:{})\b'.format('|'.join(termlist14_1d))
 phrasedefault14_1e = r'(?:{})'.format('|'.join(termlist14_1e))
@@ -10935,7 +9447,7 @@ Data.loc[(
     (
         (
             (Data['result_title'].str.contains(phrasedefault14_1a, na=False, case=False))
-            | (Data['result_title'].str.contains(phrasedefault14_1b, na=False, case=True)) #case = True
+            | (Data['result_title'].str.contains(phrasedefault14_1b_case, na=False, case=True)) #case = True
             | (Data['result_title'].str.contains(phrasespecific14_1c, na=False, case=False))
             | ((Data['result_title'].str.contains(phrasespecific14_1d, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault14_1e, na=False, case=False)))
         )
@@ -10958,52 +9470,25 @@ test.iloc[0:5, ]
 
 *Innen 2020 forvalte og beskytte økosystemene i havet og langs kysten på en bærekraftig måte for å unngå betydelig skadevirkninger, blant annet ved å styrke økosystemenes motstandsevne og ved å iverksette tiltak for å gjenoppbygge dem, slik at havene kan bli sunne og produktive*
 
-#### Phrase 1
-
-```
-TS=
-(
-  "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-  OR "particularly sensitive sea area$"
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
-      NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
-    )
-   OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
-   OR "marine spatial planning" OR "spatial management"
-   OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
-   OR "coastal resources management"
-   OR "community based management"
-   OR "locally managed marine area$" OR "LMMA$"
-   OR "resilience based management"
-   OR "herbivore management area$"
-   OR ("sustainab*" NEAR/5 ("manag*" OR "govern*"))
-   OR
-     (
-       ("ecosystem-based" OR "area-based")
-       NEAR/5 ("manag*" OR "approach*" OR "govern*")
-     )
-)
-```
+#### Phrase 1/2
 
 
 ```python
 #Termlists
-termlist14_2a = ["marine reserve", "ocean reserve", "marine nature reserve", "marine park", "particularly sensitive sea area",
+termlist14_2a = ["marine reserve", "ocean reserve", "marine sanctuar", "marine park", "particularly sensitive sea area","marine conservation",
                  "marine spatial planning",
                  "coastal zone management","integrated coastal zone planning","coastal resources management",
                  "locally managed marine area",
 
-                 "marint vernområde","marine vernområde","marine verneområde","marine reservat",
-                 "integrert kystsone", "kystplanlegging", "kystsoneforvaltning"
-              ]
-termlist_142acaps = ["LMMA","NTMR","ICZM","LSMPA"] #can search case sensitive
+                 "marint vernområde","marine vernområde","marine verneområde","marine reservat","marint vern",
+                 "integrert kystsone", "kystplanlegging", "kystsoneforvaltning"]
+termlist_14_2acase = ["LMMA.*", "NTMR","ICZM", "LSMPA.*", "MPA", "MPAs"] #can search case sensitive
+            
+#Above are terms that are specific to the marine environment
+#In the rest of the term lists, the terms need combining with marine terms
 
-              #Above I have the terms that are specific to the marine environment
-              #In the rest of the term lists, the terms need combining with marine terms
-
-termlist14_2b = ["spatial management", "community based management","resilience based management",
+termlist14_2b = ["nature reserve", 
+                 "spatial management", "community based management","resilience based management",
                  "herbivore management area", 
                  "ecosystem-based", "area-based manag", "area-based approach",
                  "sustainable management", "sustainable governance",
@@ -11012,22 +9497,24 @@ termlist14_2b = ["spatial management", "community based management","resilien
                  "naturreservat", "biotopvernområde", "nasjonalpark", "bevarte område", "bevart område", "bevaringsområde",
                  "økosystembasert forvaltning", "økosystemtilnærming", "økosystembasert styring", "forvaltningsplaner",
                  "samfunnsforvalt", "bærekraftig forvalt", "berekraftig forvalt", "arealforvalt", "bærekraftig ledelse", "berekraftig leiing",
-                 "fiskeforbud", "fiskevernsone"
-                ]
+                 "fiskeforbud", "fiskevernsone"]
 
 termlist14_2c = ["protect","conserve","conservation","conserves","conserving",
-                "vernet", "verne", "verna", "vern av", "bevare", "bevaring", "frede", "freda", "fredning", "beskytt" 
-                ]
+                "vernet", "verne", "verna", "vern av", "bevare", "bevaring", "frede", "freda", "fredning", "beskytt" ]
 
 termlist14_2d = ["area", "zone", "habitat","ecosystem",
-                "område", "sone", "miljø", "leveområd", "økosystem"
-                ]
+                "område", "sone", "miljø", "leveområd", "økosystem"]
+
+termlist14_2not = ["Marine Predator Algorithm"] 
+#This term can cause an issue if you run a search for "MPA" in titles - but not using "MPA" loses relevant results. 
+# In abstracts/longer texts it sometimes works better to drop "MPA" as they normally use the full term somewhere ("protected areas")
 
 phrasedefault14_2a = r'(?:{})'.format('|'.join(termlist14_2a))
-phrasedefault14_2acaps = r'(?:{})'.format('|'.join(termlist_142acaps))
+phrasespecific14_2acase = r'\b(?:{})\b'.format('|'.join(termlist_14_2acase))
 phrasedefault14_2b = r'(?:{})'.format('|'.join(termlist14_2b))
 phrasedefault14_2c = r'(?:{})'.format('|'.join(termlist14_2c))
 phrasedefault14_2d = r'(?:{})'.format('|'.join(termlist14_2d))
+phrasedefault14_2not = r'(?:{})'.format('|'.join(termlist14_2not))
 ```
 
 
@@ -11036,66 +9523,33 @@ phrasedefault14_2d = r'(?:{})'.format('|'.join(termlist14_2d))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault14_2a, na=False, case=False)) 
-        | (Data['result_title'].str.contains(phrasedefault14_2acaps, na=False, case=True)) #case = True
+        | (Data['result_title'].str.contains(phrasespecific14_2acase, na=False, case=True)) #case = True
         | (Data['result_title'].str.contains(phrasedefault14_2b, na=False, case=False))
         | ((Data['result_title'].str.contains(phrasedefault14_2c, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault14_2d, na=False, case=False)))
     )
     &(Data['marine_terms']==True)
+    &~(Data['result_title'].str.contains(phrasedefault14_2not, na=False, case=True))
 ),"tempsdg14_02"] = "SDG14_02"
 
 print("Number of results = ", len(Data.loc[(Data.tempsdg14_02 == "SDG14_02")]))  
 ```
 
-#### Phrase 2
 
+```python
+test=Data.loc[(Data.tempsdg14_02 == "SDG14_02"), ("result_id", "result_title")]
+test.iloc[0:5, ]
 ```
-TS=
-(
-  ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring"
-  OR "management" OR "conservation" OR "protection" OR "restoration"
-  )
-  NEAR/15
-      ("ecosystem$" OR "habitat$" OR "communit*"
-      OR "mangrove$" OR "kelp bed$" OR "kelp forest$" OR "seagrass*"
-      OR (("seaweed$" OR "macroalga*") NEAR/5 ("bed$" OR "assemblage$" OR "communit*"))
-      OR "sponge ground$" OR "reef" OR "reefs" OR "coral$"
-      OR "salt marsh*" OR "mud flat$" OR "mudflat$" OR "*tidal flat" OR "*tidal flats"
-      OR "estuar*" OR "fjord$" OR "coastal habitat$" OR "coastal ecosystem$" OR "coastal dune$" OR "coastal wetland$" OR "coastal water$"
-      OR
-        (
-          ("ocean$" OR "environment*")
-          NEAR/3
-              ("health$" OR "recovery" OR "service$" OR "functioning" OR "function$"
-              OR "quality" OR "integrity" OR "stability" OR "resilien*"
-              )
-        )
-      OR "water quality"
-      OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-      OR ("diversity" NEAR/3 ("beyond national jurisdiction" OR "beyond areas of national jurisdiction" OR "ABNJ"))
-      OR "BBNJ"
-      OR "tipping point$" OR "extinction$"
-      OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species"
-      OR "productivity" OR "food production" OR "fish stock$" OR "fishery" OR "fisheries" OR "aquaculture"
-      OR ("no-take" NEAR/3 ("area*" OR "zone*"))
-      OR "Habitats directive"
-      OR "CBD" OR "HELCOM" OR "OSPAR" OR "UNEP"
-      OR "Conservation of Antarctic Marine Living Resources" OR "CCAMLR"
-      OR "Lima convention" OR "Nairobi convention" OR "Noumea convention" OR "Barcelona convention" OR "World heritage convention"
-      OR "International coral reef initiative"
-      )
-)
-```
+
+#### Phrase 3
 
 
 ```python
 #Termlists
-termlist14_2e = ["manag", "conserv", "protect", "restor",
-                 "forvalt", "verne", "verna", "vern av", "miljøvern","bevare", "bevaring", "frede", "freda", "fredning", "beskytt", "gjenoppbygg", "restaurer", 
-                 "bærekraftig bruk", "berekraftig bruk"
-                 ]
+termlist14_2e = ["manag", "conserv", "protect", "restor", "rehabilita", "resilien",      
+                 "forvalt", "verne", "verna", "vern av", "miljøvern","bevare", "bevaring", "frede", "freda", "fredning", "beskytt", "gjenoppbygg", "restaurer", "bærekraftig bruk", "berekraftig bruk"]
                  #"vernet"(NO) will also find "vernetiltak"
 
-termlist14_2f = ["habitat","ecosystem","communit",
+termlist14_2f = ["habitat","ecosystem","ecological communit",
                  "mangrove", "kelp", "seagrass", "seaweed", "macroalga", "sponge ground", "reef", "coral", 
                  "salt marsh", "mud flat", "mudflat", "tidal flat",
                  "estuar", "fjord", "coastal dune", "coastal wetland", "coastal water", 
@@ -11115,20 +9569,17 @@ termlist14_2f = ["habitat","ecosystem","communit",
                 "mangfold", "mangfald", "diversitet", "vippepunkt", "nøkkelart", "flaggskipsart", "paraplyart", 
                 "produktivitet", "mat produksjon", "fiskebestand", "fiskeri", "havbruk", "akvakultur",
                 "habitatdirektiv", "Lima-konvensjonen","Nairobi-konvensjonen","Noumea-konvensjonen","Barcelona-konvensjonen","verdensarvkonvensjonen","Landskapskonvensjonen",
-                "naturmangfoldloven", "områdevern", "artsforvaltning"
-                ]
+                "naturmangfoldloven", "områdevern", "artsforvaltning"]
                 #added Norwegian-specific legislation
 
-termlist14_2g = ["tare.*", "tang", "tangart.*"
-                 ]
-                 #Norwegian terms from 2f that need prevent truncation
+termlist14_2ftrunc = ["tare.*", "tang", "tangart.*"] #Norwegian terms from 2f that need prevent truncation
 
-termlist14_2h = ["BBNJ", "CBD", "HELCOM", "OSPAR", "UNEP", "CCAMLR"]
+termlist14_2hcase = ["BBNJ", "CBD", "HELCOM", "OSPAR", "UNEP", "CCAMLR"]
 
 phrasedefault14_2e = r'(?:{})'.format('|'.join(termlist14_2e))
 phrasedefault14_2f = r'(?:{})'.format('|'.join(termlist14_2f))
-phrasespecific14_2g = r'\b(?:{})\b'.format('|'.join(termlist14_2g))
-phrasedefault14_2h = r'(?:{})'.format('|'.join(termlist14_2h))
+phrasespecific14_2ftrunc = r'\b(?:{})\b'.format('|'.join(termlist14_2ftrunc))
+phrasedefault14_2hcase = r'(?:{})'.format('|'.join(termlist14_2hcase))
 ```
 
 
@@ -11136,9 +9587,9 @@ phrasedefault14_2h = r'(?:{})'.format('|'.join(termlist14_2h))
 #Search 1
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault14_2h, na=False, case=True)) 
+        (Data['result_title'].str.contains(phrasedefault14_2hcase, na=False, case=True)) #case=T
         | ((Data['result_title'].str.contains(phrasedefault14_2e, na=False, case= False)) & (Data['result_title'].str.contains(phrasedefault14_2f, na=False, case=False)))
-        | ((Data['result_title'].str.contains(phrasedefault14_2e, na=False, case= False)) & (Data['result_title'].str.contains(phrasespecific14_2g, na=False, case=False)))
+        | ((Data['result_title'].str.contains(phrasedefault14_2e, na=False, case= False)) & (Data['result_title'].str.contains(phrasespecific14_2ftrunc, na=False, case=False)))
     )
     &(Data['marine_terms']==True)
 ),"tempsdg14_02"] = "SDG14_02"
@@ -11157,28 +9608,6 @@ test.iloc[0:5, ]
 
 *Begrense mest mulig og sørge for håndtering av konsekvensene av havforsuring, blant annet gjennom styrket vitenskapelig samarbeid på alle nivåer*
 
-```
-TS =
-(
-  (
-    ("impact*" OR "effect$" OR "affect$" OR "response$" OR "consequence$"
-    OR "results in" OR "changes" OR "alter*"
-    OR "sensitiv*" OR "vulnerab*" OR "threat*"
-    OR "resilience" OR "adaptive capacity" OR "coping" OR "toleranc*"
-    OR "calcif*" OR "decalcif*" OR "calcium carbonate"
-    OR "aragonite" OR "calcite" OR "carbonate saturation"
-    OR "extinction$" OR "adaptation" OR "adaptive capacity"
-    OR "competition" OR "recruitment" OR "survival" OR "reproduction"
-    )
-    NEAR/15
-        ("acidi*" OR "OA" OR "ocean ph" OR "seawater ph"
-        OR "low ph" OR "declining ph" OR "decreas* ph" OR "effect$ of ph"
-        )
-  )
-  AND "ocean$"
-)
-```
-
 Compared to the original string, we have added the term "monitoring" ("overvåk"). This is somewhat of an expansion; the original string was very limited to terms to do with impacts. If one can consider monitoring as a way of "addressing" impacts then it should be added to the original string too. 
 
 
@@ -11190,41 +9619,36 @@ termlist14_3a = ["impact", "effect", "affect", "respons", "consequence",
                  "resilien", "coping", "toleran",
                  "calcif", "carbonate", "aragonit", "calcite", 
                  "extinct", "adapt", "competiti", "recruit", "surviv", "reproduc",
-                 "monitor"
+                 "monitor",
 
                  "påvirk", "impakt", "konsekvens", "effekt",
                  "resultat", "endring", 
                  "sårbar", "truet", "truer", " trua", " trued", "stress", "tåle", 
                  "forkalk", "karbonsyre", "karbonat", "kalsit", "skjell", #"aragonit", 
                  "utrydd", "tilpass", "konkurr", "rekrutter", "overleve", "formering", "reproduksjon",
-                 "overvåk", "overvak"
-                ]
+                 "overvåk", "overvak"]
                 #spaces added with "trua"(NO) and "trued"(NO) on purpose to avoid truncation
 
 termlist14_3b = ["acidi", "ocean ph", "seawater ph", "low ph", "declining ph", "decreasing ph", "decreased ph", "effect of ph", "effects of ph",
-                 
-                 "forsur", "nedgangen i pH", "nedgang i ph", "lav ph", "lavere ph", "lågere ph", "surere hav", "surare hav", "surt hav"
-                ]
+                 "forsur", "nedgangen i pH", "nedgang i ph", "lav ph", "lavere ph", "lågere ph", "surere hav", "surare hav", "surt hav"]
 
-termlist14_3c = ["OA"]
+termlist14_3ccase = ["OA"]
 
 phrasedefault14_3a = r'(?:{})'.format('|'.join(termlist14_3a))
 phrasedefault14_3b = r'(?:{})'.format('|'.join(termlist14_3b))
-phrasespecific14_3c = r'\b(?:{})\b'.format('|'.join(termlist14_3c))
+phrasespecific14_3ccase = r'\b(?:{})\b'.format('|'.join(termlist14_3ccase))
 ```
 
 
 ```python
 #Search 1
-
 #Note that "havforsuring" (NO; ocean acidification) is included in the marine terms, so it should not be a problem to find works using this term even when combined with marine terms.
-
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault14_3a, na=False, case=False)) 
         & (
             (Data['result_title'].str.contains(phrasedefault14_3b, na=False, case=False)) 
-            | (Data['result_title'].str.contains(phrasespecific14_3c, na=False, case=True))
+            | (Data['result_title'].str.contains(phrasespecific14_3ccase, na=False, case=True)) #case = T
             )
     )
     &(Data['marine_terms']==True)
@@ -11245,24 +9669,7 @@ test.iloc[0:5, ]
 
 *Innen 2020 innføre effektive tiltak for å regulere uttaket av fiskebestandene, få slutt på overfiske og ulovlig, urapportert og uregulert fiske og ødeleggende fiskemetoder, og iverksette vitenskapelig baserte forvaltningsplaner for å gjenoppbygge fiskebestandene på kortest mulig tid, i det minste til de nivåene som kan gi høyest mulig bærekraftig avkastning ut fra bestandenes biologiske særtrekk*
 
-#### Phrase 1
-```
-TS=
-(     "overfish*"
-      OR "bycatch" OR "by-catch"
-      OR "IUU fishing"
-      OR (("gear" OR "nets") NEAR/5 ("abandoned" OR "lost" OR "discarded"))
-      OR "ghost fishing" OR "ghost nets" OR "ALDFG" OR "poison fishing"
-      OR
-        (
-          ("overharvest*" OR "overexploit*" OR "overcapacity" OR "collaps*" OR "closure$"
-          OR "illegal*" OR "unreport*" OR "unregulated" OR "corruption" OR "destructive" OR "blast" OR "dynamite" OR "cyanide"
-          )
-          NEAR/15 ("fishing" OR "fisher*" OR "shellfish*" OR "trawl*")
-        )
-      OR ("trawl*" NEAR/15 ("degrad*" OR "damag*"))    
-)
-```
+#### Phrase 1/2
 
 
 ```python
@@ -11271,33 +9678,29 @@ termlist14_4a = ["overfish", "bycatch", "by-catch", "IUU fish",
                  "ghost fishing", "ghost net", "ALDFG", "poison fishing",
 
                  "overfisk", "ulovlig fisk", "ulovlige fisk", "ulovleg fisk", "ulovlege fisk", "tjuvfiske", "bifangst", "UUU fiske", "UUU-fiske",
-                 "spøkelsesfiske", "tapte garn"
-                ]
+                 "spøkelsesfiske", "tapte garn"]
 
 termlist14_4b = ["gear", "net", "nets",
-                 "fiskeredskap.*", "fiskegarn", "havteine.*", "torskebur", "teina"
-                ]
+                 "fiskeredskap.*", "fiskegarn", "havteine.*", "torskebur", "teina"]
 termlist14_4c = ["abandoned", "lost", "discarded",
-                 "tapt", "mistet", 
-                ]
+                 "tapt", "mistet", ]
 
 termlist14_4d = ["trawl", "trawling",
-                 "trål", "bunntrål.*", "trålfiske"
-                 ]
+                 "trål", "bunntrål.*", "trålfiske"]
                  #"Trål" (NO) causes problems alone with free truncation (e.g. stråle)
 termlist14_4e = ["degrad", "damag", "harm",
-                 "skade", "ødelag", "ødeleg"
-                ]
+                 "skade", "ødelag", "ødeleg"]
 
 termlist14_4f = ["overharvest", "overexploit", "overcapacit", "collaps", "closure",
                  "illegal", "unreport", "unregulat", "corrupt", "destruct", "blast", "dynamite", "cyanid",
+                 
                  "overbeskat", "kollaps", "stenge", "stenging",
-                 "ulovlig", "ulovleg", "urapport", "uregulert", "korrupsj", "ødelegg", "ødelagt", "forring", "dynamitt", "eksplosiv", "tapt redskap", "tapte redskap"
-                ]
+                 "ulovlig", "ulovleg", "urapport", "uregulert", "korrupsj", "ødelegg", "ødelagt", "forring", "dynamitt", "eksplosiv", "tapt redskap", "tapte redskap"]
                 #"cyanid" covers norwegian and english
+    
 termlist14_4g = ["fishing", "fisher", "shellfish", "trawl",                
-                 "fiske", "skalldyr"                 
-                ]
+                 "fiske", "skalldyr"]
+
 phrasedefault14_4a = r'(?:{})'.format('|'.join(termlist14_4a))
 phrasespecific14_4b = r'\b(?:{})\b'.format('|'.join(termlist14_4b))
 phrasedefault14_4c = r'(?:{})'.format('|'.join(termlist14_4c))
@@ -11327,36 +9730,9 @@ test=Data.loc[(Data.tempsdg14_04 == "SDG14_04"), ("result_id", "result_title")]
 test.iloc[0:5, ]
 ```
 
-#### Phrase 2
+#### Phrase 3
 
 Fish species taken from The Norwegian Directorate of Fisheries https://www.fiskeridir.no/Yrkesfiske/Tall-og-analyse/Fangst-og-kvoter/Fangst/Fangst-fordelt-paa-art 
-```
-TS=
-(
-  ("manag*" OR "plan" OR "planning" OR "governance"
-  OR "restor*" OR "stock recovery"
-  OR "sustainab*"
-  OR "EBFM" OR "ecosystem approach*"
-  OR "maximum sustainable yield*" OR "MSY"
-  OR "marine stewardship council"
-  OR "regional fisheries management organi?ation$" OR "RFMOs"
-  OR "UNCLOS" OR "convention on the law of the sea"
-  OR "fish stocks agreement"
-  OR "code of conduct for responsible fisheries" OR "CCRF"
-  OR "port state measures agreement"
-  OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-  OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-  OR "common fisheries policy"
-  OR "law$" OR "legislation" OR "instrument$" OR "strateg*" OR "policy" OR "policies" OR "framework" OR "agreement*" OR "treaty" OR "treaties"
-  )
-  NEAR/15
-      ("fishery" OR "fisheries" OR "fishing"
-      OR (("harvest*") NEAR/15 ("fish*" OR "shellfish*"))
-      OR "fish stock$" OR "overfishing"
-      OR ("catch" NEAR/3 ("entitlement" OR "limit$" OR "tolerance$"))
-      )
-)
-```
 
 
 ```python
@@ -11382,29 +9758,25 @@ termlist14_4h = ["manag", "planning", "governance",
                  "den nordatlantiske laksevernorganisasjonen",
                  "regulering av fisket etter dyphavsarter",
                  "felles fiskeripolitik",
-                 "politikk", "lovverk", "regelverk", "regler", "rettningslin", "utredning", "utgreiing", "rammeverk", "avtale", "forskrift"
-                ]
-termlist14_4i = ["EBFM", "MSY", "RFMO", "UNCLOS", "CCRF", "UNFSA"]
-                #terms that need case-sensitive search
-termlist14_4j = ["law", "plan", "plans",
-                 "lov", "planer"
-                ]
-                #terms that need prevented truncation
+                 "politikk", "lovverk", "regelverk", "regler", "rettningslin", "utredning", "utgreiing", "rammeverk", "avtale", "forskrift"]
+termlist14_4icase = ["EBFM", "MSY", "RFMO", "UNCLOS", "CCRF", "UNFSA"]
+
+termlist14_4jtrunc = ["law", "plan", "plans",
+                      "lov", "planer"]
+                
 termlist14_4k = ["fish", "cod stock", "cod population", "herring", "saithe", "haddock", "mackrel", "capelin", "blue whiting", #"fishing", "fisher", "shellfish", "fish stock", "overfish",                
-                 "fiske", "skalldyr", "torsk", "skrei", "kysttorsk", "sild", "sei ", "seifisk", "hyse", "makrell", "lodde ", "loddefisk", "kolmule"
-                ]
+                 "fiske", "skalldyr", "torsk", "skrei", "kysttorsk", "sild", "sei ", "seifisk", "hyse", "makrell", "lodde ", "loddefisk", "kolmule"]
                 #terms where I prevent left truncation ("orthograFISKE"). 
                 #Here we have added some Norwegian fish species, taken from the Norwegian Directorate of Fisheries ("utvalgte art")
                 #"sei"(NO) was however difficult to include alone, have added a space after to prevent truncation in both direction
+            
 termlist14_4l = ["catch",
-                 "fangst"  
-                ]
+                 "fangst"]
 termlist14_4m = ["entitlement", "limit", "tolerance",
-                 "begrens", "kvote"              
-                ]                                
+                 "begrens", "kvote"]                                
 phrasedefault14_4h = r'(?:{})'.format('|'.join(termlist14_4h))
-phrasedefault14_4i = r'(?:{})'.format('|'.join(termlist14_4i))
-phrasespecific14_4j = r'\b(?:{})\b'.format('|'.join(termlist14_4j))
+phrasedefault14_4icase = r'(?:{})'.format('|'.join(termlist14_4icase))
+phrasespecific14_4j = r'\b(?:{})\b'.format('|'.join(termlist14_4jtrunc))
 phrasespecific14_4k = r'\b(?:{})'.format('|'.join(termlist14_4k))
 phrasedefault14_4l = r'(?:{})'.format('|'.join(termlist14_4l))
 phrasedefault14_4m = r'(?:{})'.format('|'.join(termlist14_4m))
@@ -11416,7 +9788,7 @@ phrasedefault14_4m = r'(?:{})'.format('|'.join(termlist14_4m))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault14_4h, na=False, case=False)) 
-        | (Data['result_title'].str.contains(phrasedefault14_4i, na=False, case=True)) #case = True
+        | (Data['result_title'].str.contains(phrasedefault14_4icase, na=False, case=True)) #case = True
         | (Data['result_title'].str.contains(phrasespecific14_4j, na=False, case=False))
     ) 
     &
@@ -11442,40 +9814,23 @@ test.iloc[0:5, ]
 *Innen 2020 bevare minst 10 prosent av kyst- og havområdene, i samsvar med nasjonal rett og folkeretten og på grunnlag av den beste vitenskapelige kunnskapen som er tilgjengelig*
 
 
-```
-TS=
-(
-  "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-  OR "particularly sensitive sea area$"
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving")
-      NEAR/3 ("area$" OR "zone$" OR "habitat$" OR "ecosystem$")
-    )
-  OR ("no-take" NEAR/3 ("area$" OR "zone*" OR "reserve$")) OR "NTMR$"
-)
-```
-
 
 ```python
 #Termlists
-termlist14_5a = ["marine reserve", "ocean reserve", "marine nature reserve", "marine park", "particularly sensitive sea area",
+termlist14_5a = ["marine reserve", "ocean reserve", "nature reserve", "marine sanctuar", "marine park", "particularly sensitive sea area", "marine conservation",
                  "nature reserve","national park",
                  "no-take area", "no-take zone", "no-take reserve",
 
-                 "vernområde","vernområde", "vernet økosystem", "marine reservat",
+                 "vernområde","vernområde", "vernet økosystem", "marine reservat", "marint vern",
                  "naturreservat", "nasjonalpark", "biotopvernområde", "biosfæreområde", "bevarte område", "bevaringsområde","fredningsområde","nasjonalpark",
-                 "fiskeforbud" 
-                 ]
-termlist_145acaps = ["MPA","LSMPA","NMTR"] #can search case sensitive
+                 "fiskeforbud"]
+termlist_145acaps = ["MPA","LSMPA","NMTR"] 
 
 termlist14_5b = ["protect","conserved","conservation","conserves","conserving",
-                "verne", "verna", "vern av","bevare","bevaring","frede","freda","fredning","beskytt"
-                ]
+                "verne", "verna", "vern av","bevare","bevaring","frede","freda","fredning","beskytt"]
 
 termlist14_5c = ["area","zone", "habitat", "ecosystem",
-                "område", "sone", "leveområd", "miljø", "økosystem"
-                ]
+                "område", "sone", "leveområd", "miljø", "økosystem"]
 
 termlist14_5not = ["landskapsvernområde"]
 #This NOT search is needed as this "landskapsvernområde"(NO) is often used for terrestrial conservation, 
@@ -11516,48 +9871,28 @@ test.iloc[0:5, ]
 
 *Innen 2020 forby visse former for fiskerisubsidier som bidrar til overkapasitet og overfiske, avskaffe subsidier som bidrar til ulovlig, urapportert og uregulert fiske, og dessuten unngå å innføre nye tilsvarende subsidier, samtidig som man erkjenner at en hensiktsmessig og effektiv særskilt og differensiert behandling av utviklingslandene og de minst utviklede landene bør være en integrert del av Verdens handelsorganisasjons forhandlinger om fiskerisubsidier*
 
-Phrases 1 and 2:
-```
-TS =
-(
-  ("subsid*"
-    NEAR/15
-        ("fishing" OR "fisher*" OR "overfishing" OR "bycatch" OR "trawling"
-        OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
-        )  
-  )
-  NOT ("larval subsidi*" OR "recruitment subsidi*")
-)
-
-TS=
-(
-  ("ODA" OR "official development assistance" OR "doha development agenda" OR "hong kong ministerial" OR "world trade organization" OR "WTO")
-  NEAR/15
-      ("fishing" OR "fisher*" OR "overfishing"
-      OR (("harvest*" OR "overcapacity") NEAR/15 ("fish*" OR "shellfish*"))
-      )  
-)
-```
+Merged phrases 1 and 2.
 
 
 ```python
 #Termlists
-termlist14_6a = ["subsid","official development assistance","doha development agenda","hong kong ministerial","world trade organization",
-                "statsstøtte", "offentlig støtte", "utviklingsstøtte", "bistand", "Verdens handelsorganisasjon", "Doha-runden", "ministermøtet i Hongkong"
-                 ]
-                 #"subsid" will find both the Norwegian and English
+termlist14_6a = ["subsidy", "subsidies", "subsidiz", "subsidis", 
+                 "development assistance", "development aid", "development intervention", "foreign aid", "doha development agenda", "hong kong ministerial", "world trade organization",
+                 
+                 "subsidier", 
+                 "statsstøtte", "offentlig støtte", "utviklingsstøtte", "bistand", "Verdens handelsorganisasjon", "Doha-runden", "ministermøtet i Hongkong"]
+
 termlist14_6acaps = ["ODA", "WTO"]
 
 termlist14_6b = ["fishing", "fisher", "shellfish", "trawl",                
-                 "fiske", "skalldyr"
-                ]
+                 "fiske", "skalldyr"]
                 #"fishing" will find overfishing
 
 #termlist14_6not = ["larval subsid", "recruitment subsid"] 
 #Doesn't seem to be needed here in a title search
 
 phrasedefault14_6a = r'(?:{})'.format('|'.join(termlist14_6a))
-phrasedefault14_6acaps = r'(?:{})'.format('|'.join(termlist14_6acaps))
+phrasespecific14_6acaps = r'\b(?:{})\b'.format('|'.join(termlist14_6acaps))
 phrasedefault14_6b = r'(?:{})'.format('|'.join(termlist14_6b))
 #phrasedefault14_6not = r'(?:{})'.format('|'.join(termlist14_6not))
 ```
@@ -11566,7 +9901,7 @@ phrasedefault14_6b = r'(?:{})'.format('|'.join(termlist14_6b))
 ```python
 #Search 1
 Data.loc[(
-    ((Data['result_title'].str.contains(phrasedefault14_6a, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault14_6acaps, na=False, case=True)))
+    ((Data['result_title'].str.contains(phrasedefault14_6a, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific14_6acaps, na=False, case=True)))
     & (Data['result_title'].str.contains(phrasedefault14_6b, na=False, case=False))
 ),"tempsdg14_06"] = "SDG14_06"
 
@@ -11576,7 +9911,7 @@ print("Number of results = ", len(Data[(Data.tempsdg14_06 == "SDG14_06")]))
 
 ```python
 test=Data.loc[(Data.tempsdg14_06 == "SDG14_06"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:10, ]
 ```
 
 ### SDG 14.7
@@ -11585,61 +9920,28 @@ test.iloc[0:5, ]
 
 *Innen 2030 sikre at de økonomiske fordelene ved bærekraftig bruk av havets ressurser, blant annet gjennom bærekraftig forvaltning av fiskeri, akvakultur og turistnæring, i større grad kommer små utviklingsøystater og de minst utviklede landene til gode*
 
-```
-TS =
-(
-    ("econom*" OR "GDP" OR "wealth"
-    OR "exploit*" OR "goods and services" OR "ecosystem service$"
-    OR "socio economic" OR "socioeconomic"
-    OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-    OR "trade" OR "trading" OR "market$"
-    OR "monetary" OR "moneti*" OR "investor$"
-    OR "bio-econom*" OR "bioeconom*"            
-    OR "blue growth" OR "blue econom*" OR "blue bond$"
-    )
-    AND
-      ("sustainab*"
-      OR "marine spatial planning" OR "MSP"
-      OR "ecosystem based management" OR "ecosystem based fisheries management" OR "EBFM" OR "ecosystem approach"
-      OR "area based management" OR "resilience based management" OR "community based management"
-      OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
-      OR "coastal resources management"
-      OR "locally managed marine area$" OR "LMMA$"
-      OR "marine protected area$" OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-      OR "marine conservation zone$" OR "particularly sensitive sea areas$"
-      OR "regional fisheries management organi?ation$" OR "RFMOs"
-      OR "port state measures agreement"
-      OR "fish stocks agreement" OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-      OR "code of conduct for responsible fisheries" OR "CCRF"
-      OR "Nairobi Convention"
-      )
-    AND
-      (****SIDS and LDCs****
-      )
-)
-
-```
-
 
 ```python
 #Termlists
 termlist14_7a = ["econom","wealth",
                  "exploit","goods and services","ecosystem service",
+                 "marine resource", "biological resource", "genetic resource",
                  "livelihood","job","income","profit","trade","trading","market",
                  "monetary","moneti","investor",
                  "blue growth","blue bond",
 
                  "økonomi", "rikdom",
+                 "marine ressurs", "biologiske ressurs", "biologisk ressurs", "genetiske ressurs", "genetisk ressurs",
                  "utnytt", "varer", "tjenester",
                  "levebrød", "jobb", "arbeid", "inntekt", "handel", "marked", "markad",
                  "penger",
-                 "blå vekst", "blåvekst"
-                 ]
+                 "blå vekst", "blåvekst"]
                  #"Blue/Bio economy" and "socioeconomic" (NO: blå/bio økonomi, sosioøkonomisk) is covered by "econom" (NO: økonomi)
+                 #"økosystemtjenester" (NO) are covered by "tjenester"
 
 termlist14_7acaps = ["GDP"] #can search case sensitive
 
-termlist14_7b = ["sustainab",  
+termlist14_7b = ["sustainab", "marine conservation",
                  "marine spatial planning",  
                  "ecosystem-based", "ecosystem-based fisheries", "area-based manag", "area-based approach",     
                  "spatial management", "community based management","resilience based management", 
@@ -11653,7 +9955,7 @@ termlist14_7b = ["sustainab",
                  "code of conduct for responsible fisheries",
                  "Nairobi convention"
 
-                 "bærekraft","berekraft",
+                 "bærekraft","berekraft", "marint vern",
                  "økosystem tilnærming", "økosystembasert forvaltning", "økosystembasert styring", "forvaltningsplaner",
                  "integrert kystsone", "kystplanlegging", "kystsoneforvalt",
                  "samfunnsforvalt", "bærekraftig forvalt", "berekraftig forvalt", "arealforvalt",
@@ -11662,15 +9964,14 @@ termlist14_7b = ["sustainab",
                  "bevarte område", "bevaringsområde", "fredet område", "vernet område", "marine vernområde", "marine verneområde",
                  #if this term list is used in the search, the agreement translations need to be added from 14.2c here. Currently it is not used (see note below)
                  "fiskeriforvalt", "fiskeriplanlegg", 
-                 "likevektsfangst"
-                ]
+                 "likevektsfangst"]
 
-termlist14_7bcaps = ["LMMA","ICZM","MPA","RFMO","CCRF","UNFSA"] 
+#termlist14_7bcaps = ["LMMA","ICZM","MPA","RFMO","CCRF","UNFSA"] 
 
 phrasedefault14_7a = r'(?:{})'.format('|'.join(termlist14_7a))
 phrasedefault14_7acaps = r'(?:{})'.format('|'.join(termlist14_7acaps))
-phrasedefault14_7b = r'(?:{})'.format('|'.join(termlist14_7b))
-phrasedefault14_7bcaps = r'(?:{})'.format('|'.join(termlist14_7bcaps))
+#phrasedefault14_7b = r'(?:{})'.format('|'.join(termlist14_7b))
+#phrasedefault14_7bcaps = r'(?:{})'.format('|'.join(termlist14_7bcaps))
 ```
 
 As this is a title search, we suggest dropping the second element to simplify, so it is enough to mention marine economy in LDCs/SIDS.
@@ -11702,16 +10003,11 @@ test.iloc[0:5, ]
 
 #### Phrase 1
 
-```
-TS= ("transfer of marine technolog*" OR "marine technology transfer")
-```
-
 
 ```python
 #Termlists
 termlist14_aa = ["transfer of marine technolog", "marine technology transfer", "technology transfer",
-                 "teknologioverføring", "overføring av marin teknologi", "overføre marin teknologi", "overføre teknologi" 
-                 ]
+                 "teknologioverføring", "overføring av marin teknologi", "overføre marin teknologi", "overføre teknologi"]
                  #added "technology transfer" alone, as we are going to search within the marine results anyway
 
 phrasedefault14_aa = r'(?:{})'.format('|'.join(termlist14_aa))
@@ -11735,58 +10031,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-      ("establish*" OR "build*" OR "develop*" OR "implement*" OR "propos*" OR "design" OR "provide" OR "provision"
-      OR "increas*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "upgrad*" OR "accelerat*" OR "prioriti*" OR "promot*" OR "enabl*"
-      OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"
-      OR "open data" OR "data sharing" OR "open science"
-      OR(
-          ("knowledge" OR "technolog*" OR "technical" OR "research" OR "scientific" OR "R&D")
-          NEAR/3 ("transfer" OR "sharing" OR "shared" OR "share" OR "cooperat*" OR "co-operat*" OR "collaborat*" OR "partnership$")
-        )
-      OR "invest" OR "investing" OR "fund" OR "funding" OR "financing" OR "financial support" OR "financial resources"
-      OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "aid"))
-      OR "ODA" OR "cooperation fund$"
-      OR(
-          ("international" OR "foreign" OR "development")
-          NEAR/3 ("aid" OR "assistance" OR "fund$" OR "funding" OR "financing" OR "finance" OR "grant$" OR "investment$" OR "network$")
-        )
-      OR "plan" OR "planned" OR "planning"
-      OR "policy" OR "policies" OR "initiative$" OR "framework" OR "governance" OR "strategy" OR "programme$" OR "agenda"
-      OR "innovation"
-      )
-      NEAR/5
-          ("taxonomic research" OR "genetic research" OR "biodiversity research" OR "diversity research" OR "taxonomic science" OR "fisheries science"
-          OR "citizen science"
-          OR (("ocean" OR "marine") NEAR/1 ("research" OR "science"))
-          OR
-            (
-              ("research" OR "scientific" OR "science" OR "technology" OR "biotech*"
-              OR "taxonom*" OR "genetic" OR "species" OR "biodiversity" OR "diversity"
-              )
-              NEAR/5
-                  ("knowledge" OR "capacity" OR "advisor*"
-                  OR "capabilit*" OR "training"  OR "expertise" OR "skills" OR "compentenc*"
-                  OR "infrastructure" OR "facilities" OR "research vessel$" OR "vehicle$" OR "laboratories" OR "equipment" OR "herbaria" OR "museum collection$"
-                  OR "database$" OR "software" OR "data" OR "register$" OR "reference librar*" OR "inventory" OR "inventories" OR "information system$"
-                  OR "guidelines"
-                  OR "investment$" OR "funding" OR "GERD" OR "expenditure"
-                  OR "network$" OR "sharing" OR "joint research" OR "joint effort$" OR "collaborat*" OR "international cooperation"
-                  )
-            )
-          OR "data infrastructure$" OR "data network$" OR "ocean big data" OR "smart ocean" OR "modelling technique$"
-          OR "observ* network$" OR "observ* system$" OR "observ* facilities" OR "monitoring network$" OR "biomonitoring"
-          OR "remote sensing equipment" OR "tide gauges"
-          OR
-            (
-              ("ocean*" OR "marine" OR "biological" OR "ecological" OR "biodiversity" OR "environmental")
-              NEAR/3 ("observator*" OR "monitoring")
-            )
-          )
-)
-```
 
 
 ```python
@@ -11809,13 +10053,11 @@ termlist14_ab = ["establish","build","develop","implement","propos","design","pr
                  "finansiering", "forskningsmidler", "støtte",
                  "internasjonalt nettverk","internasjonale nettverk",
                  "politikk", "retningslinj", "rammeverk", "styring", "ledelse", "leiing",
-                 "innovasjon"
-                 ] 
+                 "innovasjon"] 
                  #several words work in both languages (e.g. "promot", "design", "assist", "strateg")            
                  
 termlist14_ac = ["plan","planned","planning","aid","ODA",
-                 "øke", "øker", "midler"
-                 ] #Control truncation
+                 "øke", "øker", "midler"] #Control truncation
 
 termlist14_ad = ["knowledge","technolog","technical","research","scientific","R&D",
                  "kunnskap", "teknologi", "teknisk", "forskning", "vitenskap", "innovasjon"]
@@ -11828,8 +10070,7 @@ termlist14_af = ["research", "science", "scientific", "biotech", "ocean technolo
 
                  "forskning", "vitenskap", "bioteknol", "havteknolog", "marin teknolog",
                  "data infrastruktur", "datanettverk", "stordata", "smart hav", "modellering",
-                 "miljøovervåk", "miljøovervak", "fjernmålingsutstyr"
-                 ]
+                 "miljøovervåk", "miljøovervak", "fjernmålingsutstyr"]
                  #Originally, some of these terms were combined with the terms in termlist14_aj, but in a title search we felt they worked alone.
 
 termlist14_ag = ["observation","observator","monitoring","equipment",
@@ -11851,8 +10092,7 @@ termlist14_aj = ["knowledge","capacity","advisor","capabilit","training","expert
                  "programvare", "forskningsdata", "inventar", "datasystem", 
                  "retningslinj",
                  "midler", "pengebruk", "utgift",
-                 "nettverk", "deling", "samarbeid"
-                 ]
+                 "nettverk", "deling", "samarbeid"]
 
 termlist14_anot = ["torp sandefjord"]
 #There are a lot of reports about torp sandefjord which show up due to "Fjord"- manually removed them here (Norway only)
@@ -11896,59 +10136,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  (
-    (("blue growth" OR "blue econom*" OR "marine economy") AND "sustainab*")
-    OR
-    (
-      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources"
-      OR "biodivers*" OR "biological diversity" OR "BBNJ" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity"
-      )
-      AND
-          ("bioprospect*" OR "biopiracy" OR "Nagoya protocol" OR "biotech*" OR "marine natural product$" ("bioactive$" NEAR/3 ("compound*" OR "substance*"))
-          OR "bio-econom*" OR "bioeconom*" OR "blue growth" OR "blue econom*" OR "blue bond$" OR "marine economy"
-          )
-    )
-    OR
-    (
-      ("biodivers*" OR "biological diversity" OR "species diversity" OR "genetic diversity" OR "genomic diversity" OR "taxonomic diversity")
-      NEAR/5
-          ("benefit$"
-          OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
-          OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
-          OR "exploit*" OR "goods and services" OR "ecosystem service$"
-          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-          OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
-          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-          OR "trade" OR "trading" OR "market$"
-          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
-          )
-    )
-    OR
-    (
-      ("bioresource$" OR "biological resource$" OR "genetic resource$" OR "living marine resources")
-      NEAR/15
-          ("benefit$"
-          OR "sustainable development" OR "development intervention$" OR "human development" OR "social development" OR "*economic development"
-          OR "tourism" OR "ecotourism" OR "tourist$" OR "sightsee*"
-          OR "fisher*" OR "fishing" OR "aquaculture" OR "fish farm*" OR "harvest*" OR "aquarium trade"
-          OR "exploit*" OR "goods and services" OR "ecosystem service$"
-          OR "social ecological" OR "socialecological" OR "socioecological" OR "socio economic" OR "socioeconomic"
-          OR "econom*" OR "GDP" OR "wealth" OR "monetary" OR "moneti*" OR "investor$"
-          OR "livelihood$" OR "job$" OR "income$" OR "profit*"
-          OR "trade" OR "trading" OR "market$"
-          OR ("sustainab*" NEAR/5 ("utilization" OR "use" OR "using" OR "usage"))
-          )
-    )
-  )
-  AND
-    (****LMICs****
-    )
-) 
-```
 
 
 ```python
@@ -11962,13 +10149,13 @@ termlist14_am = ["bioresource","biological resource","genetic resource","livin
                  "biodivers","biological diversity","BBNJ","species diversity","genetic diversity","genomic diversity","taxonomic diversity",
 
                  "bioressurs", "biologiske ressurs", "genressurs", "genetiske ressurs", "levende marine ressurs",
-                 "biologisk diversit", "biologisk mangfold", "biologisk mangfald", "artsmangfold", "artsmangfald", "genetisk mangfold", "genetisk mangfald", "taksonomisk mang", "naturmangfold", "naturmangfald"                 
-                 ]
+                 "biologisk diversit", "biologisk mangf", "artsmangf", "genetisk mangf", "taksonomisk mang", "naturmangf"]
+
 termlist14_an = ["bioprospect","biopiracy","Nagoya","biotech","marine natural product","bioactive",
                  "bio-econom","bioeconom","blue growth","blue econom","blue bond","marine economy",
                  "benefit","sustainable development","development intervention","human development","social development","economic development",
                  "tourism","tourist","sightsee",
-                 "fisher","fishing","aquaculture","fish farm","harvest","aquarium trade",
+                 "fisher","fishing","aquaculture","mariculture","fish farm","harvest","aquarium trade",
                  "exploit","goods and services","ecosystem service",
                  "social ecological","socialecological","socioecological","socio economic","socioeconomic",
                  "econom","GDP","wealth","monetary","moneti","investor",
@@ -11986,8 +10173,7 @@ termlist14_an = ["bioprospect","biopiracy","Nagoya","biotech","marine natural 
                  "økonomi", "BNP", "rikdom", "penger", "investor",
                  "levebrød", "arbeid", "inntekt", "avkastn",
                  "handel", "marked",
-                 "bærekraftig bruk", "berekraftig bruk",  "selvbærende", "sjølvberande", "miljøvennlig", "miljøvennleg", "miljøvenleg", "miljøbevisst"
-                 ]
+                 "bærekraftig bruk", "berekraftig bruk",  "selvbærende", "sjølvberande", "miljøvennlig", "miljøvennleg", "miljøvenleg", "miljøbevisst"]
 
 phrasedefault14_ak = r'(?:{})'.format('|'.join(termlist14_ak))
 phrasedefault14_al = r'(?:{})'.format('|'.join(termlist14_al))
@@ -12021,41 +10207,7 @@ test.iloc[0:5, ]
 
 *Gi fiskere som driver småskala fiske, tilgang til marine ressurser og markeder*
 
-Phrase 1 & phrase 2
-```
-TS =
-(
-  ("access*" OR "right$"
-  OR "commons" OR "common property" OR "common fishing ground$" OR "ownership" OR "inheritance"
-  OR "conflict$" OR "dispute$" OR "contested" OR "competition"
-  OR "inequitab*" OR "marginali*" OR "criminali*" OR "appropriation$"
-  OR "blue injustice" OR "blue justice" OR "distributional justice"
-  )
-  AND
-      ("traditional fishing"
-      OR
-        (
-          ("fisher*" OR "fishing" OR "shellfish" OR "marine resource$" OR "marine harvest*")
-          NEAR/5 ("small-scale" OR "artisan*" OR "subsistence" OR "indigenous")    
-        )
-      )
-)
-
-TS =
-(
-  ("governance" OR "planning" OR "legislation" OR "policy" OR "policies" OR "framework" OR "strateg*" OR "legislat*" OR "law" OR "laws" OR "regulations")
-  NEAR/5
-    ("traditional fishing"
-    OR
-      (
-        ("fisher*" OR "fishing" OR "shellfish" OR "marine resource$" OR "marine harvest*")
-        NEAR/5 ("small-scale" OR "artisan*" OR "subsistence" OR "indigenous")    
-      )
-    )
-)
-
-
-```
+Phrase 1 and 2 merged.
 
 
 ```python
@@ -12071,20 +10223,17 @@ termlist14_ba = ["access", "right",
                  "felles", "eierskap",
                  "konflikt", "tvist", "konkurrans",
                  "kriminel", "stjel",
-                 "styring", "ledelse", "leiing", "politikk", "retningslinj", "rammverk", "planlegging", "regulativ", "lovgiv", "forskrift",
-                ]
-                #"rett" covers both rights and justice (rett, rettferd)
+                 "styring", "ledelse", "leiing", "politikk", "retningslinj", "rammverk", "planlegging", "regulativ", "lovgiv", "forskrift",]
+                #"rett"(NO) covers both rights and justice (rett, rettferd)
 
 termlist14_bb = ["law", "laws",
                  "lov", "lovverk", "arv"] #terms to control truncation
 
 termlist14_bc = ["fishing", "fisher", "fish market", "shellfish", "marine resource", "marine harvest",                
-                 "fiske", "skalldyr", "marine ressurs", "havbruk"
-                ]
+                 "fiske", "skalldyr", "marine ressurs", "havbruk"]
 
 termlist14_bd = ["traditional fishing","small-scale", "artisan", "subsistence", "indigenous", "sami", "sapmi", 
-                 "tradisjonel", "småskala", "subsistens", "levebrød", "urfolk", "urbefolk", "samene"
-                ]
+                 "tradisjonel", "småskala", "subsistens", "levebrød", "urfolk", "urbefolk", "samene"]
 
 phrasedefault14_ba = r'(?:{})'.format('|'.join(termlist14_ba))
 phrasespecific4_bb = r'\b(?:{})\b'.format('|'.join(termlist14_bb))
@@ -12121,35 +10270,7 @@ test.iloc[0:5, ]
 *Styrke bevaring og bærekraftig bruk av havene og de marine ressursene ved å implementere folkeretten slik den er reflektert i FNs havrettskonvensjon, som utgjør rettsgrunnlaget for bevaring og bærekraftig bruk av havene og de marine ressursene, slik det framgår av punkt 158 i FN-rapporten «The Future We Want»*
 
 
-#### Phrase 1
-```
-TS =
-(
-  "law of the sea" OR "UNCLOS"
-  OR "the future we want"
-  OR (("biodivers*" OR "biological diversity" OR "fish*") NEAR/3 ("beyond national jurisdiction" OR "ABNJ"))
-  OR "BBNJ"
-  OR "common fisheries policy"
-  OR "marine stewardship council"
-  OR "regional fisheries management organi?ation$" OR "RFMOs"
-  OR "fish stocks agreement"
-  OR "code of conduct for responsible fisheries" OR "CCRF"
-  OR "port state measures agreement"
-  OR "UNFSA" OR "Management of Straddling Fish Stocks" OR "Management of Highly Migratory Fish Stocks"
-  OR "deep-sea fisheries guidelines" OR "Management of Deep-sea Fisheries in the High Seas"
-  OR ("directive$" NEAR/3 "marine spatial planning")
-  OR "habitats directive" OR "convention on biological diversity"
-  OR "Convention on International Trade in Endangered Species"
-  OR "Regional seas programme"
-  OR "Water framework directive"
-  OR "OSPAR convention"
-  OR "Marine strategy framework directive" OR "MSFD"
-  OR "Barcelona convention"
-  OR "Global Programme of Action for the Protection of the Marine Environment"
-  OR "MARPOL" OR "prevention of pollution from ships"
-  OR "Conservation of Antarctic Living Marine Resources"
-)
-```
+#### Phrase 1 & 2
 
 A website with Norwegian and English names for international environmental agreements from the Norwegian Environment Agency was used to help translate agreement names (https://www.miljodirektoratet.no/regelverk/konvensjoner/; accessed 24/01/23)
 
@@ -12157,7 +10278,7 @@ A website with Norwegian and English names for international environmental agree
 ```python
 #Termlists
 termlist14_ca = ["law of the sea",
-                 "diversity beyond national jurisdiction",
+                 "diversity beyond national jurisdiction", "high seas treaty",
                  "common fisheries policy",
                  "marine stewardship council",
                  "regional fisheries management organi",
@@ -12176,7 +10297,8 @@ termlist14_ca = ["law of the sea",
                  "prevention of pollution from ships",
                  "Conservation of Antarctic Living Marine Resources", "Agreement on the Conservation of Polar Bears",
 
-                 "havrettskonvensjon","Havrettstraktaten",
+                 "havrettskonvensjon","Havrettstraktaten", "havtraktat",
+                 "avtalen om verdenshavene",
                  "felles fiskeripolitik",
                  "avtalen om fiske på det åpne hav",
                  "avtalen om havnestatstiltak",
@@ -12185,8 +10307,7 @@ termlist14_ca = ["law of the sea",
                  "Den nordatlantiske laksevernorganisasjonen",
                  "havstrategidirektiv", 
                  "Konvensjonen for bevaring av det marine miljø", "Oslo-Paris-konvensjonen", 
-                 "Isbjørnavtalen"
-                ]
+                 "Isbjørnavtalen"]
                 #Terms that can be searched for in all data, are about marine law/agreements
 
 termlist14_ca_case = ["UNCLOS","ABNJ","BBNJ","RFMO","CCRF","UNFSA","MSFD","MARPOL"] #terms to use uppercase
@@ -12206,8 +10327,7 @@ termlist14_cb = ["the future we want",
                  "Vannrammedirektiv",
                  "Bernkonvensjonen", "Bern-konvensjon", "Konvensjonen om vern av ville europeiske planter og dyr",
                  "Bonnkonvensjonen", "Bonn-konvensjon", "konvensjonen om bevaring av trekkende ville dyr",
-                 "Stockholmkonvensjonen", "Stockholm-konvensjon"
-                ]
+                 "Stockholmkonvensjonen", "Stockholm-konvensjon"]
                 #Terms that need to be used with marine terms
 
 phrasedefault14_ca = r'(?:{})'.format('|'.join(termlist14_ca))
@@ -12219,15 +10339,8 @@ phrasedefault14_cb = r'(?:{})'.format('|'.join(termlist14_cb))
 ```python
 #Search in marine set for generic environmental legislation, and in the whole data for marine specific legislation
 Data.loc[(
-    (    
-        (Data['result_title'].str.contains(phrasedefault14_ca, na=False, case=False)) 
-        |(Data['result_title'].str.contains(phrasedefault14_ca_case, na=False, case=True)) 
-    )
-    |
-    (
-        (Data['result_title'].str.contains(phrasedefault14_cb, na=False, case=False)) 
-        & (Data['marine_terms']==True)
-    )
+    ((Data['result_title'].str.contains(phrasedefault14_ca, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault14_ca_case, na=False, case=True)))
+    |((Data['result_title'].str.contains(phrasedefault14_cb, na=False, case=False)) & (Data['marine_terms']==True))
 ),"tempsdg14_c"] = "SDG14_c"
 
 print("Number of results = ", len(Data[(Data.tempsdg14_c == "SDG14_c")])) 
@@ -12239,44 +10352,19 @@ test=Data.loc[(Data.tempsdg14_c == "SDG14_c"), ("result_id", "result_title")]
 test.iloc[0:5, ]
 ```
 
-#### Phrase 2
-
-```
-TS =
-(
-  ("international"
-  NEAR/3 ("governance" OR "law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "framework$" OR "instrument$")
-  )
-  NEAR/15
-    ("conservation" OR "sustainab*" OR "ecosystem restoration"
-    OR "marine spatial planning" OR "MSP"
-    OR "ecosystem based management" OR "area based management" OR "resilience based management"
-    OR "coastal zone management" OR "integrated coastal zone planning" OR "ICZM"
-    OR "coastal resources management"
-    OR "community based management" OR "locally managed marine area$" OR "LMMA$"
-    OR "marine spatial planning" OR "spatial management"
-    OR "herbivore management area$"
-    OR "ecosystem approach*"
-    OR "MPA" OR "MPAs" OR "LSMPA$" OR "marine protected area$"
-    OR "marine reserve$" OR "ocean reserve$" OR "marine park$"
-    OR "marine conservation zone$"
-    OR "particularly sensitive sea areas$"
-    OR "blue growth" OR "blue econom*"
-    )
-)
-```
+#### Phrase 3
 
 
 ```python
 #Termlists
-termlist14_cc = ["international", 
-                 "internasjonal"]
+termlist14_cc = ["international", "beyond national jurisdiction", "high seas", "europ", "pacific", "asia", "africa", "latin america", "south america", "arctic",
+                 "internasjonal", "stillehavet", "afrika", "sør-amerika", "arktisk"]
 
-termlist14_cccaps = ["UN", 
-                 "FN"]
+termlist14_cccaps = ["UN", "ABNJ",
+                     "FN"]
 
 termlist14_cd = ["governance","policy","policies","regulat","legal","legislat","agreement","treaty","treaties","framework","instrument",
-                 "styring","ledelse", "leiing", "politikk", "retningslin", "rammeverk", "styring", "planlegging", "regulativ", "lovgivning", "rett", "juridisk", "lovverk", "forskrift"]
+                 "styring", "ledelse", "leiing", "politikk", "retningslin", "rammeverk", "styring", "planlegging", "regulativ", "lovgivning", "rett", "juridisk", "lovverk", "forskrift"]
 
 termlist14_ce = ["law", "laws"
                  "lov"] #terms to limit truncation
@@ -12287,8 +10375,9 @@ termlist14_cf = ["conservation","sustainab","ecosystem restoration",
                  "community based management","locally managed marine area$",
                  "marine spatial planning","spatial management",
                  "herbivore management area","ecosystem approach",
-                 "protected area", "marine reserve","ocean reserve","marine park",
-                 "conservation zone","particularly sensitive sea area",
+                 "protected area", "marine reserve","ocean reserve","marine park","marine sancturary",
+                 "nature reserve","conservation zone","particularly sensitive sea area",
+                 "biodivers", "biological diversity",
                  "blue growth","blue econom",
 
                  "forvalt", "vernet", "miljøvern", "bevart", "bevaring", "fredet", "fredning", "gjenoppbygg", "restaurer", "bærekraft",
@@ -12297,15 +10386,15 @@ termlist14_cf = ["conservation","sustainab","ecosystem restoration",
                  "integrert kystsone", "kystplanlegging", "kystsoneforvaltning",
                  "marint vernområde","marine vernområde","marine verneområde","marine reservat",
                  "naturreservat", "biotopvernområde", "nasjonalpark", "bevarte område",
-                 "blåvekst", "blå vekst", "blå økonomi"
-                 ]
+                 "biologisk diversit","biologisk mangfold",
+                 "blåvekst", "blå vekst", "blå økonomi"]
 
-termlist14_cfcaps = ["MSP", "ICZM", "LMMA", "MPA","LSMPA"] #terms to search case sensitive
+termlist14_cfcaps = ["MSP", "ICZM", "LMMA", "MPA", "LSMPA"] #terms to search case sensitive
 
 phrasedefault14_cc = r'(?:{})'.format('|'.join(termlist14_cc))
 phrasespecific14_cccaps = r'\b(?:{})\b'.format('|'.join(termlist14_cccaps))
 phrasedefault14_cd = r'(?:{})'.format('|'.join(termlist14_cd))
-phrasedefault14_ce = r'(?:{})'.format('|'.join(termlist14_ce))
+phrasespecific14_ce = r'\b(?:{})\b'.format('|'.join(termlist14_ce))
 phrasedefault14_cf = r'(?:{})'.format('|'.join(termlist14_cf))
 phrasedefault14_cfcaps = r'(?:{})'.format('|'.join(termlist14_cfcaps))
 
@@ -12316,7 +10405,7 @@ phrasedefault14_cfcaps = r'(?:{})'.format('|'.join(termlist14_cfcaps))
 #Search 1
 Data.loc[(
     ((Data['result_title'].str.contains(phrasedefault14_cc, na=False, case=False))  | (Data['result_title'].str.contains(phrasespecific14_cccaps, na=False, case=False)) )
-    & ((Data['result_title'].str.contains(phrasedefault14_cd, na=False, case=False))  | (Data['result_title'].str.contains(phrasedefault14_ce, na=False, case=False)) )
+    & ((Data['result_title'].str.contains(phrasedefault14_cd, na=False, case=False))  | (Data['result_title'].str.contains(phrasespecific14_ce, na=False, case=False)) )
     & ((Data['result_title'].str.contains(phrasedefault14_cf, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault14_cfcaps, na=False, case=True)) )
     & (Data['marine_terms']==True)
 ),"tempsdg14_c"] = "SDG14_c"
@@ -12334,37 +10423,6 @@ test.iloc[0:5, ]
 
 Works mentioning SDG14
 
-```
-TS=
-("SDG 14" OR "SDGs 14" OR "SDG14" OR "sustainable development goal$ 14"
-OR ("sustainable development goal$" AND "goal 14")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 14")
-    AND ("life below water")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 13")
-    NEAR/50 ("ocean$" OR "marine" OR "sea" OR "seas" OR "fisheries")
-    )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-```
-
 Here it was not neccesary to exclude the NOT terms used in a normal abstract search, so they are not used. But in other contexts/abstract searches it may be necessary to add them in again. 
 
 "SDG" was also not searched for case-sensitive, as it seems to work ok without.
@@ -12374,13 +10432,13 @@ Here it was not neccesary to exclude the NOT terms used in a normal abstract sea
 #Termlists
 
 termlist_sdg_a = ["SDG 14", "SDGs 14", "SDG14", "sustainable development goal 14", 
-               "bærekraftsmål 14", "berekraftsmål 14"]
+                  "bærekraftsmål 14", "berekraftsmål 14"]
 termlist_sdg_b = ["sustainable development goal", 
-               "bærekraftsmål", "berekraftsmål"]
+                  "bærekraftsmål", "berekraftsmål"]
 termlist_sdg_c = ["goal 14",
-               "mål 14"]
+                  "mål 14"]
 termlist_sdg_d = ["sustainable development goal", "SDG", "goal 14", 
-               "bærekraftsmål", "berekraftsmål", "mål 14"]
+                  "bærekraftsmål", "berekraftsmål", "mål 14"]
 termlist_sdg_e = ["ocean.*", "marine", "sea", "seas", "fisher.*",
                   "hav", "havet", "sjø", "marin", "fisker.*"]
 
@@ -12401,16 +10459,8 @@ phrasedefault_sdg_f = r'(?:{})'.format('|'.join(termlist_sdg_f))
 Data.loc[(
       (Data['result_title'].str.contains(phrasedefault_sdg_a, na=False, case=False))
       |(Data['result_title'].str.contains(phrasedefault_sdg_f, na=False, case=False))
-      |
-      (
-        (Data['result_title'].str.contains(phrasedefault_sdg_b, na=False, case=False))
-        & (Data['result_title'].str.contains(phrasedefault_sdg_c, na=False, case=False))
-      )
-      |
-      (
-         (Data['result_title'].str.contains(phrasedefault_sdg_d, na=False, case=False))
-         & (Data['result_title'].str.contains(phrasespecific_sdg_e, na=False, case=False))
-      )
+      |((Data['result_title'].str.contains(phrasedefault_sdg_b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault_sdg_c, na=False, case=False)))
+      |((Data['result_title'].str.contains(phrasedefault_sdg_d, na=False, case=False)) & (Data['result_title'].str.contains(phrasespecific_sdg_e, na=False, case=False)))
 ),"tempmentionsdg14"] = "SDG14"
     
 print("Number of results = ", len(Data[(Data.tempmentionsdg14 == "SDG14")]))
@@ -12438,41 +10488,24 @@ Used together with most (but not all) targets to try and limit the results to th
 * terr_terms : T = contains a word indicating it is about the terrestrial/limnic environment. 
 * terrestrial_double_NOT : T = does not contain marine terms alone (e.g. a title talking about coral and peatlands will be included, but one only about coral will not). 
 
-```
-TS=
-( "terrestrial" OR "soil" OR "soils"  
-  OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$"
-  OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal"
-  OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$"
-  OR "bush*" OR "shrub*" OR "meadow*"
-  OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$"
-  OR "dryland$" OR "dry land" OR "desert*"
-  OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland")
-  OR "tundra"
-
-  OR "freshwater" OR "limnic" OR "inland fish*"
-  OR "lake*" OR "pond$"
-  OR "river*" OR "stream$" OR "brook$" OR "creek$"
-)
-```
-
 
 ```python
 ## The terrestial list
 #---------------------------------
 
 termlist15_terr1 = ["terrestrial",
-                   "forest", "woodland", "taiga", "jungle", "mangrove", 
+                    "forest", "woodland", "taiga", "jungle", "mangrove", 
                     "peatland", "peat land", "swamp", "wetland", "marsh", "paludal",
                     "farmland", "agricultural land", "cropland", "pasture", "rangeland",
-                    "shrub", "meadow", "bushland", "heath",
+                    "shrub", "meadow", "bushland", "heath", "moorland",
                     "savanna","grassland","prairie",
                     "dryland", "dry land", "desert", 
-                    "mountain", "highland", "alpine", "tundra"
+                    "lowland",
+                    "mountain", "highland", "alpine", "tundra", "upland",
                     "freshwater", "limnic", "inland fish",
                     "brook", "creek",
 
-                    "terrestrisk", "landlevende","villmarksområd",
+                    "terrestrisk", "landlevende", "villmarksområd",
                     "skog", "jungel",
                     "torv", "torvmos", "torvmyr", "slåttemyr", "myrer", "myrar", "sumper", "sumpar", "våtmark", "våteng", "torvmark",
                     "dyrket mark", "dyrket jord", "dyrka jord", "dyrka mark", "landbruksmark", "utmark", "innmark", "beite",
@@ -12481,15 +10514,12 @@ termlist15_terr1 = ["terrestrial",
                     "prærie", "tørre område",
                     "tørrmark", "ørken", "halvtørre områd",
                     "fjell", "bergtopp", "alpin", 
-                    "ferskvann", "ferskvatn", "innlandsfisk", "innsjø"  
-                     ]
+                    "ferskvann", "ferskvatn", "innlandsfisk", "innsjø"]
 
 termlist15_terr2 = ["soil", "soils", "bog", "bogs", "mire", "mires", "fen", "fens", "bush", "bushes", "plains", "steppe",
                     "lake", "lakes", "pond", "ponds", "river", "rivers", "stream", "streams",
 
-                    "jord", "åker", "myr","sump", "eng", "enger", "busk", "elv", "elver", "bekk",
-                   ]
-                   #Terms where we need to avoid truncation
+                    "jord", "åker", "myr", "sump", "eng", "enger", "busk", "elv", "elver", "bekk"]
 
 phrasedefault15_terr1 = r'(?:{})'.format('|'.join(termlist15_terr1))
 phrasespecific15_terr2 = r'\b(?:{})\b'.format('|'.join(termlist15_terr2))
@@ -12520,9 +10550,9 @@ test.iloc[0:10, [0,4,5,6,8]]
 termlist_noise = ["marin", "coral", "ocean", "seafloor", "deep-sea", "deep sea","kelp", 
                   "random forest", "internet of thing", "urban ecosystem",
                   "salivary microbio","gut microbio","skin microbio","oral microbiome","gut flora","skin flora","immunologi","immunology","hormon","syndrome","vector","enzyme","infected","infection","infect",
+                  
                   "korall", "sjøbunn", "sjøbotn", "havbunn", "havbotn", "havdyp", "havdjup", "dyphav", "djuphav", "tareskog", "tare skog",
-                  "språk", "barnevernet"
-                  ]
+                  "språk", "barnevernet"]
                   #"språk" (NO: language) is added here as in Norwegian a lot of the same terms are used for language conservation as nature conservation (e.g. forvaltningsområde).
                   #"barnevernet" (NO: child protective services) also
                   #The medical terms (line 3) are from 15.1 phrase 3. We have included all from the WOS string except from parasite.
@@ -12557,7 +10587,7 @@ print("Number of results dropped = ",((len(Data.loc[Data['terrestrial_double_NOT
 ```python
 #Results
 test=Data.loc[Data['terrestrial_double_NOT']]
-test.iloc[0:5, [0,4,5,6,8]]
+test.iloc[15:25, [0,4,5,6,8]]
 ```
 
 ### SDG 15.1
@@ -12568,24 +10598,6 @@ test.iloc[0:5, [0,4,5,6,8]]
 
 
 #### Phrase 1
-```
-TS=
-(
-  ("protected area$" OR "conservation area$" OR "conservation zone$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Habitat management area$" OR "Species management area$" OR "Protected landscape$"
-  OR "conserv* ecosystem" OR "conserv* ecosystems" OR "protect* ecosystem" OR "protect* ecosystem$"
-  OR
-    (
-      ("protect*" OR "preserve" OR "preservation" OR "preserved"
-      OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-      OR "reforest*" OR "rehabilit*"
-      )
-      NEAR/5 ("habitat$" OR "biotope$")
-    )
-  )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
@@ -12596,12 +10608,12 @@ termlist15_1a = ["protected area","conservation area","conservation zone","Wi
 
                  "vernområde","bevarte område", "bevaringsområde", "naturreservat","biotopvernområde","biosfæreområde","nasjonalpark",
                  "landskapsvern","økosystemforvalt","økosystembasert forvalt",
-                 "vernet økosystem","fredningsområde","forvaltningsområde"
-                 ]
-termlist15_1b = ["protect","preserv","conserv","reforest","re-forest", "rehabilit",
-                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer","skogplanting", "gjengro",
-                 ]
+                 "vernet økosystem","fredningsområde","forvaltningsområde"]
+
+termlist15_1b = ["protect", "preserv", "conserv", "reforest", "re-forest", "rehabilit", "restor",
+                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer", "skogplanting", "gjengro"]
                  #"vernet" (NO) will also find "vernetiltak"
+    
 termlist15_1c = ["habitat","biotop", 
                  "leveområd"]
 
@@ -12632,32 +10644,14 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
- 	(
-    ("protect*" OR "preserve" OR "preservation" OR "preserved"
-    OR "conserved" OR "conservation" OR "conserves" OR "conserving" OR "conserve"
-    OR "reforest*" OR "rehabilit*"
-    )
-    NEAR/5
-      ("ecosystem$" OR "area*" OR "zone*" OR "environment*" OR "woodland$" OR "forest$" OR "taiga" OR "peatland$" OR "bog$"
-      OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*"
-      OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*"
-      OR "highland$" OR "alpine*" OR "tundra" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$"
-      )
-  )
-)
-AND TS=("terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-```
 
 
 ```python
 #Termlists
-termlist15_1d = ["protect","preserv","conserv","reforest","re-forest", "rehabilit",
-                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer","skogplanting", "gjengro"
-                 ]
+termlist15_1d = ["protect","preserv","conserv", "reforest", "re-forest", "rehabilit", "restor",
+                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer", "skogplanting", "gjengro"]
                  #"vernet"(NO) will also find "vernetiltak"
+    
 termlist15_1e = ["ecosystem", "ecolog", "zone", "environment", "protected area", "protected zone", "protection zone", "conservation area", "conservation zone",
                  "økosystem", "kulturlandskap", "landskapsvern", "miljøvern", "miljøparagraf"]
 #Supplement with the terrestrial terms in phrasedefault15_terr1 and phrasedefault15_terr2
@@ -12679,7 +10673,7 @@ phrasespecific15_1etrunc = r'\b(?:{})'.format('|'.join(termlist15_1etrunc))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault15_1d, na=False, case=False))
-        & ((Data['result_title'].str.contains(phrasedefault15_1e, na=False, case=False))| (Data['result_title'].str.contains(phrasespecific15_1etrunc, na=False, case=False)))
+        & ((Data['result_title'].str.contains(phrasedefault15_1e, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_1etrunc, na=False, case=False)))
         & (Data['terrestrial_double_NOT']==True)
     )
 ),"tempsdg15_01"] = "SDG15_01"
@@ -12690,10 +10684,9 @@ print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")]))
 
 ```python
 #Search 2 - in terr
-
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_1d, na=False, case=False))
-    &(Data['terr_terms']==True)
+    & (Data['terr_terms']==True)
 ),"tempsdg15_01"] = "SDG15_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")])) 
@@ -12706,42 +10699,20 @@ test.iloc[10:15, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  ("manage" OR "conserve" OR "protect" OR "restore" OR "management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
-  NEAR/15
-    ("habitat$"
-    OR
-      ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-      ) 
-    OR 
-      ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$")
-      )
-    OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-    OR 
-      ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")
-      )
-    OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-    )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 termlist15_1f = ["protect","preserv","conserv","restore", "restoring", "restoration", "sustainable",
-                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer", "bærekraft", "berekraft"
-                 ]
+                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer", "bærekraft", "berekraft"]
                  #"vernet"(NO) will also find "vernetiltak"
-termlist15_1g = ["habitat",
+    
+termlist15_1g = ["habitat", "nature conservation",
                  "biodivers","biological diversity","species diversity","functional diversity","genetic diversity","taxonomic diversity",
                  "key species","keystone species","foundation species","habitat forming species","key resource",
                  
-                 "leveområd", 
-                 "biologisk mangf", "biomangf", "biologiske mangf", "artsmangf", "artsdiversitet", "genetisk mangf", "genetisk diversitet",
+                 "leveområd", "naturvern",
+                 "biologisk mangf", "biomangf", "biologiske mangf", "artsmangf", "artsdiversitet", "naturmangf", "genetisk mangf", "genetisk diversitet",
                  "nøkkelart"]
 
 termlist15_1h = ["diversity", "community", "ecosystem",
@@ -12759,7 +10730,6 @@ phrasedefault15_1i = r'(?:{})'.format('|'.join(termlist15_1i))
 
 ```python
 #Search 1 in double NOT
-
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault15_1f, na=False, case=False))
@@ -12776,14 +10746,11 @@ print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")]))
 
 
 #Search 2 - in terrestrial
-
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_1f, na=False, case=False))
     & (Data['result_title'].str.contains(phrasedefault15_1h, na=False, case=False))
     & (Data['terr_terms']==True)
 ),"tempsdg15_01"] = "SDG15_01"
-    #Here an extra line is added compared to Web of Science - where phrase15_1h (diversity etc.) is searched for only within titles that
-    #also contain a terrestrial term, allowing subjects such as "forest diversity" to be found. 19 extra results, ca. 17 relevant
 
 print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")])) 
 ```
@@ -12795,120 +10762,70 @@ test.iloc[10:15, ]
 ```
 
 #### Phrase 4
-```
-TS=
-(  
-    ("long term management plan"
-    OR "agro-ecological knowledge" OR "agro ecological knowledge"
-    OR "bidiversity" OR "biological diversity"
-    OR "key biodiversity area$" 
-    OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR 		"tree$" OR "grassland$" OR "pollinator$"))
-    OR "important sites for biodiversity"
-    OR "biodiversity of food systems" OR "agrobiodiversity"
-    OR "soil biodiversity"
-    OR "ecotourism"
-    OR (("sustainab*" OR "responsible") NEAR/5 ("ecosystem service$" OR "natural resource$" OR "soil" OR "freshwater" OR "groundwater"))
-    OR
-      (
-        (
-          ("sustainab*" OR "responsibl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
-          NEAR/3
-              ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning"
-              OR "fishing" OR "fisher*" OR "hunter$" OR "hunting" OR "trapping"
-              OR "forestry"
-              OR (("recreation*" OR "tourism") NEAR/5 ("nature" OR "ecologic*"))
-              OR "grazing"
-              OR "fuel wood" OR "fire wood" OR "firewood"
-              )
-        )
-        NEAR/15
-            ("ecosystem service$" OR "natural resource$" OR "groundwater"
-            OR "fisher*" OR "game" OR "forest$"
-            OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"
-            )
-      )
-    )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
-Note, here we have made a change compared to the string in Web of Science. There, in the topic approach, biodiversity is included alone. Here I have included it with action terms. It is also misspelled in the WoS string which has caused issues in testing. See issue #30 in GitHub.
+Note that here one can expect some marine results regarding fishing - this is because relatively many fishing works concern fisheries management generally, and trying to limit to either marine or freshwater is very challenging. 
 
 
 ```python
 #Termlists
-termlist15_1j = ["long term management plan", "long-term management plan", 
-                 "agro-ecological knowledge","agro ecological knowledge",
+termlist15_1j = ["agro-ecological","agro ecological",
                  "key biodiversity area", "important sites for biodiversity",
                  "ecotourism","eco-tourism",
                  
-                 "langsiktig miljøforvaltning",
                  "nøkkelhabitat","nøkkelbiotop",
-                 "økoturis", "øko-turis"
-                 ]
-termlist15_1k = ["KBA"]      
+                 "økoturis", "øko-turis"]
 
-termlist15_1l = ["promot" , "enable" , "increase" , "establish" , "implement" , "assure" , "ensur",
-                 "muliggjør", "mogeleggjer", "mogleggjer", "øker", " øke ", " auke ", "etabler", "sørge for", "sørger for"]           
-termlist15_1m = ["biodiversit","biological diversity",
-                 "biologisk diversitet", "biologisk mangf", "biologiske mangf", "biomangf", "artsmangf"] 
-                 #Note that "biodiversit" will cover "biodiversitet" (NO) and e.g. soil biodiversity
+termlist15_1k = ["sustainabl", "responsibl", "environmental", "ecological", "ecosystem approach",
+                 "bærekraft", "berekraft", "ansvarlig", "ansvarleg", "miljø", "økologisk", "økosystemtilnærm", "økosystembasert forvaltning"]
 
-termlist15_1n = ["sustainabl", "responsibl",
-                 "bærekraft", "berekraft", "ansvarlig", "ansvarleg"]
-termlist15_1o = ["ecosystem service","soil","freshwater",
-                 "økosystemtjenest", "ferskvann", "ferskvatn", "jord "]
-                 #a space is included after "jord"(NO) to prevent "jordbruk"
-
-termlist15_1p = ["sustainabl", "responsibl", "environmental", "ecological", "ecosystem approach",
-                 "bærekraft", "berekraft", "ansvarlig", "miljø", "økologisk", "økosystemtilnærm", "økosystembasert forvaltning"]
-termlist15_1q = ["natural resource", "groundwater", "freshwater fish", "salmon", "trout", "hunting", "trapping", "forestry", "recreation", "tourism", "grazing", "firewood", "fire wood", "fuel wood",
-                 "naturressurs", "grunnvann", "grunnvatn", "ferskvannsfisk", "innlandsfisk", "ferskvannskreps", "laks", "ørret", "auret", "jakt", "fangst", "skogbruk", "fritid", "tursti", "turist", "turism", "beite", "fyringsved", "bjørkeved"]
-                 #"ved" (NO: firewood) is difficult in Norwegian because it is often combined with other words (can't stop truncation), AND is a preposition (ved also = "by")
-                 #Here we have dropped the last NEAR combo as an unneccesary restriction
+termlist15_1l = ["grazing", "forestry", "fishing", "fisher", "hunter", "hunting", "trapping",
+                 "beite", "skogbruk", "ferskvannsfisk", "innlandsfisk", "ferskvannskreps", "laks", "ørret", "auret", "jakt", "fangst"]
                  #Fishing terms in Norwegian are limited to freshwater since there is so much marine research. 
-                  #44 results dropped, nearly all marine, should be found by SDG14
-                  #Salmon and trout included as partially freshwater
-termlist15_1r = ["manag", "sustainable us", "responsible us", "usage", "govern", "administr", "planning",
-                 "forvalt", "bruk", "bruker", "planlegg", "styring", "ledelse", "leiing"]
-                 #Generic terms to combine with 15_1p, and the terrestrial terms
+                  #44 results dropped, nearly all marine, should be found by SDG14. Salmon and trout included as partially freshwater.
+
+termlist15_1m = ["long term management", "long-term management", 
+                 "langsiktig miljøforvaltning", "langsiktig forvalt"]
+
+termlist15_1n = ["manag", "sustainable us", "responsible us", "usage", "development", "ecosystem approach",
+                 "govern", "administr", "planning", "policies", "policy", "strateg",
+                 "recreation", "tourism", "tourist",
+                 "fuel wood", "fire wood", "firewood",
+                 
+                 "forvalt", "bruk", "bruker", "økosystemtilnærm", "økosystembasert forvaltning",
+                 "planlegg", "styring", "ledelse", "leiing", "politikk", 
+                 "fritid", "tursti", "turist", "turism", 
+                 "fyringsved", "bjørkeved"] 
+#"ved" (NO: firewood) is difficult in Norwegian because it is often combined with other words (can't stop truncation), AND is a preposition (ved also = "by")
+
+termlist15_1o = ["ecosystem service","natural resource","groundwater",
+                 "biodiversit","biological diversity",
+                 "fishing", "hunting", "trapping",
+                 
+                 "økosystemtjenest", "ferskvann", "ferskvatn",
+                 "biologisk diversitet", "biologisk mangf", "biologiske mangf", "biomangf", "artsmangf",
+                 "ferskvannsfiske", "innlandsfiske", "laksefiske", "ørretfiske", "auretfiske", "jakt", "fangst"]
 
 phrasedefault15_1j = r'(?:{})'.format('|'.join(termlist15_1j))
-phrasespecific15_1k = r'\b(?:{})\b'.format('|'.join(termlist15_1k))
+phrasedefault15_1k = r'(?:{})'.format('|'.join(termlist15_1k))
 phrasedefault15_1l = r'(?:{})'.format('|'.join(termlist15_1l))
 phrasedefault15_1m = r'(?:{})'.format('|'.join(termlist15_1m))
 phrasedefault15_1n = r'(?:{})'.format('|'.join(termlist15_1n))
 phrasedefault15_1o = r'(?:{})'.format('|'.join(termlist15_1o))
-phrasedefault15_1p = r'(?:{})'.format('|'.join(termlist15_1p))
-phrasedefault15_1q = r'(?:{})'.format('|'.join(termlist15_1q))
-phrasedefault15_1r = r'(?:{})'.format('|'.join(termlist15_1r))
 ```
 
 
 ```python
 #Search 1 - in double NOT
-
 Data.loc[(
     (
-        (
-            (Data['result_title'].str.contains(phrasedefault15_1j, na=False, case=False))
-            | (Data['result_title'].str.contains(phrasespecific15_1k, na=False, case=False))
-        )   
+        (Data['result_title'].str.contains(phrasedefault15_1j, na=False, case=False))
+        | ((Data['result_title'].str.contains(phrasedefault15_1k, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault15_1l, na=False, case=False)))
+        | ((Data['result_title'].str.contains(phrasedefault15_1m, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault15_1o, na=False, case=False)))
         |
         (
-            (Data['result_title'].str.contains(phrasedefault15_1l, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault15_1m, na=False, case=False))     
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault15_1n, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault15_1o, na=False, case=False))     
-        )
-        |
-        (
-            (Data['result_title'].str.contains(phrasedefault15_1p, na=False, case=False))
-            & (Data['result_title'].str.contains(phrasedefault15_1q, na=False, case=False))
+            (Data['result_title'].str.contains(phrasedefault15_1k, na=False, case=False))
+            & (Data['result_title'].str.contains(phrasedefault15_1n, na=False, case=False))   
+            & (Data['result_title'].str.contains(phrasedefault15_1o, na=False, case=False))
         )
     )
     &(Data['terrestrial_double_NOT']==True)
@@ -12918,45 +10835,24 @@ print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")]))
 
 
 #Search 2 - in terrestrial terms
-
 Data.loc[(  
-        (Data['result_title'].str.contains(phrasedefault15_1p, na=False, case=False))
-        & (Data['result_title'].str.contains(phrasedefault15_1r, na=False, case=False)) #only searching in the terrestrial terms set, as these are generic terms
-        & (Data['terr_terms']==True)
+    (
+        (Data['result_title'].str.contains(phrasedefault15_1m, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasedefault15_1k, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault15_1n, na=False, case=False))   
+    )
+    & (Data['terr_terms']==True)
 ),"tempsdg15_01"] = "SDG15_01"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_01 == "SDG15_01")])) 
 ```
 
+
+```python
+test=Data.loc[(Data.tempsdg15_01 == "SDG15_01"), ("result_id", "result_title")]
+test.iloc[10:15, ]
+```
+
 #### Phrase 5
-```
-TS=
-(
-    (
-      (
-        ("international" NEAR/3 ("agreement$" OR "treat*"))
-        NEAR/5
-            ("ecosystem$" OR "habitat$" OR "environment*" OR "biotope$" OR "ecolog*"
-            OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna"
-            )
-      )
-    OR "Convention on Biological Diversity"
-    OR ("CBD" NEAR/15 ("biological diversity" OR "biodiversity"))  
-    OR "UN Convention to Combat Desertification" OR "United Nations Convention to Combat Desertification" OR "UNCCD"
-    OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-    OR ("CITES" NEAR/15 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"))
-    OR 
-      (
-        ("United Nations Framework Convention on Climate Change" OR "UN Framework Convention on Climate Change" OR "UNFCCC") 
-        NEAR/15 ("ecosystem$" OR "habitat$" OR "environment*" OR "biotope$" OR "ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna")
-      )
-    OR "Nagoya Protocol"
-    OR "Treaty on Plant Genetic Resources for Food and Agriculture" OR "International Seed Treaty" OR "Plant Treaty" OR "ITPGRFA"
-    )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
@@ -12965,7 +10861,7 @@ termlist15_1s = ["Convention on Biological Diversity",
                  "Convention to Combat Desertification",
                  "Convention on International Trade in Endangered Species of Wild Fauna and Flora",
                  "Nagoya","Plant Genetic Resources for Food and Agriculture","International Seed Treaty","Plant Treaty",
-                 "Convention on Wetlands of International Importance",
+                 "Convention on Wetlands of International Importance", "Ramsar convention",
                  "Bonn convention", "Convention on the Conservation of Migratory Species of Wild Animals",
 
                  "Konvensjon om biologisk mangfold", "Konvensjonen om biologisk mangfold", "biodiversitetskonvensjon",
@@ -12973,9 +10869,8 @@ termlist15_1s = ["Convention on Biological Diversity",
                  "Konvensjonen om internasjonal handel med truede dyr", "handel med truede og sårbare arter",
                  "Den internasjonale plantetraktaten",
                  "Ramsarkonvensjon", "Ramsar-konvensjon", "Våtmarkskonvensjonen",
-                 "Bonnkonvensjon", "Bonn-konvensjon", "konvensjonen om bevaring av trekkende ville dyr"
-                 ]
-termlist15_1t = ["UNCCD", "CITES", "ITPGRFA"]      
+                 "Bonnkonvensjon", "Bonn-konvensjon", "konvensjonen om bevaring av trekkende ville dyr"]
+termlist15_1tcase = ["UNCCD", "CITES", "ITPGRFA"]      
 
 termlist15_1u = ["Framework Convention on Climate Change", "UNFCCC", "CBD",
                  "world heritage convention",
@@ -12983,15 +10878,14 @@ termlist15_1u = ["Framework Convention on Climate Change", "UNFCCC", "CBD",
 
                  "Klimakonvensjon.*", "rammekonvensjon om klimaendring.*",
                  "verdensarvkonvensjon.*",
-                 "landskapskonvensjon.*"
-                 ]       
+                 "landskapskonvensjon.*"]       
 
 termlist15_1v = ["ecosystem", "habitat", "environment", "biotop", "ecolog", "species", "plant", "animal", "organism", "flora", "fauna", "biodivers", "biological diversit",
                  "økosystem", "leveområd", "miljø", "økolog", "rovdyr", "pattedyr", "dyreart", "dyrart", "planter", "artsmangf", "biologisk diversit", "biologisk mangf", "biomangf"] 
 termlist15_1w = ["art", "arter"]
 
 phrasedefault15_1s = r'(?:{})'.format('|'.join(termlist15_1s))
-phrasespecific15_1t = r'\b(?:{})\b'.format('|'.join(termlist15_1t))
+phrasespecific15_1tcase = r'\b(?:{})\b'.format('|'.join(termlist15_1tcase))
 phrasespecific15_1u = r'\b(?:{})\b'.format('|'.join(termlist15_1u))
 phrasedefault15_1v = r'(?:{})'.format('|'.join(termlist15_1v))
 phrasespecific15_1w = r'\b(?:{})\b'.format('|'.join(termlist15_1w))
@@ -13004,7 +10898,7 @@ phrasespecific15_1w = r'\b(?:{})\b'.format('|'.join(termlist15_1w))
 Data.loc[(
     (
         (Data['result_title'].str.contains(phrasedefault15_1s, na=False, case=False))
-        | (Data['result_title'].str.contains(phrasespecific15_1t, na=False, case=True)) 
+        | (Data['result_title'].str.contains(phrasespecific15_1tcase, na=False, case=True)) #case = True
         |
         (
             (Data['result_title'].str.contains(phrasespecific15_1u, na=False, case=False))
@@ -13027,44 +10921,6 @@ Norsk Skogseierforbund (https://skog.no) and Landbruksdirektoratet (https://www.
 
 #### Phrase 1
 
-```
-TS=
-(
-  (
-        ("sustainable forest*" OR "sustainable woodland$" OR "sustainable silvicultur*" OR "sustainable arboricultur*"
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
-          )
-        OR
-          (
-            ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-            NEAR/5
-                ("practice$" OR "method$" OR "forestry operation$"
-                OR "cutting" OR "cut" OR "logging" OR "felling" OR "clearing"
-                OR "lopping" OR "*limbing" OR "thinning" OR "creaming" OR "pruning"
-                OR "rotation"
-                OR "regeneration" OR ("tree$" NEAR/3 "planting") 
-                OR "drainage"
-                OR "Forest area change"
-                OR "Above-ground biomass in forest"
-                OR ("proportion" NEAR/3 "protected areas")
-                OR ("proportion" NEAR/3 "long-term management plan")
-                OR "Forest under certification"
-                OR "Certified forest area"
-                )
-            )
-          OR ("protected" NEAR/3 "forest*")
-          OR ("reserved" NEAR/3 "forest*")
-          OR "UN Strategic Plan for Forests" OR "UNSPF"
-          OR "Global Forest Goals" OR "GFG$"
-          )
-  )
-  NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-)
-```
-
 
 ```python
 #Termlists
@@ -13074,14 +10930,13 @@ termlist15_2a = ["sustainable forest","sustainable woodland","sustainable sil
 
                  "bærekraftfig skog", "bærekraftig silvikultur", "berekraftig skog", "berekraftig silvikult",
                  "vernet skog", "vern av skog", "bevarte skog", "bevart skog", "freda skog", "skogvern", "verneområder i skog",
-                 "strategiske plan for skog"
-                 ]
+                 "strategiske plan for skog"]
 termlist15_2acaps = ["UNSPF", "GFG"]
 
 termlist15_2b = ["sustainab", "responsibl", "environmental", "ecological",
                  "bærekraftig", "berekraftig", "ansvarlig", "ansvarleg","miljøbevisst", "miljøvennlig","miljøvennleg", "økologisk"]
 
-termlist15_2c = ["manag", "govern", "development", "administ", "planning", "policy", "policies",
+termlist15_2c = ["manag", "govern", "development", "administ", "planning", "policy", "policies", "strateg", "approach",
                  "practice", "method", "forestry",
                  "cutting", "logging", "felling", "clearing", "lopping", "limbing", "thinning", "creaming", "pruning", "rotation",
                  "planting tree", "tree planting", "drainage", 
@@ -13091,14 +10946,13 @@ termlist15_2c = ["manag", "govern", "development", "administ", "planning", "poli
                  "forest under certification",
                  "certified forest area",
 
-                 "forvalt", "styring", "ledelse", "leiing", "utvikling", "planlegg", "politikk", "retningslin",
+                 "forvalt", "styring", "ledelse", "leiing", "utvikling", "planlegg", "politikk", "retningslin", "tilnærming",
                  "praksis", "metode", "skogskjøtsel", "skogpleie", "skogsvirke",
                  "tynning", "gjødsling", "hogst", "hogge", "stelle",
                  "planting", "foryngelse", "gjengro", "attgro", "restaurer", "drenering",
                  "skogområde", "skogvolum", "skogdek", "skogbevokste områd", "skogbevokst områd","skogareal",
                  "miljøvern", "bevaret", "bevaring", "fredet", "fredning", "frivillig vern",
-                 "miljøsertifi"
-                 ]
+                 "miljøsertifi"]
 termlist15_2ctrunc = ["use", "usage", "using", "cut",
                       "bruk", "skogbruk.*"]
 
@@ -13138,48 +10992,33 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  "deforest*"
-  OR ("*forest*" NEAR/3 ("loss" OR "degrad*"))
-  OR ("lost" NEAR/3 "forest area")
-  OR
-    (
-      ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-      NEAR/5 ("decreas*" OR "reduc*" OR "degrad*" OR "mitigat*" OR "disappear*" OR "lost" OR "loss")
-    )
-  OR ("REDD" NEAR/15 ("UN" OR "United Nations"))
-)
-```
-
 
 ```python
 #Termlists
 termlist15_2e = ["deforest", "de-forest",
                  "avskog", "skogforringelse", "skogtap"]
-                 #skogforringelse (NO: forest degredation), and is included here instead of below because in Norwegian this is one word specific to forests.
+#skogforringelse (NO: forest degredation), and is included here instead of below because in Norwegian this is specific to forests.
 
 termlist15_2f = ["forests", "woodland", "silvicultur", "arboricultu",
                  "skoger", "silvikultur"]
 termlist15_2f_trunc = ["forest",
                        "skog"] 
-    #Here we don't allow right truncation because "forest" can find "forestillinger"(NO), and "skog"(NO) finds "skogsfugl" etc. 
-    #Left truncation still allows "rainforest" etc.            
+#Here we don't allow right truncation because "forest" can find "forestillinger"(NO), and "skog"(NO) finds "skogsfugl" etc. 
+#Left truncation still allows "rainforest" etc.            
 
 termlist15_2g = ["losses", "degradation", "decreas", "reduc", "mitigat", "disappear",
                  "fortapt", "forring", "reduksj", "nedgang", "mindre", "forsvinn", "forsvunn", "naturtap"]
 termlist15_2gtrunc = ["loss", "lost", 
                       "tap", "tapt"]
 
-termlist15_2h = ["REDD"] #Can use a case-sensitive search here instead of combining with UN
+termlist15_2hcase = ["REDD"] 
 
 phrasedefault15_2e = r'(?:{})'.format('|'.join(termlist15_2e))
 phrasedefault15_2f = r'(?:{})'.format('|'.join(termlist15_2f))
 phrasespecific15_2ftrunc = r'(?:{})\b'.format('|'.join(termlist15_2f_trunc))
 phrasedefault15_2g = r'(?:{})'.format('|'.join(termlist15_2g))
 phrasespecific15_2gtrunc = r'\b(?:{})\b'.format('|'.join(termlist15_2gtrunc))
-phrasedefault15_2h = r'(?:{})'.format('|'.join(termlist15_2h))
+phrasedefault15_2hcase = r'(?:{})'.format('|'.join(termlist15_2hcase))
 ```
 
 
@@ -13187,7 +11026,7 @@ phrasedefault15_2h = r'(?:{})'.format('|'.join(termlist15_2h))
 #Search 1
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_2e, na=False, case=False)) 
-    | (Data['result_title'].str.contains(phrasedefault15_2h, na=False, case=True)) 
+    | (Data['result_title'].str.contains(phrasedefault15_2hcase, na=False, case=True)) #case=T
     | 
     (
         ((Data['result_title'].str.contains(phrasedefault15_2f, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_2ftrunc, na=False, case=False)))
@@ -13205,22 +11044,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-
-```
-TS=
-(
-  (
-    (
-      ("increas*" OR "expand*" OR "restor*" OR "rehabilitate")
-      NEAR/5 ("cover*" OR "area$" OR "zone$" OR "*land$" OR "silvicultur*")
-    )
-  OR "restore" OR "restoration" OR "rehabilitat*"
-  OR "restor*" OR "rehabilita*"
-  )
-  NEAR/5 ("*forest*" OR "woodland$")
-)
-OR TS=("afforestr*" OR "reforestr*")
-```
 
 
 ```python
@@ -13284,19 +11107,6 @@ test.iloc[0:5, ]
 The Store Norske Leksikon was used to help translate terms (https://snl.no/%C3%B8rkenspredning).
 
 #### Phrase 1
-```
-TS=
-(
-  (
-        ("desertif*"
-        OR (("increas*" OR "expand*") NEAR/5 ("desert$" OR "dryland$"))
-        )
-  )
-  OR "United Nations Convention to Combat Desertification"
-  OR "UN Convention to Combat Desertification"
-  OR "UNCCD"
-)
-```
 
 
 ```python
@@ -13306,7 +11116,7 @@ termlist15_3a = ["desertific", "convention to combat desertification",
                 ]
 termlist15_3acaps = ["UNCCD"]
 
-termlist15_3b = ["increas", "expand",
+termlist15_3b = ["increas", "expand", "expansion",
                  "økning", "utvid", "spredning", "spreiing", " auk" #space before " auk" to prevent left truncation
                 ]
 termlist15_3c = ["desert", "drylands", "dryland area",
@@ -13324,11 +11134,12 @@ phrasedefault15_3c = r'(?:{})'.format('|'.join(termlist15_3c))
 
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_3a, na=False, case=False)) 
-    |(Data['result_title'].str.contains(phrasedefault15_3acaps, na=False, case=True)) 
-    | (
+    |(Data['result_title'].str.contains(phrasedefault15_3acaps, na=False, case=True)) #case=T
+    | 
+    (
         (Data['result_title'].str.contains(phrasedefault15_3b, na=False, case=False)) 
         & (Data['result_title'].str.contains(phrasedefault15_3c, na=False, case=False))
-        )
+    )
 ),"tempsdg15_03"] = "SDG15_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_03 == "SDG15_03")]))  
@@ -13342,26 +11153,13 @@ test.iloc[0:5, ]
 
 #### Phrase 2
 
-```
-TS=
-(
-  ("desert$" OR "desertif*" OR "drought" OR "flood$" OR "dryland$")
-  NEAR/15
-      ("soil structure" OR "soil fertility" OR "soil health"
-      OR ("quality" NEAR/5 ("soil$" OR "land"))
-      OR ("degrad*" NEAR/3 ("land$" OR "soil$"))
-      OR (("erosion" OR "eroded") NEAR/5 ("land$" OR "soil$"))
-      )
-)
-```
-
 
 ```python
 #Termlists
 termlist15_3d = ["desertific", "drought", "flood", "drylands", "dryland area", 
                  "ørkenspredning", "ørkenspreiing", "halvtørre område", "tørrland"]
 
-termlist15_3e = ["soil structure" , "soil fertility" , "soil health",
+termlist15_3e = ["soil structure" , "soil fertility", "soil health",
                  "soil quality", "land quality",
                  "jordskjelett", "jordstruktur", "fruktbar jord", "jordhelse",
                  "jordkvalitet", "kvalitetsjord"]
@@ -13369,8 +11167,8 @@ termlist15_3e = ["soil structure" , "soil fertility" , "soil health",
 termlist15_3f = ["land", "soil",
                  "jord", "dyrket mark", "dyrkamark", "kultivert mark"]
 
-termlist15_3g = ["quality", "degrad", "erosion", "eroded",
-                 "kvalitet", "forring", "erosjon", "jordtap"]
+termlist15_3g = ["quality", "fertility", "degrad", "erosion", "eroded",
+                 "kvalitet", "fruktbar", "forring", "erosjon", "jordtap"]
 
 phrasedefault15_3d = r'(?:{})'.format('|'.join(termlist15_3d))
 phrasedefault15_3e = r'(?:{})'.format('|'.join(termlist15_3e))
@@ -13401,44 +11199,6 @@ test.iloc[0:5, ]
 
 #### Phrase 3
 
-```
-TS=
-(
-      ("aridificat*"
-      OR "soil pollution" OR "soil loss"
-      OR
-        (
-          ("degrad*" OR "erosion" OR "eroded" OR "salinisat*"
-          OR "alkalinisat*" OR "acidificat*" OR "contaminat*" OR "pollution"
-          OR "biodiversity loss"
-          )
-          NEAR/5 ("land$" OR "soil$")
-        )
-      )
-)
-OR
-TS=
-(
-  (
-      (
-        ("decline" OR "decreas*" OR "reduc*" OR "degrad*" OR "lower$" OR "lowered" OR "lowering" OR "loss")
-        NEAR/15
-            ("biodiversity"
-            OR ("vegetation" NEAR/3 ("cover" OR "communit*" OR "biomass"))
-            OR ("soil$" NEAR/3 ("fertility" OR "quality"))
-            )
-      )
-      OR (("chang*" OR "reduc*" OR "decreas*") NEAR/3 ("groundwater" NEAR/3 ("level$" OR "quality")))  
-  )    
-  NEAR/15
-      ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-      OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-      OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
-      OR "soil$"
-      )
-)
-```
-
 
 ```python
 #Termlists
@@ -13449,6 +11209,7 @@ termlist15_3i = ["soil",
                  "dyrket mark", "dyrkamark", "dyrka mark", "dyrkamark",  "kultivert mark"]
 termlist15_3itrunc = ["land", "jord", "jordbruk"] 
 #"land" is not truncated because in Norwegian it is a part of many place names, also in english (e.g. LANDSAT, Iceland...), and "jord"(NO) due to "fjord"
+# land still creates some noise in Norwegian ("land"(NO) = "country"(EN)) - but not enough to make it worth losing English combinations (land quality, land erosion)?
 termlist15_3j = ["quality", "degrad", "erosion", "eroded", "salinisat", "alkalinisat", "acidificat", "contaminat", "pollution", "biodiversity loss",
                  "kvalitet", "forring", "uttørking", "erosjon", "jordtap", "salinering", "forsalting", "forsuring", "forurein", "forurensing"]
 
@@ -13458,13 +11219,13 @@ termlist15_3k_trunc = ["tap", "tapt", "tapte"]
 termlist15_3l = ["biodiversity","soil","vegetation","groundwater",
                  "biodiversitet", "biologisk diversitet", "biologisk mangf", "biomangf", "jord", "vegetasjon", "grunnvann", "grunnvatn"]
 
-termlist15_3m = ["desert", "drylands", "dryland area","sub-humid", "sub humid", "semi-arid", "semiarid", "grassland", "savanna", "prarie", "rangeland",
+termlist15_3m = ["desert", "drylands", "dryland area", "sub-humid", "sub humid", "semi-arid", "semiarid",
                  "ørken", "halvtørr", "tørrland"]
 termlist15_3mtrunc = ["arid"]
 
 phrasedefault15_3h = r'(?:{})'.format('|'.join(termlist15_3h))
 phrasedefault15_3i = r'(?:{})'.format('|'.join(termlist15_3i))
-phrasespecific15_2itrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3itrunc))
+phrasespecific15_3itrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3itrunc))
 phrasedefault15_3j = r'(?:{})'.format('|'.join(termlist15_3j))
 phrasedefault15_3k = r'(?:{})'.format('|'.join(termlist15_3k))
 phrasespecific15_2ktrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3k_trunc))
@@ -13479,7 +11240,7 @@ phrasespecific15_2mtrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3mtrunc))
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_3h, na=False, case=False)) 
     | (
-        ((Data['result_title'].str.contains(phrasedefault15_3i, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_2itrunc, na=False, case=False)))
+        ((Data['result_title'].str.contains(phrasedefault15_3i, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_3itrunc, na=False, case=False)))
         & (Data['result_title'].str.contains(phrasedefault15_3j, na=False, case=False))
       )
     |
@@ -13501,56 +11262,36 @@ test.iloc[0:5, ]
 
 #### Phrase 4
 
-```
-TS=
-(
-  ("desert$" OR "desertif*" OR "dryland$" OR "dry land$"
-  OR (("arid" OR "semi arid" OR "semi-arid" OR "sub humid" OR "sub-humid") NEAR/3 ("area*" OR "land*"))
-  OR "grassland$" OR "savanna$" OR "prairie$" OR "rangeland$"
-  )
-  NEAR/15 (("soil" OR "land") NEAR/3 ("productivity" OR "fertility"))
-)
-OR
-TS=
-  (
-    ("land degradation neutrality" OR "LDN")
-    AND "land degradation"
-  )
-```
-
 Note, "land degredation" is already covered by phrase 3, and "LDN" only brings noise here, so it is not included (low-dose naltrexone).
 
 
 ```python
 #Termlists
-
-termlist15_3n = ["desert", "drylands", "dryland area","sub-humid", "sub humid", "semi-arid", "semiarid", "grassland", "savanna", "prarie", "rangeland",
-                 "ørken", "halvtørr", "tørrland"]
-termlist15_3ntrunc = ["arid"]
+termlist15_3n = ["protect", "conserv", "preserv", "restor", "rehabilit", 
+                 "promot", "improv", "enhanc", "strengthen", "maintain",
+                 
+                 "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaure",
+                 "forbedr", "sterke", "vedlikehold", "forvalt",]
 
 termlist15_3o = ["soil",
-                 "jord", "dyrket mark", "dyrkamark", "dyrka mark","kultivert mark"]
-termlist15_3otrunc = ["land"] 
-#"land" is not truncated because in Norwegian it is a part of many place names, also in english (e.g. LANDSAT, Iceland...)
-termlist15_3p = ["fertility", "productivity",
-                 "fruktbar", "fertilitet", "produktivitet"]
+                 "dyrkbar jord", "dyrka jord", "dyrkajord", "dyrket jord", "matjord", "jordmass", "jordvern", "dyrket mark", "dyrkamark", "dyrka mark", "kultivert mark"]
+#"jord"(NO) is added in phrases here as the terms it is combined with (AND) are a lot more general than in the other phrases - causes issues with e.g. "Jordan"(EN/NO) or "fjord"(EN/NO) or "gjorde"(NO).
+
+termlist15_3p = ["fertility", "productivity", "stucture", "health", "protect", "conserv", "preserv", "restor", "rehabilit",
+                 "fruktbar", "fertilitet", "produktivitet", "helse", "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaure"]
                 
 phrasedefault15_3n = r'(?:{})'.format('|'.join(termlist15_3n))
-phrasespecific15_2ntrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3ntrunc))
 phrasedefault15_3o = r'(?:{})'.format('|'.join(termlist15_3o))
-phrasespecific15_2otrunc = r'\b(?:{})\b'.format('|'.join(termlist15_3otrunc))
 phrasedefault15_3p = r'(?:{})'.format('|'.join(termlist15_3p))
 ```
 
 
 ```python
 #Search 1
-phrase15_3nq = Data.loc[(
-    ((Data['result_title'].str.contains(phrasedefault15_3n, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_2ntrunc, na=False, case=False)))
-    & (
-        ((Data['result_title'].str.contains(phrasedefault15_3o, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_2otrunc, na=False, case=False)))
-        & (Data['result_title'].str.contains(phrasedefault15_3p, na=False, case=False))
-      )
+Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault15_3n, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault15_3o, na=False, case=False))
+    & (Data['result_title'].str.contains(phrasedefault15_3p, na=False, case=False))
 ),"tempsdg15_03"] = "SDG15_03"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_03 == "SDG15_03")])) 
@@ -13568,116 +11309,57 @@ test.iloc[0:5, ]
 
 *Innen 2030 bevare økosystemer i fjellområder, inkludert det biologiske mangfoldet der, slik at de skal bli bedre i stand til å bidra til en bærekraftig utvikling*
 
-Since phrase 1 and 2 use many of the same terms, they are both handled here. For the original phrase 2, I have simplified by only taking the terms "sustainable", "ecologial" and "environmental" and dropped the combination with use, management etc. as this is a title search. In an abstract search they should be included.
-
-```
-#Phrase 1
-TS=
-(
-  (
-    (
-      ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring"
-      OR "management" OR "conservation" OR "protection" OR "restoration"
-      OR "Protected area$" OR "Wilderness area$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$" OR "Protected landscape$"
-      OR "CITES"
-      ) 
-      AND 
-        ("ecosystem$" OR "habitat$"
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        )
-    )
-  OR 
-    (
-      ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
-      ) 
-      NEAR/5 
-        ("ecosystem$" OR "habitat$"
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        ) 
-    ) 
-  OR "Habitat management area$" OR "Species management area$"
-  OR "key biodiversity area$" OR "KBA" OR "KBAs"
-  OR "important sites for biodiversity"
-  OR "Mountain Partnership"
-  OR "Mountain Green Cover Index"
-  OR "Convention on Biological Diversity" OR "CBD"
-  OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-  )
-  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
-)
-
-#Phrase 2
-TS=
-(
-  (
-    (
-      ("sustainabl*" OR "environmental*" OR "ecological*")
-      NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
-    )
-    NEAR/15
-        ("ecosystem$" OR "habitat$"
-        OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        )
-  )
-  AND ("mountain*" OR "alpine" OR "highland$" OR ("fell$" NEAR/5 "Lapland"))
-)
-```
+#### Phrase 1 & 2 
+Since phrase 1 and 2 use many of the same terms, they are both handled here. For the original phrase 2, I have simplified by only taking the terms "sustainable", "ecologial" and "environmental" and dropped the combination with use, management etc. as this is a title search. In an abstract search they should probably be included. I have also allowed some area-conservation terms (e.g. "nature reserve") to be combined with mountain/alpine alone, instead of area-conservation + mountain/alpine + nature/ecosystem. 
 
 
 ```python
 #Termlists
-termlist15_4a = ["mountain", "alpine", "highland",                
-                 "fjell", "alpin", "vidde", "vidda"
-                ]
+termlist15_4a = ["mountain", "alpine", "highland", "montane",         
+                 "fjell", "alpin", "vidde", "vidda"]
 
-termlist15_4b = ["manag", "conserv", "protect", "restor",
-                 "Protected area","Wilderness area","Nature reserve","National park","Natural monument","Natural feature","Protected landscape",
+termlist15_4b = ["manag", "conserv", "protect", "restor", "rehabilit",
                  "increas","strengthen","improv","enhanc","better","higher","upgrad","advance","develop","ensure","maintain","preserv","sustain",
                  "decreas","reduc","restrict","degrad","lower","declin","deterior",
                  "coping","cope","adapt","resilien",
                  "assess","examin","evaluat","measur","monitor",
-                 "sustainable", "ecological", "environmental",
+                 "govern", "administra", "planning", "policy", "policies", "strateg", "approach",
+                 "sustainable", 
 
                  "styring", "forvalt", "vernet", "verna", "verne", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaur",
-                 "vernområde", "verneområde", "naturreservat", "biotopvernområde", "nasjonalpark", "bevarte område", "bevaringsområde",
                  "øker", "styrk", "forbedr", "bedring", "betring", "oppgrad", "viderefør", "sikre", "vedlikehold", "vedlikehald", "oppretthold", "opprethald",
                  "reduser", "nedgang", "avgrens", "forring", "nedsatt", "nedsett", 
                  "tåle", "tilpass", "resilien",
                  "overvåk", "vurder", "evaluer", "måle", "monitor",
-                 "bærekraft", "berekraft", "økologi", "miljø"
-                ]
+                 "styring", "ledels", "leiing", "planlegg", "politikk",
+                 "bærekraft", "berekraft", ]
 
-termlist15_4c = ["ecosystem","habitat",
-                 "biodiversity","diversity",
+termlist15_4c = ["ecosystem", "habitat",
+                 "diversity",
                  "key species","keystone species","foundation species","habitat forming species","habitat-forming species","key resource",
                  "cover",
+                 "ecological", "environmental",
 
-                 "økosystem", "miljø", "leveområd",
+                 "økosystem", "miljø", "leveområd", 
                  "mangfold", "mangfald", "diversitet", 
                  "nøkkelart", "flaggskipsart", "paraplyart", "nøkkelressurs",
-                 "dekning", "dekke"
-                 ]
+                 "dekning", "dekke",
+                 "økologi", "miljø"]
 
-termlist15_4d = ["Habitat management area", "Species management area",
+termlist15_4d = ["Protected area","Wilderness area", "nature conservation",
+                 "Nature reserve","National park","Natural monument","Natural feature","Protected landscape",
+                 "Habitat management area", "Species management area",
                  "key biodiversity area", "important sites for biodiversity",
                  "Mountain Partnership", "Mountain Green Cover Index",
                  "Convention on Biological Diversity", 
                  "Convention on International Trade in Endangered Species of Wild Fauna and Flora",
                  
+                 "vernområde", "verneområde", "naturvern",
+                 "naturreservat", "biotopvernområde", "nasjonalpark", "bevarte område", "bevaringsområde",
                  "områdevern", "økosystembasert forvalt", "økosystembasert styring", "forvaltningsplan", "bærekraftig forvalt", "berekraftig forvalt","arealforvaltning", 
                  "artsforvaltning", "naturmangfoldloven", "lov om vern av naturens mangfold",
                  "Konvensjonen om biologisk mangfold", "Konvensjon om biologisk mangfold", "biodiversitetskonvensjon", 
-                 "Konvensjonen om internasjonal handel med truede dyr", "naturmangfoldloven"
-                ]
+                 "Konvensjonen om internasjonal handel med truede dyr", "naturmangfoldloven"]
 
 termlist15_4d_case = ["KBA", "KBAs", "CBD", "CITES"]
 
@@ -13691,13 +11373,12 @@ phrasespecific15_4d_case = r'\b(?:{})\b'.format('|'.join(termlist15_4d_case))
 
 ```python
 #Search 1
-
 Data.loc[(
     (Data['result_title'].str.contains(phrasedefault15_4a, na=False, case=False)) 
     & 
     (
         (Data['result_title'].str.contains(phrasedefault15_4d, na=False, case=False)) 
-        | (Data['result_title'].str.contains(phrasespecific15_4d_case, na=False, case=True))
+        | (Data['result_title'].str.contains(phrasespecific15_4d_case, na=False, case=True)) #case=T
         | ((Data['result_title'].str.contains(phrasespecific15_4b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault15_4c, na=False, case=False)))
     )
 ),"tempsdg15_04"] = "SDG15_04"
@@ -13719,18 +11400,6 @@ test.iloc[0:5, ]
 The Norwegian Red List (Artsdatabanken) webpages were used for Norwegian terms (https://artsdatabanken.no/lister/rodlisteforarter/2021/)
 
 #### Phrase 1
-```
-TS=
-(
-  ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*")
-  NEAR/5
-      ("ecosystem$" OR "habitat$" OR "biotope$"
-      OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      )
-)
-AND
-TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-```
 
 
 ```python
@@ -13785,18 +11454,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-    ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*")
-    NEAR/5
-      ("biodiversity" OR "biological diversity"
-      OR (("diversity" OR "species") NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      )
-)
-AND
-TS=("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-```
 
 
 ```python
@@ -13833,42 +11490,6 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  (
-    ("manage" OR "managing" OR "managed" OR "conserve" OR "conserving" OR "protect" OR "protecting" OR "restore" OR "restoring"
-    OR "management" OR "conservation" OR "protection" OR "restoration" OR "rehabilit*" OR "preserve" OR "preservation" OR "preserved"
-    ) 
-    AND 
-        ("biodiversity" OR "biological diversity" 
-        OR "key biodiversity area$" 
-        OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "important sites for biodiversity" 
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
-        OR "Red List Index"
-        OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
-        )
-  )
-OR
-  (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" OR "coping" OR "cope" OR "adapt*" OR "resilien*" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
-    ) 
-    NEAR/5 
-      ("biodiversity" OR "biological diversity" 
-      OR "key biodiversity area$" 
-      OR ("KBA$" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR "important sites for biodiversity" 
-      OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR (("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*") NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"))
-      OR "Red List Index"
-      OR "RLI" OR "Red List" OR "IUCN" OR "International Union for Conservation of Nature"
-      )
-  )
-)
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
@@ -13876,27 +11497,23 @@ NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kel
 
 termlist15_5f = ["manag", "conserv", "protect", "restor", "rehabilit", "preserv",
                  "increas","strengthen","improv","enhanc","better","higher","upgrad","advance","develop","ensure","maintain","preserv","sustain",
-                 "decreas","reduc","restrict","degrad","lower","declin","deterior",
+                 "decreas","reduc","restrict","degrad","lower","declin","deterior"," loss"
                  "coping","cope","adapt","resilien",
                  "assess","examin","evaluat","measur","monitor",
 
                  "styring", "forvalt", "verne", "verna", "vern av", "miljøvern", "bevare", "betring", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaur",
                  "øker", "styrk", "forbedr", "bedring", "oppgrad", "viderefør", "sikre", "vedlikehold", "vedlikehald", "oppretthold", "opprethald",
-                 "reduser", "nedgang", "avgrens", "forring", "nedsatt", "nedsett", 
+                 "reduser", "nedgang", "avgrens", "forring", "nedsatt", "nedsett", "tap av",
                  "tåle", "tilpas", "resilien",
-                 "overvåk", "overvak", "vurder", "evaluer", "måle", "monitor"
-                 ]
-
+                 "overvåk", "overvak", "vurder", "evaluer", "måle", "monitor"]
 
 termlist15_5g = ["biodiversity","species diversity",
-                "key biodiversity area","important sites for biodiversity",
                 "red list", "International Union for Conservation of Nature",
 
-                "artsmangf", "artsdiversitet", "biomangf", "biologisk mangf", "biologiske mangf", 
-                "artsforvaltning", "naturmangfoldloven","lov om vern av naturens mangfold",
+                "artsmangf", "artsdiversitet", "biomangf", "biologisk mangf", "biologiske mangf", "naturmangf",
+                "artsforvaltning", "naturmangfoldloven", "lov om vern av naturens mangfold",
                 "rødlist", "rød list", "raudlist", "raud list",
-                "trua art", "trued art", "truede art"
-                 ] 
+                "trua art", "trued art", "truede art"] 
                  #"trua art" (NO) etc are included as phrases here because both terms are easily creating noise with automatic truncation
                  #The english combinations and "truet"(NO) are covered by h+i below
 termlist15_5g_case = ["KBA", "KBAs", "CBD", "RLI", "IUCN"]
@@ -13904,12 +11521,10 @@ termlist15_5g_case = ["KBA", "KBAs", "CBD", "RLI", "IUCN"]
 termlist15_5h = ["threatened","near extinct","at risk","endanger","vulnerable","protected","red list",
                  "diversity",
                  "truet", "truga", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "fredet", "freda", "rødlist", "rød list", "raudlist", "raud list",
-                 "diversitet", "mangfold", "mangfald"
-                 ]
+                 "diversitet", "mangfold", "mangfald"]
 
 termlist15_5i = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
-                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl", "moser", "mosar", "trær"
-                 ]
+                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl", "moser", "mosar", "trær"]
 termlist15_5i_trunc = ["art","arter","dyr"]  
 
 phrasedefault15_5f = r'(?:{})'.format('|'.join(termlist15_5f))
@@ -13948,30 +11563,16 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 4
-```
-TS=
-(
-  ("extinction" OR "loss" OR "going extinct")
-  NEAR/15
-        (
-          ("threatened" OR "near extinct*" OR "at risk" OR "endanger*" OR "vulnerable" OR "protected" OR "red list*")
-          NEAR/3 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$")
-        )
-)
-NOT TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
-
 termlist15_5j = ["threatened","near extinct","at risk","endanger","vulnerable","protected","red list",
-                 "truet", "truga", "trua ", " trued", "truede", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "fredet", "freda", "rødlist", "rød list", "raudlist", "raud list"
-                 ] #the spaces before/after "trua"(NO), "trued"(NO) are intentional (to avoid e.g. "construed")
+                 "truet", "truga", "trua ", " trued", "truede", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "fredet", "freda", "rødlist", "rød list", "raudlist", "raud list"] 
+#the spaces before/after "trua"(NO), "trued"(NO) are intentional (to avoid e.g. "construed")
 
 termlist15_5k = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
-                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"
-                 ]
+                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]
 termlist15_5k_trunc = ["art", "arter", "dyr"]  
 
 termlist15_5l = ["extinction", "loss", "going extinct",
@@ -14016,39 +11617,22 @@ test.iloc[0:5, ]
 *Fremme en rettferdig og likeverdig deling av godene knyttet til bruk av genressurser, og fremme formålstjenlig tilgang til slike ressurser i  tråd med internasjonal enighet*
 
 #### Phrase 1
-```
-TS=
-(
-  (
-    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
-    NEAR/15
-        ("genetic resource$" OR "gene resources"
-        OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-        )
-  )
-  AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "species" OR "plant*" OR "animal$" OR "organism$" OR ("genetic resource$" NOT "human"))
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
-termlist15_6a = ["share", "sharing", "equitab", "equal", "fair", "access", "right", "ownership",
-                 "deling", "deler", " dele"  "tilgang", "rett", "rettferd", "eierskap", "eigarskap"
-                 ] #spaces around "dele"(NO) intentional to avoid truncation
+termlist15_6a = ["share", "sharing", "equitab", "equal", "fair", "access", "right", "ownership", "appropriati", "biopira", "biocoloni", "using", "utiliz", "utilis", "use of",
+                 "deling", "deler", " dele"  "tilgang", "rett", "rettferd", "eierskap", "eigarskap", "bruk av", "bruker", "utnytte"] 
+#spaces around "dele"(NO) intentional to avoid truncation
 
-termlist15_6b = ["genetic resource", "gene resource", 
+termlist15_6b = ["genetic resource", "gene resource", "bioresource", "biological resource",
                  "traditional knowledge", "indigenous knowledge", "autochthonous knowledge", "local knowledge",
 
-                 "genetiske ressurs", "genressurs", "plantegenetiske ressurs", "dyrgenetiske ressurs", "dyregenetiske ressurs",
-                 "tradisjonelle kunnskap", "tradisjonell kunnskap", "urfolkskunnskap" 
-                ]
+                 "genetiske ressurs", "genressurs", "plantegenetiske ressurs", "dyrgenetiske ressurs", "dyregenetiske ressurs", "bioressurs", "biologiske ressurs",
+                 "tradisjonelle kunnskap", "tradisjonell kunnskap", "urfolkskunnskap"]
 
-termlist15_6c = ["ecosystem", "biotop", "diversity", "species", "plant", "animal", "organism",
-                 "økosystem", "diversit", "mangfold", "mangfald", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "dyrgenetiske", "dyrgenetiske"
-                 ] 
+termlist15_6c = ["ecosystem", "biotop", "diversity", "species", "plant", "animal", "organism", 
+                 "økosystem", "diversit", "mangfold", "mangfald", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "dyrgenetiske", "dyrgenetiske"] 
 termlist15_6c_trunc = ["art", "arter", "dyr"]  
 
 phrasedefault15_6a = r'(?:{})'.format('|'.join(termlist15_6a))
@@ -14086,89 +11670,46 @@ test=Data.loc[(Data.tempsdg15_06 == "SDG15_06"), ("result_id", "result_title")]
 test.iloc[0:5, ]
 ```
 
-#### Phrase 2 & 3
-```
-#Phrase 2
-TS=
-(
-  (
-    ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership")
-    AND
-        (
-          (
-            ("genetic resource$" OR "gene resource$"
-            OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-            )
-            NEAR/5 ("use$" OR "using" OR "utiliz*" OR "utilis*")
-          )
-          AND
-            ("benefit$"
-            OR ("results" NEAR/3 ("research" OR "development"))
-            OR ("transfer*" NEAR/3 "technolog*")
-            OR ("participat*" NEAR/3 "research activit*")
-            OR ("develop*" NEAR/3 "product$")
-            OR (("monetary" OR "royalties") NEAR/3 ("benefit$" OR "compensat*"))
-            OR "bioprospect*"
-            )
-        )
-  )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-
-#Phrase 3
-TS=
-(
-  ("genetic resource$" OR "gene resource$*"
-  OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
-  )
-  AND
-      ("Nagoya Protocol"
-      OR "Convention on biological diversity" OR ("CBD" NEAR/15 ("biological diversity" OR "biodiversity"))
-      OR "Access and benefit-sharing" OR "Access and benefit-sharing" OR "ABS"
-      OR "Bonn Guidelines"
-      OR "Plant Genetic Resources for Food and Agriculture" OR ("Plant Genetic Resources" NEAR/3 "FAO") OR "PGRFA"
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
+#### Phrase 2 & 3 
 
 
 ```python
 #Termlists
-#Re-use 6a and 6b
+#Re-use 6b and 6c
 
 termlist15_6d = ["benefit", "results", "transfer", "technolog", "participat", "product", "monetary", "royalties", "compensat", "bioprospect",
                  "fordel", "gevinst", "resultat", "overfør", "teknologi", "deltak", "finansiel", "kompensasj", "godtgjørelse", "godtgjer", "bioprospekt"] 
 
-termlist15_6e = ["Nagoya", "Convention on biological diversity", "Access and benefit-sharing", "Access and benefit-sharing", "Bonn guideline",
+termlist15_6e = ["Nagoya", "Convention on biological diversity", "benefit sharing", "benefit-sharing",
                  "Plant Genetic Resources for Food and Agriculture",
                  "Konvensjonen om biologisk mangfold", "biodiversitetskonvensjon", "Den internasjonale plantetraktaten"
                 ] 
 termlist15_6e_case = ["CBD","ABS","PGRFA"]
 
+termlist15_6f = ["Access and benefit sharing", "Access and benefit-sharing",  "Bonn guideline"]
+
 phrasedefault15_6d = r'(?:{})'.format('|'.join(termlist15_6d))
 phrasedefault15_6e = r'(?:{})'.format('|'.join(termlist15_6e))
 phrasedefault15_6e_case = r'(?:{})'.format('|'.join(termlist15_6e_case))
+phrasedefault15_6f = r'(?:{})'.format('|'.join(termlist15_6f))
 ```
 
 
 ```python
-#Search 1
+#Search 1 - slightly simplified compared to WOS due to title search
 Data.loc[(
     (
-        (Data['result_title'].str.contains(phrasedefault15_6a, na=False, case=False)) 
-        & (Data['result_title'].str.contains(phrasedefault15_6b, na=False, case=False))
+        (Data['result_title'].str.contains(phrasedefault15_6b, na=False, case=False))
         & (Data['result_title'].str.contains(phrasedefault15_6d, na=False, case=False))
-        & (Data['terrestrial_double_NOT']==True)
+        & ((Data['terr_terms']==True) | (Data['result_title'].str.contains(phrasedefault15_6c, na=False, case=False)))
     )
     |
     (
-        (Data['result_title'].str.contains(phrasedefault15_6e, na=False, case=False)) 
-        & ((Data['result_title'].str.contains(phrasedefault15_6b, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_6e_case, na=False, case=True)))
+        (Data['result_title'].str.contains(phrasedefault15_6b, na=False, case=False)) 
+        & ((Data['result_title'].str.contains(phrasedefault15_6e, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_6e_case, na=False, case=True))) #case=T
         & (Data['terr_terms']==True)
     )
+    | (Data['result_title'].str.contains(phrasedefault15_6f, na=False, case=False))
 ),"tempsdg15_06"] = "SDG15_06"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_06 == "SDG15_06")]))  
@@ -14187,45 +11728,27 @@ test.iloc[0:5, ]
 *Iverksette umiddelbare tiltak for å stanse krypskyting og ulovlig handel med vernede plante- og dyrearter, og håndtere både tilbuds- og etterspørselssiden ved handelen med ulovlige produkter fra viltlevende dyr*
 
 #### Phrase 1
-```
-TS=
-(
-  ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*")
-  NEAR/15
-      (
-        ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-        NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
-       
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 termlist15_7a = ["poach", "traffick", "smuggl",
-                 "krypskyt", "ulovlig", "ulovleg", "smugl", 
-                 ]
+                 "krypskyt", "ulovlig", "ulovleg", "smugl"]
 
-termlist15_7b = ["protected", "endanger", "threat", "extinct", "at risk", "vulnerable", "red list",
-                 "truet", "truga", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "fredet", "freda", "rødlist", "rød list", "raudlist", "raud list"
-                 ]
+#termlist15_7b = ["protected", "endanger", "threat", "extinct", "at risk", "vulnerable", "red list",
+#                 "truet", "truga", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "fredet", "freda", "rødlist", "rød list", "raudlist", "raud list"]
+#Taken out of newest version
 
 termlist15_7c = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
-                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"
-                 ]  
+                 "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]  
+
 termlist15_7c_trunc = ["art", "arter", "dyr"]                                  
 
-termlist15_7d = ["rosewood" , "kosso" , "elephant" , "rhino" , "ivory" , "pangolin" , "turtle" , "tortoise" , "big cat" , "tiger" , "glass eel",
-                 "elefant", "neshorn", "elfenbein", "elfenben", "skilpadde", "store katt", "glassål"
-                 "trua art", "trued art", "truede art"
-                 ]
-                 #The term for "trua art" etc is added as a phrase here since "trua" could be noisy alone
+termlist15_7d = ["rosewood" , "kosso" , "elephant" , "rhino" , "ivory" , "pangolin" , "turtle" , "tortoise" , "big cat" , "tiger" , "glass eel",      
+                 "elefant", "neshorn", "elfenbein", "elfenben", "skilpadde", "store katt", "glassål"]
 
 phrasedefault15_7a = r'(?:{})'.format('|'.join(termlist15_7a))
-phrasedefault15_7b = r'(?:{})'.format('|'.join(termlist15_7b))
+#phrasedefault15_7b = r'(?:{})'.format('|'.join(termlist15_7b))
 phrasedefault15_7c = r'(?:{})'.format('|'.join(termlist15_7c))
 phrasedefault15_7c_trunc = r'\b(?:{})\b'.format('|'.join(termlist15_7c_trunc))
 phrasedefault15_7d = r'(?:{})'.format('|'.join(termlist15_7d))
@@ -14239,9 +11762,8 @@ Data.loc[(
         (Data['result_title'].str.contains(phrasedefault15_7a, na=False, case=False))
         & 
         (
-            ((Data['result_title'].str.contains(phrasedefault15_7b, na=False, case=False)) 
-            & ((Data['result_title'].str.contains(phrasedefault15_7c, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_7c_trunc, na=False, case=False)))
-            )
+            (Data['result_title'].str.contains(phrasedefault15_7c, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasedefault15_7c_trunc, na=False, case=False))
             |(Data['result_title'].str.contains(phrasedefault15_7d, na=False, case=False))
         )
     )
@@ -14258,45 +11780,22 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-  (
-    (
-      ("protected" OR "endanger*" OR "threatened*" OR "extinct*" OR "vulnerable")   
-      NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
-    )
-    AND
-        (
-          ("illegal*" OR "illicit*" OR "criminal" OR "crime")
-          NEAR/15
-              ("product$" OR "manufact*" OR "merchandise$" OR "artifact*" OR "fabricat*" OR "handicraft$" OR "handiwork$"
-              OR "market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livlihood$"
-              )
-        )
-  )
-  AND ("market$*" OR "supply" OR "supplier$" OR "supplied" OR "demand" OR "trade" OR "trading" OR "purchas*" OR "livlihood$")
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 
-#Re-use b, c, c_trunc and d
+#Re-use c, c_trunc and d
 termlist15_7e = ["illegal", "illicit", "criminal", "crime",
-                 "ulovlig", "ulovleg", "krim"
-                 ]
+                 "ulovlig", "ulovleg", "krim"]
 
 termlist15_7f = ["product" , "manufact" , "merchandise" , "artifact" , "fabricat" , "handicraft" , "handiwork",
-                 "market" , "supply" , "supplier" , "supplied" , "demand" , "trade" , "trading" , "purchas" , "livelihood",
+                 "market" , "supply" , "supplier" , "supplied" , "demand" , "trade" , "trading" , "import", "export", "purchas" , "livelihood",
                  "ivory",
+                 
                  "produkt", "varer", "produser", "gjenstand", "lager", "håndverk", "handverk",
-                 "marked", "marknad", "etterspørsel", "tilbud", "tilbod", "handel", "kjøp", "salg", "levebrød", "inntektskilde", "inntektskjelde",
-                 "elfenbein", "elfenben"
-                 ]
+                 "marked", "marknad", "etterspørsel", "tilbud", "tilbod", "handel", "kjøp", "salg", "eksport", "levebrød", "inntektskilde", "inntektskjelde",
+                 "elfenbein", "elfenben"]
 
 phrasedefault15_7e = r'(?:{})'.format('|'.join(termlist15_7e))
 phrasedefault15_7f = r'(?:{})'.format('|'.join(termlist15_7f))
@@ -14311,9 +11810,8 @@ Data.loc[(
         & (Data['result_title'].str.contains(phrasedefault15_7f, na=False, case=False))
         & 
         (
-            ((Data['result_title'].str.contains(phrasedefault15_7b, na=False, case=False)) 
-            & ((Data['result_title'].str.contains(phrasedefault15_7c, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_7c_trunc, na=False, case=False)))
-            )
+            (Data['result_title'].str.contains(phrasedefault15_7c, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasedefault15_7c_trunc, na=False, case=False))
             |(Data['result_title'].str.contains(phrasedefault15_7d, na=False, case=False))
         )
     )
@@ -14330,49 +11828,28 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 3
-```
-TS=
-(
-  (
-    ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-    NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$")
-  )
-  AND 
-    ("Convention on International Trade in Endangered Species of Wild Fauna and Flora" 
-    OR ("CITES" NEAR/15 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"))
-    )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 
-#Re-use b, c, c_trunc and d over
-termlist15_7g = ["Convention on International Trade in Endangered Species of Wild Fauna and Flora",
-                 "Konvensjonen om internasjonal handel med truede dyr", "handel med truede og sårbare arter", "internasjonal handel med truede arter"]
+termlist15_7g = ["International Trade in Endangered Species of Wild Fauna and Flora",
+                 "Konvensjonen om internasjonal handel med truede dyr", "handel med truede og sårbare arter", "handel med truede arter"]
 
 termlist15_7g_case = ["CITES"]
 
 phrasedefault15_7g = r'(?:{})'.format('|'.join(termlist15_7g))
-phrasedefault15_7g_trunc = r'\b(?:{})\b'.format('|'.join(termlist15_7g_case))
+phrasespecific15_7g_case = r'\b(?:{})\b'.format('|'.join(termlist15_7g_case))
 ```
 
 
 ```python
 #Search 1
+# Simplified as a title search - enough just to mention CITES
 Data.loc[(
     (
-        ((Data['result_title'].str.contains(phrasedefault15_7g, na=False, case=False)) | (Data['result_title'].str.contains(phrasedefault15_7g_trunc, na=False, case=False)))
-        & 
-        (
-            ((Data['result_title'].str.contains(phrasedefault15_7b, na=False, case=False)) 
-            & ((Data['result_title'].str.contains(phrasedefault15_7c, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_7c_trunc, na=False, case=False)))
-            )
-            |(Data['result_title'].str.contains(phrasedefault15_7d, na=False, case=False))
-        )
+        (Data['result_title'].str.contains(phrasedefault15_7g, na=False, case=False))
+        | (Data['result_title'].str.contains(phrasespecific15_7g_case, na=False, case=True)) #case=T
     )
     & (Data['terrestrial_double_NOT']==True)
 ),"tempsdg15_07"] = "SDG15_07"
@@ -14395,42 +11872,25 @@ test.iloc[0:5, ]
 In some of the phrases I have added an additional term list specific for using these strings for Norwegian research. It contains Latin and Norwegian names for terrestrial and limnic species deemed "very high risk" in the Norwegian black list of introduced species (2018, newest version; https://www.artsdatabanken.no/fremmedartslista2018)
 
 #### Phrase 1
-```
-TS=
-(
-  ("introduct*" OR "spread*" OR "expansion" OR "dispers*" OR "range increase")
-  AND
-      (
-        ("invasive" OR "alien" OR "exotic" OR "nonnative" OR "non-native" OR "nonindigenous" OR "non-indigenous")
-        NEAR/5 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "rodent$")
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 termlist15_8a = ["introduc", "spread", "expansion", "dispers", "range increas",
-                 "introduser", "rømme", "forvill", "utvide", "spredning", "sprei", "spre seg", "sprer seg", "spredd seg", "utbre"
-                 ]
+                 "introduser", "rømme", "forvill", "utvide", "spredning", "sprei", "spre seg", "sprer seg", "spredd seg", "utbre"]
 
 termlist15_8b = ["invasive","alien","exotic","nonnative","non-native","nonindigenous","non-indigenous",
-                  "fremmed"
-                 ]
+                  "fremmed"]
 
 termlist15_8c = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird", "rodent",
                  "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl", "gnager",
-                 "fremmedart"
-                 ]  
+                 "fremmedart"]  
                  #"fremmedart"(NO) is added as a term here, as in the trunc list below "art" is not allowed to be truncated. b&c will find "fremmede arter".
                  #This term can be an adjective, or e.g. "fremmedartslista"
 termlist15_8c_trunc = ["art", "arter", "dyr"]       
 
 termlist15_8d = ["Pelophylax ridibundus" , "Pelophylax lessonae" , "Pelophylax esculentus" , "Esox lucius" , "Neogobius melanostomus" , "Phoxinus phoxinus" , "Scardinius erythrophthalmus" , "Branta canadensis" , "Barbarea vulgaris" , "Bunias orientalis" , "Elodea canadensis" , "Elodea nuttallii" , "Lactuca serriola" , "Lupinus nootkatensis" , "Symphytum officinale" , "Reynoutria ×bohemica" , "Vincetoxicum rossicum" , "Epilobium ciliatum ciliatum" , "Epilobium ciliatum glandulosum" , "Aruncus dioicus" , "Lamiastrum galeobdolon argentatum" , "Lamiastrum galeobdolon galeobdolon" , "Lysimachia punctata" , "Pastinaca sativa hortensis" , "Amelanchier spicata" , "Berberis thunbergii" , "Cotoneaster bullatus" , "Cotoneaster dielsianus" , "Cotoneaster horizontalis" , "Lonicera caerulea" , "Lysimachia nummularia" , "Rosa rugosa" , "Arctium tomentosum" , "Lupinus polyphyllus" , "Rorippa ×armoracioides" , "Salix viminalis" , "Bromopsis inermis" , "Cerastium tomentosum" , "Cotoneaster lucidus" , "Heracleum mantegazzianum" , "Heracleum persicum" , "Laburnum anagyroides" , "Melilotus albus" , "Petasites japonicus giganteus" , "Petasites hybridus" , "Phedimus spurius" , "Primula elatior elatior" , "Reynoutria sachalinensis" , "Sambucus racemosa" , "Senecio viscosus" , "Sorbaria sorbifolia" , "Swida sericea" , "Vinca minor" , "Taxus ×media" , "Senecio inaequidens" , "Melilotus officinalis" , "Odontites vulgaris" , "Solidago canadensis" , "Festuca rubra commutata" , "Cotoneaster divaricatus" , "Berteroa incana" , "Pinus mugo uncinata" , "Cytisus scoparius" , "Impatiens glandulifera" , "Impatiens parviflora" , "Myrrhis odorata" , "Phedimus hybridus" , "Populus balsamifera" , "Reynoutria japonica" , "Sorbus mougeotii" , "Spiraea ×billardii" , "Spiraea ×rosalba" , "Spiraea ×rubella" , "Tsuga heterophylla" , "Alchemilla mollis" , "Pinus contorta" , "Picea sitchensis" , "Picea ×lutzii" , "Acer pseudoplatanus" , "Laburnum alpinum" , "Pinus mugo" , "Campylopus introflexus" , "Neovison vison" , "Lepus europaeus" , "Nyctereutes procyonoides" , "Sciurus carolinensis" , "Castor canadensis" , "Echinococcus multilocularis" , "Gyrodactylus salaris" , "Angiostrongylus vasorum" , "Anguillicoloides crassus" , "Bursaphelenchus xylophilus" , "Meloidogyne hapla" , "Meloidogyne minor" , "Aphanomyces astaci" , "Batrachochytrium dendrobatidis" , "Batrachochytrium salamandrivorans" , "Hymenoscyphus fraxineus" , "Phytophthora ramorum" , "Phytophthora austrocedri" , "Agrilus planipennis" , "Anoplophora glabripennis" , "Harmonia axyridis" , "Ips amitinus" , "Arion vulgaris" , "Dreissena bugensis" , "Dreissena polymorpha" , "Potamopyrgus antipodarum" , "Opilio canestrinii" , "Eriocheir sinensis" , "Daphnia parvula" , "Pacifastacus leniusculus" , "Aedes japonicus" , "Bombus terrestris" , 
-                 "latterfrosk" , "kontinental damfrosk" , "hybridfrosk" , "gjedde" , "svartmunnet kutling" , "ørekyt" , "sørv" , "kanadagås" , "vinterkarse" , "russekål" , "vasspest" , "smal vasspest" , "taggsalat" , "sandlupin" , "valurt" , "hybridslirekne" , "russesvalerot" , "ugrasmjølke" , "alaskamjølke" , "skogskjegg" , "sølvtvetann" , "parkgulltvetann" , "fagerfredløs" , "hagepastinakk" , "blåhegg" , "høstberberis" , "bulkemispel" , "dielsmispel" , "krypmispel" , "blåleddved" , "krypfredløs" , "rynkerose" , "ullborre" , "hagelupin" , "hybridkulekarse" , "kurvpil" , "bladfaks" , "filtarve" , "blankmispel" , "kjempebjørnekjeks" , "tromsøpalme" , "gullregn" , "hvitsteinkløver" , "japanpestrot" , "legepestrot" , "gravbergknapp" , "lundnøkleblom" , "kjempeslirekne" , "rødhyll" , "klistersvineblom" , "rognspirea" , "alaskakornell" , "gravmyrt" , "hybridbarlind" , "boersvineblom" , "legesteinkløver" , "engrødtopp" , "kanadagullris" , "veirødsvingel" , "sprikemispel" , "hvitdodre" , "bergfuru" , "gyvel" , "kjempespringfrø" , "mongolspringfrø" , "spansk kjørvel" , "sibirbergknapp" , "balsampoppel" , "parkslirekne" , "alpeasal" , "klasespirea" , "purpurspirea" , "bleikspirea" , "vestamerikansk hemlokk" , "praktmarikåpe" , "vrifuru" , "sitkagran" , "lutzgran" , "platanlønn" , "alpegullregn" , "alpefuru" , "ribbesåtemose" , "mink " , "sørhare" , "mårhund" , "riebannjáŋkkár" , "furuvednematode" , "askeskuddbeger" , "greindreper" , "asiatisk askepraktbille" , "harlekinmarihøne" , "brunskogsnegl" , "sebramusling" , "vandrepollsnegl" , "gulrotvevkjerring" , "kinaullhåndskrabbe" , "signalkreps" , "mørk jordhumle"
-                 ]
+                 "latterfrosk" , "kontinental damfrosk" , "hybridfrosk" , "gjedde" , "svartmunnet kutling" , "ørekyt" , "sørv" , "kanadagås" , "vinterkarse" , "russekål" , "vasspest" , "smal vasspest" , "taggsalat" , "sandlupin" , "valurt" , "hybridslirekne" , "russesvalerot" , "ugrasmjølke" , "alaskamjølke" , "skogskjegg" , "sølvtvetann" , "parkgulltvetann" , "fagerfredløs" , "hagepastinakk" , "blåhegg" , "høstberberis" , "bulkemispel" , "dielsmispel" , "krypmispel" , "blåleddved" , "krypfredløs" , "rynkerose" , "ullborre" , "hagelupin" , "hybridkulekarse" , "kurvpil" , "bladfaks" , "filtarve" , "blankmispel" , "kjempebjørnekjeks" , "tromsøpalme" , "gullregn" , "hvitsteinkløver" , "japanpestrot" , "legepestrot" , "gravbergknapp" , "lundnøkleblom" , "kjempeslirekne" , "rødhyll" , "klistersvineblom" , "rognspirea" , "alaskakornell" , "gravmyrt" , "hybridbarlind" , "boersvineblom" , "legesteinkløver" , "engrødtopp" , "kanadagullris" , "veirødsvingel" , "sprikemispel" , "hvitdodre" , "bergfuru" , "gyvel" , "kjempespringfrø" , "mongolspringfrø" , "spansk kjørvel" , "sibirbergknapp" , "balsampoppel" , "parkslirekne" , "alpeasal" , "klasespirea" , "purpurspirea" , "bleikspirea" , "vestamerikansk hemlokk" , "praktmarikåpe" , "vrifuru" , "sitkagran" , "lutzgran" , "platanlønn" , "alpegullregn" , "alpefuru" , "ribbesåtemose" , "mink " , "sørhare" , "mårhund" , "riebannjáŋkkár" , "furuvednematode" , "askeskuddbeger" , "greindreper" , "asiatisk askepraktbille" , "harlekinmarihøne" , "brunskogsnegl" , "sebramusling" , "vandrepollsnegl" , "gulrotvevkjerring" , "kinaullhåndskrabbe" , "signalkreps" , "mørk jordhumle"]
                  #Norway-specific adaptation: Added list of specific species that problematic in Norway - improves recall.
 
 phrasedefault15_8a = r'(?:{})'.format('|'.join(termlist15_8a))
@@ -14469,43 +11929,6 @@ test.iloc[0:5, ]
 #### Phrase 2 & 3
 
 A NINA report was used to help with Norwegian terminology: *Blaalid, R., Often, A., Magnussen, K., Olsen, S. L. & Westergaard, K. B. 2017. Fremmede skadelige karplanter – Bekjempelsesmetodikk og spredningshindrende tiltak. – NINA Rapport 1432. 87 s.* http://hdl.handle.net/11250/2469573
-```
-TS=
-(
-  (
-    ("invasive" OR "alien" OR "exotic" OR "nonnative" OR "non-native" OR "nonindigenous" OR "non-indigenous")
-    NEAR/3 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "rodent$")
-  )
-  NEAR/15
-      ("impact*" OR "effect*" OR "affect*" OR "consequen*"
-      OR "competition"
-      OR "predation"
-      OR "hybridisation"
-      OR ("disease$" NEAR/3 ("transmission" OR "transmit*"))
-      OR "parasitism"
-      OR "trampling"
-      OR "rooting"
-      OR ("biodiversity" NEAR/3 ("loss" OR "lost"))
-      OR ("habitat$" NEAR/3 "degrad*")
-      OR ("ecosystem service$" NEAR/3 ("loss" OR "lost"))
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-
-#Phrase 3
-TS=
-(
-  ("reduc*" OR "decreas*" OR "tackle" OR "control*" OR "eradicat*" OR "remov*")
-  NEAR/5
-      (
-        ("invasive" OR "alien" OR "exotic" OR "nonnative" OR "non-native" OR "nonindigenous" OR "non-indigenous")
-        NEAR/3 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "rodent$")
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
@@ -14526,8 +11949,7 @@ termlist15_8e = ["impact" , "effect" , "affect" , "consequen",
                  "sykdom", "sjukdom", "parasit",
                  "forring",
                  "økosystemtjeneste", "økosystemtenest", "biodiversitet", "biologisk mangf", "biologiske mangf", "artsmangf", "biomangf",
-                 "reduser", "tiltak", "kontroll", "utrydd", "fjerne", "bekjemp", "spredningshindr", "spreiingshindr", "forebygg", "førebygg"
-                 ]
+                 "reduser", "tiltak", "kontroll", "utrydd", "fjerne", "bekjemp", "spredningshindr", "spreiingshindr", "forebygg", "førebygg"]
 
 termlist15_8e_trunc = ["tap", "tapt"]
 
@@ -14568,85 +11990,41 @@ test.iloc[0:5, ]
 
 *Innen 2020 integrere verdien av økosystemer og biologisk mangfold i nasjonale og lokale planleggingsprosesser, i strategier for fattigdomsbekjempelse og i regnskap*
 
-```
-TS=
-(
-  ("Aichi Biodiversity Target$" OR "Strategic Plan for Biodiversity" OR "ecosystem value$" OR "biodiversity value$"
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-      OR "improv*" OR "restor*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
-      )
-      NEAR/5
-          ("ecosystem$" OR "habitat$" OR "biotope$"
-          OR (("communit*"  OR "environment*") NEAR/5 ("ecolog*" OR "biological" OR "biodiversity" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-          )
-    )
-  OR
-    (
-      ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-      OR "promoting" OR "promote" OR "improv*" OR "increase"
-      OR "restor*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
-      OR "System of Environmental-Economic Accounting" OR "SEEA"
-      )
-      NEAR/5
-          ("biodiversity" OR "biological diversity"
-          OR ("diversity" NEAR/5 ("ecolog*" OR "biological" OR "species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "forest$" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-          )
-    )
-  )
-  AND
-      ("National Biodiversity Strategy and Action Plan"
-      OR ("NBSAP" NEAR/5 ("Convention on Biological Diversity" OR "CBD"))
-      OR
-        (
-          ("national" OR "local" OR "government*" OR "regional" OR "sectoral" OR "municipal" OR "federal" OR "poverty reduction" OR "reduc* poverty" OR "anti poverty" OR "antipoverty")
-          NEAR/5
-              ("target$" OR "goal$" OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "governance"
-              OR "plan" OR "planning" OR "plans" OR "action plan$" OR "development" OR "developing"
-              OR "accounting" OR "reporting"
-              )
-        )
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
-
-This string has been simplified a bit, as this is complex string for a title search. "Biodiversity" and related terms are used more alone.
+This string has been simplified for a title search. "Biodiversity" and related terms are used more alone.
 
 
 ```python
 #Termlists
-termlist15_9a = ["biodiversit","biological diversity", "species diversity",
-                 "habitat","biotop",
-                 "biologisk diversitet", "biomangf", "artsmangf", "biologisk mangf", "biologiske mangf", "naturmangf",
-                 "økosystem", "leveområd",
-                 "cbd"]
+termlist15_9d = ["National biodiversity strategy", "national biodiversity action plan"]
+termlist15_9d_case = ["NBSAP"]
 
-termlist15_9b = ["community", "environment", "ecosystem", "diversit",
+termlist15_9a = ["biodiversit", "biological diversity", "species diversity", " cbd",
+                 "habitats", "habitat ", "biotop", "nature conserv",
+                 
+                 "biologisk diversitet", "biomangf", "artsmangf", "biologisk mangf", "biologiske mangf", "naturmangf",
+                 "økosystem", "leveområd", "naturvern"]
+#"habitat" variants are to avoid habitation
+
+termlist15_9b = ["community", "environment", "ecosystem", "diversit", "habitat",
                  "samfunn", "miljø", "mangfold", "mangfald"]
                  #Ecosystem was 50-50 noise, so was moved here to be combined with species, plant etc. 
                  #This phrase is searched for together with 9c, and alone *within* the terrestrial set to find e.g. "forest community"
 
-termlist15_9c = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
-                 "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]
+termlist15_9c = ["species", "plant", "taxonom", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
+                 "taksonom", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]
 
-termlist15_9d = ["National biodiversity strategy", "national biodiversity action plan", "national action plan"]
-termlist15_9d_case = ["NBSAP"]
-
-termlist15_9e = ["national", "local", "government", "regional", "sector", "municipal", "federal", 
+termlist15_9e = ["national", "local", "government", "regional", "sector", "municipal", "federal", "urban", "settlement", "multilevel", "multi-level",
                  "poverty reduction", "reduce poverty", "anti-poverty", "anti poverty",
 
-                 "nasjonal", "regjering", "kommun", "lokal", "fylke", "sektor",
-                 "fattigdom"
-                 ]
+                 "nasjonal", "regjering", "kommun", "lokal", "fylke", "sektor", "byer", "byområd", "byråd",
+                 "fattigdom"]
+
 termlist15_9f = ["target", "goal", "program", "strateg", "policy", "policies", "framework", "governance", 
                  "action plan", "development", "accounting", "report",
 
-                 "handlingsplan", "planlegg", "politikk", "retningslin", "rammeverk", "styring", "ledelse", "leiing", "forvaltningsplan", 
-                 "utvikling", "rapport"
-                 ]
+                 "handlingsplan", "planlegg", "politikk", "retningslin", "rammeverk", "styring", "ledelse", "leiing", "forvaltning", 
+                 "utvikling", "rapport"]
+
 termlist15_9f_trunc = ["plan", "planning", "plans",
                        "mål"] 
 
@@ -14664,26 +12042,20 @@ phrasespecific15_9f_trunc = r'\b(?:{})\b'.format('|'.join(termlist15_9f_trunc))
 ```python
 #Search in terr double NOT
 Data.loc[(
+    (Data['result_title'].str.contains(phrasedefault15_9d, na=False, case=False)) 
+    |(Data['result_title'].str.contains(phrasedefault15_9d_case, na=False, case=True)) #case=T
+    |
     (
         ((Data['result_title'].str.contains(phrasedefault15_9a, na=False, case=False))
-        |
-          (
-             (Data['result_title'].str.contains(phrasedefault15_9b, na=False, case=False))
-             & (Data['result_title'].str.contains(phrasedefault15_9c, na=False, case=False))
-          )
+        |((Data['result_title'].str.contains(phrasedefault15_9b, na=False, case=False)) & (Data['result_title'].str.contains(phrasedefault15_9c, na=False, case=False)))
         )
         & 
         (
-            (Data['result_title'].str.contains(phrasedefault15_9d, na=False, case=False)) 
-            | (Data['result_title'].str.contains(phrasedefault15_9d_case, na=False, case=True))
-            |
-              (
-                  (Data['result_title'].str.contains(phrasedefault15_9e, na=False, case=False))
-                  & ((Data['result_title'].str.contains(phrasedefault15_9f, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_9f_trunc, na=False, case=False)))
-              )
+            (Data['result_title'].str.contains(phrasedefault15_9e, na=False, case=False))
+            & ((Data['result_title'].str.contains(phrasedefault15_9f, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_9f_trunc, na=False, case=False)))
         )
     )
-    &(Data['terrestrial_double_NOT']==True)
+    & (Data['terrestrial_double_NOT']==True)
 ),"tempsdg15_09"] = "SDG15_09"
 
 print("Number of results = ", len(Data[(Data.tempsdg15_09 == "SDG15_09")]))  
@@ -14694,13 +12066,8 @@ Data.loc[(
         (Data['result_title'].str.contains(phrasedefault15_9b, na=False, case=False))
         & 
         (
-            (Data['result_title'].str.contains(phrasedefault15_9d, na=False, case=False)) 
-            | (Data['result_title'].str.contains(phrasedefault15_9d_case, na=False, case=True))
-            |
-              (
-                  (Data['result_title'].str.contains(phrasedefault15_9e, na=False, case=False))
-                  & ((Data['result_title'].str.contains(phrasedefault15_9f, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_9f_trunc, na=False, case=False)))
-              )
+            (Data['result_title'].str.contains(phrasedefault15_9e, na=False, case=False))
+            & ((Data['result_title'].str.contains(phrasedefault15_9f, na=False, case=False))|(Data['result_title'].str.contains(phrasespecific15_9f_trunc, na=False, case=False)))
         )
     )
     & (Data['terr_terms']==True)
@@ -14722,58 +12089,15 @@ test.iloc[0:5, ]
 *Mobilisere en betydelig økning i finansielle ressurser fra alle kilder for å bevare og utnytte biologisk mangfold og økosystemer på en bærekraftig måte*
 
 
-```
-TS=
-(
-  (
-    ("protect*" OR "conserved" OR "conservation" OR "conserves" OR "conserving"
-    OR "promoting" OR "promote" OR "improv*" OR "restor*" OR "enhanc*" OR "strengthen*" OR "maintain*" OR "preserv*" OR "support"
-    OR
-      (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
-      )
-    )
-    NEAR/15
-        (
-          ("ecosystem$" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "peatland$" OR "bog$" 		OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")
-          ) 
-        OR "habitat$" OR "biotope$"
-        OR "biodiversity" OR "biological diversity"
-        OR ("diversity" NEAR/5 ("species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
-        OR "Rio marker$"
-        )
-  )
-  AND
-      ("invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-      OR "financial support" OR "financial resources"
-      OR
-        (
-          ("incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e")
-          NEAR/5 ("biodiversity" OR "biological diversity")
-        )
-      OR "ODA" OR "cooperation fund$" OR "development spending"
-      OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-      OR "Global Environment Facility" OR "GEF"
-      OR "Biodiversity Finance Initiative" OR "BIOFIN"
-      OR "Partnership for Action on Green Economy" OR "PAGE"
-      OR "Poverty-Environment Action for Sustainable Development" OR "Poverty Environment Action for Sustainable Development" OR "PEAS"
-      OR "Green Commodities Programme"
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*" OR "salivary microbio*" OR "gut microbio*" OR "skin microbio*" OR "oral microbiome" OR "gut flora" OR "skin flora" OR "immunologi*" OR "immunology" OR "hormon*" OR "parasite*" OR "syndrome" OR "vector$" OR "enzyme*" OR "infected" OR "infection" OR "infect$") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
-
 
 ```python
 #Termlists
 
-termlist15_aa = ["protect","preserv","conserv", "promot", "improv", "restor", 
+termlist15_aa = ["protect", "preserv", "conserv", "promot", "improv", "restor", "rehabilit",
                  "enhanc", "strengthen", "maintain", "preserv", "support",
+                 
                  "verne", "verna", "vern av", "miljøvern", "bevare", "bevaring", "frede", "freda", "fredning", "gjenoppbygg", "restaurer", 
-                 "forbedr", "betre", "betring", "styrke", "vedlikeh", "støtte", "stønad"
-                 ]
+                 "forbedr", "betre", "betring", "styrke", "vedlikeh", "støtte", "stønad"]
 
 termlist15_ab = ["manag","use","using","govern","development","administrat","planning",
                  "forvalt", "bruk", "styr", "ledelse", "leiing", "utvikl", "planlegg"]
@@ -14783,18 +12107,19 @@ termlist15_ac = ["sustainabl", "responsib", "environmental", "ecological", "ecos
                  "bærekraft", "berekraft", "ansvarl", "miljø", "økologisk", "økosystem"]
 
 termlist15_ad = ["biodiversit", "biological diversity", "species diversity",
-                 "habitat","biotop",
-                 "rio marker",
+                 "habitat","biotop","nature conservation",
+                 "ecosystem service", "ecosystem restor", "rio marker",
+                 
                  "biologisk diversitet", "biomangf", "artsmangf", "biologisk mangf", "biologiske mangf",
-                 "økosystem", "leveområd"]
+                 "økosystem", "leveområd", "naturvern"]
 
 termlist15_ae = ["community", "environment", "ecosystem", "diversit",
                  "samfunn", "miljø", "mangfold"]
                  #Ecosystem was 50-50 noise, so was moved here to be combined with species, plant etc. 
                  #This phrase is searched for together with 9af, and alone *within* the terrestrial set
 
-termlist15_af = ["ecolog", "species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
-                 "økologi", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]
+termlist15_af = ["ecolog", "species", "taxonom", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
+                 "økologi", "taksonom", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]
 
 termlist15_ag = ["investing", "investment", "investor", "financ", "spending", "funding", "grant", "funds",
                   "incentive", "taxes", "fees", "subsidy", "subsidi",
@@ -14806,8 +12131,7 @@ termlist15_ag = ["investing", "investment", "investor", "financ", "spending", "f
                  
                  "finansiel", "midlar", "økonomiske ressurs",
                  "insentiv", "skatt", "subsidier", "subsidiar", "tilskudd", "tilskot",
-                 "samarbeidsfond", "utviklingsstøtte", "utviklingsstønad", "bistand", "utviklingshjelp", "u-hjelp"
-                 ]
+                 "samarbeidsfond", "utviklingsstøtte", "utviklingsstønad", "bistand", "utviklingshjelp", "u-hjelp"]
                  #"midler"(NO) is not used alone as is also in e.g. "sprøytemidler"
 termlist15_9ag_case = ["GEF", "BIOFIN", "PAGE", "PEAS", "ODA"]
 
@@ -14822,7 +12146,7 @@ phrasedefault15_ag = r'(?:{})'.format('|'.join(termlist15_ag))
 phrasespecific15_ag_case = r'\b(?:{})\b'.format('|'.join(termlist15_9ag_case))
 ```
 
-Since this is only a title search, we simplify to search for only biodiversity + investment, and dropp the "sustainable use/protect" parts (when used = no results). They are commented-out below.
+Since this is only a title search, we simplify to search for only biodiversity + investment, and drop the "sustainable use/protect" parts (when used = no results). They are commented-out below.
 
 
 ```python
@@ -14857,7 +12181,7 @@ print("Number of results = ", len(Data[(Data.tempsdg15_a == "SDG15_0a")]))
 
 ```python
 test=Data.loc[(Data.tempsdg15_a == "SDG15_0a"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:10, ]
 ```
 
 ### SDG 15.b
@@ -14867,96 +12191,18 @@ test.iloc[0:5, ]
 *Mobilisere betydelige ressurser fra alle kilder og på alle nivåer for å finansiere en bærekraftig skogforvaltning, og sørge for virkemidler som er egnet til å fremme slik forvaltning i utviklingslandene, blant annet virkemidler for bevaring og nyplanting av skog*
 
 
-#### Phrase 1 & 2
-```
-#Phrase 1
-TS=
-(
-
-  ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-  OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-  OR "ODA" OR "cooperation fund$" OR "development spending"
-  OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-  )
-  AND
-    (
-      (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning")
-      )
-    OR
-      (
-        ("sustainabl*" OR "responsibl*" OR "environmental*" OR "ecological*")
-        NEAR/15
-            ("practice$" OR "method$" OR "forestry operation$"
-            OR "policy" OR "policies"
-            OR "Forest area change"
-            OR "Above-ground biomass in forest"
-            OR ("Proportion" NEAR/3 "protected areas")
-            OR ("Proportion" NEAR/3 "long-term management plan")
-            OR "Forest under certification"
-            OR "Certified forest area"
-            )
-      )
-    OR ("protected" NEAR/3 "forest*")
-    OR ("reserved" NEAR/3 "forest*")
-    OR "UN Strategic Plan for Forests" OR "UNSPF"
-    OR "Global Forest Goals" OR "GFG$"
-    )
-  AND 
-    ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-)
-
-#Phrase 2
-TS=
-(
-  ("expenditure" OR "invest" OR "investing" OR "investment$" OR "financ*" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$"
-  OR "financial support" OR "financial resources"
-  OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
-  OR "ODA" OR "cooperation fund$" OR "development spending"
-  OR (("international" OR "development" OR "foreign") NEAR/3 ("aid" OR "assistance"))
-  )
-  AND
-  (
-    ("afforestr*" OR "reforestr*"
-    OR
-      (
-        ("increas*" OR "expand*")
-        NEAR/5
-          ("woodland$" OR "silvicultur*" OR "arboricultur*"
-          OR ("*forest*" NEAR/3 ("cover*" OR "area$" OR "zone$" OR "*land$"))
-          )
-      )
-    OR
-      (
-        ("restor*" OR "rehabilita*" OR "conservation" OR "protect*" OR "maintain*" OR "preserv*" ) 
-        NEAR/5 ("*forest*" OR "woodland$")
-      )
-    OR "UN-REDD" OR "UN REDD" OR "United Nations REDD" 
-	  OR (("planting" OR "plant" OR "plantation") NEAR/3 "tree$")
-    )
-  )
-  AND ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
-  AND
-    (****LMICs****
-    )
-)
-```
-
-In this search I have added a NOT search for kelp forest, as there is relatively much about this in Norway and only very rarely is a paper about both terrestrial and kelp forests. 
+In this search I have added a NOT search for kelp forest, as there is relatively much about this in Norway and only very rarely is a paper about both terrestrial and kelp forests. I have also simplified this search since it is a title search, by only using forests + support (not requiring + sustinable management/conservation/afforestation).
 
 
 ```python
 #Termlists
 termlist15_ba = ["investing", "investment", "investor", "financ", "spending", "funding", "grant", "funds",
-                  "incentive", "taxes", "fees", "subsidy", "subsidi",
+                  "incentive", "taxes", "fees", "subsidy", "subsidi", "payment",
                   "cooperation fund", "development fund", "development assistance", "international aid", "international assistance", "foreign aid", "foreign assistance", 
                  
                  "finansiel", "midlar", "økonomiske ressurs", "økonomiske midler",
-                 "insentiv", "skatt", "subsidier", "subsidiar", "tilskudd", "tilskot",
-                 "samarbeidsfond", "utviklingsstøtte", "utviklingsstønad", "bistand", "utviklingshjelp", "u-hjelp"
-                 ]
+                 "insentiv", "skatt", "subsidier", "subsidiar", "tilskudd", "tilskot", "utbetal",
+                 "samarbeidsfond", "utviklingsstøtte", "utviklingsstønad", "bistand", "utviklingshjelp", "u-hjelp"]
                  #"midler"(NO) is not used alone as is also in e.g. "sprøytemidler"
 termlist15_ba_case = ["ODA"]
 
@@ -14971,13 +12217,11 @@ phrasedefault15_bb = r'(?:{})'.format('|'.join(termlist15_bb))
 phrasedefault15_bNOT = r'(?:{})'.format('|'.join(termlist15_bNOT))
 ```
 
-I suggest simplifying this search, since it is a title search, by only using forests + support. Doing it in this way will also entirely cover any possible results from phrase 2.
-
 
 ```python
 #Search 1
 Data.loc[(
-    ((Data['result_title'].str.contains(phrasedefault15_ba, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_ba_case, na=False, case=True)))
+    ((Data['result_title'].str.contains(phrasedefault15_ba, na=False, case=False)) | (Data['result_title'].str.contains(phrasespecific15_ba_case, na=False, case=True))) #case = T
     & (Data['result_title'].str.contains(phrasedefault15_bb, na=False, case=False)) 
     & (~Data['result_title'].str.contains(phrasedefault15_bNOT, na=False, case=False))
 ),"tempsdg15_b"] = "SDG15_b"
@@ -14988,7 +12232,7 @@ print("Number of results = ", len(Data[(Data.tempsdg15_b == "SDG15_b")]))
 
 ```python
 test=Data.loc[(Data.tempsdg15_b == "SDG15_b"), ("result_id", "result_title")]
-test.iloc[0:5, ]
+test.iloc[0:10, ]
 ```
 
 ### SDG 15.c
@@ -14997,86 +12241,43 @@ test.iloc[0:5, ]
 *Øke den globale støtten til tiltak for å bekjempe krypskyting og ulovlig handel med vernede arter, blant annet ved å styrke lokalsamfunnenes evne til å benytte de muligheter som finnes for å opprettholde et bærekraftig livsgrunnlag*
 
 #### Phrase 1
-```
-TS=
-(
-  (
-    ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "halt*"
-    OR "resist*" OR "reduc*" OR "decreas*" OR "minimi*" OR "tackle*" OR "control*" OR "prevent*" OR "combat*"
-    OR "anti-poaching"
-    OR "capacity building" OR "capacity development" OR "capacity"
-    OR "cooperation" OR "collaboration" OR "network$" OR "support"
-    OR "policy" OR "policies" OR "empower*"
-    OR "knowledge transfer*"
-    OR (("raise" OR "raising") NEAR/3 ("awareness" OR "knowledge"))
-    OR ("disseminat*" NEAR/3 "information")
-    OR "educat*"
-    OR "Convention on International Trade in Endangered Species of Wild Fauna and Flora" OR "CITES"
-    OR "Landscapes for People, Food and Nature partnership"
-    )
-    NEAR/15 ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
-  )
-  AND
-    (
-      ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-      NEAR/5
-          ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-          OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-          )
-    )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
-termlist15_ca = ["poach", "traffick", "smuggl",
-                 "krypskyt", "ulovlig transport", "smugl", "ulovlig", "ulovleg"]
-
-termlist15_cb = ["protected", "endanger", "threat", "extinct", "at risk", "vulnerable", "red list",
-                 "truet", "truga", "utryddingstru", "utrydjingstruga", "utsatte", "utsette", "sårbar", "vernet", "verna", "rødlist", "rød list", "raudlist", "raud list"]
+termlist15_ca = ["poach", "traffick", "smuggl", "illegal",
+                 "krypskyt", "smugl", "ulovlig", "ulovleg"]
 
 termlist15_cc = ["species", "plant", "animal", "organism", "flora", "fauna", "wildlife", "insect", "amphibian", "reptile", "bird",
                  "plant", "rovdyr", "pattedyr", "dyreart", "dyrart", "dyreliv", "insekt", "amfibi", "krypdyr", "fugl"]  
 termlist15_cc_trunc = ["art", "arter", "dyr"]                                  
 
 termlist15_cd = ["rosewood" , "kosso" , "elephant" , "rhino" , "ivory" , "pangolin" , "turtle" , "tortoise" , "big cat" , "tiger" , "glass eel",
-                 "elefant", "neshorn", "elfenbein", "elfenben", "skilpadde", "store katt", "glassål"
-                 "trua arter", "trued art", "truede art"]
-                 #"trua arter"(NO) is added as a phrase here since "trua" would be noisy alone
+                 "elefant", "neshorn", "elfenbein", "elfenben", "skilpadde", "store katt", "glassål"]
 
-termlist15_ce = ["ended","ending","halted",
-                 "resist","reduc","decreas","minimi","tackle","control","prevent","combat",
-                 "anti-poaching",
-                 "capacity",
-                 "cooperation","collaboration","network","support",
-                 "policy","policies","empower",
-                 "knowledge transfer", "awareness","knowledge", "information", "dissemination",
+termlist15_ce = ["capacity",
+                 "cooperation","collaboration","support","international agreement",
+                 "polic", "empower", "investing", "investment",
+                 "knowledge transfer", "awareness", "knowledge", "information", "dissemination",
                  "educat", 
                  "Landscapes for People, Food and Nature partnership",
                  "Convention on International Trade in Endangered Species of Wild",
+                 "anti-poach", "patrol", "detection", 
                  
-                 "reduser", "bekjemp", "kontroll", "hindre", "kjempe", "avslutt", 
                  "kapasitet", 
                  "samarbeid", "nettverk", "støtte", "stønad",
-                 "politikk", "retningslin", "myndiggjør",
+                 "politikk", "retningslin", "myndiggjør", "bistand", "ressurs",
                  "kunnskapsoverfør", "kjenner til", "kunnskap", "informasjon", "formidl",
                  "utdann",
-                 "internasjonal handel med truede dyr", "internasjonal handel med truede og sårbare"
-                 ]
-termlist15_ce_trunc = ["stop","stopping", "end", "ends", "halt",
-                      "stoppe"]
+                 "internasjonal handel med truede dyr", "internasjonal handel med truede og sårbare",
+                 "anti-krypskyt", "avslør", "kontroll"]
 termlist15_ce_case = ["CITES"]
 
 phrasedefault15_ca = r'(?:{})'.format('|'.join(termlist15_ca))
-phrasedefault15_cb = r'(?:{})'.format('|'.join(termlist15_cb))
 phrasedefault15_cc = r'(?:{})'.format('|'.join(termlist15_cc))
-phrasedefault15_cc_trunc = r'\b(?:{})\b'.format('|'.join(termlist15_cc_trunc))
+phrasespecific15_cc = r'\b(?:{})\b'.format('|'.join(termlist15_cc_trunc))
 phrasedefault15_cd = r'(?:{})'.format('|'.join(termlist15_cd))
 phrasedefault15_ce = r'(?:{})'.format('|'.join(termlist15_ce))
-phrasedefault15_ce_trunc = r'\b(?:{})\b'.format('|'.join(termlist15_ce_trunc))
 phrasedefault15_ce_case = r'(?:{})'.format('|'.join(termlist15_ce_case))
 ```
 
@@ -15089,18 +12290,15 @@ Data.loc[(
         (Data['result_title'].str.contains(phrasedefault15_ca, na=False, case=False))
         & 
         (
-          (Data['result_title'].str.contains(phrasedefault15_cd, na=False, case=False)) 
-          |
-          (
-              (Data['result_title'].str.contains(phrasedefault15_cb, na=False, case=False)) 
-              & ((Data['result_title'].str.contains(phrasedefault15_cc, na=False, case=False))|(Data['result_title'].str.contains(phrasedefault15_cc_trunc, na=False, case=False)))
-          )
+            (Data['result_title'].str.contains(phrasedefault15_cd, na=False, case=False)) 
+            |(Data['result_title'].str.contains(phrasedefault15_cc, na=False, case=False))
+            |(Data['result_title'].str.contains(phrasespecific15_cc, na=False, case=False))
         )
-        & (
+        & 
+        (
             (Data['result_title'].str.contains(phrasedefault15_ce, na=False, case=False))
-            |(Data['result_title'].str.contains(phrasedefault15_ce_trunc, na=False, case=False))
-            |(Data['result_title'].str.contains(phrasedefault15_ce_case, na=False, case=True))
-          )
+            |(Data['result_title'].str.contains(phrasedefault15_ce_case, na=False, case=True)) # case = T
+        )
     )
     & (Data['terrestrial_double_NOT']==True)
 ),"tempsdg15_c"] = "SDG15_c"
@@ -15115,64 +12313,25 @@ test.iloc[0:5, ]
 ```
 
 #### Phrase 2
-```
-TS=
-(
-  ("Convention on International Trade in Endangered Species of Wild Fauna and Flora"
-  OR
-    ("CITES"
-    NEAR/5
-        ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-        OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-        )
-    )
-  OR
-    (
-      ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*" OR "illegal harvest*")
-      AND
-        (
-          ("protect*" OR "endanger*" OR "threat*" OR "extinct*" OR "vulnerable")
-          NEAR/5
-              ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "mammals$"
-              OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "reptile$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
-              )
-        )
-    )
-  )
-  AND
-      ("livelihood$" OR "employment"
-      OR (("local" OR "indigenous" OR "rural" OR "native") NEAR/3 ("community" OR "communities" OR "people$"))
-      OR
-        (
-          ("sustainable" OR "ecological" OR "legal" OR "eco friendly" OR "alternative$")
-          NEAR/5 ("fishing" OR "fisher$" OR "hunt" OR "hunting" OR "hunter$" OR "*tourism" OR "agroforestry" OR "agriculture" OR "income")
-        )
-      )
-)
-NOT
-TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "decision forest$" OR "IOT" OR "urban ecosystem" OR "public health" OR "national health" OR "healthcare" OR "health care" OR "epidemiology" OR "health effect$" OR "archaeolog*" OR "architect*") NOT ("terrestrial" OR "soil" OR "soils" OR "woodland$" OR "taiga" OR "jungle" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "dryland$" OR "dry land" OR "desert*" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
-```
 
 
 ```python
 #Termlists
 termlist15_cf = ["Convention on International Trade in Endangered Species of Wild Fauna and Flora",
                  "internasjonal handel med truede dyr", "internasjonal handel med truede og sårbare arter"]
-                 #Reuse 15_ce for CITES
+                 #Reuse 15_ce_case for CITES
 
 termlist15_cg = ["livelihood", "employment",
                  "local communit", "local people", "indigenous communit", "indigenous people", "rural communit", "rural people", "native communit", "native people",
+                 
                  "levebrød", "jobb", "tilsatt", "ansatt", "arbeid",
-                 "lokale samfunn", "lokalsamfunn", "urfolk", "urbefolkning", "bygd"
-                 ]
+                 "lokale samfunn", "lokalsamfunn", "urfolk", "urbefolkning", "bygd"]
 
 termlist15_ch = ["sustainab", "ecological", "legal", "alternativ", "eco-friendly", "environmentally friendly",
-                 "bærekraft", "berekraft", "økologi", "lovlig", "lovleg", "miljøven", "økoven"
-                 ]
+                 "bærekraft", "berekraft", "økologi", "lovlig", "lovleg", "miljøven", "økoven"]
 
 termlist15_ci = ["fishing", "fisher", "hunting", "hunter", "touris", "agroforest", "agricult", "income",
-                 "fiske", "jakt", "turism", "landbruk", "jordbruk", "inntekt"
-                 ]
+                 "fiske", "jakt", "turism", "landbruk", "jordbruk", "inntekt"]
 
 phrasedefault15_cf = r'(?:{})'.format('|'.join(termlist15_cf))
 phrasedefault15_cg = r'(?:{})'.format('|'.join(termlist15_cg))
@@ -15195,15 +12354,17 @@ Data.loc[(
                   &
                   (
                       (Data['result_title'].str.contains(phrasedefault15_cc, na=False, case=False))
-                      |(Data['result_title'].str.contains(phrasedefault15_cc_trunc, na=False, case=False))
+                      |(Data['result_title'].str.contains(phrasespecific15_cc, na=False, case=False))
                       |(Data['result_title'].str.contains(phrasedefault15_cd, na=False, case=False))
                   )
               )
         )
-        & (
+        & 
+        (
             (Data['result_title'].str.contains(phrasedefault15_cg, na=False, case=False))
             |((Data['result_title'].str.contains(phrasedefault15_ch, na=False, case=False))&(Data['result_title'].str.contains(phrasedefault15_ci, na=False, case=False)))
-          )
+          
+        )
     )
     & (Data['terrestrial_double_NOT']==True)
 ),"tempsdg15_c"] = "SDG15_c"
@@ -15221,51 +12382,20 @@ test.iloc[0:5, ]
 
 Works mentioning SDG15
 
-```
-TS=
-("SDG 15" OR "SDGs 15" OR "SDG15" OR "sustainable development goal$ 15"
-OR ("sustainable development goal$" AND "goal 15")
-OR
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 15")
-    AND ("life on land")
-  )
-OR 
-  (
-    ("sustainable development goal$" OR "SDG$" OR "goal 15")
-    NEAR/15 ("mountain$" OR "terrestrial" OR "forest$" OR "dryland$" OR "grassland$")
-  )
-)
-NOT 
-  TS=("secoisolariciresinol diglycoside"
-  OR "secoisolariciresinol diglucoside"
-  OR "SD-stearic acid"
-  OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
-  )
-```
-
 
 ```python
 #Termlists
 
 termlist_sdg_a = ["SDG 15", "SDGs 15", "SDG15", "sustainable development goal 15", 
-               "bærekraftsmål 15", "berekraftsmål 15"]
+                  "bærekraftsmål 15", "berekraftsmål 15"]
 termlist_sdg_b = ["sustainable development goal", 
-               "bærekraftsmål", "berekraftsmål"]
+                  "bærekraftsmål", "berekraftsmål"]
 termlist_sdg_c = ["goal 15",
-               "mål 15"]
+                  "mål 15"]
 termlist_sdg_d = ["sustainable development goal", "SDG", "goal 15", 
-               "bærekraftsmål", "berekraftsmål", "mål 15"]
+                  "bærekraftsmål", "berekraftsmål", "mål 15"]
 termlist_sdg_e = ["life on land", "mountain", "terrestrial", "forest", "dryland", "grassland",
-               "livet på land", "terrestrisk", "skog"]
+                  "livet på land", "terrestrisk", "skog"]
 
 termlist_sdg_f = ["life on land", "livet på land"]
 #extra phrase where the short titles of the SDG are included, since this is a title search
@@ -15314,8 +12444,8 @@ test.iloc[0:5, ]
 
 ```python
 #Examine - see new columns
-test=Data.loc[Data['tempsdg03_01'].notna() & Data['tempsdg03_02'].notna()]   
-test.iloc[0:4, [1,4,5,6,20,21,23,24,-1, -2, -3]]
+test=Data.loc[Data['tempsdg15_b'].notna() & Data['tempsdg15_02'].notna()]   
+test.iloc[0:4, [1,4,6,20,21,23,24, -3,-12]]
 ```
 
 
@@ -15337,106 +12467,100 @@ data2.info()
 
 ```python
 #remove columns used in searching that are no longer needed
-data2.drop(columns = ["terr_terms", "terrestrial_double_NOT", "marine_terms", "LDCs", "SIDS", "LDS", "LMICs", "LDCSIDS"], inplace=True)
+data2.drop(columns = ["terr_terms", "terrestrial_double_NOT", "marine_terms", "LDCs", "SIDS", "LDS", "LMICs", "LDCSIDS", "scp"], inplace=True)
 ```
 
 ### Combined target-level results
-This section combines all of the target-level labels. When doing this, we also separate out those that concern the general SDG phrase (i.e. works that mention SDG4 - this is not a target, so we don't want them as a target label)
+This section combines all of the target-level labels. When doing this, we also separate out those that concern the general SDG phrase (i.e. works that mention SDG4 - this is not a target, so we don't want them as a target label - your use may vary)
 
 
 ```python
-cols_target_cristin=(data2.filter(like='tempsdg').columns).tolist()
-print(type(cols_target_cristin))
+cols_target_python=(data2.filter(like='tempsdg').columns).tolist()
+print(type(cols_target_python))
 ```
 
 
 ```python
-cols_mentionsthesdg_cristin=(data2.filter(like='tempmentionsdg').columns).tolist()
-print(type(cols_mentionsthesdg_cristin))
+cols_mentionsthesdg_python=(data2.filter(like='tempmentionsdg').columns).tolist()
+print(type(cols_mentionsthesdg_python))
 ```
 
 
 ```python
-cols_target_cristin
+cols_target_python[0:5]
 ```
 
 
 ```python
-cols_mentionsthesdg_cristin
+cols_mentionsthesdg_python
 ```
 
 
 ```python
 # Concatenate the labels for all the target columns
-data2['SDG_target_topic_cristin'] = data2[cols_target_cristin].apply(lambda x: x.str.cat(sep=','), axis=1)
+data2['SDG_target_topic_python'] = data2[cols_target_python].apply(lambda x: x.str.cat(sep=','), axis=1)
 #...and all the SDG mention columns
-data2['SDG_sdg_topic_cristin'] = data2[cols_mentionsthesdg_cristin].apply(lambda x: x.str.cat(sep=','), axis=1)
+data2['SDG_sdg_topic_python'] = data2[cols_mentionsthesdg_python].apply(lambda x: x.str.cat(sep=','), axis=1)
 ```
 
 
 ```python
-test=data2.loc[data2['tempsdg03_01'].notna() & data2['tempsdg03_02'].notna()]   
+test=data2.loc[Data['tempsdg15_b'].notna() & data2['tempsdg15_02'].notna()]   
 #test=data2.loc[data2['tempmentionsdg02'].notna()]   
-test.iloc[0:3, [0,1,4,5,6,20,21,23,24,-1, -2]]
+test.iloc[0:4, [1,4,6,20,21,23,24,-1,-2, -5,-14]]
 ```
 
 ### Combined SDG-level results
 
 
 ```python
-data2["SDG_topic_cristin"]=""
+data2["SDG_topic_python"]=""
 ```
 
 
 ```python
 #loop to check whether the target column contains the SDG, and add that SDG to the whole SDG col
-SDGlist = ["SDG01", "SDG02", "SDG03", "SDG04", "SDG07", "SDG11", "SDG13", "SDG14", "SDG15"]
+SDGlist = ["SDG01", "SDG02", "SDG03", "SDG04", "SDG07", "SDG11", "SDG12", "SDG13", "SDG14", "SDG15"]
 
 for ei in SDGlist:
-    data2["SDG_topic_cristin"] = np.where(data2['SDG_target_topic_cristin'].str.contains(ei)|data2['SDG_sdg_topic_cristin'].str.contains(ei), (data2["SDG_topic_cristin"]+","+ei), data2["SDG_topic_cristin"])
+    data2["SDG_topic_python"] = np.where(data2['SDG_target_topic_python'].str.contains(ei)|data2['SDG_sdg_topic_python'].str.contains(ei), (data2["SDG_topic_python"]+","+ei), data2["SDG_topic_python"])
 ```
 
 
 ```python
 #Strip beginning comma
-data2["SDG_topic_cristin"] = data2["SDG_topic_cristin"].str.lstrip(',')
-```
-
-
-```python
-#test
-data2.loc[data2.result_id.str.contains("2020739|1796046|1826865|1248913"),].head()
+data2["SDG_topic_python"] = data2["SDG_topic_python"].str.lstrip(',')
 ```
 
 
 ```python
 #Remove the columns no longer needed
 #Remove columns for each individual target...
-data2.drop(columns = cols_target_cristin, inplace=True)
+data2.drop(columns = cols_target_python, inplace=True)
 #And the columns for the whole sdg searches...
-data2.drop(columns = cols_mentionsthesdg_cristin, inplace=True)
-data2.drop(columns = "SDG_sdg_topic_cristin", inplace=True)
+data2.drop(columns = cols_mentionsthesdg_python, inplace=True)
+data2.drop(columns = "SDG_sdg_topic_python", inplace=True)
 ```
 
 **How many results?**
 
 
 ```python
-SDGlist = ["SDG01", "SDG02", "SDG03", "SDG04", "SDG07", "SDG11", "SDG13", "SDG14", "SDG15"]
+SDGlist = ["SDG01", "SDG02", "SDG03", "SDG04", "SDG07", "SDG11", "SDG12", "SDG13", "SDG14", "SDG15"]
 
 for ei in SDGlist:
-    print("No. results for", (ei), "(topic):", np.count_nonzero(data2['SDG_topic_cristin'].str.contains(ei)))
+    print("No. results for", (ei), "(topic):", np.count_nonzero(data2['SDG_topic_python'].str.contains(ei)))
 ```
 
 
 ```python
-SDGlist = ["SDG03_01", "SDG03_02", "SDG03_03", "SDG03_04"]
+SDGlist = ["SDG03_01", "SDG03_02", "SDG03_03", "SDG03_04", "SDG07_01", "SDG11_01"]
 
 for ei in SDGlist:
-    print("No. results for", (ei), "(topic):", np.count_nonzero(data2['SDG_target_topic_cristin'].str.contains(ei)))
+    print("No. results for", (ei), "(topic):", np.count_nonzero(data2['SDG_target_topic_python'].str.contains(ei)))
 ```
 
-## Final cleaning
+### Final clean
 
 
 ```python
@@ -15446,9 +12570,9 @@ data3=data2.copy()
 
 
 ```python
-#Clean empty SDG fields to NA
-data3.loc[~data3['SDG_target_topic_cristin'].str.contains('SDG'), 'SDG_target_topic_cristin'] = np.nan
-data3.loc[~data3['SDG_topic_cristin'].str.contains('SDG'), 'SDG_topic_cristin'] = np.nan
+#Empty SDG fields to NA
+data3.loc[~data3['SDG_target_topic_python'].str.contains('SDG'), 'SDG_target_topic_python'] = np.nan
+data3.loc[~data3['SDG_topic_python'].str.contains('SDG'), 'SDG_topic_python'] = np.nan
 ```
 
 
