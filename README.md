@@ -28,20 +28,20 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 Currently, we have strings for ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group are primary contributors for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
 
 The strings available at this time are available for two platforms.
-* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate. These files contain most of the documentation expaining how we have interpreted the strings and chosen search terms.
-* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. The python searches are a simplified version of the WOS *topic approach* (see below), designed for result titles. They only contain documentation specific to conversion to python - see the WOS files for documentation expaining how we have interpreted the strings and chosen search terms.
+* Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate. These files contain most of the documentation explaining how we have interpreted the strings and chosen search terms.
+* Files with "python" in the file name are python scripts (we provide both an .ipynb notebook, and a copy as a .md markdown file). Here, all covered SDGs are included in one file. This can be run against any list of works in csv format. This script searches with both English and Norwegian terms. The python searches are a simplified version of the WOS *topic approach* (see below), designed for result titles. They only contain documentation specific to conversion to python - see the WOS files for documentation explaining how we have interpreted the strings and chosen search terms.
 
 ## What kind of results should I expect when using these strings?
 
 This depends on which string you use:
 
 **"Action" strings** : The *action approach* aims to find research related to the actions mentioned in the SDG targets and indicators. 
-This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".*. These can be verbs, or terms indicating relation to real-world change, such as "policy". 
-You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be a **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used). It focuses on precision over recall. 
+This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".* These can be verbs, or terms indicating relation to real-world change, such as "policy". 
+You might therefore expect to find a "core" set of SDG-related research, directly mentioning actions in the SDG targets. This set is likely to be **smaller** than when using methods which identify research via it containing certain topics, being published in certain journals, or mapped to a citation cluster (depending of course on the individual parameters used). It focuses on precision over recall. 
 
 **"Topic" strings** : The *topic approach* aims to find research that is related to the topics mentioned in the SDG targets and indicators. 
 This is done by looking for works which mention the topic, *e.g. "malnutrition"; "school completion"; "rights of small-scale fishers"*.
-You can therefore expect to find a **larger** set of research than when using the *action approach* (baseline testing indicates that result sets from the *topic approach* are 3-5x larger than when using the *action approach*, depending on SDG). However, the results set you find using the *topic approach* may still be smaller than you would find in other mappings which use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
+You can therefore expect to find a **larger** set of research than when using the *action approach* (baseline testing indicates that result sets from the *topic approach* are 3-5 times larger than when using the *action approach*, depending on SDG). However, the results set you find using the *topic approach* may still be smaller than you would find in other mappings which use a very wide interpretation of relatedness (for example, an even larger set would be found if you considered all medical research as relevant for SDG3, as opposed to the topics mentioned in the targets). 
 
 The python searches are a simplified version of the WOS *topic approach*, designed for result titles. 
 
@@ -60,7 +60,7 @@ Web of Science syntax strings ("WoS" files): Each file contains a search string 
 
 Python: Download the ipynb notebook to run on your own data.
 
-You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used or adapted them! You are also welcome to contact is with feedback. Our email can be found on the [project homepage](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
+You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used or adapted them! You are also welcome to contact us with feedback. Our email can be found on the [project homepage](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
 
 ## How should I cite?
 
