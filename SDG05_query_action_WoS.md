@@ -97,8 +97,34 @@ TS=
 >
 > 5.5.2 Proportion of women in managerial positions
 
-This target is about 
+This target is interpreted to cover research about 
+* Ensuring women's participation and opportunities for leadership in all areas of society
+* Proportion of women in local and governmental bodies and in managerial positions
 
+This query consists of X phrases.
+
+## Phrase 1
+
+The basic structure is _action_ + 
+```py
+TS=
+(
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*" OR "support")
+)
+```
+
+## Phrase 2
+
+The basic structure is _action_ + 
+```py
+TS=
+(
+
+)
+```
+
+## Phrase 3
+The basic structure is _action_ + 
 ```py
 TS=
 (
