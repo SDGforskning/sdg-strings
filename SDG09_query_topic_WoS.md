@@ -34,7 +34,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 9.1.2 Passenger and freight volumes, by mode of transport
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -51,7 +51,7 @@ TS=
 >
 > 9.2.2 Manufacturing employment as a proportion of total employment
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -68,7 +68,7 @@ TS=
 >
 > 9.3.2 Proportion of small-scale industries with a loan or line of credit
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -83,7 +83,7 @@ TS=
 >
 > 9.4.1 CO2 emission per unit of value added
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -115,7 +115,7 @@ TS=
 >
 > 9.a.1 Total official international support (official development assistance plus other official flows) to infrastructure
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -130,7 +130,7 @@ TS=
 >
 > 9.b.1 Proportion of medium and high-tech industry value added in total value added
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -145,7 +145,7 @@ TS=
 >
 > 9.c.1 Proportion of population covered by a mobile network, by technology
 > 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
