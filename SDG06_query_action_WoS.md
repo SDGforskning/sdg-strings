@@ -248,7 +248,23 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about improving water quality by reducing the proportion of untreated wastewaters discharged into the environment as well as releases of pollution and hazardous chemicals and materials. It is also about increasing recycling and safe reuse of water and monitoring of water quality https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+
+This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters´ `aquifers` `reservoirs`. The classification for wastewater generators is 
+> * domestic/households
+> * industrial
+> * services
+> https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf (“UNstats2025)
+> 
+> Runoff from urban and agricultural land is counted as wastewater but not monitored systematically
+> https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf (“UNstats2025)
+
+Target 6.3 is related to targets 
+* SDG 14.1 preventing and reducing marine pollution
+* SDG 12.4 reducing harmful releases to water
+* SDG 12.5 reducing waste through e.g. recycling and reuse
+
+
 
 ```py
 TS=
