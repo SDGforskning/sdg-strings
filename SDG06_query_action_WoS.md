@@ -83,7 +83,7 @@ TS=
 
 This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf (“UNstats2025”)
 
-The elements of the phrase are *action + unsafe/unprotected/contaminated + drinking water sources*
+The elements of the phrase are *action + unsafe/unprotected/contaminated + drinking water/sources*
 
 ```py
 TS=
