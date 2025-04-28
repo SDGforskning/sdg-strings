@@ -46,17 +46,21 @@ This target is interpreted to cover research about advancing access to safe and 
 
 Together, targets 6.1 and 6.2 form the WASH targets. The goal of 6.1, safely managed water, can only be achieved realised alongside the goals of 6.2, safely managed sanitation and good hygiene practices ("WASH") https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene Some gender specific features about access to safe drinking water (fetching water) are added in 6.2 phrase which aims to find research about gender equalities related to WASH.
 
-Target 6.1 is related to target 11.1 which is about access to safe housing and basic services.
+Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
 ```
 ????
 
-Collection/fetching water is important from gender inequalities point of view. It is mostly done by women & girls and is time consuming which precludes them from school or work and also makes them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender.
+Collection/fetching water is important from gender inequalities point of view.
+It is mostly done by women & girls and is time consuming which precludes them from school or work
+and also makes them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender.
 
 As it is especially related to women and 6.2 covers paying attention to women etc. should we move it there?
-Although 6.2 is about sanitation & hygiene, not drinking water. Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
+Although 6.2 is about sanitation & hygiene, not drinking water.
+Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
 
-Even in 6.2 it is difficult to include in an action phrase *prevent/decrease + women fetching water* sounds harsh/strange. Should we use it only in topic phrases? 
+Even in 6.2 it is difficult to include in an action phrase *prevent/decrease + women fetching water* sounds harsh/strange.
+Should we use it only in topic phrases? 
 
 ```
 
