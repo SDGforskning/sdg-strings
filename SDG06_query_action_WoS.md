@@ -153,7 +153,7 @@ TS=
 
 This phrase aims to find research about abandoning lack of sanitation or unsafe i.e. unimproved sanitation such as practicing open defecation as well as lack of hygiene services.
 
-The terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
+Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
 
 The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + service/facility + sanitation/hygiene*
 
@@ -169,7 +169,7 @@ TS=
 
 This phrase aims to find research about eliminating inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
 
-HLPF review of SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
+HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services` + `women/girls/people in vulnerable situations`.
 
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
