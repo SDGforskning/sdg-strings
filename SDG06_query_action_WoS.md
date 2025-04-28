@@ -42,7 +42,24 @@ For general definitions and finding terms for several targets we used
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps towards safe drinking water are covered in detail by other targets of SDG 6 and are not included here. 
+
+Together, targets 6.1 and 6.2 form the WASH targets. The goal of 6.1, safely managed water, can only be achieved realised alongside the goals of 6.2, safely managed sanitation and good hygiene practices ("WASH") https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene Some gender specific features about access to safe drinking water (fetching water) are added in 6.2 phrase which aims to find research about gender equalities related to WASH.
+
+Target 6.1 is related to target 11.1 which is about access to safe housing and basic services.
+
+```
+????
+
+Collection/fetching water is important from gender inequalities point of view. It is mostly done by women & girls and is time consuming which precludes them from school or work and also makes them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender.
+
+As it is especially related to women and 6.2 covers paying attention to women etc. should we move it there?
+Although 6.2 is about sanitation & hygiene, not drinking water. Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
+
+Even in 6.2 it is difficult to include in an action phrase *prevent/decrease + women fetching water* sounds harsh/strange. Should we use it only in topic phrases? 
+
+```
+
 
 ```py
 TS=
@@ -175,6 +192,8 @@ Specialist input:
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
+UN Statistics Division (2025). *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata ("UNstats2025")
+
 UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDeptofComm2023") 
 
 UN DESA (2023). HLPF Factsheet SDG 6 https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESAfact2023")
@@ -187,3 +206,5 @@ HLPF (2018). Inclusive, Safe, Resilient and Sustainable Societies and Persons wi
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf ("HLPF2018")
 
 UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+
+UN Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") [Accessed 2025.04.28]
