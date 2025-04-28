@@ -48,6 +48,9 @@ Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-econo
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
+
+
+
 ```
 ????
 
@@ -63,6 +66,9 @@ Even in 6.2 it is difficult to include in an action phrase *prevent/decrease + w
 Should we use it only in topic phrases? 
 
 ```
+
+
+
 
 #### Phrase 1
 
@@ -103,13 +109,18 @@ This target is interpreted to cover research about advancing adequate and equita
 
 What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1 a) https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
 
-> *Safely managed sanitation services is about using improved sanitation facilities.
-> Use of improved sanitation facilities which are not shared is defined as a basic sanitation service.
+> *Safely managed sanitation services is about using improved sanitation facilities*.
+> 
+> *Use of improved sanitation facilities which are not shared is defined as a basic sanitation service.
 > While the use of shared improved  sanitation facilities is defined as limited sanitation service*.
 > 
-> *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed and treated off-site > and hygienically separate from human contact*.
+> *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
+> and treated off-site and hygienically separate from human contact*.
 
 However, we have built the search phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate as it has been defined in the found research. 
+
+
+
 
 ```
 ????
@@ -118,6 +129,9 @@ Maybe we should stick to the metadata definition about adequate.
 But the definition is complex and with a quick test, nothing is found with the defined terms & combinations.
 
 ```
+
+
+
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. We have also included gender dependent inequalities related to the acquisition of drinking water. Even though drinking water is not unambiguously defined as part of sanitation there is a strong interlinkage between water, sanitation and hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH").
 
