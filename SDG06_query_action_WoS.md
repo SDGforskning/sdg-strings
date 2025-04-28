@@ -99,7 +99,34 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about advancing adequate and equitable access to sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation. https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf (”DESA2018”).
+
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1 a) https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
+
+> *Safely managed sanitation services is about using improved sanitation facilities.
+> Use of improved sanitation facilities which are not shared is defined as a basic sanitation service.
+> While the use of shared improved  sanitation facilities is defined as limited sanitation service.
+> 
+> Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed and treated off-site > and hygienically separate from human contact.*
+
+However, we have built the search phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate as it has been defined in the found research. 
+
+```
+????
+
+Maybe we should stick to the metadata definition about adequate.
+But the definition is complex and with a quick test, nothing is found with the defined terms & combinations.
+
+```
+
+As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. We have also included gender dependent inequalities related to the acquisition of drinking water. Even though drinking water is not unambiguously defined as part of sanitation there is a strong interlinkage between water, sanitation and hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH").
+
+
+
+
+
+
+
 
 ```py
 TS=
