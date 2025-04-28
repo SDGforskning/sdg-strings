@@ -105,9 +105,9 @@ What is adequate sanitation? According to the definitions of the indicator metad
 
 > *Safely managed sanitation services is about using improved sanitation facilities.
 > Use of improved sanitation facilities which are not shared is defined as a basic sanitation service.
-> While the use of shared improved  sanitation facilities is defined as limited sanitation service.
+> While the use of shared improved  sanitation facilities is defined as limited sanitation service*.
 > 
-> Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed and treated off-site > and hygienically separate from human contact.*
+> *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed and treated off-site > and hygienically separate from human contact*.
 
 However, we have built the search phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate as it has been defined in the found research. 
 
