@@ -264,6 +264,11 @@ Target 6.3 is related to targets
 * SDG 12.4 reducing harmful releases to water
 * SDG 12.5 reducing waste through e.g. recycling and reuse
 
+#### Phrase 1
+
+This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals and dumping into fresh water bodies as well as reducing untreated wastewaters.
+
+The elements of the phrase are *action + untreated wastewaters/wastewater generation/releases/pollution/hazardous chemicals/dumping + fresh water bodies*
 
 
 ```py
@@ -272,6 +277,22 @@ TS=
 
 )
 ```
+
+#### Phrase 2
+
+This phrase aims to find research about increasing or improving water quality, treatment of wastewaters, recycling and safe reuse of water.
+
+The elements of the phrase are *action(increase/improve/manage) + treatment of wastewaters/water quality/monitoring/recycling/safe reuse + water*
+
+
+```py
+TS=
+(
+
+)
+```
+
+
 
 ### Target 6.4
 
