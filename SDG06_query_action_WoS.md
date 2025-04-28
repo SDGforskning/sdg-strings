@@ -250,7 +250,7 @@ TS=
 
 This target is interpreted to cover research about improving water quality by reducing the proportion of untreated wastewaters discharged into the environment as well as releases of pollution and hazardous chemicals and materials. It is also about increasing recycling and safe reuse of water and monitoring of water quality https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
 
-This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters´ `aquifers` `reservoirs`. The classification for wastewater generators is 
+This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . The classification for wastewater generators is 
 > * domestic/households
 > * industrial
 > * services
