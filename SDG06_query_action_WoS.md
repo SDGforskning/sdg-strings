@@ -107,7 +107,7 @@ TS=
 
 This target is interpreted to cover research about advancing adequate and equitable access to sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation. https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf (”DESA2018”).
 
-What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1 a) https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
 
 > *Safely managed sanitation services is about using improved sanitation facilities*.
 > 
@@ -135,10 +135,99 @@ But the definition is complex and with a quick test, nothing is found with the d
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. We have also included gender dependent inequalities related to the acquisition of drinking water. Even though drinking water is not unambiguously defined as part of sanitation there is a strong interlinkage between water, sanitation and hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH").
 
+#### Phrase 1
+
+This phrase aims to find research about providing access to adequate and safe sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
+
+The elements of the phrase are *action + access + adequate/safe/basic/improved + service/facility + sanitation/hygiene* 
 
 
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 2
+
+This phrase aims to find research about abandoning lack of sanitation or unsafe i.e. unimproved sanitation such as practicing open defecation as well as lack of hygiene services.
+
+The terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
+
+The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + service/facility + sanitation/hygiene*
 
 
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 3
+
+This phrase aims to find research about eliminating inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
+
+HLPF review of SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
+`access` + `sanitation/hygiene services` + `women/girls/people in vulnerable situations`.
+
+Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+("HLPF2018").
+
+Terms for marginalized communities are from  https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
+
+The elements of the phrase are *action(eliminate inequalities/remove barriers/non-discriminating OR facilitate/assist/support) + access + services/facilities + sanitation/hygiene + women/girls/vulnerable people* 
+
+
+```py
+
+SKETCH
+
+TS=
+(
+(
+  (
+  ((eliminate OR remove) 
+AND 
+      (
+      (inequalities OR discrimination OR barriers) 
+      OR 
+      (narrow entrances OR steps OR lack of space)
+      ) 
+  )
+  OR
+  (facilitate OR assist OR support)
+  )
+
+    AND 
+    (
+    (access)
+    AND 
+		  (
+		  (services OR facilities) 
+		  AND (sanitation OR hygiene)
+		  ) 
+    )
+)
+AND (women OR girls OR people in vulnerable situations)
+)
+
+```
+
+#### Phrase 4
+
+This phrase aims to find research about removing gender related inequalities concerning the burden of fetching water from remote water sources. Collection/fetching water is usually done by women and girls and as it is time consuming it often precludes them from school or making incomes at work. It can also make them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”)
+
+The elements of the phrase are *remove inequalities + collecting/fetching water + women/girls*
+
+```
+????
+
+Should phrase 4 be here? Difficult to place in 6.1 but should be somewhere.
+
+
+```
 
 
 
@@ -148,6 +237,8 @@ TS=
 
 )
 ```
+
+
 
 ### Target 6.3
 
