@@ -44,8 +44,6 @@ For general definitions and finding terms for several targets we used
 
 This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps towards safe drinking water are covered in detail by other targets of SDG 6 and are not included here. 
 
-
-
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") Some gender specific features about access to safe drinking water (fetching water) are covered in the phrases for target 6.2 which aims to find research about gender inequalities related to WASH.
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
@@ -66,6 +64,13 @@ Should we use it only in topic phrases?
 
 ```
 
+#### Phrase 1
+
+This phrase aims to find research about advancing accessibility to safe and affordable drinking water and about promoting and investing in safely managed drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
+
+Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
+
+The elements of the phrase are *action(advance/invest/) + access/availability/affordability/management/regulating + safe + drinking water + services/sources/infrastructures*
 
 ```py
 TS=
@@ -73,6 +78,20 @@ TS=
 
 )
 ```
+
+#### Phrase 2
+
+This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf (“UNstats2025”)
+
+The elements of the phrase are *action + unsafe/unprotected/contaminated + drinking water sources*
+
+```py
+TS=
+(
+
+)
+```
+
 
 ### Target 6.2
 
