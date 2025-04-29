@@ -377,11 +377,18 @@ However, we interpret target 6.6 to be more focused on the protection of freshwa
 
 
 ?????
-No action term in the summary of the target (increase + protection – just protect) > Action and Topic phrases will be identical.
 
-Should we include protection of species/biodiversity? They are mentioned in sources but the focus is clearly on protecting water. 
 
-A conflict: mountains and forests are mentions in the title of the target but are mentioned in indicator metadata 6.6.1 as excluded because they are covered by SDG 15. For the phrase no reason to add these terms to find water-related ecosystems within forests or mountains. And no reason to filter out on the account of indicator not including them.
+No action term in the summary of the target (e.g. increase+protection – just protect)
+> Action and Topic phrases will be identical.
+
+Should we include protection of species/biodiversity? They are mentioned in sources but the focus is clearly in protecting water.
+We could add them in phrase 2 deterioration terms (loss of biodiversity / extinction of species)?
+
+Conflict: mountains and forests are mentioned in the title of the target
+but in indicator metadata 6.6.1 they are listed as excluded because they are covered by SDG 15.
+No reason to add "forest" or "mountains" to phrases - water-related ecosystems within them will be found anyway.
+I suppose no nead to filter them out even though the indicator excludes them?
 
 
 ```
