@@ -364,7 +364,7 @@ This target is interpreted to cover research about protecting and restoring wate
 It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. https://www.unwater.org/water-facts/water-and-ecosystems ("ECO")
 
 By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf (“UNstats2025”)
-Included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands´  
+Included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
 Wetlands include  `marshes` `peatland` `swamps` `bogs` `fens` `floodplains` `rice paddies` `flood recession agriculture`  
 Also `mangroves` are included here although they contain brackish water instead of fresh. 
 
