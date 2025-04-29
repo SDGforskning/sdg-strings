@@ -327,7 +327,50 @@ TS=
 >
 > 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and ensuring a sustainable supply of freshwater.
+
+By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
+
+> **Water use efficiency (WUE**) is
+> *The value added of a given sector divided by the volume of water used*.
+>
+> **The sectors** included are
+> Agriculture (ISIC A)
+> 	Agriculture; foresty; fishing
+> Industry (MIMEC) (ISIC B, C, D and F)
+> 	Mining, quarrying, manufacturing, 
+> 	electricity, gas, steam and air conditioning supply
+> 	constructions
+> 	cooling of thermoelectric plants
+> Service sector
+	Which includes e.g. water used primarily for the direct use of population
+
+Definitions of **Water stress**, **Total freshwater withdrawal (TFWW)** and **Total renewable freshwater resources (TRWR**) as defined by the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
+
+> *Total freshwater withdrawal (TFWW) is the volume for freshwater extracted from its source (rivers, lakes, aquifers) for agriculture,
+>  industries and services. Withdrawal includes fossil groundwater. It does not include non-conventional water, i.e. `treated wastewater`,
+>  `agricultural drainage water` or `desalinated water`*
+>
+> *Total renewable freshwater resources (TRWR) are the sum of internal and external freshwater resources*.
+>
+> *The level of water stress is the ratio between total freshwater withdrawal and total revewable freshwater resources*.
+
+#### Phrase 1
+
+This phrase aims to find research about increasing water-use efficiency, sustainable withdrawals and water savings on all sectors.
+
+Terms were found in UNSD SDG 6 extended report 2022 (“UNSDextended2022”), indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”) and terms for increasing water savings in https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
+(“DESA2018”)
+
+The elements of the phrase are *action + WUE/sustainable withdrawals/water savings + sectors*
+
+#### Phrase 2
+
+This phrase aims to find research about reducing water stress, water scarcity and unsustainable water withdrawals on all sectors.
+
+The elements of the phrase are *action + unsustainable withdrawals+sectors/water stress/water scarcity*
+
+
 
 ```py
 TS=
