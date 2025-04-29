@@ -177,13 +177,21 @@ Terms for removing barriers or facilitating access to sanitation/hygiene service
 
 Terms for marginalized communities are from  https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
 
+We used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
+
+* United Nations (n.d.) Fight racism. Vulnerable groups, who are they?. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UNracism")
+
+* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("NonDiscr")
+
+* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
+
 The elements of the phrase are *action(eliminate inequalities/remove barriers/non-discriminating OR facilitate/assist/support) + access + services/facilities + sanitation/hygiene + women/girls/vulnerable people* 
 
 
 ```py
 
-SKETCH
 
+SKETCH
 TS=
 (
 (
@@ -210,7 +218,24 @@ AND
 		  ) 
     )
 )
-AND (women OR girls OR people in vulnerable situations)
+AND ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
+    OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+    OR "disabled" OR "disabilities" OR "disability"
+    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+    OR "unemployed" 
+    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+    OR "women" OR "woman" OR "girls" OR "girl"
+    OR "pregnant" OR "pregnancy" OR "maternity"
+    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+    OR "living with HIV" OR "living with AIDS"
+    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+    OR "indigenous group$"
+    )
 )
 
 ```
@@ -406,3 +431,9 @@ UN Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-fac
 UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
 
 WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water (WHO2023)
+
+United Nations (n.d.) Fight racism. Vulnerable groups, who are they?. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UNracism")
+
+Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("NonDiscr")
+
+Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
