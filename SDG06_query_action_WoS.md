@@ -273,7 +273,7 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is interpreted to cover research about improving water quality by reducing the proportion of untreated wastewaters discharged into the environment as well as releases of pollution and hazardous chemicals and materials. It is also about increasing recycling and safe reuse of water and monitoring of water quality https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+This target is interpreted to cover research about improving water quality by reducing the proportion of untreated wastewaters discharged into the environment as well as releases of pollution and hazardous chemicals and materials. It is also about increasing recycling and safe reuse of water and monitoring of water quality https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
 This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . The classification for wastewater generators is 
 > * domestic/households
@@ -426,9 +426,11 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
 
-UN Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") [Accessed 2025.04.28]
+UN-Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") [Accessed 2025.04.28]
 
 UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
+
+UN-Water. Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE") [Accessed 2025.04.29]
 
 WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water (WHO2023)
 
