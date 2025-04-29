@@ -369,9 +369,9 @@ Wetlands include  `marshes` `peatland` `swamps` `bogs` `fens` `floodplains` `ric
 Also `mangroves` are included here although they contain brackish water instead of fresh. 
 
 This target is related to
-* SDG 15, particularly in target 15.1 about conservation of terrestrial and freshwater ecosystems
+* SDG 15, particularly to target 15.1 about conservation of terrestrial and freshwater ecosystems
   
-We interpret target 6.6 to be more focused on the protection of freshwater supplies than in the protection of species. 
+However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than in the protection of species. 
 
 ```
 
