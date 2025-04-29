@@ -359,7 +359,37 @@ TS=
 >
 > 6.6.1 Change in the extent of water-related ecosystems over time
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about protecting and restoring water-related ecosystems.
+
+It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. https://www.unwater.org/water-facts/water-and-ecosystems ("ECO")
+
+By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf (“UNstats2025”)
+Included in water-related ecosystems are `lakes` `rivers´ `streams` `groundwater` `artificial waterbodies` and `wetlands´  Wetlands include  `marshes` `peatland` `swamps` `bogs` `fens` `floodplains` `rice paddies` `flood recession agriculture`  Also `mangroves` are included here although they contain brackish water instead of fresh. 
+
+This target is related 
+* SDG 15, particularly in target 15.1 about conservation of terrestrial and freshwater ecosystems
+but we interpret it to be more focused on the protection of freshwater supplies than in the protection of species. 
+
+```
+
+
+?????
+No action term in the summary of the target (increase + protection – just protect) > Action and Topic phrases will be identical.
+
+Should we include protection of species/biodiversity? They are mentioned in sources but the focus is clearly on protecting water. 
+
+A conflict: mountains and forests are mentions in the title of the target but are mentioned in indicator metadata 6.6.1 as excluded because they are covered by SDG 15. For the phrase no reason to add these terms to find water-related ecosystems within forests or mountains. And no reason to filter out on the account of indicator not including them.
+
+
+```
+
+#### Phrase 1 
+(see 15.1 phrase 2)
+
+This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
+
+The elements of the phrase are *protect + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+
 
 ```py
 TS=
@@ -367,6 +397,25 @@ TS=
 
 )
 ```
+
+#### Phrase 2
+
+This phrase aims to find research about halting the deterioration of water-related ecosystems.
+
+Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+
+The elements of the phrase are *action(stop) + decline/deterioration/unsustainable use/loss/poor quality + water-related ecosystems*
+
+
+```py
+TS=
+(
+
+)
+```
+
+
+
 
 ### Target 6.a
 
@@ -431,6 +480,8 @@ UN-Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-fac
 UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
 
 UN-Water. Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE") [Accessed 2025.04.29]
+
+UN-Water. Water and Ecosystems https://www.unwater.org/water-facts/water-and-ecosystems ("ECO") [Accessed 2025.04.29]
 
 WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water (WHO2023)
 
