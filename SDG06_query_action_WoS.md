@@ -335,13 +335,13 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 > *The value added of a given sector divided by the volume of water used*.
 >
 > **The sectors** included are
-> * Agriculture (ISIC A)
+> * Agriculture (ISIC A): 
 > 	Agriculture; foresty; fishing
 > 
-> * Industry (MIMEC) (ISIC B, C, D and F)
-> 	Mining, quarrying, manufacturing, 
-> 	electricity, gas, steam and air conditioning supply
-> 	constructions
+> * Industry (MIMEC) (ISIC B, C, D and F): 
+> 	Mining; quarrying; manufacturing; 
+> 	electricity, gas, steam and air conditioning supply; 
+> 	constructions; 
 > 	cooling of thermoelectric plants
 > 
 > * Service sector
