@@ -344,7 +344,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 > 	constructions; 
 > 	cooling of thermoelectric plants
 > 
-> * Service sector
+> * Service sectors (ISIC E, ISIC G-T)
 	Which includes e.g. water used primarily for the direct use of population
 
 Definitions of **Water stress**, **Total freshwater withdrawal (TFWW)** and **Total renewable freshwater resources (TRWR**) as defined by the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
