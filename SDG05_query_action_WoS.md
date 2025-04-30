@@ -181,7 +181,51 @@ Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a
 ```py
 TS=
 (
-
+    (
+        (
+            (
+                ("ensure" OR "establish*" OR "propose*" OR "implement*"
+                OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+                OR "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
+                )
+                NEAR/5
+                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+                    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+                    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+                    )
+            )
+            OR
+            (
+                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+                )
+                NEAR/5
+                    ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+                    OR "unaffordab*" OR "expensive"
+                    OR "unbanked"
+                    )      
+            )
+        )
+        NEAR/15
+            ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
+            OR "banks" OR "a bank" OR "banking" OR "bank account$"
+            OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+            OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+            OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+            OR "financial inclusion"
+            )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
 )
 ```
 

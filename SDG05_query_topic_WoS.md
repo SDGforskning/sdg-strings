@@ -147,12 +147,39 @@ As in 1.4, we based this interpretation of financial and economic resources on <
 
 This phrase covers women's access and rights to financial services. The basic structure is access/rights + financial services + women.
 
-Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>.
+Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>. For the topic approach, we allow some terms which are already closely related to the idea of access to stand alone without being connected to access or rights explicitly; this includes microfinance types (where access is a primary objective) and "financial inclusion".
 
 ```py
 TS=
 (
-
+    (
+        ("financial inclusion" OR "microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$")
+        OR
+        (
+            ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+            OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+            OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+            OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+            OR "unaffordab*" OR "expensive"
+            OR "unbanked"
+            )
+            NEAR/15
+            ("banks" OR "a bank" OR "banking" OR "bank account$"
+            OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+            OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+            OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+            )
+        )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
 )
 ```
 
