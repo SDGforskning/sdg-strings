@@ -131,7 +131,36 @@ TS=
 >
 > 5.a.2 Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control
 
-This target is about 
+This target is essentially a subset of target 1.4 (SDG 1), where the focus is on women, and it does not include basic services or new technology:
+
+> 1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance
+
+We therefore interpret it in a similar way. We interpret 5.a to cover research about: 
+- Women's access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
+- Women's access and rights to economic resources and land/property/inheritance/natural resources (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land and natural resources, but could also include human capital/labour (e.g. access to employment).
+
+As in 1.4, we based this interpretation of financial and economic resources on <a href="#f2">UN DESA (2009, p1)</a>, which states:
+
+> Economic resources refer to the direct factors of production such as “immoveable” assets, including land, housing, common pool resources and infrastructure, as well as “moveable” assets, such as productive equipment, technology and livestock. Financial resources refer to money-based resources, including government expenditures, private financial flows and official development assistance, as well as income, credit, savings and remittances. [...] Labour is the primary resource available to the vast majority of people, particularly those from low-income households [...]
+
+#### Phrase 1
+
+This phrase covers women's access and rights to financial services. The basic structure is access/rights + financial services + women.
+
+Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>.
+
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 2
+
+This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is access/rights + resources + women.
+
+"security" is used in phrases because otherwise there are many results about food security.
 
 ```py
 TS=
@@ -179,3 +208,7 @@ Specialist input:
 ## 5. Footnotes
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
+
+<span id="f2">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
+
+<span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
