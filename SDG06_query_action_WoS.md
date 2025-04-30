@@ -392,7 +392,41 @@ TS=
 >
 > 6.5.2 Proportion of transboundary basin area with an operational arrangement for water cooperation
 
-This query consists of X phrases.
+This target is interpreted to cover research about implementation of integrated water resources management and transboundary co-operation in water resources management. 
+
+**Integrated water resources management (IWRM)** is based on an internationally agreed definition.
+> *Integrated Water Resources Management (IWRM) promotes the coordinated development and management of water, land and related resources to
+>  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
+Indicator metadata 6.5.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
+
+IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
+
+Since IWRM is a specifically defined consept the phrase is set to look for research which explicitly mentions IWRM rather than looking for any cross-sectoral water research management.
+
+Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers. 
+
+
+```
+????
+
+
+Should we search only for defined IWRM or should we search for any cross-sectoral water management?
+
+
+```
+
+#### Phrase 1
+
+This phrase aims to find research about implementing IWRM or transboundary co-operation.
+
+Terms were found from 
+* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
+* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
+* Terms for water management related projects and programmes were found in https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+
+The elements of the phrase are *action(implement/advance) + IWRM OR
+arrangement/treaty/agreement+co-operation/collaboration +  crossboundary/international+water basin+management/projects*
+
 
 ```py
 TS=
