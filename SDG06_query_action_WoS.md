@@ -543,11 +543,11 @@ TS=
 
 This target is interpreted to cover research about expanding international co-operation and capacity-building to support developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
 
-As definition of capacity capacity building we have used
+As definition of capacity building we have used
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
 United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance 
 
-As the indicator for this target monitors the amount of Official development assistance as part of government WASH spending plans, ODA is added as a capacity building term as well as grants and loans https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025)
+As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is added as a capacity building term as well as `grants` and `loans` https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025)
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
