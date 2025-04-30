@@ -80,7 +80,8 @@ TS=
 >
 > 5.4.1 Proportion of time spent on unpaid domestic and care work, by sex, age and location
 
-This target is about 
+This target is interpreted to cover research about unpaid care and domestic work. This includes as related to public services, infrastructure, social protection policies, and the sharing of responsibility within households/families, but also more general aspects, such as effects and time spent (given the indicator). 
+
 
 ```py
 TS=
