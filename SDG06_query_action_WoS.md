@@ -392,11 +392,12 @@ TS=
 >
 > 6.5.2 Proportion of transboundary basin area with an operational arrangement for water cooperation
 
-This target is interpreted to cover research about implementation of integrated water resources management and transboundary co-operation in water resources management. 
+This target is interpreted to cover research about implementing integrated water resources management and transboundary co-operation in water resources management. 
 
 **Integrated water resources management (IWRM)** is based on an internationally agreed definition.
 > *Integrated Water Resources Management (IWRM) promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
+
 Indicator metadata 6.5.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
 
 IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
