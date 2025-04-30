@@ -430,9 +430,34 @@ arrangement/treaty/agreement+co-operation/collaboration +  crossboundary/interna
 
 
 ```py
+
+
+
+SKETCH
 TS=
 (
-
+("implement*" OR "advanc*" OR "promot*") 
+AND 
+	("integrated water resources management" OR ("IWRM" NEAR "water"))
+	OR
+	(
+		(
+		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*")
+		NEAR/5
+			("co-operation" OR "cooperation" OR "collaboration")
+		)
+		AND
+		(
+		(
+		("crossboundary" OR "crossborder")
+		NEAR/5
+			("water basin*" OR "lake*" OR "river*" OR "stream*" OR "aquifer*" OR "groundwater*")
+		)
+			NEAR/15
+			("management" OR "hydroelectric*" OR "agriculture" OR ("protected area*" NEAR "conservation"))
+		
+		)
+	)
 )
 ```
 
