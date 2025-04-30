@@ -571,7 +571,16 @@ TS=
 >
 > 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf (“UNstats2025”) measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
+(“DESA2018”)
+
+According to the indicator metadata 6.b, water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water 
+quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
+
+#### Phrase 1
+
+The elements of the phrase are *action + local communities + participation/policies + WASH + management*
+
 
 ```py
 TS=
