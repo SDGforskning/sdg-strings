@@ -453,8 +453,8 @@ AND
 		NEAR/5
 			("water basin*" OR "lake*" OR "river*" OR "stream*" OR "aquifer*" OR "groundwater*")
 		)
-			NEAR/15
-			("management" OR "hydroelectric*" OR "agriculture" OR ("protected area*" NEAR "conservation"))
+		NEAR/15
+		("management" OR "hydroelectric*" OR "agriculture" OR ("protected area*" NEAR "conservation"))
 		
 		)
 	)
