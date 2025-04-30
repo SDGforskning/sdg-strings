@@ -236,12 +236,54 @@ TS=
 
 This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is action + access/rights + resources + women.
 
-"security" is used in phrases because otherwise there are many results about food security.
+"security" is used in phrases because otherwise there are many results about food security. Note: This string needs editing re issue [#173](https://github.com/SDGforskning/sdg-strings/issues/173)
 
 ```py
 TS=
 (
-
+    (
+        (
+            (
+                ("ensure" OR "establish*" OR "propose*" OR "implement*"
+                OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+                OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
+                )
+                NEAR/5
+                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+                    OR "ownership" OR "control" OR "right$"
+                    OR "affordab*" OR "pro poor"
+                    OR "empower*" OR "inclusion" OR "sharing"
+                    OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
+                    )
+            )
+            OR
+            (
+                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+                )
+                NEAR/5
+                    ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+                    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
+                    )      
+            )
+        )
+        NEAR/5
+            ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
+            OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
+            OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+            )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
 )
 ```
 

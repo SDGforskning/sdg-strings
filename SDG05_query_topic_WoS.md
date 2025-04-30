@@ -188,12 +188,35 @@ TS=
 
 This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is access/rights + resources + women.
 
-"security" is used in phrases because otherwise there are many results about food security.
+"security" is used in phrases because otherwise there are many results about food security. Note: This string needs editing re issue [#173](https://github.com/SDGforskning/sdg-strings/issues/173)
 
 ```py
 TS=
 (
-
+    (
+        ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+        OR "ownership" OR "control" OR "right$"
+        OR "affordab*" OR "pro poor"
+        OR "empower*" OR "inclusion" OR "sharing"
+        OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
+        OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+        OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
+        )
+        NEAR/5
+            ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
+            OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
+            OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+            )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
 )
 ```
 
