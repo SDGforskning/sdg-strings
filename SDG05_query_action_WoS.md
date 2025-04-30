@@ -23,6 +23,9 @@ Targets and Indicators were found from the UN Department of Economic and Social 
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="UNLDCs">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f3)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
+Acronyms used:
+- UN DESA: UN Department of Economic and Social Affairs
+
 ## 3. Targets
 
 ### Target 5.1
@@ -80,7 +83,10 @@ TS=
 >
 > 5.4.1 Proportion of time spent on unpaid domestic and care work, by sex, age and location
 
-This target is about 
+This target is interpreted to cover research about:
+- Recognition and valuing unpaid care and domestic work
+- The provision of public services, infrastructure, and social protection policies in any way related to unpaid care and domestic work
+- The promotion of shared responsibility for unpaid care and domestic work within households/families
 
 ```py
 TS=
@@ -103,7 +109,7 @@ This target is interpreted to cover research about
 
 This query consists of X phrases.
 
-## Phrase 1
+#### Phrase 1
 
 The basic structure is _action_ + 
 ```py
@@ -113,7 +119,7 @@ TS=
 )
 ```
 
-## Phrase 2
+#### Phrase 2
 
 The basic structure is _action_ + 
 ```py
@@ -123,7 +129,7 @@ TS=
 )
 ```
 
-## Phrase 3
+#### Phrase 3
 The basic structure is _action_ + 
 ```py
 TS=
@@ -157,12 +163,127 @@ TS=
 >
 > 5.a.2 Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control
 
-This target is about 
+This target is essentially a subset of target 1.4 (SDG 1), where the focus is on women, and it does not include basic services or new technology:
+
+> 1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance
+
+We therefore interpret it in a similar way. We interpret 5.a to cover research about: 
+- Ensuring women's access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
+- Ensuring women's access and rights to economic resources and land/property/inheritance/natural resources (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land and natural resources, but could also include human capital/labour (e.g. access to employment).
+
+As in 1.4, we based this interpretation of financial and economic resources on <a href="#f2">UN DESA (2009, p1)</a>, which states:
+
+> Economic resources refer to the direct factors of production such as “immoveable” assets, including land, housing, common pool resources and infrastructure, as well as “moveable” assets, such as productive equipment, technology and livestock. Financial resources refer to money-based resources, including government expenditures, private financial flows and official development assistance, as well as income, credit, savings and remittances. [...] Labour is the primary resource available to the vast majority of people, particularly those from low-income households [...]
+
+#### Phrase 1
+
+This phrase covers ensuring women's access and rights to financial services. The basic structure is action + access/rights + financial services + women.
+
+Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>.
 
 ```py
 TS=
 (
+    (
+        (
+            (
+                ("ensure" OR "establish*" OR "propose*" OR "implement*"
+                OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+                OR "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
+                )
+                NEAR/5
+                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+                    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+                    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+                    )
+            )
+            OR
+            (
+                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+                )
+                NEAR/5
+                    ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+                    OR "unaffordab*" OR "expensive"
+                    OR "unbanked"
+                    )      
+            )
+        )
+        NEAR/15
+            ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
+            OR "banks" OR "a bank" OR "banking" OR "bank account$"
+            OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+            OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+            OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+            OR "financial inclusion"
+            )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
+)
+```
 
+#### Phrase 2
+
+This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is action + access/rights + resources + women.
+
+"security" is used in phrases because otherwise there are many results about food security. Note: This string needs editing re issue [#173](https://github.com/SDGforskning/sdg-strings/issues/173)
+
+```py
+TS=
+(
+    (
+        (
+            (
+                ("ensure" OR "establish*" OR "propose*" OR "implement*"
+                OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+                OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
+                )
+                NEAR/5
+                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+                    OR "ownership" OR "control" OR "right$"
+                    OR "affordab*" OR "pro poor"
+                    OR "empower*" OR "inclusion" OR "sharing"
+                    OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
+                    )
+            )
+            OR
+            (
+                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+                )
+                NEAR/5
+                    ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+                    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
+                    )      
+            )
+        )
+        NEAR/5
+            ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
+            OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
+            OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+            )
+    )
+    AND
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "gender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
 )
 ```
 
@@ -205,3 +326,7 @@ Specialist input:
 ## 5. Footnotes
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
+
+<span id="f2">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
+
+<span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
