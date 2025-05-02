@@ -98,24 +98,40 @@ TS=
 > 5.5.2 Proportion of women in managerial positions
 
 This target is interpreted to cover research about 
-* Ensuring women's participation and opportunities for leadership in all areas of society
+* Ensuring women's participation in decision-making processes and their opportunities for leadership in these processes, across all areas of society 
 * Proportion of women in local and governmental bodies and in managerial positions
 
 This query consists of X phrases.
 
 ## Phrase 1
 
-The basic structure is _action_ + 
+The basic structure is _action_ + _women_ + 
 ```py
 TS=
 (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*" OR "support")
+    ("accelerat*" OR "achiev*" OR "advance" OR "advancing" OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" OR "ensure"OR "expand" OR "expansion" OR "facilitat*" OR "foster*" OR "guarantee*" OR "heighten*" OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "promot*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
+
+    ("*women" OR "*woman" OR "*womens" OR "*womans"
+    OR "girl$"
+    OR "female$"
+    OR "gender*"
+    OR "transgender*"
+    OR 
+        ("sex*" 
+        NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+        )
+    )
+
+
+
+
+
 )
 ```
 
 ## Phrase 2
 
-The basic structure is _action_ + 
+The basic structure is _action_ + opposites/hindre diskriminering?
 ```py
 TS=
 (
@@ -172,8 +188,10 @@ TS=
 >
 > 5.b.1 Proportion of individuals who own a mobile telephone, by sex
 
-This target is about 
 
+This target is interpreted to cover research about enhancing the use of enabling tecnology among women. The term *enabling technology* may include all kinds of technologies like welfare technologies, technologies for universal access etc, however, as both the target and the indicator emphasize information and communications technology and mobile telehpones, we have not included these technologies as relevant to this target. (kan diskuteres?? Har en funksjonshemma jente alltid like muligheter som en funksjonshemma gutt?)
+
+(https://www.itu.int/en/mediacentre/backgrounders/Pages/icts-to-achieve-the-united-nations-sustainable-development-goals.aspx) 
 ```py
 TS=
 (
@@ -187,7 +205,7 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
