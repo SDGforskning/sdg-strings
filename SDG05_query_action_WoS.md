@@ -103,6 +103,8 @@ This target is interpreted to cover research about
 
 This query consists of X phrases.
 
+(Terms for "Gender quotas" , "parental leave", "paternety leave" included both here and in 5.c?) 
+
 ## Phrase 1
 
 The basic structure is _action_ + _women_ + 
@@ -189,7 +191,7 @@ TS=
 > 5.b.1 Proportion of individuals who own a mobile telephone, by sex
 
 
-This target is interpreted to cover research about enhancing the use of enabling tecnology among women. The term *enabling technology* may include all kinds of technologies like welfare technologies, technologies for universal access etc, however, as both the target and the indicator emphasize information and communications technology and mobile telehpones, we have not included these technologies as relevant to this target. (kan diskuteres?? Har en funksjonshemma jente alltid like muligheter som en funksjonshemma gutt?)
+This target is interpreted to cover research about enhancing the use of enabling tecnology among women. The term *enabling technology* may include all kinds of technologies like welfare technologies, technologies for universal access etc, however, as both the target and the indicator emphasize information and communications technology and mobile telehpones, we have not included these technologies as relevant to this target. (kan diskuteres?? Har en funksjonshemma jente like muligheter som en funksjonshemma gutt?)
 
 (https://www.itu.int/en/mediacentre/backgrounders/Pages/icts-to-achieve-the-united-nations-sustainable-development-goals.aspx) 
 ```py
@@ -205,7 +207,7 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about adopting and strengthening policies and legislation for the promotion of gender quality and for the empowerment of women and girls. We interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality (https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf )
 
 ```py
 TS=
