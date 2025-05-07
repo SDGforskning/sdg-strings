@@ -33,6 +33,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about ending discrimination against women and girls 
 
+This query consist of one phrase. The general structure is action + discrimination + women & girls
+
 ```py
 TS=
 (
