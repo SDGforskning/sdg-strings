@@ -99,9 +99,19 @@ TS=
 
 This target is interpreted to cover research about 
 * Ensuring women's participation in decision-making processes and their opportunities for leadership in these processes, across all areas of society 
-* Proportion of women in local and governmental bodies and in managerial positions
+* Proportion of women in local and governmental bodies and in managerial positions.
 
-This query consists of X phrases.
+Research on the effects of female participation and leadership is not considered relevant.  
+
+Sources used for finding terms:  
+ * UN Women, Key messages on women's rights: https://www.unwomen.org/sites/default/files/2024-06/in-brief-key-messages-on-womens-rights-empowerment-and-equality-electoral-and-political-participation-en.pdf 
+ * Indicator metadata 5.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf refers to ISCO-08, which lists useful terms to cover `managerial positions`: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf 
+
+
+Beijing declaration - ev bakgrunnsdokument for flere delmål? (oppdateres hvert 5. år? https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf)
+
+
+This query consists of X phrases......
 
 (Terms for "Gender quotas" , "parental leave", "paternety leave" included both here and in 5.c?) 
 
@@ -207,8 +217,7 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is interpreted to cover research about adopting and strengthening policies and legislation for the promotion of gender quality and for the empowerment of women and girls. We interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality (https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf )
-
+This target is interpreted to cover research about adopting and strengthening policies and legislation for the promotion of gender quality and for the empowerment of women and girls. According to Indicator metadata 5.c (https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf ) we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
 ```py
 TS=
 (
