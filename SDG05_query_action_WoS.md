@@ -31,7 +31,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
-This target is about 
+This target is interpreted to cover research about ending discrimination against women and girls 
 
 ```py
 TS=
