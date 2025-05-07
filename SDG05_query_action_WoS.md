@@ -36,7 +36,19 @@ This target is interpreted to cover research about ending discrimination against
 ```py
 TS=
 (
-
+    (
+        (
+        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+        OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
+        )    
+        NEAR/15
+       ("discriminat*")
+        ) 
+     AND 
+        (*"women*" OR "girl*")
+    ) 
 )
 ```
 
