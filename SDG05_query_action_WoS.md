@@ -31,7 +31,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
-This target is interpreted to cover research about ending discrimination against women and girls 
+This target is interpreted to cover research about ending discrimination against women and girls. Discrimination against women is defined in Article 1 of the CEDAW Convention 
+https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf as "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
 This query consist of one phrase. The general structure is action + discrimination + women & girls
 
