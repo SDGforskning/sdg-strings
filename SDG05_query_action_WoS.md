@@ -31,10 +31,21 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
-This target is interpreted to cover research about ending discrimination against women and girls. Discrimination against women is defined in Article 1 of the CEDAW Convention 
-https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf as "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
+This target is interpreted to cover research about:
+- ending discrimination against women and girls.
+- legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
 
-This query consist of one phrase. The general structure is action + discrimination + women & girls
+We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
+https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
+
+Sex/gender?
+
+
+This query consist of x phrases. 
+
+#### Phrase 1 
+
+This phrase is about ending discrimination against women and girls. The general structure is action + discrimination + women & girls
 
 ```py
 TS=
@@ -47,13 +58,28 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/15
-       ("discriminat*")
+        (
+        ("discriminat*") OR (("impair*" OR "nullif*" OR "violat*") NEAR/15("human right*" OR "freedom*"))
         ) 
      AND 
         (*"women*" OR "girl*")
+        )
     ) 
 )
 ```
+
+
+####Phrase 2
+
+This phrase is about establishing/securing/... legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
+
+```py
+TS=
+(
+
+)
+```
+
 
 ### Target 5.2
 
