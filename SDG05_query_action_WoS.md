@@ -62,7 +62,7 @@ TS=
         ("discriminat*") OR (("impair*" OR "nullif*" OR "violat*") NEAR/15("human right*" OR "freedom*"))
         ) 
      AND 
-        (*"women*" OR "girl*")
+        ("*women*" OR "girl*")
         )
     ) 
 )
@@ -76,7 +76,23 @@ This phrase is about establishing/securing/... legal frameworks to promote, enfo
 ```py
 TS=
 (
-
+    (
+        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR
+        "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+        ) 
+        NEAR/5
+        (
+            ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+            NEAR/5
+            (
+                ("promot*" OR "enforce*" OR "monitor*")
+                NEAR/5
+                (
+                    (("equality*") OR ("non-discriminat*") NEAR/5 ("sex*"))
+                )
+            )
+        )
+    )
 )
 ```
 
