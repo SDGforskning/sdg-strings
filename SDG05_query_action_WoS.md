@@ -104,15 +104,27 @@ We used two sources to help clarify what should fall under unpaid care and domes
 Factors to do with valuation of this work, or services and policies mentioned in <a href="#f6ca">Yamamoto (2018)</a> include:
 - the structure of social welfare, contributions into pensions via care work (e.g. child credit), or taxes and tax breaks (valuing)
 - piped water, water sanitation/purification, irrigation and electricity/modern energy (public services/infrastructure)
-- public investment in care services and care industry, such as childcare, preschool, personal care, elderly care, nursing homes, care facilities (public services), parental leave (policies/shared responsibility)
-- flexible work hours (policies)
+- public investment in care services and care industry, such as childcare, preschool, personal care, elderly care, nursing homes, care facilities (public services), 
+- parental leave (policies/shared responsibility)
+- flexible work hours (policies/share responsibility)
 - mobile banking and delivery of shopping (services)
+
 
 
 ```py
 TS=
 (
-
+    ("unpaid" NEAR/5 ("care" OR "childcare" OR "housework" OR "household work" OR "household labo$r" OR "domestic work" OR "domestic labo$r"))
+    OR (("collect*" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water"))
+    OR 
+    ("unpaid"
+        AND ("household" OR "domestic" OR "home" OR "family")
+        AND ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" OR "household management" OR "domestic management" OR "pay bills" OR "pet care" OR "shopping")
+    )
+    OR 
+    ("unpaid"
+        AND (("care" OR "caring") NEAR/5 ("elderly" OR "disabled" OR "dependant$" OR "sick"))
+    )
 )
 ```
 
