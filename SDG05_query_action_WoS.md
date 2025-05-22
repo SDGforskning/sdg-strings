@@ -88,6 +88,27 @@ This target is interpreted to cover research about:
 - The provision of public services, infrastructure, and social protection policies in any way related to unpaid care and domestic work
 - The promotion of shared responsibility for unpaid care and domestic work within households/families
 
+We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). We include:
+- Food and meals management and preparation
+- Cleaning and maintenance of own dwelling and surroundings
+- Do-it-yourself decoration
+- Care, maintenance and repair of personal and household goods, textiles and footwear (e.g. washing clothes)
+- Household management (e.g. paying bills, organising)
+- Pet care
+- Shopping for household and family members
+- Collection of water and firewood/fuel
+- Childcare and instruction
+- Care of dependant adults, or non-dependant household or family members (e.g. sick, elderly or disabled )
+- Travel or transporting goods related to these activities
+
+Factors to do with valuation of this work, or services and policies mentioned in <a href="#f6ca">Yamamoto (2018)</a> include:
+- the structure of social welfare, contributions into pensions via care work (e.g. child credit), or taxes and tax breaks (valuing)
+- piped water, water sanitation/purification, irrigation and electricity/modern energy (public services/infrastructure)
+- public investment in care services and care industry, such as childcare, preschool, personal care, elderly care, nursing homes, care facilities (public services), parental leave (policies/shared responsibility)
+- flexible work hours (policies)
+- mobile banking and delivery of shopping (services)
+
+
 ```py
 TS=
 (
@@ -171,7 +192,7 @@ We therefore interpret it in a similar way. We interpret 5.a to cover research a
 - Ensuring women's access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
 - Ensuring women's access and rights to economic resources and land/property/inheritance/natural resources (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land and natural resources, but could also include human capital/labour (e.g. access to employment).
 
-As in 1.4, we based this interpretation of financial and economic resources on <a href="#f2">UN DESA (2009, p1)</a>, which states:
+As in 1.4, we based this interpretation of financial and economic resources on <a href="#f2ca">UN DESA (2009, p1)</a>, which states:
 
 > Economic resources refer to the direct factors of production such as “immoveable” assets, including land, housing, common pool resources and infrastructure, as well as “moveable” assets, such as productive equipment, technology and livestock. Financial resources refer to money-based resources, including government expenditures, private financial flows and official development assistance, as well as income, credit, savings and remittances. [...] Labour is the primary resource available to the vast majority of people, particularly those from low-income households [...]
 
@@ -179,7 +200,7 @@ As in 1.4, we based this interpretation of financial and economic resources on <
 
 This phrase covers ensuring women's access and rights to financial services. The basic structure is action + access/rights + financial services + women.
 
-Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>.
+Sources of terms for financial services included <a href="#f2ca">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f5ca">UNSGSA et al. (2018)</a>.
 
 ```py
 TS=
@@ -327,6 +348,10 @@ Specialist input:
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
 
-<span id="f2">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
+<span id="f2ca">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
 
-<span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
+<span id="f5ca">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
+
+<span id="f4ca">Statistics Division</span> (2024). SDG Indicators Metadata Repository. Department of Economic and Social Affairs, United Nations. https://unstats.un.org/sdgs/metadata/ [accessed 22 May 2025]
+
+<span id="f6ca">Yamamoto, Y</span> (2018). *Now is the Time! Reduce and redistribute the unpaid domestic and care work burden of women for sustainable development*. UNDP Asia and the Pacific.  https://www.undp.org/asia-pacific/publications/now-time-reduce-and-redistribute-unpaid-domestic-and-care-work-burden-women-sustainable-development [accessed 22 May 2025]
