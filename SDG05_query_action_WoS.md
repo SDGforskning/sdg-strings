@@ -121,17 +121,23 @@ Factors to do with valuation of this work, or services and policies mentioned in
 ```py
 TS=
 (
-    ("unpaid" NEAR/5 ("care" OR "childcare" OR "housework" OR "household work" OR "household labo$r" OR "domestic work" OR "domestic labo$r"))
-    OR (("collect*" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water"))
-    OR 
-    ("unpaid"
-        AND ("household" OR "domestic" OR "home" OR "family")
-        AND ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" OR "household management" OR "domestic management" OR "pay bills" OR "pet care" OR "shopping")
+    ("unpaid" NEAR/5 ("care" OR "childcare" OR "caregiver$" OR "housework" OR "household work" OR "household labo$r" OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic responsibilit*"))
+    OR
+    (
+        (("collect*" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water"))
+        AND ("unpaid" OR "household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
     )
     OR 
-    ("unpaid"
-        AND (("care" OR "caring") NEAR/5 ("elderly" OR "disabled" OR "dependant$" OR "sick"))
+    (
+        ("unpaid" OR "work" OR "labo$r" OR "responsib*")
+        AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+        AND ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" OR "household management" OR "domestic management" OR "home management" OR "manage the home" OR "pay bills" OR "pet care" OR "shopping")
     )
+    OR 
+    (("unpaid"
+    OR (("responsib*" OR "Labo$r") AND ("women" OR "girl$" OR "gender*"))
+    )
+    AND (("care" OR "caring" OR "caregiver$") NEAR/5 ("elderly" OR "disabled" OR "dependent$" OR "sick"))
 )
 ```
 
