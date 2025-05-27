@@ -116,28 +116,54 @@ Factors to do with valuation of this work, or services and policies mentioned in
 - flexible work hours (policies/share responsibility)
 - mobile banking and delivery of shopping (services)
 
+This query consists of 3 phrases.
 
+#### Phrase 1
+This phrase aims to find research about recognition and valuing unpaid care and domestic work. The structure is _recognising/valueing + unpaid care and domestic work_.
+
+_Unpaid care and domestic work_ can be challenging to isolate, as a) some unpaid domestic activities can also be done outside the home, b) some unpaid domestic activities can be paid labour, and d) some works often refer to unpaid work *without* using expressions for unpaid (e.g. "housework"). Therefore, the string is built up with various combinations "types of labour" with either terms for "unpaid", terms for "time use", or terms for "gender" or labour division, via trial and error. `time use surveys` do not exclusively collect data about unpaid labour, but they do include this and are about the home, thus help limiting to work about unpaid labour in the home when using more generic labour terms such as "maintenance". The phrase `division of labo$r` works in the same way, as it is often used to describe the division within a household (but not always, hence it is not used in all parts). Gender terms work in the same way - certain unpaid household activities are so gendered that this helps limit to them, however gender is also a prevalent theme in works about paid care activities. 
+
+Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where samples were collected, not the activity of firewood/water collection.  
 
 ```py
 TS=
 (
-    ("unpaid" NEAR/5 ("care" OR "childcare" OR "caregiver$" OR "housework" OR "household work" OR "household labo$r" OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic responsibilit*"))
+    (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
+    NEAR/15 
+        ("care" OR "carer$" OR "household responsibil*" OR "domestic responsibilit*" 
+        OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "domestic work" OR "domestic labo$r" OR "domestic task$" OR "domestic chore$" 
+        OR "household management" OR "household administration" OR "domestic management" OR "home management" OR "manage the home"
+        )
+    )
+    OR "informal care" OR "informal caregiv*" OR "informal carer$" OR "reproductive labo$r" OR "kin work" OR "kinwork"
     OR
     (
-        (("collect*" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water"))
-        AND ("unpaid" OR "household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+        ("unpaid" OR "without pay" OR "with no pay" OR "informal support" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r")
+        AND 
+            ("childcare" OR "caregiv*" OR "eldercare" OR "parenting"
+            OR (("care" OR "carer$" OR "caring" ) NEAR/5 ("child*" OR "elderly" OR "disabled" OR "dependent$" OR "sick"))
+            )
     )
-    OR 
+    OR "domestic division of labo$r"
+    OR
     (
-        ("unpaid" OR "work" OR "labo$r" OR "responsib*")
-        AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
-        AND ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" OR "household management" OR "domestic management" OR "home management" OR "manage the home" OR "pay bills" OR "pet care" OR "shopping")
+        ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r" OR "invisble labo$r")
+        AND 
+            ("housework" OR "cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
+            OR "household management" OR "domestic management" OR "home management" OR "manage the home" OR "pay bills" OR "pet care" OR "shopping"
+            )
+        AND ("housework" OR "household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
     )
-    OR 
-    (("unpaid"
-    OR (("responsib*" OR "Labo$r") AND ("women" OR "girl$" OR "gender*"))
+    OR
+    (
+        ("unpaid" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+        AND
+        (
+            (("collection" OR "collecting" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water" OR "fetching water"))
+            OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$"  OR "domestic work" OR "domestic labo$r" OR "domestic task$" OR "domestic chore$" 
+            OR "household management" OR "household administration" OR "domestic management" OR "home management" OR "manage the home"
+        ) 
     )
-    AND (("care" OR "caring" OR "caregiver$") NEAR/5 ("elderly" OR "disabled" OR "dependent$" OR "sick"))
 )
 ```
 
