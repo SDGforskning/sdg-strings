@@ -111,17 +111,21 @@ _Unpaid care and domestic work_ can be challenging to isolate, as a) some unpaid
 
 Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where samples were collected, not the activity of firewood/water collection.  
 
+Some activities are limited to being combined with unpaid terms: ´"household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management"´ - this is to avoid the household responsitbility system (China), domestic labour in agriculture, and "domestic" as used to mean within the current country-
+
+Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where samples were collected, not the activity of firewood/water collection.  
+
 ```py
 TS=
 (
+    "informal care" OR "informal caregiv*" OR "informal carer$" OR "reproductive labo$r" OR "kin work" OR "kinwork"
+    OR "household management" OR "household administration"
+    OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
+    OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
+    OR
     (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
-    NEAR/15 
-        ("care" OR "carer$" OR "household responsibil*" OR "domestic responsibilit*" 
-        OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "domestic work" OR "domestic labo$r" OR "domestic task$" OR "domestic chore$" 
-        OR "household management" OR "household administration" OR "domestic management" OR "home management" OR "manage the home"
-        )
+    NEAR/15 ("care" OR "carer$" OR "household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home")
     )
-    OR "informal care" OR "informal caregiv*" OR "informal carer$" OR "reproductive labo$r" OR "kin work" OR "kinwork"
     OR
     (
         ("unpaid" OR "without pay" OR "with no pay" OR "informal support" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r")
@@ -135,10 +139,10 @@ TS=
     (
         ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r" OR "invisble labo$r")
         AND 
-            ("housework" OR "cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
-            OR "household management" OR "domestic management" OR "home management" OR "manage the home" OR "pay bills" OR "pet care" OR "shopping"
+            ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
+            OR "pay bills" OR "pet care" OR "shopping" OR "domestic management" OR "home management" OR "manage the home" 
             )
-        AND ("housework" OR "household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+        AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
     )
     OR
     (
@@ -146,8 +150,7 @@ TS=
         AND
         (
             (("collection" OR "collecting" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water" OR "fetching water"))
-            OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$"  OR "domestic work" OR "domestic labo$r" OR "domestic task$" OR "domestic chore$" 
-            OR "household management" OR "household administration" OR "domestic management" OR "home management" OR "manage the home"
+            OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
         ) 
     )
 )
