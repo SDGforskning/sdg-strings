@@ -71,7 +71,7 @@ TS=
 
 #### Phrase 2
 
-This phrase is about establishing/securing/... legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
+This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex
 
 ```py
 TS=
@@ -84,13 +84,12 @@ TS=
         (
             ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
             NEAR/5
-            (
-                ("promot*" OR "enforce*" OR "monitor*")
-                NEAR/5
-                (
-                    (("equality*") OR ("non-discriminat*") NEAR/5 ("sex*"))
-                )
+            (             
+               ("equality*" OR "discriminat*" OR "exclusion" OR "dispar*" OR "bias*")
+                NEAR/5 
+                ("sex*" OR "gender*" OR "transgender*" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*")
             )
+            
         )
     )
 )
