@@ -52,17 +52,25 @@ TS=
 (
     (
         (
-        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*"
+        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" 
         OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
         OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
-        NEAR/15
+        NEAR/5
         (
-        ("discriminat*") OR (("impair*" OR "nullif*" OR "violat*") NEAR/15("human right*" OR "freedom*"))
+         ("discriminat*" OR "exclusion" OR "dispar*" OR "bias*") OR
+             (
+                ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+                NEAR/5
+                ("human right*" OR "freedom*")
+            )
         ) 
-     AND 
-        ("*women*" OR "girl*")
+        NEAR/5 
+        (*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "transgender*")
         )
     ) 
 )
