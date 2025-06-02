@@ -80,9 +80,7 @@ TS=
 >
 > 5.4.1 Proportion of time spent on unpaid domestic and care work, by sex, age and location
 
-This target is interpreted to cover research about unpaid care and domestic work. This includes as related to public services, infrastructure, social protection policies, and the sharing of responsibility within households/families, but also more general aspects, such as effects and time spent (given the indicator). 
-
-This target is interpreted to cover research about unpaid care and domestic work.
+This target is interpreted to cover research about unpaid care and domestic work. This includes this work as related to public services, infrastructure, social protection policies, and the sharing of responsibility, but also more general aspects, such as effects and time spent. It may also include works where the main subject is something that may affect the unpaid work, for example the effect of a patient diagnosis on caregiver burden, or communication between medical personel and informal caregivers. 
 
 We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). We include:
 - Food and meals management and preparation
@@ -105,44 +103,44 @@ Factors to do with valuation of this work, or services and policies mentioned in
 - flexible work hours (policies/share responsibility)
 - mobile banking and delivery of shopping (services)
 
-This query consists of 1 phrase. This phrase aims to find research about unpaid care and domestic work. The structure is _unpaid care and domestic work_.
+This query consists of 1 phrase. The structure is _unpaid care and domestic work_.
 
-_Unpaid care and domestic work_ can be challenging to isolate, as a) some unpaid domestic activities can also be done outside the home, b) some unpaid domestic activities can be paid labour, and d) some works often refer to unpaid work *without* using expressions for unpaid (e.g. "housework"). Therefore, the string is built up with various combinations "types of labour" with either terms for "unpaid", terms for "time use", or terms for "gender" or labour division, via trial and error. `time use surveys` do not exclusively collect data about unpaid labour, but they do include this and are about the home, thus help limiting to work about unpaid labour in the home when using more generic labour terms such as "maintenance". The phrase `division of labo$r` works in the same way, as it is often used to describe the division within a household (but not always, hence it is not used in all parts). Gender terms work in the same way - certain unpaid household activities are so gendered that this helps limit to them, however gender is also a prevalent theme in works about paid care activities. 
+_Unpaid care and domestic work_ can be challenging to isolate, as a) some unpaid domestic activities (e.g. caregiving, childcare) can be done outside the home or as paid/professional work, and b) some research may refer to unpaid work *without* using terms for unpaid (e.g. "housework"). Therefore, the _unpaid care and domestic work_ string is built up with some terms alone, and others in combination (direct terms for unpaid household work/care are used alone, while more ambiguous terms for work/care combined with terms for _unpaid_, _time use_, _gender_ or _labour division_). 
 
-Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where samples were collected, not the activity of firewood/water collection.  
+_Time use_, _gender_ or _labour division_ terms are not strictly equivalent to "unpaid work", but function to limit research to unpaid work in certain combinations, because the time-use, gendered or division aspect nearly always refers to unpaid parts of the labour. `time use surveys` do not exclusively collect data about unpaid labour, but include this and are about the home, thus help limiting to unpaid labour in the home when using more ambiguous labour terms (such as "maintenance"). The phrase `division of labo$r` works in the same way, as it is often used to describe the division within a household (but is also used in workplaces or colonial insect biology, so cannot be combined with e.g. "cleaning" alone). Gender terms work in the same way - certain unpaid household activities are gendered, and therefore this helps limit to them; however gender is also a prevalent theme in works about paid care activities and therefore can't be used in all places. 
 
-Some activities are limited to being combined with unpaid terms: ´"household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management"´ - this is to avoid the household responsitbility system (China), domestic labour in agriculture, and "domestic" as used to mean within the current country-
+Some specific labour terms which one might expect to suffice alone are combined with _unpaid_, _time use_, _gender_ or _labour division_: ´"household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management"´ - this is to avoid the household responsitbility system (China), domestic labour in agriculture, and "domestic" as used to mean within the current country.
 
-Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where samples were collected, not the activity of firewood/water collection.  
+Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where water samples were collected, not the activity of firewood/water collection.  
 
 ```py
 TS=
 (
-    "informal care" OR "informal caregiv*" OR "informal carer$" OR "reproductive labo$r" OR "kin work" OR "kinwork"
+    "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "caregiver burden" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork"
     OR "household management" OR "household administration"
     OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
     OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
-    OR
-    (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
-    NEAR/15 ("care" OR "carer$" OR "household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home")
-    )
-    OR
-    (
-        ("unpaid" OR "without pay" OR "with no pay" OR "informal support" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r")
-        AND 
-            ("childcare" OR "caregiv*" OR "eldercare" OR "parenting"
-            OR (("care" OR "carer$" OR "caring" ) NEAR/5 ("child*" OR "elderly" OR "disabled" OR "dependent$" OR "sick"))
-            )
-    )
     OR "domestic division of labo$r"
     OR
+        (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
+        NEAR/15 ("care" OR "carer$" OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home")
+        )
+    OR
     (
-        ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r" OR "invisble labo$r")
+        ("unpaid" OR "without pay" OR "with no pay" OR "informal support" OR "invisible labo$r" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r")
         AND 
-            ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
-            OR "pay bills" OR "pet care" OR "shopping" OR "domestic management" OR "home management" OR "manage the home" 
+            (
+                ("childcare" OR "caregiv*" OR "eldercare" OR "parenting"
+                OR (("care" OR "carer$" OR "caring" ) NEAR/5 ("child*" OR "elderly" OR "disabled" OR "dependent$" OR "sick"))
+                ) 
+            OR
+                (
+                    ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
+                    OR "pay bills" OR "pet care" OR "shopping" OR "domestic management" OR "home management" OR "manage the home" 
+                    )
+                    AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+                )
             )
-        AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
     )
     OR
     (
