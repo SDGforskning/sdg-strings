@@ -116,41 +116,40 @@ Firewood and water collection is included as a specific activity where women and
 ```py
 TS=
 (
-    "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "caregiver burden" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork"
+    "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
     OR "household management" OR "household administration"
     OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
     OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
     OR "domestic division of labo$r"
     OR
         (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
-        NEAR/15 ("care" OR "carer$" OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home")
+        NEAR/15 ("care" OR "carer$" OR "caring")
         )
     OR
-    (
-        ("unpaid" OR "without pay" OR "with no pay" OR "informal support" OR "invisible labo$r" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "division of labo$r")
-        AND 
-            (
-                ("childcare" OR "caregiv*" OR "eldercare" OR "parenting"
-                OR (("care" OR "carer$" OR "caring" ) NEAR/5 ("child*" OR "elderly" OR "disabled" OR "dependent$" OR "sick"))
-                ) 
-            OR
-                (
-                    ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
-                    OR "pay bills" OR "pet care" OR "shopping" OR "domestic management" OR "home management" OR "manage the home" 
-                    )
-                    AND ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
-                )
-            )
-    )
-    OR
-    (
-        ("unpaid" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
-        AND
         (
-            (("collection" OR "collecting" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water" OR "fetching water"))
-            OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
-        ) 
-    )
+            ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible labo$r" OR "division of labo$r")
+            NEAR/15 
+                ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
+                OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"
+                OR (("care" OR "carer$" OR "caring") NEAR/5 ("child*" OR "elderly" OR "disabled" OR "dependent$" OR "sick"))
+                OR
+                    (
+                        ("cooking" OR "meal preparation" OR "food preparation" OR "cleaning" OR "washing" OR "repair" OR "maintenance" 
+                        OR "pay bills" OR "pet care" OR "shopping" OR "domestic management" OR "home management" OR "manage the home" 
+                        )
+                        NEAR/15 ("household*" OR "domestic*" OR "home$" OR "family" OR "families" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+                    )
+                )
+        )
+        OR
+        (
+            ("unpaid" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+            NEAR/15
+                (
+                    (("collection" OR "collecting" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water" OR "fetching water"))
+                    OR "household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
+                ) 
+        )
 )
 ```
 
