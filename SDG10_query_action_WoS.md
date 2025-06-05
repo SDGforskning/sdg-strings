@@ -1,6 +1,6 @@
 # Search query for SDG 10 - Reduced inequalities, Bergen action-approach.
 
-Reduce inequality within and among countries 
+Reduce inequality within and among countries
 
 **Status: This query is currently under development (2025)**
 
@@ -31,7 +31,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is interpreted to cover research about 
+This target is interpreted as to cover research about how to permanently raise the income growth rate of the poorest population above the national average.
 
 ```py
 TS=
