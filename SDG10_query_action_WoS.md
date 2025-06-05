@@ -46,7 +46,7 @@ TS=
 >
 > 10.2.1 Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about enabling everyone to participate in societal activities. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability.
 
 ```py
 TS=
