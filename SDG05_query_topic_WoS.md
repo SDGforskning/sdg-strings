@@ -102,12 +102,11 @@ This target is interpreted to cover research about:
 * Women's equal opportunities for leadership at all levels of decision-making in political, economic and public life 
 * Proportion of women in local and governmental bodies and in managerial positions
 
-Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Declaration (https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf, including paragraph 185), we are aware that research on the private sphere may also be relevant.
+Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
 Sources used for finding terms:  
- * UN Women, Key messages on women's rights: https://www.unwomen.org/sites/default/files/2024-06/in-brief-key-messages-on-womens-rights-empowerment-and-equality-electoral-and-political-participation-en.pdf 
- * Indicator metadata 5.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf refers to ISCO-08, which lists useful terms to cover `managerial positions`: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf 
-* Monitoring gender equality and the empowerment of women and girls in the 2030 agenda for sustainable development (Position paper), for terms about leadership positions: https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf 
+  * Indicator metadata 5.5.2 <a href="#f2li">(xxx, 20xx)</a> https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf refers to ISCO-08, which lists useful terms to cover `managerial positions`: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf 
+* Monitoring Gender Equality and the Empowerment of Women and Girls in the 2030 Agenda for Sustainable Development <a href="#f3li">(UN Women, 2015)</a>, for terms about leadership positions
 
 
 
@@ -253,3 +252,15 @@ Specialist input:
 ## 5. Footnotes
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
+
+<span id="f1li">UN. (1995).</span> *Report of the Fourth World
+Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
+
+
+<span id="f2li">UN. (xxxx).</span> *title   ... *. https://www.un.....  [Accessed 2025.06.05]
+
+
+<span id="f3li">UN Women. (2015).</span> *Monitoring Gender Equality and the Empowerment of women and girls in the 2030 Agenda for Sustainable Development: Opportunities and Challenges: Position Paper*. https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf    [Accessed 2025.06.05]
+
+
+<span id="f4li">xxx. (xxxx).</span> *title... *. https://www.u... [Accessed 2025.06.05]
