@@ -371,25 +371,47 @@ TS=
 >
 > 5.5.2 Proportion of women in managerial positions
 
-This target is interpreted to cover research about 
-* Ensuring women's participation and opportunities for leadership in all areas of society
+This target is interpreted to cover research about: 
+* Ensuring women's participation at all levels of decision-making in political, economic and public life 
+* Ensuring women's equal opportunities for leadership at all levels of decision-making in political, economic and public life 
 * Proportion of women in local and governmental bodies and in managerial positions
 
-This query consists of X phrases.
+Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Declaration (https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf, including paragraph 185), we are aware that research on the private sphere may also be relevant.
+
+Sources used for finding terms:  
+ * UN Women, Key messages on women's rights: https://www.unwomen.org/sites/default/files/2024-06/in-brief-key-messages-on-womens-rights-empowerment-and-equality-electoral-and-political-participation-en.pdf 
+ * Indicator metadata 5.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf refers to ISCO-08, which lists useful terms to cover `managerial positions`: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf 
+* Monitoring gender equality and the empowerment of women and girls in the 2030 agenda for sustainable development (Position paper), for terms about leadership positions: https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf 
+
+
+This query consists of X phrases......
 
 #### Phrase 1
 
-The basic structure is _action_ + 
+The basic structure is _action_ + _women_ + _participation_ 
 ```py
 TS=
 (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "ensure" OR "attain" OR "achiev*" OR "support")
+    ("accelerat*" OR "achiev*" OR "advance" OR "advancing" OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" OR "ensure"OR "expand" OR "expansion" OR "facilitat*" OR "foster*" OR "guarantee*" OR "heighten*" OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "promot*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
+
+    ("*women" OR "*woman" OR "*womens" OR "*womans"
+    OR "girl$"
+    OR "female$"
+    OR "gender*"
+    OR "transgender*"
+    OR 
+        ("sex*" 
+        NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+        )
+    )
+
+
 )
 ```
 
 #### Phrase 2
 
-The basic structure is _action_ + 
+The basic structure is _action_ + opposites/hindre diskriminering?
 ```py
 TS=
 (
@@ -398,12 +420,19 @@ TS=
 ```
 
 #### Phrase 3
-The basic structure is _action_ + 
-```py
-TS=
-(
 
-)
+The basic structure is _action_ + _women_ + _leadership_ 
+
+```py
+
+```
+
+#### Phrase 4
+
+The basic structure is _action_ + _women_ + _proportion of seats/positions_ 
+
+```py
+
 ```
 
 ### Target 5.6
@@ -564,7 +593,35 @@ TS=
 >
 > 5.b.1 Proportion of individuals who own a mobile telephone, by sex
 
-This target is about 
+
+This target is interpreted to cover research about enhancing the use of enabling tecnology to promote empowerment of women. 
+
+As both the target and the indicator emphasize ICT, we have an extra focus on ICT. However, all forms of enabling technologies may be included as relevant as long as they promote the empowerment of women.
+
+United Nations' "Women’s Empowerment, SDGs and ICT", https://www.unapcict.org/sites/default/files/inline-files/Module_C1.pdf, defines ICT as: "ICT refers to all technology for creating, manipulating, storing, managing, sending and receiving information. ICT encompasses a wide range of multimedia and communication
+tools. It can include, but is not limited to, old media such as radio, television and telephone,
+as well as new media networks (fixed or wireless Internet), hardware (computers, mobile
+phones, tablets, etc.) and software (social media services, multimedia applications, mobile apps, etc.)" (p. 31)
+
+For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF: (https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf )
+
+This query consists of 1? phrases......
+
+
+#### Phrase 1
+
+The basic structure is _action_ + _use_ + _technologies_ + _empowerment of women_
+
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 2
+
+The basic structure is _action_ + 
 
 ```py
 TS=
@@ -579,7 +636,17 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is about 
+This target is interpreted to cover research about adopting and strengthening policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c (https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf ) we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
+
+For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF: (https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf )
+
+This query consists of X phrases......
+
+
+
+## Phrase 1
+
+The basic structure is _action_ + _policies/legislation_ + _gender equality/empowerment of women_  
 
 ```py
 TS=
@@ -587,7 +654,16 @@ TS=
 
 )
 ```
+## Phrase 2
 
+The basic structure is _systems for tracking/publishing allocations_  
+
+```py
+TS=
+(
+
+)
+```
 ## 4. Contributions
 
 * v2.1.0: 
