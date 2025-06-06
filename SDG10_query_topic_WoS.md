@@ -31,7 +31,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -46,7 +46,7 @@ TS=
 >
 > 10.2.1 Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -61,7 +61,7 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -78,7 +78,7 @@ TS=
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -108,7 +108,7 @@ TS=
 >
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -129,7 +129,7 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -144,7 +144,7 @@ TS=
 >
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -159,7 +159,7 @@ TS=
 >
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -174,7 +174,7 @@ TS=
 >
 > 10.c.1 Remittance costs as a proportion of the amount remitted
 > 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=

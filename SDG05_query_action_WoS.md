@@ -34,14 +34,78 @@ Acronyms used:
 >
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
-This target is about 
+This target is interpreted to cover research about:
+- ending discrimination against women and girls
+- strengthening and securing legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
+
+We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
+https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
+
+Sex/gender?
+
+
+This query consist of x phrases. 
+
+#### Phrase 1 
+
+This phrase is about ending discrimination against women and girls. The general structure is action + discrimination + women & girls
 
 ```py
 TS=
 (
-
+    (
+        (
+        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" 
+        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+        OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
+        )    
+        NEAR/5
+        (
+         ("discriminat*" OR "exclusion" OR "dispar*" OR "bias*") OR
+             (
+                ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+                NEAR/5
+                ("human right*" OR "freedom*")
+            )
+        ) 
+        NEAR/5 
+        (*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "transgender*")
+        )
+    ) 
 )
 ```
+
+
+#### Phrase 2
+
+This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex
+
+```py
+TS=
+(
+    (
+        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR
+        "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+        ) 
+        NEAR/5
+        (
+            ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+            NEAR/5
+            (             
+               ("equality*" OR "discriminat*" OR "exclusion" OR "dispar*" OR "bias*")
+                NEAR/5 
+                ("sex*" OR "gender*" OR "transgender*" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*")
+            )
+            
+        )
+    )
+)
+```
+
 
 ### Target 5.2
 

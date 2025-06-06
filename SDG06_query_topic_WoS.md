@@ -31,7 +31,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -46,7 +46,7 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -63,7 +63,7 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -80,7 +80,7 @@ TS=
 >
 > 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -112,7 +112,7 @@ TS=
 >
 > 6.6.1 Change in the extent of water-related ecosystems over time
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -127,7 +127,7 @@ TS=
 >
 > 6.a.1 Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
@@ -142,7 +142,7 @@ TS=
 >
 > 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
 
-This target is about 
+This target is interpreted to cover research about 
 
 ```py
 TS=
