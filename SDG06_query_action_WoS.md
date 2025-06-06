@@ -62,8 +62,9 @@ As it is especially related to women and 6.2 covers paying attention to women et
 Although 6.2 is about sanitation & hygiene, not drinking water.
 Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
 
-Even in 6.2 it is difficult to include in an action phrase *prevent/decrease + women fetching water* sounds harsh/strange.
-Should we use it only in topic phrases? 
+Even in 6.2 suitable action terms are sparce *prevent/decrease + women fetching water* sounds harsh/strange.
+"Removing inequalities" is ok, but would need more broader set of action terms to cover all the papers.
+Must we have action terms? Could the action phrease also be searching for any research about women collecting water? 
 
 ```
 
@@ -250,7 +251,9 @@ The elements of the phrase are *remove inequalities + collecting/fetching water 
 ????
 
 Should phrase 4 be here? Difficult to place in 6.1 but should be somewhere.
-
+Suitable action terms are sparce *prevent/decrease + women fetching water* sounds harsh/strange.
+"Removing inequalities" is ok, but would need more broader set of action terms to cover all the papers.
+Must we have action terms? Could the action phrease also be searching for any research about women collecting water? 
 
 ```
 
