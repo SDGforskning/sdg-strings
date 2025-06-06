@@ -61,7 +61,7 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about eliminating legislation and other practices that increase inequality.
 
 ```py
 TS=
@@ -78,7 +78,7 @@ TS=
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities. The aim is also to find research on how to get these practices to be the default.
 
 ```py
 TS=
@@ -92,6 +92,8 @@ TS=
 > **10.5 Improve the regulation and monitoring of global financial markets and institutions and strengthen the implementation of such regulations**
 >
 > 10.5.1 Financial Soundness Indicators
+
+This target is interpreted to cover research about improving the regulation of global financial markets and institutions.
 
 This query consists of X phrases.
 
@@ -108,7 +110,7 @@ TS=
 >
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about enhancing the decision-making powers of developing countries in international economic institutions, as well as developing institutions that function in a more accountable manner.
 
 ```py
 TS=
@@ -129,7 +131,7 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about implementing policies that ensure safe, responsible and financially sustainable migration.
 
 ```py
 TS=
@@ -144,7 +146,7 @@ TS=
 >
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about extensive implementation of a special principle on zero tariffs in order to increase export opportunities of developing countries, in accordance with the World Trade Organisation agreements.
 
 ```py
 TS=
@@ -159,7 +161,7 @@ TS=
 >
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about focusing development assistance and financial flows to the official channels and ensuring they are targeted to where the need is greatest, in accordance with the national plans of the recipient countries.
 
 ```py
 TS=
@@ -174,7 +176,7 @@ TS=
 >
 > 10.c.1 Remittance costs as a proportion of the amount remitted
 > 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about reducing the transaction cost of migrant remittances and eliminating corridors of high costs.
 
 ```py
 TS=
