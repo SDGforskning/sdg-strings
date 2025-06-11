@@ -48,6 +48,8 @@ TS=
 
 This target is interpreted to cover research about enabling everyone to participate in societal activities. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
 
+This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016).
+
 ```py
 TS=
 (
@@ -61,7 +63,9 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about eliminating legislation and other practices that increase inequality.
+This target is interpreted to cover research about 
+* ensuring equal opportunities and reduce inequalities???
+* eliminating legislation and other practices that increase inequality.
 
 ```py
 TS=
@@ -166,7 +170,7 @@ This target is interpreted to cover research about
 * ensuring development assistance and financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-We divided this interpretation to place focus on using official channels for aid as well as targeting it properly.  We also feel the need to put some emphasis on localization as per portrayed in <a href="#f3">
+We divided this interpretation to place focus on using official channels for aid as well as targeting it properly.  We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development.
 
 ```py
 TS=
@@ -198,9 +202,11 @@ Specialist input:
 
 ## 5. Footnotes
 
+Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-<span id="f3">United Nations. (2024).</span>Inter-Agency Policy Brief - Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda
+United Nations (2024). Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
 
