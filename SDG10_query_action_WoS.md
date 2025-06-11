@@ -166,7 +166,7 @@ This target is interpreted to cover research about
 * ensuring development assistance and financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (2024) https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda
+This interpretation was divided into three focus points to... We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (2024) https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda
 
 ```py
 TS=
