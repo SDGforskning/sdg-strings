@@ -82,7 +82,9 @@ TS=
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities. The aim is also to find research on how to get these practices to be the default.
+This target is interpreted to cover research about 
+* promoting the implementation of existing or new social and economic policy practices to reduce inequalities
+* how to get inequality reducing practices to be the default
 
 ```py
 TS=
@@ -117,6 +119,8 @@ TS=
 This target is interpreted to cover research about 
 * enhancing the decision-making powers of developing countries in international economic institutions
 * developing institutions that function in a more accountable manner
+
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
 
 ```py
 TS=
@@ -172,7 +176,7 @@ This target is interpreted to cover research about
 * ensuring development assistance and financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-We divided this interpretation to place focus on using official channels for aid as well as targeting it properly.  We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development.
+We divided this interpretation to place focus on using official channels for aid as well as targeting it properly.  We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
 
 ```py
 TS=
@@ -205,6 +209,8 @@ Specialist input:
 ## 5. Footnotes
 
 Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+
+UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
