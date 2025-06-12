@@ -114,7 +114,9 @@ TS=
 >
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about enhancing the decision-making powers of developing countries in international economic institutions, as well as developing institutions that function in a more accountable manner.
+This target is interpreted to cover research about 
+* enhancing the decision-making powers of developing countries in international economic institutions
+* developing institutions that function in a more accountable manner
 
 ```py
 TS=
