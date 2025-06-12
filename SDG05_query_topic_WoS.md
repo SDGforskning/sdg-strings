@@ -175,8 +175,8 @@ This target is interpreted to cover research about:
 Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
 Sources used for finding terms:  
-  * Indicator metadata 5.5.2 <a href="#f2li">(xxx, 20xx)</a> https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf refers to ISCO-08, which lists useful terms to cover `managerial positions`: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf 
-* Monitoring Gender Equality and the Empowerment of Women and Girls in the 2030 Agenda for Sustainable Development <a href="#f3li">(UN Women, 2015)</a>, for terms about leadership positions
+ * Indicator metadata 5.5.2 <a href="#f2li">(UN Statistics Division, 2025)</a> refers to ISCO-08, which lists useful terms to cover _managerial positions_ <a href="#f5li">(ILO, 2012)</a>.
+* Monitoring Gender Equality and the Empowerment of Women and Girls in the 2030 Agenda for Sustainable Development <a href="#f3li">(UN Women, 2015)</a>, for terms about leadership positions.
 
 
 
@@ -341,12 +341,12 @@ This target is interpreted to cover research about the use of enabling tecnology
 
 As both the target and the indicator emphasize ICT, we have an extra focus on ICT. However, all forms of enabling technologies may be included as relevant as long as they promote the empowerment of women.
 
-United Nations' "Women’s Empowerment, SDGs and ICT", https://www.unapcict.org/sites/default/files/inline-files/Module_C1.pdf, defines ICT as: "ICT refers to all technology for creating, manipulating, storing, managing, sending and receiving information. ICT encompasses a wide range of multimedia and communication
+"Women’s Empowerment, SDGs and ICT" from UN APCICT defines ICT as: "ICT refers to all technology for creating, manipulating, storing, managing, sending and receiving information. ICT encompasses a wide range of multimedia and communication
 tools. It can include, but is not limited to, old media such as radio, television and telephone,
 as well as new media networks (fixed or wireless Internet), hardware (computers, mobile
-phones, tablets, etc.) and software (social media services, multimedia applications, mobile apps, etc.)" (p. 31)
+phones, tablets, etc.) and software (social media services, multimedia applications, mobile apps, etc.)" <a href="#f4li">(UN APCICT, 2016, p.31)</a>. 
 
-For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF: (https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf )
+For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>.    
 
 This query consists of 1? phrases......
 
@@ -368,9 +368,9 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c (https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf ) we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
+This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c <a href="#f6li">(UN Statistics, 2023)</a>    we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
 
-For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF: (https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf )
+For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>.     
 
 This query consists of X phrases......
 
@@ -404,17 +404,28 @@ Specialist input:
 
 ## 5. Footnotes
 
+<span id="f5li">ILO. (2012).</span> *International Standard Classification of Occupations: Structure, group definitions and correspondence tables: ISCO–08, Volume I*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf [Accessed 2025.06.12]
+
+<span id="f1li">UN. (1995).</span> *Report of the Fourth World
+Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
+
+<span id="f4li">UN APCICT. (2016).</span> *Women’s Empowerment, SDGs and ICT*.  https://www.unapcict.org/sites/default/files/inline-files/Module_C1.pdf [Accessed 2025.06.05]
+
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
 
 <span id="f2">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
 
 <span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
 
-<span id="f1li">UN. (1995).</span> *Report of the Fourth World
-Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
+<span id="f6li">UN Statistics Division. (2023).</span> *SDG indicator metadata*. [5.c.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf [Accessed 2025.06.05]
 
-<span id="f2li">UN. (xxxx).</span> *title   ... *. https://www.un.....  [Accessed 2025.06.05]
+
+<span id="f2li">UN Statistics Division. (2025).</span> *SDG indicator metadata*. [5.5.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf [Accessed 2025.06.05]
 
 <span id="f3li">UN Women. (2015).</span> *Monitoring Gender Equality and the Empowerment of women and girls in the 2030 Agenda for Sustainable Development: Opportunities and Challenges: Position Paper*. https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf    [Accessed 2025.06.05]
 
-<span id="f4li">xxx. (xxxx).</span> *title... *. https://www.u... [Accessed 2025.06.05]
+<span id="f7li">UNICEF. (2017).</span> *Gender Equality: Glossary of Terms and Concepts*. https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf [Accessed 2025.06.05]
+
+
+
+
