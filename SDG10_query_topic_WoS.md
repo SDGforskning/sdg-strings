@@ -169,10 +169,11 @@ TS=
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
 This target is interpreted to cover research about 
-    * focusing development assistance and financial flows to the official channels
-    * ensuring development assistance and financial flows are targeted to where the need is greatest
-    * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
-
+    * the official channels for development assistance and financial flows
+    * the targeting of development assistance and financial flows
+    * the national, regional and local plans of the recipient countries for the division of development assistance and financial flows
+    
+We divided this interpretation to place focus on using official channels for aid as well as targeting it properly. We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
 
 ```py
 TS=
