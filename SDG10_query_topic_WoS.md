@@ -153,7 +153,7 @@ TS=
 >
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about a special principle on zero tariffs for developing countries, in accordance with the World Trade Organisation agreements.
 
 ```py
 TS=
