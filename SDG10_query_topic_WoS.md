@@ -80,7 +80,8 @@ TS=
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about existing or new social and economic policy practices that reduce inequalities.
+  
 
 ```py
 TS=
