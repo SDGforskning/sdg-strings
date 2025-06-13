@@ -188,7 +188,7 @@ TS=
 >
 > 10.c.1 Remittance costs as a proportion of the amount remitted
 > 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about the transaction costs of migrant remittances.
 
 ```py
 TS=
