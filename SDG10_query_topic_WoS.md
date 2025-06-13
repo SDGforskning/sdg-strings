@@ -31,7 +31,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about the income growth rates of the poorest population.
 
 ```py
 TS=
