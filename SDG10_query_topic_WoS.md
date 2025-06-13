@@ -63,7 +63,7 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about legislation and other practices that increase inequality.
 
 ```py
 TS=
