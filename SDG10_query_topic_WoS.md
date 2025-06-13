@@ -46,7 +46,9 @@ TS=
 >
 > 10.2.1 Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about the social, economic and political inclusion of all. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
+
+This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016).
 
 ```py
 TS=
