@@ -114,6 +114,10 @@ TS=
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
 This target is interpreted to cover research about 
+   * the decision-making powers of developing countries in international economic institutions
+   * the accountable modes of operation in economic institutions
+
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
 
 ```py
 TS=
