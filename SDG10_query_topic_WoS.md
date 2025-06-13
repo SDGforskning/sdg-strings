@@ -138,7 +138,7 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about safe, responsible and financially sustainable migration policies.
 
 ```py
 TS=
