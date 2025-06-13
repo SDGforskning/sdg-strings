@@ -169,6 +169,10 @@ TS=
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
 This target is interpreted to cover research about 
+    * focusing development assistance and financial flows to the official channels
+    * ensuring development assistance and financial flows are targeted to where the need is greatest
+    * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
+
 
 ```py
 TS=
