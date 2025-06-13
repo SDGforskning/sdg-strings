@@ -96,6 +96,8 @@ TS=
 >
 > 10.5.1 Financial Soundness Indicators
 
+This target is interpreted to cover research about the regulation of global financial markets and institutions.
+
 This query consists of X phrases.
 
 ```py
