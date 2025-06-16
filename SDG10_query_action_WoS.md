@@ -37,7 +37,6 @@ Acronyms used:
 
 This target is interpreted as to cover research about how to permanently raise the income growth rate of the poorest population above the national average.
 
-Why is the limit set to the bottom 40 per cent? Why is it important for the income growth rate to be higher than the national average? How is the income growth rate calculated?
 
 ```py
 TS=
@@ -56,7 +55,6 @@ This target is interpreted to cover research about enabling everyone to particip
 
 This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016). Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 (United Nations 2024).
 
-What type of actions do social, economic and political inclusion cover?
 
 ```py
 TS=
