@@ -33,6 +33,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about the income growth rates of the poorest population.
 
+Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
+
 ```py
 TS=
 (
