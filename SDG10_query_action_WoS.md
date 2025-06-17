@@ -38,6 +38,8 @@ Acronyms used:
 This target is interpreted as to cover research about how to permanently raise the income growth rate of the poorest population above the national average.
 
 
+Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
+
 ```py
 TS=
 (
@@ -217,6 +219,8 @@ Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. I
 UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
+
+UN Statistics Division (2024a). SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
