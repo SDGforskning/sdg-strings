@@ -26,6 +26,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 Acronyms used:
 
     UN DESA: UN Department of Economic and Social Affairs
+    IHRL: International Human Rights Law
 
 ## 3. Targets
 
@@ -36,7 +37,6 @@ Acronyms used:
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
 This target is interpreted as to cover research about how to permanently raise the income growth rate of the poorest population above the national average.
-
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
 
@@ -74,6 +74,12 @@ TS=
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
 This target is interpreted to cover research about eliminating legislation and other practices that increase inequality.
+
+"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that
+is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or ef-
+fect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human
+rights and fundamental freedoms in the political, economic, social, cultural or any other field of public
+life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
 ```py
 TS=
@@ -227,6 +233,8 @@ UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goal
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
 UN Statistics Division (2024a). SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
+
+UN Statistics Division (2024b). SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
