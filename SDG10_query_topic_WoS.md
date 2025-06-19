@@ -69,6 +69,12 @@ TS=
 
 This target is interpreted to cover research about legislation and other practices that increase inequality.
 
+"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that
+is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or ef-
+fect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human
+rights and fundamental freedoms in the political, economic, social, cultural or any other field of public
+life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
+
 ```py
 TS=
 (
