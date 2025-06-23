@@ -63,8 +63,9 @@ Although 6.2 is about sanitation & hygiene, not drinking water.
 Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
 
 Even in 6.2 suitable action terms are sparce *prevent/decrease + women fetching water* sounds harsh/strange.
-"Removing inequalities" is ok, but would need more broader set of action terms to cover all the papers.
-Must we have action terms? Could the action phrease also be searching for any research about women collecting water? 
+"Removing inequalities" is ok, but would need a broader set of action terms to cover all the papers.
+Must we have action terms? Could the action phrease also be searching for any research about women collecting water?
+Or should collecting water be included only in the topic approach?
 
 ```
 
