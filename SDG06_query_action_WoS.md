@@ -143,7 +143,7 @@ This phrase aims to find research about providing access to adequate and safe sa
 
 The phrase is structured partly similarly to the SDG 11 target 11.1 phrase 2 about access to basic services.
 
-The elements of the phrase are *action + access + adequate/safe/basic/improved + sanitation/hygiene* + service/facility  
+The elements of the phrase are *action + access + safely managed sanitation services OR adequate/safe/basic/improved + sanitation/hygiene services*  
 
 
 ```py
@@ -171,7 +171,7 @@ TS=
         OR 
           ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation")
 	      OR
-	     (
+	(
           ("basic" OR "adequate" OR "safe" OR "improved")
           NEAR/5
             (
@@ -183,7 +183,7 @@ TS=
               ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
               NEAR/3 ("human excreta" OR "faecal sludge" OR "wastewater")
             )
-	      )
+	)
 	)
 	    
 )
