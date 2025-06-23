@@ -149,7 +149,7 @@ The elements of the phrase are *action + access + adequate/safe/basic/improved +
 ```py
 TS=
 (
-    (
+  (
       (
         ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
         OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
@@ -160,7 +160,7 @@ TS=
             ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
       )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
-    )
+  )
     NEAR/15
         ("safely managed sanitation services" 
         OR "improved sanitation facilities" 
@@ -184,9 +184,9 @@ TS=
               NEAR/3 ("human excreta" OR "faecal sludge" OR "wastewater")
             )
 	      )
-	      )
+	)
 	    
-  )
+)
 ```
 
 #### Phrase 2
