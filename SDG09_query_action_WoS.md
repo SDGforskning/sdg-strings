@@ -102,7 +102,11 @@ TS=
 
 This target is interpreted to cover research about 
 
-```py
+* Modernizing or upgrading infrastructure and industry to ensure sustainability, with attention to efficient resource use and improved utilization of raw materials and water.
+* Adoption of environmentally friendly and low-pollution technologies, such as renewable energy, recycling, and low-emission production.
+
+
+This query consists of X phrases.
 TS=
 (
 
