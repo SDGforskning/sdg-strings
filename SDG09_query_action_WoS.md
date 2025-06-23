@@ -43,6 +43,7 @@ This target is interpreted to cover research about
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
 This query consists of X phrases.
+```py
 TS=
 (
 
@@ -90,6 +91,7 @@ This target is interpreted to cover research about
 The target is based on the idea of entrepreneurship as a development policy; supporting small enterprises promotes employment, innovation, and economic activity, especially in developing countries.
 
 This query consists of X phrases.
+```py
 TS=
 (
 
