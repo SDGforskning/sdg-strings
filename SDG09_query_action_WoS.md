@@ -146,6 +146,8 @@ TS=
 
 This target is interpreted to cover research about 
 
+* (Sustainable and resilient) infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support and technical support.
+
 ```py
 TS=
 (
