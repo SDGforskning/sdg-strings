@@ -100,6 +100,12 @@ TS=
 >
 > 9.5.2 Researchers (in full-time equivalent) per million inhabitants
 
+This target is interpreted to cover research about 
+
+* Enhancing/increasing scientific research,  
+* Upgrading technological capabilities of industrial sectors 
+* (encouraging innovation, increasing research and development workers, increasing public and private funding/investing) 
+
 This query consists of X phrases.
 
 ```py
