@@ -69,6 +69,7 @@ This target is interpreted to cover research about
 This target is based on the idea of economic structural transformation, recognizing that development requires a shift from agriculture-based economies toward industrial and service sectors. It also acknowledges that industrial production has been concentrated in wealthy countries and aims to distribute it more equitably across the world.
 
 This query consists of X phrases.
+```py
 TS=
 (
 
@@ -111,6 +112,7 @@ This target is interpreted to cover research about
 
 
 This query consists of X phrases.
+```py
 TS=
 (
 
