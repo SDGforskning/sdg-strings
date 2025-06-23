@@ -119,7 +119,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, we have built the search phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate as it has been defined in the found research. 
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate also as it has been defined in the research. 
 
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
