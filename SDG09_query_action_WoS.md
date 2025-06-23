@@ -163,6 +163,8 @@ TS=
 
 This target is interpreted to cover research about 
 
+* Supporting technology development, supporting research and innovation in developing countries. 
+
 ```py
 TS=
 (
