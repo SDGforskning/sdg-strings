@@ -49,6 +49,7 @@ TS=
 )
 ```
 
+
 ### Target 9.2
 
 > **9.2 Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry’s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries**
