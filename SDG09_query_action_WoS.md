@@ -180,6 +180,9 @@ TS=
 > 
 This target is interpreted to cover research about 
 
+* Increasing access to information and communication technology 
+* Providing universal and affordable access to Internet in least development countries 
+
 ```py
 TS=
 (
