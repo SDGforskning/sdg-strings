@@ -162,17 +162,29 @@ TS=
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
     )
     NEAR/15
-        ("safely managed sanitation services"
-	OR
-	(
+        ("safely managed sanitation services" 
+        OR "improved sanitation facilities" 
+        OR "wet sanitation technolog*" 
+        OR 
+          ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*"))
+        OR "dry sanitation technologies" 
+        OR 
+          ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation")
+	      OR
+	     (
           ("basic" OR "adequate" OR "safe" OR "improved")
           NEAR/5
             (
               ("sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
               NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
+            ) 
+            OR 
+            (
+              ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
+              NEAR/3 ("human excreta" OR "faecal sludge" OR "wastewater")
             )
-	)
-	)
+	      )
+	      )
 	    
   )
 ```
