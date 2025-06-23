@@ -36,7 +36,13 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about 
 
-```py
+* Creating and improving quality, reliable, environmentally sustainable and resilient infrastructure to support economic development and human well-being.
+* Constructing and developing local and cross-border infrastructure solutions, such as transportation networks.
+* Developing infrastructure solutions that are accessible, equitable and affordable for all.
+
+This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
+
+This query consists of X phrases.
 TS=
 (
 
@@ -53,7 +59,13 @@ TS=
 
 This target is interpreted to cover research about 
 
-```py
+* Inclusive industrialization, ensuring that the benefits of industrial development are shared beyond the privileged people and regions.
+* Promotion of sustainable industrialization, advancing environmentally friendly industrialization that utilizes clean technologies, minimizes pollution and emissions, and avoids overconsumption of resources.
+* Increasing the share of industry in both GDP and employment, based on the idea that industry can drive productivity and raise living standards.
+
+This target is based on the idea of economic structural transformation, recognizing that development requires a shift from agriculture-based economies toward industrial and service sectors. It also acknowledges that industrial production has been concentrated in wealthy countries and aims to distribute it more equitably across the world.
+
+This query consists of X phrases.
 TS=
 (
 
