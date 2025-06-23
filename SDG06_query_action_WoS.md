@@ -121,7 +121,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 
 However, we have built the search phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate as it has been defined in the found research. 
 
-
+Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
 
 ```
@@ -141,14 +141,40 @@ As the target is about equal access and a particular focus is on women, girls an
 
 This phrase aims to find research about providing access to adequate and safe sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
 
-The elements of the phrase are *action + access + adequate/safe/basic/improved + service/facility + sanitation/hygiene* 
+The phrase is structured partly similarly to the SDG 11 target 11.1 phrase 2 about access to basic services.
+
+The elements of the phrase are *action + access + adequate/safe/basic/improved + sanitation/hygiene* + service/facility  
 
 
 ```py
 TS=
 (
-
-)
+    (
+      (
+        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+        OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+        OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
+        OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR 	"combat*" OR "declin*"
+        )
+        NEAR/5
+            ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+      )
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+    )
+    NEAR/15
+        ("safely managed sanitation services"
+	OR
+	(
+          ("basic" OR "adequate" OR "safe" OR "improved")
+          NEAR/5
+            (
+              ("sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
+              NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
+            )
+	)
+	)
+	    
+  )
 ```
 
 #### Phrase 2
