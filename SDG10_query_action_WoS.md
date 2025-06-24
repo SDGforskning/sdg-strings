@@ -110,6 +110,9 @@ TS=
 "resist*"
 "prohibit*"
 
+"discriminator*"
+"inequalit*"
+
 "law$"
 "policy" OR "policies"
 "regulat*"
@@ -121,6 +124,13 @@ TS=
 "framework$"
 "instrument$"
 "governance"
+"practice*"
+"action*"
+
+"appropriat*"
+"equal*"
+"anti discriminat*"
+"anti-discriminat*"
 
 "increas*"
 "strengthen*"
