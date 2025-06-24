@@ -72,88 +72,13 @@ Social inclusion means improving opportunities for individuals and groups to tak
 
 ```py
 TS=
-(("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
-    OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" 
-    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
-    )
-
-"increas*"
-"strengthen*"
-"improv*"
-"restor*"
-"enhanc*"
-"better"
-"more efficient"
-"higher"
-"upgrad*"
-"scal* up"
-"build*" ("build* capacity" / "capacity building" / "capacity development")
-"expand" OR "expansion*"
-"accelerat*"
-"advance" OR "advancing"
-"develop" OR "developing"
-"empower*"
-"promot*"
-"ensure"
-"attain*"
-"achiev*" - note, see lower for own section on establishing/achieving
-
-"social* inclusi*"
-"economic* inclusi*"
-"political* inclusi*"
-"societal activit*"
-
-"decreas*"
-"minimi*"
-"reduc*"
-"restrict*"
-"limit$"
-"limiting"
-"limited"
-"mitigat*"
-"degrad*"
-"tackl*"
-"alleviat*"
-"lowering"
-"lower$"
-"lowered"
-"fight*"
-"combat*"
-"declin*"
-"stop*"
-"end"
-"ends"
-"ended"
-"ending"
-"remov*"
-"eliminat*"
-"eradicat*"
-"avoid*"
-"prevent*"
-"combat*"
-"cure"
-"halt*"
-"resist*"
-"overcome"
-
-"horizontal inequalit*"
-"social* exclusi*"
-"economic* exclusi*"
-"political* exclusi*"
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "accelerat*" OR "advanc*" OR "develop*" OR "empower*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*")
+NEAR
+("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal activit*"))
+OR
+(("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome")
+NEAR
+("horizontal inequalit*" OR "social* exclusi*" OR "economic* exclusi*" OR "political* exclusi*"))
 )
 ```
 
