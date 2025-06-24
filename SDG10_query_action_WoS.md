@@ -108,6 +108,7 @@ TS=
 "cure"
 "halt*"
 "resist*"
+"prohibit*"
 
 "law$"
 "policy" OR "policies"
@@ -120,6 +121,23 @@ TS=
 "framework$"
 "instrument$"
 "governance"
+
+"increas*"
+"strengthen*"
+"improv*"
+"restor*"
+"enhanc*"
+"better"
+"more efficient"
+"higher"
+"upgrad*"
+"scal* up"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+"develop" OR "developing"
+"promot*"
 
 )
 ```
