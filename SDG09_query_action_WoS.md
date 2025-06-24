@@ -45,7 +45,9 @@ This target talks about the comprehensive development of functional and sustaina
 Target is closely related to SDG 3.6 and SDG 11.2. (“Some SDGs are directly connected to sustainable transport through targets and indicators, such as SDG 3.6 on road safety, SDG 9.1 on infrastructure, and SDG 11.2 on providing access to safe, affordable, accessible, and sustainable transport systems for all and expanding public transport.” /United Nations. Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. 2021.)
 
 
-This query consists of X phrases.
+This query consists of 1 phrase. 
+The basic structure is action + afford/stable/sustainable/resilient/equitable/etc + infrastructure/roads/rail/airports/waterways/ports/energy infrastructure/waterinfrasructure/sanitation infrastructure?
+
 ```py
 TS=
 (
