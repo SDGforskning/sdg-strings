@@ -94,7 +94,32 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 ```py
 TS=
-(
+("stop*"
+"end"
+"ends"
+"ended"
+"ending"
+"remov*"
+"eliminat*"
+"eradicat*"
+"avoid*"
+"prevent*"
+"combat*"
+"cure"
+"halt*"
+"resist*"
+
+"law$"
+"policy" OR "policies"
+"regulat*"
+"legal*"
+"legislat*"
+"agreement$"
+"treaty" OR "treaties"
+"strateg*"
+"framework$"
+"instrument$"
+"governance"
 
 )
 ```
