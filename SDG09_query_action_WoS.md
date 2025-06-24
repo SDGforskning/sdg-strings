@@ -42,6 +42,9 @@ This target is interpreted to cover research about
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
+Target is closely related to SDG 3.6 and SDG 11.2. (“Some SDGs are directly connected to sustainable transport through targets and indicators, such as SDG 3.6 on road safety, SDG 9.1 on infrastructure, and SDG 11.2 on providing access to safe, affordable, accessible, and sustainable transport systems for all and expanding public transport.” /United Nations. Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. 2021.)
+
+
 This query consists of X phrases.
 ```py
 TS=
