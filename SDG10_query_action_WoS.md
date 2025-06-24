@@ -244,7 +244,29 @@ This query consists of X phrases.
 
 ```py
 TS=
-(
+("increas*"
+"strengthen*"
+"improv*"
+"restor*"
+"enhanc*"
+"better"
+"more efficient"
+"higher"
+"upgrad*"
+"scal* up"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+"develop" OR "developing"
+"promot*"
+
+"manag*"
+"control*"
+"regulat*"
+"legislat*"
+"govern*"
+"monitor*"
 
 )
 ```
