@@ -267,7 +267,8 @@ TS=
 "legislat*"
 "govern*"
 "monitor*"
-
+"surveillanc*"
+"securing"
 )
 ```
 
