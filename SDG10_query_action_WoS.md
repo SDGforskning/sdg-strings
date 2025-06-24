@@ -269,6 +269,8 @@ TS=
 "monitor*"
 "surveillanc*"
 "securing"
+
+("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money") NEAR "("institution*" OR "market*")
 )
 ```
 
