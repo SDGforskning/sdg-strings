@@ -36,7 +36,7 @@ Acronyms used:
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is interpreted as to cover research about how to permanently raise the income growth rate of the poorest population above the national average.
+This target is interpreted as to cover research about how to raise and sustain the income growth rate of the poorest population.
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
 
@@ -44,7 +44,13 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-(
+((("bottom 40%" or "bottom 40 percent" or "bottom 40 per cent" or "the poor" or "poverty" or "the poorest" or "rural poor" or "urban poor" or "working poor" or "destitute$" or "low income" or "low-income" or "disadvantaged" or "unemployed") NEAR/3 ("household$" OR "people" OR "family" or "families"))
+
+("income growth" or "income growth rate" or "per capita consumption" or "per capita income" or "welfare aggregate" or "shared prosperity" or "welfare distribution")
+
+"rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "standardi*" or "regulari*" or "consolidat*" 
+
+or "stabili*" or "normali*" or "uphold*" or "or "stabili*" or "normali*" or "uphold" or "stable" or "fixed" or "perpetual*" or "lasting" or "enduring"
 
 )
 ```
