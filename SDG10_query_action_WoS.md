@@ -241,7 +241,7 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is interpreted to cover research about ensuring safe, responsible and financially sustainable migration and mobility of people.
+This target is interpreted to cover research about ensuring safe, responsible and regular migration and mobility of people.
 
 ```py
 TS=
@@ -256,7 +256,7 @@ TS=
 >
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
-This target is interpreted to cover research about extensive implementation of a special principle on zero tariffs in order to increase export opportunities of developing countries, in accordance with the World Trade Organisation agreements.
+This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
 
 ```py
 TS=
@@ -272,11 +272,10 @@ TS=
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
 This target is interpreted to cover research about 
-* focusing development assistance and financial flows to the official channels
-* ensuring development assistance and financial flows are targeted to where the need is greatest
+* ensuring official development assistance (ODA) and financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-We divided this interpretation to place focus on using official channels for aid as well as targeting it properly.  We also feel the need to put some emphasis on localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
+We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
 
 ```py
 TS=
