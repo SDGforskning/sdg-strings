@@ -112,6 +112,7 @@ TS=
 
 "discriminator*"
 "inequalit*"
+"harass*"
 
 "law$"
 "policy" OR "policies"
@@ -129,6 +130,7 @@ TS=
 
 "appropriat*"
 "equal*"
+"equal opportunit*"
 "anti discriminat*"
 "anti-discriminat*"
 
