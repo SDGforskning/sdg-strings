@@ -166,8 +166,69 @@ This target is interpreted to cover research about promoting the implementation 
 
 ```py
 TS=
-(
+("establish*"
+"propose*"
+"design*"
+"implement*"
+"plan"
+"plans"
+"planned"
+"planning"
+"adopt*"
+"introduc*"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"architect"
+"develop" OR "development"
 
+"increas*"
+"strengthen*"
+"improv*"
+"restor*"
+"enhanc*"
+"better"
+"more efficient"
+"higher"
+"upgrad*"
+"scal* up"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+"develop" OR "developing"
+"promot*"
+
+"law$"
+"policy" OR "policies"
+"regulat*"
+"legal*"
+"legislat*"
+"agreement$"
+"treaty" OR "treaties"
+"strateg*"
+"framework$"
+"instrument$"
+"governance"
+"practice*"
+"action*"
+
+"fiscal*"
+"wage*"
+"social protect*"
+"economic*"
+
+"decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
+
+"discriminator*"
+"inequalit*"
+"harass*"
+
+"rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "consolidat*"
+
+"appropriat*"
+"equal*"
+"equal opportunit*"
+"anti discriminat*"
+"anti-discriminat*"
 )
 ```
 
