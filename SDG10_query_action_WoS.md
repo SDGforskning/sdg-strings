@@ -184,9 +184,7 @@ TS=
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is interpreted to cover research about 
-* promoting the implementation of existing or new social and economic policy practices to reduce inequalities
-* how to get inequality reducing practices to be the default
+This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
 ```py
 TS=
@@ -201,7 +199,7 @@ TS=
 >
 > 10.5.1 Financial Soundness Indicators
 
-This target is interpreted to cover research about improving the regulation of global financial markets and institutions.
+This target is interpreted to cover research about improving the regulation and monitoring of global financial markets and institutions.
 
 This query consists of X phrases.
 
@@ -235,7 +233,7 @@ TS=
 
 > **10.7 Facilitate orderly, safe, regular and responsible migration and mobility of people, including through the implementation of planned and well-managed migration policies**
 >
-> 10.7.1 Recruitment cost borne by employee as a proportion of montlhy income earned in country of destination
+> 10.7.1 Recruitment cost borne by employee as a proportion of monthly income earned in country of destination
 >
 > 10.7.2 Number of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people
 >
@@ -243,7 +241,7 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is interpreted to cover research about implementing policies that ensure safe, responsible and financially sustainable migration.
+This target is interpreted to cover research about ensuring safe, responsible and financially sustainable migration and mobility of people.
 
 ```py
 TS=
