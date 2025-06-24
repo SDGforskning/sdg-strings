@@ -161,13 +161,9 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about eliminating legislation and other practices that increase inequality.
+This target is interpreted to cover research about eliminating discriminatory legislation, policies and other practices and promote ones that ensure equal opportunity and reduce inequalities of outcome.
 
-"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that
-is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or ef-
-fect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human
-rights and fundamental freedoms in the political, economic, social, cultural or any other field of public
-life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
+"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
 ```py
 TS=
@@ -216,9 +212,7 @@ TS=
 >
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about 
-* enhancing the decision-making powers of developing countries in international economic institutions
-* developing institutions that function in a more accountable manner
+This target is interpreted to cover research about enhancing the representation and decision-making powers of developing countries in international economic institutions.
 
 In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
 
