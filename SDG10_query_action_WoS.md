@@ -27,6 +27,8 @@ Acronyms used:
 
     UN DESA: UN Department of Economic and Social Affairs
     IHRL: International Human Rights Law
+    ODA: Official Development Assistance
+    SDT: Special and Differential Treatment
 
 ## 3. Targets
 
