@@ -184,7 +184,7 @@ TS=
 > 
 This target is interpreted to cover research about 
 
-* Increasing access to information and communication technology 
+* Increasing access to information and communication technology in least development countries
 * Providing universal and affordable access to Internet in least development countries 
 
 ```py
