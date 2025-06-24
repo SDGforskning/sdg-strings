@@ -61,7 +61,7 @@ or "stabili*" or "normali*" or "uphold*" or "or "stabili*" or "normali*" or "uph
 >
 > 10.2.1 Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about enabling everyone to participate in societal activities. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
+This target is interpreted to cover research about enabling and promoting everyone to participate in social, economic and political activities. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
 
 This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016). Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 (United Nations 2024). A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target (Sharif 2024; World Bank Group 2025). For example, persons with disabilities and people of African descent experience significantly higher levels of poverty (United Nations 2018; World Bank Group 2025). 
 
@@ -70,8 +70,88 @@ Social inclusion means improving opportunities for individuals and groups to tak
 
 ```py
 TS=
-(
+(("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
+    OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+    OR "disabled" OR "disabilities" OR "disability"
+    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+    OR "unemployed" 
+    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+    OR "women" OR "woman" OR "girls" OR "girl"
+    OR "pregnant" OR "pregnancy" OR "maternity"
+    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+    OR "living with HIV" OR "living with AIDS"
+    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+    OR "indigenous group$"
+    )
 
+"increas*"
+"strengthen*"
+"improv*"
+"restor*"
+"enhanc*"
+"better"
+"more efficient"
+"higher"
+"upgrad*"
+"scal* up"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+"develop" OR "developing"
+"empower*"
+"promot*"
+"ensure"
+"attain*"
+"achiev*" - note, see lower for own section on establishing/achieving
+
+"social* inclusi*"
+"economic* inclusi*"
+"political* inclusi*"
+"societal activit*"
+
+"decreas*"
+"minimi*"
+"reduc*"
+"restrict*"
+"limit$"
+"limiting"
+"limited"
+"mitigat*"
+"degrad*"
+"tackl*"
+"alleviat*"
+"lowering"
+"lower$"
+"lowered"
+"fight*"
+"combat*"
+"declin*"
+"stop*"
+"end"
+"ends"
+"ended"
+"ending"
+"remov*"
+"eliminat*"
+"eradicat*"
+"avoid*"
+"prevent*"
+"combat*"
+"cure"
+"halt*"
+"resist*"
+"overcome"
+
+"horizontal inequalit*"
+"social* exclusi*"
+"economic* exclusi*"
+"political* exclusi*"
 )
 ```
 
