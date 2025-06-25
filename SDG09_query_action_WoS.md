@@ -138,7 +138,7 @@ This target is interpreted to cover research about
 * Upgrading technological capabilities of industrial sectors 
 * (encouraging innovation, increasing research and development workers, increasing public and private funding/investing) 
 
-SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2.  
+SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. The Sustainable Development Goals. Extended Report 2024. (2024) 
 
 This query consists of X phrases.
 
@@ -219,3 +219,4 @@ Specialist input:
 
 <span id="f4"> E-Handbook on Sustainable Development Goals Indicators (2024) https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
+<span id="f5"> The Sustainable Development Goals. Extended Report 2024. (2024) https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
