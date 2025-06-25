@@ -380,7 +380,31 @@ This target is interpreted to cover research about implementing the principle of
 
 ```py
 TS=
-(
+("implement*" or "establish*"
+"propose*"
+"design*"
+"implement*"
+"plan"
+"plans"
+"planned"
+"planning"
+"adopt*"
+"introduc*"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"architect"
+"develop" OR "development"
+
+"pathway$"
+"path$"
+"route"
+"roadmap"
+"towards"
+"way to"
+
+"overcome"
+"ensure"
+"attain*"
+"achiev*"
 
 )
 ```
