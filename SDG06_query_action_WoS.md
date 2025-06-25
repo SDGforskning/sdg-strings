@@ -264,14 +264,15 @@ AND ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
 This target is interpreted to cover research about 
+https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 * improving water quality
 * reducing the proportion of untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
 * increasing recycling and safe reuse of water
 * monitoring of water quality
 
-https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
-This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . 
+This target focuses on freshwater bodies. The ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . 
+
 The classification for wastewater generators is https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf (“UNstats2025)
 * domestic/households
 * industrial
