@@ -492,7 +492,7 @@ TS=
 
 "migrant*"
 remittance*
-
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome") NEAR "high cost*"
 )
 
 
