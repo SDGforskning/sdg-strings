@@ -417,7 +417,7 @@ This target is interpreted to cover research about
 
 We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
 
-It consists of 2 phrases.
+This query consists of 2 phrases.
 
 Phrase 1
 ```py
