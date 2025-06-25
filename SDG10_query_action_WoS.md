@@ -352,11 +352,13 @@ TS=
 
 ("secure" or "security" or "protect*" or "reliab*" or "stability" or "stable" or "safe" or "regular" or "responsible" or "orderly" or "planned" or "well-managed" or "well managed" or "well-planned" or "well planned" or "managed")
 
+
 ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome")
 
 ("risk$" or "hazard*" or "insecure" or "insecurity" or "unprotect*" or "unrelaib*" or "vulnerab*" or "dead*" or "die$" or "disappear*" or "unstability" or "unstable")
 
-("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*")
+
+("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*" or "international*")
 
 ("people" or "immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal" or "undocumented" or "refugee*")
 
