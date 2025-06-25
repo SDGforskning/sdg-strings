@@ -420,7 +420,7 @@ We have two bullet-points here to put emphasis on targeting assets where they ar
 TS=
 ("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "Scal up" OR "accelerat*" OR "advance" OR "advancing" OR "ensure" OR "attain*" OR "achiev*" OR "facilitat*")
 
-("ODA" OR "official development assistance" OR "investing" OR "invest" OR "financing" OR "funding" OR "investment$" OR "fund$" OR "finance"
+("ODA" OR "official development assistance" OR "investing" OR "invest" OR "financing" OR "funding" OR "investment$" OR "fund$" OR "finance" or "international aid")
 OR ("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "flow*" "resource*")
 )
 ```
