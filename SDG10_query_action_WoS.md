@@ -368,7 +368,7 @@ TS=
 
 ("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*" or "international*" or "internal*" or "intra stat*")
 
-("people" or "immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal" or "undocumented" or "refugee*")
+("people" or "immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*")
 
 )
 ```
@@ -486,17 +486,14 @@ This target is interpreted to cover research about reducing the transaction cost
 
 ```py
 TS=
-(("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome")
-
-"transaction cost*"
-
-"migrant*"
-remittance*
-("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome") NEAR "high cost*"
+((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered")
+NEAR
+(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$" OR "money transmission$") NEAR ("cost$" OR "charge$" OR "fee$" OR "expense$") NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
+OR
+(("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR "declin*")
+NEAR
+(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$") NEAR (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-priced" OR "high priced" OR "highly priced" OR "ruinous") NEAR ("cost$" OR "charge$" OR "fee$" OR "expense$")) NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
 )
-
-
-
 )
 ```
 
