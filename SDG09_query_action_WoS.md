@@ -214,3 +214,5 @@ Specialist input:
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation *. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<span id="f3">United Nations (2024). </span> *The Sustainable Development Goals Report 2024 *. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
