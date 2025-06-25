@@ -46,8 +46,13 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-((("bottom 40%" or "bottom 40 percent" or "bottom 40 per cent" or "the poor" or "poverty" or "the poorest" or "rural poor" or "urban poor" or "working poor" or "destitute$" or "low income" or "low-income" or "disadvantaged" or "unemployed") NEAR/3 ("household$" OR "people" OR "family" or "families"))
-
+((("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+"rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
+OR "unemployed")
+NEAR
+  ("household$" OR "people" OR "family" OR "families")
+ )
+NEAR
 ("income growth" or "income growth rate" or "per capita consumption" or "per capita income" or "welfare aggregate" or "shared prosperity" or "welfare distribution" OR "inclusive growth")
 
 "rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "standardi*" or "regulari*" or "consolidat*" 
