@@ -418,7 +418,26 @@ We have two bullet-points here to put emphasis on targeting assets where they ar
 
 ```py
 TS=
-(
+("encourag*" or "increas*"
+"strengthen*"
+"improv*"
+"restor*"
+"enhanc*"
+"better"
+"more efficient"
+"higher"
+"upgrad*"
+"scal* up"
+"build*" ("build* capacity" / "capacity building" / "capacity development")
+"expand" OR "expansion*"
+"accelerat*"
+"advance" OR "advancing"
+"develop" OR "developing"
+
+"overcome"
+"ensure"
+"attain*"
+"achiev*"
 
 )
 ```
