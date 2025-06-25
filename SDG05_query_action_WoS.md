@@ -375,6 +375,7 @@ This target is interpreted to cover research about:
 * Ensuring women's participation at all levels of decision-making in political, economic and public life 
 * Ensuring women's equal opportunities for leadership at all levels of decision-making in political, economic and public life 
 * Proportion of women in local and governmental bodies and in managerial positions
+_From the review meeting 13.06.25: "Maybe consider only including the 3rd bullet of the interpretation in the topic approach? As it is more topic-y, and adding in an action ourselves (not defined in the target) is a bit dubious."_
 
 Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
@@ -388,25 +389,32 @@ This query consists of X phrases......
 
 #### Phrase 1
 
-The basic structure is _action_ + _women_ + _participation_ 
+The basic structure is _action_ + _women_ + _participation/leadership + decisions (test å koble decisionmaking kun til participate og ikke til ledelse?)
 ```py
-TS= [terms just pasted here without considerations]
+TS= 
 (
-    ("accelerat*" OR "achiev*" OR "advance" OR "advancing" OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" OR "ensure"OR "expand" OR "expansion" OR "facilitat*" OR "foster*" OR "guarantee*" OR "heighten*" OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "promot*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
-
-    ("*women" OR "*woman" OR "*womens" OR "*womans"
-    OR "girl$"
-    OR "female$"
-    OR "gender*"
-    OR "transgender*"
+("accelerat*" OR "achiev*" OR "adopt" OR "advance" OR "advancing" OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" OR "ensure"OR "expand" OR "expansion" OR "establish*" OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
+    NEAR/5    
+    ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans") 
     OR 
-        ("sex*" 
-        NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
-        )
+    ("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*")
     )
-
-
+    NEAR/15 
+        ( 
+            ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" OR "management" OR "legislator*" OR 
+            (
+            ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*") NEAR/5 ("executive*" OR "officer*" OR "official*" OR "position")
+            )
+        )
+        )
+AND
+(
+    ("decisionmaking" OR "decision-making" OR "policymaking" OR "policy-making")
+    OR
+    ("decision*" NEAR/5 ("process*" OR "authorit" OR "business*" OR "coroprate" OR "public" OR "economic" OR "civil" OR "society" OR "communit*"))
 )
+)
+
 ```
 
 #### Phrase 2
