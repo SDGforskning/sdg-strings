@@ -47,17 +47,18 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 ```py
 TS=
 (
- ("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc* OR "improv*" OR "better" OR "attain*" OR
+ (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc* OR "improv*" OR "better" OR "attain*" OR
   "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*" OR
   "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR "uphold*"
   OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring")
-
-("income growth" or "income growth rate" or "per capita consumption" or "per capita income" or "welfare aggregate" or "shared prosperity" or "welfare distribution" OR "inclusive growth")
-
-
+NEAR
+  ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR "welfare aggregate"
+  OR "shared prosperity" OR "welfare distribution" OR "inclusive growth")
+ )
+NEAR
 (("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
-"rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
-OR "unemployed")
+ "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
+ OR "unemployed")
 NEAR
   ("household$" OR "people" OR "family" OR "families")
  )
