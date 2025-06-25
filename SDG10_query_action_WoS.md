@@ -382,7 +382,7 @@ This target is interpreted to cover research about implementing the principle of
 TS=
 ("implement*" or "establish*" or "plan" or "plans" or "planned" or "planning" or "adopt*" or "introduc*" or "develop" OR "development" or "ensure" or "attain*" or "achiev*" or "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" or accelerat*" OR "advanc*" or "promot*" or "facilitat*")
 
-("special and differential treatment*" or "SDT")
+("special and differential treatment*" or "SDT" or "zero-tariff*" or "zero tariff*") AND ("WTO" or "World Trade Organization")
 
 "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
