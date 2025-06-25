@@ -381,7 +381,7 @@ TS=
 
 This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
 
-
+```py
 TS=
 ("implement*" or "establish*" or "plan" or "plans" or "planned" or "planning" or "adopt*" or "introduc*" or "develop" OR "development" or "ensure" or "attain*" or "achiev*" or "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" or accelerat*" OR "advanc*" or "promot*" or "facilitat*")
 
@@ -404,7 +404,7 @@ TS=
 
 )
 ```
-```py
+
 ### Target 10.b
 
 > **10.b Encourage official development assistance and financial flows, including foreign direct investment, to States where the need is greatest, in particular least developed countries, African countries, small island developing States and landlocked developing countries, in accordance with their national plans and programmes**
@@ -420,7 +420,7 @@ We have two bullet-points here to put emphasis on targeting assets where they ar
 It consists of 2 phrases.
 
 Phrase 1
-
+```py
 TS=
 ("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "Scal up" OR "accelerat*" OR "advance" OR "advancing" OR "ensure" OR "attain*" OR "achiev*" OR "facilitat*")
 
@@ -451,7 +451,7 @@ Phrase 2
 
 
 ```
-```py
+
 ### Target 10.c
 
 > **10.c By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent**
