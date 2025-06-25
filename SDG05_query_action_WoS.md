@@ -389,7 +389,7 @@ This query consists of X phrases......
 
 #### Phrase 1
 
-The basic structure is _action_ + _women_ + _participation/leadership + decisions (test å koble decisionmaking kun til participate og ikke til ledelse?)
+The basic structure is _action_ + _women_ + _participation/leadership_ + _decisions_ (test å koble decisionmaking kun til participate og ikke til ledelse?)
 ```py
 TS= 
 (
@@ -403,7 +403,7 @@ TS=
         ( 
             ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" OR "management" OR "legislator*" OR 
             (
-            ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*") NEAR/5 ("executive*" OR "officer*" OR "official*" OR "position")
+            ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 ("executive*" OR "officer*" OR "official*" OR "position" OR "member*")
             )
         )
         )
@@ -423,11 +423,12 @@ The basic structure is _action_ + opposites/hindre diskriminering?
 ```py
 TS=
 (
-
+"glass ceiling"
 )
 ```
 
 #### Phrase 3
+(per 25.06 er LEADERSHIP innlemma i phrase 1)
 
 The basic structure is _action_ + _women_ + _leadership_ 
 
@@ -437,10 +438,34 @@ The basic structure is _action_ + _women_ + _leadership_
 
 #### Phrase 4
 
-The basic structure is _action_ + _women_ + _proportion of seats/positions_ 
+The basic structure is _action_ + _women_ + _proportion of seats/positions_ + _governments/leadership_ (kanskje ha dette punktet bare i TOPIC? - og altså ikke ha Action-term)
 
 ```py
-
+TS=
+(
+    (
+        ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*"
+        OR
+        (
+            ("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*")
+        )
+        )
+    )
+        NEAR/5
+    (
+        ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*")
+        NEAR/5
+        (
+            ("minister*" OR "mp"* OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
+            "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*")
+            OR
+            (
+                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
+                NEAR/5 ("executive" OR "officer*" OR "official*" OR "position" OR "menber*")
+            )
+        )
+    )
+)
 ```
 
 ### Target 5.6
