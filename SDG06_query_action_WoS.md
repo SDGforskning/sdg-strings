@@ -44,32 +44,9 @@ For general definitions and finding terms for several targets we used
 
 This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature (“UNDeptofComm2023”) https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf   e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
-Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") Some gender specific features about access to safe drinking water (fetching water) are covered in the phrases for target 6.2 which aims to find research about gender inequalities related to WASH.
+Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
-
-
-
-
-```
-????
-
-Collection/fetching water is important from gender inequalities point of view.
-It is mostly done by women & girls and is time consuming which precludes them from school or work
-and also makes them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender.
-
-As it is especially related to women and 6.2 covers paying attention to women etc. should we move it there?
-Although 6.2 is about sanitation & hygiene, not drinking water.
-Still, WASH is ofen discussed as a unite and some sources (Wikipedia) even mention clean drinking water as an element of sanitation.
-
-Even in 6.2 suitable action terms are sparce *prevent/decrease + women fetching water* sounds harsh/strange.
-"Removing inequalities" is ok, but would need a broader set of action terms to cover all the papers.
-Must we have action terms? Could the action phrease also be searching for any research about women collecting water?
-Or should collecting water be included only in the topic approach?
-
-```
-
-
 
 
 #### Phrase 1
@@ -78,9 +55,11 @@ This phrase aims to find research about advancing accessibility to safe and affo
 
 Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
 
-The elements of the phrase are *action(advance/invest/) + access/availability/affordability/management/regulating + safe + drinking water + services/sources/infrastructures*
+The elements of the phrase are *action(advance/invest/) + access/availability/affordability/management/regulating + safe+drinking water /improved drinking water sources*
 
 ```py
+
+TEST WHETHER "IMPROVED DRINKING WATER SOURCES" ARE NEEDED OR WILL "SAFE DRINKING WATER" FIND EVERYTHING RELEVANT ANYWAY
 TS=
 (
 
@@ -107,7 +86,7 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about advancing adequate and equitable access to sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation. https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf (”DESA2018”).
+This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation. https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf (”DESA2018”).
 
 What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
 
@@ -120,22 +99,12 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > and treated off-site and hygienically separate from human contact*.
 
 However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate also as it has been defined in the research. 
+`TEST WHETHER ADEQUATE IS NEEDED FOR RELEVANT RESULTS. LIMITING TO ADEQUATE MIGHT LEAVE OUT RELEVANT RESULTS. ...search for any research about advancing access to sanitation`
 
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
-
-```
-????
-
-Maybe we should stick to the metadata definition about adequate.
-But the definition is complex and with a quick test, nothing is found with the defined terms & combinations.
-
-```
-
-
-
-
-As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. We have also included gender dependent inequalities related to the acquisition of drinking water. Even though drinking water is not unambiguously defined as part of sanitation there is a strong interlinkage between water, sanitation and hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH").
+As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
+`TEST WHETHER LIMITING WITH VULNERABLE PEOPLE IS NEEDED. COULD WE JUST SEARCH FOR ELIMINATING INEQUALITIES IN ACCESS TO SANITATION (PHRASE 3)`
 
 #### Phrase 1
 
@@ -147,6 +116,8 @@ The elements of the phrase are *action + access + safely managed sanitation serv
 
 
 ```py
+
+TEST WHETHER ADEQUATE IS NEEDED FOR RELEVANT RESULTS. LIMITING TO ADEQUATE MIGHT LEAVE OUT RELEVANT RESULTS
 TS=
 (
   (
@@ -157,7 +128,7 @@ TS=
         OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR 	"combat*" OR "declin*"
         )
         NEAR/5
-            ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+            ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*")
       )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
   )
@@ -172,11 +143,11 @@ TS=
           ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation")
 	      OR
 	(
-          ("basic" OR "adequate" OR "safe" OR "improved")
+          ("basic" OR "adequate" OR "safe" OR "improved" OR "equitab*" OR "non-equit*")
           NEAR/5
             (
               ("sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
-              NEAR/2 ("service$" OR "facility" OR "facilities" OR "basic" OR "safe")
+              NEAR/2 ("service$" OR "facility" OR "facilities")
             ) 
             OR 
             (
@@ -232,6 +203,7 @@ The elements of the phrase are *action(eliminate inequalities/remove barriers/no
 
 
 SKETCH
+TEST WHETHER LIMITING WITH VULNERABLE PEOPLE IS NEEDED. COULD WE JUST SEARCH FOR ELIMINATING INEQUALITIES IN ACCESS TO SANITATION
 TS=
 (
 (
@@ -280,30 +252,6 @@ AND ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR
 
 ```
 
-#### Phrase 4
-
-This phrase aims to find research about removing gender related inequalities concerning the burden of fetching water from remote water sources. Collection/fetching water is usually done by women and girls and as it is time consuming it often precludes them from school or making incomes at work. It can also make them vulnerable to attack https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”)
-
-The elements of the phrase are *remove inequalities + collecting/fetching water + women/girls*
-
-```
-????
-
-Should phrase 4 be here? Difficult to place in 6.1 but should be somewhere.
-Suitable action terms are sparce *prevent/decrease + women fetching water* sounds harsh/strange.
-"Removing inequalities" is ok, but would need more broader set of action terms to cover all the papers.
-Must we have action terms? Could the action phrease also be searching for any research about women collecting water? 
-
-```
-
-
-
-```py
-TS=
-(
-
-)
-```
 
 
 
@@ -315,7 +263,12 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is interpreted to cover research about improving water quality by reducing the proportion of untreated wastewaters discharged into the environment as well as releases of pollution and hazardous chemicals and materials. It is also about increasing recycling and safe reuse of water and monitoring of water quality https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
+This target is interpreted to cover research about 
+> * improving water quality
+> * reducing the proportion of untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
+> * increasing recycling and safe reuse of water
+> * monitoring of water quality
+> https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
 This target focuses on freshwater bodies, the ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . The classification for wastewater generators is 
 > * domestic/households
@@ -436,39 +389,26 @@ TS=
 
 This target is interpreted to cover research about implementing integrated water resources management and transboundary co-operation in water resources management. 
 
-**Integrated water resources management (IWRM)** is based on an internationally agreed definition.
+**Integrated water resources management (IWRM)** is based on an internationally agreed definition https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025"). It is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
+
+Although IWRM is a specifically defined consept we include in addition to research which explicitly mentions IWRM also research about cross-sectoral water management as defined in the indicator metadata 6.5.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025"):
 > *Integrated Water Resources Management (IWRM) promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
-
-Indicator metadata 6.5.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
-
-IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
-
-Since IWRM is a specifically defined consept the phrase is set to look for research which explicitly mentions IWRM rather than looking for any cross-sectoral water research management.
 
 Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers. 
 
 
-```
-????
-
-
-Should we search only for defined IWRM or should we search for any cross-sectoral water management?
-
-
-```
 
 #### Phrase 1
 
-This phrase aims to find research about implementing IWRM or transboundary co-operation.
+This phrase aims to find research about implementing IWRM, cross-sectoral water management or transboundary co-operation.
 
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
 * Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
 * Terms for water management related projects and programmes were found in https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
 
-The elements of the phrase are *action(implement/advance) + IWRM OR
-arrangement/treaty/agreement+co-operation/collaboration +  crossboundary/international+water basin+management/projects*
+The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
 
 ```py
@@ -480,9 +420,9 @@ TS=
 (
 ("implement*" OR "advanc*" OR "promot*") 
 AND 
-	("integrated water resources management" OR ("IWRM" NEAR "water"))
-	OR
-	(
+	("integrated water resources management" OR ("IWRM" NEAR "water")) 
+	OR (("coordinat*" OR "integrat*") NEAR/5 (("develop*" OR "manage*") NEAR/5 ("water" NEAR/5 "land")))
+	OR (
 		(
 		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*")
 		NEAR/5
@@ -523,29 +463,10 @@ This target is related to
   
 However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than in the protection of species. 
 
-```
-
-
-?????
-
-
-No action term in the summary of the target (e.g. increase+protection – just protect)
-> Action and Topic phrases will be identical.
-
-Should we include protection of species/biodiversity?
-They are mentioned in sources but the focus is clearly on protecting water.
-We could add species/biodiversity in phrase 2 deterioration terms (loss of biodiversity / extinction of species)?
-
-Conflict: mountains and forests are mentioned in the title of the target
-but in indicator metadata 6.6.1 they are listed as excluded because they are covered by SDG 15.
-No reason to add "forest" or "mountains" to phrases - water-related ecosystems within them will be found anyway.
-I suppose no nead to filter them out even though the indicator excludes them?
-
-
-```
+Although indicator metadata 6.6.1a excludes mountain and forest ecosystems we have not filtered them from the results since the water-related ecosystems of mountains and forests are perticularly mentioned in the title of this target.
 
 #### Phrase 1 
-(see 15.1 phrase 2)
+
 
 This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
@@ -553,6 +474,10 @@ The elements of the phrase are *protect + ecosystems/areas/water quality/water q
 
 
 ```py
+
+SEE 15.1 PHRASE 2
+SDG 15 TERRESTRIAL STRING FOR FRESH WATER TERMS e.g. aquifers 
++ 14.2 PHRASE 3 FOR STRUCTURE TO ADD ACTION
 TS=
 (
 
@@ -592,12 +517,15 @@ United Nations Development Group (2017) Capacity Development, UNDAF companion gu
 
 As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is added as a capacity building term as well as `grants` and `loans` https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025)
 
+`ABOUT CAPACITY BUILDING IN OLD VERSION ON 13.3 https://github.com/SDGforskning/sdg-strings/blob/v1.0.0/SDG13_query_action_WoS.md#target-133`
+`TEST/READ ABOUT TECHNOLOGY TRANSFER AS PART OF CAPACITY BUILDING SUPPORT´ 
+
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 
 #### Phrase 1
 
-The elements of the phrase are *action(expand/support/advance) + international cooperation/capacity building + projects/programmes+WASH/water harvesting/desalination/water efficiency/wastewater treatment/recycling and reuse of water + developing countries*
+The elements of the phrase are *action(expand/support/advance) + international cooperation/capacity building + WASH/water harvesting/desalination/water efficiency/wastewater treatment/recycling and reuse of water + developing countries*
 
 
 
