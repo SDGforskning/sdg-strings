@@ -363,7 +363,7 @@ TS=
 ("risk$" or "hazard*" or "insecure" or "insecurity" or "unprotect*" or "unrelaib*" or "vulnerab*" or "dead*" or "die$" or "disappear*" or "unstability" or "unstable")
 
 
-("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*" or "international*")
+("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*" or "international*" or "internal*" or "intra stat*")
 
 ("people" or "immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal" or "undocumented" or "refugee*")
 
