@@ -357,6 +357,12 @@ NEAR
 "reliab*" / "unrelaib*"
 "vulnerab*"
 "stability"
+"safe"
+"regular"
+"responsible"
+
+"migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*"
+
 
 
 )
