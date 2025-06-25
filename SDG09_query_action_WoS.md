@@ -194,6 +194,8 @@ This target is interpreted to cover research about
 * Increasing access to information and communication technology in least development countries
 * Providing universal and affordable access to Internet in least development countries 
 
+In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. https://unstats.un.org/sdgs/report/2024/
+
 ```py
 TS=
 (
