@@ -429,7 +429,7 @@ OR ("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR
 
 ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*")
 
-("the need is greatest" OR "greatest need$")
+("best" OR "greatest" OR "biggest" OR powerful) NEAR/2 ("impact*" OR "effect*" OR "use" OR "need" OR "needs")
 
 "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
@@ -455,7 +455,7 @@ OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" O
 
 ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR divid* or division* OR distribut*)
 
-(national* OR regional* OR local*) NEAR/1 (plan OR plans OR planning))
+(national* OR regional* OR local*) NEAR/1 (plan OR plans OR planning or program*))
 
 "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
