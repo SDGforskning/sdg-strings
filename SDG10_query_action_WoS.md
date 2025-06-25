@@ -46,19 +46,21 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-((("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+(
+ ("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc* OR "improv*" OR "better" OR "attain*" OR
+  "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*" OR
+  "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR "uphold*"
+  OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring")
+
+("income growth" or "income growth rate" or "per capita consumption" or "per capita income" or "welfare aggregate" or "shared prosperity" or "welfare distribution" OR "inclusive growth")
+
+
+(("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
 "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
 OR "unemployed")
 NEAR
   ("household$" OR "people" OR "family" OR "families")
  )
-NEAR
-("income growth" or "income growth rate" or "per capita consumption" or "per capita income" or "welfare aggregate" or "shared prosperity" or "welfare distribution" OR "inclusive growth")
-
-"rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "standardi*" or "regulari*" or "consolidat*" 
-
-or "stabili*" or "normali*" or "uphold*" or "or "stabili*" or "normali*" or "uphold" or "stable" or "fixed" or "perpetual*" or "lasting" or "enduring"
-
 )
 ```
 
