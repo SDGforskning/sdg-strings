@@ -488,6 +488,11 @@ This target is interpreted to cover research about reducing the transaction cost
 TS=
 (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome")
 
+"transaction cost*"
+
+"migrant*"
+remittance*
+
 )
 
 
