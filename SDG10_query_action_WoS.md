@@ -349,6 +349,14 @@ This target is interpreted to cover research about ensuring safe, responsible an
 ```py
 TS=
 ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "build*" OR "accelerat*" OR "advanc*" OR "develop*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*")
+NEAR
+
+"secure" / "insecure"
+"security" / "insecurity"
+"protect*" / "unprotect*"
+"reliab*" / "unrelaib*"
+"vulnerab*"
+"stability"
 
 
 )
