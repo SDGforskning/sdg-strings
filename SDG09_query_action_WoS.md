@@ -216,3 +216,6 @@ Specialist input:
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
 <span id="f3">United Nations (2024). </span> *The Sustainable Development Goals Report 2024 *. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
+
+<span id="f4"> E-Handbook on Sustainable Development Goals Indicators (2024) https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
+
