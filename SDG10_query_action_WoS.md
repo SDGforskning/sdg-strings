@@ -453,9 +453,9 @@ TS=
 ("ODA" OR "official development assistance" OR "investing" OR "invest" OR "financing" OR "funding" OR "investment$" OR "fund$" OR "finance" or "international aid")
 OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "flow*" "resource*"))
 
-("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR divid* or division* OR distribut*)
+("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "divid*" or "division*" OR "distribut*")
 
-(national* OR regional* OR local*) NEAR/1 (plan OR plans OR planning or program*))
+("national*" OR "regional*" OR "local*") NEAR/1 ("plan" OR "plans" OR "planning" OR "planned" OR "program$")
 
 "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
