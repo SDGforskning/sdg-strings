@@ -50,7 +50,7 @@ TS=
  (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*"
    OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*"
    OR "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
-   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*
+   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
   )
 NEAR
   ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR
