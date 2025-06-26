@@ -58,7 +58,7 @@ NEAR
   )
  )
 AND
- ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
    "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR
    "disadvantaged" OR "unemployed"
   )
@@ -132,9 +132,7 @@ NEAR
    )
   )
  )
-
 OR 
-
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
