@@ -145,7 +145,7 @@ OR
    "introduc*"
   )
 NEAR
-  (("appropriat*" OR "equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
+  (("equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
