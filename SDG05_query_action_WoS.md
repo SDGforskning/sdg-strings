@@ -644,11 +644,71 @@ This query consists of 1? phrases......
 
 #### Phrase 1
 
-The basic structure is _action_ + _use_ + _technologies_ + _empowerment of women_
+The basic structure is _action_ + _use of technology_ + _empowerment of women_
 
 ```py
 TS=
 (
+
+"enhance"
+"access" (female access, equal access)
+"skills"
+
+    "enabling technology"
+    "innovative technology"
+    "technological intervention*"
+
+    "Information technolog*"
+    "information communications technolog*"
+    "ICTs"
+    "ICT"
+    "social media"
+    "mobile" / "mobile apps"
+    "handheld"
+    "telehealth"
+    "computer"
+    "smartphone"
+    "digital"
+    "internet"
+    "telecommunication"
+    "telephone" (cellular telehpones)
+    "television"
+    "wireless"
+    "wi-fi"
+    "computer*"
+    "world wide web"
+    "laptop"
+    "ICT4D"
+    "web-based"
+    "iphone"
+    "ipad"
+    "tablet*"
+    "hardware"
+    "software"
+    "multimedia"
+    "online / online platforms"
+    
+
+    "*empower*" (self-empowerment)
+    "self concept"
+    "self efficacy"
+    "self confidence"
+    "capacit*"
+    "emancipat*"
+    "personal strength"
+    "political strength"
+    "economic strength"
+    "power" (decision-making)
+    "control (destiny)"
+    "awareness"?
+    "entrepreneur" (står mange plasser? / = economic empowerment / independence)
+
+    "disempower*"
+    "barrier*"
+    "digital divide"
+    "inadequate infrastructure"
+    
+    
 
 )
 ```
