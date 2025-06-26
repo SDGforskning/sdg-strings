@@ -59,8 +59,8 @@ NEAR
  )
 AND
  (("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
-   "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
-   OR "unemployed"
+   "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR
+   "disadvantaged" OR "unemployed"
   )
 NEAR
   ("household$" OR "people" OR "family" OR "families"
@@ -96,13 +96,13 @@ NEAR
  )
 OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
-   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
-   OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-   "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
+   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+   "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
+   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
   )
 NEAR
-  ("horizontal inequalit*" OR "horizontal exclu*" OR "horizontal marginal*" OR "social* exclu*" OR "economic* exclu*"
-   OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
+  ("horizontal inequalit*" OR "horizontal exclu*" OR "horizontal marginal*" OR "social* exclu*" OR
+   "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
   )
  )
 )
