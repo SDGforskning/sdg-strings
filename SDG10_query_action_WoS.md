@@ -42,7 +42,7 @@ This target is interpreted as to cover research about how to raise and sustain t
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
 
-This query consists of 1 phrase. The basic structure is *action + income growth + poor*
+This query consists of 1 phrase. The basic structure is *action + income growth + poor people*
 
 ```py
 TS=
@@ -50,17 +50,21 @@ TS=
  (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*" OR
   "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*" OR
   "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR "uphold*"
-  OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring")
+  OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*
+  )
 NEAR
   ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR "welfare aggregate"
-  OR "shared prosperity" OR "welfare distribution" OR "inclusive growth")
+  OR "shared prosperity" OR "welfare distribution" OR "inclusive growth"
+  )
  )
 AND
-(("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+ (("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
  "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
- OR "unemployed")
+ OR "unemployed"
+  )
 NEAR
-  ("household$" OR "people" OR "family" OR "families")
+  ("household$" OR "people" OR "family" OR "families"
+  )
  )
 )
 ```
@@ -80,13 +84,26 @@ Social inclusion means improving opportunities for individuals and groups to tak
 
 ```py
 TS=
-((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "accelerat*" OR "advanc*" OR "develop*" OR "empower*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*")
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*"
+   OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "expansion*" OR "accelerat*" OR "advanc*" OR "advancing"
+   OR "develop*" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR "achiev*" OR "encourag*" OR
+   "facilitat*"
+  )
 NEAR
-("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal activit*"))
+  ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal activit*"
+  )
+ )
 OR
-(("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome")
+ (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR
+   "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR
+   "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "cure" OR "halt*" OR
+   "resist*" OR "overcome"
+  )
 NEAR
-("horizontal inequalit*" OR "social* exclusi*" OR "economic* exclusi*" OR "political* exclusi*"))
+  ("horizontal inequalit*" OR "horizontal exclu*" OR horizontal marginal*" OR "social* exclu*" OR "economic* exclu*" OR
+   "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
+  )
+ )
 )
 ```
 
