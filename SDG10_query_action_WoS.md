@@ -129,7 +129,8 @@ NEAR
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*" OR
+    "rule" OR "rules" OR "procedur*"
    )
   )
  )
@@ -141,11 +142,12 @@ OR
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*"
+    "anti-discriminat*" OR "non-discriminat*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*" OR
+    "rule" OR "rules" OR "procedur*" 
    )
   )
  )
