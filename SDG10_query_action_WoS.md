@@ -47,20 +47,20 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 ```py
 TS=
 (
- (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*" OR
-  "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*" OR
-  "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR "uphold*"
-  OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*
+ (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*"
+   OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*"
+   OR "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
+   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*
   )
 NEAR
-  ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR "welfare aggregate"
-  OR "shared prosperity" OR "welfare distribution" OR "inclusive growth"
+  ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR
+   "welfare aggregate" OR "shared prosperity" OR "welfare distribution" OR "inclusive growth"
   )
  )
 AND
  (("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
- "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
- OR "unemployed"
+   "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR "disadvantaged"
+   OR "unemployed"
   )
 NEAR
   ("household$" OR "people" OR "family" OR "families"
@@ -84,24 +84,25 @@ Social inclusion means improving opportunities for individuals and groups to tak
 
 ```py
 TS=
-((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*"
-   OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "expansion*" OR "accelerat*" OR "advanc*" OR "advancing"
-   OR "develop*" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR "achiev*" OR "encourag*" OR
-   "facilitat*"
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR
+   "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "expansion*" OR "accelerat*"
+   OR "advanc*" OR "advancing" OR "develop*" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
+   "achiev*" OR "encourag*" OR "facilitat*"
   )
 NEAR
-  ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal activit*"
+  ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
+   "societal activit*" 
   )
  )
 OR
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR
-   "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR
-   "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "cure" OR "halt*" OR
-   "resist*" OR "overcome"
+ (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+   OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+   "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
   )
 NEAR
-  ("horizontal inequalit*" OR "horizontal exclu*" OR horizontal marginal*" OR "social* exclu*" OR "economic* exclu*" OR
-   "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
+  ("horizontal inequalit*" OR "horizontal exclu*" OR "horizontal marginal*" OR "social* exclu*" OR "economic* exclu*"
+   OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
   )
  )
 )
