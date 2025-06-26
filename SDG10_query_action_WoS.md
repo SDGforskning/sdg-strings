@@ -102,7 +102,8 @@ OR
   )
 NEAR
   ("horizontal inequalit*" OR "horizontal exclu*" OR "horizontal marginal*" OR "social* exclu*" OR
-   "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR "political* marginal*"
+   "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR
+   "political* marginal*"
   )
  )
 )
