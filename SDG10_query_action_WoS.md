@@ -53,20 +53,16 @@ TS=
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
   )
 NEAR
-  ("income growth" OR "income growth rate" OR "per capita consumption" OR "per capita income" OR
+  ("income growth" OR "income growth rate" OR "growth in income" OR "per capita consumption" OR "per capita income" OR
    "welfare aggregate" OR "shared prosperity" OR "welfare distribution" OR "inclusive growth"
   )
  )
 AND
- (("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+ ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
    "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR
    "disadvantaged" OR "unemployed"
   )
-NEAR
-  ("household$" OR "people" OR "family" OR "families"
-  )
  )
-)
 ```
 
 ### Target 10.2
