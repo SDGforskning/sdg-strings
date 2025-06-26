@@ -97,7 +97,7 @@ This target is interpreted to cover research about
 * Improving access to financial services for all types of small-scale industrial and other enterprises, with financial services referring to, for example, affordable credit.
 * Integrating small-scale industrial and other enterprises into value chains (production and distribution chains) and into local and international markets.
 
-The target is based on the idea of entrepreneurship as a development policy; supporting small enterprises promotes employment, innovation, and economic activity, especially in developing countries.
+The target is based on the idea of entrepreneurship as a development policy; supporting small enterprises promotes employment, innovation, and economic activity, especially in developing countries. (UN. General Assembly (67th sess. : 2012-2013). (2013). Entrepreneurship for development: Resolution (No. A/67/437). https://digitallibrary.un.org/record/745054?v=pdf)
 
 This query consists of X phrases.
 ```py
