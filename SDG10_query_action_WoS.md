@@ -136,30 +136,22 @@ NEAR
   )
  )
 )
+
 OR 
-"appropriat*"
-"equal*"
-"equal opportunit*"
-"anti discriminat*"
-"anti-discriminat*"
 
-"increas*"
-"strengthen*"
-"improv*"
-"restor*"
-"enhanc*"
-"better"
-"more efficient"
-"higher"
-"upgrad*"
-"scal* up"
-"build*" ("build* capacity" / "capacity building" / "capacity development")
-"expand" OR "expansion*"
-"accelerat*"
-"advance" OR "advancing"
-"develop" OR "developing"
-"promot*"
-
+(("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR 
+  "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
+  "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
+  "introduc*"
+ )
+NEAR
+ (("appropriat*" OR "equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
+  )
+NEAR
+  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+  )
+ )
 )
 ```
 
