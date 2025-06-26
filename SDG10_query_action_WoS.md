@@ -128,7 +128,7 @@ TS=
    "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
   )
 NEAR
-  (("discriminator*" OR "inequalit*" OR "harass*"
+  (("discriminat*" OR "inequalit*" OR "harass*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -145,7 +145,7 @@ OR
    "introduc*"
   )
 NEAR
-  (("equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
+  (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
