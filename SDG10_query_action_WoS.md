@@ -81,6 +81,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. (World Bank Group 2025.) Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills (Sharif 2024). Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections (Aldar ym. 2025).
 
+This query consists of 1 phrase. The basic structure is *action + inclusion OR action + exclusion*
 
 ```py
 TS=
@@ -119,29 +120,23 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
+This query consists of 1 phrase. The basic structure is *action + discriminatory law OR action + anti-discriminatory law*
+
 ```py
 TS=
 (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR 
   "prevent*" OR "fight*" OR OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
  )
 NEAR
- ("discriminator*" OR "inequalit*" OR "harass*"
+ (("discriminator*" OR "inequalit*" OR "harass*"
+  )
+NEAR
+  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+  )
  )
-
-"law$"
-"policy" OR "policies"
-"regulat*"
-"legal*"
-"legislat*"
-"agreement$"
-"treaty" OR "treaties"
-"strateg*"
-"framework$"
-"instrument$"
-"governance"
-"practice*"
-"action*"
-
+)
+OR 
 "appropriat*"
 "equal*"
 "equal opportunit*"
