@@ -161,6 +161,8 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
+This query consists of 1 phrase. The basic structure is
+
 ```py
 TS=
 ("establish*"
@@ -237,7 +239,7 @@ TS=
 
 This target is interpreted to cover research about improving the regulation and monitoring of global financial markets and institutions.
 
-This query consists of X phrases.
+This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
@@ -280,6 +282,8 @@ TS=
 This target is interpreted to cover research about enhancing the representation and decision-making powers of developing countries in international economic institutions.
 
 In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
+
+This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
@@ -343,6 +347,8 @@ TS=
 
 This target is interpreted to cover research about ensuring safe, responsible and regular migration and mobility of people.
 
+This query consists of 1 phrase. The basic structure is
+
 ```py
 TS=
 ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "build*" OR "accelerat*" OR "advanc*" OR "develop*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" or "implement*" or "facilitat*")
@@ -370,6 +376,8 @@ TS=
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
 This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
+
+This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
@@ -407,7 +415,7 @@ This target is interpreted to cover research about
 
 We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
 
-This query consists of 2 phrases.
+This query consists of 2 phrases. The basic structure is
 
 Phrase 1
 ```py
@@ -437,6 +445,7 @@ OR ("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR
       OR "albania*" OR "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia" OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "gambia*" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo" OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*" OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria" OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR "georgia*"
 )
 ```
+
 Phrase 2
 ```py
 TS=
@@ -472,6 +481,8 @@ OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" O
 > 10.c.1 Remittance costs as a proportion of the amount remitted
 > 
 This target is interpreted to cover research about reducing the transaction cost of migrant remittances and eliminating corridors of high costs.
+
+This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
