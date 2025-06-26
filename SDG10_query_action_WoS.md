@@ -54,13 +54,14 @@ TS=
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth$"
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "earnings increas*" OR
+   "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
   )
  )
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
    "rural poor" OR "urban poor" OR "working poor" OR "destitute$" OR "low income" OR "low-income" OR
-   "disadvantaged" OR "unemployed"
+   "disadvantaged"
   )
  )
 ```
