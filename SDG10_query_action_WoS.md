@@ -121,25 +121,12 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 ```py
 TS=
-("stop*"
-"end"
-"ends"
-"ended"
-"ending"
-"remov*"
-"eliminat*"
-"eradicat*"
-"avoid*"
-"prevent*"
-"combat*"
-"cure"
-"halt*"
-"resist*"
-"prohibit*"
-
-"discriminator*"
-"inequalit*"
-"harass*"
+(("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR 
+  "prevent*" OR "fight*" OR OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
+ )
+NEAR
+ ("discriminator*" OR "inequalit*" OR "harass*"
+ )
 
 "law$"
 "policy" OR "policies"
