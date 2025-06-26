@@ -124,32 +124,33 @@ This query consists of 1 phrase. The basic structure is *action + discriminatory
 
 ```py
 TS=
-(("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR 
-  "prevent*" OR "fight*" OR OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
- )
-NEAR
- (("discriminator*" OR "inequalit*" OR "harass*"
+((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR 
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
   )
 NEAR
-  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+  (("discriminator*" OR "inequalit*" OR "harass*"
+   )
+NEAR
+   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+   )
   )
  )
-)
 
 OR 
 
-(("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR 
-  "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
-  "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
-  "introduc*"
- )
-NEAR
- (("appropriat*" OR "equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
+ (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR 
+   "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
+   "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
+   "introduc*"
   )
 NEAR
-  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+  (("appropriat*" OR "equal*" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*"
+   )
+NEAR
+   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*"
+   )
   )
  )
 )
