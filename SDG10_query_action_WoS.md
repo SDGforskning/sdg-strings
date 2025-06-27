@@ -57,8 +57,8 @@ TS=
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
-   OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "earnings increas*"
-   OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
+   OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR
+   "earnings increas*" OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
   )
  )
 AND
@@ -127,8 +127,8 @@ This query consists of 1 phrase. The basic structure is *action + discriminatory
 
 ```py
 TS=
-((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR 
-   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
+((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+   OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR
