@@ -198,8 +198,7 @@ AND
     OR "sustain*" OR "consolidat*"
    )
 NEAR
-   ("equal*" OR "equity" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR
-    "justice*"
+   ("equal*" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"
    )
   )
 OR
