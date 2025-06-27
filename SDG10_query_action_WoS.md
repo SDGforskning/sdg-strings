@@ -177,21 +177,43 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 
 ```py
 TS=
-((("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*"
+((("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
+    "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*"
+   )
 NEAR
-(("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")
+  (("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*"
+   )
 NEAR
-("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
-    "rule" OR "rules" OR "procedur*" OR "principle$" OR "redistributive impact of fiscal policy")))
+    "rule" OR "rules" OR "procedur*" OR "principle$" OR "redistributive impact of fiscal policy"
+   )
+  )
+ ) 
 AND 
-((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient" OR "higher" OR "more effectiv*" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain*" OR "consolidat*")
+ ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient" OR "higher"
+    OR "more effectiv*" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR
+    "advancing" OR "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR
+    "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*"
+    OR "sustain*" OR "consolidat*"
+   )
 NEAR
-("equal*" OR "equity" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"))
+   ("equal*" OR "equity" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR
+    "justice*"
+   )
+  )
 OR
-(("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome")
+  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+    OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+    "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
+   )
 NEAR
-("discriminator*" OR "inequalit*" OR "harass*"))))
+   ("discriminator*" OR "inequalit*" OR "harass*"
+   )
+  )
+ )
+)
 ```
 
 ### Target 10.5
