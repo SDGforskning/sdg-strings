@@ -56,9 +56,9 @@ TS=
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
   )
 NEAR
-  ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "earnings increas*" OR
-   "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
+  ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
+   OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "earnings increas*"
+   OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
   )
  )
 AND
