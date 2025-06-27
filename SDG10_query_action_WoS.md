@@ -496,11 +496,11 @@ This query consists of 1 phrase. The basic structure is
 TS=
 ((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered")
 NEAR
-(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$" OR "money transmission$") NEAR ("cost$" OR "charge$" OR "fee$" OR "expense$") NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
+(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$" OR "money transmission$") NEAR ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$") NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
 OR
 (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR "declin*")
 NEAR
-(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$") NEAR (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-priced" OR "high priced" OR "highly priced" OR "ruinous") NEAR ("cost$" OR "charge$" OR "fee$" OR "expense$")) NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
+(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$") NEAR (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR "ruinous*" OR "costly" OR "unaffordab*") NEAR ("cost$" OR "charge$" OR "fee$" OR "expense$")) NEAR ("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
 )
 )
 ```
