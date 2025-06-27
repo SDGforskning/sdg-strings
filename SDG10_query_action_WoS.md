@@ -90,7 +90,7 @@ TS=
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
-   "societal activit*" 
+   "societal activit*" OR "accessib*"
   )
  )
 OR
@@ -119,7 +119,7 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
-Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a way that don't consider people with disabilities. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
+Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
 
 This query consists of 1 phrase. The basic structure is *action + discriminatory law OR action + anti-discriminatory law*
 
@@ -134,7 +134,7 @@ NEAR
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
     "rule" OR "rules" OR "procedur*"
    )
   )
@@ -147,11 +147,11 @@ OR
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*"
+    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice*" OR "action*" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
     "rule" OR "rules" OR "procedur*" 
    )
   )
