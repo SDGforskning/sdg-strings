@@ -127,17 +127,17 @@ This query consists of 1 phrase. The basic structure is *action + discriminatory
 
 ```py
 TS=
-((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
-   OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
+((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
   )
 NEAR
-  (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR
-    "transphob*" OR "stigma*"
+  (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+    OR "stigma*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
-    "rule" OR "rules" OR "procedur*"
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+    OR "rules" OR "procedur*"
    )
   )
  )
@@ -153,8 +153,8 @@ NEAR
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
-    "rule" OR "rules" OR "procedur*" 
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+    OR "rules" OR "procedur*" 
    )
   )
  )
