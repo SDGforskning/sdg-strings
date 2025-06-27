@@ -27,8 +27,10 @@ Acronyms used:
 
     APA: American Psychology Association
     IHRL: International Human Rights Law
+    ILO: International Labour Organization
     ODA: Official Development Assistance
     SDT: Special and Differential Treatment
+    UN: United Nations
     UN DESA: UN Department of Economic and Social Affairs
 
 ## 3. Targets
@@ -169,9 +171,9 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
-This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to plan inequality reducing fiscal policies. 
+This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies.  (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). All of these policies have massive impacts on equality being realized and advanced.
 
-This query consists of 1 phrase. The basic structure is
+This query consists of 1 phrase. The basic structure is *action + laws AND action + equality/inequality*
 
 ```py
 TS=
@@ -189,6 +191,17 @@ TS=
 "architect"
 "develop" OR "development"
 
+"fiscal*"
+"wage*"
+"social* protect*"
+"social* securit*"
+"social* assist*"
+"economic*"
+
+"law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
+    "rule" OR "rules" OR "procedur*" OR "principle$" OR "redistributive impact of fiscal policy"
+
 "increas*"
 "strengthen*"
 "improv*"
@@ -205,28 +218,21 @@ TS=
 "advance" OR "advancing"
 "develop" OR "developing"
 "promot*"
+"rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "consolidat*"
 
-"law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
-    "rule" OR "rules" OR "procedur*"
-
-"fiscal*"
-"wage*"
-"social protect*"
-"economic*"
+"equal*"
+"equity"
+"equitable"
+"equal opportunit*"
+"anti discriminat*"
+"anti-discriminat*"
+"justice*"
 
 "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
 
 "discriminator*"
 "inequalit*"
 "harass*"
-
-"rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "consolidat*"
-
-"equal*"
-"equal opportunit*"
-"anti discriminat*"
-"anti-discriminat*"
 )
 ```
 
@@ -508,7 +514,13 @@ Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025). Legitimizing inclusion
 
 APA. (2020). APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
 
+Engström, V. & Vegar, A. (2021). Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
+
 Equal Future. (2025). Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation. [Accessed 27.6.2025]
+
+ILO. (2024). Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages. https://www.ilo.org/media/478696/download
+
+Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
 
 Sharif, I. (2024). Why economic inclusion is key to reducing poverty and empowering people. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
