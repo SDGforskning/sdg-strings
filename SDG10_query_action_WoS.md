@@ -52,8 +52,8 @@ TS=
 (
  (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*"
    OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*"
-   OR "establish*" OR "sustain*" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
-   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
+   OR "establish*" OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR
+   "normali*" OR "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
@@ -194,8 +194,8 @@ AND
  ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "more effectiv*"
     OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR
     "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
-    "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain*"
-    OR "consolidat*"
+    "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$"
+    OR "sustaining" OR "consolidat*"
    )
 NEAR
    ("equal*" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"
