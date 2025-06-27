@@ -1,6 +1,6 @@
-# Search query for SDG 6 - Clean water and sanitation, Bergen action-approach.
+# Search query for SDG 16 - Peace, justice and strong instutitions, Bergen action-approach.
 
-Ensure availability and sustainable management of water and sanitation for all 
+Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels 
 
 **Status: This query is currently under development (2025)**
 
@@ -17,7 +17,7 @@ Ensure availability and sustainable management of water and sanitation for all
 
 ## 2. General notes
 
-This document contains search strings for finding publications related to the actions in the SDG 6 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 6 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
+This document contains search strings for finding publications related to the actions in the SDG 16 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 16 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
@@ -25,11 +25,17 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 ## 3. Targets
 
-### Target 6.1
+### Target 16.1
 
-> **6.1 By 2030, achieve universal and equitable access to safe and affordable drinking water for all**
+> **16.1 Significantly reduce all forms of violence and related death rates everywhere**
 >
-> 6.1.1 Proportion of population using safely managed drinking water services
+> 16.1.1 Number of victims of intentional homicide per 100,000 population, by sex and age
+>
+> 16.1.2 Conflict-related deaths per 100,000 population, by sex, age and cause
+>
+> 16.1.3 Proportion of population subjected to (a) physical violence, (b) psychological violence and/or (c) sexual violence in the previous 12 months
+>
+> 16.1.4 Proportion of population that feel safe walking alone around the area they live after dark
 
 This target is interpreted to cover research about 
 
@@ -40,11 +46,15 @@ TS=
 )
 ```
 
-### Target 6.2
+### Target 16.2
 
-> **6.2 By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations**
+> **16.2 End abuse, exploitation, trafficking and all forms of violence against and torture of children**
 >
-> 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
+> 16.2.1 Proportion of children aged 1–17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month
+>
+> 16.2.2 Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation
+>
+> 16.2.3 Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18
 
 This target is interpreted to cover research about 
 
@@ -55,13 +65,15 @@ TS=
 )
 ```
 
-### Target 6.3
+### Target 16.3
 
-> **6.3 By 2030, improve water quality by reducing pollution, eliminating dumping and minimizing release of hazardous chemicals and materials, halving the proportion of untreated wastewater and substantially increasing recycling and safe reuse globally**
+> **16.3 Promote the rule of law at the national and international levels and ensure equal access to justice for all**
 >
-> 6.3.1 Proportion of domestic and industrial wastewater flows safely treated
+> 16.3.1 Proportion of victims of (a) physical, (b) psychological and/or (c) sexual violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms
 >
-> 6.3.2 Proportion of bodies of water with good ambient water quality
+> 16.3.2 Unsentenced detainees as a proportion of overall prison population
+>
+> 16.3.3 Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism
 
 This target is interpreted to cover research about 
 
@@ -72,13 +84,13 @@ TS=
 )
 ```
 
-### Target 6.4
+### Target 16.4
 
-> **6.4 By 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity**
+> **16.4 By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime**
 >
-> 6.4.1 Change in water-use efficiency over time
+> 16.4.1 Total value of inward and outward illicit financial flows (in current United States dollars)
 >
-> 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
+> 16.4.2 Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments
 
 This target is interpreted to cover research about 
 
@@ -89,13 +101,13 @@ TS=
 )
 ```
 
-### Target 6.5
+### Target 16.5
 
-> **6.5 By 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate**
+> **16.5 Substantially reduce corruption and bribery in all their forms**
 >
-> 6.5.1 Degree of integrated water resources management
+> 16.5.1 Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months
 >
-> 6.5.2 Proportion of transboundary basin area with an operational arrangement for water cooperation
+> 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
 
 This query consists of X phrases.
 
@@ -106,11 +118,13 @@ TS=
 )
 ```
 
-### Target 6.6
+### Target 16.6
 
-> **6.6 By 2020, protect and restore water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes**
+> **16.6 Develop effective, accountable and transparent institutions at all levels**
 >
-> 6.6.1 Change in the extent of water-related ecosystems over time
+> 16.6.1 Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)
+>
+> 16.6.2 Proportion of population satisfied with their last experience of public services
 
 This target is interpreted to cover research about 
 
@@ -121,11 +135,13 @@ TS=
 )
 ```
 
-### Target 6.a
+### Target 16.7
 
-> **6.a By 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities and programmes, including water harvesting, desalination, water efficiency, wastewater treatment, recycling and reuse technologies**
+> **16.7 Ensure responsive, inclusive, participatory and representative decision-making at all levels**
 >
-> 6.a.1 Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan
+> 16.7.1 Proportions of positions in national and local institutions, including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups
+>
+> 16.7.2 Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group
 
 This target is interpreted to cover research about 
 
@@ -136,11 +152,73 @@ TS=
 )
 ```
 
-### Target 6.b
+### Target 16.8
 
-> **6.b Support and strengthen the participation of local communities in improving water and sanitation management**
+> **16.8 Broaden and strengthen the participation of developing countries in the institutions of global governance**
 >
-> 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
+> 16.8.1 Proportion of members and voting rights of developing countries in international organizations
+
+This target is interpreted to cover research about 
+
+```py
+TS=
+(
+
+)
+```
+
+### Target 16.9
+
+> **16.9 By 2030, provide legal identity for all, including birth registration**
+>
+> 16.9.1 Proportion of children under 5 years of age whose births have been registered with a civil authority, by age
+
+This target is interpreted to cover research about 
+
+```py
+TS=
+(
+
+)
+```
+
+### Target 16.10
+
+> **16.10 Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements**
+>
+> 16.10.1 Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months
+>
+> 16.10.2 Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information
+
+This target is interpreted to cover research about 
+
+```py
+TS=
+(
+
+)
+```
+
+### Target 16.a
+
+> **16.a Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime**
+>
+> 16.a.1 Existence of independent national human rights institutions in compliance with the Paris Principles
+
+This target is interpreted to cover research about 
+
+```py
+TS=
+(
+
+)
+```
+
+### Target 16.b
+
+> **16.b Promote and enforce non-discriminatory laws and policies for sustainable development**
+>
+> 16.b.1 Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
 This target is interpreted to cover research about 
 
@@ -160,6 +238,6 @@ Specialist input:
 
 ## 5. Footnotes
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2025.04.02]
+<span id="f1">UN DESA. (2025).</span> *Goals: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels*. https://sdgs.un.org/goals/goal16#targets_and_indicators [Accessed 2025.06.27]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
