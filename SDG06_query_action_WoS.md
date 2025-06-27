@@ -55,7 +55,7 @@ This phrase aims to find research about advancing accessibility to safe and affo
 
 Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
 
-The elements of the phrase are *action(advance) + access/availability/affordability/management/regulation/investment + safe + drinking water/improved drinking water sources*
+The elements of the phrase are *action(advance) + access/availability/affordability/management/regulation/investment + safe/improved + drinking water*
 
 ```py
 
