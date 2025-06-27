@@ -25,10 +25,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 Acronyms used:
 
-    UN DESA: UN Department of Economic and Social Affairs
+    APA: American Psychology Association
     IHRL: International Human Rights Law
     ODA: Official Development Assistance
     SDT: Special and Differential Treatment
+    UN DESA: UN Department of Economic and Social Affairs
 
 ## 3. Targets
 
@@ -99,9 +100,10 @@ OR
    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
   )
 NEAR
-  ("horizontal inequalit*" OR "horizontal exclu*" OR "horizontal marginal*" OR "social* exclu*" OR
-   "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR
-   "political* marginal*" OR "societal exclu*" OR "societal marginal*"
+  ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+   "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*" OR
+   "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
+   "intersecti* vulnerab*" OR "intersecti* oppression*"
   )
  )
 )
@@ -117,6 +119,8 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
+Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a way that don't consider people with disabilities. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
+
 This query consists of 1 phrase. The basic structure is *action + discriminatory law OR action + anti-discriminatory law*
 
 ```py
@@ -125,7 +129,8 @@ TS=
    "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
   )
 NEAR
-  (("discriminat*" OR "inequalit*" OR "harass*"
+  (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR
+    "transphob*" OR "stigma*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -142,7 +147,7 @@ OR
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*" OR "non-discriminat*"
+    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -510,9 +515,15 @@ Specialist input:
 
 Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025). Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology. https://doi.org/10.1111/pops.70030
 
+APA. (2020). APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
+
+Equal Future. (2025). Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation. [Accessed 27.6.2025]
+
 Sharif, I. (2024). Why economic inclusion is key to reducing poverty and empowering people. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
 Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+
+UN DESA. (2018). Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
 UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
