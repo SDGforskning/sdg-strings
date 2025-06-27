@@ -58,8 +58,6 @@ Terms for improved drinking water sources were found from the indicator 6.1.1 me
 The elements of the phrase are *action(advance) + access/availability/affordability/management/regulation/investment + safe/improved + drinking water*
 
 ```py
-
-TEST WHETHER "IMPROVED DRINKING WATER SOURCES" ARE NEEDED OR WILL "SAFE DRINKING WATER" FIND EVERYTHING RELEVANT ANYWAY
 TS=
 (
   (
