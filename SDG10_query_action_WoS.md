@@ -169,7 +169,7 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
-This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc.
+This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to plan inequality reducing fiscal policies. 
 
 This query consists of 1 phrase. The basic structure is
 
