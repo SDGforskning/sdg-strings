@@ -77,7 +77,8 @@ TS=
     NEAR/15 
     (
       (
-        ("clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" 
+        ("clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality"
+	OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
         OR "piped" OR "tap*" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
         OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
         OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
