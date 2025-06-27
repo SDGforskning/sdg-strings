@@ -191,11 +191,11 @@ NEAR
   )
  ) 
 AND 
- ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "higher" OR
-    "more effectiv*" OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR
-    "advancing" OR "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR
-    "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*"
-    OR "sustain*" OR "consolidat*"
+ ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "more effectiv*"
+    OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR
+    "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
+    "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain*"
+    OR "consolidat*"
    )
 NEAR
    ("equal*" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"
@@ -203,9 +203,9 @@ NEAR
   )
 OR
   (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
-    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
-    OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-    "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
+    "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
+    "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
+    OR "halt*" OR "resist*" OR "overcome"
    )
 NEAR
    ("discriminator*" OR "inequalit*" OR "harass*"
