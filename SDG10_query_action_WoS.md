@@ -169,6 +169,8 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
+This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc.
+
 This query consists of 1 phrase. The basic structure is
 
 ```py
@@ -204,19 +206,9 @@ TS=
 "develop" OR "developing"
 "promot*"
 
-"law$"
-"policy" OR "policies"
-"regulat*"
-"legal*"
-"legislat*"
-"agreement$"
-"treaty" OR "treaties"
-"strateg*"
-"framework$"
-"instrument$"
-"governance"
-"practice*"
-"action*"
+"law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+    "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR
+    "rule" OR "rules" OR "procedur*"
 
 "fiscal*"
 "wage*"
@@ -231,7 +223,6 @@ TS=
 
 "rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "consolidat*"
 
-"appropriat*"
 "equal*"
 "equal opportunit*"
 "anti discriminat*"
