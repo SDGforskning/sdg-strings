@@ -260,7 +260,7 @@ TS=
     OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
     OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
     OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
-    OR "defecation area$" OR "area$ of defecation" 
+    OR "open defecation" 
     OR
         (
         ("bush" OR "ditch" OR "surface water$" OR "channel$" OR "beach*" 
