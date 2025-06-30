@@ -232,7 +232,7 @@ This phrase aims to find research about abandoning lack of sanitation or unsafe 
 
 Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
 
-The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + service/facility + sanitation/hygiene*
+The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + sanitation/hygiene + service/facility*
 
 
 ```py
@@ -250,7 +250,7 @@ TS=
     NEAR/15 
   (
     (
-      ("poor" OR "bad" OR "unknown" OR "lack" OR "unimproved" OR "unsafe" 
+      ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
       OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary") 
       NEAR/3 (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*"))
     )   

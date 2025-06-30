@@ -161,7 +161,39 @@ OR "tackling" OR "tackle" OR "scal* up" OR "upgrad")
 
 ```
 
+#### Phrase 2
 
+This phrase aims to find research about the lack of sanitation or unsafe i.e. unimproved sanitation such as practicing open defecation as well as lack of hygiene services.
+
+Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
+
+The elements of the phrase are *inadequate/unsafe/unimproved/lacking + sanitation/hygiene + service/facility*
+
+
+```py
+TS=
+(
+  (
+    ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
+    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary") 
+      NEAR/3 (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*"))
+  )   
+  OR "unimproved sanitation facilit*" 
+  OR ("flush toilet*" NEAR/3 ("open drain*")) 
+  OR "pit latrines without slab*" 
+  OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
+  OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
+  OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
+  OR "defecation area$" OR "area$ of defecation" 
+  OR
+      (
+      ("bush" OR "ditch" OR "surface water$" OR "channel$" OR "beach*" 
+      OR "river$" OR "stream$" OR "sea") 
+        NEAR/3 ("defecation")
+      ) 
+  OR ("contact" NEAR/3 ("human" NEAR/3 ("excret$" OR "faeces" OR "stool" OR "faecal sludge")))
+)
+```
 
 ### Target 6.3
 
