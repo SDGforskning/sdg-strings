@@ -252,7 +252,12 @@ TS=
     (
       ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
       OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary") 
-      NEAR/3 (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*"))
+      NEAR/3 
+        (
+        ("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*") 
+        OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+        OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+        )
     )   
     OR "unimproved sanitation facilit*" 
     OR ("flush toilet*" NEAR/3 ("open drain*")) 
