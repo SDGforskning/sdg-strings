@@ -60,7 +60,7 @@ TS=
     (
     "availab*" OR "access" OR "affordab*" OR "management" OR "regulat*" OR "invest*" 
     OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*"
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
     )
   
     NEAR/15 
