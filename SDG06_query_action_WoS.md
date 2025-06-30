@@ -249,15 +249,15 @@ TS=
   )
     NEAR/15 
   (
-    (("poor" OR "bad" OR "unknown" OR "lack" OR "unimproved" OR "unsafe" 
-    OR "absent" OR "absence") 
-      NEAR/3 ("sanitation" OR "hygiene")) 
-    OR (("unhygienic" OR "unsanitary" OR "insanitary")) 
-      NEAR/3 ("service$" OR "facilit*") 
+    (
+      ("poor" OR "bad" OR "unknown" OR "lack" OR "unimproved" OR "unsafe" 
+      OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary") 
+      NEAR/3 (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*"))
+    )   
     OR "unimproved sanitation facilit*" 
     OR ("flush toilet*" NEAR/3 ("open drain*")) 
     OR "pit latrines without slab*" 
-    OR "open pit*" 
+    OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
     OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
     OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
     OR "defecation area$" OR "area$ of defecation" 
@@ -270,7 +270,6 @@ TS=
     OR ("contact" NEAR/3 ("human" NEAR/3 ("excret$" OR "faeces" OR "stool" OR "faecal sludge")))
   )
 )
-
 ```
 
 #### Phrase 3
