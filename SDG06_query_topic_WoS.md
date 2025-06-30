@@ -114,12 +114,15 @@ This phrase aims to find research about access to sanitation and hygiene. Terms 
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to WASH in order to exclude research about wastewater treatment in general.
 
+Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
+
 The elements of the phrase are *access + WASH/safely managed sanitation services*  
 
 
 ```py
 TS=
-(("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*")
+(("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
+OR "tackling" OR "tackle" OR "practice*" OR "scal* up")
   NEAR/15 
 (
     ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
