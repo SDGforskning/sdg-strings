@@ -54,7 +54,7 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 TS=
 (
  (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*"
-   OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*"
+   OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$"
    OR "establish*" OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR
    "normali*" OR "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
   )
@@ -89,8 +89,8 @@ This query consists of 1 phrase. The basic structure is *action + inclusion OR a
 ```py
 TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
-   "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "expansion*" OR "accelerat*"
-   OR "advanc*" OR "advancing" OR "develop*" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
+   "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand$" OR "expansion*" OR "accelerat*"
+   OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
    "achiev*" OR "encourag*" OR "facilitat*"
   )
 NEAR
@@ -146,7 +146,7 @@ NEAR
  )
 OR 
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
-   "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
+   "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
    "introduc*"
   )
@@ -195,8 +195,8 @@ NEAR
  ) 
 AND 
  ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
-    OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR
-    "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
+    OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
+    "develop$" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
     "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$"
     OR "sustaining" OR "consolidat*"
    )
@@ -228,54 +228,35 @@ This target is interpreted to cover research about improving the regulation and 
 
 The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.) IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from global to a regional level can function fair and efficient ways. (FSB 2025.)
 
-This query consists of 1 phrase. The basic structure is
+This query consists of 1 phrase. The basic structure is *action + regulation + financial institution*
 
 ```py
 TS=
-("increas*"
-"strengthen*"
-"improv*"
-"restor*"
-"enhanc*"
-"better$"
-"more efficient"
-"more effectiv*"
-"higher"
-"upgrad*"
-"scal* up"
-"expand" OR "expansion*"
-"accelerat*"
-"advance" OR "advancing"
-"develop" OR "developing"
-"promot*"
-"encourag*"
-"facilitat*"
-"ensure"
-"attain*"
-"achiev*"
-"build* capacity" / "capacity building" / "capacity development
-"establish*"
-"implement*"
-"adopt*"
-
-"manag*"
-"control*"
-"regulat*"
-"legislat*"
-"govern*"
-"monitor*"
-"surveillanc*"
-"secure$"
-"securing"
-"assess*"
-"examin*"
-"evaluat*"
-"measur*"
-"supervis*"
-"validat*"
-"mandat*"
-
-(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade") NEAR "("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR "system"))
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient" OR 
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR
+    "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
+    "ensure" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* development*"
+    "establish*" OR "implement*" OR "adopt*"
+   )
+NEAR
+   ("manag*" OR "control*" OR "regulat*" OR "legislat*" OR "govern*" OR "monitor*" OR "surveillanc*" OR 
+    "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
+    OR "mandat*"
+   )
+  )
+AND
+ ((("global*" OR "international*"
+   )
+NEAR
+   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+   )
+  )
+NEAR
+   ("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*"
+    OR "system"
+   )
+  )
+ )
 )
 ```
 
