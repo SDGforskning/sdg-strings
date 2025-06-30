@@ -151,8 +151,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to adequate/safe sanitation i.e. the phrases search for adequate also as it has been defined in the research. 
-`TEST WHETHER ADEQUATE IS NEEDED FOR RELEVANT RESULTS. LIMITING TO ADEQUATE MIGHT LEAVE OUT RELEVANT RESULTS. ...search for any research about advancing access to sanitation`
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
 
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
@@ -161,16 +160,16 @@ As the target is about equal access and a particular focus is on women, girls an
 
 #### Phrase 1
 
-This phrase aims to find research about providing access to adequate and safe sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
+This phrase aims to find research about providing access to sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
 
 The phrase is structured partly similarly to the SDG 11 target 11.1 phrase 2 about access to basic services.
 
-The elements of the phrase are *action + access + safely managed sanitation services OR adequate/safe/basic/improved + sanitation/hygiene services*  
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to WASH in order to exclude research about wastewater treatment in general.
+
+The elements of the phrase are *action + access + WASH/safely managed sanitation services*  
 
 
 ```py
-
-TEST WHETHER ADEQUATE IS NEEDED FOR RELEVANT RESULTS. LIMITING TO ADEQUATE MIGHT LEAVE OUT RELEVANT RESULTS
 TS=
 (
   (
@@ -183,33 +182,38 @@ TS=
         NEAR/5
             ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*")
       )
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
   )
-    NEAR/15
-        ("safely managed sanitation services" 
-        OR "improved sanitation facilities" 
-        OR "wet sanitation technolog*" 
-        OR 
-          ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*"))
-        OR "dry sanitation technologies" 
-        OR 
-          ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation")
-	      OR
-	(
-          ("basic" OR "adequate" OR "safe" OR "improved" OR "equitab*" OR "non-equit*")
-          NEAR/5
-            (
-              ("sanitation" OR "hygiene" OR "toilet" OR "handwashing" OR "hand-washing" OR "sewage" OR "WASH")
-              NEAR/2 ("service$" OR "facility" OR "facilities")
-            ) 
-            OR 
-            (
-              ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
-              NEAR/3 ("human excreta" OR "faecal sludge" OR "wastewater")
-            )
-	)
-	)
-	    
+    NEAR/15 
+  (
+    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
+
+    OR "safely managed sanitation services" 
+    OR "improved sanitation facilities" 
+    OR "wet sanitation technolog*" 
+    OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
+    OR "dry sanitation technologies" 
+    OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
+    OR 
+      (
+        ("adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*") 
+          NEAR/5 
+            ("toilet*" OR "lavator*" OR "latrine*" OR "WC" OR "water closet*")
+      ) 
+      OR 
+      (
+        ("sewege" 
+          OR
+          (
+          ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
+          OR "emptying" OR "transport" OR "reuse") 
+              NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
+          )
+        )
+            NEAR/5 
+            ("sanitation" OR "hygiene" OR "WASH") 
+      )
+  )         
 )
 ```
 
