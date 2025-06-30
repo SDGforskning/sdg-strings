@@ -232,7 +232,7 @@ This query consists of 1 phrase. The basic structure is *action + regulation + f
 
 ```py
 TS=
-(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient" OR 
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient" OR 
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensure" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* development*"
@@ -245,16 +245,14 @@ NEAR
    )
   )
 AND
- ((("global*" OR "international*"
-   )
-NEAR
-   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
-   )
+  ("global*" OR "international*"
   )
-NEAR
-   ("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*"
-    OR "system"
-   )
+AND
+ (("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+  )
+  NEAR
+  ("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*"
+   OR "system"
   )
  )
 )
