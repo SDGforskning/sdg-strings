@@ -26,6 +26,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 Acronyms used:
 
     APA: American Psychology Association
+    FSB: Financial Stability Board
     FSI: Financial Soundness Indicator
     IHRL: International Human Rights Law
     ILO: International Labour Organization
@@ -225,7 +226,7 @@ NEAR
 
 This target is interpreted to cover research about improving the regulation and monitoring of global financial markets and institutions.
 
-The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.)
+The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.) IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from global to a regional level can function fair and efficient ways. (FSB 2025.)
 
 This query consists of 1 phrase. The basic structure is
 
@@ -274,7 +275,7 @@ TS=
 "validat*"
 "mandat*"
 
-(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money" OR "capital" OR "asset$") NEAR "("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*"))
+(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade") NEAR "("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR "system"))
 )
 ```
 
@@ -517,6 +518,8 @@ APA. (2020). APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Pract
 Engström, V. & Vegar, A. (2021). Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
 
 Equal Future. (2025). Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation. [Accessed 27.6.2025]
+
+FSB. (2025). Key Standards for Sound Financial Systems. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
 
 ILO. (2024). Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages. https://www.ilo.org/media/478696/download
 
