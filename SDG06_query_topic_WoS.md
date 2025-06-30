@@ -112,7 +112,9 @@ Target 6.2 is related to SDG 11 target 11.1 which is about access to basic servi
 
 This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to WASH in order to exclude research about wastewater treatment in general.
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+
+Term `WASH` although central to the topic was not used due to many irrelevant results about wash in other meanings.
 
 Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
 
@@ -125,7 +127,7 @@ TS=
 OR "tackling" OR "tackle" OR "scal* up" OR "upgrad") 
   NEAR/15 
 (
-    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
+    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
 
     OR "safely managed sanitation services" 
     OR "improved sanitation facilities" 

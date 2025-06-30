@@ -162,7 +162,9 @@ As the target is about equal access and a particular focus is on women, girls an
 
 This phrase aims to find research about providing access to sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to WASH in order to exclude research about wastewater treatment in general.
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+
+Term `WASH` although central to the topic was not used due to many irrelevant results about wash in other meanings.
 
 The elements of the phrase are *action + access + WASH/safely managed sanitation services*  
 
@@ -188,7 +190,7 @@ TS=
 
     NEAR/15 
     (
-    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
+    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
 
     OR "safely managed sanitation services" 
     OR "improved sanitation facilities" 
