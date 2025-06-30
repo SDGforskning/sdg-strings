@@ -41,7 +41,7 @@ This target is interpreted to cover research about access to safe and affordable
 
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
 
-Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
+Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to target 3.9 about death and illnesses caused e.g. by contaminated water.
 
 #### Phrase 1
 
