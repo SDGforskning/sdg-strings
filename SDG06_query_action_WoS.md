@@ -153,6 +153,8 @@ What is adequate sanitation? According to the definitions of the indicator metad
 
 However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
 
+We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
+
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
