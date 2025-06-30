@@ -26,8 +26,10 @@ Our classification of countries as least developed countries (LDCs), small islan
 Acronyms used:
 
     APA: American Psychology Association
+    FSI: Financial Soundness Indicator
     IHRL: International Human Rights Law
     ILO: International Labour Organization
+    IMF: International Monetary Fund
     ODA: Official Development Assistance
     SDT: Special and Differential Treatment
     UN: United Nations
@@ -50,7 +52,7 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 ```py
 TS=
 (
- (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better" OR "attain*"
+ (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*"
    OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop*"
    OR "establish*" OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR
    "normali*" OR "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
@@ -85,7 +87,7 @@ This query consists of 1 phrase. The basic structure is *action + inclusion OR a
 
 ```py
 TS=
-((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
    "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expan*" OR "expansion*" OR "accelerat*"
    OR "advanc*" OR "advancing" OR "develop*" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
    "achiev*" OR "encourag*" OR "facilitat*"
@@ -132,7 +134,7 @@ TS=
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*"
+    OR "stigma*" OR "ableis*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -142,7 +144,7 @@ NEAR
   )
  )
 OR 
- (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR 
+ (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
    "introduc*"
@@ -171,7 +173,7 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new social and economic policy practices to reduce inequalities/achieve greater equality.
 
-This target focuses on policies that ensure greater equality through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies.  (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). All of these policies have massive impacts on equality being realized and advanced.
+This target focuses on policies that ensure greater equality especially through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies.  (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). All of these policies have massive impacts on equality being realized and advanced.
 
 This query consists of 1 phrase. The basic structure is *action + laws AND action + equality/inequality*
 
@@ -191,7 +193,7 @@ NEAR
   )
  ) 
 AND 
- ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient" OR "more effectiv*"
+ ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
     OR "upgrad*" OR "scal* up" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR
     "develop" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
     "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$"
@@ -223,6 +225,8 @@ NEAR
 
 This target is interpreted to cover research about improving the regulation and monitoring of global financial markets and institutions.
 
+The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.)
+
 This query consists of 1 phrase. The basic structure is
 
 ```py
@@ -232,7 +236,7 @@ TS=
 "improv*"
 "restor*"
 "enhanc*"
-"better"
+"better$"
 "more efficient"
 "more effectiv*"
 "higher"
@@ -243,6 +247,15 @@ TS=
 "advance" OR "advancing"
 "develop" OR "developing"
 "promot*"
+"encourag*"
+"facilitat*"
+"ensure"
+"attain*"
+"achiev*"
+"build* capacity" / "capacity building" / "capacity development
+"establish*"
+"implement*"
+"adopt*"
 
 "manag*"
 "control*"
@@ -251,9 +264,17 @@ TS=
 "govern*"
 "monitor*"
 "surveillanc*"
+"secure$"
 "securing"
+"assess*"
+"examin*"
+"evaluat*"
+"measur*"
+"supervis*"
+"validat*"
+"mandat*"
 
-(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money") NEAR "("institution*" OR "market*"))
+(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money" OR "capital" OR "asset$") NEAR "("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*"))
 )
 ```
 
@@ -514,6 +535,8 @@ UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goal
 UN Statistics Division (2024a). SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
 UN Statistics Division (2024b). SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
+
+UN Statistics Division (2024c). SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
