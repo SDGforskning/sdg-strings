@@ -76,15 +76,6 @@ This phrase aims to find research about the use of unsafe drinking water, i.e. d
 
 The elements of the phrase are *unsafe/unprotected/contaminated/unimproved sources + drinking water*
 
-
-### Target 6.2
-
-> **6.2 By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations**
->
-> 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
-
-This target is interpreted to cover research about 
-
 ```py
 TS=
 (
@@ -105,6 +96,65 @@ TS=
   OR "unimproved drinking water source*" 
 )
 ```
+
+### Target 6.2
+
+> **6.2 By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations**
+>
+> 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
+
+This target is interpreted to cover research about 
+
+
+Target 6.2 is related to SDG 11 target 11.1 which is about access to basic services.
+
+#### Phrase 1
+
+This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
+
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to WASH in order to exclude research about wastewater treatment in general.
+
+The elements of the phrase are *access + WASH/safely managed sanitation services*  
+
+
+```py
+TS=
+(("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*")
+  NEAR/15 
+(
+    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
+
+    OR "safely managed sanitation services" 
+    OR "improved sanitation facilities" 
+    OR "wet sanitation technolog*" 
+    OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
+    OR "dry sanitation technologies" 
+    OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
+    OR 
+      (
+        ("adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*") 
+          NEAR/5 
+            ("toilet*" OR "lavator*" OR "latrine*" OR "WC" OR "water closet*")
+      ) 
+      OR 
+      (
+        ("sewege" 
+          OR
+          (
+          ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
+          OR "emptying" OR "transport" OR "reuse") 
+              NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
+          )
+        )
+            NEAR/5 
+            ("sanitation" OR "hygiene" OR "WASH") 
+      )
+)
+)       
+
+```
+
+
 
 ### Target 6.3
 
