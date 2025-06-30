@@ -235,7 +235,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient" OR 
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
-    "ensure" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* development*"
+    "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* development*"
     "establish*" OR "implement*" OR "adopt*"
    )
 NEAR
@@ -266,33 +266,21 @@ NEAR
 
 This target is interpreted to cover research about enhancing the representation and decision-making powers of developing countries in international economic institutions.
 
-In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall (UN DESA 2019; UN 2024).
 
-This query consists of 1 phrase. The basic structure is
+This query consists of 1 phrase. The basic structure is *action + representation + developing countries + international economic institution*
 
 ```py
 TS=
-("rais*" or "foster*" or "increas*" or "promot*" or "boost*" or "enhanc* or "improv*" or "better" or "attain*" or "achiev*" or "provid*" or "ensur*" or "guarantee*" or "maintain*" or "secur*" or "strengthen*" or "develop*" or "establish*" or "sustain*" or "standardi*" or "regulari*" or "consolidat*" 
+("rais*" OR "foster*" OR "boost*" OR "provid*" OR "ensur*" OR "guarantee*" OR "establish*" OR "standardi*" OR
+"regulari*" OR "consolidat*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR
+"more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR
+"capacity building" OR "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR
+"advancing" OR "develop$" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR 
+"achiev*"
 
-
-"increas*"
-"strengthen*"
-"improv*"
-"enhanc*"
-"better"
-"more effectiv*"
-"higher"
-"upgrad*"
-"scal* up"
-"expand*" OR "expansion*"
-"accelerat*"
-"advance*" OR "advancing"
-
-"representat*"
-"voice*"
-"vote*"
-"decision-making" OR "decision making"
-"decision-making power*" OR "decision making power*"
+"representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
+"decision-making power*" OR "decision making power*" OR "participat*
 
 "least developed countr*" OR "least developed nation$"
       OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world"
@@ -311,11 +299,16 @@ TS=
       )
 )
 
-
-
-(("global*" OR "international*") NEAR ("economic*" OR "financial*" or "monetar*" OR "money") NEAR "("institution*" OR "market*"))
-
-)
+ (("global*" OR "international*"
+  )
+NEAR
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+  )
+  NEAR
+  ("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*"
+   OR "system"
+  )
+ )
 ```
 
 ### Target 10.7
