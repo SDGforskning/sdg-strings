@@ -233,10 +233,10 @@ This query consists of 1 phrase. The basic structure is *action + regulation + f
 ```py
 TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient" OR 
-    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR 
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
-    "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* development*"
-    "establish*" OR "implement*" OR "adopt*"
+    "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
+    OR "establish*" OR "implement*" OR "adopt*"
    )
 NEAR
    ("manag*" OR "control*" OR "regulat*" OR "legislat*" OR "govern*" OR "monitor*" OR "surveillanc*" OR 
