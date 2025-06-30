@@ -46,7 +46,7 @@ This target is interpreted to cover research about advancing access to safe and 
 
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
 
-Target 6.1 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
+Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to target 3.9 about death and illnesses caused e.g. by contaminated water.
 
 
 #### Phrase 1
@@ -105,7 +105,7 @@ TS=
 (
   (
     "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
-    OR "stop" OR "end*"
+    OR "stop" OR "end" OR "ending"
     OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR"overcome" 
     OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
     OR "scal* up" OR "develop" OR "developing"
@@ -115,7 +115,7 @@ TS=
     NEAR/15 
     (
       (
-        ("unclean" OR "unsafe" OR "impure" OR "unimproved" OR "polluted" OR "contaminated" 
+        ("unclean" OR "unsafe" OR "impure" OR "unimproved" OR "polluted" OR "contaminated" OR "contamination" 
         OR "unhygienic" OR "unsanitary" OR "insanitary" OR "untreated" 
         OR ("unprotected" NEAR/3 ("dug well*" OR "spring*"))
         OR "surface water*" OR "river*" OR "reservoir*" OR "lake*" OR "pond*" OR "stream*" 
