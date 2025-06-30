@@ -83,6 +83,13 @@ TS=
 )
 ```
 
+#### Phrase 2
+
+This phrase aims to find research about the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf (“UNstats2025”)
+
+The elements of the phrase are *unsafe/unprotected/contaminated/unimproved sources + drinking water*
+
+
 ### Target 6.2
 
 > **6.2 By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations**
@@ -94,7 +101,21 @@ This target is interpreted to cover research about
 ```py
 TS=
 (
-
+  (
+    ("unclean" OR "unsafe" OR "impure" OR "unimproved" OR "polluted" OR "contaminated" OR "contamination" 
+    OR "unhygienic" OR "unsanitary" OR "insanitary" OR "untreated" 
+    OR ("unprotected" NEAR/3 ("dug well*" OR "spring*"))
+    OR "surface water*" OR "river*" OR "reservoir*" OR "lake*" OR "pond*" OR "stream*" 
+    OR "canal*" OR "channel*" 
+    OR (("poor" OR "bad" OR "unknown") NEAR/3 "quality") 
+    OR "E. coli" OR "Escherichia coli" OR "coliforms" OR "pathogen*" 
+    OR "arsenic" OR "fluoride*" 
+    )
+       
+      NEAR/5 
+      ("drink*" NEAR/3 "water")
+  )
+  OR "unimproved drinking water source*" 
 )
 ```
 
