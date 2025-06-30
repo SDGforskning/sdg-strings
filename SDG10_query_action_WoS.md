@@ -245,10 +245,10 @@ NEAR
    )
   )
 AND
-  ("global*" OR "international*"
+ (("global*" OR "international*"
   )
-AND
- (("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+NEAR
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
   )
   NEAR
   ("institution*" OR "market*" OR "corporation*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*"
