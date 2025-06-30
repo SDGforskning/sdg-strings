@@ -121,8 +121,8 @@ The elements of the phrase are *access + WASH/safely managed sanitation services
 
 ```py
 TS=
-(("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-OR "tackling" OR "tackle" OR "practice*" OR "scal* up")
+(("availab*" OR "unavailab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
+OR "tackling" OR "tackle" OR "practice*" OR "scal* up" OR "upgrad") 
   NEAR/15 
 (
     ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR "WASH") 
