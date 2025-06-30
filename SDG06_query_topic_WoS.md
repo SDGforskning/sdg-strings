@@ -45,41 +45,28 @@ Target 6.1 is related to SDG 11 target 11.1 which is about access to basic servi
 
 #### Phrase 1
 
-This phrase aims to find research about access to safe and affordable drinking water and about invests in safely managed drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
+This phrase aims to find research about access to drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
 
 Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
 
-The elements of the phrase are *access/availability/affordability/management/regulation/investment + safe/improved + drinking water*
+The elements of the phrase are *access/availability/affordability/clean/safe + drinking water*
 
 ```py
-
-HOW TO EXCLUDE IRRELEVANT RESULTS ABOUT ANIMALS' DRINKING WATER?
-
 TS=
 (
-    (
-    "availab*" OR "access" OR "affordab*" OR "management" OR "regulat*" OR "invest*" 
-    OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
-    )
-  
-    NEAR/15 
-    (
-      (
-        ("clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+  (
+  ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
 	OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
-        OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
-        OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
-        OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
-        OR ("water" NEAR/3 "kiosk*")
-        ) 
-        NEAR/5 
-        ("drink*" NEAR/3 "water") 
-      ) 
-      OR "improved drinking water source*" 
-      OR "safely managed drinking water" 
-
-    )
+  OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
+  OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
+  OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
+  OR ("water" NEAR/3 "kiosk*")
+  ) 
+    NEAR/5 
+      ("drink*" NEAR/3 "water") 
+  ) 
+  OR "improved drinking water source*" 
+  OR "safely managed drinking water" 
 )
 ```
 
