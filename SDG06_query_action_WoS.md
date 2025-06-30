@@ -164,7 +164,7 @@ This phrase aims to find research about providing access to sanitation and hygie
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
-Term `WASH` although central to the topic was not used due to many irrelevant results about wash in other meanings.
+Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings.
 
 The elements of the phrase are *action + access + WASH/safely managed sanitation services*  
 
@@ -190,7 +190,9 @@ TS=
 
     NEAR/15 
     (
-    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+    ("sanitation" OR "hygiene" OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
+    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+    ) 
 
     OR "safely managed sanitation services" 
     OR "improved sanitation facilities" 
