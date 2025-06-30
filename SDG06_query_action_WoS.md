@@ -215,7 +215,7 @@ TS=
           (
           ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
           OR "emptying" OR "transport" OR "reuse") 
-              NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
+              NEAR/3 ("wastewater" OR "human excret$" OR "faeces" OR "faecal sludge")
           )
         )
             NEAR/5 
@@ -238,8 +238,39 @@ The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + 
 ```py
 TS=
 (
-
+  (
+    "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
+    OR "stop" OR "end" OR "ending" OR "abandon" 
+    OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR"overcome" 
+    OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+    OR "scal* up" OR "develop" OR "developing"
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" 
+    OR "program*" OR "project*"  
+  )
+    NEAR/15 
+  (
+    (("poor" OR "bad" OR "unknown" OR "lack" OR "unimproved" OR "unsafe" 
+    OR "absent" OR "absence") 
+      NEAR/3 ("sanitation" OR "hygiene")) 
+    OR (("unhygienic" OR "unsanitary" OR "insanitary")) 
+      NEAR/3 ("service$" OR "facilit*") 
+    OR "unimproved sanitation facilit*" 
+    OR ("flush toilet*" NEAR/3 ("open drain*")) 
+    OR "pit latrines without slab*" 
+    OR "open pit*" 
+    OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
+    OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
+    OR "defecation area$" OR "area$ of defecation" 
+    OR
+        (
+        ("bush" OR "ditch" OR "surface water$" OR "channel$" OR "beach*" 
+        OR "river$" OR "stream$" OR "sea") 
+          NEAR/3 ("defecation")
+        ) 
+    OR ("contact" NEAR/3 ("human" NEAR/3 ("excret$" OR "faeces" OR "stool" OR "faecal sludge")))
+  )
 )
+
 ```
 
 #### Phrase 3
