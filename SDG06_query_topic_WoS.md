@@ -112,9 +112,9 @@ Target 6.2 is related to SDG 11 target 11.1 which is about access to basic servi
 
 This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. And `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
-Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings.
+Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
 
 Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
 
@@ -129,9 +129,10 @@ TS=
   OR "adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal") 
     NEAR/15 
   (
-    (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*")) 
+    "sanitation" 
+    OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
     OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-    OR ("WASH" NEAR/3 ("service$" OR "facilit*")) 
+    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
 
     OR "safely managed sanitation services" 
     OR "improved sanitation facilities" 
@@ -143,7 +144,7 @@ TS=
       (
         ("adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*") 
           NEAR/5 
-            ("toilet*" OR "lavator*" OR "latrine*" OR "WC" OR "water closet*")
+            ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*")
       ) 
       OR 
       (
