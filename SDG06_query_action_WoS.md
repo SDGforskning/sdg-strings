@@ -186,7 +186,7 @@ TS=
        ) 
        NEAR/5
             ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-            OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*")
+            OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal")
     )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
   )
