@@ -286,7 +286,7 @@ TS=
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
-   "decision-making power*" OR "decision making power*" OR "participat*
+   "decision-making power*" OR "decision making power*" OR "participat*"
   )
 NEAR
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
@@ -356,10 +356,6 @@ NEAR/5
   )
  )
 NOT "globalization"
-AND
-  ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR
-   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*"
-  )
  )
 ```
 
