@@ -239,7 +239,7 @@ TS=
     OR "establish*" OR "implement*" OR "adopt*"
    )
 NEAR/5
-   ("manag*" OR "control*" OR "regulat*" OR "legislat*" OR "govern*" OR "monitor*" OR "surveillanc*" OR 
+   ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
     "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
     OR "mandat*"
    )
@@ -250,12 +250,16 @@ AND
 NEAR/5
   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
   )
-  NEAR/5
+NEAR/5
   ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
    "system$"
   )
- ) NOT "globalization"
-AND ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democracy" OR "responsib*")
+ )
+NOT "globalization"
+AND
+  ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR
+   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*"
+  )
 )
 ```
 
