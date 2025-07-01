@@ -377,6 +377,7 @@ https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.p
 * increasing recycling and safe reuse of water
 * monitoring of water quality
 
+Althoug mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater body species. We interpreted this target to be more about the water quality.
 
 This target focuses on freshwater bodies. The ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . 
 
@@ -432,7 +433,6 @@ TS=
         OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$" 
-        OR "fertili?er$" OR "nutrient$"
         )
   ) 
   AND 

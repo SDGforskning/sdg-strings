@@ -317,7 +317,6 @@ TS=
     OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
     OR "polycyclic aromatic hydrocarbon$" OR "PAH"
     OR "oil spill$" 
-    OR "fertili?er$" OR "nutrient$"
     ) 
   AND 
     ("freshwater" OR "lake$" OR "pond$" 
