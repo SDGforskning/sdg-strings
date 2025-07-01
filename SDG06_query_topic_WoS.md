@@ -286,10 +286,45 @@ TS=
 
 This target is interpreted to cover research about 
 
+#### Phrase 1
+
+This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies.
+
+The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies*
+
+
 ```py
 TS=
 (
-
+    ("pollut*"
+    OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
+    OR "effluent$" 
+    OR
+    (
+      ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+        NEAR/15
+          ("waste" OR "discharge" OR "runoff" OR "run off")          
+    )
+    OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
+    OR
+    (
+      ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+      OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil")
+        NEAR/15 "contamination"   
+    )
+    OR "contaminated" OR "contaminant$" OR "toxic chemical$"
+    OR "endocrine disrupting chemical$"
+    OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+    OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+    OR "oil spill$" 
+    OR "fertili?er$" OR "nutrient$"
+    ) 
+  AND 
+    ("freshwater" OR "lake$" OR "pond$" 
+    OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+    OR "aquifer$" OR "groundwater" 
+    OR ("water" NEAR/3 "reservoir$")
+    )
 )
 ```
 

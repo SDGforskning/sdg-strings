@@ -395,7 +395,7 @@ Target 6.3 is related to targets
 
 #### Phrase 1
 
-This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals and dumping into fresh water bodies as well as reducing untreated wastewaters.
+This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies.
 
 The elements of the phrase are *action + pollution/wastewater/hazardous chemicals/ + fresh water bodies*
 
