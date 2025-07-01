@@ -31,6 +31,7 @@ Acronyms used:
     IHRL: International Human Rights Law
     ILO: International Labour Organization
     IMF: International Monetary Fund
+    IOM: International Organization for Migration
     ODA: Official Development Assistance
     SDT: Special and Differential Treatment
     UN: United Nations
@@ -84,7 +85,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. (World Bank Group 2025.) Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills (Sharif 2024). Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections (Aldar ym. 2025).
 
-This query consists of 1 phrase. The basic structure is *action + inclusion OR action + exclusion*
+This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*
 
 ```py
 TS=
@@ -126,7 +127,7 @@ This target is interpreted to cover research about eliminating discriminatory le
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
 
-This query consists of 1 phrase. The basic structure is *action + discriminatory law OR action + anti-discriminatory law*
+This query consists of 1 phrase. The basic structure is *action (stop) + discriminatory law OR action (promote) + anti-discriminatory law*
 
 ```py
 TS=
@@ -176,7 +177,7 @@ This target is interpreted to cover research about promoting the implementation 
 
 This target focuses on policies that ensure greater equality especially through fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies.  (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). All of these policies have massive impacts on equality being realized and advanced.
 
-This query consists of 1 phrase. The basic structure is *action + laws AND action + equality/inequality*
+This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality*
 
 ```py
 TS=
@@ -271,7 +272,7 @@ AND
 
 This target is interpreted to cover research about enhancing the representation and decision-making powers of developing countries in international economic institutions.
 
-In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall (UN DESA 2019; UN 2024).
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall (UN DESA 2019a; UN 2024).
 
 This query consists of 1 phrase. The basic structure is *action + representation + developing countries + international economic institution*
 
@@ -373,24 +374,49 @@ NOT "globalization"
 
 This target is interpreted to cover research about ensuring safe, responsible and regular migration and mobility of people.
 
-This query consists of 1 phrase. The basic structure is
+Migration can enable people to very effectively better their living conditions, for example by accessing higher wage jobs. Migrants also often support their relatives in their country or region of origin, thus spreading the effect even further. Countries and regions receiving migrants can greatly benefit from the skills they bring. Well-managed movement of people can so be beneficial to all parties, as well as having a big effect on reducing inequalities. However, there are still some remarkable barriers for migration and movement of people always functioning in safe, orderly, regular and responsible manners, and these can be measured through the target indicators. (UN DESA 2019b.) Orderly migration is defined as “the movement of a person from his/her usual place of residence, in keeping with the laws and regulations governing exit of the country of origin and travel, transit and entry into the host country” and regular as “migration that occurs through recognized, legal channels”. The concepts of safe and responsible migration or well-managed migration policies are not explicitly defined. (IOM 2019.) These can however be seen as countries actively working towards fulfilling the principles and objectives of the Migration Governance Framework that are pictured in the 10.7.2. indicator metadata (UN Statistics Division 2023).
+
+This query consists of 1 phrase. The basic structure is *action (positive) + security + movement of people OR action (negative) + risks + movement of people*
 
 ```py
 TS=
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "build*" OR "accelerat*" OR "advanc*" OR "develop*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" or "implement*" or "facilitat*")
-
-("secure" or "security" or "protect*" or "reliab*" or "stability" or "stable" or "safe" or "regular" or "responsible" or "orderly" or "planned" or "well-managed" or "well managed" or "well-planned" or "well planned" or "managed")
-
-
-("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome")
-
-("risk$" or "hazard*" or "insecure" or "insecurity" or "unprotect*" or "unrelaib*" or "vulnerab*" or "dead*" or "die$" or "disappear*" or "unstability" or "unstable")
-
-
-("migrat*" or "mobilit*" or "move" or "moving" or "movement" or "travel*" or "international*" or "internal*" or "intra stat*")
-
-("people" or "immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*")
-
+((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
+   "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
+   "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
+   "provid*"
+  )
+NEAR
+  ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
+   OR "orderly" OR "planned" OR "well-managed" OR "well managed" OR "well-planned" OR "well planned" OR "managed" OR
+   "dignif*"
+  )
+NEAR
+  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+   "intra stat*" OR "within-country" OR "within country"
+)
+NEAR
+  ("people" OR "immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR
+   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced"
+  )
+ )
+OR
+ (("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$"
+   OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*"
+   OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome")
+NEAR
+  ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR "die$"
+   OR "disappear*" OR "unstability" OR "unstable")
+NEAR
+  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+   "intra stat*" OR "within-country" OR "within country"
+  )
+NEAR
+  ("people" OR "immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR
+   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced"
+  )
+ )
 )
 ```
 
@@ -543,6 +569,8 @@ FSB. (2025). Key Standards for Sound Financial Systems. https://www.fsb.org/work
 
 ILO. (2024). Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages. https://www.ilo.org/media/478696/download
 
+IOM (2019). Glossary on Migration. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
+
 Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
 
 Sharif, I. (2024). Why economic inclusion is key to reducing poverty and empowering people. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
@@ -551,9 +579,13 @@ Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. I
 
 UN DESA. (2018). Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
-UN DESA. (11.7.2019). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
+UN DESA. (2019a). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
+
+UN DESA. (2019b). Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
+
+UN Statistics Division (2023). SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
 
 UN Statistics Division (2024a). SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
