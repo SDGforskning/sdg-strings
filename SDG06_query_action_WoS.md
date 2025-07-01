@@ -63,7 +63,8 @@ TS=
   (
     (
       ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-      OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+      OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*" 
+      OR "tackling" OR "tackle"
       OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
       OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
       OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
@@ -104,7 +105,8 @@ TS=
 (
   (
     "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
-    OR "stop" OR "end" OR "ending"
+    OR "stop" OR "end" OR "ending" 
+    OR "tackling" OR "tackle"
     OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR"overcome" 
     OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
     OR "scal* up" OR "develop" OR "developing"
