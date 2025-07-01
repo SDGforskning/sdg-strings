@@ -415,7 +415,7 @@ TS=
         OR "effluent$" 
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "radioactive")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
             NEAR/15
                 ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
@@ -431,7 +431,8 @@ TS=
         OR "endocrine disrupting chemical$"
         OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
-        OR "oil spill$"
+        OR "oil spill$" 
+        OR "fertili?er$" OR "nutrient$"
         )
   ) 
   AND 
