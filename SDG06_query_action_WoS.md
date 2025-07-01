@@ -71,7 +71,7 @@ TS=
       )
         NEAR/5
           ("availab*" OR "access" OR "affordab*" OR "management" OR "regulat*" OR "invest*" 
-          OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*")
+          OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*")
     )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
   )
@@ -185,8 +185,8 @@ TS=
         OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR 	"combat*" OR "declin*"
        ) 
        NEAR/5
-            ("availab*" OR "access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-            OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal")
+            ("availab*" OR "access" OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" 
+            OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*")
     )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
   )
@@ -283,7 +283,7 @@ TS=
 This phrase aims to find research about eliminating inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
 
 HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
-`access` + `sanitation/hygiene services` + `women/girls/people in vulnerable situations`.
+`access` + `sanitation/hygiene services`.
 
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 ("HLPF2018").
@@ -298,58 +298,63 @@ We used UN sources to find terms and groups that can be considered "vulnerable" 
 
 * Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
 
-The elements of the phrase are *action(eliminate inequalities/remove barriers/non-discriminating OR facilitate/assist/support) + access + services/facilities + sanitation/hygiene + women/girls/vulnerable people* 
+The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR vulnerable groups+access + sanitation/hygiene + services/facilities* 
 
 
 ```py
-
-
-SKETCH
-TEST WHETHER LIMITING WITH VULNERABLE PEOPLE IS NEEDED. COULD WE JUST SEARCH FOR ELIMINATING INEQUALITIES IN ACCESS TO SANITATION
 TS=
 (
-(
   (
-  ((eliminate OR remove) 
-AND 
-      (
-      (inequalities OR discrimination OR barriers) 
-      OR 
-      (narrow entrances OR steps OR lack of space)
-      ) 
-  )
-  OR
-  (facilitate OR assist OR support)
-  )
-
-    AND 
     (
-    (access)
-    AND 
-		  (
-		  (services OR facilities) 
-		  AND (sanitation OR hygiene)
-		  ) 
+      ("eliminat*" OR "remov*") 
+      NEAR/5 
+        (
+        ("inequalit*" OR "inequity" OR "discriminat*" 
+        OR "barrier$" OR "obstacle$" OR "hinder*" OR "hindrance*"
+        OR "insecure" OR "dangerous" OR "unsafe" OR "ha?ardous") 
+        OR ("narrow" NEAR/3 "entrance*") OR "step$" 
+        OR (("lack*" OR "narrow" OR "tight") NEAR/3 "space") OR ("slippery" NEAR/3 "floor$")
+        ) 
     )
-)
-AND ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
-    OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" 
-    OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
+  OR
+    (
+      ("facilitat*" OR "assist*" OR "support*" OR "non$discriminat*" 
+        OR 
+        ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
+        OR "working poor" OR "destitute" OR "living in poverty"
+        OR (("poor" OR "poorest" OR "low* income") 
+          NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
+        OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+        OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+        OR (("person$" OR "people$" OR "adult$") 
+          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+        OR "disabled" OR "disabilities" OR "disability"
+        OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+        OR "unemployed" 
+        OR (("work" OR "workplace" OR "worker$" OR "occupational") 
+          NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+        OR "women" OR "woman" OR "girls" OR "girl"
+        OR "pregnant" OR "pregnancy" OR "maternity"
+        OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+        OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+        OR "living with HIV" OR "living with AIDS"
+        OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+        OR "indigenous group$"
+        )
+      ) 
+    NEAR/5 
+        ("availab*" OR "access*")
     )
+  )
+  NEAR/15  
+	(
+    "sanitation" 
+    OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+    OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+    OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+  )
 )
 
 ```

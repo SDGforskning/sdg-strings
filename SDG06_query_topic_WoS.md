@@ -126,7 +126,7 @@ TS=
 (
   ("access" OR "availab*" OR "unavailab*" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
   OR "tackling" OR "tackle" OR "scal* up" OR "upgrad" 
-  OR "adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal") 
+  OR "adequate" OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*") 
     NEAR/15 
   (
     "sanitation" 
