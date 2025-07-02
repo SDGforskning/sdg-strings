@@ -290,6 +290,8 @@ This target is interpreted to cover research about
 
 This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies.
 
+In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies.
+
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies*
 
 
