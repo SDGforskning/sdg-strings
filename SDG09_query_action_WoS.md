@@ -40,7 +40,7 @@ This target is interpreted to cover research about
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
-Target is closely related to SDG 3.6 and SDG 11.2. (“Some SDGs are directly connected to sustainable transport through targets and indicators, such as SDG 3.6 on road safety, SDG 9.1 on infrastructure, and SDG 11.2 on providing access to safe, affordable, accessible, and sustainable transport systems for all and expanding public transport.” /United Nations. Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. 2021.)
+Target is closely related to SDG 3.6 and SDG 11.2. All three targets are connected to sustabable trasportation. (United Nations 2021) 
 
 Infrastructure is commonly defined as “networked systems that deliver services including energy, water, waste management, transport and telecommunications”. Broader interpretations also encompass social infrastructure, including systems for social protection, healthcare (including public health), education, finance and insurance, as well as law enforcement and justice. (Thacker, S., Hall, J.W., Adshead, D., O’Regan, N., Rozenberg, J., Hallegatte, S., Fay, M., Harvey, M., Meller, H., and Watkins, G. (2019) Infrastructure for sustainable development. Nature Sustainability, 1 April 20-19. doi: 10.1038/s41893-019-0256-8)
 
@@ -210,14 +210,14 @@ Specialist input:
 
 ## 5. Footnotes
 
+E-Handbook on Sustainable Development Goals Indicators. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
+
+The Sustainable Development Goals. Extended Report 2024. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
+
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation *. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-United Nations (2021). Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. (https://digitallibrary.un.org/record/3944744?v=pdf) [Accessed 2025.06.23]
+United Nations. (2021). Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. (https://digitallibrary.un.org/record/3944744?v=pdf) [Accessed 2025.06.23]
 
-<span id="f3">United Nations (2024). </span> *The Sustainable Development Goals Report 2024 *. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
-
-<span id="f4"> E-Handbook on Sustainable Development Goals Indicators (2024) https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
-
-<span id="f5"> The Sustainable Development Goals. Extended Report 2024. (2024) https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
+United Nations. (2024). The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
