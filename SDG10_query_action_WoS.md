@@ -54,10 +54,11 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 ```py
 TS=
 (
- (("rais*" OR "foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*"
-   OR "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$"
-   OR "establish*" OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR
-   "normali*" OR "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*"
+ (("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+   OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
+   OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
+   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
+   OR "raised"
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
@@ -92,7 +93,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand$" OR "expansion*" OR "accelerat*"
    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
-   "achiev*" OR "encourag*" OR "facilitat*"
+   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*"
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
@@ -149,7 +150,7 @@ OR
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
-   "introduc*"
+   "introduc*" OR "boost*"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -197,9 +198,9 @@ NEAR
 AND 
  ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
     OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
-    "develop$" OR "developing" OR "promot*" OR "rais*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR
-    "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$"
-    OR "sustaining" OR "consolidat*"
+    "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR
+    "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$" OR
+    "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised"
    )
 NEAR
    ("equal*" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"
@@ -237,7 +238,7 @@ TS=
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR 
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
-    OR "establish*" OR "implement*" OR "adopt*"
+    OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*"
    )
 NEAR/5
    ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
@@ -278,12 +279,11 @@ This query consists of 1 phrase. The basic structure is *action + representation
 
 ```py
 TS=
-((("rais*" OR "foster*" OR "boost*" OR "provid*" OR "ensur*" OR "guarantee*" OR "establish*" OR "standardi*" OR
-   "regulari*" OR "consolidat*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR
-   "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR
-   "capacity building" OR "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR
-   "advancing" OR "develop$" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR 
-   "achiev*"
+((("foster*" OR "boost*" OR "provid*" OR "ensur*" OR "guarantee*" OR "establish*" OR "standardi*" OR "regulari*" OR
+   "consolidat*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "more efficient*" OR
+   "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR "capacity building" OR
+   "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop$" OR
+   "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR "raised"
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
@@ -383,7 +383,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
    "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
    "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
-   "provid*"
+   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised"
   )
 NEAR
   ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
@@ -429,15 +429,15 @@ NEAR
 
 This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
 
-SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.)
+SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.) Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and importation. 
 
 This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
-("implement*" or "establish*" or "plan" or "plans" or "planned" or "planning" or "adopt*" or "introduc*" or "develop" OR "development" or "ensure" or "attain*" or "achiev*" or "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" or accelerat*" OR "advanc*" or "promot*" or "facilitat*")
+("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "ensure" OR "attain*" OR "achiev*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" or accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied")
 NEAR
-("special and differential treatment*" or "SDT" or "S&D" OR "S and D" OR "zero-tariff*" or "zero tariff*" or "tariff lines") 
+("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*" OR "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty") 
 NEAR
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
    "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
