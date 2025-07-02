@@ -320,7 +320,8 @@ TS=
     ) 
   AND 
     ("freshwater" OR "lake$" OR "pond$" 
-    OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+    OR "river$" OR ("stream$" NEAR/3 "water")  
+    OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$")
     )

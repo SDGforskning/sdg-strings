@@ -379,7 +379,7 @@ https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.p
 
 Althoug mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater body species. We interpreted this target to be more about the water quality.
 
-This target focuses on freshwater bodies. The ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . 
+This target focuses on freshwater bodies. The ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream.
 
 The classification for wastewater generators is https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf (“UNstats2025)
 * domestic/households
@@ -437,7 +437,8 @@ TS=
   ) 
   AND 
   ("freshwater" OR "lake$" OR "pond$" 
-  OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+  OR "river$" OR ("stream$" NEAR/3 "water") 
+  OR "brook$" OR "creek$" 
   OR "aquifer$" OR "groundwater" 
   OR ("water" NEAR/3 "reservoir$"))
 )
