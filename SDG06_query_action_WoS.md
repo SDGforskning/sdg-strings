@@ -515,15 +515,31 @@ TS=
 
 #### Phrase 3
 
-This phrase aims to find research about increasing or improving water quality and monitoring of freshwater bodies.
+This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies.
 
-The elements of the phrase are *action(increase/improve/manage) + water quality/monitoring + freshwater bodies*
+The elements of the phrase are *action(increase/improve/monitor) + water quality + freshwater bodies*
 
 
 ```py
 TS=
 (
-
+("incres*" OR "improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
+OR "enforc*" OR "prioriti*" 
+OR "monitor*"
+)
+  NEAR/5 
+  (
+    (
+    ("quality" NEAR/3 "water") 
+    )
+       NEAR/15 
+        ("freshwater" OR "lake$" OR "pond$" 
+        OR "river$" OR ("stream$" NEAR/3 "water") 
+        OR "brook$" OR "creek$" 
+        OR "aquifer$" OR "groundwater" 
+        OR ("water" NEAR/3 "reservoir$"))
+  )
 )
 ```
 

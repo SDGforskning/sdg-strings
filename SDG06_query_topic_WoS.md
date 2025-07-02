@@ -388,6 +388,26 @@ TS=
   OR ("water" NEAR/3 "reservoir$"))
 )
 
+#### Phrase 3
+
+This phrase aims to find research about the water quality of freshwater bodies.
+
+The elements of the phrase are *water quality + freshwater bodies*
+
+
+```py
+TS=
+(
+  (
+  ("quality" NEAR/3 "water") 
+  )
+    NEAR/15 
+    ("freshwater" OR "lake$" OR "pond$" 
+    OR "river$" OR ("stream$" NEAR/3 "water") 
+    OR "brook$" OR "creek$" 
+    OR "aquifer$" OR "groundwater" 
+    OR ("water" NEAR/3 "reservoir$"))
+)
 
 ### Target 6.4
 
