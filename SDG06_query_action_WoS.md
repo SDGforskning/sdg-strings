@@ -400,6 +400,8 @@ This phrase aims to find research about reducing or eliminating releases of poll
 
 In stead of specifying to research about reducing untreated wastewaters we have included research about reducing any wastewaters in freshwater bodies.
 
+This phrase is partly similar to 14.1 phrase 1.
+
 The elements of the phrase are *action + pollution/wastewater/hazardous chemicals/ + fresh water bodies*
 
 
@@ -448,9 +450,74 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about increasing or improving water quality, treatment of wastewaters, recycling and safe reuse of water.
+This phrase aims to find research about increasing or improving treatment of wastewaters, recycling and reuse of water.
 
-The elements of the phrase are *action(increase/improve/manage) + treatment of wastewaters/water quality/monitoring/recycling/safe reuse + water*
+The phrase is partly similar to 14.1 phrase 2.
+
+The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies*
+
+
+```py
+TS=
+(
+  (
+    (
+        ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
+        OR "enforc*" OR "prioriti*"
+        )
+        NEAR/5
+            ("treatment" OR "recovery"
+            OR "technolog*"
+            OR "monitor*" OR "assess*"
+            OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+            OR "life cycle assess*" OR "LCA"
+            OR "environment* assess*" OR "environment* impact assess*"
+            OR "manag*" OR "pollution control$"
+            OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme" 
+            OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+            )
+    )  
+    NEAR/15
+        ("pollut*"
+        OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
+        OR "effluent$" 
+        OR
+          (
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            NEAR/15
+                ("waste" OR "discharge" OR "runoff" OR "run off")          
+          )
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
+        OR
+          (
+            ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+            )
+            NEAR/15 "contamination"   
+          )
+        OR "contaminated" OR "contaminant$" OR "toxic chemical$"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+        OR "oil spill$" 
+        ) 
+  )
+  AND 
+  ("freshwater" OR "lake$" OR "pond$" 
+  OR "river$" OR ("stream$" NEAR/3 "water") 
+  OR "brook$" OR "creek$" 
+  OR "aquifer$" OR "groundwater" 
+  OR ("water" NEAR/3 "reservoir$"))
+)
+```
+
+
+#### Phrase 3
+
+This phrase aims to find research about increasing or improving water quality and monitoring of freshwater bodies.
+
+The elements of the phrase are *action(increase/improve/manage) + water quality/monitoring + freshwater bodies*
 
 
 ```py
@@ -459,7 +526,6 @@ TS=
 
 )
 ```
-
 
 
 ### Target 6.4

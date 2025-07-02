@@ -292,6 +292,8 @@ This phrase aims to find research about releases of pollution and hazardous chem
 
 In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies.
 
+This phrase is partly similar to 14.1 phrase 1.
+
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies*
 
 
