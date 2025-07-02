@@ -283,7 +283,8 @@ TS=
    "consolidat*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better*" OR "more efficient*" OR
    "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR "capacity building" OR
    "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop$" OR
-   "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR "raised"
+   "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR
+   "raised"
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
@@ -405,8 +406,8 @@ OR
    OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*"
    OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome")
 NEAR
-  ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR "die$"
-   OR "disappear*" OR "unstability" OR "unstable" OR "trafficking")
+  ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
+   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking")
 NEAR
   ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
    "intra stat*" OR "within-country" OR "within country"
@@ -429,15 +430,21 @@ NEAR
 
 This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
 
-SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.) Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and importation. 
+SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.) Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. (UN Statistics Division 2016.)
 
 This query consists of 1 phrase. The basic structure is
 
 ```py
 TS=
-("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "ensure" OR "attain*" OR "achiev*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" or accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied")
+((("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop"
+   OR "development" OR "ensure" OR "attain*" OR "achiev*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR
+   "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied"
+  )
 NEAR
-("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*" OR "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty") 
+  ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*" OR
+   "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR "zero per cent tariff"
+   OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
+  ) 
 NEAR
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
    "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
@@ -493,8 +500,12 @@ NEAR
    "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
    "georgia*"
   )
+ )
 AND
-("World Trade Organization" or "WTO" or "trade facilitation agreement*" or "trade agreement*" OR "trade opportunit*" OR "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$")
+  ("World Trade Organization" OR "WTO" OR "trade facilitation agreement*" OR "trade agreement*" OR "trade opportunit*" OR
+   "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$" OR
+   "doha mandate$"
+  )
 )
 ```
 
@@ -627,6 +638,8 @@ UN DESA. (2019a). Review of SDG implementation and interrelations among goals: D
 UN DESA. (2019b). Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
+
+UN Statistics Division (2016). SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
 UN Statistics Division (2023). SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
 
