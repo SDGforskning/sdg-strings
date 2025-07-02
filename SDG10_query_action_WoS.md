@@ -260,7 +260,7 @@ NEAR/5
 NOT "globalization"
 AND
   ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR
-   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*"
+   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*"
   )
 )
 ```
