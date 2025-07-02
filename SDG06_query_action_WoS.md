@@ -450,7 +450,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about increasing or improving treatment of wastewaters, recycling and reuse of water.
+This phrase aims to find research about increasing or improving treatment, recycling and reuse of wastewaters related to freshwater bodies.
 
 The phrase is partly similar to 14.1 phrase 2.
 
