@@ -25,7 +25,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 ```
 OBS
-GENERAL NOTES + SOURCES NOT YET ADDED
+GENERAL NOTES & NOTES FOR TARGETS
+ + SOURCES NOT YET ADDED
 
 ```
 
