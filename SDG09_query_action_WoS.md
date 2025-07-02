@@ -37,7 +37,6 @@ Our classification of countries as least developed countries (LDCs), small islan
 This target is interpreted to cover research about 
 
 * Creating and improving quality, reliable, environmentally sustainable and resilient infrastructure that is accessible, equitable and affordable for all.
-* Constructing and developing local and cross-border infrastructure solutions, such as transportation networks, in a manner that is reliable, environmentally sustainable, and resilient. (is this needeed?)
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
@@ -47,9 +46,8 @@ Infrastructure is commonly defined as “networked systems that deliver services
 
 The concept of sustainable infrastructure has evolved over the years and usually it covers the entire life cycle of the project. “Sustainable infrastructure refers to infrastructure projects that are planned, designed, constructed, operated, and decommissioned in a manner to ensure economic and financial, social, environmental (including climate resilience), and institutional sustainability over the entire life cycle of the project.” (Inter American Development Bank, & IDB Invest (2018). What is Sustainable Infrastructure? A Framework to Guide Sustainability Across the Project Cycle. https://doi.org/10.18235/0001043)
 
-This query consists of 2 phrase. 
+This query consists of 1 phrase. 
 The basic structure of phrase 1 is action + sustainable + infrastructure + affordable
-The basic structure of phrase 2 is action + sustainable + transportation infrasturcture + affordable (this is maybe not needeed)
 
 ```py
 TS=
@@ -215,6 +213,8 @@ Specialist input:
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation *. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+United Nations (2021). Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. (https://digitallibrary.un.org/record/3944744?v=pdf) [Accessed 2025.06.23]
 
 <span id="f3">United Nations (2024). </span> *The Sustainable Development Goals Report 2024 *. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
 
