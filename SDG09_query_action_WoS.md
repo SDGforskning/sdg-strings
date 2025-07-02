@@ -36,9 +36,8 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about 
 
-* Creating and improving quality, reliable, environmentally sustainable and resilient infrastructure to support economic development and human well-being.
-* Constructing and developing local and cross-border infrastructure solutions, such as transportation networks.
-* Developing infrastructure solutions that are accessible, equitable and affordable for all.
+* Creating and improving quality, reliable, environmentally sustainable and resilient infrastructure that are accessible, equitable and affordable for all.
+* Constructing and developing local and cross-border infrastructure solutions, such as transportation networks, in a manner that is reliable, environmentally sustainable, and resilient. (is this needeed?)
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
@@ -48,8 +47,9 @@ Infrastructure is commonly defined as “networked systems that deliver services
 
 The concept of sustainable infrastructure has evolved over the years and usually it covers the entire life cycle of the project. “Sustainable infrastructure refers to infrastructure projects that are planned, designed, constructed, operated, and decommissioned in a manner to ensure economic and financial, social, environmental (including climate resilience), and institutional sustainability over the entire life cycle of the project.” (Inter American Development Bank, & IDB Invest (2018). What is Sustainable Infrastructure? A Framework to Guide Sustainability Across the Project Cycle. https://doi.org/10.18235/0001043)
 
-This query consists of 1 phrase. 
-The basic structure is action + afford/stable/sustainable/resilient/equitable/etc + infrastructure/roads/rail/airports/waterways/ports/energy infrastructure/waterinfrasructure/sanitation infrastructure?
+This query consists of 2 phrase. 
+The basic structure of phrase 1 is action + sustainable + infrastructure + affordable
+The basic structure of phrase 2 is action + sustainable + transportation infrasturcture + affordable (this is maybe not needeed)
 
 ```py
 TS=
@@ -70,9 +70,8 @@ TS=
 
 This target is interpreted to cover research about 
 
-* Inclusive industrialization, ensuring that the benefits of industrial development are shared beyond the privileged people and regions.
-* Promotion of sustainable industrialization, advancing environmentally friendly industrialization that utilizes clean technologies, minimizes pollution and emissions, and avoids overconsumption of resources.
-* Increasing the share of industry in both GDP and employment, based on the idea that industry can drive productivity and raise living standards.
+* Promoting inclusive and sustainable industrialization.
+* Increasing share of industry in both gross domestic product (GDP) and employment. 
 
 This target is based on the idea of economic structural transformation, recognizing that development requires a shift from agriculture-based economies toward industrial and service sectors. It also acknowledges that industrial production has been concentrated in wealthy countries and aims to distribute it more equitably across the world.
 
@@ -97,7 +96,6 @@ This target is interpreted to cover research about
 * Improving access to financial services for all types of small-scale industrial and other enterprises, with financial services referring to, for example, affordable credit.
 * Integrating small-scale industrial and other enterprises into value chains (production and distribution chains) and into local and international markets.
 
-The target is based on the idea of entrepreneurship as a development policy; supporting small enterprises promotes employment, innovation, and economic activity, especially in developing countries. (UN. General Assembly (67th sess. : 2012-2013). (2013). Entrepreneurship for development: Resolution (No. A/67/437). https://digitallibrary.un.org/record/745054?v=pdf)
 
 This query consists of X phrases.
 ```py
