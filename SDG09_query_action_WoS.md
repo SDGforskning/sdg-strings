@@ -40,7 +40,7 @@ This target is interpreted to cover research about
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
-Target is closely related to SDG 3.6 and SDG 11.2. All three targets are connected to sustabable trasportation. (United Nations 2021) 
+Target is closely related to SDG 3.6 and SDG 11.2. All three targets are connected to sustainable trasportation. (United Nations 2021) 
 
 Infrastructure is commonly defined as “networked systems that deliver services including energy, water, waste management, transport and telecommunications”. Broader interpretations also encompass social infrastructure, including systems for social protection, healthcare (including public health), education, finance and insurance, as well as law enforcement and justice. (Thacker, S., Hall, J.W., Adshead, D., O’Regan, N., Rozenberg, J., Hallegatte, S., Fay, M., Harvey, M., Meller, H., and Watkins, G. (2019) Infrastructure for sustainable development. Nature Sustainability, 1 April 20-19. doi: 10.1038/s41893-019-0256-8)
 
