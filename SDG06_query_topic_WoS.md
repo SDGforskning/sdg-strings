@@ -438,7 +438,7 @@ The elements of the phrase are *WUE/sustainable withdrawals/water savings*
 ```py
 TS=
 ( 
-  "water use efficiency" OR "WUE" 
+  "water use efficiency" OR ("WUE" NEAR/15 "water")  
   OR 
   (
     ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 

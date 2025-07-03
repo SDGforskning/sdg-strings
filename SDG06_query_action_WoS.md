@@ -598,7 +598,7 @@ TS=
   ) 
   NEAR/5 
   ( 
-    "water use efficiency" OR "WUE" 
+    "water use efficiency" OR ("WUE" NEAR/15 "water") 
     OR 
     (
       ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 
