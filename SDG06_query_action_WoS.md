@@ -579,14 +579,14 @@ We are unsure about whether research about water efficiency of agricultural plan
 
 #### Phrase 1
 
-This phrase aims to find research about increasing water-use efficiency, sustainable withdrawals and water savings.
+This phrase aims to find research about promoting water-use efficiency, sustainable withdrawals and water savings as well as reducing inefficient water-use or unsustainable withdrawals.
 
 Terms were found in 
 * UNSD SDG 6 extended report 2022 (“UNSDextended2022”)
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
 
 
-The elements of the phrase are *action + WUE/sustainable withdrawals/water savings*
+The elements of the phrase are *action(increase/decrease) + WUE/sustainable withdrawals/water savings*
 
 
 ```py
@@ -594,14 +594,17 @@ TS=
 ( 
   ("promote" OR "enable" OR "increase" OR "establish*" OR "develop" OR "development"
   OR "propose*" OR "proposal$" OR "implement*" OR "prioriti?e" 
-  OR "ensur*" OR "assure" OR "strengthen" OR "improv*" OR "advance"
+  OR "ensur*" OR "assure" OR "strengthen" OR "improv*" OR "advance" 
+  OR "reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "resist*" OR "avoid*" 
+  OR "tackle" OR "tackling"
   ) 
   NEAR/5 
   ( 
     "water use efficiency" OR ("WUE" NEAR/15 "water") 
     OR 
     (
-      ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 
+      ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*" 
+      OR "unsustainab*" OR "irresponsib*" OR "inefficient*") 
         NEAR/3 
         (
           (
@@ -636,18 +639,40 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about reducing water use, water stress, water scarcity and unsustainable water withdrawals.
+This phrase aims to find research about reducing water use, water stress and water scarcity.
 
-Terms for reducing water use in agriculture https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
-(“DESA2018”)
-
-The elements of the phrase are *action + unsustainable withdrawals+sectors/water stress/water scarcity*
+The elements of the phrase are *action + water use/water stress/water scarcity*
 
 
 
 ```py
 TS=
 (
+("reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "resist*" OR "avoid*") 
+NEAR/5 
+(
+  (
+    (
+      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+      OR "withdrawal$" 
+      )
+        NEAR/15
+        (
+        "water supply" OR "water supplies" OR "suppl* of freshwater"
+        OR "water resource$" OR "freshwater resource$" 
+        )
+    )
+      OR 
+    (
+    ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+      NEAR/3 ("water" OR "fresh$water")
+    )
+  ) 
+  OR 
+  (
+    "water scarcity" OR "water stress" OR "water withdrawal intensity" 
+  )
+)
 
 )
 ```
