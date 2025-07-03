@@ -642,38 +642,38 @@ TS=
 This phrase aims to find research about reducing the use of water resources, water stress and water scarcity.
 
 The elements of the phrase are *action + use of water resources/water stress/water scarcity*
-
-
+A NOT string about was added to exclude irrelevant results about a `water filling algorithm`
 
 ```py
 TS=
 (
-("reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "resist*" OR "avoid*") 
-NEAR/5 
 (
+  ("reduc*" OR "decreas*" OR "minimi*" OR "combat*" OR "resist*" OR "avoid*") 
+    NEAR/5 
   (
     (
-      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
-      OR "withdrawal$" 
-      )
+      (
+        ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+        OR "withdrawal$" 
+        )
         NEAR/15
         (
         "water supply" OR "water supplies" OR "suppl* of freshwater"
         OR "water resource$" OR "freshwater resource$" 
         )
-    )
+      )
       OR 
-    (
-    ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+      (
+      ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
       NEAR/3 ("water" OR "fresh$water")
-    )
-  ) 
+      )
+    ) 
   OR 
-  (
+    (
     "water scarcity" OR "water stress" OR "water withdrawal intensity" 
+    )
   )
-)
-
+) NOT ("water-filling" OR "water filling") 
 )
 ```
 
