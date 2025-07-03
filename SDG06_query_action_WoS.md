@@ -697,7 +697,7 @@ Transboundary co-operation refers to operational agreements on water management 
 
 #### Phrase 1
 
-This phrase aims to find research about implementing water resources management, IWRM or transboundary co-operation.
+This phrase aims to find research about implementing cross sectoral or co-ordinated water resources management, IWRM or transboundary co-operation.
 
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
@@ -708,44 +708,53 @@ The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral 
 
 
 ```py
-6.4 String for water resources management:
-(
-            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
-            OR "withdrawal$" 
-            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
-            )
-            NEAR/15
-            (
-            "water supply" OR "water supplies" OR "suppl* of freshwater"
-            OR "water resource$" OR "freshwater resource$" 
-            )
-          )
-
-
-SKETCH
 TS=
 (
-("implement*" OR "advanc*" OR "promot*") 
-AND 
-	("integrated water resources management" OR ("IWRM" NEAR "water")) 
-	OR (("coordinat*" OR "integrat*") NEAR/5 (("develop*" OR "manage*") NEAR/5 ("water" NEAR/5 "land")))
-	OR (
-		(
-		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*")
-		NEAR/5
-			("co-operation" OR "cooperation" OR "collaboration")
-		)
-		AND
-		(
-		(
-		("crossboundary" OR "crossborder")
-		NEAR/5
-			("water basin*" OR "lake*" OR "river*" OR "stream*" OR "aquifer*" OR "groundwater*")
-		)
-		NEAR/15
-		("management" OR "hydroelectric*" OR "agriculture" OR ("protected area*" NEAR "conservation"))
-		
-		)
+  ("implement*" OR "advanc*" OR "promot*" OR "enhanc*"
+  OR "establish*" OR "develop" OR "development"
+  OR "propose*" OR "proposal$") 
+NEAR/5 
+  (
+	  "integrated water resources management" OR ("IWRM" NEAR/5 "water") 
+	  OR 
+    (
+      ("cross sectoral" OR "cross-sectoral" 
+      OR"coordinat*" OR "co-ordinat*" OR "integrat*" OR "interdependen*") 
+        NEAR/5 
+          (
+            ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
+            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies") 
+             NEAR/5 
+              (
+                "water resource$" OR "freshwater resource$" 
+                OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
+                OR ("water" NEAR/5 "land") 
+                OR (("water" OR "river") NEAR/3 "basin") 
+                OR "hydrological unit"
+              )
+          )
+    )
+	OR 
+    (
+		  (
+		  ("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*" 
+      OR "convention$" OR "memorandum of understanding")
+		      NEAR/5
+			    ("co-operation" OR "cooperation" OR "collaboration")
+		  )
+		  NEAR/15 
+		    (
+		      ("crossboundary" OR "crossborder" OR "transboundary" OR "trans-boundary" OR "transborder" OR "interstate")
+		      NEAR/5
+			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream*" 
+            OR "aquifer*" OR "groundwater*" 
+            OR "water resource$" OR "freshwater resource$" 
+            OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
+            OR ("water" NEAR/5 "land") 
+            OR (("water" OR "river") NEAR/3 "basin") 
+            OR "hydrological unit")
+		    )
+    )
 	)
 )
 ```
