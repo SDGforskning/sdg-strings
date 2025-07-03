@@ -47,6 +47,9 @@ TS=
 > 8.2.1 Annual growth rate of real GDP per employed person
 
 This target is interpreted to cover research about 
+* Increasing economic productivity through diversification, technological upgrading anad innovation.
+
+The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are treated as examples and included in the search strings but not in the interpretation.
 
 ```py
 TS=
