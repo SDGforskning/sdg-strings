@@ -258,7 +258,7 @@ TS=
         OR "pregnant" OR "pregnancy" OR "maternity"
         OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
         OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" 
-        OR ("non$binary" NEAR/3 "gender")
+        OR "non$binary" 
         OR "living with HIV" OR "living with AIDS"
         OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
         OR "indigenous group$"
