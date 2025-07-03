@@ -605,9 +605,8 @@ TS=
         NEAR/3 
         (
           (
-            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+            ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
             OR "withdrawal$" 
-            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
             )
             NEAR/15
             (
@@ -661,11 +660,9 @@ TS=
 >
 > 6.5.2 Proportion of transboundary basin area with an operational arrangement for water cooperation
 
-This target is interpreted to cover research about implementing integrated water resources management and transboundary co-operation in water resources management. 
+This target is interpreted to cover research about implementing water resource management, in particular integrated water resources management (IWRM) and transboundary co-operation in water resources management. 
 
 **Integrated water resources management (IWRM)** is based on an internationally agreed definition https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025"). It is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
-
-Although IWRM is a specifically defined consept we include in addition to research which explicitly mentions IWRM also research about cross-sectoral water management as defined in the indicator metadata 6.5.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025"):
 > *Integrated Water Resources Management (IWRM) promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
 
@@ -675,7 +672,7 @@ Transboundary co-operation refers to operational agreements on water management 
 
 #### Phrase 1
 
-This phrase aims to find research about implementing IWRM, cross-sectoral water management or transboundary co-operation.
+This phrase aims to find research about implementing water resources management, IWRM or transboundary co-operation.
 
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
@@ -686,7 +683,18 @@ The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral 
 
 
 ```py
-
+6.4 String for water resources management:
+(
+            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+            OR "withdrawal$" 
+            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+            )
+            NEAR/15
+            (
+            "water supply" OR "water supplies" OR "suppl* of freshwater"
+            OR "water resource$" OR "freshwater resource$" 
+            )
+          )
 
 
 SKETCH

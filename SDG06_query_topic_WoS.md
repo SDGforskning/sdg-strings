@@ -445,9 +445,8 @@ TS=
       NEAR/3 
     (
       (
-        ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
-        OR "withdrawal$" 
-        OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+        ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+            OR "withdrawal$" 
         )
           NEAR/15
             (
