@@ -744,7 +744,9 @@ NEAR/5
 		  )
 		  NEAR/15 
 		    (
-		      ("crossboundary" OR "crossborder" OR "transboundary" OR "trans-boundary" OR "transborder" OR "interstate")
+		      ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
+          OR "transboundary" OR "trans-boundary" 
+          OR "transborder" OR "trans-border" OR "interstate")
 		      NEAR/5
 			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream*" 
             OR "aquifer*" OR "groundwater*" 

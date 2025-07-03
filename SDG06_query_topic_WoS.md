@@ -519,11 +519,67 @@ TS=
 
 This query consists of X phrases.
 
+
+
+#### Phrase 1
+
+This phrase aims to find research about cross sectoral or co-ordinated water resources management, IWRM or transboundary co-operation.
+
+Terms were found from 
+* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
+* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
+* Terms for water management related projects and programmes were found in https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+
+The elements of the phrase are *IWRM/cross-sectoral water management/transboundary co-operation agreements* 
+
+
 ```py
 TS=
 (
-
+	"integrated water resources management" OR ("IWRM" NEAR/5 "water") 
+	OR 
+  (
+    ("cross sectoral" OR "cross-sectoral" 
+    OR"coordinat*" OR "co-ordinat*" OR "integrat*" OR "interdependen*") 
+      NEAR/5 
+        (
+          ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
+          OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies") 
+             NEAR/5 
+              (
+              "water resource$" OR "freshwater resource$" 
+              OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
+              OR ("water" NEAR/5 "land") 
+              OR (("water" OR "river") NEAR/3 "basin") 
+              OR "hydrological unit"
+              )
+        )
+  )
+	OR 
+  (
+		(
+		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*" 
+    OR "convention$" OR "memorandum of understanding")
+		    NEAR/5
+			  ("co-operation" OR "cooperation" OR "collaboration")
+		)
+		  NEAR/15 
+		    (
+		      ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
+          OR "transboundary" OR "trans-boundary" 
+          OR "transborder" OR "trans-border" OR "interstate")
+		      NEAR/5
+			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream*" 
+            OR "aquifer*" OR "groundwater*" 
+            OR "water resource$" OR "freshwater resource$" 
+            OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
+            OR ("water" NEAR/5 "land") 
+            OR (("water" OR "river") NEAR/3 "basin") 
+            OR "hydrological unit")
+		    )
+    )
 )
+
 ```
 
 ### Target 6.6
