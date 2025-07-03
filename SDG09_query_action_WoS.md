@@ -36,7 +36,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about 
 
-* Creating and improving quality, reliable, environmentally sustainable and resilient infrastructure that is accessible, equitable and affordable for all.
+* Creating and improving quality, reliable, environmentally sustainable, and resilient infrastructure that is equitably and affordably accessible for all.
 
 This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
 
