@@ -423,11 +423,54 @@ TS=
 
 This target is interpreted to cover research about 
 
+#### Phrase 1
+
+This phrase aims to find research about water-use efficiency, sustainable withdrawals and water savings.
+
+Terms were found in 
+* UNSD SDG 6 extended report 2022 (“UNSDextended2022”)
+* Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
+
+
+The elements of the phrase are *WUE/sustainable withdrawals/water savings*
+
+
 ```py
 TS=
-(
+( 
+  "water use efficiency" OR "WUE" 
+  OR 
+  (
+    ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 
+      NEAR/3 
+    (
+      (
+        ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+        OR "withdrawal$" 
+        OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+        )
+          NEAR/15
+            (
+            "water supply" OR "water supplies" OR "suppl* of freshwater"
+            OR "water resource$" OR "freshwater resource$" 
+            )
+      )
+      OR 
+      (
+        ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+            NEAR/3 ("water" OR "fresh$water")
+      )
+    )
+  ) 
+  OR 
+  (
+    ("save" OR "saving$") 
+      NEAR/5 
+        ("water" NEAR/3 ("withdrawal$" OR "use*"))
+  )
+) 
 
-)
+
 ```
 
 ### Target 6.5
