@@ -528,15 +528,15 @@ The basic structure of Phrase 1 is *action (encourage) + financial assistance + 
 Phrase 1
 ```py
 TS=
-((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance" OR "advancing" OR "ensure" OR "attain*" OR "achiev*" OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*")
+((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*" OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*")
 NEAR
-(("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR "development aid" OR "foreign aid" OR "international aid" OR
-"cooperation fund" OR "development spending" OR "foreign invest*" OR "international invest*" "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*")
-OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "flow*" "resource*" OR "subsid*" OR "aid$")))
+(("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR "development aid" OR "foreign aid" OR "international aid" OR 
+"cooperation fund*" OR "development spending$" OR "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*")
+OR (("economic" OR "financial*" OR "monetary") NEAR/3 ("support*" OR "assist*" OR "flow*" OR "resource*" OR "subsid*" OR "aid$")))
 NEAR
-("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed")
+("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*")
 NEAR
-("impact*" OR "effect*" OR "use" OR "need" OR "needs"))
+("impact*" OR "effect*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"))
 AND
 ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
    "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
