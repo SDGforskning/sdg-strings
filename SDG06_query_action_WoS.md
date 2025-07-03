@@ -620,7 +620,7 @@ TS=
           OR 
           (
           ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
-            NEAR/3 ("water" OR "freshwater" OR "fresh water")
+            NEAR/3 ("water" OR "freshwater")
           )
         )
     ) 
@@ -665,7 +665,7 @@ TS=
       OR 
       (
       ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
-      NEAR/3 ("water" OR "fresh$water")
+      NEAR/3 ("water" OR "freshwater")
       )
     ) 
   OR 
@@ -676,6 +676,9 @@ TS=
 ) NOT ("water-filling" OR "water filling") 
 )
 ```
+
+
+
 
 ### Target 6.5
 

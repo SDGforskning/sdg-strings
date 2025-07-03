@@ -325,7 +325,7 @@ TS=
     OR "oil spill$" 
     ) 
   AND 
-    ("freshwater" OR "lake$" OR "pond$" 
+    ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
     OR "river$" OR ("stream$" NEAR/3 "water")  
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
@@ -383,7 +383,7 @@ TS=
         ) 
   )
   AND 
-  ("freshwater" OR "lake$" OR "pond$" 
+  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
   OR "river$" OR ("stream$" NEAR/3 "water") 
   OR "brook$" OR "creek$" 
   OR "aquifer$" OR "groundwater" 
@@ -405,7 +405,7 @@ TS=
   ("quality" NEAR/3 "water") 
   )
     NEAR/15 
-    ("freshwater" OR "lake$" OR "pond$" 
+    ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
     OR "river$" OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
@@ -457,7 +457,7 @@ TS=
       OR 
       (
         ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
-            NEAR/3 ("water" OR "fresh$water")
+            NEAR/3 ("water" OR "freshwater")
       )
     )
   ) 
@@ -498,7 +498,7 @@ TS=
       OR 
     (
     ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
-      NEAR/3 ("water" OR "fresh$water")
+      NEAR/3 ("water" OR "freshwater")
     )
   ) 
   OR 
