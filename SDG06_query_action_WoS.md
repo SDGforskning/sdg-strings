@@ -639,7 +639,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about reducing water use, water stress and water scarcity.
+This phrase aims to find research about reducing the use of water resources, water stress and water scarcity.
 
 The elements of the phrase are *action + water use/water stress/water scarcity*
 

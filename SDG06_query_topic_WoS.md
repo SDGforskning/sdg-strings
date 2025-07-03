@@ -469,7 +469,41 @@ TS=
   )
 ) 
 
+```
 
+#### Phrase 2
+
+This phrase aims to find research about the use of water resources, water stress and water scarcity.
+
+The elements of the phrase are *action + water use/water stress/water scarcity*
+
+
+
+```py
+TS=
+(
+  (
+    (
+      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+      OR "withdrawal$" 
+      )
+        NEAR/15
+        (
+        "water supply" OR "water supplies" OR "suppl* of freshwater"
+        OR "water resource$" OR "freshwater resource$" 
+        )
+    )
+      OR 
+    (
+    ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+      NEAR/3 ("water" OR "fresh$water")
+    )
+  ) 
+  OR 
+  (
+    "water scarcity" OR "water stress" OR "water withdrawal intensity" 
+  )
+)
 ```
 
 ### Target 6.5
