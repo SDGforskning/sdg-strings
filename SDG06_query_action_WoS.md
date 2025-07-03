@@ -573,31 +573,72 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 > * Service sectors (ISIC E, ISIC G-T)
 	Which includes e.g. water used primarily for the direct use of population
 
-Definitions of **Water stress**, **Total freshwater withdrawal (TFWW)** and **Total renewable freshwater resources (TRWR**) as defined by the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
+Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. 
 
-> **Total freshwater withdrawal (TFWW)** is *the volume for freshwater extracted from its source (rivers, lakes, aquifers) for agriculture,
->  industries and services. Withdrawal includes fossil groundwater. It does not include non-conventional water, i.e. `treated wastewater`,
->  `agricultural drainage water` or `desalinated water`*
->
-> **Total renewable freshwater resources (TRWR)** are *the sum of internal and external freshwater resources*.
->
-> **The level of water stress** is *the ratio between total freshwater withdrawal and total revewable freshwater resources*.
 
 #### Phrase 1
 
-This phrase aims to find research about increasing water-use efficiency, sustainable withdrawals and water savings on all sectors.
+This phrase aims to find research about increasing water-use efficiency, sustainable withdrawals and water savings.
 
 Terms were found in 
 * UNSD SDG 6 extended report 2022 (“UNSDextended2022”)
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
-* terms for increasing water savings in agriculture https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
-(“DESA2018”)
 
-The elements of the phrase are *action + WUE/sustainable withdrawals/water savings + sectors*
+
+The elements of the phrase are *action + WUE/sustainable withdrawals/water savings*
+
+
+```py
+TS=
+( 
+  ("promote" OR "enable" OR "increase" OR "establish*" OR "develop" OR "development"
+  OR "propose*" OR "proposal$" OR "implement*" OR "prioriti?e" 
+  OR "ensur*" OR "assure" OR "strengthen" OR "improv*" OR "advance"
+  ) 
+  NEAR/5 
+  ( 
+    "water use efficiency" OR "WUE" 
+    OR 
+    (
+      ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 
+        NEAR/3 
+        (
+          (
+            ("manag*" OR "extract*" OR "practice$" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
+            OR "withdrawal$" 
+            OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies"
+            )
+            NEAR/15
+            (
+            "water supply" OR "water supplies" OR "suppl* of freshwater"
+            OR "water resource$" OR "freshwater resource$" 
+            )
+          )
+          OR 
+          (
+          ("withdrawal$" OR "abstraction" OR "abstracted") NEAR/3 ("water" OR "fresh$water")
+          )
+        )
+    ) 
+    OR 
+    (
+    ("save" OR "saving$") 
+      NEAR/5 
+        ("water" NEAR/3 ("withdrawal$" OR "use*"))
+    )
+  )
+)    
+
+
+```
+
 
 #### Phrase 2
 
-This phrase aims to find research about reducing water stress, water scarcity and unsustainable water withdrawals on all sectors.
+This phrase aims to find research about reducing water use, water stress, water scarcity and unsustainable water withdrawals.
+
+Terms for reducing water use in agriculture https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
+(“DESA2018”)
 
 The elements of the phrase are *action + unsustainable withdrawals+sectors/water stress/water scarcity*
 
