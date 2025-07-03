@@ -575,7 +575,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 
 Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
 
-
+We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic. Since HLPF 2018 ("DESA2018") mentiones agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
 
 #### Phrase 1
 
