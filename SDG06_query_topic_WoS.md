@@ -475,7 +475,7 @@ TS=
 
 This phrase aims to find research about the use of water resources, water stress and water scarcity.
 
-The elements of the phrase are *action + water use/water stress/water scarcity*
+The elements of the phrase are *use of water resources/water stress/water scarcity*
 
 
 
