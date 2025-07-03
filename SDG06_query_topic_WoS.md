@@ -540,7 +540,7 @@ TS=
 	OR 
   (
     ("cross sectoral" OR "cross-sectoral" 
-    OR"coordinat*" OR "co-ordinat*" OR "integrat*" OR "interdependen*") 
+    OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*") 
       NEAR/5 
         (
           ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
