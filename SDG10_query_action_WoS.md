@@ -736,31 +736,51 @@ AND
 > 
 This target is interpreted to cover research about reducing the transaction cost of migrant remittances and eliminating corridors of high costs.
 
-Remittances are payments sent from one person to another, relatively low in value. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittance transfers are provided by banks and money transfer operators for a price to the end users. 
+Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. (The World Bank 2007; UN Statistics Division 2024d.) Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
 
-This query consists of 1 phrase. The basic structure is
+This query consists of 1 phrase. The basic structure is *action (reduce) + remittance cost + migrants OR action (eliminate) + high remittance cost + migrants*
 
 ```py
 TS=
-((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered")
+((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*"
+   OR "lowering" OR "lower$" OR "lowered"
+  )
 NEAR
-(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$" OR "money transmission$")
+  (("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR
+    "money order$" OR "money transmission$"
+   )
+NEAR/3
+   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
+   )
+  )
 NEAR
-("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$")
-NEAR ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
-   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$")
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
+   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced" OR "expat*" OR "transferee$"
+  )
+ )
 OR
-(("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR "declin*")
+ (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+   OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR "declin*"
+  )
 NEAR
-(("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR "money order$")
+  ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR
+   "money order$" OR "money transmission$"
+  )
 NEAR
-(("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR "ruinous*" OR "costly" OR "unaffordab*")
+  (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR "ruinous*"
+    OR "costly" OR "unaffordab*"
+   )
+NEAR/3
+   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
+   )
+  )
 NEAR
-("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"))
-NEAR
-("immigrant*" or "emigrant*" or "alien$" or "resident alien$" or "migrant*" "settler$" or "illegal alien$" OR "illegal immigrant$" or "undocumented alien" OR "undocumented immigrant$" or "refugee*"))
-)
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
+   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced" OR "expat*" OR "transferee$"
+  )
+ )
 )
 ```
 
@@ -812,12 +832,17 @@ UN Statistics Division (2024b). SDG Indicators Metadata Repository - Target 10.3
 
 UN Statistics Division (2024c). SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
+UN Statistics Division (2024d). SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
+
+
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
 United Nations (2018). High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
 United Nations (2024). Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
 
-World Bank Group (2025). Social inclusion. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
+The World Bank. (2007). General principles for international remittance services. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
+
+World Bank Group. (2025). Social inclusion. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
 
 WTO (2025). Special and differential treatment. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
