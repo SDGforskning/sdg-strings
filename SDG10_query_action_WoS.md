@@ -471,8 +471,8 @@ TS=
    "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied"
   )
 NEAR
-  ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*" OR
-   "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR
+  ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*"
+   OR "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR 
    "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
   ) 
 NEAR
@@ -559,8 +559,8 @@ Phrase 1
 ```py
 TS=
 ((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
-   "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*" OR
-   "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*"
+   "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
+   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*"
   )
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
@@ -576,8 +576,8 @@ NEAR/3
   )
   )
 NEAR
-  ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*" OR
-   "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
+  ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
+   OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
   )
 NEAR
   ("impact*" OR "effect*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
