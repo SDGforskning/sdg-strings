@@ -791,13 +791,13 @@ Although indicator metadata 6.6.1a excludes mountain and forest ecosystems we ha
 
 This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
-The elements of the phrase are *protect + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+The elements of the phrase are *action + conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems*
 
 
 ```py
 TS=
 (
-  ("manage" OR "conserve" OR "protect" OR "restore" OR "rehabilitate"
+  ("conserve" OR "manage" OR "protect" OR "restore" OR "rehabilitate"
   OR
     (
       ("designat*" OR "placement" OR "expand*" OR "extend"
@@ -809,7 +809,7 @@ TS=
       OR "preserv*" OR "support*" OR "ensur*"
       )
       NEAR/5
-        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
+        ("conservation" OR "management" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
     )
   )
   NEAR/5 

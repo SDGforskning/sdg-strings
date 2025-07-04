@@ -590,10 +590,37 @@ TS=
 
 This target is interpreted to cover research about 
 
+#### Phrase 1 
+
+
+This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
+
+The elements of the phrase are *conserving/protecting + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+
+
 ```py
 TS=
 (
-
+  ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
+  OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
+  OR "management" OR "conservation" OR "protection" OR "restoration" OR "resilien*"
+  )
+  NEAR/5 
+  (
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" 
+    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+    ) 
+      NEAR/5 
+       ("freshwater" OR "fresh water" 
+        OR "lake*" OR "pond$"
+        OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+        OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
+        OR "wetland$" OR "mangrove$" 
+        OR "floodplains" OR "rice paddies" 
+        OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
+        OR "aquifer$" OR "groundwater"
+       )
+  )
 )
 ```
 
