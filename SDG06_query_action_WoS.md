@@ -795,13 +795,39 @@ The elements of the phrase are *protect + ecosystems/areas/water quality/water q
 
 
 ```py
-
-SEE 15.1 PHRASE 2
-SDG 15 TERRESTRIAL STRING FOR FRESH WATER TERMS e.g. aquifers 
-+ 14.2 PHRASE 3 FOR STRUCTURE TO ADD ACTION
 TS=
 (
-
+  ("manage" OR "conserve" OR "protect" OR "restore" OR "rehabilitate"
+  OR
+    (
+      ("designat*" OR "placement" OR "expand*" OR "extend"
+      OR "design" OR "designing" OR "create" OR "creation" OR "creating"
+      OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
+      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
+      OR "enforce" OR "enforcement" OR "enforcing"
+      OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
+      OR "preserv*" OR "support*" OR "ensur*"
+      )
+      NEAR/5
+        ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
+    )
+  )
+  NEAR/5 
+  (
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" 
+    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+    ) 
+      NEAR/5 
+       ("freshwater" OR "fresh water" 
+        OR "lake*" OR "pond$"
+        OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+        OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
+        OR "wetland$" OR "mangrove$" 
+        OR "floodplains" OR "rice paddies" 
+        OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
+        OR "aquifer$" OR "groundwater"
+       )
+  )
 )
 ```
 
