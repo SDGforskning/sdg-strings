@@ -814,7 +814,7 @@ TS=
   )
   NEAR/5 
   (
-    ("ecosystem$" OR "habitat$" OR "ecological communit*" 
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
     OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
     ) 
       NEAR/5 
@@ -833,18 +833,46 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about halting the deterioration of water-related ecosystems.
+This phrase aims to find research about preventing the deterioration of water-related ecosystems.
 
 Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
 
-The elements of the phrase are *action(stop) + decline/deterioration/unsustainable use/loss/poor quality + water-related ecosystems*
+The elements of the phrase are *action + decline/deterioration/unsustainable use + water-related ecosystems*
 
 
 ```py
 TS=
 (
-
+("prevent" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "combat*" OR "halt*" OR "resist*" OR "minimi*" OR "avoid*" OR "tackle") 
+  NEAR/5 
+  (
+    (
+    ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*") 
+    OR (
+        ("unsustainab*" OR "exploit*") 
+        NEAR/5 
+          ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+        )
+    ) 
+  NEAR/15 
+    (
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
+    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+    ) 
+      NEAR/5 
+       ("freshwater" OR "fresh water" 
+        OR "lake*" OR "pond$"
+        OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+        OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
+        OR "wetland$" OR "mangrove$" 
+        OR "floodplains" OR "rice paddies" 
+        OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
+        OR "aquifer$" OR "groundwater"
+       )
+    )
+  )
 )
+
 ```
 
 

@@ -607,7 +607,7 @@ TS=
   )
   NEAR/5 
   (
-    ("ecosystem$" OR "habitat$" OR "ecological communit*" 
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
     OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
     ) 
       NEAR/5 
