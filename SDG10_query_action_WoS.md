@@ -33,6 +33,7 @@ Acronyms used:
     IMF: International Monetary Fund
     IOM: International Organization for Migration
     ODA: Official Development Assistance
+    OECD: Organisation for Economic Co-operation and Development
     SDT: Special and Differential Treatment
     UN: United Nations
     UN DESA: UN Department of Economic and Social Affairs
@@ -545,10 +546,10 @@ AND
 > 10.b.1 Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
 
 This target is interpreted to cover research about 
-* ensuring official development assistance (ODA) and financial flows are targeted to where the need is greatest
+* ensuring ODA and other financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024).
+We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024). ODA is the main source of financing for foreign development aid and it is provided by official agencies such as state and local governments. Recipients of ODA are low- and middle-income countries and it can be used to aid in advancing for example health, education and infrastructure services. (OECD 2025.)
 
 This query consists of 2 phrases. 
 
@@ -770,6 +771,8 @@ ILO. (2024). Wage policies, including living wages. Report for discussion at the
 IOM (2019). Glossary on Migration. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
 
 Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
+
+OECD. (2025). Official development assistance (ODA). https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
 
 Sharif, I. (2024). Why economic inclusion is key to reducing poverty and empowering people. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
