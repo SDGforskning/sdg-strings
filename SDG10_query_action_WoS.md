@@ -209,7 +209,7 @@ This target is interpreted to cover research about promoting the implementation 
 This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
 This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality*. 
-```py("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
+```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
 
 
 ```py
