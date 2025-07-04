@@ -472,8 +472,8 @@ TS=
   )
 NEAR
   ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*" OR
-   "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR "zero per cent tariff"
-   OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
+   "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR
+   "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
   ) 
 NEAR
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
@@ -532,8 +532,8 @@ NEAR
   )
  )
 AND
-  ("World Trade Organization" OR "WTO" OR "trade facilitation agreement*" OR "trade agreement*" OR "trade opportunit*" OR
-   "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$" OR
+  ("World Trade Organization" OR "WTO" OR "trade facilitation agreement*" OR "trade agreement*" OR "trade opportunit*"
+   OR "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$" OR
    "doha mandate$"
   )
 )
@@ -558,15 +558,16 @@ The basic structure of Phrase 1 is *action (encourage) + financial assistance + 
 Phrase 1
 ```py
 TS=
-((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*"
-   OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*" OR "facilitat*" OR
-   "raise" OR "raising" OR "raised" OR "boost*"
+((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
+   "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*" OR
+   "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*"
   )
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
    "development aid" OR "foreign aid" OR "international aid" OR "cooperation fund*" OR "development spending$" OR
    "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*" OR
+   "international fund*"
+OR
   (("economic" OR "financial*" OR "monetary"
    )
 NEAR/3
@@ -649,8 +650,9 @@ TS=
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
    "development aid" OR "foreign aid" OR "international aid" OR "cooperation fund*" OR "development spending$" OR
-   "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*" OR
+   "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*"
+   OR "international fund*"
+OR
   (("economic" OR "financial*" OR "monetary"
    )
 NEAR/3
@@ -662,8 +664,9 @@ NEAR
   (("national*" OR "regional*" OR "local*"
    )
 NEAR/3
-   ("plan" OR "plans" OR "planning" OR "planned" OR "program$" OR "scheme$" OR "project$" OR "blueprint$" OR "layout$" OR
-    "design$" OR "framework$" OR "initiative$" OR "bid$" OR "effort$" OR "venture$" OR "undertaking$" OR "enterprise$"
+   ("plan" OR "plans" OR "planning" OR "planned" OR "program$" OR "scheme$" OR "project$" OR "blueprint$" OR "layout$"
+    OR "design$" OR "framework$" OR "initiative$" OR "bid$" OR "effort$" OR "venture$" OR "undertaking$" OR
+    "enterprise$"
    )
   )
   )
