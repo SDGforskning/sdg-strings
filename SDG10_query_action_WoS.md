@@ -122,13 +122,42 @@ NEAR
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about eliminating discriminatory legislation, policies and other practices and promote ones that ensure equal opportunity and reduce inequalities of outcome.
+This target is interpreted to cover research about 
+* ensuring equal opportunity and reducing inequalities of outcome
+* eliminating discriminatory legislation, policies and other practices and promote ones that ensure equal opportunity and reduce inequalities of outcome.
 
 "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
 
-This query consists of 1 phrase. The basic structure is *action (stop) + discriminatory law OR action (promote) + anti-discriminatory law*
+This query consists of 2 phrases. 
+
+The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR action (reduce) + inequalities*.
+
+```py
+TS=
+((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
+   "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring"
+ )
+NEAR/3
+  ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
+   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
+  )
+ )
+OR
+ (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
+   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+   "declin*" OR "abate$" OR "abating" OR "diminish*"
+  )
+NEAR/3
+  ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+   OR "stigma*" OR "ableis*"
+  )
+ )
+)
+```
+
+The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action (promote) + anti-discriminatory law*.
 
 ```py
 TS=
@@ -142,7 +171,7 @@ NEAR
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-    OR "rules" OR "procedur*"
+    OR "rules" OR "procedur*" OR "initiative*"
    )
   )
  )
@@ -150,7 +179,7 @@ OR
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
-   "introduc*" OR "boost*"
+   "introduc*" OR "boost*" OR "foster*"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -159,7 +188,7 @@ NEAR
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-    OR "rules" OR "procedur*" 
+    OR "rules" OR "procedur*" OR "initiative*"
    )
   )
  )
