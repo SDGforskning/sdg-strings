@@ -742,12 +742,12 @@ This query consists of 1 phrase. The basic structure is *action (reduce) + remit
 
 ```py
 TS=
-((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*"
-   OR "lowering" OR "lower$" OR "lowered"
+((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+   "alleviat*" OR "lowering" OR "lower$" OR "lowered"
   )
 NEAR
-  (("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR
-    "money order$" OR "money transmission$"
+  (("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+    OR "money order$" OR "money transmission$"
    )
 NEAR/3
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
@@ -755,8 +755,8 @@ NEAR/3
   )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
-   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$"
+   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
+   OR "displaced" OR "expat*" OR "transferee$"
   )
  )
 OR
@@ -764,12 +764,12 @@ OR
    OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR "declin*"
   )
 NEAR
-  ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money" OR
-   "money order$" OR "money transmission$"
+  ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+   OR "money order$" OR "money transmission$"
   )
 NEAR
-  (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR "ruinous*"
-    OR "costly" OR "unaffordab*"
+  (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR
+    "ruinous*" OR "costly" OR "unaffordab*"
    )
 NEAR/3
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
@@ -777,8 +777,8 @@ NEAR/3
   )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
-   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$"
+   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
+   OR "displaced" OR "expat*" OR "transferee$"
   )
  )
 )
