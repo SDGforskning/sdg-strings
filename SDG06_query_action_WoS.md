@@ -847,7 +847,11 @@ TS=
   NEAR/5 
   (
     (
-    ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*") 
+    ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*"
+    OR "erosion" OR "flooding" OR "drought$" 
+    OR ("flow" NEAR/3 ("reduced" OR "diminish*" OR "decrased" OR "low*")) 
+    OR ("species" NEAR/3 ("extinction" OR "loss")) 
+    OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))) 
     OR (
         ("unsustainab*" OR "exploit*") 
         NEAR/5 

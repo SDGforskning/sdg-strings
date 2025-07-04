@@ -638,11 +638,17 @@ The elements of the phrase are *decline/deterioration/unsustainable use + water-
 TS=
 (
   (
-  ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*") 
+  ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*" 
+  OR "erosion" OR "flooding" OR "drought$" 
+  OR ("flow" NEAR/3 ("reduced" OR "diminish*" OR "decrased" OR "low*")) 
+  OR ("species" NEAR/3 ("extinction" OR "loss")) 
+  OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))
+  ) 
   OR (
       ("unsustainab*" OR "exploit*") 
         NEAR/5 
-        ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+        ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies"
+        OR ("water" NEAR/3 "extract*"))
       )
   ) 
   NEAR/15 
