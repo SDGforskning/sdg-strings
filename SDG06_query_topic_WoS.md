@@ -624,6 +624,48 @@ TS=
 )
 ```
 
+
+#### Phrase 2
+
+This phrase aims to find research about the deterioration of freshwater-related ecosystems.
+
+Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+
+The elements of the phrase are *decline/deterioration/unsustainable use + water-related ecosystems*
+
+
+```py
+TS=
+(
+  (
+  ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*") 
+  OR (
+      ("unsustainab*" OR "exploit*") 
+        NEAR/5 
+        ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+      )
+  ) 
+  NEAR/15 
+  (
+    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
+    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+    ) 
+      NEAR/5 
+       ("freshwater" OR "fresh water" 
+        OR "lake*" OR "pond$"
+        OR "river*" OR "stream$" OR "brook$" OR "creek$" 
+        OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
+        OR "wetland$" OR "mangrove$" 
+        OR "floodplains" OR "rice paddies" 
+        OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
+        OR "aquifer$" OR "groundwater"
+       )
+  )
+)
+
+```
+
+
 ### Target 6.a
 
 > **6.a By 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities and programmes, including water harvesting, desalination, water efficiency, wastewater treatment, recycling and reuse technologies**

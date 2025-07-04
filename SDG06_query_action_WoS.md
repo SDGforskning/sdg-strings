@@ -833,7 +833,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about preventing the deterioration of water-related ecosystems.
+This phrase aims to find research about preventing the deterioration of freshwater-related ecosystems.
 
 Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
 
