@@ -231,7 +231,8 @@ AND
     "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised"
    )
 NEAR
-   ("equal*" OR "equitable" OR "equal opportunit*" OR "anti discriminat*" OR "anti-discriminat*" OR "justice*"
+   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
+    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
    )
   )
 OR
