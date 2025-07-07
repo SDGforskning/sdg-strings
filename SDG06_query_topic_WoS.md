@@ -596,6 +596,7 @@ This target is interpreted to cover research about
 This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
 The elements of the phrase are *conserving/protecting + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+The structure of the phrase is similar to SDG 14.2 phrase 3.
 
 
 ```py
