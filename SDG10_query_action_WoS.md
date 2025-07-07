@@ -106,7 +106,7 @@ OR
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
-   "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating"
+   "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*"
   )
 NEAR
   ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
@@ -150,7 +150,7 @@ OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
    "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist*" OR
-   "lift$ out of" OR "lifting out of" OR "overcom*"
+   "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*"
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -165,7 +165,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 ```py
 TS=
 ((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*"
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*"
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -181,7 +181,7 @@ NEAR
 OR 
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
-   "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propose*" OR "implement*" OR "adopt*" OR
+   "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR
    "introduc*" OR "boost*" OR "foster*"
   )
 NEAR
@@ -216,7 +216,7 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 
 ```py
 TS=
-((("establish*" OR "propose*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
+((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
     "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*"
   )
 NEAR
@@ -242,7 +242,7 @@ OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
     "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
     OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
-    "diminish*" OR "abate$" OR "abating"
+    "diminish*" OR "abate$" OR "abating" OR "dismantl*"
    )
 NEAR
    ("discriminator*" OR "inequalit*" OR "harass*"
@@ -767,7 +767,7 @@ NEAR
 OR
  (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
    "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR
-   "declin*"
+   "declin*" OR "dismantl*"
   )
 NEAR
   ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
