@@ -681,12 +681,120 @@ TS=
 
 This target is interpreted to cover research about 
 
+#### Phrase 1
+
+The elements of the phrase are *action + capacity building/international cooperation + WASH/drinking water/water harvesting/desalination/water efficiency/wastewater treatment/recycling and reuse of water + developing countries*
+
+The structure of the phrase is similar to SDG 12.a phrase 1.
+
 ```py
 TS=
 (
+  (
+    ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+    OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
+    OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+    OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+    OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+    OR "awareness" OR "disseminat*" OR "educat*" OR "training" 
+    OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+    OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$"
+    OR "financial support" OR "financial resources"
+    OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+    OR "ODA" OR "official development assistance" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+    OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
+    OR "international cooperation" OR "international collaboration" 
+    OR "international network$" OR "international partnership$"
+    OR "development cooperation" OR "development network$"
+    OR "development partnership$" OR "research partnership$"
+    OR (("international" OR "development") 
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"))
+    ) 
+      NEAR/5 
+      (
+      (
+        "sanitation" 
+        OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+        OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+        OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+    
+        OR "safely managed sanitation services" 
+        OR "improved sanitation facilities" 
+        OR "wet sanitation technolog*" 
+        OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
+        OR "dry sanitation technologies" 
+        OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
+        OR 
+        (
+        ("adequate" OR "safe" OR "basic" OR "equitab*" OR "non-equit*") 
+          NEAR/5 
+            ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+        ) 
+      OR 
+        (
+          ("sewege" 
+          OR
+          (
+          ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
+          OR "emptying" OR "transport" OR "reuse") 
+              NEAR/3 ("wastewater" OR "human excret$" OR "faeces" OR "faecal sludge")
+          )
+          )
+            NEAR/5 
+            ("sanitation" OR "hygiene" OR "WASH") 
+        ) 
+      OR 
+      (
+        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+	      OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+        OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
+        OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
+        OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
+        OR ("water" NEAR/3 "kiosk*")
+        ) 
+          NEAR/5 
+          ("drink*" NEAR/3 "water") 
+      ) 
+      OR "improved drinking water source*" 
+      OR "safely managed drinking water" 
 
+      OR ("water" NEAR/3 ("harvest*" OR "desalinat*")) 
+      OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
+      OR (("wastewater" OR "waste water" OR "sewage") 
+        NEAR/3 ("treatment" OR "recycl*" OR "reuse"))
+      ) 
+      )
+  ) 
+AND 
+  ("least developed countr*" OR "least developed nation$"
+  OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" 
+  OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" 
+  OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" 
+  OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" 
+  OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" 
+  OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*" 
+
+  OR "small island developing nation$" OR "small-island developing state$" OR "small-island developing countr*"
+  OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" 
+  OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" 
+  OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" 
+  OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" 
+  OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" 
+  OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*"
+  OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" 
+  OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" 
+
+  OR  "landlocked developing nation$" OR "landlocked developing stat*" OR "land-locked developing nation$" OR "land-locked developing stat*"
+  OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" 
+  OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" 
+  OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" 
+  OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" 
+  OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*"
+  )
 )
+
 ```
+
 
 ### Target 6.b
 

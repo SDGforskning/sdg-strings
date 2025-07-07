@@ -909,8 +909,6 @@ The elements of the phrase are *action + capacity building/international coopera
 
 The structure of the phrase is similar to SDG 12.a phrase 1.
 
-
-
 ```py
 TS=
 (
