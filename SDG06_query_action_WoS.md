@@ -852,7 +852,9 @@ TS=
     OR "erosion" OR "flooding" OR "drought$" 
     OR ("flow" NEAR/3 ("reduced" OR "diminish*" OR "decrased" OR "low*")) 
     OR ("species" NEAR/3 ("extinction" OR "loss")) 
-    OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))) 
+    OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))
+    ) 
+
     OR (
         ("unsustainab*" OR "exploit*") 
         NEAR/5 
