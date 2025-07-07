@@ -54,8 +54,7 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-(
- (("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+((("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
@@ -64,7 +63,8 @@ TS=
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
    OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR
-   "earnings increas*" OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise"
+   "earnings increas*" OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise" OR "anti-poverty" OR
+   "antipoverty" OR "out of poverty"
   )
  )
 AND
@@ -105,7 +105,8 @@ OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
-   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome"
+   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR
+   "lift$ out of" OR "lifting out of"
   )
 NEAR
   ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
