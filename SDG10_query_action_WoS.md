@@ -241,7 +241,8 @@ OR
   (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
     "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
-    OR "halt*" OR "resist*" OR "overcome"
+    OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
+    "diminish*" OR "abate$" OR "abating"
    )
 NEAR
    ("discriminator*" OR "inequalit*" OR "harass*"
