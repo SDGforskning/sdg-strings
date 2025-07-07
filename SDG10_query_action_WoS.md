@@ -105,8 +105,8 @@ OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
-   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR
-   "lift$ out of" OR "lifting out of"
+   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
+   "lift$ out of" OR "lifting out of" OR "diminish*"
   )
 NEAR
   ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
@@ -149,7 +149,8 @@ NEAR/3
 OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
-   "declin*" OR "abate$" OR "abating" OR "diminish*"
+   "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist*" OR
+   "lift$ out of" OR "lifting out of" OR "overcom*"
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
