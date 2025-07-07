@@ -436,10 +436,13 @@ NEAR
 OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$"
    OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*"
-   OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome")
+   OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR
+   "relief*" OR "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating"
+  )
 NEAR
   ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
-   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking")
+   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking"
+  )
 NEAR
   ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
    "intra stat*" OR "within-country" OR "within country"
@@ -745,7 +748,7 @@ This query consists of 1 phrase. The basic structure is *action (reduce) + remit
 ```py
 TS=
 ((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
-   "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+   "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "diminish*" OR "abate$" OR "abating"
   )
 NEAR
   (("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
