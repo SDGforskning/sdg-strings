@@ -791,7 +791,8 @@ Although indicator metadata 6.6.1a excludes mountain and forest ecosystems we ha
 
 This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
-The elements of the phrase are *action + conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+The elements of the phrase are *action + conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems* 
+The structure of the phrase is similar to 14.2 phrase 3.
 
 
 ```py
