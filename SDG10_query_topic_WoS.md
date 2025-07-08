@@ -150,13 +150,43 @@ NEAR
 >
 > 10.4.2 Redistributive impact of fiscal policy
 
-This target is interpreted to cover research about existing or new social and economic policy practices that reduce inequalities.
+This target is interpreted to cover research about existing or new policy practices that reduce inequalities or promote achieving greater equality.
   
+This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning, but limited to those types of policies. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
+
+This query consists of 1 phrase. The basic structure is *laws AND increase/decrease + equality/inequality. ("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*") was removed from the original search string not to limit the search only to these types of policies.
 
 ```py
 TS=
-(
-
+(("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+  "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
+  "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*"
+ ) 
+AND 
+ (("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
+   OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
+   "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR
+   "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$" OR
+   "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised" OR "heighten*"
+  )
+NEAR
+  ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
+   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
+  )
+ )
+OR
+  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+    "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
+    "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
+    OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
+    "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
+   )
+NEAR
+   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
+    "bias$ed"
+   )
+  )
 )
 ```
 
