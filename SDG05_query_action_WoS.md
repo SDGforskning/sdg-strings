@@ -250,7 +250,7 @@ TS=
             OR "tax break$" OR "tax credit$" OR "child credit$" OR "pension$" OR "caregiver benefit$"
             OR 
                 (("income support" OR "financial support" OR "economic support" OR "cash" OR "allowance" OR "payment$" OR "subsid*" OR "leave") 
-                NEAR/2 ("caregiv*" OR "care" OR "carer$" OR "childcare" OR "eldercare")
+                NEAR/3 ("caregiv*" OR "care" OR "carer$" OR "childcare" OR "eldercare")
                 )
             OR "nursery" OR "daycare" OR "day care" OR "kindergarten" OR "preschool" 
             OR "elderly care" OR "nursing home$" OR "residential care" OR "care facilit*" OR "care service$" OR "home nurs*" OR "care home$" 
