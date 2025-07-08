@@ -36,9 +36,9 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about developing reliable, sustainable and resilient infrastructure that is accessible for all. 
 
-Infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks. (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10; United Nations Environment Programme, 2021, 8).
+Infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks. (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J. 2022, 10; United Nations Environment Programme 2021, 8).
 
-Sustainable infrastructure refers to systems that are planned, designed, built, operated, and eventually decommissioned in ways that ensure economic, financial, social, environmental (including climate resilience), and institutional sustainability throughout their entire life cycle. This widely used definition is adapted from the Inter-American Development Bank. (United Nations Environment Programme 2021, 8).
+Sustainable infrastructure refers to systems that are planned, designed, built, operated, and eventually decommissioned in ways that ensure economic, financial, social, environmental (including climate resilience), and institutional sustainability throughout their entire life cycle. This widely used definition is adapted from the Inter-American Development Bank. (United Nations Environment Programme (2021) 2021, 8).
 
 This query consists of 1 phrase. 
 The basic structure of phrase 1 is action + sustainable + infrastructure + accessible
