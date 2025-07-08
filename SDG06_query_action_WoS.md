@@ -902,7 +902,7 @@ In its current form, however, the phrase searches for any research about WASH re
 
 We have interpreted capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity.  
 
-As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025). Although the indicator metadata defines 
+As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025).
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
