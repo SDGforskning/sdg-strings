@@ -891,15 +891,18 @@ TS=
 >
 > 6.a.1 Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan
 
-This target is interpreted to cover research about expanding international co-operation and capacity-building to support developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
+This target is interpreted to cover research about advancing international co-operation and capacity-building to support developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
 
 As definition of capacity building we have used
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
 United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance
 
-We have interpreted capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity. 
+According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025).
+In its current form, however, the phrase searches for any research about WASH related capacity building, whether aided or not. 
 
-The indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025)
+We have interpreted capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity.  
+
+As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025). Although the indicator metadata defines 
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
