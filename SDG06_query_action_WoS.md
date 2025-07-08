@@ -934,7 +934,7 @@ TS=
         OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
         OR "awareness" OR "disseminat*" OR "educat*" OR "training" 
         OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
-        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$"
+        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$" OR "microfinance" 
         OR "financial support" OR "financial resources"
         OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" 
         OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$"
