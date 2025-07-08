@@ -35,11 +35,26 @@ This target is interpreted to cover research about the income growth rates of th
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
 
+This query consists of 1 phrase. The basic structure is *income growth rate + poor*
+
 ```py
 TS=
-(
-
-)
+(("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
+   "antipoverty" OR "out of poverty" OR
+   (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
+    )
+NEAR/3
+    ("increas*" OR "growth" OR "rise$" OR "rising"
+    )
+   )
+  )
+AND
+  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+   "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income" OR "low-income" OR
+   "disadvantaged" OR "extremely poor$" OR "severely poor$" OR "abjectly poor$" OR "absolutely poor$"
+  )
+ )
 ```
 
 ### Target 10.2
@@ -48,16 +63,25 @@ TS=
 >
 > 10.2.1 Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
 
-This target is interpreted to cover research about the social, economic and political inclusion of all. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
+This target is interpreted to cover research about the social, economic and political inclusion of all. Research about social, economic and political exclusion is also included here. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
 
 This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016). Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 (United Nations 2024). A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target (Sharif 2024; World Bank Group 2025). For example, persons with disabilities and people of African descent experience significantly higher levels of poverty (United Nations 2018; World Bank Group 2025). 
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. (World Bank Group 2025.) Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills (Sharif 2024). Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections (Aldar ym. 2025).
 
+This query consists of 1 phrase. The basic structure is *inclusion OR exclusion*
+
 ```py
 TS=
-(
-
+(("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
+  "societal activit*" OR "accessib*"
+ )
+OR
+ ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+  "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
+  OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
+  "intersecti* vulnerab*" OR "intersecti* oppression*"
+ )
 )
 ```
 
@@ -67,18 +91,54 @@ TS=
 >
 > 10.3.1 Proportion of population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
-This target is interpreted to cover research about legislation and other practices that increase inequality.
+This target is interpreted to cover research about 
+* equal opportunity and inequalities of outcome
+* legislation, policies and other practices that increase inequality/discriminatory legislation, policies and other practices.
 
-"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that
-is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or ef-
-fect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human
-rights and fundamental freedoms in the political, economic, social, cultural or any other field of public
-life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
+"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
+
+Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
+
+This query consists of 2 phrases.
+
+The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
 
 ```py
 TS=
-(
+(("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
+  "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
+ )
+ ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+  OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
+  "bias$ed"
+ )
+)
+```
 
+The basic structure of Phrase 2 is *discriminatory law OR anti-discriminatory law*.
+
+```py
+TS=
+((("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
+   "bias$ed"
+  )
+NEAR
+  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+   OR "rules" OR "procedur*" OR "initiative*"
+  )
+ )
+OR
+ (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
+   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
+  )
+NEAR
+  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+   OR "rules" OR "procedur*" OR "initiative*"
+  )
+ )
 )
 ```
 
