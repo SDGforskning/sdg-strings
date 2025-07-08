@@ -1049,18 +1049,69 @@ AND
 This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf (“UNstats2025”) measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
 (“DESA2018”)
 
-According to the indicator metadata 6.b, water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water 
-quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
+According to the indicator metadata 6.b, water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
+
+The terms for `wastewater treatment` `water quality` and `water-related ecosystems` are combined with freswater terms as in the phrases for targets 6.3 and 6.6. 
 
 #### Phrase 1
 
-The elements of the phrase are *action + local communities + participation/policies + WASH + management*
+The elements of the phrase are *action + local communities + participation/policies + water and sanitation elements + management*
 
 
 ```py
 TS=
 (
-
+  ("support*" OR "strengthen*" OR "increas*"  OR "improv*" OR "enhanc*" OR "better" OR "higher"
+  OR "overcome" OR "ensure" OR "attain*" OR "achiev*" 
+  OR "promot*" OR "establish*" OR "enable" OR "implement*" 
+  OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing" 
+  OR "tackling" OR "tackle" 
+  OR "decreas*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
+  OR "lowering" OR "lower$" OR "lowered" OR "declin*"
+  ) 
+  NEAR/15 
+  (
+    (
+      ("local" OR "stakeholder$" OR "municip*" OR "communit*" OR "commun*" OR "district") 
+    NEAR/5 
+        ("participat*" OR "contribut*" OR "impact" OR "plan" OR "planning" 
+        OR "choice$" OR "choose" OR "solution$" 
+        OR ("decision$" NEAR/3 "making") 
+        OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$"
+        )
+    ) 
+    NEAR/5 
+    (
+      ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies" OR "extract*" OR "resource us*" OR "usage" 
+      OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$") 
+        NEAR/5 
+          (
+            (("drink*" OR "potable") NEAR/3 "water")
+            OR "sanitation" 
+            OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+            OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
+            OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+            OR 
+            (
+              (
+                (("wastewater" OR "waste water" OR "sewage" OR "sewer$") NEAR/3 "treatment") 
+                OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+                OR "ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$"
+              ) 
+              
+                NEAR/5 
+                  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+                  OR "river$" OR ("stream$" NEAR/3 "water") 
+                  OR "brook$" OR "creek$" 
+                  OR "aquifer$" OR "groundwater" 
+                  OR ("water" NEAR/3 "reservoir$"))
+              ) 
+            OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
+            OR "water resource$" OR "freshwater resource$" 
+            OR "water supply" OR "water supplies" OR "suppl* of freshwater"
+          ) 
+      )
+    )         
 )
 ```
 

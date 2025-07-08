@@ -818,11 +818,55 @@ AND
 
 This target is interpreted to cover research about 
 
+#### Phrase 1
+
+The elements of the phrase are *local communities + participation/policies + water and sanitation elements + management*
+
+
 ```py
 TS=
 (
+  (
+    ("local" OR "stakeholder$" OR "municip*" OR "communit*" OR "commun*" OR "district") 
+    NEAR/5 
+      ("participat*" OR "contribut*" OR "impact" OR "plan" OR "planning" 
+      OR "choice$" OR "choose" OR "solution$" 
+      OR ("decision$" NEAR/3 "making") 
+      OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$"
+      )
+  ) 
+  NEAR/5 
+    (
+    ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies" OR "extract*" OR "resource us*" OR "usage" 
+    OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$") 
+        NEAR/5 
+        (
+          (("drink*" OR "potable") NEAR/3 "water")
+          OR "sanitation" 
+          OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+          OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
+          OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+          OR 
+            (
+              (
+              (("wastewater" OR "waste water" OR "sewage" OR "sewer$") NEAR/3 "treatment") 
+              OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+              OR "ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$"
+              ) 
+                NEAR/5 
+                  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+                  OR "river$" OR ("stream$" NEAR/3 "water") 
+                  OR "brook$" OR "creek$" 
+                  OR "aquifer$" OR "groundwater" 
+                  OR ("water" NEAR/3 "reservoir$"))
+            ) 
+            OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
+            OR "water resource$" OR "freshwater resource$" 
+            OR "water supply" OR "water supplies" OR "suppl* of freshwater"
+        ) 
+    )
+)         
 
-)
 ```
 
 
