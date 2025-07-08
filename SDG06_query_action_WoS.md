@@ -894,7 +894,7 @@ TS=
 This target is interpreted to cover research about advancing international co-operation and capacity-building to support developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
 
 As definition of capacity building we have used
-* Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
+* Definition of "capacity development: "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
 United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance
 
 According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025).
