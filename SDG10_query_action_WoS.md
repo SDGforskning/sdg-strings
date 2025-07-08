@@ -185,7 +185,7 @@ OR
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR
-   "introduc*" OR "boost*" OR "foster*"
+   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -220,7 +220,8 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 ```py
 TS=
 ((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
-    "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*"
+    "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*" OR
+    "reform$" OR "reforming" OR "reformed"
   )
 NEAR
   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -275,7 +276,8 @@ TS=
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR 
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
-    OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*"
+    OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR
+    "reforming" OR "reformed"
    )
 NEAR/5
    ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
@@ -321,7 +323,7 @@ TS=
    "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR "capacity building" OR
    "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop$" OR
    "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR
-   "raised"
+   "raised" OR "reform$" OR "reforming" OR "reformed"
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
@@ -421,7 +423,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
    "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
    "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
-   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised"
+   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed"
   )
 NEAR
   ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
@@ -570,7 +572,7 @@ Phrase 1
 TS=
 ((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
    "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
-   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*"
+   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed"
   )
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
