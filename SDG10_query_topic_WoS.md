@@ -196,14 +196,28 @@ NEAR
 >
 > 10.5.1 Financial Soundness Indicators
 
-This target is interpreted to cover research about the regulation of global financial markets and institutions.
+This target is interpreted to cover research about the regulation and monitoring of global financial markets and institutions.
 
-This query consists of X phrases.
+This query consists of 1 phrase. The basic structure is *regulation + financial institution*.
 
 ```py
 TS=
-(
-
+(("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
+  "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
+  OR "mandat*"
+ )
+AND
+ (("global*" OR "international*"
+  ) 
+NEAR/5
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+  )
+NEAR/5
+  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
+   "system$"
+  )
+ )
+NOT "globalization"
 )
 ```
 
