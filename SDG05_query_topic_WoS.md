@@ -270,7 +270,7 @@ TS=
             NEAR/15
             ("banks" OR "a bank" OR "banking" OR "bank account$"
             OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-            OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+            OR "credit" OR "entrepreneurial finance" OR "loan$" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
             OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
             )
         )
