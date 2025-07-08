@@ -200,6 +200,10 @@ This target is interpreted to cover research about the regulation and monitoring
 
 This query consists of 1 phrase. The basic structure is *regulation + financial institution*.
 
+The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.) IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from a global to a regional level can function in fair and efficient ways. (FSB 2025.)
+
+This query consists of 1 phrase. The basic structure is action + regulation + financial institution ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*" OR "egalitar*")was removed from the search string. While the goal of implementing better regulation and monitoring is to make the institutions function in more responsible and transparent manners, this isn't directly mentioned in the target and is also left out of the interpretation.
+
 ```py
 TS=
 (("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
@@ -227,16 +231,85 @@ NOT "globalization"
 >
 > 10.6.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about 
-   * the decision-making powers of developing countries in international economic institutions
-   * the accountable modes of operation in economic institutions
+This target is interpreted to cover research about the representation and decision-making powers of developing countries in international economic institutions.
 
 In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
 
+This query consists of 1 phrase. The basic structure is *representation + developing countries + international economic institution*
+
 ```py
 TS=
-(
-
+((("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
+   "decision-making power*" OR "decision making power*" OR "participat*"
+  )
+NEAR
+  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
+   "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
+   "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
+   OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR
+   "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR
+   "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR
+   "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR
+   "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR
+   "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic"
+   OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR
+   "Eritrea*" OR "Ethiopia*" OR "gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*"
+   OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "malawian" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR
+   "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR
+   "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*"
+   OR "zambian$" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma"
+   OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR
+   "Bhutan*" OR "bhutanese" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR
+   "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR
+   "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR
+   "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR
+   "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR
+   "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR
+   "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR
+   "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR
+   "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR
+   "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR
+   "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR
+   "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR
+   "Virgin Islands" OR "Armenia*" OR "Azerbaijan*" OR "Bolivia*" OR "Botswana*" OR "Eswatini" OR "eswantian" OR
+   "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR
+   "Lao People’s Democratic Republic" OR "Laos" OR "Mongolia*" OR "North Macedonia" OR "Republic of Macedonia" OR
+   "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan"
+   OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zimbabwe*" OR "albania*" OR
+   "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia"
+   OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR
+   "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR
+   "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR
+   "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR
+   "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR
+   "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR
+   "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR
+   "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo"
+   OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR
+   "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR
+   "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*"
+   OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR
+   "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR
+   "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR
+   "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR
+   "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria"
+   OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR
+   "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
+   "georgia*"
+  )
+ )
+AND
+ (("global*" OR "international*"
+  ) 
+NEAR/5
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+  )
+NEAR/5
+  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
+   "system$"
+  )
+ )
+NOT "globalization"
 )
 ```
 
@@ -252,12 +325,42 @@ TS=
 >
 > 10.7.4 Proportion of the population who are refugees, by country of origin
 
-This target is interpreted to cover research about safe, responsible and financially sustainable migration policies.
+This target is interpreted to cover research about safe, responsible and regular migration and mobility of people.
+
+"Migration" is not a term officially defined under international law, but refers to a situation where a person moves away from their usual place of recidence. The move can be within-country or to another country, it can be temporary or permanent and be the cause of a variety of reasons. Excluded from this definition are movements due to "recreation, holiday, visits to friends and relatives, business, medical treatment or religious pilgrimages”, that in turn are covered by "mobility of people". (IOM 2019.) Migration can enable people to very effectively better their living conditions, for example by accessing higher wage jobs. Migrants also often support their relatives in their country or region of origin, thus spreading the effect even further. Countries and regions receiving migrants can greatly benefit from the skills they bring. Well-managed movement of people can so be beneficial to all parties, as well as having a big effect on reducing inequalities. However, there are still some remarkable barriers for migration and movement of people always functioning in safe, orderly, regular and responsible manners, and these can be measured through the target indicators. (UN DESA 2019b.) Orderly migration is defined as “the movement of a person from his/her usual place of residence, in keeping with the laws and regulations governing exit of the country of origin and travel, transit and entry into the host country” and regular as “migration that occurs through recognized, legal channels”. The concepts of safe and responsible migration or well-managed migration policies are not explicitly defined. (IOM 2019.) These can however be seen as policies that actively work towards fulfilling the principles and objectives of the Migration Governance Framework that are pictured in the 10.7.2. indicator metadata (UN Statistics Division 2023). 
+
+This query consists of 1 phrase. The basic structure is *security + movement of people OR risks + movement of people*
 
 ```py
 TS=
-(
-
+((("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
+   OR "orderly" OR "planned" OR "well-managed" OR "well managed" OR "well-planned" OR "well planned" OR "managed" OR
+   "dignif*"
+  )
+NEAR
+  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+   "intra stat*" OR "within-country" OR "within country"
+  )
+NEAR
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
+   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced" OR "expat*" OR "transferee$"
+  )
+ )
+OR
+ (("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
+   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
+  )
+NEAR
+  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+   "intra stat*" OR "within-country" OR "within country"
+  )
+NEAR
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
+   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
+   "displaced" OR "expat*" OR "transferee$"
+  )
+ )
 )
 ```
 
@@ -268,6 +371,8 @@ TS=
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
 This target is interpreted to cover research about a special principle on zero tariffs for developing countries, in accordance with the World Trade Organisation agreements.
+
+
 
 ```py
 TS=
