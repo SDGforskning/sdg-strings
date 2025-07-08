@@ -770,7 +770,7 @@ NEAR
     OR "money order$" OR "money transmission$"
    )
 NEAR/3
-   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
+   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
 NEAR
