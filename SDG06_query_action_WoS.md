@@ -909,9 +909,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 #### Phrase 1
 
-The elements of the phrase are *action + capacity building/international cooperation + WASH/drinking water/water harvesting/desalination/water efficiency/wastewater treatment/recycling and reuse of water + developing countries*
-
-The structure of the phrase is similar to SDG 12.a phrase 1.
+The elements of the phrase are *action + international cooperation/support + capacity building + WASH/drinking water/water harvesting/desalination/water efficiency/wastewater treatment/recycling and reuse of water + developing countries*
 
 ```py
 TS=
@@ -922,24 +920,25 @@ TS=
     )
     NEAR/5
     (
-      ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
-      OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
-      OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
-      OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
-      OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
-      OR "awareness" OR "disseminat*" OR "educat*" OR "training" 
-      OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
-      OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$"
-      OR "financial support" OR "financial resources"
-      OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e"
+      (
+      (
+      (("international" OR "development") 
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")) 
       OR "ODA" OR "official development assistance" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
-      OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$" 
-      OR "international cooperation" OR "international collaboration" 
-      OR "international network$" OR "international partnership$"
-      OR "development cooperation" OR "development network$"
-      OR "development partnership$" OR "research partnership$"
-      OR (("international" OR "development") 
-        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$"))
+      )
+      NEAR/15 
+        ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+        OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
+        OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
+        OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
+        OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
+        OR "awareness" OR "disseminat*" OR "educat*" OR "training" 
+        OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
+        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$"
+        OR "financial support" OR "financial resources"
+        OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" 
+        OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$"
+        )
       ) 
       NEAR/5 
       (
