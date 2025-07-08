@@ -58,7 +58,7 @@ TS=
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-   OR "raised" OR "offer*"
+   OR "raised" OR "offer*" OR "heighten*"
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
@@ -94,7 +94,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand$" OR "expansion*" OR "accelerat*"
    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
-   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*"
+   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "heighten*"
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
@@ -186,7 +186,7 @@ OR
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR
-   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
+   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR "heighten*"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -235,7 +235,7 @@ AND
     OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
     "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR
     "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$" OR
-    "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised"
+    "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised" OR "heighten*"
    )
 NEAR
    ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -278,7 +278,7 @@ TS=
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
     OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR
-    "reforming" OR "reformed" OR "offer*"
+    "reforming" OR "reformed" OR "offer*" OR "heighten*"
    )
 NEAR/5
    ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
@@ -324,7 +324,7 @@ TS=
    "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR "capacity building" OR
    "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop$" OR
    "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR
-   "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
+   "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR "heighten*"
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
@@ -424,7 +424,8 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
    "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
    "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
-   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
+   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR
+   "heighten*"
   )
 NEAR
   ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
@@ -574,7 +575,7 @@ TS=
 ((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
    "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
    OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed" OR
-   "offer*"
+   "offer*" OR "heighten*"
   )
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
