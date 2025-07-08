@@ -58,7 +58,7 @@ TS=
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-   OR "raised"
+   OR "raised" OR "offer*"
   )
 NEAR
   ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
@@ -94,7 +94,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand$" OR "expansion*" OR "accelerat*"
    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
-   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*"
+   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*"
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
@@ -107,7 +107,7 @@ OR
    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
    "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
-   "nullif*"
+   "nullif*" OR "hinder*"
   )
 NEAR
   ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
@@ -144,14 +144,14 @@ TS=
  )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
+   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
   )
  )
 OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
    "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist*" OR
-   "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*"
+   "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -167,7 +167,8 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 ```py
 TS=
 ((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*" OR "nullif*"
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*" OR "nullif*" OR
+   "hinder*"
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -185,11 +186,11 @@ OR
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
    "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR
-   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed"
+   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
+    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
    )
 NEAR
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -238,7 +239,7 @@ AND
    )
 NEAR
    ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
+    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
    )
   )
 OR
@@ -246,7 +247,7 @@ OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
     "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
     OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
-    "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*"
+    "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
    )
 NEAR
    ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -277,7 +278,7 @@ TS=
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
     OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR
-    "reforming" OR "reformed"
+    "reforming" OR "reformed" OR "offer*"
    )
 NEAR/5
    ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
@@ -299,7 +300,7 @@ NEAR/5
 NOT "globalization"
 AND
   ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR
-   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*"
+   "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*" OR "egalitar*"
   )
 )
 ```
@@ -323,7 +324,7 @@ TS=
    "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build* capacity" OR "capacity building" OR
    "capacity development" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop$" OR
    "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "attain*" OR "achiev*" OR "raise" OR "raising" OR
-   "raised" OR "reform$" OR "reforming" OR "reformed"
+   "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
@@ -423,7 +424,7 @@ TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
    "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
    "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
-   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed"
+   "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*"
   )
 NEAR
   ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
@@ -444,7 +445,7 @@ OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$"
    OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*"
    OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR
-   "relief*" OR "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "nullif*"
+   "relief*" OR "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "nullif*" OR "hinder*"
   )
 NEAR
   ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
@@ -480,7 +481,7 @@ This query consists of 1 phrase. The basic structure is *action + SDT + developi
 TS=
 ((("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop"
    OR "development" OR "ensure" OR "attain*" OR "achiev*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR
-   "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied"
+   "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied" 
   )
 NEAR
   ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*"
@@ -572,7 +573,8 @@ Phrase 1
 TS=
 ((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
    "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
-   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed"
+   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed" OR
+   "offer*"
   )
 NEAR
   ("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
@@ -774,7 +776,7 @@ NEAR
 OR
  (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
    "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR
-   "declin*" OR "dismantl*" OR "nullif*"
+   "declin*" OR "dismantl*" OR "nullif*" OR "hinder*"
   )
 NEAR
   ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
