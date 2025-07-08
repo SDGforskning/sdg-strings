@@ -247,12 +247,18 @@ TS=
         )
         NEAR/5
             ("social welfare" OR "welfare system$" OR "social protection" OR "social polic*"
-            OR "tax break$" OR "tax credit$" OR "child credit$" OR "pension$"
-            OR "public service$" OR "basic service$" OR "infrastructure" OR "modern energy" OR "irrigation" OR "electricity" OR "water sanitation" OR "clean water" OR "piped water" OR "water supply"
+            OR "tax break$" OR "tax credit$" OR "child credit$" OR "pension$" 
+            OR 
+                (("income support" OR "financial support" OR "economic support" OR "benefits" or "allowance" OR "leave" OR "payment$" OR "subsid*") 
+                NEAR/2 ("caregiv*" OR "care" OR "carer$" OR "childcare" OR "eldercare")
+                )
             OR "nursery" OR "daycare" OR "day care" OR "kindergarten" OR "preschool" 
             OR "elderly care" OR "nursing home$" OR "residential care" OR "care facilit*" OR "care service$" OR "home nurs*" OR "care home$" 
             OR (("formal" OR "professional") NEAR/3 ("care" OR "caregiv*"))
-            OR "flexible work*" OR "flextime" OR "flexitime" OR "parental leave" OR "care* leave" OR "matern* leave" OR "patern* leave"
+            OR "flexible work*" OR "flextime" OR "flexitime" OR "parental leave" OR "matern* leave" OR "patern* leave"
+            OR "public service$" OR "basic service$" OR "infrastructure" OR "modern energy" OR "electricity" 
+            OR "irrigation" OR "water sanitation" OR "clean water" OR "piped water" OR "water supply"
+            OR "mobile bank*" OR "mobile financ*" OR "delivery service$" 
             )
     )
     NEAR/15
