@@ -34,20 +34,14 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 9.1.2 Passenger and freight volumes, by mode of transport
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about developing reliable, sustainable and resilient infrastructure that is accessible for all. 
 
-* Creating and improving quality, reliable, environmentally sustainable, and resilient infrastructure that is equitably and affordably accessible for all.
+Infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks. (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10; United Nations Environment Programme, 2021, 8).
 
-This target talks about the comprehensive development of functional and sustainable infrastructure. The infrastructure being developed should support equitable economic progress and social development. At the same time, it should be environmentally responsible and foster global cooperation.
-
-Target is closely related to SDG 3.6 and SDG 11.2. All three targets are connected to sustainable trasportation. (United Nations 2021) 
-
-Infrastructure is commonly defined as “networked systems that deliver services including energy, water, waste management, transport and telecommunications”. Broader interpretations also encompass social infrastructure, including systems for social protection, healthcare (including public health), education, finance and insurance, as well as law enforcement and justice. (Thacker, S., Hall, J.W., Adshead, D., O’Regan, N., Rozenberg, J., Hallegatte, S., Fay, M., Harvey, M., Meller, H., and Watkins, G. (2019) Infrastructure for sustainable development. Nature Sustainability, 1 April 20-19. doi: 10.1038/s41893-019-0256-8)
-
-The concept of sustainable infrastructure has evolved over the years and usually it covers the entire life cycle of the project. “Sustainable infrastructure refers to infrastructure projects that are planned, designed, constructed, operated, and decommissioned in a manner to ensure economic and financial, social, environmental (including climate resilience), and institutional sustainability over the entire life cycle of the project.” (Inter American Development Bank, & IDB Invest (2018). What is Sustainable Infrastructure? A Framework to Guide Sustainability Across the Project Cycle. https://publications.iadb.org/en/what-sustainable-infrastructure-framework-guide-sustainability-across-project-cycle)
+Sustainable infrastructure refers to systems that are planned, designed, built, operated, and eventually decommissioned in ways that ensure economic, financial, social, environmental (including climate resilience), and institutional sustainability throughout their entire life cycle. This widely used definition is adapted from the Inter-American Development Bank. (United Nations Environment Programme 2021, 8).
 
 This query consists of 1 phrase. 
-The basic structure of phrase 1 is action + sustainable + infrastructure + affordable
+The basic structure of phrase 1 is action + sustainable + infrastructure + accessible
 
 ```py
 TS=
@@ -212,12 +206,16 @@ Specialist input:
 
 E-Handbook on Sustainable Development Goals Indicators. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
+Inter-American Development Bank. (2018). *What is Sustainable Infrastructure? A Framework to Guide Sustainability Across the Project Cycle*. Washington, DC, USA: IDB; 2018. Available from: https://publications.iadb.org/publications/english/document/What_is_Sustainable_Infrastructure__A_Framework_to_Guide_Sustainability_Across_the_Project_Cycle.pdf [Accessed 2025.07.08]
+
+Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022). *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
+
 The Sustainable Development Goals. Extended Report 2024. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation *. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-United Nations. (2021). Sustainable transport, sustainable development. Interagency report for second Global Sustainable Transport Conference. (https://digitallibrary.un.org/record/3944744?v=pdf) [Accessed 2025.06.23]
-
 United Nations. (2024). The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
+
+United Nations Environment Programme (2021). (2021). *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
