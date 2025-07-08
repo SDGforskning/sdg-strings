@@ -583,7 +583,7 @@ NEAR
    "development aid" OR "foreign aid" OR "international aid" OR "cooperation fund*" OR "development spending$" OR
    "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
    "international fund*"
-OR
+  OR
   (("economic" OR "financial*" OR "monetary"
    )
 NEAR/3
