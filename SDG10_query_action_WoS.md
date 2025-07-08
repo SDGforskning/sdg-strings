@@ -61,10 +61,15 @@ TS=
    OR "raised" OR "offer*" OR "heighten*"
   )
 NEAR
-  ("income growth" OR "income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$"
-   OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR
-   "earnings increas*" OR "income increas*" OR "wage growth" OR "wage increas*" OR "salar* rise" OR "anti-poverty" OR
-   "antipoverty" OR "out of poverty"
+  ("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
+   "antipoverty" OR "out of poverty" OR
+   (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
+    )
+NEAR/3
+    ("increas*" OR "growth" OR "rise$" OR "rising"
+    )
+   )
   )
  )
 AND
@@ -788,7 +793,7 @@ NEAR
     "ruinous*" OR "costly" OR "unaffordab*"
    )
 NEAR/3
-   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$"
+   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
 NEAR
