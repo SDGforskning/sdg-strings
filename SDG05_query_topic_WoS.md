@@ -88,18 +88,7 @@ TS=
 
 This target is interpreted to cover research about unpaid care and domestic work. This includes this work as related to public services, infrastructure, social protection policies, and the sharing of responsibility, but also more general aspects, such as effects and time spent. It may also include works where the main subject is something that may affect the unpaid work, for example the effect of a patient diagnosis on caregiver burden, or communication between medical personel and informal caregivers. 
 
-We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). We include:
-- Food and meals management and preparation
-- Cleaning and maintenance of own dwelling and surroundings
-- Do-it-yourself decoration
-- Care, maintenance and repair of personal and household goods, textiles and footwear (e.g. washing clothes)
-- Household management (e.g. paying bills, organising)
-- Pet care
-- Shopping for household and family members
-- Collection of water and firewood/fuel
-- Childcare and instruction
-- Care of dependant adults, or non-dependant household or family members (e.g. sick, elderly or disabled )
-- Travel or transporting goods related to these activities
+We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). We include food and meals management and preparation, cleaning and maintenance of own dwelling and surroundings, do-it-yourself decoration, care, maintenance and repair of personal and household goods, textiles and footwear (e.g. washing clothes), household management (e.g. paying bills, organising), pet care, shopping for household and family members, collection of water and firewood/fuel, childcare and instruction, care of dependant adults, or non-dependant household or family members (e.g. sick, elderly or disabled), travel or transporting goods related to these activities.
 
 Factors to do with valuation of this work, or services and policies mentioned in <a href="#f6ca">Yamamoto (2018)</a> include:
 - the structure of social welfare, contributions into pensions via care work (e.g. child credit), or taxes and tax breaks (valuing)
