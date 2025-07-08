@@ -459,7 +459,7 @@ We have two bullet-points here to put emphasis on targeting assets where they ar
 
 This query consists of 2 phrases.
 
-The basic structure of Phrase 1 is *financial assistance + target + need + developing countries.
+The basic structure of Phrase 1 is *financial assistance + target + need + developing countries*.
 
 Phrase 1
 
@@ -636,10 +636,24 @@ AND
 > 
 This target is interpreted to cover research about the transaction costs of migrant remittances.
 
+Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. (The World Bank 2007; UN Statistics Division 2024d.) Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
+
+This query consists of 1 phrase. The basic structure is *remittance cost + migrants*
+
 ```py
 TS=
-(
-
+((("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+   OR "money order$" OR "money transmission$"
+  )
+NEAR/3
+  ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
+  )
+ )
+NEAR
+ ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
+  OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
+  OR "displaced" OR "expat*" OR "transferee$"
+ )
 )
 ```
 
