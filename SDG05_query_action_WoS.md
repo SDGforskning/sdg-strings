@@ -203,7 +203,8 @@ TS=
     )
     NEAR/15
         (
-            "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
+            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
             OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
@@ -265,7 +266,8 @@ TS=
     )
     NEAR/15
         (
-            "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
+            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
             OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
@@ -326,7 +328,8 @@ TS=
     )
     NEAR/15
         (
-            "informal care" OR "informal caregiv*" OR "informal carer$" OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
+            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
             OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
