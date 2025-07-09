@@ -19,7 +19,7 @@ Reduce inequality within and among countries
 
 This document contains search strings for finding publications related to the actions in the SDG 10 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 10 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
-Targets and Indicators were found from the UN Department of Economic and Social Affairs website (<a id="SDGT+Is">[UN DESA, 2025](#f1)</a>).
+Targets and Indicators were found from the UN Department of Economic and Social Affairs website (<a id="SDG+Is">[UN DESA, 2025](#f1)</a>).
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (<a id="Developing countries">[United Nations, 2016, 2017, 2018, 2019, 2020, 2021](#f2)</a>). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (<a id="EPOC">[https://epoc.cochrane.org/lmic-filters](#f3)</a>).
 
@@ -839,7 +839,7 @@ UN DESA. (2019a). Review of SDG implementation and interrelations among goals: D
 
 UN DESA. (2019b). Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
+<a id="f1"></a> UN DESA. (2025). Goals: Reduce inequality within and among countries. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] [_2] (#SDG+Is)
 
 UN Statistics Division (2016). SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
