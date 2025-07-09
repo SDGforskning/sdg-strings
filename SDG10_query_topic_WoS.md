@@ -17,11 +17,27 @@ Reduce inequality within and among countries
 
 ## 2. General notes
 
-This document contains search strings for finding publications related to the topics in the SDG 10 targets and indicators ("topic approach"; focus on recall, larger result set). We also have a version which finds publications related to the actions in the SDG 10 targets and indicators ("action approach"; focus on precision, smaller result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
+This document contains search strings for finding publications related to the actions in the SDG 10 targets and indicators ("action approach"; focus on precision, smaller result set). We also have a version which finds publications related to the topics in the SDG 10 targets and indicators ("topic approach"; focus on recall, larger result set), provided in the same repository as this file. For more explanation, see the Readme in this repository.
 
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2"> (United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from <a href="#f3">EPOC (2020)</a>.
+
+Acronyms used:
+
+    APA: American Psychology Association
+    EPOC: Effective Practice and Organisation of Care
+    FSB: Financial Stability Board
+    FSI: Financial Soundness Indicator
+    IHRL: International Human Rights Law
+    ILO: International Labour Organization
+    IMF: International Monetary Fund
+    IOM: International Organization for Migration
+    ODA: Official Development Assistance
+    OECD: Organisation for Economic Co-operation and Development
+    SDT: Special and Differential Treatment
+    UN: United Nations
+    UN DESA: UN Department of Economic and Social Affairs
 
 ## 3. Targets
 
@@ -33,7 +49,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about the income growth rates of the poorest population.
 
-Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a.)  
+Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>.
 
 This query consists of 1 phrase. The basic structure is *income growth rate + poor*
 
@@ -65,9 +81,9 @@ AND
 
 This target is interpreted to cover research about the social, economic and political inclusion of all. Research about social, economic and political exclusion is also included here. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
 
-This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. (Stewart 2016). Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 (United Nations 2024). A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target (Sharif 2024; World Bank Group 2025). For example, persons with disabilities and people of African descent experience significantly higher levels of poverty (United Nations 2018; World Bank Group 2025). 
+This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. <a href="#f5">(Stewart 2016)</a>. Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 <a href="#f6">(United Nations 2024)</a>. A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target <a href="#f7">(Sharif 2024)</a>; <a href="#f8">(World Bank Group 2025)</a>. For example, persons with disabilities and people of African descent experience significantly higher levels of poverty <a href="#f9">(United Nations 2018)</a>; <a href="#f8">(World Bank Group 2025)</a>. 
 
-Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. (World Bank Group 2025.) Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills (Sharif 2024). Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections (Aldar ym. 2025).
+Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
 This query consists of 1 phrase. The basic structure is *inclusion OR exclusion*
 
@@ -95,9 +111,9 @@ This target is interpreted to cover research about
 * equal opportunity and inequalities of outcome
 * legislation, policies and other practices that increase inequality/discriminatory legislation, policies and other practices.
 
-"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL (UN Statistics Division 2024b.)
+"Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life." The prohibited grounds of discrimination are listed in IHRL <a href="#f11">(UN Statistics Division 2024b.)</a>
 
-Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. (APA 2020; Equal Future 2025; UN DESA 2018; United Nations 2018.)
+Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. <a href="#f12">(APA 2020</a>; <a href="#f13">Equal Future 2025</a>; <a href="#f14">UN DESA 2018</a>; <a href="#f9">United Nations 2018.)</a>
 
 This query consists of 2 phrases.
 
@@ -152,7 +168,7 @@ NEAR
 
 This target is interpreted to cover research about existing or new policy practices that reduce inequalities or promote achieving greater equality.
   
-This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning, but limited to those types of policies. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
+This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning, but the interpretation is not limited to these types of policies. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17">(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
 This query consists of 1 phrase. The basic structure is *laws AND increase/decrease + equality/inequality. ```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")``` was removed from the original search string not to limit the search only to these types of policies.
 
@@ -200,7 +216,7 @@ This target is interpreted to cover research about the regulation and monitoring
 
 This query consists of 1 phrase. The basic structure is *regulation + financial institution*.
 
-The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.) IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from a global to a regional level can function in fair and efficient ways. (FSB 2025.)
+The operations of international financial institutions are evaluated through seven FSIs. Their global monitoring is the IMF's responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. <a href="#f18">(UN Statistics Division 2024c.)</a> IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from a global to a regional level can function in fair and efficient ways. <a href="#f19">(FSB 2025.)</a>
 
 This query consists of 1 phrase. The basic structure is action + regulation + financial institution ("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*" OR "egalitar*")was removed from the search string. While the goal of implementing better regulation and monitoring is to make the institutions function in more responsible and transparent manners, this isn't directly mentioned in the target and is also left out of the interpretation.
 
@@ -233,7 +249,7 @@ NOT "globalization"
 
 This target is interpreted to cover research about the representation and decision-making powers of developing countries in international economic institutions.
 
-In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well (UN DESA 2019; UN 2024).
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall <a href="#f20">(UN DESA 2019a</a>; <a href="#f6">UN 2024)</a>.
 
 This query consists of 1 phrase. The basic structure is *representation + developing countries + international economic institution*
 
@@ -327,7 +343,7 @@ NOT "globalization"
 
 This target is interpreted to cover research about safe, responsible and regular migration and mobility of people.
 
-"Migration" is not a term officially defined under international law, but refers to a situation where a person moves away from their usual place of recidence. The move can be within-country or to another country, it can be temporary or permanent and be the cause of a variety of reasons. Excluded from this definition are movements due to "recreation, holiday, visits to friends and relatives, business, medical treatment or religious pilgrimages”, that in turn are covered by "mobility of people". (IOM 2019.) Migration can enable people to very effectively better their living conditions, for example by accessing higher wage jobs. Migrants also often support their relatives in their country or region of origin, thus spreading the effect even further. Countries and regions receiving migrants can greatly benefit from the skills they bring. Well-managed movement of people can so be beneficial to all parties, as well as having a big effect on reducing inequalities. However, there are still some remarkable barriers for migration and movement of people always functioning in safe, orderly, regular and responsible manners, and these can be measured through the target indicators. (UN DESA 2019b.) Orderly migration is defined as “the movement of a person from his/her usual place of residence, in keeping with the laws and regulations governing exit of the country of origin and travel, transit and entry into the host country” and regular as “migration that occurs through recognized, legal channels”. The concepts of safe and responsible migration or well-managed migration policies are not explicitly defined. (IOM 2019.) These can however be seen as policies that actively work towards fulfilling the principles and objectives of the Migration Governance Framework that are pictured in the 10.7.2. indicator metadata (UN Statistics Division 2023). 
+"Migration" is not a term officially defined under international law, but refers to a situation where a person moves away from their usual place of recidence. The move can be within-country or to another country, it can be temporary or permanent and be the cause of a variety of reasons. Excluded from this definition are movements due to "recreation, holiday, visits to friends and relatives, business, medical treatment or religious pilgrimages”, that in turn are covered by "mobility of people". <a href="#f21">(IOM 2019.)</a> Migration can enable people to very effectively better their living conditions, for example by accessing higher wage jobs. Migrants also often support their relatives in their country or region of origin, thus spreading the effect even further. Countries and regions receiving migrants can greatly benefit from the skills they bring. Well-managed movement of people can so be beneficial to all parties, as well as having a big effect on reducing inequalities. However, there are still some remarkable barriers for migration and movement of people always functioning in safe, orderly, regular and responsible manners, and these can be measured through the target indicators. <a href="#f22">(UN DESA 2019b.)</a> Orderly migration is defined as “the movement of a person from his/her usual place of residence, in keeping with the laws and regulations governing exit of the country of origin and travel, transit and entry into the host country” and regular as “migration that occurs through recognized, legal channels”. The concepts of safe and responsible migration or well-managed migration policies are not explicitly defined. <a href="#f21">(IOM 2019.)</a> These can however be seen as policies that actively work towards fulfilling the principles and objectives of the Migration Governance Framework that are pictured in the 10.7.2. indicator metadata <a href="#f23">(UN Statistics Division 2023)</a>. 
 
 This query consists of 1 phrase. The basic structure is *security + movement of people OR risks + movement of people*
 
@@ -372,7 +388,7 @@ NEAR
 
 This target is interpreted to cover research about the principle of special and differential treatment for developing countries, in accordance with the World Trade Organisation agreements.
 
-SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.) Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. (UN Statistics Division 2016.)
+SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. <a href="#f24">(WTO 2025.)</a> Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. <a href="#f25">(UN Statistics Division 2016.)</a>
 
 This query consists of 1 phrase. The basic structure is *SDT + developing country + agreement*
 
@@ -455,7 +471,7 @@ This target is interpreted to cover research about
     * the targeting of development assistance and financial flows according to greatest need
     * the national, regional and local plans of the recipient countries for the division of development assistance and financial flows
     
-We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024). ODA is the main source of financing for foreign development aid and it is provided by official agencies such as state and local governments. Recipients of ODA are low- and middle-income countries and it can be used to aid in advancing for example health, education and infrastructure services. (OECD 2025.)
+We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development <a href ="#f6">(UN 2024)</a>. ODA is the main source of financing for foreign development aid and it is provided by official agencies such as state and local governments. Recipients of ODA are low- and middle-income countries and it can be used to aid in advancing for example health, education and infrastructure services. <a href="#f26">(OECD 2025.)</a>
 
 This query consists of 2 phrases.
 
@@ -636,7 +652,7 @@ AND
 > 
 This target is interpreted to cover research about the transaction costs of migrant remittances.
 
-Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. (The World Bank 2007; UN Statistics Division 2024d.) Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
+Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. <a href="#f27">(The World Bank 2007</a>; <a href="#f28">UN Statistics Division 2024d.)</a> Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
 
 This query consists of 1 phrase. The basic structure is *remittance cost + migrants*
 
@@ -665,6 +681,58 @@ Specialist input:
 
 ## 5. Footnotes
 
+<span id="f10">Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025).</span> *Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology*. https://doi.org/10.1111/pops.70030
+
+<span id="f12">APA. (2020).</span> *APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons*. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
+
+<span id="f3">Cochrane Effective Practice and Organisation of Care. (2020).</span> *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
+
+<span id="f16">Engström, V. & Vegar, A. (2021).</span> *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
+
+<span id="f13">Equal Future. (2025).</span> *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
+
+<span id="f19">FSB. (2025).</span> *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
+
+<span id="f1">ILO. (2024).</span> *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
+
+<span id="f21">IOM (2019).</span> *Glossary on Migration*. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
+
+<span id="f15">Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020).</span> *The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework*. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
+
+<span id="f26">OECD. (2025).</span> *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
+
+<span id="f7">Sharif, I. (2024).</span> *Why economic inclusion is key to reducing poverty and empowering people*. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
+
+<span id="f5">Stewart, F. (2016).</span> *Horizontal Inequalities*. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+
+<span id="f14">UN DESA. (2018).</span> *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
+
+<span id="f20">UN DESA.</span> (2019a). *Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note*. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
+
+<span id="f22">UN DESA. (2019b).</span> *Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note*. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
+
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
+<span id="f25">UN Statistics Division (2016).</span> *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
+
+<span id="f23">UN Statistics Division (2023).</span> *SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
+
+<span id="f4">UN Statistics Division (2024a).</span> *SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
+
+<span id="f11">UN Statistics Division (2024b).</span> *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
+
+<span id="f18">UN Statistics Division (2024c).</span> *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
+
+<span id="f28">UN Statistics Division (2024d).</span> *SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
+
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<span id="f9">United Nations (2018).</span> *High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities*. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+
+<span id="f6">United Nations (2024).</span> *Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development*. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
+
+<span id="f27">The World Bank. (2007).</span> *General principles for international remittance services*. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
+
+<span id="f8">World Bank Group. (2025).</span> *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
+
+<span id="f24">WTO (2025).</span> *Special and differential treatment*. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
