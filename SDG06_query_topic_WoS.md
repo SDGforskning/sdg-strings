@@ -252,7 +252,7 @@ TS=
         OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
         OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
         OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-        OR (("person$" OR "people$" OR "adult$") 
+        OR (("person$" OR "people$" OR "adult$" OR "men") 
           NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
         OR "disabled" OR "disabilities" OR "disability"
         OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
