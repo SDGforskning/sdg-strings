@@ -565,7 +565,7 @@ This target is interpreted to cover research about
 * ensuring ODA and other financial flows are targeted to where the need is greatest
 * dividing the resources in accordance with the national, regional and local plans of the recipient countries.
 
-We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development (UN 2024). ODA is the main source of financing for foreign development aid and it is provided by official agencies such as state and local governments. Recipients of ODA are low- and middle-income countries and it can be used to aid in advancing for example health, education and infrastructure services. (OECD 2025.)
+We have two bullet-points here to put emphasis on targeting assets where they are needed most, as well as localization as per portrayed in Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development <a href ="#f6">(UN 2024)</a>. ODA is the main source of financing for foreign development aid and it is provided by official agencies such as state and local governments. Recipients of ODA are low- and middle-income countries and it can be used to aid in advancing for example health, education and infrastructure services. <a href="#f26">(OECD 2025.)</a>
 
 This query consists of 2 phrases. 
 
@@ -828,7 +828,7 @@ Specialist input:
 
 <span id="f15">Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020).</span> *The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework*. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
 
-OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
+<span id="f26">OECD. (2025).</span> *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
 
 <span id="f7">Sharif, I. (2024).</span> *Why economic inclusion is key to reducing poverty and empowering people*. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
