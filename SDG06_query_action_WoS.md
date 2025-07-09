@@ -25,7 +25,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 For general definitions and finding terms for several targets we used
 * UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC2023")</a>.
-* UN DESA (2023). HLPF Factsheet SDG 6 https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESAfact2023")
+* UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">("DESA 2023")</a>.
 * UN DESA/DSDG et al. (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
 ("DESA2018")
 * UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
@@ -1138,7 +1138,7 @@ UN Statistics Division (2025). *SDG Indicators Metadata Repository*. https://uns
 
 <span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDGC 2023") 
 
-UN DESA (2023). HLPF Factsheet SDG 6 https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESAfact2023")
+<span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESA 2023")
 
 UN DESA/DSDG et al. (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   ("DESA2018")
 
