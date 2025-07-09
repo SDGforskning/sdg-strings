@@ -839,7 +839,7 @@ UN DESA. (2019a). *Review of SDG implementation and interrelations among goals: 
 
 UN DESA. (2019b). *Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note*. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
-<a id="f1"></a> UN DESA. (2025). *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] (#SDG+Is)
+<span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] (#SDG+Is)
 
 UN Statistics Division (2016). *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
