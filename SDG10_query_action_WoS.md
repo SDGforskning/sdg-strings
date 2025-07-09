@@ -218,7 +218,7 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new policy practices to reduce inequalities/achieve greater equality.
 
-This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17>(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
+This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17">(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
 This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality*. 
 ```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
@@ -273,7 +273,7 @@ NEAR
 
 This target is interpreted to cover research about improving the regulation and monitoring of global financial markets and institutions.
 
-The operations of international financial institutions are evaluated through seven Financial Soundness Indicators (FSIs). Their global monitoring is the International Monetary Fund's (IMF's) responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. (UN Statistics Division 2024c.) IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from a global to a regional level can function in fair and efficient ways. (FSB 2025.)
+The operations of international financial institutions are evaluated through seven FSIs. Their global monitoring is the IMF's responsibility, with data coming in from national central banks and other supervisory agencies. The FSIs are calculated by looking at the capitals, assets, loans, liabilities and exchanges of the institutions. The detailed definitions and concepts are listed in the target metadata. <a href="f18">(UN Statistics Division 2024c.)</a> IMF has created several standards that represent the minimum requirements for good practice. These focus on for example transparency, dissemination of data, standardized supervision and combating money laundering. They are designed to be universally applicable and flexible. The objective of these standards is to ensure that all financial institutions from a global to a regional level can function in fair and efficient ways. <a href="#f19">(FSB 2025.)</a>
 
 This query consists of 1 phrase. The basic structure is *action + regulation + financial institution* ```("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*" OR "egalitar*")```was removed from the search string. While the goal of implementing better regulation and monitoring is to make the institutions function in more responsible and transparent manners, this isn't directly mentioned in the target and is also left out of the interpretation.
 
@@ -820,7 +820,7 @@ Specialist input:
 
 <span id="f13">Equal Future. (2025).</span> *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
 
-FSB. (2025). *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
+<span id="f19">FSB. (2025).</span> *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
 
 <span id="f1">ILO. (2024).</span> *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
 
@@ -850,7 +850,7 @@ UN Statistics Division (2023). *SDG Indicators Metadata Repository - Target 10.7
 
 <span id="f11">UN Statistics Division (2024b).</span> *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
 
-UN Statistics Division (2024c). *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
+<span id="f18">UN Statistics Division (2024c).</span> *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
 UN Statistics Division (2024d). *SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
 
