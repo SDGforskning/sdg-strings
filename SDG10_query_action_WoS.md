@@ -21,7 +21,7 @@ This document contains search strings for finding publications related to the ac
 
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2"> (United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (<a href="#f3">(https://epoc.cochrane.org/lmic-filters)</a>).
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2"> (United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath <a href="#f3">(https://epoc.cochrane.org/lmic-filters)</a>.
 
 Acronyms used:
 
@@ -88,9 +88,9 @@ AND
 
 This target is interpreted to cover research about enabling and promoting everyone to participate in social, economic and political activities. Special attention is paid to people in a disadvantaged position due to any characteristic, e.g. age, gender or disability (horizontal inequalities).
 
-This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. <a href="#f5">(Stewart 2016)</a>. Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 <a href="#f6">(United Nations 2024)</a>. A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target <a href="#f6">(Sharif 2024)</a>; <a href="#f7">(World Bank Group 2025)</a>. For example, persons with disabilities and people of African descent experience significantly higher levels of poverty <a href="#f8">(United Nations 2018)</a>; <a href="#f7">(World Bank Group 2025)</a>. 
+This target handles empowering people who face horizontal inequalities. This refers to groups of people who share an identity characteristic like race or religion and can therefore be exposed to the same kind of inequalities. <a href="#f5">(Stewart 2016)</a>. Ensuring that people in disadvantaged positions are part of decision-making processes (especially decisions regarding themselves) is a method recommended to accelerate progress in this target as well as the whole of SDG10 <a href="#f6">(United Nations 2024)</a>. A big part of structural discrimination and horizontal inequalities are linked to poorness, which is why living below 50 % of median income is considered a solid indicator for this target <a href="#f7">(Sharif 2024)</a>; <a href="#f8">(World Bank Group 2025)</a>. For example, persons with disabilities and people of African descent experience significantly higher levels of poverty <a href="#f9">(United Nations 2018)</a>; <a href="#f8">(World Bank Group 2025)</a>. 
 
-Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f7">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f6">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f9">(Aldar ym. 2025)</a>.
+Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
 This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*
 
@@ -809,11 +809,11 @@ Specialist input:
 
 ## 5. Footnotes
 
-Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025). *Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology*. https://doi.org/10.1111/pops.70030
+<span id="f10">Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025).</span> *Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology*. https://doi.org/10.1111/pops.70030
 
 APA. (2020). *APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons*. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
 
-Cochrane Effective Practice and Organisation of Care. (2020). *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
+<span id="f3">Cochrane Effective Practice and Organisation of Care. (2020).</span> *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
 
 Engström, V. & Vegar, A. (2021). *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
 
@@ -829,9 +829,9 @@ Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). *The redistributive impa
 
 OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
 
-Sharif, I. (2024). *Why economic inclusion is key to reducing poverty and empowering people*. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
+<span id="f7">Sharif, I. (2024).</span> *Why economic inclusion is key to reducing poverty and empowering people*. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
-Stewart, F. (2016). *Horizontal Inequalities*. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+<span id="f5">Stewart, F. (2016).</span> *Horizontal Inequalities*. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
 
 UN DESA. (2018). *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
@@ -839,13 +839,13 @@ UN DESA. (2019a). *Review of SDG implementation and interrelations among goals: 
 
 UN DESA. (2019b). *Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note*. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] (#SDG+Is)
+<span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
 UN Statistics Division (2016). *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
 UN Statistics Division (2023). *SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
 
-UN Statistics Division (2024a). *SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
+<span id="f4">UN Statistics Division (2024a).</span> *SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
 UN Statistics Division (2024b). *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
 
@@ -855,12 +855,12 @@ UN Statistics Division (2024d). *SDG Indicators Metadata Repository - Target 10.
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-United Nations (2018). *High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities*. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+<span id="f9">United Nations (2018).</span> *High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities*. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
-United Nations (2024). *Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development*. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
+<span id="f6">United Nations (2024).</span> *Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development*. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
 
 The World Bank. (2007). *General principles for international remittance services*. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
 
-World Bank Group. (2025). *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
+<span id="f8">World Bank Group. (2025).</span> *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
 
 WTO (2025). *Special and differential treatment*. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
