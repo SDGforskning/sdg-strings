@@ -24,7 +24,7 @@ Targets and Indicators were found from the UN Department of Economic and Social 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 For general definitions and finding terms for several targets we used
-* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDeptofComm2023")
+* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC2023")</a>.
 * UN DESA (2023). HLPF Factsheet SDG 6 https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESAfact2023")
 * UN DESA/DSDG et al. (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
 ("DESA2018")
@@ -1136,7 +1136,7 @@ Specialist input:
 
 UN Statistics Division (2025). *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata ("UNstats2025")
 
-UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDeptofComm2023") 
+<span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDGC 2023") 
 
 UN DESA (2023). HLPF Factsheet SDG 6 https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESAfact2023")
 
