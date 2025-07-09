@@ -753,7 +753,7 @@ AND
 > 
 This target is interpreted to cover research about reducing the transaction cost of migrant remittances and eliminating corridors of high costs.
 
-Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. (The World Bank 2007; UN Statistics Division 2024d.) Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
+Remittances are money transfers sent from one person to another, relatively low in value. Small payments to and from businesses are excluded from the definition. This target focuses on international remittance transfers, where money is transfered across borders. These remittances are typically done by migrant workers who send regularly send money to their families in their home countries. Remittances form an important source of income in many developing economies, recipients even being dependent on them to cover living expenses. Even though a single remittance is usually small in value, combined they can account for up to a third of GDP of a developing country, making them a significant source of external financing. Remittance transfers are provided by banks and money transfer operators (=corridors) for a price to the end users. The World Bank maintains a publicly available database of these providers and their prices in order to improve transparency of the market. <a href="#f27">(The World Bank 2007</a>; <a href="#f28">UN Statistics Division 2024d.)</a> Remittances play a crucial part in many developing nations' economics which is why reducing the costs to both the senders and receivers is seen as a vital action to reduce inequalities.
 
 This query consists of 1 phrase. The basic structure is *action (reduce) + remittance cost + migrants OR action (eliminate) + high remittance cost + migrants*
 
@@ -852,7 +852,7 @@ Specialist input:
 
 <span id="f18">UN Statistics Division (2024c).</span> *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
-UN Statistics Division (2024d). *SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
+<span id="f28">UN Statistics Division (2024d).</span> *SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
@@ -860,7 +860,7 @@ UN Statistics Division (2024d). *SDG Indicators Metadata Repository - Target 10.
 
 <span id="f6">United Nations (2024).</span> *Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development*. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
 
-The World Bank. (2007). *General principles for international remittance services*. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
+<span id="f27">The World Bank. (2007).</span> *General principles for international remittance services*. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
 
 <span id="f8">World Bank Group. (2025).</span> *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
 
