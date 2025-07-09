@@ -315,7 +315,7 @@ NOT "globalization"
 
 This target is interpreted to cover research about enhancing the representation and decision-making powers of developing countries in international economic institutions.
 
-In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall (UN DESA 2019a; UN 2024).
+In order to achieve truely effective and permanent changes on a global level, it is crucial to involve developing countries in the decision-making processes that concern their own economical development as well as giving them more representation overall <a href="#f20">(UN DESA 2019a</a>; <a href="#f6">UN 2024)</a>.
 
 This query consists of 1 phrase. The basic structure is *action + representation + developing countries + international economic institution*
 
@@ -836,7 +836,7 @@ OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/t
 
 <span id="f14">UN DESA. (2018).</span> *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
-UN DESA. (2019a). *Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note*. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
+<span id="f20">UN DESA.</span> (2019a). *Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note*. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
 UN DESA. (2019b). *Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note*. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
