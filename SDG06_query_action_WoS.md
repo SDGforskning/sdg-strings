@@ -288,7 +288,7 @@ HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/fil
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 ("HLPF2018").
 
-We have defined disadvantaged groups according to https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
+We have defined vulnerable groups of people according to https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
@@ -298,7 +298,7 @@ In addition we used UN sources to find terms and groups that can be considered "
 
 * Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
 
-The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR vulnerable groups+access + sanitation/hygiene + services/facilities* 
+The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
 
 
 ```py
@@ -320,7 +320,12 @@ TS=
     (
       ("facilitat*" OR "assist*" OR "support*" OR "non$discriminat*" 
         OR 
-        ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+          
+        OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
         OR "working poor" OR "destitute" OR "living in poverty"
         OR (("poor" OR "poorest" OR "low* income") 
           NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
@@ -334,11 +339,11 @@ TS=
         OR "unemployed" 
         OR (("work" OR "workplace" OR "worker$" OR "occupational") 
           NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-        OR "women" OR "woman" OR "girls" OR "girl"
+        OR "women" OR "woman" OR "girls" OR "girl" 
         OR "pregnant" OR "pregnancy" OR "maternity"
         OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
         OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" 
-        OR "non$binary" 
+        OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
         OR "living with HIV" OR "living with AIDS"
         OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
         OR "indigenous group$"
