@@ -476,7 +476,7 @@ NEAR
 
 This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
 
-SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. (WTO 2025.) Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. (UN Statistics Division 2016.)
+SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. <a href="#f24">(WTO 2025.)</a> Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. <a href="#f25">(UN Statistics Division 2016.)</a>
 
 This query consists of 1 phrase. The basic structure is *action + SDT + developing country + agreement*
 
@@ -842,7 +842,7 @@ OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/t
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02]
 
-UN Statistics Division (2016). *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
+<span id="f25">UN Statistics Division (2016).</span> *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
 <span id="f23">UN Statistics Division (2023).</span> *SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
 
@@ -864,4 +864,4 @@ The World Bank. (2007). *General principles for international remittance service
 
 <span id="f8">World Bank Group. (2025).</span> *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
 
-WTO (2025). *Special and differential treatment*. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
+<span id="f24">WTO (2025).</span> *Special and differential treatment*. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
