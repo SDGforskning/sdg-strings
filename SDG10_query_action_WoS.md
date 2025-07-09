@@ -812,13 +812,13 @@ Specialist input:
 
 <span id="f10">Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025).</span> *Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology*. https://doi.org/10.1111/pops.70030
 
-APA. (2020). *APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons*. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
+<span id="f12">APA. (2020).</span> *APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons*. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
 
 <span id="f3">Cochrane Effective Practice and Organisation of Care. (2020).</span> *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
 
 Engström, V. & Vegar, A. (2021). *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
 
-Equal Future. (2025). *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
+<span id="f13">Equal Future. (2025).</span> *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
 
 FSB. (2025). *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
 
@@ -834,7 +834,7 @@ OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/t
 
 <span id="f5">Stewart, F. (2016).</span> *Horizontal Inequalities*. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
 
-UN DESA. (2018). *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
+<span id="f14">UN DESA. (2018).</span> *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
 UN DESA. (2019a). *Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note*. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
@@ -848,7 +848,7 @@ UN Statistics Division (2023). *SDG Indicators Metadata Repository - Target 10.7
 
 <span id="f4">UN Statistics Division (2024a).</span> *SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
-UN Statistics Division (2024b). *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
+<span id="f11">UN Statistics Division (2024b).</span> *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
 
 UN Statistics Division (2024c). *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
