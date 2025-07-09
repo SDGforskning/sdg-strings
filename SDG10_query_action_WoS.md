@@ -809,59 +809,58 @@ Specialist input:
 
 ## 5. Footnotes
 
-Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025). Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology. https://doi.org/10.1111/pops.70030
+Aldar, L., Pliskin, R., Hasson, Y. & Halperin, E. (2025). *Legitimizing inclusion: Psychological interventions increase support for minority inclusion in the political game, but less so during wartime. Political Psychology*. https://doi.org/10.1111/pops.70030
 
-APA. (2020). APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
+APA. (2020). *APA RESOLUTION on Opposing Discriminatory Laws, Policies, and Practices Aimed at LGBTQ+ Persons*. https://www.apa.org/about/policy/resolution-opposing-discriminatory-laws.pdf
 
-Cochrane Effective Practice and Organisation of Care. 2020. LMIC Filters. (https://epoc.cochrane.org/lmic-filters)
+Cochrane Effective Practice and Organisation of Care. (2020). *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
 
-Engström, V. & Vegar, A. (2021). Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
+Engström, V. & Vegar, A. (2021). *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
 
-Equal Future. (2025). Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation. [Accessed 27.6.2025]
+Equal Future. (2025). *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
 
-FSB. (2025). Key Standards for Sound Financial Systems. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
+FSB. (2025). *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
 
-ILO. (2024). Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages. https://www.ilo.org/media/478696/download
+ILO. (2024). *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
 
-IOM (2019). Glossary on Migration. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
+IOM (2019). *Glossary on Migration*. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
 
-Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
+Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). *The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework*. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
 
-OECD. (2025). Official development assistance (ODA). https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
+OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
 
-Sharif, I. (2024). Why economic inclusion is key to reducing poverty and empowering people. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
+Sharif, I. (2024). *Why economic inclusion is key to reducing poverty and empowering people*. World Bank Blogs. https://blogs.worldbank.org/en/voices/why-economic-inclusion-is-key-to-reducing-poverty-and-empowering-people
 
-Stewart, F. (2016). Horizontal Inequalities. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
+Stewart, F. (2016). *Horizontal Inequalities*. World Social Science Report 2016. ISSC. https://en.unesco.org/inclusivepolicylab/sites/default/files/analytics/document/2018/9/wssr_2016_chap_07.pdf
 
-UN DESA. (2018). Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
+UN DESA. (2018). *Disability and Development Report - Realizing the SDGs by, for and with persons with disabilities*. https://www.un.org/en/desa/un-disability-and-development-report-%E2%80%93-realizing-sdgs-and-persons-disabilities
 
-UN DESA. (2019a). Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
+UN DESA. (2019a). *Review of SDG implementation and interrelations among goals: Discussion on SDG 10 – Reduced inequalities, Background Note*. https://sdgs.un.org/sites/default/files/documents/24021BN_SDG_10_Inequalities.pdf
 
-UN DESA. (2019b). Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
+UN DESA. (2019b). *Sustainable Development Goal 10 – Reduced Inequalities: Progress and Prospects, Concept note*. https://sustainabledevelopment.un.org/content/documents/21453SDG_10_EGM_2019_concept_note_30Jan_consolidated.pdf
 
-<a id="f1"></a> UN DESA. (2025). Goals: Reduce inequality within and among countries. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] [_2] (#SDG+Is)
+<a id="f1"></a> UN DESA. (2025). *Goals: Reduce inequality within and among countries*. https://sdgs.un.org/goals/goal10#targets_and_indicators [Accessed 2025.04.02] (#SDG+Is)
 
-UN Statistics Division (2016). SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
+UN Statistics Division (2016). *SDG Indicators Metadata Repository - Target 10.a. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0A-01.pdf
 
-UN Statistics Division (2023). SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
+UN Statistics Division (2023). *SDG Indicators Metadata Repository - Target 10.7. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-07-02.pdf
 
-UN Statistics Division (2024a). SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
+UN Statistics Division (2024a). *SDG Indicators Metadata Repository - Target 10.1. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-01-01.pdf
 
-UN Statistics Division (2024b). SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
+UN Statistics Division (2024b). *SDG Indicators Metadata Repository - Target 10.3. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-03-01.pdf
 
-UN Statistics Division (2024c). SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
+UN Statistics Division (2024c). *SDG Indicators Metadata Repository - Target 10.5. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-05-01.pdf
 
-UN Statistics Division (2024d). SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
-
+UN Statistics Division (2024d). *SDG Indicators Metadata Repository - Target 10.c. Department of Economic and Social Affairs*. https://unstats.un.org/sdgs/metadata/files/Metadata-10-0C-01.pdf
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-United Nations (2018). High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+United Nations (2018). *High-level Political Forum 2018 - Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities*. https://sustainabledevelopment.un.org/content/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
-United Nations (2024). Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
+United Nations (2024). *Inter-Agency Policy Brief: Accelerating SDG Localization to deliver on the promise of the 2030 Agenda for Sustainable Development*. https://sdgs.un.org/publications/inter-agency-policy-brief-accelerating-sdg-localization-deliver-promise-2030-agenda.
 
-The World Bank. (2007). General principles for international remittance services. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
+The World Bank. (2007). *General principles for international remittance services*. https://documents1.worldbank.org/curated/en/894291468313541470/pdf/388210ENGLISH01remittances01PUBLIC1.pdf 
 
-World Bank Group. (2025). Social inclusion. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
+World Bank Group. (2025). *Social inclusion*. https://www.worldbank.org/en/topic/social-inclusion#1 [Accessed 17.06.2025]
 
-WTO (2025). Special and differential treatment. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
+WTO (2025). *Special and differential treatment*. https://www.wto.org/english/tratop_e/dda_e/status_e/sdt_e.htm [Accessed 2.7.2025]
