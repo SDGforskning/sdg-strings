@@ -218,7 +218,7 @@ NEAR
 
 This target is interpreted to cover research about promoting the implementation of existing or new policy practices to reduce inequalities/achieve greater equality.
 
-This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. (Lustig, Mariotti & Sánchez-Páramo 2020). Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. (Engström & Vegar 2021). Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection (ILO 2024). In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
+This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17>(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
 This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality*. 
 ```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
@@ -816,17 +816,17 @@ Specialist input:
 
 <span id="f3">Cochrane Effective Practice and Organisation of Care. (2020).</span> *LMIC Filters*. (https://epoc.cochrane.org/lmic-filters)
 
-Engström, V. & Vegar, A. (2021). *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
+<span id="f16">Engström, V. & Vegar, A. (2021).</span> *Social Protection Policies of International Organizations. Institute for Human Rights, Åbo Akademi University*. https://www.abo.fi/wp-content/uploads/2021/08/2021-Engstrom-and-Vegar-Social-Protection-Policies-of-IOs.pdf
 
 <span id="f13">Equal Future. (2025).</span> *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
 
 FSB. (2025). *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
 
-ILO. (2024). *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
+<span id="f1">ILO. (2024).</span> *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
 
 IOM (2019). *Glossary on Migration*. https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf.
 
-Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020). *The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework*. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
+<span id="f15">Lustig, N., Mariotti, C. & Sánchez-Páramo, C. (2020).</span> *The redistributive impact of fiscal policy indicator: A new global standard for assessing government effectiveness in tackling inequality within the SDG framework*. https://blogs.worldbank.org/en/opendata/redistributive-impact-fiscal-policy-indicator-new-global-standard-assessing-government
 
 OECD. (2025). *Official development assistance (ODA)*. https://www.oecd.org/en/topics/policy-issues/official-development-assistance-oda.html [Accessed 04.07.2025]
 
