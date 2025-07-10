@@ -48,7 +48,7 @@ Target 6.1 is related to SDG 11 target 11.1 which is about access to basic servi
 
 This phrase aims to find research about access to drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
 
-Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
+Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 The elements of the phrase are *access/availability/affordability/clean/safe + drinking water*
 
@@ -73,7 +73,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf (“UNstats2025”)
+This phrase aims to find research about the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 The elements of the phrase are *unsafe/unprotected/contaminated/unimproved sources + drinking water*
 
@@ -111,7 +111,7 @@ Target 6.2 is related to SDG 11 target 11.1 which is about access to basic servi
 
 #### Phrase 1
 
-This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
+This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
@@ -169,7 +169,7 @@ TS=
 
 This phrase aims to find research about the lack of sanitation or unsafe i.e. unimproved sanitation such as practicing open defecation as well as lack of hygiene services.
 
-Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
+Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 The elements of the phrase are *inadequate/unsafe/unimproved/lacking + sanitation/hygiene + service/facility*
 
@@ -208,21 +208,20 @@ TS=
 
 This phrase aims to find research about inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
 
-HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
+HLPF review on SDG 6 implementation (2018) <a href="#5">(DESA 2018)</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
-Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
-("HLPF2018").
+Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">(HLPF 2018)</a>.
 
 Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">("DESA 2018")</a>.
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
-* United Nations (n.d.) Fight racism. Vulnerable groups, who are they?. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UNracism")
+* United Nations (n.d.) Fight racism. Vulnerable groups, who are they? <a href="#10">(UN Fight racism)</a>.
 
-* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("NonDiscr")
+* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. <a href="#11">(Office of the High Commissioner)</a> (accessed Jun 2022). 
 
-* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
+* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#12">(Blanchard)</a>. 
 
 The elements of the phrase are *inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
 
@@ -433,8 +432,8 @@ This target is interpreted to cover research about
 This phrase aims to find research about water-use efficiency, sustainable withdrawals and water savings.
 
 Terms were found in 
-* UNSD SDG 6 extended report 2022 (“UNSDextended2022”)
-* Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
+* UNSD SDG 6 extended report 2022 <a href="#6">(UNSD 2022)</a>
+* Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
 
 The elements of the phrase are *WUE/water security/sustainable withdrawals/water savings*
@@ -532,9 +531,9 @@ This query consists of X phrases.
 This phrase aims to find research about cross sectoral or co-ordinated water resources management, IWRM or transboundary co-operation.
 
 Terms were found from 
-* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
-* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
-* Terms for water management related projects and programmes were found in https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
+* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf <a href="#f8">(UN Statistics division 2025)</a>
+* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">(UNSD 2022)</a> and UN-Water pages for Water quality and wastewater <a href="#13">(UN-Water, Water quality & Wastewater)</a>
 
 The elements of the phrase are *IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
@@ -637,7 +636,7 @@ TS=
 
 This phrase aims to find research about the deterioration of freshwater-related ecosystems.
 
-Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+Terms for deterioration were found in UNSD SDG 6 Extended report 2022 <a href="#6">(UNSD 2022)</a>.
 
 The elements of the phrase are *decline/deterioration/unsustainable use + water-related ecosystems*
 
@@ -888,3 +887,38 @@ Specialist input:
 <span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata 
+
+<span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf 
+
+<span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf 
+
+<span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf 
+
+<span id="f17">High-level Political Forum (2023).</span> *SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation* https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf
+
+<span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
+https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+
+<span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf 
+
+<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene [Accessed 2025.04.28]
+
+UN-Water. *Water and Gender* https://www.unwater.org/water-facts/water-and-gender [Accessed 2025.04.28]
+
+<span id="f13">UN-Water.</span> *Water Quality and Wastewater* https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
+
+<span id="f14">UN-Water.</span> *Water and Ecosystems* https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
+
+WHO (2023). *Drinking-water* https://www.who.int/news-room/fact-sheets/detail/drinking-water
+
+<span id="f10">United Nations (n.d.).</span> *Fight racism. Vulnerable groups, who are they?* https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).
+
+<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022).
+
+<span id="f12">Blanchard et al. (2017).</span> *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction*. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra.
+
+<span id="f15"> United Nations Development Group (2017).</span> *Capacity Development UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
+
+<span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
