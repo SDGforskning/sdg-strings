@@ -28,6 +28,7 @@ For general definitions and finding terms for several targets we used
 * UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">("DESA 2023")</a>.
 * UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#5">("DESA 2018")</a>.
 * UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 <a href="#6">("UNSD 2022")</a>.
+* High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation <a href="#17">("HLPF 2023")</a>.
 * UN-Water website’s Water fact pages https://www.unwater.org/water-facts
 
 
@@ -1142,7 +1143,7 @@ Specialist input:
 
 <span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf 
 
-High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf ("HLPF2023")
+<span id="f17">High-level Political Forum (2023).</span> SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf
 
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
