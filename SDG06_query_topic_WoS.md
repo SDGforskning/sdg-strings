@@ -437,7 +437,7 @@ Terms were found in
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
 
 
-The elements of the phrase are *WUE/sustainable withdrawals/water savings*
+The elements of the phrase are *WUE/water security/sustainable withdrawals/water savings*
 
 
 ```py
