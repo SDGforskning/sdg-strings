@@ -43,7 +43,7 @@ For general definitions and finding terms for several targets we used
 
 This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">("UNDGC 2023")</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
-Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
+Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">("UN-Water WASH")</a>
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to target 3.9 about death and illnesses caused e.g. by contaminated water.
 
@@ -52,7 +52,7 @@ Target 6.1 is related to SDG 11 target 11.1 which is about access to basic servi
 
 This phrase aims to find research about advancing access to safe and affordable drinking water and about promoting and investing in safely managed drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
 
-Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf.  (“UNstats2025”).
+Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf  <a href="#f8">("UN Statistics division 2025")</a>.
 
 The elements of the phrase are *action + access/availability/affordability/management/regulation/investment + safe/improved + drinking water*
 
@@ -95,7 +95,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf (“UNstats2025”)
+This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 
 The elements of the phrase are *action + unsafe/unprotected/contaminated/unimproved sources + drinking water*
 
@@ -142,7 +142,7 @@ TS=
 
 This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#5">("DESA 2018")</a>.
 
-What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">("UN Statistics division 2025")</a> 
 
 > *Safely managed sanitation services is about using improved sanitation facilities*.
 > 
@@ -163,7 +163,7 @@ As the target is about equal access and a particular focus is on women, girls an
 
 #### Phrase 1
 
-This phrase aims to find research about providing access to sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (UNstats2025).
+This phrase aims to find research about providing access to sanitation and hygiene for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a <a href="#f8">("UN Statistics division 2025")</a>.
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
@@ -230,7 +230,7 @@ TS=
 
 This phrase aims to find research about abandoning lack of sanitation or unsafe i.e. unimproved sanitation such as practicing open defecation as well as lack of hygiene services.
 
-Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”)
+Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 
 The elements of the phrase are *action + inadequate/unsafe/unimproved/lacking + sanitation/hygiene + service/facility*
 
@@ -387,13 +387,13 @@ Althoug mentioned in the background materials, terms `nutrients` and `fertilizer
 
 This target focuses on freshwater bodies. The ones mentioned in the 6.3.2 indicator metadata are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream.
 
-The classification for wastewater generators is https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf (“UNstats2025)
+The classification for wastewater generators is https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">("UN Statistics division 2025")</a>
 * domestic/households
 * industrial
 * services
 
-Runoff from urban and agricultural land is counted as wastewater but not monitored systematically
-https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf (“UNstats2025)
+By the definition of metadata for indicator 6.3.1 runoff from urban and agricultural land is counted as wastewater but not monitored systematically
+https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 
 Target 6.3 is related to targets 
 * SDG 14.1 preventing and reducing marine pollution
@@ -560,7 +560,7 @@ OR "monitor*"
 
 This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and ensuring a sustainable supply of freshwater.
 
-By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
+By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
 
 > **Water use efficiency (WUE**) is
 > *The value added of a given sector divided by the volume of water used*.
@@ -578,7 +578,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 > * Service sectors (ISIC E, ISIC G-T)
 	Which includes e.g. water used primarily for the direct use of population
 
-Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
+Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 
 We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic. Since HLPF review on SDG 6 implementation <a href="#5">("DESA 2018")</a> mentiones agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
 
@@ -588,7 +588,7 @@ This phrase aims to find research about promoting water-use efficiency, sustaina
 
 Terms were found in 
 * UNSD SDG 6 extended report 2022 (“UNSDextended2022”)
-* Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf (“UNstats2025”)
+* Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
 
 
 The elements of the phrase are *action(increase/decrease) + WUE/sustainable withdrawals/water savings*
@@ -695,7 +695,7 @@ TS=
 
 This target is interpreted to cover research about implementing water resource management, in particular integrated water resources management (IWRM) and transboundary co-operation in water resources management. 
 
-**Integrated water resources management (IWRM)** is based on an internationally agreed definition https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025"). It is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
+**Integrated water resources management (IWRM)** is based on an internationally agreed definition https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">("UN Statistics division 2025")</a>. It is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), roles of supporting institutions, management instruments for choices between alternative actions and financing.
 > *Integrated Water Resources Management (IWRM) promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
 
@@ -708,8 +708,8 @@ Transboundary co-operation refers to operational agreements on water management 
 This phrase aims to find research about implementing cross sectoral or co-ordinated water resources management, IWRM or transboundary co-operation.
 
 Terms were found from 
-* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
-* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
+* Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
+* Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf <a href="#f8">("UN Statistics division 2025")</a>
 * Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">("UNSD 2022")</a>; https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
 The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral water management/transboundary co-operation agreements* 
@@ -780,8 +780,8 @@ This target is interpreted to cover research about protecting and restoring wate
 
 It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. https://www.unwater.org/water-facts/water-and-ecosystems ("ECO")
 
-By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf (“UNstats2025”)
-Included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
+By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf <a href="#f8">("UN Statistics division 2025")</a>
+included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
 Wetlands include  `marshes` `peatland` `swamps` `bogs` `fens` `floodplains` `rice paddies` `flood recession agriculture`  
 Also `mangroves` are included here although they contain brackish water instead of fresh. 
 
@@ -903,12 +903,12 @@ As definition of capacity building we have used
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
 United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance
 
-According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025).
+According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 In its current form, however, the phrase searches for any research about WASH related capacity building, whether aided or not. 
 
 We have interpreted capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important in capacity.  
 
-As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf (UNstats2025).
+As the indicator for this target monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
@@ -1052,7 +1052,7 @@ AND
 >
 > 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
 
-This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf (“UNstats2025”) measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration <a href="#5">("DESA 2018")</a>.
+This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf <a href="#f8">("UN Statistics division 2025")</a> measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration <a href="#5">("DESA 2018")</a>.
 
 According to the indicator metadata 6.b, water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
 
@@ -1133,7 +1133,7 @@ Specialist input:
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-UN Statistics Division (2025). *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata ("UNstats2025")
+<span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata ("UN Statistics division 2025")
 
 <span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDGC 2023") 
 
@@ -1148,7 +1148,7 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSD 2022")
 
-UN-Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") [Accessed 2025.04.28]
+<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("UN-Water WASH") [Accessed 2025.04.28]
 
 UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
 
