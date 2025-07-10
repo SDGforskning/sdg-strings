@@ -284,18 +284,17 @@ This phrase aims to find research about eliminating inequalities in access to sa
 HLPF review on SDG 6 implementation (2018) <a href="#5">("DESA 2018")</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
-Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
-("HLPF2018").
+Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">("HLPF 2018")</a>.
 
 Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">("DESA 2018")</a>.
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
-* United Nations (n.d.) Fight racism. Vulnerable groups, who are they?. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UNracism")
+* United Nations (n.d.) Fight racism. Vulnerable groups, who are they? <a href="#10">("UN Fight racism")</a>.
 
-* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("NonDiscr")
+* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. <a href="#11">("Office of the High Commissioner")</a> (accessed Jun 2022). 
 
-* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
+* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#12">("Blanchard")</a>. 
 
 The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
 
@@ -381,7 +380,7 @@ This target is interpreted to cover research about
 * reducing the proportion of untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
 * increasing recycling and safe reuse of water
 * monitoring of water quality
-<a href="#6">("UNSD 2022")</a>; https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
+<a href="#6">("UNSD 2022")</a>; <a href="#13">("UN-Water Water quality")</a>
 
 Althoug mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater body species. We interpreted this target to be more about the water quality.
 
@@ -710,7 +709,7 @@ This phrase aims to find research about implementing cross sectoral or co-ordina
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
 * Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf <a href="#f8">("UN Statistics division 2025")</a>
-* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">("UNSD 2022")</a>; https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
+* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">("UNSD 2022")</a> and UN-Water pages for Water quality and wastewater <a href="#13">("UN-Water Water quality")</a>
 
 The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
@@ -778,7 +777,7 @@ NEAR/5
 
 This target is interpreted to cover research about protecting and restoring water-related ecosystems.
 
-It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. https://www.unwater.org/water-facts/water-and-ecosystems ("ECO")
+It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">("UN-Water Ecosystems")</a>
 
 By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf <a href="#f8">("UN Statistics division 2025")</a>
 included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
@@ -901,7 +900,7 @@ This target is interpreted to cover research about advancing international co-op
 
 As definition of capacity building we have used
 * Definition of "capacity development": "the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results" (United Nations Development Group 2017).
-United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance
+United Nations Development Group (2017) Capacity Development, UNDAF companion guidance <a href="#f15">("UNDAF 2017")</a>.
 
 According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">("UN Statistics division 2025")</a>.
 In its current form, however, the phrase searches for any research about WASH related capacity building, whether aided or not. 
@@ -1143,8 +1142,8 @@ Specialist input:
 
 High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf ("HLPF2023")
 
-HLPF (2018). Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary
-https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf ("HLPF2018")
+<span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
+https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf ("HLPF 2018")
 
 <span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSD 2022")
 
@@ -1152,16 +1151,16 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
 
-UN-Water. Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE") [Accessed 2025.04.29]
+<span id="f13">UN-Water.</span> Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
 
-UN-Water. Water and Ecosystems https://www.unwater.org/water-facts/water-and-ecosystems ("ECO") [Accessed 2025.04.29]
+<span id="f14">UN-Water.</span> Water and Ecosystems https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
 
 WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water (WHO2023)
 
-United Nations (n.d.) Fight racism. Vulnerable groups, who are they?. https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UNracism")
+<span id="f10">United Nations (n.d.).</span> *Fight racism. Vulnerable groups, who are they?* https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UN Fight racism")
 
-Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("NonDiscr")
+<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("Office of the High Commissioner")
 
-Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
+<span id="f12">Blanchard et al. (2017).</span> *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction*. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
 
-United Nations Development Group (2017) Capacity Development, UNDAF companion guidance. https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
+<span id="f15"> *United Nations Development Group (2017).</span> Capacity Development, UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
