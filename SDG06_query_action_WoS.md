@@ -27,7 +27,7 @@ For general definitions and finding terms for several targets we used
 * UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC 2023")</a>.
 * UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">("DESA 2023")</a>.
 * UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#5">("DESA 2018")</a>.
-* UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+* UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 <a href="#6">("UNSD 2022")</a>.
 * UN-Water website’s Water fact pages https://www.unwater.org/water-facts
 
 
@@ -376,11 +376,12 @@ TS=
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
 This target is interpreted to cover research about 
-https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”); https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
+
 * improving water quality
 * reducing the proportion of untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
 * increasing recycling and safe reuse of water
 * monitoring of water quality
+<a href="#6">("UNSD 2022")</a>; https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
 Althoug mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater body species. We interpreted this target to be more about the water quality.
 
@@ -709,7 +710,7 @@ This phrase aims to find research about implementing cross sectoral or co-ordina
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf ("UNstats2025")
 * Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf.
-* Terms for water management related projects and programmes were found in https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">("UNSD 2022")</a>; https://www.unwater.org/water-facts/water-quality-and-wastewater ("WASTE")
 
 The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
@@ -841,7 +842,7 @@ TS=
 
 This phrase aims to find research about preventing the deterioration of freshwater-related ecosystems.
 
-Terms for deterioration were found in UNSD SDG 6 Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf (“UNSDextended2022”)
+Terms for deterioration were found in UNSD SDG 6 Extended report 2022 <a href="#6">("UNSD 2022")</a>.
 
 The elements of the phrase are *action + decline/deterioration/unsustainable use + water-related ecosystems*
 
@@ -1145,7 +1146,7 @@ High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with o
 HLPF (2018). Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf ("HLPF2018")
 
-UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
+<span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSD 2022")
 
 UN-Water. WASH - Water, Sanitation and Hygiene https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") [Accessed 2025.04.28]
 
