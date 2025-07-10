@@ -24,7 +24,7 @@ Targets and Indicators were found from the UN Department of Economic and Social 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 For general definitions and finding terms for several targets we used
-* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC 2023")</a>.
+* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">(UNDGC 2023)</a>.
 * UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">("DESA 2023")</a>.
 * UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#5">("DESA 2018")</a>.
 * UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 <a href="#6">("UNSD 2022")</a>.
