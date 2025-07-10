@@ -59,7 +59,7 @@ TS=
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-   OR "raised" OR "offer*" OR "heighten*"
+   OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term"
   )
 NEAR
   ("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
@@ -67,7 +67,7 @@ NEAR
    "antipoverty" OR "out of poverty" OR
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
-NEAR/3
+   NEAR/3
     ("increas*" OR "growth" OR "rise$" OR "rising"
     )
    )
