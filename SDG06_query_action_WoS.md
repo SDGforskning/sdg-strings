@@ -24,10 +24,9 @@ Targets and Indicators were found from the UN Department of Economic and Social 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
 For general definitions and finding terms for several targets we used
-* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC2023")</a>.
+* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">("UNDGC 2023")</a>.
 * UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">("DESA 2023")</a>.
-* UN DESA/DSDG et al. (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
-("DESA2018")
+* UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#5">("DESA 2018")</a>.
 * UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSDextended2022")
 * UN-Water website’s Water fact pages https://www.unwater.org/water-facts
 
@@ -42,7 +41,7 @@ For general definitions and finding terms for several targets we used
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">("UNDGC2023")</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
+This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">("UNDGC 2023")</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
 
@@ -141,7 +140,7 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation. https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf (”DESA2018”).
+This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#5">("DESA 2018")</a>.
 
 What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf (“UNstats2025”) 
 
@@ -282,13 +281,13 @@ TS=
 
 This phrase aims to find research about eliminating inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
 
-HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018") states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
+HLPF review on SDG 6 implementation (2018) <a href="#5">("DESA 2018")</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 ("HLPF2018").
 
-We have defined vulnerable groups of people according to https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
+Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">("DESA 2018")</a>.
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
@@ -580,7 +579,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 
 Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf (“UNstats2025”)
 
-We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic. Since HLPF 2018 ("DESA2018") mentiones agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
+We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic. Since HLPF review on SDG 6 implementation <a href="#5">("DESA 2018")</a> mentiones agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
 
 #### Phrase 1
 
@@ -1052,8 +1051,7 @@ AND
 >
 > 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
 
-This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf (“UNstats2025”) measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   
-(“DESA2018”)
+This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf (“UNstats2025”) measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration <a href="#5">("DESA 2018")</a>.
 
 According to the indicator metadata 6.b, water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
 
@@ -1140,7 +1138,7 @@ UN Statistics Division (2025). *SDG Indicators Metadata Repository*. https://uns
 
 <span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESA 2023")
 
-UN DESA/DSDG et al. (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   ("DESA2018")
+<span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   ("DESA 2018")
 
 High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf ("HLPF2023")
 
