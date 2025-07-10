@@ -214,7 +214,7 @@ HLPF review on SDG 6 implementation (2018) https://hlpf.un.org/sites/default/fil
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 ("HLPF2018").
 
-We have defined vulnerable groups of people according to https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf ("DESA2018")
+Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">("DESA 2018")</a>.
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
