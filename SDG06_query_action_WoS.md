@@ -1143,7 +1143,7 @@ Specialist input:
 
 <span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf 
 
-<span id="f17">High-level Political Forum (2023).</span> SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf
+<span id="f17">High-level Political Forum (2023).</span> *SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation* https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf
 
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
@@ -1152,13 +1152,13 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene [Accessed 2025.04.28]
 
-UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender [Accessed 2025.04.28]
+UN-Water. *Water and Gender* https://www.unwater.org/water-facts/water-and-gender [Accessed 2025.04.28]
 
-<span id="f13">UN-Water.</span> Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
+<span id="f13">UN-Water.</span> *Water Quality and Wastewater* https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
 
-<span id="f14">UN-Water.</span> Water and Ecosystems https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
+<span id="f14">UN-Water.</span> *Water and Ecosystems* https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
 
-WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water
+WHO (2023). *Drinking-water* https://www.who.int/news-room/fact-sheets/detail/drinking-water
 
 <span id="f10">United Nations (n.d.).</span> *Fight racism. Vulnerable groups, who are they?* https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).
 
@@ -1166,6 +1166,6 @@ WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drin
 
 <span id="f12">Blanchard et al. (2017).</span> *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction*. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra.
 
-<span id="f15"> *United Nations Development Group (2017).</span> Capacity Development, UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
+<span id="f15"> United Nations Development Group (2017).</span> *Capacity Development UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
 
-<span id="f16"> *UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
+<span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
