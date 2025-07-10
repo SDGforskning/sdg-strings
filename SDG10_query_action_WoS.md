@@ -64,7 +64,7 @@ TS=
 NEAR/3
   ("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
    "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
-   "antipoverty" OR "out of poverty" OR "poverty reduction"
+   "antipoverty" OR "out of poverty" OR "poverty reduction" OR
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
