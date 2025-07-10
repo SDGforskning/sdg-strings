@@ -557,7 +557,8 @@ OR "monitor*"
 >
 > 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
 
-This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and ensuring a sustainable supply of freshwater.
+This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and ensuring a sustainable supply of freshwater. We have interpreted this target to be also about water security 
+> *"The capacity of a population to safeguard sustainable access to adequate  quantities of acceptable quality water for sustaining livelihoods, human  well-being, and socio-economic development, for ensuring protection against  water-borne pollution and water-related disasters, and for preserving  ecosystems in a climate of peace and political stability."*  <a href="#f16">("UN-Water, What is water security")</a>.
 
 By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
 
@@ -590,7 +591,7 @@ Terms were found in
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">("UN Statistics division 2025")</a>
 
 
-The elements of the phrase are *action(increase/decrease) + WUE/sustainable withdrawals/water savings*
+The elements of the phrase are *action(increase/decrease) + WUE/water security/sustainable withdrawals/water savings*
 
 
 ```py
@@ -605,6 +606,7 @@ TS=
   NEAR/5 
   ( 
     "water use efficiency" OR ("WUE" NEAR/15 "water") 
+    OR "water security" 
     OR 
     (
       ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*" 
@@ -1132,35 +1134,37 @@ Specialist input:
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-<span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata ("UN Statistics division 2025")
+<span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata 
 
-<span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf ("UNDGC 2023") 
+<span id="f3">UN Department of Global Communications (2023).</span> *What Is Goal 6 –Clean Water And Sanitation*. https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf 
 
-<span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf ("DESA 2023")
+<span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf 
 
-<span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf   ("DESA 2018")
+<span id="f5">UN DESA (2018).</span> *2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all* https://hlpf.un.org/sites/default/files/migrated/documents/195716.29_Formatted_2018_background_notes_SDG_6.pdf 
 
 High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation https://hlpf.un.org/sites/default/files/2023-06/BN%20HLPF%202023%20SDG%206_1.pdf ("HLPF2023")
 
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
-https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf ("HLPF 2018")
+https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
-<span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf ("UNSD 2022")
+<span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf 
 
-<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("UN-Water WASH") [Accessed 2025.04.28]
+<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene [Accessed 2025.04.28]
 
-UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender (“Water&Gender”) [Accessed 2025.04.28]
+UN-Water. Water and Gender https://www.unwater.org/water-facts/water-and-gender [Accessed 2025.04.28]
 
 <span id="f13">UN-Water.</span> Water Quality and Wastewater https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
 
 <span id="f14">UN-Water.</span> Water and Ecosystems https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
 
-WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water (WHO2023)
+WHO (2023). Drinking-water https://www.who.int/news-room/fact-sheets/detail/drinking-water
 
-<span id="f10">United Nations (n.d.).</span> *Fight racism. Vulnerable groups, who are they?* https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).("UN Fight racism")
+<span id="f10">United Nations (n.d.).</span> *Fight racism. Vulnerable groups, who are they?* https://www.un.org/en/fight-racism/vulnerable-groups?gclid=EAIaIQobChMI9ODI_PvC9wIVV53VCh3pQgZCEAAYASAAEgInB_D_BwE (accessed Jun 2022).
 
-<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022). ("Office of the High Commissioner")
+<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022).
 
-<span id="f12">Blanchard et al. (2017).</span> *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction*. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra. ("Blanchard")
+<span id="f12">Blanchard et al. (2017).</span> *Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction*. https://www.undrr.org/publication/marginalized-and-minority-groups-consideration-ndra.
 
 <span id="f15"> *United Nations Development Group (2017).</span> Capacity Development, UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
+
+<span id="f16"> *UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
