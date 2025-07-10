@@ -47,7 +47,7 @@ Acronyms used:
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is interpreted as to cover research about how to raise and sustain income growth and the income growth rate of the poorest population.
+This target is interpreted as to cover research about how to raise and sustain the income growth and income growth rate of the poorest population.
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>.
 
