@@ -55,16 +55,16 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-((("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+((("foster*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-   OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term"
+   OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
+   "out of poverty" OR "poverty reduction" OR "poverty alleviation"
   )
-NEAR/3
+NEAR/5
   ("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
-   "antipoverty" OR "out of poverty" OR "poverty reduction" OR
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR 
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
@@ -74,9 +74,10 @@ NEAR/3
   )
  )
 AND
-  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
+  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR
    "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income" OR "low-income" OR
-   "disadvantaged" OR "extremely poor$" OR "severely poor$" OR "abjectly poor$" OR "absolutely poor$"
+   "disadvantaged" OR "extremely poor$" OR "severely poor$" OR "abjectly poor$" OR "absolutely poor$" OR
+   "impoverished"
   )
  )
 ```
