@@ -589,7 +589,7 @@ TS=
 >
 > 6.5.2 Proportion of transboundary basin area with an operational arrangement for water cooperation
 
-This target is interpreted to cover research about implementing water resource management, in particular integrated water resources management (IWRM) and transboundary co-operation in water resources management. 
+This target is interpreted to cover research about coordinated water resources management, in particular integrated water resources management (IWRM) and transboundary co-operation in water resources management. 
 
 **Integrated water resources management (IWRM)** is based on an internationally agreed definition https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>. 
 > Integrated Water Resources Management (IWRM) *promotes the coordinated development and management of water, land and related resources to
@@ -598,6 +598,7 @@ This target is interpreted to cover research about implementing water resource m
 IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing.
 
 Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#6">("UNSD 2022")</a>. 
+
 
 
 #### Phrase 1
@@ -668,7 +669,22 @@ TS=
 >
 > 6.6.1 Change in the extent of water-related ecosystems over time
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about protecting and restoring water-related ecosystems.
+
+It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water, Water & Ecosystems)</a>
+
+By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>
+included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
+Wetlands include  `marshes` `peatland` `swamps` `bogs` `fens` `floodplains` `rice paddies` `flood recession agriculture`  
+Also `mangroves` are included even though they contain brackish water instead of fresh. 
+
+This target is related to 
+* SDG 15, particularly to target 15.1 about conservation of terrestrial and freshwater ecosystems. 
+
+However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than on the protection of species. 
+
+Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we have not filtered them from the results since the water-related ecosystems of mountains and forests are mentioned in the title of this target.
+
 
 #### Phrase 1 
 
@@ -676,6 +692,7 @@ This target is interpreted to cover research about
 This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
 The elements of the phrase are *conserving/protecting + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+
 The structure of the phrase is similar to SDG 14.2 phrase 3.
 
 
