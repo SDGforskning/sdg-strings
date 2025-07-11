@@ -23,12 +23,13 @@ Targets and Indicators were found from the UN Department of Economic and Social 
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
-```
-OBS
-GENERAL NOTES & NOTES FOR TARGETS
- + SOURCES NOT YET ADDED
-
-```
+For general definitions and search terms we used
+* UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">(UNDGC 2023)</a>.
+* UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">(DESA 2023)</a>.
+* UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#5">(DESA 2018)</a>.
+* UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 <a href="#6">(UNSD 2022)</a>.
+* High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation <a href="#17">(HLPF 2023)</a>.
+* UN-Water website’s Water facts pages https://www.unwater.org/water-facts
 
 ## 3. Targets
 
@@ -38,17 +39,18 @@ GENERAL NOTES & NOTES FOR TARGETS
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is interpreted to cover research about access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature (“UNDeptofComm2023”) https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-6_Fast-Facts.pdf   e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
+This target is interpreted to cover research about access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UNDGC 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
-Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.*  https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene ("WASH") 
+Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">(UN-Water, WASH-Water,Sanitation & Hygiene)</a>
 
-Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to target 3.9 about death and illnesses caused e.g. by contaminated water.
+Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to SDG 3 target 3.9 about death and illnesses caused e.g. by contaminated water.
+
 
 #### Phrase 1
 
-This phrase aims to find research about access to drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
+This phrase aims to find research about access to drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a> safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, we have just search for any research mentioning accessable or available drinking water.
 
-Terms for improved drinking water sources were found from the indicator 6.1.1 metadata https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+Terms for improved drinking water sources were found from the indicator 6.1.1 metadata <a href="#f8">(UN Statistics division 2025)</a>.
 
 The elements of the phrase are *access/availability/affordability/clean/safe + drinking water*
 
@@ -104,10 +106,26 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#5">(DESA 2018)</a>.
 
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> 
 
-Target 6.2 is related to SDG 11 target 11.1 which is about access to basic services.
+> *Safely managed sanitation services is about using improved sanitation facilities*.
+> 
+> *Use of improved sanitation facilities which are not shared is defined as a basic sanitation service.
+> While the use of shared improved  sanitation facilities is defined as limited sanitation service*.
+> 
+> *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
+> and treated off-site and hygienically separate from human contact*.
+
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
+
+We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
+
+Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
+
+As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include inequalities they may face in access to sanitation and hygiene. 
+
 
 #### Phrase 1
 
@@ -211,7 +229,7 @@ This phrase aims to find research about inequalities in access to safe sanitatio
 HLPF review on SDG 6 implementation (2018) <a href="#5">(DESA 2018)</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
-Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">(HLPF 2018)</a>.
+Terms for barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">(HLPF 2018)</a>.
 
 Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">("DESA 2018")</a>.
 
