@@ -63,7 +63,7 @@ TS=
    "out of poverty" OR "poverty reduction" OR "poverty alleviation"
   )
 NEAR/5
-  ("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
+  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR
    "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR 
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
