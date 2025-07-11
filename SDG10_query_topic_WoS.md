@@ -49,7 +49,7 @@ Acronyms used:
 
 This target is interpreted to cover research about the income growth and income growth rates of the poorest population.
 
-Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>.
+Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. (UN Statistics Divison 2024a). The term "inclusive growth" is often used when talking about raising the income growth of the poorest population and poverty reduction. The idea is that economic growth should be broad-based, including all parts of a country's population, especially focusing on income growth through improved employment. This makes economic growth sustainable in the long run and narrows the gap between poor and non-poor households. (Ianchovichina & Lundström 2009.)
 
 This query consists of 1 phrase. The basic structure is *income growth rate + poor*
 
@@ -57,7 +57,7 @@ This query consists of 1 phrase. The basic structure is *income growth rate + po
 TS=
 (("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
    "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
-   "antipoverty" OR "out of poverty" OR
+   "antipoverty" OR "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor" OR
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
 NEAR/3
