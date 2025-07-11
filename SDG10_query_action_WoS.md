@@ -49,7 +49,7 @@ Acronyms used:
 
 This target is interpreted as to cover research about how to raise and sustain the income growth and income growth rate of the poorest population.
 
-Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>.
+Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>. The term "inclusive growth" is often used when talking about raising the income growth of the poorest population and poverty reduction. The idea is that economic growth should be broad-based, including all parts of a country's population, especially focusing on income growth through improved employment. This makes economic growth sustainable in the long run and narrows the gap between poor and non-poor households. <a href="#f29">(Ianchovichina & Lundström 2009.)</a>
 
 This query consists of 1 phrase. The basic structure is *action + income growth + poor* ```NOT "oral health"```was added to remove results about the effects of income changes to self-rated oral health.
 
@@ -60,10 +60,10 @@ TS=
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
    OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
-   "out of poverty" OR "poverty reduction" OR "poverty alleviation"
+   "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
   )
 NEAR/5
-  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR
+  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "inclusive economic*" OR
    "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR 
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
@@ -823,6 +823,8 @@ Specialist input:
 <span id="f13">Equal Future. (2025).</span> *Discriminatory laws and legislation. https://equalfuture-eurasia.org/barriers/discriminatory-laws-and-legislation*. [Accessed 27.6.2025]
 
 <span id="f19">FSB. (2025).</span> *Key Standards for Sound Financial Systems*. https://www.fsb.org/work-of-the-fsb/about-the-compendium-of-standards/key_standards/ [Accessed 30.6.2025]
+
+<span id="f29">Ianchovichina, E. & Lundström, S. (2009).</span> *Inclusive Growth Analytics - Framework and Application*. Policy Research Working Paper 4851. The World Bank Economic and Debt Department, Economic Policy Division. https://documents1.worldbank.org/curated/en/771771468180864543/pdf/wps4851.pdf
 
 <span id="f1">ILO. (2024).</span> *Wage policies, including living wages. Report for discussion at the Meeting of Experts on Wage Policies, including Living Wages*. https://www.ilo.org/media/478696/download
 
