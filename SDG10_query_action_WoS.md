@@ -73,6 +73,7 @@ NEAR/5
    )
   )
  )
+NOT "oral health"
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR
    "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income" OR "low-income" OR
@@ -80,7 +81,6 @@ AND
    "impoverished"
   )
  )
-NOT "oral health"
 ```
 
 ### Target 10.2
