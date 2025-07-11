@@ -68,7 +68,7 @@ NEAR/5
    (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
-    ("increas*" OR "growth" OR "rise$" OR "rising"
+    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
     )
    )
   )
