@@ -914,7 +914,7 @@ We interpret capacity building to include improvements in areas such as technolo
 According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 In its current form, however, the phrase searches for any research about WASH related capacity building, whether aided or not. 
 
-As the indicator monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` as well as some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+As the indicator monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` and some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
@@ -927,7 +927,8 @@ The elements of the phrase are *action + international cooperation/support + cap
 TS=
 (
 (
-    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build" OR "building" OR "advance" OR "advancing" 
+    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" 
+    OR "build" OR "building" OR "advance" OR "advancing" 
     OR "establish*" OR "address" OR "consider*" OR "assess*" OR "expand*" OR "support*"
     )
     NEAR/5
@@ -935,20 +936,25 @@ TS=
       (
       (
       (("international" OR "development") 
-        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")) 
-      OR "ODA" OR "official development assistance" OR "cooperation fund$" OR "development spending" OR "development aid" OR "development assistance" OR "foreign aid" OR "international aid" OR "international assistance"
+          NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")) 
+      OR "ODA" OR "official development assistance" OR "cooperation fund$" 
+      OR "development spending" OR "development aid" OR "development assistance" 
+      OR "foreign aid" OR "international aid" OR "international assistance"
       )
       NEAR/15 
-        ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" OR "financial capacity" 
+        ("institutional capacity" OR "human capacity" OR "technological capacity" OR "scientific capacity" 
+        OR "financial capacity" 
         OR "capacity building" OR "capacity development" OR "build* capacity" OR "develop* capacity" 
         OR "infrastructure$" OR "facilities" OR "tools" OR "technical support" OR "managerial support"
         OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "R&D" OR "innovation" 
         OR "communication" OR "social network$" OR "information network$" OR "campaign$" 
         OR "awareness" OR "disseminat*" OR "educat*" OR "training" 
         OR "knowledge transfer*" OR "transfer of technolog*" OR "technological transfer" OR "technology transfer"
-        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$" OR "microfinance" 
+        OR "expenditure" OR "invest" OR "investing" OR "investment$" OR "financing" OR "spending" 
+        OR "funding" OR "funder$" OR "fund$" OR "grant$" OR "loan$" OR "microfinance" 
         OR "financial support" OR "financial resources"
-        OR "incentive$" OR "taxes" OR "tax" OR "fees" OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" 
+        OR "incentive$" OR "taxes" OR "tax" OR "fees" 
+        OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" 
         OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$"
         )
       ) 
