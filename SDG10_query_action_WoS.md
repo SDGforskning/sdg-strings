@@ -51,7 +51,7 @@ This target is interpreted as to cover research about how to raise and sustain t
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>. The term "inclusive growth" is often used when talking about raising the income growth of the poorest population and poverty reduction. The idea is that economic growth should be broad-based, including all parts of a country's population, especially focusing on income growth through improved employment. This makes economic growth sustainable in the long run and narrows the gap between poor and non-poor households. <a href="#f29">(Ianchovichina & Lundström 2009.)</a>
 
-This query consists of 1 phrase. The basic structure is *action + income growth + poor* NOT-operator was used to remove results about some of the effects of income growth that don't talk about the means of achieving income growth as well as taxation.
+This query consists of 1 phrase. The basic structure is *action + income growth + poor*. NOT-operator was used to remove results about taxation and some of the effects of income growth that don't talk about any of the means of achieving income growth.
 
 ```py
 TS=
