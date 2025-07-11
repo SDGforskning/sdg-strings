@@ -308,7 +308,31 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about <a href="#6">("UNSD 2022")</a>; <a href="#13">(UN-Water, Water quality & Wastewater)</a>
+
+* improving water quality
+* reducing untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
+* increasing recycling and safe reuse of wastewater
+* monitoring of water quality
+  
+
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream.
+
+The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
+* domestic/households
+* industrial
+* services
+
+By the definition of metadata for indicator 6.3.1 runoff from urban and agricultural land is counted as wastewater but not monitored systematically
+https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>. The phrases are neither searching for `runoff` nor excluding it.
+
+Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater species. We interpreted this target to be more about the water quality.
+
+Target 6.3 is related to targets 
+* SDG 14.1 preventing and reducing marine pollution
+* SDG 12.4 reducing harmful releases to water
+* SDG 12.5 reducing waste through e.g. recycling and reuse
+
 
 #### Phrase 1
 
@@ -443,7 +467,31 @@ TS=
 >
 > 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and about ensuring a sustainable supply of freshwater. We interpret that maintaining sustainable water supplies includes water security 
+> Definition of water security: *"The capacity of a population to safeguard sustainable access to adequate  quantities of acceptable quality water for sustaining livelihoods, human  well-being, and socio-economic development, for ensuring protection against  water-borne pollution and water-related disasters, and for preserving  ecosystems in a climate of peace and political stability."*  <a href="#f16">(UN-Water, What is water security)</a>.
+
+By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
+
+> **Water use efficiency (WUE**) is
+> *the value added of a given sector divided by the volume of water used*.
+>
+> **The sectors** included are
+> * Agriculture (ISIC A): 
+> 	Agriculture; foresty; fishing
+> 
+> * Industry (MIMEC) (ISIC B, C, D and F): 
+> 	Mining; quarrying; manufacturing; 
+> 	electricity, gas, steam and air conditioning supply; 
+> 	constructions; 
+> 	cooling of thermoelectric plants
+> 
+> * Service sectors (ISIC E, ISIC G-T)
+	Which includes e.g. water used primarily for the direct use of population
+
+Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+
+We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#5">(DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
+
 
 #### Phrase 1
 
@@ -499,6 +547,7 @@ TS=
 This phrase aims to find research about the use of water resources, water stress and water scarcity.
 
 The elements of the phrase are *use of water resources/water stress/water scarcity*
+
 A NOT string about was added to exclude irrelevant results about a `water filling algorithm`
 
 
