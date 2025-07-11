@@ -51,7 +51,7 @@ This target is interpreted as to cover research about how to raise and sustain t
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>.
 
-This query consists of 1 phrase. The basic structure is *action + income growth + poor*
+This query consists of 1 phrase. The basic structure is *action + income growth + poor* ```NOT "oral health"```was added to remove results about the effects of income changes to self-rated oral health.
 
 ```py
 TS=
@@ -80,6 +80,7 @@ AND
    "impoverished"
   )
  )
+NOT "oral health"
 ```
 
 ### Target 10.2
