@@ -64,18 +64,18 @@ TS=
   )
 NEAR/5
   ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "inclusive economic*" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR
-   (("reduc*" OR "lessen*" OR "decreas*"
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "income secur*" OR 
+   (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
     )
    NEAR/3
-    ("income inequalit*" OR "income insecur*"
+    ("income inequalit*" OR "income insecur*" OR "income gap*"
     )
    )
   OR
    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
-    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
+    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*" OR "expand*"
     )
    )
   )
@@ -83,7 +83,8 @@ NEAR/5
 NOT "oral health" NOT "food security" NOT "food system" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
 "obes*" NOT "emission*" NOT "housing*" NOT "tax revenue*" NOT "mental health" NOT "subsid*" NOT "natural disaster$"
 NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "cataract*" NOT "children's develop*"
-NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "health care" NOT "health effect*" NOT "welfare benefit*"
+NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "health care" NOT "health effect*" NOT
+"welfare benefit*"
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
    "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
