@@ -75,16 +75,16 @@ NEAR/5
    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
-    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*" OR "expand*"
+    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
     )
    )
   )
  )
-NOT "oral health" NOT "food security" NOT "food system" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
+NOT "oral health" NOT "food security" NOT "food polic*" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
 "obes*" NOT "emission*" NOT "housing*" NOT "tax revenue*" NOT "mental health" NOT "subsid*" NOT "natural disaster$"
 NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "cataract*" NOT "children's develop*"
 NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "health care" NOT "health effect*" NOT
-"welfare benefit*"
+"welfare benefit*" NOT "relative income*"
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
    "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
