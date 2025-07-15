@@ -69,7 +69,7 @@ NEAR/5
    (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
     )
    NEAR/3
-    ("income inequalit*" OR "income insecur*" OR "income gap*"
+    ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*"
     )
    )
   OR
@@ -83,11 +83,11 @@ NEAR/5
  )
 NOT "oral health" NOT "food security" NOT "food polic*" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
 "obes*" NOT "emission*" NOT "housing*" NOT "tax revenue*" NOT "mental health" NOT "subsid*" NOT "natural disaster$"
-NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "cataract*" NOT "children's develop*"
+NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
 NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "healthcare" NOT "health care" NOT
 "health effect*" NOT "welfare benefit*" NOT "relative income*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
 NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
-NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health"
+NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health" NOT "economic cycle" NOT "buffer*" NOT "surger*"
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
    "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
