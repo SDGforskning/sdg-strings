@@ -64,7 +64,8 @@ TS=
   )
 NEAR/5
   ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "inclusive economic*" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "income secur*" OR 
+   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "income secur*" OR
+   "income equalit*" OR
    (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
     )
    NEAR/3
@@ -83,8 +84,10 @@ NEAR/5
 NOT "oral health" NOT "food security" NOT "food polic*" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
 "obes*" NOT "emission*" NOT "housing*" NOT "tax revenue*" NOT "mental health" NOT "subsid*" NOT "natural disaster$"
 NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "cataract*" NOT "children's develop*"
-NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "health care" NOT "health effect*" NOT
-"welfare benefit*" NOT "relative income*"
+NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "healthcare" NOT "health care" NOT
+"health effect*" NOT "welfare benefit*" NOT "relative income*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
+NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
+NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health"
 AND
   ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
    "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
@@ -116,7 +119,7 @@ TS=
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
-   "societal activit*" OR "accessib*"
+   "societal activit*" OR "accessib*" OR "financ* inclusi*"
   )
  )
 OR
@@ -131,7 +134,7 @@ NEAR
   ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
    "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
    OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
-   "intersecti* vulnerab*" OR "intersecti* oppression*"
+   "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ*" exclus*"
   )
  )
 )
