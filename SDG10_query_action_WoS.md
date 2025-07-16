@@ -82,8 +82,7 @@ NEAR/5
   )
  )
 NOT "oral health*" NOT "food polic*" NOT "glaucoma*" NOT "obesity" NOT "eco-friendly" NOT "rent*" NOT "housing pric*"
-NOT "tax benefit*" NOT "subsid*" NOT "natural disaster$"
-NOT "segregation*" NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
+NOT "tax benefit*" NOT "natural disaster$" NOT "segregation*" NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
 NOT "brain function*" NOT "health-related" NOT "health related" NOT "product life" NOT "healthcare" NOT "health care" NOT
 "health effect*" NOT "welfare benefit*" NOT "relative income*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
 NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
