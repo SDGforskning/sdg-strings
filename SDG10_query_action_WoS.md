@@ -81,10 +81,10 @@ NEAR/5
    )
   )
  )
-NOT "oral health" NOT "food security" NOT "food polic*" NOT "livestock" NOT "fertility rate*" NOT "glaucoma*" NOT
-"obes*" NOT "emission*" NOT "housing*" NOT "tax revenue*" NOT "mental health" NOT "subsid*" NOT "natural disaster$"
-NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
-NOT "brain function*" NOT "health-related hindrance" NOT "product life" NOT "healthcare" NOT "health care" NOT
+NOT "oral health*" NOT "food polic*" NOT "glaucoma*" NOT "obesity" NOT "eco-friendly" NOT "rent*" NOT "housing pric*" NOT
+"tax benefit*" NOT "subsid*" NOT "natural disaster$"
+NOT "segregation*" NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
+NOT "brain function*" NOT "health-related" NOT "health related" NOT "product life" NOT "healthcare" NOT "health care" NOT
 "health effect*" NOT "welfare benefit*" NOT "relative income*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
 NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
 NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health" NOT "economic cycle" NOT "buffer*" NOT "surger*"
@@ -471,12 +471,12 @@ NEAR
   )
 NEAR
   ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
-   "intra stat*" OR "within-country" OR "within country"
+   "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
   )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
    "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$"
+   "displace*" OR "expat*" OR "transferee$"
   )
  )
 )
@@ -788,7 +788,7 @@ NEAR/3
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
    OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
-   OR "displaced" OR "expat*" OR "transferee$"
+   OR "displace*" OR "expat*" OR "transferee$"
   )
  )
 OR
@@ -811,7 +811,7 @@ NEAR/3
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
    OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
-   OR "displaced" OR "expat*" OR "transferee$"
+   OR "displace*" OR "expat*" OR "transferee$"
   )
  )
 )
