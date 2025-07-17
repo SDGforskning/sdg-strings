@@ -63,16 +63,9 @@ TS=
    "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
   )
 NEAR/5
-  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "inclusive economic*" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "income secur*" OR
-   "income equalit*" OR
-   (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
-    )
-   NEAR/3
-    ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*"
-    )
-   )
-  OR
+  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
+   "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth"
+   OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
@@ -81,10 +74,18 @@ NEAR/5
    )
   )
  )
+OR
+  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
+   )
+  NEAR/3
+   ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
+    "income instabilit*" OR "earning* instabilit*"
+   )
+  )
 NOT "oral health*" NOT "food polic*" NOT "glaucoma*" NOT "obesity" NOT "eco-friendly" NOT "rent*" NOT "housing pric*"
-NOT "tax benefit*" NOT "natural disaster$" NOT "segregation*" NOT "voter*" NOT "SNAP" NOT "pricing" NOT "improv* health" NOT "charcoal*" NOT "children's develop*"
-NOT "brain function*" NOT "health-related" NOT "health related" NOT "product life" NOT "healthcare" NOT "health care" NOT
-"health effect*" NOT "welfare benefit*" NOT "relative income*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
+NOT "tax benefit*" NOT "segregation*" NOT "pricing" NOT "charcoal" NOT "children's develop*" NOT "natural disaster$"
+NOT "brain function*" NOT "health-related" NOT "health related" NOT "healthcare" NOT "health care" NOT
+"health effect*" NOT "benefit* advic*" NOT "income* satisf*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
 NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
 NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health" NOT "economic cycle" NOT "buffer*" NOT "surger*"
 AND
