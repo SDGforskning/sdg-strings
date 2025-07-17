@@ -79,6 +79,7 @@ NEAR/5
    )
   )
  )
+NOT "health effect*" NOT "pricing" NOT "rent* pric*" NOT "housing" NOT "benefit* advic*" NOT "obesity" NOT "glaucoma*" NOT "children's develop*" NOT "charcoal" NOT "natural disaster$" NOT "product life" NOT "brain function*" NOT "health-related" NOT "health related" NOT "segregation*" NOT "oral health*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT "health care" NOT "nutrition*" NOT "ecological footprint$" NOT "educational attainment" NOT "substance abus*" NOT "*glycemia*"
 OR
  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
   )
@@ -88,11 +89,6 @@ OR
   )
  )
 )
-NOT "oral health*" NOT "food polic*" NOT "glaucoma*" NOT "obesity" NOT "eco-friendly" NOT "rent*" NOT "housing pric*"
-NOT "tax benefit*" NOT "segregation*" NOT "pricing" NOT "charcoal" NOT "children's develop*" NOT "natural disaster$"
-NOT "brain function*" NOT "health-related" NOT "health related" NOT "healthcare" NOT "health care" NOT
-"health effect*" NOT "benefit* advic*" NOT "income* satisf*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
-NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
 ```
 
 ### Target 10.2
