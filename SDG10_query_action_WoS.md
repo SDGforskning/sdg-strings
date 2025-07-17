@@ -83,7 +83,7 @@ NOT "health effect*" NOT "pricing" NOT "rent* pric*" NOT "housing" NOT "benefit*
 NOT "children's develop*" NOT "charcoal" NOT "natural disaster$" NOT "product life" NOT "brain function*" NOT
 "health-related" NOT "health related" NOT "segregation*" NOT "oral health*" NOT "income* satisf*" NOT "food polic*" NOT
 "healthcare" NOT "health care" NOT "nutrition*" NOT "ecological footprint$" NOT "educational attainment" NOT
-"substance abus*" NOT "*glycemia*"
+"substance abus*" NOT "*glycemia*" NOT "environment* improv*" NOT "energy pric*" NOT "retirement saving$"
 OR
  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
   )
