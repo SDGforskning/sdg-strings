@@ -69,8 +69,8 @@ AND
   )
 NEAR/5
   ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-   "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth"
-   OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
+   "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+   "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
     )
    NEAR/3
