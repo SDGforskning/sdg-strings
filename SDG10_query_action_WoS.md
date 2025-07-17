@@ -55,7 +55,12 @@ This query consists of 1 phrase. The basic structure is *action + income growth 
 
 ```py
 TS=
-((("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+(("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
+  "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
+  OR "low-income" OR "extreme* poor$" OR "severe* poor$" OR "abject* poor$" OR "absolute* poor$" OR "impoverished"
+ )
+AND
+ (("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
@@ -75,25 +80,19 @@ NEAR/5
   )
  )
 OR
-  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
-   )
-  NEAR/3
-   ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
-    "income instabilit*" OR "earning* instabilit*"
-   )
+ (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
   )
+ NEAR/3
+  ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
+   "income instabilit*" OR "earning* instabilit*"
+  )
+ )
+)
 NOT "oral health*" NOT "food polic*" NOT "glaucoma*" NOT "obesity" NOT "eco-friendly" NOT "rent*" NOT "housing pric*"
 NOT "tax benefit*" NOT "segregation*" NOT "pricing" NOT "charcoal" NOT "children's develop*" NOT "natural disaster$"
 NOT "brain function*" NOT "health-related" NOT "health related" NOT "healthcare" NOT "health care" NOT
 "health effect*" NOT "benefit* advic*" NOT "income* satisf*" NOT "calorie*" NOT "nutrition*" NOT "health functioning*"
 NOT "substance abus*" NOT "energ* pric*" NOT "environment* improv*" NOT "*glycemia*" NOT "infertilit*" NOT "medical school*"
-NOT "eurosceptic*" NOT "dissaving*" NOT "long-term health" NOT "economic cycle" NOT "buffer*" NOT "surger*"
-AND
-  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
-   "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
-   OR "low-income" OR "extreme* poor$" OR "severe* poor$" OR "abject* poor$" OR "absolute* poor$" OR "impoverished"
-  )
- )
 ```
 
 ### Target 10.2
