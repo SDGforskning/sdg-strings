@@ -92,8 +92,9 @@ NOT "health effect*" NOT "benefit* advic*" NOT "pricing" NOT "rent* pric*" NOT "
 "children's develop*" NOT "glaucoma*" NOT "natural disaster$" NOT "product life" NOT "health related" NOT "segregation*" NOT
 "oral health*" NOT "brain function*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT "health care" NOT "calorie*"
 NOT "ecological footprint$" NOT "hous* cost*" NOT "substance abus*" NOT "*glycemia*" NOT "environment* improv*" NOT "*saving$" 
-NOT "energy pric*" NOT "educational attainment"  NOT "medical" NOT "eurosceptic*" NOT "anemi*" NOT "soil degrad*" NOT "adipos*" 
-NOT "*fertilit*" NOT "electricity demand*" NOT "alcohol*" NOT "altruis*" NOT "adolescent health" NOT "hierarchical power" 
+NOT "energy pric*" NOT "educational attainment"  NOT "medical" NOT "eurosceptic*" NOT "anemi*" NOT "soil degrad*" NOT
+"adipos*" NOT "*fertilit*" NOT "electricity demand*" NOT "alcohol*" NOT "altruis*" NOT "adolescent health" NOT
+"hierarchical power" 
 )
 ```
 
