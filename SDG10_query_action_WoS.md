@@ -79,13 +79,6 @@ NEAR/5
    )
   )
  )
-NOT "health effect*" NOT "pricing" NOT "rent* pric*" NOT "housing" NOT "benefit* advic*" NOT "obesity" NOT "glaucoma*"
-NOT "children's develop*" NOT "charcoal" NOT "natural disaster$" NOT "product life" NOT "brain function*" NOT
-"health related" NOT "segregation*" NOT "oral health*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT
-"health care" NOT "nutrition*" NOT "ecological footprint$" NOT "educational attainment" NOT "substance abus*" NOT
-"*glycemia*" NOT "environment* improv*" NOT "energy" NOT "*saving$" NOT "metaboli*" NOT "medical" NOT
-"eurosceptic*" NOT "calorie*" NOT "fertility" NOT "soil degrad*" NOT "alcohol*" NOT "altruis*" NOT "adipos*" NOT
-"adolescent health" NOT "hierarchical power" NOT "produc* qualit*" NOT "physical activit*" NOT "tuberculosis"
 OR
  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
   )
@@ -94,6 +87,13 @@ OR
    "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*"
   )
  )
+NOT "health effect*" NOT "pricing" NOT "rent* pric*" NOT "housing" NOT "benefit* advic*" NOT "obesity" NOT "glaucoma*"
+NOT "children's develop*" NOT "charcoal" NOT "natural disaster$" NOT "product life" NOT "brain function*" NOT
+"health related" NOT "segregation*" NOT "oral health*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT
+"health care" NOT "nutrition*" NOT "ecological footprint$" NOT "educational attainment" NOT "substance abus*" NOT
+"*glycemia*" NOT "environment* improv*" NOT "energy" NOT "*saving$" NOT "metaboli*" NOT "medical" NOT
+"eurosceptic*" NOT "calorie*" NOT "fertility" NOT "soil degrad*" NOT "alcohol*" NOT "altruis*" NOT "adipos*" NOT
+"adolescent health" NOT "hierarchical power" NOT "produc* qualit*" NOT "physical activit*" NOT "tuberculosis"
 )
 ```
 
