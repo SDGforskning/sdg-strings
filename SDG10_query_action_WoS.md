@@ -55,45 +55,43 @@ This query consists of 1 phrase. The basic structure is *the poor + action + inc
 
 ```py
 TS=
-(("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
-  "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
-  OR "low-income" OR "extreme* poor$" OR "severe* poor$" OR "abject* poor$" OR "absolute* poor$" OR "impoverished"
- )
-AND
- (("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
-   OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
-   OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
-   "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-   OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
-   "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
+((("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
+   "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
+   OR "low-income" OR "extreme* poor$" OR "severe* poor$" OR "abject* poor$" OR "absolute* poor$" OR "impoverished"
   )
+AND
+  (("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
+    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
+    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
+    OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
+    "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
+   )
 NEAR/5
-  ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-   "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-   "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
-   (("earnings" OR "income$" OR "salar*" OR "livelihood$"
-    )
-   NEAR/3
-    ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
+   ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
+    "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+    "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
+    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
+     )
+    NEAR/3
+     ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
+     )
     )
    )
   )
- )
 OR
- (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
-  )
- NEAR/3
-  ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
-   "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*"
+  (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
+   )
+  NEAR/3
+   ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
+    "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*"
+   )
   )
  )
-NOT "health effect*" NOT "pricing" NOT "rent* pric*" NOT "housing" NOT "benefit* advic*" NOT "obesity" NOT "glaucoma*"
-NOT "children's develop*" NOT "charcoal" NOT "natural disaster$" NOT "product life" NOT "brain function*" NOT
-"health related" NOT "segregation*" NOT "oral health*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT
-"health care" NOT "nutrition*" NOT "ecological footprint$" NOT "educational attainment" NOT "substance abus*" NOT
-"*glycemia*" NOT "environment* improv*" NOT "energy" NOT "*saving$" NOT "metaboli*" NOT "medical" NOT
-"eurosceptic*" NOT "calorie*" NOT "fertility" NOT "soil degrad*" NOT "alcohol*" NOT "altruis*" NOT "adipos*" NOT
-"adolescent health" NOT "hierarchical power" NOT "produc* qualit*" NOT "physical activit*" NOT "tuberculosis"
+NOT "health effect*" NOT "benefit* advic*" NOT "pricing" NOT "rent* pric*" NOT "charcoal" NOT "obesity" NOT "children's develop*"
+NOT "glaucoma*" NOT "natural disaster$" NOT "product life" NOT
+"health related" NOT "segregation*" NOT "oral health*" NOT "brain function*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT "health care" NOT "calorie*" NOT "ecological footprint$" NOT "housing" NOT "substance abus*" NOT "*glycemia*" NOT "environment* improv*" NOT "energy pric*" NOT "*saving$" NOT "educational attainment"   NOT "*fertilit*" NOT "medical" NOT
+"eurosceptic*" NOT "anemi*" NOT "soil degrad*" NOT "electricity demand*" NOT "alcohol*" NOT "altruis*" NOT "adipos*" NOT "adolescent health" NOT "hierarchical power" 
 )
 ```
 
