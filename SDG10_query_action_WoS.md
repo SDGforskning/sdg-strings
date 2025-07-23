@@ -185,7 +185,7 @@ TS=
   )
  )
 NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*" NOT "intranet"
-NOT "prescription*"
+NOT "prescription*" NOT "zeolite$" NOT "phosphatas*" NOT "gene$" NOT "outcome index"
 )
 ```
 
