@@ -158,31 +158,33 @@ This query consists of 1 phrase. The basic structure is *action (positive) + inc
 
 ```py
 TS=
-((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
-   "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
-   OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
-   OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" 
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
+    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
+    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
+   )
+ NEAR
+   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
+    "societal activit*" OR "accessib*" OR "financ* inclusi*"
+   )
   )
-NEAR
-  ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
-   "societal activit*" OR "accessib*" OR "financ* inclusi*"
+ OR
+  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
+    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
+    "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
+    "nullif*" OR "hinder*"
+   )
+ NEAR
+   ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+    "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
+    OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
+    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclus*"
+   )
   )
  )
-OR
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
-   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
-   "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
-   "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
-   "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
-   "nullif*" OR "hinder*"
-  )
-NEAR
-  ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
-   "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
-   OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
-   "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclus*"
-  )
- )
+NOT "consumption upgrade$" NOT "dna accessib*" NOT "rna$" NOT "receptor$"
 )
 ```
 
