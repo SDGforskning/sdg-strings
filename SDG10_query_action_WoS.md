@@ -159,9 +159,9 @@ This query consists of 1 phrase. The basic structure is *action (positive) + inc
 ```py
 TS=
 ((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
-   "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand$" OR "expansion*" OR "accelerat*"
-   OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR
-   "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "heighten*"
+   "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
+   OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
+   OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" 
   )
 NEAR
   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
@@ -180,7 +180,7 @@ NEAR
   ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
    "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
    OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
-   "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ*" exclus*"
+   "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclus*"
   )
  )
 )
