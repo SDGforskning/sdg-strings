@@ -31,7 +31,9 @@ The strings available at this time are available for two platforms.
 
 ## What kind of results should I expect when using these strings?
 
-This depends on which string you use:
+The WoS files (SDGXX_query_xxxxx_WoS.md) contain, for each target, a description of which research themes we consider "relevant" to the target and are trying to find with our search string. The files also contain the search strings themselves. Reading this documentation should give a clear picture of what kind of research is covered by the mapping. 
+
+Your results will also depend on which approach you use:
 
 **"Action" strings** : The *action approach* aims to find research related to the actions mentioned in the SDG targets and indicators. 
 This is done by looking for works which include a formulation indicating relation to the action, *e.g. "...reducing malnutrition"; "...ensuring rights of small-scale fishers"; "...policies for improving school completion among...".* These can be verbs, or terms indicating relation to real-world change, such as "policy". 
