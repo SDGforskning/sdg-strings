@@ -184,7 +184,7 @@ TS=
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna accessib*" NOT "rna$" NOT "receptor$"
+NOT "consumption upgrade$" NOT "dna accessib*" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*"
 )
 ```
 
