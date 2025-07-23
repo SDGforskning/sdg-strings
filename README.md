@@ -50,7 +50,9 @@ We have tried to be consistent in the approaches, but there are occasional excep
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Current status and planned changes?
-We have finished a version that can be used for ten of the SDGs (in Web of Science search syntax, and in Python) - see "Releases". We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved with feedback, and may require changes over time. 
+We are currently working on strings for the remaining 6 SDGs (SDG 5, 6, 8, 9, 10, 16) and plan to have versions in the course of 2025. Contributing institutions to this work include the University of Bergen, University of Stavanger, Western Norway University of Applied Sciences, University of Helsinki, Aalto University, Tampere University, and the Research Council of Norway.  
+
+Aside from this, we have finished a version (v2.0.0) that can be used for ten of the SDGs (in Web of Science search syntax, and in Python) - see "Releases". We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved with feedback, and may require changes over time. 
 
 We test the strings in an informal way while building and carried out formal testing of v1.2.2 in August 2023, documented in Zenodo (Caroline S Armitage, Håkon Magne Bjerkan, Leena Pirit Byholm, Inger Gåsemyr, Eli Heldaas Seland, & Lise Vik-Haugen. (2023). Testing the Bergen-approach search strings for SDG research mapping (v. 1.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8386611). The next version (v2.0.0) and onwards include changes made after this testing. 
 
