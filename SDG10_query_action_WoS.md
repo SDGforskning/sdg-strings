@@ -164,8 +164,8 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
  NEAR
-   ("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
-    "societal activit*" OR "accessib*" OR "financ* inclusi*"
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR
+    "accessib*" OR "financ* inclu*"
    )
   )
  OR
@@ -177,14 +177,15 @@ TS=
     "nullif*" OR "hinder*"
    )
  NEAR
-   ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
-    "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
-    OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
-    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclus*"
+   ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+    "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
+    OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
+    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*"
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna accessib*" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*"
+NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*" NOT "intranet"
+NOT "prescription*"
 )
 ```
 
