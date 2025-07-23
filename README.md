@@ -2,8 +2,6 @@
 
 These files contain search strings to find academic publications related to certain [Sustainable development goals](https://sdgs.un.org/goals). 
 
-This work is a product of the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway. **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**. This project is led by the University of Bergen Library, partnered with the libraries at Western Norway University of Applied Sciences and the University of Stavanger. Natural Resources Institute Finland (Luke) has contributed with search strings for two SDGs as an external collaborator.
-
 File names in this set consist of the SDG and the _approach_ used (topic vs. action), as well as the platform/syntax for the string. The _approach_ relates to decisions about what kind of research the string should find: research closely related to the actions of the SDG targets (*action*), or research more broadly related to the topics in the targets (*topic*). *You can read more about these below*. Stable versions are saved as "releases" and can be accessed a) using the "tags" in the GitHub repository or b) via Zenodo (https://doi.org/10.5281/zenodo.7241689); in between releases, there may be uneven/untested changes to the strings.
 
 ## Why are we building strings? How do they differ to existing mappings?
@@ -25,7 +23,7 @@ For more thoughts about mappings, see also [Rafols, Noyons, Confraria & Ciarli (
 
 ## Which SDGs, platforms and languages are covered? 
 
-Currently, we have strings for ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15. The project group are primary contributors for eight of these; an external collaborator from Natural Resources Institute Finland for the other two. If you like our method and could consider contributing, you are welcome to get in touch.
+Currently, we have strings for ten of the SDGs: SDGs 1, 2, 3, 4, 7, 11, 12, 13, 14 and 15 (but are working on more: see "Current status and planned changes"). If you like our method and could consider contributing, you are welcome to get in touch.
 
 The strings available at this time are available for two platforms.
 * Those with "WOS" in the file name are formatted in Web of Science syntax (and can be run in the Web of Science Core collection from Clarivate via Advanced Search). These are in English. While these strings are built for the WoS platform, this work is not affiliated with Web of Science/Clarivate. These files contain most of the documentation explaining how we have interpreted the strings and chosen search terms.
@@ -50,7 +48,7 @@ We have tried to be consistent in the approaches, but there are occasional excep
 An early description of these approaches can be found in [Armitage, Lorenz & Mikki (2020)](https://doi.org/10.1162/qss_a_00071). 
 
 ## Current status and planned changes?
-We are currently working on strings for the remaining 6 SDGs (SDG 5, 6, 8, 9, 10, 16) and plan to have versions in the course of 2025. Contributing institutions to this work include the University of Bergen, University of Stavanger, Western Norway University of Applied Sciences, University of Helsinki, Aalto University, Tampere University, and the Research Council of Norway.  
+We are currently working on strings for the remaining 6 SDGs (SDG 5, 6, 8, 9, 10, 16) and plan to have versions in the course of 2025. 
 
 Aside from this, we have finished a version (v2.0.0) that can be used for ten of the SDGs (in Web of Science search syntax, and in Python) - see "Releases". We consider this a "version": We think the strings are functioning relatively well, but they can likely be improved with feedback, and may require changes over time. 
 
@@ -63,6 +61,14 @@ Web of Science syntax strings ("WoS" files): Each file contains a search string 
 Python: Download the ipynb notebook to run on your own data.
 
 You are welcome to translate the strings into other database syntax or tools, or edit a version to fit your needs. We are interested in hearing about work that comes from these strings, so please consider sharing with us if you have used or adapted them! You are also welcome to contact us with feedback. Our email can be found on the [project homepage](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool).
+
+## Who we are and history
+
+This work began in 2019, a grew out of a concern when examining differenves between SDG mappings ([Armitage, Lorenz & Mikki 2020](https://doi.org/10.1162/qss_a_00071)).
+
+This led to the project *Bærekraftsforskning for alle – en transparent kartleggings- og gjenfinningstjeneste* (Sustainable development research for all – a transparent mapping and discovery tool), a Norwegian project supported by the National Library of Norway (2021-2023). **[Read more about the project and find contact details here](https://www.uib.no/en/ub/148804/sustainable-development-research-all-%E2%80%93-transparent-mapping-and-discovery-tool)**. The goal of the project was both to further develop a well-documented mapping, and to make Norwegian results more accessible. The contents of this repository are partially a result of this work. This project was led by the University of Bergen Library, partnered with the libraries at Western Norway University of Applied Sciences and the University of Stavanger. 
+
+v2.0.0 of the strings (which covers ten SDGs) was developed under this project by these three insitutions, together with Natural Resources Institute Finland (LUKE) who contributed with search strings for two SDGs as an external collaborator. Further development work in 2025 (strings for the remaining six SDGs and improvements to the python script) is being done in a larger collaboration between the libraries at the University of Bergen, University of Stavanger, Western Norway University of Applied Sciences, OsloMet, University of Helsinki, Aalto University, Tampere University, and the analysis and data group at the Research Council of Norway. 
 
 ## How should I cite?
 
