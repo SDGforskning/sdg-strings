@@ -167,8 +167,9 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
  NEAR/3
-   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR
-    "accessib*" OR "financ* inclu*"
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR  "accessib*" OR 
+    "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "financ* integrat*" OR 
+    "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*"
    )
   )
  OR
@@ -183,13 +184,12 @@ TS=
    ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
     "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
     OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
-    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*"
+    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
+    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*"
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*" NOT "intranet"
-NOT "prescription*" NOT "zeolite$" NOT "phosphatas*" NOT "gene$" NOT "outcome index" NOT "programming language$"
-NOT "biodiversity" NOT "fire safety" NOT "condom$" NOT "pharmacist$" NOT "server$"
+NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*"
 )
 ```
 
