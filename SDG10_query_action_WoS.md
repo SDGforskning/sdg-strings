@@ -163,7 +163,7 @@ TS=
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
- NEAR
+ NEAR/3
    ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR
     "accessib*" OR "financ* inclu*"
    )
@@ -176,7 +176,7 @@ TS=
     "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
     "nullif*" OR "hinder*"
    )
- NEAR
+ NEAR/3
    ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
     "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
     OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
@@ -185,7 +185,8 @@ TS=
   )
  )
 NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "receptor$" NOT "touris*" NOT "flood*" NOT "intranet"
-NOT "prescription*" NOT "zeolite$" NOT "phosphatas*" NOT "gene$" NOT "outcome index"
+NOT "prescription*" NOT "zeolite$" NOT "phosphatas*" NOT "gene$" NOT "outcome index" NOT "programming language$"
+NOT "biodiversity" NOT "fire safety" NOT "condom$" NOT "pharmacist$" NOT "server$"
 )
 ```
 
