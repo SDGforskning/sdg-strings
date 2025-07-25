@@ -167,9 +167,9 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
  NEAR/3
-   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR  "accessib*"
-    OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "financ* integrat*" OR 
-    "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*"
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR  "accessib*" OR 
+    "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "financ* integrat*" OR 
+    "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "socio-economic* equal*" OR "socioeconomic* equal*"
    )
   )
  OR
@@ -181,19 +181,15 @@ TS=
     "nullif*" OR "hinder*"
    )
  NEAR/3
-   ("horizontal* inequalit*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+   ("horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
     "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
     OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
     "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
-    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*"
+    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*" OR "socioeconomic exclu*"
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT
-"uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT
-"electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT
-"foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT
-"clinical trial$" NOT "public report*" NOT "knowledge manage*"
+NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$" NOT "radioactiv*" NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"
 )
 ```
 
