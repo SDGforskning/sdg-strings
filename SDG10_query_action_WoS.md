@@ -159,6 +159,8 @@ Social inclusion means improving opportunities for individuals and groups to tak
 
 This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*
 
+Katso sivut 1114-1117!
+
 ```py
 TS=
 (((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
@@ -194,7 +196,11 @@ TS=
   )
  )
 NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT
-"uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$" NOT "radioactiv*" NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT "education* manage*"
+"uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT
+"electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT
+"foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT
+"clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$" NOT "radioactiv*" NOT
+"thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT "education* manage*"
 )
 ```
 
