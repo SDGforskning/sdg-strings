@@ -167,8 +167,8 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
  NEAR/3
-   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR  "accessib*" OR 
-    "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "financ* integrat*" OR 
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR  "accessib*"
+    OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "financ* integrat*" OR 
     "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*"
    )
   )
@@ -189,7 +189,11 @@ TS=
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*"
+NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*" NOT
+"uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT
+"electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT
+"foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT
+"clinical trial$" NOT "public report*" NOT "knowledge manage*"
 )
 ```
 
