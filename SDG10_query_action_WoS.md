@@ -194,14 +194,14 @@ TS=
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT "data archiv*"
-NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity" NOT "parasit*"
-NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT "blog*" NOT
-"foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "career strateg*" NOT
-"clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$" NOT "radioactiv*"
-NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT "education* manage*" NOT "brain tumor$"
-NOT "laser*" NOT "heidegger" NOT "exege*" NOT "venom*" NOT "stakeholder$" NOT "entrepreneurial intention*" NOT
-"endoscop*" NOT "pyoderm*"
+NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT
+"data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity"
+NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT
+"blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT
+"career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT
+"particle$" NOT "radioactiv*" NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT
+"education* manage*" NOT "brain tumor$" NOT "laser*" NOT "heidegger" NOT "exege*" NOT "venom*" NOT "stakeholder$" NOT
+"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*"
 )
 ```
 
