@@ -201,7 +201,9 @@ NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT 
 "career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT
 "particle$" NOT "radioactiv*" NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT
 "education* manage*" NOT "brain tumor$" NOT "laser*" NOT "heidegger" NOT "exege*" NOT "venom*" NOT "stakeholder$" NOT
-"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*"
+"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "object* count*" NOT "patient data" NOT
+"art of medicine" NOT "biomarker*" NOT "social tv" NOT "price sharing" NOT "vaccin*" NOT "microb*" NOT "geolog*" NOT
+"caffeine" NOT "drone*" NOT "last-mile deliver*" NOT "micronutri*" NOT "armyworm*" NOT "tiktok" NOT "septal*" NOT "h$emorrhage*"
 )
 ```
 
