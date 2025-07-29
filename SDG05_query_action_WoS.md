@@ -79,7 +79,34 @@ TS=
 ```
 
 
-#### Phrase 2
+#### Phrase 2 
+
+This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is action + anti-discrimination + women & girls
+
+```py
+TS=
+(
+  ( "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher"
+  OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing"
+  OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*")
+    NEAR/5
+    (
+      ("women's rights") OR
+        (
+          ("inclusion*" OR "includ*" OR "anti-discriminat*" OR "non-discriminat*" OR "equality" OR "equal rights")
+    NEAR/5
+          ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR
+          "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*" OR "maternity" OR "maternal"
+          OR "gender*" OR "transgender*" OR
+          ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+          )
+        )
+  )  
+)
+```
+
+
+#### Phrase 3
 
 This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex
 
