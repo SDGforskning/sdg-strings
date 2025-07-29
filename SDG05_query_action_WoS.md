@@ -53,29 +53,28 @@ This phrase is about ending discrimination against women and girls. The general 
 ```py
 TS=
 (
-    (
-        (
+  (
         ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" 
         OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
         OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/5
-        (
-         ("discriminat*" OR "exclusion" OR "dispar*" OR "bias*") OR
+            ("discriminat*" OR "exclusion" OR "exclud*" OR "dispar*" OR "bias*") OR
              (
                 ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
                 NEAR/5
-                ("human right*" OR "freedom*")
+                ("human right*" OR "women's right*" OR "freedom*")
             )
-        ) 
+     ) 
         NEAR/5 
-        (*women" OR "*woman" OR "*womens" OR "*womans"
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
         OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "transgender*")
-        )
-    ) 
+        OR "gender*" OR "transgender*" OR
+            ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+            )
+        )     
 )
 ```
 
