@@ -108,7 +108,7 @@ TS=
 
 #### Phrase 3
 
-This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex
+This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex. The general structure is action + legislation + equality + women
 
 ```py
 TS=
@@ -122,12 +122,15 @@ TS=
             ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
             NEAR/5
             (             
-               ("equality*" OR "discriminat*" OR "exclusion" OR "dispar*" OR "bias*")
+               ("equality*" OR "discriminat*" OR "rights" OR "exclusion" OR "exclud*" OR "inclusion" OR "includ*" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*")
                 NEAR/5 
-                ("sex*" OR "gender*" OR "transgender*" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*")
+                ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR
+                 "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*" OR "maternity" OR "maternal"
+                 OR "gender*" OR "transgender*" OR
+                ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+                )
             )
-            
-        )
+         )   
     )
 )
 ```
