@@ -204,7 +204,9 @@ NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT 
 "entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "object* count*" NOT "patient data" NOT
 "art of medicine" NOT "biomarker*" NOT "social tv" NOT "price sharing" NOT "vaccin*" NOT "microb*" NOT "geolog*" NOT
 "caffeine" NOT "drone*" NOT "last-mile deliver*" NOT "micronutri*" NOT "armyworm*" NOT "tiktok" NOT "septal*" NOT
-"h$emorrhage*" NOT "antibod*" NOT "remote sens*" NOT "dataset$" NOT "ozonat*" NOT "wind energ*" NOT "biomass*"
+"h$emorrhage*" NOT "antibod*" NOT "remote sens*" NOT "dataset$" NOT "ozonat*" NOT "wind energ*" NOT "biomass*" NOT
+"ordinaly*" NOT "cataly*" NOT "factor productivity" NOT "trade agreement$" NOT "rheumatolog*" NOT "mitral*" NOT
+"diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*"
 )
 ```
 
