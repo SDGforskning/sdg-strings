@@ -194,7 +194,7 @@ TS=
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT
+NOT "consumption upgrade$" NOT "dna" NOT "*rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT
 "data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity"
 NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT
 "blog*" NOT "foreign medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT
@@ -206,7 +206,9 @@ NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT 
 "caffeine" NOT "drone*" NOT "last-mile deliver*" NOT "micronutri*" NOT "armyworm*" NOT "tiktok" NOT "septal*" NOT
 "h$emorrhage*" NOT "antibod*" NOT "remote sens*" NOT "dataset$" NOT "ozonat*" NOT "wind energ*" NOT "biomass*" NOT
 "ordinaly*" NOT "cataly*" NOT "factor productivity" NOT "trade agreement$" NOT "rheumatolog*" NOT "mitral*" NOT
-"diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*"
+"diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "protein synth*" NOT "biomim*" NOT "antimon*" NOT
+"linear model*" NOT "exposure matri*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT
+"museum artifact$" NOT "energy manage*" NOT "naloxon*"
 )
 ```
 
