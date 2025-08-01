@@ -194,24 +194,20 @@ TS=
    )
   )
  )
-NOT "consumption upgrade$" NOT "dna" NOT "*rna$" NOT "intranet" NOT "touris*" NOT "flood*" NOT "gene$" NOT
-"data archiv*" NOT "uncanny valley" NOT "psychological test*" NOT "care counsel*" NOT "biodiversity" NOT "geodiversity"
-NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT "zeolite$" NOT "phospholipid*" NOT
-"blog*" NOT "medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT
-"career strateg*" NOT "clinical trial$" NOT "public report*" NOT "knowledge manage*" NOT "electr* motor*" NOT
-"particle$" NOT "radioactiv*" NOT "thermograph*" NOT "hydropon*" NOT "water authorit*"  NOT "e-navigat*" NOT
-"education* manage*" NOT "brain tumor$" NOT "laser*" NOT "heidegger" NOT "exege*" NOT "venom*" NOT "stakeholder$" NOT
-"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "object* count*" NOT "patient data" NOT
-"art of medicine" NOT "biomarker*" NOT "social tv" NOT "price sharing" NOT "vaccin*" NOT "microb*" NOT "geolog*" NOT
-"caffeine" NOT "drone*" NOT "last-mile deliver*" NOT "micronutri*" NOT "armyworm*" NOT "tiktok" NOT "septal*" NOT
-"h$emorrhage*" NOT "antibod*" NOT "remote sens*" NOT "dataset$" NOT "ozonat*" NOT "wind energ*" NOT "biomass*" NOT
-"ordinaly*" NOT "cataly*" NOT "factor productivity" NOT "trade agreement$" NOT "rheumatolog*" NOT "mitral*" NOT
-"diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "protein synth*" NOT "biomim*" NOT "antimon*" NOT
-"conductiv*" NOT "exposure matri*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT
-"museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "masstige" NOT
-"blockchain$" NOT "enzym*" NOT "digital chip$" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "injecti*" NOT
+NOT "dna" NOT "*rna$" NOT "flood*" NOT "gene$" NOT "uncanny valley" NOT "biodiversity" NOT "geodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT "pedomet*" NOT "molecul*" NOT  "zeolite$" NOT "phospholipid*" NOT
+"medical student*" NOT "palliative care*" NOT "velocimetr*" NOT "local resistance" NOT "digital chip$" NOT
+"career strateg*" NOT "clinical trial$" NOT "knowledge manage*" NOT "electr* motor*" NOT
+"particle$" NOT "radioactiv*" NOT "thermograph*"NOT "brain tumor$" NOT "laser*" NOT "exege*" NOT "venom*" NOT
+"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "patient data" NOT "biomarker*" NOT "microb*" NOT "geolog*" NOT
+"caffeine" NOT "drone*" NOT "micronutri*" NOT "septal*" NOT
+"h$emorrhage*" NOT "antibod*" NOT "remote sens*" NOT "wind energ*" NOT "biomass*" NOT
+"factor productivity" NOT "trade agreement$" NOT "rheumatolog*" NOT "mitral*" NOT
+"diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "synth*" NOT "biomim*" NOT "antimon*" NOT
+"dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT "conductiv*" NOT
+"museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT
+"blockchain$" NOT "enzym*" NOT "machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT 
 "hydrogen fuel*" NOT "isotop*" NOT "organoid*" NOT "fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT
-"osmosis" NOT "chemical*" NOT "deepfak*" NOT "model calibr*" NOT "python*"
+"osmosis" NOT "deepfak*" NOT "model calibr*" NOT "python*"
 )
 ```
 
