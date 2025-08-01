@@ -202,11 +202,11 @@ NOT "radioactiv*" NOT "thermograph*" NOT "brain tumor$" NOT "laser*" NOT "exege*
 "microb*" NOT "geolog*" NOT "caffeine" NOT "drone*" NOT "micronutri*" NOT "septal*" NOT "h$emorrhage*" NOT "antibod*"
 NOT "remote sens*" NOT "wind energ*" NOT "biomass*" NOT "factor productivity" NOT "trade agreement$" NOT
 "rheumatolog*" NOT "mitral*" NOT "diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "synth*" NOT "biomim*"
-NOT "antimon*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT "conductiv*" NOT "museum artifact$" NOT
-"energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "blockchain$" NOT "enzym*" NOT
-"machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "hydrogen fuel*" NOT "isotop*" NOT "organoid*" NOT
-"fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT "osmosis" NOT "deepfak*" NOT "model calibr*" NOT
-"python*"
+NOT "antimon*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT "conductiv*" NOT
+"museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "blockchain$" NOT
+"enzym*" NOT "machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "hydrogen fuel*" NOT "isotop*" NOT
+"organoid*" NOT "fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT "osmosis" NOT "deepfak*" NOT
+"model calibr*" NOT "python*" NOT "computer vision*"
 )
 ```
 
