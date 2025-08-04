@@ -639,7 +639,7 @@ phones, tablets, etc.) and software (social media services, multimedia applicati
 For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>. 
 
 
-This query consists of 1? phrases......
+This query consists of 2 phrases.
 
 
 #### Phrase 1
@@ -649,78 +649,74 @@ The basic structure is _action_ + _use of technology_ + _empowerment of women_
 ```py
 TS=
 (
-
-"enhance"
-"access" (female access, equal access)
-"skills"
-
-    "enabling technology"
-    "innovative technology"
-    "technological intervention*"
-
-    "Information technolog*"
-    "information communications technolog*"
-    "ICTs"
-    "ICT"
-    "social media"
-    "mobile" / "mobile apps"
-    "handheld"
-    "telehealth"
-    "computer"
-    "smartphone"
-    "digital"
-    "internet"
-    "telecommunication"
-    "telephone" (cellular telehpones)
-    "television"
-    "wireless"
-    "wi-fi"
-    "computer*"
-    "world wide web"
-    "laptop"
-    "ICT4D"
-    "web-based"
-    "iphone"
-    "ipad"
-    "tablet*"
-    "hardware"
-    "software"
-    "multimedia"
-    "online / online platforms"
-    
-
-    "*empower*" (self-empowerment)
-    "self concept"
-    "self efficacy"
-    "self confidence"
-    "capacit*"
-    "emancipat*"
-    "personal strength"
-    "political strength"
-    "economic strength"
-    "power" (decision-making)
-    "control (destiny)"
-    "awareness"?
-    "entrepreneur" (står mange plasser? / = economic empowerment / independence)
-
-    "disempower*"
-    "barrier*"
-    "digital divide"
-    "inadequate infrastructure"
-    
-    
-
+     ("accelera*" OR "achiev*" OR "adopt*" OR "advance" OR "advancing" OR  "attain*" OR "better" OR "build*" 
+     OR "develop*" OR "elevat*" OR "empower*" OR "enhanc*" OR "ensur*" OR "establish*" OR "facilitat*" 
+     OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher" OR "implement*" OR "improv*"
+     OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" OR "plan" OR "planning" OR "plans" 
+     OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" OR "raise" OR "raising" 
+     OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
+    )
+NEAR/5
+    (
+    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "skills") 
+        NEAR/5
+    ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+    OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
+    OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
+    OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
+    OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
+    )
+NEAR/5
+    (
+    "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
+    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+    )
+NEAR/15    
+    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
+    OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
+    OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
 )
+
 ```
 
 #### Phrase 2
 
-The basic structure is _action_ + 
+The basic structure is _action_ + _barriers_ + _use of technology_ + _empowerment of women_
 
 ```py
 TS=
 (
-
+    (
+      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
+      OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
+      OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+      OR "improv*" OR "manag*" OR "counteract*" 
+      )
+      NEAR/5
+        ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*"
+        OR "divide*" OR "disempower*")
+    )
+    NEAR/5
+(
+    (
+    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "skills") 
+        NEAR/5
+    ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+    OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
+    OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
+    OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
+    OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
+    )
+NEAR/5
+    (
+    "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
+    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+    )
+NEAR/15    
+    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
+    OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
+    OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
+)
 )
 ```
 
