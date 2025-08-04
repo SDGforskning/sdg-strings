@@ -206,7 +206,7 @@ NOT "antimon*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT 
 "museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "blockchain$" NOT
 "enzym*" NOT "machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "hydrogen fuel*" NOT "isotop*" NOT
 "organoid*" NOT "fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT "osmosis" NOT "deepfak*" NOT
-"model calibr*" NOT "python*" NOT "computer vision*"
+"model calibr*" NOT "python*" NOT "computer vision*" NOT "microscop*" NOT "an$esthe*"
 )
 ```
 
