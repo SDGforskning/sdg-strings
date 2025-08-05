@@ -199,14 +199,14 @@ NOT "dna" NOT "*rna$" NOT "flood*" NOT "gene$" NOT "biodiversity" NOT "parasit*"
 "velocimetr*" NOT "career strateg*" NOT "clinical trial$" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$"
 NOT "radioactiv*" NOT "thermograph*" NOT "brain tumor$" NOT "laser*" NOT "exege*" NOT "venom*" NOT
 "entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "patient data" NOT "biomarker*" NOT
-"microb*" NOT "geolog*" NOT "caffeine" NOT "drone*" NOT "micronutri*" NOT "septal*" NOT "h$emorrhage*" NOT "antibod*"
+"micro*" NOT "geolog*" NOT "caffeine" NOT "drone*" NOT "septal*" NOT "h$emorrhage*" NOT "antibod*"
 NOT "remote sens*" NOT "wind energ*" NOT "biomass*" NOT "factor productivity" NOT "trade agreement$" NOT
 "rheumatolog*" NOT "mitral*" NOT "diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "synth*" NOT "biomim*"
 NOT "antimon*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT "conductiv*" NOT
 "museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "blockchain$" NOT
 "enzym*" NOT "machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "hydrogen fuel*" NOT "isotop*" NOT
 "organoid*" NOT "fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT "osmosis" NOT "deepfak*" NOT
-"model calibr*" NOT "python*" NOT "computer vision*" NOT "microscop*" NOT "an$esthe*"
+"model calibr*" NOT "python*" NOT "computer vision*" NOT "an$esthe*"
 )
 ```
 
@@ -266,7 +266,7 @@ NEAR
     OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
     "bias$ed"
    )
-NEAR
+NEAR/5
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
     OR "rules" OR "procedur*" OR "initiative*"
@@ -283,7 +283,7 @@ NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
     "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
    )
-NEAR
+NEAR/5
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
     OR "rules" OR "procedur*" OR "initiative*"
