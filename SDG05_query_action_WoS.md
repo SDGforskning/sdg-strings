@@ -710,11 +710,11 @@ TS=
 NEAR/5
     (
     "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
-    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
     )
 NEAR/15    
     ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-    OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
+    OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
     OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
 )
 )
@@ -731,30 +731,110 @@ This target is interpreted to cover research about policies and legislation for 
 For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>.   
 
 
-This query consists of X phrases......
+This query consists of 2 phrases......
 
 
 
 ## Phrase 1
 
-The basic structure is _action_ + _policies/legislation_ + _gender equality/empowerment of women_  
+The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender equality/empowerment of women_  
 
 ```py
 TS=
 (
-
+    ("accelera*" OR "achiev*" OR "adopt" OR "advance$" OR "advancing" OR "architect*" OR "attain*" OR "better" 
+    OR "build*" OR "consolidat*" OR "design*" OR "develop$" OR "developing" OR "development" OR "elevat*" 
+    OR "empower*" OR "encourag*" OR "enhance" OR "ensur*" OR "establish*" OR "expan$" OR "expansion*" 
+    OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher" OR "implement*"
+    OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" OR "maintain*" 
+    OR "more efficient" OR "plan" OR "plans" OR "planned" OR "planning" OR "policy" OR "policies" 
+    OR "program" OR "programs" OR "promot*" OR "propos*" OR "provid*" OR "raise" OR "raising" 
+    OR "reform$" OR "reforming" OR "reformed" OR "restor*" OR "scal* up" OR "secur*" OR "strateg*" 
+    OR "strengthen"  OR "support*" OR "sustain$" OR "sustaining" OR "upgrad*")  
+         
+NEAR/5
+    ("action*" OR "agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" OR "law$" 
+    OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "practice$" OR "principle$" 
+    OR "procedure*" OR "program*" OR "regulat*" OR "right*" OR "rule" OR "rules" OR "strateg*" OR "treaty" OR "treaties") 
+NEAR/15
+(
+    "GEWE" OR 
+    (("gender*" OR "transgender*")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
+    OR
+    (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") NEAR/5 ("autonomy" OR "capacity*" 
+    OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
+    OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
+    OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy"))
+)
 )
 ```
 ## Phrase 2
 
-The basic structure is _systems for tracking/publishing allocations_  
+The basic structure is _action (decrease)_ + _discriminatory policies/legislation_  
 
 ```py
 TS=
 (
-
-)
+    (   
+        ("alleviat*" OR "combat*" OR "decreas*" OR "eliminat*" OR "end" OR "ending" OR "eradicat*" OR "escap*" 
+        OR "fight*" OR "lift out of" OR "lifting out of" OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" 
+        OR "reduc*" OR "relief" OR "tackl*"
+        )     
+    NEAR/5
+        (
+            ("action*" OR "agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+            OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "practice$" 
+            OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "right*" OR "rule" OR "rules" 
+            OR "strateg*" OR "treaty" OR "treaties") 
+            NEAR/5
+            (
+                ("bias*" OR "discriminat*" OR "dispar*" OR "exclud*" OR "exclusion" OR "impair*" OR "limit*" 
+                OR "nullif*" OR "reduc*" OR "violat*")
+                NEAR/5
+                ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$" OR "gender" OR "transgender*")
+            )
 ```
+
+## Phrase 3
+The basic structure is _systems for tracking/publishing allocations_  + _gender equality/empowerment of women_ (ev ha denne bare på Topic?)
+```py
+TS=
+(
+    (
+        ("assess*" OR "control*" OR "disclos*" OR "evaluat*" OR "examin*" OR "govern$" OR "legislat*" 
+        OR "make public"  OR "manage$" OR "mandat*" OR "measur*" OR "monitor*" OR "publish*" OR "register*" 
+        OR "registration" OR "regulat*" OR "secure$" OR "securing"  OR "supervis*" OR "surveillanc*" 
+        OR "system$" OR "track*" OR "transparenc*" OR "validat*" 
+        )
+            NEAR/5
+            ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "assignment*" OR "budget*" 
+            OR "disbursement*" OR "distribution" OR "expenditure*" OR "funding*" OR "grant*" OR "portion*" 
+            OR "provision*" OR "quota*" OR "~~resource*~~" OR "share*" OR "spending*" )
+    )
+NEAR/10
+    ("GEWE" OR 
+    (("gender*" OR "transgender*")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
+    OR
+    (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
+        NEAR/5 
+        ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
+        OR "emancipat*" OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" 
+        OR "personal strength" OR "political strenght" OR "power" OR "right*" OR "self concept" 
+        OR "self confidence" OR "self efficacy"))
+    )
+)
+
+(få inn gender-budgeting også:
+TS=(
+("assess*" OR "control*" OR "disclos*" OR "evaluat*" OR "examin*" OR "govern$" OR "legislat*" OR "manage$" 
+        OR "mandat*" OR "measur*" OR "monitor*" OR "make public" OR "publish*" OR "register*" OR "registration" 
+        OR "regulat*" OR "secure$" OR "securing"  OR "supervis*" OR "surveillanc*" OR "system$" OR "track*" 
+        OR "transparenc*" OR "validat*" 
+        )
+NEAR/5 ("gender-responsive budgeting" OR "gender budgeting" OR "gender-responsive allocation")
+))
+```
+
 ## 4. Contributions
 
 * v2.1.0: 
