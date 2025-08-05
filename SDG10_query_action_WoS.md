@@ -257,7 +257,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 
 ```py
 TS=
-((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+(((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
    "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*" OR "nullif*" OR
    "hinder*"
   )
@@ -273,6 +273,8 @@ NEAR/5
    )
   )
  )
+NOT "obstacle$ avoid*"
+)
 OR 
  (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
    "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
