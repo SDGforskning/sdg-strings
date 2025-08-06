@@ -478,16 +478,17 @@ NEAR
   )
  )
 AND
- (("global" OR "international" OR "globally" OR "internationally"
+ ((("global" OR "international" OR "globally" OR "internationally"
   ) 
 NEAR/5
-  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade" OR "banking"
   )
-NEAR/5
-  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
-   "system$"
+NEAR/3
+  ("institution*" OR "market*" OR "bank$" OR "depositor*" OR "repositor*" OR "system$"
   )
  )
+OR "world trade organization" OR "WTO" OR "international monetary fund" OR "imf" OR "world bank"
+)
 )
 ```
 
