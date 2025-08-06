@@ -664,17 +664,18 @@ TS=
    "offer*" OR "heighten*"
   )
 NEAR
-  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" "cooperation* fund*" OR "develop* spending$" OR
+  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR "cooperation* fund*" OR "develop* spending$" OR
    "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
    "international fund*" OR "develop* fund*" OR "foreign support*" OR "international support*" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support*" OR "develop* subsid*" 
   )
 NEAR
-  ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
+  (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
    OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
   )
 NEAR
   ("impact*" OR "effect*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
   )
+)
  )
 AND
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
