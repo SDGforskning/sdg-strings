@@ -378,7 +378,7 @@ TS=
 NEAR/5
    ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
     "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
-    OR "mandat*"
+    OR "mandat*" OR "report*"
    )
   )
 AND
@@ -392,7 +392,7 @@ NEAR/5
    "system$"
   )
  )
-NOT "globalization"
+NOT "globalization" NOT "electric* sector*" NOT "wildlife trad*"
 )
 ```
 
