@@ -419,7 +419,7 @@ TS=
   )
 NEAR
   ("representat*" OR "voice*" OR "vote*" OR "voting" OR "decision-making" OR "decision making" OR 
-   "decision-making power*" OR "decision making power*" OR "participat*"
+   "participate" OR "participation" OR "participating"
   )
 NEAR
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
