@@ -478,7 +478,7 @@ NEAR
   )
  )
 AND
- (("global*" OR "international*"
+ (("global" OR "international" OR "globally" OR "internationally"
   ) 
 NEAR/5
   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
@@ -488,8 +488,7 @@ NEAR/5
    "system$"
   )
  )
-NOT "globalization"
- )
+)
 ```
 
 ### Target 10.7
