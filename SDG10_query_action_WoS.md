@@ -524,7 +524,7 @@ NEAR
    "dignif*"
   )
 NEAR
-  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+  ("migrat*" OR "mobili*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
 )
 NEAR
@@ -563,7 +563,7 @@ NEAR
 >
 > 10.a.1 Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
 
-This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries, in accordance with the World Trade Organisation agreements.
+This target is interpreted to cover research about implementing the principle of special and differential treatment (SDT) for developing countries.
 
 SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. <a href="#f24">(WTO 2025.)</a> Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. <a href="#f25">(UN Statistics Division 2016.)</a>
 
@@ -576,7 +576,7 @@ TS=
    "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied" 
   )
 NEAR
-  ("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*"
+  ("special and differential treatment*" OR "preferential treatment*" OR "zero-tariff*"
    OR "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR 
    "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
   ) 
@@ -636,11 +636,6 @@ NEAR
    "georgia*"
   )
  )
-AND
-  ("World Trade Organization" OR "WTO" OR "trade facilitation agreement*" OR "trade agreement*" OR "trade opportunit*"
-   OR "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$" OR
-   "doha mandate$"
-  )
 )
 ```
 
