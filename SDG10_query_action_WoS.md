@@ -392,7 +392,7 @@ NEAR/5
    "system$"
   )
  )
-NOT "globalization" NOT "electric* sector*" NOT "wildlife trad*"
+NOT "globalization" NOT "electric* sector*" NOT "wildlife trad*" NOT "food safe*"
 )
 ```
 
@@ -418,7 +418,7 @@ TS=
    "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR "heighten*"
   )
 NEAR
-  ("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
+  ("representat*" OR "voice*" OR "vote*" OR "voting" OR "decision-making" OR "decision making" OR 
    "decision-making power*" OR "decision making power*" OR "participat*"
   )
 NEAR
