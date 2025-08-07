@@ -739,22 +739,24 @@ The basic structure of Phrase 2 is *action (target) + financial assistance + pla
 Phrase 2
 ```py
 TS=
-((("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "divid*" or "division*" OR "distribut*"
+(((("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "divid*" or "division*" OR "distribut*"
   )
-NEAR
+NEAR/3
    ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR "cooperation* fund*" OR "develop* spending$" OR
    "foreign invest*" OR "international invest*" OR "develop* invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*" OR "develop* fund*" OR "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support$" OR "develop* subsid*" 
+   "international fund*" OR "develop* fund*" OR "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support$" OR "develop* subsid*" OR "humanitar* assist*" OR "humanitar* aid$" OR "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid$" OR "cross-national fund*" OR "cross-national invest*"
   )
-NEAR
+)
+AND
   (("national*" OR "regional*" OR "local*"
    )
 NEAR/3
    ("plan" OR "plans" OR "planning" OR "planned" OR "program$" OR "scheme$" OR "project$" OR "blueprint$" OR "layout$"
     OR "design$" OR "framework$" OR "initiative$" OR "bid$" OR "effort$" OR "venture$" OR "undertaking$" OR
-    "enterprise$"
+    "enterprise$" OR "niche$"
    )
   )
+NOT "cross-national"
   )
 AND
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
