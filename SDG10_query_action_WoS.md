@@ -830,7 +830,7 @@ This query consists of 1 phrase. The basic structure is *action (reduce) + remit
 
 ```py
 TS=
-((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+(((("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
    "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "diminish*" OR "abate$" OR "abating"
   )
 NEAR
@@ -859,6 +859,7 @@ NEAR/3
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
+)
 )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
