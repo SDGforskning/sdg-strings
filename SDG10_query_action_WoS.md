@@ -834,10 +834,10 @@ TS=
    "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "diminish*" OR "abate$" OR "abating"
   )
 NEAR
-  (("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+  (("remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
     OR "money order$" OR "money transmission$"
    )
-NEAR/3
+NEAR
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
@@ -848,7 +848,7 @@ OR
    "declin*" OR "dismantl*" OR "nullif*" OR "hinder*"
   )
 NEAR
-  ("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+  ("remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
    OR "money order$" OR "money transmission$"
   )
 NEAR
