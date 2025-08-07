@@ -841,12 +841,7 @@ NEAR/3
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
-NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
-   OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
-   OR "displace*" OR "expat*" OR "transferee$"
   )
- )
 OR
  (("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
    "prevent*" OR "combat*" OR "cure" OR "halt*" OR "resist*" OR "tackl*" OR "fight*" OR "combat*" OR "overcome" OR
@@ -864,12 +859,12 @@ NEAR/3
    ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
    )
   )
+)
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
    OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
    OR "displace*" OR "expat*" OR "transferee$"
   )
- )
 )
 ```
 
