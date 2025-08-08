@@ -208,7 +208,7 @@ OR TS=
 
 This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The elements of the phrase are: *access/rights + resources + poor/vulnerable*.
 
-"security" is used in phrases because otherwise there are many results about food security.  
+"security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example).
 
 ```py
 TS=
