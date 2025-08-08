@@ -215,16 +215,17 @@ TS=
 (
   (
     ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-    OR "ownership" OR "control" OR "right$"
+    OR "ownership" OR "right$"
+    OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control"
     OR "affordab*" OR "pro poor"
     OR "empower*" OR "inclusion" OR "sharing"
-    OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
+    OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
     OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
+    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
     )      
     NEAR/5
         ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-        OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
+        OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit"
         OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
         )
   )
