@@ -99,49 +99,7 @@ NOT "energy pric*" NOT "educational attainment"  NOT "medical" NOT "eurosceptic*
 "adipos*" NOT "*fertilit*" NOT "electricity demand*" NOT "alcohol*" NOT "altruis*" NOT "adolescent health" NOT
 "hierarchical power" NOT "housing" NOT "tobacco"
 )
-///
-TS=
-(((("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
-    OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
-    OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
-    "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-    OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
-    "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
-   )
-  NEAR/5
-   ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-    "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-    "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR 
-    (("earnings" OR "income$" OR "salar*" OR "livelihood$"
-     )
-    NEAR/3
-     ("increas*" OR "growth" OR "rise$" OR "rising" OR "gain*"
-     )
-    )
-   )
-  OR
-   (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*"
-    )
-   NEAR/3
-    ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
-     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*"
-    )
-  )
- )
-AND
- ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low-wage" OR
-  "low wage" OR "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income"
-  OR "low-income" OR "extreme* poor$" OR "severe* poor$" OR "abject* poor$" OR "absolute* poor$" OR "impoverished"
- )
-)
-NOT "health effect*" NOT "benefit* advic*" NOT "pricing" NOT "rent* pric*" NOT "charcoal" NOT "obesity" NOT "hous* price*" NOT
-"children's develop*" NOT "glaucoma*" NOT "natural disaster$" NOT "product life" NOT "health related" NOT "segregation*" NOT
-"oral health*" NOT "brain function*" NOT "income* satisf*" NOT "food polic*" NOT "healthcare" NOT "health care" NOT "calorie*"
-NOT "ecological footprint$" NOT "hous* cost*" NOT "substance abus*" NOT "*glycemia*" NOT "environment* improv*" NOT "*saving$" 
-NOT "energy pric*" NOT "educational attainment"  NOT "medical" NOT "eurosceptic*" NOT "anemi*" NOT "soil degrad*" NOT
-"adipos*" NOT "*fertilit*" NOT "electricity demand*" NOT "alcohol*" NOT "altruis*" NOT "adolescent health" NOT
-"hierarchical power" NOT "housing" NOT "tobacco"
-)
+
 
 ```
 
@@ -168,11 +126,12 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
    )
  NEAR/3
-   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal activit*" OR
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
     "accessib*" OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
     "financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR
     "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
-    "socio-economic* equal*" OR "socioeconomic* equal*"
+    "socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "economic* activit*" OR
+    "financ* activit*" OR "political* activit*"
    )
   )
  OR
@@ -181,7 +140,7 @@ TS=
     "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
     "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
     "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
-    "nullif*" OR "hinder*"
+    "nullif*" OR "hinder*" 
    )
  NEAR/3
    ("horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
@@ -190,23 +149,12 @@ TS=
     "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
     "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR
     "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"
-    OR "socioeconomic exclu*"
+    OR "socioeconomic exclu*" OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR
+    "political* inactivit*" OR "societal* inactivit*"
    )
   )
  )
-NOT "dna" NOT "*rna$" NOT "flood*" NOT "gene$" NOT "biodiversity" NOT "parasit*" NOT "electron$" NOT "aerosol$" NOT
-"pedomet*" NOT "molecul*" NOT "zeolite$" NOT "phospholipid*" NOT "medical student*" NOT "palliative care*" NOT
-"velocimetr*" NOT "career strateg*" NOT "clinical trial$" NOT "knowledge manage*" NOT "electr* motor*" NOT "particle$"
-NOT "radioactiv*" NOT "thermograph*" NOT "brain tumor$" NOT "laser*" NOT "exege*" NOT "venom*" NOT
-"entrepreneurial intention*" NOT "endoscop*" NOT "pyoderm*" NOT "flavonoid*" NOT "patient data" NOT "biomarker*" NOT
-"micro*" NOT "geolog*" NOT "caffeine" NOT "drone*" NOT "septal*" NOT "h$emorrhage*" NOT "antibod*"
-NOT "remote sens*" NOT "wind energ*" NOT "biomass*" NOT "factor productivity" NOT "trade agreement$" NOT
-"rheumatolog*" NOT "mitral*" NOT "diamond$" NOT "compost*" NOT "*cutaneous*" NOT "oncolog*" NOT "synth*" NOT "biomim*"
-NOT "antimon*" NOT "dispute resolut*" NOT "cellulos*" NOT "energ* industr*" NOT "chromat*" NOT "conductiv*" NOT
-"museum artifact$" NOT "energy manage*" NOT "naloxon*" NOT "power plant$" NOT "rescu* system*" NOT "blockchain$" NOT
-"enzym*" NOT "machine learn*" NOT "petal$" NOT "inertia*" NOT "nanowire$" NOT "hydrogen fuel*" NOT "isotop*" NOT
-"organoid*" NOT "fractal*" NOT "dosimetr*" NOT "energy storag*" NOT "firearm$" NOT "osmosis" NOT "deepfak*" NOT
-"model calibr*" NOT "python*" NOT "computer vision*" NOT "an$esthe*"
+NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*"
 )
 ```
 
