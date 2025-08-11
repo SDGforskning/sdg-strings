@@ -208,7 +208,7 @@ OR TS=
 
 This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The elements of the phrase are: *access/rights + resources + poor/vulnerable*.
 
-"security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example).
+"security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
 ```py
 TS=
@@ -216,7 +216,7 @@ TS=
   (
     ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
     OR "ownership" OR "right$"
-    OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control"
+    OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
     OR "affordab*" OR "pro poor"
     OR "empower*" OR "inclusion" OR "sharing"
     OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
@@ -225,7 +225,7 @@ TS=
     )      
     NEAR/5
         ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-        OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit"
+        OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
         OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
         )
   )
