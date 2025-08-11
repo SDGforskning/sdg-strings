@@ -155,8 +155,9 @@ TS=
    )
   )
  )
-NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "benz*" NOT "*lipid*"
-NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*"
+NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT "*lipid*"
+NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*" NOT
+"*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*"
 )
 ```
 
