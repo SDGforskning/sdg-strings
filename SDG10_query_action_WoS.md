@@ -123,7 +123,8 @@ TS=
 (((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
-    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*"
+    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
+    "establish*"
    )
  NEAR/3
    ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
@@ -155,9 +156,9 @@ TS=
    )
   )
  )
-NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT "*lipid*"
-NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*" NOT
-"*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*" NOT "*porous*" NOT "immuno*"
+NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT
+"*lipid*" NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*"
+NOT "*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*" NOT "*porous*" NOT "immuno*"
 )
 ```
 
