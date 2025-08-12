@@ -68,12 +68,13 @@ TS=
       OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
       "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
       OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
-      "out of poverty" OR "poverty reduc*" OR "reduc* poverty" OR "poverty alleviat*" OR "alleviat* poverty*" OR "pro-poor"
+      "out of poverty" OR "poverty reduc*" OR "reduc* poverty" OR "poverty alleviat*" OR "alleviat* poverty*" 
       )
       NEAR/5
       ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
       "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*"
+      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
+      "pro-poor* growth" OR "pro-poor* econom*"
       )
     )
     OR
