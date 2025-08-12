@@ -72,13 +72,13 @@ TS=
       )
       NEAR/5
       ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-      "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*"
+      "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*"
       )
     )
     OR
     (
-      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*")
+      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*")
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income segregat*" OR
