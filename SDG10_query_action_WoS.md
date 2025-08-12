@@ -71,7 +71,7 @@ TS=
       OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
       "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor"
       )
-      NEAR/5
+      NEAR/3
       ("income growth rate$" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
       "inclusive economic*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
       "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" 
@@ -86,7 +86,7 @@ TS=
       ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*")
       NEAR/3
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
-        OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*"
+        OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income segregat*"
         )
     )
   )
