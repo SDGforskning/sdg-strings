@@ -47,7 +47,7 @@ Acronyms used:
 >
 > 10.1.1 Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
 
-This target is interpreted as to cover research about how to raise and sustain the income growth and income growth rate of the poorest population.
+This target is interpreted as to cover research about how to raise and sustain the economic growth and income growth rates of the poorest population.
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>. The term "inclusive growth" is often used when talking about raising the income growth of the poorest population and poverty reduction. The idea is that economic growth should be broad-based, including all parts of a country's population, especially focusing on income growth through improved employment. This makes economic growth sustainable in the long run and narrows the gap between poor and non-poor households. <a href="#f29">(Ianchovichina & Lundström 2009.)</a>
 
