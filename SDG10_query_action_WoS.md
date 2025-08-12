@@ -64,7 +64,7 @@ TS=
   (
     (
       ("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
-      OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "develop$" OR "establish*"
+      OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "strengthen*" OR "develop$" OR "establish*"
       OR "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
       "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
       OR "raised" OR "offer*" OR "heighten*" OR "long-term" OR "long term" OR "anti-poverty" OR "antipoverty" OR
