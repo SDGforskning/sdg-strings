@@ -80,7 +80,7 @@ TS=
       "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
       OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
       "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
-      "economic* self relian*"
+      "economic* self relian*" OR "income convergenc*"
       )
     )
     OR
@@ -91,7 +91,7 @@ TS=
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR
-         "financ* barrier$" OR "economic* barrier$" OR "poverty gap"
+         "poverty gap"
         )
     )
   )
