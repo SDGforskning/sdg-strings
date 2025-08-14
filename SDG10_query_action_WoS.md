@@ -59,7 +59,7 @@ TS=
     ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
      "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
-     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimensional* poor*"
+     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*"
     )
   AND
   (
