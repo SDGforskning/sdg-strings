@@ -84,10 +84,11 @@ TS=
     )
     OR
     (
-      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*")
+      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*")
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
-        OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*"
+         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR
+         "financ* barrier$" OR "economic* barrier$"
         )
     )
   )
