@@ -59,7 +59,8 @@ TS=
     ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
      "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
-     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*"
+     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*" OR "multidimension* poverty"
+     OR "poor household$" OR "poor communit*"
     )
   AND
   (
@@ -70,7 +71,7 @@ TS=
       "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
       OR "raised" OR "offer*" OR "heighten*" OR "long term" OR "anti poverty" OR "antipoverty" OR "out of poverty" OR
       "poverty reduc*" OR "reduc* poverty" OR "poverty alleviat*" OR "alleviat* poverty" OR "gini index" OR
-      "fight* poverty"
+      "fight* poverty" OR "poverty lending" OR "eradicat* poverty"
       )
       NEAR/5
       ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
@@ -84,11 +85,13 @@ TS=
     )
     OR
     (
-      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*")
+      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
+       "eradicat*"
+      )
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR
-         "financ* barrier$" OR "economic* barrier$"
+         "financ* barrier$" OR "economic* barrier$" OR "poverty gap"
         )
     )
   )
