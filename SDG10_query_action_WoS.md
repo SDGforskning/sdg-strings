@@ -319,27 +319,26 @@ TS=
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR 
     "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "encourag*" OR "facilitat*" OR
     "ensur*" OR "attain*" OR "achiev*" OR "build* capacit*" OR "capacit* building$" OR "capacit* OR development*"
-    OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR
+    OR "establish*" OR "implement*" OR "adopt*" OR "raise" OR "raising" OR "raised" OR "boost*" OR
     "reforming" OR "reformed" OR "offer*" OR "heighten*"
    )
 NEAR/5
-   ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
-    "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
+   ("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR "surveillanc*" OR 
+    "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "reform*"  OR "supervis*" OR "validat*"
     OR "mandat*" OR "report*" OR "oversight*"
    )
   )
 AND
- (("global*" OR "international*"
+ (("global" OR "international" OR "globally" OR "internationally" OR "supranational*"
   ) 
 NEAR/5
   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
   )
 NEAR/5
-  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
-   "system$"
+  ("institution*" OR "market*" OR "bank*" OR "depositor*" OR "repositor*" OR
+   "system$" OR "organi$ation*"
   )
  )
-NOT "globalization" NOT "electric* sector*" NOT "wildlife trad*" NOT "food safe*"
 )
 ```
 
