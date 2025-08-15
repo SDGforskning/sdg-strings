@@ -339,6 +339,7 @@ NEAR/5
    "system$" OR "organi$ation*"
   )
  )
+NOT "emission*"
 )
 ```
 
