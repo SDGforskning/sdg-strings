@@ -332,7 +332,7 @@ AND
  (("global" OR "international" OR "globally" OR "internationally" OR "supranational*" OR "transnational*" OR "transatlantic*"
   ) 
 NEAR/5
-  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade" OR "trading"
+  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "trade" OR "trading"
   )
 NEAR/5
   ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
