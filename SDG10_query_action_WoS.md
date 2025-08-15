@@ -430,7 +430,7 @@ AND
 NEAR/5
   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade" OR "banking"
   )
-NEAR/3
+NEAR/5
   ("institution*" OR "market*" OR "bank$" OR "depositor*" OR "repositor*" OR "system$" OR "organi$ation*" OR "central bank*"
   )
  )
