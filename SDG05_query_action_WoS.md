@@ -410,10 +410,10 @@ OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
         )
         NEAR/5 
             (    
-                ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" OR "vote" 
-                OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" OR "management" 
-                OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" OR "member of parliament" 
-                OR "government" OR "mayor*" OR "quota"
+                ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
+                OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
+                OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+                OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR
                 (
                 ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
                 ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional"))
@@ -438,20 +438,49 @@ The basic structure is the opposite of phrase 1: _remove barriers_ + _women_ + _
 ```py
 TS=
 (
+    ("alleviat*" OR "avoid*" OR "combat*" OR "decreas*" OR "dismantl*" OR "eliminat*" OR "end" OR "ends" OR "ended" 
+    OR "ending" OR "eradicat*" OR "limit$" OR "limited" OR "limiting" OR "minimi*" OR "overcome" OR "prevent*" 
+    OR "reduc*" OR "remov*" OR "stop*")
+    NEAR/3
     (
-("avoid*" OR "combat*" OR "decreas*" OR "dismantl*" OR "eliminat*" OR "end" OR "ends" OR "ended" 
-OR "ending" OR "eradicat*" OR "overcome" OR "prevent*" OR "reduce" OR "reducing" OR "remov*" OR "stop*“
-
-NEAR/3
-("barrier*" OR "discriminat*" OR "exclusion" OR "inequal*" OR "unequal*" OR "inequit*" OR "unequit*" OR "glass ceiling" OR "gender divide" OR "gender gap*" OR "obstacle*" OR "unbalance*" OR "imbalance*" OR "diss (se 4.5) underrepresentation"
-)
-)
-("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
-    (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+        (
+    (
+    ("barrier*" OR "bias*" OR "discriminat*" OR "exclusion" OR "hindrance*" OR "hinder" OR "inequal*" OR "unequal*"
+    OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalance*" OR "imbalance*" OR "disparit*" OR "underrepresentation")
+        NEAR/5
+        (
+        ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
+        (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+        )
+        )  
     )
+        OR
+    ("glass ceiling*" OR "gender divide*" OR "gender gap*" OR "gender parity")
+    
+    )
+    
+        NEAR/5 
+            (    
+                ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
+                OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
+                OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+                OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR 
+                (
+                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
+                ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional"))
+                )   
+                )
+            )
+    AND
+    (
+    ("decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" OR "politics")
+    OR
+    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit" OR "business*" OR "corporate" OR "public" 
+    OR "economic" OR "civil" OR "society" OR "communit*")
+    )
+)
 
-NEAR/15
-("leadership...)
+
 ```
 
 
