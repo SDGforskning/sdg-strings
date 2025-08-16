@@ -385,11 +385,11 @@ Sources used for finding terms:
 * Indicator metadata 5.5.2 <a href="#f2li">(UN Statistics Division, 2025)</a> refers to ISCO-08, which lists useful terms to cover _managerial positions_ <a href="#f5li">(ILO, 2012)</a>.
 * Monitoring Gender Equality and the Empowerment of Women and Girls in the 2030 Agenda for Sustainable Development <a href="#f3li">(UN Women, 2015)</a>, for terms about leadership positions.
 
-This query consists of X phrases......
+This query consists of 3 phrases:
 
 #### Phrase 1
 
-The basic structure is _action_ + _women_ + _participation/leadership_ + _decision-making_ (test å koble decisionmaking kun til participate og ikke til ledelse?)
+The basic structure is _action_ + _women_ + _participation/leadership_ + _decisionmaking_
 ```py
 TS= 
 (
@@ -427,50 +427,52 @@ OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
     ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit" OR "business*" OR "corporate" OR "public" 
     OR "economic" OR "civil" OR "society" OR "communit*")
     )
-    )
-)
+ )
+
 
 ```
 
 #### Phrase 2
 
-The basic structure is the opposite of phrase 1: _remove barriers_ + _women_ + _participation/leadership_ 
+The basic structure is the opposite of phrase 1: _remove barriers_ + _women_ + _participation/leadership_ + _(decisionmaking?)_
 ```py
 TS=
 (
     ("alleviat*" OR "avoid*" OR "combat*" OR "decreas*" OR "dismantl*" OR "eliminat*" OR "end" OR "ends" OR "ended" 
     OR "ending" OR "eradicat*" OR "limit$" OR "limited" OR "limiting" OR "minimi*" OR "overcome" OR "prevent*" 
-    OR "reduc*" OR "remov*" OR "stop*")
+    OR "reduc*" OR "remov*" OR "stop*"
+    )
     NEAR/3
     (
         (
-    (
-    ("barrier*" OR "bias*" OR "discriminat*" OR "exclusion" OR "hindrance*" OR "hinder" OR "inequal*" OR "unequal*"
-    OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalance*" OR "imbalance*" OR "disparit*" OR "underrepresentation")
-        NEAR/5
-        (
-        ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
-        (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
-        )
-        )  
-    )
-        OR
-    ("glass ceiling*" OR "gender divide*" OR "gender gap*" OR "gender parity")
-    
-    )
-    
-        NEAR/5 
-            (    
-                ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
-                OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
-                OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
-                OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR 
-                (
-                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
-                ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional"))
-                )   
-                )
+            (
+            ("barrier*" OR "bias*" OR "discriminat*" OR "exclusion" OR "hindrance*" OR "hinder" OR "inequal*" 
+            OR "unequal*" OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalance*" OR "imbalance*" 
+            OR "disparit*" OR "underrepresentation")
+            NEAR/5
+            (
+            ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
+            (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
             )
+            )  
+            )
+            OR
+            ( "glass ceiling*" OR "gender divide*" OR "gender gap*" OR "gender disparity" OR "gender inequality" 
+            OR "gender imbalance " OR "gender inequity")
+         )
+    
+            NEAR/5 
+                (    
+                 ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
+                    OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
+                        OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+                    OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR 
+                    (
+                    ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
+                    ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional"))
+                    )   
+                )
+     )
     AND
     (
     ("decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" OR "politics")
