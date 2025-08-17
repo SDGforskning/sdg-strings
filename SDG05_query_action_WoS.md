@@ -394,13 +394,13 @@ The basic structure is _action_ + _women_ + _participation/leadership_ + _decisi
 TS= 
 (
 ("accelerat*" OR "achiev*" OR "adopt" OR "advance" OR "advancing" OR "attain*" OR "better" OR "build" 
-OR "develop*" OR "elevat*" OR "elevating" OR "empower*" OR "enhanc*" OR "ensur*"OR "expand" OR "expansion" 
-OR "establish*" OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher*" 
-OR "implement*" OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" 
+OR "develop*" OR "elevat*" OR "elevating" OR "empower*" OR "encourag*" OR "enhanc*" OR "ensur*" OR "expand" 
+OR "expansion" OR "establish*" OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" 
+OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" 
 OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" 
 OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
     NEAR/5    
-    (
+        (
         (
             ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans") 
             OR 
@@ -438,17 +438,17 @@ The basic structure is the opposite of phrase 1: _remove barriers_ + _women_ + _
 ```py
 TS=
 (
-    ("alleviat*" OR "avoid*" OR "combat*" OR "decreas*" OR "dismantl*" OR "eliminat*" OR "end" OR "ends" OR "ended" 
-    OR "ending" OR "eradicat*" OR "limit$" OR "limited" OR "limiting" OR "minimi*" OR "overcome" OR "prevent*" 
-    OR "reduc*" OR "remov*" OR "stop*"
+    ("alleviat*" OR "avoid*" OR "combat*" OR "counteract" OR "decreas*" OR "dismantl*" OR "eliminat*" OR "end" 
+    OR "ends" OR "ended" OR "ending" OR "eradicat*" OR "fight*" OR "limit$" OR "limited" OR "limiting" 
+    OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" OR "reduc*" OR "remov*" OR "stop*"
     )
     NEAR/3
     (
         (
             (
-            ("barrier*" OR "bias*" OR "discriminat*" OR "exclusion" OR "hindrance*" OR "hinder" OR "inequal*" 
-            OR "unequal*" OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalance*" OR "imbalance*" 
-            OR "disparit*" OR "underrepresentation")
+            ("barrier*" OR "bias*" OR "discriminat*" OR "divide*" OR "exclusion" OR "hindrance*" OR "hinder" 
+            OR "inequal*" OR "unequal*" OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalanc*" 
+            OR "imbalance*" OR "disparit*" OR "underrepresentation")
             NEAR/5
             (
             ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
@@ -465,7 +465,7 @@ TS=
                 (    
                  ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
                     OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
-                        OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+                    OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
                     OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR 
                     (
                     ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
@@ -695,15 +695,16 @@ The basic structure is _action_ + _use of technology_ + _empowerment of women_
 TS=
 (
      ("accelera*" OR "achiev*" OR "adopt*" OR "advance" OR "advancing" OR  "attain*" OR "better" OR "build*" 
-     OR "develop*" OR "elevat*" OR "empower*" OR "enhanc*" OR "ensur*" OR "establish*" OR "facilitat*" 
-     OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher" OR "implement*" OR "improv*"
-     OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" OR "plan" OR "planning" OR "plans" 
-     OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" OR "raise" OR "raising" 
+     OR "develop*" OR "consolidat*" OR "elevat*" OR "empower*" OR "encourag*" OR "enhanc*" OR "ensur*" 
+     OR "establish*" OR "expand" OR "expansion"  OR "facilitat*" OR "foster*" OR "framework$" 
+     OR "guarantee*" OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" 
+     OR "introduc*" OR "law$" OR "legislat*" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" 
+     OR "program" OR "programs" OR "promot*" OR "propos*" OR "raise" OR "raising" 
      OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
     )
 NEAR/5
     (
-    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "skills") 
+    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
         NEAR/5
     ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
     OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
@@ -711,15 +712,17 @@ NEAR/5
     OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
     OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
     )
-NEAR/5
-    (
-    "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
-    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
-    )
-NEAR/15    
-    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-    OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
-    OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
+NEAR/15
+        (
+            (
+            "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
+            (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+            )
+            NEAR/15    
+            ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
+            OR "emancipat*" OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" 
+            OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
+       )
 )
 
 ```
@@ -732,19 +735,20 @@ The basic structure is _action_ + _barriers_ + _use of technology_ + _empowermen
 TS=
 (
     (
-      ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limited" OR "limiting" OR "alleviat*"
-      OR "address*" OR "tackl*" OR "combat*" OR "fight*" OR "prevent*" OR "avoid*"
-      OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-      OR "improv*" OR "manag*" OR "counteract*" 
+      ("address*" OR "alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
+      OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR  "eradicat*" OR "fight*" OR "limit$" 
+      OR "limited" OR "limiting" OR "manag*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
+      OR "prevent*" OR "remov*" OR "stop*" OR "tackl*"   
       )
       NEAR/5
-        ("barrier$" OR "obstacle$" OR "inequit*" OR "unequit*" OR "inequal*" OR "unequal*" OR "discriminat*"
-        OR "divide*" OR "disempower*")
+        ("barrier$" OR "discriminat*" OR "disempower*" OR "disparit*" OR "divide*" OR "hinder" OR "hindranc*" 
+        OR "imbalance" OR "inequit*" OR "inequal*"  OR "obstacle*"  OR "unequit*" OR "unbalanc*" OR "unequal*" 
+        )
     )
     NEAR/5
 (
     (
-    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "skills") 
+    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
         NEAR/5
     ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
     OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
@@ -752,15 +756,15 @@ TS=
     OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
     OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
     )
-NEAR/5
+NEAR/15
     (
     "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
     (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
     )
 NEAR/15    
     ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-    OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
-    OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
+    OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength" 
+    OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
 )
 )
 ```
@@ -776,7 +780,7 @@ This target is interpreted to cover research about policies and legislation for 
 For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>.   
 
 
-This query consists of 2 phrases......
+This query consists of 2 phrases.
 
 
 
@@ -787,30 +791,37 @@ The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender 
 ```py
 TS=
 (
-    ("accelera*" OR "achiev*" OR "adopt" OR "advance$" OR "advancing" OR "architect*" OR "attain*" OR "better" 
-    OR "build*" OR "consolidat*" OR "design*" OR "develop$" OR "developing" OR "development" OR "elevat*" 
-    OR "empower*" OR "encourag*" OR "enhance" OR "ensur*" OR "establish*" OR "expan$" OR "expansion*" 
-    OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" OR "higher" OR "implement*"
-    OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" OR "maintain*" 
-    OR "more efficient" OR "plan" OR "plans" OR "planned" OR "planning" OR "policy" OR "policies" 
-    OR "program" OR "programs" OR "promot*" OR "propos*" OR "provid*" OR "raise" OR "raising" 
-    OR "reform$" OR "reforming" OR "reformed" OR "restor*" OR "scal* up" OR "secur*" OR "strateg*" 
-    OR "strengthen"  OR "support*" OR "sustain$" OR "sustaining" OR "upgrad*")  
+    ("accelera*" OR "accept*" OR "achiev*" OR "adopt" OR "advance$" OR "advancing" OR "agree*" OR "architect*" 
+    OR "attain*" OR "better" OR "build*" OR "confirm*" OR "consolidat*" OR "design*" OR "develop$" OR "developing" 
+    OR "development" OR "elevat*" OR "empower*" OR "encourag*" OR "enhance" OR "ensur*" OR "establish*" 
+    OR "expan$" OR "expansion*" OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" 
+    OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" 
+    OR "legislat*" OR "maintain*" OR "more efficient" OR "pass" OR "plan" OR "plans" OR "planned" 
+    OR "planning" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" 
+    OR "provid*" OR "raise" OR "raising" OR "reform$" OR "reforming" OR "reformed" OR "restor*" OR "scal* up" 
+    OR "secur*" OR "strateg*" OR "strengthen"  OR "support*" OR "sustain$" OR "sustaining" OR "upgrad*"
+    )  
          
-NEAR/5
-    ("action*" OR "agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" OR "law$" 
-    OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "practice$" OR "principle$" 
-    OR "procedure*" OR "program*" OR "regulat*" OR "right*" OR "rule" OR "rules" OR "strateg*" OR "treaty" OR "treaties") 
-NEAR/15
-(
-    "GEWE" OR 
-    (("gender*" OR "transgender*")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
-    OR
-    (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") NEAR/5 ("autonomy" OR "capacity*" 
-    OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-    OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" OR "personal strength" OR "political strenght" 
-    OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy"))
-)
+NEAR/3
+        (
+        ("action*" OR "agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+        OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "practice$" 
+        OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "right*" OR "rule" 
+        OR "rules" OR "strateg*" OR "treaty" OR "treaties") 
+        NEAR/5
+            (
+            ("GEWE") OR 
+            (("gender*" OR "transgender*")  NEAR/3 ("parit*" OR "disparit*" OR "equal*" OR "inequal*" 
+            OR "unequal*" OR "equit*" OR "inequit*" OR "unequit*" OR "balanc*" OR "imbalanc*" 
+            OR "unbalanc*" OR "diversity" OR "gap"))
+            OR
+            (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") NEAR/3 
+            ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
+            OR "emancipat*" OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" 
+            OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
+            OR "self confidence" OR "self efficacy"))
+            )
+        )
 )
 ```
 ## Phrase 2
