@@ -786,7 +786,7 @@ This query consists of 2 phrases.
 
 ## Phrase 1
 
-The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender equality/empowerment of women_  
+The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender (in)equality/empowerment of women_  
 
 ```py
 TS=
@@ -813,7 +813,7 @@ NEAR/3
             ("GEWE") OR 
             (("gender*" OR "transgender*")  NEAR/3 ("parit*" OR "disparit*" OR "equal*" OR "inequal*" 
             OR "unequal*" OR "equit*" OR "inequit*" OR "unequit*" OR "balanc*" OR "imbalanc*" 
-            OR "unbalanc*" OR "diversity" OR "gap"))
+            OR "unbalanc*" OR "discriminat*" OR "diversity" OR "gap" OR "divide*" OR "bias"))
             OR
             (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") NEAR/3 
             ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
@@ -829,26 +829,27 @@ NEAR/3
 The basic structure is _action (decrease)_ + _discriminatory policies/legislation_  
 
 ```py
-TS=
-(
-    (   
-        ("alleviat*" OR "combat*" OR "decreas*" OR "eliminat*" OR "end" OR "ending" OR "eradicat*" OR "escap*" 
-        OR "fight*" OR "lift out of" OR "lifting out of" OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" 
-        OR "reduc*" OR "relief" OR "tackl*"
+TS=(
+       
+        ("alleviat*" OR "combat*" OR "decreas*" OR "eliminat*" OR "end" OR "ending" OR "eradicat*" 
+        OR "fight*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" 
+        OR "reduc*" OR "remov*" 
         )     
     NEAR/5
         (
-            ("action*" OR "agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
-            OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "practice$" 
-            OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "right*" OR "rule" OR "rules" 
-            OR "strateg*" OR "treaty" OR "treaties") 
+            ("agreement$" OR "framework$" OR "governance" OR "law$" OR "legal*" OR "legislat*" OR "plan"  
+            OR "policy" OR "policies" OR "principle$" OR "procedure*" OR  "regulat*" OR "right*" OR "rule" OR "rules" OR "strateg*" OR "treaty" OR "treaties") 
             NEAR/5
             (
-                ("bias*" OR "discriminat*" OR "dispar*" OR "exclud*" OR "exclusion" OR "impair*" OR "limit*" 
-                OR "nullif*" OR "reduc*" OR "violat*")
-                NEAR/5
+                ("bias*" OR "discriminat*" OR "dispar*" OR "parit*" OR "gap" OR "exclud*" OR "exclusion" 
+                OR "impair*" OR   "violat*" OR "equal*" OR "inequal*" OR "unequal*" OR "equit*" OR "inequit*"
+                OR "unequit*" OR "balanc*" OR "imbalanc*"   OR "unbalanc*" OR "diversity" OR "gap" OR "divide*")
+                NEAR/3
                 ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$" OR "gender" OR "transgender*")
             )
+        )
+)
+
 ```
 
 ## Phrase 3
@@ -875,7 +876,7 @@ NEAR/10
         NEAR/5 
         ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
         OR "emancipat*" OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" 
-        OR "personal strength" OR "political strenght" OR "power" OR "right*" OR "self concept" 
+        OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
         OR "self confidence" OR "self efficacy"))
     )
 )
