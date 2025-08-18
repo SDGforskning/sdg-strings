@@ -120,12 +120,12 @@ TS=
     OR "domestic task$" OR "domestic chore$" OR "domestic duties" OR "domestic responsibilit*" 
     OR "domestic division of labo$r"
     OR
-        (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data") 
+        (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR ("gender*" NEAR/3 "division")) 
         NEAR/15 ("care" OR "carer$" OR "caring")
         )
     OR
         (
-            ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible labo$r" OR "division of labo$r")
+            ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" OR "division of" OR ("gender*" NEAR/3 "division"))
             NEAR/15 
                 ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
                 OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"
@@ -141,7 +141,7 @@ TS=
         )
         OR
         (
-            ("unpaid" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
+            ("unpaid" OR "invisible" OR "women*" OR "woman" OR "girl$" OR "mother*" OR "gender*")
             NEAR/15
                 (
                     (("collection" OR "collecting" OR "fetch*") NEAR/5 ("fuel" OR "firewood" OR "drinking water" OR "well water" OR "clean water" OR "fetching water"))
