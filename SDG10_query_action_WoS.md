@@ -193,8 +193,10 @@ OR
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
-   "bias$ed"
+   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclus*" OR (("accessib*" NEAR ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed"
+     )
+    )
+   )
   )
  )
 )
