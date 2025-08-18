@@ -780,7 +780,7 @@ This target is interpreted to cover research about policies and legislation for 
 For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>.   
 
 
-This query consists of 2 phrases.
+This query consists of 2 phrases:
 
 
 
@@ -850,46 +850,6 @@ TS=(
         )
 )
 
-```
-
-## Phrase 3
-The basic structure is _systems for tracking/publishing allocations_  + _gender equality/empowerment of women_ (ev ha denne bare på Topic?)
-```py
-TS=
-(
-    (
-        ("assess*" OR "control*" OR "disclos*" OR "evaluat*" OR "examin*" OR "govern$" OR "legislat*" 
-        OR "make public"  OR "manage$" OR "mandat*" OR "measur*" OR "monitor*" OR "publish*" OR "register*" 
-        OR "registration" OR "regulat*" OR "secure$" OR "securing"  OR "supervis*" OR "surveillanc*" 
-        OR "system$" OR "track*" OR "transparenc*" OR "validat*" 
-        )
-            NEAR/5
-            ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "assignment*" OR "budget*" 
-            OR "disbursement*" OR "distribution" OR "expenditure*" OR "funding*" OR "grant*" OR "portion*" 
-            OR "provision*" OR "quota*" OR "~~resource*~~" OR "share*" OR "spending*" )
-    )
-NEAR/10
-    ("GEWE" OR 
-    (("gender*" OR "transgender*")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
-    OR
-    (("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
-        NEAR/5 
-        ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
-        OR "emancipat*" OR "*empower*" OR "freedom" OR "independence"  OR "personal priorities" 
-        OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
-        OR "self confidence" OR "self efficacy"))
-    )
-)
-
-(få inn gender-budgeting også:
-TS=(
-("assess*" OR "control*" OR "disclos*" OR "evaluat*" OR "examin*" OR "govern$" OR "legislat*" OR "manage$" 
-        OR "mandat*" OR "measur*" OR "monitor*" OR "make public" OR "publish*" OR "register*" OR "registration" 
-        OR "regulat*" OR "secure$" OR "securing"  OR "supervis*" OR "surveillanc*" OR "system$" OR "track*" 
-        OR "transparenc*" OR "validat*" 
-        )
-NEAR/5 ("gender-responsive budgeting" OR "gender budgeting" OR "gender-responsive allocation")
-))
 ```
 
 ## 4. Contributions
