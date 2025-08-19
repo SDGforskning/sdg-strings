@@ -193,7 +193,7 @@ OR
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclus*" OR "hate speech" OR "stereotyp*" OR "ageis$" OR (("accessib*" NEAR ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
+   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$" OR (("accessib*" NEAR ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
      ) 
     )
    )
@@ -213,7 +213,7 @@ TS=
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
+    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclusion" OR "bias" OR
     "bias$ed"
    )
 NEAR/5
