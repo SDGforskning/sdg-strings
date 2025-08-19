@@ -177,9 +177,9 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR actio
 
 ```py
 TS=
-(((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
+((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
    "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*"
- )
+  )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
@@ -193,24 +193,26 @@ OR
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$" OR (("accessib*" OR ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled" OR "disabilities" OR "disability" OR "displaced*" OR "handicap*" OR "mental illness*"
-    OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$" OR "individual*") NEAR/3 ("HIV" OR "AIDS" OR "trans" OR "older" OR "old" OR "cancer*"))
-    OR "elderly" OR "elders" OR "pensioners" OR "seniors" OR "retired" OR "unemployed" OR "homeless" OR "veteran*" OR "age related"
-    OR "women" OR "woman" OR "female" OR "girls" OR "girl" OR "pregnant" OR "pregnancy" OR "maternity" OR "menstrua*"
-    OR "*LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR "nonbinary" 
-    OR "queer" OR "intersex" OR "two-spirit" OR OR "gender$"
-    OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*"
-    OR "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal"
-    OR "social*" OR "self" OR "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR "*demograph*" OR "cognitive" OR "consumer$" OR 
-    ) NEAR ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
+   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$" OR
+   (("accessib*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR
+     "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+     OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled" OR "disabilities" OR "disability" OR "displaced*" OR "handicap*" OR "mental illness*"
+     OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$" OR "individual*") NEAR/3 ("HIV" OR "AIDS" OR "trans" OR "older" OR "old" OR "cancer*"))
+     OR "elderly" OR "elders" OR "pensioners" OR "seniors" OR "retired" OR "unemployed" OR "homeless" OR "veteran*" OR "age related"
+     OR "women" OR "woman" OR "female" OR "girls" OR "girl" OR "pregnant" OR "pregnancy" OR "maternity" OR "menstrua*"
+     OR "*LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR "nonbinary" 
+     OR "queer" OR "intersex" OR "two-spirit" OR "gender$"
+     OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*"
+     OR "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal"
+     OR "social*" OR "self" OR "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR "*demograph*" OR "cognitive" OR             "consumer$"
+    )
+NEAR
+("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
      ) 
     )
    )
   )
- )
-) NOT "exclusion restriction*" NOT "exclusion limit*"
+NOT "exclusion restriction*" NOT "exclusion limit*"
 )
 ```
 
