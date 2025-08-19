@@ -212,7 +212,7 @@ NEAR
     )
    )
   )
-NOT "exclusion restriction*" NOT "exclusion limit*"
+NOT "exclusion restriction*" NOT "exclusion limit*" NOT "Dark Matter" NOT "quantum" NOT "ion*" NOT "stereotyp* behav*" NOT "thermodynamic*"
 )
 ```
 
