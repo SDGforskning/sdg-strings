@@ -199,7 +199,7 @@ NEAR/3
    )
   )
  )
-) NOT "exclusion restriction*"
+) NOT "exclusion restriction*" NOT "exclusion limit*"
 )
 ```
 
