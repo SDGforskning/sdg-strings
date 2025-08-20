@@ -178,7 +178,8 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR actio
 ```py
 TS=
 ((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
-   "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*" OR "foster*"
+   "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*" OR "foster*" OR "enhance" OR
+   "enhances" OR "enhanced" OR "enhancing"
   )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -221,7 +222,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 
 ```py
 TS=
-(((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
    "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*" OR "nullif*" OR
    "hinder*"
   )
@@ -237,13 +238,12 @@ NEAR/5
    )
   )
  )
-NOT "obstacle$ avoid*"
-)
 OR 
- (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient*" OR 
-   "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR
-   "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR
-   "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR "heighten*"
+ (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing" OR
+   "better$" OR "more efficient*" OR "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR
+   "develop$" OR "developing" OR "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR
+   "implement*" OR "adopt*" OR "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR
+   "offer*" OR "heighten*"
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -256,6 +256,7 @@ NEAR/5
    )
   )
  )
+NOT "obstacle$ avoid*" NOT "macrophag*"
 )
 ```
 
@@ -288,11 +289,11 @@ NEAR/5
   )
  )
 AND 
- ((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
-    OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
-    "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR
-    "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$" OR
-    "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised" OR "heighten*"
+ ((("increas*" OR "strengthen*" OR "improv*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing" OR "better$" OR
+    "more efficient" OR "more effectiv*" OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR
+    "advance$" OR "advancing" OR "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR
+    "achiev*" OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR
+    "sustain$" OR "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised" OR "heighten*"
    )
 NEAR/5
    ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
