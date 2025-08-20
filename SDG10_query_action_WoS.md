@@ -193,7 +193,7 @@ OR
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$"
+   OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$"
    OR (("accessib*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR
    "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR
    "children" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
