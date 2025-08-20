@@ -388,12 +388,32 @@ TS=
 
 #### Phrase 2
 
-The basic structure is _systems for tracking/publishing allocations_  
+The basic structure is _systems/policies for allocations for gender equality_  
 
 ```py
 TS=
 (
+    ("gender responsive budgeting" OR "gender budgeting") 
+        OR  
+    (
+        (   
+        ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" OR "monitor*" 
+        OR "program*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
+        OR "rule" OR "rules" OR "strate*" OR "tool*" OR "track*" OR "transparen*") 
+            NEAR/3 ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
+            OR "disbursement*" OR "expenditur*")
+        )   
+    NEAR/5
+    (    
+    ("GEWE") OR 
+    ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
+        NEAR/3 
+        ("*balanc*" OR "divide*" OR "*empower*" OR "*equal*" OR "*equit*" OR "gap" OR "*parit*")
+    )
+    )
+NOT "transplant*"
 )
+
 ```
 
 ## 4. Contributions
