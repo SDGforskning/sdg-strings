@@ -279,7 +279,7 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 
 ```py
 TS=
-((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
+(((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
     "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*" OR
     "reform$" OR "reforming" OR "reformed"
   )
@@ -302,7 +302,7 @@ NEAR/5
    )
   )
 OR
- ( (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+ (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
     "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
     OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
@@ -314,9 +314,9 @@ NEAR/5
     "bias$ed"
    )
   )
-NOT "obstacle$ avoid*"
 )
  )
+NOT "obstacle$ avoid*" NOT "avoid* obstacle$"
 )
 ```
 
