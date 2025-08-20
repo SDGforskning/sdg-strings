@@ -310,7 +310,7 @@ OR
    )
 NEAR/5
    ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclusion" OR "bias" OR
+    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "obstacle$" OR "unequal*" OR "exclusion" OR "bias" OR
     "bias$ed"
    )
   )
