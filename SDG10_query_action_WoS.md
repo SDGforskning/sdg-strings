@@ -213,7 +213,7 @@ NEAR
     )
    )
   )
-NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT "stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*"
+NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT "stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" 
 )
 ```
 
@@ -312,7 +312,7 @@ NEAR/5
     "bias$ed"
    )
   )
-NOT "obstacle$ avoid*"
+NOT "obstacle$ avoid*" NOT "macrophage*"
 )
  )
 )
