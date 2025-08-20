@@ -279,7 +279,7 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 
 ```py
 TS=
-(((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
+((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
     "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*" OR
     "reform$" OR "reforming" OR "reformed"
   )
@@ -310,14 +310,11 @@ OR
    )
 NEAR/5
    ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "obstacle$" OR "unequal*" OR "exclusion" OR "bias" OR
-    "bias$ed"
+    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "bias" OR "bias$ed"
    )
   )
 )
  )
-NOT "obstacle$ avoid*" NOT "avoid* obstacle$"
-)
 ```
 
 ### Target 10.5
