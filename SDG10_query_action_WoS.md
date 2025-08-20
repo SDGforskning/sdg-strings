@@ -189,8 +189,9 @@ NEAR/3
 OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
-   "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist*" OR
-   "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
+   "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
+   OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
+   "hinder*"
   )
 NEAR/3
   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -207,7 +208,8 @@ NEAR/3
      "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*"
      OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR "indigenous" OR "protected group$"
      OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR "health care" OR "healthcare" OR
-     "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$"
+     "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR "*demograph*" OR "democrac*" OR "cognitive" OR
+     "consumer$"
     )
 NEAR
     ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
@@ -216,7 +218,8 @@ NEAR
   )
  )
 )
-NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT "stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" 
+NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT "stereotyp* behav*" NOT
+"thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" 
 )
 ```
 
@@ -225,7 +228,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 ```py
 TS=
 (((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "dismantl*" OR "nullif*" OR
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR "resisting OR "prohibit*" OR "dismantl*" OR "nullif*" OR
    "hinder*"
   )
 NEAR
@@ -307,8 +310,8 @@ OR
  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
     "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
-    OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
-    "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
+    OR "halt*" OR "resist" OR "resists" OR "resisting OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR
+    "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
    )
 NEAR/5
    ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
