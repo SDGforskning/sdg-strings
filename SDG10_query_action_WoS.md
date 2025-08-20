@@ -312,7 +312,7 @@ NEAR/5
     "bias$ed"
    )
   )
-NOT "obstacle$ avoid*" NOT "macrophage*"
+NOT "obstacle$ avoid*"
 )
  )
 )
