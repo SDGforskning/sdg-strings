@@ -199,7 +199,7 @@ NEAR/3
    "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR
    "children" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
    OR "disabilities" OR "disability" OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$"
-   OR "adult$" OR "men" OR "patient$" OR "individual*") NEAR/3 ("HIV" OR "AIDS" OR "trans" OR "older" OR "old" OR
+   OR "adult$" OR "men" OR "patient$" OR "individual* OR "adolescent*") NEAR/3 ("HIV" OR "AIDS" OR "trans" OR "older" OR "old" OR
    "cancer*")) OR "elderly" OR "elders" OR "pensioners" OR "seniors" OR "retired" OR "unemployed" OR "homeless" OR
    "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girls" OR "girl" OR "pregnant" OR "pregnancy" OR
    "maternity" OR "menstrua*" OR "*LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR
