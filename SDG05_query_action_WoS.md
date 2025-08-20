@@ -69,10 +69,16 @@ TS=
      ) 
         NEAR/5 
         ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$" OR "female$" OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "transgender*" OR
-            ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+        OR "gender*"
+        OR "transgender*"
+        OR
+            ("sex"
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
             )
         )     
 )
@@ -95,10 +101,17 @@ TS=
         (
           ("inclusion*" OR "includ*" OR "anti-discriminat*" OR "non-discriminat*" OR "equality" OR "equal rights")
     NEAR/5
-          ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR
-          "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*" OR "maternity" OR "maternal"
-          OR "gender*" OR "transgender*" OR
-          ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+          ("*women" OR "*woman" OR "*womens" OR "*womans"
+          OR "girl$"
+          OR "female$"
+          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+          OR wife" OR "wives" OR "girlfriend$"
+          OR "pregnan*" OR "maternity" OR "maternal"
+          OR "gender*" OR "transgender*"
+          OR
+            ("sex*"
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+            )
           )
         )
   )  
@@ -124,10 +137,18 @@ TS=
             (             
                ("equality*" OR "discriminat*" OR "rights" OR "exclusion" OR "exclud*" OR "inclusion" OR "includ*" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*")
                 NEAR/5 
-                ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$" OR
-                 "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "pregnan*" OR "maternity" OR "maternal"
-                 OR "gender*" OR "transgender*" OR
-                ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+                ("*women" OR "*woman" OR "*womens" OR "*womans"
+                OR "girl$"
+                OR "female$"
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal"
+                OR "gender*"
+                OR "transgender*"
+                OR
+                  ("sex*"
+                  NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+                  )
                 )
             )
          )   
