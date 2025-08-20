@@ -201,12 +201,11 @@ NEAR/3
    OR "disabilities" OR "disability" OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$"
    OR "adult$" OR "men" OR "patient$" OR "individual*") NEAR/3 ("HIV" OR "AIDS" OR "trans" OR "older" OR "old" OR
    "cancer*")) OR "elderly" OR "elders" OR "pensioners" OR "seniors" OR "retired" OR "unemployed" OR "homeless" OR
-   "veteran*" OR "age related" OR "women" OR "woman" OR "female" OR "girls" OR "girl" OR "pregnant" OR "pregnancy" OR
+   "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girls" OR "girl" OR "pregnant" OR "pregnancy" OR
    "maternity" OR "menstrua*" OR "*LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR
    "nonbinary" OR "queer" OR "intersex" OR "two-spirit" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR
-   "immigrant$" OR "asylum*" OR "racial*" OR "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR
-   "interpersonal" OR "social*" OR "self" OR "health care" OR "healthcare" OR "health personnel" OR "health service*"
-   OR "nurs*" OR "emotional*" OR "*demograph*" OR "cognitive" OR "consumer$"
+   "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR "health care" OR "healthcare" OR "health personnel" OR "health service*"
+   OR "nurs*" OR "emotional*" OR "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$"
     )
 NEAR
 ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
