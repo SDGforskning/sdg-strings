@@ -35,7 +35,7 @@ Acronyms used:
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- ending discrimination against women and girls
+- ending discrimination against women and girls, including by improving women's rights
 - strengthening and securing legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
 
 We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
@@ -48,7 +48,7 @@ This query consist of x phrases.
 
 #### Phrase 1 
 
-This phrase is about ending discrimination against women and girls. The general structure is action + discrimination + women & girls
+This phrase is about ending discrimination against women and girls. The general structure is action + discrimination/rights + women & girls
 
 ```py
 TS=
@@ -87,7 +87,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is action + anti-discrimination + women & girls
+This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is action + anti-discrimination/rights + women & girls
 
 ```py
 TS=
