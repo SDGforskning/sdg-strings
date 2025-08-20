@@ -178,7 +178,7 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR actio
 ```py
 TS=
 ((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
-   "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*"
+   "strengthen*" OR "stabili*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*" OR "foster*"
   )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
