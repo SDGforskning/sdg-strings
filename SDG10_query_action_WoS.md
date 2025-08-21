@@ -209,10 +209,10 @@ NEAR/3
      "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR
      "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR
      "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR
-     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$" OR "addict*"
+     "*demograph*" OR "democrac*" OR "consumer$" OR "addict*"
     )
 NEAR
-    ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
+    ("barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases"
     ) 
    )
   )
@@ -329,7 +329,7 @@ NEAR/5
      "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR
      "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR
      "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR
-     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$" OR "addict*"
+     "*demograph*" OR "democrac*" OR "consumer$" OR "addict*"
     )
 NEAR
     ("bias" OR "bias$ed"
