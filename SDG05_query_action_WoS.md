@@ -60,7 +60,7 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/5
-            ("discriminat*" OR "exclusion" OR "exclud*" OR "dispar*" OR "bias*") OR
+            ("discriminat*" OR "exclusion" OR "dispar*" OR "bias*") OR
              (
                 ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
                 NEAR/5
