@@ -201,15 +201,15 @@ NEAR/3
      "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR
      "child*" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
      OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$"
-     OR "individual*" OR "adolescent*" OR "child*") NEAR/3 ("disabilities" OR "disability" OR "HIV" OR "AIDS" OR "trans"
-     OR "older" OR "old" OR "cancer*" OR "autis*" OR "disorder$" OR "chronic" OR "chronically" OR "neurodiverg*")) OR
-     "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless" OR "veteran*" OR
-     "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "pregnan*" OR "matern*" OR "menstrua*" OR "*LGBT*"
-     OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$"
-     OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-     OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal*"
-     OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR 
-     "*demograph*" OR "addict*"
+     OR "individual*" OR "adolescent*" OR "child*") NEAR/3 ("impairment" OR "disabilities" OR "disability" OR "HIV" OR
+     "AIDS" OR "trans" OR "older" OR "old" OR "cancer*" OR "autis*" OR "disorder$" OR "chronic" OR "chronically" OR
+     "neurodiverg*")) OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"
+     OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "pregnan*" OR "matern*" OR "menstrua*"
+     OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR
+     "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR
+     "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR
+     "interpersonal*" OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR "*demograph*" OR
+     "addict*"
     )
 NEAR
     ("barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases"
@@ -319,17 +319,17 @@ NEAR/5
    "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$" OR
    (("accessib*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR
      "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR
-     "children" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
+     "child*" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
      OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$"
-     OR "individual*" OR "adolescent*") NEAR/3 ("disabilities" OR "disability" OR "HIV" OR "AIDS" OR "trans" OR "older"
-     OR "old" OR "cancer*" OR "autis*" OR "disorder$")) OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR
-     "retired" OR "unemployed" OR "homeless" OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR
-     "girl*" OR "pregnan*" OR "matern*" OR "menstrua*" OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR
-     "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "two-spirit$" OR
-     "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR
-     "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal*" OR "social*" OR "self" OR
-     "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR
-     "*demograph*" OR "democrac*" OR "addict*"
+     OR "individual*" OR "adolescent*" OR "child*") NEAR/3 ("impairment" OR "disabilities" OR "disability" OR "HIV" OR
+     "AIDS" OR "trans" OR "older" OR "old" OR "cancer*" OR "autis*" OR "disorder$" OR "chronic" OR "chronically" OR
+     "neurodiverg*")) OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"
+     OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "pregnan*" OR "matern*" OR "menstrua*"
+     OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR
+     "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR
+     "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR
+     "interpersonal*" OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR "*demograph*" OR
+     "addict*"
     )
 NEAR
     ("bias" OR "bias$ed"
