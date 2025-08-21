@@ -64,7 +64,7 @@ TS=
              (
                 ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
                 NEAR/5
-                ("human right*" OR "women's right*" OR "freedom*")
+                ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "right$")
             )
      ) 
         NEAR/5 
