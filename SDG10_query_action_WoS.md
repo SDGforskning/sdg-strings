@@ -208,7 +208,7 @@ NEAR/3
      OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$"
      OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
      OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal*"
-     OR "social*" OR "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR 
+     OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR 
      "*demograph*" OR "addict*"
     )
 NEAR
