@@ -209,7 +209,7 @@ NEAR/3
      "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR
      "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR
      "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR
-     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$"
+     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$" OR "addict*"
     )
 NEAR
     ("barrier$" OR "obstacle$" OR  "bias" OR "bias$ed" OR "biases"
@@ -228,8 +228,8 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action
 ```py
 TS=
 (((("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
-   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR "resisting OR "prohibit*" OR "dismantl*" OR "nullif*" OR
-   "hinder*"
+   "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR "resisting OR "prohibit*" OR "dismantl*" OR
+   "nullif*" OR "hinder*"
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
@@ -329,7 +329,7 @@ NEAR/5
      "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR
      "indigenous" OR "protected group$" OR "mental health" OR "intergroup" OR "interpersonal" OR "social*" OR "self" OR
      "health care" OR "healthcare" OR "health personnel" OR "health service*" OR "nurs*" OR "emotional*" OR
-     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$"
+     "*demograph*" OR "democrac*" OR "cognitive" OR "consumer$" OR "addict*"
     )
 NEAR
     ("bias" OR "bias$ed"
