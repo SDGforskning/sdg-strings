@@ -485,34 +485,6 @@ TS=
 
 ```
 
-
-#### Phrase 3
-
-The basic structure is _action_ + _women_ + _proportion of seats/positions_ + _governments/leadership_ (kanskje ha dette punktet bare i TOPIC? - og altså ikke ha Action-term, jfr review-møte:)
-
-```py
-TS=
-(
-    ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
-    (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
-    )
-        NEAR/5
-    (
-        ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*" OR "quota")
-        NEAR/3
-        (
-            ("minister*" OR "mp" OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
-            "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*")
-            OR
-            (
-                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
-                NEAR/5 ("executive" OR "officer*" OR "official*" OR "position*" OR "member*")
-            )
-        )
-    )
-)
-```
-
 ### Target 5.6
 
 > **5.6 Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with the Programme of Action of the International Conference on Population and Development and the Beijing Platform for Action and the outcome documents of their review conferences**
