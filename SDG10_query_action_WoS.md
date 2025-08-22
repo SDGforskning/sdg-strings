@@ -221,7 +221,7 @@ NEAR
  )
 )
 NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT
-"stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" 
+"stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" NOT "glyco*"
 )
 ```
 
