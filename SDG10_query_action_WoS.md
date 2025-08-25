@@ -1,4 +1,4 @@
-# Search query for SDG 10 - Reduced inequalities, Bergen action-approach.
+ensur# Search query for SDG 10 - Reduced inequalities, Bergen action-approach.
 
 Reduce inequality within and among countries
 
@@ -177,13 +177,13 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR actio
 
 ```py
 TS=
-(((("ensure" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
+(((("ensur*" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
    "strengthen*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*" OR "foster*" OR "enhance" OR
    "enhances" OR "enhanced" OR "enhancing" OR "endors*"
   )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" OR
+   "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" OR
    (("social*" OR "ethn*" OR "racial*") NEAR/3 "toleran*")
   )
  )
