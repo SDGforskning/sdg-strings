@@ -290,11 +290,11 @@ TS=
 ((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
     "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*" OR
     "reform$" OR "reforming" OR "reformed"
-  )
+   )
 NEAR/5
   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
    "treaties" OR "strategy" OR "strategies" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
-   "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*"
+   "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*" OR "protocol*"
   )
  )
 AND 
@@ -341,6 +341,7 @@ NEAR
   )
  )
 )
+)
 ```
 
 ### Target 10.5
@@ -367,7 +368,7 @@ TS=
 NEAR/5
    ("manage$" OR "managing" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR "surveillanc*" OR 
     "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "reform*"  OR "supervis*" OR "validat*"
-    OR "mandat*" OR "report*" OR "oversight*"
+    OR "mandat*" OR "report*" OR "oversight*" OR "ensurance"
    )
   )
 AND
