@@ -96,10 +96,11 @@ TS=
   OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing"
   OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*")
     NEAR/5
-    ("women's rights" OR "rights of women")
+    ("women's rights" OR "*women right" OR "rights of women" OR "gender inclusion" OR ("inclusion" NEAR/5 "gender") OR "gender equality" OR "gender equity")
     OR
       (
-      ("human right*" OR "women's rights" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "inclusion*" OR "anti-discriminat*" OR "non-discriminat*" OR "equality" OR "equal rights")
+      ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equality" OR "equal rights"
+      OR "financial exclusion" OR "economic exclusion" OR "social inclusion" OR "digital inclusion" OR "women's inclusion")
        NEAR/5
           ("*women" OR "*woman" OR "*womens" OR "*womans"
           OR "girl$"
