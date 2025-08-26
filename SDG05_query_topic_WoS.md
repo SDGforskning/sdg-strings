@@ -52,12 +52,33 @@ TS=
 ```
 #### Phrase 2
 
-The general structure is _ _ + _ _
+This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is _anti-discrimination/rights_ + _women & girls_
 
 ```py
 TS=
 (
-
+ ("women's rights" OR "rights of women" OR "gender inclusion" OR ("inclusion" NEAR/5 "gender")
+    OR "gender equalit*" OR "gender equit*" OR "gender equal*")
+    OR
+      (
+        ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR
+        "non-discriminat*" OR "equalit*" OR "equal rights" OR "financial inclusion" OR "economic inclusion" OR
+        "social inclusion" OR "digital inclusion" OR "women's inclusion")
+        NEAR/5
+          ("*women" OR "*woman" OR "*womens" OR "*womans"
+          OR "girl$"
+          OR "female$"
+          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+          OR "wife" OR "wives" OR "girlfriend$"
+          OR "pregnan*" OR "maternity" OR "maternal"
+          OR "gender*" OR "transgender*"
+          OR
+            ("sex*"
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+            OR "bias*" OR "discriminat*" OR "violence")
+            )
+          )
+        )  
 )
 ```
 
