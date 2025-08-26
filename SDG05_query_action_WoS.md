@@ -35,16 +35,13 @@ Acronyms used:
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- ending discrimination against women and girls, including by improving women's rights
+- ending discrimination against women and girls, including by improving women's rights and reducing gender-based inequality
 - strengthening and securing legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
 
 We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
 https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
-Sex/gender?
-
-
-This query consist of x phrases. 
+This query consist of 3 phrases. 
 
 #### Phrase 1 
 
@@ -60,14 +57,17 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/5
-            ("discriminat*" OR "exclusion" OR "dispar*" OR "bias*") OR
+            ("discriminat*" OR "dispar*" OR "bias*" OR "gender exclusion" OR ("exclusion" NEAR/5 "gender")
+            OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion"
+            OR "cultural exclusion" OR "digital exclusion" OR "gender inequalit*" OR "gender inequit*")
+            OR
              (
                 ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
                 NEAR/5
                 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
             )
      ) 
-        NEAR/5 
+  NEAR/5 
         ("*women" OR "*woman" OR "*womens" OR "*womans"
         OR "girl$"
         OR "female$"
