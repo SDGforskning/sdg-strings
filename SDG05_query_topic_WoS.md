@@ -42,7 +42,7 @@ This query consists of three phrases
 
 #### Phrase 1
 
-The basic structure is _ _ + _ _
+The general structure is _ _ + _ _
 
 ```py
 TS=
@@ -52,7 +52,7 @@ TS=
 ```
 #### Phrase 2
 
-The basic structure is _ _ + _ _
+The general structure is _ _ + _ _
 
 ```py
 TS=
@@ -62,13 +62,42 @@ TS=
 ```
 
 #### Phrase 3
-The basic structure is _ _ + _ _
+The general structure is _legal frameworks_ + _equality/non-discrimination_ + _women & girls_
 
 ```py
 TS=
 (
-
+    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
+     "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+            NEAR/5
+            (             
+              ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" ))
+              OR
+                (
+                  ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
+                  OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"
+                  OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion"
+                  OR "*women's inclusion")
+                  NEAR/5 
+                 ("*women" OR "*woman" OR "*womens" OR "*womans"
+                   OR "girl$"
+                   OR "female$"
+                   OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                   OR "wife" OR "wives" OR "girlfriend$"
+                   OR "pregnan*" OR "maternity" OR "maternal"
+                   OR "gender*"
+                   OR "transgender*"
+                   OR
+                     ("sex*"
+                      NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+                      OR "bias*" OR "discriminat*" OR "violence")
+                      )
+                   )
+                )
+            )
 )
+           
+  
 ```
 
 ### Target 5.2
