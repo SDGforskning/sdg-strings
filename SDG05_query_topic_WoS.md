@@ -62,7 +62,7 @@ TS=
 ```
 
 #### Phrase 3
-The general structure is _legal frameworks_ + _equality/non-discrimination_ + _women & girls_
+This phrase is about legal frameworks concerning equality and non-discrimination on the basis of sex. The general structure is _legal frameworks_ + _equality/non-discrimination_ + _women & girls_
 
 ```py
 TS=
