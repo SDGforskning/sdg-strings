@@ -92,15 +92,17 @@ This phrase aims to catch the opposite of discrimination (inclusion, anti-discri
 ```py
 TS=
 (
-  ( "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher"
-  OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing"
-  OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*")
+  ( "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*"
+  OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*"
+  OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*"
+  OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*")
     NEAR/5
-    ("women's rights" OR "*women right" OR "rights of women" OR "gender inclusion" OR ("inclusion" NEAR/5 "gender") OR "gender equality" OR "gender equity")
+    ("women's rights" OR "*women right" OR "rights of women" OR "gender inclusion" OR ("inclusion" NEAR/5 "gender")
+    OR "gender equalit*" OR "gender equit*")
     OR
       (
-      ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equality" OR "equal rights"
-      OR "financial exclusion" OR "economic exclusion" OR "social inclusion" OR "digital inclusion" OR "women's inclusion")
+      ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR
+      "equalit*" OR "equit*" OR "equal rights" OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "women's inclusion")
        NEAR/5
           ("*women" OR "*woman" OR "*womens" OR "*womans"
           OR "girl$"
@@ -127,12 +129,15 @@ This phrase is about establishing, securing etc. legal frameworks concerning equ
 TS=
 (
     (
-        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR
-        "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
+        OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR
+        "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" OR
+        "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
         ) 
         NEAR/5
         (
-            ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+            ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
+            "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
             NEAR/5
             (             
                ("equality*" OR "discriminat*" OR "rights" OR "exclusion" OR "exclud*" OR "inclusion" OR "includ*" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*")
