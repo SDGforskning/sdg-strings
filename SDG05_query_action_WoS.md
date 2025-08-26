@@ -78,7 +78,8 @@ TS=
         OR "transgender*"
         OR
             ("sex"
-            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+            OR "bias*" OR "discriminat*" OR "violence")
             )
         )     
 )
@@ -113,7 +114,8 @@ TS=
           OR "gender*" OR "transgender*"
           OR
             ("sex*"
-            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+            OR "bias*" OR "discriminat*" OR "violence")
             )
           )
         )  
@@ -140,7 +142,12 @@ TS=
             "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
             NEAR/5
             (             
-               ("equality*" OR "discriminat*" OR "rights" OR "exclusion" OR "exclud*" OR "inclusion" OR "includ*" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*")
+              ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" ))
+              OR
+                (
+                  ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
+                  OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"
+                  OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion" OR "*women's inclusion")
                 NEAR/5 
                 ("*women" OR "*woman" OR "*womens" OR "*womans"
                 OR "girl$"
@@ -152,12 +159,14 @@ TS=
                 OR "transgender*"
                 OR
                   ("sex*"
-                  NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence")
+                  NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+                  OR "bias*" OR "discriminat*" OR "violence")
                   )
                 )
-            )
-         )   
-    )
+              )
+           )   
+      )
+  )
 )
 ```
 
