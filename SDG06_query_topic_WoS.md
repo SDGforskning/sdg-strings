@@ -376,7 +376,7 @@ TS=
     ) 
   AND 
     ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-    OR "river$" OR ("stream$" NEAR/3 "water")  
+    OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water")  
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$")
@@ -434,7 +434,7 @@ TS=
   )
   AND 
   ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-  OR "river$" OR ("stream$" NEAR/3 "water") 
+  OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
   OR "brook$" OR "creek$" 
   OR "aquifer$" OR "groundwater" 
   OR ("water" NEAR/3 "reservoir$"))
@@ -456,7 +456,7 @@ TS=
   )
     NEAR/15 
     ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-    OR "river$" OR ("stream$" NEAR/3 "water") 
+    OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$"))
