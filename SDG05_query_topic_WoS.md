@@ -32,13 +32,15 @@ Our classification of countries as least developed countries (LDCs), small islan
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- discrimination against women and girls, women's rights and gender-based inequality
-- legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
+- discrimination and inequality on the basis of sex and gender, including specifically women's rights
+- legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex and gender
 
-We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
+While the target states "all women and girls", we use a wider gender and sex interpretation for two reasons. 1. Some research which is relevant to discrimination against women and girls uses gender-neutral terms such as "gender discrimination", and thus limiting to works mentioning women and girls might miss relevant works, 2. The indicator is on the basis of sex, not specifically about women and girls. 
+
+For discrimination, we use the definition of discrimination against women in Article 1 of the CEDAW Convention 
 https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
-This query consists of three phrases
+This query consists of three phrases.
 
 #### Phrase 1
 
