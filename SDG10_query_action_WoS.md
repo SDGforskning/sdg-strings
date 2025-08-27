@@ -177,9 +177,9 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR actio
 
 ```py
 TS=
-(((("ensur*" OR "secure$" OR "securing" OR "make$ sure" OR "making sure" OR "make$ certain" OR "making certain" OR
-   "strengthen*" OR "guarantee*" OR "assure$" OR "assuring" OR "improv*" OR "foster*" OR "enhance" OR
-   "enhances" OR "enhanced" OR "enhancing" OR "endors*"
+(((("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "strengthen*" OR "guarantee*" OR
+    "assure$" OR "assuring" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
+    OR "endors*"
   )
 NEAR/3
   ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
@@ -367,9 +367,9 @@ TS=
     "reforming" OR "reformed" OR "offer*" OR "heighten*"
    )
 NEAR/5
-   ("manage$" OR "managing" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR "surveillanc*" OR 
-    "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "reform*"  OR "supervis*" OR "validat*"
-    OR "mandat*" OR "report*" OR "oversight*" OR "ensurance"
+   ("manage$" OR "managing" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR
+    "surveillanc*" OR "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "reform*"  OR "supervis*" OR
+    "validat*" OR "mandat*" OR "report*" OR "oversight*" OR "ensurance"
    )
   )
 AND
@@ -655,9 +655,14 @@ TS=
    "offer*" OR "heighten*"
   )
 NEAR
-  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR "cooperation* fund*" OR "develop* spending$" OR
-   "foreign invest*" OR "international invest*" OR "develop* invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*" OR "develop* fund*" OR "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support$" OR "develop* subsid*" 
+  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
+   "cooperation* fund*" OR "develop* spending$" OR "foreign invest*" OR "international invest*" OR "develop* invest*" OR
+   "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*" OR "develop* fund*" OR
+   "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR
+   "international subsid*" OR "develop* support$" OR "develop* subsid*" OR "humanitar* assist*" OR "humanitar* aid$" OR
+   "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid$" OR "cross-national fund*"
+   OR "cross-national invest*"
+  )
   )
 NEAR
   (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
@@ -733,9 +738,13 @@ TS=
 (((("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "divid*" or "division*" OR "distribut*"
   )
 NEAR/3
-   ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR "cooperation* fund*" OR "develop* spending$" OR
-   "foreign invest*" OR "international invest*" OR "develop* invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*" OR "develop* fund*" OR "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support$" OR "develop* subsid*" OR "humanitar* assist*" OR "humanitar* aid$" OR "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid$" OR "cross-national fund*" OR "cross-national invest*"
+   ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
+   "cooperation* fund*" OR "develop* spending$" OR "foreign invest*" OR "international invest*" OR "develop* invest*" OR
+   "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*" OR "develop* fund*" OR
+   "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR
+   "international subsid*" OR "develop* support$" OR "develop* subsid*" OR "humanitar* assist*" OR "humanitar* aid$" OR
+   "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid$" OR "cross-national fund*"
+   OR "cross-national invest*"
   )
 )
 AND
