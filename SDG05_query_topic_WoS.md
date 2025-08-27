@@ -49,7 +49,7 @@ TS=
 (
   (
     ("discriminat*" OR "dispar*" OR "gender bias*" 
-    OR "gender exclusion" OR ("exclusion" NEAR/5 "gender") 
+    OR ("exclusion" NEAR/5 "gender") 
     OR
       ("exclude" 
       NEAR/3
@@ -86,7 +86,7 @@ This phrase aims to catch the opposite of discrimination (inclusion, anti-discri
 TS=
 (
   ("women's rights" OR "rights of women" 
-  OR "gender inclusion" OR ("inclusion" NEAR/5 "gender")
+  OR ("inclusion" NEAR/5 "gender")
   OR "gender equalit*" OR "gender equit*" OR "gender equal*"
   )
   OR
@@ -119,8 +119,9 @@ TS=
   OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor"
   )
   NEAR/5
-      ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" )
-      OR
+      (
+        ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
+        OR
         (
           ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
           OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"

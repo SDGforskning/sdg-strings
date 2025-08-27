@@ -57,8 +57,7 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/5
-            ("discriminat*" OR "dispar*" OR "bias*" 
-            OR "gender exclusion" OR ("exclusion" NEAR/5 "gender") 
+            ("discriminat*" OR "dispar*" OR "bias*" OR ("exclusion" NEAR/5 "gender") 
             OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion" OR "cultural exclusion" OR "digital exclusion" 
             OR "gender inequalit*" OR "gender inequit*"
             OR  (
@@ -94,8 +93,7 @@ TS=
     OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*"
     )
     NEAR/5
-        ("women's rights" OR "*women right" OR "rights of women" 
-        OR "gender inclusion" OR ("inclusion" NEAR/5 "gender") 
+        ("women's rights" OR "*women right" OR "rights of women" OR ("inclusion" NEAR/5 "gender") 
         OR "gender equalit*" OR "gender equit*" OR "gender equal*"
         OR
             (
@@ -138,7 +136,7 @@ TS=
             )
             NEAR/5
                 (             
-                    "gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" )
+                    ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
                     OR 
                     (
                         ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
