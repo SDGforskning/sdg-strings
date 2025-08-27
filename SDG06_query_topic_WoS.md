@@ -316,7 +316,7 @@ This target is interpreted to cover research about <a href="#6">("UNSD 2022")</a
 * monitoring of water quality
   
 
-This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. Term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.
 
 The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
 * domestic/households
@@ -456,7 +456,7 @@ TS=
   )
     NEAR/15 
     ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-    OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
+    OR ("river$") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$"))
