@@ -390,7 +390,7 @@ This phrase aims to find research about the treatment, recycling and reuse of wa
 
 The phrase is partly similar to 14.1 phrase 2.
 
-The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies*
+The elements of the phrase are *treatment/recycling/reuse + wastewaters + freswater bodies*
 
 
 ```py
