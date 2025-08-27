@@ -916,7 +916,7 @@ United Nations Development Group (2017) Capacity Development, UNDAF companion gu
 We interpret capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important capacity building.  
 
 According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
-In its current form, however, the phrase searches for any research about cooperation on WASH related capacity building, whether aided or not. 
+In its current form, however, the phrase searches for any research about cooperation on WASH related capacity building. 
 
 As the indicator monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` and some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
