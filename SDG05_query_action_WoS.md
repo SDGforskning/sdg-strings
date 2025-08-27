@@ -35,7 +35,7 @@ Acronyms used:
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- ending discrimination and reducing inequality on the basis of sex and gender, including improving specifically women's rights
+- ending discrimination and reducing inequality on the basis of sex and gender, including improving specifically women and girls' rights, freedoms, equality etc.
 - strengthening and securing legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex and gender
 
 While the target states "all women and girls", we use a wider gender and sex interpretation for two reasons. 1. Some research which is relevant to discrimination against women and girls uses gender-neutral terms such as "gender discrimination", and thus limiting to works mentioning women and girls might miss relevant works, 2. The indicator is on the basis of sex, not specifically about women and girls. 
@@ -46,7 +46,7 @@ https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW
 
 #### Phrase 1 
 
-This phrase is about ending discrimination against women and girls. The general structure is action + discrimination/rights + women & girls
+This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
 ```py
 TS=
@@ -83,7 +83,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is action + anti-discrimination/rights + women & girls
+This phrase aims to find works about improving inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *action + anti-discrimination/rights + women/gender*
 
 ```py
 TS=
@@ -119,7 +119,7 @@ TS=
 
 #### Phrase 3
 
-This phrase is about establishing, securing etc. legal frameworks concerning equality and non-discrimination on the basis of sex. The general structure is action + legislation + equality + women
+This phrase is about establishing and improving legal frameworks concerning equality and non-discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women/gender*
 
 ```py
 TS=

@@ -32,7 +32,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- discrimination and inequality on the basis of sex and gender, including specifically women's rights
+- discrimination and inequality on the basis of sex and gender, including specifically women and girls' rights, freedoms, equality etc.
 - legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex and gender
 
 While the target states "all women and girls", we use a wider gender and sex interpretation for two reasons. 1. Some research which is relevant to discrimination against women and girls uses gender-neutral terms such as "gender discrimination", and thus limiting to works mentioning women and girls might miss relevant works, 2. The indicator is on the basis of sex, not specifically about women and girls. 
@@ -44,7 +44,7 @@ This query consists of three phrases.
 
 #### Phrase 1
 
-This phrase is about discrimation and exclusion of women and girls. The general structure is _discrimination/exclusion/rights_ + _women & girls_
+This phrase is about discrimination and inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
 ```py
 TS=
@@ -82,7 +82,7 @@ TS=
 ```
 #### Phrase 2
 
-This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is _anti-discrimination/rights_ + _women & girls_
+This phrase aims to find works about inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *anti-discrimination/rights + women/gender*
 
 ```py
 TS=
@@ -112,7 +112,7 @@ TS=
 
 #### Phrase 3
 
-This phrase is about legal frameworks concerning equality and non-discrimination on the basis of sex. The general structure is _legal frameworks_ + _equality/non-discrimination_ + _women & girls_
+This phrase is about legal frameworks concerning equality and non-discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
 
 ```py
 TS=
