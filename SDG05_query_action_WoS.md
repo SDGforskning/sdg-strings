@@ -67,7 +67,7 @@ TS=
                 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
             )
      ) 
-  NEAR/5 
+      NEAR/5 
         ("*women" OR "*woman" OR "*womens" OR "*womans"
         OR "girl$"
         OR "female$"
@@ -140,7 +140,7 @@ TS=
         NEAR/5
         (
             ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-            "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+            "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor")
             NEAR/5
             (             
               ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" ))
