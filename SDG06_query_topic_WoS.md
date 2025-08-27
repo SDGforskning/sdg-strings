@@ -357,7 +357,11 @@ TS=
         NEAR/15
           ("waste" OR "discharge" OR "runoff" OR "run off")          
     )
-    OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
+    OR 
+    (
+      ("plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$") 
+      NEAR/5 ("contaminat*" OR "pollut*")
+    )
     OR 
     (
       ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
