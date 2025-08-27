@@ -351,14 +351,14 @@ TS=
     ("pollut*"
     OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
     OR "effluent$" 
-    OR
+    OR 
     (
       ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
         NEAR/15
           ("waste" OR "discharge" OR "runoff" OR "run off")          
     )
     OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
-    OR
+    OR 
     (
       ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
       OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil")
