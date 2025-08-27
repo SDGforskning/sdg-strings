@@ -42,12 +42,40 @@ This query consists of three phrases
 
 #### Phrase 1
 
-The general structure is _ _ + _ _
+This phrase is about discrimation and exclusion of women and girls. The general structure is _discrimination/exclusion/rights_ + _women & girls_
 
 ```py
 TS=
 (
-
+  (
+   ("discriminat*" OR "dispar*" OR "gender bias*" OR "gender exclusion" OR ("exclusion" NEAR/5 "gender") OR
+   ("exclude" NEAR/3
+    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$"
+    OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives"
+    OR "girlfriend$" OR "gender*" OR "transgender*"))
+    OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion"
+    OR "cultural exclusion" OR "digital exclusion" OR "gender inequalit*" OR "gender inequit*")
+    OR
+     ( ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+        NEAR/5
+       ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
+     )
+ ) 
+     NEAR/5 
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR "wife" OR "wives" OR "girlfriend$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*"
+        OR "transgender*"
+        OR
+            ("sex"
+            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
+            OR "bias*" OR "discriminat*" OR "violence")
+            )
+        )     
 )
 ```
 #### Phrase 2
