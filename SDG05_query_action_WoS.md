@@ -94,7 +94,7 @@ TS=
     OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*"
     )
     NEAR/5
-        ("women's rights" OR "*women right" OR "rights of women" OR ("inclusion" NEAR/5 "gender") 
+        ("women's rights" OR "rights of women" OR ("inclusion" NEAR/5 "gender") 
         OR "gender equalit*" OR "gender equit*" OR "gender equal*"
         OR
             (

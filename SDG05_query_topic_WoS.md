@@ -87,8 +87,7 @@ This phrase aims to find works about inclusion, anti-discrimination, equality et
 ```py
 TS=
 (
-  ("women's rights" OR "rights of women" 
-  OR ("inclusion" NEAR/5 "gender")
+  ("women's rights" OR "rights of women" OR ("inclusion" NEAR/5 "gender")
   OR "gender equalit*" OR "gender equit*" OR "gender equal*"
   )
   OR
