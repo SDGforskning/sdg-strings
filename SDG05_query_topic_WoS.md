@@ -89,7 +89,7 @@ This phrase is about legal frameworks concerning equality and non-discrimination
 TS=
 (
     ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-     "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance")
+     "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor")
             NEAR/5
             (             
               ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" ))
