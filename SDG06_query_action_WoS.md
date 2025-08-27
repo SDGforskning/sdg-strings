@@ -654,7 +654,7 @@ This phrase aims to find research about reducing the use of water resources, wat
 
 The elements of the phrase are *action + use of water resources/water stress/water scarcity*
 
-A NOT string about was added to exclude irrelevant results about a `water filling algorithm`
+A NOT string was added to exclude irrelevant results about a `water filling algorithm`
 
 ```py
 TS=

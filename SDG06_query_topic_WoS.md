@@ -552,7 +552,7 @@ This phrase aims to find research about the use of water resources, water stress
 
 The elements of the phrase are *use of water resources/water stress/water scarcity*
 
-A NOT string about was added to exclude irrelevant results about a `water filling algorithm`
+A NOT string was added to exclude irrelevant results about a `water filling algorithm`
 
 
 
