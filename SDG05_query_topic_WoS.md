@@ -125,9 +125,7 @@ This phrase is about legal frameworks/policies concerning equality and discrimin
 
 Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
 
-`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), but still in the overall target area I think?
-
-Consider changing to NEAR 15 after legislation? Adds about 80% more results, and many look relevant?
+`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
 
 ```py
 TS=
@@ -135,7 +133,7 @@ TS=
   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
   OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
   )
-  NEAR/5
+  NEAR/15
       (
         ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
         OR "misogyn*" OR "sexism" OR "sexist"

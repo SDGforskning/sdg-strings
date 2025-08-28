@@ -141,48 +141,46 @@ This phrase is about establishing and improving legal frameworks/policies concer
 
 Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
 
-`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), but still in the overall target area I think?
-
-Consider changing to NEAR 15 after legislation? Adds about 80% more results, and many look relevant?
+`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
 
 ```py
 TS=
 (
     (
-        ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
-        OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
-        OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
-        OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
-        ) 
-        NEAR/5
         (
-            ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-            "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
-            )
+            ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
+            OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
+            OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
+            OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+            ) 
             NEAR/5
-                (             
-                    ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
-                    OR "misogyn*" OR "sexism" OR "sexist"
-                    OR 
-                    (
-                        ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
-                        OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
-                        OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
-                        OR "*women's inclusion"
-                        )
-                        NEAR/5 
-                            ("*women" OR "*woman" OR "*womens" OR "*womans"
-                            OR "girl$"
-                            OR "female$"
-                            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-                            OR "wife" OR "wives" OR "girlfriend$"
-                            OR "pregnan*" OR "maternity" OR "maternal"
-                            OR "gender*" OR "sexual and gender" OR "transgender*"
-                            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
-                            )
-                    )
-                )   
+                ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
+                "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
+                )
         )
+        NEAR/15
+        (             
+            ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
+            OR "misogyn*" OR "sexism" OR "sexist"
+            OR 
+            (
+                ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
+                OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
+                OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
+                OR "*women's inclusion"
+                )
+                NEAR/5 
+                    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                    OR "girl$"
+                    OR "female$"
+                    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                    OR "wife" OR "wives" OR "girlfriend$"
+                    OR "pregnan*" OR "maternity" OR "maternal"
+                    OR "gender*" OR "sexual and gender" OR "transgender*"
+                    OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+                    )
+            )
+        )   
     )
 )
 ```
