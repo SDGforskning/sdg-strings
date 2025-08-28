@@ -48,6 +48,8 @@ https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW
 
 This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
+Removed `disparit*` from the women and gender string, as "sex disparities" alone finds mostly medical papers regarding differences between the sexes in various health conditions.
+
 ```py
 TS=
 (
@@ -58,12 +60,13 @@ TS=
         OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
         )    
         NEAR/5
-            ("discriminat*" OR "dispar*" OR "bias*" OR ("exclusion" NEAR/5 "gender") 
-            OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion" OR "cultural exclusion" OR "digital exclusion" 
+            ("discriminat*" OR "dispar*" OR "bias*"
             OR "gender inequalit*" OR "gender inequit*"
+            OR ("exclusion" NEAR/5 "gender") 
+            OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion" OR "cultural exclusion" OR "digital exclusion" 
             OR  (
                     ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
-                    NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
+                    NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
                 )
             )
     ) 
@@ -75,7 +78,7 @@ TS=
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
         OR "gender*" OR "transgender*"
-        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )     
 )
 ```
@@ -122,7 +125,7 @@ TS=
 
 This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women/gender*
 
-Removed `disparit* OR bias*´ from the women and gender string, many medical papers regarding e.g. sex-biased regulation of genes.
+Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
 
 `strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), but still in the overall target area I think?
 

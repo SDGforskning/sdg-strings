@@ -46,38 +46,42 @@ This query consists of three phrases.
 
 This phrase is about discrimination and inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
+`excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
+
+Removed `disparit* OR bias* OR difference*` from the women and gender string, as these find mostly medical papers regarding differences between the sexes in various health conditions.
+
 ```py
 TS=
 (
-  (
-    ("discriminat*" OR "dispar*" OR "gender bias*" 
+    ("discriminat*" OR "dispar*" OR "gender bias*"
+    OR "gender inequalit*" OR "gender inequit*"
     OR ("exclusion" NEAR/5 "gender") 
     OR
-      ("exclude" 
-      NEAR/3
-        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-        OR "gender*" OR "transgender*"
-        )
+      (
+        ("excludes" OR "exclude" OR "exclusion")
+        NEAR/2
+          ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
+          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+          OR "gender*" OR "transgender*"
+          )
       )
-    OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "political exclusion" OR "cultural exclusion"
-    OR "gender inequalit*" OR "gender inequit*")
+    OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
     OR
       ( 
         ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
-        NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
+        NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
       )
-  ) 
-  NEAR/5 
-      ("*women" OR "*woman" OR "*womens" OR "*womans"
-      OR "girl$"
-      OR "female$"
-      OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-      OR "wife" OR "wives" OR "girlfriend$"
-      OR "pregnan*" OR "maternity" OR "maternal"
-      OR "gender*" OR "transgender*"
-      OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"OR "bias*" OR "discriminat*" OR "violence"))
-      )     
+    ) 
+    NEAR/5 
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR "wife" OR "wives" OR "girlfriend$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "transgender*"
+        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+        )     
 )
 ```
 #### Phrase 2
@@ -114,7 +118,7 @@ TS=
 
 This phrase is about legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
 
-Removed `disparit* OR bias*´ from the women and gender string, many medical papers regarding e.g. sex-biased regulation of genes.
+Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
 
 `strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), but still in the overall target area I think?
 
