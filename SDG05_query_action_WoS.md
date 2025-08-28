@@ -120,11 +120,32 @@ This target is interpreted to cover research about
 
 Violence against women is defined by the UN as "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" <a href="#f2hb">(UN OHCHR, 1993)</a>
 
+#### Phrase 1
+
+This phrase is about ending violence against women and girls. The general structure is action + violence + women & girls
 
 ```py
 TS=
 (
-
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
+	OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" 
+	OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" 
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*"
+	) 
+	NEAR/10 
+		("violence" OR "violent" OR "exploit*" OR "physical harm" OR "emotional harm" OR "harmful"
+		) 
+		NEAR/10
+		    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                OR "girl$"
+                OR "female$"
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR "wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal"
+                OR "gender*" OR "sexual and gender" OR "transgender*"
+		    )
+		
 )
 ```
 
@@ -141,10 +162,32 @@ This target is interpreted to cover research about
 
 Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
 
+#### Phrase 1
+
+This phrase is about eliminating harmful practices against women and girls. The general structure is action + practice + women & girls
+
 ```py
 TS=
 (
-
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
+	OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" 
+	OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" 
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*"
+	) 
+	NEAR/10 
+		("harmful practice$" OR "female genital mutilation" OR "FGM" "female genital cutting" OR "circumcision$" OR (("child" OR "children" OR "force*") NEAR/10 "marriage*")
+        ) 
+		NEAR
+		    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                OR "girl$"
+                OR "female$"
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR "wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal"
+                OR "gender*" OR "sexual and gender" OR "transgender*"
+		    )
+		
 )
 ```
 
