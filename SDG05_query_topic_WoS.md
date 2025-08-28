@@ -53,16 +53,20 @@ Removed `disparit* OR bias* OR difference*` from the women and gender string, as
 ```py
 TS=
 (
-    ("discriminat*" OR "dispar*" OR "gender bias*"
-    OR "gender inequalit*" OR "gender inequit*"
-    OR ("exclusion" NEAR/5 "gender") 
+  "misogyn*" OR "sexism" OR "sexist"
+  OR
+  (
+    ("discriminat*" OR "dispar*"
+    OR "prejudic*"
+    OR "gender inequalit*" OR "gender inequit*" OR "gender bias*"
+    OR (("bias*" OR "exclusion") NEAR/5 ("systematic*" OR "unconscious*"))
     OR
       (
         ("excludes" OR "exclude" OR "exclusion")
         NEAR/2
           ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
           OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-          OR "gender*" OR "transgender*"
+          OR "gender*" OR "sexual and gender" OR "transgender*"
           )
       )
     OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
@@ -79,9 +83,10 @@ TS=
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "transgender*"
+        OR "gender*" OR "sexual and gender" OR "transgender*"
         OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-        )     
+        )   
+  )  
 )
 ```
 #### Phrase 2
@@ -91,14 +96,14 @@ This phrase aims to find works about inclusion, anti-discrimination, equality et
 ```py
 TS=
 (
-  ("women's rights" OR "rights of women" OR ("inclusion" NEAR/5 "gender")
+  ("women's rights" OR "rights of women" OR "women's freedom"
+  OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
   OR "gender equalit*" OR "gender equit*" OR "gender equal*"
   )
   OR
   (
-    ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
+    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
     OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion" 
-    OR "women's inclusion"
     )
     NEAR/5
         ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -107,7 +112,7 @@ TS=
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "transgender*"
+        OR "gender*" OR "sexual and gender" OR "transgender*"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
   )  
@@ -148,7 +153,7 @@ TS=
             OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "transgender*"
+            OR "gender*" OR "sexual and gender" OR "transgender*"
             OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
             )
         )

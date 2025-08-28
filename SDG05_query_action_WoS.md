@@ -48,38 +48,52 @@ https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW
 
 This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
-Removed `disparit*` from the women and gender string, as "sex disparities" alone finds mostly medical papers regarding differences between the sexes in various health conditions.
+Removed `disparit* OR bias* OR difference*` from the women and gender string, as these find mostly medical papers regarding differences between the sexes in various health conditions.
 
 ```py
 TS=
 (
-    (
-        ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" 
-        OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
-        OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
-        OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
-        )    
-        NEAR/5
-            ("discriminat*" OR "dispar*" OR "bias*"
-            OR "gender inequalit*" OR "gender inequit*"
-            OR ("exclusion" NEAR/5 "gender") 
-            OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion" OR "cultural exclusion" OR "digital exclusion" 
-            OR  (
-                    ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
-                    NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
-                )
-            )
-    ) 
-    NEAR/5 
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "transgender*"
-        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
-        )     
+    ("decreas*" OR "minimi*" OR "reduc*" OR "mitigat*" 
+    OR "alleviat*" OR "tackl*" OR "fight*" OR "combat*"
+    OR "end" OR "ending" OR "eliminat*" OR "eradicat*" OR "prevent*"
+    OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
+    )  
+    NEAR/5
+        ("misogyn*" OR "sexism" OR "sexist"
+        OR
+            (
+                ("discriminat*" OR "dispar*"
+                OR "prejudic*"
+                OR "gender inequalit*" OR "gender inequit*" OR "gender bias*"
+                OR (("bias*" OR "exclusion") NEAR/5 ("systematic*" OR "unconscious*"))
+                OR
+                    (
+                        ("excludes" OR "exclude" OR "exclusion")
+                        NEAR/2
+                            ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
+                            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+                            OR "gender*" OR "sexual and gender" OR "transgender*"
+                            )
+                    )
+                OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
+                OR
+                    ( 
+                        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+                        NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
+                    )
+                ) 
+                NEAR/5 
+                    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                    OR "girl$"
+                    OR "female$"
+                    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                    OR "wife" OR "wives" OR "girlfriend$"
+                    OR "pregnan*" OR "maternity" OR "maternal"
+                    OR "gender*" OR "sexual and gender" OR "transgender*"
+                    OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+                    )   
+            )  
+        )
 )
 ```
 
@@ -97,13 +111,13 @@ TS=
     OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*"
     )
     NEAR/5
-        ("women's rights" OR "rights of women" OR ("inclusion" NEAR/5 "gender") 
+        ("women's rights" OR "rights of women" OR "women's freedom"
+        OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
         OR "gender equalit*" OR "gender equit*" OR "gender equal*"
         OR
             (
-                ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
+                ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
                 OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion"
-                OR "women's inclusion"
                 )
                 NEAR/5
                     ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -112,7 +126,7 @@ TS=
                     OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
-                    OR "gender*" OR "transgender*"
+                    OR "gender*" OR "sexual and gender" OR "transgender*"
                     OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
                     )
             )
@@ -152,8 +166,9 @@ TS=
                     OR 
                     (
                         ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
-                        OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "policial inclusion" OR "political exclusion"
-                        OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion" OR "*women's inclusion"
+                        OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
+                        OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
+                        OR "*women's inclusion"
                         )
                         NEAR/5 
                             ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -162,7 +177,7 @@ TS=
                             OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
                             OR "wife" OR "wives" OR "girlfriend$"
                             OR "pregnan*" OR "maternity" OR "maternal"
-                            OR "gender*" OR "transgender*"
+                            OR "gender*" OR "sexual and gender" OR "transgender*"
                             OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
                             )
                     )
