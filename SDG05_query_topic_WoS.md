@@ -111,22 +111,29 @@ TS=
 
 #### Phrase 3
 
-This phrase is about legal frameworks concerning equality and non-discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
+This phrase is about legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
+
+Removed `disparit* OR bias*´ from the women and gender string, many medical papers regarding e.g. sex-biased regulation of genes.
+
+`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), but still in the overall target area I think?
+
+Consider changing to NEAR 15 after legislation? Adds about 80% more results, and many look relevant?
 
 ```py
 TS=
 (
   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
-  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor"
+  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
   )
   NEAR/5
       (
         ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
+        OR "misogyn*" OR "sexism" OR "sexist"
         OR
         (
           ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
           OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"
-          OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion"
+          OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion" OR "policial inclusion" OR "political exclusion"
           OR "*women's inclusion"
           )
           NEAR/5 
@@ -137,7 +144,7 @@ TS=
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
             OR "gender*" OR "transgender*"
-            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
             )
         )
       )
