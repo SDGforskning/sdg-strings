@@ -60,8 +60,8 @@ TS=
         OR "gender*" OR "transgender*"
         )
       )
-    OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion"
-    OR "cultural exclusion" OR "digital exclusion" OR "gender inequalit*" OR "gender inequit*")
+    OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "political exclusion" OR "cultural exclusion"
+    OR "gender inequalit*" OR "gender inequit*")
     OR
       ( 
         ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
@@ -93,7 +93,8 @@ TS=
   OR
   (
     ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
-    OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "women's inclusion"
+    OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion" 
+    OR "women's inclusion"
     )
     NEAR/5
         ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -132,8 +133,8 @@ TS=
         OR
         (
           ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
-          OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"
-          OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion" OR "policial inclusion" OR "political exclusion"
+          OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
+          OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
           OR "*women's inclusion"
           )
           NEAR/5 

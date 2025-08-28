@@ -99,7 +99,8 @@ TS=
         OR
             (
                 ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
-                OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "women's inclusion"
+                OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion"
+                OR "women's inclusion"
                 )
                 NEAR/5
                     ("*women" OR "*woman" OR "*womens" OR "*womans"
