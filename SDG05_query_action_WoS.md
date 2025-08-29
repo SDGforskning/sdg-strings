@@ -206,11 +206,32 @@ This target is interpreted to cover research about
 
 Violence against women is defined by the UN as "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" <a href="#f2hb">(UN OHCHR, 1993)</a>
 
+#### Phrase 1
+
+This phrase is about ending violence against women and girls. The general structure is action + violence + women & girls
 
 ```py
 TS=
 (
-
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
+	OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" 
+	OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" 
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*"
+	) 
+	NEAR/10 
+		("violence" OR "violent" OR "exploit*" OR "physical harm" OR "emotional harm" OR "harmful"
+		) 
+		NEAR/10
+		    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                OR "girl$"
+                OR "female$"
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR "wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal"
+                OR "gender*" OR "sexual and gender" OR "transgender*"
+		    )
+		
 )
 ```
 
@@ -227,10 +248,32 @@ This target is interpreted to cover research about
 
 Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
 
+#### Phrase 1
+
+This phrase is about eliminating harmful practices against women and girls. The general structure is action + practice + women & girls
+
 ```py
 TS=
 (
-
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
+	OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" 
+	OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" 
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*"
+	) 
+	NEAR/10 
+		("harmful practice$" OR "female genital mutilation" OR "FGM" "female genital cutting" OR "circumcision$" OR (("child" OR "children" OR "force*") NEAR/10 "marriage*")
+        ) 
+		NEAR
+		    ("*women" OR "*woman" OR "*womens" OR "*womans"
+                OR "girl$"
+                OR "female$"
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR "wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal"
+                OR "gender*" OR "sexual and gender" OR "transgender*"
+		    )
+		
 )
 ```
 
@@ -581,15 +624,55 @@ TS=
 > 5.6.2 Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education
 
 This target is interpreted to cover research about
-* ensuring universal access to sexual and reproductive health and reproductive rights
+* ensuring universal access to sexual and reproductive health
+* ensuring universal access to reproductive rights
 
 The conferences mentioned in the target text relates to sexual and reproductive health in general, and with indicator 5.6.2 relating to both women and men, the interpretation of this target is not restricted to cover just women and girls. Topics and aspects of sexual and reproductive health is based on the mentioned conferences <a href="#f3hb">(ICPD, 1994) and </a> <a href="#f4hb">(UN Women, 2015)</a> and also related SDGs.
+
+#### Phrase 1
+This phrase covers ensuring sexual and reproductive health as mentioned in the conference documents. The structure is action + health issue
 
 ```py
 TS=
 (
-
+    ("accelerat*" OR "achiev*" OR "advance" OR "advancing" 
+    OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" 
+    OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" 
+    OR "ensure"OR "expand" OR "expansion" OR "facilitat*" 
+    OR "foster*" OR "guarantee*" OR "heighten*" OR "higher*" 
+    OR "implement*" OR "improv*" OR "increas*" OR "promot*" 
+    OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
+    NEAR/10
+    ("sexual health" OR "reproductive health" OR "safe pregnan*" OR "safe child birth$"
+    )
 )
+```
+#### Phrase 2
+This phrase covers ensuring access and removing barriers for reproductive rights. The structure is action + access + reproductive rights
+
+```py
+TS=
+(
+    (
+        (
+        (("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+        OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*"
+        OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
+        OR ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*"
+            )
+            NEAR/5
+            ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*"
+            )
+        )
+        OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+        )
+    )
+    NEAR
+    ("reproductive rights"
+    )
+    )
+)    
+
 ```
 
 ### Target 5.a
