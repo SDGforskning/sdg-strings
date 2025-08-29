@@ -379,10 +379,10 @@ phones, tablets, etc.) and software (social media services, multimedia applicati
 
 For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>.    
 
-This query consists of 2? phrases......
+This query consists of 1 phrase:
 
 
-## Phrase 1
+#### Phrase 1
 
 The basic structure is _use_ + _technologies_ + _empowerment of women_
 
@@ -404,7 +404,8 @@ NEAR/15
         (
             (
             "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
-            (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+            (("gender*" OR "transgender")  NEAR/3 ("*parit*" OR "*equal*" OR "*equit*" OR "*balanc*" OR "gap" 
+            OR "divide" OR "difference*" OR "discriminat*"))
             )
             NEAR/15    
             ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
@@ -415,49 +416,7 @@ NEAR/15
 
 ```
 
-#### Phrase 2
 
-The basic structure is _barriers_ + _use of technology_ + _empowerment of women_
-
-```py
-(fra action:)
-TS=
-(
-    (
-      ("address*" OR "alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
-      OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR  "eradicat*" OR "fight*" OR "limit$" 
-      OR "limited" OR "limiting" OR "manag*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
-      OR "prevent*" OR "remov*" OR "stop*" OR "tackl*"   
-      )
-      NEAR/5
-        ("barrier$" OR "discriminat*" OR "disempower*" OR "disparit*" OR "divide*" OR "hinder" OR "hindranc*" 
-        OR "imbalance" OR "inequit*" OR "inequal*"  OR "obstacle*"  OR "unequit*" OR "unbalanc*" OR "unequal*" 
-        )
-    )
-    NEAR/5
-(
-    (
-    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
-        NEAR/5
-    ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-    OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
-    OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
-    OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
-    OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
-    )
-NEAR/15
-    (
-    "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
-    (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
-    )
-NEAR/15    
-    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-    OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength" 
-    OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
-)
-)
-)
-```
 
 ### Target 5.c
 
