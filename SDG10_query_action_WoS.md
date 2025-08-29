@@ -1,4 +1,4 @@
-ensur# Search query for SDG 10 - Reduced inequalities, Bergen action-approach.
+Search query for SDG 10 - Reduced inequalities, Bergen action-approach.
 
 Reduce inequality within and among countries
 
@@ -110,7 +110,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
-This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*
+This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. NOT-operators were added to this query to delete results with *accessible*/*accessibility* that don't concern promoting social, economic or political inclusion in any way.
 
 
 ```py
