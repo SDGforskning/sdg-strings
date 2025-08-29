@@ -193,16 +193,17 @@ TS=(
             ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans") 
             OR 
             (
-            ("gender*" OR "transgender*") NEAR/3 ("parit*" OR "equal*" OR "equi*" OR "balanc*")
+            ("gender*" OR "transgender*") NEAR/3 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" 
+            OR "gap*" OR "divide*")
             )
         )
         NEAR/5 
         
             ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
-             OR  "member of parliament" OR "mayor*" OR "quota" OR  "vote" OR "votes" OR "voting" 
+             OR  "member of parliament" OR "mayor*" OR "quota" OR "vote" OR "votes" OR "voting" 
              OR "chief traditional" OR
              (
-                ("represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
+                ("*represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
                 OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position")
                 NEAR/3
                 ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
