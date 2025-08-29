@@ -203,12 +203,14 @@ TS=(
              OR "chief traditional" OR
              (
                 ("represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
-                OR "corporate" OR "enterprise" OR "board" OR "chief" OR "member*" OR "officer*" OR "position")
+                OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position")
                 NEAR/3
                 ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
                 OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
                 OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" )
              )
+             OR
+             (("board") NEAR/3 ("director"))
             )
         
     ) 
