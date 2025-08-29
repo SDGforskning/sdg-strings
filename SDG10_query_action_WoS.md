@@ -110,7 +110,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
-This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. NOT-operators were added to this query to delete results with *accessible*/*accessibility* that don't concern promoting social, economic or political inclusion in any way.
+This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. NOT-operators were added to this query to delete results with ```accessible/accessibility``` that don't concern promoting social, economic or political inclusion in any way.
 
 
 ```py
@@ -171,7 +171,7 @@ This target is interpreted to cover research about
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. <a href="#f12">(APA 2020</a>; <a href="#f13">Equal Future 2025</a>; <a href="#f14">UN DESA 2018</a>; <a href="#f9">United Nations 2018.)</a>
 
-This query consists of 2 phrases. 
+This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining them with other terms (for example ```barrier$ NEAR poor NEAR/3 household$```). We still felt we needed to use NOT-operators to delete results that are not connected to the theme of the target.
 
 The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR action (reduce) + inequalities*.
 
@@ -256,7 +256,7 @@ OR
   )
 NEAR
   (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
+    "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" 
    )
 NEAR/5
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
