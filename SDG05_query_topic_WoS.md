@@ -32,121 +32,139 @@ Our classification of countries as least developed countries (LDCs), small islan
 > 5.1.1 Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex
 
 This target is interpreted to cover research about:
-- discrimination against women and girls, women's rights and gender-based inequality
-- legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex
+- discrimination and inequality on the basis of sex and gender, including specifically women and girls' rights, freedoms, equality etc.
+- legal frameworks to promote, enforce and monitor equality and non-discrimination on the basis of sex and gender
 
-We use the definition of discrimination against women in Article 1 of the CEDAW Convention 
+While the target states "all women and girls", we use a wider gender and sex interpretation for two reasons. 1. Some research which is relevant to discrimination against women and girls uses gender-neutral terms such as "gender discrimination", and thus limiting to works mentioning women and girls might miss relevant works, 2. The indicator is on the basis of sex, not specifically about women and girls. 
+
+For discrimination, we use the definition of discrimination against women in Article 1 of the CEDAW Convention 
 https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
-This query consists of three phrases
+**Working note**: It is possible that the terms `prejudice, misogyn*, sexism, sexist` will need to be discussed/removed. Pros/cons:
+- Our reading of the CEDAW defines discrimination as action/result, while prejudice and stereotyping are attitudes/biases -> Remove
+- The CEDAW  recognises that prejudice and stereotyping need to be eliminated as part of stopping discrimination, as outlined in Article 5 -> ?
+- The other targets will not cover research about misogyny or sexism, making 5.1 the main option for including this research at all in SDG5 -> Keep
+- Some terms are ambigous, for example "bias" can be an attitude and a result. Is it the same for "misogyny" (is hostility an attitude or an action)? https://www.ungei.org/gender-transformative-education-glossary/gender/misogyny -> ? 
+
+This query consists of three phrases.
 
 #### Phrase 1
 
-This phrase is about discrimation and exclusion of women and girls. The general structure is _discrimination/exclusion/rights_ + _women & girls_
+This phrase is about discrimination and inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
+
+`excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
+
+Removed `disparit* OR bias* OR difference*` from the women and gender string, as these find mostly medical papers regarding differences between the sexes in various health conditions.
 
 ```py
 TS=
 (
+  "misogyn*" OR "sexism" OR "sexist"
+  OR
   (
-   ("discriminat*" OR "dispar*" OR "gender bias*" OR "gender exclusion" OR ("exclusion" NEAR/5 "gender") OR
-   ("exclude" NEAR/3
-    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" OR "sister$" OR "mother$"
-    OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives"
-    OR "girlfriend$" OR "gender*" OR "transgender*"))
-    OR "social exclusion" OR "economic exclusion" OR "financial exclusion" OR "political exclusion"
-    OR "cultural exclusion" OR "digital exclusion" OR "gender inequalit*" OR "gender inequit*")
+    ("discriminat*" OR "dispar*"
+    OR "prejudic*"
+    OR "gender inequalit*" OR "gender inequit*" OR "gender bias*"
+    OR (("bias*" OR "exclusion") NEAR/5 ("systematic*" OR "unconscious*"))
     OR
-     ( ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
-        NEAR/5
-       ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights to" OR "rights")
-     )
- ) 
-     NEAR/5 
+      (
+        ("excludes" OR "exclude" OR "exclusion")
+        NEAR/2
+          ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
+          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+          OR "gender*" OR "sexual and gender" OR "transgender*"
+          )
+      )
+    OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
+    OR
+      ( 
+        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+        NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
+      )
+    ) 
+    NEAR/5 
         ("*women" OR "*woman" OR "*womens" OR "*womans"
         OR "girl$"
         OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*"
-        OR "transgender*"
-        OR
-            ("sex"
-            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
-            OR "bias*" OR "discriminat*" OR "violence")
-            )
-        )     
+        OR "gender*" OR "sexual and gender" OR "transgender*"
+        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+        )   
+  )  
 )
 ```
 #### Phrase 2
 
-This phrase aims to catch the opposite of discrimination (inclusion, anti-discrimination, equality etc.) of women and girls. The general structure is _anti-discrimination/rights_ + _women & girls_
+This phrase aims to find works about inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *anti-discrimination/rights + women/gender*
 
 ```py
 TS=
 (
- ("women's rights" OR "rights of women" OR "gender inclusion" OR ("inclusion" NEAR/5 "gender")
-    OR "gender equalit*" OR "gender equit*" OR "gender equal*")
-    OR
-      (
-        ("human right*" OR "right to" OR "rights to" OR "rights" OR "rights of" OR "anti-discriminat*" OR
-        "non-discriminat*" OR "equalit*" OR "equal rights" OR "financial inclusion" OR "economic inclusion" OR
-        "social inclusion" OR "digital inclusion" OR "women's inclusion")
-        NEAR/5
-          ("*women" OR "*woman" OR "*womens" OR "*womans"
-          OR "girl$"
-          OR "female$"
-          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-          OR "wife" OR "wives" OR "girlfriend$"
-          OR "pregnan*" OR "maternity" OR "maternal"
-          OR "gender*" OR "transgender*"
-          OR
-            ("sex*"
-            NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
-            OR "bias*" OR "discriminat*" OR "violence")
-            )
-          )
-        )  
+  ("women's rights" OR "rights of women" OR "women's freedom"
+  OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
+  OR "gender equalit*" OR "gender equit*" OR "gender equal*"
+  )
+  OR
+  (
+    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
+    OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion" 
+    )
+    NEAR/5
+        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR "wife" OR "wives" OR "girlfriend$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "sexual and gender" OR "transgender*"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+        )
+  )  
 )
 ```
 
 #### Phrase 3
-This phrase is about legal frameworks concerning equality and non-discrimination on the basis of sex. The general structure is _legal frameworks_ + _equality/non-discrimination_ + _women & girls_
+
+This phrase is about legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
+
+Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
+
+`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
 
 ```py
 TS=
 (
-    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-     "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor")
-            NEAR/5
-            (             
-              ("gender exclusion" OR ("exclusion" NEAR/5 "gender") OR "gender inclusion" OR ("inclusion" NEAR/5 "gender" ))
-              OR
-                (
-                  ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
-                  OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion"
-                  OR "social exclusion" OR "social inclusion" OR "digital exclusion" OR "digital inclusion"
-                  OR "*women's inclusion")
-                  NEAR/5 
-                 ("*women" OR "*woman" OR "*womens" OR "*womans"
-                   OR "girl$"
-                   OR "female$"
-                   OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-                   OR "wife" OR "wives" OR "girlfriend$"
-                   OR "pregnan*" OR "maternity" OR "maternal"
-                   OR "gender*"
-                   OR "transgender*"
-                   OR
-                     ("sex*"
-                      NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*"
-                      OR "bias*" OR "discriminat*" OR "violence")
-                      )
-                   )
-                )
+  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
+  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
+  )
+  NEAR/15
+      (
+        ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
+        OR "misogyn*" OR "sexism" OR "sexist"
+        OR
+        (
+          ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
+          OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
+          OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
+          OR "*women's inclusion"
+          )
+          NEAR/5 
+            ("*women" OR "*woman" OR "*womens" OR "*womans"
+            OR "girl$"
+            OR "female$"
+            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+            OR "wife" OR "wives" OR "girlfriend$"
+            OR "pregnan*" OR "maternity" OR "maternal"
+            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
             )
+        )
+      )
 )
            
-  
+
 ```
 
 ### Target 5.2
