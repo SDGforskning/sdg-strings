@@ -184,47 +184,34 @@ This query consists of X phrases......
 
 #### Phrase 1
 
-The basic structure is _women_ + _participation/leadership_ + _decisionmaking_
+The basic structure is _women_ + _participation/leadership_ 
 
 ```py
 
-TS= (fra action:)
-(
-("accelerat*" OR "achiev*" OR "adopt" OR "advance" OR "advancing" OR "attain*" OR "better" OR "build" 
-OR "develop*" OR "elevat*" OR "elevating" OR "empower*" OR "encourag*" OR "enhanc*" OR "ensur*" OR "expand" 
-OR "expansion" OR "establish*" OR "facilitat*" OR "foster*" OR "framework$" OR "guarantee*" OR "heighten*" 
-OR "higher*" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" OR "introduc*" OR "law$" OR "legislat*" 
-OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" OR "propos*" 
-OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
-    NEAR/5    
-        (
+TS=(
         (
             ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans") 
             OR 
             (
-            ("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*")
+            ("gender*" OR "transgender*") NEAR/3 ("parit*" OR "equal*" OR "equi*" OR "balanc*")
             )
         )
         NEAR/5 
-            (    
-                ("participat*" OR "involve*" OR "represent*" OR "engage*" OR "position*" OR "voice*" 
-                OR "vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "head" OR "manager*" 
-                OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
-                OR "member of parliament" OR "government" OR "mayor*" OR "quota" OR
-                (
-                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") NEAR/5 
-                ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional"))
-                )   
-                )
+        
+            ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
+             OR  "member of parliament" OR "mayor*" OR "quota" OR  "vote" OR "votes" OR "voting" 
+             OR "chief traditional" OR
+             (
+                ("represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
+                OR "corporate" OR "enterprise" OR "board" OR "chief" OR "member*" OR "officer*" OR "position")
+                NEAR/3
+                ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
+                OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
+                OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" )
+             )
             )
-    AND
-    (
-    ("decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" OR "politics")
-    OR
-    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit" OR "business*" OR "corporate" OR "public" 
-    OR "economic" OR "civil" OR "society" OR "communit*")
-    )
- )
+        
+    ) 
 
 
 ```

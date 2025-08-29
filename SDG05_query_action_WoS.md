@@ -424,7 +424,7 @@ OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support")
     (
     ("decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" OR "politics")
     OR
-    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit" OR "business*" OR "corporate" OR "public" 
+    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit*" OR "business*" OR "corporate" OR "public" 
     OR "economic" OR "civil" OR "society" OR "communit*")
     )
  )
@@ -477,7 +477,7 @@ TS=
     (
     ("decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" OR "politics")
     OR
-    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit" OR "business*" OR "corporate" OR "public" 
+    ("decision*" OR "decid*") NEAR/5 ("process*" OR "authorit*" OR "business*" OR "corporate" OR "public" 
     OR "economic" OR "civil" OR "society" OR "communit*")
     )
 )
