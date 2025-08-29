@@ -301,65 +301,61 @@ The basic structure is _women_ + _participation/leadership_
 
 ```py
 
-TS=(
+TS=
+(
+    ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans"
+    OR 
         (
-            ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans") 
-            OR 
-            (
-            ("gender*" OR "transgender*") NEAR/3 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" 
-            OR "gap*" OR "divide*")
-            )
+            ("gender*" OR "transgender*") 
+            NEAR/3 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "gap*" OR "divide*")
         )
-        NEAR/5 
-        
-            ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
-             OR  "member of parliament" OR "mayor*" OR "quota" OR "vote" OR "votes" OR "voting" 
-             OR "chief traditional" OR
-             (
+    )
+    NEAR/5 
+        ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
+        OR  "member of parliament" OR "mayor*" OR "quota" OR "vote" OR "votes" OR "voting" 
+        OR "chief traditional" 
+        OR
+            (
                 ("*represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
-                OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position")
+                OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position"
+                )
                 NEAR/3
-                ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
-                OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
-                OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" )
-             )
-             OR
-             (("board") NEAR/3 ("director"))
+                    ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
+                    OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
+                    OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" 
+                    )
             )
-        
-    ) 
-
+            OR (("board") NEAR/3 ("director"))
+        )  
+) 
 
 ```
 
 #### Phrase 2
-
 
 The basic structure is  _women_ + _proportion of seats/positions_ + _governments/leadership_ 
 
 ```py
 TS=
 (
-    ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" OR
-    (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
+    ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" 
+    OR (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
     )
-        NEAR/5
-    (
-        ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*" OR "quota")
-        NEAR/3
+    NEAR/5
         (
-            ("minister*" OR "mp" OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
-            "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*")
-            OR
-            (
-                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
-                NEAR/5 ("executive" OR "officer*" OR "official*" OR "position*" OR "member*")
-            )
+            ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*" OR "quota")
+            NEAR/3
+                ("minister*" OR "mp" OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
+                "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*"
+                OR
+                    (
+                        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
+                        NEAR/5 ("executive" OR "officer*" OR "official*" OR "position*" OR "member*")
+                    )
+                )
         )
-    )
 )
 ```
-
 
 
 ### Target 5.6
@@ -506,28 +502,31 @@ The basic structure is _use_ + _technologies_ + _empowerment of women_
 
 TS=
 (
-     
     (
-    ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
+        ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
         NEAR/5
-    ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-    OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
-    OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
-    OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
-    OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" )
+            ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+            OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
+            OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
+            OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
+            OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" 
+            )
     )
-NEAR/15
+    NEAR/15
         (
-            (
-            "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR 
-            (("gender*" OR "transgender")  NEAR/3 ("*parit*" OR "*equal*" OR "*equit*" OR "*balanc*" OR "gap" 
-            OR "divide" OR "difference*" OR "discriminat*"))
+            ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" 
+            OR 
+                (
+                    ("gender*" OR "transgender")  
+                    NEAR/3 ("*parit*" OR "*equal*" OR "*equit*" OR "*balanc*" OR "gap" OR "divide" OR "difference*" OR "discriminat*")
+                )
             )
             NEAR/15    
-            ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
-            OR "emancipat*" OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" 
-            OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy")
-       )
+                ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
+                OR "emancipat*" OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" 
+                OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy"
+                )
+        )
 )
 
 ```
@@ -554,24 +553,25 @@ The basic structure is _policies/legislation_ + _gender (in)equality/empowerment
 ```py
 TS=
 (
-
-("agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$"
-OR "law$" OR "legal*" OR "legislat*" OR "plan" OR "policy" OR "policies"
-OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "rule"
-OR "rules" OR "strateg*" OR "treaty" OR "treaties")
+    ("agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$"
+    OR "law$" OR "legal*" OR "legislat*" OR "plan" OR "policy" OR "policies"
+    OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "rule"
+    OR "rules" OR "strateg*" OR "treaty" OR "treaties"
+    )
     NEAR/5
-        (
-            ("GEWE") OR
+        ("GEWE" 
+        OR
             (
-            ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$")
-            NEAR/3
-            ("autonomy" OR "balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "control" OR "decision-making" 
-            OR "discriminat*" OR "divide*" OR "diversit*" OR "dispar*" OR "economic strength" OR "emancipat*" 
-            OR "*empower*" OR "equal*" OR "equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
-            OR "imbalanc*" OR "impair*" OR "inequal*" OR "includ*" OR "inclusion" OR "independence" 
-            OR "inequit*" OR "parit*" OR "personal priorities" OR "personal strength" OR "political strength" 
-            OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy" OR "unequal*" 
-            OR "unequit*" OR "unbalanc*" OR "violat*")
+                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$")
+                NEAR/3
+                    ("autonomy" OR "balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "control" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR "dispar*" OR "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "equal*" OR "equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
+                    OR "imbalanc*" OR "impair*" OR "inequal*" OR "includ*" OR "inclusion" OR "independence" 
+                    OR "inequit*" OR "parit*" OR "personal priorities" OR "personal strength" OR "political strength" 
+                    OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy" OR "unequal*" 
+                    OR "unequit*" OR "unbalanc*" OR "violat*"
+                    )
             )
         )
 )
@@ -586,25 +586,29 @@ The basic structure is _systems/policies for allocations for gender equality_
 TS=
 (
     ("gender responsive budgeting" OR "gender budgeting") 
-        OR  
+    OR  
     (
         (   
-        ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" OR "monitor*" 
-        OR "program*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
-        OR "rule" OR "rules" OR "strate*" OR "tool*" OR "track*" OR "transparen*") 
-            NEAR/3 ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
-            OR "disbursement*" OR "expenditur*")
+            ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" OR "monitor*" 
+            OR "program*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
+            OR "rule" OR "rules" OR "strate*" OR "tool*" OR "track*" OR "transparen*"
+            ) 
+            NEAR/3 
+                ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
+                OR "disbursement*" OR "expenditur*"
+                )
         )   
-    NEAR/5
-    (    
-    ("GEWE") OR 
-    ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
-        NEAR/3 
-        ("*balanc*" OR "divide*" OR "*empower*" OR "*equal*" OR "*equit*" OR "gap" OR "*parit*")
+        NEAR/5
+            ("GEWE" 
+            OR 
+                (
+                    ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
+                    NEAR/3 ("*balanc*" OR "divide*" OR "*empower*" OR "*equal*" OR "*equit*" OR "gap" OR "*parit*")
+                )
+            )
     )
-    )
-NOT "transplant*"
 )
+NOT TS=("transplant*")
 
 ```
 
@@ -630,7 +634,6 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 <span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
 
 <span id="f6li">UN Statistics Division. (2023).</span> *SDG indicator metadata*. [5.c.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf [Accessed 2025.06.05]
-
 
 <span id="f2li">UN Statistics Division. (2025).</span> *SDG indicator metadata*. [5.5.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf [Accessed 2025.06.05]
 
