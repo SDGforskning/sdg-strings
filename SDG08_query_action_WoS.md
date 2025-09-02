@@ -36,7 +36,7 @@ This target is interpreted to cover research about
 * sustaining per capita economic growth
 * supporting national macroeconomic development
 
-This includes work focused on productivity, GDP growth, and development models in both individual per capita) and national terms. While the goal highlights Least Developed Countries (LDCs), relevant literature may also examine comparative or general economic strategies, particularly where equity and sustainability are addressed.
+This includes work focused on productivity, GDP growth, and development models in both individual per capita and national terms. While the goal highlights Least Developed Countries (LDCs), relevant literature may also examine comparative or general economic strategies, particularly where equity and sustainability are addressed.
 
 ```py
 TS=
@@ -102,9 +102,9 @@ TS=
 
 This target is interpreted to cover research about 
 
-* achieving full employment and improving labor force participation
-* ensuring access to decent work
-* improving wage equality and reducing incomine disparities
+* achieving full employment
+* ensuring access to decent work for all
+* improving wage equality and reducing income disparities
 
 This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
 
@@ -124,8 +124,6 @@ TS=
 This target is interpreted to cover research about reducing the number of youth not in employment, education, or training (NEET).
 
 This includes research on youth disengagement, early labor market integration, and various interventions (educational, policy-based, or community-driven) aimed at increasing youth participations in economic and educational systems.
-
-For interpreting NEET we have used the definition by the UN as "youth (15-24 years old) who are not in employment and not in education or training".
 
 ```py
 TS=
@@ -174,8 +172,7 @@ TS=
 
 This target is interpreted to cover research about 
 
-* promoting sustainable tourism
-* supporting job creation through the tourism sector
+* implementing policies to promote sustainable tourism
 
 This includes research on the environmental, economic and cultural dimensions of sustainable tourism. Emphasis is placed on decent job creation and the promotion of local culture and products.
 
@@ -196,7 +193,7 @@ TS=
 
 This target is interpreted to cover research about 
 
-* expanding access to financial services
+* expanding access to financial services from domestic institutions
 * enhancing financial inclusion through infrastructure or digital innovation
 
 This includes studies on barriers to financial access, especially for underserved populations, as well as efforts to improve institutional capacity, regulatory frameworks, and technological tools (e.g., mobile banking, fintech) to support inclusive economic participations.
