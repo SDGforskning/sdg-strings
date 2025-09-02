@@ -64,7 +64,11 @@ TS=
 >
 > 8.3.1 Proportion of informal employment in total employment, by sector and sex
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Promoting policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation
+* Promoting policies that encourage formalization and growth micro-, small- and medium-sized enterprises
+
+The aspect of development-oriented policies is dificult to distinguish and not emphasized in the interpretation. There is some overlap with other SDGs (decent job creation, innovation and growth).
 
 ```py
 TS=
@@ -81,7 +85,11 @@ TS=
 >
 > 8.4.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Improving resource efficiency in consumption and production
+* Endeavouring to decouple economic growth from negative environmental impact
+
+The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production (10YFP) with base documents and interim progress reports.
 
 ```py
 TS=
