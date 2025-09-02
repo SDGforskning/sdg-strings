@@ -47,7 +47,7 @@ TS=
 > 8.2.1 Annual growth rate of real GDP per employed person
 
 This target is interpreted to cover research about 
-* Increasing economic productivity through diversification, technological upgrading anad innovation.
+* Increasing economic productivity through diversification, technological upgrading and innovation.
 
 The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are treated as examples and included in the search strings but not in the interpretation.
 
@@ -136,7 +136,11 @@ TS=
 >
 > 8.7.1 Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Eradication of forced labour, modern slavery and human trafficking
+* prohibit and end child labour and child soldiers
+
+The two steps for ending child labour is not considered essential, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour.
 
 ```py
 TS=
@@ -153,7 +157,11 @@ TS=
 >
 > 8.8.2 Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* protecting labour rights
+* promoting safe and secure working environments for all workers
+
+The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" (ILO Declaration on Fundamental Principles and Rights at Work and its Follow-up).
 
 ```py
 TS=
@@ -201,6 +209,9 @@ TS=
 > 8.a.1 Aid for Trade commitments and disbursements
 
 This target is interpreted to cover research about 
+* Increasing Aid for Trade support for developing countries
+
+Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." (https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm)
 
 ```py
 TS=
