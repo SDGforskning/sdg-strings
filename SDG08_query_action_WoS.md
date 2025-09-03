@@ -33,6 +33,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about 
 
+* sustaining per capita economic growth
+* supporting national macroeconomic development
+
+This includes work focused on productivity, GDP growth, and development models in both individual per capita and national terms. While the goal highlights Least Developed Countries (LDCs), relevant literature may also examine comparative or general economic strategies, particularly where equity and sustainability are addressed.
+
 ```py
 TS=
 (
@@ -108,6 +113,12 @@ TS=
 
 This target is interpreted to cover research about 
 
+* achieving full employment
+* ensuring access to decent work for all
+* improving wage equality and reducing income disparities
+
+This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
+
 ```py
 TS=
 (
@@ -121,7 +132,9 @@ TS=
 >
 > 8.6.1 Proportion of youth (aged 15-24 years) not in education, employment or training
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about reducing the number of youth not in employment, education, or training (NEET).
+
+This includes research on youth disengagement, early labor market integration, and various interventions (educational, policy-based, or community-driven) aimed at increasing youth participations in economic and educational systems.
 
 ```py
 TS=
@@ -178,6 +191,10 @@ TS=
 
 This target is interpreted to cover research about 
 
+* implementing policies to promote sustainable tourism
+
+This includes research on the environmental, economic and cultural dimensions of sustainable tourism. Emphasis is placed on decent job creation and the promotion of local culture and products.
+
 ```py
 TS=
 (
@@ -194,6 +211,13 @@ TS=
 > 8.10.2 Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider
 
 This target is interpreted to cover research about 
+
+* expanding access to financial services from domestic institutions
+* enhancing financial inclusion through infrastructure or digital innovation
+
+This includes studies on barriers to financial access, especially for underserved populations, as well as efforts to improve institutional capacity, regulatory frameworks, and technological tools (e.g., mobile banking, fintech) to support inclusive economic participations.
+
+This interpretation takes into account the two indicators with regards to both the physical infrastructure required for banks and ATMs, as well as digital infrastructure for mobile banking solutions.
 
 ```py
 TS=
@@ -227,6 +251,11 @@ TS=
 > 8.b.1 Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy
 
 This target is interpreted to cover research about 
+
+* developing and implementing youth employment strategies
+* implementing the Global Jobs Pact
+
+This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
 
 ```py
 TS=
