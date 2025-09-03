@@ -21,7 +21,7 @@ This document contains search strings for finding publications related to the ac
 
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
+Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Health (https://epoc.cochrane.org/lmic-filters).
 
 ## 3. Targets
 
@@ -47,6 +47,9 @@ TS=
 > 8.2.1 Annual growth rate of real GDP per employed person
 
 This target is interpreted to cover research about 
+* Increasing economic productivity through diversification, technological upgrading and innovation.
+
+The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are treated as examples and included in the search strings but not in the interpretation.
 
 ```py
 TS=
@@ -61,7 +64,11 @@ TS=
 >
 > 8.3.1 Proportion of informal employment in total employment, by sector and sex
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Promoting policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation
+* Promoting policies that encourage formalization and growth micro-, small- and medium-sized enterprises
+
+The aspect of development-oriented policies is dificult to distinguish and not emphasized in the interpretation. There is some overlap with other SDGs (decent job creation, innovation and growth).
 
 ```py
 TS=
@@ -78,7 +85,11 @@ TS=
 >
 > 8.4.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Improving resource efficiency in consumption and production
+* Endeavouring to decouple economic growth from negative environmental impact
+
+The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production (10YFP) with base documents and interim progress reports.
 
 ```py
 TS=
@@ -125,7 +136,11 @@ TS=
 >
 > 8.7.1 Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* Eradication of forced labour, modern slavery and human trafficking
+* prohibit and end child labour and child soldiers
+
+The two steps for ending child labour is not considered essential, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour.
 
 ```py
 TS=
@@ -142,7 +157,11 @@ TS=
 >
 > 8.8.2 Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about
+* protecting labour rights
+* promoting safe and secure working environments for all workers
+
+The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" (ILO Declaration on Fundamental Principles and Rights at Work and its Follow-up).
 
 ```py
 TS=
@@ -190,6 +209,9 @@ TS=
 > 8.a.1 Aid for Trade commitments and disbursements
 
 This target is interpreted to cover research about 
+* Increasing Aid for Trade support for developing countries
+
+Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." (https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm)
 
 ```py
 TS=
