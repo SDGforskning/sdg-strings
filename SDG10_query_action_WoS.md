@@ -343,6 +343,7 @@ NEAR
  )
 )
 )
+NOT "obstacle$ avoid*" NOT "Collision avoid*"
 ```
 
 ### Target 10.5
