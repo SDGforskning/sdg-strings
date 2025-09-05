@@ -119,6 +119,8 @@ This target is interpreted to cover research about
 
 This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
 
+Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' (https://www.ilo.org/topics-and-sectors/decent-work). Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' (https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_emp/@ed_emp_msu/documents/briefingnote/wcms_155817.pdf; https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf))
+
 ```py
 TS=
 (
@@ -193,7 +195,7 @@ This target is interpreted to cover research about
 
 * implementing policies to promote sustainable tourism
 
-This includes research on the environmental, economic and cultural dimensions of sustainable tourism. Emphasis is placed on decent job creation and the promotion of local culture and products.
+This includes research on the environmental, economic and cultural dimensions of sustainable tourism (UN Tourism: https://www.untourism.int/sustainable-development). Emphasis is placed on decent job creation and the promotion of local culture and products.
 
 ```py
 TS=
@@ -255,7 +257,7 @@ This target is interpreted to cover research about
 * developing and implementing youth employment strategies
 * implementing the Global Jobs Pact
 
-This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
+This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact (https://webapps.ilo.org/public/libdoc/nonigo/2009/446885.pdf; https://www.ilo.org/resource/conference-paper/recovering-crisis-global-jobs-pact) is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
 
 ```py
 TS=
