@@ -119,7 +119,7 @@ This target is interpreted to cover research about
 
 This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
 
-Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' (https://www.ilo.org/topics-and-sectors/decent-work). Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' (https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_emp/@ed_emp_msu/documents/briefingnote/wcms_155817.pdf; https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf))
+Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' <a href="#f3">(ILO, 2025)</a>. Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' (https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_emp/@ed_emp_msu/documents/briefingnote/wcms_155817.pdf; https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf))
 
 ```py
 TS=
@@ -275,6 +275,8 @@ Specialist input:
 
 ## 5. Footnotes
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal8#targets_and_indicators [Accessed 2025.04.22]
+<a id="f1"></a>UN DESA. (2025). *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal8#targets_and_indicators [Accessed 2025.04.22]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<a id="f3"></a>International Labour Organization. (2025). *Decent work*. https://www.ilo.org/topics-and-sectors/decent-work [Accessed 2025.09.05]
