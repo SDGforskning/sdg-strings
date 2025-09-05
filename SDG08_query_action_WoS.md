@@ -119,7 +119,7 @@ This target is interpreted to cover research about
 
 This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
 
-Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' <a href="#f3">(ILO, 2025)</a>. Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' (https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_emp/@ed_emp_msu/documents/briefingnote/wcms_155817.pdf; https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf))
+Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' <a href="#f3">(ILO, 2025)</a>. Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' <a href="#f4">(ILO, 2017)</a>
 
 ```py
 TS=
@@ -195,7 +195,7 @@ This target is interpreted to cover research about
 
 * implementing policies to promote sustainable tourism
 
-This includes research on the environmental, economic and cultural dimensions of sustainable tourism (UN Tourism: https://www.untourism.int/sustainable-development). Emphasis is placed on decent job creation and the promotion of local culture and products.
+This includes research on the environmental, economic and cultural dimensions of sustainable tourism <a href="#f5">(UN Tourism, 2025)</a>. Emphasis is placed on decent job creation and the promotion of local culture and products.
 
 ```py
 TS=
@@ -237,7 +237,7 @@ TS=
 This target is interpreted to cover research about 
 * Increasing Aid for Trade support for developing countries
 
-Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." (https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm)
+Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." <a href="#f7">(WTO, n.d.)</a>
 
 ```py
 TS=
@@ -257,7 +257,7 @@ This target is interpreted to cover research about
 * developing and implementing youth employment strategies
 * implementing the Global Jobs Pact
 
-This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact (https://webapps.ilo.org/public/libdoc/nonigo/2009/446885.pdf; https://www.ilo.org/resource/conference-paper/recovering-crisis-global-jobs-pact) is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
+This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact <a href="#f6">(ILO, 2022)</a> is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
 
 ```py
 TS=
@@ -275,8 +275,16 @@ Specialist input:
 
 ## 5. Footnotes
 
-<a id="f1"></a>UN DESA. (2025). *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal8#targets_and_indicators [Accessed 2025.04.22]
+<a id="f4"></a>International Labour Organization. (2017). *Measuring productive employment: A 'how to' note*. https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf [Accessed 2025.09.05]
 
-<span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+<a id="f6"></a>International Labour Organization. (2022). *Recovering from the crisis: A Global Jobs Pact (adopted by the International Labour Conference in 2009 and amended in 2022)*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed_norm/%40relconf/documents/meetingdocument/wcms_115076.pdf [Accessed 2025.09.05]
 
 <a id="f3"></a>International Labour Organization. (2025). *Decent work*. https://www.ilo.org/topics-and-sectors/decent-work [Accessed 2025.09.05]
+
+<a id="f1"></a>UN DESA. (2025). *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal8#targets_and_indicators [Accessed 2025.04.22]
+
+<a id="f5"></a>UN Tourism. (2025). *Sustainable development*. https://www.untourism.int/sustainable-development [Accessed 2025.09.05]
+
+<a id="f2"></a>United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<a id="f7"></a>World Trade Organization. (n.d.). *Aid for Trade fact sheet*. https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm
