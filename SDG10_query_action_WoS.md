@@ -115,7 +115,7 @@ This query consists of 1 phrase. The basic structure is *action (positive) + inc
 
 ```py
 TS=
-(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better$" OR "more efficient*" OR
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
