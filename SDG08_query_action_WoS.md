@@ -176,7 +176,7 @@ This target is interpreted to cover research about
 * protecting labour rights
 * promoting safe and secure working environments for all workers
 
-The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" (ILO Declaration on Fundamental Principles and Rights at Work and its Follow-up).
+The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" <a href="#f8">(ILO, 2022a)</a>.
 
 ```py
 TS=
@@ -257,7 +257,7 @@ This target is interpreted to cover research about
 * developing and implementing youth employment strategies
 * implementing the Global Jobs Pact
 
-This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact <a href="#f6">(ILO, 2022)</a> is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
+This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact <a href="#f6">(ILO, 2022b)</a> is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
 
 ```py
 TS=
@@ -277,7 +277,10 @@ Specialist input:
 
 <a id="f4"></a>International Labour Organization. (2017). *Measuring productive employment: A 'how to' note*. https://www.ilo.org/sites/default/files/2024-05/wcms_565180.pdf [Accessed 2025.09.05]
 
-<a id="f6"></a>International Labour Organization. (2022). *Recovering from the crisis: A Global Jobs Pact (adopted by the International Labour Conference in 2009 and amended in 2022)*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed_norm/%40relconf/documents/meetingdocument/wcms_115076.pdf [Accessed 2025.09.05]
+<a id="f8"></a>International Labour Organization. (2022a). *ILO declaration on fundamental principles and rights at work and its follow-up: Adopted at the 86th session of the International Labour Conference (1998)
+and amended at the 110th session (2022)*. https://www.ilo.org/sites/default/files/2024-04/ILO_1998_Declaration_EN.pdf
+
+<a id="f6"></a>International Labour Organization. (2022b). *Recovering from the crisis: A Global Jobs Pact (adopted by the International Labour Conference in 2009 and amended in 2022)*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed_norm/%40relconf/documents/meetingdocument/wcms_115076.pdf [Accessed 2025.09.05]
 
 <a id="f3"></a>International Labour Organization. (2025). *Decent work*. https://www.ilo.org/topics-and-sectors/decent-work [Accessed 2025.09.05]
 
