@@ -119,7 +119,7 @@ TS=
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
-    "establish*" OR "emphas*" OR "engag*" OR "extend* or better$*"
+    "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
  NEAR/3
    ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
