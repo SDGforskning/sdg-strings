@@ -49,10 +49,17 @@ TS=
 This target is interpreted to cover research about 
 
 ```py
-TS=
-(
+Testing accessibility. Below the latest version.
 
-)
+TS=( ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
+    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
+    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
+    "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
+   )
+ NEAR/3 ("accessib*" NEAR/3 ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*" OR ("discriminat*" OR "inequalit*" OR "harass*" OR  "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation"  OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR  "ageis*" OR "agis*" OR "prejud*" OR "religis*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR  "destitute" OR "living in poverty" OR  "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled" OR "displaced*" OR "handicap*" OR "mental illness*"   OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"  OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$"))) )
+
+
 ```
 
 ### Target 10.3
@@ -64,10 +71,51 @@ TS=
 This target is interpreted to cover research about 
 
 ```py
-TS=
-(
 
+TS=
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
+    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
+    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
+    "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
+   )
+ NEAR/3
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
+    ("accessib*" NEAR/2 "economic*") OR ("accessib*" NEAR/2 "financ*") OR ("accessib*" NEAR/2 "labor") OR ("accessib*" NEAR/2 "labour") OR ("accessib*" NEAR/2 "political*") OR ("accessib*" NEAR/2 "legislat*") OR ("accessib*" NEAR/2 "decision-making") OR ("accessib*" NEAR/2 "societal*)  OR ("accessib*" NEAR/2 "sosio-economic*) OR ("accessib*" NEAR/2"socioeconomic" )  OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
+    "financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR
+    "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
+    "socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR
+    "political* activit*"
+   )
+  )
+ OR
+  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
+    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
+    "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
+    "nullif*" OR "hinder*" 
+   )
+ NEAR/3
+   ("horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+    "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
+    OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
+    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
+    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR
+    "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"
+    OR "socioeconomic exclu*" OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR
+    "political* inactivit*" OR "societal* inactivit*" OR "societal* isolat*" OR "social* isolat*" OR
+    "economic* isolat*" OR "financ* isolat*" OR "political* isolat*"
+   )
+  )
+ )
+NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT
+"*lipid*" NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*"
+NOT "*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*" NOT "*porous*" NOT "immuno*"
 )
+)
+
+ ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR ("accessib*" NEAR/2 "economic*") OR ("accessib*" NEAR/2 "financ*") OR  ("accessib*" NEAR/2 "labor") OR ("accessib*" NEAR/2 "labour") OR ("accessib*" NEAR/2 "political*") OR ("accessib*" NEAR/2 "legislat*") OR ("accessib*" NEAR/2 "decision-making") OR ("accessib*" NEAR/2 "societal*)  OR ("accessib*" NEAR/2 "sosio-economic*) OR ("accessib*" NEAR/2"socioeconomic" )  OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR     "financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR     "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR     "socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR     "political* activit*"    )  NEAR/3  (("social*" OR "ethn*" OR "racial*") NEAR/3 "intoleran*") OR "discriminat*" OR "inequalit*" OR "harass*" OR    "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation"    OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR    "ageis*" OR "agis*" OR "prejud*" OR "religis*" OR    (("accessib*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR      "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR      "child*" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"      OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$"      OR "individual*" OR "adolescent*" OR "child*") NEAR/3 ("impairment" OR "disabilities" OR "disability" OR "HIV" OR      "AIDS" OR "trans" OR "older" OR "old" OR "cancer*" OR "autis*" OR "disorder$" OR "chronic" OR "chronically" OR      "neurodiverg*")) OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"      OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "pregnan*" OR "matern*" OR "menstrua*"      OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR      "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR      "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR      "interpersonal*" OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR "*demograph*" OR      "addict*"     ))
 ```
 
 ### Target 10.4
