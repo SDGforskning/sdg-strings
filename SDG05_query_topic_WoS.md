@@ -414,7 +414,7 @@ TS=
             ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
             OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
             OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-            OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+            OR "inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
             OR "unaffordab*" OR "expensive"
             OR "unbanked"
             )
@@ -450,18 +450,18 @@ TS=
 (
     (
         ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-        OR "ownership" OR "right$"
+        OR "ownership" OR "landownership" OR "right$"
         OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
         OR "affordab*" OR "pro poor"
         OR "empower*" OR "inclusion" OR "sharing"
         OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
-        OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+        OR "inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
         OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
         )
         NEAR/5
             ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
             OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
-            OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+            OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
             )
     )
     AND
