@@ -45,6 +45,8 @@ Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-econo
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to SDG 3 target 3.9 about death and illnesses caused e.g. by contaminated water.
 
+The `quality of drinking water` retrieves some irrelevant results about the drinking water of animals, livestock in particular. These are not currently excluded in order to keep all the relevant results included.
+
 
 #### Phrase 1
 
