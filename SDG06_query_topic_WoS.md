@@ -312,10 +312,9 @@ TS=
 
 This target is interpreted to cover research about <a href="#6">("UNSD 2022")</a>; <a href="#13">(UN-Water, Water quality & Wastewater)</a>
 
-* improving water quality
-* reducing untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
-* increasing recycling and safe reuse of wastewater
-* monitoring of water quality
+* water quality
+* untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
+* recycling and safe reuse of wastewater
   
 
 This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta. We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
