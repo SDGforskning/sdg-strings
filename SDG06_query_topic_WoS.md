@@ -473,7 +473,7 @@ TS=
 > 6.4.2 Level of water stress: freshwater withdrawal as a proportion of available freshwater resources
 
 This target is interpreted to cover research about increasing water-use efficiency (WUE) and ensuring that freshwater withdrawals are sustainable on all sectors. It is about reducing water scarcity and levels of water stress and about ensuring a sustainable supply of freshwater. We interpret that maintaining sustainable water supplies includes water security 
-> Definition of water security: *"The capacity of a population to safeguard sustainable access to adequate  quantities of acceptable quality water for sustaining livelihoods, human  well-being, and socio-economic development, for ensuring protection against  water-borne pollution and water-related disasters, and for preserving  ecosystems in a climate of peace and political stability."*  <a href="#f16">(UN-Water, What is water security)</a>.
+> Definition of water security: *"The capacity of a population to safeguard sustainable access to adequate  quantities of acceptable quality water for sustaining livelihoods, human  well-being, and socio-economic development, for ensuring protection against  water-borne pollution and water-related disasters, and for preserving  ecosystems in a climate of peace and political stability."*  <a href="#f16">(UN-Water. What is water security)</a>.
 
 By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
@@ -495,7 +495,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 
 Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#5">(DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
+We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#f5">(UN DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
 
 
 #### Phrase 1
@@ -503,7 +503,7 @@ We are unsure about whether research about water efficiency of agricultural plan
 This phrase aims to find research about water-use efficiency, sustainable withdrawals and water savings.
 
 Terms were found in 
-* UNSD SDG 6 extended report 2022 <a href="#6">(UNSD 2022)</a>
+* UNSD SDG 6 extended report 2022 <a href="#f6">(UNSD 2022)</a>
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
 
@@ -600,9 +600,9 @@ This target is interpreted to cover research about coordinated water resources m
 > Integrated Water Resources Management (IWRM) *promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
 
-IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors <a href="#17">(UNEP)</a>. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors <a href="#f17">(UNEP)</a>. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#6">(UNSD 2022)</a>. 
+Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#f6">(UNSD 2022)</a>. 
 
 
 
@@ -613,7 +613,7 @@ This phrase aims to find research about cross sectoral or co-ordinated water res
 Terms were found from 
 * Indicator metadata 6.5.1  https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 * Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf <a href="#f8">(UN Statistics division 2025)</a>
-* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#6">(UNSD 2022)</a> and UN-Water pages for Water quality and wastewater <a href="#13">(UN-Water, Water quality & Wastewater)</a>
+* Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#f6">(UNSD 2022)</a> and UN-Water pages for Water quality and wastewater <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
 The elements of the phrase are *IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
