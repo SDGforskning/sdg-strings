@@ -615,31 +615,45 @@ TS=
 
 This target is interpreted to cover research about
 * ensuring universal access to sexual and reproductive health
-* ensuring universal access to reproductive rights
+* ensuring reproductive rights
 
-The conferences mentioned in the target text relates to sexual and reproductive health in general, and with indicator 5.6.2 relating to both women and men, the interpretation of this target is not restricted to cover just women and girls. Topics and aspects of sexual and reproductive health is based on the mentioned conferences <a href="#f3hb">(ICPD, 1994) and </a> <a href="#f4hb">(UN Women, 2015)</a> and also related SDGs.
+The conferences mentioned in the target text relates to sexual and reproductive health in general, and with indicator 5.6.2 relating to both women and men, the interpretation of this target is not restricted to cover just women and girls. Topics and aspects of sexual and reproductive health is based on the mentioned conferences <a href="#f3hb">(ICPD, 1994) and </a> <a href="#f4hb">(UN Women, 2015)</a> and also related SDGs (i.e. 3.7).
 
 #### Phrase 1
-This phrase covers ensuring sexual and reproductive health as mentioned in the conference documents. The structure is action + health issue
+This phrase covers ensuring access to sexual and reproductive health and reproductive rights as mentioned in the conference documents. The structure is *sexual or reproductive health + equity/access + action*
 
 ```py
-TS=
+TS =
 (
-    ("accelerat*" OR "achiev*" OR "advance" OR "advancing" 
-    OR "attain" OR "better" OR "boost*" OR "build" OR "develop*" 
-    OR "elevate" OR "elevating" OR "empower*" OR "enhanc*" 
-    OR "ensure"OR "expand" OR "expansion" OR "facilitat*" 
-    OR "foster*" OR "guarantee*" OR "heighten*" OR "higher*" 
-    OR "implement*" OR "improv*" OR "increas*" OR "promot*" 
-    OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strengthen*" OR "support"
-    )
-    NEAR/10
-        ("sexual health" OR "reproductive health" OR "safe pregnan*" OR "safe child birth$"
+  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "harmful practice$" OR "harmful traditional practice$" OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
+  )
+  NEAR/15
+      ("health equity" OR "equity in health*" OR "health for all" OR "health promotion""
+      OR
+        (
+          ("access*" OR "right$" OR "coverage"
+          OR "afford" OR "affordab*" OR "low cost" OR "free of charge" OR "free service$" OR "subsidi*" OR "informed decision$"
+          )
+          NEAR/5
+            ("increas*" OR "enhanc*" OR "universal"
+            OR "expand*" OR "provide" OR "providing" OR "provision" OR "promot*" OR "ensur*"
+            OR "improv*" OR "support*" OR "advoca*" OR "address*" OR "fight*"
+            OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*"
+            )
         )
-)
+      OR
+        (
+          ("barrier$" OR "obstacle$" OR "impediment$" OR "unaffordab*" OR "expensive" OR  "hinder*" OR "restriction$")
+          NEAR/5
+            ("dismant*" OR "remov*" OR "combat" OR "fight*" OR "overcome" OR "address*" OR "fight*" OR "eliminat*"
+            OR "policy" OR "policies" OR "initiative$" OR "framework$" OR "program*" OR "strateg*"
+            )
+        )
+      )
+)       
 ```
 #### Phrase 2
-This phrase covers ensuring access and removing barriers for reproductive rights. The structure is action + access + reproductive rights
+This phrase covers both ensuring and removing barriers for reproductive rights. The structure is action + reproductive rights
 
 ```py
 TS=
@@ -649,13 +663,16 @@ TS=
     OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
     OR 
         (
-            ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*")
-            NEAR/5 ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "equitab*" OR "non-equit*")
+            ("decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending"
+            )
+            NEAR/5 
+            ("access" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" OR "non-equit*"
+            )
         )
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
+    OR "legislat*" OR "law$" OR "regulation$" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
     )
-    NEAR
-        ("reproductive rights"
+    NEAR/15
+        ("reproductive right$" OR (("abortion$" OR "contraception" OR "family planning" OR infertility) NEAR/15 right$)
         )
 )    
 
