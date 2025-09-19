@@ -913,7 +913,7 @@ This target is interpreted to cover research about advancing international coope
 
 As definition of capacity building we have used
 * Definition of "capacity development": *"the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"* (United Nations Development Group 2017).
-United Nations Development Group (2017) Capacity Development, UNDAF companion guidance <a href="#f15">(UNDAF 2017)</a>.
+United Nations Development Group (2017) Capacity Development, UNDAF companion guidance <a href="#f15">(United Nations Development Group 2017)</a>.
 
 We interpret capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important capacity building.  
 
@@ -1070,7 +1070,7 @@ AND
 >
 > 6.b.1 Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management
 
-This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf <a href="#f8">(UN Statistics division 2025)</a> measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration <a href="#5">(DESA 2018)</a>.
+This target is interpreted to cover research about supporting the participation of local communities and stakeholders in water and sanitation management. As the indicator for this target https://unstats.un.org/sdgs/metadata/files/Metadata-06-0B-01.pdf <a href="#f8">(UN Statistics division 2025)</a> measures existing `administrative units` `policies` and `procedures` for local community participation, we include these in participation. Even though the focus of the target is on local participation rather than administration <a href="#f5">(UN DESA 2018)</a>.
 
 According to the indicator metadata 6.b <a href="#f8">(UN Statistics division 2025)</a> water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
 
