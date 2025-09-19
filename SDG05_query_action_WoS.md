@@ -620,7 +620,7 @@ This target is interpreted to cover research about
 The conferences mentioned in the target text relates to sexual and reproductive health in general, and with indicator 5.6.2 relating to both women and men, the interpretation of this target is not restricted to cover just women and girls. Topics and aspects of sexual and reproductive health is based on the mentioned conferences <a href="#f3hb">(ICPD, 1994) and </a> <a href="#f4hb">(UN Women, 2015)</a> and also related SDGs (i.e. 3.7).
 
 #### Phrase 1
-This phrase covers ensuring access to sexual and reproductive health and reproductive rights as mentioned in the conference documents. The structure is *sexual or reproductive health + equity/access + action*
+This phrase covers ensuring access to sexual and reproductive health as mentioned in the conference documents. The structure is *sexual or reproductive health + equity/access + action*
 
 ```py
 TS =
@@ -628,7 +628,7 @@ TS =
   ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "harmful practice$" OR "harmful traditional practice$" OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
   )
   NEAR/15
-      ("health equity" OR "equity in health*" OR "health for all" OR "health promotion""
+      ("health equity" OR "equity in health*" OR "health for all" OR "health promotion"
       OR
         (
           ("access*" OR "right$" OR "coverage"
