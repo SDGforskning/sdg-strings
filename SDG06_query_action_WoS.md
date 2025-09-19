@@ -287,17 +287,17 @@ This phrase aims to find research about eliminating inequalities in access to sa
 HLPF review on SDG 6 implementation (2018) <a href="#f5">(UN DESA 2018)</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
-Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">(HLPF 2018)</a>.
+Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#f9">(HLPF 2018)</a>.
 
-Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#5">(DESA 2018)</a>.
+Some vulnerable groups of people are mentioned in HPLF review on SDG 6 implementation <a href="#f5">(UN DESA 2018)</a>.
 
 In addition we used UN sources to find terms and groups that can be considered "vulnerable" (Blanchard et al., 2017; Office of the High Commissioner, n.d.; United Nations, n.d.).
 
-* United Nations (n.d.) Fight racism. Vulnerable groups, who are they? <a href="#10">(UN Fight racism)</a>.
+* United Nations (n.d.) Fight racism. Vulnerable groups, who are they? <a href="#f10">(United Nations)</a>.
 
-* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. <a href="#11">(Office of the High Commissioner)</a> (accessed Jun 2022). 
+* Office of the High Commissioner (n.d.) Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health. United Nations Human Rights. <a href="#f11">(Office of the High Commissioner)</a> (accessed Jun 2022). 
 
-* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#12">(Blanchard)</a>. 
+* Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#f12">(Blanchard)</a>. 
 
 The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
 
