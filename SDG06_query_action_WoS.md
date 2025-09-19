@@ -708,9 +708,9 @@ This target is interpreted to cover research about implementing coordinated wate
 > Integrated Water Resources Management (IWRM) *promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
 
-IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing.
+IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors <a href="#17">(UNEP)</a>. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#6">("UNSD 2022")</a>. 
+Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#6">(UNSD 2022)</a>. 
 
 
 
@@ -1185,3 +1185,5 @@ WHO (2023). *Drinking-water* https://www.who.int/news-room/fact-sheets/detail/dr
 <span id="f15"> United Nations Development Group (2017).</span> *Capacity Development UNDAF companion guidance* https://unsdg.un.org/resources/capacity-development-undaf-companion-guidance [accessed 19.12.2019] 
 
 <span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
+
+<span id="f17"> UNEP.</span> *Integrated water resources management* https://www.unep.org/topics/fresh-water/water-resources-management/integrated-water-resources-management [Accessed 2025.09.19]
