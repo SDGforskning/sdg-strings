@@ -310,7 +310,7 @@ TS=
 >
 > 6.3.2 Proportion of bodies of water with good ambient water quality
 
-This target is interpreted to cover research about <a href="#f6">("UNSD 2022")</a>; <a href="#f13">(UN-Water, Water quality & Wastewater)</a>
+This target is interpreted to cover research about <a href="#f6">("UNSD 2022")</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
 * water quality
 * untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
