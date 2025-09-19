@@ -143,7 +143,7 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#5">(DESA 2018)</a>.
+This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#f5">(UN DESA 2018)</a>.
 
 What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> 
 
@@ -284,7 +284,7 @@ TS=
 
 This phrase aims to find research about eliminating inequalities in access to safe sanitation and hygiene services particularly for women, girls and people in vulnerable situations. 
 
-HLPF review on SDG 6 implementation (2018) <a href="#5">(DESA 2018)</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
+HLPF review on SDG 6 implementation (2018) <a href="#f5">(UN DESA 2018)</a> states that universal access also implies providing access to services in schools, health-care facilities and other institutional settings. We have not added these as specific terms in the phrases since they are covered by the general syntax 
 `access` + `sanitation/hygiene services`.
 
 Terms for removing barriers or facilitating access to sanitation/hygiene services for persons with disabilities were found in <a href="#9">(HLPF 2018)</a>.
