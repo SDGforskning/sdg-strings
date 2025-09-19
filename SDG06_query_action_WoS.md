@@ -789,7 +789,7 @@ NEAR/5
 
 This target is interpreted to cover research about protecting and restoring water-related ecosystems.
 
-It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water, Water & Ecosystems)</a>
+It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water. Water & Ecosystems)</a>
 
 By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>
 included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
@@ -854,7 +854,7 @@ TS=
 
 This phrase aims to find research about preventing the deterioration of freshwater-related ecosystems.
 
-Terms for deterioration were found in UNSD SDG 6 Extended report 2022 <a href="#6">(UNSD 2022)</a>.
+Terms for deterioration were found in UNSD SDG 6 Extended report 2022 <a href="#f6">(UNSD 2022)</a>.
 
 The elements of the phrase are *action + decline/deterioration/unsustainable use + water-related ecosystems*
 
