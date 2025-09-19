@@ -214,7 +214,7 @@ This phrase is about ending violence related to women and girls. The general str
 TS=
 (
 	("eliminat*" OR "eradicat*" OR"decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
 		("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "mutilat*"
@@ -250,18 +250,17 @@ Harmful practices are regarded as human rights violations and forms of violence,
 This phrase is about eliminating harmful practices against women and girls. The general structure is action + practice + women & girls
 
 ```py
-TS=
-(
-	("eliminat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
+TS=(
+	("eliminat*" OR "eradicat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" 
 	OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
 	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" 
 	OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" 
-	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending"
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("harmful practice$" OR "female genital mutilation" OR "FGM" "female genital cutting" OR "circumcision$" OR (("child" OR "children" OR "force*") NEAR/10 "marriage*")
-        ) 
-		NEAR
+		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*" OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/10 "marriage*") OR "bride kidnap*"
+		) 
+		NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans"
                 OR "girl$"
                 OR "female$"
