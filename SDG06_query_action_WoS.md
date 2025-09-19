@@ -25,10 +25,10 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 For general definitions and search terms we used
 * UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">(UNDGC 2023)</a>.
-* UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">(DESA 2023)</a>.
-* UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#f5">(DESA 2018)</a>.
+* UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">(UN DESA 2023)</a>.
+* UN DESA (2018). 2018 HLPF Review of SDG implementation: SDG 6 – Ensure availability and sustainable management of water and sanitation for all <a href="#f5">(UN DESA 2018)</a>.
 * UNSD (2022). 6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022 <a href="#f6">(UNSD 2022)</a>.
-* High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation <a href="#f17">(HLPF 2023)</a>.
+* High-level Political Forum (2023). SDGs in focus: SDG 6 and interlinkages with other SDGs – Clean water and sanitation <a href="#f17">(High-level Political Forum 2023)</a>.
 * UN-Water website’s Water facts pages https://www.unwater.org/water-facts
 
 
