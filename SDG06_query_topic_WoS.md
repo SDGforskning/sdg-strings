@@ -676,7 +676,7 @@ TS=
 
 This target is interpreted to cover research about protection and restoration of water-related ecosystems.
 
-It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water, Water & Ecosystems)</a>
+It focuses on the protection of freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water, Water & Ecosystems)</a>
 
 By the definition of indicator metadata 6.6.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-06-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>
 included in water-related ecosystems are `lakes` `rivers` `streams` `groundwater` `artificial waterbodies` and `wetlands`   
@@ -694,9 +694,9 @@ Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we 
 #### Phrase 1 
 
 
-This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
+This phrase aims to find research about protection of freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
-The elements of the phrase are *conserving/protecting + ecosystems/areas/water quality/water quantity + water-related ecosystems*
+The elements of the phrase are *conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems*
 
 The structure of the phrase is similar to SDG 14.2 phrase 3.
 
