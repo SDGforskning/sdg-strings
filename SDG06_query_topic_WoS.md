@@ -1010,9 +1010,9 @@ Specialist input:
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
-<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations (accessed Jun 2022).
+<span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations [accessed Jun 2022]
 
-<span id="f17"> UNEP.</span> *Integrated water resources management* https://www.unep.org/topics/fresh-water/water-resources-management/integrated-water-resources-management [Accessed 2025.09.19]
+<span id="f17"> UNEP.</span> *Integrated water resources management* https://www.unep.org/topics/fresh-water/water-resources-management/integrated-water-resources-management [Accessed 19.9.2025]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
@@ -1026,16 +1026,16 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f4">UN DESA (2023).</span> *HLPF Factsheet SDG 6* https://sdgs.un.org/sites/default/files/2023-07/2023%20HLPF%20Factsheet%20SDG%206.pdf 
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2025.04.02]
+<span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2.4.2025]
 
 <span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf 
 
 <span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata 
 
-<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene [Accessed 2025.04.28]
+<span id="f7">UN-Water.</span> *WASH - Water, Sanitation and Hygiene* https://www.unwater.org/water-facts/wash-water-sanitation-and-hygiene [Accessed 28.4.2025]
 
-<span id="f14">UN-Water.</span> *Water and Ecosystems* https://www.unwater.org/water-facts/water-and-ecosystems ("UN-Water Ecosystems") [Accessed 2025.04.29]
+<span id="f14">UN-Water.</span> *Water and Ecosystems* https://www.unwater.org/water-facts/water-and-ecosystems [Accessed 29.4.2025]
 
-<span id="f13">UN-Water.</span> *Water Quality and Wastewater* https://www.unwater.org/water-facts/water-quality-and-wastewater ("UN-Water Water quality") [Accessed 2025.04.29]
+<span id="f13">UN-Water.</span> *Water Quality and Wastewater* https://www.unwater.org/water-facts/water-quality-and-wastewater [Accessed 29.4.2025]
 
-<span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 2025.07.10]
+<span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 10.7.2025]
