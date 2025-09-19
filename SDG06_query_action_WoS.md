@@ -1141,7 +1141,7 @@ TS=
 
 ## 4. Contributions
 
-* v2.1.0: 
+* v2.1.0: Leena Byholm (Sept 2025)
 
 Specialist input: 
 
