@@ -781,7 +781,7 @@ TS=
 >
 > 6.a.1 Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan
 
-This target is interpreted to cover research about international co-operation and capacity-building to support developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
+This target is interpreted to cover research about international cooperation or capacity-building support to developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
 
 As definition of capacity building we have used
 * Definition of "capacity development": *"the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"* (United Nations Development Group 2017).
@@ -790,7 +790,7 @@ United Nations Development Group (2017) Capacity Development, UNDAF companion gu
 We interpret capacity building to include improvements in areas such as technology, infrastructure, research, skills, and knowledge, in addition to institutional structures, practices and resources. Allocation, awareness or understanding of responsibilities can also be important capacity building.  
 
 According to the metadata for indicator 6.a.1 *"International cooperation and capacity-building support" implies aid (most of it quantifiable) in the form of grants or loans by external support agencies* https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
-In its current form, however, the phrase searches for any research about cooperation on WASH related capacity building. 
+**In its current form, however, the phrase searches for any research about international or development cooperation on WASH related capacity building, whether aid or other form of collaboration**. 
 
 As the indicator monitors the amount of `Official development assistance` as part of government WASH spending plans, `ODA` is included as a capacity building term as well as `grants` and `loans` and some other financing terms. https://unstats.un.org/sdgs/metadata/files/Metadata-06-0A-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
