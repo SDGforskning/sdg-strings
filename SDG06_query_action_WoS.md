@@ -44,7 +44,7 @@ For general definitions and search terms we used
 
 This target is interpreted to cover research about advancing access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UN Department of Global Communications 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
-Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">(UN-Water, WASH-Water,Sanitation & Hygiene)</a>
+Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">(UN-Water. WASH-Water,Sanitation & Hygiene)</a>
 
 Target 6.1 is related to SDG 11 target 11.1 which is about access to basic services and to SDG 3 target 3.9 about death and illnesses caused e.g. by contaminated water.
 
