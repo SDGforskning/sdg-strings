@@ -178,12 +178,30 @@ TS=
 >
 > 5.2.2 Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence
 
-This target is about 
+This target is interpreted to cover research about
+* violence related to women and girls
+
+A wider interpretation is chosen because 'violence against women and girls' is difficult to distinguish when building search strings. Violence against women is defined by the UN as "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" <a href="#f2hb">(UN OHCHR, 1993)</a>
+
+#### Phrase 1
+
+This phrase is about violence related to women and girls. The general structure is violence + women & girls
 
 ```py
 TS=
-(
-
+(	
+    ("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "mutilat*"
+    )
+	NEAR/10
+	    ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR "wife" OR "wives" OR "girlfriend$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "sexual and gender" OR "transgender*"
+	    )
+		
 )
 ```
 
@@ -195,12 +213,29 @@ TS=
 >
 > 5.3.2 Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age
 
-This target is about 
+This target is interpreted to cover research about
+* harmful practices against women and girls
+
+Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
+
+#### Phrase 1
+
+This phrase is about harmful practices against women and girls. The general structure is practice + women & girls
 
 ```py
 TS=
 (
-
+	("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*" OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/10 "marriage*") OR "bride kidnap*"
+	) 
+	NEAR/10
+	    ("*women" OR "*woman" OR "*womens" OR "*womans"
+        OR "girl$"
+        OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+        OR "wife" OR "wives" OR "girlfriend$"
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "gender*" OR "sexual and gender" OR "transgender*"
+	    )
 )
 ```
 
@@ -369,15 +404,40 @@ TS=
 >
 > 5.6.2 Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education
 
-This target is about 
+This target is interpreted to cover research about
+* universal access to sexual and reproductive health
+* reproductive rights
+
+The conferences mentioned in the target text relates to sexual and reproductive health in general, and with indicator 5.6.2 relating to both women and men, the interpretation of this target is not restricted to cover just women and girls. Topics and aspects of sexual and reproductive health is based on the mentioned conferences <a href="#f3hb">(ICPD, 1994) and </a> <a href="#f4hb">(UN Women, 2015)</a> and also related SDGs (i.e. 3.7).
+
+#### Phrase 1
+This phrase covers access to sexual and reproductive health as mentioned in the conference documents. The structure is *sexual or reproductive health + equity/access*
+
+```py
+TS =
+(
+  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "harmful practice$" OR "harmful traditional practice$" OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
+  )
+  NEAR/15
+      ("health equity" OR "equity in health*" OR "health for all" OR "health promotion"
+      OR
+        (
+          ("access*" OR "right$" OR "coverage"
+          OR "afford" OR "affordab*" OR "low cost" OR "free of charge" OR "free service$" OR "subsidi*" OR "informed decision$"
+          )
+        )
+      )
+)       
+```
+#### Phrase 2
+This phrase covers reproductive rights. The structure is *reproductive rights*
 
 ```py
 TS=
-(
+("reproductive right$" OR (("abortion$" OR "contraception" OR "family planning" OR infertility) NEAR/15 right$)
+)    
 
-)
 ```
-
 ### Target 5.a
 
 > **5.a Undertake reforms to give women equal rights to economic resources, as well as access to ownership and control over land and other forms of property, financial services, inheritance and natural resources, in accordance with national laws**
