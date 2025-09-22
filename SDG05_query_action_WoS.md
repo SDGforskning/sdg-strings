@@ -85,7 +85,7 @@ TS=
                 OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
                 OR
                     ( 
-                        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+                        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
                         NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
                     )
                 ) 
