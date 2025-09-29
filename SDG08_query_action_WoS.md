@@ -114,8 +114,8 @@ TS=
 This target is interpreted to cover research about 
 
 * achieving full employment
-* ensuring access to decent work for all
-* improving wage equality and reducing income disparities
+* creating employment and jobs, labour rights, ensuring social protection for workers, ensuring social dialogue in workplaces, and more generally having access to decent work and employment
+* improving wage equality
 
 This includes studies on both the quantity and quality of employment, including issues like underemployment, labor market discrimination, job satisfaction, working conditions, and wage fairness. While women, youth, and persons with diabilities are mentioned specifically, searches should capture broader issues of inclusion and equity across labor markets.
 
@@ -195,7 +195,13 @@ This target is interpreted to cover research about
 
 * implementing policies to promote sustainable tourism
 
-This includes research on the environmental, economic and cultural dimensions of sustainable tourism <a href="#f5">(UN Tourism, 2025)</a>. Emphasis is placed on decent job creation and the promotion of local culture and products.
+This includes research on the environmental, economic and cultural dimensions of sustainable tourism (<a href="#f5">UN Tourism, 2025</a>). 
+
+The UNWTO (<a href="#f8">2013</a>) defines sustainable tourism as:
+
+> "Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”.
+
+Other aspects of sustainable tourism are also covered in SDG 12.b, which was also used as a basis for the phrases for this target.
 
 ```py
 TS=
@@ -214,8 +220,8 @@ TS=
 
 This target is interpreted to cover research about 
 
-* expanding access to financial services from domestic institutions
-* enhancing financial inclusion through infrastructure or digital innovation
+* expanding access to financial services from local, domestic and/or national institutions
+* enhancing financial inclusion through physical or digital infrastructure
 
 This includes studies on barriers to financial access, especially for underserved populations, as well as efforts to improve institutional capacity, regulatory frameworks, and technological tools (e.g., mobile banking, fintech) to support inclusive economic participations.
 
@@ -289,5 +295,7 @@ and amended at the 110th session (2022)*. https://www.ilo.org/sites/default/file
 <a id="f5"></a>UN Tourism. (2025). *Sustainable development*. https://www.untourism.int/sustainable-development [Accessed 2025.09.05]
 
 <a id="f2"></a>United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
+
+<a id="f8"></a>UNWTO (2013). *Sustainable Tourism for Development Guidebook - Enhancing capacities for Sustainable Tourism for development in developing countries*. https://www.e-unwto.org/doi/epdf/10.18111/9789284415496.
 
 <a id="f7"></a>World Trade Organization. (n.d.). *Aid for Trade fact sheet*. https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm
