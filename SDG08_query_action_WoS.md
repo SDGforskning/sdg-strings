@@ -206,7 +206,19 @@ Other aspects of sustainable tourism are also covered in SDG 12.b, which was als
 ```py
 TS=
 (
-
+  (
+    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build*" OR "advance" OR "advancing" 
+    OR "establish*" OR "consider*" OR "encourag*" OR "ensure" OR "implement" OR "adopt*" OR "apply" OR "enforce" OR "propose*" OR "design*" OR "plan" OR "planning" 
+    OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
+    ) 
+    NEAR/5 ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
+	OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*") 
+  )
+  NEAR/15 
+      (
+        ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
+        NEAR/3 ("tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "hotel$")
+      )
 )
 ```
 
