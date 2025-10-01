@@ -33,15 +33,14 @@ In many of the strings we use `"*womens" OR "*womans"` - this will also find res
 When interpreting this SDG and deciding the scope of research that we should aim to cover, we had to interpret who is covered by the targets. This is challenging because the SDG uses varying terminology:
 - The main title of the SDG covers both "gender equality" generally, and "women and girls"
 - Some targets refer to "women" in all parts (e.g. 5.2)
-- Some do not refer to "women" in the target, only in an indicator (e.g. 5.6; which also mentions "men")
 - Some refer to "women" in the target but "sex" (e.g. 5.1) or "gender" (e.g. 5.c) in the indicator
-- Some targets do not refer to gender/sex/women at all (e.g. 5.4)
+- Some do not refer to "women", "gender" or "sex" at all in the target, only in an indicator (e.g. 5.6, which also refers to "men"; 5.4, which refers to "sex")
  
-This leads to a difficulty. While a lot of SDG5 has a focus on "women and girls", it is not limited to these, and sometimes widens into "gender" and "sex" equality. These terms have different meanings <a href="#f7ca">(WHO, 2025)</a> and therefore influences interpretations. In addition, the coverage of "women and girls" is not clear. As <a href="#f8ca">Matthyse (2020)</a> states:
+This leads to a difficulty. While a lot of SDG5 has a focus on "women and girls", it is not limited to these, and sometimes widens into "gender" and "sex" equality. These terms have different meanings <a href="#f7ca">(WHO, 2025)</a> and therefore influence interpretations. In addition, the coverage of "women and girls" is not clear. As <a href="#f8ca">Matthyse (2020)</a> states:
 >"At first glance one would assume that the separation of ‘gender equality’ from ‘women and girls’ denotes that ‘gender equality’ is encompassing of, but not limited to, ‘women and girls’. However, when interpreting the targets and indicators these confirm that gender equality is typically measured in cisnormative terms. SDG 5 clearly states that its aim is to end all forms of discrimination against all women and girls. The goal is also not clear on whether trans women and girls, legally affirmed or not, are included in the remit of SDG 5. However, what is clear is that marginalised gender minorities, which also include gender-diverse, gender non-conforming and gender-fluid persons, to name a few, are completely omitted and erased from the scope of its application."
 
 Given this complex background, we have chosen to interpret "relevant" research as follows: 
-In targets which do not use gender/sex/women terms (5.4 and 5.6), we do not limit to gender/sex, as a rule.
+In targets which do not use gender/sex/women terms in the target itself (5.4 and 5.6), we do not limit to gender/sex/women, as a rule.
 In the other targets which specify gender/sex/women terms, we include terms for women, sex, gender, gender non-conforming and transgender. While one could argue for a narrower approach, we think that including gender minorities along with women is aligned with the very first theme of the SDG: "Achieve gender equality" - especially as some of the SDG5 target issues are relevant for some gender minorities <a href="#f9ca">(UN Human Rights Office of the High Commissioner, 2025)</a>. From a practical perspective, this approach also avoids having a widely different scope between targets, and helps us to build searches with good recall, as some research will use general terms for gender but be relevant for women.
 
 ## 3. Targets
