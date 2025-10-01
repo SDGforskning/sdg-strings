@@ -22,9 +22,27 @@ This document contains search strings for finding publications related to the ac
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
 Acronyms used:
+- UN: United Nations
 - UN DESA: UN Department of Economic and Social Affairs
+- ILO: International Labour Organisation
 
 In many of the strings we use `"*womens" OR "*womans"` - this will also find results with "women's" and "woman's" in the current WOS search functionality. 
+
+### General interpretation note
+
+When interpreting this SDG and deciding the scope of research that we should aim to cover, we had to interpret who is covered by the targets. This is challenging because the SDG uses varying terminology:
+- The main title of the SDG covers both "gender equality" generally, and "women and girls"
+- Some targets refer to "women" in all parts (e.g. 5.2)
+- Some do not refer to "women" in the target, only in an indicator (e.g. 5.6; which also mentions "men")
+- Some refer to "women" in the target but "sex" (e.g. 5.1) or "gender" (e.g. 5.c) in the indicator
+- Some targets do not refer to gender/sex/women at all (e.g. 5.4)
+ 
+This leads to a difficulty. While a lot of SDG5 has a focus on "women and girls", it is not limited to these, and sometimes widens into "gender" and "sex" equality. These terms have different meanings <a href="#f7ca">(WHO, 2025)</a> and therefore influences interpretations. In addition, the coverage of "women and girls" is not clear. As <a href="#f8ca">Matthyse (2020)</a> states:
+>"At first glance one would assume that the separation of ‘gender equality’ from ‘women and girls’ denotes that ‘gender equality’ is encompassing of, but not limited to, ‘women and girls’. However, when interpreting the targets and indicators these confirm that gender equality is typically measured in cisnormative terms. SDG 5 clearly states that its aim is to end all forms of discrimination against all women and girls. The goal is also not clear on whether trans women and girls, legally affirmed or not, are included in the remit of SDG 5. However, what is clear is that marginalised gender minorities, which also include gender-diverse, gender non-conforming and gender-fluid persons, to name a few, are completely omitted and erased from the scope of its application."
+
+Given this complex background, we have chosen to interpret "relevant" research as follows: 
+In targets which do not use gender/sex/women terms (5.4 and 5.6), we do not limit to gender/sex, as a rule.
+In the other targets which specify gender/sex/women terms, we include terms for women, sex, gender, gender non-conforming and transgender. While one could argue for a narrower approach, we think that including gender minorities along with women is aligned with the very first theme of the SDG: "Achieve gender equality" - especially as some of the SDG5 target issues are relevant for some gender minorities <a href="#f9ca">(UN Human Rights Office of the High Commissioner, 2025)</a>. From a practical perspective, this approach also avoids having a widely different scope between targets, and helps us to build searches with good recall, as some research will use general terms for gender but be relevant for women.
 
 ## 3. Targets
 
@@ -1018,13 +1036,15 @@ TS=
 
 * v2.1.0: 
 
-Specialist input: 
+Specialist input: Hanne Marie Johansen, Professor in Gender Studies (29.09.25)
 
 ## 5. Footnotes
 
 <span id="f3hb">ICPD. (1994).</span> *Programme of Action - Adopted at the International Conference on Population and Development (ICPD)*. https://www.unfpa.org/sites/default/files/event-pdf/PoA_en.pdf [Accessed 2025.05.08]
 
 <span id="f5li">ILO. (2012).</span> *International Standard Classification of Occupations: Structure, group definitions and correspondence tables: ISCO–08, Volume I*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf [Accessed 2025.06.12]
+
+<span id="f8ca">Matthyse, L. (2020).</span> *Achieving gender equality by 2030: Transgender equality in relation to Sustainable Development Goal 5*. Agenda, pp. 124-132 https://doi.org/10.1080/10130950.2020.1744336
 
 <span id="f1li">UN. (1995).</span> *Report of the Fourth World
 Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
@@ -1034,6 +1054,8 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 <span id="f2ca">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
+
+<span id="f9ca">UN Human Rights Office of the High Commissioner. (2025).</span> *Transgender* [Factsheet]. UN Free & Equal. https://www.unfe.org/en/know-the-facts/challenges-solutions/transgender [Accessed 2025.09.29]
 
 <span id="f2hb">UN OHCHR. (1993).</span> *Declaration on the Elimination of Violence against Women*. https://www.ohchr.org/en/instruments-mechanisms/instruments/declaration-elimination-violence-against-women [Accessed 2025.05.08]
 
@@ -1048,5 +1070,7 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 <span id="f3li">UN Women. (2015).</span> *Monitoring Gender Equality and the Empowerment of women and girls in the 2030 Agenda for Sustainable Development: Opportunities and Challenges: Position Paper*. https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf    [Accessed 2025.06.05]
 
 <span id="f7li">UNICEF. (2017).</span> *Gender Equality: Glossary of Terms and Concepts*. https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf [Accessed 2025.06.05]
+
+<span id="f7ca">WHO. (2025).</span> *Gender and health*. https://www.who.int/health-topics/gender [Accessed 2025.09.29]
 
 <span id="f6ca">Yamamoto, Y</span> (2018). *Now is the Time! Reduce and redistribute the unpaid domestic and care work burden of women for sustainable development*. UNDP Asia and the Pacific.  https://www.undp.org/asia-pacific/publications/now-time-reduce-and-redistribute-unpaid-domestic-and-care-work-burden-women-sustainable-development [accessed 22 May 2025]
