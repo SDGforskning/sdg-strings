@@ -174,7 +174,7 @@ TS=
                 ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
                 OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
                 OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
-                OR "*women's inclusion"
+                OR "*women's inclusion" OR "equal pay*"
                 )
                 NEAR/5 
                     ("*women" OR "*woman" OR "*womens" OR "*womans"
