@@ -163,6 +163,11 @@ TS=
 
 This target is interpreted to cover research about 
 
+    Ensuring, even strengthening, representation across demographic groups or population groups, in local, national and international decision-making institutions. 
+    Decision-making institutions are here understood as legislature, public service and judiciary institutions.  
+
+By judicial institutions we understand it to cover the courts of law, at all levels.  Demographic groups are groups of people according to sex and age. Groups of population could be etnhic minorities, and other minority groups with few or no representatives in national and local institutions.  
+
 ```py
 TS=
 (
