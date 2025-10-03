@@ -37,7 +37,13 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 16.1.4 Proportion of population that feel safe walking alone around the area they live after dark
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about reduction of (lethal) violence and intentional killings. Violence is here understood as all sorts of intentional violence that results in deaths and homicide, or even severe injury, among civilians as well as armed forces. It should cover all forms and aspects of intentional physical, psychological or sexual violence. 
+
+By all sorts of conflicts, we understand the conflicts where the intention is homicide, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, or domestic political conflicts like civil wars, or international conflicts, like wars.  
+
+The conflicts are of different character and are reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
+
+The query should also find research on work for peace and stability in an area, as well as research on experience of security and safety for people. 
 
 ```py
 TS=
