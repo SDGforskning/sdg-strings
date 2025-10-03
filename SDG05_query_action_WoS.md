@@ -898,7 +898,7 @@ TS=
 
 #### Phrase 2
 
-The basic structure is _action_ + _barriers_ + _use of technology_ + _empowerment of women_
+The basic structure is _action_ + _barriers_ + _use of technology_ + _empowerment of women_ (perhaps integrate into phrase 1, decide about NEAR...)
 
 ```py
 TS=
@@ -914,28 +914,49 @@ TS=
             OR "imbalance" OR "inequit*" OR "inequal*"  OR "obstacle*"  OR "unequit*" OR "unbalanc*" OR "unequal*" 
             )
     )
-    NEAR/5
-        (
+    NEAR/10
+    (
             (
-                ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
+                ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills" 
+                OR "competenc*" OR "confidence" OR "aquisition" OR "capab*") 
                 NEAR/5
-                    ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-                    OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
-                    OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
-                    OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
-                    OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web"
+                    ("apps" OR "applications" OR "automat*" OR "broadband" OR "chatbot*" OR "computer*" 
+                    OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
+                    OR "enabling technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
+                    OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+                    OR "information communications technolog*" OR "information technolog*" 
+                    OR "innovative technolog*" OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
+                    OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" OR "online" 
+                    OR "*phone*" OR "robot*" OR "social media" OR "tablet*" OR "tehcnological intervention*" 
+                    OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "web-based" OR "wi-fi" 
+                    OR "wireless" OR  
+                    (("artificial" OR "machine" OR "generative" OR "computational") NEAR/1 ("intelligence" OR "learning"))
                     )
             )
+    
+    NEAR/15
+        (
+            "GEWE"
+            OR
+            (
+            ("*women" OR "*woman" OR "*womens" OR "*womans"
+            OR "girl$"
+            OR "female$"
+            OR "sister$" OR "mother$" OR "daughter$"
+            OR "wife" OR "wives" OR "girlfriend$"
+            OR "pregnan*" OR "maternity" OR "maternal"
+            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+            )
             NEAR/15
-                ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" 
-                OR (("gender*" OR "transgender")  NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*" OR "diversity"))
-                )
-            NEAR/15    
-                ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" OR "emancipat*"
-                OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength" 
-                OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy"
-                )
+                    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
+                    OR "emancipat*" OR "*empower*" OR "independence" OR "personal priorities" OR "personal strength"
+                    OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
+                    OR "rights*" OR "equity" OR "equality"
+                    )
+            )
         )
+)
 )
 ```
 
