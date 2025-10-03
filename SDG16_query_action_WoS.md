@@ -215,9 +215,9 @@ TS=
 
 This target is interpreted to cover research about 
 
-    Ensuring public access to information.  
+    - Ensuring public access to information.  
 
-    Protection of fundamental freedoms.  Fundamental freedoms are here interpreted as part of basic human rights, like 
+    - Protection of fundamental freedoms.  Fundamental freedoms are here interpreted as part of basic human rights, like 
     “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
     (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english) 
 
