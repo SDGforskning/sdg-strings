@@ -99,9 +99,13 @@ TS=
 > 16.4.2 Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments
 
 This target is interpreted to cover research about 
+
     reduction of illicit financial flows (IFFs) 
+    
     reduction of illicit arms flows  
-    strengthening recovery of stolen assets  
+    
+    strengthening recovery of stolen assets 
+    
     fighting all organized crime  
 
 For research on reduction of illicit financial flows, it should also cover research on strengthening the capacity to track and control illegal financial flows in and out of countries. This includes research on capital controls, tax evasion, business transparency, money laundering etc.  Illicit arms flow and recovery and returning stolen assets, are aspects of illicit financial flows and organized crime.  
