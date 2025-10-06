@@ -886,7 +886,7 @@ TS=
             )
             NEAR/15
                     ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "independence" OR "personal priorities" OR "personal strength"
+                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength"
                     OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
                     OR "rights*" OR "equity" OR "equality"
                     )
@@ -950,7 +950,7 @@ TS=
             )
             NEAR/15
                     ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "independence" OR "personal priorities" OR "personal strength"
+                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength"
                     OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
                     OR "rights*" OR "equity" OR "equality"
                     )
