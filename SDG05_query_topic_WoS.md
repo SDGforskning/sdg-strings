@@ -661,31 +661,37 @@ The basic structure is _systems/policies for allocations for gender equality_
 ```py
 TS=
 (
-    ("gender responsive budgeting" OR "gender budgeting") 
+    ("gender responsive budget*" OR "gender budget*") 
     OR  
     (
         (   
             ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" OR "monitor*" 
-            OR "program*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
-            OR "rule" OR "rules" OR "strate*" OR "tool*" OR "track*" OR "transparen*"
+            OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
+            OR  "track*" OR "transparen*"
             ) 
             NEAR/3 
                 ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
-                OR "disbursement*" OR "expenditur*"
+                OR "disbursement*" OR "expenditur*" OR "public financ*"
                 )
         )   
         NEAR/5
-            ("GEWE" 
-            OR 
-                (
-                    ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
-                    NEAR/3 ("*balanc*" OR "divide*" OR "*empower*" OR "*equal*" OR "*equit*" OR "gap" OR "*parit*")
-                )
+        ("GEWE" OR
+            (
+                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" 
+                OR "lesbian" OR "sexual* and gender" OR "transperson*" OR "non-binary")
+                    NEAR/3
+                    ("autonomy" OR "*balanc*" OR  "capacity*" OR "choice*" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR  "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "*equal*" OR "*equit*" OR "freedom" OR "gap"
+                    OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
+                    OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
+                    OR "self confidence" OR "self efficacy" OR "violat*")
             )
+        )       
     )
 )
 NOT TS=("transplant*")
-
 ```
 
 ## 4. Contributions
