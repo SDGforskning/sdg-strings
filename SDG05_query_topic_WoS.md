@@ -627,30 +627,30 @@ This query consists of 2 phrases:
 The basic structure is _policies/legislation_ + _gender (in)equality/empowerment of women_  
 
 ```py
+
 TS=
 (
-    ("agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$"
-    OR "law$" OR "legal*" OR "legislat*" OR "plan" OR "policy" OR "policies"
-    OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "rule"
-    OR "rules" OR "strateg*" OR "treaty" OR "treaties"
-    )
-    NEAR/5
-        ("GEWE" 
-        OR
-            (
-                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$")
-                NEAR/3
-                    ("autonomy" OR "balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "control" OR "decision-making" 
-                    OR "discriminat*" OR "divide*" OR "diversit*" OR "dispar*" OR "economic strength" OR "emancipat*" 
-                    OR "*empower*" OR "equal*" OR "equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
-                    OR "imbalanc*" OR "impair*" OR "inequal*" OR "includ*" OR "inclusion" OR "independence" 
-                    OR "inequit*" OR "parit*" OR "personal priorities" OR "personal strength" OR "political strength" 
-                    OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy" OR "unequal*" 
-                    OR "unequit*" OR "unbalanc*" OR "violat*"
-                    )
-            )
-        )
-)
+    ("agreement$" OR "directive*" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+    OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "principle$" OR "program*" 
+    OR "regulat*" OR "rule" OR "rules" OR "statute*" OR "strateg*" OR "treaty" OR "treaties") 
+        NEAR/5
+            ("GEWE" OR
+                (
+                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" 
+                OR "lesbian" OR "sexual* and gender" OR "transperson*" OR "non-binary"
+                OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+                )
+                    NEAR/3
+                    ("autonomy" OR "*balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR  "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "*equal*" OR "*equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
+                    OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
+                    OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
+                    OR "self confidence" OR "self efficacy" OR "violat*")
+                )
+            )       
+)  
 ```
 
 #### Phrase 2
