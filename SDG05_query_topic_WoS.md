@@ -642,7 +642,7 @@ TS=
                 OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
                 )
                     NEAR/3
-                    ("autonomy" OR "*balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "decision-making" 
+                    ("autonomy" OR "*balanc*" OR "bias*" OR "capacity*" OR "decision-making" 
                     OR "discriminat*" OR "divide*" OR "diversit*" OR  "economic strength" OR "emancipat*" 
                     OR "*empower*" OR "*equal*" OR "*equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
                     OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
