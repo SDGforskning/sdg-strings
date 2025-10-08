@@ -630,8 +630,8 @@ The basic structure is _policies/legislation_ + _gender (in)equality/empowerment
 
 TS=
 (
-    ("agreement$" OR "directive*" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
-    OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "principle$" OR "program*" 
+    ("agreement$" OR "convention" OR "directive*" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+    OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "principle$" OR "program*" OR "ratification"
     OR "regulat*" OR "rule" OR "rules" OR "statute*" OR "strateg*" OR "treaty" OR "treaties") 
         NEAR/5
             ("GEWE" OR
@@ -647,7 +647,7 @@ TS=
                     OR "*empower*" OR "*equal*" OR "*equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
                     OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
                     OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
-                    OR "self confidence" OR "self efficacy" OR "violat*")
+                    OR "self confidence" OR "self efficacy")
                 )
             )       
 )  
@@ -686,7 +686,7 @@ TS=
                     OR "*empower*" OR "*equal*" OR "*equit*" OR "freedom" OR "gap"
                     OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
                     OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
-                    OR "self confidence" OR "self efficacy" OR "violat*")
+                    OR "self confidence" OR "self efficacy")
             )
         )       
     )
