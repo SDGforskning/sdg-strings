@@ -975,7 +975,7 @@ This query consists of 2 phrases:
 
 
 
-## Phrase 1
+#### Phrase 1
 
 The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender (in)equality/empowerment of women_  
 
@@ -1015,7 +1015,7 @@ NEAR/3
     )
 )
 ```
-## Phrase 2
+#### Phrase 2
 
 The basic structure is _action (decrease)_ + _discriminatory policies/legislation_  
 
@@ -1028,8 +1028,9 @@ TS=
     )     
     NEAR/5
         (
-            ("agreement$" OR "framework$" OR "governance" OR "law$" OR "legal*" OR "legislat*" OR "plan"  
-            OR "policy" OR "policies" OR "principle$" OR "procedure*" OR  "regulat*" OR "right*" OR "rule" OR "rules" OR "strateg*" OR "treaty" OR "treaties"
+            ("agreement$" OR "convention" OR  "framework$" OR "governance" OR "law$" OR "legal*" OR "legislat*" OR "plan"  
+            OR "policy" OR "policies" OR "principle$"  OR  "ratification" OR "regulat*" OR "rule" OR "rules" 
+            OR "strateg*" OR "treaty" OR "treaties"
             ) 
             NEAR/5
                 (
@@ -1037,11 +1038,13 @@ TS=
                     OR "impair*" OR   "violat*" OR "equal*" OR "inequal*" OR "unequal*" OR "equit*" OR "inequit*"
                     OR "unequit*" OR "balanc*" OR "imbalanc*"   OR "unbalanc*" OR "diversity" OR "gap" OR "divide*"
                     )
-                    NEAR/3 ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$" OR "gender" OR "transgender*")
+                        NEAR/3 ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "sister$" OR "mother$" 
+                        OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" 
+                        OR "girl$" OR "gender*" OR "transgender*" OR "sexual* and gender" OR "transperson*" 
+                        OR "non-binary" OR "sex")
                 )
         )
 )
-
 ```
 
 ## 4. Contributions
