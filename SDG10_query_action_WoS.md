@@ -49,7 +49,47 @@ TS=
 This target is interpreted to cover research about 
 
 ```py
-
+TS=
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
+    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
+    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
+    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
+    "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
+   )
+ NEAR/3
+   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
+    "accessib*" OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
+    "financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR
+    "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
+    "socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR
+    "political* activit*"
+   )
+  )
+ OR
+  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
+    "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+    "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
+    "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
+    "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR
+    "nullif*" OR "hinder*" 
+   )
+ NEAR/3
+   ("horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+    "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
+    OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
+    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
+    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR
+    "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"
+    OR "socioeconomic exclu*" OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR
+    "political* inactivit*" OR "societal* inactivit*" OR "societal* isolat*" OR "social* isolat*" OR
+    "economic* isolat*" OR "financ* isolat*" OR "political* isolat*"
+   )
+  )
+ )
+NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT
+"*lipid*" NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*"
+NOT "*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*" NOT "*porous*" NOT "immuno*"
+)
 
 
 ```
