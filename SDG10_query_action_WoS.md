@@ -50,21 +50,19 @@ This target is interpreted to cover research about
 
 ```py
 TS=
-(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
+(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "foster*" OR "more efficient*" OR
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
     "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
  NEAR/3
-   ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR
-    "accessib*" OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
-    "financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR
-    "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
-    "socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR
-    "political* activit*"
-   )
-  )
+(( "social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
+"financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
+"socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR  "political* activit*" ) OR 
+("accessib*" NEAR/3 ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"lisää tähän ihmisryhmä))))
+
+
  OR
   (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
     "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
