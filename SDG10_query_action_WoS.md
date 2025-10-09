@@ -49,15 +49,7 @@ TS=
 This target is interpreted to cover research about 
 
 ```py
-Testing accessibility. Below the latest version.
 
-TS=( ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "more efficient*" OR
-    "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
-    OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
-    OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
-    "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
-   )
- NEAR/3 ("accessib*" NEAR/3 ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*" OR ("discriminat*" OR "inequalit*" OR "harass*" OR  "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation"  OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR  "ageis*" OR "agis*" OR "prejud*" OR "religis*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR  "destitute" OR "living in poverty" OR  "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled" OR "displaced*" OR "handicap*" OR "mental illness*"   OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"  OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$"))) )
 
 
 ```
