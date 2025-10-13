@@ -138,10 +138,97 @@ This target is interpreted to cover research about reducing the number of youth 
 
 This includes research on youth disengagement, early labor market integration, and various interventions (educational, policy-based, or community-driven) aimed at increasing youth participations in economic and educational systems.
 
+This query consists of two phrases. Phrase 1 addresses the issue of reducing unemployment in youth, whereas Phrase 2 is concerned with increasing employment of the same group of people.
+
+#### Phrase 1
+
+The basic structure is *action + drop-out + youth + education/training* and *action + unemployment + youth*
+
 ```py
 TS=
 (
+  (
+    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" 
+	OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+    NEAR/10
+    (
+      (
+        ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving" OR "withdraw$" OR "withdrawal$" OR "discontinue")
+        NEAR/10
+        ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
+        NEAR/15
+        (
+          "education" OR "schooling" OR "academic*" OR "academia" OR "apprenticeship$" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" OR "primary school*" OR "elementary school*" 
+		  OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR
+          (
+            ("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*")
+          ) OR
+          "university" OR "universities" OR "higher education" OR "college$" OR
+          (
+            ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
+            NEAR/3
+            ("education" OR "training" OR "school*" OR "learning")
+          ) OR
+		  (
+		  ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
+		  )
+        )
+      )
+      OR
+      (
+        ("unemploy*" OR "underemploy*" OR "NEET$" OR "jobless" OR "out of work" OR "not in work" OR "economic* inactive" OR "labor market exclusion$" OR "labour market exclusion$" OR "employment barrier$")
+        NEAR/10
+        ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
+      )
+    )
+  )
+)
+```
 
+#### Phrase 2
+
+In this phrase we shift the emphasis from decreasing the number of youth not in employment, education, or training (NEET) to actively increasing the proportion of youth who are engaged in employment, education, or training.
+
+The basic structure is *action + completion + youth + education/training* and *action + employment + youth*
+
+```py
+TS=
+(
+  (
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "build$" OR "building" OR "expand" OR "expansion*" OR "encourag*" OR "facilitat*" OR "promot*" 
+	OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*")
+    NEAR/10
+    (
+      (
+        ("completion" OR "attainment" OR "graduation" OR "academic success" OR "access" OR "skill$ acquisition" OR "retention")
+        NEAR/5
+        ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
+        NEAR/5
+        (
+          "education" OR "schooling" OR "academic*" OR "academia" OR "apprenticeship$" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" OR "primary school*" OR "elementary school*" 
+		  OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR "school-to-work transition$" OR
+          (
+            ("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*")
+          ) OR
+          "university" OR "universities" OR "higher education" OR "college$" OR
+          (
+            ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
+            NEAR/3
+            ("education" OR "training" OR "school*" OR "learning")
+          ) OR
+		  (
+		  ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
+		  )
+        )
+      )
+      OR
+      (
+        ("employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market" OR "workforce" OR "carer development" OR "socioeconomic attainment$" OR "school-to-work transition$")
+        NEAR/7
+        ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
+      )
+    )
+  )
 )
 ```
 
@@ -203,22 +290,54 @@ The UNWTO (<a href="#f8">2013</a>) defines sustainable tourism as:
 
 Other aspects of sustainable tourism are also covered in SDG 12.b, which was also used as a basis for the phrases for this target.
 
+The basic structure is *action + policies + sustainable tourism* and *action + policies + job creation/local culture + sustainable tourism*
+
 ```py
-TS=
+TS = 
 (
   (
-    ("develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build*" OR "advance" OR "advancing" 
-    OR "establish*" OR "consider*" OR "encourag*" OR "ensure" OR "implement" OR "adopt*" OR "apply" OR "enforce" OR "propose*" OR "design*" OR "plan" OR "planning" 
-    OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
-    ) 
-    NEAR/5 ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
-	OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*") 
-  )
-  NEAR/15 
+    (
       (
-        ("sustainab*" OR "responsib*" OR "environmental*" OR "ecological*" OR "eco" OR "green") 
-        NEAR/3 ("tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "hotel$")
+	    "develop" OR "development" OR "promote" OR "strengthen*" OR "improv*" OR "enhanc*" OR "increas*" OR "build$" OR "building" OR "built" OR "advance" OR "advancing" 
+		OR "establish*" OR "consider*" OR "encourag*" OR "ensure" OR "implement" OR "adopt*" OR "apply" OR "enforce" OR "propose*" OR "design*" OR "plan" OR "planning" 
+		OR "introduc*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards"
+      ) 
+      NEAR/5
+      (
+        "policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
+		OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
       )
+    )
+    NEAR/15
+    (
+      "ecotourism" OR "eco-tourism" OR
+      (
+        (
+          "sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative"
+        )
+        NEAR/3
+        (
+          "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR
+          "air passenger travel" OR "airport tourism" OR ("cruise" NEAR/5 ("travel" OR "tourism" OR "ship")) OR "hotel$"
+        )
+      )
+	)
+    OR
+    (
+      (
+        "job creation" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" OR "local economy" OR "local economies" OR "value chain$" OR
+        "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" OR "cultural heritage" OR "local culture$" OR
+        "indigenous knowledge" OR "traditional practice$"
+      )
+      NEAR/5
+      (
+        "ecotourism" OR "eco-tourism" OR
+        (
+          "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism"
+        )
+      )
+    )
+  )
 )
 ```
 
