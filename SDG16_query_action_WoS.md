@@ -62,7 +62,12 @@ TS=
 >
 > 16.2.3 Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about:
+•	ending abuse and exploitation of children
+•	ending trafficking of children 
+•	ending all forms of violence against and torture of children
+All forms of violence include physical, psychological and sexual violence.
+
 
 ```py
 TS=
@@ -127,6 +132,12 @@ TS=
 >
 > 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
 
+This target is interpreted to cover research about 
+reducing corruption
+reducing bribery 
+
+Corruption is understood as the abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. 
+
 This query consists of X phrases.
 
 ```py
@@ -181,7 +192,10 @@ TS=
 >
 > 16.8.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about broadening and strengthening the participation of developing countries in institutions of global governance. 
+Global governance is understood as the regulation of interdependent relations between independent nations. Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
+Are regional institutions like regional development banks or EU outside the global scope?
+
 
 ```py
 TS=
@@ -238,7 +252,9 @@ TS=
 >
 > 16.a.1 Existence of independent national human rights institutions in compliance with the Paris Principles
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about strengthening national institutions to prevent violence and combat terrorism and crime, including through international cooperation
+Relevant national institutions are for example courts of law, intelligence and investigative institutions and police. 
+
 
 ```py
 TS=
