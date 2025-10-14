@@ -843,13 +843,12 @@ The basic structure is _action_ + _use of technology_ + _empowerment of women_
 TS=
 (
     (
-        ("accelera*" OR "achiev*" OR "adopt*" OR "advance" OR "advancing" OR  "attain*" OR "better" OR "build*" 
-        OR "develop*" OR "consolidat*" OR "elevat*" OR "empower*" OR "encourag*" OR "enhanc*" OR "ensur*" 
-        OR "establish*" OR "expand" OR "expansion"  OR "facilitat*" OR "foster*" OR "framework$" 
-        OR "guarantee*" OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" 
-        OR "introduc*" OR "law$" OR "legislat*" OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" 
-        OR "program" OR "programs" OR "promot*" OR "propos*" OR "raise" OR "raising" 
-        OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
+        ("accelera*" OR "achiev*" OR "adopt*" OR "advance" OR "advancing" OR  "attain*" OR "better" 
+        OR "build*" OR "develop*" OR "consolidat*" OR "elevat*" OR "empower*" OR "encourag*" OR "enhanc*" 
+        OR "ensur*" OR "establish*" OR "expand" OR "expansion"  OR "facilitat*" OR "foster*" 
+        OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" 
+        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" 
+        OR "propos*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
         )
         NEAR/5
             (
