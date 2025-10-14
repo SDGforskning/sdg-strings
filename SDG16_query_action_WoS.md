@@ -166,6 +166,11 @@ TS=
 > 16.6.2 Proportion of population satisfied with their last experience of public services
 
 This target is interpreted to cover research about 
+- developing effective, accountable and transparent institutions at all levels.
+
+Institutions are understood as government bodies.
+Levels include the local, national and international levels of institutions such as parliaments, ministries, local governments, law enforcers (police), courts, ombudsman institutions, UN, EU etc. 
+
 
 ```py
 TS=
@@ -221,6 +226,11 @@ TS=
 > 16.9.1 Proportion of children under 5 years of age whose births have been registered with a civil authority, by age
 
 This target is interpreted to cover research about 
+- providing legal identity for all
+- providing birth registration for all 
+
+A legal identity includes name, sex, place and date of birth and nationality.
+
 
 ```py
 TS=
@@ -280,6 +290,19 @@ TS=
 > 16.b.1 Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
 This target is interpreted to cover research about 
+- Promoting and enforcing non-discriminatory laws and policies for sustainable development 
+
+Discriminatory factors could cover
+- ethnicity
+- gender
+- religion
+- disability
+- age
+- sexual orientation
+- national origin
+- political opinion
+- social status
+
 
 ```py
 TS=
