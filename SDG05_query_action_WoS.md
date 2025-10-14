@@ -880,7 +880,7 @@ TS=
             OR "sister$" OR "mother$" OR "daughter$"
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR "gender*" OR "sexual and gender" OR "transgender*" OR "lesbian*" OR "transperson*" OR "non-binary" 
             OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
             )
             NEAR/15
@@ -944,7 +944,7 @@ TS=
             OR "sister$" OR "mother$" OR "daughter$"
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR "gender*" OR "sexual and gender" OR "transgender*" OR "lesbian*" OR "transperson*" OR "non-binary" 
             OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
             )
             NEAR/15
@@ -999,7 +999,7 @@ NEAR/3
             (
             ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
             OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal"
-            OR "lesbian" OR "sexual* and gender" OR "transperson*" OR "non-binary"
+            OR "lesbian*" OR "sexual* and gender" OR "transperson*" OR "non-binary"
             OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
             )
             NEAR/3
