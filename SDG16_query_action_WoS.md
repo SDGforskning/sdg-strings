@@ -87,6 +87,16 @@ TS=
 > 16.3.3 Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism
 
 This target is interpreted to cover research about 
+•	promoting the rule of law at the national and international levels
+•	ensuring equal access to justice for all
+
+This includes: 
+•	reporting of physical, psychological and sexual violence to competent authorities
+•	reducing the share of unsentenced prisoners and pretrial detention
+•	ensuring proper prison conditions, including proper health care, safety, enough food and space (overcrowding)
+•	rehabilitation and social reintegration of convicted/sentenced criminals
+•	accessing formal or informal dispute resolution mechanisms as a way of solving disputes. 
+
 
 ```py
 TS=
