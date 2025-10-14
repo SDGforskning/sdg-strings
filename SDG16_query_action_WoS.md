@@ -91,11 +91,11 @@ This target is interpreted to cover research about
 - ensuring equal access to justice for all
 
 This includes: 
-•	reporting of physical, psychological and sexual violence to competent authorities
-•	reducing the share of unsentenced prisoners and pretrial detention
-•	ensuring proper prison conditions, including proper health care, safety, enough food and space (overcrowding)
-•	rehabilitation and social reintegration of convicted/sentenced criminals
-•	accessing formal or informal dispute resolution mechanisms as a way of solving disputes. 
+- reporting of physical, psychological and sexual violence to competent authorities
+- reducing the share of unsentenced prisoners and pretrial detention
+- ensuring proper prison conditions, including proper health care, safety, enough food and space (overcrowding)
+- rehabilitation and social reintegration of convicted/sentenced criminals
+- accessing formal or informal dispute resolution mechanisms as a way of solving disputes. 
 
 
 ```py
