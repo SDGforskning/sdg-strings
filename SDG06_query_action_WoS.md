@@ -83,7 +83,7 @@ TS=
   (
     ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" 
     OR "quality" OR "monitor*" 
-	  OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+    OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
     OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
     OR "rainwater" 
     OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
@@ -487,8 +487,8 @@ TS=
   (
     (
         ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
-        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" OR "design*" OR "adopt*"
-        OR "enforc*" OR "prioriti*"
+        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" 
+        OR "design*" OR "adopt*" OR "enforc*" OR "prioriti*"
         )
         NEAR/5
             ("treatment" OR "recovery"
@@ -508,7 +508,8 @@ TS=
         OR "effluent$" 
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" 
+            OR "urban" OR "dumping")
             NEAR/15
                 ("waste" OR "discharge" OR "runoff" OR "run off")          
           )

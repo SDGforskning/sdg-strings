@@ -419,7 +419,8 @@ TS=
         OR "effluent$" 
         OR
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" 
+            OR "urban" OR "dumping")
             NEAR/15
                 ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
