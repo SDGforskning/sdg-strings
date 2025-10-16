@@ -117,13 +117,10 @@ TS=
 This target is interpreted to cover research about 
 
 - reduction of illicit financial flows (IFFs) 
-    
-- reduction of illicit arms flows  
-    
+- reduction of illicit arms flows 
 - strengthening recovery of stolen assets 
-    
 - fighting all organized crime  
-
+ 
 For research on reduction of illicit financial flows, it should also cover research on strengthening the capacity to track and control illegal financial flows in and out of countries. This includes research on capital controls, tax evasion, business transparency, money laundering etc.  Illicit arms flow and recovery and returning stolen assets, are aspects of illicit financial flows and organized crime.  
 
 (See SDG 8.10 Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all)  
