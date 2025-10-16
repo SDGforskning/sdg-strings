@@ -245,6 +245,11 @@ TS=
 > 16.10.2 Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information
 
 This target is interpreted to cover research about 
+- ensuring public access to information.  
+- protection of fundamental freedoms.  Fundamental freedoms are here interpreted as part of basic human rights, like 
+    “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
+    (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english)
+
 
     - Ensuring public access to information.  
 
