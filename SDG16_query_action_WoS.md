@@ -270,7 +270,8 @@ TS=
 >
 > 16.a.1 Existence of independent national human rights institutions in compliance with the Paris Principles
 
-This target is interpreted to cover research about strengthening national institutions to prevent violence and combat terrorism and crime, including through international cooperation
+This target is interpreted to cover research about strengthening national institutions to prevent violence and combat terrorism and crime, including through international cooperation.
+
 Relevant national institutions are for example courts of law, intelligence and investigative institutions and police. 
 
 
