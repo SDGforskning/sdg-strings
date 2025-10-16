@@ -50,17 +50,29 @@ This target is interpreted to cover research about
 
 ```py
 TS=
-(((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "foster*" OR "more efficient*" OR
+((("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "foster*" OR "more efficient*" OR
     "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*"
     OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*"
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
     "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
  NEAR/3
-(( "social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "societal* activit*" OR "financ* inclu*" OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR
-"financ* integrat*" OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR
-"socio-economic* equal*" OR "socioeconomic* equal*" OR "social* activit*" OR "financ* activit*" OR  "political* activit*" ) OR 
-("accessib*" NEAR/3 ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"lisää tähän ihmisryhmä))))
+( "social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" 
+OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "financ* integrat*"
+OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
+OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "political* activit*" 
+OR ("accessib*" NEAR/3 ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"
+OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+OR (("person$" OR "people$" OR "adult$" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly"
+OR "retired" OR "indigenous"))
+OR "disabled" OR "disabilities" OR "disability"
+OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR"gender$"
+OR "living with HIV" OR "living with AIDS"
+OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+OR "indigenous group$"))))
 
 
  OR
@@ -84,10 +96,7 @@ TS=
    )
   )
  )
-NOT "dna" NOT "*rna$" NOT "zeolite$" NOT "gene$" NOT "optic* access*" NOT "meson*" NOT "ferro*" NOT "*benz*" NOT
-"*lipid*" NOT "ion*" NOT "spectro*" NOT "polymer*" NOT "sulph*" NOT "sulf*" NOT "anion*" NOT "lign*" NOT "*hydroly*"
-NOT "*isotop*" NOT "antibod*" NOT "*particl*" NOT "acidi*" NOT "*porous*" NOT "immuno*"
-)
+
 
 
 ```
