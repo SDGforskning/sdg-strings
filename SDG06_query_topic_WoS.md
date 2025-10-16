@@ -272,7 +272,9 @@ TS=
         OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
         OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
         OR (("person$" OR "people$" OR "adult$" OR "men") 
-          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" 
+          OR "displaced*" OR "patient$" OR "trans" OR "intersex" 
+          OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
         OR "disabled" OR "disabilities" OR "disability"
         OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
         OR "unemployed" 
@@ -371,7 +373,10 @@ TS=
     )
     OR "contaminated" OR "contaminant$" OR "toxic chemical$"
     OR "endocrine disrupting chemical$"
-    OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+    OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+    OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+    OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+    OR "perflurochemicals" OR "PFAS" OR "endosulfan"
     OR "polycyclic aromatic hydrocarbon$" OR "PAH"
     OR "oil spill$" 
     ) 
@@ -428,7 +433,10 @@ TS=
           )
         OR "contaminated" OR "contaminant$" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$" 
         ) 
@@ -750,7 +758,8 @@ TS=
   OR (
       ("unsustainab*" OR "exploit*") 
         NEAR/5 
-        ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies"
+        ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" 
+        OR "planning" OR "policy" OR "policies"
         OR ("water" NEAR/3 "extract*"))
       )
   ) 
@@ -865,7 +874,8 @@ TS=
         ) 
       OR 
       (
-        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" 
+        OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
 	      OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
         OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
         OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
@@ -962,7 +972,9 @@ TS=
   ) 
   NEAR/5 
     (
-    ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies" OR "extract*" OR "resource us*" OR "usage" 
+    ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" 
+    OR "policy" OR "policies" OR "extract*" 
+    OR "resource us*" OR "usage" 
     OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$") 
         NEAR/5 
         (

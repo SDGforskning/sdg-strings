@@ -75,14 +75,17 @@ TS=
           ("availab*" OR "access" OR "affordab*" OR "management" OR "regulat*" OR "invest*" 
           OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*")
     )
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" 
+    OR "program*" OR "project*" OR "intervention*"
   )
     NEAR/15 
 (
   (
-    ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+    ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" 
+    OR "quality" OR "monitor*" 
 	  OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
-    OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
+    OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
+    OR "rainwater" 
     OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
     OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
     OR ("water" NEAR/3 "kiosk*")
@@ -184,13 +187,15 @@ TS=
         OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*" 
         OR "tackling" OR "tackle"  
         OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-        OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR 	"combat*" OR "declin*"
+        OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" 
+        OR "fight*" OR 	"combat*" OR "declin*"
        ) 
        NEAR/5
             ("availab*" OR "access" OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" 
             OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*")
     )
-    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" OR "project*" OR "intervention*"
+    OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" 
+    OR "program*" OR "project*" OR "intervention*"
   )
    
   NEAR/15 
@@ -334,7 +339,9 @@ TS=
         OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
         OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
         OR (("person$" OR "people$" OR "adult$" OR "men") 
-          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" 
+          OR "displaced*" OR "patient$" OR "trans" OR "intersex" 
+          OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
         OR "disabled" OR "disabilities" OR "disability"
         OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
         OR "unemployed" 
@@ -428,7 +435,8 @@ TS=
         OR "effluent$" 
         OR 
           (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" 
+            OR "urban" OR "dumping")
             NEAR/15
                 ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
@@ -440,13 +448,17 @@ TS=
         OR 
           (
             ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
-            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+            OR "organotin$" OR "tributyltin" OR "TBT" 
+            OR "mining" OR "mine tailing$" OR "oil"
             )
             NEAR/15 "contamination"   
           )
         OR "contaminated" OR "contaminant$" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$" 
         )
@@ -510,7 +522,10 @@ TS=
           )
         OR "contaminated" OR "contaminant$" OR "toxic chemical$"
         OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
         OR "polycyclic aromatic hydrocarbon$" OR "PAH"
         OR "oil spill$" 
         ) 
@@ -822,7 +837,8 @@ TS=
       ("designat*" OR "placement" OR "expand*" OR "extend"
       OR "design" OR "designing" OR "create" OR "creation" OR "creating"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" OR "strategy" OR "governance"
+      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" 
+      OR "strategy" OR "governance"
       OR "enforce" OR "enforcement" OR "enforcing"
       OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
       OR "preserv*" OR "support*" OR "ensur*"
@@ -862,7 +878,8 @@ The elements of the phrase are *action + decline/deterioration/unsustainable use
 ```py
 TS=
 (
-("prevent" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "combat*" OR "halt*" OR "resist*" OR "minimi*" OR "avoid*" OR "tackle") 
+("prevent" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "combat*" OR "halt*" OR "resist*" 
+OR "minimi*" OR "avoid*" OR "tackle") 
   NEAR/5 
   (
     (
@@ -876,7 +893,8 @@ TS=
     OR (
         ("unsustainab*" OR "exploit*") 
         NEAR/5 
-          ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies")
+          ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" 
+          OR "planning" OR "policy" OR "policies")
         )
     ) 
   NEAR/15 
@@ -977,7 +995,8 @@ TS=
         OR "wet sanitation technolog*" 
         OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
         OR "dry sanitation technologies" 
-        OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
+        OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" 
+        OR "container based sanitation") 
         OR 
         (
         ("adequate" OR "safe" OR "basic" OR "equitab*" OR "non-equit*") 
@@ -999,7 +1018,8 @@ TS=
         ) 
       OR 
       (
-        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" 
+        OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
 	      OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
         OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
         OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
@@ -1105,7 +1125,9 @@ TS=
     ) 
     NEAR/5 
     (
-      ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies" OR "extract*" OR "resource us*" OR "usage" 
+      ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" 
+      OR "policy" OR "policies" OR "extract*" 
+      OR "resource us*" OR "usage" 
       OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$") 
         NEAR/5 
           (
