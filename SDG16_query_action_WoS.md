@@ -206,8 +206,10 @@ TS=
 > 16.8.1 Proportion of members and voting rights of developing countries in international organizations
 
 This target is interpreted to cover research about broadening and strengthening the participation of developing countries in institutions of global governance. 
-Global governance is understood as the regulation of interdependent relations between independent nations. Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
-Are regional institutions like regional development banks or EU outside the global scope?
+
+Global governance is understood as the regulation of interdependent relations between independent nations. 
+
+Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
 
 
 ```py
