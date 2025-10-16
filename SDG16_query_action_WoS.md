@@ -63,9 +63,9 @@ TS=
 > 16.2.3 Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18
 
 This target is interpreted to cover research about:
-•	ending abuse and exploitation of children
-•	ending trafficking of children 
-•	ending all forms of violence against and torture of children
+- ending abuse and exploitation of children
+- ending trafficking of children 
+- ending all forms of violence against and torture of children
 All forms of violence include physical, psychological and sexual violence.
 
 
