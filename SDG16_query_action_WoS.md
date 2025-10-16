@@ -188,6 +188,9 @@ TS=
 > 16.7.2 Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group
 
 This target is interpreted to cover research about 
+ensuring, even strengthening, representation across demographic groups or population groups, in local, national and international decision-making institutions. 
+    Decision-making institutions are here understood as legislature, public service and judiciary institutions.
+
 
     Ensuring, even strengthening, representation across demographic groups or population groups, in local, national and international decision-making institutions. 
     Decision-making institutions are here understood as legislature, public service and judiciary institutions.  
