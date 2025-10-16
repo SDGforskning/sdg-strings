@@ -143,8 +143,8 @@ TS=
 > 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
 
 This target is interpreted to cover research about 
-    - reducing corruption
-    - reducing bribery 
+- reducing corruption
+- reducing bribery 
 
 Corruption is understood as the abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. 
 
