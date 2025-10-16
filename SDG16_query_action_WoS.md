@@ -250,13 +250,6 @@ This target is interpreted to cover research about
     “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
     (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english)
 
-
-    - Ensuring public access to information.  
-
-    - Protection of fundamental freedoms.  Fundamental freedoms are here interpreted as part of basic human rights, like 
-    “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
-    (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english) 
-
 Both parts of the target should be in accordance with national laws and international agreements.  It also includes research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information 
 
 “The four freedoms relate to freedom of speech, freedom of worship, freedom from want and freedom from fear. They are sometimes simply referred to as freedom from fear and freedom from want.” https://www.ohchr.org/en/human-rights/universal-declaration/translations/english 
