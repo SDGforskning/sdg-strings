@@ -96,7 +96,7 @@ TS=
                         NEAR/2
                             ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
                             OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-                            OR "gender*" OR "sexual and gender" OR "transgender*"
+                            OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                             )
                     )
                 OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
@@ -113,7 +113,7 @@ TS=
                     OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
-                    OR "gender*" OR "sexual and gender" OR "transgender*"
+                    OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                     OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
                     )   
             )  
@@ -137,7 +137,7 @@ TS=
     NEAR/5
         ("women's rights" OR "rights of women" OR "women's freedom"
         OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
-        OR "gender equalit*" OR "gender equit*" OR "gender equal*"
+        OR "gender equalit*" OR "gender equit*" OR "gender equal*" OR "equal pay*"
         OR
             (
                 ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
@@ -150,7 +150,7 @@ TS=
                     OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
-                    OR "gender*" OR "sexual and gender" OR "transgender*"
+                    OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                     OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
                     )
             )
@@ -191,7 +191,7 @@ TS=
                 ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
                 OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
                 OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
-                OR "*women's inclusion"
+                OR "*women's inclusion" OR "equal pay*"
                 )
                 NEAR/5 
                     ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -200,7 +200,7 @@ TS=
                     OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
-                    OR "gender*" OR "sexual and gender" OR "transgender*"
+                    OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                     OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
                     )
             )
