@@ -316,12 +316,10 @@ TS=
 >
 > 5.5.1 Proportion of seats held by women in (a) national parliaments and (b) local governments
 >
-> 5.5.2 Proportion of women in managerial positions
+> 5.5.2 Proportion of women in managerial positions 
 
-This target is interpreted to cover research about: 
-* Women's participation at all levels of decision-making in political, economic and public life 
-* Women's equal opportunities for leadership at all levels of decision-making in political, economic and public life 
-* Proportion of women in local and governmental bodies and in managerial positions
+
+This target is interpreted to cover research about gender balance or women's participation and leadership in decision-making in political, economic and public life.
 
 Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
@@ -331,70 +329,43 @@ Sources used for finding terms:
 
 
 
-This query consists of X2 phrases:
+This query consists of 1 phrase:
 
 #### Phrase 1
 
 The basic structure is _women_ + _participation/leadership_ 
 
 ```py
-
-TS=
-(
-    ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans"
-    OR 
-        (
-            ("gender*" OR "transgender*") 
-            NEAR/3 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "gap*" OR "divide*")
-        )
+TS= 
+(    
+    (
+        ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" OR "mother$" OR "wife" 
+        OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" OR "sexual* and gender" 
+        OR "glass ceiling*" OR 
+        (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
+        NEAR/5 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap*"))    
+        )            
     )
-    NEAR/5 
-        ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
-        OR  "member of parliament" OR "mayor*" OR "quota" OR "vote" OR "votes" OR "voting" 
-        OR "chief traditional" 
-        OR
-            (
-                ("*represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
-                OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position"
-                )
-                NEAR/3
-                    ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
-                    OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
-                    OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" 
-                    )
-            )
-            OR (("board") NEAR/3 ("director"))
+        NEAR/5 
+    (
+        ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
+        OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+        OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
+        OR "cabinet*" OR "mayor*" OR  "career*" OR "advancement*") OR
+        (
+        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" OR "council*" OR "artistic") 
+        NEAR/3 ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional")
+        ) OR
+        (
+        ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" OR "quota" OR "promotion") 
+        NEAR/3 
+        ("decisionmak*" OR "decision-mak*" OR "decision*" OR "decid*" OR "policymak*" OR "policy-mak*" 
+        OR "politics" OR "business*" OR "corporate" OR "public" OR "economic" OR "civil" OR "society" 
+        OR "communit*" OR "authorit*" OR "economic" OR "society" OR "communit*" OR "power")
         )  
-) 
-
-```
-
-#### Phrase 2
-
-The basic structure is  _women_ + _proportion of seats/positions_ + _governments/leadership_ 
-
-```py
-TS=
-(
-    ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" 
-    OR (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
-    )
-    NEAR/5
-        (
-            ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*" OR "quota")
-            NEAR/3
-                ("minister*" OR "mp" OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
-                "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*"
-                OR
-                    (
-                        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
-                        NEAR/5 ("executive" OR "officer*" OR "official*" OR "position*" OR "member*")
-                    )
-                )
-        )
+    )                     
 )
 ```
-
 
 ### Target 5.6
 
