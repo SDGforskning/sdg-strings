@@ -22,9 +22,26 @@ This document contains search strings for finding publications related to the to
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
 Acronyms used:
+- UN: United Nations
 - UN DESA: UN Department of Economic and Social Affairs
+- ILO: International Labour Organisation
 
-In many of the strings we use `"*womens" OR "*womans"` - this will also find results with "women's" and "woman's" in the current WOS search functionality.
+In many of the strings we use `"*womens" OR "*womans"` - this will also find results with "women's" and "woman's" in the current WOS search functionality. 
+
+### General interpretation note
+
+When interpreting this SDG and deciding the scope of research that we should aim to cover, we had to interpret who is covered by the targets. This is challenging because the SDG uses varying terminology:
+- The main title of the SDG covers both "gender equality" generally, and "women and girls"
+- Some targets refer to "women" in all parts (e.g. 5.2)
+- Some refer to "women" in the target but "sex" (e.g. 5.1) or "gender" (e.g. 5.c) in the indicator
+- Some do not refer to "women", "gender" or "sex" at all in the target, only in an indicator (e.g. 5.6, which also refers to "men"; 5.4, which refers to "sex")
+ 
+This leads to a difficulty. While a lot of SDG5 has a focus on "women and girls", it is not limited to these, and sometimes widens into "gender" and "sex" equality. These terms have different meanings <a href="#f7ca">(WHO, 2025)</a> and therefore influence interpretations. In addition, the coverage of "women and girls" is not clear. As <a href="#f8ca">Matthyse (2020)</a> states:
+>"At first glance one would assume that the separation of ‘gender equality’ from ‘women and girls’ denotes that ‘gender equality’ is encompassing of, but not limited to, ‘women and girls’. However, when interpreting the targets and indicators these confirm that gender equality is typically measured in cisnormative terms. SDG 5 clearly states that its aim is to end all forms of discrimination against all women and girls. The goal is also not clear on whether trans women and girls, legally affirmed or not, are included in the remit of SDG 5. However, what is clear is that marginalised gender minorities, which also include gender-diverse, gender non-conforming and gender-fluid persons, to name a few, are completely omitted and erased from the scope of its application."
+
+Given this complex background, we have chosen to interpret "relevant" research as follows: 
+In targets which do not use gender/sex/women terms in the target itself (5.4 and 5.6), we do not limit to gender/sex/women, as a rule.
+In the other targets which specify gender/sex/women terms, we include terms for women, sex, gender, gender non-conforming and transgender. While one could argue for a narrower approach, we think that including gender minorities along with women is aligned with the very first theme of the SDG: "Achieve gender equality" - especially as some of the SDG5 target issues are relevant for some gender minorities <a href="#f9ca">(UN Human Rights Office of the High Commissioner, 2025)</a>. From a practical perspective, this approach also avoids having a widely different scope between targets, and helps us to build searches with good recall, as some research will use general terms for gender but be relevant for women.
 
 ## 3. Targets
 
@@ -62,7 +79,7 @@ Removed `disparit* OR bias* OR difference*` from the women and gender string, as
 ```py
 TS=
 (
-  "misogyn*" OR "sexism" OR "sexist"
+  "misogyn*" OR "sexism" OR "sexist" OR "CEDAW"
   OR
   (
     ("discriminat*" OR "dispar*"
@@ -75,13 +92,13 @@ TS=
         NEAR/2
           ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
           OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-          OR "gender*" OR "sexual and gender" OR "transgender*"
+          OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
           )
       )
     OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
     OR
       ( 
-        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*")         
+        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
         NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
       )
     ) 
@@ -92,7 +109,7 @@ TS=
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "sexual and gender" OR "transgender*"
+        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
         )   
   )  
@@ -111,7 +128,7 @@ TS=
   )
   OR
   (
-    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
+    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" OR "equal pay*"
     OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion" 
     )
     NEAR/5
@@ -121,7 +138,7 @@ TS=
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
         OR "wife" OR "wives" OR "girlfriend$"
         OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "sexual and gender" OR "transgender*"
+        OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
   )  
@@ -148,7 +165,7 @@ TS=
         OR "misogyn*" OR "sexism" OR "sexist"
         OR
         (
-          ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
+          ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*" OR "equal pay*"
           OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
           OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
           OR "*women's inclusion"
@@ -160,7 +177,7 @@ TS=
             OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
             OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
             )
         )
@@ -319,12 +336,10 @@ TS=
 >
 > 5.5.1 Proportion of seats held by women in (a) national parliaments and (b) local governments
 >
-> 5.5.2 Proportion of women in managerial positions
+> 5.5.2 Proportion of women in managerial positions 
 
-This target is interpreted to cover research about: 
-* Women's participation at all levels of decision-making in political, economic and public life 
-* Women's equal opportunities for leadership at all levels of decision-making in political, economic and public life 
-* Proportion of women in local and governmental bodies and in managerial positions
+
+This target is interpreted to cover research about gender balance or women's participation and leadership in decision-making in political, economic and public life.
 
 Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
@@ -334,70 +349,43 @@ Sources used for finding terms:
 
 
 
-This query consists of X2 phrases:
+This query consists of 1 phrase:
 
 #### Phrase 1
 
 The basic structure is _women_ + _participation/leadership_ 
 
 ```py
-
-TS=
-(
-    ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans"
-    OR 
-        (
-            ("gender*" OR "transgender*") 
-            NEAR/3 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "gap*" OR "divide*")
-        )
+TS= 
+(    
+    (
+        ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" OR "mother$" OR "wife" 
+        OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" OR "sexual* and gender" 
+        OR "glass ceiling*" OR 
+        (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
+        NEAR/5 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap*"))    
+        )            
     )
-    NEAR/5 
-        ("leadership" OR "leader*" OR "manager*" OR "legislator*" OR "judge*" OR "minister*" 
-        OR  "member of parliament" OR "mayor*" OR "quota" OR "vote" OR "votes" OR "voting" 
-        OR "chief traditional" 
-        OR
-            (
-                ("*represent*" OR "participat*" OR "involve*" OR "engagement" OR "voice*" OR "senior" OR "top" 
-                OR "corporate" OR "enterprise" OR "chief" OR "member*" OR "position"
-                )
-                NEAR/3
-                    ("parliament" OR "mp" OR "mps" OR "government" OR "management" OR "politic*" OR "authorit*" 
-                    OR "decision*" OR "decid*" OR "decisionmak*" OR "decision-mak*" OR "policymak*" OR "policy-mak*" 
-                    OR "director" OR "executive*" OR "official*" OR "officer*" OR "board" OR "business" 
-                    )
-            )
-            OR (("board") NEAR/3 ("director"))
+        NEAR/5 
+    (
+        ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
+        OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+        OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
+        OR "cabinet*" OR "mayor*" OR  "career*" OR "advancement*") OR
+        (
+        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" OR "council*" OR "artistic") 
+        NEAR/3 ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional")
+        ) OR
+        (
+        ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" OR "quota" OR "promotion") 
+        NEAR/3 
+        ("decisionmak*" OR "decision-mak*" OR "decision*" OR "decid*" OR "policymak*" OR "policy-mak*" 
+        OR "politics" OR "business*" OR "corporate" OR "public" OR "economic" OR "civil" OR "society" 
+        OR "communit*" OR "authorit*" OR "economic" OR "society" OR "communit*" OR "power")
         )  
-) 
-
-```
-
-#### Phrase 2
-
-The basic structure is  _women_ + _proportion of seats/positions_ + _governments/leadership_ 
-
-```py
-TS=
-(
-    ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans*" 
-    OR (("gender*" OR "transgender*") NEAR/5 ("parit*" OR "equal*" OR "equit*" OR "balanc*"))
-    )
-    NEAR/5
-        (
-            ("proportion" OR "share" OR "number*" OR "seat*" OR "position*" OR "candidate*" OR "quota")
-            NEAR/3
-                ("minister*" OR "mp" OR "mps" OR "parliament" OR "judge*" OR "government*" OR 
-                "leadership" OR "leader*" OR "head*" OR "manager*" OR "management" OR "legislat*"
-                OR
-                    (
-                        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board") 
-                        NEAR/5 ("executive" OR "officer*" OR "official*" OR "position*" OR "member*")
-                    )
-                )
-        )
+    )                     
 )
 ```
-
 
 ### Target 5.6
 
@@ -546,7 +534,7 @@ TS=
 >
 > 5.b.1 Proportion of individuals who own a mobile telephone, by sex
 
-This target is interpreted to cover research about the use of enabling tecnology to promote empowerment of women. 
+This target is interpreted to cover research about the use of enabling tecnology for empowerment, either of women or empowerment in a gender perspective.  
 
 As both the target and the indicator emphasize ICT, we have an extra focus on ICT. However, all forms of enabling technologies may be included as relevant as long as they promote the empowerment of women.
 
@@ -569,32 +557,45 @@ The basic structure is _use_ + _technologies_ + _empowerment of women_
 TS=
 (
     (
-        ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills") 
-        NEAR/5
-            ("enabling technolog*" OR "computer*" OR "digital" OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-            OR "information communications technolog*" OR "information technolog*" OR "innovative technolog*" OR "internet"
-            OR "ipad*" OR "iphone*" OR "laptop*" OR "mobile*" OR "multimedia" OR "online" OR "smartphone*" OR "social media"
-            OR "tablet*" OR "tehcnological intervention*" OR "telecommunication" OR "telehealth" OR "telephone*" 
-            OR "television" OR "web-based" OR "wi-fi" OR "wireless" OR "world wide web" 
-            )
-    )
+        ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills" 
+         OR "competenc*" OR "confidence" OR "aquisition" OR "capab*") 
+            NEAR/5
+                ("apps" OR "applications" OR "automat*" OR "broadband" OR "chatbot*" OR "computer*" 
+                OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
+                OR "enabling technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
+                OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+                OR "information communications technolog*" OR "information technolog*" 
+                OR "innovative technolog*" OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
+                OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" OR "online" 
+                OR "*phone*" OR "robot*" OR "social media" OR "tablet*" OR "tehcnological intervention*" 
+                OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "web-based" OR "wi-fi" 
+                OR "wireless" OR  
+                (("artificial" OR "machine" OR "generative" OR "computational") NEAR/1 ("intelligence" OR "learning"))
+                )
+     )
+    
     NEAR/15
         (
-            ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" 
-            OR 
-                (
-                    ("gender*" OR "transgender")  
-                    NEAR/3 ("*parit*" OR "*equal*" OR "*equit*" OR "*balanc*" OR "gap" OR "divide" OR "difference*" OR "discriminat*")
-                )
+            "GEWE"
+            OR
+            (
+            ("*women" OR "*woman" OR "*womens" OR "*womans"
+            OR "girl$"
+            OR "female$"
+            OR "sister$" OR "mother$" OR "daughter$"
+            OR "wife" OR "wives" OR "girlfriend$"
+            OR "pregnan*" OR "maternity" OR "maternal"
+            OR "gender*" OR "sexual and gender" OR "transgender*"
+            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
             )
-            NEAR/15    
-                ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength" 
-                OR "emancipat*" OR "*empower*" OR "independence"  OR "personal priorities" OR "personal strength" 
-                OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy"
-                )
+            NEAR/15
+                    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
+                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" 
+                    OR "personal strength" OR "political strength" OR "power" OR "self concept" OR "self confidence"
+                    OR "self efficacy" OR "rights*" OR "equity" OR "equality")
+            )
         )
 )
-
 ```
 
 
@@ -617,30 +618,30 @@ This query consists of 2 phrases:
 The basic structure is _policies/legislation_ + _gender (in)equality/empowerment of women_  
 
 ```py
+
 TS=
 (
-    ("agreement$" OR "framework$" OR "governance" OR "initiative$" OR "instrument$"
-    OR "law$" OR "legal*" OR "legislat*" OR "plan" OR "policy" OR "policies"
-    OR "principle$" OR "procedure*" OR "program*" OR "regulat*" OR "rule"
-    OR "rules" OR "strateg*" OR "treaty" OR "treaties"
-    )
-    NEAR/5
-        ("GEWE" 
-        OR
-            (
-                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$")
-                NEAR/3
-                    ("autonomy" OR "balanc*" OR "bias*" OR "capacity*" OR "choice*" OR "control" OR "decision-making" 
-                    OR "discriminat*" OR "divide*" OR "diversit*" OR "dispar*" OR "economic strength" OR "emancipat*" 
-                    OR "*empower*" OR "equal*" OR "equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
-                    OR "imbalanc*" OR "impair*" OR "inequal*" OR "includ*" OR "inclusion" OR "independence" 
-                    OR "inequit*" OR "parit*" OR "personal priorities" OR "personal strength" OR "political strength" 
-                    OR "power" OR "right*" OR "self concept" OR "self confidence" OR "self efficacy" OR "unequal*" 
-                    OR "unequit*" OR "unbalanc*" OR "violat*"
-                    )
-            )
-        )
-)
+    ("agreement$" OR "convention" OR "directive*" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+    OR "law$" OR "legal*" OR "legislat*" OR "plan"  OR "policy" OR "policies" OR "principle$" OR "program*" OR "ratification"
+    OR "regulat*" OR "rule" OR "rules" OR "statute*" OR "strateg*" OR "treaty" OR "treaties") 
+        NEAR/5
+            ("GEWE" OR
+                (
+                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" 
+                OR "lesbian" OR "sexual* and gender" OR "transperson*" OR "non-binary"
+                OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+                )
+                    NEAR/3
+                    ("autonomy" OR "*balanc*" OR "bias*" OR "capacity*" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR  "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "*equal*" OR "*equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
+                    OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
+                    OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
+                    OR "self confidence" OR "self efficacy")
+                )
+            )       
+)  
 ```
 
 #### Phrase 2
@@ -651,42 +652,50 @@ The basic structure is _systems/policies for allocations for gender equality_
 ```py
 TS=
 (
-    ("gender responsive budgeting" OR "gender budgeting") 
+    ("gender responsive budget*" OR "gender budget*") 
     OR  
     (
         (   
             ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" OR "monitor*" 
-            OR "program*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
-            OR "rule" OR "rules" OR "strate*" OR "tool*" OR "track*" OR "transparen*"
+            OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" OR "regulation*" 
+            OR  "track*" OR "transparen*"
             ) 
             NEAR/3 
                 ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
-                OR "disbursement*" OR "expenditur*"
+                OR "disbursement*" OR "expenditur*" OR "public financ*"
                 )
         )   
         NEAR/5
-            ("GEWE" 
-            OR 
-                (
-                    ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$") 
-                    NEAR/3 ("*balanc*" OR "divide*" OR "*empower*" OR "*equal*" OR "*equit*" OR "gap" OR "*parit*")
-                )
+        ("GEWE" OR
+            (
+                ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" 
+                OR "lesbian" OR "sexual* and gender" OR "transperson*" OR "non-binary")
+                    NEAR/3
+                    ("autonomy" OR "*balanc*" OR  "capacity*" OR "choice*" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR  "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "*equal*" OR "*equit*" OR "freedom" OR "gap"
+                    OR  "impair*" OR  "includ*" OR "inclusion" OR "independence" OR  "*parit*" OR "personal priorities" 
+                    OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept" 
+                    OR "self confidence" OR "self efficacy")
             )
+        )       
     )
 )
 NOT TS=("transplant*")
-
 ```
 
 ## 4. Contributions
 
 * v2.1.0: 
 
-Specialist input: 
+Specialist input: Specialist input: Hanne Marie Johansen, Professor in Gender Studies (29.09.25)
 
 ## 5. Footnotes
 
 <span id="f5li">ILO. (2012).</span> *International Standard Classification of Occupations: Structure, group definitions and correspondence tables: ISCO–08, Volume I*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf [Accessed 2025.06.12]
+
+<span id="f8ca">Matthyse, L. (2020).</span> *Achieving gender equality by 2030: Transgender equality in relation to Sustainable Development Goal 5*. Agenda, pp. 124-132 https://doi.org/10.1080/10130950.2020.1744336
 
 <span id="f1li">UN. (1995).</span> *Report of the Fourth World
 Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
@@ -699,6 +708,8 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 
 <span id="f2">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
 
+<span id="f9ca">UN Human Rights Office of the High Commissioner. (2025).</span> *Transgender* [Factsheet]. UN Free & Equal. https://www.unfe.org/en/know-the-facts/challenges-solutions/transgender [Accessed 2025.09.29]
+
 <span id="f3">UNSGSA</span> (Office of the United Nations Secretary-General’s Special Advocate for Inclusive Finance for Development, Her Majesty Queen Máxima of the Netherlands), the Better Than Cash Alliance, the United Nations Capital Development (UNCDF), and the World Bank. (2018).  *Igniting SDG Progress through Digital Financial Inclusion*. https://www.betterthancash.org/explore-resources/igniting-sdg-progress-through-digital-financial-inclusion [accessed 30.04.2022] 
 
 <span id="f6li">UN Statistics Division. (2023).</span> *SDG indicator metadata*. [5.c.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf [Accessed 2025.06.05]
@@ -708,6 +719,8 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 <span id="f3li">UN Women. (2015).</span> *Monitoring Gender Equality and the Empowerment of women and girls in the 2030 Agenda for Sustainable Development: Opportunities and Challenges: Position Paper*. https://www.unwomen.org/sites/default/files/Headquarters/Attachments/Sections/Library/Publications/2015/IndicatorPaper-EN-FINAL.pdf    [Accessed 2025.06.05]
 
 <span id="f7li">UNICEF. (2017).</span> *Gender Equality: Glossary of Terms and Concepts*. https://www.unicef.org/rosa/media/1761/file/Genderglossarytermsandconcepts.pdf [Accessed 2025.06.05]
+
+<span id="f7ca">WHO. (2025).</span> *Gender and health*. https://www.who.int/health-topics/gender [Accessed 2025.09.29]
 
 
 
