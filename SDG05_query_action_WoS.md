@@ -225,7 +225,7 @@ A wider interpretation is chosen because 'violence against women and girls' is d
 
 #### Phrase 1
 
-This phrase is about ending violence related to women and girls. The general structure is action + violence + women & girls
+This phrase is about ending violence related to women and girls. The general structure is *action + violence + women & girls*
 
 ```py
 TS=
@@ -234,7 +234,7 @@ TS=
 	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "mutilat*"
+		("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "stalk*" OR "mutilat*" OR "traffick*" OR "smuggl*" OR "slave*"
         )
 		NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -260,11 +260,11 @@ TS=
 This target is interpreted to cover research about
 * eliminating all harmful practices against women and girls
 
-Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
+The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
 
 #### Phrase 1
 
-This phrase is about eliminating harmful practices against women and girls. The general structure is action + practice + women & girls
+This phrase is about eliminating harmful practices against women and girls. The general structure is *action + practice + women & girls*
 
 ```py
 TS=(
@@ -275,7 +275,10 @@ TS=(
 	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*" OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/10 "marriage*") OR "bride kidnap*"
+		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*"
+		OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/5 "marriage*")
+		OR "CEFM" OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
+		OR (("virgin*" OR "hymen*") NEAR/5 ("test*" OR "examin*"))
 		) 
 		NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -1089,6 +1092,8 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 <span id="f2ca">UN DESA (2009).</span> *2009 World Survey on the Role of Women in Development: Women’s Control over Economic Resources and Access to Financial Resources, including Microfinance*. United Nations. https://www.un.org/womenwatch/daw/public/WorldSurvey2009.pdf
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Achieve gender equality and empower all women and girls*. https://sdgs.un.org/goals/goal5#targets_and_indicators [Accessed 2025.02.14]
+
+<span id="f5hb">UN OHCHR.</span> *Harmful practices: OHCHR and women’s human rights and gender equality*. https://www.ohchr.org/en/women/harmful-practices [Accessed 2025.10.19]
 
 <span id="f9ca">UN Human Rights Office of the High Commissioner. (2025).</span> *Transgender* [Factsheet]. UN Free & Equal. https://www.unfe.org/en/know-the-facts/challenges-solutions/transgender [Accessed 2025.09.29]
 
