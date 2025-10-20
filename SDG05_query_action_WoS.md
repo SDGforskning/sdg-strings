@@ -217,7 +217,7 @@ TS=
 	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat" OR "combatting" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "mutilat*"
+		("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "stalk*" OR "mutilat*" OR "traffick*" OR "smuggl*" OR "slave*"
         )
 		NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans"
