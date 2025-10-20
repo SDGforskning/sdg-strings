@@ -208,7 +208,7 @@ A wider interpretation is chosen because 'violence against women and girls' is d
 
 #### Phrase 1
 
-This phrase is about ending violence related to women and girls. The general structure is action + violence + women & girls
+This phrase is about ending violence related to women and girls. The general structure is *action + violence + women & girls*
 
 ```py
 TS=
@@ -247,7 +247,7 @@ The OHCHR includes female genital mutilation, child, early and forced marriage, 
 
 #### Phrase 1
 
-This phrase is about eliminating harmful practices against women and girls. The general structure is action + practice + women & girls
+This phrase is about eliminating harmful practices against women and girls. The general structure is *action + practice + women & girls*
 
 ```py
 TS=(
@@ -258,7 +258,10 @@ TS=(
 	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*" OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/5 "marriage*") OR "cefm" OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*") OR (("virgin*" OR "hymen*") NEAR/5 ("test*" OR "examin*"))
+		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*"
+		OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/5 "marriage*")
+		OR "CEFM" OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
+		OR (("virgin*" OR "hymen*") NEAR/5 ("test*" OR "examin*"))
 		) 
 		NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans"
