@@ -38,10 +38,32 @@ This target is interpreted to cover research about
 
 This includes work focused on productivity, GDP growth, and development models in both individual per capita and national terms. While the goal highlights Least Developed Countries (LDCs), relevant literature may also examine comparative or general economic strategies, particularly where equity and sustainability are addressed.
 
+In an effort to avoid topics concerning the development of conserving and preserving nature, which we deemed not relevant for the subject of this SDG target, the phrase has been split into two sections. The "conserv*" and "preserv*" actions have a closer relation to the economic growth keywords, while the remaining ones have had a more standard NEAR/10 relation to the other keywords.
+
+The basics structure is *conserving OR sustaining + economic growth*
+
 ```py
 TS=
 (
-
+  (
+    ("conserv*" OR "preserv*")
+    NEAR/6
+    (
+      ("economic*" OR "financ*" OR "GDP*" OR "gross national product" OR "macroeconomic*" OR "capital" OR "income" OR "productiv*")
+      NEAR/2
+      ("grow*" OR "expans*" OR "performance*" OR "output$" OR "indicator$" OR "advancement$")
+    )
+  )
+  OR
+  (
+    ("maintain*" OR "sustain" OR "facilitat*")
+    NEAR/10
+    (
+      ("economic*" OR "financ*" OR "GDP*" OR "gross national product" OR "macroeconomic*" OR "capital" OR "income" OR "productiv*")
+      NEAR/2
+      ("grow*" OR "develop*" OR "expans*" OR "performance*" OR "output$" OR "indicator$" OR "advancement$")
+    )
+  )
 )
 ```
 
