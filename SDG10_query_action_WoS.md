@@ -384,8 +384,8 @@ NEAR/5
    "system$" OR "organi$ation*"
   )
  )
-NOT "emission*"
 )
+
 ```
 
 ### Target 10.6
