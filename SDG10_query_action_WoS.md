@@ -35,8 +35,46 @@ This target is interpreted to cover research about
 
 ```py
 TS=
-(
-
+ (
+    ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
+     "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
+     "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
+     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*" OR "multidimension* poverty"
+     OR "poor household$" OR "poor communit*"
+    )
+  AND
+  (
+    (
+      ("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
+      OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "strengthen*" OR "develop$" OR "establish*" OR
+      "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
+      "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
+      OR "raised" OR "offer*" OR "heighten*" OR "long term" OR "anti poverty" OR "antipoverty" OR "out of poverty" OR
+      "poverty reduc*" OR "reduc* poverty" OR "poverty alleviat*" OR "alleviat* poverty" OR "gini index" OR
+      "fight* poverty" OR "poverty lending" OR "eradicat* poverty"
+      )
+      NEAR/5
+      ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
+      "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
+      "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
+      OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
+      "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
+      "economic* self relian*" OR "income convergenc*"
+      )
+    )
+    OR
+    (
+      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
+       "eradicat*"
+      )
+      NEAR/5
+        ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
+         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR
+         "poverty gap"
+        )
+    )
+  )
 )
 ```
 
