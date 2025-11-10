@@ -172,58 +172,70 @@ Many of the laws, policies and practicies that hinder equal opportunities are no
 
 This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining them with other terms (for example ```barrier$ NEAR poor NEAR/3 household$```). We still felt we needed to use NOT-operators to delete results that are not connected to the theme of the target.
 
-The basic structure of Phrase 1 is *action (ensure) + equal opportunity OR action (reduce) + inequalities*.
+The basic structure of Phrase 1 is *action (ensure) + equal opportunity + (poor or vulnerable) OR action (reduce) + inequalities* + (poor or vulnerable). 
 
 ```py
 TS=
-(((("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "strengthen*" OR "guarantee*" OR
-    "assure$" OR "assuring" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
-    OR "endors*"
-  )
+((((("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
+  OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing")
+
 NEAR/3
-  ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-   "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" OR
-   (("social*" OR "ethn*" OR "racial*") NEAR/3 "toleran*")
+  ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*"
+  )  
   )
- )
+ 
 OR
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR 
-   "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
-   "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
-   OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
-   "hinder*"
-  )
+ (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
+  OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
+  OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt" OR "resist" OR "resists" OR "resisting"
+  OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*")
+
 NEAR/3
-  ((("social*" OR "ethn*" OR "racial*") NEAR/3 "intoleran*") OR "discriminat*" OR "inequalit*" OR "harass*" OR
-   "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation"
-   OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "hate speech" OR "stereotyp*" OR
-   "ageis*" OR "agis*" OR "prejud*" OR "religis*" OR
-   (("accessib*" OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR
-     "destitute" OR "living in poverty" OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR
-     "child*" OR "communit*" OR "neighbo$rhood*")) OR "vulnerable" OR "marginali?ed" OR "disadvantaged" OR "disabled"
-     OR "displaced*" OR "handicap*" OR "mental illness*" OR (("person$" OR "people$" OR "adult$" OR "men" OR "patient$"
-     OR "individual*" OR "adolescent*" OR "child*") NEAR/3 ("impairment" OR "disabilities" OR "disability" OR "HIV" OR
-     "AIDS" OR "trans" OR "older" OR "old" OR "cancer*" OR "autis*" OR "disorder$" OR "chronic" OR "chronically" OR
-     "neurodiverg*")) OR "elderly" OR "elder$" OR "pensioner$" OR "senior$" OR "retired" OR "unemployed" OR "homeless"
-     OR "veteran*" OR "age related" OR "women" OR "woman" OR "female*" OR "girl*" OR "pregnan*" OR "matern*" OR "menstrua*"
-     OR "*LGBT*" OR "lesbian$" OR "gay" OR "bi-sexual*" OR "bisexual*" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR
-     "queer$" OR "intersex*" OR "two-spirit$" OR "gender$" OR "minorit*" OR "refugee$" OR "migrant$" OR "immigrant$" OR
-     "asylum*" OR "racial*" OR "ethn*" OR "indigenous*" OR "protected group$" OR "mental health" OR "intergroup" OR
-     "interpersonal*" OR "social*" OR "health care" OR "healthcare" OR "health service*" OR "nurs*" OR "*demograph*" OR
-     "addict*"
-    )
-NEAR
-    ("barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*"
-    ) 
+
+  ("discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
+  OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing"
+  OR "ableis*" OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
+  OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*")
    )
   )
+
+AND 
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+   OR "disabled" OR "disabilities" OR "disability"
+   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
+   OR "living with HIV" OR "living with AIDS"
+   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+   OR "indigenous group$")
+)
+
+OR
+
+(("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
+  OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
+  OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
+  OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
+   "hinder*"
+  )
+NEAR/5
+
+("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination")
  )
+
+
+OR
+
+(("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
+  OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing")
+
+NEAR/3
+  ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
 )
-NOT "exclusion restriction*" NOT "exclusion limit*" NOT "dark matter" NOT "quantum" NOT "ion*" NOT
-"stereotyp* behav*" NOT "thermodynamic*" NOT "recombina*" NOT "electrolumin*" NOT "lumin*" NOT "glyco*"
-NOT "flora*" NOT "pollen" NOT "pollinat*" NOT "rat" NOT "rats" NOT "mice" NOT "inverter*" NOT "beam*" NOT
-"equality test*"
 )
+
 ```
 
 The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action (promote) + anti-discriminatory law*.
