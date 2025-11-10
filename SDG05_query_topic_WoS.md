@@ -329,41 +329,45 @@ Sources used for finding terms:
 
 
 
-This query consists of 1 phrase:
+This query consists of 1 phrase.
 
 #### Phrase 1
 
-The basic structure is _women_ + _participation/leadership_ 
+The basic structure is _women/gender equality_ + _participation/leadership/decisionmaking_ 
 
 ```py
 TS= 
 (    
     (
         ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" OR "mother$" OR "wife" 
-        OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" OR "sexual* and gender" 
-        OR "glass ceiling*" OR 
+        OR "wives" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "girlfriend$" OR "maternity" 
+        OR "maternal" OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
         (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
         NEAR/5 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap*"))    
         )            
     )
         NEAR/5 
-    (
-        ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
-        OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
-        OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
-        OR "cabinet*" OR "mayor*" OR  "career*" OR "advancement*") OR
-        (
-        ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" OR "council*" OR "artistic") 
-        NEAR/3 ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" OR "member*" OR "traditional")
-        ) OR
-        (
-        ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" OR "quota" OR "promotion") 
-        NEAR/3 
-        ("decisionmak*" OR "decision-mak*" OR "decision*" OR "decid*" OR "policymak*" OR "policy-mak*" 
-        OR "politics" OR "business*" OR "corporate" OR "public" OR "economic" OR "civil" OR "society" 
-        OR "communit*" OR "authorit*" OR "economic" OR "society" OR "communit*" OR "power")
-        )  
-    )                     
+            (
+                ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
+                OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+                OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
+                OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*")
+                OR
+                (
+                ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" OR "council*" 
+                OR "artistic") 
+                    NEAR/3 ("director*" OR "executive*" OR "officer*" OR "official*" OR "position*" 
+                    OR "member*" OR "traditional")
+                )
+                OR
+                (   
+                ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" 
+                OR "quota" OR "promotion") NEAR/3 ("decisionmak*" OR "decision-mak*" OR "decision*" OR "decid*" 
+                OR "policymak*" OR "policy-mak*" OR "politics" OR "business*" OR "corporate" OR "public" 
+                OR "economic" OR "civil" OR "society" OR "communit*" OR "authorit*" OR "economic" 
+                OR "society" OR "communit*" OR "power")
+                )
+            )                       
 )
 ```
 
