@@ -134,7 +134,7 @@ OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "politic
    ("accessib*" NEAR/3
     ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"
 OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-OR   (( "poor" OR "poorest" OR "low* income")NEAR/3("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+OR   (( "poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
 OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
 OR   (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
 OR "disabled" OR "disabilities" OR "disability"
