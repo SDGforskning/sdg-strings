@@ -49,9 +49,7 @@ TS=
       OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "strengthen*" OR "develop$" OR "establish*" OR
       "sustain$" OR "sustaining" OR "standardi*" OR "regulari*" OR "consolidat*" OR "stabili*" OR "normali*" OR
       "uphold*" OR "stable" OR "fixed" OR "perpetual*" OR "lasting" OR "enduring" OR "facilitat*" OR "raise" OR "raising"
-      OR "raised" OR "offer*" OR "heighten*" OR "long term" OR "anti poverty" OR "antipoverty" OR "out of poverty" OR
-      "poverty reduc*" OR "reduc* poverty" OR "poverty alleviat*" OR "alleviat* poverty" OR "gini index" OR
-      "fight* poverty" OR "poverty lending" OR "eradicat* poverty"
+      OR "raised" OR "offer*" OR "heighten*"
       )
       NEAR/5
       ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
@@ -65,18 +63,21 @@ TS=
     )
     OR
     (
-      ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
-       "eradicat*"
+      (("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
+       "eradicat*" OR fight*
       )
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
-         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR
-         "poverty gap"
-        )
+         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
+        )) OR  "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending" ))
     )
   )
 )
 ```
+
+
+
+
 
 ### Target 10.2
 
