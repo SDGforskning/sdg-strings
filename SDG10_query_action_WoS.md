@@ -51,7 +51,7 @@ This target is interpreted as to cover research about how to raise and sustain t
 
 Setting the limit to the bottom 40 % is a "practical compromise" that insures the target including the poorest populations in differing circumstances of different countries. The income growth rate is computed as average annual growth rate of either per capita consumption or actual income over about a 5-year period. <a href="#f4">(UN Statistics Divison 2024a)</a>. The term "inclusive growth" is often used when talking about raising the income growth of the poorest population and poverty reduction. The idea is that economic growth should be broad-based, including all parts of a country's population, especially focusing on income growth through improved employment. This makes economic growth sustainable in the long run and narrows the gap between poor and non-poor households. <a href="#f29">(Ianchovichina & Lundström 2009.)</a>
 
-This query consists of 1 phrase. The basic structure is *the poor + action (foster) + income growth OR action (reduce) + income inequality*. NOT-operator was used to remove results about some of the effects of income growth that don't talk about any of the means of achieving income growth. These will be covered in the topic-approach.
+This query consists of 1 phrase. The basic structure is *the poor + action (foster) + income growth OR action (reduce) + income inequality*. 
 
 ```py
 TS=
@@ -109,7 +109,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
-This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. NOT-operators were added to this query to delete results with ```accessible/accessibility``` that don't concern promoting social, economic or political inclusion in any way.
+This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. Term ```accessible/accessibility```central in this topic, but it is also a term used in many other contexts. To avoid a large number of irrelevant results, it was combined using proximity operators with terms describing social, economic, and political participation, as well as with terms describing vulnerable population groups.
 
 
 ```py
