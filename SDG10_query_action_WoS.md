@@ -69,10 +69,12 @@ TS=
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
-        )) OR  "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending" ))
+        )) OR  "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
     )
   )
 )
+  
+
 ```
 
 
