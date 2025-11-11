@@ -43,12 +43,6 @@ While the target states "all women and girls", we use a wider gender and sex int
 For discrimination, we use the definition of discrimination against women in Article 1 of the CEDAW Convention 
 https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
-**Working note**: It is possible that the terms `prejudice, misogyn*, sexism, sexist` will need to be discussed/removed. Pros/cons:
-- Our reading of the CEDAW defines discrimination as action/result, while prejudice and stereotyping are attitudes/biases -> Remove
-- The CEDAW  recognises that prejudice and stereotyping need to be eliminated as part of stopping discrimination, as outlined in Article 5 -> ?
-- The other targets will not cover research about misogyny or sexism, making 5.1 the main option for including this research at all in SDG5 -> Keep
-- Some terms are ambigous, for example "bias" can be an attitude and a result. Is it the same for "misogyny" (is hostility an attitude or an action)? https://www.ungei.org/gender-transformative-education-glossary/gender/misogyny -> ? 
-
 This query consists of three phrases.
 
 #### Phrase 1
