@@ -704,11 +704,11 @@ NEAR
   )
   
 NEAR
-  (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
-   OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
+  (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimis*" OR "optimiz*"
+   OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$" OR "maximiz*" OR "maximis*"
   )
 NEAR/5
-  ("impact*" OR "effect*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
+  ("impact*" OR "effect*" OR "useful*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
   )
 )
  )
