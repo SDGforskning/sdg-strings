@@ -49,7 +49,9 @@ This query consists of three phrases.
 
 This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
 
-Removed `disparit* OR bias* OR difference*` from the women and gender string, as these find mostly medical papers regarding differences between the sexes in various health conditions.
+`excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
+
+The last part of the search string (*women/gender*) is shared between search strings in many of the targets in SDG 5. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
