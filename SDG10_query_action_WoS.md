@@ -580,8 +580,7 @@ NEAR
   )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displace*" OR "expat*" OR "transferee$"
+  "refugee*" OR "displace*" OR "expat*" OR "transferee$"
   )
  )
 )
