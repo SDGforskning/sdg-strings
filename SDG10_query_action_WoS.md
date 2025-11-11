@@ -891,7 +891,7 @@ NEAR
    OR "money order$" OR "money transmission$"
   )
 NEAR
-  (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR "high-price*" OR "high price*" OR "highly price*" OR
+  (("high*" OR "elevated*" OR "steep*" OR "expensiv*" OR
     "ruinous*" OR "costly" OR "unaffordab*"
    )
 NEAR/3
