@@ -187,7 +187,8 @@ Many of the laws, policies and practicies that hinder equal opportunities are no
 
 This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining the searches with terms describing vulnerable population groups. 
 
-The basic structure of Phrase 1 is *action (ensure) + equal opportunity + (vulnerable population groups) OR action (reduce) + inequalities* + (vulnerable population groups). 
+The basic structure of Phrase 1 is *action (ensure) + equal opportunity + (vulnerable population groups) OR action (reduce) + inequalities* + (vulnerable population groups). In addition to basic structure there are searches like "decrease racism" and "increase egalitarian", which doesn't need to combine any population groups.
+
 
 ```py
 TS=
