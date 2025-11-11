@@ -602,7 +602,7 @@ This query consists of 1 phrase. The basic structure is *action + SDT + developi
 
 ```py
 TS=
-((("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop"
+(("implement*" OR "establish*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop"
    OR "development" OR "ensure" OR "attain*" OR "achiev*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR
    "accelerat*" OR "advanc*" OR "promot*" OR "facilitat*" OR "boost*" OR "apply" OR "applying" OR "applied" 
   )
@@ -667,7 +667,7 @@ NEAR
    "georgia*"
   )
  )
-)
+
 ```
 
 ### Target 10.b
