@@ -703,7 +703,7 @@ NEAR
    "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid$" OR "cross-national fund*"
    OR "cross-national invest*"
   )
-  )
+  
 NEAR
   (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
    OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
