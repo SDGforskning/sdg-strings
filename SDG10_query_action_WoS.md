@@ -185,9 +185,9 @@ This target is interpreted to cover research about
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. <a href="#f12">(APA 2020</a>; <a href="#f13">Equal Future 2025</a>; <a href="#f14">UN DESA 2018</a>; <a href="#f9">United Nations 2018.)</a>
 
-This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining them with other terms (for example ```barrier$ NEAR poor NEAR/3 household$```). We still felt we needed to use NOT-operators to delete results that are not connected to the theme of the target.
+This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining the searches with terms describing vulnerable population groups. 
 
-The basic structure of Phrase 1 is *action (ensure) + equal opportunity + (poor or vulnerable) OR action (reduce) + inequalities* + (poor or vulnerable). 
+The basic structure of Phrase 1 is *action (ensure) + equal opportunity + (vulnerable population groups) OR action (reduce) + inequalities* + (vulnerable population groups). 
 
 ```py
 TS=
@@ -253,7 +253,7 @@ NEAR/3
 
 ```
 
-The basic structure of Phrase 2 is *action (stop) + discriminatory law OR action (promote) + anti-discriminatory law*.
+The basic structure of Phrase 2 is *action (stop) + discriminatory law + (vulnerable population groups) OR action (promote) + anti-discriminatory law* + (vulnerable population groups).
 
 ```py
 TS=
@@ -263,8 +263,8 @@ TS=
   )
 NEAR
   (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclusion" OR "bias" OR
-    "bias$ed"
+    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "bias" OR
+    "bias$ed" OR "obstacle$" OR "barrier$"
    )
 NEAR/5
    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
@@ -292,8 +292,20 @@ NEAR/5
   )
  )
 )
-NOT "obstacle$ avoid*" NOT "macrophag*"
-)
+AND 
+    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+   OR "disabled" OR "disabilities" OR "disability"
+   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
+   OR "living with HIV" OR "living with AIDS"
+   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+   OR "indigenous group$")
+ )
+
+
 ```
 
 ### Target 10.4
