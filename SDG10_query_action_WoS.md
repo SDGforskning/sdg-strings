@@ -112,7 +112,7 @@ This target handles empowering people who face horizontal inequalities. This ref
 
 Social inclusion means improving opportunities for individuals and groups to take part in society. This can include for example eradicating discriminatory attitudes from legal systems, labour markets and health care. <a href="#f8">(World Bank Group 2025)</a>. Economic inclusion aims to empower individuals and communities by for example boosting their income and training them in economic skills <a href="#f7">(Sharif 2024)</a>. Political inclusion then covers opportunities for partaking in political activities, e.g. voting and participating in elections <a href="#f10">(Aldar ym. 2025)</a>.
 
-This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. Term ```accessible/accessibility```central in this topic, but it is also a term used in many other contexts. To avoid a large number of irrelevant results, it was combined using proximity operators with terms describing social, economic, and political inclusion, as well as with terms describing vulnerable population groups.
+This query consists of 1 phrase. The basic structure is *action (positive) + inclusion OR action (negative) + exclusion*. Term ```accessible/accessibility```is central in this topic, but it is also a term used in many other contexts. To avoid a large number of irrelevant results, it was combined using proximity operators with terms describing social, economic, and political inclusion, as well as with terms describing vulnerable population groups.
 
 
 ```py
