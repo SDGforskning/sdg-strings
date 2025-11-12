@@ -758,10 +758,8 @@ The basic structure of Phrase 1 is *action (encourage) + financial assistance + 
 Phrase 1
 ```py
 TS=
-((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR
-   "more effectiv*" OR "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
-   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed" OR
-   "offer*" OR "heighten*"
+((("encourag*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR  "scal* up" OR "accelerat*" OR "advance$" OR "advancing" OR "ensure$" OR "attain*" OR "achiev*"
+   OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed" OR "heighten*"
   )
 NEAR
   ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
@@ -774,14 +772,16 @@ NEAR
   )
   
 NEAR
-  (("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimis*" OR "optimiz*"
-   OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$" OR "maximiz*" OR "maximis*"
+  ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "aim$" OR "aiming" OR "aimed" 
+   OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$" 
   )
 NEAR/5
-  ("impact*" OR "effect*" OR "useful*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
-  )
-)
- )
+
+  ("better" OR "efficient*" OR "effectiv*" OR optimal* OR "need" OR "needs" OR "needed" OR "impactful*" OR "useful*")
+
+   )
+ 
+
 AND
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
    "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
