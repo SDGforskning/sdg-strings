@@ -92,7 +92,7 @@ TS=
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
         )
       )
-         OR  "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
+         OR ("anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
     )
   )
 )
@@ -126,7 +126,9 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
     "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
+
  NEAR/3
+
  ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" 
 OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "financ* integrat*"
 OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
@@ -432,8 +434,7 @@ AND
 (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
   OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
   OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
-  OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
-   "hinder*"
+  OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
   )
 
 NEAR/5
