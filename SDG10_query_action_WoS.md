@@ -254,7 +254,7 @@ NEAR/3
 
 ```
 
-The basic structure of Phrase 2 is *action (stop) + discriminatory law + (vulnerable population groups) OR action (promote) + anti-discriminatory law* + (vulnerable population groups).
+The basic structure of Phrase 2 is *action (stop) + discriminatory law + vulnerable population groups OR action (promote) + anti-discriminatory law* + vulnerable population groups.
 
 ```py
 TS=
