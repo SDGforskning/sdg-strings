@@ -187,9 +187,9 @@ This target is interpreted to cover research about
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. <a href="#f12">(APA 2020</a>; <a href="#f13">Equal Future 2025</a>; <a href="#f14">UN DESA 2018</a>; <a href="#f9">United Nations 2018.)</a>
 
-This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining the searches with terms describing vulnerable population groups. 
+This query consists of 2 phrases. Both of the phrases include many terms that can have different meanings or be used in a lot of different contexts, such as ```accessible/accessibility```, ```barrier```, ```obstacle``` or ```bias/biased```. The use of some of these has been constricted by combining the searches with terms describing vulnerable population groups. Some terms on the other hand, such as “racism” and “egalitarianism,” did not need to be combined with terms describing vulnerable population groups. 
 
-The basic structure of Phrase 1 is *action (ensure) + equal opportunity + vulnerable population groups OR action (reduce) + inequalities* + vulnerable population groups. In addition to basic structure there are searches like "decrease racism" and "increase egalitarian", which doesn't need to combine any population groups.
+The basic structure of Phrase 1 is *action (ensure) + equal opportunity + poor/vulnerable OR action (reduce) + inequalities* + poor/vulnerable. 
 
 
 ```py
