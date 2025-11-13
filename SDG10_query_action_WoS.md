@@ -266,7 +266,7 @@ NEAR/3
 
 ```
 
-The basic structure of Phrase 2 is *action (stop) + discriminatory law + vulnerable population groups OR action (promote) + anti-discriminatory law* + vulnerable population groups.
+The basic structure of Phrase 2 is *action (stop) + discriminatory law + poor/vulnerables OR action (promote) + anti-discriminatory law* + poor/vulnerable.
 
 ```py
 TS=
@@ -346,7 +346,7 @@ This target is interpreted to cover research about promoting the implementation 
 
 This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning, but the interpretation is not limited to these types of policies. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17">(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
-This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality* + vulnerable population groups. In addition to basic structure there are searches like "decrease racism" and "increase egalitarian", which doesn't need to combine any population groups.
+This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality* + poor/vulnerable. In addition to basic structure there are searches like "decrease racism" and "increase egalitarian", which doesn't need to combine any groups.
 ```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
 
 
