@@ -56,10 +56,21 @@ This target is interpreted to cover research about
 
 The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are treated as examples and included in the search strings but not in the interpretation.
 
+#### Phrase 1 
+
+This phrase is about increasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + productivity + aspects*
 ```py
 TS=
 (
-
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+  "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+  )
+  NEAR/15
+  ("Econom*" NEAR/5 "productivity"
+  )
+  NEAR/15
+  ("diversif*" OR "technolog*" OR "innovat*")
 )
 ```
 
