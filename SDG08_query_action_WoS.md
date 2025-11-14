@@ -496,6 +496,8 @@ This includes studies on barriers to financial access, especially for underserve
 
 This interpretation takes into account the two indicators with regards to both the physical infrastructure required for banks and ATMs, as well as digital infrastructure for mobile banking solutions.
 
+The basic structure is *strengthening capacity + domestic financial institutions*
+
 ```py
 TS=
 (
@@ -548,6 +550,8 @@ This target is interpreted to cover research about
 * implementing the Global Jobs Pact
 
 This includes research on the design, evaluation, and implementation of youth labor market policies and coordinated programs at national or multilateral levels. The Global Jobs Pact <a href="#f6">(ILO, 2022b)</a> is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
+
+The basic structure is *develop global strategies + youth employment*
 
 ```py
 TS = 
