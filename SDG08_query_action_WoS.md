@@ -54,11 +54,11 @@ TS=
 This target is interpreted to cover research about 
 * Increasing economic productivity through diversification, technological upgrading and innovation.
 
-The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are treated as examples and included in the search strings but not in the interpretation.
+The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are only considered as examples. Economic productivity is focused on the value of output (GDP) related to labour and resource input (see indicator 8.2.1). The main focus is productivity related to diversification, technology and innovation.
 
 #### Phrase 1 
 
-This phrase is about increasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + productivity + aspects*
+This phrase is about increasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + productivity + aspects of productivity*
 ```py
 TS=
 (
@@ -67,10 +67,15 @@ TS=
   OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
   )
   NEAR/15
-  ("Econom*" NEAR/5 "productivity"
+  (
+    (
+      ("Econom*" OR "labo$r" OR "workforce" OR "employee" OR "organi?ation*" OR "total factor")
+      NEAR/5 "productivity"
+    )
+    OR "TFP" OR "output per worker" OR "resource efficiency"
   )
   NEAR/15
-  ("diversif*" OR "technolog*" OR "innovat*")
+  ("diversif*" OR "technolog*" OR "innovat*" OR "entrepreneurship")
 )
 ```
 
