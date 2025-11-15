@@ -169,14 +169,23 @@ TS=
 
 This target is interpreted to cover research about
 * Eradication of forced labour, modern slavery and human trafficking
-* prohibit and end child labour and child soldiers
+* prohibit and end child labour and the use of child soldiers
 
-The two steps for ending child labour is not considered essential, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour.
+The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results. Adding more child synonyms near "labour" did not produce significant results.
 
+#### Phrase 1 
+
+This phrase is about eradicating forced labour, ending slavery and human trafficking, and ending child labour and the use of child soldiers. The general structure is *action + forced/child labour*
 ```py
 TS=
 (
-
+  ("stop*" OR "end" OR "ends" OR  "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "ban" OR "banned" OR "banning"
+  )
+  NEAR/15
+      ("forced labo$r" OR "forced work" OR "slavery" OR "slave labo$r" OR "slave work*" OR "human trafficking" OR "labo$r trafficking" OR "child labo$r" 
+      OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 "soldier$"
+      ) 
+)
 )
 ```
 
