@@ -160,7 +160,7 @@ This target is interpreted to cover research about
 * Improving resource efficiency in consumption and production
 * Endeavouring to decouple economic growth from negative environmental impact
 
-The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production (10YFP) with base documents and interim progress reports.
+The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
 ```py
 TS=
@@ -358,6 +358,8 @@ and amended at the 110th session (2022)*. https://www.ilo.org/sites/default/file
 <a id="f6"></a>International Labour Organization. (2022b). *Recovering from the crisis: A Global Jobs Pact (adopted by the International Labour Conference in 2009 and amended in 2022)*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed_norm/%40relconf/documents/meetingdocument/wcms_115076.pdf [Accessed 2025.09.05]
 
 <a id="f3"></a>International Labour Organization. (2025). *Decent work*. https://www.ilo.org/topics-and-sectors/decent-work [Accessed 2025.09.05]
+
+<a id="f9"></a>UN DESA (2014). *The 10 Year Framework of Programmes on Sustainable Consumption and Production Patterns (10YFP)*. https://sdgs.un.org/sites/default/files/publications/1444HLPF_10YFP2.pdf
 
 <a id="f1"></a>UN DESA. (2025). *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal8#targets_and_indicators [Accessed 2025.04.22]
 
