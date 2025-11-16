@@ -188,32 +188,23 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about promoting policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
+This phrase is about decoupling economic growth from negative environmental impact. The general structure is *action + growth + impact*
 
 ```py
 TS=
 (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+	("decoupl*" OR "separat*" OR "differentiat*" OR "de-link*" OR "dissociat*" OR "detach*" OR "decompos*")
+	NEAR/10
+	(("econom*" OR "GDP" OR "gross domestic product") NEAR/10 "growth")
+	NEAR/10
+	("emission$" OR "pollut*" OR "contamin*" OR "waste$" OR "climate change" OR "resource-saving" OR "eco-efficien*" OR "resource efficien*" OR "sustainable resource management"
+	OR
+	((("environment*" OR "natur*" OR "ecolog*" OR "ocean$" OR "forest*" OR "air" OR "soil" OR "water$" OR "lake$" OR "river$")
+		NEAR/5 ("impact*" OR "degrad*" OR "deteriorat*" OR "destroy*" OR "destructi*" OR "poison*" OR "damag*" OR "harm*" OR "pressur*"
+    )
+    )  
   )
-  NEAR/3
-    (
-      ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
-		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
-      )
-      NEAR/10
-      (
-        (
-          ("formali*"OR "grow*" OR "expan*") 
-            NEAR/10 
-            (
-              ("micro" OR "small" OR "medium") NEAR/2 ("business*" OR "company" OR "companies" OR "corporation$" OR "firm$" OR "enterprise$")
-            )
-            OR "SME" OR "SMES" 
-        ) 
-    )
-    )
+)
 )
 ```
 
