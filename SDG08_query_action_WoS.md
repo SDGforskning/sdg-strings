@@ -162,10 +162,58 @@ This target is interpreted to cover research about
 
 The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
+#### Phrase 1 
+
+This phrase is about improving resource efficiency in consumption and production. The general structure is *action + efficiency + areas/context*
+
 ```py
 TS=
 (
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+  )
+	NEAR/5
+    (
+		("resource" OR "material" OR "energy") NEAR/1 ("efficien*"
+		)
+		OR "resource-saving" OR "eco-efficien*" OR "sustainable resource management" OR "resource decoupling" OR "resource productivity" OR "product life cycle"
+    )
+	NEAR/10
+		("consum*" OR "produc*" OR "goods" OR "retail*" OR "manufactur*" OR "service$" OR "industr*" OR "business*" OR "mining" OR "agricultur*" OR "forest*" 
+		OR "fisher*" OR "touris*" OR "construction" OR "infrastructure" OR "procur*" OR "financ*" OR "transport" OR "public" 
+   		)
+)
+```
 
+#### Phrase 2 
+
+This phrase is about promoting policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
+
+```py
+TS=
+(
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+  )
+  NEAR/3
+    (
+      ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
+		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
+      )
+      NEAR/10
+      (
+        (
+          ("formali*"OR "grow*" OR "expan*") 
+            NEAR/10 
+            (
+              ("micro" OR "small" OR "medium") NEAR/2 ("business*" OR "company" OR "companies" OR "corporation$" OR "firm$" OR "enterprise$")
+            )
+            OR "SME" OR "SMES" 
+        ) 
+    )
+    )
 )
 ```
 
