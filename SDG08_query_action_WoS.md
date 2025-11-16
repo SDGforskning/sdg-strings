@@ -313,7 +313,22 @@ This phrase is about promoting safe and secure working environments. The general
 ```py
 TS=
 (
- )
+	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+	"expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+	OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+	)
+	NEAR/5
+	(
+		("occupational health and safety" OR "occupational health" OR "occupational safety" OR "OHS")   
+		OR
+			(("safe" OR "secure" OR "safety" OR "health" OR "well-being" OR "protect*" OR "ergonom*"
+			OR (("injur*" OR "accident*" OR "risk$" OR "disease*" OR "hazard*") NEAR/5 ("prevent*" OR "minim*" OR "remov*" OR "free" OR "avoid*" OR "mitigat*" OR "reduc*"))
+			)
+    		)
+	)
+	NEAR/10
+		("work environment*" OR "work conditions" OR "work place$" OR "occupational")
+)
 ```
 
 ### Target 8.9
