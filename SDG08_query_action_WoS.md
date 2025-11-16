@@ -385,10 +385,19 @@ This target is interpreted to cover research about
 
 Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." <a href="#f7">(WTO, n.d.)</a>
 
+#### Phrase 1 
+
+This phrase is about increasing Aid for Trade. The general structure is *action + aid/trade*
+
 ```py
 TS=
 (
-
+	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+	"expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+	OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+	)
+	NEAR/10
+	("aid for trade" OR "trade-related assistance" OR "trade capacity building" OR "trade support programs" OR "trade infrastructure support")
 )
 ```
 
