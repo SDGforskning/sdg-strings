@@ -292,11 +292,28 @@ This target is interpreted to cover research about
 
 The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" <a href="#f8">(ILO, 2022a)</a>.
 
+#### Phrase 1 
+
+This phrase is about protecting labour rights. The general structure is *action + labour rights*
+
 ```py
 TS=
 (
+	("protect*" OR "secure*" OR "affirm*" OR "ensur*" OR "safeguard*" OR "uph$ld*" OR "recogni*" OR "enforc*" OR "sustain" OR "preserv*" OR "maintain*")
+	NEAR/10
+	("labo$r right*" OR "worker$ right*" OR "freedom of association" OR "collective bargaining" OR "right to strike" OR "unioni$ing" OR "union right*")
+	
+  )
+```
 
-)
+#### Phrase 2 
+
+This phrase is about promoting safe and secure working environments. The general structure is *action + safety + working environments*
+
+```py
+TS=
+(
+ )
 ```
 
 ### Target 8.9
