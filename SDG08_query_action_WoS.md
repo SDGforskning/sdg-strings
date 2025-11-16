@@ -59,6 +59,7 @@ The focus is on economic productivity in general, and the two latter aspects, hi
 #### Phrase 1 
 
 This phrase is about increasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + productivity + aspects of productivity*
+
 ```py
 TS=
 (
@@ -89,12 +90,61 @@ This target is interpreted to cover research about
 * Promoting policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation
 * Promoting policies that encourage formalization and growth micro-, small- and medium-sized enterprises
 
-The aspect of development-oriented policies is dificult to distinguish and not emphasized in the interpretation. There is some overlap with other SDGs (decent job creation, innovation and growth).
+The aspect of development-oriented policies is dificult to distinguish and not emphasized in the interpretation. Policies are interpreted to include legislation, strategies, plans, treaties, and similar initiatives. There is some overlap with other SDGs and targets in SDG 8 (decent job creation, innovation and growth).
+
+#### Phrase 1 
+
+This phrase is about promoting polcies for productive activities, decent jobsincreasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + policies + activities*
 
 ```py
 TS=
 (
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+  )
+  NEAR/3
+    (
+      ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
+		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
+      )
+      NEAR/10
+      (
+        ("productive" OR "decent") NEAR/3 ("activity" OR "activities" OR "job$" OR "work" OR "labo$r")
+        OR "entrepreneurship" OR "job creation" OR "innovat*" OR "creativ*"
+      )
+    )
+)
+```
 
+#### Phrase 2 
+
+This phrase is about promoting policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
+
+```py
+TS=
+(
+  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
+  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
+  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
+  )
+  NEAR/3
+    (
+      ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
+		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
+      )
+      NEAR/10
+      (
+        (
+          ("formali*"OR "grow*" OR "expan*") 
+            NEAR/10 
+            (
+              ("micro" OR "small" OR "medium") NEAR/2 ("business*" OR "company" OR "companies" OR "corporation$" OR "firm$" OR "enterprise$")
+            )
+            OR "SME" OR "SMES" 
+        ) 
+    )
+    )
 )
 ```
 
