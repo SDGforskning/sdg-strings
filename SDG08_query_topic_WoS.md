@@ -74,24 +74,18 @@ TS=
 > 8.2.1 Annual growth rate of real GDP per employed person
 
 This target is interpreted to cover research about 
-* Increasing economic productivity through diversification, technological upgrading and innovation.
+* economic productivity through diversification, technological upgrading and innovation.
 
 The focus is on economic productivity in general, and the two latter aspects, high-value added and labour-intensive sectors, are only considered as examples. Economic productivity is focused on the value of output (GDP) related to labour and resource input (see indicator 8.2.1). The main focus is productivity related to diversification, technology and innovation.
 
 #### Phrase 1 
 
-This phrase is about increasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + productivity + aspects of productivity*
+This phrase is about economic productivity through diversification, technological upgrading and innovation. The general structure is *productivity + aspects of productivity*
 
 ```py
 TS=
 (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-  "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-  )
-  NEAR/15
-  (
-    (
+  	(
       ("Econom*" OR "labo$r" OR "workforce" OR "employee" OR "organi?ation*" OR "total factor")
       NEAR/5 "productivity"
     )
@@ -109,49 +103,37 @@ TS=
 > 8.3.1 Proportion of informal employment in total employment, by sector and sex
 
 This target is interpreted to cover research about
-* Promoting policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation
-* Promoting policies that encourage formalization and growth micro-, small- and medium-sized enterprises
+* Policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation
+* Policies that encourage formalization and growth micro-, small- and medium-sized enterprises
 
 The aspect of development-oriented policies is dificult to distinguish and not emphasized in the interpretation. Policies are interpreted to include legislation, strategies, plans, treaties, and similar initiatives. There is some overlap with other SDGs and targets in SDG 8 (decent job creation, innovation and growth).
 
 #### Phrase 1 
 
-This phrase is about promoting polcies for productive activities, decent jobsincreasing economic productivity through diversification, technological upgrading and innovation. The general structure is *action + policies + activities*
+This phrase is about policies for productive activities, decent jobsincreasing economic productivity through diversification, technological upgrading and innovation. The general structure is *policies + activities*
 
 ```py
 TS=
 (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-  )
-  NEAR/3
-    (
-      ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
-		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
-      )
-      NEAR/10
-      (
-        ("productive" OR "decent") NEAR/3 ("activity" OR "activities" OR "job$" OR "work" OR "labo$r")
+	("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
+	OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
+	)
+	NEAR/10
+	(
+    	("productive" OR "decent") NEAR/3 ("activity" OR "activities" OR "job$" OR "work" OR "labo$r")
         OR "entrepreneurship" OR "job creation" OR "innovat*" OR "creativ*"
-      )
-    )
+	)
 )
 ```
 
 #### Phrase 2 
 
-This phrase is about promoting policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
+This phrase is about policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *policies + action + enterprises*
 
 ```py
 TS=
 (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-  )
-  NEAR/3
-    (
+	(
       ("policy" OR "policies" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "convention$" OR "strateg*" OR "framework$"  
 		  OR "governance" OR "rule" OR "rules" OR "procedur*" OR "action$" OR "principle$" OR "initiative*"
       )
@@ -179,8 +161,8 @@ TS=
 > 8.4.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
 This target is interpreted to cover research about
-* Improving resource efficiency in consumption and production
-* Endeavouring to decouple economic growth from negative environmental impact
+* resource efficiency in consumption and production
+* decouple economic growth from negative environmental impact
 
 The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
@@ -191,11 +173,6 @@ This phrase is about improving resource efficiency in consumption and production
 ```py
 TS=
 (
-  ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-  "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-  OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-  )
-	NEAR/5
     (
 		("resource" OR "material" OR "energy") NEAR/1 ("efficien*"
 		)
@@ -451,20 +428,17 @@ TS=
 > 8.7.1 Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age
 
 This target is interpreted to cover research about
-* Eradication of forced labour, modern slavery and human trafficking
-* prohibit and end child labour and the use of child soldiers
+* forced labour, modern slavery and human trafficking
+* child labour and the use of child soldiers
 
 The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results. Adding more child synonyms near "labour" did not produce significant results.
 
 #### Phrase 1 
 
-This phrase is about eradicating forced labour, ending slavery and human trafficking, and ending child labour and the use of child soldiers. The general structure is *action + forced/child labour*
+This phrase is about forced labour, slavery and human trafficking, and child labour and the use of child soldiers. The general structure is *forced/child labour*
 ```py
 TS=
 (
-  ("stop*" OR "end" OR "ends" OR  "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "ban" OR "banned" OR "banning"
-  )
-  NEAR/15
       ("forced labo$r" OR "forced work" OR "slavery" OR "slave labo$r" OR "slave work*" OR "human trafficking" OR "labo$r trafficking" OR "child labo$r" 
       OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 "soldier$"
       ) 
@@ -481,20 +455,18 @@ TS=
 > 8.8.2 Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status
 
 This target is interpreted to cover research about
-* protecting labour rights
-* promoting safe and secure working environments for all workers
+* labour rights
+* safe and secure working environments for all workers
 
 The ILO definition of labour rights is "freedom of association and the effective recognition of the right to collective bargaining" <a href="#f8">(ILO, 2022a)</a>.
 
 #### Phrase 1 
 
-This phrase is about protecting labour rights. The general structure is *action + labour rights*
+This phrase is about labour rights. The general structure is *labour rights*
 
 ```py
 TS=
 (
-	("protect*" OR "secure*" OR "affirm*" OR "ensur*" OR "safeguard*" OR "uph$ld*" OR "recogni*" OR "enforc*" OR "sustain" OR "preserv*" OR "maintain*")
-	NEAR/10
 	("labo$r right*" OR "worker$ right*" OR "freedom of association" OR "collective bargaining" OR "right to strike" OR "unioni$ing" OR "union right*")
 	
   )
@@ -507,11 +479,6 @@ This phrase is about promoting safe and secure working environments. The general
 ```py
 TS=
 (
-	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-	"expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-	OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-	)
-	NEAR/5
 	(
 		("occupational health and safety" OR "occupational health" OR "occupational safety" OR "OHS")   
 		OR
@@ -673,22 +640,17 @@ TS=
 > 8.a.1 Aid for Trade commitments and disbursements
 
 This target is interpreted to cover research about 
-* Increasing Aid for Trade support for developing countries
+* Aid for Trade support for developing countries
 
 Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." <a href="#f7">(WTO, n.d.)</a>
 
 #### Phrase 1 
 
-This phrase is about increasing Aid for Trade. The general structure is *action + aid/trade*
+This phrase is about Aid for Trade. The general structure is *aid for trade*
 
 ```py
 TS=
 (
-	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR
-	"expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise"
-	OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
-	)
-	NEAR/10
 	("aid for trade" OR "trade-related assistance" OR "trade capacity building" OR "trade support programs" OR "trade infrastructure support")
 )
 ```
