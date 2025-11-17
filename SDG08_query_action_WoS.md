@@ -179,8 +179,8 @@ TS=
 > 8.4.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
 This target is interpreted to cover research about
-* Improving resource efficiency in consumption and production
-* Endeavouring to decouple economic growth from negative environmental impact
+* improving resource efficiency in consumption and production
+* decoupling economic growth from negative environmental impact
 
 The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
