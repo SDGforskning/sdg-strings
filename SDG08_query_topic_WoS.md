@@ -110,7 +110,7 @@ The aspect of development-oriented policies is dificult to distinguish and not e
 
 #### Phrase 1 
 
-This phrase is about policies for productive activities, decent jobsincreasing economic productivity through diversification, technological upgrading and innovation. The general structure is *policies + activities*
+This phrase is about promoting policies for productive activities, decent jobs, entrepreneurship, creativity and innovation. The general structure is *action + policies + activities*
 
 ```py
 TS=
