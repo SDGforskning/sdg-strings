@@ -202,7 +202,9 @@ This includes studies on both the quantity and quality of employment, including 
 
 Decent work is defined by ILO in their Decent Work Agenda and contains the four pillars of 'employment creation, social protection, rights at work, and social dialogue' <a href="#f3">(ILO, 2025)</a>. Productive employment is defined by ILO as 'employment yielding sufficient returns to labour to permit the worker and her/his dependents a level of consumption above the poverty line' <a href="#f4">(ILO, 2017)</a>
 
-The basics structure is *productive employment/decent work + wage equality + decent work pillars*
+#### Phrase 1
+
+The basics structure is *productive employment/decent work + wage equality + decent work pillars*.
 
 ```py
 TS=
@@ -220,6 +222,29 @@ OR
 )
 ```
 
+#### Phrase 2
+
+The basic structure is *wage equality*.
+
+```py
+TS=
+(
+  ("wage equality" OR "equal pay" OR "fair wage$" OR "pay gap")	
+)
+```
+
+#### Phrase 3
+
+The basic structure is *decent work pillars*.
+
+```py
+TS=
+(
+  ("labor rights" OR "labour rights" OR ("social protection" NEAR/5 "worker$") OR "workers' right$" OR "occupational safety" OR "collective bargain*" OR "workplace standard$" 
+  OR "job creation" OR "employment opportunit*" OR "social safety net$" OR "job security" OR "labor protection$")
+)
+```
+
 ### Target 8.6
 
 > **8.6 By 2020, substantially reduce the proportion of youth not in employment, education or training**
@@ -230,11 +255,11 @@ This target is interpreted to cover research about youth not in employment, educ
 
 This includes research on youth disengagement, early labor market integration, and various interventions (educational, policy-based, or community-driven) aimed at increasing youth participations in economic and educational systems.
 
-This query consists of two phrases. Phrase 1 adresses youth unemployment and youth not in education or training, while Phrase 2 concerns the opposite aspect of youth employment and youth education and/or training.
+This query consists of four phrases. Phrase 1 adresses youth not in education or training, Phrase 2 concerns youth unemployment. Phrase 3 and 4 reverses the logic, Phrase 3 deals with youth in education or training, while Phrase 4 concerns youth employment.
 
 #### Phrase 1
 
-The basic structure is *youth + education/training* and *unemployment + youth*
+The basic structure is *youth not in education/training*.
 
 ```py
 TS=
@@ -261,7 +286,16 @@ TS=
       )
     )
   )
-  OR 
+)
+```
+
+#### Phrase 2
+
+The basic structure is *youth unemployment*.
+
+```py
+TS=
+(
   (
     ("unemploy*" OR "underemploy*" OR "NEET$" OR "jobless" OR "out of work" OR "not in work" OR "economic* inactive" OR "labor market exclusion$" OR "labour market exclusion$" OR "employment barrier$" OR "not in education employment or training")
       NEAR/10
@@ -270,9 +304,9 @@ TS=
 )
 ```
 
-#### Phrase 2
+#### Phrase 3
 
- The basic structure is *youth education + youth employment*
+ The basic structure is *youth education*.
 
 ```py
 TS=
@@ -298,7 +332,16 @@ TS=
       )
     )
   )
-  OR
+)
+```
+
+#### Phrase 4
+
+The basic structure is *youth employment*.
+
+```py
+TS=
+(
   (
     ("employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" OR "income generation" 
     OR "socioeconomic attainment$" OR "school-to-work transition$")
@@ -397,20 +440,60 @@ Other aspects of sustainable tourism are also covered in SDG 12.b, which was als
 
 The phrase does not include the phrase regarding job creation and local culture promotion from the action query, as it made no difference in the results since it will be covered by the remainder of the phrase.
 
-The basic structure is *sustainable tourism*.
+#### Phrase 1
+
+The basic structure is *policies + sustainable tourism*.
 
 ```py
 TS=
 (
-  "ecotourism" OR "eco-tourism" OR
+  (
+    "policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
+		OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
+    )
+    NEAR/15
+  ("ecotourism" OR "eco-tourism" OR
+    (
+      (
+        "sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative"
+      )
+      NEAR/3
+      (
+        "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR
+        "air passenger travel" OR "airport tourism" OR ("cruise" NEAR/5 ("travel" OR "tourism" OR "ship")) OR "hotel$"
+      )
+    )
+  )
+)
+```
+
+#### Phrase 2 
+
+The basic structure is *policies + job creation/local culture + sustainable tourism*
+
+```py
+TS = 
+(
   (
     (
-      "sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative"
+        "policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
+		OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
     )
-    NEAR/3
+    NEAR/15
     (
-      "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR
-      "air passenger travel" OR "airport tourism" OR ("cruise" NEAR/5 ("travel" OR "tourism" OR "ship")) OR "hotel$"
+      (
+        "job$" OR "job access" OR "job creation" OR "labor market$" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" 
+		OR "local economy" OR "local economies" OR "value chain$" OR "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" 
+		OR "cultural heritage$" OR "local culture$" OR "indigenous knowledge" OR "traditional practice$"
+      )
+      NEAR/5
+      (
+        "ecotourism" OR "eco-tourism" OR
+        (
+          "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" 
+		  OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism"
+        )
+      )
     )
   )
 )
