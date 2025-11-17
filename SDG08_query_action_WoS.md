@@ -537,7 +537,7 @@ This target is interpreted to cover research about
 
 This includes research on the environmental, economic and cultural dimensions of sustainable tourism (<a href="#f5">UN Tourism, 2025</a>). 
 
-The UNWTO (<a href="#f8">2013</a>) defines sustainable tourism as:
+The UNWTO (<a href="#f10">2013</a>) defines sustainable tourism as:
 
 > "Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”.
 
@@ -771,6 +771,6 @@ and amended at the 110th session (2022)*. https://www.ilo.org/sites/default/file
 
 <a id="f2"></a>United Nations. (2016, 2017, 2018, 2019, 2020, 2021). *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-<a id="f8"></a>UNWTO (2013). *Sustainable Tourism for Development Guidebook - Enhancing capacities for Sustainable Tourism for development in developing countries*. https://www.e-unwto.org/doi/epdf/10.18111/9789284415496.
+<a id="f10"></a>UNWTO (2013). *Sustainable Tourism for Development Guidebook - Enhancing capacities for Sustainable Tourism for development in developing countries*. https://www.e-unwto.org/doi/epdf/10.18111/9789284415496.
 
 <a id="f7"></a>World Trade Organization. (n.d.). *Aid for Trade fact sheet*. https://www.wto.org/english/tratop_e/devel_e/a4t_e/a4t_factsheet_e.htm
