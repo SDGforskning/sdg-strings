@@ -85,7 +85,8 @@ This phrase is about economic productivity through diversification, technologica
 ```py
 TS=
 (
-  	(
+  (
+    (
       ("Econom*" OR "labo$r" OR "workforce" OR "employee" OR "organi?ation*" OR "total factor")
       NEAR/5 "productivity"
     )
