@@ -169,7 +169,7 @@ The focus is on resource efficiency, and not limited to the global aspect and pr
 
 #### Phrase 1 
 
-This phrase is about improving resource efficiency in consumption and production. The general structure is *efficiency + areas/context*
+This phrase is about resource efficiency in consumption and production. The general structure is *efficiency + areas/context*
 
 ```py
 TS=
@@ -188,7 +188,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about decoupling economic growth from negative environmental impact. The general structure is *growth + environmental impact*
+This phrase is about economic growth related to negative environmental impact. The general structure is *growth + impact*
 
 ```py
 TS=
@@ -431,7 +431,7 @@ This target is interpreted to cover research about
 * forced labour, modern slavery and human trafficking
 * child labour and the use of child soldiers
 
-The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results. Adding more child synonyms near "labour" did not produce significant results.
+The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results.
 
 #### Phrase 1 
 
@@ -474,7 +474,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about promoting safe and secure working environments. The general structure is *action + safety + working environments*
+This phrase is about safe and secure working environments. The general structure is *safety + working environments*
 
 ```py
 TS=
