@@ -141,9 +141,18 @@ SDG Target 9.5 focuses on strengthening the foundation for innovation and scient
 This query consists of X phrases.
 
 ```py
-TS=( ("upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "improv*" OR "legislat*" OR "governance" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" )
-NEAR/5 ( ("research" OR "innovation*" OR "R&D" OR "R & D" OR "research and development" OR "research & development" OR "technology" OR "technological capabilities" )
-NEAR/5 ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "subsidy" OR "subsidi*" ) ) ) 
+TS=
+(
+     ("upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "improv*" OR "legislat*" OR "governance" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" 
+     ) 
+     NEAR/5
+      ( ("research" OR "innovation*" OR "R&D" OR "R & D" OR "research and development" OR "research & development" OR "technology" OR "technological capabilities" 
+        ) 
+      NEAR/5 
+      ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "subsidy" OR "subsidi*" 
+      )
+    ) 
+) 
 ```
 
 ### Target 9.a
