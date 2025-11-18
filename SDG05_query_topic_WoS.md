@@ -72,7 +72,7 @@ TS=
           OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
           )
       )
-    OR "financial exclusion" OR "economic exclusion" OR "social exclusion" OR "digital exclusion" OR "cultural exclusion" OR "political exclusion"
+    OR ("exclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")
     OR
       ( 
         ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
@@ -106,7 +106,7 @@ TS=
   OR
   (
     ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" OR "equal pay*"
-    OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion" 
+    OR ("inclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")) 
     )
     NEAR/5
         ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -126,9 +126,7 @@ TS=
 
 This phrase is about legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *legislation + equality + women/gender*
 
-Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
-
-`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
+The last part of the search string (*women/gender*) is shared between search strings in many of the targets in SDG 5. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers regarding e.g. sex-biased regulation of genes.
 
 ```py
 TS=
@@ -143,8 +141,7 @@ TS=
         OR
         (
           ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*" OR "equal pay*"
-          OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
-          OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
+          OR (("inclusion" OR "exclusion") NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
           OR "*women's inclusion"
           )
           NEAR/5 
