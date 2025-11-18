@@ -491,76 +491,8 @@ TS=
 )
 ```
 
+
 #### Phrase 2
-
-This phrase aims to find research about increasing or improving treatment, recycling and reuse of wastewaters related to freshwater bodies.
-
-The phrase is partly similar to 14.1 phrase 2.
-
-The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies*
-
-
-```py
-TS=
-(
-  (
-    (
-        ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
-        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" 
-        OR "design*" OR "adopt*" OR "enforc*" OR "prioriti*"
-        )
-        NEAR/5
-            ("treatment" OR "recovery"
-            OR "technolog*"
-            OR "monitor*" OR "assess*"
-            OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
-            OR "life cycle assess*" OR "LCA"
-            OR "environment* assess*" OR "environment* impact assess*"
-            OR "manag*" OR "pollution control$"
-            OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme" 
-            OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
-            )
-    )  
-    NEAR/15
-        ("pollut*"
-        OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
-        OR "effluent$" 
-        OR
-          (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" 
-            OR "urban" OR "dumping")
-            NEAR/15
-                ("waste" OR "discharge" OR "runoff" OR "run off")          
-          )
-        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"
-        OR
-          (
-            ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
-            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
-            )
-            NEAR/15 "contamination"   
-          )
-        OR "contaminated" OR "contaminant$" OR "toxic chemical$"
-        OR "endocrine disrupting chemical$"
-        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
-        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
-        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
-        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
-        OR "oil spill$" 
-        ) 
-  )
-  AND 
-  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-  OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
-  OR "brook$" OR "creek$" 
-  OR "aquifer$" OR "groundwater" 
-  OR ("water" NEAR/3 "reservoir$"))
-)
-```
-
-
-#### Phrase 3
 
 This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies.
 
