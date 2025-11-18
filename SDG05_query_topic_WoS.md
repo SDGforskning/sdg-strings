@@ -284,7 +284,7 @@ Using `NEAR` for "formal/informal" care is important, as many works specify the 
 ```py
 TS=
 (
-    ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+    ("informal" NEAR/3 ("care" OR "caring" OR "carer$" OR "caregiv*"))
     OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
     OR "household management" OR "household administration"
     OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
@@ -292,11 +292,13 @@ TS=
     OR "domestic division of labo$r"
     OR
         (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR ("gender*" NEAR/3 "division")) 
-        NEAR/15 ("care" OR "carer$" OR "caring")
+        NEAR/15 ("care" OR "caring" OR "carer$" OR "caregiv*")
         )
     OR
         (
-            ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" OR "division of" OR ("gender*" NEAR/3 "division"))
+            ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" 
+            OR "division of" OR ("gender*" NEAR/3 "division")
+            )
             NEAR/15 
                 ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
                 OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"

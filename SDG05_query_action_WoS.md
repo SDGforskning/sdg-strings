@@ -332,7 +332,7 @@ TS=
     )
     NEAR/15
         (
-            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            ("informal" NEAR/3 ("care" OR "caring" OR "carer$" OR "caregiv*"))
             OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
@@ -340,11 +340,13 @@ TS=
             OR "domestic division of labo$r"
             OR
                 (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR ("gender*" NEAR/3 "division")) 
-                NEAR/15 ("care" OR "carer$" OR "caring")
+                NEAR/15 ("care" OR "caring" OR "carer$" OR "caregiv*")
                 )
             OR
             (
-                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" OR "division of" OR ("gender*" NEAR/3 "division"))
+                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" 
+                OR "division of" OR ("gender*" NEAR/3 "division")
+                )
                 NEAR/15 
                     ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
                     OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"
@@ -395,13 +397,16 @@ TS=
             ("social welfare" OR "welfare system$" OR "social protection" OR "social polic*"
             OR "tax break$" OR "tax credit$" OR "child credit$" OR "pension$" OR "caregiver benefit$"
             OR 
-                (("income support" OR "financial support" OR "economic support" OR "cash" OR "allowance" OR "payment$" OR "subsid*" OR "leave") 
-                NEAR/3 ("caregiv*" OR "care" OR "carer$" OR "childcare" OR "eldercare")
+                (   
+                    ("income support" OR "financial support" OR "economic support" OR "benefits" OR "cash" OR "allowance" OR "payment$" OR "subsid*" OR "leave"
+                    OR "formal" OR "professional"
+                    ) 
+                    NEAR/3 ("care" OR "caring" OR "carer$" OR "caregiv*" OR "childcare" OR "eldercare")
                 )
             OR "nursery" OR "daycare" OR "day care" OR "kindergarten" OR "preschool" 
             OR "elderly care" OR "nursing home$" OR "residential care" OR "care facilit*" OR "care service$" OR "home nurs*" OR "care home$" 
-            OR (("formal" OR "professional") NEAR/3 ("care" OR "caregiv*"))
-            OR "flexible work*" OR "flextime" OR "flexitime" OR "parental leave" OR "matern* leave" OR "patern* leave"
+            OR "flexible work*" OR "flextime" OR "flexitime" OR "time off work"
+            OR "parental leave" OR "matern* leave" OR "patern* leave" OR "compassionate leave"
             OR "public service$" OR "basic service$" OR "infrastructure" OR "modern energy" OR "electricity" 
             OR "irrigation" OR "water sanitation" OR "clean water" OR "piped water" OR "water supply"
             OR "mobile bank*" OR "mobile financ*" OR "delivery service$" 
@@ -409,7 +414,7 @@ TS=
     )
     NEAR/15
         (
-            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            ("informal" NEAR/3 ("care" OR "caring" OR "carer$" OR "caregiv*"))
             OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
@@ -417,11 +422,13 @@ TS=
             OR "domestic division of labo$r"
             OR
                 (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR ("gender*" NEAR/3 "division")) 
-                NEAR/15 ("care" OR "carer$" OR "caring")
+                NEAR/15 ("care" OR "caring" OR "carer$" OR "caregiv*")
                 )
             OR
             (
-                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" OR "division of" OR ("gender*" NEAR/3 "division"))
+                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" 
+                OR "division of" OR ("gender*" NEAR/3 "division")
+                )
                 NEAR/15 
                     ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
                     OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"
@@ -471,7 +478,7 @@ TS=
     )
     NEAR/15
         (
-            ("informal" NEAR/3 ("care" OR "caregiv*" OR "carer$"))
+            ("informal" NEAR/3 ("care" OR "caring" OR "carer$" OR "caregiv*"))
             OR "family caregiv*" OR "reproductive labo$r" OR "reproductive work" OR "kin work" OR "kinwork" OR "motherwork"
             OR "household management" OR "household administration"
             OR "housework" OR "household work" OR "household labo$r" OR "household task$" OR "household chore$" OR "household duties" 
@@ -479,11 +486,13 @@ TS=
             OR "domestic division of labo$r"
             OR
                 (("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR ("gender*" NEAR/3 "division")) 
-                NEAR/15 ("care" OR "carer$" OR "caring")
+                NEAR/15 ("care" OR "caring" OR "carer$" OR "caregiv*")
                 )
             OR
             (
-                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" OR "division of" OR ("gender*" NEAR/3 "division"))
+                ("unpaid" OR "without pay" OR "with no pay" OR "time use survey*" OR "time use statistic*" OR "time use data" OR "informal support" OR "invisible" 
+                OR "division of" OR ("gender*" NEAR/3 "division")
+                )
                 NEAR/15 
                     ("household responsibil*" OR "domestic work" OR "domestic labo$r" OR "domestic management" OR "manage the home"
                     OR "childcare" OR "caregiv*" OR "eldercare" OR "parenting"
