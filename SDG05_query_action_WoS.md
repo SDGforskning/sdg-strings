@@ -526,7 +526,7 @@ TS=
             (
                 (
                 ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" OR "mother$" 
-                OR "wife" OR "wives" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" 
+                OR "daughter$" OR "wife" OR "wives" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" 
                 OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" OR "sexual* and gender") 
                 OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
                 NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*"))
@@ -579,9 +579,9 @@ TS=
                         NEAR/5
                         (
                         ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" 
-                        OR "mother$" OR "wife" OR "wives" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" 
-                        OR "niece$" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" OR "sexual* and gender") 
-                        OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary") 
+                        OR "mother$" OR "daughter$" OR "wife" OR "wives" OR "aunt" OR "aunts" OR "grandmother$" 
+                        OR "grandma$" OR "niece$" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" 
+                        OR "sexual* and gender") OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary") 
                         NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*"))
                         )
                 )
@@ -843,7 +843,7 @@ phones, tablets, etc.) and software (social media services, multimedia applicati
 For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>. 
 
 
-This query consists of 2 phrases.
+This query consists of 1 phrase.
 
 
 #### Phrase 1
@@ -861,115 +861,66 @@ TS=
         OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" 
         OR "propos*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
         )
-        NEAR/5
-            (
-                ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills" 
-                OR "competenc*" OR "confidence" OR "aquisition" OR "capab*") 
-                NEAR/5
-                    ("apps" OR "applications" OR "automat*" OR "broadband" OR "chatbot*" OR "computer*" 
-                    OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
-                    OR "enabling technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
-                    OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-                    OR "information communications technolog*" OR "information technolog*" 
-                    OR "innovative technolog*" OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
-                    OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" OR "online" 
-                    OR "*phone*" OR "robot*" OR "social media" OR "tablet*" OR "tehcnological intervention*" 
-                    OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "web-based" OR "wi-fi" 
-                    OR "wireless" OR  
-                    (("artificial" OR "machine" OR "generative" OR "computational") NEAR/1 ("intelligence" OR "learning"))
-                    )
-            )
-    )
-    NEAR/15
+        OR
         (
-            "GEWE"
-            OR
-            (
-            ("*women" OR "*woman" OR "*womens" OR "*womans"
-            OR "girl$"
-            OR "female$"
-            OR "sister$" OR "mother$" OR "daughter$"
-            OR "wife" OR "wives" OR "girlfriend$"
-            OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*" OR "lesbian*" OR "transperson*" OR "non-binary" 
-            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+            ("address*" OR "alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
+            OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR  "eradicat*" OR "fight*" OR "limit$" 
+            OR "limited" OR "limiting" OR "manag*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
+            OR "prevent*" OR "remov*" OR "stop*" OR "tackl*"   
             )
-            NEAR/15
-                    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength"
-                    OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
-                    OR "rights*" OR "equity" OR "equality"
-                    )
-            )
-        )
-)
-
-```
-
-#### Phrase 2
-
-The basic structure is _action_ + _barriers_ + _use of technology_ + _empowerment of women_ (perhaps integrate into phrase 1, decide about NEAR...)
-
-```py
-TS=
-(
-    (
-        ("address*" OR "alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
-        OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR  "eradicat*" OR "fight*" OR "limit$" 
-        OR "limited" OR "limiting" OR "manag*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
-        OR "prevent*" OR "remov*" OR "stop*" OR "tackl*"   
-        )
-        NEAR/5
+            NEAR/5
             ("barrier$" OR "discriminat*" OR "disempower*" OR "disparit*" OR "divide*" OR "hinder" OR "hindranc*" 
             OR "imbalance" OR "inequit*" OR "inequal*"  OR "obstacle*"  OR "unequit*" OR "unbalanc*" OR "unequal*" 
             )
+        )
     )
-    NEAR/10
-    (
+    NEAR/5
+        (           
             (
-                ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills" 
+                ("use" OR "usage" OR "utili*" OR "access" OR "adoption" OR "diffusion" OR "skills" 
                 OR "competenc*" OR "confidence" OR "aquisition" OR "capab*") 
-                NEAR/5
-                    ("apps" OR "applications" OR "automat*" OR "broadband" OR "chatbot*" OR "computer*" 
-                    OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
-                    OR "enabling technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
-                    OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-                    OR "information communications technolog*" OR "information technolog*" 
-                    OR "innovative technolog*" OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
-                    OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" OR "online" 
-                    OR "*phone*" OR "robot*" OR "social media" OR "tablet*" OR "tehcnological intervention*" 
-                    OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "web-based" OR "wi-fi" 
-                    OR "wireless" OR  
-                    (("artificial" OR "machine" OR "generative" OR "computational") NEAR/1 ("intelligence" OR "learning"))
-                    )
-            )
-    
-    NEAR/15
-        (
-            "GEWE"
-            OR
+                    NEAR/15
+                        ("apps" OR "applications" OR "broadband" OR "chatbot*" OR "computer*" 
+                        OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
+                        OR "technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
+                        OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
+                        OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
+                        OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" 
+                        OR "*phone*" OR "robot*" OR "social media" OR "tablet*" 
+                        OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "wi-fi" 
+                        OR "wireless" OR  
+                        (("artificial" OR "machine" OR "generative" OR "computational") 
+                        NEAR/1 ("intelligence" OR "learning"))
+                        )
+            )  
+        NEAR/15
             (
-            ("*women" OR "*woman" OR "*womens" OR "*womans"
-            OR "girl$"
-            OR "female$"
-            OR "sister$" OR "mother$" OR "daughter$"
-            OR "wife" OR "wives" OR "girlfriend$"
-            OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*" OR "lesbian*" OR "transperson*" OR "non-binary" 
-            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-            )
-            NEAR/15
-                    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" OR "personal strength"
-                    OR "political strength" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
-                    OR "rights*" OR "equity" OR "equality"
-                    )
+             "GEWE"
+                OR
+                (
+                ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" 
+                OR "female$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+                OR "wife" OR "wives" OR "girlfriend$"
+                OR "pregnan*" OR "maternity" OR "maternal" 
+                OR "lesbian*" 
+                OR "gender*" OR "sexual and gender" 
+                OR "transgender*"OR "transperson*" OR "non-binary" 
+                OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" 
+                OR "discriminat*" OR "violence"))
+                )
+                NEAR/10
+                        ("autonomy" OR "control" OR "decision-making" OR "economic strength"
+                        OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "opportunit*" 
+                        OR "personal priorities" OR "personal strength" OR "personal development" 
+                        OR "political strength*" OR "power" OR "self concept" OR "self confidence" OR "self efficacy" 
+                        OR "rights*" OR "equity" OR "equality"
+                        )
+                )
             )
         )
 )
-)
 ```
-
 ### Target 5.c
 
 > **5.c Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels**

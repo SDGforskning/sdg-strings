@@ -339,9 +339,13 @@ The basic structure is _women/gender equality_ + _participation/leadership/decis
 TS= 
 (    
     (
-        ("female$" OR "*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "sister$" OR "mother$" OR "wife" 
-        OR "wives" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "girlfriend$" OR "maternity" 
-        OR "maternal" OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
+        ("*women" OR "*woman" OR "*womens" OR "*womans" 
+        OR "girl$"
+        OR "female$" 
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
+        OR "wife" OR "wives" OR  OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
         (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
         NEAR/5 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap*"))    
         )            
@@ -541,23 +545,21 @@ The basic structure is _use_ + _technologies_ + _empowerment of women_
 TS=
 (
     (
-        ("use" OR "usage" OR "utilization" OR "access" OR "adoption" OR "diffusion" OR "skills" 
+        ("use" OR "usage" OR "utili*" OR "access" OR "adoption" OR "diffusion" OR "skills" 
          OR "competenc*" OR "confidence" OR "aquisition" OR "capab*") 
-            NEAR/5
-                ("apps" OR "applications" OR "automat*" OR "broadband" OR "chatbot*" OR "computer*" 
+            NEAR/15
+                ("apps" OR "applications" OR "broadband" OR "chatbot*" OR "computer*" 
                 OR "digital" OR "distance learning" OR "distance education" OR "e-learning" 
-                OR "enabling technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
+                OR "technolog*" OR "generative pre-trained transformer*" OR "gen-ai*" OR "gpt" 
                 OR "handheld" OR "hardware" OR "ICTs" OR "ICT" OR "ICT4D" 
-                OR "information communications technolog*" OR "information technolog*" 
-                OR "innovative technolog*" OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
-                OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" OR "online" 
-                OR "*phone*" OR "robot*" OR "social media" OR "tablet*" OR "tehcnological intervention*" 
-                OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "web-based" OR "wi-fi" 
+                OR "internet" OR "ipad*" OR "laptop*" OR "llm*" 
+                OR "large language model*" OR "mobile*" OR "mooc*" OR "multimedia" 
+                OR "*phone*" OR "robot*" OR "social media" OR "tablet*" 
+                OR "telecommunication" OR "telehealth" OR "television" OR "web" OR "wi-fi" 
                 OR "wireless" OR  
                 (("artificial" OR "machine" OR "generative" OR "computational") NEAR/1 ("intelligence" OR "learning"))
                 )
-     )
-    
+     )    
     NEAR/15
         (
             "GEWE"
@@ -566,16 +568,16 @@ TS=
             ("*women" OR "*woman" OR "*womens" OR "*womans"
             OR "girl$"
             OR "female$"
-            OR "sister$" OR "mother$" OR "daughter$"
+            OR "sister$" OR "mother$" OR "daughter$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" 
             OR "wife" OR "wives" OR "girlfriend$"
-            OR "pregnan*" OR "maternity" OR "maternal"
-            OR "gender*" OR "sexual and gender" OR "transgender*"
-            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+            OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+            OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson" OR "non-binary"     
             )
-            NEAR/15
-                    ("autonomy" OR "capacity*" OR "choice*" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "personal priorities" 
-                    OR "personal strength" OR "political strength" OR "power" OR "self concept" OR "self confidence"
+            NEAR/10
+                    ("autonomy" OR "control" OR "decision-making" OR "economic strength"
+                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "opportunit*" OR "personal priorit*" 
+                    OR "personal strength" OR "personal development" OR "political strength" OR "power" 
+                    OR "self concept" OR "self confidence"
                     OR "self efficacy" OR "rights*" OR "equity" OR "equality")
             )
         )
