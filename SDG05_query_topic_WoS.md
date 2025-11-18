@@ -445,9 +445,11 @@ As in 1.4, we based this interpretation of financial and economic resources on <
 
 #### Phrase 1
 
-This phrase covers women's access and rights to financial services. The basic structure is access/rights + financial services + women.
+This phrase covers women's access and rights to financial services. The basic structure is _access/rights + financial services + women_.
 
 Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>. For the topic approach, we allow some terms which are already closely related to the idea of access to stand alone without being connected to access or rights explicitly; this includes microfinance types (where access is a primary objective) and "financial inclusion".
+
+The string does find some results about access/barriers to medical care related to insurance, which somewhat outside of scope, but not completely. 
 
 ```py
 TS=
@@ -472,13 +474,14 @@ TS=
         )
     )
     AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
+        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$"
         OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal" 
-        OR "gender*"
+        OR "wife" OR "wives" OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "lesbian*"
+        OR "gender*" OR "sexual and gender"
+        OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
@@ -486,9 +489,11 @@ TS=
 
 #### Phrase 2
 
-This phrase covers access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is access/rights + resources + women.
+This phrase covers women's access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is _access/rights + resources + women_.
 
-"security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
+"security" is used only together with other terms, because otherwise there are many results about food security. The same applies to "control", as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
+
+The string does find some results about access/barriers to medical care related to income, which somewhat outside of scope, but not completely. 
 
 ```py
 TS=
@@ -510,13 +515,14 @@ TS=
             )
     )
     AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
+        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$"
         OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal" 
-        OR "gender*"
+        OR "wife" OR "wives" OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal"
+        OR "lesbian*"
+        OR "gender*" OR "sexual and gender"
+        OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
