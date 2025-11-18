@@ -138,7 +138,7 @@ This target is interpreted to cover research about
 
 SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. The Sustainable Development Goals. Extended Report 2024. (2024) 
 
-This query consists of X phrases.
+This query consists of 1 phrase.
 
 ```py
 TS=
@@ -164,6 +164,8 @@ TS=
 This target is interpreted to cover research about: 
 
 * Facilitatating sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
+
+This query consists of 1 phrase.
 
 ```py
 TS=
