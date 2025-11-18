@@ -163,9 +163,7 @@ TS=
 
 This target is interpreted to cover research about: 
 
-    Facilitatating sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
-
-* Creating and improving sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support and technical support.
+* Facilitatating sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
 
 ```py
 TS=
