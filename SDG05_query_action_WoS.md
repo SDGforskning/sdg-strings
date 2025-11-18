@@ -142,9 +142,7 @@ TS=
 
 This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women/gender*
 
-Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
-
-`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
+The last part of the search string (*women/gender*) is shared between search strings in many of the targets in SDG 5. However, here `disparit* OR bias* OR difference*` is removed, as it causes issues in combination with `bias` and `strateg* OR regulat*` and finds many medical papers regarding e.g. sex-biased regulation of genes.
 
 ```py
 TS=
@@ -158,7 +156,8 @@ TS=
             ) 
             NEAR/5
                 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-                "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
+                "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
+				OR "promot*" OR "enforc*" OR "monitor*"
                 )
         )
         NEAR/15
