@@ -452,10 +452,7 @@ TS=
                 ("waste" OR "discharge" OR "runoff" OR "run off")          
           )
         OR 
-        (
-          ("plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$") 
-          NEAR/5 ("contaminat*" OR "pollut*")
-        ) 
+        "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"  
         OR 
         (
           ("pharmaceutic*" OR "antibiotic*" OR "medical" 
