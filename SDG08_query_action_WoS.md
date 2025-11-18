@@ -141,7 +141,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about promoting policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
+This phrase is about promoting policies for formalising and growing micro-, small- and medium-sized enterprises. The general structure is *action + policies + action + enterprises*
 
 ```py
 TS=
