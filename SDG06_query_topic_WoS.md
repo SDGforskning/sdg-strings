@@ -139,7 +139,9 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about access to sanitation and hygiene. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+This phrase aims to find research about providing safe and equitable sanitation and hygiene services for all people.
+
+This phrase aims to find research safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
@@ -147,15 +149,15 @@ Term `WASH` is linked to `services or facilities` in order to exclude irrelevant
 
 Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
 
-The elements of the phrase are *access + WASH/safely managed sanitation services*  
+The elements of the phrase are *safe/equitable/access + WASH/safely managed sanitation services*  
 
 
 ```py
 TS=
 (
-  ("access" OR "availab*" OR "unavailab*" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
+  ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" OR "access" OR "availab*" OR "unavailab*" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
   OR "tackling" OR "tackle" OR "scal* up" OR "upgrad" 
-  OR "adequate" OR "safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*") 
+  OR "adequate") 
     NEAR/15 
   (
     "sanitation" 
