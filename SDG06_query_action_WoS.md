@@ -449,10 +449,14 @@ TS=
           )
         OR 
         (
-          ("plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
-          OR "pharmaceutic*") 
+          ("plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$") 
           NEAR/5 ("contaminat*" OR "pollut*")
-        )
+        ) 
+        OR 
+        (
+          ("pharmaceutic*" OR "antibiotic*") 
+          NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+        ) 
         OR 
           (
             ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
