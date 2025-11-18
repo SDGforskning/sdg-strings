@@ -300,25 +300,17 @@ TS=(
 > 5.4.1 Proportion of time spent on unpaid domestic and care work, by sex, age and location
 
 This target is interpreted to cover research about:
-- Recognition and valuing unpaid care and domestic work, including work on caregiver burden and economic costs
+- Recognition and valuing unpaid care and unpaid domestic work, including research which talks about the costs/impacts/burden of these activities (whether to society or the individual, and of any type (economic, emotional, social...)), as this is a form of recognition
 - Provision of public services, infrastructure, and social protection policies in any way related to unpaid care and domestic work
-- The promotion of shared responsibility for unpaid care and domestic work, including division and fairness. Although the SDG limits this to "within households and the family", in practice, it is difficult to separate the sharing of work within the household, and the sharing of work with e.g. professional services, and it being more equitable in other dimensions. Therefore we take a wider interpretation where we consider shared responsibility and division generally. 
+- The promotion of shared responsibility for unpaid care and domestic work, including division and fairness. Although the SDG limits this to "within households and the family", in practice, it is difficult to separate the sharing of work within the household versus the sharing of work with e.g. professional services. Therefore we take a wider interpretation where we consider shared responsibility and division generally. 
 
-We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). We include food and meals management and preparation, cleaning and maintenance of own dwelling and surroundings, do-it-yourself decoration, care, maintenance and repair of personal and household goods, textiles and footwear (e.g. washing clothes), household management (e.g. paying bills, organising), pet care, shopping for household and family members, collection of water and firewood/fuel, childcare and instruction, care of dependant adults, or non-dependant household or family members (e.g. sick, elderly or disabled), travel or transporting goods related to these activities.
-
-Factors to do with valuation of this work, or services and policies mentioned in <a href="#f6ca">Yamamoto (2018)</a> include:
-- the structure of social welfare, contributions into pensions via care work (e.g. child credit), or taxes and tax breaks (valuing)
-- piped water, water sanitation/purification, irrigation and electricity/modern energy (public services/infrastructure)
-- public investment in care services and care industry, such as childcare, preschool, personal care, elderly care, nursing homes, care facilities (public services), 
-- parental leave (policies/shared responsibility)
-- flexible work hours (policies/share responsibility)
-- mobile banking and delivery of shopping (services)
+We used two sources to help clarify what should fall under unpaid care and domestic work: The indicator metadata for target 5.4 (<a href="#f4ca">Statistics Division 2024</a>) and a report published by the UNDP Regional Bureau for Asia and the Pacific (<a href="#f6ca">Yamamoto 2018</a>). These mention food and meals management and preparation, cleaning and maintenance of own dwelling and surroundings, do-it-yourself decoration, care, maintenance and repair of personal and household goods, textiles and footwear (e.g. washing clothes), household management (e.g. paying bills, organising), pet care, shopping for household and family members, collection of water and firewood/fuel, childcare and instruction, care of dependant adults, or non-dependant household or family members (e.g. sick, elderly or disabled), travel or transporting goods related to these activities.
 
 _Unpaid care and domestic work_ can be challenging to isolate, as a) some unpaid domestic activities (e.g. caregiving, childcare) can be done outside the home or as paid/professional work, and b) some research may refer to unpaid work *without* using terms for unpaid (e.g. "housework"). Therefore, the _unpaid care and domestic work_ string is built up with some terms alone, and others in combination (direct terms for unpaid household work/care are used alone, while more ambiguous terms for work/care combined with terms for _unpaid_, _time use_, _gender_ or _labour division_). 
 
 _Time use_, _gender_ or _labour division_ terms are not strictly equivalent to "unpaid work", but function to limit research to unpaid work in certain combinations, because the time-use, gendered or division aspect nearly always refers to unpaid parts of the labour. `time use surveys` do not exclusively collect data about unpaid labour, but include this and are about the home, thus help limiting to unpaid labour in the home when using more ambiguous labour terms (such as "maintenance"). The phrase `division of labo$r` works in the same way, as it is often used to describe the division within a household (but is also used in workplaces or colonial insect biology, so cannot be combined with e.g. "care" alone). Gender terms work in the same way - certain unpaid household activities are gendered, and therefore this helps limit to them; however gender is also a prevalent theme in works about paid care activities and therefore can't be used in all places. `sex` terms (as opposed to gender) did not seem to yield many or relevant results. 
 
-Some specific labour terms which one might expect to suffice alone are combined with _unpaid_, _time use_, _gender_ or _labour division_: ´"household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management"´ - this is to avoid the household responsitbility system (China), domestic labour in agriculture, and "domestic" as used to mean within the current country.
+Some specific labour terms which one might expect to suffice alone are combined with _unpaid_, _time use_, _gender_ or _labour division_: ´"household responsibil*" OR "domestic responsibilit*" OR "domestic work" OR "domestic labo$r" OR "domestic management"´ - this is to avoid the household responsibility system (China), domestic labour in agriculture, and "domestic" as used to mean within the current country.
 
 Firewood and water collection is included as a specific activity where women and girls tend to bear a high load. Here, `collected` is excluded as it tends to produce works where water samples were collected, not the activity of firewood/water collection.  
 
@@ -334,8 +326,9 @@ This phrase aims to find research about recognition and valuing unpaid care and 
 TS=
 (
     ("valu*" OR "recogni*" OR "credit*" OR "respect*" OR "acknowledg*" OR "significance" OR "importance"
-    OR "GDP" OR "care economy" OR "contribution" OR "contribute" OR "cost$" $OR "price"
-    OR "caregiver burden" OR "zarit burden interview" OR "CarerQol" OR "qol" OR "quality of life"
+    OR "GDP" OR "care economy" OR "contribution" OR "contribute" OR "cost$" OR "price"
+    OR "economic impact$" OR "financial impact$" OR "social impact$" OR "emotional impact$"
+    OR "burden" OR "zarit burden interview" OR "CarerQol" OR "qol" OR "quality of life"
     )
     NEAR/15
         (
@@ -380,7 +373,15 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about the provision of public services, infrastructure, and social protection policies in any way related to unpaid care and domestic work. The structure is _action + social services etc + unpaid care and domestic work_.
+This phrase aims to find research about the provision of public services, infrastructure, and social protection policies in any way related to unpaid care and domestic work. The structure is _action + social services/infrastructure etc + unpaid care and domestic work_.
+
+Services, infrastructure and policies mentioned in <a href="#f6ca">Yamamoto (2018)</a> include:
+- the structure of social welfare, contributions into pensions via care work (e.g. child credit), or taxes and tax breaks (valuing)
+- piped water, water sanitation/purification, irrigation and electricity/modern energy (public services/infrastructure)
+- public investment in care services and care industry, such as childcare, preschool, personal care, elderly care, nursing homes, care facilities (public services), 
+- parental leave (policies/shared responsibility)
+- flexible work hours (policies/share responsibility)
+- mobile banking and delivery of shopping (services)
 
 ```py
 TS=
@@ -1103,6 +1104,8 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 
 <span id="f6li">UN Statistics Division. (2023).</span> *SDG indicator metadata*. [5.c.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-0c-01.pdf [Accessed 2025.06.05]
 
+<span id="f4ca">UN Statistics Division. (2024).</span> *SDG indicator metadata*. [5.4.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-04-01.pdf [Accessed 2025.11.18]
+
 <span id="f2li">UN Statistics Division. (2025).</span> *SDG indicator metadata*. [5.5.1] https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-02.pdf [Accessed 2025.06.05]
 
 <span id="f4hb">UN Women. (2015).</span> *Beijing Declaration and Platform for Action, Beijing +5 Political Declaration and Outcome*. https://www.unwomen.org/en/digital-library/publications/2015/01/beijing-declaration[Accessed 2025.05.08]
@@ -1113,4 +1116,4 @@ Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20fu
 
 <span id="f7ca">WHO. (2025).</span> *Gender and health*. https://www.who.int/health-topics/gender [Accessed 2025.09.29]
 
-<span id="f6ca">Yamamoto, Y</span> (2018). *Now is the Time! Reduce and redistribute the unpaid domestic and care work burden of women for sustainable development*. UNDP Asia and the Pacific.  https://www.undp.org/asia-pacific/publications/now-time-reduce-and-redistribute-unpaid-domestic-and-care-work-burden-women-sustainable-development [accessed 22 May 2025]
+<span id="f6ca">Yamamoto, Y</span> (2018). *Now is the Time! Reduce and redistribute the unpaid domestic and care work burden of women for sustainable development*. UNDP Asia and the Pacific.  https://www.undp.org/asia-pacific/publications/now-time-reduce-and-redistribute-unpaid-domestic-and-care-work-burden-women-sustainable-development [Accessed 2025.05.22]
