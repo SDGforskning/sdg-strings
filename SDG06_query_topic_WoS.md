@@ -39,7 +39,7 @@ For general definitions and search terms we used
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is interpreted to cover research about access to safe and affordable drinking water for all people. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UN Department of Global Communications 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
+This target is interpreted to cover research about safe and affordable drinking water as well as safe drinking water services and infrastrucures. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UN Department of Global Communications 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">(UN-Water. WASH-Water,Sanitation & Hygiene)</a>
 
@@ -47,6 +47,7 @@ Target 6.1 is related to SDG 11 target 11.1 which is about access to basic servi
 
 The `quality of drinking water` retrieves some irrelevant results about the drinking water of animals, livestock in particular. These are not currently excluded because it would also exclude some relevant research discussing drinking water used by both animal and people.
 
+This query consists of 2 phrases.
 
 #### Phrase 1
 
@@ -60,17 +61,22 @@ The elements of the phrase are *access/availability/affordability/clean/safe + d
 TS=
 (
   (
-  ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "improved" OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+  ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" OR "manag*" OR "regulat*" 
+  OR "quality" OR "monitor*" 
 	OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
-  OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
+  OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
+  OR "water provision" OR "household water" OR "domestic water" 
+  OR "rainwater"
   OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
   OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
-  OR ("water" NEAR/3 "kiosk*")
+  OR ("water" NEAR/3 "kiosk*") 
+  OR "water security" OR "water insecurity" 
+  OR "water justice"
   ) 
     NEAR/5 
       ("drink*" NEAR/3 "water") 
   ) 
-  OR "improved drinking water source*" 
+  OR "improved drinking water source*" OR "improved water source"
   OR "safely managed drinking water" 
 )
 ```
@@ -86,6 +92,7 @@ TS=
 (
   (
     ("unclean" OR "unsafe" OR "impure" OR "unimproved" OR "polluted" OR "contaminated" OR "contamination" 
+    OR "non-potable" 
     OR "unhygienic" OR "unsanitary" OR "insanitary" OR "untreated" 
     OR ("unprotected" NEAR/3 ("dug well*" OR "spring*"))
     OR "surface water*" OR "river*" OR "reservoir*" OR "lake*" OR "pond*" OR "stream*" 
@@ -523,7 +530,7 @@ The elements of the phrase are *WUE/water security/sustainable withdrawals/water
 TS=
 ( 
   "water use efficiency" OR ("WUE" NEAR/15 "water") 
-  OR "water security"  
+  OR "water security" OR "water insecurity" 
   OR 
   (
     ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*") 
