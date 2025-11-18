@@ -454,7 +454,7 @@ TS=
         ) 
         OR 
         (
-          ("pharmaceutic*" OR "antibiotic*") 
+          ("pharmaceutic*" OR "antibiotic*" OR "medical") 
           NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
         ) 
         OR 
