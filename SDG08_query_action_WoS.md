@@ -451,8 +451,8 @@ TS=
 > 8.7.1 Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age
 
 This target is interpreted to cover research about
-* Eradication of forced labour, modern slavery and human trafficking
-* prohibit and end child labour and the use of child soldiers
+* eradication of forced labour, modern slavery and human trafficking
+* prohibiting and ending child labour and the use of child soldiers
 
 The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results.
 
@@ -673,7 +673,7 @@ TS=
 > 8.a.1 Aid for Trade commitments and disbursements
 
 This target is interpreted to cover research about 
-* Increasing Aid for Trade support for developing countries
+* increasing Aid for Trade support for developing countries
 
 Aid for Trade is an initiative by the World Trade Organization about "helping developing countries, in particular the least developed, to build the trade capacity and infrastructure they need to benefit from trade opening." <a href="#f7">(WTO, n.d.)</a>
 
