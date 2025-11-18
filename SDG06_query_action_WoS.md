@@ -106,7 +106,7 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+This phrase aims to find research about reducing the use of unsafe drinking water, i.e. drinking water from unimproved water sources or contaminated drinking water. Definitions for unimproved water sources and biological or chemical contaminants of drinking water were found from the indicator metadata 6.1.1. https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a>. Pathogenic contaminants of drinking water were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>
 
 The elements of the phrase are *action + unsafe/unprotected/contaminated/unimproved sources + drinking water*
 
@@ -133,7 +133,11 @@ TS=
         OR "surface water*" OR "river*" OR "reservoir*" OR "lake*" OR "pond*" OR "stream*" 
         OR "canal*" OR "channel*" 
         OR (("poor" OR "bad" OR "unknown") NEAR/3 "quality") 
-        OR "E. coli" OR "Escherichia coli" OR "coliforms" OR "pathogen*" 
+        OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+        OR "protozoa" OR "helminth$" OR "parasite$" 
+        OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+        OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+        OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
         OR "arsenic" OR "fluoride*" 
         )
        
@@ -1219,3 +1223,4 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 10.7.2025]
 
+<span id="f18"> WHO (2025).</span> *Top 10 drinking-water and sanitation related pathogens* https://cdn.who.int/media/docs/default-source/wash-documents/burden-of-disease/top-10-drinking-water-and-sanitation-pathogens_final.pdf?sfvrsn=c0e013da_3&download=true
