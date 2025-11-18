@@ -199,7 +199,7 @@ TS=
        ) 
        NEAR/5
             ("availab*" OR "access" OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" 
-            OR "safe" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*")
+            OR "safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*")
     )
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" 
     OR "program*" OR "project*" OR "intervention*"
@@ -213,20 +213,20 @@ TS=
     OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
     
     OR "safely managed sanitation services" 
-    OR "improved sanitation facilities" 
+    OR "improved sanitation facilit*" 
     OR "wet sanitation technolog*" 
     OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-    OR "dry sanitation technologies" 
+    OR "dry sanitation" 
     OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
     OR 
       (
-        ("adequate" OR "safe" OR "basic" OR "equitab*" OR "non-equit*") 
+        ("adequate" OR "safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*") 
           NEAR/5 
             ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
       ) 
       OR 
       (
-        ("sewege" 
+        ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
           OR
           (
           ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
@@ -999,10 +999,10 @@ TS=
         OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
     
         OR "safely managed sanitation services" 
-        OR "improved sanitation facilities" 
+        OR "improved sanitation facilit*" 
         OR "wet sanitation technolog*" 
         OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-        OR "dry sanitation technologies" 
+        OR "dry sanitation" 
         OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" 
         OR "container based sanitation") 
         OR 
