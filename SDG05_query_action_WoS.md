@@ -854,18 +854,17 @@ The basic structure is _action_ + _use of technology_ + _empowerment of women_
 TS=
 (
     (
-        ("accelera*" OR "achiev*" OR "adopt*" OR "advance" OR "advancing" OR  "attain*" OR "better" 
-        OR "build*" OR "develop*" OR "consolidat*" OR "elevat*" OR "empower*" OR "encourag*" OR "enhanc*" 
-        OR "ensur*" OR "establish*" OR "expand" OR "expansion"  OR "facilitat*" OR "foster*" 
-        OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "initiative$" 
-        OR "plan" OR "planning" OR "plans" OR "policy" OR "policies" OR "program" OR "programs" OR "promot*" 
-        OR "propos*" OR "raise" OR "raising" OR "scal* up" OR "secur*" OR "strateg*" OR "strengthen*" OR "support*"
+        ("accelera*" OR "achiev*" OR "advance" OR "advancing" OR  "attain*" OR "better" 
+        OR "build*" OR "develop" OR "developing" OR "consolidat*" OR "elevat*" OR "empower*" OR "encourag*" 
+        OR "enhanc*" OR "ensur*" OR "establish*" OR "expand" OR "expansion*"  OR "facilitat*" OR "foster*" 
+        OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "promot*" 
+        OR "propos*" OR "raise" OR "raising" OR "raised" OR "scal* up" OR "secur*" OR "strengthen*" 
         )
         OR
         (
-            ("address*" OR "alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
-            OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR  "eradicat*" OR "fight*" OR "limit$" 
-            OR "limited" OR "limiting" OR "manag*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
+            ("alleviat*" OR "avoid*" OR "combat*" OR "counteract*"  OR "decreas*" OR "dismantl*" 
+            OR "eliminat*" OR "end" OR "ends" OR "ended" OR "ending" OR "eradicat*" OR "fight*" OR "limit$" 
+            OR "limited" OR "limiting" OR "minimi*" OR "mitigat*" OR "overcom*" OR "reduc*" 
             OR "prevent*" OR "remov*" OR "stop*" OR "tackl*"   
             )
             NEAR/5
@@ -893,9 +892,9 @@ TS=
                         NEAR/1 ("intelligence" OR "learning"))
                         )
             )  
-        NEAR/15
+            NEAR/15
             (
-             "GEWE"
+                "GEWE"
                 OR
                 (
                 ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" 
@@ -906,8 +905,6 @@ TS=
                 OR "lesbian*" 
                 OR "gender*" OR "sexual and gender" 
                 OR "transgender*"OR "transperson*" OR "non-binary" 
-                OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" 
-                OR "discriminat*" OR "violence"))
                 )
                 NEAR/10
                         ("autonomy" OR "control" OR "decision-making" OR "economic strength"
