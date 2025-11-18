@@ -355,7 +355,7 @@ This phrase aims to find research about releases of pollution and hazardous chem
 
 In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies.
 
-This phrase is partly similar to 14.1 phrase 1.
+This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from same the sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies*
 
@@ -379,8 +379,14 @@ TS=
     ) 
     OR 
     (
-      ("pharmaceutic*" OR "antibiotic*" OR "medical") 
-      NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+      ("pharmaceutic*" OR "antibiotic*" OR "medical" 
+      OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+      OR "protozoa" OR "helminth$" OR "parasite$" 
+      OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+      OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+      OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+      OR "arsenic" OR "fluoride*" ) 
+        NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
     )
     OR 
     (
@@ -1071,3 +1077,7 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 <span id="f16"> UN-Water.</span> *What is water security* https://www.unwater.org/publications/what-water-security-infographic [Accessed 10.7.2025]
 
 <span id="f18"> WHO (2025).</span> *Top 10 drinking-water and sanitation related pathogens* https://cdn.who.int/media/docs/default-source/wash-documents/burden-of-disease/top-10-drinking-water-and-sanitation-pathogens_final.pdf?sfvrsn=c0e013da_3&download=true
+
+<a id="f19"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
+
+<a id="f20"></a> UN Environment Programme. (n.d.). *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]. [↩](#marinepollUN)
