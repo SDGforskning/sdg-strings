@@ -179,8 +179,8 @@ TS=
 > 8.4.2 Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
 
 This target is interpreted to cover research about
-* Improving resource efficiency in consumption and production
-* Endeavouring to decouple economic growth from negative environmental impact
+* improving resource efficiency in consumption and production
+* decoupling economic growth from negative environmental impact
 
 The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
@@ -454,7 +454,7 @@ This target is interpreted to cover research about
 * Eradication of forced labour, modern slavery and human trafficking
 * prohibit and end child labour and the use of child soldiers
 
-The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results. Adding more child synonyms near "labour" did not produce significant results.
+The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results.
 
 #### Phrase 1 
 

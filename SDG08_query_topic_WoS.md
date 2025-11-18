@@ -62,7 +62,8 @@ This phrase is about economic productivity through diversification, technologica
 ```py
 TS=
 (
-  	(
+  (
+    (
       ("Econom*" OR "labo$r" OR "workforce" OR "employee" OR "organi?ation*" OR "total factor")
       NEAR/5 "productivity"
     )
@@ -87,7 +88,7 @@ The aspect of development-oriented policies is dificult to distinguish and not e
 
 #### Phrase 1 
 
-This phrase is about promoting policies for productive activities, decent jobs, entrepreneurship, creativity and innovation. The general structure is *action + policies + activities*
+This phrase is about policies for productive activities, decent jobs, entrepreneurship, creativity and innovation. The general structure is *policies + activities*
 
 ```py
 TS=
@@ -105,7 +106,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about policies for formalising and growing micro, small and medium-sized enterprises. The general structure is *policies + action + enterprises*
+This phrase is about policies for formalising and growing micro-, small- and medium-sized enterprises. The general structure is *policies + action + enterprises*
 
 ```py
 TS=
@@ -139,13 +140,13 @@ TS=
 
 This target is interpreted to cover research about
 * resource efficiency in consumption and production
-* decouple economic growth from negative environmental impact
+* economic growth related to negative environmental impact
 
-The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
+The focus is on resource efficiency, and not limited to the global aspect and progressive improvement. The decoupling aspect is considered an action element and therefore dropped in this topic approach. The framing of the target is the Framework of Programmes on Sustainable Consumption and Production, 10YFP <a href="#f9">(UN DESA, 2014)</a>.
 
 #### Phrase 1 
 
-This phrase is about improving resource efficiency in consumption and production. The general structure is *action + efficiency + areas/context*
+This phrase is about resource efficiency in consumption and production. The general structure is *efficiency + areas/context*
 
 ```py
 TS=
@@ -164,14 +165,13 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about decoupling economic growth from negative environmental impact. The general structure is *action + growth + impact*
+This phrase is about economic growth related to negative environmental impact. The general structure is *growth + impact*
 
 ```py
 TS=
 (
-	("decoupl*" OR "separat*" OR "differentiat*" OR "de-link*" OR "dissociat*" OR "detach*" OR "decompos*")
-	NEAR/10
-	(("econom*" OR "GDP" OR "gross domestic product") NEAR/10 "growth")
+	(
+    ("econom*" OR "GDP" OR "gross domestic product") NEAR/10 "growth")
 	NEAR/10
 	("emission$" OR "pollut*" OR "contamin*" OR "waste$" OR "climate change" OR "resource-saving" OR "eco-efficien*" OR "resource efficien*" OR "sustainable resource management"
 	OR
@@ -361,7 +361,7 @@ This target is interpreted to cover research about
 * forced labour, modern slavery and human trafficking
 * child labour and the use of child soldiers
 
-The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results. Adding more child synonyms near "labour" did not produce significant results.
+The elimination or ending of child labour is not considered an important distinction, and the aspect of child soldiers is included in the interpretation as this is not always defined as child labour. Modern slavery is not sufficient as a search term, as more general terms like slavery and slave labour are commonly used. This will however include historical research that could be considered more or less relevant. The action term "remov*" was dropped as it mostly produces results related to organ removal or other irrelevant results.
 
 #### Phrase 1 
 
@@ -404,7 +404,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about promoting safe and secure working environments. The general structure is *action + safety + working environments*
+This phrase is about safe and secure working environments. The general structure is *safety + working environments*
 
 ```py
 TS=
