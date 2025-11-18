@@ -139,9 +139,7 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about providing safe and equitable sanitation and hygiene services for all people.
-
-This phrase aims to find research safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+This phrase aims to find research about providing safe and equitable sanitation and hygiene services for all people. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 `Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
