@@ -161,7 +161,9 @@ TS=
 >
 > 9.a.1 Total official international support (official development assistance plus other official flows) to infrastructure
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about: 
+
+    Facilitatating sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
 
 * Creating and improving sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support and technical support.
 
