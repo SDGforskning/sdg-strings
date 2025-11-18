@@ -807,7 +807,7 @@ NEAR/5
 		      NEAR/5
 			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream*" 
             OR "aquifer*" OR "groundwater*" 
-            OR "watershed" 
+            OR "watershed" OR "catchment" 
             OR "water resource$" OR "freshwater resource$" 
             OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
             OR ("water" NEAR/5 "land") 
