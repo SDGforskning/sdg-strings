@@ -435,7 +435,7 @@ TS=
     (
       (
         ("employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" OR "income generation" 
-		OR "socioeconomic attainment$" OR "school-to-work transition$" OR)
+		OR "socioeconomic attainment$" OR "school-to-work transition$")
         NEAR/10
           ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
       )
