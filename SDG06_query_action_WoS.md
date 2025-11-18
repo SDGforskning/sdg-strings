@@ -152,7 +152,7 @@ TS=
 >
 > 6.2.1 Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
 
-This target is interpreted to cover research about advancing access to adequate and equitable sanitation and hygiene for all people and in particular women and girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#f5">(UN DESA 2018)</a>.
+This target is interpreted to cover research about reducing inequalities in access to safe sanitation and hygiene services, and about advancing access to these services for women, girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#f5">(UN DESA 2018)</a>.
 
 What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> 
 
@@ -172,6 +172,7 @@ Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housin
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
 
+This query consists of 3 phrases.
 
 #### Phrase 1
 
