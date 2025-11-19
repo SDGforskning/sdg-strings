@@ -68,11 +68,56 @@ TS=
 >
 > 9.3.2 Proportion of small-scale industries with a loan or line of credit
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about: 
+* Access to financial services for small-scale industrial and other enterprises, including affordable credit.
+* Integration of small-scale industrial and other enterprises into value chains and their participation in both local and international markets.
+
+According to Indicator metadata 9.3.1, we interpret the term “small-scale enterprises” as encompassing all small businesses, including those classified in smaller categories such as microenterprises (UN Statistics Division, 2025). 
+"The value chain describes the full range of activities that firms and workers perform to bring a product from its conception to end use and beyond. This includes activities such as research and development (R&D), design, production, marketing, distribution and support to the final consumer. The activities that comprise a value chain can be contained within a single firm or divided among different firms in a local economy, or among a group of countries." (United Nations Department of Economic and Social Affairs, 2023, p.2)
+
+International trade grew significantly after 1990, and one major driver of this growth was the emergence of global value chains (GVCs). These chains are considered a key mechanism for creating jobs and fostering sustainable, inclusive economic growth. A global value chain is defined as: "…the series of stages in the production of a product or service for sale to consumers. Each stage adds value, and at least two stages are in different countries". (World Bank, 2020).
+
+For these reasons, we use all kinds of search terms describing value and supply chains in the search process.
+
+This query consists of two phrases.
+
+#### Phrase 1
+
+This phrase is about access of small-scale enterprises to financial services. Basic structure is *financial services + small-scale enterprises*.
+
+```py
+TS=(
+    ("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
+	OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" OR "banks" OR "a bank" OR "banking" OR "bank account$" 
+	OR "digital finance" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" OR "savings" OR "insurance" OR (("deposit" OR "withdraw" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
+	OR "payment service$" OR "transfer service$" OR "transfer funds" OR "financial inclusion" OR "M-PESA"
+	OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunity*" OR "resource*" OR "service*")) 
+	OR (("advice" OR "training") NEAR/2 ("business" OR "company"))
+		)
+    NEAR/5
+		(("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
+	    OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*"
+		)
+)
+```
+#### Phrase 2
+
+This phrase is about integration of small-scale enterprises to value chains/market entry. Basic structure is *small-scale enterprises + value chains/market entry*.
 
 ```py
 TS=
 (
+    (
+        (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
+	    OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" 
+	)
+		NEAR/5
+		("value chain$" OR "production chain$" OR "supply chain$" OR "distribution chain$" OR "logistics chain$" OR "marketing chain$" OR "GVC*" OR "production network$" OR "processing chain$" 
+		OR "retail chain$" OR "delivery chain$" OR " global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
+		OR "cross-border business*" 
+		OR (("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade")
+        )
+		)
 
 )
 ```
