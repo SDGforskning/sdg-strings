@@ -142,15 +142,17 @@ TS=
             OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" OR "education" OR "school$" 
             OR "health care" OR "healthcare" 
             OR "buildings" OR "housing" OR "public spaces" OR "disaster management" 
-            OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "transport" OR "transportation" OR "urban mobility" OR "road" OR "roads") 
+            OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "transport" OR "transportation" OR "urban mobility" OR "road" OR "roads"
+            ) 
 	        NEAR/5
 		    (
                 (("resourse$" OR "water" OR "material$" OR "energy") NEAR/1 ("efficien*" OR "sustainable" OR "optimi$ation")) 
                 OR "eco-efficien*" OR "circular econom*" OR "circularity" OR "closed-loop economy" 
                 OR "industrial ecology" OR "cradle to cradle" OR "cradle-to-cradle"
                 OR (("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "clean" OR "cleaner") NEAR/1 ("technolog*" OR "practice$" OR "production" OR "process*")) 
-		    OR (("footprint" OR (("lifecycle$" OR "life-cycle$") NEAR/1 "cost$")) NEAR/3 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "lower" OR "lower$" OR "lowered"))
-		))
+		        OR (("footprint" OR (("lifecycle$" OR "life-cycle$") NEAR/1 "cost$")) NEAR/3 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "lower" OR "lower$" OR "lowered"))
+		    )
+        )
 
 )
 ```
