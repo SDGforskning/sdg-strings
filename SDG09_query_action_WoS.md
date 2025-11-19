@@ -34,19 +34,47 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 9.1.2 Passenger and freight volumes, by mode of transport
 
-This target is interpreted to cover research about developing reliable, sustainable and resilient infrastructure that is accessible for all. 
+This target is interpreted to cover research about developing reliable, sustainable and resilient infrastructure that is affordable and equitable for all.  
 
-We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J. 2022, 10; United Nations Environment Programme 2021, 8).
+We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10; United Nations Environment Programme, 2021, 8).
 
-Sustainable infrastructure refers to systems that are planned, designed, built, operated, and eventually decommissioned in ways that ensure economic, financial, social, environmental (including climate resilience), and institutional sustainability throughout their entire life cycle. This widely used definition is adapted from the Inter-American Development Bank. (United Nations Environment Programme (2021) 2021, 8).
+Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; Soriano et al., 2022; United Nations Environment Programme, 2021. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
 
-This query consists of 1 phrase. 
-The basic structure of phrase 1 is action + sustainable + infrastructure + accessible
+We understand that economic and social well-being is the result not the target and therefore terms are not added in the phrase.
+
+
+This query consists of one phrase. 
+
+This phrase is about developing sustainable infrastructure that is affordable for all. Basic structure is *action + sustainable + infrastructure + affordable*.
 
 ```py
 TS=
 (
-
+	("advance" OR "advancing" OR "develop" OR "developing" OR "enhanc*" OR "foster*" OR "improv*" OR "invent" OR "inventing" OR "moderni*" OR "upgrad*" OR "strengthen*" OR "better" OR "build" OR "encourag*" OR "promot*" OR "plan" OR "planning"
+	)  
+		NEAR/15 
+		(
+            ("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" 
+		    OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
+		    ) 
+			    NEAR/5 
+                ("infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "infrastruct*" OR "supply" OR "solution$" OR "source*")) 
+                OR "energy system$" OR "power system$" 
+                OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "lighting" 
+                OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
+                OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
+                OR "telecommunication$" OR "digital communications" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
+                OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" OR "education" OR "school$" 
+                OR "health care" OR "healthcare" 
+                OR "buildings" OR "housing" OR "public spaces" OR "disaster management" 
+                OR "air connection*" OR "airports" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "highway*" OR "maritime" OR "mass transit*" OR "mobility system$" 
+                OR "public transport*" OR "public transit*" OR "ports" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads" OR "rural access" OR "sea connection*" OR "sea route*" 
+                OR "ship* route*" OR "transport" OR "transportation" OR "tunnel$" OR "urban mobility" OR "waterways" 
+                )
+        ) 
+				    NEAR/5 
+				    ("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" OR "moderate" OR "fair" OR "accessib*" OR "economical" OR "cost-effective*"
+				    )
 )
 
 ```
