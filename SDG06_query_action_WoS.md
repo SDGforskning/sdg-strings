@@ -1033,7 +1033,7 @@ TS=
         OR "container based sanitation") 
         OR 
         (
-        ("adequate" OR "safe" OR "basic" OR "equitab*" OR "non-equit*") 
+        ("adequate" OR "safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*") 
           NEAR/5 
             ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
         ) 
