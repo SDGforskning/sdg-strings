@@ -223,7 +223,7 @@ TS=
         ) 
 	    NEAR/5 
         (
-            ("infrastruct*" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$"
+            ("industry" OR "industries" OR "manufacturer$" OR "industrial sector$"
             OR "infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "solution$" OR "source*")) 
             OR "energy system$" OR "power system$" 
             OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "electric* production" OR "lighting" 
