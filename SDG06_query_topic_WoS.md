@@ -355,7 +355,7 @@ This phrase aims to find research about releases of pollution and hazardous chem
 
 In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies or drinking water.
 
-This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies/drinking water*
 
