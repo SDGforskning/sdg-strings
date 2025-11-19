@@ -424,13 +424,13 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies.
+This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies or drinking water.
 
-Instead of specifying to research about reducing untreated wastewaters we have included research about reducing any wastewaters in freshwater bodies.
+Instead of specifying to research about reducing untreated wastewaters we have included research about reducing any wastewaters in freshwater bodies or drinking water.
 
 This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
-The elements of the phrase are *action + pollution/wastewater/hazardous chemicals/ + fresh water bodies*
+The elements of the phrase are *action + pollution/wastewater/hazardous chemicals/ + fresh water bodies/drinking water*
 
 
 ```py
@@ -495,11 +495,11 @@ TS=
 ```
 #### Phrase 2
 
-This phrase aims to find research about increasing or improving treatment, recycling and reuse of wastewaters related to freshwater bodies.
+This phrase aims to find research about increasing or improving treatment, recycling and reuse of wastewaters related to freshwater bodies or drinking water.
 
 The phrase is partly similar to 14.1 phrase 2 and many of the terms for pollution were found from the same sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
-The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies*
+The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies/drinking water*
 
 
 ```py
@@ -575,9 +575,9 @@ TS=
 
 #### Phrase 3
 
-This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies.
+This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies and drinking water.
 
-The elements of the phrase are *action(increase/improve/monitor) + water quality + freshwater bodies*
+The elements of the phrase are *action(increase/improve/monitor) + water quality + freshwater bodies/drinking water*
 
 
 ```py

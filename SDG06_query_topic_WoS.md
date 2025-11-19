@@ -351,13 +351,13 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies.
+This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies or drinking water.
 
-In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies.
+In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies or drinking water.
 
 This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
-The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies*
+The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies/drinking water*
 
 
 ```py
@@ -414,9 +414,9 @@ TS=
 
 #### Phrase 2
 
-This phrase aims to find research about the water quality of freshwater bodies.
+This phrase aims to find research about the water quality of freshwater bodies or drinking water.
 
-The elements of the phrase are *water quality + freshwater bodies*
+The elements of the phrase are *water quality + freshwater bodies/drinking water*
 
 
 ```py
