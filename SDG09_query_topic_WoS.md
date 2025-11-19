@@ -292,13 +292,18 @@ TS=
 >
 > 9.c.1 Proportion of population covered by a mobile network, by technology
 > 
-This target is interpreted to cover research about 
+This phrase is about developing sustainable infrastructure that is affordable for all. Basic structure is sustainable/reliable + internet connection/mobile network. 
+This query consists of one phrase. 
 
 ```py
 TS=
 (
-
-)
+	("Internet" OR "internet connection" OR "mobile network" OR "mobile broadband" OR "access to information" OR "access to internet" OR "communication technology" OR "ICT" OR "information and communication technology" OR "digital infrastructure" OR "telecommunication" OR "telecom network" OR "broadband" OR "wireless network" OR "connectivity" OR "affordable internet" OR "low-cost internet" OR "cheap internet" OR "internet affordability" OR "digital divide" OR "universal access" OR "inclusive access" OR "internet penetration" OR "connectivity gap" OR "2G" OR "3G" OR "4G" OR "LTE" OR "third generation" OR "second generation" OR "low bandwidth" OR "slow internet" OR "limited connectivity" OR "basic mobile network" OR "poor connectivity" OR "low-speed internet"
+	)  
+	AND 
+	("least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+	)
+)  
 ```
 
 ## 4. Contributions
