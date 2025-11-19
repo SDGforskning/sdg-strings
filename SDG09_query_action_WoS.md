@@ -91,18 +91,67 @@ TS=
 
 This target is interpreted to cover research about 
 
-* Improving access to financial services for all types of small-scale industrial and other enterprises, with financial services referring to, for example, affordable credit.
-* Integrating small-scale industrial and other enterprises into value chains (production and distribution chains) and into local and international markets.
+* Increasing access to financial services for all types of small-scale industrial and other enterprises, with financial services including affordable credit.
+* Increasing the integration of small-scale industrial and other enterprises into value chains, as well as into local and international markets.
 
+According to Indicator metadata 9.3.1, we interpret the term “small-scale enterprises” as encompassing all small businesses, including those classified in smaller categories such as microenterprises (UN Statistics Division, 2025). 
 
-This query consists of X phrases.
+"The value chain describes the full range of activities that firms and workers perform to bring a product from its conception to end use and beyond. This includes activities such as research and development (R&D), design, production, marketing, distribution and support to the final consumer. The activities that comprise a value chain can be contained within a single firm or divided among different firms in a local economy, or among a group of countries." (United Nations Department of Economic and Social Affairs, 2023, p.2)
+
+International trade grew significantly after 1990, and one major driver of this growth was the emergence of global value chains (GVCs). These chains are considered a key mechanism for creating jobs and fostering sustainable, inclusive economic growth. A global value chain is defined as: "…the series of stages in the production of a product or service for sale to consumers. Each stage adds value, and at least two stages are in different countries". (World Bank, 2020).
+
+For these reasons, we use all kinds of search terms describing value and supply chains in the search process.
+
+This query consists of two phrases.
+
+#### Phrase 1
+
+This phrase is about increasing the access of small-scale enterprises to financial services. Basic structure is *action + financial services + small-scale enterprises*.
+
 ```py
 TS=
 (
+	("improv*" OR "increase*" OR "strengthen*" OR "enhance*" OR "better" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "ensure" 
+	OR (("overcome" OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*") NEAR/1 ("barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$")) 
+	OR (("enact*" OR "amend*" OR "develop*" OR "reform*" OR "implement*" OR "improv*" OR "ratif*" OR "strengthen") NEAR/3 ("agreement$" OR "convention" OR "directive" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" OR "juridic*" OR "law$" OR "legal*" OR "legislat*" OR "policy" OR "policies" OR "principle$" OR "ratification*" OR "regulat*" OR "rule" OR "rules"))
+	)
+        NEAR/5
+		("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
+        OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" OR "banks" OR "a bank" OR "banking" OR "bank account$" 
+        OR "digital finance" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" 
+        OR "savings" OR "insurance" OR (("deposit" OR "withdraw" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
+        OR "payment service$" OR "transfer service$" OR "transfer funds" OR "financial inclusion" OR "M-PESA"
+        OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunity*" OR "resource*" OR "service*")) 
+        OR (("advice" OR "training") NEAR/2 ("business" OR "company"))
+		)
+            NEAR/5
+            (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
+            OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*"
+            )
+)
+```
+#### Phrase 2
+This phrase is about increasing the integration of small-scale enterprises to value chains/market entry. Basic structure is *action + small-scale enterprises + value chains/market entry*.
+
+```py
+TS=
+(
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*"
+	OR (("overcome" OR "reduce" OR "reducing" OR "decreas*") NEAR/3 ("trade costs" OR "barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$"))
+    )
+ 		NEAR/10
+		((("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
+		OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" 
+		)
+		    NEAR/5
+		    ("value chain$" OR "production chain$" OR "supply chain$" OR "distribution chain$" OR "logistics chain$" OR "marketing chain$" OR "GVC*" OR "production network$" OR "processing chain$" 
+		    OR "retail chain$" OR "delivery chain$" OR " global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
+		    OR "cross-border business*" OR 
+			(("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade"))
+            )
 
 )
 ```
-
 ### Target 9.4
 
 > **9.4 By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities**
