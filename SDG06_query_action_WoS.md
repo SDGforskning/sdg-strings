@@ -411,8 +411,7 @@ The classification for wastewater generators is <a href="#f8">(UN Statistics div
 * industrial
 * services
 
-By the definition of metadata for indicator 6.3.1 runoff from urban and agricultural land is counted as wastewater but not monitored systematically
-https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>. The phrases are neither searching for `runoff` nor excluding it.
+Since `runoff` from urban and agricultural land is mentioned in the indicator metadata as a potentially significant contributor to wastewater flows we have added it as a search term. Although runoff is not currently monitored by the indicators for 6.3  https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater species. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as it is closely linked to questions about the water quality and would be quite challenging to filter out. 
 
