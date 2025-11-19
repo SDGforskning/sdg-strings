@@ -83,11 +83,45 @@ TS=
 >
 > 9.4.1 CO2 emission per unit of value added
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about sustainable infrastructure and industry achieved through resource-use efficiency and the adoption of clean and environmentally sound technologies and industrial processes.
+
+See Target 9.1 for details on how we define the concept of infrastructure.
+
+This query consists of one phrase.
+
+#### Phrase 1
+
+This phrase is about the sustainability of infrastructure and industry through resource efficiency and the usage of clean and environmentally friendly technologies and industrial processes. Basic structure is *sustainability + infrastructure/industry + resource-use efficiency /clean technologies / environmentally sound*.
 
 ```py
 TS=
 (
+    ("sustainab*" OR "resilien*" OR "adaptab*" OR "flexib*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" 
+	OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
+    ) 
+	    NEAR/5 
+        (
+            ("infrastruct*" OR "industry" OR "industries" OR "manufacturer$" OR "industrial sector$"
+            OR "infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "solution$" OR "source*")) 
+            OR "energy system$" OR "power system$" 
+            OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "electric* production" OR "lighting" 
+            OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
+            OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
+            OR "telecommunication$" OR "digital communications" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
+            OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" OR "education" OR "school$" 
+            OR "health care" OR "healthcare" 
+            OR "buildings" OR "housing" OR "public spaces" OR "disaster management" 
+            OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "transport" OR "transportation" OR "urban mobility" OR "road" OR "roads"
+            )  
+	        NEAR/5
+            (
+                (("resourse$" OR "water" OR "material$" OR "energy") NEAR/1 ("efficien*" OR "sustainable" OR "optimi$ation")) 
+                OR "eco-efficien*" OR "circular econom*" OR "circularity" OR "closed-loop economy" 
+                OR "industrial ecology" OR "cradle to cradle" OR "cradle-to-cradle"
+                OR (("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "clean" OR "cleaner") NEAR/1 ("technolog*" OR "practice$" OR "production" OR "process*")) 
+                OR (("footprint" OR (("lifecycle$" OR "life-cycle$") NEAR/1 "cost$")) NEAR/3 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "lower" OR "lower$" OR "lowered"))
+		    )
+        )
 
 )
 ```
