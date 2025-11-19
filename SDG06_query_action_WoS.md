@@ -182,7 +182,7 @@ This query consists of 3 phrases.
 
 This phrase aims to find research about providing safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a <a href="#f8">(UN Statistics division 2025)</a>.
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewege` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
 Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
 
@@ -1039,7 +1039,7 @@ TS=
         ) 
       OR 
         (
-          ("sewege" 
+          ("sewage" 
           OR
           (
           ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
