@@ -1058,12 +1058,14 @@ TS=
         OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" OR "rainwater"
         OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
         OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
-        OR ("water" NEAR/3 "kiosk*")
+        OR ("water" NEAR/3 "kiosk*") 
+        OR "water security" OR "water insecurity" 
+        OR "water justice" 
         ) 
           NEAR/5 
           ("drink*" NEAR/3 "water") 
       ) 
-      OR "improved drinking water source*" 
+      OR "improved drinking water source*" OR "improved water source" 
       OR "safely managed drinking water" 
 
       OR ("water" NEAR/3 ("harvest*" OR "desalinat*")) 
