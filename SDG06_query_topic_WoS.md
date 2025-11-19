@@ -51,7 +51,7 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about access to drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a> safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, hence the phrase searches for any research mentioning accessable or available drinking water.
+This phrase aims to find research about safe and affordable drinking water and about safe drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf <a href="#f8">(UN Statistics division 2025)</a> safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, hence the phrase searches for any research mentioning accessable or available drinking water.
 
 Terms for improved drinking water sources were found from the indicator 6.1.1 metadata <a href="#f8">(UN Statistics division 2025)</a>.
 

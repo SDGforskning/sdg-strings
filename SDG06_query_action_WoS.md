@@ -42,7 +42,7 @@ For general definitions and search terms we used
 >
 > 6.1.1 Proportion of population using safely managed drinking water services
 
-This target is interpreted to cover research about advancing availability of safe and affordable drinking water as well as safe drinking water services and infrastrucures. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UN Department of Global Communications 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
+This target is interpreted to cover research about advancing availability of safe and affordable drinking water as well as promoting safe drinking water services and infrastrucures. It also includes steps necessary for achieving this, for example `safe management of drinking water services` which is an indicator of this target and `investments in infrastructure`. Some steps, although mentioned in literature <a href="#f3">(UN Department of Global Communications 2023)</a> e.g. `protection and restoration of water-related ecosystems` and `hygiene education` are not included in the phrases of this target as they are covered in detail by other targets of SDG 6. 
 
 Together, targets 6.1 and 6.2 form the WASH targets. *The health and socio-economic benefits of safely managed water can only be fully realized alongside safely managed sanitation and good hygiene practices.* <a href="#f7">(UN-Water. WASH-Water,Sanitation & Hygiene)</a>
 
@@ -54,7 +54,7 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about advancing access to safe and affordable drinking water and about promoting and investing in safely managed drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf  <a href="#f8">(UN Statistics division 2025)</a> safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, hence the phrase searches for any research mentioning accessable or available drinking water.
+This phrase aims to find research about advancing availability of safe and affordable drinking water and about promoting and investing in safely managed drinking water services and infrastructures. By the definition of the indicator metadata 6.1.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf  <a href="#f8">(UN Statistics division 2025)</a> safely managed drinking water services refer to using `improved drinking water sources` which are accessible, available when needed and free from contamination. The indicator metadata definitions for accessability and availability would have been difficult to incorporate in the phrase, hence the phrase searches for any research mentioning accessable or available drinking water.
 
 Terms for improved drinking water sources were found from the indicator 6.1.1 metadata <a href="#f8">(UN Statistics division 2025)</a>.
 
