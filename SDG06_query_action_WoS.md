@@ -490,9 +490,86 @@ TS=
   OR ("water" NEAR/3 "reservoir$"))
 )
 ```
-
-
 #### Phrase 2
+
+This phrase aims to find research about increasing or improving treatment, recycling and reuse of wastewaters related to freshwater bodies.
+
+The phrase is partly similar to 14.1 phrase 2 and many of the terms for pollution were found from the same sources, <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+
+The elements of the phrase are *action(increase/improve) + treatment/recycling/reuse + wastewaters + freswater bodies*
+
+
+```py
+TS=
+(
+  (
+    (
+        ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+        OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" OR "introduce" 
+        OR "design*" OR "adopt*" OR "enforc*" OR "prioriti*"
+        )
+        NEAR/5
+            ("treatment" OR "recovery"
+            OR "technolog*"
+            OR "monitor*" OR "assess*"
+            OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+            OR "life cycle assess*" OR "LCA"
+            OR "environment* assess*" OR "environment* impact assess*"
+            OR "manag*" OR "pollution control$"
+            OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme" 
+            OR "recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using" 
+            )
+    )  
+    NEAR/15
+        ("pollut*"
+        OR "wastewater" OR "waste water" OR "sewage" OR "sewer$"
+        OR "effluent$" 
+        OR
+          (
+            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" 
+            OR "urban" OR "dumping")
+            NEAR/15
+                ("waste" OR "discharge" OR "runoff" OR "run off")          
+          )
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
+        OR 
+        (
+          ("pharmaceutic*" OR "antibiotic*" OR "medical" 
+          OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+          OR "protozoa" OR "helminth$" OR "parasite$" 
+          OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+          OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+          OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+          OR "arsenic" OR "fluoride*" ) 
+            NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+        ) 
+        OR
+          (
+            ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+            OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+            )
+            NEAR/15 "contamination"   
+          )
+        OR "contaminated" OR "contaminant$" OR "toxic chemical$"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+        OR "oil spill$" 
+        ) 
+  )
+  AND 
+  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+  OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
+  OR "brook$" OR "creek$" 
+  OR "aquifer$" OR "groundwater" 
+  OR ("water" NEAR/3 "reservoir$"))
+)
+```
+
+#### Phrase 3
 
 This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies.
 
