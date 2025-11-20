@@ -391,7 +391,7 @@ This target is interpreted to cover research about:
 * Increasing access to information and communication technology in least development countries
 * Providing universal and affordable access to Internet in least development countries 
 
-In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. https://unstats.un.org/sdgs/report/2024/. Target 9.c aims to significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020. 2023 HLPF thematic review of SDG 9). 
+In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. The Sustainable Development Goals Report 2024. Target 9.c aims to significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020. 2023 HLPF thematic review of SDG 9). 
 
 This phrase is about developing sustainable infrastructure that is affordable for all. Basic structure is action + sustainable/reliable + internet connection/mobile network 
 This query consists of one phrase. 
@@ -421,8 +421,6 @@ Specialist input:
 
 <span id="f4">Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022).</span> *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
 
-<span id="f5">The Sustainable Development Goals. Extended Report 2024. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
-
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
@@ -438,3 +436,5 @@ Specialist input:
 <span id="10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
 <span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
+<span id="f12">2023 HLPF thematic review of SDG 9
+<span id="f13">The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/ 
