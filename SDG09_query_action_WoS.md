@@ -417,9 +417,13 @@ Specialist input:
 
 ## 5. Footnotes
 
+<span id="f12">2023 HLPF thematic review of SDG 9
+
 <span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
 <span id="f4">Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022).</span> *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
+
+<span id="f13">The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/ 
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
@@ -436,11 +440,3 @@ Specialist input:
 <span id="f10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
 <span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
-<<<<<<< HEAD
-<span id="f12">2023 HLPF thematic review of SDG 9
-=======
-
-<span id="f12">2023 HLPF thematic review of SDG 9. https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
-
->>>>>>> 8fc646033924a0209852a9665bf5baca430c72db
-<span id="f13">The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/ 
