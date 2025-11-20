@@ -361,6 +361,8 @@ Specialist input:
 
 ## 5. Footnotes
 
+<span id="f3">2023 HLPF thematic review of SDG 9 https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
+
 <span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
 <span id="f4">Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022).</span> *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
