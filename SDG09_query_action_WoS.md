@@ -436,5 +436,5 @@ Specialist input:
 <span id="10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
 <span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
-<span id="f12">2023 HLPF thematic review of SDG 9
+<span id="f12">2023 HLPF thematic review of SDG 9. https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
 <span id="f13">The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/ 
