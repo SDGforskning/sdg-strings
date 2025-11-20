@@ -419,7 +419,6 @@ Specialist input:
 
 E-Handbook on Sustainable Development Goals Indicators. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
-Inter-American Development Bank. (2018). *What is Sustainable Infrastructure? A Framework to Guide Sustainability Across the Project Cycle*. Washington, DC, USA: IDB; 2018. Available from: https://publications.iadb.org/publications/english/document/What_is_Sustainable_Infrastructure__A_Framework_to_Guide_Sustainability_Across_the_Project_Cycle.pdf [Accessed 2025.07.08]
 
 Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022). *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
 
@@ -431,10 +430,12 @@ The Sustainable Development Goals. Extended Report 2024. (2024). https://unstats
 
 United Nations. (2024). The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
 
+United Nations Department of Economic and Social Affairs. (2023). *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf Accessed [2025-11-12]
+
 United Nations Environment Programme (2021). (2021). *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
 
 United Nations Industrial Development Organization. (2013). *Lima Declaration: Towards Inclusive and Sustainable Industrial Development*. General Conference Resolution GC.15/Res.1. Lima, Peru: UNIDO, 2013. Available: https://www.unido.org [Accessed 9.7.2025]
 
 United Nations Industrial Development Organization. (2021). *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
-United Nations Industrial Development Organization. (2024). *International Yearbook of Industrial Statistics, edition 2024*. UNIDO statistics. https://stat.unido.org/portal/storage/file/publications/yb/2024/UNIDO_IndustrialStatistics_Yearbook_2024.pdf [Accessed 9.7.2025]
+UN Statistics Division. (2025). *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
