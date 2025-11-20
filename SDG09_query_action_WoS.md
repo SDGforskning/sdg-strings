@@ -417,25 +417,24 @@ Specialist input:
 
 ## 5. Footnotes
 
-E-Handbook on Sustainable Development Goals Indicators. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
+<span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
+<span id="f4">Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022).</span> *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
 
-Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022). *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
+<span id="f5">The Sustainable Development Goals. Extended Report 2024. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
-The Sustainable Development Goals. Extended Report 2024. (2024). https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
-
-<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation *. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
+<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
 
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
-United Nations. (2024). The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
+<span id="f6">United Nations. (2024).</span> The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
 
-United Nations Department of Economic and Social Affairs. (2023). *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf Accessed [2025-11-12]
+<span id="f7">United Nations Department of Economic and Social Affairs. (2023).</span> *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf Accessed [2025-11-12]
 
-United Nations Environment Programme (2021). (2021). *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
+<span id="f8">United Nations Environment Programme. (2021).</span> *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
 
-United Nations Industrial Development Organization. (2013). *Lima Declaration: Towards Inclusive and Sustainable Industrial Development*. General Conference Resolution GC.15/Res.1. Lima, Peru: UNIDO, 2013. Available: https://www.unido.org [Accessed 9.7.2025]
+<span id="9">United Nations Industrial Development Organization. (2013).</span> *Lima Declaration: Towards Inclusive and Sustainable Industrial Development*. General Conference Resolution GC.15/Res.1. Lima, Peru: UNIDO, 2013. Available: https://www.unido.org [Accessed 9.7.2025]
 
-United Nations Industrial Development Organization. (2021). *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
+<span id="10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
-UN Statistics Division. (2025). *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
+<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
