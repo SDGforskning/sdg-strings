@@ -935,74 +935,104 @@ This query consists of 2 phrases:
 
 #### Phrase 1
 
-The basic structure is _action (strengthen)_ + _policies/legislation_ + _gender (in)equality/empowerment of women_  
+The basic structure is _action (strengthen/decrease)_ + _policies/legislation_ + _gender (in)equality/empowerment of women_  
 
 ```py
 TS=
 (
-    ("accelera*" OR "achiev*" OR "adopt" OR "advance$" OR "advancing" OR "agree*"
-    OR "attain*" OR "better" OR "build*" OR "confirm*" OR "consolidat*" OR "develop$" OR "developing"
-    OR "development" OR "empower*" OR "encourag*" OR "enhance" OR "ensur*" OR "establish*"
-    OR "expan$" OR "expansion*" OR "facilitat*" OR "foster*" OR "guarantee*" OR "heighten*"
-    OR "higher" OR "implement*" OR "improv*" OR "increas*" OR "maintain*" OR "more efficient" OR "pass" 
-    OR "promot*" OR "propos*" OR "raise" OR "raising" OR "ratif*" OR "restor*" OR "scal* up"
-    OR "secur*" OR "strengthen" OR "sustain$" OR "sustaining" OR "upgrad*")
-NEAR/3
+    ("accelera*" OR "achiev*" OR "adopt" OR "adopting" OR "advance$" OR "advancing" 
+    OR "attain*" OR "better" OR "build*" OR "consolidat*" OR "develop$" OR "developing"
+    OR "development" OR "enforc*" OR "enhanc*" OR "ensur*" OR "establish*"
+    OR "expand" OR "expansion*" OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" 
+    OR "more efficient" OR "pass" OR "promot*" OR "ratif*" OR "scal* up" OR "strengthen" OR "upgrad*" 
+    OR "alleviat*" OR "combat*" OR "decreas*" OR "eliminat*" OR "end" OR "ending" OR "eradicat*" 
+    OR "fight*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" OR "reduc*" OR "remov*"   
+    )
+    NEAR/3
     (
-        ("agreement$" OR "convention" OR "directive*" OR "framework$" OR "governance" OR "initiative$" 
-        OR "instrument$" OR "law$" OR "legal*" OR "legislat*" OR "plan" OR "policy" OR "policies" 
-        OR "principle$" OR "program*" OR "ratification*" OR "regulat*" OR "rule" OR "rules" OR "statute*" 
-        OR "strateg*" OR "treaty" OR "treaties")
-        NEAR/5
+        ("agreement$" OR "convention" OR "directive*" OR "framework$" OR "governance" 
+        OR "judicial" OR "judiciary" OR "law$" OR "legal*" OR "legislat*" OR "policy" OR "policies" 
+        OR "regulation*" OR "rule" OR "rules" OR "statute*" OR "treaty" OR "treaties") 
+        NEAR/3
             ("GEWE" OR
-            (
-            ("gender*" OR "transgender*" OR "female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
-            OR "sister$" OR "mother$" OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal"
-            OR "lesbian*" OR "sexual* and gender" OR "transperson*" OR "non-binary"
-            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-            )
-            NEAR/3
-                ("autonomy" OR "*balanc*" OR "bias*" OR "capacity*" OR "decision-making"
-                OR "discriminat*" OR "divide*" OR "diversit*" OR "economic strength" OR "emancipat*"
-                OR "*empower*" OR "*equal*" OR "*equit*" OR "exclud*" OR "exclusion" OR "freedom" OR "gap"
-                OR "impair*" OR "includ*" OR "inclusion" OR "independence" OR "*parit*" OR "personal priorities"
-                OR "personal strength" OR "political strength" OR "power" OR "right*" OR "self concept"
-                OR "self confidence" OR "self efficacy" )
-            )   
+                (
+                ("*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                OR "female$"   
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
+                OR "wife" OR "wives" OR "girlfriend$" 
+                OR "pregnan*" OR "maternity" OR "maternal" 
+                OR "lesbian*" 
+                OR "gender*" OR "sexual* and gender" 
+                OR "transgender*" OR "transperson*" OR "non-binary"
+                OR "sex")
+                NEAR/3
+                ("autonomy" OR "*balanc*" OR "bias" OR "based" OR "capacity*" OR "decision-making" 
+                    OR "discriminat*" OR "divide*" OR "diversit*" OR "economic strength" OR "emancipat*" 
+                    OR "*empower*" OR "*equal*" OR "*equit*" OR "exclusion" OR "freedom" OR "gap"
+                    OR "impair*" OR "inclusion" OR "independence" OR "liberation" OR "*parit*"
+                    OR "personal development" OR "personal priorit*" OR "personal strength" 
+                    OR "political strength" OR "power" OR "rights" OR "self concept" 
+                    OR "self confidence" OR "self efficacy" OR "violence*"             
+                    )
+                )
             )
     )
 )
 ```
 #### Phrase 2
 
-The basic structure is _action (decrease)_ + _discriminatory policies/legislation_  
+The basic structure is _increase_ + _systems/policies for allocations for gender equality_. The NOT phrase has been included to exclude results related to transplantation and organ donation.
 
 ```py
 TS=
-( 
-    ("alleviat*" OR "combat*" OR "decreas*" OR "eliminat*" OR "end" OR "ending" OR "eradicat*" 
-    OR "fight*" OR "minimi*" OR "mitigat*" OR "overcom*" OR "prevent*" 
-    OR "reduc*" OR "remov*" 
-    )     
-    NEAR/5
+(
+("accelera*" OR "achiev*" OR "adopt" OR "adopting" OR "advance$" OR "advancing" 
+    OR "attain*" OR "better" OR "build*" OR "consolidat*" OR "develop$" OR "developing"
+    OR "development" OR "enforc*" OR "enhanc*" OR "ensur*" OR "establish*"
+    OR "expand" OR "expansion*" OR "heighten*" OR "higher" OR "implement*" OR "improv*" OR "increas*" 
+    OR "more efficient" OR "pass" OR "promot*" OR "ratif*" OR "scal* up" OR "strengthen" OR "upgrad*" )
+    AND
+    (
+        ("gender" NEAR/1 "budget*")
+        OR         
         (
-            ("agreement$" OR "convention" OR  "framework$" OR "governance" OR "law$" OR "legal*" OR "legislat*" OR "plan"  
-            OR "policy" OR "policies" OR "principle$"  OR  "ratification" OR "regulat*" OR "rule" OR "rules" 
-            OR "strateg*" OR "treaty" OR "treaties"
-            ) 
-            NEAR/5
-                (
-                    ("bias*" OR "discriminat*" OR "dispar*" OR "parit*" OR "gap" OR "exclud*" OR "exclusion" 
-                    OR "impair*" OR   "violat*" OR "equal*" OR "inequal*" OR "unequal*" OR "equit*" OR "inequit*"
-                    OR "unequit*" OR "balanc*" OR "imbalanc*"   OR "unbalanc*" OR "diversity" OR "gap" OR "divide*"
+            (
+                ("disclos*" OR "framework*" OR "law$" OR "legislation" OR "make public" OR "mechanism*" 
+                OR "monitor*" OR "policy" OR "policies" OR "principle$" OR "procedure*" OR "provision*" 
+                OR "regulation*" OR "track*" OR "transparen*") 
+                    NEAR/3 
+                    ("allocation*" OR "allotment*" OR "appropriation*" OR "apportionment*" OR "budget*" 
+                    OR "disbursement*" OR "expenditur*" OR "public financ*" OR "taxation*")
+            )   
+                NEAR/5
+                ("GEWE" 
+                OR
+                    (
+                        ("*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
+                        OR "female$"   
+                        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" 
+                        OR "niece$"OR "daughter$" 
+                        OR "wife" OR "wives" OR "girlfriend$" 
+                        OR "pregnan*" OR "maternity" OR "maternal" 
+                        OR "lesbian*" 
+                        OR "gender*" OR "sexual* and gender" 
+                        OR "transgender*" OR "transperson*" OR "non-binary"
+                        OR "sex")
+                            NEAR/3
+                            ("autonomy" OR "*balanc*" OR "bias" OR "based" OR "capacity*" OR "decision-making" 
+                            OR "discriminat*" OR "divide*" OR "diversit*" 
+                            OR "economic strength" OR "emancipat*" 
+                            OR "*empower*" OR "*equal*" OR "*equit*" OR "exclusion" OR "freedom" OR "gap"
+                            OR "impair*" OR "inclusion" OR "independence" OR "liberation" OR  "*parit*" 
+                            OR "personal development" OR "personal priorit*" 
+                            OR "personal strength" OR "political strength" OR "power" OR "rights" 
+                            OR "self concept" OR "self confidence" OR "self efficacy" OR "violence*")
                     )
-                        NEAR/3 ("female$" OR "*woman" OR "*women" OR "*womens" OR "*womans" OR "sister$" OR "mother$" 
-                        OR "daugther$" OR "wife" OR "wives" OR "girlfriend$" OR "maternity" OR "maternal" OR "lesbian*" 
-                        OR "girl$" OR "gender*" OR "transgender*" OR "sexual* and gender" OR "transperson*" 
-                        OR "non-binary" OR "sex")
                 )
-        )
+        )  
+    )     
 )
+NOT TS=("transplant*")          
 ```
 
 ## 4. Contributions
