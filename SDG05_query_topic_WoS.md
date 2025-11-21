@@ -338,18 +338,17 @@ The basic structure is _women/gender equality_ + _participation/leadership/decis
 ```py
 TS= 
 (    
-    (
-        ("*women" OR "*woman" OR "*womens" OR "*womans" 
-        OR "girl$"
-        OR "female$" 
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
-        OR "wife" OR "wives" OR  OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal" 
-        OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
-        (("gender*" OR "transgender*" OR "transperson*" OR "non-binary")
-        NEAR/5 ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap*"))    
-        )            
-    )
+    ("*women" OR "*woman" OR "*womens" OR "*womans" 
+    OR "girl$"
+    OR "female$" 
+    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
+    OR "wife" OR "wives" OR "girlfriend$" 
+    OR "pregnan*" OR "maternity" OR "maternal" 
+    OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
+    (("gender*" OR "transgender*" OR "transperson*" OR "non-binary" OR "sex") NEAR/5 
+        ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap" OR "based" OR "bias" 
+        OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" ))    
+    )            
         NEAR/5 
             (
                 ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
