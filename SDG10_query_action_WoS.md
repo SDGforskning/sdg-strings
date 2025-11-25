@@ -598,7 +598,7 @@ This query consists of 1 phrase. The basic structure is *action (positive) + sec
 
 ```py
 TS=
-((("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
+((("increase$" OR "increasing" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "upgrad*" OR "scal* up" OR "foster*" OR 
    "build* capacit*" OR "capacity building" OR "capacity development" OR "accelerat*" OR "advance$" OR "advancing" OR
    "develop$" OR "developing" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "implement*" OR "facilitat*" OR
    "provid*" OR "boost*" OR "raise" OR "raising" OR "raised" OR "reform$" OR "reforming" OR "reformed" OR "offer*" OR
@@ -614,8 +614,8 @@ NEAR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
 )
 NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" 
- OR "refugee*" OR "displaced" OR "expat*" OR "transferee$"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"  OR "expat*" OR "transferee$"
+ OR "refugee*" OR "displace* people" OR "displace* population" OR "displace* person*" OR "person* displaced"
   )
  )
 OR
@@ -626,15 +626,16 @@ OR
   )
 NEAR
   ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
-   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
+   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$" OR "death*"
+ OR "mortalit*" OR "casualt*" OR "injur*" OR "danger" 
   )
 NEAR
   ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
   )
 NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-  "refugee*" OR "displace* people" OR "displace* population" OR "expat*" OR "transferee$"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "expat*" OR "transferee$"
+  OR "refugee*" OR "displace* people" OR "displace* population*" OR "displace* person*" OR "person* displaced" 
   )
  )
 )
