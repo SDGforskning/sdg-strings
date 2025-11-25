@@ -634,7 +634,7 @@ NEAR
   )
 NEAR
   ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-  "refugee*" OR "displace*" OR "expat*" OR "transferee$"
+  "refugee*" OR "expat*" OR "transferee$" OR (“displace*” NEAR/3 (“population” OR “people”))
   )
  )
 )
