@@ -43,6 +43,17 @@ Given this complex background, we have chosen to interpret "relevant" research a
 In targets which do not use gender/sex/women terms in the target itself (5.4 and 5.6), we do not limit to gender/sex/women, as a rule.
 In the other targets which specify gender/sex/women terms, we include terms for women, sex, gender, gender non-conforming and transgender. While one could argue for a narrower approach, we think that including gender minorities along with women is aligned with the very first theme of the SDG: "Achieve gender equality" - especially as some of the SDG5 target issues are relevant for some gender minorities <a href="#f9ca">(UN Human Rights Office of the High Commissioner, 2025)</a>. From a practical perspective, this approach also avoids having a widely different scope between targets, and helps us to build searches with good recall, as some research will use general terms for gender but be relevant for women.
 
+For the relevant targets we therefore use a standard "women, girls and gender" string (see under), although parts of this are modified as needed to improve precision (see individual target notes if this applies). This string has taken elements from <a href="#f10ca">Song et al. (2016)</a>.
+
+```
+("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+)
+```
+
 ## 3. Targets
 
 ### Target 5.1
@@ -474,14 +485,10 @@ TS=
         )
     )
     AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "lesbian*"
-        OR "gender*" OR "sexual and gender"
-        OR "transgender*" OR "transperson*" OR "non-binary"
+        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
@@ -515,14 +522,10 @@ TS=
             )
     )
     AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "lesbian*"
-        OR "gender*" OR "sexual and gender"
-        OR "transgender*" OR "transperson*" OR "non-binary"
+        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
@@ -696,6 +699,8 @@ Specialist input: Specialist input: Hanne Marie Johansen, Professor in Gender St
 <span id="f5li">ILO. (2012).</span> *International Standard Classification of Occupations: Structure, group definitions and correspondence tables: ISCO–08, Volume I*. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40dcomm/%40publ/documents/publication/wcms_172572.pdf [Accessed 2025.06.12]
 
 <span id="f8ca">Matthyse, L. (2020).</span> *Achieving gender equality by 2030: Transgender equality in relation to Sustainable Development Goal 5*. Agenda, pp. 124-132 https://doi.org/10.1080/10130950.2020.1744336
+
+<span id="f10ca">Song, Simonsen, Wilson & Jenkins. Development of a PubMed Based Search Tool for Identifying Sex and Gender Specific Health Literature. J Womens Health (Larchmt). 2016 Feb;25(2):181-7. https://doi.org/10.1089/jwh.2015.5217.
 
 <span id="f1li">UN. (1995).</span> *Report of the Fourth World
 Conference on Women*. https://www.un.org/womenwatch/daw/beijing/pdf/Beijing%20full%20report%20E.pdf [Accessed 2025.06.05]
