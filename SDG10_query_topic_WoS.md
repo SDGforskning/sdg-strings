@@ -54,23 +54,7 @@ Setting the limit to the bottom 40 % is a "practical compromise" that insures th
 This query consists of 1 phrase. The basic structure is *income growth rate + poor*
 
 ```py
-TS=
-(("income growth rate$" OR "growth in income$" OR "per capita consumption$" OR "per capita income$" OR
-   "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR "inclusive growth" OR "anti-poverty" OR
-   "antipoverty" OR "out of poverty" OR "poverty reduction" OR "poverty alleviation" OR "pro-poor" OR
-   (("earnings" OR "income$" OR "wage$" OR "salar*" OR "livelihood$"
-    )
-NEAR/3
-    ("increas*" OR "growth" OR "rise$" OR "rising"
-    )
-   )
-  )
-AND
-  ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "poverty" OR "the poorest" OR
-   "rural poor$" OR "urban poor$" OR "working poor$" OR "destitute$" OR "low income" OR "low-income" OR
-   "disadvantaged" OR "extremely poor$" OR "severely poor$" OR "abjectly poor$" OR "absolutely poor$"
-  )
- )
+
 ```
 
 ### Target 10.2
@@ -88,17 +72,7 @@ Social inclusion means improving opportunities for individuals and groups to tak
 This query consists of 1 phrase. The basic structure is *inclusion OR exclusion*
 
 ```py
-TS=
-(("social* inclusi*" OR "economic* inclusi*" OR "political* inclusi*" OR "societal* inclusi*" OR
-  "societal activit*" OR "accessib*"
- )
-OR
- ("horizontal* inequalit*" OR "horizontal* exclus*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
-  "social* exclus*" OR "economic* exclus*" OR "political* exclus*" OR "social* marginal*" OR "economic* marginal*"
-  OR "political* marginal*" OR "societal exclus*" OR "societal marginal*" OR "intersecti* exclus*" OR
-  "intersecti* vulnerab*" OR "intersecti* oppression*"
- )
-)
+
 ```
 
 ### Target 10.3
@@ -120,42 +94,13 @@ This query consists of 2 phrases.
 The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
 
 ```py
-TS=
-(("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-  "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
- )
- ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-  OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
-  "bias$ed"
- )
-)
+
 ```
 
 The basic structure of Phrase 2 is *discriminatory law OR anti-discriminatory law*.
 
 ```py
-TS=
-((("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-   OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
-   "bias$ed"
-  )
-NEAR
-  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-   OR "rules" OR "procedur*" OR "initiative*"
-  )
- )
-OR
- (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
-  )
-NEAR
-  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-   "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-   OR "rules" OR "procedur*" OR "initiative*"
-  )
- )
-)
+
 ```
 
 ### Target 10.4
@@ -173,37 +118,7 @@ This target focuses on policies that ensure greater equality. Special focus is p
 This query consists of 1 phrase. The basic structure is *laws AND increase/decrease + equality/inequality. ```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")``` was removed from the original search string not to limit the search only to these types of policies.
 
 ```py
-TS=
-(("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-  "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
-  "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*"
- ) 
-AND 
- (("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better$" OR "more efficient" OR "more effectiv*"
-   OR "upgrad*" OR "scal* up" OR "expand$" OR "expansion*" OR "accelerat*" OR "advance$" OR "advancing" OR
-   "develop$" OR "developing" OR "promot*" OR "foster*" OR "boost*" OR "attain*" OR "achiev*" OR "provid*" OR
-   "ensur*" OR "guarantee*" OR "maintain*" OR "secur*" OR "strengthen*" OR "establish*" OR "sustain$" OR
-   "sustaining" OR "consolidat*" OR "raise" OR "raising" OR "raised" OR "heighten*"
-  )
-NEAR
-  ("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-   "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*"
-  )
- )
-OR
-  (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR
-    "degrad*" OR "tackl*" OR "alleviat*" OR "fight*" OR "combat*" OR "declin*" OR "stop*" OR "end" OR "ends" OR
-    "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "cure"
-    OR "halt*" OR "resist*" OR "overcome" OR "escap*" OR "relief*" OR "lift$ out of" OR "lifting out of" OR
-    "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
-   )
-NEAR
-   ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-    OR "stigma*" OR "ableis*" OR "inaccesib*" OR "barrier$" OR "obstacle$" OR "unequal*" OR "exclus*" OR "bias" OR
-    "bias$ed"
-   )
-  )
-)
+
 ```
 
 ### Target 10.5
@@ -221,24 +136,7 @@ The operations of international financial institutions are evaluated through sev
 This query consists of 1 phrase. The basic structure is action + regulation + financial institution ```("fair*" OR "sustainab*" OR "transparen*" OR "equalit*" OR "democra*" OR "responsib*" OR "accountab*" OR "legitimat*" OR "effectiv*" OR "credib*" OR "ethic*" OR "egalitar*")```was removed from the search string. While the goal of implementing better regulation and monitoring is to make the institutions function in more responsible and transparent manners, this isn't directly mentioned in the target and is also left out of the interpretation.
 
 ```py
-TS=
-(("manage$" OR "control*" OR "regulat*" OR "legislat*" OR "govern$" OR "monitor*" OR "surveillanc*" OR 
-  "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "supervis*" OR "validat*"
-  OR "mandat*"
- )
-AND
- (("global*" OR "international*"
-  ) 
-NEAR/5
-  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
-  )
-NEAR/5
-  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
-   "system$"
-  )
- )
-NOT "globalization"
-)
+
 ```
 
 ### Target 10.6
@@ -254,79 +152,7 @@ In order to achieve truely effective and permanent changes on a global level, it
 This query consists of 1 phrase. The basic structure is *representation + developing countries + international economic institution*
 
 ```py
-TS=
-((("representat*" OR "voice*" OR "vote*" OR "decision-making" OR "decision making" OR 
-   "decision-making power*" OR "decision making power*" OR "participat*"
-  )
-NEAR
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
-   "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
-   "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
-   OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR
-   "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR
-   "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR
-   "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR
-   "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR
-   "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic"
-   OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR
-   "Eritrea*" OR "Ethiopia*" OR "gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*"
-   OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "malawian" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR
-   "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR
-   "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*"
-   OR "zambian$" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma"
-   OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR
-   "Bhutan*" OR "bhutanese" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR
-   "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR
-   "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR
-   "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR
-   "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR
-   "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR
-   "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR
-   "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR
-   "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR
-   "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR
-   "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR
-   "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR
-   "Virgin Islands" OR "Armenia*" OR "Azerbaijan*" OR "Bolivia*" OR "Botswana*" OR "Eswatini" OR "eswantian" OR
-   "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR
-   "Lao People’s Democratic Republic" OR "Laos" OR "Mongolia*" OR "North Macedonia" OR "Republic of Macedonia" OR
-   "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan"
-   OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zimbabwe*" OR "albania*" OR
-   "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia"
-   OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR
-   "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR
-   "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR
-   "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR
-   "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR
-   "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR
-   "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR
-   "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo"
-   OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR
-   "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR
-   "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*"
-   OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR
-   "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR
-   "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR
-   "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR
-   "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria"
-   OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR
-   "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
-   "georgia*"
-  )
- )
-AND
- (("global*" OR "international*"
-  ) 
-NEAR/5
-  ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade"
-  )
-NEAR/5
-  ("institution*" OR "market*" OR "bank*" OR "central bank*" OR "depositor*" OR "repositor*" OR
-   "system$"
-  )
- )
-NOT "globalization"
-)
+
 ```
 
 ### Target 10.7
@@ -348,36 +174,7 @@ This target is interpreted to cover research about safe, responsible and regular
 This query consists of 1 phrase. The basic structure is *security + movement of people OR risks + movement of people*
 
 ```py
-TS=
-((("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
-   OR "orderly" OR "planned" OR "well-managed" OR "well managed" OR "well-planned" OR "well planned" OR "managed" OR
-   "dignif*"
-  )
-NEAR
-  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
-   "intra stat*" OR "within-country" OR "within country"
-  )
-NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$"
-  )
- )
-OR
- (("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
-   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
-  )
-NEAR
-  ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
-   "intra stat*" OR "within-country" OR "within country"
-  )
-NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-   "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*" OR
-   "displaced" OR "expat*" OR "transferee$"
-  )
- )
-)
+
 ```
 
 ### Target 10.a
@@ -393,72 +190,7 @@ SDT principles are part of WTO'S Doha Agenda and are designed to support develop
 This query consists of 1 phrase. The basic structure is *SDT + developing country + agreement*
 
 ```py
-TS=
-(("special and differential treatment*" OR "SDT" OR "S&D" OR "S and D" OR "preferential treatment*" OR "zero-tariff*"
-  OR "zero tariff*" OR "0% tariff" OR "0 per cent tariff" OR "0 percent tariff" OR "zero % tariff" OR 
-  "zero per cent tariff" OR "zero percent tariff" OR "duty-free treatment*" OR "duty free treatment" OR "free of duty"
- ) 
-NEAR
- ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
-  "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
-  "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
-  OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR
-  "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR
-  "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR
-  "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR
-  "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR
-  "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic"
-  OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR
-  "Eritrea*" OR "Ethiopia*" OR "gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*"
-  OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "malawian" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR
-  "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR
-  "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*"
-  OR "zambian$" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma"
-  OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR
-  "Bhutan*" OR "bhutanese" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR
-  "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR
-  "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR
-  "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR
-  "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR
-  "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR
-  "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR
-  "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR
-  "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR
-  "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR
-  "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR
-  "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR
-  "Virgin Islands" OR "Armenia*" OR "Azerbaijan*" OR "Bolivia*" OR "Botswana*" OR "Eswatini" OR "eswantian" OR
-  "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR
-  "Lao People’s Democratic Republic" OR "Laos" OR "Mongolia*" OR "North Macedonia" OR "Republic of Macedonia" OR
-  "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan"
-  OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zimbabwe*" OR "albania*" OR
-  "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia"
-  OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR
-  "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR
-  "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR
-  "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR
-  "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR
-  "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR
-  "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR
-  "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo"
-  OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR
-  "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR
-  "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*"
-  OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR
-  "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR
-  "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR
-  "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR
-  "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria"
-  OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR
-  "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
-  "georgia*"
- )
-AND
- ("World Trade Organization" OR "WTO" OR "trade facilitation agreement*" OR "trade agreement*" OR "trade opportunit*"
-  OR "trading opportunit*" OR "doha declaration$" OR "doha ministerial declaration$" OR "doha development agenda$" OR
-  "doha mandate$"
- )
-)
+
 ```
 
 ### Target 10.b
@@ -480,168 +212,14 @@ The basic structure of Phrase 1 is *financial assistance + target + need + devel
 Phrase 1
 
 ```py
-TS=
-(("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
-  "development aid" OR "foreign aid" OR "international aid" OR "cooperation fund*" OR "development spending$" OR
-  "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-  "international fund*"
- OR
-  (("economic" OR "financial*" OR "monetary"
-   )
-NEAR/3
-   ("support*" OR "assist*" OR "flow*" OR "resource*" OR "subsid*" OR "aid$"
-   )
-  )
- )
-NEAR
- ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "concentrat*" OR "aim$" OR "aiming" OR "aimed" OR "optimi$e*"
-  OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "oriantate$"
- )
-NEAR
- ("impact*" OR "effect*" OR "use" OR "need" OR "needs" OR "needed" OR "efficien*"
- )
-AND
- ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
-  "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
-  "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
-  OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR
-  "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR
-  "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR
-  "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR
-  "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR
-  "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic"
-  OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR
-  "Eritrea*" OR "Ethiopia*" OR "gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*"
-  OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "malawian" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR
-  "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR
-  "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*"
-  OR "zambian$" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma"
-  OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR
-  "Bhutan*" OR "bhutanese" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR
-  "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR
-  "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR
-  "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR
-  "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR
-  "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR
-  "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR
-  "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR
-  "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR
-  "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR
-  "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR
-  "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR
-  "Virgin Islands" OR "Armenia*" OR "Azerbaijan*" OR "Bolivia*" OR "Botswana*" OR "Eswatini" OR "eswantian" OR
-  "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR
-  "Lao People’s Democratic Republic" OR "Laos" OR "Mongolia*" OR "North Macedonia" OR "Republic of Macedonia" OR
-  "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan"
-  OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zimbabwe*" OR "albania*" OR
-  "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia"
-  OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR
-  "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR
-  "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR
-  "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR
-  "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR
-  "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR
-  "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR
-  "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo"
-  OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR
-  "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR
-  "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*"
-  OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR
-  "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR
-  "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR
-  "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR
-  "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria"
-  OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR
-  "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
-  "georgia*"
- )
-)
+
 ```
 
 The basic structure of Phrase 2 is *financial assistance + plans + developing country*
 
 Phrase 2
 
-```py
-TS=
-((("ODA" OR "official development assistance*" OR "development assistance*" OR "official development aid" OR
-   "development aid" OR "foreign aid" OR "international aid" OR "cooperation fund*" OR "development spending$" OR
-   "foreign invest*" OR "international invest*" OR "foreign financ*" OR "international financ*" OR "foreign fund*" OR
-   "international fund*"
-  OR
-  (("economic" OR "financial*" OR "monetary"
-   )
-NEAR/3
-   ("support*" OR "assist*" OR "flow*" OR "resource*" OR "subsid*" OR "aid$"
-   )
-  )
- )
-NEAR
-  (("national*" OR "regional*" OR "local*"
-   )
-NEAR/3
-   ("plan" OR "plans" OR "planning" OR "planned" OR "program$" OR "scheme$" OR "project$" OR "blueprint$" OR "layout$"
-    OR "design$" OR "framework$" OR "initiative$" OR "bid$" OR "effort$" OR "venture$" OR "undertaking$" OR
-    "enterprise$"
-   )
-  )
- )
-AND
-  ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
-   "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
-   "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
-   OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR
-   "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR
-   "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR
-   "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR
-   "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR
-   "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic"
-   OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR
-   "Eritrea*" OR "Ethiopia*" OR "gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*"
-   OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "malawian" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR
-   "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR
-   "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*"
-   OR "zambian$" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma"
-   OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR
-   "Bhutan*" OR "bhutanese" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR
-   "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR
-   "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR
-   "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR
-   "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR
-   "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR
-   "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR
-   "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR
-   "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR
-   "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR
-   "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR
-   "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR
-   "Virgin Islands" OR "Armenia*" OR "Azerbaijan*" OR "Bolivia*" OR "Botswana*" OR "Eswatini" OR "eswantian" OR
-   "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR
-   "Lao People’s Democratic Republic" OR "Laos" OR "Mongolia*" OR "North Macedonia" OR "Republic of Macedonia" OR
-   "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan"
-   OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zimbabwe*" OR "albania*" OR
-   "algeria*" OR "angola*" OR "argentina*" OR "azerbaijan*" OR "bahrain*" OR "belarus*" OR "byelarus*" OR "belorussia"
-   OR "belize*" OR "honduras" OR "honduran" OR "dahomey" OR "bosnia*" OR "herzegovina*" OR "botswana*" OR
-   "bechuanaland" OR "brazil*" OR "brasil*" OR "bulgaria*" OR "upper volta" OR "kampuchea" OR "khmer republic" OR
-   "cameroon*" OR "cameroun" OR "ubangi shari" OR "chile*" OR "china" OR "chinese" OR "colombia*" OR "costa rica*" OR
-   "cote d’ivoire" OR "cote divoire" OR "cote d ivoire" OR "ivory coast" OR "croatia*" OR "cyprus" OR "cypriot" OR
-   "czech" OR "ecuador*" OR "egypt*" OR "united arab republic" OR "el salvador*" OR "estonia*" OR "eswatini" OR
-   "swaziland" OR "swazi" OR "gabon" OR "gabonese" OR "gabonaise" OR "ghana*" OR "gibralta*" OR "greece" OR "greek" OR
-   "honduras" OR "honduran$" OR "hungary" OR "hungarian$" OR "india" OR "indian$" OR "indonesia*" OR "iran" OR
-   "iranian$" OR "iraq" OR "iraqi$" OR "isle of man" OR "jordan" OR "jordanian$" OR "kenya*" OR "korea*" OR "kosovo"
-   OR "kosovan$" OR "latvia*" OR "lebanon" OR "lebanese" OR "libya*" OR "lithuania*" OR "macau" OR "macao" OR
-   "macanese" OR "malagasy" OR "malaysia*" OR "malay federation" OR "malaya federation" OR "malta" OR "maltese" OR
-   "mauritania" OR "mauritanian$" OR "mexico" OR "mexican$" OR "montenegr*" OR "morocco" OR "moroccan$" OR "namibia*"
-   OR "netherlands antilles" OR "nicaragua*" OR "nigeria*" OR "oman" OR "omani$" OR "muscat" OR "pakistan*" OR
-   "panama*" OR "papua new guinea*" OR "peru" OR "peruvian$" OR "philippine$" OR "philipine$" OR "phillipine$" OR
-   "phillippine$" OR "filipino$" OR "filipina$" OR "poland" OR "polish" OR "portugal" OR "portugese" OR "romania*" OR
-   "russia" OR "russian$" OR "polynesia*" OR "saudi arabia*" OR "serbia*" OR "slovakia*" OR "slovak republic" OR
-   "slovenia*" OR "melanesia*" OR "south africa*" OR "sri lanka*" OR "dutch guiana" OR "netherlands guiana" OR "syria"
-   OR "syrian$" OR "thailand" OR "thai" OR "tunisia*" OR "ukraine" OR "ukrainian$" OR "uruguay*" OR "venezuela*" OR
-   "vietnam*" OR "west bank" OR "gaza" OR "palestine" OR "palestinian$" OR "yugoslavia*" OR "turkish" OR "turkey" OR
-   "georgia*"
-  )
-)
+
 ```
 
 ### Target 10.c
@@ -657,20 +235,7 @@ Remittances are money transfers sent from one person to another, relatively low 
 This query consists of 1 phrase. The basic structure is *remittance cost + migrants*
 
 ```py
-TS=
-((("transaction" OR "remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
-   OR "money order$" OR "money transmission$"
-  )
-NEAR/3
-  ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
-  )
- )
-NEAR
- ("immigrant*" OR "emigrant*" OR "alien$" OR "resident alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
-  OR "illegal alien$" OR "illegal immigrant$" OR "undocumented alien" OR "undocumented immigrant$" OR "refugee*"
-  OR "displaced" OR "expat*" OR "transferee$"
- )
-)
+
 ```
 
 ## 4. Contributions
