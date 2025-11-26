@@ -594,6 +594,8 @@ Terms were found from
 * Indicator metadata 6.5.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-02.pdf <a href="#f8">(UN Statistics division 2025)</a>
 * Terms for water management related projects and programmes were found in UNSD SDG 6 Extended report 2022 <a href="#f6">(UNSD 2022)</a> and UN-Water pages for Water quality and wastewater <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
+In the action version of this phrase term `IWRM` is linked to `water` with NEAR operator in order to exclude irrelevant results. To expand the search, we have used AND operator in the topic version. 
+
 The elements of the phrase are *IWRM/cross-sectoral water management/transboundary co-operation agreements* 
 
 
