@@ -943,7 +943,7 @@ This query consists of 1 phrase.
 
 #### Phrase 1
 
-The elements of the phrase are *local communities + participation/policies + management + water and sanitation elements*
+The elements of the phrase are *local communities + participation/policies/management + water and sanitation elements*
 
 
 ```py
@@ -953,18 +953,15 @@ TS=
     ("local" OR "stakeholder$" OR "municip*" OR "communit*" OR "commun*" OR "district") 
     NEAR/5 
       ("participat*" OR "contribut*" OR "impact" OR "plan" OR "planning" 
-      OR "choice$" OR "choose" OR "solution$" 
-      OR ("decision$" NEAR/3 "making") 
-      OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$"
+        OR "choice$" OR "choose" OR "solution$" 
+        OR ("decision$" NEAR/3 "making") 
+        OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$" 
+        OR "manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" 
+      OR "policy" OR "policies"  
+      OR "resource us*"
       )
   ) 
   NEAR/5 
-    (
-    ("manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" 
-    OR "policy" OR "policies" OR "extract*" 
-    OR "resource us*" OR "usage" 
-    OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$") 
-        NEAR/5 
         (
           (("drink*" OR "potable") NEAR/3 "water")
           OR "sanitation" 
@@ -988,8 +985,7 @@ TS=
             OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
             OR "water resource$" OR "freshwater resource$" 
             OR "water supply" OR "water supplies" OR "suppl* of freshwater"
-        ) 
-    )
+        )  
 )         
 
 ```
