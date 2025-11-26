@@ -607,12 +607,14 @@ TS=
   OR "integrated water management" OR "integrated basin management"
 	OR 
   (
-    ("cross sectoral" OR "cross-sectoral" 
+    ("cross sectoral" OR "cross-sectoral" OR "intersectoral" OR "inter sectoral" 
+    OR "multisectoral" OR "multi sectoral" 
     OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*") 
       NEAR/5 
         (
           ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
-          OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" OR "policy" OR "policies") 
+          OR "govern*" OR "development" OR "administrat*" OR "plan" OR "plans" OR "planning" 
+          OR "policy" OR "policies") 
              NEAR/5 
               (
               "water resource$" OR "freshwater resource$" 
