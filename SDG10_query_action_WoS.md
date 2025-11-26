@@ -85,7 +85,7 @@ TS=
     (
       (
         ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
-       "eradicat*" OR fight*
+       "eradicat*" OR "fight*"
         )
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
