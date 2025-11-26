@@ -885,13 +885,13 @@ TS=
   ("conserve" OR "manage" OR "protect" OR "restore" OR "rehabilitate"
   OR
     (
-      ("designat*" OR "placement" OR "expand*" OR "extend"
+      ("designat*" OR "placement" OR "expand*" OR "extend*"
       OR "design" OR "designing" OR "create" OR "creation" OR "creating"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
       OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" 
-      OR "strategy" OR "governance"
-      OR "enforce" OR "enforcement" OR "enforcing"
-      OR "increas*" OR "strengthen" OR "improv*" OR "enhance" OR "facilitat*"
+      OR "strategy" OR "govern*"
+      OR "enforc*" 
+      OR "increas*" OR "strengthen" OR "improv*" OR "enhanc*" OR "facilitat*"
       OR "preserv*" OR "support*" OR "ensur*"
       )
       NEAR/5
