@@ -642,14 +642,14 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about promoting water-use efficiency, sustainable withdrawals and water savings as well as reducing inefficient water-use or unsustainable withdrawals.
+This phrase aims to find research about promoting water-use efficiency, sustainable withdrawals, water savings and recycling of water as well as reducing inefficient water-use or unsustainable withdrawals.
 
 Terms were found in 
 * UNSD SDG 6 extended report 2022 <a href="#f6">(UNSD 2022)</a>
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
 
-The elements of the phrase are *action(increase/decrease) + WUE/water security/sustainable withdrawals/water savings*
+The elements of the phrase are *action(increase/decrease) + WUE/water security/sustainable withdrawals/water savings/recycling*
 
 
 ```py
