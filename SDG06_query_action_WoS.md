@@ -793,7 +793,7 @@ TS=
 NEAR/5 
   (
 	  "integrated water resources management" 
-    OR ("IWRM" AND "water") 
+    OR ("IWRM" NEAR/15 "water") 
     OR "integrated water management" OR "integrated basin management" 
 	  OR 
     (
