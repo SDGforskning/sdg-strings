@@ -1039,7 +1039,6 @@ TS=
       ) 
       NEAR/5 
       (
-      (
         "sanitation" 
         OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
         OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
@@ -1095,8 +1094,7 @@ TS=
       OR ("water" NEAR/3 ("harvest*" OR "desalinat*")) 
       OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
       OR (("wastewater" OR "waste water" OR "sewage") 
-        NEAR/3 ("treatment" OR "recycl*" OR "reuse"))
-      ) 
+        NEAR/3 ("treatment" OR "recycl*" OR "reuse")) 
       )
   ) 
 )
