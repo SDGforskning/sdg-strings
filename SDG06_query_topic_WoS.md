@@ -878,7 +878,8 @@ TS=
       OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
       OR (("wastewater" OR "waste water" OR "sewage") 
         NEAR/3 ("treatment" OR "recycl*" OR "reuse"))
-      )
+    ) 
+    OR "Global WASH strategy" OR "Global WASH cluster"
   ) 
 AND 
   ("least developed countr*" OR "least developed nation$"

@@ -1097,6 +1097,7 @@ TS=
         NEAR/3 ("treatment" OR "recycl*" OR "reuse")) 
       )
   ) 
+  OR "Global WASH strategy" OR "Global WASH cluster"
 )
 AND 
   ("least developed countr*" OR "least developed nation$"
