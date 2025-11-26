@@ -979,7 +979,7 @@ OR "minimi*" OR "avoid*" OR "tackle" OR "decreas*" OR "reduc*" OR "diminish*")
 >
 > 6.a.1 Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan
 
-This target is interpreted to cover research about advancing international cooperation or capacity-building support to developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
+This target is interpreted to cover research about advancing international cooperation or international support for capacity-building to developing countries in WASH related activities and programmes. Activities specifically mentioned are `water harvesting` `desalination` `water efficiency` `wastewater treatment` `recycling and reuse`
 
 As definition of capacity building we have used
 * Definition of "capacity development": *"the process whereby people, organizations and society as a whole unleash, strengthen, create, adapt, and maintain capacity over time, in order to achieve development results"* (United Nations Development Group 2017).
@@ -1013,7 +1013,9 @@ TS=
       (
       (
       (("international" OR "development") 
-          NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$")) 
+          NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" 
+          OR "support" OR "investment$")
+      ) 
       OR "ODA" OR "official development assistance" OR "cooperation fund$" 
       OR "development spending" OR "development aid" OR "development assistance" 
       OR "foreign aid" OR "international aid" OR "international assistance"
