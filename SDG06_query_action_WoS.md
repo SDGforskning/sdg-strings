@@ -867,6 +867,8 @@ However, we interpret target 6.6 to be more focused on the protection of freshwa
 
 Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we have not filtered them from the results since the water-related ecosystems of mountains and forests are mentioned in the title of this target.
 
+This query consists of 2 phrases.
+
 #### Phrase 1 
 
 
@@ -907,7 +909,7 @@ TS=
         OR "river*" OR "stream$" OR "brook$" OR "creek$" 
         OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
         OR "wetland$" OR "mangrove$" 
-        OR "floodplains" OR "rice paddies" 
+        OR "floodplain$" OR "rice paddies" OR "rice paddy" 
         OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
         OR "aquifer$" OR "groundwater"
        )
@@ -957,7 +959,7 @@ OR "minimi*" OR "avoid*" OR "tackle")
         OR "river*" OR "stream$" OR "brook$" OR "creek$" 
         OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
         OR "wetland$" OR "mangrove$" 
-        OR "floodplains" OR "rice paddies" 
+        OR "floodplain$" OR "rice paddies" OR "rice paddy" 
         OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
         OR "aquifer$" OR "groundwater"
        )
