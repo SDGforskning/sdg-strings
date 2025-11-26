@@ -765,7 +765,7 @@ This target is interpreted to cover research about implementing coordinated wate
 > Integrated Water Resources Management (IWRM) *promotes the coordinated development and management of water, land and related resources to
 >  maximize economic and social welfare in an equitable manner, without compromising the sustainability of vital ecosystems*.
 
-IWRM is a cross-sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors <a href="#f17">(UNEP)</a>. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+IWRM is a cross sectoral approach to water resources management based on the interdependence of uses of water resources on different sectors <a href="#f17">(UNEP)</a>. It consists of various dimensions including enabling environment (policies, laws, etc), supporting institutions, management instruments and financing https://unstats.un.org/sdgs/metadata/files/Metadata-06-05-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#f6">(UNSD 2022)</a>. 
 
