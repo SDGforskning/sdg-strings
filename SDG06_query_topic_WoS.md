@@ -627,13 +627,14 @@ TS=
   (
 		
 		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*" 
-    OR "convention$" OR "memorandum of understanding")
+    OR "convention$" OR "memorandum of understanding" OR "pact$" OR "settlement$" OR "accord" 
+    OR "protocol$" OR "policy" OR "policies" OR "legislation")
 		
 		  NEAR/15 
 		    (
 		      ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
           OR "transboundary" OR "trans-boundary" 
-          OR "transborder" OR "trans-border" OR "interstate" 
+          OR "transborder" OR "trans-border" OR "interstate" OR "international" 
           OR "co-operation" OR "cooperation" OR "collaboration")
 		      NEAR/5
 			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream$" 
