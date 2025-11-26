@@ -769,7 +769,7 @@ IWRM is a cross-sectoral approach to water resources management based on the int
 
 Transboundary co-operation refers to operational agreements on water management between countries sharing transboundary rivers, lakes and aquifers <a href="#f6">(UNSD 2022)</a>. 
 
-
+This query consists of X phrases
 
 #### Phrase 1
 
@@ -786,9 +786,10 @@ The elements of the phrase are *action(implement/advance) + IWRM/cross-sectoral 
 ```py
 TS=
 (
-  ("implement*" OR "advanc*" OR "promot*" OR "enhanc*"
+  ("implement*" OR "increas*" OR "improv*" OR "advance" OR "advancing" 
+  OR "promot*" OR "enhanc*" OR "propose*" OR "proposal$" 
   OR "establish*" OR "develop" OR "development"
-  OR "propose*" OR "proposal$") 
+  OR "policy" OR "policies" OR "framework$" OR "legislat*" OR "strateg*") 
 NEAR/5 
   (
 	  "integrated water resources management" OR ("IWRM" NEAR/5 "water") 
