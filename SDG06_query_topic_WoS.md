@@ -956,9 +956,9 @@ TS=
         OR "choice$" OR "choose" OR "solution$" 
         OR ("decision$" NEAR/3 "making") 
         OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$" 
-        OR "manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" OR "plan" OR "planning" 
-      OR "policy" OR "policies"  
-      OR "resource us*"
+        OR "manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" 
+        OR "plan" OR "planning" OR "policy" OR "policies" OR "resource us*" 
+        OR "empower*" OR "engage*" OR "collaborat*" OR "co-operat*" OR "cooperat*" OR "inclus*"
       )
   ) 
   NEAR/5 
