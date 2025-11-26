@@ -929,8 +929,9 @@ The elements of the phrase are *action + decline/deterioration/unsustainable use
 ```py
 TS=
 (
-("prevent" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "combat*" OR "halt*" OR "resist*" 
-OR "minimi*" OR "avoid*" OR "tackle") 
+("prevent" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "avoid*" OR "combat*" 
+OR "halt*" OR "resist*" 
+OR "minimi*" OR "avoid*" OR "tackle" OR "decreas*" OR "reduc*" OR "diminish*") 
   NEAR/5 
   (
     (
