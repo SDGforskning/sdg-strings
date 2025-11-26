@@ -956,7 +956,7 @@ NEAR/3
 )
 )
 AND
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "migration" OR "settler$" OR "asylum seeker$"
      OR "refugee*" OR "expat*" OR "transferee$"
   )
 )
