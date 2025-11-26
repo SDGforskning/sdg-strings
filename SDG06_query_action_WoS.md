@@ -636,7 +636,9 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 
 Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-We are unsure about whether research about water efficiency of agricultural plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#f5">(UN DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results.
+We are unsure about whether research about water efficiency of plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#f5">(UN DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results. The results currently include both research about drought tolerant crops and water-stress of plants in general. 
+
+This query consists of 2 phrases.
 
 #### Phrase 1
 
@@ -666,7 +668,7 @@ TS=
     OR 
     (
       ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*" 
-      OR "unsustainab*" OR "irresponsib*" OR "inefficient*") 
+      OR "unsustainab*" OR "irresponsib*" OR "inefficient*" OR "resilient" OR "resilience") 
         NEAR/3 
         (
           (
@@ -690,7 +692,13 @@ TS=
     (
     ("save" OR "saving$") 
       NEAR/5 
-        ("water" NEAR/3 ("withdrawal$" OR "use*"))
+        ("water" NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
+    ) 
+    OR "water saving$" 
+    OR 
+    (
+      ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
+	      NEAR/1 ("water" OR "freshwater")
     )
   )
 )    
