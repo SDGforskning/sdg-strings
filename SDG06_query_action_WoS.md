@@ -994,6 +994,7 @@ As the indicator monitors the amount of `Official development assistance` as par
 
 Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) (United Nations, 2016, 2017, 2018, 2019, 2020, 2021). Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
 
+This query consists of 1 phrase.
 
 #### Phrase 1
 
@@ -1040,7 +1041,8 @@ TS=
         "sanitation" 
         OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
         OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-        OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+        OR ("WASH" 
+          NEAR/3 ("service$" OR "facilit*" OR "program*" OR "intervention$" OR "initiative$"))
     
         OR "safely managed sanitation services" 
         OR "improved sanitation facilit*" 
