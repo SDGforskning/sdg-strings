@@ -792,7 +792,9 @@ TS=
   OR "policy" OR "policies" OR "framework$" OR "legislat*" OR "strateg*") 
 NEAR/5 
   (
-	  "integrated water resources management" OR ("IWRM" NEAR/5 "water") 
+	  "integrated water resources management" 
+    OR ("IWRM" AND "water") 
+    OR "integrated water management" OR "integrated basin management" 
 	  OR 
     (
       ("cross sectoral" OR "cross-sectoral" 
@@ -813,19 +815,18 @@ NEAR/5
     )
 	OR 
     (
-		  (
+		  
 		  ("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*" 
       OR "convention$" OR "memorandum of understanding")
-		      NEAR/5
-			    ("co-operation" OR "cooperation" OR "collaboration")
-		  )
+		  
 		  NEAR/15 
 		    (
 		      ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
           OR "transboundary" OR "trans-boundary" 
-          OR "transborder" OR "trans-border" OR "interstate")
+          OR "transborder" OR "trans-border" OR "interstate" 
+          OR "co-operation" OR "cooperation" OR "collaboration")
 		      NEAR/5
-			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream*" 
+			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream$" 
             OR "aquifer*" OR "groundwater*" 
             OR "watershed" OR "catchment" 
             OR "water resource$" OR "freshwater resource$" 
