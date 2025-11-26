@@ -939,9 +939,11 @@ According to the indicator metadata 6.b <a href="#f8">(UN Statistics division 20
 
 We have combined the terms for `wastewater treatment` `water quality` and `water-related ecosystems` with freswater terms as in the phrases for targets 6.3 and 6.6. 
 
+This query consists of 1 phrase.
+
 #### Phrase 1
 
-The elements of the phrase are *local communities + participation/policies + water and sanitation elements + management*
+The elements of the phrase are *local communities + participation/policies + management + water and sanitation elements*
 
 
 ```py
