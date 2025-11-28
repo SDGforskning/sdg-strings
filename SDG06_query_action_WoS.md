@@ -879,9 +879,12 @@ The structure of the phrase is similar to SDG 14.2 phrase 3.
 ```py
 TS=
 (
-  ("conserve" OR "manage" OR "protect" OR "restore" OR "rehabilitate"
+  ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
+  OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
   OR
     (
+      ("management" OR "conservation" OR "protection" OR "restoration" OR "resilien*")
+      NEAR/5 
       ("designat*" OR "placement" OR "expand*" OR "extend*"
       OR "design" OR "designing" OR "create" OR "creation" OR "creating"
       OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
@@ -890,9 +893,7 @@ TS=
       OR "enforc*" 
       OR "increas*" OR "strengthen" OR "improv*" OR "enhanc*" OR "facilitat*"
       OR "preserv*" OR "support*" OR "ensur*"
-      )
-      NEAR/5
-        ("conservation" OR "management" OR "protection" OR "restoration" OR "rehabilitation" OR "sustainable" OR "resilien*")
+      )  
     )
   )
   NEAR/5 
