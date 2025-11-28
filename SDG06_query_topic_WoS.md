@@ -263,49 +263,46 @@ The elements of the phrase are *inequalities OR women/vulnerable groups+access +
 ```py
 TS=
 (
-  (
+  ("inequalit*" OR "inequity" OR "discriminat*" 
+  OR "barrier$" OR "obstacle$" OR "hinder*" OR "hindrance*"
+  OR "insecure" OR "dangerous" OR "unsafe" OR "ha?ardous" 
+  OR ("narrow" NEAR/3 "entrance*") OR "step$" 
+  OR (("lack*" OR "narrow" OR "tight") NEAR/3 "space") OR ("slippery" NEAR/3 "floor$") 
+  OR "non$discriminat*"
+      
+  OR 
     (
-      "inequalit*" OR "inequity" OR "discriminat*" 
-      OR "barrier$" OR "obstacle$" OR "hinder*" OR "hindrance*"
-      OR "insecure" OR "dangerous" OR "unsafe" OR "ha?ardous" 
-      OR ("narrow" NEAR/3 "entrance*") OR "step$" 
-      OR (("lack*" OR "narrow" OR "tight") NEAR/3 "space") OR ("slippery" NEAR/3 "floor$")
-      OR "facilitat*" OR "assist*" OR "support*" OR "non$discriminat*"
-      OR 
-        (
-        "*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
+      ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+      OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
           
-        OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
-        OR "working poor" OR "destitute" OR "living in poverty"
-        OR (("poor" OR "poorest" OR "low* income") 
+      OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
+      OR "working poor" OR "destitute" OR "living in poverty"
+      OR (("poor" OR "poorest" OR "low* income") 
           NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-        OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
-        OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-        OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-        OR (("person$" OR "people$" OR "adult$" OR "men") 
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
+      OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+      OR (("person$" OR "people$" OR "adult$" OR "men") 
           NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" 
           OR "displaced*" OR "patient$" OR "trans" OR "intersex" 
           OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-        OR "disabled" OR "disabilities" OR "disability"
-        OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-        OR "unemployed" 
-        OR (("work" OR "workplace" OR "worker$" OR "occupational") 
+      OR "disabled" OR "disabilities" OR "disability"
+      OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+      OR "unemployed" 
+      OR (("work" OR "workplace" OR "worker$" OR "occupational") 
           NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-        OR "women" OR "woman" OR "girls" OR "girl" 
-        OR "pregnant" OR "pregnancy" OR "maternity"
-        OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-        OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" 
-        OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
-        OR "living with HIV" OR "living with AIDS"
-        OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-        OR "indigenous group$"
-        )
-    ) 
+      OR "women" OR "woman" OR "girls" OR "girl" 
+      OR "pregnant" OR "pregnancy" OR "maternity"
+      OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" 
+      OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
+      OR "living with HIV" OR "living with AIDS"
+      OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+      OR "indigenous group$"
+      ) 
     NEAR/5 
         ("availab*" OR "access*")
+    )
   )
   NEAR/15  
 	(
