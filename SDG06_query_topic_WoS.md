@@ -838,7 +838,8 @@ TS=
         OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
         OR 
         (
-        ("adequate" OR "safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*") 
+        ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" 
+        OR "adequate" OR "access") 
           NEAR/5 
             ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
         ) 
