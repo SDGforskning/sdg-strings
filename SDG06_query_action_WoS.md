@@ -317,29 +317,25 @@ In addition we used UN sources to find terms and groups that can be considered "
 
 * Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#f12">(Blanchard)</a>. 
 
-The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
+The elements of the phrase are *action(eliminate OR facilitate) + inequalities OR women/vulnerable groups+access + sanitation/hygiene services/facilities* 
 
 
 ```py
 TS=
 (
-  (
-    (
-      ("eliminat*" OR "remov*") 
+  ("eliminat*" OR "remov*" OR "facilitat*" OR "assist*" OR "support*") 
       NEAR/5 
-        (
+      (
         ("inequalit*" OR "inequity" OR "discriminat*" 
         OR "barrier$" OR "obstacle$" OR "hinder*" OR "hindrance*"
-        OR "insecure" OR "dangerous" OR "unsafe" OR "ha?ardous") 
+        OR "insecure" OR "dangerous" OR "unsafe" OR "ha?ardous" 
         OR ("narrow" NEAR/3 "entrance*") OR "step$" 
-        OR (("lack*" OR "narrow" OR "tight") NEAR/3 "space") OR ("slippery" NEAR/3 "floor$")
-        ) 
-    )
-  OR
-    (
-      ("facilitat*" OR "assist*" OR "support*" OR "non$discriminat*" 
+        OR (("lack*" OR "narrow" OR "tight") NEAR/3 "space") OR ("slippery" NEAR/3 "floor$") 
+        OR "non$discriminat*"
+      
         OR 
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
+        (
+          ("*women" OR "*woman" OR "*womens" OR "*womans"
         OR "girl$"
         OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
@@ -368,12 +364,14 @@ TS=
         OR "living with HIV" OR "living with AIDS"
         OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
         OR "indigenous group$"
-        )
+        
       ) 
+      
     NEAR/5 
         ("availab*" OR "access*")
-    )
-  )
+      )
+      )
+
   NEAR/15  
 	(
     "sanitation" 
@@ -381,6 +379,7 @@ TS=
     OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
     OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
     OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+  )
   )
 )
 
