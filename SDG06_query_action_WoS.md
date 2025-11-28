@@ -283,7 +283,8 @@ TS=
     OR ("flush toilet*" NEAR/3 ("open drain*")) 
     OR "pit latrines without slab*" 
     OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
-    OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
+    OR ("hanging" NEAR/3 ("toilet$" OR "latrine$")) 
+    OR "no toilet" 
     OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
     OR "open defecation" 
     OR

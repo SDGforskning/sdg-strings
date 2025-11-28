@@ -226,6 +226,7 @@ TS=
   OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
   OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
   OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
+  OR "no toilet" 
   OR "open defecation" 
   OR
       (
