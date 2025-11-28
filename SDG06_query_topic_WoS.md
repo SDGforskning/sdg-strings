@@ -157,9 +157,10 @@ The elements of the phrase are *safe/equitable/access + WASH/safely managed sani
 ```py
 TS=
 (
-  ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" OR "access" OR "availab*" OR "unavailab*" OR "obstacle" OR "barrier" OR "hinder*" OR "hindrance*" 
-  OR "tackling" OR "tackle" OR "scal* up" OR "upgrad" 
-  OR "adequate") 
+  ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
+  OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
+  OR "hinder*" OR "hindrance*" 
+  ) 
     NEAR/15 
   (
     "sanitation" 

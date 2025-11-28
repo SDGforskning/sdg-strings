@@ -193,25 +193,25 @@ The elements of the phrase are *action + safe/equitable/access + WASH/safely man
 TS=
 (
   (
-    (
-       ( "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
-        OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*" 
-        OR "tackling" OR "tackle"  
-        OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "develop" OR "developing"
-        OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" 
-        OR "fight*" OR 	"combat*" OR "declin*"
-       ) 
-       NEAR/5
-            ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" OR "availab*" OR "access" OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" 
-            )
-    )
+    "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "higher"
+    OR "overcome" OR "ensure" OR "attain*" OR "achiev*"OR "upgrad*" 
+    OR "tackling" OR "tackle"  
+    OR "scal* up" OR "expand" OR "expansion*" OR "advance" OR "advancing" 
+    OR "develop" OR "developing"
+    OR "decreas*" OR "minimi*" OR "reduc*" OR "limit$" OR "limiting" OR "limited" 
+    OR "lowering" OR "lower$" OR "lowered" 
+    OR "fight*" OR 	"combat*" OR "declin*" 
     OR "legislat*" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" 
     OR "program*" OR "project*" OR "intervention*"
   )
-   
   NEAR/15 
   (
-    "sanitation" 
+    ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
+    OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
+    OR "hinder*" OR "hindrance*"  
+    ) 
+      NEAR/15 
+    ("sanitation" 
     OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
     OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
     OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
@@ -241,6 +241,7 @@ TS=
             NEAR/5 
             ("sanitation" OR "hygiene" OR "WASH") 
       )
+    )
   )
 )        
 ```
