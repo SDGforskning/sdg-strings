@@ -207,7 +207,7 @@ TS=
   NEAR/15 
   (
     ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
-    OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
+    OR "adequate" OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
     OR "hinder*" OR "hindrance*"  
     ) 
       NEAR/15 
@@ -224,7 +224,7 @@ TS=
     OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
     OR 
       (
-        ("adequate" OR "safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*") 
+        ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
           NEAR/5 
             ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
       ) 
