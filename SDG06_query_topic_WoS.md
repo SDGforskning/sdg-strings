@@ -257,7 +257,7 @@ In addition we used UN sources to find terms and groups that can be considered "
 
 * Blanchard et al. (2017). Words into action guidelines: National Disaster Risk Assessment. Special Topics: K. Consideration of Marginalized and Minority Groups in a National Disaster Risk Assessment. United Nations Office for Disaster Risk Reduction <a href="#f12">(Blanchard)</a>. 
 
-The elements of the phrase are *inequalities OR women/vulnerable groups+access + sanitation/hygiene + services/facilities* 
+The elements of the phrase are *inequalities OR women/vulnerable groups+access + sanitation/hygiene services/facilities* 
 
 
 ```py
