@@ -132,7 +132,7 @@ The last part of the search string (*women/gender*) is shared between search str
 TS=
 (
   ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
-  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "promot*" OR "enforc*" OR "monitor*"
+  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
   )
   NEAR/15
       (
