@@ -157,8 +157,7 @@ TS=
             NEAR/5
                 ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
                 "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
-				OR "promot*" OR "enforc*" OR "monitor*"
-                )
+				)
         )
         NEAR/15
         (             
