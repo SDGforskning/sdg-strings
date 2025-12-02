@@ -47,11 +47,11 @@ This query consists of three phrases.
 
 #### Phrase 1 
 
-This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
+This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women, girls and gender*
 
 `excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
 
-The last part of the search string (*women/gender*) is shared between search strings in many of the targets in SDG 5. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
@@ -103,7 +103,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase aims to find works about improving inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *action + anti-discrimination/rights + women/gender*
+This phrase aims to find works about improving inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *action + anti-discrimination/rights + women, girls and gender*
 
 ```py
 TS=
@@ -140,9 +140,9 @@ TS=
 
 #### Phrase 3
 
-This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women/gender*
+This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women, girls and gender*
 
-The last part of the search string (*women/gender*) is shared between search strings in many of the targets in SDG 5. However, here `disparit* OR bias* OR difference*` is removed, as it causes issues in combination with `bias` and `strateg* OR regulat*` and finds many medical papers regarding e.g. sex-biased regulation of genes.
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
