@@ -127,7 +127,7 @@ TS=
 
 This phrase is about legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *legislation + equality + women, girls and gender*
 
-We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `factor$ OR distribution OR disparit* OR difference* OR bias*` is removed, to reduce noise mainly from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
@@ -153,7 +153,7 @@ TS=
             OR "wife" OR "wives" OR "girlfriend$"
             OR "pregnan*" OR "maternity" OR "maternal"
             OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+            OR ("sex*" NEAR/5 ("based" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
             )
         )
       )
