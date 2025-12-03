@@ -51,7 +51,7 @@ This phrase is about ending discrimination and reducing inequality regarding wom
 
 `excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
 
-We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `based OR factor$ OR characteristic$ OR disparit* OR difference* OR bias*` is removed, to reduce noise, mainly from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
@@ -93,7 +93,7 @@ TS=
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
                     OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-                    OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+                    OR ("sex" NEAR/5 ("distribution" OR "discriminat*" OR "violence"))
                     )   
             )  
         )
@@ -142,7 +142,7 @@ TS=
 
 This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women, girls and gender*
 
-We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `disparit* OR bias* OR difference*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `factor$ OR disparit* OR difference* OR bias*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
@@ -177,7 +177,7 @@ TS=
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
                     OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-                    OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+                    OR ("sex*" NEAR/5 ("based" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
                     )
             )
         )   
