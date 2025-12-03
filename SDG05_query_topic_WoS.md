@@ -88,7 +88,8 @@ TS=
         OR "pregnan*" OR "maternity" OR "maternal"
         OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-        )   
+        )
+    )      
   )  
 )
 ```
