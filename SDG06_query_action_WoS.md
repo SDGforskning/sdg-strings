@@ -848,7 +848,7 @@ NEAR/5
 >
 > 6.6.1 Change in the extent of water-related ecosystems over time
 
-This target is interpreted to cover research about protecting and restoring of water-related ecosystems.
+This target is interpreted to cover research about protecting and restoring water-related ecosystems.
 
 It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water. Water & Ecosystems)</a>
 
@@ -869,7 +869,7 @@ This query consists of 2 phrases.
 #### Phrase 1 
 
 
-This phrase aims to find research about protection of freshwater-related ecosystems, their spatial extent and water quality and quantity.
+This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
 The elements of the phrase are *action + conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems* 
 
