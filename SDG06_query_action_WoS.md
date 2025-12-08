@@ -848,7 +848,7 @@ NEAR/5
 >
 > 6.6.1 Change in the extent of water-related ecosystems over time
 
-This target is interpreted to cover research about protecting and restoring water-related ecosystems.
+This target is interpreted to cover research about promoting the protection and restoration of water-related ecosystems.
 
 It focuses on protecting freshwater resources containing ecosystems, the spatial area of them and the quality and quantity of water in them. <a href="#f14">(UN-Water. Water & Ecosystems)</a>
 
@@ -869,35 +869,26 @@ This query consists of 2 phrases.
 #### Phrase 1 
 
 
-This phrase aims to find research about protecting freshwater-related ecosystems, their spatial extent and water quality and quantity.
+This phrase aims to find research about promoting protecttion of freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
 The elements of the phrase are *action + conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems* 
 
-The structure of the phrase is similar to SDG 14.2 phrase 3.
 
 
 ```py
 TS=
 (
-  ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
-  OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
-  OR
-    (
-      ("management" OR "conservation" OR "protection" OR "restoration" OR "resilien*")
-      NEAR/5 
-      ("designat*" OR "placement" OR "expand*" OR "extend*"
-      OR "design" OR "designing" OR "create" OR "creation" OR "creating"
-      OR "establish*" OR "propose*" OR "proposal$" OR "implement*" OR "prioriti$e"
-      OR "plans" OR "plan" OR "planned" OR "planning" OR "policy" OR "policies" OR "initiativ*" OR "framework" 
-      OR "strategy" OR "govern*"
-      OR "enforc*" 
-      OR "increas*" OR "strengthen" OR "improv*" OR "enhanc*" OR "facilitat*"
-      OR "preserv*" OR "support*" OR "ensur*"
-      )  
-    )
-  )
-  NEAR/5 
+("promot*" OR "enhanc*" OR "increas*" OR "improv*" OR "strengthen" 
+OR "advance" OR "advancing" OR "propose*" OR "proposal$" OR "implement*" 
+OR "establish*" OR "develop" OR "development")
+  NEAR/15 
   (
+    ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
+    OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
+    OR "management" OR "conservation" OR "protection" OR "restoration" OR "resilien*"
+    )
+    NEAR/15   
+    (
     ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
     OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
     ) 
@@ -911,6 +902,7 @@ TS=
         OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
         OR "aquifer$" OR "groundwater"
        )
+    )
   )
 )
 ```

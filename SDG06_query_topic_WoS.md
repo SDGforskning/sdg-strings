@@ -684,7 +684,6 @@ This phrase aims to find research about protection of freshwater-related ecosyst
 
 The elements of the phrase are *conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems*
 
-The structure of the phrase is similar to SDG 14.2 phrase 3.
 
 
 ```py
@@ -694,7 +693,7 @@ TS=
   OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
   OR "management" OR "conservation" OR "protection" OR "restoration" OR "resilien*"
   )
-  NEAR/5 
+  NEAR/15 
   (
     ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
     OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
