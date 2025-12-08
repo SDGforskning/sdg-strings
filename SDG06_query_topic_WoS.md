@@ -684,7 +684,7 @@ This phrase aims to find research about protection of freshwater-related ecosyst
 
 The elements of the phrase are *conservation + ecosystems/areas/water quality/water quantity + water-related ecosystems*
 
-
+The structure of this phrase is similar to phrase 3 of targets 14.2 and 15.1.
 
 ```py
 TS=
