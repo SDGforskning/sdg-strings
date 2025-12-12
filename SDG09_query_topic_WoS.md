@@ -253,8 +253,8 @@ SDG Target 9.5 focuses on strengthening the foundation for innovation and scient
 
 This target is interpreted to cover research about:    
 
-* Increasing technological capabilities and research within or to do with industry  
-* Increasing innovation, and increasing R&D capacity, including workforce and funding  
+* Technological capabilities and research within or to do with industry  
+* Innovation, and R&D capacity, including workforce and funding  
 
 This query consists of one phrase. The elements of the phrase are research/innovation/R&D/technology + industry/capability/workforce.
 
@@ -264,7 +264,7 @@ TS=
      ("research" OR "innovation*" OR "R&D" OR "R & D" OR "research and development" OR "research & development" OR "technology" OR "technological capabilities" 
      )  
         NEAR/5 
-        ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "subsidy" OR "subsidi*" ) 
+        ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "gross domestic product" OR "subsidy" OR "subsidi*" ) 
 ) 
 ```
 
