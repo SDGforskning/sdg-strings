@@ -338,6 +338,11 @@ TS=
 > **9.c Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020**
 >
 > 9.c.1 Proportion of population covered by a mobile network, by technology
+
+This target is interpreted to cover research about: 
+
+* Access to information and communication technology in least developed countries
+* Universal and affordable access to Internet in least developed countries
 > 
 This query consists of one phrase. This phrase is about the access to information and comminication technology. Basic structure is sustainable/reliable + internet connection/mobile network + least developed countries 
  
