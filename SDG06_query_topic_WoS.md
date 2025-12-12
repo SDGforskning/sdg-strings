@@ -59,20 +59,19 @@ The elements of the phrase are *access/availability/affordability/clean/safe + d
 TS=
 (
   (
-  ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" OR "manag*" OR "regulat*" 
-  OR "quality" OR "monitor*" 
-	OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
-  OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
-  OR "water provision" OR "household water" OR "domestic water" 
-  OR "rainwater"
-  OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
-  OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
-  OR ("water" NEAR/3 "kiosk*") 
-  OR "water security" OR "water insecurity" 
-  OR "water justice"
-  ) 
-    NEAR/5 
-      ("drink*" NEAR/3 "water") 
+    ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" OR "manag*" OR "regulat*" 
+    OR "quality" OR "monitor*" 
+    OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+    OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
+    OR "water provision" OR "household water" OR "domestic water" 
+    OR "rainwater"
+    OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
+    OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
+    OR ("water" NEAR/3 "kiosk*") 
+    OR "water security" OR "water insecurity" 
+    OR "water justice"
+    ) 
+    NEAR/5 ("drink*" NEAR/3 "water") 
   ) 
   OR "improved drinking water source*" OR "improved water source"
   OR "safely managed drinking water" 
@@ -102,10 +101,8 @@ TS=
     OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
     OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
     OR "arsenic" OR "fluoride*" 
-    )
-       
-      NEAR/5 
-      ("drink*" NEAR/3 "water")
+    )  
+    NEAR/5 ("drink*" NEAR/3 "water")
   )
   OR "unimproved drinking water source*" 
 )
@@ -151,7 +148,6 @@ Some of the terms used as action terms in the action approach phrase are lifted 
 
 The elements of the phrase are *safe/equitable/access + WASH/safely managed sanitation services*  
 
-
 ```py
 TS=
 (
@@ -159,13 +155,11 @@ TS=
   OR "adequate" OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
   OR "hinder*" OR "hindrance*" 
   ) 
-    NEAR/15 
-  (
-    "sanitation" 
+  NEAR/15 
+    ("sanitation" 
     OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
     OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
     OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-
     OR "safely managed sanitation services" 
     OR "improved sanitation facilit*" 
     OR "wet sanitation technolog*" 
@@ -175,23 +169,22 @@ TS=
     OR 
       (
         ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
-          NEAR/5 
-            ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*")
+          NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*")
       ) 
-      OR 
+    OR 
       (
         ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
-          OR
+        OR
           (
-          ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
-          OR "emptying" OR "transport" OR "reuse") 
-              NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
+            ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
+            OR "emptying" OR "transport" OR "reuse"
+            ) 
+            NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
           )
         )
-            NEAR/5 
-            ("sanitation" OR "hygiene" OR "WASH") 
+        NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
       )
-  )
+    )
 )       
 
 ```
@@ -204,22 +197,22 @@ Terms for unimproved sanitation were found from indicator metadata 6.2.1 a https
 
 The elements of the phrase are *inadequate/unsafe/unimproved/lacking + sanitation/hygiene + service/facility*
 
-
 ```py
 TS=
 (
   (
     ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
-    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary") 
-      NEAR/3 
+    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary"
+    ) 
+    NEAR/3 
       (
-        ("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*") 
-        OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+        (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*")) 
+        OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
         OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
       )
   )   
   OR "unimproved sanitation facilit*" 
-  OR ("flush toilet*" NEAR/3 ("open drain*")) 
+  OR ("flush toilet*" NEAR/3 "open drain*") 
   OR "pit latrines without slab*" 
   OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
   OR ("hanging" NEAR/3 ("toilet$" OR "latrine$"))
@@ -227,11 +220,10 @@ TS=
   OR "no toilet" 
   OR "open defecation" 
   OR
-      (
-      ("bush" OR "ditch" OR "surface water$" OR "channel$" OR "beach*" 
-      OR "river$" OR "stream$" OR "sea") 
-        NEAR/3 ("defecation")
-      ) 
+    (
+      ("bush" OR "ditch" OR "surface water$" OR "channel$" OR "beach*" OR "river$" OR "stream$" OR "sea") 
+      NEAR/3 ("defecation")
+    ) 
   OR ("contact" NEAR/3 ("human" NEAR/3 ("excret$" OR "faeces" OR "stool" OR "faecal sludge")))
 )
 ```
@@ -257,7 +249,6 @@ In addition we used UN sources to find terms and groups that can be considered "
 
 The elements of the phrase are *inequalities OR women/vulnerable groups+access + sanitation/hygiene services/facilities* 
 
-
 ```py
 TS=
 (
@@ -275,20 +266,23 @@ TS=
           
       OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor"  
       OR "working poor" OR "destitute" OR "living in poverty"
-      OR (("poor" OR "poorest" OR "low* income") 
-          NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" 
       OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-      OR (("person$" OR "people$" OR "adult$" OR "men") 
-          NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" 
-          OR "displaced*" OR "patient$" OR "trans" OR "intersex" 
-          OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+      OR 
+        (
+          ("person$" OR "people$" OR "adult$" OR "men") 
+          NEAR/3 
+            ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" 
+            OR "displaced*" OR "patient$" OR "trans" OR "intersex" 
+            OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"
+            )
+        )
       OR "disabled" OR "disabilities" OR "disability"
       OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
       OR "unemployed" 
-      OR (("work" OR "workplace" OR "worker$" OR "occupational") 
-          NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+      OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
       OR "women" OR "woman" OR "girls" OR "girl" 
       OR "pregnant" OR "pregnancy" OR "maternity"
       OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
@@ -298,18 +292,16 @@ TS=
       OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
       OR "indigenous group$"
       ) 
-    NEAR/5 
-        ("availab*" OR "access*")
+      NEAR/5 ("availab*" OR "access*")
     )
   )
   NEAR/15  
-	(
-    "sanitation" 
-    OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
-    OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-    OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
-  )
+      ("sanitation" 
+      OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+      OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+      OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+      OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+      )
 )
 ```
 
@@ -356,7 +348,6 @@ This phrase is partly similar to 14.1 phrase 1 and many of the terms for polluti
 
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies/drinking water*
 
-
 ```py
 TS=
 (
@@ -366,28 +357,28 @@ TS=
     OR 
     (
       ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
-        NEAR/15
-          ("waste" OR "discharge" OR "runoff" OR "run off")          
+      NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off")          
     )
+    OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"  
     OR 
-    "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"  
-    OR 
-    (
-      ("pharmaceutic*" OR "antibiotic*" OR "medical" 
-      OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
-      OR "protozoa" OR "helminth$" OR "parasite$" 
-      OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
-      OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
-      OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
-      OR "arsenic" OR "fluoride*" ) 
+      (
+        ("pharmaceutic*" OR "antibiotic*" OR "medical" 
+        OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+        OR "protozoa" OR "helminth$" OR "parasite$" 
+        OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+        OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+        OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+        OR "arsenic" OR "fluoride*" 
+        ) 
         NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
-    )
+      )
     OR 
-    (
-      ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
-      OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil")
+      (
+        ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+        OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+        )
         NEAR/15 "contamination"   
-    )
+      )
     OR "contaminated" OR "contaminant$" OR "toxic chemical$"
     OR "endocrine disrupting chemical$"
     OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
@@ -397,13 +388,13 @@ TS=
     OR "polycyclic aromatic hydrocarbon$" OR "PAH"
     OR "oil spill$" 
     ) 
-  AND 
-    ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-    OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water")  
-    OR "brook$" OR "creek$" 
-    OR "aquifer$" OR "groundwater" 
-    OR ("water" NEAR/3 "reservoir$") 
-    OR "drinking water")
+    AND 
+      ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+      OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water")  
+      OR "brook$" OR "creek$" 
+      OR "aquifer$" OR "groundwater" 
+      OR ("water" NEAR/3 "reservoir$") 
+      OR "drinking water")
 )
 ```
 
@@ -415,20 +406,18 @@ This phrase aims to find research about the water quality of freshwater bodies o
 
 The elements of the phrase are *water quality + freshwater bodies/drinking water*
 
-
 ```py
 TS=
 (
-  (
   ("quality" NEAR/3 "water") 
-  )
-    NEAR/15 
-    ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-    OR ("river$") OR ("stream$" NEAR/3 "water") 
-    OR "brook$" OR "creek$" 
-    OR "aquifer$" OR "groundwater" 
-    OR ("water" NEAR/3 "reservoir$")
-    OR "drinking water")
+  NEAR/15 
+      ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+      OR ("river$") OR ("stream$" NEAR/3 "water") 
+      OR "brook$" OR "creek$" 
+      OR "aquifer$" OR "groundwater" 
+      OR ("water" NEAR/3 "reservoir$")
+      OR "drinking water"
+      )
 )
 ```
 
@@ -475,9 +464,7 @@ Terms were found in
 * UNSD SDG 6 extended report 2022 <a href="#f6">(UNSD 2022)</a>
 * Indicator metadata 6.4.1 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-01.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
-
 The elements of the phrase are *WUE/water security/sustainable withdrawals/water savings/recycling*
-
 
 ```py
 TS=
@@ -485,39 +472,36 @@ TS=
   "water use efficiency" OR ("WUE" NEAR/15 "water") 
   OR "water security" OR "water insecurity" 
   OR 
-  (
-    ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*" 
-    OR "unsustainab*" OR "irresponsib*" OR "inefficient*" OR "resilient" OR "resilience") 
-      NEAR/3 
     (
-      (
-        ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
-            OR "withdrawal$" 
-        )
-          NEAR/15
-            (
-            "water supply" OR "water supplies" OR "suppl* of freshwater"
-            OR "water resource$" OR "freshwater resource$" 
-            )
-      )
-      OR 
-      (
-        ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+      ("sustainab*" OR "responsib*" OR "environmental*" OR "efficient*" 
+      OR "unsustainab*" OR "irresponsib*" OR "inefficient*" OR "resilient" OR "resilience"
+      ) 
+      NEAR/3 
+        (
+          (
+            ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$")
+            NEAR/15
+                ("water supply" OR "water supplies" OR "suppl* of freshwater"
+                OR "water resource$" OR "freshwater resource$" 
+                )
+          )
+        OR 
+          (
+            ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
             NEAR/3 ("water" OR "freshwater")
-      )
-    )
-  ) 
+          )
+        )
+    ) 
   OR 
-  (
-    ("save" OR "saving$") 
-      NEAR/5 
-        ("water" NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
-  ) 
+    (
+      ("save" OR "saving$") 
+      NEAR/5 ("water" NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
+    ) 
   OR "water saving$" 
   OR 
     (
       ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
-	      NEAR/1 ("water" OR "freshwater")
+	    NEAR/1 ("water" OR "freshwater")
     )
 ) 
 
@@ -532,33 +516,25 @@ The elements of the phrase are *use of water resources/water stress/water scarci
 A NOT string was added to exclude irrelevant results about a `water filling algorithm`
 
 
-
 ```py
 TS=
 (
-(
   (
     (
-      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" 
-      OR "withdrawal$" 
-      )
-        NEAR/15
-        (
-        "water supply" OR "water supplies" OR "suppl* of freshwater"
-        OR "water resource$" OR "freshwater resource$" 
-        )
+      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$")
+      NEAR/15
+          ("water supply" OR "water supplies" OR "suppl* of freshwater"
+          OR "water resource$" OR "freshwater resource$" 
+          )
     )
-      OR 
+    OR 
     (
-    ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
+      ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
       NEAR/3 ("water" OR "freshwater")
-    )
+    ) 
+    OR ("water scarcity" OR "water stress" OR "water withdrawal intensity" )
   ) 
-  OR 
-  (
-    "water scarcity" OR "water stress" OR "water withdrawal intensity" 
-  )
-) NOT ("water-filling" OR "water filling") 
+  NOT ("water-filling" OR "water filling") 
 )
 ```
 
@@ -606,36 +582,37 @@ TS=
   (
     ("cross sectoral" OR "cross-sectoral" OR "intersectoral" OR "inter sectoral" 
     OR "multisectoral" OR "multi sectoral" 
-    OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*") 
-      NEAR/5 
-        (
-          ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
-          OR "govern*" OR "development" OR "administrat*" OR "plan" OR "plans" OR "planning" 
-          OR "policy" OR "policies") 
-             NEAR/5 
-              (
-              "water resource$" OR "freshwater resource$" 
-              OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
-              OR ("water" NEAR/5 "land") 
-              OR (("water" OR "river") NEAR/3 "basin") 
-              OR "hydrological unit" OR "watershed"
-              )
-        )
+    OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*"
+    ) 
+    NEAR/5 
+      (
+        ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
+        OR "govern*" OR "development" OR "administrat*" OR "plan" OR "plans" OR "planning" 
+        OR "policy" OR "policies"
+        ) 
+        NEAR/5 
+            ("water resource$" OR "freshwater resource$" 
+            OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
+            OR ("water" NEAR/5 "land") 
+            OR (("water" OR "river") NEAR/3 "basin") 
+            OR "hydrological unit" OR "watershed"
+            )
+      )
   )
 	OR 
   (
-		
 		("arrangement*" OR "treaty" OR "treaties" OR "agreement*" OR "framework*" 
     OR "convention$" OR "memorandum of understanding" OR "pact$" OR "settlement$" OR "accord" 
-    OR "protocol$" OR "policy" OR "policies" OR "legislation")
-		
-		  NEAR/15 
-		    (
-		      ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
-          OR "transboundary" OR "trans-boundary" 
-          OR "transborder" OR "trans-border" OR "interstate" OR "international" 
-          OR "co-operation" OR "cooperation" OR "collaboration")
-		      NEAR/5
+    OR "protocol$" OR "policy" OR "policies" OR "legislation"
+    )
+		NEAR/15 
+		  (
+		    ("crossboundary" OR "crossborder" OR "cross-boundary" OR "cross-border"
+        OR "transboundary" OR "trans-boundary" 
+        OR "transborder" OR "trans-border" OR "interstate" OR "international" 
+        OR "co-operation" OR "cooperation" OR "collaboration"
+        )
+		    NEAR/5
 			      ("water basin*" OR "lake*" OR "river*" OR "river basin" OR "stream$" 
             OR "aquifer*" OR "groundwater*" 
             OR "watershed" OR "catchment" 
@@ -643,9 +620,10 @@ TS=
             OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
             OR ("water" NEAR/5 "land") 
             OR (("water" OR "river") NEAR/3 "basin") 
-            OR "hydrological unit")
-		    )
-    )
+            OR "hydrological unit"
+            )
+		  )
+  )
 )
 
 ```
@@ -674,9 +652,7 @@ Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we 
 
 This query consists of 2 phrases.
 
-
 #### Phrase 1 
-
 
 This phrase aims to find research about protection of freshwater-related ecosystems, their spatial extent and water quality and quantity.
 
@@ -692,12 +668,12 @@ TS=
   OR "management" OR "conservation" OR "protection" OR "restoration" OR "resilien*"
   )
   NEAR/15 
-  (
-    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
-    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
-    ) 
+    (
+      ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
+      OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+      ) 
       NEAR/5 
-       ("freshwater" OR "fresh water" 
+        ("freshwater" OR "fresh water" 
         OR "lake*" OR "pond$"
         OR "river*" OR "stream$" OR "brook$" OR "creek$" 
         OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
@@ -705,8 +681,8 @@ TS=
         OR "floodplain$" OR "rice paddies" OR "rice paddy" 
         OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
         OR "aquifer$" OR "groundwater"
-       )
-  )
+        )
+    )
 )
 ```
 
@@ -719,32 +695,33 @@ Terms for deterioration were found in UNSD SDG 6 Extended report 2022 <a href="#
 
 The elements of the phrase are *decline/deterioration/unsustainable use + water-related ecosystems*
 
-
 ```py
 TS=
 (
   (
-  ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*" 
-  OR "erosion" OR "flooding" OR "drought$" 
-  OR ("flow" NEAR/3 ("reduced" OR "diminish*" OR "decrased" OR "low*")) 
-  OR ("species" NEAR/3 ("extinction" OR "loss")) 
-  OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))
-  ) 
-  OR (
+    ("deteriorat*" OR "declin*" OR "degrad*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*" 
+    OR "erosion" OR "flooding" OR "drought$" 
+    OR ("flow" NEAR/3 ("reduced" OR "diminish*" OR "decrased" OR "low*")) 
+    OR ("species" NEAR/3 ("extinction" OR "loss")) 
+    OR ("biodiversity" NEAR/3 ("loss*" OR "lost"))
+    ) 
+  OR 
+    (
       ("unsustainab*" OR "exploit*") 
-        NEAR/5 
+      NEAR/5 
         ("manag*" OR "use" OR "using" OR "usage" OR "utili*" OR "govern*" OR "development" OR "administrat*" 
         OR "planning" OR "policy" OR "policies"
-        OR ("water" NEAR/3 "extract*"))
-      )
+        OR ("water" NEAR/3 "extract*")
+        )
+    )
   ) 
   NEAR/15 
-  (
-    ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
-    OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
-    ) 
+    (
+      ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
+      OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+      ) 
       NEAR/5 
-       ("freshwater" OR "fresh water" 
+        ("freshwater" OR "fresh water" 
         OR "lake*" OR "pond$"
         OR "river*" OR "stream$" OR "brook$" OR "creek$" 
         OR "marsh" OR "marshes" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp$" 
@@ -752,12 +729,11 @@ TS=
         OR "floodplain$" OR "rice paddies" OR "rice paddy" 
         OR ("reservoir$" NEAR/3 "water") OR "artificial waterbod*" 
         OR "aquifer$" OR "groundwater"
-       )
-  )
+        )
+    )
 )
 
 ```
-
 
 ### Target 6.a
 
@@ -789,13 +765,14 @@ The elements of the phrase are *international cooperation/support + capacity bui
 ```py
 TS=
 (
+  ("Global WASH strategy" OR "Global WASH cluster"
+  OR
   (
     (
       (
-      (("international" OR "development") 
-          NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" 
-          OR "support" OR "investment$")
-      ) 
+        (("international" OR "development") 
+        NEAR/3 ("cooperat*" OR "co-operat*" OR "collaborat*" OR "network$" OR "partnership$" OR "support" OR "investment$")
+        ) 
       OR "ODA" OR "official development assistance" OR "cooperation fund$" 
       OR "development spending" OR "development aid" OR "development assistance" 
       OR "foreign aid" OR "international aid" OR "international assistance"
@@ -816,14 +793,12 @@ TS=
         OR "subsidy" OR "subsidies" OR "subsidi?ing" OR "subsidi?e" 
         OR "policy" OR "policies" OR "empower*" OR "strateg*" OR "programme$" OR "program$" OR "intervention$"
         )
-      ) 
-      NEAR/5 
-      (
-        "sanitation" 
+    ) 
+    NEAR/5 
+        ("sanitation" 
         OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
         OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-        OR ("WASH" 
-          NEAR/3 ("service$" OR "facilit*"OR "program*" OR "intervention$" OR "initiative$"))
+        OR ("WASH" NEAR/3 ("service$" OR "facilit*"OR "program*" OR "intervention$" OR "initiative$"))
     
         OR "safely managed sanitation services" 
         OR "improved sanitation facilit*" 
@@ -832,52 +807,46 @@ TS=
         OR "dry sanitation" 
         OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
         OR 
-        (
-        ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" 
-        OR "adequate" OR "access") 
-          NEAR/5 
-            ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
-        ) 
-      OR 
-        (
-          ("sewage" 
-          OR
           (
-          ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
-          OR "emptying" OR "transport" OR "reuse") 
-              NEAR/3 ("wastewater" OR "human excret$" OR "faeces" OR "faecal sludge")
-          )
-          )
-            NEAR/5 
-            ("sanitation" OR "hygiene" OR "WASH") 
-        ) 
-      OR 
-      (
-        ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" 
-        OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
-	      OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
-        OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
-        OR "water provision" OR "household water" OR "domestic water" 
-        OR "rainwater"
-        OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
-        OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
-        OR ("water" NEAR/3 "kiosk*") 
-        OR "water security" OR "water insecurity" 
-        OR "water justice"
-        ) 
-          NEAR/5 
-          ("drink*" NEAR/3 "water") 
-      ) 
-      OR "improved drinking water source*" OR "improved water source" 
-      OR "safely managed drinking water" 
+            ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
+            NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+          ) 
+        OR 
+          (
+            ("sewage" 
+            OR
+              (
+                ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
+                NEAR/3 ("wastewater" OR "human excret$" OR "faeces" OR "faecal sludge")
+              )
+            )
+            NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
+          ) 
+        OR 
+          (
+            ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" 
+            OR "manag*" OR "regulat*" OR "quality" OR "monitor*" 
+            OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+            OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
+            OR "water provision" OR "household water" OR "domestic water" 
+            OR "rainwater"
+            OR ("protect*" NEAR/3 ("dug well*" OR "spring*")) 
+            OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
+            OR ("water" NEAR/3 "kiosk*") 
+            OR "water security" OR "water insecurity" 
+            OR "water justice"
+            ) 
+            NEAR/5 ("drink*" NEAR/3 "water") 
+          ) 
+        OR "improved drinking water source*" OR "improved water source" 
+        OR "safely managed drinking water" 
 
-      OR ("water" NEAR/3 ("harvest*" OR "desalinat*")) 
-      OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
-      OR (("wastewater" OR "waste water" OR "sewage") 
-        NEAR/3 ("treatment" OR "recycl*" OR "reuse"))
-    ) 
-    OR "Global WASH strategy" OR "Global WASH cluster"
+        OR ("water" NEAR/3 ("harvest*" OR "desalinat*")) 
+        OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
+        OR (("wastewater" OR "waste water" OR "sewage") NEAR/3 ("treatment" OR "recycl*" OR "reuse"))
+        ) 
   ) 
+  )
 AND 
   ("least developed countr*" OR "least developed nation$"
   OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" 
@@ -942,7 +911,6 @@ This query consists of 1 phrase.
 
 The elements of the phrase are *local communities + participation/policies/management + water and sanitation elements*
 
-
 ```py
 TS=
 (
@@ -950,39 +918,40 @@ TS=
     ("local" OR "stakeholder$" OR "municip*" OR "communit*" OR "commun*" OR "district") 
     NEAR/5 
       ("participat*" OR "contribut*" OR "impact" OR "plan" OR "planning" 
-        OR "choice$" OR "choose" OR "solution$" 
-        OR ("decision$" NEAR/3 "making") 
-        OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$" 
-        OR "manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" 
-        OR "plan" OR "planning" OR "policy" OR "policies" OR "resource us*" 
-        OR "empower*" OR "engage*" OR "collaborat*" OR "co-operat*" OR "cooperat*" OR "inclus*"
+      OR "choice$" OR "choose" OR "solution$" 
+      OR ("decision$" NEAR/3 "making") 
+      OR "administrat*" OR "policy" OR "policies" OR "procedure$" OR "scheme$" 
+      OR "manage*" OR "develop*" OR "govern*" OR "development" OR "administrat*" 
+      OR "plan" OR "planning" OR "policy" OR "policies" OR "resource us*" 
+      OR "empower*" OR "engage*" OR "collaborat*" OR "co-operat*" OR "cooperat*" OR "inclus*"
       )
   ) 
   NEAR/5 
-        (
-          (("drink*" OR "potable") NEAR/3 "water")
-          OR "sanitation" 
-          OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
-          OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
-          OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-          OR 
+      (
+        (("drink*" OR "potable") NEAR/3 "water")
+        OR "sanitation" 
+        OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+        OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
+        OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+        OR 
+          (
             (
-              (
-              (("wastewater" OR "waste water" OR "sewage" OR "sewer$") NEAR/3 "treatment") 
-              OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
-              OR "ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$"
-              ) 
-                NEAR/5 
-                  ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
-                  OR "river$" OR ("stream$" NEAR/3 "water") 
-                  OR "brook$" OR "creek$" 
-                  OR "aquifer$" OR "groundwater" 
-                  OR ("water" NEAR/3 "reservoir$"))
+            (("wastewater" OR "waste water" OR "sewage" OR "sewer$") NEAR/3 "treatment") 
+            OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+            OR "ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$"
             ) 
-            OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
-            OR "water resource$" OR "freshwater resource$" 
-            OR "water supply" OR "water supplies" OR "suppl* of freshwater"
-        )  
+            NEAR/5 
+              ("freshwater" OR "fresh water" OR "lake$" OR "pond$" 
+              OR "river$" OR ("stream$" NEAR/3 "water") 
+              OR "brook$" OR "creek$" 
+              OR "aquifer$" OR "groundwater" 
+              OR ("water" NEAR/3 "reservoir$")
+              )
+          ) 
+        OR "water use efficiency" OR ("WUE" NEAR/15 "water") 
+        OR "water resource$" OR "freshwater resource$" 
+        OR "water supply" OR "water supplies" OR "suppl* of freshwater"
+      )  
 )         
 
 ```
