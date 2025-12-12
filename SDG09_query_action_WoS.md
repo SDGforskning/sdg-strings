@@ -369,7 +369,7 @@ This query consists of one phrase. This phrase is about technology development, 
 ```py
 TS=
 (
-    (increas* OR strengthen* OR improv* OR restor* OR enhanc* OR upgrad* OR "scale* up" OR build* OR "capacity building" OR "capacity development" OR expand* OR accelerat* OR advance* OR develop* OR encourag* OR facilitat* OR promot* OR implement* OR adopt* OR establish* OR design* OR plan* OR pathway* OR roadmap OR "way to" OR attain* OR achiev*
+    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "upgrad*" OR "scale* up" OR "build*" OR "capacity building" OR "capacity development" OR "expand*" OR "accelerat*" OR "advance*" OR "develop*" OR "encourag*" OR "facilitat*" OR "promot*" OR "implement*" OR "adopt*" OR "establish*" OR "design*" OR "plan*" OR "pathway*" OR "roadmap" OR "way to" OR "attain*" OR "achiev*"
     )
     NEAR/15
     ("technology development" OR "research and development" OR "R&D" OR "research & development" OR "research and innovation" OR innovation OR "domestic technology" OR "policy environment" OR "industrial diversification" OR "value addition"
