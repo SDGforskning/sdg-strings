@@ -319,7 +319,7 @@ TS=
 
 This target is interpreted to cover research about:   
 
-* Supporting technology development, research and innovation in developing countries.   
+* Technology development, research and innovation in developing countries.   
 
 This query consists of one phrase. Basic structure is technology development + research and innovation + developing countries.   
 
