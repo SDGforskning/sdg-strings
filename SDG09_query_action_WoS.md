@@ -360,11 +360,9 @@ TS=
 
 The goal is to help developing nations build their own technological and industrial capacity, diversify their economies, and add more value to raw materials rather than relying solely on exports of unprocessed goods. 
 
-This target is interpreted to cover research about:   
-
-* Supporting technology development, research and innovation in developing countries.   
-
-This query consists of one phrase. This phrase is about technology development, research and innovation in developing countries. Basic structure is action + technology/research development + developing countries.
+This target is interpreted to cover research about supporting technology development, research and innovation in developing countries. 
+  
+This query consists of one phrase. This phrase is about supporting technology development, research and innovation in developing countries. Basic structure is action + technology/research development + developing countries.
 
 ```py
 TS=
