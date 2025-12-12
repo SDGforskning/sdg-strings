@@ -391,7 +391,7 @@ This target is interpreted to cover research about:
 
 In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. The Sustainable Development Goals Report 2024. Target 9.c aims to significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020. 2023 HLPF thematic review of SDG 9). 
 
-This query consists of one phrase. This phrase is about increasing the access to information and comminication technology. developing sustainable infrastructure that is affordable for all. Basic structure is sustainable/reliable + internet connection/mobile network + least developed countries. 
+This query consists of one phrase. This phrase is about increasing the access to information and comminication technology. Basic structure is sustainable/reliable + internet connection/mobile network + least developed countries. 
 
 ```py
 
