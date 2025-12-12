@@ -21,8 +21,6 @@ This document contains search strings for finding publications related to the to
 
 Targets and Indicators were found from the UN Department of Economic and Social Affairs website <a href="#f1">(UN DESA, 2025)</a>.
 
-Our classification of countries as least developed countries (LDCs), small island developing states (SIDS) and landlocked developing states (LDS) is taken from the Statistical Annex of United Nations World Economic Situation and Prospects (tables F, H and I) <a href="#f2">(United Nations, 2016, 2017, 2018, 2019, 2020, 2021)</a>. Additional terms for these countries, generic terms for country groups, and terms for low and middle income countries (LMICs) were gathered from the LMIC 2020 filter from the Norwegian Satellite of Cochrane Effective Practice and Organisation of Care (EPOC), developed by the Norwegian Institute of Public Heath (https://epoc.cochrane.org/lmic-filters).
-
 For general definitions and search terms we used
 * UN Department of Global Communications (2023). What Is Goal 6 –Clean Water And Sanitation <a href="#f3">(UN Department of Global Communications 2023)</a>.
 * UN DESA (2023). HLPF Factsheet SDG 6 <a href="#f4">(UN DESA 2023)</a>.
@@ -354,7 +352,7 @@ This phrase aims to find research about releases of pollution and hazardous chem
 
 In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies or drinking water.
 
-This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a id="Marinepoll">[Lloyd-Smith and Immig (2018)](#f19)</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a id="marinepollUN">[UN Environment Programme, n.d.](#f20)</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+This phrase is partly similar to 14.1 phrase 1 and many of the terms for pollution were found from the same sources, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
 The elements of the phrase are *pollution/wastewater/hazardous chemicals/ + fresh water bodies/drinking water*
 
@@ -1037,6 +1035,6 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f18"> WHO (2025).</span> *Top 10 drinking-water and sanitation related pathogens* https://cdn.who.int/media/docs/default-source/wash-documents/burden-of-disease/top-10-drinking-water-and-sanitation-pathogens_final.pdf?sfvrsn=c0e013da_3&download=true
 
-<a id="f19"></a> Lloyd-Smith and Immig. (2018). *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf. [↩](#Marinepoll)
+<span id="f19"> Lloyd-Smith and Immig (2018).</span> *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf
 
-<a id="f20"></a> UN Environment Programme. (n.d.). *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]. [↩](#marinepollUN)
+<span id="f20"> UN Environment Programme (n.d.).</span> *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]
