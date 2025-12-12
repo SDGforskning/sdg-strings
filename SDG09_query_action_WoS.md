@@ -364,7 +364,7 @@ This target is interpreted to cover research about:  
 
 * Supporting technology development, research and innovation in developing countries.   
 
-This query consists of one phrase. 
+This query consists of one phrase. This phrase is about technology development, research and innovation in developing countries. Basic structure is action + technology/research development + developing countries.
 
 ```py
 TS=
