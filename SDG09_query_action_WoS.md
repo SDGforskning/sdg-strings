@@ -289,9 +289,9 @@ This target is interpreted to cover research about
 * Increasing technological capabilities and research within or to do with industry 
 * Increasing innovation, and increasing R&D capacity, including workforce and funding 
 
-SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. The Sustainable Development Goals. Extended Report 2024. (2024) 
+SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. (The Sustainable Development Goals. Extended Report 2024). 
 
-This query consists of 1 phrase.
+This query consists of 1 phrase. The elements of the phrase are action + research/innovation/R&D/technology + industry/capability/workforce.
 
 ```py
 TS=
@@ -302,7 +302,7 @@ TS=
       ( ("research" OR "innovation*" OR "R&D" OR "R & D" OR "research and development" OR "research & development" OR "technology" OR "technological capabilities" 
         ) 
       NEAR/5 
-      ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "subsidy" OR "subsidi*" 
+      ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "gross domestic product" OR "subsidy" OR "subsidi*" 
       )
     ) 
 ) 
