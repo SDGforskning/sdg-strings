@@ -224,9 +224,11 @@ TS=
     OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
     )      
     NEAR/5
-        ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-        OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
-        OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+        ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labo$r market" OR "labo$r force"
+        OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
+        OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "livestock owner*" OR "livestock asset$"
+        OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
+        OR "natural resource$"
         )
   )
   AND
