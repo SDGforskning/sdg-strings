@@ -50,15 +50,20 @@ This phrase is about developing sustainable infrastructure that is affordable fo
 ```py
 TS=
 (
-	("advance" OR "advancing" OR "develop" OR "developing" OR "enhanc*" OR "foster*" OR "improv*" OR "invent" OR "inventing" OR "moderni*" OR "upgrad*" OR "strengthen*" OR "better" OR "build" OR "encourag*" OR "promot*" OR "plan"
+	("advance" OR "advancing" OR "develop" OR "developing" OR "enhanc*" OR "foster*" OR "improv*" OR "invent" OR "inventing" 
+    OR "moderni*" OR "upgrad*" OR "strengthen*" OR "better" OR "build" OR "encourag*" OR "promot*" OR "plan"
 	)  
 		NEAR/5 
 		(
-            ("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "non-polluting" OR "energy-efficient"
+            ("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" 
+            OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" 
+            OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" 
+            OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "non-polluting" OR "energy-efficient"
 		    ) 
 			    NEAR/5 
                 ("infrastruct*" OR (("energy" OR "power" OR "electric*") 
-					NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" OR "connections" OR "structure*" OR "foundation"))  
+					NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" 
+                    OR "distrib*" OR "connections" OR "structure*" OR "foundation"))  
                 OR "energy system$" OR "power system$" OR "electrification" OR "lighting" 
                 OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
                 OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
@@ -66,15 +71,19 @@ TS=
                 OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" OR "financial service$" OR "banking service$" 
 				OR "education" OR "school$"
                 OR "health care" OR "healthcare" OR "public service$"
-                OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public"))
-				OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*"))
-                OR "air connection*" OR "airport*" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "ports" OR "maritime" OR "mass transit*" OR "mobility system$" 
-                OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads"  OR "highway*" OR "rural access" OR "sea connection*" OR "sea route*" 
+                OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") 
+                NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public"))
+				OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" 
+                OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*"))
+                OR "air connection*" OR "airport*" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "ports" OR "maritime" 
+                OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" 
+                OR "rail" OR "rails" OR "railway*" OR "road" OR "roads"  OR "highway*" OR "rural access" OR "sea connection*" OR "sea route*" 
                 OR "ship* route*" OR "transport" OR "transportation" OR "tunnel$" OR "urban mobility" OR "waterways" 
                 )
         
 				    NEAR/5 
-				    ("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" OR "moderate" OR "fair" OR "accessib*" OR "economical*" OR "cost-effective*" OR "cheap"
+				    ("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" 
+                    OR "moderate" OR "fair" OR "accessib*" OR "economical*" OR "cost-effective*" OR "cheap"
 				    )
         )
 )
