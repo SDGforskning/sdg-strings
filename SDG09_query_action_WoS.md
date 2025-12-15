@@ -36,9 +36,9 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about developing reliable, sustainable and resilient infrastructure that is affordable and equitable for all.  
 
-We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks (Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10; United Nations Environment Programme, 2021, 8).
+We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks <a href=#4>(Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10; United Nations Environment Programme, 2021, 8)</a>.
 
-Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; Soriano et al., 2022; United Nations Environment Programme, 2021. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
+Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; <a href= #4>Soriano et al., 2022</a>; <a href= #8>United Nations Environment Programme, 2021</a>. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
 
 We understand that economic and social well-being is the result not the target and therefore terms are not added in the phrase.
 
@@ -50,31 +50,33 @@ This phrase is about developing sustainable infrastructure that is affordable fo
 ```py
 TS=
 (
-	("advance" OR "advancing" OR "develop" OR "developing" OR "enhanc*" OR "foster*" OR "improv*" OR "invent" OR "inventing" OR "moderni*" OR "upgrad*" OR "strengthen*" OR "better" OR "build" OR "encourag*" OR "promot*" OR "plan" OR "planning"
+	("advance" OR "advancing" OR "develop" OR "developing" OR "enhanc*" OR "foster*" OR "improv*" OR "invent" OR "inventing" OR "moderni*" OR "upgrad*" OR "strengthen*" OR "better" OR "build" OR "encourag*" OR "promot*" OR "plan"
 	)  
-		NEAR/15 
+		NEAR/5 
 		(
-            ("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" 
-		    OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
+            ("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "non-polluting" OR "energy-efficient"
 		    ) 
 			    NEAR/5 
-                ("infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "infrastruct*" OR "supply" OR "solution$" OR "source*")) 
-                OR "energy system$" OR "power system$" 
-                OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "lighting" 
+                ("infrastruct*" OR (("energy" OR "power" OR "electric*") 
+					NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" OR "connections" OR "structure*" OR "foundation"))  
+                OR "energy system$" OR "power system$" OR "electrification" OR "lighting" 
                 OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
                 OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
-                OR "telecommunication$" OR "digital communications" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
-                OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" OR "education" OR "school$" 
-                OR "health care" OR "healthcare" 
-                OR "buildings" OR "housing" OR "public spaces" OR "disaster management" 
-                OR "air connection*" OR "airports" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "highway*" OR "maritime" OR "mass transit*" OR "mobility system$" 
-                OR "public transport*" OR "public transit*" OR "ports" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads" OR "rural access" OR "sea connection*" OR "sea route*" 
+                OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
+                OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" OR "financial service$" OR "banking service$" 
+				OR "education" OR "school$"
+                OR "health care" OR "healthcare" OR "public service$"
+                OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public"))
+				OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*"))
+                OR "air connection*" OR "airport*" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "ports" OR "maritime" OR "mass transit*" OR "mobility system$" 
+                OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads"  OR "highway*" OR "rural access" OR "sea connection*" OR "sea route*" 
                 OR "ship* route*" OR "transport" OR "transportation" OR "tunnel$" OR "urban mobility" OR "waterways" 
                 )
-        ) 
+        
 				    NEAR/5 
-				    ("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" OR "moderate" OR "fair" OR "accessib*" OR "economical" OR "cost-effective*"
+				    ("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" OR "moderate" OR "fair" OR "accessib*" OR "economical*" OR "cost-effective*" OR "cheap"
 				    )
+        )
 )
 
 ```
