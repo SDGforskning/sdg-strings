@@ -358,8 +358,6 @@ TS=
 >
 > 9.b.1 Proportion of medium and high-tech industry value added in total value added
 
-The goal is to help developing nations build their own technological and industrial capacity, diversify their economies, and add more value to raw materials rather than relying solely on exports of unprocessed goods. 
-
 This target is interpreted to cover research about supporting technology development, research and innovation in developing countries. 
   
 This query consists of one phrase. This phrase is about supporting technology development, research and innovation in developing countries. Basic structure is action + technology/research development + developing countries.
@@ -436,6 +434,4 @@ Specialist input:
 
 <span id="f10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
-<span id="f11">United Nations. (n.d.). Goal 9: Industry, innovation and infrastructure. Retrieved from https://www.un.org/sustainabledevelopment/infrastructure-industrialization/
-
-<span id="f12">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
+<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
