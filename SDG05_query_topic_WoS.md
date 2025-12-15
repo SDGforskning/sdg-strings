@@ -72,7 +72,7 @@ TS=
           OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
           )
       )
-    OR ("exclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")
+    OR ("exclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
     OR
       ( 
         ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
@@ -88,11 +88,11 @@ TS=
         OR "pregnan*" OR "maternity" OR "maternal"
         OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-        )
-    )      
+        )      
   )  
 )
 ```
+
 #### Phrase 2
 
 This phrase aims to find works about inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *anti-discrimination/rights + women, girls and gender*
