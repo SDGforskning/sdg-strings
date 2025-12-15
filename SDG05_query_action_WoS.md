@@ -798,54 +798,46 @@ This phrase covers ensuring women's access and rights to economic resources, nat
 
 "security" is used only together with other terms, because otherwise there are many results about food security. The same applies to "control", as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
-The string does find some results about access/barriers to medical care related to income, which somewhat outside of scope, but not completely. 
+The string finds quite many results about access/barriers to medical care related to income, and differences in access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to women and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`. 
 
 ```py
 TS=
 (
-    (
-        (
-            (
-                ("ensur*" OR "establish*" OR "propos*" OR "implement*"
-                OR "improv*" OR "increas*" OR "better" OR "reform*"
-                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-                OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
-                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-                )
-                NEAR/5
-                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-                    OR "ownership" OR "landownership" OR "right$"
-                    OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
-                    OR "affordab*" OR "pro poor"
-                    OR "empower*" OR "inclusion" OR "sharing"
-                    OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
-                    )
-            )
-            OR
-            (
-                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
-                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
-                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-                )
-                NEAR/5
-                    ("inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-                    OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
-                    )      
-            )
-        )
-        NEAR/5
-            ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-            OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
-            OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
-            )
+  (
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
+    OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+    OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
+    OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+    OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+    OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
     )
-    AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+    NEAR/5
+        (
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+          OR "ownership" OR "landownership" OR "homeownership" OR "right$"
+          OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
+          OR "affordab*" OR "pro poor"
+          OR "empower*" OR "inclusion" OR "sharing"
+          OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
+          OR "inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+          OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
+          )
+          NEAR/15
+              ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
+              OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
+              OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
+              OR "natural resource$"
+              )
         )
+  )
+  AND
+      ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+      OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+      OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+      OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+      OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+      )
 )
 ```
 

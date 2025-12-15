@@ -460,7 +460,7 @@ This phrase covers women's access and rights to financial services. The basic st
 
 Sources of terms for financial services included <a href="#f2">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f3">UNSGSA et al. (2018)</a>. For the topic approach, we allow some terms which are already closely related to the idea of access to stand alone without being connected to access or rights explicitly; this includes microfinance types (where access is a primary objective) and "financial inclusion".
 
-The string does find some results about access/barriers to medical care related to insurance, which somewhat outside of scope, but not completely. 
+The string does find some results about access/barriers to medical care related to insurance, which somewhat outside of scope, but not completely. `banks` may find some results about "seed banks", but we consider these to fall under "natural resources" so are not considered out of scope for this target. 
 
 ```py
 TS=
@@ -500,14 +500,14 @@ This phrase covers women's access and rights to economic resources, natural reso
 
 "security" is used only together with other terms, because otherwise there are many results about food security. The same applies to "control", as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
-The string does find some results about access/barriers to medical care related to income, which somewhat outside of scope, but not completely. 
+The string finds quite many results about access/barriers to medical care related to income, and differences in access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to women and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`. 
 
 ```py
 TS=
 (
     (
         ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-        OR "ownership" OR "landownership" OR "right$"
+        OR "ownership" OR "landownership" OR "homeownership" OR "right$"
         OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
         OR "affordab*" OR "pro poor"
         OR "empower*" OR "inclusion" OR "sharing"
@@ -515,10 +515,11 @@ TS=
         OR "inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
         OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
         )
-        NEAR/5
+        NEAR/15
             ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-            OR "income" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
-            OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+              OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
+              OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
+              OR "natural resource$"
             )
     )
     AND
