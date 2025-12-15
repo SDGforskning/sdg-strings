@@ -285,44 +285,38 @@ This phrase covers ensuring access and rights to economic resources, natural res
 
 "security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
+The string finds quite many results about access/barriers to medical care related to income, and access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to vulnerable groups and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`.
+
 ```py
 TS=
 (
   (
-    (
-      (
-        ("ensure" OR "establish*" OR "propose*" OR "implement*"
-        OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
-        OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-        OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" OR "reform*"
-        OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-        )
-        NEAR/5
-            ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-            OR "ownership" OR "landownership" OR "homeownership" OR "right$"
-            OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
-            OR "affordab*" OR "pro poor"
-            OR "empower*" OR "inclusion" OR "sharing"
-            OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
-            )
-      )
-      OR
-      (
-        ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
-        OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
-        )
-        NEAR/5
-            ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-            OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
-            )      
-      )
+    ("ensure" OR "establish*" OR "propose*" OR "implement*"
+    OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+    OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+    OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" OR "reform*"
+    OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+    OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+    OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
     )
     NEAR/5
-        ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labo$r market" OR "labo$r force"
-        OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
-        OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "livestock owner*" OR "livestock asset$"
-        OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
-        OR "natural resource$"
+        (
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+          OR "ownership" OR "landownership" OR "homeownership" OR "right$"
+          OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
+          OR "affordab*" OR "pro poor"
+          OR "empower*" OR "inclusion" OR "sharing"
+          OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
+          OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+          OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
+          )
+          NEAR/15
+              ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labo$r market" OR "labo$r force"
+              OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
+              OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "livestock owner*" OR "livestock asset$"
+              OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
+              OR "natural resource$"
+              )
         )
   )
   AND

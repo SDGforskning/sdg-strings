@@ -210,6 +210,8 @@ This phrase covers access and rights to economic resources, natural resources, l
 
 "security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
+The string finds quite many results about access/barriers to medical care related to income, and access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to vulnerable groups and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`.
+
 ```py
 TS=
 (
@@ -223,7 +225,7 @@ TS=
     OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
     OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
     )      
-    NEAR/5
+    NEAR/15
         ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labo$r market" OR "labo$r force"
         OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
         OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "livestock owner*" OR "livestock asset$"
