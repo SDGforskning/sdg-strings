@@ -285,7 +285,7 @@ This phrase covers ensuring access and rights to economic resources, natural res
 
 "security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
-The string finds quite many results about access/barriers to medical care related to income, and access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to vulnerable groups and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`.
+The string finds quite many results about access/barriers to medical care related to income, and access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to vulnerable groups and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`. We also consider them relevant to the "basic services" (healthcare) part of this target.
 
 ```py
 TS=
