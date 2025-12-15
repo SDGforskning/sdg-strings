@@ -749,55 +749,46 @@ This phrase covers ensuring women's access and rights to financial services. The
 
 Sources of terms for financial services included <a href="#f2ca">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f5ca">UNSGSA et al. (2018)</a>.
 
-The string does find some results about access/barriers to medical care related to insurance, which somewhat outside of scope, but not completely. 
+The string does find some results about access/barriers to medical care related to insurance, which somewhat outside of scope, but not completely. `banks` may find some results about "seed banks", but we consider these to fall under "natural resources" so are not considered out of scope for this target. 
 
 ```py
 TS=
 (
-    (
-        (
-            (
-                ("ensur*" OR "establish*" OR "propos*" OR "implement*"
-                OR "improv*" OR "increas*" OR "better" OR "reform*"
-                OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-                OR "develop" OR "development" OR "attain*" OR "achiev*" OR "improv*" OR "strengthen*"
-                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-                )
-                NEAR/5
-                    ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-                    OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-                    OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-                    )
-            )
-            OR
-            (
-                ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
-                OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
-                OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-                )
-                NEAR/5
-                    ("inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
-                    OR "unaffordab*" OR "expensive"
-                    OR "unbanked"
-                    )      
-            )
-        )
-        NEAR/15
-            ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
-            OR "banks" OR "a bank" OR "banking" OR "bank account$"
-            OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-            OR "credit" OR "entrepreneurial finance" OR "loan$" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
-            OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
-            OR "financial inclusion" 
-            )
+  (
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
+    OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+    OR "develop" OR "development" OR "attain*" OR "achiev*" OR "improv*" OR "strengthen*"
+    OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+    OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+    OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
     )
-    AND
-        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+    NEAR/5
+        (
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+          OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+          OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+          OR "inaccessib*" OR "barrier$" OR "hindrance$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+          OR "unaffordab*" OR "expensive"
+          OR "unbanked"
+          ) 
+          NEAR/15
+              ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
+              OR "banks" OR "a bank" OR "banking" OR "bank account$"
+              OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+              OR "credit" OR "entrepreneurial finance" OR "loan$" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+              OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+              OR "financial inclusion" 
+              )
         )
+  )
+  AND
+      ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+      OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+      OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+      OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+      OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+      )
 )
 ```
 
