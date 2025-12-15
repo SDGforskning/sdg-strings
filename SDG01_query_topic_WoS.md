@@ -215,7 +215,7 @@ TS=
 (
   (
     ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-    OR "ownership" OR "right$"
+    OR "ownership" OR "landownership" OR "homeownership" OR "right$"
     OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
     OR "affordab*" OR "pro poor"
     OR "empower*" OR "inclusion" OR "sharing"
