@@ -36,9 +36,9 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about reliable, sustainable and resilient infrastructure that is affordable and equitable for all.  
 
-We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks <a href="f4">(Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10 </a>; <a href="f8">United Nations Environment Programme, 2021, 8)</a>.
+We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks <a href="#f4">(Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10 </a>; <a href="#f8">United Nations Environment Programme, 2021, 8)</a>.
 
-Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; <a href="f4">Soriano et al., 2022</a>; <a href=#"f8">United Nations Environment Programme, 2021</a>. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
+Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; <a href="#f4">Soriano et al., 2022</a>; <a href="#f8">United Nations Environment Programme, 2021</a>. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
 
 We understand that economic and social well-being is the result not the target and therefore terms are not added in the phrase.
 
@@ -371,7 +371,7 @@ Specialist input:
 
 ## 5. Footnotes
 
-<span id="f3">2023 HLPF thematic review of SDG 9 https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
+<span id="f12">2023 HLPF thematic review of SDG 9 https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
 
 <span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
@@ -389,8 +389,8 @@ Specialist input:
 
 <span id="f8">United Nations Environment Programme. (2021).</span> *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
 
-<span id="9">United Nations Industrial Development Organization. (2013).</span> *Lima Declaration: Towards Inclusive and Sustainable Industrial Development*. General Conference Resolution GC.15/Res.1. Lima, Peru: UNIDO, 2013. Available: https://www.unido.org [Accessed 9.7.2025]
+<span id="f9">United Nations Industrial Development Organization. (2013).</span> *Lima Declaration: Towards Inclusive and Sustainable Industrial Development*. General Conference Resolution GC.15/Res.1. Lima, Peru: UNIDO, 2013. Available: https://www.unido.org [Accessed 9.7.2025]
 
-<span id="10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
+<span id="f10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
 <span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
