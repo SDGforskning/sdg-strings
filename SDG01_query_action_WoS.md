@@ -231,10 +231,10 @@ Sources of terms for *financial services* included <a id="DESA">[Department of E
 TS=
 (
   (
-    ("ensure" OR "establish*" OR "propose*" OR "implement*"
-    OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
     OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-    OR "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+    OR "develop" OR "development" OR "attain*" OR "achiev*" OR "improv*" OR "strengthen*"
     OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
     OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
     OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
@@ -291,10 +291,10 @@ The string finds quite many results about access/barriers to medical care relate
 TS=
 (
   (
-    ("ensure" OR "establish*" OR "propose*" OR "implement*"
-    OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
     OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-    OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*" OR "reform*"
+    OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
     OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
     OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
     OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
@@ -351,10 +351,12 @@ TS=
 (
   (
     (
-      ("ensure" OR "establish*" OR "propose*" OR "implement*"
-      OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+      ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+      OR "improv*" OR "increas*" OR "better" OR "reform*"
       OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-      OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+      OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
+      OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+      OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
       OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
       )
       NEAR/5
