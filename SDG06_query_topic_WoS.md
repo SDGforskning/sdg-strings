@@ -2,7 +2,7 @@
 
 Ensure availability and sustainable management of water and sanitation for all 
 
-**Status: This query is currently under development (2025)**
+**Status: This query is a finished draft. It has not been formally tested.**
 
 **Contents**
 
@@ -11,7 +11,6 @@ Ensure availability and sustainable management of water and sanitation for all
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
-
 
 ## 1. Full query
 
@@ -959,7 +958,7 @@ TS=
 
 ## 4. Contributions
 
-* v2.1.0: Leena Byholm (Sept 2025)
+* v2.1.0: Leena Byholm (2025)
 
 Specialist input: 
 
