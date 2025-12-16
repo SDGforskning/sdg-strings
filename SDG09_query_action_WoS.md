@@ -336,7 +336,7 @@ TS=
 ( 
         ( "increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "foster*" OR "more efficient*" OR "more effectiv*" OR "higher$" OR "upgrad*" OR "scal* up" OR "build*" OR "expand*" OR "accelerat*" OR "heighten*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "developed" OR "empower*" OR "promot*" OR "ensur*" OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
         )  
-    AND 
+    NEAR/5 
         (("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
         )  
             NEAR/5 
