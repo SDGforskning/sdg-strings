@@ -297,27 +297,39 @@ TS=
 
 This target is interpreted to cover research about 
 
-* Increasing technological capabilities and research within or to do with industry 
-* Increasing innovation, and increasing R&D capacity, including workforce and funding.
+* Upgrading/enhancing technological capabilities and research within or to do with industry.
+* Encouraging innovation, and increasing R&D capacity, including workforce and funding.
 
 SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. (The Sustainable Development Goals. Extended Report 2024). 
 
-This query consists of 1 phrase. The elements of the phrase are action + research/innovation/R&D/technology + industry/capability/workforce.
+This query consists of 2 phrases. 
+
+#### Phrase 1
+
+This phrase is about upgrading/enhancing technological capabilities and research within or to do with industry. The elements of the phrase are action + technolocal capabilities/R&D + industry.
 
 ```py
 TS=
 (
-     ("upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "improv*" OR "legislat*" OR "governance" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*" 
-     ) 
+     ("boost*" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"
+		OR "legislat*" OR "regulat*" OR "juridic*" OR "policy" OR "policies"
+		)
      NEAR/5
-      ( ("research" OR "innovation*" OR "R&D" OR "R & D" OR "research and development" OR "research & development" OR "technology" OR "technological capabilities" 
+      ("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
+		OR  "research and development and innovation$" OR "research & development & innovation$" OR "research-development-innovation$" OR "RDI"
+	  OR "technological capabilit*" OR "technology capabilit*" OR "technological competenc*" OR "innovation capabilit*"
         ) 
-      NEAR/5 
-      ("industr*" OR "capacity" OR "capabilit*" OR "sector*" OR "institutions" OR "national" OR "regional" OR "worker*" OR "workforce" OR "researcher$" OR "invest*" OR "financ*" OR "fund*" OR "spending*" OR "expend*" OR "expense*" OR "GDP" OR "gross domestic product" OR "subsidy" OR "subsidi*" 
-      )
-    ) 
-) 
-```
+		NEAR/5
+		("industry" OR "industrial sector*" OR "industrial enterprise$"
+		)
+)
+
+```py
+
+#### Phrase 2
+
+
+
 
 ### Target 9.a
 
