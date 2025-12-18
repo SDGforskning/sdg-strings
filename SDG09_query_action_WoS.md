@@ -330,6 +330,8 @@ TS=
 
 This phrase is about upgrading/enhancing technological capabilities and research within or to do with industry. The elements of the phrase are action + R&D capacity/innovation/workforce.
 
+```py
+
 TS=
 (
      ("increas*" OR "boost*" OR "add" OR "raise" OR "grow" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" 
@@ -347,6 +349,7 @@ TS=
 			)
 )
 
+```py
 
 ### Target 9.a
 
