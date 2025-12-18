@@ -328,7 +328,7 @@ TS=
 
 #### Phrase 2
 
-This phrase is about upgrading/enhancing technological capabilities and research within or to do with industry. The elements of the phrase are action + R&D capacity/innovation/workforce.
+This phrase is about encouraging innovation, and increasing R&D capacity, including workforce and funding. The elements of the phrase are action + R&D capacity/innovation/workforce.
 
 ```py
 
