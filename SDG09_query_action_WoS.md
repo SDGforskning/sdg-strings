@@ -328,7 +328,24 @@ TS=
 
 #### Phrase 2
 
+This phrase is about upgrading/enhancing technological capabilities and research within or to do with industry. The elements of the phrase are action + R&D capacity/innovation/workforce.
 
+TS=
+(
+     ("increas*" OR "boost*" OR "add" OR "raise" OR "grow" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" 
+     OR "legislat*" OR "regulat*" OR "juridic*" OR (("policy" OR "policies") NEAR/3 ("effect*" OR "impact*" OR "influenc*"))
+	 )
+ 		NEAR/5
+		("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
+		OR  "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
+		)
+			NEAR/5 
+			("innovation$" OR "capacity" OR "capabilit*"
+			OR (("worker*" OR "workforce" OR "employee" OR "staff" OR "labor" OR "labour") NEAR/3 ("number*" OR "amount" OR "share")) OR ("job$" NEAR/1 "creat*")
+			OR "invest$" OR "investing" OR "investment$" OR "financ*" OR "fund$" OR "funding" OR "spending*" OR "expend*" OR "expense*" 
+			OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR "resource$"
+			)
+)
 
 
 ### Target 9.a
