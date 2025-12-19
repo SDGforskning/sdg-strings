@@ -147,17 +147,17 @@ We use the standard "women, girls and gender string" as described in General int
 ```py
 TS=
 (
-    (
-        (
-            ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
-            OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
-            OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
-            OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
-            ) 
-            NEAR/5
-                ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-                "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
-				)
+	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
+	 OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
+     OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
+     OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+     ) 
+	NEAR/5
+	(
+    	(
+		  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
+           "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
+		  )
         )
         NEAR/15
         (             
