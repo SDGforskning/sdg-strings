@@ -102,11 +102,11 @@ TS=
 (
   ("women's rights" OR "rights of women" OR "women's freedom"
   OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
-  OR "gender equalit*" OR "gender equit*" OR "gender equal*"
+  OR "gender equalit*" OR "gender equit*" OR "gender equal*" OR "equal pay*"
   )
   OR
   (
-    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" OR "equal pay*"
+    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
     OR ("inclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")) 
     )
     NEAR/5
