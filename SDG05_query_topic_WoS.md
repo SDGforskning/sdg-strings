@@ -583,7 +583,7 @@ tools. It can include, but is not limited to, old media such as radio, televisio
 as well as new media networks (fixed or wireless Internet), hardware (computers, mobile
 phones, tablets, etc.) and software (social media services, multimedia applications, mobile apps, etc.)" <a href="#f4li">(UN APCICT, 2016, p.31)</a>. 
 
-For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>.    
+For definitions of gender equality and empowerment we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>. The standard "women and girls string" (<a href="https://github.com/SDGforskning/sdg-strings/blob/Workingbranch-SDG5/SDG05_query_topic_WoS.md#general-interpretation-note">see general interpretation note</a>) has been slightly modified; the part with ("sex*" NEAR/5 ("based" OR ...etc) has been omitted because of non-relevant results.  
 
 This query consists of 1 phrase:
 
