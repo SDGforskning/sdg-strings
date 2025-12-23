@@ -329,7 +329,7 @@ Sources used for finding terms:
 
 
 
-This query consists of 1 phrase.
+This query consists of 2 phrases.
 
 #### Phrase 1
 
@@ -346,8 +346,8 @@ TS=
     OR "pregnan*" OR "maternity" OR "maternal" 
     OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" OR 
     (("gender*" OR "transgender*" OR "transperson*" OR "non-binary" OR "sex") NEAR/5 
-        ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap" OR "based" OR "bias" 
-        OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" ))    
+        ("*parit*" OR "*equal*" OR "*equi*" OR "*balanc*" OR "divide*" OR "gap" OR "based" OR "bias*" 
+        OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*"))    
     )            
         NEAR/5 
             (
@@ -373,6 +373,59 @@ TS=
             )                       
 )
 ```
+#### Phrase 2
+
+The basic structure is _barriers against_ + _women/gender equality_ + _participation/leadership/decisionmaking_ 
+
+```py
+TS=
+(
+    (
+        (
+            ("barrier*" OR "bias*" OR "discriminat*" OR "divide*" OR "exclusion" OR "hindrance*" OR "hinder" OR "inequal*" OR "unequal*"
+            OR "inequit*" OR "unequit*" OR "obstacle*" OR "unbalanc*" OR "imbalanc*" OR "disparit*" OR "underrepresentation")
+                NEAR/5
+                (
+                ("*women" OR "*woman" OR "*womens" OR "*womans" 
+                OR "girl$" 
+                OR "female$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" 
+                OR "niece$" OR "daughter$" 
+                OR "wife" OR "wives" OR "girlfriend$" 
+                OR "maternity" OR "maternal" 
+                OR "lesbian*" OR "sexual* and gender") OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary") 
+                NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*"))
+                )
+        )
+            OR 
+            ("glass ceiling*" OR "gender divide*" OR "gender gap*" OR "gender disparit*" 
+            OR "gender inequalit*" OR "gender imbalanc*" OR "gender inequit*")
+    )
+                        NEAR/5 
+                        (   
+                            ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" 
+                            OR "ceo*" OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" 
+                            OR "mp" OR "mps" OR "member* of congress" OR "head of state" OR "member* of parliament" 
+                            OR "presiden*" OR "government" OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*" 
+                            )              
+                            OR
+                            (   
+                            ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" 
+                            OR "council*" OR "artistic") NEAR/3 ("director*" OR "executive*" OR "officer*" 
+                            OR "official*" OR "position*" OR "member*" OR "traditional" )
+                            )   
+                            OR
+                            (
+                            ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" 
+                            OR "quota" OR "promotion" ) NEAR/3 ("decisionmak*" OR "decision-mak*" OR "decision*" 
+                            OR "decid*" OR "policymak*" OR "policy-mak*" OR "politics" OR "business*" OR "corporate" 
+                            OR "public" OR "economic" OR "civil" OR "society" OR "communit*" OR "authorit*" OR "economic" 
+                            OR "society" OR "communit*" OR "power")
+                            )  
+                        )                  
+)
+```
+
 
 ### Target 5.6
 
