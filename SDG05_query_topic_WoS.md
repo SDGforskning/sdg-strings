@@ -646,7 +646,7 @@ TS=
 
 This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c <a href="#f6li">(UN Statistics, 2023)</a>    we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
 
-For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>.     
+For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>. The standard "women and girls string" (see general interpretation note) has been slightly modified: "Violence" has been removed for better relevance.    
 
 This query consists of 2 phrases:
 
@@ -672,7 +672,8 @@ TS=
                 OR "lesbian*" 
                 OR "gender*" OR "sexual* and gender" 
                 OR "transgender*" OR "transperson*" OR "non-binary"
-                OR "sex")
+                OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" 
+                OR "difference*" OR "bias*" OR "discriminat*")))
                 NEAR/3
                     ("autonomy" OR "*balanc*" OR "bias" OR "based" OR "capacity*" OR "decision-making" 
                     OR "discriminat*" OR "divide*" OR "diversit*" 
@@ -692,7 +693,7 @@ TS=
 
 
 The basic structure is _systems/policies for allocations for gender equality_  .
-The NOT phrase has been included to exclude results related to transplantation and organ donation.
+The NOT phrase has been included to exclude results about allocation policy related to transplantations.
 
 ```py
 TS=
@@ -722,7 +723,8 @@ TS=
                 OR "lesbian" 
                 OR "gender*" OR "sexual* and gender" 
                 OR "transgender*" OR "transperson*" OR "non-binary"
-                OR "sex")
+                OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" 
+                OR "difference*" OR "bias*" OR "discriminat*")))
                 NEAR/3
                     ("autonomy" OR "*balanc*" OR "bias" OR "based" OR "capacity*" OR "decision-making" 
                     OR "discriminat*" OR "divide*" OR "diversit*" 
