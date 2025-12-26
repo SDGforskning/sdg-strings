@@ -333,7 +333,7 @@ This query consists of 2 phrases.
 
 #### Phrase 1
 
-The basic structure is _women/gender equality_ + _participation/leadership/decisionmaking_ 
+The phrase covers women's participation/leadership/decisionmaking. The basic structure is _women/gender equality_ + _participation/leadership/decisionmaking_ 
 
 ```py
 TS= 
@@ -354,7 +354,8 @@ TS=
                 ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" OR "ceo*" 
                 OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
                 OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
-                OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*")
+                OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*"
+                )
                 OR
                 (
                 ("chief*" OR "senior" OR "top" OR "managing" OR "enterprise*" OR "board" OR "head" OR "council*" 
@@ -365,17 +366,15 @@ TS=
                 OR
                 (   
                 ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" 
-                OR "quota" OR "promotion") NEAR/3 ("decisionmak*" OR "decision-mak*" OR "decision*" OR "decid*" 
-                OR "policymak*" OR "policy-mak*" OR "politics" OR "business*" OR "corporate" OR "public" 
-                OR "economic" OR "civil" OR "society" OR "communit*" OR "authorit*" OR "economic" 
-                OR "society" OR "communit*" OR "power")
+                OR "quota*" OR "promotion") NEAR/3 ("authorit*" OR "business*" OR "civil" OR "communit*" OR "corporate" OR "decid*"
+                OR "decision*" OR "economic" OR "politics" OR "policymak*" OR "policy-mak*" OR "power" OR "public" OR "society")
                 )
             )                       
 )
 ```
 #### Phrase 2
 
-The basic structure is _barriers against_ + _women/gender equality_ + _participation/leadership/decisionmaking_ 
+The phrase covers barriers against women's participation/leadership/decisionmaking. The basic structure is _barriers against_ + _women/gender equality_ + _participation/leadership/decisionmaking_ 
 
 ```py
 TS=
@@ -389,11 +388,10 @@ TS=
                 ("*women" OR "*woman" OR "*womens" OR "*womans" 
                 OR "girl$" 
                 OR "female$" 
-                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" 
-                OR "niece$" OR "daughter$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$"OR "niece$" OR "daughter$" 
                 OR "wife" OR "wives" OR "girlfriend$" 
-                OR "maternity" OR "maternal" 
-                OR "lesbian*" OR "sexual* and gender") OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary") 
+                OR "pregnan*" OR "maternity" OR "maternal" 
+                OR "lesbian*" OR "sexual* and gender") OR (("gender*" OR "transgender*" OR "transperson*" OR "non-binary" OR "sex") 
                 NEAR/5 ("parit*" OR "equal*" OR "equi*" OR "balanc*"))
                 )
         )
@@ -417,10 +415,9 @@ TS=
                             OR
                             (
                             ("participat*" OR "involv*" OR "represent*" OR "engag*" OR "position*" OR "voice*" 
-                            OR "quota" OR "promotion" ) NEAR/3 ("decisionmak*" OR "decision-mak*" OR "decision*" 
-                            OR "decid*" OR "policymak*" OR "policy-mak*" OR "politics" OR "business*" OR "corporate" 
-                            OR "public" OR "economic" OR "civil" OR "society" OR "communit*" OR "authorit*" OR "economic" 
-                            OR "society" OR "communit*" OR "power")
+                            OR "quota*" OR "promotion" ) NEAR/3 ("authorit*" OR "business*" OR "civil" OR "communit*" OR "corporate" 
+                            OR "decid*" OR "decision*" OR "economic" OR "politics" OR "policymak*" OR "policy-mak*" 
+                            OR "power" OR "public" OR "society")
                             )  
                         )                  
 )
@@ -620,10 +617,12 @@ TS=
             ("*women" OR "*woman" OR "*womens" OR "*womans"
             OR "girl$"
             OR "female$"
-            OR "sister$" OR "mother$" OR "daughter$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" 
+            OR "sister$" OR "mother$"  OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
             OR "wife" OR "wives" OR "girlfriend$"
-            OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-            OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson" OR "non-binary"     
+            OR "pregnan*" OR "maternity" OR "maternal" 
+            OR "lesbian*"
+            OR "gender*" OR "sexual and gender" 
+            OR "transgender*" OR "transperson" OR "non-binary"     
             )
             NEAR/10
                     ("autonomy" OR "control" OR "decision-making" OR "economic strength"
@@ -646,7 +645,7 @@ TS=
 
 This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c <a href="#f6li">(UN Statistics, 2023)</a>    we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
 
-For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>. The standard "women and girls string" (see general interpretation note) has been slightly modified: "Violence" has been removed for better relevance.    
+For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f7li">(UNICEF, 2017)</a>. The standard "women and girls string" (<a href="https://github.com/SDGforskning/sdg-strings/blob/Workingbranch-SDG5/SDG05_query_topic_WoS.md#general-interpretation-note">see general interpretation note</a>) has been slightly modified: "Violence" has been removed for better relevance.    
 
 This query consists of 2 phrases:
 
@@ -717,7 +716,7 @@ TS=
             (
                 ("*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$"
                 OR "female$"   
-                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$"OR "daughter$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
                 OR "wife" OR "wives" OR "girlfriend$" 
                 OR "pregnan*" OR "maternity" OR "maternal" 
                 OR "lesbian" 
