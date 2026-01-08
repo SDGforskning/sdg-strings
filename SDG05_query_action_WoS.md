@@ -62,7 +62,7 @@ TS=
     OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
     )  
     NEAR/5
-        ("misogyn*" OR "sexism" OR "sexist"
+        ("misogyn*" OR "sexism" OR "sexist" OR "CEDAW"
         OR
             (
                 ("discriminat*" OR "dispar*"
