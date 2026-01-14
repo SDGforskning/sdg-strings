@@ -158,41 +158,37 @@ TS=
   ) 
   NEAR/15 
     ("sanitation" 
-    OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
-    OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-    OR "safely managed sanitation services" 
-    OR "improved sanitation facilit*" 
-    OR "wet sanitation technolog*" 
-    OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-    OR "dry sanitation" 
-    OR "dry pit latrine$ with slabs" OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
-    OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
-    OR "separating toilet$" OR "separating latrine$" 
-    OR "outhouse$"
-    OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
-    OR
-      (
-        ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" 
-        OR "adequate" OR "access" OR "improved") 
-          NEAR/5 ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*")
-      ) 
-    OR 
-      (
-        ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
-        OR
-          (
-            ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
-            OR "emptying" OR "transport" OR "reuse"
-            ) 
-            NEAR/3 ("wastewater" OR "human excreta" OR "animal excreta" OR "fecal" OR "faecal" 
-                   OR "feces" OR "faeces" OR "black water" OR "urine" OR "compost")
+      OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+      OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+      OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+          
+      OR "safely managed sanitation services" 
+      OR "improved sanitation facilit*" 
+      OR "wet sanitation technolog*" 
+      OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
+      OR "dry sanitation" 
+      OR "dry pit latrine$ with slabs" OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+      OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
+      OR "separating toilet$" OR "separating latrine$" 
+      OR "outhouse$"
+      OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
+      OR "toilet$" OR "lavator*" OR "latrine*" OR "water closet*" 
+      OR 
+        (
+          ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
+            OR
+              (
+                ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
+                  NEAR/3 ("wastewater" OR "human excreta" OR "animal excreta" 
+                        OR "fecal" OR "faecal" OR "feces" OR "faeces" 
+                        OR "black water" OR "urine" OR "compost")
+              )
           )
-        )
-        NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
-      )
+          NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
+          )
     )
-)       
+)
+     
 
 ```
 

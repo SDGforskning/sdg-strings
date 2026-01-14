@@ -219,12 +219,7 @@ TS=
           OR "separating toilet$" OR "separating latrine$" 
           OR "outhouse$"
           OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
-          OR 
-            (
-              ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" 
-              OR "adequate" OR "access" OR "improved") 
-              NEAR/5 ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*") 
-            ) 
+          OR "toilet$" OR "lavator*" OR "latrine*" OR "water closet*"   
           OR 
             (
               ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
