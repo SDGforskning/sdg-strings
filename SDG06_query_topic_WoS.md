@@ -208,12 +208,13 @@ The elements of the phrase are *inadequate/unsafe/unimproved/lacking + sanitatio
 TS=
 (
   (
-    ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
-    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary" OR "limited"
+    ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "limited" 
+        OR "unimproved" OR "unsafe" OR "unhygienic" OR "unsanitary" OR "insanitary" 
+        OR "absent" OR "absence" OR "lack*"
     ) 
     NEAR/3 
-      (
-        (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*")) 
+      ("sanitation" 
+       OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
         OR "handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$") 
         OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
       )
