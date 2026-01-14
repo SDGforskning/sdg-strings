@@ -137,11 +137,13 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+This phrase aims to find research about safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>. We thank PhD Anni Juvakoski for her specialist contribution to improving the phrase and finding more relevant search terms. 
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+`Toilets` with synonyms are linked to `safe` -string to focus on basic services rather than e.g. residental area planning. Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
 
 Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
+
+As pointed out by our specialist, we have not included brands (such as EcoSan toilets) in the search terms. We felt that an equitable and up-do-date list of brands would be challenging to maintain. But this may exclude articles mentioning only the brand and not e.g. "improved toilets".
 
 Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
 
@@ -151,8 +153,8 @@ The elements of the phrase are *safe/equitable/access + WASH/safely managed sani
 TS=
 (
   ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
-  OR "adequate" OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
-  OR "hinder*" OR "hindrance*" 
+  OR "adequate" OR "appropriate" OR "access" OR "availab*" OR "unavailab*" 
+  OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" OR "limited"
   ) 
   NEAR/15 
     ("sanitation" 
@@ -164,11 +166,15 @@ TS=
     OR "wet sanitation technolog*" 
     OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
     OR "dry sanitation" 
-    OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation") 
-    OR 
+    OR "dry pit latrine$ with slabs" OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+    OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
+    OR "separating toilet$" OR "separating latrine$" 
+    OR "outhouse$"
+    OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
+    OR
       (
         ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
-          NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*")
+          NEAR/5 ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*")
       ) 
     OR 
       (
@@ -178,7 +184,8 @@ TS=
             ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" 
             OR "emptying" OR "transport" OR "reuse"
             ) 
-            NEAR/3 ("wastewater" OR "human excreta" OR "faecal sludge")
+            NEAR/3 ("wastewater" OR "human excreta" OR "animal excreta" OR "fecal" OR "faecal" 
+                   OR "feces" OR "faeces" OR "black water" OR "urine" OR "compost")
           )
         )
         NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
@@ -960,7 +967,7 @@ TS=
 
 * v2.1.0: Leena Byholm (2025)
 
-Specialist input: 
+Specialist input: Anni Juvakoski (PhD), target 6.2, January 2026
 
 ## 5. Footnotes
 
