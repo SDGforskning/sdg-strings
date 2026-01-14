@@ -221,7 +221,8 @@ TS=
           OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
           OR 
             (
-              ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
+              ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" 
+              OR "adequate" OR "access" OR "improved") 
               NEAR/5 ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*") 
             ) 
           OR 
