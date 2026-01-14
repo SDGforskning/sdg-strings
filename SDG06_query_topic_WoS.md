@@ -154,7 +154,7 @@ TS=
 (
   ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
   OR "adequate" OR "appropriate" OR "access" OR "availab*" OR "unavailab*" 
-  OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*" OR "limited"
+  OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*"
   ) 
   NEAR/15 
     ("sanitation" 
@@ -209,7 +209,7 @@ TS=
 (
   (
     ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
-    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary"
+    OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary" OR "limited"
     ) 
     NEAR/3 
       (
