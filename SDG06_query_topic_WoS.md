@@ -125,7 +125,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and WHO/UNICEF JMP Sanitation website we have built the phrases to search for any research mentioning access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate". Terms `basic` and `limited` are added in the `safe` string since they might be used in the papers about improved sanitation.
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and WHO/UNICEF JMP Sanitation website we have built the phrases to search for any research mentioning access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
@@ -133,17 +133,19 @@ Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housin
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include inequalities they may face in access to sanitation and hygiene. 
 
+We would like to thank PhD Anni Juvakoski for her specialist advise and for finding more relevant search terms. 
+
 This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>. We thank PhD Anni Juvakoski for her specialist contribution to improving the phrase and finding more relevant search terms. 
+This phrase aims to find research about safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a>
 
 Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general. Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
 
 As pointed out by our specialist, we have not included brands (such as EcoSan toilets) in the search terms. We felt that an equitable and up-do-date list of brands would be challenging to maintain. But this may exclude articles mentioning only the brand and not e.g. "improved toilets".
 
-Some of the terms used as action terms in the action approach phrase are lifted in the `availability` string in order to broaden the search.
+ Terms `basic` and `limited` are added in the `safe` string since they are used in source materials when defining improved sanitation and might be used in research papers.
 
 The elements of the phrase are *safe/equitable/access + WASH/safely managed sanitation services*  
 
