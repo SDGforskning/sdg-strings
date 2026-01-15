@@ -125,7 +125,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and WHO/UNICEF JMP Sanitation website we have built the phrases to search for any research mentioning access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and *WHO/UNICEF JMP Sanitation website* we have built the phrases to search for any research mentioning access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
