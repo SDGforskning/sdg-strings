@@ -131,7 +131,7 @@ As the target is about equal access and a particular focus is on women, girls an
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
-We would like to thank PhD Anni Juvakoski for her specialist advise and for finding more relevant search terms. 
+We would like to thank PhD Anni Juvakoski for her valuable specialist advise and for finding more relevant search terms. 
 
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 

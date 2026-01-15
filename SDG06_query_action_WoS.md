@@ -161,13 +161,13 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and *WHO/UNICEF JMP Sanitation website* we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate". Terms `basic` and `limited` are added in the `safe` string since they might be used in the papers about improved sanitation.
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and *WHO/UNICEF JMP Sanitation website* we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
 
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
-We would like to thank PhD Anni Juvakoski for her specialist advise and for finding more relevant search terms. 
+We would like to thank PhD Anni Juvakoski for her valuable specialist advise and for finding more relevant search terms. 
 
 Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
