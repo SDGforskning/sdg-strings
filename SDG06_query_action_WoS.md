@@ -1171,9 +1171,9 @@ TS=
 
 ## 4. Contributions
 
-* v2.1.0: Leena Byholm (2025)
+* v2.1.0: Leena Byholm (January 2026)
 
-Specialist input: Anni Juvakoski (PhD), target 6.2, January 2026
+Specialist input: Anni Juvakoski (PhD in Water and Environmental Engineering), target 6.2, January 2026
 
 ## 5. Footnotes
 
