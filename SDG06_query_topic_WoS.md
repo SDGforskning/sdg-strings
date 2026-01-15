@@ -129,11 +129,11 @@ However, in addition to searching for safely managed sanitation services as defi
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
-Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
-
 As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include inequalities they may face in access to sanitation and hygiene. 
 
 We would like to thank PhD Anni Juvakoski for her specialist advise and for finding more relevant search terms. 
+
+Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
 This query consists of 3 phrases.
 
