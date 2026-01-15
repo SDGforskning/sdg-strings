@@ -998,20 +998,17 @@ TS=
           ("sanitation" 
           OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
           OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-          OR ("WASH" NEAR/3 ("service$" OR "facilit*" OR "program*" OR "intervention$" OR "initiative$"))
-      
+          OR ("WASH" NEAR/3 ("service$" OR "facilit*"OR "program*" OR "intervention$" OR "initiative$")) 
+          OR "toilet$" OR "lavator*" OR "latrine*" OR "water closet*" OR "outhouse$" 
+    
           OR "safely managed sanitation services" 
           OR "improved sanitation facilit*" 
-          OR "wet sanitation technolog*" 
           OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-          OR "dry sanitation" 
-          OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" 
-          OR "container based sanitation") 
-          OR 
-          (
-            ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
-            NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
-          ) 
+          OR ("pit latrines" NEAR/3 ("slab*" OR "platform*"))
+          OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+          OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
+          OR "separating toilet$" OR "separating latrine$" 
+          OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
           OR 
           (
             ("sewage" 
