@@ -175,9 +175,7 @@ This query consists of 3 phrases.
 
 This phrase aims to find research about providing safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a <a href="#f8">(UN Statistics division 2025)</a>. We thank PhD Anni Juvakoski for her contribution to improving the phrase and finding more relevant search terms.
 
-`Toilets` with synonyms are linked to `safe` -string to focus on basic services rather than e.g. residental area planning. Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
-
-Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
+Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general. Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
 
 As pointed out by our specialist, we have not included brands (such as EcoSan toilets) in the search terms. We felt that an equitable and up-do-date list of brands would be challenging to maintain. But this may exclude articles mentioning only the brand and not e.g. "improved toilets".
 
