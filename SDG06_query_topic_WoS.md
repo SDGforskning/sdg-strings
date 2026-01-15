@@ -305,7 +305,7 @@ TS=
       OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
       OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
       OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-      OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+      OR ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*") 
       )
 )
 ```
