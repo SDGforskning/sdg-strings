@@ -151,7 +151,7 @@ TS=
 
 This target is interpreted to cover research about reducing inequalities in access to safe sanitation and hygiene services, and about advancing access to these services for women, girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#f5">(UN DESA 2018)</a>.
 
-What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> 
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> and WHO/UNICEF JMP Sanitation website <a href="#f21">(WHO/UNICEF JMP)</a>
 
 > *Safely managed sanitation services is about using improved sanitation facilities*.
 > 
@@ -161,7 +161,7 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and WHO/UNICEF JMP Sanitation website we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate". Terms `basic` and `limited` are added in the `safe` string since they might be used in the papers about improved sanitation.
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
@@ -199,7 +199,7 @@ TS=
   )
   NEAR/15 
     (
-      ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
+      ("safe" OR "safely" OR "improved" OR "basic" OR "limited" OR "equitab*" OR "non-equit*" OR "equal*" 
       OR "adequate" OR "appropriate" OR "access" OR "availab*" OR "unavailab*" 
       OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*"
       ) 
@@ -1184,6 +1184,8 @@ Specialist input: Anni Juvakoski (PhD in Water and Environmental Engineering), t
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
 
+<span id="f19"> Lloyd-Smith and Immig (2018).</span> *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf
+
 <span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations [accessed Jun 2022]
 
 <span id="f17"> UNEP.</span> *Integrated water resources management* https://www.unep.org/topics/fresh-water/water-resources-management/integrated-water-resources-management [Accessed 19.9.2025]
@@ -1202,6 +1204,8 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2.4.2025]
 
+<span id="f20"> UN Environment Programme (n.d.).</span> *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]
+
 <span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf 
 
 <span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata 
@@ -1216,6 +1220,8 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f18"> WHO (2025).</span> *Top 10 drinking-water and sanitation related pathogens* https://cdn.who.int/media/docs/default-source/wash-documents/burden-of-disease/top-10-drinking-water-and-sanitation-pathogens_final.pdf?sfvrsn=c0e013da_3&download=true
 
-<span id="f19"> Lloyd-Smith and Immig (2018).</span> *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf
+<span id="f21"> WHO/UNICEF JMP.</span> *Sanitation* https://washdata.org/topics/sanitation [Accessed 15.1.2026]
 
-<span id="f20"> UN Environment Programme (n.d.).</span> *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]
+
+
+
