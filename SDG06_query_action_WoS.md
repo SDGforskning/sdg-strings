@@ -214,7 +214,8 @@ TS=
           OR "wet sanitation technolog*" 
           OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
           OR "dry sanitation" 
-          OR "dry pit latrine$ with slabs" OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+          OR ("pit latrines" NEAR/3 ("slab*" OR "platform*")) 
+          OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
           OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
           OR "separating toilet$" OR "separating latrine$" 
           OR "outhouse$"
@@ -274,7 +275,7 @@ TS=
       )   
       OR "unimproved sanitation facilit*" 
       OR ("flush toilet*" NEAR/3 ("open drain*")) 
-      OR "pit latrines without slab*" 
+      OR ("pit latrines" NEAR/3 ("slab*" OR "platform*")) 
       OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
       OR ("hanging" NEAR/3 ("toilet$" OR "latrine$")) 
       OR "no toilet" 
