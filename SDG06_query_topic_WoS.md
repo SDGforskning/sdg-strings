@@ -480,19 +480,11 @@ TS=
       OR "unsustainab*" OR "irresponsib*" OR "inefficient*" OR "resilient" OR "resilience"
       ) 
       NEAR/3 
-        (
           (
-            ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$")
+            ("withdrawal$" OR "extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$")
             NEAR/15
-                ("water supply" OR "water supplies" OR "water resource$" OR "freshwater"
-                )
-          )
-        OR 
-          (
-            ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
-            NEAR/3 ("water" OR "freshwater")
-          )
-        )
+                "freshwater"  
+          )  
     ) 
   OR 
     (
@@ -513,6 +505,8 @@ TS=
 
 This phrase aims to find research about the use of water resources, water stress and water scarcity.
 
+The phrase contains same element of ´extraction of water´ as phrase 2 but linked more tightly to ´water supplies´ and with the restriction to ´sustainable´ lifted.
+
 The elements of the phrase are *use of water resources/water stress/water scarcity*
 
 A NOT string was added to exclude irrelevant results about a `water filling algorithm`
@@ -523,7 +517,7 @@ TS=
 (
   (
     (
-      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$")
+      ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$")
       NEAR/15
           ("water supply" OR "water supplies" OR "suppl* of freshwater"
           OR "water resource$" OR "freshwater resource$" 
@@ -534,7 +528,7 @@ TS=
       ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
       NEAR/3 ("water" OR "freshwater")
     ) 
-    OR ("water scarcity" OR "water stress" OR "water withdrawal intensity" )
+    OR "water scarcity" OR "water stress" OR "water withdrawal intensity"
   ) 
   NOT ("water-filling" OR "water filling") 
 )
