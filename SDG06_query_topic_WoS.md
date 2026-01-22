@@ -484,8 +484,7 @@ TS=
           (
             ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$")
             NEAR/15
-                ("water supply" OR "water supplies" OR "suppl* of freshwater"
-                OR "water resource$" OR "freshwater resource$" 
+                ("water supply" OR "water supplies" OR "water resource$" OR "freshwater"
                 )
           )
         OR 
@@ -504,7 +503,7 @@ TS=
   OR 
     (
       ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
-	    NEAR/1 ("water" OR "freshwater")
+	    NEAR/1 ("water" OR "freshwater" OR "greywater")
     )
 ) 
 
