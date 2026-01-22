@@ -60,7 +60,7 @@ TS=
   (
     ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" OR "manag*" OR "regulat*" 
     OR "quality" OR "monitor*" 
-    OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+    OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" OR "disinfect*"
     OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
     OR "water provision" OR "household water" OR "domestic water" 
     OR "rainwater"
@@ -68,7 +68,7 @@ TS=
     OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
     OR ("water" NEAR/3 "kiosk*") 
     OR "water security" OR "water insecurity" 
-    OR "water justice"
+    OR "water justice" OR "water safety"
     ) 
     NEAR/5 ("drink*" NEAR/3 "water") 
   ) 
