@@ -1101,7 +1101,7 @@ This target is interpreted to cover research about supporting the participation 
 
 According to the indicator metadata 6.b <a href="#f8">(UN Statistics division 2025)</a> water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
 
-We have combined the terms for `wastewater treatment` `water quality` and `water-related ecosystems` with freswater terms as in the phrases for targets 6.3 and 6.6. 
+We have combined the terms for `wastewater treatment` `water quality` and `water-related ecosystems` with freshwater terms as in the phrases for targets 6.3 and 6.6. 
 
 This query consists of 1 phrase.
 
