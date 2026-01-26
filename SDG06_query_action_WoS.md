@@ -472,7 +472,7 @@ TS=
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$") 
-    OR "drinking water"
+    OR ("drink*" NEAR/1 "water")
     )
 )
 ```
@@ -550,7 +550,7 @@ TS=
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
     OR ("water" NEAR/3 "reservoir$") 
-    OR "drinking water"
+    OR ("drink*" NEAR/1 "water")
     )
 )
 ```
@@ -578,7 +578,7 @@ TS=
           OR "brook$" OR "creek$" 
           OR "aquifer$" OR "groundwater" 
           OR ("water" NEAR/3 "reservoir$") 
-          OR "drinking water"
+          OR ("drink*" NEAR/1 "water")
           )
     )
 )
