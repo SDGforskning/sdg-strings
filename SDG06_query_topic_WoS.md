@@ -499,7 +499,7 @@ TS=
     ) 
   OR "water harvesting" 
   OR ("evaporation" NEAR/3 ("solar" OR "clean water" OR "pure water")) 
-  OR "solar evaporator$"
+  OR "water evaporator$"
 ) 
 
 ```
