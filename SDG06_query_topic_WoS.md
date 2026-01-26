@@ -498,7 +498,7 @@ TS=
 	    NEAR/1 ("water" OR "freshwater" OR "greywater")
     ) 
   OR "water harvesting" 
-  OR ("evaporation" NEAR/3 "clean water")
+  OR ("evaporation" NEAR/3 ("solar" OR "clean water"))
 ) 
 
 ```
