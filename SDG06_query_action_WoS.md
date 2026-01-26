@@ -659,7 +659,7 @@ TS=
       ) 
     OR 
       (("save" OR "saving$") 
-      NEAR/5 ("water" NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
+      NEAR/5 (("water" OR "freshwater") NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
       ) 
     OR "water saving$" 
     OR 
@@ -702,7 +702,8 @@ TS=
           ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
           NEAR/3 ("water" OR "freshwater")
         )
-      OR "water scarcity" OR "water stress" OR "water withdrawal intensity"
+      OR (("water" OR "freshwater") NEAR/1 "scarcity") 
+      OR "water stress" OR "water withdrawal intensity"
       )
   ) NOT ("water-filling" OR "water filling") 
 )
