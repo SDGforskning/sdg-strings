@@ -661,7 +661,7 @@ TS=
       (("save" OR "saving$") 
       NEAR/5 (("water" OR "freshwater") NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
       ) 
-    OR "water saving$" 
+    OR "water saving$" OR "freshwater saving$" 
     OR 
       (
         ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
