@@ -496,7 +496,8 @@ TS=
     (
       ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
 	    NEAR/1 ("water" OR "freshwater" OR "greywater")
-    )
+    ) 
+  OR "water harvesting"
 ) 
 
 ```
