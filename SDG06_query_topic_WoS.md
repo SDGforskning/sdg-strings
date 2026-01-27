@@ -646,7 +646,7 @@ Also `mangroves` are included even though they contain brackish water instead of
 This target is related to 
 * SDG 15, particularly to target 15.1 about conservation of terrestrial and freshwater ecosystems. 
 
-However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than on the protection of species. Nonetheless, since the sources clearly mention biodiversity as an element to be protected we have have included ´biodiversity´ in the search terms and have  not tryed to exclude research about species. Species affect and are affected by the condition of their habitat.
+However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than on the protection of species. Nonetheless, since the sources clearly mention biodiversity as an element to be protected we have included ´biodiversity´ in the search terms and have  not tryed to exclude research about species. Species affect and are affected by the condition of their habitat.
 
 Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we have not filtered them from the results since the water-related ecosystems of mountains and forests are mentioned in the title of this target.
 
