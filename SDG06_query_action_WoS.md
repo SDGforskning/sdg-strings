@@ -1175,7 +1175,7 @@ TS=
 
 * v2.1.0: Leena Byholm (January 2026)
 
-Specialist input: Anni Juvakoski (PhD in Water and Environmental Engineering), target 6.2, January 2026
+Specialist input: Anni Juvakoski (PhD in Water and Environmental Engineering), Aalto University; target 6.2, January 2026
 
 ## 5. Footnotes
 
