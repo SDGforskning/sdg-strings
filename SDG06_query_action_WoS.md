@@ -771,7 +771,7 @@ TS=
         OR "interact*" 
         OR "synergy" OR "synergies"
         ) 
-        NEAR/5 
+        NEAR/10 
             ("water management" 
             OR 
               (
