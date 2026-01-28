@@ -668,7 +668,8 @@ TS=
   ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
   OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
   OR "management" OR "conservation" OR "protection" OR "restoration" OR "resilien*" 
-  OR "extract*" OR "resource us*" OR "usage" OR "consumption" OR "withdrawal$"
+  OR "nature based solution$" 
+  OR "extract*" OR "resource us*" OR "usage" OR "consumption" OR "withdrawal$" 
   )
   NEAR/15 
     (
