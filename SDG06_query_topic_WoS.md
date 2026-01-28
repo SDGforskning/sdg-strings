@@ -323,7 +323,7 @@ This target is interpreted to cover research about
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
-This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it, as well as `water quality`, to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
 
 The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
 * domestic/households
@@ -397,7 +397,8 @@ TS=
       OR "brook$" OR "creek$" 
       OR "aquifer$" OR "groundwater" 
       OR ("water" NEAR/3 "reservoir$") 
-      OR ("drink*" NEAR/1 "water"))
+      OR ("drink*" NEAR/1 "water") 
+      OR "water quality")
 )
 ```
 
