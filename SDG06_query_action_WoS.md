@@ -471,6 +471,7 @@ TS=
     OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
+    OR "natural water$" 
     OR ("water" NEAR/3 "reservoir$") 
     OR ("drink*" NEAR/1 "water") 
     OR "water quality"
@@ -550,6 +551,7 @@ TS=
     OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
+    OR "natural water$" 
     OR ("water" NEAR/3 "reservoir$") 
     OR ("drink*" NEAR/1 "water") 
     OR "water quality"
@@ -579,6 +581,7 @@ TS=
           OR ("river$") OR ("stream$" NEAR/3 "water") 
           OR "brook$" OR "creek$" 
           OR "aquifer$" OR "groundwater" 
+          OR "natural water$" 
           OR ("water" NEAR/3 "reservoir$") 
           OR ("drink*" NEAR/1 "water")
           )
