@@ -500,7 +500,7 @@ TS=
       ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
 	    NEAR/1 ("water" OR "freshwater" OR "greywater")
     ) 
-  OR "water harvesting" 
+  OR "water harvest*" OR "rainwater harvest*" OR "stormwater harvest*"
   OR ("evaporation" NEAR/3 ("solar" OR "clean water" OR "pure water")) 
   OR "water evaporator$"
 ) 
