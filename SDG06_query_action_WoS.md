@@ -767,10 +767,14 @@ TS=
       (
         ("cross sectoral" OR "cross-sectoral" OR "intersectoral" OR "inter sectoral" 
         OR "multisectoral" OR "multi sectoral" 
-        OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*" OR "interconnect*" OR "synergy" OR "synergies"
+        OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*" OR "interconnect*" 
+        OR "interact*" 
+        OR "synergy" OR "synergies"
         ) 
         NEAR/5 
-            (
+            ("water management" 
+            OR 
+              (
               ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
               OR "govern*" OR "development" OR "administrat*" OR "plan" OR "plans" OR "planning" 
               OR "policy" OR "policies"
@@ -780,9 +784,9 @@ TS=
                 OR "water supply" OR "water supplies" OR "suppl* of freshwater" 
                 OR ("water" NEAR/5 "land") 
                 OR (("water" OR "river") NEAR/3 "basin") 
-                OR "hydrological unit" OR "watershed" 
-                OR "water management"
+                OR "hydrological unit" OR "watershed"
                 )
+              )
             )
       )
     OR 
