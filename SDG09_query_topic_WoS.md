@@ -307,9 +307,9 @@ TS=
 
 This target is interpreted to cover research about: 
 
-* Facilitatating sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
+* Sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
 
-This query consists of one phrase. This phrase is about facilitatating sustainable and resilient infrastructure development in developing countries. Basic structure is action + sustainable/resilient + infrastructure + developing countries.
+This query consists of one phrase. Phrase is about sustainable and resilient infrastructure development in developing countries. Basic structure is sustainable/resilient + infrastructure + developing countries.
 
 ```py
 TS=
