@@ -266,10 +266,6 @@ This query consists of one phrase. The elements of the phrase are research/innov
 ```py
 TS=
 (
-     ("boost*" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"
-		OR "legislat*" OR "regulat*" OR "juridic*" OR "policy" OR "policies"
-		)
-     NEAR/5
       ("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
 		OR  "research and development and innovation$" OR "research & development & innovation$" OR "research-development-innovation$" OR "RDI"
 	  OR "technological capabilit*" OR "technology capabilit*" OR "technological competenc*" OR "innovation capabilit*"
@@ -289,10 +285,6 @@ This phrase is about encouraging innovation, and increasing R&D capacity, includ
 
 TS=
 (
-     ("increas*" OR "boost*" OR "add" OR "raise" OR "grow" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" 
-     OR "legislat*" OR "regulat*" OR "juridic*" OR (("policy" OR "policies") NEAR/3 ("effect*" OR "impact*" OR "influenc*"))
-	 )
- 		NEAR/5
 		("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
 		OR  "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
 		)
