@@ -561,7 +561,7 @@ TS=
 
 #### Phrase 3   
 
-This phrase aims to find research about improving treatment of wastewaters and about removing pollution and hazardous chemicals from waters. 
+This phrase aims to find research about improving treatment of wastewaters and about removing pollution and hazardous chemicals from wastewaters. 
 
 The phrase is partly similar to 14.1 phrase 2 and many of the terms for pollution were found from the same sources, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
