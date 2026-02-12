@@ -397,10 +397,10 @@ TS=
       OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water")  
       OR "brook$" OR "creek$" 
       OR "aquifer$" OR "groundwater" 
-      OR "natural water$" 
+      OR "natural water$" OR "water source$"
       OR ("water" NEAR/3 "reservoir$") 
       OR ("drink*" NEAR/1 "water") 
-      OR "water quality")
+      )
 )
 ```
 #### Phrase 2   
@@ -480,7 +480,7 @@ TS=
       OR "brook$" OR "creek$" 
       OR "aquifer$" OR "groundwater" 
       OR ("water" NEAR/3 "reservoir$") 
-      OR "natural water$" 
+      OR "natural water$" OR "water source$" 
       OR ("drink*" NEAR/1 "water") 
       )
 )
