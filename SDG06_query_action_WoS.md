@@ -405,7 +405,7 @@ Target 6.3 is related to targets
 * SDG 12.4 reducing harmful releases to water
 * SDG 12.5 reducing waste through e.g. recycling and reuse
 
-This query consists of 3 phrases.
+This query consists of 4 phrases.
 
 #### Phrase 1
 

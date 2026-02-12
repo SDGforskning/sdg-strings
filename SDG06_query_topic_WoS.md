@@ -339,7 +339,7 @@ Target 6.3 is related to targets
 * SDG 12.4 reducing harmful releases to water
 * SDG 12.5 reducing waste through e.g. recycling and reuse
 
-This query consists of 2 phrases.
+This query consists of 3 phrases.
 
 #### Phrase 1
 
@@ -402,10 +402,68 @@ TS=
       OR "water quality")
 )
 ```
+#### Phrase 2   
+
+This phrase aims to find research about the treatment of wastewaters and about removing pollution and hazardous chemicals from waters. 
+
+The terms for pollution were found largely from the same sources as in 14.1, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+
+The elements of the phrase are *treatment/removing + wastewater/pollution+water*
+
+```py
+TS=
+(
+  ("treatment" OR "remov*" OR "recovery" OR "technolog*"
+  OR "monitor*" OR "assess*"
+  OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+  OR "life cycle assess*" OR "LCA"
+  OR "environment* assess*" OR "environment* impact assess*"
+  OR "manag*" OR "pollution control$"
+  OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
+  ) 
+    NEAR/15 
+    ("wastewater" OR "waste water" OR "sewage" OR "sewer$" OR "effluent$" 
+      OR 
+      (
+        (
+        (
+          ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off" OR "stormwater$")
+        ) 
+        OR "pollut*" OR "contaminated" OR "contaminant$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
+        OR "heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+        OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
+        OR "toxic chemical$"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+        OR "oil spill$" 
+        OR 
+          (
+          ("pharmaceutic*" OR "antibiotic*" OR "medical" 
+          OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+          OR "protozoa" OR "helminth$" OR "parasite$" 
+          OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+          OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+          OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+          OR "arsenic" OR "fluoride*"
+          ) 
+            NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+          )
+        ) 
+          NEAR/5 
+          ("water$")
+      ) 
+    )   
+) 
+```
 
 
-
-#### Phrase 2
+#### Phrase 3
 
 This phrase aims to find research about the water quality of freshwater bodies or drinking water.
 
