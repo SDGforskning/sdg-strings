@@ -382,10 +382,10 @@ TS=
 
 This target is interpreted to cover research about 
 
-* improving water quality
-* reducing untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
-* increasing recycling and safe reuse of wastewater
-* monitoring of water quality
+* reducing untreated wastewaters, pollution and hazardous chemicals discharged into freshwater bodies
+* improving treatment of wastewaters 
+* increasing recycling and safe reuse of freshwater
+* improving and monitoring of the water quality of freshwater bodies
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 

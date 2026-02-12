@@ -319,7 +319,8 @@ TS=
 This target is interpreted to cover research about 
 
 * freshwater bodies and pollution, untreated wastewater and hazardous chemicals 
-* water quality
+* treatment of wastewater
+* freshwater bodies and water quality
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
