@@ -324,7 +324,7 @@ This target is interpreted to cover research about
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
-This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be considered relevant to the target.
 
 The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
 * domestic/households
@@ -333,7 +333,7 @@ The classification for wastewater generators is <a href="#f8">(UN Statistics div
 
 Since `runoff` from urban and agricultural land is mentioned in the indicator metadata as a potentially significant contributor to wastewater flows we have added it as a search term. Although runoff is not currently monitored by the indicators for 6.3  https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater species. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as it is closely linked to questions about the water quality and would be quite challenging to filter out.
+Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freshwaters. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as this is closely linked to questions about the water quality and would be quite challenging to filter out.
 
 Target 6.3 is related to targets 
 * SDG 14.1 preventing and reducing marine pollution
@@ -344,7 +344,7 @@ This query consists of 3 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies or drinking water.
+This phrase aims to find research about releases of pollution and hazardous chemicals, wastewaters and dumping into freshwater bodies or drinking water.
 
 In stead of specifying to research about untreated wastewaters we have included research about any wastewaters in freshwater bodies or drinking water.
 

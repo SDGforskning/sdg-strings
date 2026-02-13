@@ -383,13 +383,13 @@ TS=
 This target is interpreted to cover research about 
 
 * reducing untreated wastewaters, pollution and hazardous chemicals discharged into freshwater bodies
-* increasing treatment, recycling and safe reuse of freshwater
-* improving treatment of wastewaters 
+* improving treatment and recycling of wastewaters, pollution and hazardous chemicals related to freshwater bodies
+* improving treatment of wastewaters in general
 * improving and monitoring water quality of freshwater bodies
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
-This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be considered relevant to the target.
 
 The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
 * domestic/households
@@ -398,7 +398,7 @@ The classification for wastewater generators is <a href="#f8">(UN Statistics div
 
 Since `runoff` from urban and agricultural land is mentioned in the indicator metadata as a potentially significant contributor to wastewater flows we have added it as a search term. Although runoff is not currently monitored by the indicators for 6.3  https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater species. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as it is closely linked to questions about the water quality and would be quite challenging to filter out. 
+Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freshwaters. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as this is closely linked to questions about the water quality and would be quite challenging to filter out. 
 
 Target 6.3 is related to targets 
 * SDG 14.1 preventing and reducing marine pollution
@@ -409,7 +409,7 @@ This query consists of 4 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies or drinking water.
+This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into freshwater bodies or drinking water.
 
 Instead of specifying to research about reducing untreated wastewaters we have included research about reducing any wastewaters in freshwater bodies or drinking water.
 
@@ -561,7 +561,7 @@ TS=
 
 This phrase aims to find research about improving treatment of wastewaters and about removing pollution and hazardous chemicals from wastewaters. 
 
-The phrase is partly similar to 14.1 phrase 2 and many of the terms for pollution were found from the same sources, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+The terms for pollution were found largely from the same sources as in 14.1, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
 
 The elements of the phrase are *action(increase/improve) + treatment/removing + wastewater/pollution+water*
 
