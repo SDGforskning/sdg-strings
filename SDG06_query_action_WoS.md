@@ -573,6 +573,8 @@ TS=
   OR "introduce" OR "design*" OR "adopt*" OR "enforc*" OR "prioriti*"
   )
     NEAR/5 
+    ("water purification" 
+    OR 
     (
       ("treatment" OR "remov*" OR "recovery" OR "technolog*"
       OR "monitor*" OR "assess*"
@@ -621,7 +623,8 @@ TS=
           ("water$")
       ) 
       )   
-    )   
+    )
+  )   
 )
 ```
 

@@ -413,6 +413,8 @@ The elements of the phrase are *treatment/removing + wastewater/pollution+water*
 
 ```py
 TS=
+("water purification" 
+OR 
 (
   ("treatment" OR "remov*" OR "recovery" OR "technolog*"
   OR "monitor*" OR "assess*"
@@ -460,7 +462,8 @@ TS=
           NEAR/5 
           ("water$")
       ) 
-    )   
+    ) 
+  )  
 ) 
 ```
 
