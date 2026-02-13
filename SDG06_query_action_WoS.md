@@ -586,34 +586,35 @@ TS=
         ("wastewater" OR "waste water" OR "sewage" OR "sewer$" OR "effluent$" 
         OR 
         (
-          (
-          (
-            ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+        (
+        (
+          ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
             NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off" OR "stormwater$")
-          ) 
-          OR "pollut*" OR "contaminated" OR "contaminant$"
-          OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
-          OR "heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
-          OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil"
-          OR "toxic chemical$"
-          OR "endocrine disrupting chemical$"
-          OR "persistent organic pollutant$" OR "pesticide$" OR "herbicide$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
-          OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
-          OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
-          OR "perflurochemicals" OR "PFAS" OR "endosulfan"
-          OR "polycyclic aromatic hydrocarbon$" OR "PAH"
-          OR "oil spill$" 
-          OR 
+        ) 
+        OR "pollut*" OR "contaminated" OR "contaminant$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
+        OR "toxic chemical$"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+        OR "oil spill$" 
+        OR 
           (
-            ("pharmaceutic*" OR "antibiotic*" OR "medical" 
-            OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
-            OR "protozoa" OR "helminth$" OR "parasite$" 
-            OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
-            OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
-            OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
-            OR "arsenic" OR "fluoride*"
-            ) 
-              NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+          ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+          OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil" 
+          OR "pesticide$" OR "herbicide$" 
+          OR "pharmaceutic*" OR "antibiotic*" OR "medical" 
+          OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+          OR "protozoa" OR "helminth$" OR "parasite$" 
+          OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+          OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+          OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+          OR "arsenic" OR "fluoride*"
+          ) 
+            NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
           )
         ) 
           NEAR/5 
