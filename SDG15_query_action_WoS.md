@@ -362,7 +362,7 @@ TS=
         OR "Global Forest Goals" OR "GFG$"
         )
   )
-  NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
+  NEAR/5 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
 )
 ```
 
