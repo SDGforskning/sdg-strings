@@ -477,12 +477,12 @@ In addition to articles about the effects agriforestry has on soils, this phrase
 TS=
 (
   ("desert$" OR "desertif*" OR "drought$" OR "flood*" OR "dryland$")
-  NEAR/15
+  NEAR/10
       (
         ("restor*" OR "rehabilita*" OR "improv*" OR "enhanc*" OR "strengthen*"
         OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
         )
-        NEAR/15 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
+        NEAR/5 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
       )
 )
 ```
