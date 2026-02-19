@@ -503,43 +503,53 @@ This phrase aims to find research about the conservation, restoration, and manag
 
 Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
 
-Compared to the action approach, a string of action terms is added in addition to the existing management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). Many of the terms for Protected areas/Natural monuments etc. are combined with ecosystem terms - the aim of this is to exclude protecting human communities, architecture etc. 
+Compared to the action approach, a string of action terms is added in addition to the existing management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). Some of the terms for Protected areas/Natural monuments etc. are combined with ecosystem terms - the aim of this is to exclude protecting human communities, architecture etc. 
 
-The elements of this phrase are: *(management/conservation/changes + ecosystems/bidiversity OR management/conservation/protected areas + ecosystems/bidiversity OR instruments) + mountains*.  
+The elements of this phrase are: *(management/conservation/changes+ecosystems/bidiversity OR increase/strengthen+ecosystems/bidiversity OR instruments) + mountains*.  
 
 ```py
 TS=
 (
   (
     (
-      ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*"
-      OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+      ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*" OR "sustainable" 
+      OR "Protected landscape$" OR "Nature reserve$" OR "National park$" 
+      OR "Natural monument$" OR "Natural feature$"
+      OR "CITES" 
+      ) 
+      AND 
+      ("ecosystem$" OR "habitat$"
+      OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+      OR (("diversity" OR "communit*") 
+        NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+        OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+        OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")) 
+      OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+      OR (("covered" OR "cover*") 
+        NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+        OR "cropland$" OR "grassland$" OR "wetland$")) 
+      )
+    ) 
+    OR 
+    (
+      ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
       OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
       OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
       OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
       OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
       ) 
       NEAR/5 
-        ("ecosystem$" OR "habitat$"
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        )
-    )
-  OR 
-    (
-      ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation"
-      OR "Protected landscape$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$"
-      OR "CITES"
-      ) 
-      AND
-        ("ecosystem$" OR "habitat$" OR "nature conservation"
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        ) 
+      ("ecosystem$" OR "habitat$"
+      OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+      OR (("diversity" OR "communit*") 
+        NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+        OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+        OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+      OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+      OR (("covered" OR "cover*") 
+        NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+        OR "cropland$" OR "grassland$" OR "wetland$")) 
+      )
     ) 
   OR "Protected area$" OR "Wilderness area$" 
   OR "Habitat management area$" OR "Species management area$"
