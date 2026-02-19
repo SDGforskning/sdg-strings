@@ -610,7 +610,7 @@ This phrase aims to find research about the degradation of terrestrial habitats.
 TS=
 (
   ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*")
-  NEAR/5
+  NEAR/15
       ("ecosystem$" OR "habitat$" OR "biotope$"
       OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
       )
