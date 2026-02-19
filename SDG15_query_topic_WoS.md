@@ -518,16 +518,16 @@ TS=
       OR "CITES" 
       ) 
       AND 
-      ("ecosystem$" OR "habitat$"
-      OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-      OR (("diversity" OR "communit*") 
-        NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
-        OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
-        OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")) 
-      OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-      OR (("covered" OR "cover*") 
-        NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
-        OR "cropland$" OR "grassland$" OR "wetland$")) 
+        ("ecosystem$" OR "habitat$"
+        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+        OR (("diversity" OR "communit*") 
+          NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+          OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+          OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")) 
+        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+        OR (("covered" OR "cover*") 
+          NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+          OR "cropland$" OR "grassland$" OR "wetland$")) 
       )
     ) 
     OR 
@@ -539,16 +539,16 @@ TS=
       OR "assess*" OR "examin*" OR "evaluat*" OR "measur*" OR "monitor*"
       ) 
       NEAR/5 
-      ("ecosystem$" OR "habitat$"
-      OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-      OR (("diversity" OR "communit*") 
-        NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
-        OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
-        OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-      OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-      OR (("covered" OR "cover*") 
-        NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
-        OR "cropland$" OR "grassland$" OR "wetland$")) 
+        ("ecosystem$" OR "habitat$"
+        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+        OR (("diversity" OR "communit*") 
+          NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+          OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+          OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+        OR (("covered" OR "cover*") 
+          NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+          OR "cropland$" OR "grassland$" OR "wetland$")) 
       )
     ) 
   OR "Protected area$" OR "Wilderness area$" 
