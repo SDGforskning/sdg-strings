@@ -735,7 +735,9 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about sharing/access/fairness/use and genetic resources or traditional knowledge. The elements of the phrase are *sharing/access/use + resources/knowledge + ecosystems/organisms/bioresources*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about sharing/access/fairness/use and genetic resources or traditional knowledge. The elements of the phrase are *sharing/access/use + resources/knowledge + ecosystems/organisms/bioresources*. The phrase is sliced into three parts linking search terms to genetic resources with slightly different combinations in order to find all the results found by the action phrase and to have best possible recall without increasing the amount of irrelevant results.
+
+It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
@@ -755,6 +757,19 @@ TS=
           ("genetic resource$" OR "gene resources" OR "biological resource$"
           OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
           )
+    ) 
+    OR 
+    (
+    (
+      ("promot*" OR "improv*" OR "enhanc*" OR "strengthen*"
+      OR "increas*" OR "expand*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
+      )
+      NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
+    )
+    NEAR/15
+        ("genetic resource$" OR "gene resources"
+        OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
+        )
     )
   )
   AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "biological diversity" OR "species" OR "plant*" OR "animal$" OR "organism$" 
