@@ -974,7 +974,7 @@ TS=
     ("invasive" OR "alien" OR "exotic" OR "nonnative" OR "non-native" OR "nonindigenous" OR "non-indigenous")
     NEAR/3 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "rodent$")
   )
-  NEAR/15
+  AND 
       ("impact*" OR "effect*" OR "affect*" OR "consequen*"
       OR "competition"
       OR "predation"
