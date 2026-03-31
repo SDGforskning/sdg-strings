@@ -167,13 +167,13 @@ TS=(
 
 > **9.3 Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets**
 >
-> 9.3.1 Proportion of small-scale industries in total industry value added
+> 9.3.1 Proportion of small-scale industries in total industry value added, based on (a) international classification and (b) national classifications
 >
 > 9.3.2 Proportion of small-scale industries with a loan or line of credit
 
 This target is interpreted to cover research about 
 
-* Increasing access to financial services for all types of small-scale industrial and other enterprises, with financial services including affordable credit.
+* Increasing access to financial services for small-scale industrial and other enterprises, with financial services including affordable credit.
 * Increasing the integration of small-scale industrial and other enterprises into value chains, as well as into local and international markets.
 
 According to Indicator metadata 9.3.1, we interpret the term “small-scale enterprises” as encompassing all small businesses, including those classified in smaller categories such as microenterprises (UN Statistics Division, 2025). 
@@ -193,23 +193,31 @@ This phrase is about increasing the access of small-scale enterprises to financi
 ```py
 TS=
 (
-	("improv*" OR "increase*" OR "strengthen*" OR "enhance*" OR "better" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "ensure" 
-	OR (("overcome" OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*") NEAR/1 ("barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$")) 
-	OR (("enact*" OR "amend*" OR "develop*" OR "reform*" OR "implement*" OR "improv*" OR "ratif*" OR "strengthen") NEAR/3 ("agreement$" OR "convention" OR "directive" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" OR "juridic*" OR "law$" OR "legal*" OR "legislat*" OR "policy" OR "policies" OR "principle$" OR "ratification*" OR "regulat*" OR "rule" OR "rules"))
+	("improv*" OR "increase*" OR "strengthen*" OR "enhance*" OR "better" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" 
+	OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "ensur*" 
+	OR (("overcom*" OR "reduc*" OR "decreas*" OR "avoid*" OR "prevent*" OR "remov*") 
+	NEAR/1 ("barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$")) 
+	OR (("enact*" OR "amend*" OR "develop*" OR "reform*" OR "implement*" OR "improv*" OR "ratif*" OR "strengthen") 
+	NEAR/3 ("agreement$" OR "convention*" OR "directive*" OR "framework$" OR "governance" OR "initiative$" OR "instrument$" 
+	OR "juridicial*" OR "juridiciary" OR "law$" OR "legal*" OR "legislat*" OR "policy" OR "policies" OR "practice$" OR "principle$" 
+	OR "procedur*" OR "ratification*" OR "regulat*" OR "rule" OR "rules" OR "strateg*" OR "treaty" OR "treaties"))
 	)
         NEAR/5
-		("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
-        OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" OR "banks" OR "a bank" OR "banking" OR "bank account$" 
-        OR "digital finance" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" 
-        OR "savings" OR "insurance" OR (("deposit" OR "withdraw" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
+		(("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
+        OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" 
+		OR "banks" OR "a bank" OR "banking" OR "bank account$" OR "bank financ*" OR "community bank$" OR "access to bank*"
+        OR "digital finance" OR "digital money" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" 
+		OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" 
+        OR "savings" OR "insurance" OR (("deposit*" OR "withdraw*" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
         OR "payment service$" OR "transfer service$" OR "transfer funds" OR "financial inclusion" OR "M-PESA"
-        OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunity*" OR "resource*" OR "service*")) 
-        OR (("advice" OR "training") NEAR/2 ("business" OR "company"))
+        OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunit*" OR "resource*" OR "service*")) 
+        OR (("advice" OR "training") NEAR/2 ("business" OR "company" OR "companies"))
 		)
             NEAR/5
-            (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
-            OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*"
-            )
+            (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/3 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
+            OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" OR "SME" OR "SMEs"
+        )
+	)
 )
 ```
 #### Phrase 2
@@ -218,19 +226,21 @@ This phrase is about increasing the integration of small-scale enterprises to va
 ```py
 TS=
 (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*"
+    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "advance" OR "advancing" OR "facilitat*" OR "promot*" 
+	OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*"
 	OR (("overcome" OR "reduce" OR "reducing" OR "decreas*") NEAR/3 ("trade costs" OR "barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$"))
     )
- 		NEAR/10
-		((("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
-		OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" 
+ 		NEAR/5
+		(((("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
+		OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" OR "SME" OR "SMEs"
 		)
 		    NEAR/5
 		    ("value chain$" OR "production chain$" OR "supply chain$" OR "distribution chain$" OR "logistics chain$" OR "marketing chain$" OR "GVC*" OR "production network$" OR "processing chain$" 
-		    OR "retail chain$" OR "delivery chain$" OR " global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
-		    OR "cross-border business*" OR 
-			(("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade"))
-            )
+		    OR "retail chain$" OR "delivery chain$" OR "global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
+		    OR "cross-border business*" OR "internationali$ation" 
+			OR (("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade" OR "factory" OR "factories"))
+        )
+    )
 
 )
 ```
@@ -455,13 +465,11 @@ Specialist input:
 
 <span id="f13">The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/ 
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
-
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
 <span id="f6">United Nations. (2024).</span> The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
 
-<span id="f7">United Nations Department of Economic and Social Affairs. (2023).</span> *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf Accessed [2025-11-12]
+<span id="f7">United Nations Department of Economic and Social Affairs. (2023).</span> *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf [Accessed 2025-11-12]
 
 <span id="f8">United Nations Environment Programme. (2021).</span> *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
 
@@ -469,4 +477,6 @@ Specialist input:
 
 <span id="f10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
-<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
+<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
+
+<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf [Accessed 2025-11-11]
