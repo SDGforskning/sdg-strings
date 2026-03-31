@@ -386,9 +386,11 @@ TS=
 
 ## 4. Contributions
 
-* v2.1.0: 
+* v2.1.0: Taina Peltonen, Johanna Löhönen (March 2026)
 
-Specialist input: 
+* Internal review: Paula Nissilä (December 2025)
+
+Specialist input: Eeva-Liisa Viskari (Chief Specialist in Sustainability and ESG) Tampere University (December 2025)
 
 ## 5. Footnotes
 
