@@ -138,7 +138,7 @@ TS=
 
 > **9.3 Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets**
 >
-> 9.3.1 Proportion of small-scale industries in total industry value added
+> 9.3.1 Proportion of small-scale industries in total industry value added, based on (a) international classification and (b) national classifications
 >
 > 9.3.2 Proportion of small-scale industries with a loan or line of credit
 
@@ -161,18 +161,22 @@ This query consists of two phrases.
 This phrase is about access of small-scale enterprises to financial services. Basic structure is *financial services + small-scale enterprises*.
 
 ```py
-TS=(
-    ("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
-	OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" OR "banks" OR "a bank" OR "banking" OR "bank account$" 
-	OR "digital finance" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" OR "savings" OR "insurance" OR (("deposit" OR "withdraw" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
-	OR "payment service$" OR "transfer service$" OR "transfer funds" OR "financial inclusion" OR "M-PESA"
-	OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunity*" OR "resource*" OR "service*")) 
-	OR (("advice" OR "training") NEAR/2 ("business" OR "company"))
-		)
-    NEAR/5
-		(("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
-	    OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*"
-		)
+TS=
+(
+	("long-term finance*" OR "loan$" OR "lend* fund$" OR "lending" OR "credit$" OR "debt$" OR "financial instrument*" OR "microfinanc*" OR "micro-financ*" 
+    OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$" 
+	OR "banks" OR "a bank" OR "banking" OR "bank account$" OR "bank financ*" OR "community bank$" OR "access to bank*"
+    OR "digital finance" OR "digital money" OR "mobile money" OR "digital currency" OR "electronic payments" OR "digital payment$" 
+	OR "fintech" OR "mobile phone-based payment" OR "mobile payment" OR "mobile wallet" OR "entrepreneurial finance" 
+    OR "savings" OR "insurance" OR (("deposit*" OR "withdraw*" OR "transfer" OR "save" OR "borrow") NEAR/1 ("currency" OR "money"))
+    OR "payment service$" OR "transfer service$" OR "transfer funds" OR "financial inclusion" OR "M-PESA"
+    OR (("financial" OR "monetary") NEAR/1 ("asset*" OR "opportunit*" OR "resource*" OR "service*")) 
+    OR (("advice" OR "training") NEAR/2 ("business" OR "company" OR "companies"))
+	)
+        NEAR/5
+        (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/3 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*") 
+        OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" OR "SME" OR "SMEs"
+        )
 )
 ```
 #### Phrase 2
@@ -182,17 +186,15 @@ This phrase is about integration of small-scale enterprises to value chains/mark
 ```py
 TS=
 (
-    (
-        (("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
-	    OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" 
+	((("small" OR "small-scale" OR "micro" OR "micro-scale") NEAR/1 ("enterprise*" OR "business*" OR "industry" OR "industri*" OR "firm$" OR "company" OR "companies" OR "venture*")) 
+	OR "microenterprise$" OR "microbusiness*" OR "micro and small enterprise$" OR "MSEs" OR "micro- and small-scale enterprise$" OR "small and micro business*" OR "SME" OR "SMEs"
 	)
 		NEAR/5
-		("value chain$" OR "production chain$" OR "supply chain$" OR "distribution chain$" OR "logistics chain$" OR "marketing chain$" OR "GVC*" OR "production network$" OR "processing chain$" 
-		OR "retail chain$" OR "delivery chain$" OR " global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
-		OR "cross-border business*" 
-		OR (("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade")
-        )
-		)
+			("value chain$" OR "production chain$" OR "supply chain$" OR "distribution chain$" OR "logistics chain$" OR "marketing chain$" OR "GVC*" OR "production network$" OR "processing chain$" 
+			OR "retail chain$" OR "delivery chain$" OR "global commodity chain$" OR "supply network*" OR "material chain$" OR "global factory" OR "export*" OR "import" OR "market" OR "markets"  
+			OR "cross-border business*" OR "internationali$ation" 
+			OR (("international*" OR "local" OR "global" OR "globally" OR "regional*" OR "provincial*" OR "domestic") NEAR/3 ("networks" OR "business*" OR "trade" OR "factory" OR "factories"))
+        	)
 
 )
 ```
@@ -398,13 +400,11 @@ Specialist input:
 
 <span id="f5">The Sustainable Development Goals. Extended Report 2024. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
-<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
-
 <span id="f2">United Nations. (2016, 2017, 2018, 2019, 2020, 2021).</span> *World Economic Situation and Prospects; Statistical Annex*. https://www.un.org/development/desa/dpad/document_gem/global-economic-monitoring-unit/world-economic-situation-and-prospects-wesp-report/
 
 <span id="f6">United Nations. (2024).</span> The Sustainable Development Goals Report 2024. https://unstats.un.org/sdgs/report/2024/The-Sustainable-Development-Goals-Report-2024.pdf [Accessed 2025.06.25]
 
-<span id="f7">United Nations Department of Economic and Social Affairs. (2023).</span> *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf Accessed [2025-11-12]
+<span id="f7">United Nations Department of Economic and Social Affairs. (2023).</span> *Accounting for Global Value Chains: GVC Satellite Accounts and Integrated Business Statistics*. United Nations. https://unstats.un.org/unsd/business-stat/GVC/Accounting_for_GVC_web.pdf [Accessed 2025-11-12]
 
 <span id="f8">United Nations Environment Programme. (2021).</span> *International Good Practice Principles for Sustainable Infrastructure*. Nairobi Available https://wedocs.unep.org/bitstream/handle/20.500.11822/34853/GPSI.pdf [Accessed 2025.07.08]
 
@@ -412,4 +412,6 @@ Specialist input:
 
 <span id="f10">United Nations Industrial Development Organization. (2021).</span> *Industrial Development Report 2022*. The Future of Industrialization in a Post-Pandemic World. Vienna. https://digitallibrary.un.org/record/3994233?v=pdf [Accessed 9.7.2025]
 
-<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf Accessed [2025-11-11]
+<span id="f1">UN DESA. (2025).</span> *Goals: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation*. https://sdgs.un.org/goals/goal9#targets_and_indicators [Accessed 2025.04.02]
+
+<span id="f11">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf [Accessed 2025-11-11]
