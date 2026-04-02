@@ -92,7 +92,7 @@ TS=
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
         )
       )
-         OR (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
+OR (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
     )
   )
 )
