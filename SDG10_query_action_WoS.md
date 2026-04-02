@@ -72,14 +72,14 @@ TS=
       OR "raised" OR "offer*" OR "heighten*"
       )
       NEAR/5
-      ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-      "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-      "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
-      "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
-      OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
-      "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
-      "economic* self relian*" OR "income convergenc*"
-      )
+           ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
+           "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+           "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
+           "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
+            OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
+           "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
+           "economic* self relian*" OR "income convergenc*"
+            )
     )
     OR
     (
@@ -88,11 +88,11 @@ TS=
        "eradicat*" OR "fight*"
      )
       NEAR/5
-        ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
-         OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
+           ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
+           OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
         )
       )
-OR (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
+     OR (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
     )
   )
 )
