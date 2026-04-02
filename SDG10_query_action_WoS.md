@@ -63,7 +63,7 @@ TS=
      OR "poor household$" OR "poor communit*"
     )
   AND
-  (
+   (
     (
       ("foster*" OR "increas*" OR "promot*" OR "boost*" OR "enhanc*" OR "improv*" OR "better$" OR "attain*" OR "achiev*"
       OR "provid*" OR "ensur*" OR "guarantee*" OR "maintain*" OR "strengthen*" OR "develop$" OR "establish*" OR
@@ -84,9 +84,9 @@ TS=
     OR
     (
       (
-        ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
+     ("reduc*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "alleviat*" OR "overcom*" OR
        "eradicat*" OR "fight*"
-        )
+     )
       NEAR/5
         ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
          OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
