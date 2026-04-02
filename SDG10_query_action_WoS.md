@@ -126,48 +126,47 @@ TS=
     OR "attain*" OR "achiev*" OR "encourag*" OR "facilitat*" OR "boost*" OR "offer*" OR "enabl*" OR "optimi$*" OR
     "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
-
- NEAR/3
-
- ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" 
-OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "financ* integrat*"
-OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
-OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "political* activit*" OR
-   ("accessib*" NEAR/3
-    ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"
-OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-OR   (( "poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-OR   (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-OR "disabled" OR "disabilities" OR "disability"
-OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR"gender$"
-OR "living with HIV" OR "living with AIDS"
-OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-OR "indigenous group$")
+  NEAR/3
+     ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" 
+     OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "financ* integrat*"
+     OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
+     OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "political* activit*"
+     OR
+     ("accessib*"
+     NEAR/3
+          ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"
+          OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+          OR (( "poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+          OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+          OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+          OR "disabled" OR "disabilities" OR "disability"
+          OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+          OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR"gender$"
+          OR "living with HIV" OR "living with AIDS"
+          OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+          OR "indigenous group$"
+          )
+    )
    )
-  )
  )
  OR
  (
-  (
-    "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
+  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR
     "declin*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR
     "avoid*" OR "prevent*" OR "cure" OR "halt*" OR "resist*" OR "overcom*" OR "escap*" OR "relief*" OR
     "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "dismantl*" OR "impair*" OR  "nullif*" OR "hinder*" 
    )
- NEAR/3
-   (
-    "horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
-    "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
-    OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
-    "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
-    "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR
-    "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"
-    OR "socioeconomic exclu*" OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR
-    "political* inactivit*" OR "societal* inactivit*" OR "societal* isolat*" OR "social* isolat*" OR
-    "economic* isolat*" OR "financ* isolat*" OR "political* isolat*"
-   )
+   NEAR/3
+        ("horizontal* inequal*" OR "horizontal* exclu*" OR "horizontal* marginal*" OR "horizontal vulnerab*" OR
+        "social* exclu*" OR "economic* exclu*" OR "political* exclu*" OR "social* marginal*" OR "economic* marginal*"
+        OR "political* marginal*" OR "societal exclu*" OR "societal marginal*" OR "intersecti* exclu*" OR
+        "intersecti* vulnerab*" OR "intersecti* oppression*" OR "financ* exclu*" OR "social* inequal*" OR 
+        "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*" OR
+        "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"
+        OR "socioeconomic exclu*" OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR
+        "political* inactivit*" OR "societal* inactivit*" OR "societal* isolat*" OR "social* isolat*" OR
+        "economic* isolat*" OR "financ* isolat*" OR "political* isolat*"
+        )
   )
  )
 
