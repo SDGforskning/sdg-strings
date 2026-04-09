@@ -127,7 +127,7 @@ TS=
     "establish*" OR "emphas*" OR "engag*" OR "extend*" OR "better$*"
    )
   NEAR/3
-     ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" 
+     ("social* inclu*" OR "economic* inclu*" OR "political* inclu*" OR "societal* inclu*" OR "financ* inclu*" OR "socio-economic* inclu*" OR "socioeconomic* inclu*" OR "religious inclu*"
      OR "social* integrat*" OR "economic* integrat*" OR "political* integrat*" OR "socio-economic* integrat*" OR "socioeconomic integrat*" OR "financ* integrat*"
      OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
      OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "political* activit*" OR "social* participat*" OR "economic* participat*" OR "political* participat*" OR "societal* participat*" OR "financ* participat*" OR "socio-economic* participat*" OR "socioeconomic* participat*"
@@ -141,7 +141,7 @@ TS=
           OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
           OR "disabled" OR "disabilities" OR "disability"
           OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-          OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR"gender$"
+          OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
           OR "living with HIV" OR "living with AIDS"
           OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
           OR "indigenous group$"
