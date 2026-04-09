@@ -132,7 +132,7 @@ TS=
      OR "social* equal*" OR "economic* equal*" OR "political* equal*" OR "societal* equal*" OR"socio-economic* equal*" OR "socioeconomic* equal*"
      OR "social* activit*" OR "societal* activit*" OR "financ* activit*" OR  "political* activit*"
      OR
-     ("accessib*"
+     (("accessib*" OR "access to")
      NEAR/3
           ("economic*" OR "financ*" OR "labor" OR "labour" OR "political*" OR "legislat*" OR "decision-making" OR "societal*" OR "social*" OR "socio-economic*" OR "socioeconomic*"
           OR "poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
