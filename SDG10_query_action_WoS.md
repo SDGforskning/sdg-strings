@@ -78,7 +78,7 @@ TS=
            "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
             OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
            "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
-           "economic* self relian*" OR "income convergenc*"
+           "economic* self relian*" OR "income convergenc*" OR "economic* independen*" OR "financial independen*"
             )
     )
     OR
