@@ -215,7 +215,7 @@ NEAR/3
   ("discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
   OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing"
   OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
-  OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*" OR "marginali*" OR "oppress*" OR "exploit*" OR "disenfranchi*"
+  OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*" OR "marginali$e" OR "oppress*" OR "exploit*" OR "disenfranchi*"
     )
    )
   )
