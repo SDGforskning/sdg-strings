@@ -198,8 +198,7 @@ TS=
   (
    (
     (
-     (
-       "ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
+     ("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
         OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
      )
        NEAR/3
@@ -222,19 +221,19 @@ TS=
       )
     )
 
-      AND
+   AND
 
-      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-      OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-      OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$"  ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-      OR "disabled" OR "disabilities" OR "disability"
-      OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
-      OR "living with HIV" OR "living with AIDS"
-      OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-      OR "indigenous group$"
-      )
+   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$"  ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+   OR "disabled" OR "disabilities" OR "disability"
+   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
+   OR "living with HIV" OR "living with AIDS"
+   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+   OR "indigenous group$"
+    )
   )
 
  OR
@@ -271,27 +270,26 @@ TS=
 (
  (
   (
-   (
-     "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+   ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
      "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR "resisting" OR "prohibit*" OR "dismantl*" OR
      "nullif*" OR "hinder*"
    )
 
-     NEAR
-        (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-        OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "bias" OR
+   NEAR
+       (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
+       OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "bias" OR
        "bias$ed" OR "obstacle$" OR "barrier$" OR "misogyny*" OR "marginali$e" OR "oppress*" OR "exploit*"
          )
 
-     NEAR/5
-          ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-          "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-          OR "rules" OR "procedur*" OR "initiative*"
-          )
-        )
-   )
+   NEAR/5
+       ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+       "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+       OR "rules" OR "procedur*" OR "initiative*"
+       )
+      )
+    )
 
-    OR
+ OR
 
     (("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing" OR
     "better$" OR "more efficient*" OR "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR
@@ -312,20 +310,20 @@ TS=
         )
        )
     )
- )
+  )
 
-    AND
+ AND
 
-   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-   OR "disabled" OR "disabilities" OR "disability"
-   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
-   OR "living with HIV" OR "living with AIDS"
-   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-   OR "indigenous group$"
+ ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+ OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+ OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+ OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+ OR "disabled" OR "disabilities" OR "disability"
+ OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+ OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
+ OR "living with HIV" OR "living with AIDS"
+ OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+ OR "indigenous group$"
    )
  )
 
