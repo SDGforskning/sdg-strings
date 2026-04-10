@@ -194,74 +194,72 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity + poor/v
 ```py
 TS=
 
- ((((("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
-  OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing")
-
-NEAR/3
-  ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*"
-   )  
-  )
- 
-OR
-
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
-  OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
-  OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists" OR "resisting"
-  OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
- )
-
-NEAR/3
-
-  ("discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
-  OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing"
-  OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
-  OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*" OR "marginali$e" OR "oppress*" OR "exploit*" OR "disenfranchi*"
+ (
+  (
+   (
+    (
+     (
+       "ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
+        OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
+     )
+       NEAR/3
+           ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*")  
     )
-   )
+ 
+      OR
+
+      (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
+      OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
+      OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists" OR "resisting"
+      OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
+       )
+      NEAR/3
+           ("discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
+           OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing"
+           OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
+           OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*" OR "marginali$e" OR "oppress*" OR "exploit*" OR "disenfranchi*"
+           )
+      )
+    )
+
+      AND
+
+      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
+      OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$"  ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+      OR "disabled" OR "disabilities" OR "disability"
+      OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
+      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
+      OR "living with HIV" OR "living with AIDS"
+      OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+      OR "indigenous group$"
+      )
   )
 
-AND
+ OR
 
-   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$"  ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-   OR "disabled" OR "disabilities" OR "disability"
-   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
-   OR "living with HIV" OR "living with AIDS"
-   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-   OR "indigenous group$"
-  )
- )
+    (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
+    OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
+    OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
+    OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
+    "hinder*"
+     )
+
+    NEAR/5
+         ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*")
+    )
 
 OR
 
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
-  OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
-  OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
-  OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR
-   "hinder*"
-  )
+   (("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
+   OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
+    )
 
-NEAR/5
-
- ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*"
-  )
- )
-
-OR
-
-(("ensur*" OR "secure$" OR "securing" OR "mak* sure" OR "mak* certain" OR "assure$" OR "assuring" OR "endors*"
-  OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
- )
-
-NEAR/3
-
-  ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*"
+   NEAR/3
+        ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
    )
-  )
- )
+)
 
 ```
 
