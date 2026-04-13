@@ -409,7 +409,7 @@ TS=
  )
 
 ```
-The basic structure of phrase 2 is,  “decrease racism” and “increase egalitarianism”.
+The basic structure of phrase 2 is *action + laws AND action (increase/decrease) + equality/inequality*.
 
 ```py
 TS=
