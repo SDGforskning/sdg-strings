@@ -349,7 +349,7 @@ This query consists of 1 phrase. The basic structure is *action + laws AND actio
 ```py
 TS=
 
-(
+
  (
   (
    (
@@ -413,7 +413,11 @@ TS=
   )
  )
 
-OR
+```
+The basic structure of phrase 2 is,  “decrease racism” and “increase egalitarianism”.
+
+```py
+TS=
 
  (
   (
@@ -452,7 +456,7 @@ OR
      ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
   )
  )
-)
+
 ```
 
 ### Target 10.5
