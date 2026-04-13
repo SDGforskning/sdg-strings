@@ -413,32 +413,34 @@ TS=
   )
  )
 
- OR
+OR
 
- ((("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
+ (
+  (
+   ("establish*" OR "propos*" OR "design*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR
     "adopt*" OR "introduc*" OR "architect*" OR "develop" OR "development" OR "promot*" OR "facilitat*" OR
     "reform$" OR "reforming" OR "reformed"
    )
 
-NEAR/5
+ NEAR/5
     ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strategy" OR "strategies" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
     "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*" OR "protocol*"
     )
   )
 
- AND
+  AND
 
- (("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
-  OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
-  OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
-  OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
-  )
+  (
+   ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
+   OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
+   OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
+   OR "resisting" OR "lift$ out of" OR "lifting out of" OR "overcom*" OR "dismantl*" OR "impair*" OR "nullif*" OR "hinder*"
+   )
 
-NEAR/5
-
- ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination")
- )
+ NEAR/5
+      ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination")
+   )
 
  
  OR
@@ -447,8 +449,7 @@ NEAR/5
   OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing")
 
  NEAR/3
-
-  ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
+     ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
   )
  )
 )
