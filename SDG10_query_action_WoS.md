@@ -402,6 +402,7 @@ TS=
  )
 
 ```
+```py
 TS=
 
  (
@@ -441,7 +442,7 @@ TS=
      ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
   )
  )
-)
+
 ```
 
 ### Target 10.5
