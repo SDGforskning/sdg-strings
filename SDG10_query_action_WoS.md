@@ -342,14 +342,10 @@ This target is interpreted to cover research about promoting the implementation 
 
 This target focuses on policies that ensure greater equality. Special focus is placed on fiscal, wage and social protection planning, but the interpretation is not limited to these types of policies. The redistributive impact of fiscal policy is an indicator that basically compares how the distribution of income in a population changes before and after paying taxes, social insurance payments etc. This gives policy makers a tool to consider the impacts of national and international fiscal policies. <a href="#f15">(Lustig, Mariotti & Sánchez-Páramo 2020.)</a> Both countries and different organizations can have social protection policies that aim to secure access to regular income and social services, especially to vulnerable groups of people. These can include pensions, child benefits, affordable housing and food security among other things. <a href="#f16">(Engström & Vegar 2021.)</a> Wage policies concider themes such as minimum wage, gender pay gaps, collective bargaining of wages and wage protection <a href="#f17">(ILO 2024)</a>. In addition to these, countries and organizations have many other policies that can have massive impacts on equality being realized and advanced.
 
-This query consists of 1 phrase. The basic structure is *action + laws AND action (increase/decrease) + equality/inequality* + poor/vulnerable. In addition to the basic structure, there are searches such as “decrease racism” and “increase egalitarianism,” which don’t require combining any groups.
-```("fiscal*" OR "wage*" OR "social* protect*" OR "social* securit*" OR "social* assist*" OR "economic*")```was removed from the original search string not to limit the search only to these types of policies.
-
+This query consists of 2 phrases. The basic structure of phrase 1 is *action + laws AND action (increase/decrease) + equality/inequality* + poor/vulnerable.
 
 ```py
 TS=
-
-
  (
   (
    (
@@ -390,9 +386,8 @@ TS=
     )
 
    NEAR/5
-        ("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-        OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "ableis*" OR "inaccesib*" OR "unequal*" OR
-       "exclusion" OR "hate speech" OR "stereotyp*" OR "ageis$" OR "bias" OR "bias$ed"
+        ("discriminat*" OR "inequalit*" OR "harass*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*" OR "unequal*" OR
+       "exclusion"  OR "stereotyp*"  OR "bias" OR "bias$ed"  OR "marginali$e" OR "oppress*" OR "exploit*"
         )
      )
     )
@@ -443,7 +438,7 @@ TS=
    )
 
  NEAR/5
-      ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination")
+      ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "misogyny*" OR "ableis*")
    )
 
  
