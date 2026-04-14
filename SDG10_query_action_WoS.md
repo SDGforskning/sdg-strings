@@ -628,8 +628,8 @@ NEAR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
 )
 NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" 
- OR "refugee*" OR "displaced" OR "expat*" OR "transferee$"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*" OR "displaced"
+  OR "expat*" OR "transferee$" OR "guest worker$" OR "seasonal worker$" OR "stateless people" OR "stateless person$"
   )
  )
 OR
@@ -639,16 +639,16 @@ OR
    "relief*" OR "lift$ out of" OR "lifting out of" OR "diminish*" OR "abate$" OR "abating" OR "nullif*" OR "hinder*"
   )
 NEAR
-  ("risk$" OR "hazard*" OR "insecure" OR "insecurity" OR "unprotect*" OR "unrelaib*" OR "vulnerab*" OR "dead*" OR
-   "die$" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
+  ("risk$" OR "hazard*" OR "danger" OR "insecure" OR "insecurity" OR "unprotect*" OR "unreliab*" OR "vulnerab*" OR "dead*" OR 
+   "die$" OR "death" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
   )
 NEAR
   ("migrat*" OR "mobilit*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
   )
 NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR 
-  "refugee*" OR "displace*" OR "expat*" OR "transferee$"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*" OR "displace*"
+  OR "expat*" OR "transferee$" OR "guest worker$" OR "seasonal worker$" OR "stateless people" OR "stateless person$"
   )
  )
 )
