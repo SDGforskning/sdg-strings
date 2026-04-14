@@ -647,7 +647,7 @@ NEAR
    "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
   )
 NEAR
-  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*" OR "displace*"
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*"
   OR "expat*" OR "transferee$" OR "guest worker$" OR "seasonal worker$" OR "stateless people" OR "stateless person$"
   )
  )
