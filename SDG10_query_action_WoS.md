@@ -578,7 +578,7 @@ NEAR
   )
  )
 AND
- ((("global" OR "international" OR "globally" OR "internationally" OR "supranational*" OR "transnational*" OR "transatlantic*"
+ ((("global" OR "international" OR "globally" OR "internationally" OR "supranational*" OR "transnational*" OR "multilateral*" OR "worldwide" OR "intergovernmental" 
   ) 
 NEAR/5
   ("economic*" OR "financial*" OR "monetar*" OR "money" OR "capital" OR "asset$" OR "payment$" OR "trade" OR "banking"
@@ -587,7 +587,7 @@ NEAR/5
   ("institution*" OR "market*" OR "bank$" OR "depositor*" OR "repositor*" OR "system$" OR "organi$ation*" OR "central bank*"
   )
  )
-OR "world trade organization" OR "WTO" OR "international monetary fund" OR "imf" OR "world bank"
+OR "world trade organization" OR "international monetary fund" OR "world bank" OR "WTO" OR "IMF"
 )
 )
 ```
