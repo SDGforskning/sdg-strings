@@ -770,12 +770,12 @@ NEAR
   )
   
 NEAR
-  ("target*" OR "focus*" OR "direct*" OR "allocat*" OR "aim$" OR "aiming" OR "aimed" 
+  ("target*" OR "focus*" OR "direct" OR "directing" OR "allocat*" OR "aim$" OR "aiming" OR "aimed" 
    OR "channel*" OR "point" OR "points" OR "pointed" OR "orient$" OR "orientate$" 
   )
 NEAR/5
 
-  ("better" OR "efficient*" OR "effectiv*" OR "optimal*" OR "optimi*" OR "need" OR "needs" OR "needed" OR "impactful*" OR "useful*")
+  ("better" OR "efficient*" OR "effectiv*" OR "optimal*" OR "optimi*" OR "need" OR "needs" OR "needed")
 
    )
  
