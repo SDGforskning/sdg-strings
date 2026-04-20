@@ -54,7 +54,7 @@ Setting the limit to the bottom 40 % is a "practical compromise" that insures th
 This query consists of 1 phrase. The basic structure is *income growth rate + poor*
 
 ```py
-TS=
+
 TS= ((
     ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
