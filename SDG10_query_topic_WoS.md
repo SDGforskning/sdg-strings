@@ -55,28 +55,26 @@ This query consists of 1 phrase. The basic structure is *income growth rate + po
 
 ```py
 TS=
- ((
+TS= ((
     ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
      "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
-     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*" OR "multidimension* poverty"
-     OR "poor household$" OR "poor communit*"
+     "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*" OR "multidimension* poverty" OR
+     "poor household$" OR "poor communit*"
     )
-  
-      NEAR/5
-           ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
-           "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
-           "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
-           "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*"
-            OR "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
-           "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
-           "economic* self relian*" OR "income convergenc*" OR "economic* independen*" OR "financial independen*"
-           "income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" 
-            OR "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
-            )
-    )
-  
-OR (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
+    NEAR/5
+    ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
+     "inclusive econom*" OR "welfare aggregate$" OR "shared prosperit*" OR "welfare distribution$" OR
+     "inclusive growth" OR "income secur*" OR "income equalit*" OR "income stabilit*" OR "microfinanc*" OR
+     "pro poor* growth" OR "propoor* growth" OR "pro poor* econom*" OR "propoor* econom*" OR "financial* selfrelian*" OR
+     "financial* self relian*" OR "econom* equalit*" OR "econom* wellbeing" OR "econom* well being" OR
+     "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
+     "economic* self relian*" OR "income convergenc*" OR "economic* independen*" OR "financial independen*" OR
+     "income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
+     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
+    ))
+    OR 
+    (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
 )
 
 
