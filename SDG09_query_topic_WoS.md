@@ -230,7 +230,8 @@ TS=
             OR "energy system$" OR "power system$" 
             OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "electric* production" 
 			OR "lighting" 
-            OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
+            OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) 
+            OR "recycling system$" 
             OR "water suppl*" OR "drinking water" OR "potable water" OR "clean water" OR "sanitation" OR "drainage system$" 
 			OR "water and sanitation system$" OR "food suppl*"
             OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solution$" OR "internet" OR "mobile network$"
