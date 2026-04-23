@@ -218,33 +218,41 @@ This phrase is about the sustainability of infrastructure and industry through r
 ```py
 TS=
 (
-    ("sustainab*" OR "resilien*" OR "adaptab*" OR "flexib*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" 
-	OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
-    ) 
+		("sustainab*" OR "renewabl*" OR "resource-efficien*" OR "recyclab*" OR "reusabl*"
+	    OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" 
+		OR "ecologically sound" OR "low* carbon" 
+	    OR "green" OR "eco" OR "ecological" OR "nonpollut*" OR "non-pollut*"
+        )
 	    NEAR/5 
         (
             ("industry" OR "industries" OR "manufacturer$" OR "industrial sector$"
-            OR "infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "solution$" OR "source*")) 
+            OR "infrastruct*" OR (("energy" OR "power") NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "solution$" OR "source*")) 
             OR "energy system$" OR "power system$" 
-            OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "electric* production" OR "lighting" 
+            OR "electrification" OR "electric* transmission" OR "electric* distribution" OR "electric* connections" OR "electric* production" 
+			OR "lighting" 
             OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
-            OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
-            OR "telecommunication$" OR "digital communications" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
-            OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" OR "education" OR "school$" 
+            OR "water suppl*" OR "drinking water" OR "potable water" OR "clean water" OR "sanitation" OR "drainage system$" 
+			OR "water and sanitation system$" OR "food suppl*"
+            OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solution$" OR "internet" OR "mobile network$"
+            OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal services" OR "financial service$" OR "banking service$" 
+			OR "education" OR "school*" 
             OR "health care" OR "healthcare" 
             OR "buildings" OR "housing" OR "public spaces" OR "disaster management" 
-            OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "transport" OR "transportation" OR "urban mobility" OR "road" OR "roads"
-            )  
+            OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "transport" OR "transportation" 
+			OR "urban mobility" OR "road" OR "roads"
+            ) 
 	        NEAR/5
-            (
-                (("resourse$" OR "water" OR "material$" OR "energy") NEAR/1 ("efficien*" OR "sustainable" OR "optimi$ation")) 
+		    (
+                (("resource$" OR "water" OR "material$" OR "energy") NEAR/1 ("efficien*" OR "sustainable" OR "optimi$ation")) 
                 OR "eco-efficien*" OR "circular econom*" OR "circularity" OR "closed-loop economy" 
                 OR "industrial ecology" OR "cradle to cradle" OR "cradle-to-cradle"
-                OR (("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "clean" OR "cleaner") NEAR/1 ("technolog*" OR "practice$" OR "production" OR "process*")) 
-                OR (("footprint" OR (("lifecycle$" OR "life-cycle$") NEAR/1 "cost$")) NEAR/3 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "lower" OR "lower$" OR "lowered"))
+                OR (("sustainab*" OR "environmental*" OR "ecological*" OR "eco" OR "green" OR "clean" OR "cleaner") 
+					NEAR/1 ("technolog*" OR "practice$" OR "production" OR "process*")) 
+		        OR (("footprint" OR "CO2" OR "emission$" OR (("lifecycle$" OR "life-cycle$") NEAR/1 "cost$")) 
+					NEAR/3 ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "lower" OR "lower$" OR "lowered"))
 		    )
         )
-
+	
 )
 ```
 
