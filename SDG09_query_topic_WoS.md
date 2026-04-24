@@ -275,6 +275,9 @@ This target is interpreted to cover research about:   
 This query consists of two phrases. The elements of the phrase are research/innovation/R&D/technology + industry/capability/workforce.
 
 ```py
+
+#### Phrase 1
+
 TS=
 (
       ("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
