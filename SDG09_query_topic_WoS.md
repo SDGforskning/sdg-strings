@@ -307,7 +307,7 @@ TS=
 			)
 )
 
-```py
+```
 
 
 ### Target 9.a
@@ -322,7 +322,7 @@ This target is interpreted to cover research about:
 
 This query consists of one phrase. Phrase is about sustainable and resilient infrastructure development in developing countries. Basic structure is sustainable/resilient + infrastructure + developing countries.
 
-```py
+```
 TS=
 ( 
         (("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
