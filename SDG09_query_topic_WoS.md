@@ -373,8 +373,7 @@ TS=
 
 This target is interpreted to cover research about:
 
-    Access to information and communication technology in least developed countries and
-    universal and affordable access to Internet in least developed countries.
+    Access to information and communication technology in least developed countries and universal and affordable access to Internet in least developed countries.
 
 In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. The Sustainable Development Goals Report 2024. Target 9.c aims to significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020. 2023 HLPF thematic review of SDG 9).
 
@@ -384,13 +383,36 @@ This query consists of one phrase. This phrase is about the access to informatio
 ```py
 TS=
 (
-	("Internet" OR "internet connection" OR (“access” NEAR/1 “internet") OR "mobile network" OR "mobile broadband" OR "access to information" OR "access to internet" OR "communication technology" OR "ICT" OR "information and communications technology" OR "digital infrastructure" OR "telecommunication" OR "telecom network" OR "broadband" OR "wireless network" OR "connectivity" OR "affordable internet" OR "low-cost internet" OR "cheap internet" OR "internet affordability" OR "digital divide" OR "universal access" OR "inclusive access" OR "internet penetration" OR "connectivity gap" OR "2G" OR "3G" OR "4G" OR "LTE" OR "third generation" OR "second generation" OR "low bandwidth" OR "slow internet" OR "limited connectivity" OR "basic mobile network" OR "poor connectivity" OR "low-speed internet" OR "wifi"
-        ) 
-        ) 
-    AND 
-        ("least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-        )  
-)
+		(
+		(
+		("access*" OR "equitab*" OR "inequitab*" OR "equity" OR "equality" OR "inequality" OR "equal" OR "unequal" OR "share" OR "sharing" OR "shared benefit$" OR "benefit sharing" 
+		OR "justice" OR "democracy" OR "affordab*" OR "unaffordab*" OR "right$" OR "ownership" OR "control" OR "barrier$" OR "obstacle$"
+		)
+			NEAR/15 
+			("Internet" OR "mobile network" OR "mobile broadband" OR "information" OR "internet" 
+			OR "communication technology" OR "ICT" OR "information and communications technology" OR "digital infrastructure" OR "telecommunication" OR "telecom network" OR "broadband" 
+			OR "wireless network" OR "digital divide"  
+			OR "2G" OR "3G" OR "4G" OR "LTE" OR "third generation" OR "second generation" OR "low bandwidth" OR "slow internet" 
+			OR "basic mobile network" OR "wifi"
+			)
+		)
+		OR 
+		(
+		("connectivity" OR "connectivity gap" OR "limited connectivity" OR "poor connectivity") 
+		NEAR/3 ("internet" OR "ICT" OR "information and communications technology") OR "internet penetration"
+		)
+		)
+			 
+				NEAR/15 
+				("least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" 
+				OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" 
+				OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" 
+				OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" 
+				OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" 
+				OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+				) 
+) 
+
 ```
 
 ## 4. Contributions
