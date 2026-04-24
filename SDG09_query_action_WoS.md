@@ -335,13 +335,13 @@ TS=
 		OR "legislat*" OR "regulat*" OR "juridic*" OR "policy" OR "policies"
 		)
      NEAR/5
-      ("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
+      (("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
 		OR  "research and development and innovation$" OR "research & development & innovation$" OR "research-development-innovation$" OR "RDI"
 	  OR "technological capabilit*" OR "technology capabilit*" OR "technological competenc*" OR "innovation capabilit*"
         ) 
 		NEAR/5
 		("industry" OR "industrial sector*" OR "industrial enterprise$"
-		)
+		))
 )
 
 ```
