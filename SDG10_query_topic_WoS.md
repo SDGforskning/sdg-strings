@@ -631,7 +631,22 @@ Remittances are money transfers sent from one person to another, relatively low 
 This query consists of 1 phrase. The basic structure is *remittance cost + migrants*
 
 ```py
+TS=
+(
+ (
+  ("remittance*" OR "money transfer*" OR "money deliver*" OR "cash deliver*" OR "assignment of money"
+    OR "money order$" OR "money transmission$"
+   )
+NEAR
+   ("cost$" OR "charge$" OR "fee" OR "fees" OR "expense$" OR "price*"
+   )
+  )
 
+AND
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*"
+  OR "expat*" OR "transferee$" OR "guest worker$" OR "seasonal worker$" OR "stateless people" OR "stateless person$"
+  )
+)
 ```
 
 ## 4. Contributions
