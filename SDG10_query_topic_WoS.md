@@ -248,7 +248,7 @@ This target focuses on policies that ensure greater equality. Special focus is p
 
 This query consists of 2 phrases.
 
-The basic structure of Phrase 1 is *equal opportunity OR inequalities*.```
+The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
 
 ```py
 TS=
@@ -292,7 +292,7 @@ The basic structure of Phrase 2 is laws AND equality/inequality.
 
 ```py
 TS=
-(
+((
     ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
     "treaties" OR "strategy" OR "strategies" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action$" OR
     "rule" OR "rules" OR "procedur*" OR "principle$" OR "initiative*" OR "protocol*"
@@ -302,6 +302,8 @@ TS=
 AND
       ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "misogyny*" OR "ableis*" OR "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" )
    )
+
+NOT "pyrolysis")
 
 ``` 
 
