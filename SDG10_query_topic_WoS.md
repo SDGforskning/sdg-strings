@@ -303,7 +303,7 @@ AND
       ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "misogyny*" OR "ableis*" OR "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" )
    )
 
- 
+``` 
 
 
 ### Target 10.5
