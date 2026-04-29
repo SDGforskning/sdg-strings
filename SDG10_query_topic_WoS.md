@@ -364,7 +364,7 @@ TS=
   ("representat*" OR "voice*" OR "vote*" OR "voting" OR "decision-making" OR "decision making" OR 
    "participate" OR "participation" OR "participating"
   )
-NEAR
+NEAR/30
   ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR
    "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR
    "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$"
