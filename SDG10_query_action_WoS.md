@@ -267,7 +267,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law + poor/vu
 ```py
 TS=
 
-(
+((
  (
   (
    ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
@@ -276,9 +276,8 @@ TS=
    )
 
    NEAR
-       (("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*"
-       OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion" OR "bias" OR
-       "bias$ed" OR "obstacle$" OR "barrier$" OR "misogyny*" OR "marginali$e" OR "oppress*" OR "exploit*"
+       (("discriminat*" OR "inequalit*" OR "harass*" OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion"
+       OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$" OR "marginali$e" OR "oppress*" OR "exploit*"
          )
 
    NEAR/5
@@ -300,7 +299,7 @@ TS=
 
     NEAR
        (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-       "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" 
+       "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
         )
 
     NEAR/5
@@ -326,6 +325,41 @@ TS=
  OR "indigenous group$"
    )
  )
+
+OR
+
+(("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
+     "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR "resisting" OR "prohibit*" OR "dismantl*" OR
+     "nullif*" OR "hinder*"
+   )
+NEAR
+    ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "misogyny*")
+
+ NEAR/5
+        ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+        "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+        OR "rules" OR "procedur*" OR "initiative*"
+        )
+)
+
+OR
+
+ (
+    ("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing" OR
+    "better$" OR "more efficient*" OR "more effectiv*" OR "build*" OR "accelerat*" OR "advance$" OR "advancing" OR
+    "develop$" OR "developing" OR "development" OR "encourag*" OR "facilitat*" OR "establish*" OR "propos*" OR
+    "implement*" OR "adopt*" OR "introduc*" OR "boost*" OR "foster*" OR "reform$" OR "reforming" OR "reformed" OR
+    "offer*" OR "heighten*"
+     )
+NEAR
+   "egalitar*"
+NEAR/5
+        ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
+        "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
+        OR "rules" OR "procedur*" OR "initiative*"
+        )
+ )
+)
 
 
 ```
