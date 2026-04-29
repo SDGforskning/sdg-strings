@@ -358,7 +358,7 @@ TS=
      OR "legislat*" OR "regulat*" OR "juridic*" OR (("policy" OR "policies") NEAR/3 ("effect*" OR "impact*" OR "influenc*"))
 	 )
  		NEAR/5
-		("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
+		(("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
 		OR  "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
 		)
 			NEAR/5 
@@ -366,9 +366,8 @@ TS=
 			OR (("worker*" OR "workforce" OR "employee" OR "staff" OR "labor" OR "labour") NEAR/3 ("number*" OR "amount" OR "share")) OR ("job$" NEAR/1 "creat*")
 			OR "invest$" OR "investing" OR "investment$" OR "financ*" OR "fund$" OR "funding" OR "spending*" OR "expend*" OR "expense*" 
 			OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR "resource$"
-			)
+			))
 )
-
 ```
 
 ### Target 9.a
