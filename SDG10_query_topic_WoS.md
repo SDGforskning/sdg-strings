@@ -393,7 +393,7 @@ NEAR/5
   )
  )
 OR "world trade organization" OR "international monetary fund" OR "world bank" OR "WTO" OR "IMF"
-)
+ )
 )
 ```
 
@@ -413,9 +413,25 @@ This target is interpreted to cover research about safe, responsible and regular
 
 "Migration" is not a term officially defined under international law, but refers to a situation where a person moves away from their usual place of recidence. The move can be within-country or to another country, it can be temporary or permanent and be the cause of a variety of reasons. Excluded from this definition are movements due to "recreation, holiday, visits to friends and relatives, business, medical treatment or religious pilgrimages”, that in turn are covered by "mobility of people". <a href="#f21">(IOM 2019.)</a> Migration can enable people to very effectively better their living conditions, for example by accessing higher wage jobs. Migrants also often support their relatives in their country or region of origin, thus spreading the effect even further. Countries and regions receiving migrants can greatly benefit from the skills they bring. Well-managed movement of people can so be beneficial to all parties, as well as having a big effect on reducing inequalities. However, there are still some remarkable barriers for migration and movement of people always functioning in safe, orderly, regular and responsible manners, and these can be measured through the target indicators. <a href="#f22">(UN DESA 2019b.)</a> Orderly migration is defined as “the movement of a person from his/her usual place of residence, in keeping with the laws and regulations governing exit of the country of origin and travel, transit and entry into the host country” and regular as “migration that occurs through recognized, legal channels”. The concepts of safe and responsible migration or well-managed migration policies are not explicitly defined. <a href="#f21">(IOM 2019.)</a> These can however be seen as policies that actively work towards fulfilling the principles and objectives of the Migration Governance Framework that are pictured in the 10.7.2. indicator metadata <a href="#f23">(UN Statistics Division 2023)</a>. 
 
-This query consists of 1 phrase. The basic structure is *security + movement of people OR risks + movement of people*
+This query consists of 1 phrase. The basic structure is *security/risks + movement of people*
 
 ```py
+TS=
+(
+  ("secure" OR "security" OR "protect*" OR "reliab*" OR "stability" OR "stable" OR "safe" OR "regular" OR "responsible"
+   OR "orderly" OR "planned" OR "well-managed" OR "well managed" OR "well-planned" OR "well planned" OR "managed" OR
+   "dignif*" OR "risk$" OR "hazard*" OR "danger" OR "insecure" OR "insecurity" OR "unprotect*" OR "unreliab*" OR "vulnerab*" OR "dead*" OR 
+   "die$" OR "death" OR "disappear*" OR "unstability" OR "unstable" OR "trafficking" OR "barrier$" OR "obstacle$"
+  )
+NEAR
+  ("migrat*" OR "mobili*" OR "move" OR "moving" OR "movement" OR "travel*" OR "international*" OR "internal*" OR
+   "intra stat*" OR "within-country" OR "within country" OR "cross-border*" OR "cross* border*"
+  )
+NEAR
+  ("immigrant*" OR "emigrant*" OR "alien$" OR "migrant*" OR "settler$" OR "asylum seeker$" OR "refugee*" OR "displaced"
+  OR "expat*" OR "transferee$" OR "guest worker$" OR "seasonal worker$" OR "stateless people" OR "stateless person$"
+  )
+ )
 
 ```
 
