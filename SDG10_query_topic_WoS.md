@@ -198,7 +198,7 @@ TS=
     "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
    )
 
-   NEAR/5
+   NEAR/30
        ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
        "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
        OR "rules" OR "procedur*" OR "initiative*"
@@ -224,7 +224,7 @@ OR
 
    ( ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "misogyny*" OR  "egalitar*")
 
- NEAR/5
+ NEAR/30
         ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
         "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
         OR "rules" OR "procedur*" OR "initiative*"
