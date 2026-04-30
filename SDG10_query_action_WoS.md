@@ -464,7 +464,7 @@ TS=
 
   AND
 
-  (
+  ((
    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"  
    OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" 
    OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "escap*" OR "relief*" OR "halt*" OR "resist" OR "resists"
@@ -485,6 +485,7 @@ TS=
      ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
   )
  )
+)
 
 ```
 
