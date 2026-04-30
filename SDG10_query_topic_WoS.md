@@ -148,7 +148,7 @@ Many of the laws, policies and practicies that hinder equal opportunities are no
 
 This query consists of 1 phrase.
 
-The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
+The basic structure of phare is *equal opportunity OR inequalities*.
 
 ```py
 ((
