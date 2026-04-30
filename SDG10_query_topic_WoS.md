@@ -180,7 +180,7 @@ The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
   ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*" OR "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
 )
 
-NOT "pyrolysis" OR "species-poor" OR "species poor"
+NOT "pyrolysis" OR "species-poor" OR "species poor" OR "nuclear science"
 )
 ```
 
