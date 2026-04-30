@@ -146,16 +146,15 @@ This target is interpreted to cover research about
 
 Many of the laws, policies and practicies that hinder equal opportunities are not explicitly discriminatory. However, many of these lack protection and support for e.g. women, persons with disabilities and sexual or ethnic minorities. This can lead to for example sexual harassment, racism and sexism as well as impeding with an individual's freedom of action regarding marriage, legal capacity, politics, movement, health and work among other things. Examples of such are laws restricting women from working in industrial occupations or practices that lead to cities being designed in a non-accessible manner. <a href="#f12">(APA 2020</a>; <a href="#f13">Equal Future 2025</a>; <a href="#f14">UN DESA 2018</a>; <a href="#f9">United Nations 2018.)</a>
 
-This query consists of 2 phrases.
+This query consists of 1 phrase.
 
 The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
 
 ```py
-(
+((
  (
    ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
-    OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing"
-    OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
+    OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
     OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "intoleran*" OR "bigot*" OR "marginali$e" OR "oppress*" OR "exploit*" OR "disenfranchi*"
    )
    
@@ -181,58 +180,10 @@ The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
   ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*" OR "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
 )
 
-
-```
-
-The basic structure of Phrase 2 is *discriminatory law OR anti-discriminatory law*.
-
-```py
-TS=
-
-(
- (
-  (
-   ("discriminat*" OR "inequalit*" OR "harass*" OR "stigma*" OR "ableis*" OR "inaccesib*" OR "unequal*" OR "exclusion"
-    OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$" OR "marginali$e" OR "oppress*" OR "exploit*" OR 
-    "equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-    "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
-   )
-
-   NEAR/30
-       ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-       "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-       OR "rules" OR "procedur*" OR "initiative*"
-       ) 
-    )
-
-   AND
-
-   ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "homeless"
-   OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-   OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-   OR (("person$" OR "people$" OR "adult$" OR "woman" OR "women" OR "man" OR "men" OR "population$" ) NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-   OR "disabled" OR "disabilities" OR "disability"
-   OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors" OR "unemployed" 
-   OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binar*" OR "nonbinar*" OR "queer$" OR "intersex*" OR "gender$"
-   OR "living with HIV" OR "living with AIDS"
-   OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-   OR "indigenous group$"
-   )
- )
-
-OR
-
-   ( ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "misogyny*" OR  "egalitar*")
-
- NEAR/30
-        ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
-        "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
-        OR "rules" OR "procedur*" OR "initiative*"
-        )
-    )
+NOT "pyrolysis" OR "species-poor" OR "species poor"
 )
-
 ```
+
 
 ### Target 10.4
 
