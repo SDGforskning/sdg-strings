@@ -298,8 +298,7 @@ TS=
      )
 
     NEAR
-       (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "anti discriminat*" OR
-       "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*"
+       (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "inclusi*" OR "accessib*"
         )
 
     NEAR/5
@@ -352,7 +351,7 @@ OR
     "offer*" OR "heighten*"
      )
 NEAR
-   "egalitar*"
+   "egalitar* OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*"
 NEAR/5
         ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
         "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
