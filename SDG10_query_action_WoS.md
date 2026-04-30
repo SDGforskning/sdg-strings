@@ -298,7 +298,7 @@ TS=
      )
 
     NEAR
-       (("equal" OR "equally" OR "equalit*" OR "equal opportunit*" OR "equal-opportunit*" OR "inclusi*" OR "accessib*"
+       (("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*"
         )
 
     NEAR/5
@@ -332,7 +332,7 @@ OR
      "nullif*" OR "hinder*"
    )
 NEAR
-    ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "misogyny*")
+     ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*")
 
  NEAR/5
         ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
