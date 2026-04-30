@@ -195,6 +195,7 @@ The basic structure of Phrase 1 is *action (ensure) + equal opportunity + poor/v
 TS=
 
  (
+(
   (
    (
     (
@@ -259,7 +260,7 @@ TS=
         ("egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
    )
 )
-
+NOT ("pyrolysis" OR "species poor" OR "species-poor"))
 ```
 
 The basic structure of Phrase 2 is *action (stop) + discriminatory law + poor/vulnerables OR action (promote) + anti-discriminatory law* + poor/vulnerable.
@@ -267,7 +268,7 @@ The basic structure of Phrase 2 is *action (stop) + discriminatory law + poor/vu
 ```py
 TS=
 
-((
+(((
  (
   (
    ("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR
@@ -351,7 +352,7 @@ OR
     "offer*" OR "heighten*"
      )
 NEAR
-   "egalitar* OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*"
+   "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*"
 NEAR/5
         ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR
         "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "practice$" OR "action*" OR "rule"
@@ -360,7 +361,7 @@ NEAR/5
  )
 )
 
-
+NOT ("pyrolysis" OR "polymer science)))
 ```
 
 ### Target 10.4
