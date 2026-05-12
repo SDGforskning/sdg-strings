@@ -60,7 +60,7 @@ TS= ((
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
      "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
      "absolute* poor*" OR "absolute* poverty" OR "impoverished" OR "multidimension* poor*" OR "multidimension* poverty" OR
-     "poor household$" OR "poor communit*"
+     "poor household$" OR "poor communit*" 
     )
     AND
     ("income growth" OR "per capita consumption$" OR "per capita income$" OR "income per capita" OR
@@ -71,7 +71,7 @@ TS= ((
      "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
      "economic* self relian*" OR "income convergenc*" OR "economic* independen*" OR "financial independen*" OR
      "income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
-     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "poverty" OR "gini index"
+     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "gini index" OR "poverty"
     ))
     OR 
     (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending")
