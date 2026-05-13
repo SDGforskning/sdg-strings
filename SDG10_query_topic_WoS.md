@@ -71,12 +71,12 @@ TS= ((
      "financ* equalit*" OR "financ* wellbeing" OR "financ* well being" OR "economic* selfrelian*" OR
      "economic* self relian*" OR "income convergenc*" OR "economic* independen*" OR "financial independen*" OR
      "income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
-     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "gini index" 
+     "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "gini index" OR "poverty" NEAR/5 ("reduc*" OR "alleviat*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "overcom*" OR
+       "eradicat*" OR "fight*")
     ))
     OR 
     (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
-    OR "poverty" NEAR/5 ("reduc*" OR "alleviat*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "overcom*" OR
-       "eradicat*" OR "fight*"))
+    )
 )
 
 
