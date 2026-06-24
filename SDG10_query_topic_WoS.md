@@ -153,7 +153,7 @@ This query consists of 1 phrase.
 The basic structure of phare is *equal opportunity OR inequalities*.
 
 ```py
-((
+(
  (
    ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
     OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
@@ -182,8 +182,6 @@ The basic structure of phare is *equal opportunity OR inequalities*.
   ("racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "ageism" OR "agism" OR "hate speech" OR "religious discrimination" OR "ableis*" OR "misogyny*" OR "egalitar*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*")
 )
 
-NOT "pyrolysis" OR "species-poor" OR "species poor" OR "nuclear science"
-)
 ```
 
 
