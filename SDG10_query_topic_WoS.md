@@ -153,6 +153,8 @@ This query consists of 1 phrase.
 The basic structure of phare is *equal opportunity OR inequalities*.
 
 ```py
+TS=
+
 (
  (
    ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
