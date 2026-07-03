@@ -262,7 +262,7 @@ TS=
 This target is interpreted to cover research about
 * eliminating all harmful practices against women and girls
 
-The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
+The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant. Some search terms are combined with "women, girls and gender" to avoid noise.
 
 #### Phrase 1
 
@@ -277,21 +277,22 @@ TS=(
 	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "end" OR "ends" OR "ended" OR "ending" OR "abolish*"
 	) 
 	NEAR/10 
-		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*"
-		OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/5 "marriage*")
-		OR "CEFM" OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
-		OR (("virgin*" OR "hymen*") NEAR/5 ("test*" OR "examin*"))
-		) 
-		NEAR/10
-		    ("*women" OR "*woman" OR "*womens" OR "*womans"
-                OR "girl$"
-                OR "female$"
-                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-                OR "wife" OR "wives" OR "girlfriend$"
-                OR "pregnan*" OR "maternity" OR "maternal"
-                OR "gender*" OR "sexual and gender" OR "transgender*"
+		(("femicid*" OR "feminicid*" OR "grannicid*" OR "infibulat*" OR "virginity test*" OR (("hymen" OR "hymenal") NEAR/5 ("test*" OR "examin*")))
+		OR "child marriage$" OR "early marriage$" OR  "forced marriage$" OR "underage marriage$"
+		OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
+		OR
+		(("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$"
+			OR "CEFM" OR "physical punish*" OR "corporal punish*" OR "stoning$"
+			) 
+			NEAR/10
+		    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+			OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
+			OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+			OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+			OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
 		    )
-		
+		)
+		)
 )
 ```
 
