@@ -282,7 +282,7 @@ TS=(
 		OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
 		OR
 		(("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$"
-			OR "CEFM" OR "physical punish*" OR "corporal punish*" OR "stoning$"
+			OR "CEFM" OR "physical punish*" OR "corporal punish*" OR "stoning$" OR "honor killing$"
 			) 
 			NEAR/10
 		    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
