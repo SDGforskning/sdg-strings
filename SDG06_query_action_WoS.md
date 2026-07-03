@@ -2,7 +2,7 @@
 
 Ensure availability and sustainable management of water and sanitation for all 
 
-**Status: This query is currently under development (2025)**
+**Status: This query is a finished draft. It has not been formally tested.**
 
 **Contents**
 
@@ -11,7 +11,6 @@ Ensure availability and sustainable management of water and sanitation for all
 3. Documentation and string sections for each target
 4. Contributions
 5. Footnotes
-
 
 ## 1. Full query
 
@@ -82,7 +81,7 @@ TS=
       (
         ("availab*" OR "access" OR "affordab*" OR "clean" OR "safe" OR "safety" OR "improved" OR "manag*" OR "regulat*" 
         OR "quality" OR "monitor*" 
-        OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" 
+        OR "potable" OR "uncontaminated" OR "unpolluted" OR "pure" OR "disinfect*"
         OR "piped" OR "tap*" OR "faucet" OR "running" OR "municipal" OR "borehol*" OR "tubewell*" 
         OR "water provision" OR "household water" OR "domestic water" 
         OR "rainwater" 
@@ -90,7 +89,7 @@ TS=
         OR "packaged" OR "delivered" OR "collect*" OR "fetch*" OR "distribut*"
         OR ("water" NEAR/3 "kiosk*") 
         OR "water security" OR "water insecurity" 
-        OR "water justice" 
+        OR "water justice" OR "water safety"
         ) 
         NEAR/5 ("drink*" NEAR/3 "water") 
       ) 
@@ -152,7 +151,7 @@ TS=
 
 This target is interpreted to cover research about reducing inequalities in access to safe sanitation and hygiene services, and about advancing access to these services for women, girls and people in vulnerable situations. It is also about abandoning unimproved sanitation facilities or lack of sanitation i.e. practicing open defecation <a href="#f5">(UN DESA 2018)</a>.
 
-What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> 
+What is adequate sanitation? According to the definitions of the indicator metadata 6.2.1a  https://unstats.un.org/sdgs/metadata/files/Metadata-06-02-01a.pdf <a href="#f8">(UN Statistics division 2025)</a> and WHO/UNICEF JMP Sanitation website <a href="#f21">(WHO/UNICEF JMP)</a>
 
 > *Safely managed sanitation services is about using improved sanitation facilities*.
 > 
@@ -162,13 +161,15 @@ What is adequate sanitation? According to the definitions of the indicator metad
 > *Safely managed sanitation services also refer to facilities where the excreta are safely disposed of in situ or removed
 > and treated off-site and hygienically separate from human contact*.
 
-However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
+However, in addition to searching for safely managed sanitation services as defined in the indicator metadata 6.2.1a and *WHO/UNICEF JMP Sanitation website* we have built the phrases to search for any research mentioning advancing access to sanitation as we interpreted this to be the aim of the target and would have lost relevant research by restricting to research mentioning "adequate".
+
+As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
 
 We were unsure whether oral hygiene should be included as it is not specifically mentioned in the background materials. Currently, the phrases do not excluded it.
 
-Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
+We would like to thank PhD Anni Juvakoski for her valuable specialist advise and for finding more relevant search terms. 
 
-As the target is about equal access and a particular focus is on women, girls and people in vulnerable situations we interpret this target also to include eliminating inequalities they may face in access to sanitation and hygiene. 
+Target 6.2 is related to SDG 11 target 11.1 which is about access to safe housing and basic services.
 
 This query consists of 3 phrases.
 
@@ -176,9 +177,11 @@ This query consists of 3 phrases.
 
 This phrase aims to find research about providing safe and equitable sanitation and hygiene services. Terms for the search were found e.g. in the indicator metadata 6.2.1a <a href="#f8">(UN Statistics division 2025)</a>.
 
-`Toilets` with synonyms are linked to `adequate` -string to focus on basic services. Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general.
+Term `WC`was not used due to other uses of wc as an abbreviation. `sewage` and `disposal of wastewater` etc. are linked to `sanitation & hygiene` in order to exclude research about wastewater treatment in general. Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
 
-Term `WASH` is linked to `services or facilities` in order to exclude irrelevant results about wash in other meanings. Term `hygiene`in also linked to `services or facilities` in order to try to focus on services more than consequences of lack of hygiene.
+As pointed out by our specialist, we have not included brands (such as EcoSan toilets) in the search terms. We felt that an equitable and up-do-date list of brands would be challenging to maintain. But this may exclude articles mentioning only the brand and not e.g. "improved toilets".
+
+Terms `basic` and `limited` are added in the `safe` string since they are used in source materials when defining improved sanitation and might be used in research papers.
 
 The elements of the phrase are *action + safe/equitable/access + WASH/safely managed sanitation services*  
 
@@ -197,41 +200,42 @@ TS=
   OR "program*" OR "project*" OR "intervention*"
   )
   NEAR/15 
-    (
-      ("safe" OR "safely" OR "improved" OR "basic" OR "equitab*" OR "non-equit*" OR "equal*" 
-      OR "adequate" OR "access" OR "availab*" OR "unavailab*" OR "obstacle$" OR "barrier$" 
-      OR "hinder*" OR "hindrance*"  
-      ) 
-      NEAR/15 
-          ("sanitation" 
-          OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
-          OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-          OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-          
-          OR "safely managed sanitation services" 
-          OR "improved sanitation facilit*" 
-          OR "wet sanitation technolog*" 
-          OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-          OR "dry sanitation" 
-          OR "dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" OR "container based sanitation" 
-          OR 
+  (
+  (
+    ("safe" OR "safely" OR "improved" OR "basic" OR "limited" OR "equitab*" OR "non-equit*" OR "equal*" 
+    OR "adequate" OR "appropriate" OR "access" OR "availab*" OR "unavailab*" 
+    OR "obstacle$" OR "barrier$" OR "hinder*" OR "hindrance*"
+    ) 
+  NEAR/15 
+    ("sanitation" 
+    OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
+    OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
+    OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
+    OR "toilet$" OR "lavator*" OR "latrine*" OR "water closet*" OR "outhouse$"
+    OR 
+      (
+        ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
+          OR
             (
-              ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
-              NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
-            ) 
-          OR 
-            (
-              ("sewage" OR "sewers" OR "sewer network" OR "sewer system" OR "sewerage" 
-              OR
-                (
-                  ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
-                  NEAR/3 ("wastewater" OR "human excret$" OR "faeces" OR "faecal sludge")
-                )
-              )
-              NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
+              ("dispos*" OR "removal" OR "remove*" OR "treat*" OR "containment" OR "emptying" OR "transport" OR "reuse") 
+                NEAR/3 ("wastewater" OR "human excreta" OR "animal excreta" 
+                        OR "fecal" OR "faecal" OR "feces" OR "faeces" 
+                        OR "black water" OR "urine" OR "compost")
             )
-          )
+        )
+        NEAR/5 ("sanitation" OR "hygiene" OR "WASH") 
+      )
     )
+  )
+  OR "safely managed sanitation services" 
+  OR "improved sanitation facilit*" 
+  OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
+  OR ("pit latrines" NEAR/3 ("slab*" OR "platform*"))
+  OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+  OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
+  OR "separating toilet$" OR "separating latrine$" 
+  OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
+  )
 )        
 ```
 
@@ -258,23 +262,23 @@ TS=
   NEAR/15 
     (
       (
-        ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "lack*" OR "unimproved" OR "unsafe" 
-        OR "absent" OR "absence" OR "unhygienic" OR "unsanitary" OR "insanitary"
+        ("inadequate" OR "unsafe" OR "poor" OR "bad" OR "unknown" OR "limited" 
+        OR "unimproved" OR "unsafe" OR "unhygienic" OR "unsanitary" OR "insanitary" 
+        OR "absent" OR "absence" OR "lack*" 
         ) 
         NEAR/3 
-          (
-            (("sanitation" OR "hygiene") NEAR/3 ("service$" OR "facilit*")) 
+          ("sanitation" 
+           OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
             OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
             OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
           )
       )   
       OR "unimproved sanitation facilit*" 
       OR ("flush toilet*" NEAR/3 ("open drain*")) 
-      OR "pit latrines without slab*" 
+      OR ("pit latrines" NEAR/3 ("slab*" OR "platform*")) 
       OR ("open pit*" NEAR/3 ("sanitation" OR "defecation"))
-      OR ("hanging" NEAR/3 ("toilet$" OR "latrine$")) 
+      OR (("toilet$" OR "latrine$") NEAR/3 ("hanging" OR "bucket$" OR "pan$" OR "tray$" OR "container$"))  
       OR "no toilet" 
-      OR ("unsealed" NEAR/3 ("bucket$" OR "pan$" OR "tray$" OR "container$")) 
       OR "open defecation" 
       OR
         (
@@ -360,7 +364,7 @@ TS=
         OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
         OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
         OR ("WASH" NEAR/3 ("service$" OR "facilit*"))
-        OR ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
+        OR ("toilet$" OR "lavator*" OR "latrine*" OR "water closet*") 
         )
     )
 )
@@ -377,14 +381,14 @@ TS=
 
 This target is interpreted to cover research about 
 
-* improving water quality
-* reducing untreated wastewaters discharged into the environment and releases of pollution and hazardous chemicals and materials
-* increasing recycling and safe reuse of wastewater
-* monitoring of water quality
+* reducing untreated wastewaters, pollution and hazardous chemicals discharged into freshwater bodies
+* improving treatment and recycling of wastewaters, pollution and hazardous chemicals related to freshwater bodies
+* improving treatment of wastewaters in general
+* improving and monitoring water quality of freshwater bodies
 
  <a href="#f6">(UNSD 2022)</a>; <a href="#f13">(UN-Water. Water quality & Wastewater)</a>
 
-This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be consider relevant to the target.
+This target focuses on freshwater bodies. The ones mentioned in the metadata for indicator 6.3.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-02.pdf <a href="#f8">(UN Statistics division 2025)</a> are `lakes` `rivers` `streams` `groundwaters` `aquifers`  `reservoirs` . Although `drinking water` is not a freshwater body, we have added it to the phrases for better recall of research relevant to topics of the target. Term `stream` is combined with `water` in order to exclude irrelevant results e.g. about waste stream. In phrases 1 and 2, term `river` is combined with `NOT river delta` to exclude results e.g. about cities by the river delta.  We do not count `aquacultures` as freshwater bodies but whenever papers about them mention also `freshwater` they are retrieved by the phrases, even though pollution on aquacultures would not be considered relevant to the target.
 
 The classification for wastewater generators is <a href="#f8">(UN Statistics division 2025)</a>
 * domestic/households
@@ -393,18 +397,18 @@ The classification for wastewater generators is <a href="#f8">(UN Statistics div
 
 Since `runoff` from urban and agricultural land is mentioned in the indicator metadata as a potentially significant contributor to wastewater flows we have added it as a search term. Although runoff is not currently monitored by the indicators for 6.3  https://unstats.un.org/sdgs/metadata/files/Metadata-06-03-01.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
-Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freswater species. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as it is closely linked to questions about the water quality and would be quite challenging to filter out. 
+Although mentioned in the background materials, terms `nutrients` and `fertilizers` were not included in the phrases in order to not focus too much in the ecology/biology of freshwaters. We interpreted this target to be more about the water quality. However, we have not tried to exclude research about the effects of freshwater quality on plant/animal species as this is closely linked to questions about the water quality and would be quite challenging to filter out. 
 
 Target 6.3 is related to targets 
 * SDG 14.1 preventing and reducing marine pollution
 * SDG 12.4 reducing harmful releases to water
 * SDG 12.5 reducing waste through e.g. recycling and reuse
 
-This query consists of 3 phrases.
+This query consists of 4 phrases.
 
 #### Phrase 1
 
-This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into fresh water bodies or drinking water.
+This phrase aims to find research about reducing or eliminating releases of pollution and hazardous chemicals, wastewaters and dumping into freshwater bodies or drinking water.
 
 Instead of specifying to research about reducing untreated wastewaters we have included research about reducing any wastewaters in freshwater bodies or drinking water.
 
@@ -428,7 +432,7 @@ TS=
         OR 
           (
             ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
-            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off")          
+            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off" OR "stormwater$")          
           )
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$"  
         OR 
@@ -466,8 +470,9 @@ TS=
     OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
+    OR "natural water$" OR "water source$" 
     OR ("water" NEAR/3 "reservoir$") 
-    OR "drinking water"
+    OR ("drink*" NEAR/1 "water")
     )
 )
 ```
@@ -507,7 +512,7 @@ TS=
         OR
           (
             ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
-            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off")          
+            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off" OR "stormwater$")          
           )
         OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
         OR 
@@ -544,13 +549,85 @@ TS=
     OR ("river$" NOT "river delta") OR ("stream$" NEAR/3 "water") 
     OR "brook$" OR "creek$" 
     OR "aquifer$" OR "groundwater" 
+    OR "natural water$" OR "water source$" 
     OR ("water" NEAR/3 "reservoir$") 
-    OR "drinking water"
+    OR ("drink*" NEAR/1 "water")
     )
 )
 ```
 
-#### Phrase 3
+#### Phrase 3   
+
+This phrase aims to find research about improving treatment of wastewaters and about removing pollution and hazardous chemicals from wastewaters. 
+
+The terms for pollution were found largely from the same sources as in 14.1, Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life <a href="#f19">[Lloyd-Smith and Immig (2018)]</a> and the Global Programme of Action for the Protection of the Marine Environment from Land-based Activities (<a href="#f20">[UN Environment Programme, n.d.]</a>). Terms for pathogenic contaminants were found from WHO Top 10 drinking-water and sanitation related pathogens <a href="#f18">(WHO 2025)</a>.
+
+The elements of the phrase are *action(increase/improve) + treatment/removing + wastewater/pollution+water*
+
+```py
+TS=
+(
+  ("improv*" OR "strengthen*" OR "enhanc*" OR "scal* up" OR "upgrad*"
+  OR "develop" OR "developing" OR "implement*" OR "establish*" OR "build*" OR "propose*" 
+  OR "introduce" OR "design*" OR "adopt*" OR "enforc*" OR "prioriti*"
+  )
+    NEAR/5 
+    ("water purification" 
+    OR 
+    (
+      ("treatment" OR "remov*" OR "recovery" OR "technolog*"
+      OR "monitor*" OR "assess*"
+      OR "indicator$" OR "bioindicator$" OR "index" OR "indices"
+      OR "life cycle assess*" OR "LCA"
+      OR "environment* assess*" OR "environment* impact assess*"
+      OR "manag*" OR "pollution control$"
+      OR "strategy" OR "strategies" OR "regulat*" OR "legislat*" OR "policy" OR "policies" OR "framework" OR "programme"
+      ) 
+        NEAR/15 
+        ("wastewater" OR "waste water" OR "sewage" OR "sewer$" OR "effluent$" 
+        OR 
+        (
+        (
+        (
+          ("aquaculture" OR "farm*" OR "industr*" OR "livestock" OR "agricultur*" OR "household$" OR "domestic" OR "urban" OR "dumping")
+            NEAR/15 ("waste" OR "discharge" OR "runoff" OR "run off" OR "stormwater$")
+        ) 
+        OR "pollut*" OR "contaminated" OR "contaminant$"
+        OR "plastic$" OR "microplastic$" OR "micro plastic$" OR "nanoplastic$" OR "nano plastic$" 
+        OR "toxic chemical$"
+        OR "endocrine disrupting chemical$"
+        OR "persistent organic pollutant$" OR "polychlorinated biphenyl$" OR "PCB" OR "DDT" 
+        OR "hexachlorocyclohexane" OR "hexachlorobenzene" OR "hexachlorobutadiene" OR "pentachlorobenzene" 
+        OR "pentachlorophenol" OR "pentachloroanisole" OR "hexabromocyclododecane" OR "polybrominated diphenyl ether$" 
+        OR "perflurochemicals" OR "PFAS" OR "endosulfan"
+        OR "polycyclic aromatic hydrocarbon$" OR "PAH"
+        OR "oil spill$" 
+        OR 
+          (
+          ("heavy metal$" OR "toxic metal$" OR "mercury" OR "arsenic" OR "cadmium" OR "chromium" OR "copper" OR "nickel" 
+          OR "organotin$" OR "tributyltin" OR "TBT" OR "mining" OR "mine tailing$" OR "oil" 
+          OR "pesticide$" OR "herbicide$" 
+          OR "pharmaceutic*" OR "antibiotic*" OR "medical" 
+          OR "pathogen*" OR  "bacteria" OR "virus" OR "viruses" 
+          OR "protozoa" OR "helminth$" OR "parasite$" 
+          OR "Legionella pneumophila" OR "E. coli" OR "Escherichia coli " OR "coliforms" 
+          OR "Vibrio cholerae" OR "Salmonella" OR "Shigella" OR "Campylobacter" OR "Rotavirus" 
+          OR "Norovirus" OR "Hepatitis" OR "Adenovirus" OR "Cryptosporidium" 
+          OR "arsenic" OR "fluoride*"
+          ) 
+            NEAR/3 ("contaminat*" OR "pollut*" OR "residue*")
+          )
+        ) 
+          NEAR/5 
+          ("water$")
+      ) 
+      )   
+    )
+  )   
+)
+```
+
+#### Phrase 4
 
 This phrase aims to find research about increasing, improving and monitoring water quality of  freshwater bodies and drinking water.
 
@@ -572,8 +649,9 @@ TS=
           OR ("river$") OR ("stream$" NEAR/3 "water") 
           OR "brook$" OR "creek$" 
           OR "aquifer$" OR "groundwater" 
+          OR "natural water$" OR "water source$" 
           OR ("water" NEAR/3 "reservoir$") 
-          OR "drinking water"
+          OR ("drink*" NEAR/1 "water")
           )
     )
 )
@@ -609,7 +687,7 @@ By the definition of the indicator metadata 6.4.1 https://unstats.un.org/sdgs/me
 > * Service sectors (ISIC E, ISIC G-T)
 	Which includes e.g. water used primarily for the direct use of population
 
-Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not made efforts to exclude withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">(UN Statistics division 2025)</a>.
+Although sectors are specified in the sources we have not specified sectors in the phrases. The phrases are searching for any research about sustainable use of water supplies. Also, we have not excluded withdrawals of non-conventional water, i.e. `treated wastewater` `agricultural drainage water` or `desalinated water`although these were mentioned as not-included in the indicator metadata 6.4.2 https://unstats.un.org/sdgs/metadata/files/Metadata-06-04-02.pdf <a href="#f8">(UN Statistics division 2025)</a>.
 
 We are unsure about whether research about water efficiency or water stress of plants should be considered relevant to this topic or not. Since HLPF review on SDG 6 implementation <a href="#f5">(UN DESA 2018)</a> mentions agricultural sector as the largest user of fresh water and names e.g. increasing productivity of food crops and growing fewer water-intensive crops as means to water savings we have not tried to exclude these from the results. The results currently include both research about drought tolerant crops and water stress of plants in general. 
 
@@ -645,27 +723,26 @@ TS=
         OR "unsustainab*" OR "irresponsib*" OR "inefficient*" OR "resilient" OR "resilience"
         ) 
         NEAR/3 
-          (
+          
             (
-              ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$" )
+              ("withdrawal$" OR "extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$")
               NEAR/15
-                ("water supply" OR "water supplies" OR "suppl* of freshwater"
-                OR "water resource$" OR "freshwater resource$" 
-                )
-            )
-            OR (("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") NEAR/3 ("water" OR "freshwater"))
-          )
+                "freshwater"
+            )   
       ) 
     OR 
       (("save" OR "saving$") 
-      NEAR/5 ("water" NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
+      NEAR/5 (("water" OR "freshwater") NEAR/3 ("withdrawal$" OR "use*" OR "usage"))
       ) 
-    OR "water saving$" 
+    OR "water saving$" OR "freshwater saving$" 
     OR 
       (
         ("recycl*" OR "re-cycl*" OR "reuse$" OR "re-use$" OR "reusing" OR "re-using") 
-        NEAR/1 ("water" OR "freshwater")
-      )
+        NEAR/1 ("water" OR "freshwater" OR "greywater")
+      ) 
+    OR "water harvest*" OR "rainwater harvest*" OR "stormwater harvest*"
+    OR ("evaporation" NEAR/3 ("solar" OR "clean water" OR "pure water")) 
+    OR "water evaporator$"
     )
 )    
 
@@ -675,6 +752,8 @@ TS=
 #### Phrase 2
 
 This phrase aims to find research about reducing the use of water resources, water stress and water scarcity.
+
+The phrase contains same element of ´extraction of water´ as phrase 2 but linked more tightly to ´water supplies´ and with the restriction to ´sustainable´ lifted.
 
 The elements of the phrase are *action + use of water resources/water stress/water scarcity*
 
@@ -688,7 +767,7 @@ TS=
     NEAR/5 
       (
         (
-          ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$" OR "withdrawal$" )
+          ("extract*" OR "resource us*" OR "usage" OR "consumption" OR "consume$" OR "consumer$")
           NEAR/15
               ("water supply" OR "water supplies" OR "suppl* of freshwater"
               OR "water resource$" OR "freshwater resource$" 
@@ -699,7 +778,8 @@ TS=
           ("withdrawal$" OR "abstraction" OR "abstracted" OR "allocation") 
           NEAR/3 ("water" OR "freshwater")
         )
-      OR ("water scarcity" OR "water stress" OR "water withdrawal intensity")
+      OR (("water" OR "freshwater") NEAR/1 "scarcity") 
+      OR "water stress" OR "water withdrawal intensity"
       )
   ) NOT ("water-filling" OR "water filling") 
 )
@@ -755,10 +835,14 @@ TS=
       (
         ("cross sectoral" OR "cross-sectoral" OR "intersectoral" OR "inter sectoral" 
         OR "multisectoral" OR "multi sectoral" 
-        OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*"
+        OR"coordinat*" OR "co-ordinat*" OR "integrated" OR "interdependen*" OR "interconnect*" 
+        OR "interact*" 
+        OR "synergy" OR "synergies"
         ) 
-        NEAR/5 
-            (
+        NEAR/10 
+            ("water management" 
+            OR 
+              (
               ("manage*" OR "develop*" OR "resource use" OR "usage" OR "withdrawals" 
               OR "govern*" OR "development" OR "administrat*" OR "plan" OR "plans" OR "planning" 
               OR "policy" OR "policies"
@@ -770,6 +854,7 @@ TS=
                 OR (("water" OR "river") NEAR/3 "basin") 
                 OR "hydrological unit" OR "watershed"
                 )
+              )
             )
       )
     OR 
@@ -819,7 +904,7 @@ Also `mangroves` are included even though they contain brackish water instead of
 This target is related to 
 * SDG 15, particularly to target 15.1 about conservation of terrestrial and freshwater ecosystems. 
 
-However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than on the protection of species. Still, we have not tried to exclude research about species since the sources clearly include biodiversity as an element to be protected. Species affect and are affected by the condition of their habitat.
+However, we interpret target 6.6 to be more focused on the protection of freshwater supplies than on the protection of species. Nonetheless, since the sources clearly mention biodiversity as an element to be protected we have included `biodiversity` in the search terms and have  not tryed to exclude research about species. Species affect and are affected by the condition of their habitat.
 
 Although indicator metadata 6.6.1a excludes `mountain and forest ecosystems` we have not filtered them from the results since the water-related ecosystems of mountains and forests are mentioned in the title of this target.
 
@@ -838,7 +923,9 @@ The structure of this phrase is similar to phrase 3 of targets 14.2 and 15.1.
 TS=
 (
   ("conserve" OR "conserving" OR "manage" OR "managing" OR "managed" 
-  OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*"
+  OR "protect" OR "protecting" OR "protected" OR "restore" OR "restoring" OR "rehabilita*" 
+  OR "nature based solution$" 
+  OR "extract*" OR "resource us*" OR "usage" OR "consumption" OR "withdrawal$" 
   OR
     (
       ("management" OR "conservation" OR "protection" OR "restoration" OR "resilien*")
@@ -858,8 +945,9 @@ TS=
     (
       ("ecosystem$" OR "habitat$" OR "ecological communit*" OR "biotope$" 
       OR ("water" NEAR/3 ("quality" OR "quantity" OR "area" OR "extent" OR "volume")) 
+      OR "biodiversity"
       ) 
-      NEAR/5 
+      NEAR/10 
         ("freshwater" OR "fresh water" 
         OR "lake*" OR "pond$"
         OR "river*" OR "stream$" OR "brook$" OR "creek$" 
@@ -997,20 +1085,17 @@ TS=
           ("sanitation" 
           OR ("hygiene" NEAR/3 ("service$" OR "facilit*")) 
           OR ("handwashing" OR "hand-washing" OR ("wash*" NEAR/3 "hand$")) 
-          OR ("WASH" NEAR/3 ("service$" OR "facilit*" OR "program*" OR "intervention$" OR "initiative$"))
-      
+          OR ("WASH" NEAR/3 ("service$" OR "facilit*"OR "program*" OR "intervention$" OR "initiative$")) 
+          OR "toilet$" OR "lavator*" OR "latrine*" OR "water closet*" OR "outhouse$" 
+    
           OR "safely managed sanitation services" 
           OR "improved sanitation facilit*" 
-          OR "wet sanitation technolog*" 
           OR ("flush toilet*" NEAR/3 ("sewer*" OR "septic tank*" OR "pit latrine*")) 
-          OR "dry sanitation" 
-          OR ("dry pit latrine* with slabs" OR "ventilated pit latrine*" OR "composting toilet*" 
-          OR "container based sanitation") 
-          OR 
-          (
-            ("safe" OR "safely" OR "safety" OR "basic" OR "equitab*" OR "non-equit*" OR "adequate" OR "access") 
-            NEAR/5 ("toilet*" OR "lavator*" OR "latrine*" OR "water closet*") 
-          ) 
+          OR ("pit latrines" NEAR/3 ("slab*" OR "platform*"))
+          OR "ventilated pit latrine$" OR "composting latrine$" OR "container based sanitation" 
+          OR "pit toilet$" OR "dry toilet$" OR "composting toilet$" 
+          OR "separating toilet$" OR "separating latrine$" 
+          OR "urine-diverting dry toilet$" OR "urine-diverting dry latrine$" 
           OR 
           (
             ("sewage" 
@@ -1101,7 +1186,7 @@ This target is interpreted to cover research about supporting the participation 
 
 According to the indicator metadata 6.b <a href="#f8">(UN Statistics division 2025)</a> water and sanitation management includes all areas of management related to each of the targets under SDG 6:  water supply (6.1), sanitation and hygiene (6.2), wastewater treatment and ambient water quality (6.3), efficiency and sustainable use (6.4), integrated water resources management (6.5) and water-related ecosystems (6.6).
 
-We have combined the terms for `wastewater treatment` `water quality` and `water-related ecosystems` with freswater terms as in the phrases for targets 6.3 and 6.6. 
+We have combined the terms for `wastewater treatment` `water quality` and `water-related ecosystems` with freshwater terms as in the phrases for targets 6.3 and 6.6. 
 
 This query consists of 1 phrase.
 
@@ -1167,9 +1252,9 @@ TS=
 
 ## 4. Contributions
 
-* v2.1.0: Leena Byholm (Sept 2025)
+* v2.1.0: Leena Byholm (January 2026)
 
-Specialist input: 
+Specialist input: Anni Juvakoski (PhD in Water and Environmental Engineering), Aalto University; target 6.2, January 2026
 
 ## 5. Footnotes
 
@@ -1179,6 +1264,8 @@ Specialist input:
 
 <span id="f9">HLPF (2018).</span> *Inclusive, Safe, Resilient and Sustainable Societies and Persons with Disabilities: Executive Summary*
 https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_Sectoral_paper_HLPF2018.pdf
+
+<span id="f19"> Lloyd-Smith and Immig (2018).</span> *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf
 
 <span id="f11">Office of the High Commissioner (n.d.).</span> *Non-discrimination: Groups in vulnerable situations. Special Rapporteur on the right to health*. United Nations Human Rights https://www.ohchr.org/en/special-procedures/sr-health/non-discrimination-groups-vulnerable-situations [accessed Jun 2022]
 
@@ -1198,6 +1285,8 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f1">UN DESA. (2025).</span> *Goals: Ensure availability and sustainable management of water and sanitation for all*. https://sdgs.un.org/goals/goal6#targets_and_indicators [Accessed 2.4.2025]
 
+<span id="f20"> UN Environment Programme (n.d.).</span> *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]
+
 <span id="f6">UNSD (2022).</span> *6 Clean Water and Sanitation: The Sustainable Development Goals Extended report 2022* https://unstats.un.org/sdgs/report/2022/extended-report/Extended-Report_Goal-6.pdf 
 
 <span id="f8">UN Statistics Division (2025).</span> *SDG Indicators Metadata Repository*. https://unstats.un.org/sdgs/metadata 
@@ -1212,6 +1301,8 @@ https://sdgs.un.org/sites/default/files/documents/18805PersonswithDisabilities_S
 
 <span id="f18"> WHO (2025).</span> *Top 10 drinking-water and sanitation related pathogens* https://cdn.who.int/media/docs/default-source/wash-documents/burden-of-disease/top-10-drinking-water-and-sanitation-pathogens_final.pdf?sfvrsn=c0e013da_3&download=true
 
-<span id="f19"> Lloyd-Smith and Immig (2018).</span> *Ocean Pollutants Guide: Toxic Threats to Human Health and Marine Life*. International Pollutants Elimination Network/National Toxics Network.  https://ipen.org/sites/default/files/documents/ipen-ocean-pollutants-v2_1-en-web.pdf
+<span id="f21"> WHO/UNICEF JMP.</span> *Sanitation* https://washdata.org/topics/sanitation [Accessed 15.1.2026]
 
-<span id="f20"> UN Environment Programme (n.d.).</span> *Addressing Land-Based Pollution*. United Nations. https://www.unep.org/explore-topics/oceans-seas/what-we-do/addressing-land-based-pollution [Accessed 22 November 2021]
+
+
+
