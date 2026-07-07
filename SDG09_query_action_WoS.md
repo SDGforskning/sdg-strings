@@ -315,18 +315,15 @@ TS=
 >
 > 9.5.2 Researchers (in full-time equivalent) per million inhabitants
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research on activities aimed at strengthening scientific research and upgrading the technological capabilities of industrial sectors, including through encouraging innovation and increasing R&D capacity (personnel and funding).
 
-* Upgrading/enhancing technological capabilities and research within or to do with industry.
-* Encouraging innovation, and increasing R&D capacity, including workforce and funding.
+In Target 9.5, we interpret the primary means of advancing scientific research and industrial technological development to be those explicitly mentioned in the target, and we use these as the basis for our search.
 
-SDG Target 9.5 focuses on strengthening the foundation for innovation and scientific advancement. E-Handbook on Sustainable Development Goals Indicators (2024): 9.5.1 and 9.5.2. In spite of the research workforce continuing to rise at the global level, firm policy commitments towards substantial increase in the number of research personnel, particularly in developing economies, as well as strengthening the participation of women in research profession are essential for the effective delivery of innovative solutions for the challenges ahead. (The Sustainable Development Goals. Extended Report 2024). 
-
-This query consists of 2 phrases. 
+This query consists of one phrase. 
 
 #### Phrase 1
 
-This phrase is about upgrading/enhancing technological capabilities and research within or to do with industry. The elements of the phrase are action + technolocal capabilities/R&D + industry.
+This phrase is about enhancing scientific research and upgrading technological capabilities within industry by increasing personnel and funding. The elements of the phrase are *action + scientific research/technolocal capabilities + investments*.
 
 ```py
 TS=
@@ -641,9 +638,6 @@ TS=
 Specialist input: Eeva-Liisa Viskari (Chief Specialist in Sustainability and ESG) Tampere University (December 2025)
 
 ## 5. Footnotes
-
-
-<span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
 <span id="f4">Soriano, A, Gaikwad S, Stratton-Short S, Bajpai A, Imbuye J. (2022).</span> *Inclusive infrastructure for climate action*. UNOPS, Copenhagen, Denmark. Available https://wrd.unwomen.org/sites/default/files/2023-03/Inclusive_Infrastructure_Climate_Action.pdf [Accessed 2025.07.07]
 
