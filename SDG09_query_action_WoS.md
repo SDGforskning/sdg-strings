@@ -327,44 +327,31 @@ This phrase is about enhancing scientific research and upgrading technological c
 
 ```py
 TS=
-(
-     ("boost*" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"
-		OR "legislat*" OR "regulat*" OR "juridic*" OR "policy" OR "policies"
-		)
-     NEAR/5
-      (("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
-		OR  "research and development and innovation$" OR "research & development & innovation$" OR "research-development-innovation$" OR "RDI"
-	  OR "technological capabilit*" OR "technology capabilit*" OR "technological competenc*" OR "innovation capabilit*"
-        ) 
-		NEAR/5
-		("industry" OR "industrial sector*" OR "industrial enterprise$"
-		))
-)
-
-```
-
-#### Phrase 2
-
-This phrase is about encouraging innovation, and increasing R&D capacity, including workforce and funding. The elements of the phrase are action + R&D capacity/innovation/workforce.
-
-```py
-
-TS=
-(
-     ("increas*" OR "boost*" OR "add" OR "raise" OR "grow" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" 
-     OR "legislat*" OR "regulat*" OR "juridic*" OR (("policy" OR "policies") NEAR/3 ("effect*" OR "impact*" OR "influenc*"))
-	 )
- 		NEAR/5
-		(("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
-		OR  "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
-		)
-			NEAR/5 
-			("innovation$" OR "capacity" OR "capabilit*"
-			OR (("worker*" OR "workforce" OR "employee" OR "staff" OR "labor" OR "labour") NEAR/3 ("number*" OR "amount" OR "share")) OR ("job$" NEAR/1 "creat*")
+(	
+	("increas*" OR "boost*" OR "add" OR "raise" OR "grow" OR "upgrad*" OR "improv*" OR "better" OR "enhanc*" OR "promot*" OR "encourag*" 
+     OR "legislat*" OR "regulat*" OR "juridic*" OR "policy" OR "policies"
+	)
+		NEAR/5 
+		(
+			("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
+			OR "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
+			OR "innovation$" 
+			OR "worker*" OR "workforce" OR "employee$" OR "staff" OR "labor" OR "labour" OR "job$" OR "researcher$" OR "scientist$"
 			OR "invest$" OR "investing" OR "investment$" OR "financ*" OR "fund$" OR "funding" OR "spending*" OR "expend*" OR "expense*" 
-			OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR "resource$"
-			))
+			OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR  "research resource$" OR "technology resource$" OR "technological resource$" 
+			OR "financi* resource$" OR "economic resource$" OR "capital resource$" OR "fundamental resource$" OR "science resource$" 
+			OR "innovation resource$" OR "knowledge resource$"
+			OR "capacity" OR "capabilit*" 
+			)
+				NEAR/5
+				("scientific research" 
+				OR 
+				(("technological" OR "technology" OR "technologies") NEAR/5 ("industry" OR "industrial*"))
+				)
+		)
 )
+
+
 ```
 
 ### Target 9.a
