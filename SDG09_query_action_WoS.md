@@ -560,53 +560,75 @@ TS=
 >
 > 9.c.1 Proportion of population covered by a mobile network, by technology
 > 
-This target is interpreted to cover research about: 
+This target is interpreted to cover research about increasing access to information and communications technology in least developed countries and providing universal and affordable access to the Internet in least developed countries. 
 
-* Increasing access to information and communication technology in least developed countries and providing universal and affordable access to Internet in least developed countries. 
+This query consists of one phrase. 
 
-In most developing countries, mobile broadband (3G or above) is the main way – and often the only way – to connect to the Internet. Around 95 per cent of the global population now has this form of access. Bridging the “coverage gap” for the remaining 5 per cent poses significant challenges. Mobile broadband remains inaccessible to 18 per cent of people in the LDCs and LLDCs. The Sustainable Development Goals Report 2024. Target 9.c aims to significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020. 2023 HLPF thematic review of SDG 9). 
-
-This query consists of one phrase. This phrase is about increasing the access to information and communication technology. Basic structure is action + internet connection/mobile network + least developed countries. 
+#### Phrase 1
+This phrase is about increasing the access to information and communication technology. Basic structure is *action + increase access/decrease barriers + ITC + least developed countries*. 
 
 ```py
 
 TS=
 (
-    ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "build* capacity" 
-	OR "capacity building" OR "capacity development" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" 
-	OR "promot*" OR "overcome" OR "ensure" OR "attain*" OR "achiev*"
-    )   
-	NEAR/15
-		((
+	(
 		(
-		("access*" OR "equitab*" OR "inequitab*" OR "equity" OR "equality" OR "inequality" OR "equal" OR "unequal" OR "share" OR "sharing" OR "shared benefit$" OR "benefit sharing" 
-		OR "justice" OR "democracy" OR "affordab*" OR "unaffordab*" OR "right$" OR "ownership" OR "control" OR "barrier$" OR "obstacle$"
+			("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up" OR "build*"  
+			OR "capacity development" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "encourag*" OR "facilitat*" OR "promot*" 
+			OR "ensure" OR "attain*" OR "achiev*" OR "provid*"
+			)   
+				NEAR/5
+				(
+					(
+						("access*" OR "equitab*" OR "inequitab*" OR "equity" OR "equality" OR "equal" OR 
+						"afford*" OR "low cost" OR "inexpensive*" OR "reasonable" OR "connectiv*"
+						)
+						NEAR/15
+						("Internet" OR "internet connection*"
+						OR "mobile network" OR "mobile broadband" OR "basic mobile network" OR "mobile connectiv*" 
+						OR "information technolog*" OR "communication technolog*" OR "ICT" OR "information and communication$ technolog*" OR "information & communication$ technolog*" 
+						OR "information communication$ technolog*" 
+						OR "digital infrastructure" OR "telecommunication*" OR "telecom network" OR "broadband" OR "telecom system*"
+						OR "wireless network" OR "wireless broadband" OR "wifi" OR "wireless technologies"  
+						OR "2G" OR "3G" OR "4G" OR "5G" OR "LTE"
+						)
+					)
+					OR "digital inclusion"
+				)
 		)
-			NEAR/15 
-			("Internet" OR "mobile network" OR "mobile broadband" OR "information" OR "internet" 
-			OR "communication technology" OR "ICT" OR "information and communications technology" OR "digital infrastructure" OR "telecommunication" OR "telecom network" OR "broadband" 
-			OR "wireless network" OR "digital divide"  
-			OR "2G" OR "3G" OR "4G" OR "LTE" OR "third generation" OR "second generation" OR "low bandwidth" OR "slow internet" 
-			OR "basic mobile network" OR "wifi"
-			)
-		)
-		OR 
+		OR
 		(
-		("connectivity" OR "connectivity gap" OR "limited connectivity" OR "poor connectivity") 
-		NEAR/3 ("internet" OR "ICT" OR "information and communications technology") OR "internet penetration"
-		)
-		)
-			 
-				NEAR/15 
-				("least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" 
-				OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" 
-				OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" 
-				OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" 
-				OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" 
-				OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-				) 
+			("decreas*" OR "minim*" OR "reduc*" OR "restrict*" OR "limit$" OR "mitigat*" OR "tackl*" OR "declin*"OR "diminish*"
 			)
-) 
+				NEAR/5
+				(
+					(
+						("barrier$" OR "obstacle$" OR "inequal*" OR "unequal" OR "expensive*" OR "unaffordab*" OR "costly" OR "high-price$" OR "high price$"
+						)
+						NEAR/15 
+							("Internet" OR "internet access*" OR "internet connectiv*" OR "internet connection*"
+							OR "mobile network" OR "mobile broadband" OR "basic mobile network" OR "mobile connectiv*" 
+							OR "information technolog*" OR "communication technolog*" OR "ICT" OR "information and communication$ technolog*" OR "information & communication$ technolog*" 
+							OR "information communication$ technolog*" 
+							OR "digital infrastructure" OR "telecommunication*" OR "telecom network" OR "broadband" OR "telecom system*"
+							OR "wireless network" OR "wireless broadband" OR "wifi" OR "wireless technologies"
+							OR "2G" OR "3G" OR "4G" OR "5G" OR "LTE"
+							)
+					)
+					OR "digital divide" 
+				)
+		)
+	)	
+
+		NEAR/15 
+		("least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" 
+		OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" 
+		OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" 
+		OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" 
+		OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" 
+		OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+		) 
+)
 
 ```
 
@@ -620,7 +642,6 @@ Specialist input: Eeva-Liisa Viskari (Chief Specialist in Sustainability and ESG
 
 ## 5. Footnotes
 
-<span id="f12">2023 HLPF thematic review of SDG 9 https://sdgs.un.org/sites/default/files/2023-06/2023%20HLFP%20Thematic%20review%20of%20SDG%209%20Summary%20Report_30%20June%202023.pdf 
 
 <span id="f3">E-Handbook on Sustainable Development Goals Indicators. (2024).</span> https://unstats.un.org/sdgs/report/2024/extended-report/Extended-Report_Goal-9.pdf [Accessed 2025.06.24]
 
