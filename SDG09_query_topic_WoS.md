@@ -277,8 +277,6 @@ This phrase covers scientific research and the technological capabilities of ind
 
 ```py
 
-#### Phrase 1
-
 TS=
 (
 		("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
