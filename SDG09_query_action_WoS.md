@@ -549,7 +549,7 @@ This target is interpreted to cover research about increasing access to informat
 This query consists of one phrase. 
 
 #### Phrase 1
-This phrase is about increasing the access to information and communication technology. Basic structure is *action + increase access/decrease barriers + ITC + least developed countries*. 
+This phrase is about increasing the access to information and communication technology in least developed countries. Basic structure is *action + increase access/decrease barriers + ITC + least developed countries*. 
 
 ```py
 
