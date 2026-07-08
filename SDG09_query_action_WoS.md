@@ -323,7 +323,7 @@ This query consists of one phrase.
 
 #### Phrase 1
 
-This phrase is about enhancing scientific research and upgrading technological capabilities within industry by increasing personnel and funding. The elements of the phrase are *action  + investments + scientific research/technolocal capabilities*.
+This phrase is about enhancing scientific research and upgrading technological capabilities within industry by increasing personnel and funding. The elements of the phrase are *action  + R&D capacity + scientific research/technolocal capabilities*.
 
 ```py
 TS=
