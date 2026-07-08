@@ -36,11 +36,11 @@ Our classification of countries as least developed countries (LDCs), small islan
 
 This target is interpreted to cover research about reliable, sustainable and resilient infrastructure that is affordable and equitable for all.  
 
-We think that infrastructure is understood in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks <a href="#f4">(Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10 </a>; <a href="#f8">United Nations Environment Programme, 2021, 8)</a>.
+We interpret infrastructure in this target as a broad and integrated system, consisting of both physical and institutional components. It includes so-called hard infrastructure, such as energy, transport, water, waste management and digital communication systems, as well as soft infrastructure, including human resources, institutional structures and policy frameworks <a href="#f4">(Soriano, A., Gaikwad. S., Stratton-Short. S., Bajpai, A, & Imbuye. J., 2022, 10 </a>; <a href="#f8">United Nations Environment Programme, 2021, 8)</a>.
 
-Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly used terms for describing infrastructure, drawn from sources; <a href="#f4">Soriano et al., 2022</a>; <a href="#f8">United Nations Environment Programme, 2021</a>. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
+Since infrastructure is understood broadly to encompass both so-called hard infrastructure and soft infrastructure, it is practically very difficult, if not impossible, to employ all the terms that can be used to describe it. We use commonly employed infrastructure-related terms, drawn from the following sources; <a href="#f4">Soriano et al., 2022</a>; <a href="#f8">United Nations Environment Programme, 2021</a>. Since the target indicators emphasize transport infrastructure, we have included terms related to transportation more broadly in the search.
 
-We understand that economic and social well-being is the result not the target and therefore terms are not added in the phrase.
+We interpret economic and social well-being as an outcome of infrastructure development rather than the primary target itself, and therefore do not include related terms in the search phrase.
 
 This query consists of one phrase.
 
@@ -86,9 +86,9 @@ TS=
 
 This target is interpreted to cover research about inclusive and sustainable industrialization and the share of industry in both economic growth and employment.
 
-The term industry is inherently ambiguous. In general usage, it refers to a specific sector of economic activity, such as agriculture, manufacturing or services. In economics, however, the term is understood more narrowly, typically referring to manufacturing activities. Also, the indicators for this target focus on the manufacturing sector <a href="#f1">(UN DESA 2025)</a>. We understand the concept of industry more broadly than manufacturing, as the target itself uses both the terms industrialization and industry, which we interpreted as referring to larger phenomenon, industrial development, even though manufacturing often has the key role in it. This broader viewpoint is seen in many documents by United Nations organizations, such as the Lima Declaration: Towards Inclusive and Sustainable Industrial Development <a href="#f9">(United Nations Industrial Development Organization 2013)</a>.
+The term industry is inherently ambiguous. In general usage, it refers to a specific sector of economic activity, such as agriculture, manufacturing or services. In economics, however, the term is understood more narrowly, typically referring to manufacturing activities. Also, the indicators for this target focus on the manufacturing sector <a href="#f1">(UN DESA 2025)</a>. We interpret the concept of industry more broadly than manufacturing, as the target itself uses both the terms industrialization and industry, which we interpret as referring to the broader phenomenon of industrial development, even though manufacturing often has the key role in it. This broader viewpoint is seen in many documents by United Nations organizations, such as the Lima Declaration: Towards Inclusive and Sustainable Industrial Development <a href="#f9">(United Nations Industrial Development Organization 2013)</a>.
 
-We also interpret that the underlying idea behind the target is inclusive and sustainable industrial development (ISID). ISID is concept developed by UNIDO and is defined to mean "Long-term industrialization that drives development along three aspects: creating shared prosperity by offering equal opportunities and equitable distribution of benefits to all; advancing economic competitiveness; and safeguarding the environment by decoupling the prosperity generated by industrial activities from excessive natural resource use and negative environmental impacts" <a href="#10">(United Nations Industrial Development Organization 2021, xvii)</a>.
+We also interpret that the underlying idea behind the target is inclusive and sustainable industrial development (ISID). ISID is a concept developed by UNIDO and is defined to mean "Long-term industrialization that drives development along three aspects: creating shared prosperity by offering equal opportunities and equitable distribution of benefits to all; advancing economic competitiveness; and safeguarding the environment by decoupling the prosperity generated by industrial activities from excessive natural resource use and negative environmental impacts" <a href="#10">(United Nations Industrial Development Organization 2021, xvii)</a>.
 
 This query consists of two phrases.
 
@@ -152,7 +152,7 @@ According to the definition provided by <a href="#f7">the United Nations Departm
 
 International trade grew significantly after 1990, and one major driver of this growth was the emergence of global value chains (GVCs). These chains are considered a key mechanism for creating jobs and fostering sustainable, inclusive economic growth. A global value chain is defined as: "…the series of stages in the production of a product or service for sale to consumers. Each stage adds value, and at least two stages are in different countries". <a href="#f5">(World Bank, 2020)</a>.
 
-For these reasons, we use all kinds of search terms describing value and supply chains in the search process.
+For these reasons, we include a broad range of search terms related to value chains and supply chains.
 
 This query consists of two phrases.
 
@@ -273,7 +273,7 @@ This query consists of one phrase.
 
 #### Phrase 1
 
-This phrase covers scientific research and the technological capabilities of industrial sectors, together with the research and development (R&D) capacity used to advance them. The elements of the phrase are *R&D capacity + scientific research/technolocal capabilities*.
+This phrase covers scientific research and the technological capabilities of industrial sectors, together with the research and development (R&D) capacity used to advance them. The elements of the phrase are *R&D capacity + scientific research/technological capabilities*.
 
 ```py
 
@@ -487,7 +487,7 @@ This query consists of one phrase.
 
 #### Phrase 1
 
-This phrase is about the access to information and communication technology in least developed countries. Basic structure is *access/barriers + ITC + least developed countries*.
+This phrase is about access to information and communications technology in least developed countries. Basic structure is *access/barriers + ITC + least developed countries*.
  
 
 ```py
