@@ -305,25 +305,92 @@ TS=
 >
 > 9.a.1 Total official international support (official development assistance plus other official flows) to infrastructure
 
-This target is interpreted to cover research about: 
+This target is interpreted to cover research about sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through enhanced financial, technological and technical support (including official development assistance).
 
-* Sustainable and resilient infrastructure development in developing countries (African countries, least developed countries, landlocked developing countries and small island developing States) through financial support, technological support, technical support and official development assistance (ODA).   
+This query consists of one phrase. 
 
-This query consists of one phrase. Phrase is about sustainable and resilient infrastructure development in developing countries. Basic structure is sustainable/resilient + infrastructure + developing countries.
+#### Phrase 1
+
+This phrase is about sustainable infrastructure development in developing countries through financial or technical support. Basic structure is *sustainable infrastructure + financial/technical support + developing countries*.
 
 ```
 TS=
 ( 
-        (("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "energy-efficient"
-        )  
+	(
+		("reliabl*" OR "sustainab*" OR "resilien*" OR "invulnerab*" OR "adaptab*" OR "flexib*" OR "recoverab*" OR "maintainable*" OR "renewabl*" 
+		OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "reusab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" 
+		OR "environmentally sound" OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" 
+		OR "nonpolluting" OR "energy-efficient"
+		)  
             NEAR/5 
-            ("infrastruct*" OR (("energy" OR "power" OR "electric*") NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" OR "connections" OR "structure*" OR "foundation")) OR "energy system$" OR "power system$" OR "electrification" OR "lighting" OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply" OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$" OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" OR "financial service$" OR "banking service$" OR "education" OR "school$" OR "health care" OR "healthcare" OR "public service$" OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public")) OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*")) OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads" OR "transport" OR "transportation" )
-        ) 
+            ("infrastruct*" 
+			OR 
+				(("energy" OR "power" OR "electric*") 
+				NEAR/1 
+					("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" 
+					OR "connections" OR "structure*" OR "foundation"
+					)
+				) 
+			OR "energy system$" OR "power system$" OR "electrification" OR "lighting" 
+			OR "waste" OR "wastewater$" OR "sewage" 
+			OR "recycling system$" OR "water supply" OR "drinking water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" 
+			OR "food supply" OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$" 
+			OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" 
+			OR "monetary service$" OR "banking service$" 
+			OR "education infrastruct*" OR "education system*" OR "school$" OR "health care" OR "healthcare" OR "hospital*" OR "medical care" OR "public service$" 
+			OR "buildings" OR "housing" OR "public spaces" OR "sport* facilit*"
+			OR "disaster management" OR "disaster prevent*" 
+			OR "public alert*" OR "public warn*" OR "early warn*" 
+			OR "mass transit*" OR "mobility system$" OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" 
+			OR "road" OR "roads" OR "transport" OR "transportation" 
+			)
+		)
+	AND
+	(
+	"financial support" OR "technological support" OR "technical support" 
+	OR "official development assistance" OR "ODA" 
+	OR "cooperation* fund*" OR "develop* spending*" OR "foreign subsid*" OR "international subsid*" OR "develop* subsid*" 
+	OR "humanitar* assist*" OR "humanitar* aid*" OR "humanitar* fund*" OR "humanitar* invest*" 
+	OR "cross-national assist*" OR "cross-national aid*" OR "cross-national fund*" OR "cross-national invest*" 
+	OR "financial assistance*" OR "financial aid" OR "financial resourc*" OR "financial backing" OR "financial contribution*" 
+	OR "financial instrument*" OR "monetary support*" OR "economic support*" OR "external support*"
+	OR "technolog* transfer*" OR "transfer of technical knowledge" OR "transfer of technolog*" OR "technical assistance" OR "capacity building"
+	OR "multilateral development bank*" OR "development bank*"
+	OR "development aid" OR "development assistan*" OR "development financ*" OR "development fund*"
+	OR (("foreign" OR "international" OR "donor*" OR "multilateral" OR "bilateral") 
+	NEAR/3 (invest* OR financ* OR fund* OR support* OR assist* OR aid))
+	)
     AND 
-    ("financial support" OR "technological support" OR "technical support" OR "official development assistance" OR "ODA" OR "develop* assist*" OR "develop* aid*" OR "foreign aid*" OR "international aid*" OR "cooperation* fund*" OR "develop* spending*" OR "foreign investment" OR "foreign invest*" OR "international invest*" OR "international investment" OR "develop* invest*" OR "develop* investment" OR "foreign financ*" OR "international financ*" OR "develop* fund*" OR "foreign support*" OR "international support*" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR "international subsid*" OR "develop* support*" OR "develop* subsid*" OR "humanitar* assist*" OR "humanitar* aid*" OR "humanitar* fund*" OR "humanitar* invest*" OR "cross-national assist*" OR "cross-national aid*" OR "cross-national fund*" OR "cross-national invest*" OR "invest*" OR "fund*" OR "financ*" OR "technolog* transfer*" OR "transfer of technical knowledge" OR "transfer of technolog*" 
-    ) 
-    AND 
-    ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world" OR "less developed countr*" OR "less developed nation$" OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" OR "deprived countr*" OR "deprived nation$" OR "middle income countr*" OR "middle income nation$" OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$" OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*" OR "emerging economies" OR "emerging nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*" OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands" OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*" 
+    ("least developed countr*" OR "least developed nation$" OR "developing countr*" OR "developing nation$" OR "developing states" OR "developing world" 
+	OR "less developed countr*" OR "less developed nation$" 
+	OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*" OR "underdeveloped nation$" OR "underserved countr*" OR "underserved nation$" 
+	OR "deprived countr*" OR "deprived nation$" OR "middle income countr*" OR "middle income nation$" 
+	OR "low income countr*" OR "low income nation$" OR "lower income countr*" OR "lower income nation$" 
+	OR "poor countr*" OR "poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics" OR "third world" OR "global south" OR "lami countr*" 
+	OR "transitional countr*" OR "emerging economies" OR "emerging nation$" 
+	OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" 
+	OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" 
+	OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" 
+	OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" 
+	OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" 
+	OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" 
+	OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" 
+	OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*" 
+	OR "Antigua and Barbuda" OR "Antigua & Barbuda" OR "antiguan$" OR "Bahamas" OR "Bahrain" OR "Barbados" OR "Belize" 
+	OR "Cabo Verde" OR "Cape Verde" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Cuba" OR "cuban$" OR "Dominica*" OR "Dominican Republic" 
+	OR "Micronesia*" OR "Fiji" OR "fijian$" OR "Grenada*" OR "Guinea-Bissau" OR "Guyana*" OR "Haiti*" OR "Jamaica*" OR "Kiribati*" 
+	OR "Maldives" OR "maldivian$" OR "Marshall Islands" OR "Mauritius" OR "mauritian$" OR "Nauru*" OR "Palau*" OR "Papua New Guinea*" 
+	OR "Saint Kitts and Nevis" OR "st kitts and nevis" OR "Saint Lucia*" OR "St Lucia*" OR "Vincent and the Grenadines" OR "Vincent & the Grenadines" 
+	OR "Samoa*" OR "Sao Tome" OR "Seychelles" OR "seychellois*" OR "Singapore*" OR "Solomon Islands" OR "Surinam*" OR "Timor-Leste" OR "timorese" 
+	OR "Tonga*" OR "Trinidad and Tobago" OR "Trinidad & Tobago" OR "trinidadian$" OR "tobagonian$" OR "Tuvalu*" OR "Vanuatu*" 
+	OR "Anguilla*" OR "Aruba*" OR "Bermuda*" OR "Cayman Islands" OR "Northern Mariana$" OR "Cook Islands" OR "Curacao" OR "French Polynesia*" 
+	OR "Guadeloupe*" OR "Guam" OR "Martinique" OR "Montserrat" OR "New Caledonia*" OR "Niue" OR "Puerto Rico" OR "puerto rican" OR "Sint Maarten" 
+	OR "Turks and Caicos" OR "Turks & Caicos" OR "Virgin Islands" OR "Afghanistan" OR "afghan*" OR "Armenia*" OR "Azerbaijan*" 
+	OR "Bhutan" OR "bhutanese" OR "Bolivia*" OR "Botswana*" OR "Burkina Faso" OR "Burundi" OR "Central African Republic" OR "Chad" 
+	OR "Eswatini" OR "eswantian" OR "Ethiopia*" OR "Kazakhstan*" OR "kazakh" OR "Kyrgyzstan" OR "Kyrgyz*" OR "kirghizia" OR "kirgizstan" 
+	OR "Lao People’s Democratic Republic" OR "Laos" OR "Lesotho" OR "Malawi" OR "malawian" OR "Mali" OR "Mongolia*" OR "Nepal*" OR "Niger" OR "North Macedonia" 
+	OR "Republic of Macedonia" OR "Paraguay" OR "Moldova*" OR "Rwanda$" OR "South Sudan" OR "sudanese" OR "Swaziland" 
+	OR "Tajikistan" OR "tadjikistan" OR "tajikistani$" OR "Turkmenistan" OR "Uganda*" OR "Uzbekistan" OR "uzbekistani$" OR "Zambia" OR "zambian$" OR "Zimbabwe*" 
     )    
 ) 
  
