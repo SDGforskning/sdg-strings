@@ -180,7 +180,7 @@ According to Indicator metadata 9.3.1, we interpret the term "small-scale enterp
 
 According to the definition provided by <a href="#f7">United Nations Department of Economic and Social Affairs (2023, p. 2)</a>, we understand that a value chain refers to the set of activities undertaken by companies and workers to move a product from its initial concept to end use and beyond. These activities encompass the entire production process, starting from development and continuing through to customer support. They may occur within a single enterprise or be distributed among multiple firms within a local economy or across different countries.
 
-International trade grew significantly after 1990, and one major driver of this growth was the emergence of global value chains (GVCs). These chains are considered a key mechanism for creating jobs and fostering sustainable, inclusive economic growth. A global value chain is defined as: "…the series of stages in the production of a product or service for sale to consumers. Each stage adds value, and at least two stages are in different countries". <a href="#f14">(World Bank, 2020)</a>.
+International trade grew significantly after 1990, and one major driver of this growth was the emergence of global value chains (GVCs). These chains are considered a key mechanism for creating jobs and fostering sustainable, inclusive economic growth. A global value chain is defined as: "…the series of stages in the production of a product or service for sale to consumers. Each stage adds value, and at least two stages are in different countries". <a href="#f6">(World Bank, 2020)</a>.
 
 For these reasons, we use all kinds of search terms describing value and supply chains in the search process.
 
@@ -642,4 +642,4 @@ Specialist input: Eeva-Liisa Viskari (Chief Specialist in Sustainability and ESG
 
 <span id="f3">UN Statistics Division. (2025).</span> *SDG indicator metadata [9.3.1]* https://unstats.un.org/sdgs/metadata/files/Metadata-09-03-01.pdf [Accessed 2025-11-11]
 
-<span id="f14">World Bank. (2020). </span> *World Development Report 2020: Trading for Development in the Age of Global Value Chains*. Washington, DC: World Bank. doi:10.1596/978-1-4648-1457-0. https://digitallibrary.un.org/record/3850531/files/9781464814570.pdf
+<span id="f6">World Bank. (2020). </span> *World Development Report 2020: Trading for Development in the Age of Global Value Chains*. Washington, DC: World Bank. doi:10.1596/978-1-4648-1457-0. https://digitallibrary.un.org/record/3850531/files/9781464814570.pdf
