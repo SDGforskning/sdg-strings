@@ -265,13 +265,15 @@ TS=
 >
 > 9.5.2 Researchers (in full-time equivalent) per million inhabitants
 
+This target is interpreted to cover research on scientific research and the technological capabilities of industrial sectors, including innovation and research and development (R&D) capacity in terms of personnel and funding.
 
-This target is interpreted to cover research about:    
+In Target 9.5, we interpret innovation and R&D capacity as the key mechanisms through which scientific research and industrial technological development are advanced, as explicitly stated in the target, and we use these as the basis for our search.
 
-* Technological capabilities and research within or to do with industry  
-* Innovation, and R&D capacity, including workforce and funding  
+This query consists of one phrase.
 
-This query consists of two phrases. The elements of the phrase are research/innovation/R&D/technology + industry/capability/workforce.
+#### Phrase 1
+
+This phrase covers scientific research and the technological capabilities of industrial sectors, together with the research and development (R&D) capacity used to advance them. The elements of the phrase are *R&D capacity + scientific research/technolocal capabilities*.
 
 ```py
 
@@ -279,33 +281,20 @@ This query consists of two phrases. The elements of the phrase are research/inno
 
 TS=
 (
-      ("innovation$" OR "industrial research" OR "R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation$" 
-		OR  "research and development and innovation$" OR "research & development & innovation$" OR "research-development-innovation$" OR "RDI"
-	  OR "technological capabilit*" OR "technology capabilit*" OR "technological competenc*" OR "innovation capabilit*"
-        ) 
-		NEAR/5
-		("industry" OR "industrial sector*" OR "industrial enterprise$"
-		)
-)
-
-```py
-
-#### Phrase 2
-
-This phrase is about innovation, and R&D capacity, including workforce and funding. The elements of the phrase are R&D capacity/innovation/workforce.
-
-```py
-
-TS=
-(
 		("R&D" OR "R & D" OR "R+D" OR "R + D" OR "research and development" OR "research & development" OR "research development and innovation" 
-		OR  "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
+		OR "research and development and innovation" OR "research & development & innovation" OR "research-development-innovation" OR "RDI"
+		OR "innovation$"
+		OR "worker*" OR "workforce" OR "employee$" OR "staff" OR "labor" OR "labour" OR "job$" OR "researcher$" OR "scientist$"
+		OR "invest$" OR "investing" OR "investment$" OR "financ*" OR "fund$" OR "funding" OR "spending*" OR "expend*" OR "expense*" 
+		OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR  "research resource$" OR "technology resource$" OR "technological resource$" 
+		OR "financi* resource$" OR "economic resource$" OR "capital resource$" OR "fundamental resource$" OR "science resource$" 
+		OR "innovation resource$" OR "knowledge resource$"
+		OR "capacity" OR "capabilit*" 
 		)
-			NEAR/5 
-			("innovation$" OR "capacity" OR "capabilit*"
-			OR (("worker*" OR "workforce" OR "employee" OR "staff" OR "labor" OR "labour") NEAR/3 ("number*" OR "amount" OR "share")) OR ("job$" NEAR/1 "creat*")
-			OR "invest$" OR "investing" OR "investment$" OR "financ*" OR "fund$" OR "funding" OR "spending*" OR "expend*" OR "expense*" 
-			OR "GDP" OR "gross domestic product" OR "incentive$" OR "subsidy" OR "subsidies" OR "resource$"
+		NEAR/5
+			("scientific research" 
+			OR 
+			(("technological" OR "technology" OR "technologies") NEAR/5 ("industry" OR "industrial*"))
 			)
 )
 
