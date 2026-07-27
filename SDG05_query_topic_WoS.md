@@ -200,6 +200,8 @@ This target is interpreted to cover research about
 
 A wider interpretation is chosen because 'violence against women and girls' is difficult to distinguish when building search strings. Violence against women is defined by the UN as "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" <a href="#f2hb">(UN OHCHR, 1993)</a>
 
+The term 'violence" is for this target removed from the standard string for "women, girls and gender" mentioned in General Notes, as the violence aspect is covered elsewhere in the phrase. The results include some research on animals but these are difficult to exclude.
+
 #### Phrase 1
 
 This phrase is about violence related to women and girls. The general structure is *violence + women & girls*
@@ -233,7 +235,7 @@ TS=
 This target is interpreted to cover research about
 * harmful practices against women and girls
 
-The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant. Some search terms are combined with "women, girls and gender" to avoid noise.
+The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant. Some search terms are combined with "women, girls and gender" to avoid irrelevant results (e.g. FGM and CEFM). Search terms related to marriage are in phrases, as NEAR combinations produced more noise without improving recall.
 
 #### Phrase 1
 
@@ -250,7 +252,7 @@ TS=
 		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$"
 		OR "CEFM" OR "physical punish*" OR "corporal punish*" OR "stoning$" OR "honor killing$"
 		) 
-		NEAR/10
+		NEAR/15
 		    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
 			OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
 			OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
