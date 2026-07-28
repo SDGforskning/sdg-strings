@@ -699,7 +699,9 @@ TS=
     OR "legislat*" OR "law$" OR "regulation$" OR "govern*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "program*"
     )
     NEAR/15
-        ("reproductive right$" OR (("abortion$" OR "contraception" OR "family planning" OR infertility) NEAR/15 right$)
+        ("reproductive choice" OR "family planning" 
+		OR (("reproductive" OR "abortion$" OR "contracepti*" OR  "fertility" OR "inferti*") NEAR/5 "right$")
+        OR (("autonomy" OR "consent*" OR "coerc*" OR "discriminat*" OR "violence" OR "equit*" OR "inequit*") NEAR/10 "reproductive")
         )
 )    
 
