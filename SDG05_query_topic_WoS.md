@@ -429,9 +429,12 @@ This phrase covers reproductive rights. The structure is *reproductive rights*
 
 ```py
 TS=
-("reproductive right$" OR (("abortion$" OR "contraception" OR "family planning" OR infertility) NEAR/15 right$)
-)    
-
+(
+	("reproductive choice" OR "family planning"
+	OR (("reproductive" OR "abortion$" OR "contracepti*" OR "fertility" OR "inferti*") NEAR/5 "right$")
+	OR (("autonomy" OR "consent*" OR "coerc*" OR "discriminat*" OR "violence" OR "equit*" OR "inequit*") NEAR/10 "reproductive")
+	)
+)
 ```
 ### Target 5.a
 
