@@ -2,7 +2,7 @@
 
 Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation 
 
-**Status: This query is currently under development (2025)**
+**Status: This query is a finished draft. It has not been formally tested.**
 
 **Contents**
 
