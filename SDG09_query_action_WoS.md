@@ -60,24 +60,24 @@ TS=
 			OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpolluting" OR "non-polluting" OR "energy-efficient"
 		  	) 
 			NEAR/5 
-          	("infrastruct*" 
-			OR 
-				(("energy" OR "power" OR "electric*") 
-				NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" OR "connections" OR "structure*" OR "foundation")
-				)  
-          	OR "energy system$" OR "power system$" OR "electrification" OR "lighting" 
-          	OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
-			OR "water supply" OR "drinking water" OR "potable water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
-			OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
-			OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" OR "financial service$" OR "banking service$" 
-			OR "education" OR "school$"
-			OR "health care" OR "healthcare" OR "public service$"
-			OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public"))
-			OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*"))
-			OR "air connection*" OR "airport*" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "ports" OR "maritime" OR "mass transit*" OR "mobility system$" 
-			OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads"  OR "highway*" OR "rural access" OR "sea connection*" OR "sea route*" 
-			OR "ship* route*" OR "transport" OR "transportation" OR "tunnel$" OR "urban mobility" OR "waterways" 
-			)
+				("infrastruct*" 
+				OR 
+					(("energy" OR "power" OR "electric*") 
+					NEAR/1 ("infrastruct*" OR "supply" OR "supplies" OR "supplying" OR "solution$" OR "source*" OR "transmission" OR "transfer*" OR "distrib*" OR "connections" OR "structure*" OR "foundation")
+					)  
+				OR "energy system$" OR "power system$" OR "electrification" OR "lighting" 
+				OR (("waste" OR "wastewater$" OR "sewage") NEAR/1 ("treatment" OR "collection" OR "management")) OR "recycling system$" 
+				OR "water supply" OR "drinking water" OR "potable water" OR "clean water" OR "sanitation" OR "drainage system$" OR "water and sanitation system$" OR "food supply"
+				OR "telecommunication$" OR "digital communication$" OR "communication$" OR "digital solutions" OR "internet" OR "mobile network$"
+				OR "public amenities" OR "rule of law" OR "juridical system$" OR "legal service$" OR "financial service$" OR "banking service$" 
+				OR "education" OR "school$"
+				OR "health care" OR "healthcare" OR "public service$"
+				OR "buildings" OR "housing" OR "public spaces" OR (("facility" OR "facilities") NEAR/1 ("service$" OR "medical" OR "sport*" OR "social" OR "public"))
+				OR "disaster management" OR "disaster prevent*" OR ("disaster*" NEAR/3 "prepare*") OR "public alert*" OR "public warn*" OR "early warn*" OR ("system$" NEAR/1 ("alert*" OR "warn*"))
+				OR "air connection*" OR "airport*" OR "border crossing" OR "freight*" OR "harbor*" OR "harbour*" OR "ports" OR "maritime" OR "mass transit*" OR "mobility system$" 
+				OR "public transport*" OR "public transit*" OR "rail" OR "rails" OR "railway*" OR "road" OR "roads"  OR "highway*" OR "rural access" OR "sea connection*" OR "sea route*" 
+				OR "ship* route*" OR "transport" OR "transportation" OR "tunnel$" OR "urban mobility" OR "waterways" 
+				)
 			NEAR/5 
 				("afford*" OR "equitab*" OR "equality" OR "equity" OR "low cost" OR "inexpensive" OR "reasonable" OR "moderate" OR "fair" OR "accessib*" OR "economical*" OR "cost-effective*" OR "cheap"
 				)
@@ -120,20 +120,22 @@ TS=
 		)
 	    NEAR/5
 	    (   
-            ("inclusiv*" OR "participatory" OR (("worker*" OR "employee*") NEAR/1 ("participation" OR "equity" OR "reasonableness" OR "fairness" OR "justice")) OR "equal opportunit*" OR "equitab*" OR "equality" OR "inclusion" OR "social responsibility" 
+            ("inclusiv*" OR "participatory" 
+			OR (("worker*" OR "employee*") NEAR/1 ("participation" OR "equity" OR "reasonableness" OR "fairness" OR "justice")) 
+			OR "equal opportunit*" OR "equitab*" OR "equality" OR "inclusion" OR "social responsibility" 
 	        OR "sustainab*" OR "renewabl*" OR "resource-efficien*" OR "repairab*" OR "recyclab*" OR "ecofriendly" OR "eco-friendly" OR "environmentally friendly" OR "environmentally sound" 
 	        OR "ecologically friendly" OR "ecologically sound" OR "low* carbon" OR "green" OR "eco" OR "ecological" OR "nonpollut*" OR "non-pollut*" OR "energy-efficien*" OR "energy-saving"
             ) 
 		    NEAR/5 
-				("industrialisat*" OR "industrializat*" OR (("industrial" OR "industry" OR "industries") NEAR/1 ("sector$" OR "development" OR "transformation" OR "expansion"))
+				("industrialisat*" OR "industrializat*" 
+				OR (("industrial" OR "industry" OR "industries") NEAR/1 ("sector$" OR "development" OR "transformation" OR "expansion"))
 				)
 		) 
 	)
     OR 
     (
 		("advance" OR "advancing" OR "boost*" OR "encourag*" OR "enhanc*" OR "facilitat*" OR "foster*" OR "promot*" OR "support*") 
-			NEAR/5 
-            ("ecoindustrial development" OR "eco-industrial development" OR "industry 5.0" OR "fifth industrial revolution")	
+		NEAR/5 ("ecoindustrial development" OR "eco-industrial development" OR "industry 5.0" OR "fifth industrial revolution")	
     )
 
 )
@@ -149,20 +151,20 @@ TS=(
 	    OR "raise" OR "raising" OR "raised" OR "boost*" OR "ensur*" 
 	    OR (("overcom*" OR "reduc*" OR "decreas*" OR "avoid*" OR "prevent*" OR "remove" OR "removing") NEAR/1 ("barrier$" OR "inaccessib*" OR "hindrance$" OR "obstacle$"))
         )
-	        NEAR/5
-	            (("industrial sector$" OR "industry" OR "industries" OR "manufacturing")
-		        NEAR/3 
-		            ("employment" OR "job$" OR (("share" OR "proportion" OR "percentage") NEAR/1 ("workers" OR "workplace*" OR "work place*")) OR "labor force" OR "labour force" 
-		            OR "gross domestic product" OR "GDP" 
-		            OR (("economic*" OR "economy") NEAR/2 ("growth" OR "output$" OR "performance*")) 
-		            )
-                )
+	    NEAR/5
+	        (("industrial sector$" OR "industry" OR "industries" OR "manufacturing")
+		    NEAR/3 
+				("employment" OR "job$" OR (("share" OR "proportion" OR "percentage") NEAR/1 ("workers" OR "workplace*" OR "work place*")) OR "labor force" OR "labour force" 
+				OR "gross domestic product" OR "GDP" 
+				OR (("economic*" OR "economy") NEAR/2 ("growth" OR "output$" OR "performance*")) 
+				)
+            )
     )
 	OR 
     (
-        ("industrial sector$" OR "industry" OR "industries" OR "manufacturing") NEAR/3 (("decreas*" OR "diminis*" OR "cut" OR "reduce") NEAR/1 ("unemployment"))
+        ("industrial sector$" OR "industry" OR "industries" OR "manufacturing") 
+		NEAR/3 (("decreas*" OR "diminis*" OR "cut" OR "reduce") NEAR/1 ("unemployment"))
     )
-
 )
 ```
 
