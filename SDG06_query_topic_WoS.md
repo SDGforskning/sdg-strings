@@ -1038,7 +1038,7 @@ OR ("sustainable development goal$" AND "goal 6")
 OR
   (
     ("sustainable development goal$" OR "SDG$" OR "goal 6")
-    AND ("water and sanitation")
+    AND ("water and sanitation" OR "clean water")
   )
 )
 NOT 
