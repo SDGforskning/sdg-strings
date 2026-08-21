@@ -49,8 +49,8 @@ For the relevant targets we therefore use a standard "women, girls and gender" s
 ```
 ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
 OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+OR "pregnan*" OR "maternity" OR "maternal" 
+OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
 OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
 )
 ```
@@ -85,40 +85,37 @@ We use the standard "women, girls and gender string" as described in General int
 ```py
 TS=
 (
-  "misogyn*" OR "sexism" OR "sexist" OR "CEDAW"
-  OR
-  (
-    ("discriminat*" OR "dispar*"
-    OR "prejudic*"
-    OR "gender inequalit*" OR "gender inequit*" OR "gender bias*"
-    OR (("bias*" OR "exclusion") NEAR/5 ("systematic*" OR "unconscious*"))
+    "misogyn*" OR "sexism" OR "sexist" OR "CEDAW"
     OR
-      (
-        ("excludes" OR "exclude" OR "exclusion")
-        NEAR/2
-          ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
-          OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-          OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-          )
-      )
-    OR ("exclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
-    OR
-      ( 
-        ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
-        NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
-      )
-    ) 
-    NEAR/5 
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-        OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
-        )      
-  )  
+    (
+        ("discriminat*" OR "dispar*"
+        OR "prejudic*"
+        OR "gender inequalit*" OR "gender inequit*" OR "gender bias*"
+        OR (("bias*" OR "exclusion") NEAR/5 ("systematic*" OR "unconscious*"))
+        OR
+            (
+                ("excludes" OR "exclude" OR "exclusion")
+                NEAR/2
+                    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
+                    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+                    OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+                    )
+            )
+        OR ("exclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
+        OR
+            ( 
+                ("impair*" OR "nullif*" OR "violat*" OR "reduc*" OR "limit*" OR "undermin*" OR "ignor*")         
+                NEAR/5 ("human right*" OR "women's right*" OR "freedom*" OR "right to" OR "rights")
+            )
+        ) 
+        NEAR/5 
+            ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
+            OR "pregnan*" OR "maternity" OR "maternal"
+            OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+            OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+            )      
+    )  
 )
 ```
 
@@ -129,26 +126,23 @@ This phrase aims to find works about inclusion, anti-discrimination, equality et
 ```py
 TS=
 (
-  ("women's rights" OR "rights of women" OR "women's freedom"
-  OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
-  OR "gender equalit*" OR "gender equit*" OR "gender equal*" OR "equal pay*"
-  )
-  OR
-  (
-    ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
-    OR ("inclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")) 
+    ("women's rights" OR "rights of women" OR "women's freedom"
+    OR "women's inclusion" OR ("inclusion" NEAR/5 "gender")
+    OR "gender equalit*" OR "gender equit*" OR "gender equal*" OR "equal pay*"
     )
-    NEAR/5
-        ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+    OR
+    (
+        ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
+        OR ("inclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*")) 
         )
-  )  
+        NEAR/5
+            ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
+            OR "pregnan*" OR "maternity" OR "maternal"
+            OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+            OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+            )
+    )  
 )
 ```
 
@@ -161,31 +155,27 @@ We use the standard "women, girls and gender string" as described in General int
 ```py
 TS=
 (
-  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
-  OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
-  )
-  NEAR/15
-      (
-        ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
-        OR "misogyn*" OR "sexism" OR "sexist"
-        OR
-        (
-          ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*" OR "equal pay*"
-          OR (("inclusion" OR "exclusion") NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
-          OR "*women's inclusion"
-          )
-          NEAR/5 
-            ("*women" OR "*woman" OR "*womens" OR "*womans"
-            OR "girl$"
-            OR "female$"
-            OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-            OR "wife" OR "wives" OR "girlfriend$"
-            OR "pregnan*" OR "maternity" OR "maternal"
-            OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-            OR ("sex*" NEAR/5 ("based" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+    ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" 
+    OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
+    )
+    NEAR/15
+            ("misogyn*" OR "sexism" OR "sexist" 
+            OR ("exclusion" NEAR/5 "gender") OR ("inclusion" NEAR/5 "gender")
+            OR
+                (
+                    ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*" OR "equal pay*"
+                    OR (("inclusion" OR "exclusion") NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
+                    OR "*women's inclusion"
+                    )
+                    NEAR/5 
+                        ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+                        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
+                        OR "pregnan*" OR "maternity" OR "maternal"
+                        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+                        OR ("sex*" NEAR/5 ("based" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+                        )
+                )
             )
-        )
-      )
 )
            
 
@@ -214,18 +204,17 @@ This phrase is about violence related to women and girls. The general structure 
 ```py
 TS=
 (	
-    ("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "abus*" OR "exploit*" OR "coerc*" OR "harass*" OR "stalk*" OR "mutilat*" OR "traffick*" OR "smuggl*" OR "slave*"
+    ("violence" OR "violent" OR "assault*" OR "rape*" OR "raping*" OR "incest*" OR "abus*"
+	OR "physical punish*" OR "corporal punish*" OR "victimi*" OR "exploit*" OR "coerc*" OR "harass*" OR "stalk*" OR "bully*" OR "bulli*" OR "cyberbull*"
+	OR "mutilat*" OR "traffick*" OR "smuggl*" OR "slave*" OR "femicide*" OR "feminicide*" OR "infanticide*"
     )
 	NEAR/10
-	    ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "sexual and gender" OR "transgender*"
-	    )
-		
+	    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+        OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*"))
+        )
 )
 ```
 
@@ -261,8 +250,8 @@ TS=
 		NEAR/15
 		    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
 			OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
-			OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-			OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+			OR "pregnan*" OR "maternity" OR "maternal" 
+            OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
 			OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
 		    )
 	)
@@ -361,8 +350,7 @@ The phrase covers women's participation/leadership/decisionmaking. The basic str
 TS= 
 (
     ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
-    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
-    OR "wife" OR "wives" OR "girlfriend$" 
+    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
     OR "pregnan*" OR "maternity" OR "maternal" 
     OR "lesbian*" OR "sexual* and gender" OR "glass ceiling*" 
     OR 
@@ -376,7 +364,7 @@ TS=
     )            
     NEAR/5 
         ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "manager*" OR "dean*" OR "ceo*" 
-        OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
+        OR "politician*" OR "management role$" OR "management position$" OR "upper management" OR "legislator*" OR "judge*" OR "minister*" OR "mp" OR "mps" 
         OR "member* of congress" OR "head of state" OR "member* of parliament" OR "presiden*" OR "government" 
         OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*"
         OR
@@ -411,8 +399,7 @@ TS=
             )
             NEAR/5
                 ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$" 
-                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
-                OR "wife" OR "wives" OR "girlfriend$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
                 OR "pregnan*" OR "maternity" OR "maternal" 
                 OR "lesbian*" OR "sexual* and gender" 
                 OR 
@@ -423,8 +410,8 @@ TS=
         )
     )
     NEAR/5 
-        ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*"  OR "manager*" OR "dean*" 
-        OR "ceo*" OR "politician*" OR "management" OR "legislator*" OR "judge*" OR "minister*" 
+        ("vote" OR "votes" OR "voting" OR "leadership" OR "leader*" OR "manager*" OR "dean*" 
+        OR "ceo*" OR "politician*" OR "management role$" OR "management position$" OR "upper management" OR "legislator*" OR "judge*" OR "minister*" 
         OR "mp" OR "mps" OR "member* of congress" OR "head of state" OR "member* of parliament" 
         OR "presiden*" OR "government" OR "cabinet*" OR "mayor*" OR "career*" OR "advancement*" 
         OR
@@ -556,8 +543,8 @@ TS=
     AND
         ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
@@ -595,8 +582,8 @@ TS=
     AND
         ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
         OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
-        OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
-        OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+        OR "pregnan*" OR "maternity" OR "maternal" 
+        OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
         OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
         )
 )
@@ -651,15 +638,13 @@ TS=
         OR
             (
                 ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
-                OR "sister$" OR "mother$"  OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-                OR "wife" OR "wives" OR "girlfriend$"
+                OR "sister$" OR "mother$"  OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
                 OR "pregnan*" OR "maternity" OR "maternal" 
-                OR "lesbian*"
-                OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson" OR "non-binary"     
+                OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson" OR "non-binary"     
                 )
                 NEAR/10
                     ("autonomy" OR "control" OR "decision-making" OR "economic strength"
-                    OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "opportunit*" OR "personal priorit*" 
+                    OR "enabl*" OR "emancipat*" OR "*empower*" OR "freedom" OR "independence" OR "opportunit*" OR "personal priorit*" 
                     OR "personal strength" OR "personal development" OR "political strength" OR "power" 
                     OR "self concept" OR "self confidence"
                     OR "self efficacy" OR "rights*" OR "equity" OR "equality"
@@ -698,11 +683,9 @@ TS=
         OR
             (
                 ("*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$" OR "female$"   
-                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
-                OR "wife" OR "wives" OR "girlfriend$" 
+                OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
                 OR "pregnan*" OR "maternity" OR "maternal" 
-                OR "lesbian*" 
-                OR "gender*" OR "sexual* and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+                OR "lesbian*" OR "gender*" OR "sexual* and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                 OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*"))
                 )
                 NEAR/3
@@ -747,11 +730,9 @@ TS=
             OR
                 (
                     ("*woman" OR "*women" OR "*womens" OR "*womans" OR "girl$" OR "female$"   
-                    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" 
-                    OR "wife" OR "wives" OR "girlfriend$" 
+                    OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$" 
                     OR "pregnan*" OR "maternity" OR "maternal" 
-                    OR "lesbian" 
-                    OR "gender*" OR "sexual* and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+                    OR "lesbian*" OR "gender*" OR "sexual* and gender" OR "transgender*" OR "transperson*" OR "non-binary"
                     OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*"))
                     )
                     NEAR/3
