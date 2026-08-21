@@ -203,6 +203,8 @@ This target is interpreted to cover research about
 
 A wider interpretation is chosen because 'violence against women and girls' is difficult to distinguish when building search strings. Violence against women is defined by the UN as "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" <a href="#f2hb">(UN OHCHR, 1993)</a>
 
+The term 'violence" is for this target removed from the standard string for "women, girls and gender" mentioned in General Notes, as the violence aspect is covered elsewhere in the phrase. The results include some research on animals but these are difficult to exclude.
+
 #### Phrase 1
 
 This phrase is about violence related to women and girls. The general structure is *violence + women & girls*
@@ -236,7 +238,7 @@ TS=
 This target is interpreted to cover research about
 * harmful practices against women and girls
 
-The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant.
+The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant. Some search terms are combined with "women, girls and gender" to avoid irrelevant results (e.g. FGM and CEFM). Search terms related to marriage are in phrases, as NEAR combinations produced more noise without improving recall.
 
 #### Phrase 1
 
@@ -245,20 +247,22 @@ This phrase is about harmful practices against women and girls. The general stru
 ```py
 TS=
 (
-	("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$" OR "infibulat*"
-	OR (("child" OR "children" OR "early" OR "underage*" OR "force*") NEAR/5 "marriage*")
-	OR "CEFM" OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
-	OR (("virgin*" OR "hymen*") NEAR/5 ("test*" OR "examin*"))
-	) 
-	NEAR/10
-	    ("*women" OR "*woman" OR "*womens" OR "*womans"
-        OR "girl$"
-        OR "female$"
-        OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$"
-        OR "wife" OR "wives" OR "girlfriend$"
-        OR "pregnan*" OR "maternity" OR "maternal"
-        OR "gender*" OR "sexual and gender" OR "transgender*"
-	    )
+	("femicid*" OR "feminicid*" OR "grannicid*" OR "infibulat*" OR "virginity test*" OR (("hymen" OR "hymenal") NEAR/5 ("test*" OR "examin*")))
+	OR "child marriage$" OR "early marriage$" OR  "forced marriage$" OR "underage marriage$"
+	OR "bride kidnap*" OR ("accus*" NEAR/5 "witch*")
+	OR
+		(
+		("harmful practice$" OR "harmful traditional practice$" OR "genital mutilation" OR "FGM" OR "genital cutting" OR "circumcision$"
+		OR "CEFM" OR "physical punish*" OR "corporal punish*" OR "stoning$" OR "honor killing$"
+		) 
+		NEAR/15
+		    ("*women" OR "*woman" OR "*womens" OR "*womans" OR "girl$" OR "female$"
+			OR "sister$" OR "mother$" OR "aunt" OR "aunts" OR "grandmother$" OR "grandma$" OR "niece$" OR "daughter$" OR "wife" OR "wives" OR "girlfriend$"
+			OR "pregnan*" OR "maternity" OR "maternal" OR "lesbian*"
+			OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
+			OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "dispar*" OR "difference*" OR "bias*" OR "discriminat*" OR "violence"))
+		    )
+		)
 )
 ```
 
@@ -461,7 +465,7 @@ This phrase covers access to sexual and reproductive health as mentioned in the 
 ```py
 TS =
 (
-  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "harmful practice$" OR "harmful traditional practice$" OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
+  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "menstrual health*" OR "menopaus*" OR "prenatal care" OR "pregnancy care" OR "postpartum care" OR (("reproduct*" OR "sex*" OR "STI" OR "trichomona" OR "chlamydia" OR "gonorrhoea" OR "syphilis" OR "HIV" OR "human immunodeficiency" OR "HPV" OR "human papilloma*" OR "genital herpes" OR "HTLV-1" OR "hepatitis B") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health for all" OR "health promotion"
@@ -479,9 +483,12 @@ This phrase covers reproductive rights. The structure is *reproductive rights*
 
 ```py
 TS=
-("reproductive right$" OR (("abortion$" OR "contraception" OR "family planning" OR infertility) NEAR/15 right$)
-)    
-
+(
+	("reproductive choice" OR "family planning"
+	OR (("reproductive" OR "abortion$" OR "contracepti*" OR "fertility" OR "inferti*") NEAR/5 "right$")
+	OR (("autonomy" OR "consent*" OR "coerc*" OR "discriminat*" OR "violence" OR "equit*" OR "inequit*") NEAR/10 "reproductive")
+	)
+)
 ```
 ### Target 5.a
 
