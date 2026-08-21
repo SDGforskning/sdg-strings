@@ -652,7 +652,7 @@ This phrase covers ensuring access to sexual and reproductive health as mentione
 ```py
 TS =
 (
-  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR "harmful practice$" OR "harmful traditional practice$" OR (("reproduct*" OR "sex*" OR "STI") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
+  ("reproductive health*" OR "sexual health*" OR "family planning" OR "planned pregnan*" OR "safe pregnan*" OR "safe child birth$" OR "contracept*" OR "abortion$" OR "infertil*" OR (("reproduct*" OR "sex*" OR "STI" OR "trichomona" OR "chlamydia" OR "gonorrhoea" OR "syphilis" OR "HIV" OR "human immunodeficiency" OR "HPV" OR "human papilloma*" OR "genital herpes" OR "HTLV-1" OR "hepatitis B") NEAR/5 ("education" OR "inform*" OR "health literacy" or "counsel*"))
   )
   NEAR/15
       ("health equity" OR "equity in health*" OR "health for all" OR "health promotion"
