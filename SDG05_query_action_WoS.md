@@ -71,19 +71,15 @@ While the target states "all women and girls", we use a wider gender and sex int
 For discrimination, we use the definition of discrimination against women in Article 1 of the CEDAW Convention 
 https://www.ohchr.org/sites/default/files/documents/publications/OHCHR-IPU-CEDAW-Handbook-revised-edition.pdf: "any distinction, exclusion or restriction made on the bases of sex which has the effect or purpose of impairing or nullifying the recognition, enjoyment or exercise by women, irrespective of their marital status, on a basis of equality of men and women, of human rights and fundamental freedoms in the political, economic, social, cultural, civil or any other field".
 
-**Working note**: It is possible that the terms `prejudice, misogyn*, sexism, sexist` will need to be discussed/removed. Pros/cons:
-- Our reading of the CEDAW defines discrimination as action/result, while prejudice and stereotyping are attitudes/biases -> Remove
-- The CEDAW  recognises that prejudice and stereotyping need to be eliminated as part of stopping discrimination, as outlined in Article 5 -> ?
-- The other targets will not cover research about misogyny or sexism, making 5.1 the main option for including this research at all in SDG5 -> Keep
-- Some terms are ambigous, for example "bias" can be an attitude and a result. Is it the same for "misogyny" (is hostility an attitude or an action)? https://www.ungei.org/gender-transformative-education-glossary/gender/misogyny -> ? 
-
 This query consists of three phrases.
 
 #### Phrase 1 
 
-This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women/gender*
+This phrase is about ending discrimination and reducing inequality regarding women/sex/gender. The general structure is *action + discrimination/rights + women, girls and gender*
 
-Removed `disparit* OR bias* OR difference*` from the women and gender string, as these find mostly medical papers regarding differences between the sexes in various health conditions.
+`excluding`and `excluded` seem to be used very often in medical works to describe who was included in a trial, so we try to exclude these by limiting to `exclude OR excludes OR exclusion` where works seem to be more relevant, describing the process of exclusion. `NEAR/2` is used, rather than the more common 3 or 5, as it helps remove some works talking about "exclusion criteria included pregnant women..." (but not completely effective).
+
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `based OR factor$ OR characteristic$ OR disparit* OR difference* OR bias*` is removed, to reduce noise, mainly from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
@@ -94,7 +90,7 @@ TS=
     OR "lift out of" OR "lifting out of" OR "overcom*" OR "escap*" OR "relief"
     )  
     NEAR/5
-        ("misogyn*" OR "sexism" OR "sexist"
+        ("misogyn*" OR "sexism" OR "sexist" OR "CEDAW"
         OR
             (
                 ("discriminat*" OR "dispar*"
@@ -125,7 +121,7 @@ TS=
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
                     OR "lesbian" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-                    OR ("sex" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
+                    OR ("sex" NEAR/5 ("distribution" OR "discriminat*" OR "violence"))
                     )   
             )  
         )
@@ -135,7 +131,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase aims to find works about improving inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *action + anti-discrimination/rights + women/gender*
+This phrase aims to find works about improving inclusion, anti-discrimination, equality etc. (opposite of discrimination) regarding women/sex/gender. The general structure is *action + anti-discrimination/rights + women, girls and gender*
 
 ```py
 TS=
@@ -152,7 +148,7 @@ TS=
         OR
             (
                 ("human right*" OR "right to" OR "rights" OR "rights of" OR "anti-discriminat*" OR "non-discriminat*" OR "equalit*" OR "equal rights" 
-                OR "financial inclusion" OR "economic inclusion" OR "social inclusion" OR "digital inclusion" OR "cultural inclusion" OR "policial inclusion"
+                OR ("inclusion" NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
                 )
                 NEAR/5
                     ("*women" OR "*woman" OR "*womens" OR "*womans"
@@ -172,26 +168,24 @@ TS=
 
 #### Phrase 3
 
-This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women/gender*
+This phrase is about establishing and improving legal frameworks/policies concerning equality and discrimination regarding women/gender/sex. The general structure is *action + legislation + equality + women, girls and gender*
 
-Removed `disparit* OR bias*` from the women and gender string, seems to cause issues in combination with `bias` and `strateg* OR regulat*` - many medical papers regarding e.g. sex-biased regulation of genes.
-
-`strateg*` brings in a lot of results that are perhaps not really about legal frameworks (e.g. health strategies), and `regulation` brings in some about biological regulation - but difficult to remove?  
+We use the standard "women, girls and gender string" as described in General interpretation note above. However, here `factor$ OR disparit* OR difference* OR bias*` is removed, to reduce noise from medical papers about differences between the sexes in various health conditions.
 
 ```py
 TS=
 (
-    (
-        (
-            ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
-            OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
-            OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
-            OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
-            ) 
-            NEAR/5
-                ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
-                "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "monitor*"
-                )
+	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient"
+	 OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" 
+     OR "advance" OR "advancing" OR "develop" OR "developing" OR "overcome" OR "ensure" OR "attain*" 
+     OR "achiev*" OR "establish*" OR "propose*" OR "design*" OR "implement*" OR "adopt*" OR "introduc*"
+     ) 
+	NEAR/5
+	(
+    	(
+		  ("law$" OR "policy" OR "policies" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR
+           "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance"
+		  )
         )
         NEAR/15
         (             
@@ -200,8 +194,7 @@ TS=
             OR 
             (
                 ("equality*" OR "discriminat*" OR "rights" OR "dispar*" OR "bias*" OR "opportunit*" OR "empower*"
-                OR "financial exclusion" OR "financial inclusion" OR "economic exclusion" OR "economic inclusion" OR "social exclusion" OR "social inclusion" 
-                OR "digital exclusion" OR "digital inclusion" OR "cultural inclusion" OR "cultural exclusion" OR "policial inclusion" OR "political exclusion"
+                OR (("inclusion" OR "exclusion") NEAR/3 ("financ*" OR "econom*" OR "social" OR "digit*" OR "cultur*" OR "politic*"))
                 OR "*women's inclusion" OR "equal pay*"
                 )
                 NEAR/5 
@@ -212,7 +205,7 @@ TS=
                     OR "wife" OR "wives" OR "girlfriend$"
                     OR "pregnan*" OR "maternity" OR "maternal"
                     OR "lesbian*" OR "gender*" OR "sexual and gender" OR "transgender*" OR "transperson*" OR "non-binary"
-                    OR ("sex*" NEAR/5 ("based" OR "factor$" OR "distribution" OR "characteristic$" OR "difference*" OR "discriminat*" OR "violence"))
+                    OR ("sex*" NEAR/5 ("based" OR "distribution" OR "characteristic$" OR "discriminat*" OR "violence"))
                     )
             )
         )   
