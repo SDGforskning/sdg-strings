@@ -2,7 +2,7 @@
 
 Achieve gender equality and empower all women and girls
 
-**Status: This query is currently under development (2025)**
+**Status: This query is a finished draft. It has not been formally tested.**
 
 **Contents**
 
@@ -767,7 +767,9 @@ NOT TS=("transplant*")
 
 ## 4. Contributions
 
-* v2.1.0: 
+* v2.1.0: Caroline S. Armitage, Håkon M. Bjerkan, Eli Heldaas Seland, Lise Vik Haugen
+
+* Internal review: Leena Byholm, Taina Peltonen (11.25)
 
 Specialist input: Specialist input: Hanne Marie Johansen, Professor in Gender Studies (29.09.25)
 
