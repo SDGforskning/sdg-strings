@@ -212,16 +212,18 @@ TS=
 > 5.2.2 Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence
 
 This target is interpreted to cover research about
-* eliminating all forms of violence related to women and girls
+* eliminating all forms of violence related to gender, including specifically women and girls 
 
-A wider interpretation is chosen because 'violence against women and girls' is difficult to distinguish when building search strings. Violence against women is defined by the UN <a href="#f2hb">(UN OHCHR, 1993)</a> as:
+See General Notes for an explanation of how women/girls/gender is interpreted.
+
+A wider interpretation is chosen because 'violence against women and girls' is difficult to distinguish from research about violence *perpetrated by* women and girls when building search strings. Violence against women is defined by the UN <a href="#f2hb">(UN OHCHR, 1993)</a> as:
 > "any act of gender-based violence that results in, or is likely to result in, physical, sexual, or mental harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life"
 
 The term 'violence" is for this target removed from the standard string for "women, girls and gender" mentioned in General Notes, as the violence aspect is covered elsewhere in the phrase. The results include some research on animals but these are difficult to exclude.
 
 #### Phrase 1
 
-This phrase is about ending violence related to women and girls. The general structure is *action + violence + women & girls*
+This phrase is about ending violence related to women/girls/gender. The general structure is *action + violence + women/girls/gender*
 
 ```py
 TS=
@@ -255,13 +257,13 @@ TS=
 > 5.3.2 Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age
 
 This target is interpreted to cover research about
-* eliminating all harmful practices against women and girls
+* eliminating all harmful practices against women and girls, or research about these harmful practices and gender
 
-The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR, 2025a)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant. Some search terms are combined with "women, girls and gender" to avoid irrelevant results (e.g. FGM and CEFM). Search terms related to marriage are in phrases, as NEAR combinations produced more noise without improving recall.
+The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR, 2025a)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant; however we use the wider gender string (see General Notes), and research about harmful practices with a gender aspect is considered in scope. Some search terms are combined with "women, girls and gender" to avoid irrelevant results (e.g. FGM and CEFM). Search terms related to marriage are in phrases, as NEAR combinations produced more noise without improving recall.
 
 #### Phrase 1
 
-This phrase is about eliminating harmful practices against women and girls. The general structure is *action + practice + women & girls*
+This phrase is about eliminating harmful practices against women and girls. The general structure is *action + practice + women/girls/gender*
 
 ```py
 TS=(
@@ -745,8 +747,8 @@ This target is essentially a subset of target 1.4 (SDG 1), where the focus is on
 > 1.4 By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance
 
 We therefore interpret it in a similar way. We interpret 5.a to cover research about: 
-- Ensuring women's access and rights to financial services ("financial inclusion"). We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
-- Ensuring women's access and rights to economic resources and land/property/inheritance/natural resources (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land and natural resources, but could also include human capital/labour (e.g. access to employment).
+- Ensuring access and rights to financial services ("financial inclusion") for women/from a gender perspective. We interpret this as money-based resources. For this we include research about access to forms of microfinance, digital finance and mobile money, plus other more traditional financial products/financial services. Includes credit, savings, payment services, fund transfers and insurance.
+- Ensuring access and rights to economic resources and land/property/inheritance/natural resources for women/from a gender perspective (including rights for tenure, ownership and control, and security). We interpret "economic resources" to include mentioned elements such as land and natural resources, but could also include human capital/labour (e.g. access to employment).
 
 As in 1.4, we based this interpretation of financial and economic resources on <a href="#f2ca">UN DESA (2009, p1)</a>, which states:
 
@@ -754,7 +756,7 @@ As in 1.4, we based this interpretation of financial and economic resources on <
 
 #### Phrase 1
 
-This phrase covers ensuring women's access and rights to financial services. The basic structure is _action + access/rights + financial services + women_.
+This phrase covers ensuring access and rights to financial services for women/from a gender perspective. The basic structure is _action + access/rights + financial services + women/gender_.
 
 Sources of terms for financial services included <a href="#f2ca">UN DESA (2009)</a> and a digital financial inclusion report from the <a href="#f5ca">UNSGSA et al. (2018)</a>.
 
@@ -803,7 +805,7 @@ TS=
 
 #### Phrase 2
 
-This phrase covers ensuring women's access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is _action + access/rights + resources + women_.
+This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance for women/from a gender perspective. The basic structure is _action + access/rights + resources + women/gender_.
 
 "security" is used only together with other terms, because otherwise there are many results about food security. The same applies to "control", as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
 
@@ -875,7 +877,7 @@ This query consists of 1 phrase.
 
 #### Phrase 1
 
-The basic structure is _action_ + _use of technology_ + _empowerment of women_
+The basic structure is _action + use of technology + women/gender + empowerment_
 
 ```py
 TS=
@@ -945,7 +947,7 @@ TS=
 >
 > 5.c.1 Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment
 
-This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c <a href="#f6li">(UN Statistics, 2023)</a>    we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
+This target is interpreted to cover research about policies and legislation for the promotion of gender equality and for the empowerment of women and girls. According to Indicator metadata 5.c <a href="#f6li">(UN Statistics, 2023)</a> we interpret the indicator to pertain to the characteristics of the financial system, not to the amount of funds each country spends on efforts for gender equality.
 
 For definitions of _gender equality_ and _empowerment_ we use "Gender equality: Glossary of Terms and Concepts" from UNICEF <a href="#f5li">(UNICEF, 2017)</a>. The standard "women and girls string" (<a href="https://github.com/SDGforskning/sdg-strings/blob/Workingbranch-SDG5/SDG05_query_topic_WoS.md#general-interpretation-note">see general interpretation note</a>) has been slightly modified: "Violence" has been removed for better relevance. 
 
@@ -954,7 +956,7 @@ This query consists of 2 phrases:
 
 #### Phrase 1
 
-The basic structure is _action (strengthen/decrease)_ + _policies/legislation_ + _gender (in)equality/empowerment of women_  
+The basic structure is _action + policies/legislation + women/gender + empowerment/(in)equality_  
 
 ```py
 TS=
