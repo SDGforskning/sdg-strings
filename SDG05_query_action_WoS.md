@@ -212,7 +212,7 @@ TS=
 > 5.2.2 Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence
 
 This target is interpreted to cover research about
-* eliminating all forms of violence related to gender, including specifically women and girls 
+* eliminating all forms of violence related to women and girls, or research about these forms of violence from a gender perspective 
 
 See General Notes for an explanation of how women/girls/gender is interpreted.
 
