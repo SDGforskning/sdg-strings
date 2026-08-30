@@ -231,54 +231,46 @@ Sources of terms for *financial services* included <a id="DESA">[Department of E
 TS=
 (
   (
-    (
-      (
-        ("ensure" OR "establish*" OR "propose*" OR "implement*"
-        OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
-        OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-        OR "develop" OR "development" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
-        OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-        )
-        NEAR/5
-            ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-            OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
-            OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
-            )
-      )
-      OR
-      (
-        ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
-        OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
-        )
-        NEAR/5
-            ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
-            OR "unaffordab*" OR "expensive"
-            OR "unbanked"
-            )      
-      )
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
+    OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+    OR "develop" OR "development" OR "attain*" OR "achiev*" OR "improv*" OR "strengthen*"
+    OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+    OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+    OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
     )
-    NEAR/15
-          ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
-          OR "banks" OR "a bank" OR "banking" OR "bank account$"
-          OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
-          OR "credit" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
-          OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
-          OR "financial inclusion"
+    NEAR/5
+        (
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+          OR "ownership" OR "control" OR "right$" OR "empower*" OR "inclusion"
+          OR "affordab*" OR "pro poor" OR "inexpensive" OR "free of charge" OR "free service$"
+          OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*" OR "exclusion"
+          OR "unaffordab*" OR "expensive"
+          OR "unbanked"
           )
+          NEAR/15
+              ("microfinanc*" OR "micro-financ*" OR "microinsurance" OR "micro-insurance" OR "microcredit" OR "micro-credit" OR "microloan$" OR "micro-loan$"
+              OR "banks" OR "a bank" OR "banking" OR "bank account$"
+              OR "digital finance" OR "mobile money" OR "electronic payments" OR "digital payment$" OR "fintech"
+              OR "credit" OR "entrepreneurial finance" OR "loan$" OR "savings" OR "insurance" OR "payment service$" OR "transfer service$" OR "transfer funds"
+              OR (("financial" OR "monetary") NEAR/1 ("resourc*" OR "opportunit*" OR "asset*" OR "servic*"))
+              OR "financial inclusion"
+              )
+        )
   )
   AND
       ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
       OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-      OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+      OR (("person$" OR "people$" OR "adult$" OR "men") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
       OR "disabled" OR "disabilities" OR "disability"
       OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
       OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
       OR "women" OR "woman" OR "girls" OR "girl"
       OR "pregnant" OR "pregnancy" OR "maternity"
       OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
       OR "living with HIV" OR "living with AIDS"
       OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
       OR "indigenous group$"
@@ -291,43 +283,40 @@ TS=
 
 This phrase covers ensuring access and rights to economic resources, natural resources, land, property and inheritance. The basic structure is *action + access/rights + resources + poor/vulnerable*.
 
-"security" is used in phrases because otherwise there are many results about food security. 
+"security" is used in phrases because otherwise there are many results about food security. "control" is also used in phrases as it was found to cause too much noise alone (works mentioning "control groups" or "asthma control" for example). `("of" NEAR/1 "assets")` is used to help filter out many works from business (e.g. return on assets).
+
+The string finds quite many results about access/barriers to medical care related to income, and access to healthcare in low-/middle- income countries. These are potentially outside of scope - they are related to vulnerable groups and access, but more to healthcare rather than economic resources directly. However, they are difficult to exclude without losing relevant results due to the word `income`. We also consider them relevant to the "basic services" (healthcare) part of this target.
 
 ```py
 TS=
 (
   (
-    (
-      (
-        ("ensure" OR "establish*" OR "propose*" OR "implement*"
-        OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
-        OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-        OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
-        OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
-        )
-        NEAR/5
-            ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
-            OR "ownership" OR "control" OR "right$"
-            OR "affordab*" OR "pro poor"
-            OR "empower*" OR "inclusion" OR "sharing"
-            OR "tenure security" OR "secure tenure" OR "income security" OR "secure livelihood$"
-            )
-      )
-      OR
-      (
-        ("reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
-        OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
-        )
-        NEAR/5
-            ("inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
-            OR "unaffordab*" OR "exclusion" OR "land grab*" OR "insecurity"
-            )      
-      )
+    ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+    OR "improv*" OR "increas*" OR "better" OR "reform*"
+    OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
+    OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
+    OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+    OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
+    OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
     )
     NEAR/5
-        ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labour market$"
-        OR "income" OR "livelihood$" OR "wealth" OR "inheritance"
-        OR "land" OR "lands" OR "farmland$" OR "property" OR "natural resource$" OR "tenure"
+        (
+          ("access*" OR "equitab*" OR "equity" OR "equality" OR "equal"
+          OR "ownership" OR "landownership" OR "homeownership" OR "right$"
+          OR "control over" OR "control of" OR "control and use" OR "access and control" OR "individual control" OR "collective control" OR "territorial control" OR "land control" OR "economic control"
+          OR "affordab*" OR "pro poor"
+          OR "empower*" OR "inclusion" OR "sharing"
+          OR "tenure security" OR "secure tenure" OR "land tenure" OR "income security" OR "secure livelihood$"
+          OR "inaccessib*" OR "barrier$" OR "obstacle$" OR "unequal" OR "inequalit*" OR "inequitab*"
+          OR "unaffordab*" OR "exclusion" OR "land grab*" OR "appropriation of land" OR "insecurity"
+          )
+          NEAR/15
+              ("economic resource$" OR "employment" OR "decent work" OR "paid work" OR "labo$r market" OR "labo$r force"
+              OR "income" OR "earnings" OR "wage" OR "wages" OR "livelihood$" OR "wealth" OR "inheritance" OR "inherit" OR ("of" NEAR/1 "assets")
+              OR "land" OR "lands" OR "landowner*" OR "farmland$" OR "livestock owner*" OR "livestock asset$"
+              OR "property" OR "home owner*" OR "homeowner*" OR "tenure" 
+              OR "natural resource$"
+              )
         )
   )
   AND
@@ -335,14 +324,14 @@ TS=
       OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
       OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
       OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-      OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+      OR (("person$" OR "people$" OR "adult$" OR "men") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
       OR "disabled" OR "disabilities" OR "disability"
       OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
       OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
       OR "women" OR "woman" OR "girls" OR "girl"
       OR "pregnant" OR "pregnancy" OR "maternity"
       OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
+      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
       OR "living with HIV" OR "living with AIDS"
       OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
       OR "indigenous group$"
@@ -362,10 +351,12 @@ TS=
 (
   (
     (
-      ("ensure" OR "establish*" OR "propose*" OR "implement*"
-      OR "improv*" OR "increase" OR "increasing" OR "increased" OR "better"
+      ("ensur*" OR "establish*" OR "propos*" OR "implement*"
+      OR "improv*" OR "increas*" OR "better" OR "reform*"
       OR "adopt*" OR "introduc*" OR "build*" OR "plan" OR "planning" OR "plans"
-      OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*" OR "increas*"
+      OR "develop" OR "attain*" OR  "achiev*" OR "improv*" OR "strengthen*"
+      OR "reduce" OR "reducing" OR "decreas*" OR "avoid*" OR "prevent*" OR "combat*"
+      OR "overcome" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "dismantl*"
       OR "program*" OR "strateg*" OR "policy" OR "policies" OR "framework$" OR "initiative$" OR "law$" OR "legislat*"
       )
       NEAR/5
@@ -399,23 +390,23 @@ TS=
         )
   )
   AND
-    ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
-    OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
-    OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
-    OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
-    OR (("person$" OR "people$" OR "adult$") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
-    OR "disabled" OR "disabilities" OR "disability"
-    OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
-    OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
-    OR "women" OR "woman" OR "girls" OR "girl"
-    OR "pregnant" OR "pregnancy" OR "maternity"
-    OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
-    OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*"
-    OR "living with HIV" OR "living with AIDS"
-    OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
-    OR "indigenous group$"
-    OR "least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
-    )
+      ("poverty" OR "the poor" OR "the poorest" OR "rural poor" OR "urban poor" OR "working poor" OR "destitute" OR "living in poverty"
+      OR (("poor" OR "poorest" OR "low* income") NEAR/3 ("household$" OR "people" OR "children" OR "communit*" OR "neighbo$rhood*"))
+      OR "the vulnerable" OR "vulnerable group$" OR "vulnerable communit*" OR "marginali?ed group$" OR "marginali$ed communit*" OR "disadvantaged group$" OR "disadvantaged communit*"
+      OR "slum" OR "slums" OR "shanty town$" OR "informal settlement*" OR "homeless"
+      OR (("person$" OR "people$" OR "adult$" OR "men") NEAR/3 ("vulnerable" OR "marginali$ed" OR "disadvantaged" OR "discriminated" OR "displaced*" OR "patient$" OR "trans" OR "intersex" OR "older" OR "old" OR "elderly" OR "retired" OR "indigenous"))
+      OR "disabled" OR "disabilities" OR "disability"
+      OR "elderly" OR "elders" OR "pensioners" OR "vulnerable seniors"
+      OR "unemployed" OR (("work" OR "workplace" OR "worker$" OR "occupational") NEAR/3 ("injury" OR "injuries" OR "illness*" OR "accident$"))
+      OR "women" OR "woman" OR "girls" OR "girl"
+      OR "pregnant" OR "pregnancy" OR "maternity"
+      OR "child" OR "children" OR "infant$" OR "babies" OR "newborn$" OR "toddler$" OR "youth$"
+      OR "sexual minorit*" OR "LGBT*" OR "lesbian$" OR "gay" OR "bisexual" OR "transgender*" OR "non-binary" OR "nonbinary" OR "gender non-conforming" OR "gender nonconforming" OR "queer"
+      OR "living with HIV" OR "living with AIDS"
+      OR "ethnic minorit*" OR "minority group$" OR "refugee$" OR "migrant$" OR "immigrant$" OR "asylum*"
+      OR "indigenous group$"
+      OR "least developed countr*" OR "least developed nation$" OR "Angola*" OR "Benin" OR "beninese" OR "Burkina Faso" OR "Burkina fasso" OR "burkinese" OR "burkinabe" OR "Burundi*" OR "Central African Republic" OR "Chad" OR "Comoros" OR "comoro islands" OR "iles comores" OR "Congo" OR "congolese" OR "Djibouti*" OR "Eritrea*" OR "Ethiopia*" OR "Gambia*" OR "Guinea" OR "Guinea-Bissau" OR "guinean" OR "Lesotho" OR "lesothan*" OR "Liberia*" OR "Madagasca*" OR "Malawi*" OR "Mali" OR "malian" OR "Mauritania*" OR "Mozambique" OR "mozambican$" OR "Niger" OR "Rwanda*" OR "Sao Tome and Principe" OR "Senegal*" OR "Sierra Leone*" OR "Somalia*" OR "South Sudan" OR "Sudan" OR "sudanese" OR "Togo" OR "togolese" OR "tongan" OR "Uganda*" OR "Tanzania*" OR "Zambia*" OR "Cambodia*" OR "Kiribati*" OR "Lao People’s democratic republic" OR "Laos" OR "Myanmar" OR "myanma" OR "Solomon islands" OR "Timor Leste" OR "Tuvalu*" OR "Vanuatu*" OR "Afghanistan" OR "afghan$" OR "Bangladesh*" OR "Bhutan*" OR "Nepal*" OR "Yemen*" OR "Haiti*"
+      )
 )
 ```
 
@@ -624,7 +615,7 @@ TS=
 
 * Testing v1.2.2: Project group; see documentation https://doi.org/10.5281/zenodo.8386611
 
-* v2.0.0: Caroline S. Armitage (Aug-Oct 2023), minor review Lise Vik Haugen.
+* v2.0.0, 2.1.0: Caroline S. Armitage, minor review Lise Vik Haugen.
 
 Specialist input: Awaiting specialist input.
 
