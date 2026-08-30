@@ -192,7 +192,7 @@ TS=
       NEAR/5 ("management" OR "conservation" OR "protection" OR "restoration" OR "sustainable")
     )
   )
-  NEAR/15
+  NEAR/5
       ("habitat$" OR "nature conservation"
       OR (("communit*") NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$"))
       OR (("ecosystem$" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "pollinator$" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR "upland$" OR "tundra" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$")) 
@@ -362,7 +362,7 @@ TS=
         OR "Global Forest Goals" OR "GFG$"
         )
   )
-  NEAR/15 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
+  NEAR/5 ("*forest*" OR "woodland$" OR "silvicultur*" OR "arboricultur*")
 )
 ```
 
@@ -477,12 +477,12 @@ In addition to articles about the effects agriforestry has on soils, this phrase
 TS=
 (
   ("desert$" OR "desertif*" OR "drought$" OR "flood*" OR "dryland$")
-  NEAR/15
+  NEAR/10
       (
         ("restor*" OR "rehabilita*" OR "improv*" OR "enhanc*" OR "strengthen*"
         OR "maintain*" OR "preserv*" OR "conserv*" OR "protect*"
         )
-        NEAR/15 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
+        NEAR/5 ("soil structure" OR "soil fertility" OR "land fertility" OR "soil health" OR "soil productivity" OR "soil quality")
       )
 )
 ```

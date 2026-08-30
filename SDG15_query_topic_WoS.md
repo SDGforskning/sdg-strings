@@ -503,17 +503,36 @@ This phrase aims to find research about the conservation, restoration, and manag
 
 Specifying terms for areas counted as green cover for the Mountain Green Cover Index `forest` `shrubs` `trees` `pasture` `cropland` `grassland` `wetland` are mentioned in the SDG metadata for indicator 15.4.2 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf). `KBA` is not freely truncated due to noise from "kbar" (a unit).
 
-Compared to the action approach, a string of action terms is added in addition to the existing management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). Many of the terms for Protected areas/Natural monuments etc. are combined with ecosystem terms - the aim of this is to exclude protecting human communities, architecture etc. 
+Compared to the action approach, a string of action terms is added in addition to the existing management/conservation terms to reach relevant articles which do not mention conservation (e.g. about `decline` of biodiversity on mountain areas). Some of the terms for Protected areas/Natural monuments etc. are combined with ecosystem terms - the aim of this is to exclude protecting human communities, architecture etc. 
 
-The elements of this phrase are: *(management/conservation/changes + ecosystems/bidiversity OR management/conservation/protected areas + ecosystems/bidiversity OR instruments) + mountains*.  
+The elements of this phrase are: *(management/conservation/changes+ecosystems/bidiversity OR increase/strengthen+ecosystems/bidiversity OR instruments) + mountains*.  
 
 ```py
 TS=
 (
   (
     (
-      ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*"
-      OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+      ("manag*" OR "conserv*" OR "protect*" OR "restor*" OR "rehabilit*" OR "sustainable" 
+      OR "Protected landscape$" OR "Nature reserve$" OR "National park$" 
+      OR "Natural monument$" OR "Natural feature$"
+      OR "CITES" 
+      ) 
+      AND 
+        ("ecosystem$" OR "habitat$"
+        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
+        OR (("diversity" OR "communit*") 
+          NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+          OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+          OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$")) 
+        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
+        OR (("covered" OR "cover*") 
+          NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+          OR "cropland$" OR "grassland$" OR "wetland$")) 
+      )
+    ) 
+    OR 
+    (
+      ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
       OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
       OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
       OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
@@ -522,24 +541,15 @@ TS=
       NEAR/5 
         ("ecosystem$" OR "habitat$"
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
+        OR (("diversity" OR "communit*") 
+          NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" 
+          OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$"
+          OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        )
-    )
-  OR 
-    (
-      ("management" OR "conservation" OR "protection" OR "restoration" OR "rehabilitation"
-      OR "Protected landscape$" OR "Nature reserve$" OR "National park$" OR "Natural monument$" OR "Natural feature$"
-      OR "CITES"
-      ) 
-      AND
-        ("ecosystem$" OR "habitat$" OR "nature conservation"
-        OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
-        OR (("diversity" OR "communit*") NEAR/3 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
-        OR "key species" OR "keystone species" OR "foundation species" OR "habitat forming species" OR "key resource$"
-        OR (("covered" OR "cover*") NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" OR "cropland$" OR "grassland$" OR "wetland$")) 
-        ) 
+        OR (("covered" OR "cover*") 
+          NEAR/5 ("green" OR "vegetat*" OR "*forest$" OR "shrub$" OR "tree$" OR "pasture$" 
+          OR "cropland$" OR "grassland$" OR "wetland$")) 
+      )
     ) 
   OR "Protected area$" OR "Wilderness area$" 
   OR "Habitat management area$" OR "Species management area$"
@@ -565,7 +575,7 @@ TS=
       ("sustainabl*" OR "environmental*" OR "ecological*" OR "ecosystem approach")
       NEAR/3 ("manag*" OR "use" OR "using" OR "govern*" OR "development" OR "administrat*" OR "planning" OR "policy" OR "policies" OR "strateg*" OR "approach*")
     )
-    NEAR/15
+    AND 
         ("ecosystem$" OR "habitat$"
         OR (("communit*" OR "diversity") NEAR/5 ("ecolog*" OR "species" OR "taxonom*" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
         OR "biodiversity" OR "biological diversity" OR "species diversity" OR "functional diversity" OR "genetic diversity" OR "taxonomic diversity"
@@ -600,7 +610,7 @@ This phrase aims to find research about the degradation of terrestrial habitats.
 TS=
 (
   ("degrad*" OR "declin*" OR "loss" OR "lost" OR "destruct*" OR "disappear*" OR "fragmentat*")
-  NEAR/5
+  NEAR/15
       ("ecosystem$" OR "habitat$" OR "biotope$"
       OR ("communit*" NEAR/5 ("ecolog*" OR "species" OR "plant*" OR "animal$" OR "organism$" OR "flora" OR "fauna" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "mosses" OR "tree$" OR "grassland$" OR "pollinator$"))
       )
@@ -635,7 +645,9 @@ Even though this is the topic approach version, the phrase still contains the el
 The concept of *threatened species* is interpreted according to the classification of the SDG metadata for indicator 15.5.1 (<a id="SDGmetarep">[UN Statistics Division 2022](#f3)</a>; https://unstats.un.org/sdgs/metadata/files/Metadata-15-05-01.pdf): 
 > "Threatened species are those listed on The IUCN Red List of Threatened Species in the categories Vulnerable, Endangered, or Critically Endangered (i.e., species that are facing a high, very high, or extremely high risk of extinction in the wild in the medium-term future)."
 
-The elements of the phrase are *action + biodiversity/key biodiversity areas/threatened species*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
+The elements of the phrase are *management/conservation OR promoting + biodiversity/key biodiversity areas/threatened species*. 
+
+It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results. Terms about human microbiome and terms which are related to diseases were added to `NOT` string in order to exclude articles about those. The medical terms were picked from a set of irrelevant papers found when testing the phrases and are not chosen systematically. It is possible that terms like `parasite` `infection` or `immunology` will exclude also relevant results.
 
 ```py
 TS=
@@ -656,7 +668,7 @@ TS=
   )
 OR
   (
-    ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
+    ("promot*" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "higher" OR "upgrad*" OR "advance" OR "develop" 
     OR "ensure" OR "maintain*" OR "preserv*" OR "sustain" 
     OR "decreas*" OR "reduc*" OR "restrict*" OR "degrad*" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "deterior*" OR "degrad*" 
     OR "coping" OR "cope" OR "adapt*" OR "resilien*" 
@@ -723,7 +735,9 @@ This query consists of 3 phrases. The phrases are limited by the exclusion of `m
 
 #### Phrase 1
 
-This phrase aims to find research about sharing/access/fairness/use and genetic resources or traditional knowledge. The elements of the phrase are *sharing/access/use + resources/knowledge + ecosystems/organisms/bioresources*. It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
+This phrase aims to find research about sharing/access/fairness/use and genetic resources or traditional knowledge. The elements of the phrase are *sharing/access/use + resources/knowledge + ecosystems/organisms/bioresources*. The phrase is sliced into three parts linking search terms to genetic resources with slightly different combinations in order to find all the results found by the action phrase and to have best possible recall without increasing the amount of irrelevant results.
+
+It is limited by the exclusion of `marine` habitats (except when a **terrestrial or freshwater term** is mentioned) and some other terms which were detected to bring irrelevant results.
 
 ```py
 TS=
@@ -743,6 +757,19 @@ TS=
           ("genetic resource$" OR "gene resources" OR "biological resource$"
           OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
           )
+    ) 
+    OR 
+    (
+    (
+      ("promot*" OR "improv*" OR "enhanc*" OR "strengthen*"
+      OR "increas*" OR "expand*" OR "stimulat*" OR "encourag*" OR "secure" OR "securing"
+      )
+      NEAR/5 ("share$" OR "sharing" OR "equitab*" OR "equal" OR "fair" OR "access" OR "accessing" OR "accessib*" OR "right$" OR "ownership" OR "appropriation" OR "biopiracy" OR "biocolonial*")
+    )
+    NEAR/15
+        ("genetic resource$" OR "gene resources"
+        OR ("knowledge" NEAR/3 ("traditional" OR "indigenous" OR "autochthonous" OR "local"))
+        )
     )
   )
   AND ("ecosystem$" OR "biotope$" OR "biodiversity" OR "biological diversity" OR "species" OR "plant*" OR "animal$" OR "organism$" 
@@ -826,11 +853,21 @@ The elements of the phrase are *poaching/trafficking + species*. It is limited b
 ```py
 TS=
 (
-  ("poach*" OR "trafficking" OR "trafficked" OR "smuggl*")
+  (
+  ("poach*" OR "smuggl*")
+  AND 
+      ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
+      OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
+      )
+  ) 
+  OR 
+  (
+  ("trafficking" OR "trafficked")
   NEAR/15
       ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "wildlife" OR "insect$" OR "amphibian$" OR "bird$" OR "reptile$"
       OR "rosewood" OR "kosso" OR "elephant$" OR "rhino*" OR "ivory" OR "pangolin$" OR "turtle$" OR "tortoise$" OR "big cat$" OR "tiger$" OR "glass eel$"
       )
+  ) 
 )
 NOT
 TS=(("marine" OR "ocean$" OR "seafloor" OR "coral" OR "kelp forest$" OR "kelp-forest$" OR "random forest$" OR "IOT" OR "urban ecosystem" OR "cell*" OR "*membrane*") NOT ("terrestrial" OR "soil" OR "soils" OR "*forest*" OR "woodland$" OR "taiga" OR "jungle$" OR "mangrove$" OR "peatland$" OR "bog$" OR "mire$" OR "fen$" OR "swamp*" OR "wetland$" OR "marsh*" OR "paludal" OR "farmland$" OR "agricultural land$" OR "cropland$" OR "pasture$" OR "rangeland$" OR "bush*" OR "shrub*" OR "meadow*" OR "moorland$" OR "heathland$" OR "savanna*" OR "plain$" OR "grassland$" OR "prairie$" OR "steppe" OR "dryland$" OR "dry land" OR "desert*" OR "lowland$" OR "mountain*" OR "highland$" OR "alpine*" OR ("fell$" NEAR/15 "Lapland") OR "upland$" OR "tundra" OR "freshwater" OR "limnic" OR "inland fish*" OR "lake*" OR "pond$" OR "river*" OR "stream$" OR "brook$" OR "creek$"))
@@ -937,7 +974,7 @@ TS=
     ("invasive" OR "alien" OR "exotic" OR "nonnative" OR "non-native" OR "nonindigenous" OR "non-indigenous")
     NEAR/3 ("species" OR "flora" OR "fauna" OR "plant$" OR "animal$" OR "organism$" OR "wildlife" OR "insect$" OR "amphibian$" OR "reptile$" OR "bird$" OR "rodent$")
   )
-  NEAR/15
+  AND 
       ("impact*" OR "effect*" OR "affect*" OR "consequen*"
       OR "competition"
       OR "predation"
