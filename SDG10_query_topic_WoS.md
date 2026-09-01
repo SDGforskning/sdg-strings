@@ -75,7 +75,7 @@ TS= (
        "eradicat*" OR "fight*")
     ))
     OR 
-    (anti-poverty OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
+    ("anti-poverty" OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
     )
 )
 
