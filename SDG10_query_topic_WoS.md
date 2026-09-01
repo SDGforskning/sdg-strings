@@ -55,7 +55,7 @@ This query consists of 1 phrase. The basic structure is *poor + income growth*.
 
 ```py
 
-TS= (
+TS= ((
     ("bottom 40%" OR "bottom 40 percent" OR "bottom 40 per cent" OR "the poor" OR "the poorest" OR "low wage" OR
      "rural poor*" OR "urban poor*" OR "working poor*" OR "destitute$" OR "low income" OR "extreme* poor*" OR
      "extreme* poverty" OR "severe* poor*" OR "severe* poverty" OR "abject* poor*" OR "abject* poverty" OR
@@ -73,7 +73,7 @@ TS= (
      ("income inequalit*" OR "income insecur*" OR "income gap*" OR "income uncertain*" OR "income polari$ation" OR
      "income instabilit*" OR "earning* instabilit*" OR "economic inequalit*" OR "income disparit*" OR "gini index" OR "poverty" NEAR/5 ("reduc*" OR "alleviat*" OR "lessen*" OR "decreas*" OR "narrow*" OR "mitigat*" OR "curb*" OR "overcom*" OR
        "eradicat*" OR "fight*")
-    ))
+    )))
     OR 
     ("anti-poverty" OR "anti poverty" OR "antipoverty" OR "out of poverty" OR "poverty lending"
     )
