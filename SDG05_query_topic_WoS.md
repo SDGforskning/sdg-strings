@@ -190,7 +190,7 @@ TS=
 > 5.2.2 Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence
 
 This target is interpreted to cover research about
-* eliminating all forms of violence related to women and girls, or research about these forms of violence from a gender perspective 
+* all forms of violence against women and girls, including research that applies a more general gender perspective to such violence. 
 
 See General Notes for an explanation of how women/girls/gender is interpreted.
 
@@ -229,7 +229,7 @@ TS=
 > 5.3.2 Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age
 
 This target is interpreted to cover research about
-* harmful practices against women and girls, or research about these harmful practices and gender
+* harmful practices against women and girls, including research that applies a more general gender perspective to such practices.
 
 The OHCHR includes female genital mutilation, child, early and forced marriage, virginity testing and accusations of witchcraft as harmful practices <a href="#f5hb">(UN OHCHR, 2025a)</a>. Harmful practices are regarded as human rights violations and forms of violence, so there is overlap with target 5.2. Harmful practices only concerning boys or young men are considered irrelevant; however we use the wider gender string (see General Notes), and research about harmful practices with a gender aspect is considered in scope. Some search terms are combined with "women, girls and gender" to avoid irrelevant results (e.g. FGM and CEFM). Search terms related to marriage are in phrases, as NEAR combinations produced more noise without improving recall.
 
@@ -336,7 +336,7 @@ TS=
 
 This target is interpreted to cover research about gender balance or women's participation and leadership in decision-making in political, economic and public life.
 
-Private sphere (family and home life) not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995)</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
+The private sphere (family and home life) is not explicitly included in the search strings, but based on the Beijing Report <a href="#f1li">(UN, 1995</a>, including paragraph 185), we are aware that research on the private sphere may also be relevant.
 
 Sources used for finding terms:  
 * Indicator metadata 5.5.2 <a href="#f2li">(UN Statistics Division, 2025)</a> refers to ISCO-08, which lists useful terms to cover _managerial positions_ <a href="#f5li">(ILO, 2012)</a>.
