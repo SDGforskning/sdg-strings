@@ -38,13 +38,17 @@ Our classification of countries as least developed countries (LDCs), small islan
 > 16.1.4 Proportion of population that feel safe walking alone around the area they live after dark
 
 This target is interpreted to cover research about 
-- reduction of (lethal) violence and intentional killings. Violence is here understood as all sorts of intentional violence that results in deaths and homicide, or even severe injury, among civilians as well as armed forces. It should cover all forms and aspects of intentional physical, psychological or sexual violence. 
+- reduction of violence and intentional killings.
 
-By all sorts of conflicts, we understand the conflicts where the intention is homicide, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, or domestic political conflicts like civil wars, or international conflicts, like wars.  
+ According to United Nations violence is defined as “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or collective group may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301
+ 
+Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as "... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral (ICRC, 2024).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
+
+The query should also find research on work for peace as an aspect of reducing violence.
 
 The conflicts are of different character and are reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
 
-The query should also find research on work for peace and stability in an area, as well as research on experience of security and safety for people. 
+
 
 ```py
 TS=
