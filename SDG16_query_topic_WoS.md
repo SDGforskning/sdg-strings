@@ -50,8 +50,31 @@ The violence is of different character and is reported from all over the world, 
 
 
 ```py
+
+
+
+
 TS=
 (
+ (("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"))
+OR
+ (("Killing$" NOT (cell$ OR tumor$ OR cyst$ OR disease$ OR pandem* OR cancer OR bacteri*)))
+OR 
+ (("Violent*" OR "armed" OR "deadl*") NEAR/3 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" )) 
+OR
+ (("Military" OR "militia*" OR "paramilitary") NEAR/0 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$"))  
+OR
+ (("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$"))
+OR 
+ (("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")) 
+OR 
+ (("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*"))
+OR 
+ (("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")) 
+OR 
+ (("weapon$" NEAR/5 ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR "death$" OR "injur*" OR "force$"))) 
+OR
+ (("Political*" NEAR/5 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")))
 
 )
 ```
