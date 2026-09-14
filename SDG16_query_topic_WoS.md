@@ -65,6 +65,7 @@ OR
 )
 ```
 
+```py
 TS=
 (
  (("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"))
@@ -88,6 +89,8 @@ OR
  (("Political*" NEAR/5 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")))
 
 )
+```
+
 
 ### Target 16.2
 
