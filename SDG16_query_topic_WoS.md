@@ -46,13 +46,15 @@ Conflicts are often the cause of violence, hence the notions are closely linked 
 
 The query should also find research on work for peace as an aspect of reducing violence.
 
-The violence is of different character and is reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
+The violence is of different character and is reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query.
 
+This query is dived in 4 phrases to make the search easier to read.
+
+Phrase 1
+
+The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is also much in use in health, typically when “fighting cancer “, so the search is limited with the usage of NOT. 
 
 ```py
-
-
-
 
 TS=
 (
