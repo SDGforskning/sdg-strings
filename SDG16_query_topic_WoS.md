@@ -95,7 +95,25 @@ OR
 
 )
 ```
+Prase 3 
 
+This query is searching for research on violence in family or gendered and is expressed in family/gender/partner + violence/abuse/maltreatment. Related is a query covering violence/abuse/maltreatment + physical/mental.
+
+Both phrases have the addition of NOT abuse/use + drugs/alcohol to avoid this particular literature. There could be a chance of missing out on literature on violence and abuse connected to drug abuse, but for the most part it will be covered by the first element of the search string. 
+
+```py
+(
+ (
+  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR marital OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")) NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")) 
+ ) 
+OR 
+ (
+  (("Physical*" OR "mental*" OR "emotional*" OR "psychological*") NEAR/1 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*") NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")))
+ )
+)
+
+
+```
 
 ### Target 16.2
 
