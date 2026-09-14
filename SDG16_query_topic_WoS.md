@@ -64,6 +64,11 @@ OR
 
 )
 ```
+Phrase 2 
+
+Wars and armed conflicts causes violence so the query consist of violent + war/warfare/conflict/attacks/riots. 
+
+
 
 ```py
 TS=
