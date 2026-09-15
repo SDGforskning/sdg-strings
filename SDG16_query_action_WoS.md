@@ -48,6 +48,20 @@ The query should also find research on work for peace as an aspect of reducing v
 
 The conflicts are of different character and are reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
 
+This query consists of 4 phrases.
+
+#### Phrase 1
+
+The action search on violence in general is based on the query reducing + violence.
+The word "killing" is also much in use in health, typically when “fighting cancer “, so the search is limited with the usage of NOT. 
+The phrase about avoiding violence is based on: decreasing + peacebuilding
+(
+ ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
+ )
+OR
+ ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "people" OR "Young" OR "Youth$" OR "child*" OR "boy$" OR "girl$" OR "men" OR "Women"  OR "adult$" OR "adolescent$" OR "teen*" OR "elderl*" OR "human$" OR "mass" OR "soldier$" OR "terror*" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
+ )
+)
 
 
 ```py
