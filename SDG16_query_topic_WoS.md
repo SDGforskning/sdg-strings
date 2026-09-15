@@ -51,7 +51,7 @@ The violence is of different character and is reported from all over the world, 
 
 This query is dived in 4 phrases to make the search easier to read.
 
-### Phrase 1
+## Phrase 1
 
 The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is also much in use in health, typically when “fighting cancer “, so the search is limited with the usage of NOT. 
 
@@ -105,7 +105,7 @@ Both phrases have the addition of NOT abuse/use + drugs/alcohol to avoid this pa
 ```py
 (
  (
-  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR marital OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")) NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")) 
+  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR "marital" OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")) NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")) 
  ) 
 OR 
  (
