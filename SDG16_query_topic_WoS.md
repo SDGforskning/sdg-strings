@@ -62,7 +62,7 @@ TS=
 (
  ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$")
 OR
- ("Killing$" NOT (cell$ OR tumor$ OR cyst$ OR disease$ OR pandem* OR cancer OR bacteri*))
+ ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "Young" OR "Youth$" OR "child*" OR "men" OR "Women" OR "adult$" OR "adolescent$" OR "teen*" OR "elderl*" OR "human$" OR "mass" OR "terror*" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"))
 
 )
 ```
