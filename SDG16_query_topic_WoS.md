@@ -50,11 +50,11 @@ The query should also find research on work for peace as an aspect of reducing v
 
 The violence is of different character and is reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query.
 
-This query is dived in 4 phrases to make the search easier to read. 
+This query is dived in 4 phrases according to different aspects of violence. 
 
 #### Phrase 1
 
-The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is much in use in health, typically when “fighting cancer“, bacterias, but also in many other topics like hunting, animals, bugs etc., and is therefore restircted in the query: Killings + people/humans
+The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is much in use in health, typically when fighting cancer or bacterias, but also in other contexts like hunting, animals, bugs etc., and is therefore restircted in the query accordingly: Killings + people/humans
 
 ```py
 
