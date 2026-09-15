@@ -39,7 +39,7 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
  This target is interpreted to cover research about
 
-> •	reduction of violence and intentional killings.
+ •	reduction of violence and intentional killings.
 
  According to United Nations violence is defined as “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or collective group may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301 
  
