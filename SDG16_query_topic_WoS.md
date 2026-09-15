@@ -62,7 +62,7 @@ TS=
 (
  ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$")
 OR
- ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "Young" OR "Youth$" OR "child*" OR "men" OR "Women" OR "adult$" OR "adolescent$" OR "teen*" OR "elderl*" OR "human$" OR "mass" OR "terror*" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"))
+ ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "people" OR "Young" OR "Youth$" OR "child*" OR "boy$" OR "girl$" OR "men" OR "Wom#n"  OR "adult$" OR "adolescent$" OR "teen*" OR "elderl*" OR "human$" OR "mass" OR "soldier$" OR "terror*" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"))
 
 )
 ```
