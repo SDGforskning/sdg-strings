@@ -37,11 +37,10 @@ Our classification of countries as least developed countries (LDCs), small islan
 >
 > 16.1.4 Proportion of population that feel safe walking alone around the area they live after dark
 >
- This target is interpreted to cover research about
-
+This target is interpreted to cover research about
  •	reduction of violence and intentional killings.
 
- According to United Nations violence is defined as “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or collective group may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301 
+According to United Nations violence is defined as “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or  collective group may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301 
  
 Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as "... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral (ICRC, 2024).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
 
@@ -49,7 +48,7 @@ The query should also find research on work for peace as an aspect of reducing v
 
 The violence is of different character and is reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query.
 
-This query is dived in 4 phrases to make the search easier to read.
+This query is dived in 4 phrases to make the search easier to read. 
 
 #### Phrase 1
 
@@ -65,10 +64,9 @@ OR
 
 )
 ```
-Phrase 2 
+#### Phrase 2 
 
-Wars and armed conflicts causes violence so the query consist of violent + war/warfare/conflict/attacks/riots. 
-
+This query consist of violent + war/warfare/conflict/attacks/riots. 
 
 
 ```py
@@ -96,25 +94,34 @@ OR
 
 )
 ```
-Prase 3 
+#### Prase 3 
 
-This query is searching for research on violence in family or gendered and is expressed in family/gender/partner + violence/abuse/maltreatment. Related is a query covering violence/abuse/maltreatment + physical/mental.
+This query is based on the seach: family/gender/partner + violence/abuse/maltreatment. Related is a query covering violence/abuse/maltreatment + physical/mental.
 
-Both phrases have the addition of NOT abuse/use + drugs/alcohol to avoid this particular literature. There could be a chance of missing out on literature on violence and abuse connected to drug abuse, but for the most part it will be covered by the first element of the search string. 
 
 ```py
 (
  (
-  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR "marital" OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")) NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")) 
+  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR "marital" OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*"))
  ) 
 OR 
  (
-  (("Physical*" OR "mental*" OR "emotional*" OR "psychological*") NEAR/1 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*") NOT (("drug$" OR "substance$" OR "alcohol*" OR "chemical$" OR "solvent$") NEAR/1 ("abuse" OR "misuse" OR "use")))
+  (("Physical*" OR "mental*" OR "emotional*" OR "psychological*") NEAR/1 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*"))
  )
 )
+```
 
+#### 4
+This quary is based on peacebuilding.
+
+```py
+(
+ "peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$" OR (("peace*" OR "stabilit*" OR "securit*" OR "pacification") NEAR/3 ("conflict*" OR "postconflict*" OR "violence"))
+)
 
 ```
+
+
 
 ### Target 16.2
 
