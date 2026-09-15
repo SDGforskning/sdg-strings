@@ -54,7 +54,7 @@ This query is dived in 4 phrases to make the search easier to read.
 
 #### Phrase 1
 
-The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is also much in use in health, typically when “fighting cancer “, so the search is limited with the usage of NOT. 
+The topic search on violence in general consist of expressions for violence or violent conduct/behaviour. The word "killing" is much in use in health, typically when “fighting cancer“, bacterias, but also in many other topics like hunting, animals, bugs etc., and is therefore restircted in the query: Killings + people/humans
 
 ```py
 
