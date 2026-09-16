@@ -58,7 +58,6 @@ The word "killing" is much in use in health, typically when fighting cancer or b
 The phrase about avoiding violence is based on: Strengthen + peacebuilding
 
 
-
 ```py
 TS=
 (
@@ -82,6 +81,11 @@ OR
 ```
 
 #### Phrase 2
+
+Wars and armed conflicts causes violence and the search consist of violent + war/warfare/conflict. 
+
+The action for reducing conflict leading to violence is phrased as decrease + conflict + violence 
+
 
 ```py
 TS=
