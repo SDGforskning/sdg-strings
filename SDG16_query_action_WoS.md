@@ -81,6 +81,96 @@ OR
 )
 ```
 
+#### Phrase 2
+
+```py
+TS=
+(
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
+
+AND
+TS=
+(
+ (
+  ("Violent*" OR "armed" OR "deadl*") NEAR/3 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" )
+ )
+ OR
+ (
+  ("Military" OR "militia*" OR "paramilitary") NEAR/0 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$")
+ )  
+OR
+ (
+  ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
+ )
+OR 
+ (
+  ("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")
+ ) 
+OR 
+ (
+  ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
+ )
+OR 
+ (
+  ("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")
+ ) 
+OR 
+ (
+  ("weapon$" NEAR/5 ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR "death$" OR "injur*" OR "force$")
+  )
+ ) 
+OR
+ (
+  ("Political*" NEAR/5 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")
+  )
+ )
+)
+
+```
+
+#### Phrase 3
+
+This query is searching for research on family or gendered violence and is expressed in family/gender/partner + violence/abuse/maltreatment. A related part is physical/mental + violence. 
+Family violence is partly covered by the above search on violence and murder.
+
+```py
+TS=
+(
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
+AND
+TS=
+(
+ (
+  (
+   ("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$") OR "uxoricide$")
+ ) 
+OR 
+ (
+  (
+   ("Physical*" OR "mental*" OR "emotional*" OR "psychological*") NEAR/1 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")
+  )
+ )
+)
+
+```
+
+
+#### Phrase 4
+The work for peace is the opposite of violence, killings and conflict. The query consist of strengthen + peacebuilding
+
+```py
+TS=
+(
+ ("strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "conserv*" OR "preserv*" OR "sustain")
+AND
+TS=
+ (
+  "peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$" OR (("peace*" OR "stabilit*" OR "securit*" OR "pacification") NEAR/3 ("conflict*" OR "postconflict*" OR "violence")
+  )
+ )
+)
+```
+
 ### Target 16.2
 
 > **16.2 End abuse, exploitation, trafficking and all forms of violence against and torture of children**
