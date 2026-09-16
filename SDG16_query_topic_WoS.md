@@ -48,7 +48,9 @@ According to United Nations violence is defined as
 >sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”
 >: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301 
  
-Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as "... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral (ICRC, 2024).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
+Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as 
+>"... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral (ICRC, 2024).”:
+> https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
 
 The query should also find research on work for peace as an aspect of reducing violence.
 
@@ -64,10 +66,9 @@ The topic search on violence in general consist of expressions for violence or v
 
 TS=
 (
-   ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$"
+   "Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$"
    OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack"
    OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
-   )
    OR
    ("Killing$"
    NEAR/5
