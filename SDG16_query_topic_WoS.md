@@ -99,11 +99,12 @@ OR
 
 This query is based on the seach: family/gender/partner + violence/abuse/maltreatment. Related is a query covering violence/abuse/maltreatment + physical/mental.
 
+Family violence is partly covered by the above search on violence and murder.
 
 ```py
 (
  (
-  (("gender-based" OR "gendered" OR "partner" OR "Family" OR "domestic" OR "marital" OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*"))
+  (("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$") OR "uxoricide$")
  ) 
 OR 
  (
