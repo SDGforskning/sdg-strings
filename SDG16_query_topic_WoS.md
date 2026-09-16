@@ -60,13 +60,23 @@ The topic search on violence in general consist of expressions for violence or v
 
 TS=
 (
- ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$")
-OR
- ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*" OR "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human")
- )
-OR
- ("Killing$" NEAR/5 ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
- )
+   ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$"
+   OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack"
+   OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
+   )
+   OR
+   ("Killing$"
+   NEAR/5
+      ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$"
+      OR "teen*" OR "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human"
+      )
+    )
+   OR
+   ("Killing$"
+   NEAR/5
+      ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"
+      )
+    )
 )
 ```
 #### Phrase 2 
