@@ -53,8 +53,9 @@ This query consists of 4 phrases.
 #### Phrase 1
 
 The action search on violence in general is based on the query reducing + violence.
-The word "killing" is also much in use in health, typically when “fighting cancer “, so the search is limited with the usage of NOT. 
-The phrase about avoiding violence is based on: decreasing + peacebuilding
+The word "killing" is much in use in health, typically when fighting cancer or bacteria, but also in other contexts like hunting, animals, bugs etc., and is therefore restricted in the query accordingly: Killings + people/humans, Killings + mass/revenge
+
+The phrase about avoiding violence is based on: Strengthen + peacebuilding
 
 
 
