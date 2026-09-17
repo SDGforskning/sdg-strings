@@ -117,6 +117,7 @@ This query is based on the seach: family/gender/partner + violence/abuse/maltrea
 Family violence is partly covered by the above search on violence and murder.
 
 ```py
+TS=
 (
  (
   (("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*") NEAR/3 ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$") OR "uxoricide$")
@@ -132,6 +133,7 @@ OR
 This quary is based on peacebuilding.
 
 ```py
+TS=
 (
  "peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$" OR (("peace*" OR "stabilit*" OR "securit*" OR "pacification") NEAR/3 ("conflict*" OR "postconflict*" OR "violence"))
 )
