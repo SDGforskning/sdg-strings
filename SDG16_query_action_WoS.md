@@ -40,9 +40,14 @@ Our classification of countries as least developed countries (LDCs), small islan
 This target is interpreted to cover research about 
 - reduction of violence and intentional killings.
 
- According to United Nations violence is defined as “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or collective group may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301
+ According to United Nations violence is defined as 
+> “(...) a social phenomenon that involves forceful acts or behaviour that are intended to cause harm. The injury or damage inflicted by violence to an individual or collective group
+> may be physical, psychological, sexual, or deprivation, or combined. Violence is both intentional and forceful (Adapted from Jacquette, 2013).”:
+> https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0301
  
-Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as "... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral (ICRC, 2024).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
+Conflicts are often the cause of violence, hence the notions are closely linked to each other. Here the focus is on conflicts where the intention is violent harm, whether the conflicts are interpersonal (like family violence, neighbour’s disputes, robberies etc.), killings by criminal organizations, domestic political conflicts like civil wars, or international armed conflicts, such as wars.  (see https://unstats.un.org/sdgs/report/2025/The-Sustainable-Development-Goals-Report-2025.pdf)  Further, armed conflicts are defined as 
+>"... all cases of declared war and other de facto armed conflict between two or more States, even if the state of war is not recognised by one of them and/or the use of armed force is unilateral
+>(ICRC, 2024).”: https://www.undrr.org/understanding-disaster-risk/terminology/hips/so0101
 
 The query should also find research on work for peace as an aspect of reducing violence.
 
@@ -93,7 +98,7 @@ TS=
  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
 
 AND
-TS=
+
 (
  (
   ("Violent*" OR "armed" OR "deadl*") NEAR/3 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" )
@@ -142,7 +147,6 @@ TS=
 (
  ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
 AND
-TS=
 (
  (
   (
@@ -167,7 +171,6 @@ TS=
 (
  ("strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "conserv*" OR "preserv*" OR "sustain")
 AND
-TS=
  (
   "peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$" OR (("peace*" OR "stabilit*" OR "securit*" OR "pacification") NEAR/3 ("conflict*" OR "postconflict*" OR "violence")
   )
