@@ -227,10 +227,17 @@ This includes:
 For the United Nations (UN) system, the rule of law is a principle of governance in which all persons, institutions and entities, public and private, including the State itself, are accountable to laws that are publicly promulgated, equally enforced and independently adjudicated, and which are consistent with international human rights norms and standards. It requires measures to ensure adherence to the principles of supremacy of the law, equality before the law, accountability to the law, fairness in the application of the law, separation of powers, participation in decision-making, legal certainty, avoidance of arbitrariness, and procedural and legal transparency. https://www.un.org/ruleoflaw/what-is-the-rule-of-law/
 Justice for all is defined as fair, transparent, effective, non-discriminatory and accountable justice services for all people. https://www.un.org/ruleoflaw/thematic-areas/justice-2/
 
+This query consists of 6 phrases.
+
+Phrase 1
+The basic structure is the rule of law + action
+
 ```py
 TS=
 (
-
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
+NEAR/15
+(("law" OR "legal*") NEAR/1 ("rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR ("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*")) 
 )
 ```
 
