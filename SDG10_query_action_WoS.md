@@ -203,7 +203,7 @@ TS=
         OR "strengthen*" OR "guarantee*" OR "improv*" OR "foster*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing"
      )
        NEAR/3
-           ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*")  
+           ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "access to")  
     )
  
       OR
