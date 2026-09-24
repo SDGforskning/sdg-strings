@@ -157,7 +157,7 @@ TS=
 
 (
  (
-   ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
+   ("equal" OR "equally" OR "equalit*" OR "inclusi*" OR "accessib*" OR "access to" OR "discriminat*" OR "inequalit*" OR "unequal*" OR "harass*"
     OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*"  OR "exclusion" OR "stereotyp*" OR "prejud*" 
     OR "barrier$" OR "obstacle$" OR "bias" OR "bias$ed" OR "biases" OR "bigot*" OR "marginali$e" OR "oppress*" OR "exploit*" OR "disenfranchi*"
    )
