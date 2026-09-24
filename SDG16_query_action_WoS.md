@@ -224,6 +224,8 @@ This includes:
 - rehabilitation and social reintegration of convicted/sentenced criminals
 - accessing formal or informal dispute resolution mechanisms as a way of solving disputes. 
 
+For the United Nations (UN) system, the rule of law is a principle of governance in which all persons, institutions and entities, public and private, including the State itself, are accountable to laws that are publicly promulgated, equally enforced and independently adjudicated, and which are consistent with international human rights norms and standards. It requires measures to ensure adherence to the principles of supremacy of the law, equality before the law, accountability to the law, fairness in the application of the law, separation of powers, participation in decision-making, legal certainty, avoidance of arbitrariness, and procedural and legal transparency. https://www.un.org/ruleoflaw/what-is-the-rule-of-law/
+Justice for all is defined as fair, transparent, effective, non-discriminatory and accountable justice services for all people. https://www.un.org/ruleoflaw/thematic-areas/justice-2/
 
 ```py
 TS=
