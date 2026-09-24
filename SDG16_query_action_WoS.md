@@ -237,7 +237,8 @@ TS=
 (
 ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
 NEAR/15
-(("law" OR "legal*") NEAR/1 ("rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR ("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*")) 
+(("law" OR "legal*") NEAR/1 ("rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR
+("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*")) 
 )
 ```
 
