@@ -229,18 +229,39 @@ Justice for all is defined as fair, transparent, effective, non-discriminatory a
 
 This query consists of 6 phrases.
 
-Phrase 1
+#### Phrase 1
 The basic structure is the rule of law + action
 
 ```py
 TS=
 (
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
+ (
+  ("law" OR "legal*")
+  NEAR/1
+  (
+  "rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR
+  ("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*"
+  )
+ )
 NEAR/15
-(("law" OR "legal*") NEAR/1 ("rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR
-("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*")) 
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
 )
 ```
+#### Phrase 2
+The basic structure is justice for all + action
+
+```py
+TS=
+(
+ (
+  (
+   ("Justice" OR "judicial system*" OR "legal system*") NEAR/2 ("fair*" OR "transparent" OR "effective" OR "non-discriminatory" OR "discriminat*" OR "accountable" OR "equal*" OR "access*")
+  )
+OR "justice for all")
+NEAR/15
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
+)
+
 
 ### Target 16.4
 
