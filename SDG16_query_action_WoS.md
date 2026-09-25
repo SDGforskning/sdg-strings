@@ -255,14 +255,41 @@ TS=
 (
  (
   (
-   ("Justice" OR "judicial system*" OR "legal system*") NEAR/2 ("fair*" OR "transparent" OR "effective" OR "non-discriminatory" OR "discriminat*" OR "accountable" OR "equal*" OR "access*")
+   ("Justice" OR "judicial system*" OR "legal system*") NEAR/2 ("fair*" OR "transparent" OR "effective" OR "non-discriminatory" OR "discriminat*" OR
+   "accountable" OR "equal*" OR "access*")
   )
-OR "justice for all")
-NEAR/15
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
+  OR "justice for all"
+ )
+ NEAR/15
+ ("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
 )
+```
+#### Phrase 3
+The basic structure is pretrial detention + action
 
+```py
+TS=
+(
+ (
+  ("unsentence*" OR "without sentence" OR "without sentencing" OR "without conviction" OR "pretrial")
+  NEAR/1
+  ("imprisonment" OR "prison" OR "detention" OR "incarcerat*" OR "custody" OR "remand*")
+ )
+ NEAR/15
+ ("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited")
+)
+```
+#### Phrase 4
+The basic structure is prison conditions + action
 
+```py
+TS=
+(
+ (("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "remand*" OR "custody[BT2.1]") NEAR/1 ("condition$" OR "food" OR "space" OR "health*" OR "medical")))
+NEAR/15
+
+)
+```
 ### Target 16.4
 
 > **16.4 By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime**
