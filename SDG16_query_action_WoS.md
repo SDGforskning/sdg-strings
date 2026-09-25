@@ -265,28 +265,75 @@ TS=
 )
 ```
 #### Phrase 3
-The basic structure is pretrial detention + action
+The basic structure is action + pretrial detention
+
+```py
+TS=
+(
+ ("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited")
+ NEAR/15
+ (
+  ("unsentence*" OR "without sentence" OR "without sentencing" OR "without conviction" OR "pretrial")
+  NEAR/1
+  ("imprisonment" OR "prison" OR "detention" OR "incarcerat*" OR "custody" OR "remand*"))
+)
+```
+#### Phrase 4
+The basic structure is action(positive) + prison conditions OR action(negative) + Prison overcrowding
 
 ```py
 TS=
 (
  (
-  ("unsentence*" OR "without sentence" OR "without sentencing" OR "without conviction" OR "pretrial")
-  NEAR/1
-  ("imprisonment" OR "prison" OR "detention" OR "incarcerat*" OR "custody" OR "remand*")
+  ("increas*" OR "improv*" OR "enhanc*" OR "promot*" OR "ensure*")
+  NEAR/15
+  (
+   ("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "remand*" OR "custody")
+   NEAR/1
+   ("condition$" OR "food" OR "space" OR "health*" OR "medical")
+  )
  )
- NEAR/15
- ("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited")
+ OR
+ (
+  ("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "alleviat*")
+  NEAR/15
+  (
+   ("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "custody" OR "remand*") NEAR/1 "overcrowd*")
+  )
 )
 ```
-#### Phrase 4
-The basic structure is prison conditions + action
+#### Phrase 5 
+The basic structure is action + rehabilitation of prisoners
 
 ```py
 TS=
 (
- (("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "remand*" OR "custody[BT2.1]") NEAR/1 ("condition$" OR "food" OR "space" OR "health*" OR "medical")))
-NEAR/15
+ ("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
+ NEAR/15
+ (
+  ("rehabilitat*" OR "reintegrat*") NEAR/1 ("imprisonment" OR "prison*" OR "criminal$" OR "inmate$" OR "incarcerat*")
+ )
+)
+```
+#### Phrase 6 
+The basic structure is action + Reporting or solving disputes
+
+```py
+TS=
+(
+ ("increas*" OR "strengthen*" OR "improv*"  OR "restor*" OR "enhanc*" OR "encourag*" OR "facilitat*" OR "promot*" OR "ensure*" OR "achiev*")
+ NEAR/15
+ (
+  (
+   ("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence")
+   NEAR/1
+   ("solve" OR "solving" OR "resolve" OR "resolving" OR "work out" OR "interpret*" OR "resolution" OR "report")
+   NEAR/3
+   ("Court*" OR "mechanism*" OR "process*" OR "method*" OR "committee*" OR "law*" OR "legal*" OR "justice" OR "judicial system*" OR "council$" OR "ombudsman" OR "tribunal$")
+  )
+  OR
+  (
+   ("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence") NEAR/1 "mediat*"))
 
 )
 ```
