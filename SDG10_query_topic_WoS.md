@@ -150,7 +150,7 @@ Many of the laws, policies and practicies that hinder equal opportunities are no
 
 This query consists of 1 phrase.
 
-The basic structure of phare is *equal opportunity OR inequalities*.
+The basic structure of phare is *equal opportunity/inequalities*.
 
 ```py
 TS=
@@ -201,7 +201,7 @@ This target focuses on policies that ensure greater equality. Special focus is p
 
 This query consists of 2 phrases.
 
-The basic structure of Phrase 1 is *laws/policies + equal opportunities/inequalities + poor and vulnerable*.
+The basic structure of Phrase 1 is *laws/policies + equal opportunities/inequalities + poor/vulnerable*.
 
 ```py
 TS=
@@ -241,7 +241,7 @@ AND
 ```
 
 
-The basic structure of Phrase 2 is *laws + equality/inequality*.
+The basic structure of Phrase 2 is *laws/policies + discrimination/egalitarianism*.
 
 ```py
 TS=
