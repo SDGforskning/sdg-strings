@@ -436,7 +436,7 @@ This target is interpreted to cover research about the principle of special and 
 
 SDT principles are part of WTO'S Doha Agenda and are designed to support developing countries in implementing WTO agreements and commitments. For example, developing countries might have a longer time for implementing certain commitments, their trade interest are safeguarded by the other WTO members and they receive support for building their infrastructures and increasing trading opportunities. <a href="#f24">(WTO 2025.)</a> Accurate measurements for most of the SDTs are not available, which is why tariff lines have been chosen as the measurable indicator here. Tariffs are customs duties on merchandise imports. By applying zero-tariffs to imports from developing countries, it is possible to boost local production and exportation. <a href="#f25">(UN Statistics Division 2016.)</a>
 
-This query consists of 1 phrase. The basic structure is *SDT + developing country + agreement*
+This query consists of 1 phrase. The basic structure is *SDT + developing country*.
 
 ```py
 TS=
