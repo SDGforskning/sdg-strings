@@ -111,7 +111,7 @@ TS=
   OR "financ* exclu*" OR "social* inequal*" OR "economic* inequal*" OR "political* inequal*" OR "societal* inequal*" OR "socio-economic* inequal*"
   OR "socioeconomic* inequal*" OR "socio-economic* marginal*" OR "socioeconomic* marginal*" OR "socio-economic* exclu*"OR "socioeconomic exclu*"
   OR "social* inactivit*" OR "economic* inactivit*" OR "financ* inactivit*" OR  "political* inactivit*" OR "societal* inactivit*"
-  OR "societal* isolat*" OR "social* isolat*" OR "economic* isolat*" OR "financ* isolat*" OR "political* isolat*"
+  OR "societal* isolat*" OR "social* isolat*" OR "economic* isolat*" OR "financ* isolat*" OR "political* isolat*")
   OR
   (("accessib*" OR "access to")
   NEAR/3
@@ -130,7 +130,7 @@ TS=
        )
   )
  )
-)
+
 
 ```
 
