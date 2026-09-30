@@ -201,7 +201,7 @@ This target focuses on policies that ensure greater equality. Special focus is p
 
 This query consists of 2 phrases.
 
-The basic structure of Phrase 1 is *equal opportunity OR inequalities*.
+The basic structure of Phrase 1 is *laws/policies + equal opportunities/inequalities + poor and vulnerable*.
 
 ```py
 TS=
@@ -241,7 +241,7 @@ AND
 ```
 
 
-The basic structure of Phrase 2 is laws AND equality/inequality.
+The basic structure of Phrase 2 is *laws + equality/inequality*.
 
 ```py
 TS=
