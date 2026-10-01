@@ -62,25 +62,25 @@ The word "killing" is much in use in health, typically when fighting cancer or b
 
 The phrase about avoiding violence is based on: Strengthen + peacebuilding
 
-
 ```py
 TS=
 (
- ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
-
-AND
-
- (
-  ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
-  )
-OR
-  ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*" OR "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human")
-  )
-OR
-  ("Killing$" NEAR/5 ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
-  )
-
-
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR
+ "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR
+ "avoid*" OR "prevent*")
+  AND
+   (
+    ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR
+    "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR
+    "violent extremism" OR "religious violence" OR "deadly attack$"
+    )
+   OR
+    ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*" OR
+    "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human")
+    )
+   OR
+   ("Killing$" NEAR/5 ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
+   )
  )
 )
 ```
@@ -95,45 +95,56 @@ The action for reducing conflict leading to violence is phrased as decrease + co
 ```py
 TS=
 (
- ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*")
-
-AND
-
-(
+ ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR
+ "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR
+ "avoid*" OR "prevent*")
+ AND
  (
-  ("Violent*" OR "armed" OR "deadl*") NEAR/3 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" )
- )
- OR
- (
-  ("Military" OR "militia*" OR "paramilitary") NEAR/0 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$")
- )  
-OR
- (
-  ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
- )
-OR 
- (
-  ("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")
- ) 
-OR 
- (
-  ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
- )
-OR 
- (
-  ("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")
- ) 
-OR 
- (
-  ("weapon$" NEAR/5 ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR "death$" OR "injur*" OR "force$")
+  (
+   ("Violent*" OR "armed" OR "deadl*")
+    NEAR/3
+     ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" )
   )
- ) 
-OR
- (
-  ("Political*" NEAR/5 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")
+  OR
+   (
+    ("Military" OR "militia*" OR "paramilitary")
+     NEAR/0
+      ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR
+      "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR
+      "uprising$" OR "invasion$")
+   )
+  OR
+   (
+    ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
+   )
+  OR 
+   (
+    ("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")
+   ) 
+  OR 
+   (
+    ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
+   )
+  OR 
+   (
+    ("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")
+   ) 
+  OR 
+   (
+    ("weapon$" NEAR/5 ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR
+    "aggression$" OR "aggressive" OR "assault*" OR "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR
+    "rebellion$" OR "uprising$" OR "invasion$" OR "death$" OR "injur*" OR "force$")
+    )
+   )
+  OR
+   (
+    ("Political*" NEAR/5 ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR
+    "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")
+    )
+   )
   )
- )
 )
+
 
 ```
 
