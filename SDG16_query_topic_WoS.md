@@ -124,8 +124,9 @@ OR
 OR 
  ("weapon$"
   NEAR/5
-   ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR "confrontation$" OR
-  "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR "death$" OR "injur*" OR "force$")
+   ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR
+   "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR
+   "death$" OR "injur*" OR "force$")
  )
 OR
  ("Political*"
@@ -146,7 +147,8 @@ TS=
 (
  (
   (
-   ("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*")
+   ("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR
+   "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*")
     NEAR/3
     ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$")
   OR "uxoricide$")
