@@ -218,8 +218,7 @@ TS=
     "anti-discriminat*" OR "non-discriminat*" OR "inclusi*" OR "accessib*" OR "egalitar*" OR "discriminat*" OR
     "inequalit*" OR "harass*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*" OR "unequal*" OR
     "exclusion"  OR "stereotyp*"  OR "bias" OR "bias$ed"  OR "marginali$e" OR "oppress*" OR "exploit*" OR "discriminat*" OR "inequalit*"
-     OR "harass*" OR "stigma$" OR "stigmati$ed" OR "stigmati$ation" OR "stigmati$ing" OR "inaccesib*" OR "unequal*" OR
-     "exclusion"  OR "stereotyp*"  OR "bias" OR "bias$ed"  OR "marginali$e" OR "oppress*" OR "exploit*"
+     OR "harass*" OR "inaccesib*" OR "unequal*" OR "exclusion"  OR "stereotyp*"  OR "bias" OR "bias$ed"  OR "marginali$e" OR "oppress*" OR "exploit*"
     )
 
 AND
