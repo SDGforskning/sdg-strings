@@ -209,16 +209,23 @@ The basics structure is *productive employment/decent work + wage equality + dec
 ```py
 TS=
 (
-  (  
-    ("productive" OR "decent" OR "meaningful" OR "steady" OR "gainful" OR "sustainable" OR "fair" OR "inclusive")
-      NEAR/5
-    ("employment" OR "work" OR "job$" OR "labor" OR "labour")
+  ("productive" OR "decent" OR "meaningful" OR "steady" OR "gainful" OR "sustainable" OR "fair" OR "inclusive")
+  NEAR/5
+  ("employment" OR "work" OR "job$" OR "labor" OR "labour")
+  OR
+  ("wage" OR "wages" OR "pay" OR "earning*" OR "salary" OR "salaries" OR "compensation" OR "remuneration")
+  NEAR/3
+  ("equal*" OR "fair" OR "equity" OR "gap*")
+  OR
+  (
+    ("labor" OR "labour" OR "employee*" OR "worker*")
+    NEAR/3
+    ("right$" OR "protection$" OR "creation$" OR "safet*")
+    OR
+    ("social protection" NEAR/5 "worker$")
+    OR
+    "occupational safety" OR "collective bargain*" OR "workplace standard$" OR "job creation" OR "employment opportunit*" OR "social safety net$" OR "job security"
   )
-OR
-  ("wage equality" OR "equal pay" OR "fair wage$" OR "pay gap")	
-OR
-  ("labor rights" OR "labour rights" OR ("social protection" NEAR/5 "worker$") OR "workers' right$" OR "occupational safety" OR "collective bargain*" OR "workplace standard$" 
-  OR "job creation" OR "employment opportunit*" OR "social safety net$" OR "job security" OR "labor protection$")
 )
 ```
 
@@ -228,8 +235,11 @@ The basic structure is *wage equality*.
 
 ```py
 TS=
+TS=
 (
-  ("wage equality" OR "equal pay" OR "fair wage$" OR "pay gap")	
+  ("wage" OR "wages" OR "pay" OR "earning*" OR "salary" OR "salaries" OR "compensation" OR "remuneration")
+  NEAR/3
+  ("equal*" OR "fair" OR "equity" OR "gap*")
 )
 ```
 
@@ -240,8 +250,13 @@ The basic structure is *decent work pillars*.
 ```py
 TS=
 (
-  ("labor rights" OR "labour rights" OR ("social protection" NEAR/5 "worker$") OR "workers' right$" OR "occupational safety" OR "collective bargain*" OR "workplace standard$" 
-  OR "job creation" OR "employment opportunit*" OR "social safety net$" OR "job security" OR "labor protection$")
+  ("labor" OR "labour" OR "employee*" OR "worker*")
+  NEAR/3
+  ("right$" OR "protection$" OR "creation$" OR "safet*")
+  OR
+  ("social protection" NEAR/5 "worker$")
+  OR
+  "occupational safety" OR "collective bargain*" OR "workplace standard$" OR "job creation" OR "employment opportunit*" OR "social safety net$" OR "job security"
 )
 ```
 
@@ -264,27 +279,20 @@ The basic structure is *youth not in education/training*.
 ```py
 TS=
 (
+  ("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving" OR "withdraw$" OR "withdrawal$" OR "discontinue")
+  NEAR/10
+  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
+  NEAR/15
   (
-	("dropout*" OR "drop-out*" OR "drop out" OR "dropping out" OR "quit" OR "early school-leaving" OR "withdraw$" OR "withdrawal$" OR "discontinue")
-	NEAR/10
-	  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
-	NEAR/15
-    (
-      "education" OR "schooling" OR "academic*" OR "academia" OR "apprenticeship$" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" OR "primary school*" OR "elementary school*" 
-      OR "primary educat*" OR "middle school*" OR "secondary school*" OR "secondary education*" OR "degree$" OR "diploma$" OR "certificate$" OR
-      (
-        ("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*")
-      ) OR
-      "university" OR "universities" OR "higher education" OR "college$" OR
-      (
-        ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
-        NEAR/3
-        ("education" OR "training" OR "school*" OR "learning")
-      ) OR
-      (
-        ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
-      )
-    )
+    "education" OR "schooling" OR "academic*" OR "academia" OR "apprenticeship$" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" OR "primary school*" OR "elementary school*" OR "middle school*" OR "secondary school*" OR "degree$" OR "diploma$" OR "certificate$"
+    OR
+    ("school" NEAR/3 ("boys" OR "girls" OR "kids" OR "child*" OR "young*" OR "youth*" OR "adolescen*" OR "teen*"))
+    OR
+    "university" OR "universities" OR "college$"
+    OR
+    ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary") NEAR/3 ("training" OR "school*" OR "learning")
+    OR
+    ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
   )
 )
 ```
@@ -296,11 +304,9 @@ The basic structure is *youth unemployment*.
 ```py
 TS=
 (
-  (
-    ("unemploy*" OR "underemploy*" OR "NEET$" OR "jobless" OR "out of work" OR "not in work" OR "economic* inactive" OR "labor market exclusion$" OR "labour market exclusion$" OR "employment barrier$" OR "not in education employment or training")
-      NEAR/10
-    ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
-  )
+  ("unemploy*" OR "underemploy*" OR "NEET$" OR "jobless" OR "out of work" OR "not in work" OR "economic* inactive" OR "labor market exclusion$" OR "labour market exclusion$" OR "employment barrier$" OR "not in education employment or training")
+  NEAR/10
+  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
 )
 ```
 
@@ -311,26 +317,18 @@ TS=
 ```py
 TS=
 (
+  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*" OR ("young" NEAR/10 "student$"))
+  NEAR/15
   (
-	  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*" OR ("young" NEAR/10 "student$"))
-	  NEAR/15
-	  (
-      "education" OR "schooling" OR "academic*" OR "academia" OR "apprentice" OR "apprenticeship$" OR "intern" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" 
-      OR "primary school*" OR "elementary school*" OR "degree" OR "diploma" OR "certificate" OR "primary educat*" OR "middle school*" OR "secondary school*" 
-      OR "secondary education*" OR "school-to-work transition$" OR
-      (
-        ("school" OR "education") NEAR/3 ("boys" OR "girls" OR "kids" OR "child*")
-      ) OR
-      "university" OR "universities" OR "higher education" OR "college$" OR
-      (
-        ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary")
-      NEAR/3
-        ("education" OR "training" OR "school*" OR "learning")
-      ) OR
-      (
-        ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
-      )
-    )
+    "education" OR "schooling" OR "academic*" OR "academia" OR "apprentice" OR "apprenticeship$" OR "intern" OR "internship" OR "reskill$" OR "reskilling" OR "professional development" OR "primary school*" OR "elementary school*" OR "degree" OR "diploma" OR "certificate" OR "middle school*" OR "secondary school*" OR "school-to-work transition$"
+    OR
+    "school" NEAR/3 ("boys" OR "girls" OR "kids" OR "child*" OR "young*" OR "youth*" OR "adolescen*" OR "teen*")
+    OR
+    "university" OR "universities" OR "college$"
+    OR
+    ("technic*" OR "vocation*" OR "tertiar*" OR "postsecondary" OR "post secondary") NEAR/3 ("education" OR "training" OR "school*" OR "learning")
+    OR
+    ("skill$" OR "job" OR "career" OR "workforce") NEAR/3 "training"
   )
 )
 ```
@@ -342,12 +340,9 @@ The basic structure is *youth employment*.
 ```py
 TS=
 (
-  (
-    ("employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" OR "income generation" 
-    OR "socioeconomic attainment$" OR "school-to-work transition$")
+  ("employ*" OR "job$" OR "work" OR "workplace" OR "work market" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" OR "income generation" OR "socioeconomic attainment$" OR "school-to-work transition$")
   NEAR/10
-    ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
-  )
+  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
 )
 ```
 
@@ -442,60 +437,37 @@ The phrase does not include the phrase regarding job creation and local culture 
 
 #### Phrase 1
 
-The basic structure is *policies + sustainable tourism*.
+The basic structure is *sustainable tourism*.
 
 ```py
 TS=
 (
+  "ecotourism" OR "eco-tourism"
+  OR
+  ("sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative")
+  NEAR/3
   (
-    "policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
-		OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
-    )
-    NEAR/15
-  ("ecotourism" OR "eco-tourism" OR
-    (
-      (
-        "sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative"
-      )
-      NEAR/3
-      (
-        "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR
-        "air passenger travel" OR "airport tourism" OR ("cruise" NEAR/5 ("travel" OR "tourism" OR "ship")) OR "hotel$"
-      )
-    )
+    "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR "air passenger travel"
+    OR
+    "cruise" NEAR/5 ("tourism" OR "ship")
+    OR
+    "hotel$" OR "camping" OR "trekking" OR "hiking" OR "safari" OR "train" OR "railway" OR "railroad"
   )
 )
 ```
 
 #### Phrase 2 
 
-The basic structure is *policies + job creation/local culture + sustainable tourism*
+The basic structure is *job creation/local culture + sustainable tourism*
 
 ```py
-TS = 
+TS=
 (
-  (
-    (
-        "policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
-		OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
-    )
-    NEAR/15
-    (
-      (
-        "job$" OR "job access" OR "job creation" OR "labor market$" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" 
-		OR "local economy" OR "local economies" OR "value chain$" OR "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" 
-		OR "cultural heritage$" OR "local culture$" OR "indigenous knowledge" OR "traditional practice$"
-      )
-      NEAR/5
-      (
-        "ecotourism" OR "eco-tourism" OR
-        (
-          "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" 
-		  OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism"
-        )
-      )
-    )
-  )
+  ("job$" OR "job access" OR "job creation" OR "labor market$" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" OR "local economy" OR "local economies" OR "value chain$" OR "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" OR "cultural heritage$"
+  OR
+  ("indigenous" OR "traditional" OR "local") NEAR/2 ("knowledge" OR "practice$" OR "culture$" OR "heritage"))
+  NEAR/5
+  ("ecotourism" OR "eco-tourism" OR "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism")
 )
 ```
 
@@ -507,16 +479,24 @@ TS =
 >
 > 8.10.2 Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider
 
-This target is interpreted to cover research about domestic financial services and institutions
+This target is interpreted to cover research about domestic financial services and institutions.
 
-The basic structure is *domestic financial institutions*.
+The phrase includes a NOT section to avoid the most common types of specific banks that fall outside of the interpretation of the target.
+
+The basic structure is *domestic financial institutions - non-financial banks*.
 
 ```py
 TS=
 (
   ("national*" OR "local*" OR "regional" OR "domestic")
   NEAR/5
-  ("financial institution$" OR "bank$" OR "credit union$" OR "insurance compan*" OR "financial service provider$" OR "microfinance")
+  ("financial institution$" OR "bank$" OR "banking" OR "credit union$" OR "insurance compan*" OR "financial service provider$" OR "microfinance")
+  NOT
+  (
+    "National Trauma Data Bank" OR "National Marine Sanctuary"
+    OR
+    ("national*" OR "local*" OR "regional" OR "domestic") NEAR/3 ("Gene Bank$" OR "Germplasm Bank$" OR "Germoplasm Bank$")
+  )
 )
 ```
 
@@ -552,27 +532,22 @@ This target is interpreted to cover research about global strategies for employm
 
 The Global Jobs Pact <a href="#f6">(ILO, 2022b)</a> is mentioned specifically, but the boarder aim is to capture institutional strategies for increasing youth employment, particularly within structured or policy-driven contexts.
 
-Since the initial phrase which included the *youth* structure gave identical results to the action query, this phrase has instead focused on global strategies for employment in general.
-
 The basic structure is *global strategies + employment*
 
 ```py
-TS =
+TS=
 (
   (
-	"Global Jobs Pact" OR
-    (
-      "global*" OR "international" OR "worldwide" OR "world-wide" OR "transnational" OR "multinational")
-      NEAR/5
-      ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" 
-      OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*"
-    )
+    "Global Jobs Pact"
+    OR
+    ("global*" OR "international" OR "worldwide" OR "world-wide" OR "transnational" OR "multinational")
+    NEAR/5
+    ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*" OR "program$")
   )
   NEAR/15
-  (
-	"employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" 
-	OR "income generation" OR "socioeconomic attainment$" OR "school-to-work transition$"
-  )
+  ("employ*" OR "job$" OR "work" OR "job access" OR "job creation" OR "labor market$" OR "labour market$" OR "workforce$" OR "career development$" OR "job placement$" OR "income generation" OR "socioeconomic attainment$" OR "school-to-work transition$")
+  NEAR/10
+  ("youth*" OR "young people" OR "adolescen*" OR "teen*" OR "young adult*")
 )
 ```
 
