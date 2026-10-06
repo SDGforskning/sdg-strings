@@ -235,7 +235,6 @@ The basic structure is *wage equality*.
 
 ```py
 TS=
-TS=
 (
   ("wage" OR "wages" OR "pay" OR "earning*" OR "salary" OR "salaries" OR "compensation" OR "remuneration")
   NEAR/3
