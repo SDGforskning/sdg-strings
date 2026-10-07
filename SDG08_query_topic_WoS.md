@@ -422,51 +422,57 @@ TS=
 >
 > 8.9.1 Tourism direct GDP as a proportion of total GDP and in growth rate
 
-This target is interpreted to cover research about sustainable tourism.
+This target is interpreted to cover research about policies about sustainable tourism.
 
 This includes research on the environmental, economic and cultural dimensions of sustainable tourism (<a href="#f5">UN Tourism, 2025</a>). 
 
 The UNWTO (<a href="#f10">2013</a>) defines sustainable tourism as:
 
-> "Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities”.
+> "Tourism that takes full account of its current and future economic, social and environmental impacts, addressing the needs of visitors, the industry, the environment, and host communities".
 
 Other aspects of sustainable tourism are also covered in SDG 12.b, which was also used as a basis for the phrases for this target.
 
-The phrase does not include the phrase regarding job creation and local culture promotion from the action query, as it made no difference in the results since it will be covered by the remainder of the phrase.
-
 #### Phrase 1
 
-The basic structure is *sustainable tourism*.
+The basic structure is *policies + sustainable tourism*.
 
 ```py
 TS=
 (
-  "ecotourism" OR "eco-tourism"
-  OR
-  ("sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative")
-  NEAR/3
+  ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")
+  NEAR/15
   (
-    "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR "air passenger travel"
+    "ecotourism" OR "eco-tourism"
     OR
-    "cruise" NEAR/5 ("tourism" OR "ship")
-    OR
-    "hotel$" OR "camping" OR "trekking" OR "hiking" OR "safari" OR "train" OR "railway" OR "railroad"
+    ("sustainab*" OR "responsib*" OR "environmental*" OR "ecolog*" OR "eco" OR "green" OR "inclusive" OR "ethical" OR "fair" OR "conscious" OR "resilient" OR "regenerative")
+    NEAR/3
+    (
+      "tourism" OR "tourist$" OR "hospitality" OR "leisure" OR "ecotourism" OR "eco-tourism" OR "air travel" OR "airline travel" OR "air transport" OR "aviation" OR "flight*" OR "air passenger travel"
+      OR
+      "cruise" NEAR/5 ("tourism" OR "ship")
+      OR
+      "hotel$" OR "camping" OR "trekking" OR "hiking" OR "safari" OR "train" OR "railway" OR "railroad"
+    )
   )
 )
 ```
 
 #### Phrase 2 
 
-The basic structure is *job creation/local culture + sustainable tourism*
+The basic structure is *policies + job creation/local culture + sustainable tourism*
 
 ```py
 TS=
 (
-  ("job$" OR "job access" OR "job creation" OR "labor market$" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" OR "local economy" OR "local economies" OR "value chain$" OR "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" OR "cultural heritage$"
-  OR
-  ("indigenous" OR "traditional" OR "local") NEAR/2 ("knowledge" OR "practice$" OR "culture$" OR "heritage"))
-  NEAR/5
-  ("ecotourism" OR "eco-tourism" OR "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism")
+  ("policies*" OR "policy" OR "law$" OR "regulat*" OR "legal*" OR "legislat*" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")
+  NEAR/15
+  (
+    ("job$" OR "job access" OR "job creation" OR "labor market$" OR "employment" OR "livelihood$" OR "income generation" OR "entrepreneurship" OR "economic empowerment" OR "local economy" OR "local economies" OR "value chain$" OR "microenterprise$" OR "small business*" OR "community development$" OR "inclusive growth" OR "social inclusion" OR "cultural heritage$"
+    OR
+    ("indigenous" OR "traditional" OR "local") NEAR/2 ("knowledge" OR "practice$" OR "culture$" OR "heritage"))
+    NEAR/5
+    ("ecotourism" OR "eco-tourism" OR "sustainab* tourism" OR "responsib* tourism" OR "environmental* tourism" OR "ecological* tourism" OR "eco tourism" OR "green tourism" OR "inclusive tourism" OR "ethical tourism" OR "fair tourism" OR "conscious tourism" OR "resilient tourism" OR "regenerative tourism")
+  )
 )
 ```
 
@@ -478,15 +484,17 @@ TS=
 >
 > 8.10.2 Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider
 
-This target is interpreted to cover research about domestic financial services and institutions.
+This target is interpreted to cover research about capacities of domestic financial services and institutions.
 
 The phrase includes a NOT section to avoid the most common types of specific banks that fall outside of the interpretation of the target.
 
-The basic structure is *domestic financial institutions - non-financial banks*.
+The basic structure is *capacity + domestic financial institutions - non-financial banks*.
 
 ```py
 TS=
 (
+  ("capacity" OR "capabilit*" OR "infrastructure$" OR "technolog*" OR "facilities" OR "tools" OR "research" OR "knowledge" OR "skills" OR "competenc*" OR "expertise" OR "educat*" OR "awareness" OR "training")
+  NEAR/10
   ("national*" OR "local*" OR "regional" OR "domestic")
   NEAR/5
   ("financial institution$" OR "bank$" OR "banking" OR "credit union$" OR "insurance compan*" OR "financial service provider$" OR "microfinance")
