@@ -89,9 +89,9 @@ TS=
 
 #### Phrase 2
 
-Wars and armed conflicts causes violence and the search consist of violent + war/warfare/conflict. 
+Wars and armed conflicts causes violence and the search consist of violent + war/warfare/conflict. Violence is covered in phrase 1.
 
-The action for reducing conflict leading to violence is phrased as decrease + conflict + violence 
+The action for reducing conflict leading to violence is phrased as decrease + violent/armed conflict
 
 
 ```py
