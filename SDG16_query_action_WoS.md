@@ -390,6 +390,73 @@ For research on reduction of illicit financial flows, it should also cover resea
 Assets in this context is defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
 Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5.
 
+The query consists of 4 phrases.
+
+#### Phrase 1
+The basic structure of the query is illicit/illegal + money transfer
+
+```py
+TS=
+(
+    (
+        ("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+        NEAR/5
+            ("financ*" OR "money" OR "cash" OR "capital" OR "economic*" OR "trade")
+    )
+    OR "Tax evasion*" OR "Duty evasion" OR "Trade misinvoic*" OR "Money laundering" OR "Tax haven$"
+    OR
+    (
+        ("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*" OR "Secre*")
+    )
+)
+
+```
+
+#### Phrase 2
+The basic structure of the query is illicit/illegal +  armaments. A closer proximity operator is used for illicit + arms to avoid litterature on the body part arms. 
+```py
+TS=
+(
+    ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    NEAR/5
+        ("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*") 
+    OR
+    ("arms" NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    )
+    OR
+    (
+        (Trafficking OR smuggl*)
+        NEAR/1
+            ("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+    )
+    OR
+        (
+            ("Tracing" OR "Traceab*" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
+            OR "Identif*" OR "record*" OR "surrendered")
+            NEAR/5
+                ("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry"
+                OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+        )
+    OR
+        (
+            (
+                ("Tracing" OR "Traceable" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
+                OR "Identif*" OR "record*" OR "control" OR "surrendered")
+                NEAR/0 ("arms")
+            )
+        )
+    OR
+        ("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
+)
+```
+#### Phrase 3
+```py
+TS=
+(
+
+)
+```
+#### Phrase 4
 ```py
 TS=
 (
