@@ -86,7 +86,7 @@ TS=
 ```
 #### Phrase 2 
 
-This query consist of violent + war/warfare/conflict/attacks/riots. 
+This query consist of violent + war/warfare/conflict/attacks/riots. Violence is covered by the first query.
 
 ```py
 TS=
