@@ -65,23 +65,25 @@ The phrase about avoiding violence is based on: Strengthen + peacebuilding
 ```py
 TS=
 (
- ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered" OR
- "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR
- "avoid*" OR "prevent*")
-  AND
-   (
-    ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault" OR
-    "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$" OR
-    "violent extremism" OR "religious violence" OR "deadly attack$"
-    )
-   OR
-    ("Killing$" NEAR/5 ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*" OR
-    "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human")
-    )
-   OR
-   ("Killing$" NEAR/5 ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
-   )
- )
+    ("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "lowering" OR "lower$" OR "lowered"
+    OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+    OR "avoid*" OR "prevent*")
+    AND
+        (
+            ("Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR "rape$" OR raping$ OR "sexual assault"
+            OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR "Terrorist attack" OR "terrorist related death$"
+            OR "violent extremism" OR "religious violence" OR "deadly attack$"
+            )
+        OR
+            ("Killing$" NEAR/5
+                ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*"
+                OR "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human")
+            )
+        OR
+            ("Killing$" NEAR/5
+                ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$")
+            )
+        )
 )
 ```
 
