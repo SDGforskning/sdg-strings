@@ -66,22 +66,22 @@ The topic search on violence in general consist of expressions for violence or v
 
 TS=
 (
- "Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing" OR
- "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$" OR
- "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
- OR
-  ("Killing$"
-  NEAR/5
-   ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*" OR
-   "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human"
-   )
-  )
- OR
-  ("Killing$"
- NEAR/5
-   ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"
-   )
-  )
+    "Violence" OR "terrorism" OR "massacre" OR "genocide" OR "Pogrom$" OR "ethnic cleansing"
+    OR "rape$" OR raping$ OR "sexual assault" OR "torture" OR "assassination$" OR "murder$" OR "homicide$"
+    OR "Terrorist attack" OR "terrorist related death$" OR "violent extremism" OR "religious violence" OR "deadly attack$"
+    OR
+        ("Killing$"
+        NEAR/5
+            ("citizen$" OR "civilian$" OR "soldier$" OR "people" OR "person$" OR "child*" OR "Young" OR "Youth" OR "adolescent$" OR "teen*"
+            OR "men" OR "man" OR "women" OR "woman" OR "adult$" OR "elderly" OR "demograph*" OR "humans" OR "humanity" OR "human"
+            )
+        )
+    OR
+        ("Killing$"
+        NEAR/5
+            ("mass" OR "terror" OR "combat$" OR "war$" OR "revenge" OR "feud$" OR "School$"
+            )
+        )
 )
 ```
 #### Phrase 2 
@@ -91,49 +91,52 @@ This query consist of violent + war/warfare/conflict/attacks/riots.
 ```py
 TS=
 (
- (
-  ("Violent*" OR "armed" OR "deadl*")
-   NEAR/3
-   ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*" OR
-   "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR
-   "rebellion$" OR "uprising$" OR "invasion$")
- ) 
+    (
+        ("Violent*" OR "armed" OR "deadl*")
+        NEAR/3
+            ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR "fight*" OR "attack*"
+            OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$"
+            OR "rebellion$" OR "uprising$" OR "invasion$"
+            )
+    ) 
 OR
- (
-  ("Military" OR "militia*" OR "paramilitary")
- NEAR/0
- ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR
- "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$")
- )  
+    (
+        ("Military" OR "militia*" OR "paramilitary")
+        NEAR/0
+            ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*"
+            OR "aggression$" OR "aggressive*" OR "assault*" OR "confrontation$" OR "combat*" OR "riot$" OR "coup$"
+            OR "rebellion$" OR "uprising$" OR "invasion$")
+            )  
 OR
- (
-  ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
-)
+    (
+        ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
+    )
 OR
- (
-  ("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")
- ) 
+    (
+        ("Violent*" OR "armed" OR "military" OR "militia*" OR "paramilitary") NEAR/1 ("force*" OR "intervention$")
+    ) 
 OR 
- (
-  ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
- )
+    (
+        ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
+    )
 OR 
- (
-  ("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")
- ) 
+    (
+        ("Violent" OR "armed") NEAR/1 ("Robberies" OR "Robbery")
+    ) 
 OR 
- ("weapon$"
-  NEAR/5
-   ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*" OR
-   "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$" OR
-   "death$" OR "injur*" OR "force$")
- )
+    ("weapon$"
+    NEAR/5
+        ("conflict*" OR "Dispute*" OR "Hostilit*" OR "feud$" OR "vendetta" OR "aggression$" OR "aggressive" OR "assault*"
+        OR "confrontation$" OR "Robberies" OR "Robbery" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$" OR "invasion$"
+        OR "death$" OR "injur*" OR "force$")
+    )
 OR
- ("Political*"
-  NEAR/5
-   ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*" OR
-   "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$" OR "rebellion$" OR "uprising$")
- )
+    ("Political*"
+    NEAR/5
+        ("conflict*" OR "dispute*" OR "hostilit*" OR "feud$" OR "vendetta" OR "battle" OR fight* OR "attack*"
+        OR "aggression$" OR "aggressive*" OR "assault*" OR "terrorism" OR "combat$" OR "riot$" OR "coup$"
+        OR "rebellion$" OR "uprising$")
+    )
 )
 ```
 #### Prase 3 
@@ -145,22 +148,23 @@ Family violence is partly covered by the above search on violence and murder.
 ```py
 TS=
 (
- (
-  (
-   ("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*" OR "Family" OR
-   "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*")
-    NEAR/3
-    ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$")
-  OR "uxoricide$")
- ) 
+    (
+        (
+            ("gender-based" OR "gendered" OR "partner" OR "wife$" OR "husband$" OR "spouse" OR "child*" OR "kid*"
+            OR "Family" OR "relative$" OR "domestic" OR marital OR "honor-related" OR "sexual*")
+            NEAR/3
+                ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*" OR "killing$")
+        OR "uxoricide$"
+        )
+    ) 
 OR 
- (
-  (
-   ("Physical*" OR "mental*" OR "emotional*" OR "psychological*")
-    NEAR/1
-     ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")
-  )
- )
+    (
+        (
+            ("Physical*" OR "mental*" OR "emotional*" OR "psychological*")
+            NEAR/1
+                ("harassment" OR "abuse" OR "assault" OR "misuse" OR "maltreat*")
+        )
+    )
 )
 ```
 
@@ -169,12 +173,13 @@ This quary is based on peacebuilding.
 
 ```py
 TS=
-(
-"peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$" OR
- (
-  ("peace*" OR "stabilit*" OR "securit*" OR "pacification")
-   NEAR/3 ("conflict*" OR "postconflict*" OR "violence")
- )
+("peacebuilding" OR "peacekeeping" OR "sustainable peace" OR "disarmament*" OR "demilitarization$" OR "demilitarisation$"
+    OR
+    (
+        ("peace*" OR "stabilit*" OR "securit*" OR "pacification")
+        NEAR/3
+            ("conflict*" OR "postconflict*" OR "violence")
+    )
 )
 
 ```
