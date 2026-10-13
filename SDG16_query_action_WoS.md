@@ -373,7 +373,9 @@ TS=
 		)
   		OR
   		(
-   			("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence") NEAR/1 "mediat*")
+   			("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence")
+			NEAR/1 "mediat*"
+		)
 	)
 
 )
@@ -506,8 +508,9 @@ TS=
 This target is interpreted to cover research about 
 - developing effective, accountable and transparent institutions at all levels.
 
-Institutions are understood as government bodies.
-Levels include the local, national and international levels of institutions such as parliaments, ministries, local governments, law enforcers (police), courts, ombudsman institutions, UN, EU etc. 
+Even if both public and private institutions could be included, the goal is interpreted to be about public institutions, since the two indicators point to this sector in measuring government expenditures and public services.
+"Levels" include the local, national and international levels of institutions such as parliaments, ministries, local governments, law enforcers (police), courts, ombudsman institutions, UN, EU etc. 
+"Develop" is interpreted to include both initiating new institutions and further developing existing ones. The search therefore includes both names of existing institutions and more generic terms.   
 
 
 ```py
