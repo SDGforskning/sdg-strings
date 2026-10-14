@@ -620,10 +620,29 @@ This target is interpreted to cover research about
 
 A legal identity includes name, sex, place and date of birth and nationality.
 
+ The term "passport" is not included in the search as the results mostly inclue research about different kinds of passports 
+ and the document itself, such as biometrics, not about having an identity. The term "National ID" describes mostly ID-systems.
+
+This query consists of one phrase. The general structure is action + legal identity
 
 ```py
 TS=
 (
+	("Provide" OR "Ensur*" OR "Issue$" OR "implement*" OR "adopt*" OR "introduc*" OR "develop" OR "provid*" OR "ensure" OR "ensuring" OR "attain*"
+	)
+	NEAR/5
+	(
+		(Identity"
+		NEAR/0
+		("legal" OR "paper$" OR "certificate$" OR "credential$" OR "card$")
+		)
+		OR
+		("birth"
+		NEAR/1
+		("certificate$" OR "credential$" OR "registrat*" OR "register$")
+		)
+ 		OR "recognized as a person before the law"
+	) 
 
 )
 ```
@@ -678,27 +697,58 @@ TS=
 > 16.b.1 Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
 
 This target is interpreted to cover research about 
-- Promoting and enforcing non-discriminatory laws and policies for sustainable development 
+•	Promoting and enforcing non-discriminatory laws and non-discriminatory policies in all areas and in all aspects of sustainable development 
 
-Discriminatory factors could cover
-- ethnicity
-- gender
-- religion
-- disability
-- age
-- sexual orientation
-- national origin
-- political opinion
-- social status
+"Sustainable development" will not be a part of the search as it is considered implicit that all goals are about obtaining sustainable development. Further, this target is a so called “Means of implementation” target and is therefore foundational to realization of all targets under SDG16. 
+Definition of discrimination from https://unstats.un.org/sdgs/metadata/files/Metadata-16-0b-01.pdf. "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life."
 
+This query consists of two phrases.
+
+#### Phrase 1
+The basic structure is action (positive) + non-discriminatory laws
 
 ```py
 TS=
 (
+	("promot*" OR "enforce$" OR "increas*" OR "strengthen*" OR "improv*" OR "enhance" OR "enhances" OR "enhanced" OR "enhancing" OR "better" OR
+	"more efficient*" OR "more effectiv*" OR "advance$" OR "advancing" OR "develop$" OR "developing" OR "development" OR "encourag*" OR
+	"facilitat*" OR "establish*" OR "propos*" OR "implement*" OR "adopt*" OR "introduce*" OR "boost*" OR "reform$" OR "reforming" OR
+	"reformed" OR "heighten*" OR "ensure" OR "achiev*"
+	)
+	NEAR/5
+	(
+		("equal" OR "equally" OR "equalit*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "egalitar*" OR
+		"equity" OR "fairness"
+		)
+		NEAR/3
+		("law$" OR "policy" OR "policies" OR "legal*" OR "legislat*" OR "judicial" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR
+		"strateg*" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "principle$")
+	)
 
 )
 ```
+#### Phrase 2
+The basic structure is action (negative) + discriminatory laws
 
+```py
+TS=
+(
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "stop*" OR "end" OR "ends" OR "ended" OR
+	"ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "fight*" OR "combat*" OR "halt*" OR "resist" OR "resists" OR
+	"resisting" OR "prohibit*" OR "nullif*" OR "hinder*"
+	)
+	NEAR/5
+	(
+		("discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma*" OR
+		"ableis*" OR  "unequal*" OR "exclusion" OR "exclude$" OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$"
+		)
+		NEAR/3
+		("law$" OR "policy" OR "policies" OR "legal*" OR "legislat*" OR "judicial" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR
+		"strateg*" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "principle$"
+		)
+	)
+)
+```
 
 ## 4. Contributions
 
