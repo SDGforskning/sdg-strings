@@ -339,13 +339,13 @@ TS=
 )
 ```
 #### Phrase 5 
-The basic structure is action + rehabilitation of prisoners
+This phrase seraches for the improvement of the rehabilitation of prisoners. The basic structure is action + rehabilitation of prisoners
 
 ```py
 TS=
 (
 	("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
-	NEAR/15
+	NEAR/5
  	(
   		("rehabilitat*" OR "reintegrat*")
 		NEAR/1
@@ -354,13 +354,14 @@ TS=
 )
 ```
 #### Phrase 6 
-The basic structure is action + (Reporting OR solving) disputes
+This phrase searches for increasing the reporting of violence and disputes to competent authorities and (or) the enhanced use of a formal or informal dispute resolution mechanism. The basic structure is action + Reporting or solving disputes + competent authorities or dispute resolution mechanisms. 
 
 ```py
 TS=
 (
-	("increas*" OR "strengthen*" OR "improv*"  OR "restor*" OR "enhanc*" OR "encourag*" OR "facilitat*" OR "promot*" OR "ensure*" OR "achiev*")
- 	NEAR/15
+	("increas*" OR "strengthen*" OR "improv*"  OR "restor*" OR "enhanc*" OR "encourag*" OR "facilitat*" OR "promot*" OR "ensure*" OR "achiev*"
+	)
+ 	NEAR/5
  	(
   		(
 			(
