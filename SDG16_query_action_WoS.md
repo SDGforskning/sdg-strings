@@ -263,13 +263,13 @@ Justice for all is defined as fair, transparent, effective, non-discriminatory a
 This query consists of 6 phrases.
 
 #### Phrase 1
-The basic structure is the action + rule of law
+This phrase searches for promoting the rule of law. The basic structure is action + rule of law
 
 ```py
 TS=
 (
 	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
-	NEAR/15	
+	NEAR/5	
  	(
 		("law" OR "legal*")
 		NEAR/1
@@ -281,13 +281,13 @@ TS=
 
 ```
 #### Phrase 2
-The basic structure is action + justice for all
+This phrase searches for ensuring justice for all. The basic structure is action + justice for all
 
 ```py
 TS=
 (
  	("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "promot*" OR "encourag*" OR "facilitat*"OR "ensure*" OR "achiev*")
- 	NEAR/15
+ 	NEAR/5
   	("justice for all" OR 
 	(
 		("Justice" OR "judicial system*" OR "legal system*")
@@ -298,13 +298,13 @@ TS=
  )
 ```
 #### Phrase 3
-The basic structure is action + pretrial detention
+This phrase searches for the reduction of pretrial detention. The basic structure is action + pretrial detention
 
 ```py
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited")
- 	NEAR/15
+ 	NEAR/5
 	(
   		("unsentence*" OR "without sentence" OR "without sentencing" OR "without conviction" OR "pretrial")
   		NEAR/1
@@ -313,14 +313,14 @@ TS=
 )
 ```
 #### Phrase 4
-The basic structure is action(positive) + prison conditions OR action(negative) + Prison overcrowding
+This phrase searches for improvement of prison conditions and (or) the reduction of prison overcrowding. The basic structure is action(positive) + prison conditions OR action(negative) + prison overcrowding
 
 ```py
 TS=
 (
 	(
   		("increas*" OR "improv*" OR "enhanc*" OR "promot*" OR "ensure*")
-		NEAR/15
+		NEAR/5
   		(
    			("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "remand*" OR "custody")
    			NEAR/1
@@ -330,7 +330,7 @@ TS=
  	OR
  	(
   		("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "alleviat*")
-  		NEAR/15
+  		NEAR/5
   		(
    			("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "custody" OR "remand*")
 			NEAR/1 "overcrowd*"
