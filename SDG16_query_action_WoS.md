@@ -516,7 +516,7 @@ Even if both public and private institutions could be included, the goal is inte
 This query consists of two phrases.
 
 #### Phrase 1
-The general structure is (action (positive) + accoountable + instiutions
+This phrase seraches for establishing and maintainging effective institutions. The general structure is (action (positive) + accoountable + instiutions
 
 ```py
 TS=
@@ -561,7 +561,7 @@ TS=
 )
 ```
 #### Phrase 2
-The basic structure is action (negative) + non-accountable + institutions
+This phrase seraches for the reduction of ineffective institutions. The basic structure is action (negative) + ineffective + institutions
 
 ```py
 TS=
@@ -659,8 +659,8 @@ This target is interpreted to cover research about
 
 A legal identity includes name, sex, place and date of birth and nationality.
 
- The term "passport" is not included in the search as the results mostly inclue research about different kinds of passports 
- and the document itself, such as biometrics, not about having an identity. The term "National ID" describes mostly ID-systems.
+ The term "passport" is not included in the search as the results mostly include research about different kinds of passports 
+ and the document itself, such as biometrics, not about having an identity. The term "National ID" describes mostly ID-systems and is also not included.
 
 This query consists of one phrase. The general structure is action + legal identity
 
@@ -744,7 +744,7 @@ Definition of discrimination from https://unstats.un.org/sdgs/metadata/files/Met
 This query consists of two phrases.
 
 #### Phrase 1
-The basic structure is action (positive) + non-discriminatory laws
+This phrase searches for the promotion of non-discriminator laws. The basic structure is action (positive) + non-discriminatory laws
 
 ```py
 TS=
@@ -767,7 +767,7 @@ TS=
 )
 ```
 #### Phrase 2
-The basic structure is action (negative) + discriminatory laws
+This phrase searches for the reduction of discriminatory laws. The basic structure is action (negative) + discriminatory laws
 
 ```py
 TS=
