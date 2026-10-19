@@ -219,14 +219,18 @@ TS=
 >
 > 16.2.2 Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation
 >
-> 16.2.3 Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18
-
-This target is interpreted to cover research about:
-- ending abuse and exploitation of children
-- ending trafficking of children 
-- ending all forms of violence against and torture of children
-  
+>This target is interpreted to cover research about: 
+•	ending and reducing abuse and maltreatment of children 
+•	ending and reducing trafficking and exploitation of children  
+•	ending and reducing all forms of violence against and torture of children 
+>
 All forms of violence is interpreted to include physical, psychological and sexual violence.
+Definition violence against children: “Violence against children refers to any deliberate, unwanted and non-essential act, threatened or actual, against a child or against multiple children that results in or has a high likelihood of resulting in death, injury or other forms of physical and psychological suffering.” 
+United Nations Children’s Fund, International Classification of
+Violence against Children, UNICEF, New York, 2023. p13.  Available here: https://data.unicef.org/resources/international-classification-of-violence-against-children/
+See also article 19 in the UN Convention on the Right of the Child. https://www.unicef.org/child-rights-convention. 
+>
+The complete query consists of 6 phrases.
 
 
 ```py
