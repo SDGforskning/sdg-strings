@@ -249,8 +249,9 @@ OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" 
  			"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
 			OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
 )
+```
 
-#### Phrase 2
+#### Phrase2 
 This phrase searches for research about reducing and ending the exploitation and trafficking of children. The basic structure is ending + exploiting + children.
 To avoid large amounts of noise from alcohol, substance and drug misuse, the term "misuse" is not included among the search terms.
 ```py
@@ -313,6 +314,8 @@ TS=
  	)
 )
 
+>
+>
 ```
 #### Phrase 2
 This phrase searches for ensuring justice for all. The basic structure is action + justice for all
