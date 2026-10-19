@@ -233,7 +233,8 @@ See also article 19 in the UN Convention on the Right of the Child. https://www.
 The complete query consists of 6 phrases.
 
 #### Phrase 1
-This phrase searches for research about reducing and ending abuse and maltreatment of children. 
+This phrase searches for research about reducing and ending abuse and maltreatment of children.
+The term abuse is used in phrases to avoid noise from “substance abuse”. This results in “double” searching, e.g. child is included in both "child abuse" and in the second part of the topic-search, child*.
 ```py
 TS=
 (
@@ -249,7 +250,12 @@ OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" 
 				OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
 
 )
-```
+
+#### Phrase 2
+This phrase searches for research about reducing and ending the exploitation and trafficking of children
+```py
+TS=
+(
 
 ### Target 16.3
 
