@@ -219,7 +219,7 @@ TS=
 >
 > 16.2.2 Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation
 >
->This target is interpreted to cover research about: 
+This target is interpreted to cover research about: 
 •	ending and reducing abuse and maltreatment of children 
 •	ending and reducing trafficking and exploitation of children  
 •	ending and reducing all forms of violence against and torture of children 
