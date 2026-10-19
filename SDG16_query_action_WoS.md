@@ -248,7 +248,6 @@ OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" 
 			("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
  			"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
 			OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
-
 )
 
 #### Phrase 2
@@ -296,6 +295,7 @@ Justice for all is defined as fair, transparent, effective, non-discriminatory a
 
 This query consists of 6 phrases.
 
+```
 #### Phrase 1
 This phrase searches for promoting the rule of law. The basic structure is action + rule of law
 
