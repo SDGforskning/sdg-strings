@@ -242,20 +242,33 @@ TS=
 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 	 	NEAR/5
-			(("child abuse" OR "sexual abuse" OR "physical abuse" OR "emotional abuse" OR "psychological abuse" OR
-			 "maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
+	(("child abuse" OR "sexual abuse" OR "physical abuse" OR "emotional abuse" OR "psychological abuse" OR
+	 "maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
 			NEAR/5
-				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
- 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
-				OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
+			("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+ 			"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
+			OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
 
 )
 
 #### Phrase 2
-This phrase searches for research about reducing and ending the exploitation and trafficking of children
+This phrase searches for research about reducing and ending the exploitation and trafficking of children. The basic structure is ending + exploiting + children.
+To avoid large amounts of noise from alcohol, substance and drug misuse, the term "misuse" is not included among the search terms.
 ```py
 TS=
 (
+(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+ OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+ OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+		NEAR/5
+	(("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*"	 OR "illegal adoption$" OR
+	"exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r " OR "bonded labo$r" OR
+	"forced criminality" OR "forced crime" OR “forced begging”)
+			 NEAR/5
+		 ("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+		"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" 
+		OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")))
+)
 
 ### Target 16.3
 
