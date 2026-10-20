@@ -238,16 +238,16 @@ The term abuse is used in phrases to avoid noise from “substance abuse”. Thi
 ```py
 TS=
 (
-(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 	 	NEAR/5
-	(("child abuse" OR "sexual abuse" OR "physical abuse" OR "emotional abuse" OR "psychological abuse" OR
-	 "maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
+		(("child abuse" OR "sexual abuse" OR "physical abuse" OR "emotional abuse" OR "psychological abuse" OR
+		 "maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
 			NEAR/5
-			("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
- 			"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
-			OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
+				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+ 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
+				OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))) 
 )
 ```
 
@@ -257,17 +257,55 @@ To avoid large amounts of noise from alcohol, substance and drug misuse, the ter
 ```py
 TS=
 (
-(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
- OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
- OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		NEAR/5
-	(("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*"	 OR "illegal adoption$" OR
-	"exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r " OR "bonded labo$r" OR
-	"forced criminality" OR "forced crime" OR “forced begging”)
-			 NEAR/5
-		 ("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
-		"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" 
-		OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")))
+			(("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*"	 OR "illegal adoption$" OR
+			"exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r " OR "bonded labo$r" OR
+			"forced criminality" OR "forced crime" OR “forced begging”)
+			 	NEAR/5
+					 ("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+					"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" 
+					OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")))
+)
+```
+
+#### Phrase 3
+This phrase searches for research about the reduction and ending of violence, brutality and bullying against children in a physical sense. The basic structure is: ending + violence + children
+```py
+TS=
+(
+	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" 
+	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+ 		NEAR/5
+			(("violence" OR "violent" OR "brutality" OR "brutal treatment" OR "physical punishment"
+			OR "corporal punishment" OR "physical aggression" OR "verbal aggression" OR "bullying" OR
+			"beating" OR "physical fighting" OR "physical assault")
+				NEAR/5
+						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
+						OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+						OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))
+)
+```
+#### Phrase 4
+This phrase searches for research about reducing and ending sexual violence against children. The first parenthesis in the last part of the phrase, which requires some kind for force might be considered unnecessary. All sexual contact between children and adults is illegal and unwanted. But to cover unwanted sexual contact between children/minors, and avoid the inclusion of consensual sexual contact between peers it is included. 
+```py
+TS=
+(
+	(("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+		 NEAR/5
+			((("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
+			 OR "sexual harassment" OR "sexual aggression" OR "sexual grooming" OR "sexual extortion"
+			OR (("non-consensual" OR "forced" OR "coerced" OR "unsolicited" OR "unwanted")
+							NEAR/1 ("sexual contact" OR "sexual act$" OR "sexual activit*" OR "sexual intercourse")))
+				 NEAR/5
+					("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
+					OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+					OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))))
 )
 ```
 ### Target 16.3
