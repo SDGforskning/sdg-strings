@@ -437,14 +437,13 @@ For research on reduction of illicit financial flows, it should also cover resea
 
 Assets in this context is defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
 Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5. Substantially reduce corruption and bribery.  It can also cover human trafficking, a topic more extensively covered by 16.2. Protect children from abuse, exploitation, trafficking and violence.
-https://sdg16now.org/report/target16-4/ 
-The query consists of 4 phrases.
 
+https://sdg16now.org/report/target16-4/ 
 
 The query consists of 4 phrases.
 
 #### Phrase 1
-The basic structure of the query is illicit/illegal + money transfer
+This phrase is about reducing illicit financial flows (IFF) and consist of reducing + illicit/illegal + money transfer
 
 ```py
 TS=
