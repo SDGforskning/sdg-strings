@@ -521,7 +521,7 @@ TS=
 ```
 
 #### Phrase 2
-The basic structure of the query is illicit/illegal +  armaments. A closer proximity operator is used for illicit + arms to avoid litterature on the body part arms. 
+This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms to avoid litterature on the body part arms. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the phrase contains strengthening + tracing + weapons.
 ```py
 TS=
 
