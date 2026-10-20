@@ -521,47 +521,61 @@ TS=
 ```
 
 #### Phrase 2
-This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms to avoid litterature on the body part arms. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the phrase contains strengthening + tracing + weapons.
+This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms to avoid litterature on arms as body parts. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the phrase contains strengthening + tracing + weapons.
 ```py
 TS=
-
 (
-    ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
-    NEAR/5
-        ("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*") 
-    OR
-    ("arms" NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
-    )
-    OR
-    (
-        (Trafficking OR smuggl*)
-        NEAR/1
-            ("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
-    )
-    OR
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*"
+	OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating"
+	OR "diminish*" OR "curb*")
+	NEAR/5
+    	("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    	NEAR/5
+        	("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*") 
+    	OR
+    	("arms" NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    	)
+    	OR
+    	(
+        	(Trafficking OR smuggl*)
+        	NEAR/1
+            	("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+    	)
+OR
+(
+	("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+	NEAR/5
         (
-            ("Tracing" OR "Traceab*" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
-            OR "Identif*" OR "record*" OR "surrendered")
+            ("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control" OR "national registry" OR "foreign registry")
             NEAR/5
-                ("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry"
-                OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+                ("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$"
+				OR "handgun$" OR "artiller*")
         )
-    OR
-        (
-            (
-                ("Tracing" OR "Traceable" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
-                OR "Identif*" OR "record*" OR "control" OR "surrendered")
-                NEAR/0 ("arms")
-            )
-        )
-    OR
-        ("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
+    	OR
+        	(
+            	(
+                	("Tracing" OR "Traceable" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
+                	OR "Identif*" OR "record*" OR "control" OR "surrendered")
+                	NEAR/0 ("arms")
+            	)
+        	)
+    	OR
+        	("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
+)
 )
 ```
 #### Phrase 3
+This phrase covers research on the increased work for recovery of stolen assets and the structure of the query is strengthen + recovery + stolen + assets
+https://www.u4.no/publications/the-recovery-of-stolen-assets-a-fundamental-principle-of-the-un-convention-against-corruption
+
+
 ```py
 TS=
 (
+	("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
+	OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+	NEAR/5
+			
 
 )
 ```
