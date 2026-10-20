@@ -436,7 +436,10 @@ This target is interpreted to cover research about
 For research on reduction of illicit financial flows, it should also cover research on strengthening the capacity to track and control illegal financial flows in and out of countries. This includes research on capital controls, tax evasion, business transparency, money laundering etc.  Illicit arms flow and recovery and returning stolen assets, are aspects of illicit financial flows and organized crime. 
 
 Assets in this context is defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
-Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5.
+Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5. Substantially reduce corruption and bribery.  It can also cover human trafficking, a topic more extensively covered by 16.2. Protect children from abuse, exploitation, trafficking and violence.
+https://sdg16now.org/report/target16-4/ 
+The query consists of 4 phrases.
+
 
 The query consists of 4 phrases.
 
@@ -464,6 +467,7 @@ TS=
 The basic structure of the query is illicit/illegal +  armaments. A closer proximity operator is used for illicit + arms to avoid litterature on the body part arms. 
 ```py
 TS=
+
 (
     ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
     NEAR/5
