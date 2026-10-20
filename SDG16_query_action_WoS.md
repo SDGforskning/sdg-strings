@@ -575,15 +575,38 @@ TS=
 	("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
 	OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
 	NEAR/5
+		(
+			("recover*" OR "return*" OR "recaptur*" OR "repossess*" OR "trac*" OR identif* OR "freez*" OR "seiz*" OR "confiscat*")
+			AND
+			(
+				(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
+				NEAR/5
+					("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert$" OR "real estate$"
+					OR "valuables" OR "collectables" OR "fine art" OR "gold" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$" OR "yacht$"
+					OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
+			) 
 			
 
 )
 ```
 #### Phrase 4
+This phrase is about organized crime. Parts of the subject will be covered by the query in phrases 1-3, as the topics above are interwoven with organized crime. 
+The query is containg weakening/reducing/controlling + criminal organisations.
+https://www.unodc.org/unodc/en/organized-crime/intro.html
+
 ```py
 TS=
 (
-
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "curb*" OR "decreas*"
+	OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*")
+	NEAR/5
+		("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+		NEAR/1
+			("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
+			OR "Business" OR "firm$" OR "compan*" OR "professional*")
+		OR
+		("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR"Transnational crime" OR "International crime"
+		OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
 )
 ```
 
