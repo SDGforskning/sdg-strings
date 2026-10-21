@@ -926,6 +926,9 @@ Global governance is understood as the regulation of interdependent relations be
 
 Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
 
+Definition of global governance:
+Global governance encompasses the totality of institutions, policies, norms, procedures and initiatives through which States and their citizens try to bring more predictability, stability and order to their responses to transnational challenges. (United Nations Committee for Development Policy. (2014). Global governance and global rules for development in the post-2015 era: Policy note (ST/DESA(02)/G57. United Nations. https://www.un.org/en/development/desa/policy/cdp/cdp_publications/2014cdppolicynote.pdf)
+
 
 ```py
 TS=
