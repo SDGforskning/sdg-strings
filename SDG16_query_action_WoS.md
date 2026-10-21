@@ -775,6 +775,16 @@ TS=
 )
 ```
 #### Phrase 6
+This phrase searches for research about anti-corruption. In addition to "anti-corruption", promoting and ensuring transparency and electoral integrity is covered.
+```py
+TS=
+(
+	"Anti-corruption" OR "anticorruption” OR "anti-bribery" OR "antibribery" OR "Promoting accountability"
+	OR "promoting transparency" OR "transparent procurement*" OR "counter-corruption" OR
+	"promote electoral integrity" OR "ensure electoral integrity" OR "promote election integrity"
+	OR "ensure election integrity" OR "promoting the integrity of election*"
+)
+```
 ### Target 16.6
 
 > **16.6 Develop effective, accountable and transparent institutions at all levels**
