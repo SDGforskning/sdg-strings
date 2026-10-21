@@ -677,20 +677,104 @@ TS=
 > 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
 
 This target is interpreted to cover research about 
-- reducing corruption
-- reducing bribery 
+- fighting and reducing corruption
+- fighting and reducing bribery 
 
-Corruption is understood as the abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. 
+The United Nations Convention against Corruption (UnCAC) focuses on identifying specific acts of corruption and refrains from giving a definition. The specific acts mentioned are: bribery, embezzlement, trading in influence, abuse for functions, illicit enrichment, laundering of proceeds of crime and concealment and obstruction of justice [of the above mentioned crimes]. Both public and private sectors are covered by the UNCAC. (United Nations. (2003). United Nations Convention Against Corruption. Treaty Series, 2349, 41)
+For practical purposes this definition of corruption is used: abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. (https://www.u4.no/terms) Christian Michelsen Institute, Anti Corruption Center U4. 
 
-This query consists of X phrases.
+
+This query consists of 6 phrases.
+#### Phrase 1
+This phrase searches for research about reducing or fighting bribery or corruption expressed by using the general definition stated above. 
 
 ```py
 TS=
 (
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
+	OR "mitigat*" OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+	OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*"
+	OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" 
+	OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
+			NEAR/15
+				(
+					(
+						("Abus*" OR "misus*" OR "violat*" OR "exploit*" OR "illicit" OR "illegitimate")
+							NEAR/2
+							("entrusted power" OR "public office*" OR "duty")
+					)
+								NEAR/2
+								("private gain*" OR "profit*" OR "winnings" OR "monetary" OR "enrichment"
+								OR "benefit*" OR "pay*")
+				)
+) 
 
+
+```
+#### Phrase 2
+This phrase searches for various activities, situations and phenomenon often associated with corruption and bribery. To avoid noise from research where corruption is not the context, corrupt* is searched within a proximity of maximum 15 words. Bribery is not added because it is searched as a stand-alone term in phrase 4.
+```py
+TS=
+(
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
+	OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
+		NEAR/15
+			(
+				(corrupt*)
+				 NEAR/15
+					("embezzle*" OR "fraud" OR "money laundering" OR "extortion" OR "sextortion" OR "clientelism"
+					OR "nepotism" OR "public procurement" OR "kickback*")
+			)
 )
 ```
-
+#### Phrase 3
+This phrase searches for research where the term corrupt is used in the sense that is relevant to this SDG target. Due to the term's polysemy it can not be used as a stand-alone search term.
+```py
+TS=
+(
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	 OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
+	 OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR
+	"ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
+		  NEAR/15
+			(
+				("Corrupt*")
+					NEAR/2
+				("act*" OR "risk*" OR "behavior*" OR "behaviour*" OR "conduct*" OR "practice*" OR "bureaucra*" OR "officer*")
+			)
+)
+```
+#### Phrase 4
+This phrase searches for research about fighting and reducing bribery. The basic structure is reduce/fight + bribery.
+```py
+TS=
+(
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
+	OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
+		 NEAR/15
+	("bribe*" OR "trading in influence" OR "buying influence" OR "selling influence" OR "informal payment*"
+	OR "grease payment*" OR "grease money" OR "extra-legal payment*" OR "illegal payment*" OR "money under the 	counter"
+	OR "money under the table" OR "pay* under the counter" OR "pay* under the table" OR "facilitation pay*")
+)
+```
+#### Phrase 5
+This phrase searches for research about fighting and reducing corrupt illicit actions connected with democratic functioning. The basic structure is: reduce/fight + electoral fraud.
+```py
+TS=
+(
+	("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	OR "degrad*" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*"
+	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
+	OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
+			NEAR/15
+	("election fraud*" OR "electoral fraud" OR "electoral corruption" OR "corrupt election*" OR "buying vote*" OR "delivering vote*" OR "voter fraud*" OR "ballot fraud*" OR "political corruption*" OR "political fraud*" OR "political bribe*")
+)
+```
+#### Phrase 6
 ### Target 16.6
 
 > **16.6 Develop effective, accountable and transparent institutions at all levels**
