@@ -330,17 +330,39 @@ TS=
 	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
 	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 			NEAR/5
-			((("repeat*" OR "frequent*" OR "constant*" or "systematic")
+			(
+				(
+					("repeat*" OR "frequent*" OR "constant*" or "systematic")
 							NEAR/3
-								("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
+					("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
 								OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
-								OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating"))
+								OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
+				)
 				 NEAR/5
 						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
 						OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" OR "teen*" OR "preteen$"
-						OR "underage" OR "youth$" OR "juvenile$"))
+						OR "underage" OR "youth$" OR "juvenile$")
+			)
 )
 ``
+#### Phrase 6
+This phrase searches for research about reducing brutal violence not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
+```py
+TS=
+(
+	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" 
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+			NEAR/5
+					(
+						("homicide*" OR "killing*" OR "murder*" OR "shooting*" OR "rape*" OR "torture"
+						OR "genital mutilation" OR "FGM" OR "clitoridectomy" OR "excision" OR "infibulation")
+				NEAR/5
+						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid"
+						OR "kids" OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$"
+						OR "adolescence" OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+					)
+) 
 ### Target 16.3
 
 > **16.3 Promote the rule of law at the national and international levels and ensure equal access to justice for all**
