@@ -338,8 +338,8 @@ TS=
 					("repeat*" OR "frequent*" OR "constant*" or "systematic")
 							NEAR/3
 					("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
-								OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
-								OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
+					OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
+					OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
 				)
 				 NEAR/5
 						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
