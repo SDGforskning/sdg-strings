@@ -251,7 +251,7 @@ TS=
  				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
 				OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
-		) 
+	) 
 )
 ```
 
@@ -306,18 +306,21 @@ TS=
 	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
 	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		 NEAR/5
-			(("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
-			 OR "sexual harassment" OR "sexual aggression" OR "sexual grooming" OR "sexual extortion"
-			OR 	(
+			(
+				("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
+			 	OR "sexual harassment" OR "sexual aggression" OR "sexual grooming" OR "sexual extortion"
+			OR
+					(
 						("non-consensual" OR "forced" OR "coerced" OR "unsolicited" OR "unwanted")
 							NEAR/1
 						("sexual contact" OR "sexual act$" OR "sexual activit*" OR "sexual intercourse")
+					)
 				)
-			)
 				 NEAR/5
 					("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
 					OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
-					OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$"))
+					OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+			)
 )
 
 ```
@@ -344,7 +347,7 @@ TS=
 						OR "underage" OR "youth$" OR "juvenile$")
 			)
 )
-``
+```
 #### Phrase 6
 This phrase searches for research about reducing brutal violence not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
 ```py
