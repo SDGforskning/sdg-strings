@@ -365,7 +365,27 @@ TS=
 						OR "kids" OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$"
 						OR "adolescence" OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 					)
-) 
+)
+```
+#### Phrase 7
+This phrase searches for research about reducing online-violence against children. The basic structure is: ending/reducing + online violence + children.
+```py
+TS=
+(
+	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
+	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+		NEAR/5
+		(
+			("cyberbullying" OR "online bullying" OR "digital bullying" OR "cyber abuse" OR "cyberabuse" OR "online abuse"
+			OR "digital abuse" OR "cyber-grooming" OR "online grooming")
+			NEAR/5
+			("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
+			OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" OR "teen*"
+			OR "preteen$" OR "underage" OR "youth$" OR juvenile$)
+		)
+)
+```
 ### Target 16.3
 
 > **16.3 Promote the rule of law at the national and international levels and ensure equal access to justice for all**
