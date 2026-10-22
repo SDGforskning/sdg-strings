@@ -931,12 +931,37 @@ Institutions of global governance included are for instance UN, WTO, WHO, IMF, I
 Definition of global governance:
 Global governance encompasses the totality of institutions, policies, norms, procedures and initiatives through which States and their citizens try to bring more predictability, stability and order to their responses to transnational challenges. (United Nations Committee for Development Policy. (2014). Global governance and global rules for development in the post-2015 era: Policy note (ST/DESA(02)/G57. United Nations. https://www.un.org/en/development/desa/policy/cdp/cdp_publications/2014cdppolicynote.pdf)
 >
-This target consists of 
+This target consists of 3 phrases. 
+#### Phrase 1 
+This phrase searches for research on strengthening developing countries participation in international organizations where specific names of organizations is not mentioned. The basic structure is: strengthening + participation + global organizations + developing countries.
 
 ```py
 TS=
-(
-
+(		("increas*" OR "strengthen*" OR "broaden*" OR "improv*" OR "enhanc*" OR "accelerat*"
+	 	OR  "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "foster*" OR "boost*"
+		OR "ensure" OR "attain*")
+				 NEAR/5
+				(("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
+				OR "seat*" OR "vote$" OR "decision making" OR "membership*" OR "member$" )
+					 NEAR/5
+						("develop* countr*" OR  "least developed countr*" OR "least developed nation$"
+						OR "developing countr*" OR "developing nation$" OR "developing states" OR 
+						"developing world" OR "less developed countr*" OR "less developed nation$" OR 
+						"under developed countr*" OR "under developed nation$" OR "underdeveloped countr*"
+						OR "underdeveloped nation$"  OR underserved countr*" OR "underserved nation$" OR
+						"deprived countr*" OR "deprived nation$"  OR "middle income countr*" OR
+						"middle income nation$" OR "low income countr*" OR "low income nation$" OR
+						"lower income countr*" OR "lower income nation$" OR "poor countr*" OR
+						"poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics"
+						OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*"
+						OR "emerging economies" OR "emerging nation$")))NEAR/5 
+(("global" OR "international" OR "regional" OR "transnational"
+							OR "multilateral" OR "worldwide" OR "world wide" OR "intergovernmental")
+								 NEAR/1
+									("organization*" OR "organisation" OR "NGO" OR "institution*"
+									OR "treaty" OR "governing body" OR "government" OR "assembly"
+									OR "forum" OR "union*" OR "alliance*" OR "agency" OR "council"
+									OR "board*" OR "corporation" OR "court*" OR "tribunal*"))
 )
 ```
 
