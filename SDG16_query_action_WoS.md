@@ -937,11 +937,12 @@ This phrase searches for research on strengthening developing countries particip
 
 ```py
 TS=
-(		("increas*" OR "strengthen*" OR "broaden*" OR "improv*" OR "enhanc*" OR "accelerat*"
+(
+		("increas*" OR "strengthen*" OR "broaden*" OR "improv*" OR "enhanc*" OR "accelerat*"
 	 	OR  "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "foster*" OR "boost*"
 		OR "ensure" OR "attain*")
 				 NEAR/5
-				(("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
+				((("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
 				OR "seat*" OR "vote$" OR "decision making" OR "membership*" OR "member$" )
 					 NEAR/5
 						("develop* countr*" OR  "least developed countr*" OR "least developed nation$"
@@ -954,17 +955,111 @@ TS=
 						"lower income countr*" OR "lower income nation$" OR "poor countr*" OR
 						"poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics"
 						OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*"
-						OR "emerging economies" OR "emerging nation$")))NEAR/5 
-(("global" OR "international" OR "regional" OR "transnational"
-							OR "multilateral" OR "worldwide" OR "world wide" OR "intergovernmental")
-								 NEAR/1
-									("organization*" OR "organisation" OR "NGO" OR "institution*"
-									OR "treaty" OR "governing body" OR "government" OR "assembly"
-									OR "forum" OR "union*" OR "alliance*" OR "agency" OR "council"
-									OR "board*" OR "corporation" OR "court*" OR "tribunal*"))
+						OR "emerging economies" OR "emerging nation$"))
+					NEAR/5 
+						(("global" OR "international" OR "regional" OR "transnational"
+						OR "multilateral" OR "worldwide" OR "world wide" OR "intergovernmental")
+								NEAR/1
+								("organization*" OR "organisation" OR "NGO" OR "institution*"
+								OR "treaty" OR "governing body" OR "government" OR "assembly"
+								OR "forum" OR "union*" OR "alliance*" OR "agency" OR "council"
+								OR "board*" OR "corporation" OR "court*" OR "tribunal*")))
 )
 ```
-
+#### Phrase 2
+This phrase searches for research on strenghtening the participation of developing countries in UN organizations.  All UN organizations are mentioned, but those containing "United Nations" can be omitted as they are already included in "United Nations" as a stand-alone search. The abbreviation WHO is not included to avoid noise from the pronoun who. The basic structure is: strengthen + participation + developing countries + UN organizations.
+```py
+TS=
+(
+		("increas*" OR "strengthen*" OR "broaden*" OR "improv*" OR "enhanc*"
+		OR "accelerat*" OR  "advance" OR "advancing" OR "facilitat*" OR "promot*"
+		OR "foster*" OR "boost*" OR "ensure" OR "attain*")
+				NEAR/5
+					(
+						(("participat*" OR "representat*" OR "voice*" OR "voting right*"
+						OR "quota" OR "seat*" OR "vote$" OR "decision making" OR
+						"membership*" OR "member$" )
+								NEAR/5
+								("develop* countr*" OR  "least developed countr*" OR
+								"least developed nation$" OR "developing countr*" OR
+								"developing nation$" OR "developing states" OR "developing world"
+								OR "less developed countr*" OR "less developed nation$" OR
+								"under developed countr*" OR "under developed nation$" OR
+								"underdeveloped countr*" OR "underdeveloped nation$"
+								OR "underserved countr*" OR "underserved nation$" OR
+								"deprived countr*" OR "deprived nation$"  OR "middle income countr*"
+								OR "middle income nation$" OR "low income countr*" OR "low income nation$"
+								OR "lower income countr*" OR "lower income nation$" OR "poor countr*"
+								OR "poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR
+								"lmics" OR "third world" OR "global south" OR "lami countr*" OR
+								"transitional countr*" OR "emerging economies" OR "emerging nation$"))
+				NEAR/5
+					("United Nations" OR "UN" OR "United Nations Development Programme" OR "UNDP"
+					OR "United Nations Environment Programme" OR "UNEP" OR "United Nations Population Fund"
+					OR "UNFPA" OR "United Nations Capital Development Fund" OR "UNCDF" OR "United Nations Volunteers"
+					OR "UNV" OR "United Nations Human Settlements Programme" OR "UN-Habitat" OR
+					"UNHABITAT" OR "United Nations Children's Fund" OR "UNICEF" OR "World Food Programme" OR
+					"WFP" OR "United Nations Conference on Trade and Development" OR "UNCTAD" OR
+					"Office of the United Nations High Commissioner for Refugees" OR "UNHCR" OR
+					"United Nations Office for Project Services" OR "UNOPS" OR
+					"United Nations Relief and Works Agency for Palestine Refugees in the Near East" OR
+					"UNRWA" OR "United Nations Entity for Gender Equality and the Empowerment of Women" OR
+					"UN Women" OR "UNWOMEN" OR "Office for the Coordination of Humanitarian Affairs" OR "OCHA"
+					OR "Joint United Nations Programme on HIV/AIDS" OR "UNAIDS" OR "United Nations University"
+					OR "UNU" OR "United Nations Institute for Training and Research" OR "UNITAR" OR
+					"United Nations Institute for Disarmament Research" OR "UNIDIR" OR "United Nations System Staff College"
+					OR "UNSSC" OR "Food and Agriculture Organization" OR "FAO" OR "International Civil Aviation Organization"
+					OR "ICAO" OR "International Fund for Agricultural Development" OR "IFAD" OR "International Labour Organization"
+					OR "ILO" OR "International Monetary Fund" OR "IMF" OR "International Maritime Organization" OR "IMO" OR
+					"International Telecommunication Union" OR "ITU" OR "United Nations Educational, Scientific and Cultural Organization"
+					OR "UNESCO" OR "United Nations Industrial Development Organization" OR "UNIDO" OR
+					"Universal Postal Union" OR "UPU" OR "World Health Organization" OR "World Intellectual Property Organization"
+					OR "WIPO" OR "World Meteorological Organization" OR "WMO" OR "World Bank" OR "World Bank Group"
+					OR "WBG" OR "International Atomic Energy Agency" OR "IAEA" OR "International Organization for Migration"
+					OR "IOM" OR "International Seabed Authority" OR "ISA" OR "International Tribunal for the Law of the Sea"
+					OR "ITLOS" OR "Organisation for the Prohibition of Chemical Weapons" OR "OPCW" OR
+					"Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization" OR "CTBTO"
+					OR "United Nations Counter-Terrorism Implementation Task Force")
+					)
+)
+```
+#### Phrase 3
+This phrase searches for research on strengthening the participation of developing countries in specific, named non-United Nations organizations of relevance to developing countries. The basic structure is: strengthening + participation + developing countries + specific organizations.
+```py
+TS=
+(
+	("increas*" OR "strengthen*" OR "broaden*" OR "improv*" OR "enhanc*" OR "accelerat*"
+	OR "advance" OR "advancing" OR "facilitat*" OR "promot*" OR "foster*" OR "boost*"
+	OR "ensure" OR "attain*")
+			NEAR/5
+			(
+				(
+					("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
+					OR "seat*" OR "vote$" OR "decision making" OR "membership*" OR "member$")
+					NEAR/5
+					("develop* countr*" OR  "least developed countr*" OR "least developed nation$"
+					OR "developing countr*" OR "developing nation$" OR "developing states" OR
+					"developing world" OR "less developed countr*" OR "less developed nation$"
+					OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*"
+					OR "underdeveloped nation$"  OR "underserved countr*" OR "underserved nation$" OR
+					"deprived countr*" OR "deprived nation$"  OR "middle income countr*" OR
+					"middle income nation$" OR "low income countr*" OR "low income nation$"
+					OR "lower income countr*" OR "lower income nation$" OR "poor countr*" OR
+					"poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics"
+					OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*"
+					OR "emerging economies" OR "emerging nation$")
+				)
+					NEAR/5
+				("MERCOSUR" OR "Mercado Común del Sur" OR "ASEAN" OR
+				"Association of Southeast Asian Nations" OR "Shanghai Cooperation Organisation" OR
+				"OSCE" OR "Organization for Security and Co-operation in Europe" OR "African Union"
+				OR "Economic Community of West African States" OR "OECD" OR
+				"Organisation for Economic Co-operation and Development" OR "World Bank"
+				OR "International Monetary Fund" OR "Asian Infrastructure Investment Bank" OR
+				"Development Bank of Latin America" OR "African development bank" OR "Asian development bank"
+				OR "Organization of American States" OR "League of Arab States" OR "Arab League" OR "SAARC")
+			)
+)
 ### Target 16.9
 
 > **16.9 By 2030, provide legal identity for all, including birth registration**
