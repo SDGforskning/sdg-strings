@@ -595,7 +595,7 @@ TS=
     	)
     	OR
     	(
-        	(Trafficking OR smuggl*)
+        	("Trafficking" OR "smuggl*")
         	NEAR/1
             	("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
     	)
