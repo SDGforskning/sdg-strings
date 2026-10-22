@@ -759,7 +759,7 @@ TS=
 	OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
 		 NEAR/15
 	("bribe*" OR "trading in influence" OR "buying influence" OR "selling influence" OR "informal payment*"
-	OR "grease payment*" OR "grease money" OR "extra-legal payment*" OR "illegal payment*" OR "money under the 	counter"
+	OR "grease payment*" OR "grease money" OR "extra-legal payment*" OR "illegal payment*" OR "money under the counter"
 	OR "money under the table" OR "pay* under the counter" OR "pay* under the table" OR "facilitation pay*")
 )
 ```
@@ -773,7 +773,8 @@ TS=
 	OR "declin*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending"
 	OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*" OR "inhibit*" OR "counter")
 			NEAR/15
-	("election fraud*" OR "electoral fraud" OR "electoral corruption" OR "corrupt election*" OR "buying vote*" OR "delivering vote*" OR "voter fraud*" OR "ballot fraud*" OR "political corruption*" OR "political fraud*" OR "political bribe*")
+	("election fraud*" OR "electoral fraud" OR "electoral corruption" OR "corrupt election*" OR "buying vote*" OR
+	"delivering vote*" OR "voter fraud*" OR "ballot fraud*" OR "political corruption*" OR "political fraud*" OR "political bribe*")
 )
 ```
 #### Phrase 6
@@ -919,9 +920,9 @@ TS=
 ### Target 16.8
 
 > **16.8 Broaden and strengthen the participation of developing countries in the institutions of global governance**
->
+
 > 16.8.1 Proportion of members and voting rights of developing countries in international organizations
->
+
 This target is interpreted to cover research about broadening and strengthening the participation of developing countries in institutions of global governance. 
 >
 Global governance is understood as the regulation of interdependent relations between independent nations. 
