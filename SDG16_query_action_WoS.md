@@ -583,43 +583,46 @@ This phrase is about limiting the flow of illicit armaments, and the query conta
 ```py
 TS=
 (
-	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*"
-	OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating"
-	OR "diminish*" OR "curb*")
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+	OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
+	OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
 	NEAR/5
     	("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
     	NEAR/5
-        	("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*") 
-    	OR
-    	("arms" NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
-    	)
-    	OR
-    	(
-        	("Trafficking" OR "smuggl*")
-        	NEAR/1
-            	("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
-    	)
-OR
-(
-	("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
-	NEAR/5
-        (
-            ("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control" OR "national registry" OR "foreign registry")
-            NEAR/5
-                ("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$"
-				OR "handgun$" OR "artiller*")
-        )
-    	OR
-        	(
-            	(
-                	("Tracing" OR "Traceable" OR "traced" OR "national registry" OR "foreign registry" OR "seizures" OR "seized"
-                	OR "Identif*" OR "record*" OR "control" OR "surrendered")
-                	NEAR/0 ("arms")
-            	)
-        	)
-    	OR
-        	("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
-)
+        	("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" 			OR "artiller*") 
+			OR
+    			("arms"
+				NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted"
+						OR "privately manufactured")
+				)
+    		OR
+    			(
+        			("Trafficking" OR "smuggl*")
+        			NEAR/1
+            			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" 						OR "gun$" OR "handgun$" OR "artiller*")
+    			)
+				OR
+					(
+						("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*"
+						OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+						NEAR/5
+        					(
+            					("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control" 								OR "national registry" OR "foreign registry")
+            					NEAR/5
+                					("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry"
+									OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+        					)
+    					OR
+        					(
+            					(
+                					("Tracing" OR "Traceable" OR "traced"  OR "seizures" OR "seized" OR "Identif*" OR 										"record*" OR "control" OR "national registry" OR "foreign registry")
+                					NEAR/0 ("arms")
+            					)
+        					)
+    					OR
+        							("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty"
+									OR "Register of Conventional Arms") 
+					)
 )
 ```
 #### Phrase 3
