@@ -349,7 +349,7 @@ TS=
 )
 ```
 #### Phrase 6
-This phrase searches for research about reducing brutal violence not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
+This phrase searches for research about reducing brutal violence against children not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
 ```py
 TS=
 (
@@ -368,7 +368,7 @@ TS=
 )
 ```
 #### Phrase 7
-This phrase searches for research about reducing online-violence against children. The basic structure is: ending/reducing + online violence + children.
+This phrase searches for research about reducing online violence against children. The basic structure is: ending/reducing + online violence + children.
 ```py
 TS=
 (
@@ -678,15 +678,14 @@ TS=
 > 16.5.1 Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months
 >
 > 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
-
+>
 This target is interpreted to cover research about 
 - fighting and reducing corruption
 - fighting and reducing bribery 
-
+>
 The United Nations Convention against Corruption (UnCAC) focuses on identifying specific acts of corruption and refrains from giving a definition. The specific acts mentioned are: bribery, embezzlement, trading in influence, abuse for functions, illicit enrichment, laundering of proceeds of crime and concealment and obstruction of justice [of the above mentioned crimes]. Both public and private sectors are covered by the UNCAC. (United Nations. (2003). United Nations Convention Against Corruption. Treaty Series, 2349, 41)
 For practical purposes this definition of corruption is used: abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. (https://www.u4.no/terms) Christian Michelsen Institute, Anti Corruption Center U4. 
-
-
+>
 This query consists of 6 phrases.
 #### Phrase 1
 This phrase searches for research about reducing or fighting bribery or corruption expressed by using the general definition stated above. 
@@ -922,16 +921,17 @@ TS=
 > **16.8 Broaden and strengthen the participation of developing countries in the institutions of global governance**
 >
 > 16.8.1 Proportion of members and voting rights of developing countries in international organizations
-
+>
 This target is interpreted to cover research about broadening and strengthening the participation of developing countries in institutions of global governance. 
-
+>
 Global governance is understood as the regulation of interdependent relations between independent nations. 
-
+>
 Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
-
+>
 Definition of global governance:
 Global governance encompasses the totality of institutions, policies, norms, procedures and initiatives through which States and their citizens try to bring more predictability, stability and order to their responses to transnational challenges. (United Nations Committee for Development Policy. (2014). Global governance and global rules for development in the post-2015 era: Policy note (ST/DESA(02)/G57. United Nations. https://www.un.org/en/development/desa/policy/cdp/cdp_publications/2014cdppolicynote.pdf)
-
+>
+This target consists of 
 
 ```py
 TS=
