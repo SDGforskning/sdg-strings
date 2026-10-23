@@ -679,6 +679,8 @@ AND
 )
 OR
 ("anti-money laundering" OR "Stolen Asset Recovery Initiative")
+OR
+((("law" OR "act*" OR "regulat*" OR "rule" OR "rules" OR "legislat*" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")) AND (("stolen" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*") NEAR/5 ("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art" OR "gold" OR "jewel*" OR "crypto" OR "bit coin" OR "yacht$" OR "private jet$" OR "expensive car$" OR "watches" OR  "shares" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*")))
 )
 )
 ```
@@ -700,6 +702,10 @@ TS=
 		OR
 		("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR "Transnational crime" OR "International crime"
 		OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
+		OR
+		(("ICT" OR "cyber*" OR "internet" OR "computer*" OR "crypto*" OR "block-chain" OR "New technologies")
+		NEAR/5
+			("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud *" OR "deception*"))
 )
 ```
 
