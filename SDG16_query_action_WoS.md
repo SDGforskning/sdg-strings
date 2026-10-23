@@ -613,12 +613,13 @@ is about tracing armaments, to have more control with the flow of weapons, the q
 ```py
 TS=
 (
-	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
-	OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
-	OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
-	NEAR/5
-    	("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
-    	NEAR/5
+	(
+		("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+		OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
+		OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
+		NEAR/5
+    		("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    		NEAR/5
         	("armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$"
 			OR "artiller*") 
 			OR
@@ -633,6 +634,7 @@ TS=
             			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$"
 						OR "gun$" OR "handgun$" OR "artiller*")
     			)
+		)
 				OR
 					(
 						("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*"
@@ -662,27 +664,44 @@ TS=
 This phrase is about research on the increased work for recovery of stolen assets. Return, as a synonym of recovery, needs a seperate search query as its double meaning will give hits on the return on money. 
 The structure of the query is strengthen + recovery + stolen + assets
 https://www.u4.no/publications/the-recovery-of-stolen-assets-a-fundamental-principle-of-the-un-convention-against-corruption
+(Note: There seems to be something not working with this phrase)
 
 
 ```py
 TS=
 (
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
-OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
-NEAR/5
-(
-(("return*" ) NEAR/3 ("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*"))
-OR
-(("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
-AND 
-(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*") AND ("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$" OR 		"valuables" OR "collectables" OR "fine art$" OR "gold*" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$" OR "yacht$" OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
+	(
+		("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
+		OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+		NEAR/5
+			(
+				(("return*" ) NEAR/3 ("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*"))
+				OR
+					(("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
+					AND 
+						(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
+						AND
+							("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$"
+							OR "valuables" OR "collectables" OR "fine art$" OR "gold*" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$"
+							OR "yacht$" OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
+					)
+				OR
+					("anti-money laundering" OR "Stolen Asset Recovery Initiative")
+				OR
+					(
+						("law" OR "act*" OR "regulat*" OR "rule" OR "rules" OR "legislat*" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties"
+						OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")
+						AND
+							(("stolen" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
+							NEAR/5
+								("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art"
+								OR "gold" OR "jewel*" OR "crypto" OR "bit coin" OR "yacht$" OR "private jet$" OR "expensive car$" OR "watches" OR  "shares" OR "stock" OR "security"
+								OR "Ship$" OR "Vessel$" OR "cargo*"))
+					)
+			)
+	)
 )
-OR
-("anti-money laundering" OR "Stolen Asset Recovery Initiative")
-OR
-((("law" OR "act*" OR "regulat*" OR "rule" OR "rules" OR "legislat*" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")) AND (("stolen" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*") NEAR/5 ("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art" OR "gold" OR "jewel*" OR "crypto" OR "bit coin" OR "yacht$" OR "private jet$" OR "expensive car$" OR "watches" OR  "shares" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*")))
-)
-)
+
 ```
 #### Phrase 4
 This phrase is about organized crime. Parts of the subject will be covered by the queries in phrases 1-3 as the topics are interwoven with organized crime. 
