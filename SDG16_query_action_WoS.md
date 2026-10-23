@@ -549,10 +549,10 @@ This target is interpreted to cover research about
 - strengthening recovery of stolen assets 
 - fighting all organized crime  
  
-For research on reduction of illicit financial flows, it should also cover research on strengthening the capacity to track and control illegal financial flows in and out of countries. This includes research on capital controls, tax evasion, business transparency, money laundering etc.  Illicit arms flow and recovery and returning stolen assets, are aspects of illicit financial flows and organized crime. 
+For research on reduction of illicit financial and arms flows, it should also cover research on strengthening the capacity to track and control illegal financial and arms flows in and out of countries. This includes research on capital and arms controls, tax evasion, business transparency, money laundering etc.  Illicit arms flows, recovery and returning stolen assets, illicit financial flows and organized crime are all closly interconnected. 
 
-Assets in this context is defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
-Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5. Substantially reduce corruption and bribery.  It can also cover human trafficking, a topic more extensively covered by 16.2. Protect children from abuse, exploitation, trafficking and violence.
+Assets in this context are defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
+Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5. Substantially reduce corruption and bribery.  It can also cover human trafficking, a topic covered by 16.2. Protect children from abuse, exploitation, trafficking and violence.
 
 https://sdg16now.org/report/target16-4/ 
 
@@ -564,22 +564,51 @@ This phrase is about reducing illicit financial flows (IFF) and consist of reduc
 ```py
 TS=
 (
-    (
-        ("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
-        NEAR/5
-            ("financ*" OR "money" OR "cash" OR "capital" OR "economic*" OR "trade")
-    )
-    OR "Tax evasion*" OR "Duty evasion" OR "Trade misinvoic*" OR "Money laundering" OR "Tax haven$"
-    OR
-    (
-        ("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*" OR "Secre*")
-    )
+	(
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*"
+	OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
+	NEAR/5
+    	(
+			(
+        	("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+        	NEAR/5
+            	("financ*" OR "money" OR "cash" OR "capital" OR "economic*" OR "currenc*" OR "transaction$" OR trade OR "commercial practic*" OR "commercial activit*")
+    		)
+			OR "Tax evasion*" OR "Duty evasion" OR "Trade misinvoic*" OR "Money laundering" OR "Tax haven$" OR " Financial haven$"
+			OR
+				(
+					("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+					NEAR
+						(
+							("financ*" OR "money" OR "cash" OR "capital" OR "economic*") NEAR/3 ("Transfer*")
+						)
+				)
+			OR
+				(
+					("business" OR "econom*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("manipulation$" OR "fraud$" OR "Secre*")
+				)
+		)
+	)
+				OR
+				(
+					("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
+					OR "encourag*" OR "facilitat*" OR "ensure")
+					NEAR/5
+    					(
+							(
+        					("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*")
+    						)
+								OR " ownership regist*" OR "Global Financial Integrity")
+				)
+				
+		
 )
 
 ```
 
 #### Phrase 2
-This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms to avoid litterature on arms as body parts. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the phrase contains strengthening + tracing + weapons.
+This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms 
+to avoid litterature on arms as body parts. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the query consist of strengthening + tracing + weapons.
 ```py
 TS=
 (
