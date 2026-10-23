@@ -1205,19 +1205,77 @@ TS=
 > 16.10.2 Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information
 
 This target is interpreted to cover research about 
-- ensuring public access to information.  
-- protection of fundamental freedoms.  Fundamental freedoms are here interpreted as part of basic human rights, like 
+- Ensuring public access to information.  
+The other side of the coin as avoiding disinformation and fake news. For a description on the topic disinformation:
+>“While misinformation refers to the accidental spread of inaccurate information, disinformation is not only inaccurate, but intends to deceive and is spread in order to do serious harm.
+>Disinformation can be spread by state or non-state actors. It can affect a broad range of human rights, undermining responses to public policies or amplifying tensions in times of emergency or armed conflict.
+>There is no universally accepted definition of disinformation. No one definition may be sufficient on its own, given the multiple and different contexts in which concerns over disinformation may arise, including with >regard to issues as diverse as electoral process, public health, armed conflicts, or climate change.” See https://www.un.org/en/countering-disinformation
+- protection of fundamental freedoms. Fundamental freedoms are here interpreted as part of basic human rights, like 
     “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
     (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english)
+- ensuring public access to information about the extent of killings, kidnapping, violence against and disappearance of typically journalists, media personnel, trade unionist and human rights advocates
 
-Both parts of the target should be in accordance with national laws and international agreements.  It also includes research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information 
+All parts of the target should be in accordance with national laws and international agreements.  It also includes research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information 
 
 “The four freedoms relate to freedom of speech, freedom of worship, freedom from want and freedom from fear. They are sometimes simply referred to as freedom from fear and freedom from want.” https://www.ohchr.org/en/human-rights/universal-declaration/translations/english 
+
+For definition of right to information, see Unesco’s information: https://www.unesco.org/en/right-information
+
+It should include research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information.
+Unavoidably the find (hits) will contain all sorts of topics as it is about access to information on anything, like politics, environment, health, urban planning etc, no restriction according to topic.
+
+The query consist of four phrases:
+- Public access to information
+- Killings and kidnapping of journalists
+- Fundamental freedoms for everyone
+
+#### Phrase 1
+The query contains of search for strengthening + public + access/ rights + information/news. It also contains the opposite of reducing/controlling + public + disinformation. 
+The search is not searching public*, but public or publicly, to avoid literature on for instance publicity or publications. 
+
 
 ```py
 TS=
 (
-
+(
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
+NEAR/5
+(
+(
+(("Public" OR "Publicly") NEAR/5 (("access*" OR "availab*") NEAR/5 ("information*" OR "news")))
+OR
+(("access" OR "rights" OR "right" OR "freedom$" OR "transparan*") NEAR/1 ("news" OR "documents"))
+OR
+(("ATI" OR "Access-to-information" OR "freedom of information") NEAR/5 ("law*" OR "framework$" OR "legislation$")) 
+)
+)
+)
+OR
+(
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+NEAR/5
+("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news")) OR "deepfake$" OR "incorrect information" OR "false information" OR "inaccurate information")
+)
+)
+```
+#### Phrase 2
+This phrase is concerning the fact that killings and kidnappings of journalist and media personell are a threat to access to information in a society. The query consist of Stopping/abolishing + killings/kidnapping/imprisonment + journalists/media staff 
+```py
+TS=
+(
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+NEAR/5
+(("Killing$" OR "disappear$" OR "torture" OR "kidnapping" OR "detention" OR "imprison*" OR "custody" OR "incarceration") NEAR/3 ("journalis*" OR "media personnel" OR "media staff" OR "trade unionist$" OR "trades unionist$" OR "union member$" OR "trade unionism" OR "human rights advocate$" OR "rights defender$" OR "activist$"))
+)
+```
+#### Phrase 3
+This phrase is about protecting fundamental freedoms for everyone in a society, and the query is built on strengthening/protect +  freedom/rights + information/assembly/belief
+```py
+TS=
+(
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
+NEAR/5
+((("Freedom$" OR "right$") NEAR/3 ("Information" OR "thought" OR "press" OR "opinion" OR "speech" OR "assembl*" OR "association*" OR "worship" OR "religious" OR "belief" OR "religion" OR "conscience")) OR "free press" OR "freedom from want" OR "freedom from fear")
 )
 ```
 
