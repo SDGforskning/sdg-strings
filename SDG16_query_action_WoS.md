@@ -608,7 +608,8 @@ TS=
 
 #### Phrase 2
 This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms 
-to avoid litterature on arms as body parts. As the second half of the phrase is about tracing armaments, to have more control with the flow of weapons, the query consist of strengthening + tracing + weapons.
+to avoid litterature on arms as body parts. The search has to contain illicit/illegal, to avoid the litterature on legal weaponry. As the second half of the phrase 
+is about tracing armaments, to have more control with the flow of weapons, the query consist of strengthening + tracing + weapons/weaponization.
 ```py
 TS=
 (
@@ -618,17 +619,19 @@ TS=
 	NEAR/5
     	("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
     	NEAR/5
-        	("armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" 			OR "artiller*") 
+        	("armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$"
+			OR "artiller*") 
 			OR
     			("arms"
-				NEAR/0 ("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted"
-						OR "privately manufactured")
+				NEAR/0
+					("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
 				)
     		OR
     			(
         			("Trafficking" OR "smuggl*")
         			NEAR/1
-            			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$" 						OR "gun$" OR "handgun$" OR "artiller*")
+            			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$"
+						OR "gun$" OR "handgun$" OR "artiller*")
     			)
 				OR
 					(
@@ -636,51 +639,51 @@ TS=
 						OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
 						NEAR/5
         					(
-            					("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control" 								OR "national registry" OR "foreign registry")
+            					("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control"
+								OR "national registr*" OR "foreign registr*")
             					NEAR/5
-                					("small arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry"
-									OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*")
+                					("small arms" OR "armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$"
+									OR "gun$" OR "handgun$" OR "artiller*")
         					)
-    					OR
+    						OR
         					(
             					(
-                					("Tracing" OR "Traceable" OR "traced"  OR "seizures" OR "seized" OR "Identif*" OR 										"record*" OR "control" OR "national registry" OR "foreign registry")
+                					("Tracing" OR "Trace*" OR "track$" OR "seizures" OR "Identif*" OR "record*" OR "control"
+									OR "national registr*" OR "foreign registr*")
                 					NEAR/0 ("arms")
             					)
         					)
-    					OR
-        							("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty"
-									OR "Register of Conventional Arms") 
+    								OR
+        								("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
 					)
 )
 ```
 #### Phrase 3
-This phrase covers research on the increased work for recovery of stolen assets and the structure of the query is strengthen + recovery + stolen + assets
+This phrase is about research on the increased work for recovery of stolen assets. Return, as a synonym of recovery, needs a seperate search query as its double meaning will give hits on the return on money. 
+The structure of the query is strengthen + recovery + stolen + assets
 https://www.u4.no/publications/the-recovery-of-stolen-assets-a-fundamental-principle-of-the-un-convention-against-corruption
 
 
 ```py
 TS=
 (
-	("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
-	OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
-	NEAR/5
-		(
-			("recover*" OR "return*" OR "recaptur*" OR "repossess*" OR "trac*" OR identif* OR "freez*" OR "seiz*" OR "confiscat*")
-			AND
-			(
-				(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
-				NEAR/5
-					("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert$" OR "real estate$"
-					OR "valuables" OR "collectables" OR "fine art" OR "gold" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$" OR "yacht$"
-					OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
-			) 
-			
-
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
+OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+NEAR/5
+(
+(("return*" ) NEAR/3 ("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*"))
+OR
+(("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
+AND 
+(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*") AND ("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$" OR 		"valuables" OR "collectables" OR "fine art$" OR "gold*" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$" OR "yacht$" OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
+)
+OR
+("anti-money laundering" OR "Stolen Asset Recovery Initiative")
+)
 )
 ```
 #### Phrase 4
-This phrase is about organized crime. Parts of the subject will be covered by the query in phrases 1-3, as the topics above are interwoven with organized crime. 
+This phrase is about organized crime. Parts of the subject will be covered by the queries in phrases 1-3 as the topics are interwoven with organized crime. 
 The query is containg weakening/reducing/controlling + criminal organisations.
 https://www.unodc.org/unodc/en/organized-crime/intro.html
 
@@ -695,7 +698,7 @@ TS=
 			("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
 			OR "Business" OR "firm$" OR "compan*" OR "professional*")
 		OR
-		("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR"Transnational crime" OR "International crime"
+		("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR "Transnational crime" OR "International crime"
 		OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
 )
 ```
