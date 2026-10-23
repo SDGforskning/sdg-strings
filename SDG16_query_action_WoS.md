@@ -664,7 +664,7 @@ TS=
 This phrase is about research on the increased work for recovery of stolen assets. Return, as a synonym of recovery, needs a seperate search query as its double meaning will give hits on the return on money. 
 The structure of the query is strengthen + recovery + stolen + assets
 https://www.u4.no/publications/the-recovery-of-stolen-assets-a-fundamental-principle-of-the-un-convention-against-corruption
-(Note: There seems to be something not working with this phrase)
+(Note: There is something taht does not work with following query in WoS - working on it)
 
 
 ```py
