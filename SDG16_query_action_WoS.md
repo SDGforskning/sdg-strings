@@ -230,11 +230,11 @@ United Nations Children’s Fund, International Classification of
 Violence against Children, UNICEF, New York, 2023. p13.  Available here: https://data.unicef.org/resources/international-classification-of-violence-against-children/
 See also article 19 in the UN Convention on the Right of the Child. https://www.unicef.org/child-rights-convention. 
 
-The complete query consists of 6 phrases.
+The complete query consists of 6 phrases. The action element of all phrases is identical containing verbs meaning reducing and ending, in addition two opposites, growth and increase is included.
 
 #### Phrase 1
 This phrase searches for research about reducing and ending abuse and maltreatment of children.
-The term abuse is used in phrases to avoid noise from “substance abuse”. This results in “double” searching, e.g. child is included in both "child abuse" and in the second part of the topic-search, child*.
+The term abuse is used in phrases to avoid noise from “substance abuse”. This results in “double” searching, e.g. child is included in both "child abuse" and in the second part of the topic-search, child*. The basic structure is reduce or end + abuse or maltreatment + children
 ```py
 TS=
 (
@@ -248,8 +248,7 @@ TS=
 		 	"maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
 			NEAR/5
 				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
- 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*"
-				OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+ 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR 							"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
 	) 
 )
@@ -262,17 +261,13 @@ To avoid large amounts of noise from alcohol, substance and drug misuse, the ter
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 		"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		NEAR/5
 			(
-				("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*" OR "illegal adoption$" OR
-				"exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r" OR "bonded labo$r" OR
-				"forced criminality" OR "forced crime" OR “forced begging”)
+				("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*" OR "illegal 					adoption$" OR "exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r" OR 					"bonded labo$r" OR "forced criminality" OR "forced crime" OR “forced begging”)
 			 	NEAR/5
-					 ("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
-					"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" 
-					OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR 							"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
 )
 ```
@@ -283,28 +278,26 @@ This phrase searches for research about the reduction and ending of violence, br
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" 
-	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 			"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
  		NEAR/5
 			(
 				("violence" OR "violent" OR "brutality" OR "brutal treatment" OR "physical punishment"
 				OR "corporal punishment" OR "physical aggression" OR "verbal aggression" OR "bullying" OR
 				"beating" OR "physical fighting" OR "physical assault")
 				NEAR/5
-						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
-						OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
-						OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
+				OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+				OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
 )
 ```
 #### Phrase 4
-This phrase searches for research about reducing and ending sexual violence against children. The first parenthesis in the last part of the phrase, which requires some kind for force might be considered unnecessary. All sexual contact between children and adults is illegal and unwanted. But to cover unwanted sexual contact between children/minors, and avoid the inclusion of consensual sexual contact between peers it is included. 
+This phrase searches for research about reducing and ending sexual violence against children. The first parenthesis in the last part of the phrase, which requires some kind for force might be considered unnecessary. All sexual contact between children and adults is illegal and unwanted. But to cover unwanted sexual contact between children/minors, and avoid the inclusion of consensual sexual contact between peers it is included. The basic structure is: reducing or ending + sexual violence + children
 ```py
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-	 OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 		"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		 NEAR/5
 			(
 				("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
@@ -325,21 +318,20 @@ TS=
 
 ```
 #### Phrase 5
-This phrase searches for research about reducing and ending psychological and emotional violence, that is not covered by the terms violence or maltreatment, against children. The basic structure is end + emotional violence + children.
+This phrase searches for research about reducing and ending psychological and emotional violence, that is not covered by the terms violence or maltreatment, against children. The basic structure is: end + emotional violence + children.
 ```py
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*"
-	OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 			"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 			NEAR/5
 			(
 				(
-					("repeat*" OR "frequent*" OR "constant*" or "systematic")
+					("repeat*" OR "frequent*" OR "constant*" or "systematic*")
 							NEAR/3
 					("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
 					OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
-					OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
+					OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR 							"humiliating")
 				)
 				 NEAR/5
 						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
@@ -745,7 +737,7 @@ For practical purposes this definition of corruption is used: abuse of entrusted
 >
 This query consists of 6 phrases.
 #### Phrase 1
-This phrase searches for research about reducing or fighting bribery or corruption expressed by using the general definition stated above. 
+This phrase searches for research about reducing or fighting bribery or corruption expressed by using the general definition stated above. The basic structure is: fighting and reducing + abuse of entrusted power + private gain.
 
 ```py
 TS=
@@ -771,7 +763,7 @@ TS=
 
 ```
 #### Phrase 2
-This phrase searches for various activities, situations and phenomenon often associated with corruption and bribery. To avoid noise from research where corruption is not the context, corrupt* is searched within a proximity of maximum 15 words. Bribery is not added because it is searched as a stand-alone term in phrase 4.
+This phrase searches for various activities, situations and phenomenon often associated with corruption and bribery. To avoid noise from research where corruption is not the context, corrupt* is searched within a proximity of maximum 15 words. Bribery is not added because it is searched as a stand-alone term in phrase 4. The basic structure is: fight or reduce + corrupt + possible context for corruption.
 ```py
 TS=
 (
@@ -789,7 +781,7 @@ TS=
 )
 ```
 #### Phrase 3
-This phrase searches for research where the term corrupt is used in the sense that is relevant to this SDG target. Due to the term's polysemy it can not be used as a stand-alone search term.
+This phrase searches for research where the term corrupt is used in the sense that is relevant to this SDG target. Due to the term's polysemy it can not be used as a stand-alone search term. The basic structure is: reduce or fight + corrupt acts.
 ```py
 TS=
 (
@@ -806,7 +798,7 @@ TS=
 )
 ```
 #### Phrase 4
-This phrase searches for research about fighting and reducing bribery. The basic structure is reduce/fight + bribery.
+This phrase searches for research about fighting and reducing bribery. The basic structure is: reduce/fight + bribery.
 ```py
 TS=
 (
@@ -835,7 +827,7 @@ TS=
 )
 ```
 #### Phrase 6
-This phrase searches for research about anti-corruption. In addition to "anti-corruption", promoting and ensuring transparency and electoral integrity is covered.
+This phrase searches for research about anti-corruption. In addition to "anti-corruption", promoting and ensuring transparency and electoral integrity is covered. The phrase consists of this element only.
 ```py
 TS=
 (
@@ -1083,7 +1075,7 @@ TS=
 )
 ```
 #### Phrase 2
-This phrase searches for research on strenghtening the participation of developing countries in UN organizations.  All UN organizations are mentioned, but those containing "United Nations" can be omitted as they are already included in "United Nations" as a stand-alone search. The abbreviation WHO is not included to avoid noise from the pronoun who. The basic structure is: strengthen + participation + developing countries + UN organizations.
+This phrase searches for research on strengthening the participation of developing countries in UN organizations.  All UN organizations are mentioned, but those containing "United Nations" can be omitted as they are already included in "United Nations" as a stand-alone search. The abbreviation WHO is not included to avoid noise from the pronoun who. The basic structure is: strengthen + participation + developing countries + UN organizations.
 ```py
 TS=
 (
@@ -1176,6 +1168,7 @@ TS=
 				OR "Organization of American States" OR "League of Arab States" OR "Arab League" OR "SAARC")
 			)
 )
+```
 ### Target 16.9
 
 > **16.9 By 2030, provide legal identity for all, including birth registration**
@@ -1306,16 +1299,97 @@ NEAR/5
 
 This target is interpreted to cover research about strengthening national institutions to prevent violence and combat terrorism and crime, including through international cooperation.
 
-Relevant national institutions are for example courts of law, intelligence and investigative institutions and police. 
+Relevant national institutions are for example courts of law, intelligence and investigative institutions, police, child protection and social services. 
+
+This target has a complex structure and including all the elements in the search yield a low number of results. Perhaps the last element of each of the search phrases: preventing and combating crime and terrorism should be left out.
+The query consist for three phrases.
+
+#### Phrase 1
+This phrase searches for research about strengthening and building capacity in legal, investigative and security sector to prevent and fight crime and terrorism. The basic structure is: strengthen + legal sector + preventing/fighting crime and terror.
 
 
 ```py
 TS=
 (
-
+	("strengthen*" OR (("build*") NEAR/1 ("capacity")) OR "develop" OR "developing"
+	OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "establish*" OR "propose*" 
+	OR "implement*" OR "joint effort*" OR "cooperat*" OR "collaborat*")
+	NEAR/5
+	("polic*" OR "justice" OR "court* of law" OR "legal" OR "judicial" OR
+	"judiciary" OR "counter terrorism" OR  "counterterrorism" OR "investigat*"
+	OR
+			(("intelligence" OR "security")
+			NEAR/1
+			("agenc*" OR "organi$ation*" OR "service*")))
+	NEAR/5
+	(
+		("prevent*" OR "combat*" OR "decreas*" OR "reduc*" OR "limit$" OR 
+		"limiting" OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering" OR
+		"lower$" OR "lowered" OR "fight*" OR "combat*")
+		NEAR/2
+		("crime" OR "criminal act*" OR "terror*" OR "violence"
+		OR "violent"))
 )
 ```
+#### Phrase 2
+This phrase searches for research about strengthening and building capacity in child protection, family welfare and social service institutions to prevent and fight crime and terrorism. The basic structure is: strengthen + social service institutions + preventing/fighting crime and terror.
+```py
+TS=
+(
+		(
+			("strengthen*" OR (("build*") NEAR/1 ("capacity")) OR
+			"develop" OR "developing" OR "facilitat*" OR "promot*" OR
+			"boost*" OR "ensure" OR "establish*" OR "propose*" OR
+			"implement*" OR "joint effort*" OR "cooperat*" OR "collaborat*")
+			NEAR/5
+			("child protection services" OR "child welfare services" OR "social services"
+			OR "street level bureaucra*" OR	"family protection" OR
+			"family counselling" OR "family welfare office*")
+		)
+			NEAR/15
+		(
+			("prevent*" OR "combat*" OR "decreas*" OR "reduc*"	OR "limit$" 
+			OR "limiting" OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering"
+			OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+				NEAR/2
+				("crime" OR "criminal act*" OR "terror*" OR "violence" OR "violent")
+		)
 
+)
+
+```
+#### Phrase 3
+This phrase searches for research about strengthening and building capacity in legal, investigative and security sector to prevent and fight crime and terrorism. The basic structure is: strengthen + institutions that work with rehabilitation of criminals + preventing/fighting crime and terror.
+```py
+TS=
+(
+	("strengthen*" OR (("build*") NEAR/1 ("capacity")) OR "develop" 
+	OR "developing" OR "facilitat*" OR "promot*" OR "boost*" OR "ensure"
+	OR "establish*" OR "propose*" OR "implement*" OR "joint effort*" OR
+	"cooperat*" OR "collaborat*")
+	NEAR/15
+	(
+		(
+		("offender*" OR "prisoner*" OR "criminal*")
+		NEAR/2
+		("rehabilitation" OR "reintegration" OR "reentry" OR
+		"re-entry" OR "return")
+		)
+		OR "correctional services" OR "correctional facilit*"
+		OR "prison"
+	)
+	NEAR/15
+	(
+		("prevent*" OR "combat*" OR "decreas*" OR "reduc*"
+		OR "limit$" OR "limiting" OR "mitigat*" OR "tackl*"
+		OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+		OR "fight*" OR "combat*")
+		NEAR/2
+		("crime" OR "criminal act*" OR "terror*" OR "violence"
+		OR "violent")
+	)
+)
+```
 ### Target 16.b
 
 > **16.b Promote and enforce non-discriminatory laws and policies for sustainable development**
