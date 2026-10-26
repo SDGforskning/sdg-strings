@@ -569,7 +569,7 @@ TS=
 			OR "Tax evasion*" OR "Duty evasion" OR "Trade misinvoic*" OR "Money laundering" OR "Tax haven$" OR " Financial haven$"
 			OR
 				(
-					("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+					("illicit*" OR "illegal*" OR "crim*" OR "unlawful*" OR "corrupt*" OR "fraud*")
 					NEAR
 						(
 							("financ*" OR "money" OR "cash" OR "capital" OR "economic*") NEAR/3 ("Transfer*")
