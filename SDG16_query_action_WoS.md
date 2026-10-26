@@ -669,11 +669,12 @@ TS=
 			(
 				(("return*" ) NEAR/3 ("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*"))
 				OR
-					(("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
+					(
+					("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
 					AND 
 						(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
 						AND
-							("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$"
+							("asset$" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$"
 							OR "valuables" OR "collectables" OR "fine art$" OR "gold*" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$"
 							OR "yacht$" OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
 					)
@@ -686,7 +687,7 @@ TS=
 						AND
 							(("stolen" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
 							NEAR/5
-								("assets" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art"
+								("asset$" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art"
 								OR "gold" OR "jewel*" OR "crypto" OR "bit coin" OR "yacht$" OR "private jet$" OR "expensive car$" OR "watches" OR  "shares" OR "stock" OR "security"
 								OR "Ship$" OR "Vessel$" OR "cargo*"))
 					)
