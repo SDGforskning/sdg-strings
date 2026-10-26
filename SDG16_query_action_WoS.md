@@ -656,8 +656,6 @@ TS=
 This phrase is about research on the increased work for recovery of stolen assets. Return, as a synonym of recovery, needs a seperate search query as its double meaning will give hits on the return on money. 
 The structure of the query is strengthen + recovery + stolen + assets
 https://www.u4.no/publications/the-recovery-of-stolen-assets-a-fundamental-principle-of-the-un-convention-against-corruption
-(Note: There is something taht does not work with following query in WoS - working on it)
-
 
 ```py
 TS=
@@ -671,9 +669,9 @@ TS=
 				OR
 					(
 					("recover*" OR "recaptur*" OR "repossess*" OR "trac*" OR "identif*" OR "freez*" OR "seiz*" OR "confiscat*") 
-					AND 
+					NEAR 
 						(("stolen" OR "Plunder*" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
-						AND
+						NEAR
 							("asset$" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "propert*" OR "real estate$"
 							OR "valuables" OR "collectables" OR "fine art$" OR "gold*" OR "jewel*" OR "diamond$" OR "crypto" OR "bit coin$"
 							OR "yacht$" OR "private jet$" OR "expensive car$" OR "share$" OR "stock" OR "security" OR "Ship$" OR "Vessel$" OR "cargo*"))
@@ -684,7 +682,7 @@ TS=
 					(
 						("law" OR "act*" OR "regulat*" OR "rule" OR "rules" OR "legislat*" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties"
 						OR "strateg*" OR "framework$" OR "instrument$" OR "governance" OR "procedur*" OR "practice$" OR "action$" OR "principle$" OR "initiative*")
-						AND
+						NEAR
 							(("stolen" OR "hidden" OR "secreted" OR "illicit*" OR "illegal*")
 							NEAR/5
 								("asset$" OR "monies" OR "money" OR "cash" OR "funds" OR "finance*" OR "bank account$" OR "property" OR "real estate" OR "valuables" OR "collectables" OR "fine art"
