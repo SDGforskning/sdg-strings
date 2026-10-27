@@ -795,7 +795,7 @@ TS=
    OR "facilitat*" OR "raise" OR "raising" OR "raised" OR "boost*" OR "reform$" OR "reforming" OR "reformed" OR "heighten*"
   )
 NEAR
-  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
+  ("ODA" OR "develop* assist*" OR "develop* aid" OR "development spending" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
    "cooperation* fund*" OR "foreign invest*" OR "international invest*" OR "develop* invest*" OR
    "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*" OR "develop* fund*" OR
    "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR
