@@ -523,7 +523,7 @@ Phrase 1
 ```py
 TS=
 ((
-  ("ODA" OR "develop* assist*" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
+  ("ODA" OR "develop* assist*" OR "development spending" OR "develop* aid" OR "foreign aid$" OR "international aid$" OR "co-operation* fund*" OR
    "cooperation* fund*" OR "foreign invest*" OR "international invest*" OR "develop* invest*" OR
    "foreign financ*" OR "international financ*" OR "foreign fund*" OR "international fund*" OR "develop* fund*" OR
    "foreign support$" OR "international support$" OR "foreign assist*" OR "international assist*" OR "foreign subsid*" OR
