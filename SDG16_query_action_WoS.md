@@ -51,9 +51,9 @@ Conflicts are often the cause of violence, hence the notions are closely linked 
 
 The query should also find research on work for peace as an aspect of reducing violence.
 
-The conflicts are of different character and are reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
+The violence is of different character and are reported from all over the world, hence no definition or limitation to particular geographical areas or states in the query. 
 
-This query consists of 4 phrases.
+This query consists of 4 phrases according to different aspects of violence.
 
 #### Phrase 1
 
@@ -89,7 +89,7 @@ TS=
 
 #### Phrase 2
 
-Wars and armed conflicts causes violence and the search consist of violent + war/warfare/conflict. Violence is covered in phrase 1.
+Wars and armed conflicts causes violence and the query consist of violent + war/warfare/conflict/attacks/riots. "Violence" is covered in phrase 1.
 
 The action for reducing conflict leading to violence is phrased as decrease + violent/armed conflict
 
