@@ -86,7 +86,7 @@ TS=
 ```
 #### Phrase 2 
 
-This query consist of violent + war/warfare/conflict/attacks/riots. Violence is covered by the first query.
+This query consist of violent + war/warfare/conflict/attacks/riots. "Violence" is covered in phrase 1.
 
 ```py
 TS=
@@ -109,7 +109,7 @@ OR
             )  
 OR
     (
-        ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/5 ("war$" OR "warfare$")
+        ("Violent*" OR "Armed" OR "military" OR "militia*" OR "paramilitary") NEAR/3 ("war$" OR "warfare$")
     )
 OR
     (
@@ -117,7 +117,7 @@ OR
     ) 
 OR 
     (
-        ("Violent*" OR "armed") NEAR/5 ("death$" OR "fatalit*" OR "injur*")
+        ("Violent*" OR "armed") NEAR/3 ("death$" OR "fatalit*" OR "injur*")
     )
 OR 
     (
@@ -141,9 +141,8 @@ OR
 ```
 #### Prase 3 
 
-This query is based on the seach: family/gender/partner + violence/abuse/maltreatment. Related is a query covering violence/abuse/maltreatment + physical/mental.
+Family violence is only partly covered by the query on violence and murder in phrase 1. The query in this phrase is more directly on family and partner violence expresse in a query on family/gender/partner + violence/abuse/maltreatment. Related is also a query covering violence/abuse/maltreatment + physical/mental, though this also covers situations outside family violence.
 
-Family violence is partly covered by the above search on violence and murder.
 
 ```py
 TS=
@@ -169,7 +168,7 @@ OR
 ```
 
 #### Phrase 4
-This quary is based on peacebuilding.
+The research on work for peace is research on the opposite of violence, research on work for stability and avoiding conflicts and killings. The query consist of peacebuilding.
 
 ```py
 TS=
@@ -234,6 +233,49 @@ TS=
 
 This target is interpreted to cover research about 
 
+- reduction of illicit financial flows (IFFs) 
+- reduction of illicit arms flows 
+- strengthening recovery of stolen assets 
+- fighting all organized crime  
+ 
+For research on reduction of illicit financial and arms flows, it should also cover research on strengthening the capacity to track and control illegal financial and arms flows in and out of countries. This includes research on capital and arms controls, tax evasion, business transparency, money laundering etc.  Illicit arms flows, recovery and returning stolen assets, illicit financial flows and organized crime are all closly interconnected. 
+
+Assets in this context are defined as financial assets like cash and bank accounts, real estate like land and property, and valuables like for instance fine art, gold, crypto currency, private jets etc. 
+Fighting organized crime can to a large extent include research on corruption, a theme covered broader in SDG 16.5. Substantially reduce corruption and bribery.  It can also cover human trafficking, a topic covered by 16.2. Protect children from abuse, exploitation, trafficking and violence.
+
+https://sdg16now.org/report/target16-4/ 
+
+The query consists of 4 phrases.
+
+#### Phrase 1
+
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 1
+
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 1
+
+```py
+TS=
+(
+
+)
+```
+
+#### Phrase 1
+
 ```py
 TS=
 (
@@ -284,6 +326,47 @@ TS=
 > 16.7.2 Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group
 
 This target is interpreted to cover research about 
+-	ensuring responsive decision-making institutions
+-	ensuring decision-making institutions are inclusive
+-	ensuring participatory decision-making institutions 
+-	ensuring representative decision-making institutions
+across demographic groups or population groups, in local, national and international decision-making institutions. 
+
+Decision-making institutions are here understood as legislature, public service and judiciary institutions.  Judicial institutions are understood as covering the courts of law at all levels. These institutions as well as legislatures and public services, are named at a generic level.  
+
+Minority groups, including political minorities, or according to sex, sexual orientation, disability, age, ethnicity, religion, etc., that are underrepresented or unrepresented in decision-making institutions, are not explicitly named in the search string. The theory is that they will anyhow be retrieved by the query asking for responsive, inclusive, participatory and representative decision-making institutions. This also avoid the risk that a few unmentioned groups are not covered by the query.
+
+The target is divided in 4 phrases:
+-	Governance, on national and local level
+-	The legislatures
+-	The public service
+-	The judiciary
+  
+#### Phrase 1
+
+```py
+TS=
+(
+
+)
+```
+#### Phrase 2
+
+```py
+TS=
+(
+
+)
+```
+#### Phrase 3
+
+```py
+TS=
+(
+
+)
+```
+#### Phrase 4
 
 ```py
 TS=
@@ -331,6 +414,47 @@ TS=
 > 16.10.2 Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information
 
 This target is interpreted to cover research about 
+- Ensuring public access to information.  
+The other side of the coin as avoiding disinformation and fake news. For a description on the topic disinformation:
+>“While misinformation refers to the accidental spread of inaccurate information, disinformation is not only inaccurate, but intends to deceive and is spread in order to do serious harm.
+>Disinformation can be spread by state or non-state actors. It can affect a broad range of human rights, undermining responses to public policies or amplifying tensions in times of emergency or armed conflict.
+>There is no universally accepted definition of disinformation. No one definition may be sufficient on its own, given the multiple and different contexts in which concerns over disinformation may arise, including with >regard to issues as diverse as electoral process, public health, armed conflicts, or climate change.” See https://www.un.org/en/countering-disinformation
+- protection of fundamental freedoms. Fundamental freedoms are here interpreted as part of basic human rights, like 
+    “ ...freedom of speech, freedom of worship, freedom from want and freedom from fear...” 
+    (https://www.ohchr.org/en/human-rights/universal-declaration/translations/english)
+- ensuring public access to information about the extent of killings, kidnapping, violence against and disappearance of typically journalists, media personnel, trade unionist and human rights advocates
+
+All parts of the target should be in accordance with national laws and international agreements.  It also includes research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information 
+
+“The four freedoms relate to freedom of speech, freedom of worship, freedom from want and freedom from fear. They are sometimes simply referred to as freedom from fear and freedom from want.” https://www.ohchr.org/en/human-rights/universal-declaration/translations/english 
+
+For definition of right to information, see Unesco’s information: https://www.unesco.org/en/right-information
+
+It should include research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information.
+Unavoidably the find (hits) will contain all sorts of topics as it is about access to information on anything, like politics, environment, health, urban planning etc, no restriction according to topic.
+
+The query consist of three phrases:
+- Public access to information
+- Killings and kidnapping of journalists
+- Fundamental freedoms for everyone
+
+#### Phrase 1
+
+```py
+TS=
+(
+
+)
+```
+#### Phrase 2
+
+```py
+TS=
+(
+
+)
+```
+#### Phrase 3
 
 ```py
 TS=
