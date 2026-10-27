@@ -300,6 +300,63 @@ TS=
 ```
 
 #### Phrase 2
+This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms to avoid litterature on arms as body parts. The search has to contain illicit/illegal, to avoid the litterature on legal weaponry. As the second half of the phrase is about finding research on control with the flow of illigeal weapons, the\is part of the query consist of strengthening + tracing + weapons/weaponization.
+
+```py
+TS=
+(
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+	OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
+	OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
+	NEAR/5
+		(
+    		("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    		NEAR/5
+        	("armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$"
+			OR "artiller*") 
+			OR
+    			("arms"
+				NEAR/0
+					("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+				)
+			OR
+    			(
+        			("Trafficking" OR "smuggl*")
+        			NEAR/1
+            			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$"
+						OR "gun$" OR "handgun$" OR "artiller*")
+    			)
+		)
+	OR
+		(
+			("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*"
+			OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
+			NEAR/5
+				(
+					("Tracing" OR "Trace*" OR "Track$" OR "seizures" OR "Identif*" OR "record*" OR "control"
+					OR "national registr*" OR "foreign registr*")
+					NEAR/5
+						("small arms" OR "armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$"
+						OR "gun$" OR "handgun$" OR "artiller*")
+				
+				OR
+        					(
+            					(
+                					("Tracing" OR "Trace*" OR "track$" OR "seizures" OR "Identif*" OR "record*" OR "control"
+									OR "national registr*" OR "foreign registr*")
+                					NEAR/0 ("arms")
+            					)
+        					)
+				)
+
+	OR
+		("Small Arms Trade Transparency Barometer" OR "Arms Trade Treaty" OR "Register of Conventional Arms") 
+					)
+
+)
+```
+
+#### Phrase 3
 
 ```py
 TS=
@@ -308,16 +365,7 @@ TS=
 )
 ```
 
-#### Phrase 1
-
-```py
-TS=
-(
-
-)
-```
-
-#### Phrase 1
+#### Phrase 4
 
 ```py
 TS=
