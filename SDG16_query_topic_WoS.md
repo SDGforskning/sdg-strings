@@ -486,34 +486,50 @@ The target is divided in 4 phrases:
 -	The judiciary
   
 #### Phrase 1
+This query consist of search for research on (accommodate/develope +) inclusive/accessible + governance/government
 
 ```py
 TS=
 (
-
+(("Inclusiv*" OR "Accessibl*" OR "Diversit*" OR "Responsiv*" OR "Receptiv*" OR "Participat*" OR "partake*" OR "Take part" OR "Representative") NEAR/3 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority" OR "directorate" OR "ministry" OR "department" OR "governing bod*"))
+OR
+(("Exclusi*" OR "exclude*" OR inaccessible OR "Unresponsive" ) NEAR/3 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority"))
 )
 ```
 #### Phrase 2
+This query consist of research on inclusive/accessible + the legislatures. Parts of the debate on the topic is about avoiding that majority groups exclude minorities, but as exclusive rights some times are used to benefit in particular earlier discriminated groups of people, this is not part of the search.
 
 ```py
 TS=
 (
-
+	(("Inclusive" OR "Accessible" OR "Diversit*" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
+	NEAR/5
+		("Legislature" OR ("Legislative" NEAR/3 ("bod*" OR "assembl*" OR "Council$")) OR "Legislation$" OR "Congress" OR "Parliament$" OR "National Assembl*"
+		OR "Senate" OR "House of Representatives" OR "House of Commons")) 
 )
 ```
 #### Phrase 3
+This phrase consist of query concerning research on inclusive/accessible + public service
+
 
 ```py
 TS=
 (
-
+	("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*" OR "partaking" OR "Take part" OR "Representative")
+	NEAR/5
+		("public service$" OR "civil service$" OR "government service$" OR "Municipal service$" OR "Municipal Council$" OR "City Council$" OR "public sector$" OR "public utilit*")
 )
 ```
 #### Phrase 4
+This query aim to find research on inclusive judiciary, and consist of inclusive/accessible + judiciary
 
 ```py
 TS=
 (
+	("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding"
+	OR "Participat*" OR "partaking" OR "Take part" OR "Representative")
+	NEAR/5
+		("judiciar*" OR "courts" OR "court" OR "tribunal*")
 
 )
 ```
