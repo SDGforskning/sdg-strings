@@ -1235,7 +1235,7 @@ For definition of right to information, see Unesco’s information: https://www.
 It should include research about implementation and adaption of constitutional, statutory or policy guarantees for public access to information.
 Unavoidably the find (hits) will contain all sorts of topics as it is about access to information on anything, like politics, environment, health, urban planning etc, no restriction according to topic.
 
-The query consist of four phrases:
+The query consist of three phrases:
 - Public access to information
 - Killings and kidnapping of journalists
 - Fundamental freedoms for everyone
