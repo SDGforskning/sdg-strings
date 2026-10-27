@@ -248,15 +248,58 @@ https://sdg16now.org/report/target16-4/
 The query consists of 4 phrases.
 
 #### Phrase 1
+This phrase is on research on work on reducing illicit financial flows (IFF) and consist of reducing + illicit/illegal + money transfer. The query expressing research on work to improve the control with IFFs, contains strengthening + business transparency.
 
 ```py
 TS=
+
 (
+(
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*"
+	OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
+	NEAR/5
+    	(
+			(
+        	("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+        	NEAR/5
+            	("financ*" OR "money" OR "cash" OR "capital" OR "economic*" OR "currenc*" OR "transaction$" OR trade OR "commercial practic*" OR "commercial activit*")
+    		)
+			OR "Tax evasion*" OR "Duty evasion" OR "Trade misinvoic*" OR "Money laundering" OR "Tax haven$" OR " Financial haven$"
+			OR
+				(
+					("illicit*" OR "illegal*" OR "crim*" OR "unlawful*" OR "corrupt*" OR "fraud*")
+					NEAR
+						(
+							("financ*" OR "money" OR "cash" OR "capital" OR "economic*") NEAR/3 ("Transfer*")
+						)
+				)
+			OR
+				(
+					("business" OR "econom*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("manipulation$" OR "fraud$" OR "Secre*")
+				)
+		)
+	)
+				OR
+(
+					("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
+					OR "encourag*" OR "facilitat*" OR "ensure")
+					NEAR/5
+
+				
+						(
+							(
+        					("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*")
+    						)
+								OR " ownership regist*" OR "Global Financial Integrity")
+	
+)	
+				
+	
 
 )
 ```
 
-#### Phrase 1
+#### Phrase 2
 
 ```py
 TS=
