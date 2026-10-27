@@ -420,7 +420,7 @@ TS=
 		OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
 		OR
 		(("ICT" OR "cyber*" OR "internet" OR "computer*" OR "crypto*" OR "block-chain" OR "New technologies")
-		NEAR/5
+		NEAR/3
 			("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud *" OR "deception*"))
 
 )
