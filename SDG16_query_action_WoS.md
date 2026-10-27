@@ -557,9 +557,9 @@ This phrase is on research about improving the work for reducting illicit financ
 TS=
 (
 	(
-					("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
-					OR "encourag*" OR "facilitat*" OR "ensure")
-					NEAR/5
+		("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
+		OR "encourag*" OR "facilitat*" OR "ensure")
+		NEAR/5
 	)
 	(
 	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*"
@@ -601,12 +601,17 @@ TS=
 ```
 
 #### Phrase 2
-This phrase is about limiting the flow of illicit armaments, and the query contains limit + illicit + weapons. A closer proximity operator is used for illicit + arms 
+This phrase is about research on improving the work for limiting the flow of illicit armaments, and the query contains improving + limit + illicit + weapons. A closer proximity operator is used for illicit + arms 
 to avoid litterature on arms as body parts. The search has to contain illicit/illegal, to avoid the litterature on legal weaponry. As the second half of the phrase 
 is about tracing armaments, to have more control with the flow of weapons, the query consist of strengthening + tracing + weapons/weaponization.
 ```py
 TS=
 (
+
+("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
+					OR "encourag*" OR "facilitat*" OR "ensure")
+
+NEAR/5
 	(
 		("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
 		OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
