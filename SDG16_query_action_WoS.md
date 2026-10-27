@@ -551,11 +551,16 @@ https://sdg16now.org/report/target16-4/
 The query consists of 4 phrases.
 
 #### Phrase 1
-This phrase is about reducing illicit financial flows (IFF) and consist of reducing + illicit/illegal + money transfer
+This phrase is on research about improving the work for reducting illicit financial flows (IFF) and consist of improving + reducing + illicit/illegal + money transfer
 
 ```py
 TS=
 (
+	(
+					("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
+					OR "encourag*" OR "facilitat*" OR "ensure")
+					NEAR/5
+	)
 	(
 	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*"
 	OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
@@ -582,16 +587,13 @@ TS=
 		)
 	)
 				OR
-				(
-					("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
-					OR "encourag*" OR "facilitat*" OR "ensure")
-					NEAR/5
-    					(
+				
+						(
 							(
         					("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*")
     						)
 								OR " ownership regist*" OR "Global Financial Integrity")
-				)
+				
 				
 		
 )
