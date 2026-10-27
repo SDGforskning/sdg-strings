@@ -702,27 +702,32 @@ TS=
 
 ```
 #### Phrase 4
-This phrase is about organized crime. Parts of the subject will be covered by the queries in phrases 1-3 as the topics are interwoven with organized crime. 
-The query is containg weakening/reducing/controlling + criminal organisations.
+This phrase is about fighting organized crime. Parts of the subject will be covered by the queries in phrases 1-3 as the topics are interwoven with organized crime. 
+The query is searching research containg strengthening + fighting/controlling + criminal organisations. Criminal organizations are often behind cyber crime, hence the phrase includes a query covering research on this aspect as well. 
 https://www.unodc.org/unodc/en/organized-crime/intro.html
 
 ```py
 TS=
 (
-	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "curb*" OR "decreas*"
-	OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*")
-	NEAR/5
-		("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
-		NEAR/1
-			("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
-			OR "Business" OR "firm$" OR "compan*" OR "professional*")
-		OR
-		("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR "Transnational crime" OR "International crime"
-		OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
-		OR
-		(("ICT" OR "cyber*" OR "internet" OR "computer*" OR "crypto*" OR "block-chain" OR "New technologies")
+("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
+		OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
 		NEAR/5
-			("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud *" OR "deception*"))
+	(
+		("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "curb*" OR "decreas*"
+		OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*")
+		NEAR/5
+			(("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+			NEAR/1
+				("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
+				OR "Business" OR "firm$" OR "compan*" OR "professional*"))
+			OR
+				("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR "Transnational crime" OR "International crime"
+				OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
+			OR
+				(("ICT" OR "cyber*" OR "internet" OR "computer*" OR "crypto*" OR "block-chain" OR "New technologies")
+				NEAR/5
+				("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud *" OR "deception*"))
+	)
 )
 ```
 
