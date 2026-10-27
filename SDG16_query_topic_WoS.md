@@ -598,28 +598,61 @@ The query consist of three phrases:
 - Fundamental freedoms for everyone
 
 #### Phrase 1
+The query contains of search for ensuring public + access/ rights + information/news. It also contains the opposite of reducing/controlling + public + disinformation. The search is not searching public*, but public or publicly, to avoid literature on for instance publicity or publications.
 
 ```py
 TS=
 (
+(
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
+NEAR/5
+(
+(
+(("Public" OR "Publicly") NEAR/5 (("access*" OR "availab*") NEAR/5 ("information*" OR "news")))
+OR
+(("access" OR "rights" OR "right" OR "freedom$" OR "transparan*") NEAR/1 ("news" OR "documents"))
+OR
+(("ATI" OR "Access-to-information" OR "freedom of information") NEAR/5 ("law*" OR "framework$" OR "legislation$")) 
+)
+)
+)
+OR
+(
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+NEAR/5
+("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news")) OR "deepfake$" OR "incorrect information" OR "false information" OR "inaccurate information")
+)
 
 )
 ```
 #### Phrase 2
+This phrase is concerning the fact that killings and kidnappings of journalist and media personell are a threat to access to information in a society. The query consist of killings/kidnapping/imprisonment + journalists/media staff
 
 ```py
 TS=
 (
-
+	(("Killing$" OR "disappear$" OR "torture" OR "kidnapping" OR "detention" OR "imprison*" OR "custody" OR "incarceration")
+	NEAR/3
+		("journalis*" OR "media personnel" OR "media staff" OR "trade unionist$" OR "trades unionist$" OR "union member$" OR "trade unionism"
+		OR "human rights advocate$" OR "rights defender$" OR "activist$"))
 )
 ```
 #### Phrase 3
+This phrase is about protecting fundamental freedoms for everyone in a society, and the query is built on strengthening/protect + freedom/rights + information/assembly/belief
 
 ```py
 TS=
 (
-
+	(
+		(("Freedom$" OR "right$")
+		NEAR/3
+			("Information" OR "thought" OR "press" OR "opinion" OR "speech" OR "assembl*" OR "association*" OR "worship" OR "religious" OR "belief" OR "religion" OR "conscience"))
+			OR
+				"free press" OR "freedom from want" OR "freedom from fear"
+	)
 )
+
+
 ```
 
 ### Target 16.a
