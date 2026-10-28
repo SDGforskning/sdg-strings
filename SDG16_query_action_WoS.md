@@ -420,9 +420,6 @@ TS=
   		)
  	)
 )
-
->
->
 ```
 #### Phrase 2
 This phrase searches for ensuring justice for all. The basic structure is action + justice for all
