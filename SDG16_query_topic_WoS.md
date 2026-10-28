@@ -699,6 +699,8 @@ and the document itself, such as biometrics, not about having an identity. The t
 
 This query consists of one phrase searching for legal identity or birth registration
 
+```py
+TS=
 (
 	("Identity"
 	NEAR/0
@@ -711,6 +713,7 @@ This query consists of one phrase searching for legal identity or birth registra
 	)
  	OR "recognized as a person before the law"
 ) 
+```
 
 ### Target 16.10
 
