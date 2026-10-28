@@ -553,11 +553,47 @@ TS=
 > 16.6.2 Proportion of population satisfied with their last experience of public services
 
 This target is interpreted to cover research about 
+- effective, accountable and transparent institutions at all levels.
+
+Even if both public and private institutions could be included, the goal is interpreted to be about public institutions, since the two indicators point to this sector in measuring government expenditures and public services.
+"Levels" include the local, national and international levels of institutions such as parliaments, ministries, local governments, law enforcers (police), courts, ombudsman institutions, UN, EU etc. 
+The search includes both names of existing institutions and more generic terms.   
+
+This query consists of one phrase that searches for effective, accountable or transparent institutions as well as the oposite, e.g. ineffective, unaccaoutable and non-transparent. 
 
 ```py
 TS=
 (
-
+	("Effective" OR "successful*" OR "effectual" OR "functional" OR "Accountab*" OR "Responsible" OR "Liable" OR "liability" OR "Answerable" OR
+	"chargeable" OR "Reliab*" OR "Transparent" OR "transparency" OR "openness" OR "open" OR corrupt*" OR "non-transparent" OR "ineffective" OR
+	"unsuccessful*" OR "dysfunctional*" OR "Unaccountab*" OR "unresponsible" OR "Unreliab*" OR "discredit*" OR "bribe*"
+	)
+	NEAR/3
+	(
+		(
+			("global" OR "international" OR "regional" OR "transnational" OR "multilateral" OR "worldwide" OR "world wide" OR "intergovernmental" OR "public"
+			)
+			NEAR/0
+			("organization$" OR "organisation$" OR "institution$" OR "assembly" OR "forum" OR "union*" OR "alliance*" OR "agency" OR "council"
+			)
+		)
+	OR "governing body" OR "government*" OR "Budget" OR "public service$" OR "Parliament*" OR "Ministries" OR "ministry" OR "Law enforce*" OR "Police" OR
+	"Court of Law" OR "court of justice" OR "Ombudsman" OR "tribunal*" OR "UN" OR "United Nations" OR "International Criminal Court" OR
+	"European court of human rights" OR "ECHR" OR "WTO" OR "World Trade Organization" OR "UNCTAD" OR "EU" OR "European Union" OR "MERCOSUR" OR
+	"Mercado Común del Sur" OR "ASEAN" OR "Association of Southeast Asian Nations" OR "South Asian Association for Regional Cooperation" OR "SAARC" OR "NATO" OR
+	"North Atlantic Treaty Organization" OR "Shanghai Cooperation Organisation" OR "OSCE" OR "Organization for Security and Co-operation in Europe" OR
+	"African Union" OR "Economic Community of West African States" OR "OECD" OR "Organisation for Economic Co-operation and Development" OR "World Bank" OR
+	"International Monetary Fund" OR "Asian Infrastructure Investment Bank" OR "Development Bank of Latin America" OR "ECB" OR "European Central Bank" OR
+	"African development bank" OR "Asian development bank" OR "Organization of American States" OR "League of Arab States" OR "Arab League" OR "ITU" OR
+	"UNESCO" OR "UNIDO" OR "Universal Postal Union" OR "UPU" OR "World Health Organization" OR "World Intellectual Property Organization" OR "WIPO" OR
+	"World Meteorological Organization" OR "WMO" OR "WBG" OR "International Atomic Energy Agency" OR "IAEA" OR "International Organization for Migration" OR
+	"IOM" OR "International Seabed Authority" OR "ISA" OR "International Tribunal for the Law of the Sea" OR "ITLOS" OR
+	"Organisation for the Prohibition of Chemical Weapons" OR "OPCW" OR "Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization" OR
+	"CTBTO" OR "ICC" OR "International Trade Centre" OR "ITC" OR "UNDP" OR "UNEP" OR "UNFPA" OR "UNCDF" OR "UNV" OR "UN-Habitat" OR "UNHABITAT" OR "UNICEF" OR
+	"World Food Programme" OR "WFP" OR "UNHCR" OR "UNOPS" OR "UNRWA" OR "UN Women" OR "UNWOMEN" OR "Office for the Coordination of Humanitarian Affairs" OR
+	"OCHA" OR "UNAIDS" OR "UNU" OR "UNITAR" OR "UNIDIR" OR "UNSSC" OR "Food and Agriculture Organization" OR "FAO" OR "International Civil Aviation Organization" OR
+	"ICAO" OR "International Fund for Agricultural Development" OR "IFAD" OR "International Maritime Organization" OR "IMO" OR "International Telecommunication Union"
+	)
 )
 ```
 
