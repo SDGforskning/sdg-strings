@@ -1316,12 +1316,10 @@ This target is interpreted to cover research about strengthening national instit
 Relevant national institutions are for example courts of law, intelligence and investigative institutions, police, child protection and social services. 
 
 This target has a complex structure and including all the elements in the search yield a low number of results. Perhaps the last element of each of the search phrases: preventing and combating crime and terrorism should be left out.
-The query consist for three phrases.
+The query consist of three phrases.
 
 #### Phrase 1
 This phrase searches for research about strengthening and building capacity in legal, investigative and security sector to prevent and fight crime and terrorism. The basic structure is: strengthen + legal sector + preventing/fighting crime and terror.
-
-
 ```py
 TS=
 (
@@ -1373,7 +1371,7 @@ TS=
 
 ```
 #### Phrase 3
-This phrase searches for research about strengthening and building capacity in legal, investigative and security sector to prevent and fight crime and terrorism. The basic structure is: strengthen + institutions that work with rehabilitation of criminals + preventing/fighting crime and terror.
+This phrase searches for research about strengthening and building capacity in criminal rehabilitation to prevent and fight crime and terrorism. The basic structure is: strengthen + rehabilitation of criminals + preventing/fighting crime and terror.
 ```py
 TS=
 (
