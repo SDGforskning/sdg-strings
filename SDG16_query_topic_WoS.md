@@ -848,22 +848,143 @@ TS=
 
 )
 ```
-
 ### Target 16.8
 
 > **16.8 Broaden and strengthen the participation of developing countries in the institutions of global governance**
->
+
 > 16.8.1 Proportion of members and voting rights of developing countries in international organizations
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about broadening and strengthening the participation of developing countries in institutions of global governance. 
+>
+Global governance is understood as the regulation of interdependent relations between independent nations. 
+>
+Institutions of global governance included are for instance UN, WTO, WHO, IMF, ICJ.
+>
+Definition of global governance:
+Global governance encompasses the totality of institutions, policies, norms, procedures and initiatives through which States and their citizens try to bring more predictability, stability and order to their responses to transnational challenges. (United Nations Committee for Development Policy. (2014). Global governance and global rules for development in the post-2015 era: Policy note (ST/DESA(02)/G57. United Nations. https://www.un.org/en/development/desa/policy/cdp/cdp_publications/2014cdppolicynote.pdf)
+>
+This target consists of 3 phrases. 
+#### Phrase 1 
+This phrase searches for research on developing countries participation in international organizations where specific names of organizations is not mentioned. The basic structure is: participation + global organizations + developing countries.
 
 ```py
 TS=
 (
-
+	(
+		(
+			("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
+				OR "seat*" OR "vote$" OR "decision making" OR "membership*" OR "member$" )
+					 NEAR/5
+			("develop* countr*" OR  "least developed countr*" OR "least developed nation$"
+			OR "developing countr*" OR "developing nation$" OR "developing states" OR 
+			"developing world" OR "less developed countr*" OR "less developed nation$" OR 
+			"under developed countr*" OR "under developed nation$" OR "underdeveloped countr*"
+			OR "underdeveloped nation$"  OR underserved countr*" OR "underserved nation$" OR
+			"deprived countr*" OR "deprived nation$"  OR "middle income countr*" OR
+			"middle income nation$" OR "low income countr*" OR "low income nation$" OR
+			"lower income countr*" OR "lower income nation$" OR "poor countr*" OR
+			"poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics"
+			OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*"
+			OR "emerging economies" OR "emerging nation$")
+		)
+			NEAR/5 
+						(
+							("global" OR "international" OR "regional" OR "transnational"
+							OR "multilateral" OR "worldwide" OR "world wide" OR "intergovernmental")
+								NEAR/1
+							("organization*" OR "organisation" OR "NGO" OR "institution*"
+							OR "treaty" OR "governing body" OR "government" OR "assembly"
+							OR "forum" OR "union*" OR "alliance*" OR "agency" OR "council"
+							OR "board*" OR "corporation" OR "court*" OR "tribunal*")
+						)
+	)
 )
 ```
-
+#### Phrase 2
+This phrase searches for research on the participation of developing countries in UN organizations.  All UN organizations are mentioned, but those containing "United Nations" can be omitted as they are already included in "United Nations" as a stand-alone search term. The abbreviation WHO is not included to avoid noise from the pronoun who. The basic structure is: participation + developing countries + UN organizations.
+```py
+TS=
+(
+			(
+				("participat*" OR "representat*" OR "voice*" OR "voting right*"
+				OR "quota" OR "seat*" OR "vote$" OR "decision making" OR
+				"membership*" OR "member$" )
+				NEAR/5
+				("develop* countr*" OR  "least developed countr*" OR
+				"least developed nation$" OR "developing countr*" OR
+				"developing nation$" OR "developing states" OR "developing world"
+				OR "less developed countr*" OR "less developed nation$" OR
+				"under developed countr*" OR "under developed nation$" OR
+				"underdeveloped countr*" OR "underdeveloped nation$"
+				OR "underserved countr*" OR "underserved nation$" OR
+				"deprived countr*" OR "deprived nation$"  OR "middle income countr*"
+				OR "middle income nation$" OR "low income countr*" OR "low income nation$"
+				OR "lower income countr*" OR "lower income nation$" OR "poor countr*"
+				OR "poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR
+				"lmics" OR "third world" OR "global south" OR "lami countr*" OR
+				"transitional countr*" OR "emerging economies" OR "emerging nation$")
+			)
+				NEAR/5
+					("United Nations" OR "UN" OR "United Nations Development Programme" OR "UNDP"
+					OR "United Nations Environment Programme" OR "UNEP" OR "United Nations Population Fund"
+					OR "UNFPA" OR "United Nations Capital Development Fund" OR "UNCDF" OR "United Nations Volunteers"
+					OR "UNV" OR "United Nations Human Settlements Programme" OR "UN-Habitat" OR
+					"UNHABITAT" OR "United Nations Children's Fund" OR "UNICEF" OR "World Food Programme" OR
+					"WFP" OR "United Nations Conference on Trade and Development" OR "UNCTAD" OR
+					"Office of the United Nations High Commissioner for Refugees" OR "UNHCR" OR
+					"United Nations Office for Project Services" OR "UNOPS" OR
+					"United Nations Relief and Works Agency for Palestine Refugees in the Near East" OR
+					"UNRWA" OR "United Nations Entity for Gender Equality and the Empowerment of Women" OR
+					"UN Women" OR "UNWOMEN" OR "Office for the Coordination of Humanitarian Affairs" OR "OCHA"
+					OR "Joint United Nations Programme on HIV/AIDS" OR "UNAIDS" OR "United Nations University"
+					OR "UNU" OR "United Nations Institute for Training and Research" OR "UNITAR" OR
+					"United Nations Institute for Disarmament Research" OR "UNIDIR" OR "United Nations System Staff College"
+					OR "UNSSC" OR "Food and Agriculture Organization" OR "FAO" OR "International Civil Aviation Organization"
+					OR "ICAO" OR "International Fund for Agricultural Development" OR "IFAD" OR "International Labour Organization"
+					OR "ILO" OR "International Monetary Fund" OR "IMF" OR "International Maritime Organization" OR "IMO" OR
+					"International Telecommunication Union" OR "ITU" OR "United Nations Educational, Scientific and Cultural Organization"
+					OR "UNESCO" OR "United Nations Industrial Development Organization" OR "UNIDO" OR
+					"Universal Postal Union" OR "UPU" OR "World Health Organization" OR "World Intellectual Property Organization"
+					OR "WIPO" OR "World Meteorological Organization" OR "WMO" OR "World Bank" OR "World Bank Group"
+					OR "WBG" OR "International Atomic Energy Agency" OR "IAEA" OR "International Organization for Migration"
+					OR "IOM" OR "International Seabed Authority" OR "ISA" OR "International Tribunal for the Law of the Sea"
+					OR "ITLOS" OR "Organisation for the Prohibition of Chemical Weapons" OR "OPCW" OR
+					"Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization" OR "CTBTO"
+					OR "United Nations Counter-Terrorism Implementation Task Force")
+)
+```
+#### Phrase 3
+This phrase searches for research on strengthening the participation of developing countries in specific, named non-United Nations organizations of relevance to developing countries. The basic structure is: participation + developing countries + specific organizations.
+```py
+TS=
+(
+		(
+			("participat*" OR "representat*" OR "voice*" OR "voting right*" OR "quota"
+			OR "seat*" OR "vote$" OR "decision making" OR "membership*" OR "member$")
+			NEAR/5
+			("develop* countr*" OR  "least developed countr*" OR "least developed nation$"
+			OR "developing countr*" OR "developing nation$" OR "developing states" OR
+			"developing world" OR "less developed countr*" OR "less developed nation$"
+			OR "under developed countr*" OR "under developed nation$" OR "underdeveloped countr*"
+			OR "underdeveloped nation$"  OR "underserved countr*" OR "underserved nation$" OR
+			"deprived countr*" OR "deprived nation$"  OR "middle income countr*" OR
+			"middle income nation$" OR "low income countr*" OR "low income nation$"
+			OR "lower income countr*" OR "lower income nation$" OR "poor countr*" OR
+			"poor nation$" OR "poorer countr*" OR "poorer nation$" OR "lmic" OR "lmics"
+			OR "third world" OR "global south" OR "lami countr*" OR "transitional countr*"
+			OR "emerging economies" OR "emerging nation$")
+		)
+					NEAR/5
+					("MERCOSUR" OR "Mercado Común del Sur" OR "ASEAN" OR
+					"Association of Southeast Asian Nations" OR "Shanghai Cooperation Organisation" OR
+					"OSCE" OR "Organization for Security and Co-operation in Europe" OR "African Union"
+					OR "Economic Community of West African States" OR "OECD" OR
+					"Organisation for Economic Co-operation and Development" OR "World Bank"
+					OR "International Monetary Fund" OR "Asian Infrastructure Investment Bank" OR
+					"Development Bank of Latin America" OR "African development bank" OR "Asian development bank"
+					OR "Organization of American States" OR "League of Arab States" OR "Arab League" OR "SAARC")
+)
+```
 ### Target 16.9
 
 > **16.9 By 2030, provide legal identity for all, including birth registration**
@@ -986,19 +1107,87 @@ TS=
 
 ### Target 16.a
 
+### Target 16.a
+
 > **16.a Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime**
 >
 > 16.a.1 Existence of independent national human rights institutions in compliance with the Paris Principles
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about strengthening national institutions to prevent violence and combat terrorism and crime, including through international cooperation.
 
+Relevant national institutions are for example courts of law, intelligence and investigative institutions, police, child protection and social services. 
+
+This target has a complex structure and including all the elements in the search yield a low number of results. Perhaps the last element of each of the search phrases: preventing and combating crime and terrorism should be left out.
+The query consist of three phrases.
+
+#### Phrase 1
+This phrase searches for research about legal, investigative and security sector to prevent and fight crime and terrorism. The basic structure is: legal sector + preventing/fighting crime and terror.
 ```py
 TS=
 (
-
+("polic*" OR "justice" OR "court* of law" OR "legal" OR "judicial" OR
+"judiciary" OR "counter terrorism" OR  "counterterrorism" OR "investigat*"
+	OR
+	(
+	("intelligence" OR "security")
+	NEAR/1
+	("agenc*" OR "organi$ation*" OR "service*")
+	)
+)
+	NEAR/5
+	(
+		("prevent*" OR "combat*" OR "decreas*" OR "reduc*" OR "limit$" OR 
+		"limiting" OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering" OR
+		"lower$" OR "lowered" OR "fight*" OR "combat*")
+		NEAR/2
+		("crime" OR "criminal act*" OR "terror*" OR "violence"
+		OR "violent")
+	)
 )
 ```
-
+#### Phrase 2
+This phrase searches for research about child protection, family welfare and social service institutions to prevent and fight crime and terrorism. The basic structure is: social service institutions + preventing/fighting crime and terror.
+```py
+TS=
+(
+		("child protection services" OR "child welfare services" OR "social services"
+		OR "street level bureaucra*" OR	"family protection" OR
+		"family counselling" OR "family welfare office*")
+		NEAR/15
+		(
+			("prevent*" OR "combat*" OR "decreas*" OR "reduc*"	OR "limit$" 
+			OR "limiting" OR "mitigat*" OR "tackl*" OR "alleviat*" OR "lowering"
+			OR "lower$" OR "lowered" OR "fight*" OR "combat*")
+			NEAR/2
+			("crime" OR "criminal act*" OR "terror*" OR "violence" OR "violent")
+		)
+)
+```
+#### Phrase 3
+This phrase searches for research about criminal rehabilitation to prevent and fight crime and terrorism. The basic structure is: rehabilitation of criminals + preventing/fighting crime and terror.
+```py
+TS=
+((
+		(
+		("offender*" OR "prisoner*" OR "criminal*")
+		NEAR/2
+		("rehabilitation" OR "reintegration" OR "reentry" OR
+		"re-entry" OR "return")
+		)
+		OR "correctional services" OR "correctional facilit*"
+		OR "prison"
+	)
+	NEAR/15
+	(
+		("prevent*" OR "combat*" OR "decreas*" OR "reduc*"
+		OR "limit$" OR "limiting" OR "mitigat*" OR "tackl*"
+		OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+		OR "fight*" OR "combat*")
+		NEAR/2
+		("crime" OR "criminal act*" OR "terror*" OR "violence"
+		OR "violent")
+	)
+)
 ### Target 16.b
 
 > **16.b Promote and enforce non-discriminatory laws and policies for sustainable development**
