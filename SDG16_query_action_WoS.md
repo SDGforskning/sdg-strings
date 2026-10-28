@@ -1412,7 +1412,7 @@ Definition of discrimination from https://unstats.un.org/sdgs/metadata/files/Met
 This query consists of two phrases.
 
 #### Phrase 1
-This phrase searches for the promotion of non-discriminator laws. The basic structure is action (positive) + non-discriminatory laws
+This phrase searches for the promotion of non-discriminatory laws. The basic structure is action (positive) + non-discriminatory laws
 
 ```py
 TS=
