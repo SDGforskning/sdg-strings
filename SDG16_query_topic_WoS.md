@@ -1048,14 +1048,10 @@ The query consist of three phrases:
 - Fundamental freedoms for everyone
 
 #### Phrase 1
-The query contains of search for ensuring public + access/ rights + information/news. It also contains the opposite of reducing/controlling + public + disinformation. The search is not searching public*, but public or publicly, to avoid literature on for instance publicity or publications.
+The query contains of search for public + access/ rights + information/news. It also contains the opposite on willed disinformation. The queries is not searching public*, but public or publicly, to avoid literature on for instance publicity or publications.
 
 ```py
 TS=
-(
-(
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
-NEAR/5
 (
 (
 (("Public" OR "Publicly") NEAR/5 (("access*" OR "availab*") NEAR/5 ("information*" OR "news")))
@@ -1064,15 +1060,9 @@ OR
 OR
 (("ATI" OR "Access-to-information" OR "freedom of information") NEAR/5 ("law*" OR "framework$" OR "legislation$")) 
 )
-)
-)
 OR
-(
-("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
-NEAR/5
-("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news")) OR "deepfake$" OR "incorrect information" OR "false information" OR "inaccurate information")
-)
-
+("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news"))
+OR "deepfake$" OR "incorrect information" OR "false information" OR "inaccurate information")
 )
 ```
 #### Phrase 2
