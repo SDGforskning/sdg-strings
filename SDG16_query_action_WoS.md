@@ -961,39 +961,55 @@ Decision-making institutions are here understood as legislature, public service 
 Minority groups, including political minorities, or according to sex, sexual orientation, disability, age, ethnicity, religion, etc., that are underrepresented or unrepresented in decision-making institutions, are not explicitly named in the search string. The theory is that they will anyhow be retrieved by the query asking for responsive, inclusive, participatory and representative decision-making institutions. This also avoid the risk that a few unmentioned groups are not covered by the query.
 
 The target is divided in 4 phrases:
--	Governance, on national and local level
--	The legislatures
--	The public service
--	The judiciary
+-	Ensuring inclusive governance, on national and local level
+-	Ensuring inclusive legislatures
+-	Ensuring inclusive public service
+-	Ensuring inclusive judiciary
   
 #### Phrase 1
 This query consist of accommodate/develope + inclusive/accessible + governance/government
 ```py
 TS=
 (
-(
-("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
-NEAR/5
-(("Inclusiv*" OR "Accessibl*" OR "Diversit*" OR "Responsiv*" OR "Receptiv*" OR "Participat*" OR "partake*" OR "Take part" OR "Representative") NEAR/5 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority" OR "directorate" OR "ministry" OR "department" OR "governing bod*"))
-)
-OR
-(
-("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "resist*")
-NEAR/5
-(("Exclusi*" OR "exclude*" OR inaccessible OR "Unresponsive" ) NEAR/5 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority"))
-)
+	(
+		("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap"
+		OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*"
+		OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
+		NEAR/5
+			(("Inclusiv*" OR "Accessibl*" OR "Diversit*" OR "Responsiv*" OR "Receptiv*" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
+			NEAR/5
+				("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority" OR "directorate" OR "ministry" OR "department" OR "governing bod*"))
+	)
+	OR
+		(
+			("decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+			OR "fight*" OR "combat*" OR "abate$" OR "abating" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "remov*" OR "eliminat*" OR "eradicat*"
+			OR "avoid*" OR "prevent*" OR "combat*" OR "resist*")
+			NEAR/5
+				(
+					("Exclusi*" OR "exclude*" OR inaccessible OR "Unresponsive" )
+					NEAR/5
+						("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority"))
+		)
 )
 ```
 #### Phrase 2
-This query consist of accommodate/develope + inclusive/accessible + the legislatures. Parts of the debate on the topic is about avoiding that majority groups exclude minorities, but as exclusive rights some times are used to benefit in particular earlier discriminated groups of people, this is not part of the search. 
+This query consist of accommodate/develope + inclusive/accessible + the legislatures. Parts of the debate on the topic is about research on avoiding that minorities are excluded, but as exclusive rights some times are used to benefit particular and previously discriminated groups of people, this is not part of the search. 
 ```py
 TS=
 (
-(
-("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
-NEAR/5
-(("Inclusive" OR "Accessible" OR "Diversit*" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Participat*" OR "partake*" OR "Take part" OR "Representative") NEAR/5  ("Legislature" OR ("Legislative" NEAR/3 ("bod*" OR "assembl*" OR "Council$")) OR "Legislation$" OR "Congress" OR "Parliament$" OR "National Assembl*" OR "Senate" OR "House of Representatives" OR "House of Commons") )
-)
+	(
+		("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap"
+		OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "boost*"
+		OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
+		NEAR/5
+			(
+				("Inclusive" OR "Accessible" OR "Diversit*" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
+				 NEAR/5
+					("Legislature" OR ("Legislative" NEAR/3 ("bod*" OR "assembl*" OR "Council$")) OR "Legislation$" OR "Congress" OR "Parliament$" OR "National Assembl*"
+					OR "Senate" OR "House of Representatives" OR "House of Commons")
+			)
+	)
 )
 ```
 
@@ -1002,9 +1018,16 @@ This query consist of accommodate/develope + inclusive/accessible + public servi
 ```py
 TS=
 (
-("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
-NEAR/10
-(("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*" OR "partaking" OR "Take part" OR "Representative") NEAR/5  ("public service$" OR "civil service$" OR "government service$" OR "Municipal service$" OR "Municipal Council$" OR "City Council$" OR "public sector" OR "public utilit*"))
+	("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route"
+	OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*"
+	OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
+	NEAR/10
+		(
+			("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*"
+			OR "partaking" OR "Take part" OR "Representative")
+			NEAR/5
+				("public service$" OR "civil service$" OR "government service$" OR "Municipal service$" OR "Municipal Council$" OR "City Council$" OR "public sector" OR "public utilit*")
+		)
 )
 ```
 
@@ -1013,10 +1036,16 @@ This query consist of accommodate/develope + inclusive/accessible + judiciary
 ```py
 TS=
 (
-("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route" OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
-NEAR/5
-(("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*" OR "partaking" OR "Take part" OR "Representative") NEAR/5 ("judiciar*" OR "courts" OR "court" OR "tribunal*"))
-
+	("establish*" OR "propose*" OR "implement*" OR "introduc*" OR "build*" OR "develop" OR "development" OR "provid*" OR "pathway$" OR "path$" OR "route"
+	OR "roadmap" OR "towards" OR "way to" OR "increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "develop" OR "developing" OR "encourag*"
+	OR "facilitat*" OR "promot*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "Accomodat*")
+	NEAR/5
+		(
+			("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*"
+			OR "partaking" OR "Take part" OR "Representative")
+			NEAR/5
+				("judiciar*" OR "courts" OR "court" OR "tribunal*")
+		)
 )
 ```
 
