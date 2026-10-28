@@ -404,7 +404,6 @@ Justice for all is defined as fair, transparent, effective, non-discriminatory a
 
 This query consists of 6 phrases.
 
-```
 #### Phrase 1
 This phrase searches for promoting the rule of law. The basic structure is action + rule of law
 
