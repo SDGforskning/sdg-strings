@@ -752,43 +752,53 @@ Decision-making institutions are here understood as legislature, public service 
 
 Minority groups, including political minorities, or according to sex, sexual orientation, disability, age, ethnicity, religion, etc., that are underrepresented or unrepresented in decision-making institutions, are not explicitly named in the search string. The theory is that they will anyhow be retrieved by the query asking for responsive, inclusive, participatory and representative decision-making institutions. This also avoid the risk that a few unmentioned groups are not covered by the query.
 
-The target is divided in 4 phrases:
+The target is divided in 4 phrases concerning responsive, inclusive, participatory and representative decision-making at these levels:
 -	Governance, on national and local level
 -	The legislatures
 -	The public service
 -	The judiciary
   
 #### Phrase 1
-This query consist of search for research on (accommodate/develope +) inclusive/accessible + governance/government
+This query consist of search for research on inclusive/accessible + governance/government
 
 ```py
 TS=
 (
-(("Inclusiv*" OR "Accessibl*" OR "Diversit*" OR "Responsiv*" OR "Receptiv*" OR "Participat*" OR "partake*" OR "Take part" OR "Representative") NEAR/3 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority" OR "directorate" OR "ministry" OR "department" OR "governing bod*"))
-OR
-(("Exclusi*" OR "exclude*" OR inaccessible OR "Unresponsive" ) NEAR/3 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority"))
+	(
+		("Inclusiv*" OR "Accessibl*" OR "Diversit*" OR "Responsiv*" OR "Receptiv*" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
+		NEAR/3
+			("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority" OR "directorate" OR "ministry"
+			OR "department" OR "governing bod*")
+	)
+	OR
+		(
+			("Exclusi*" OR "exclude*" OR inaccessible OR "Unresponsive" )
+				NEAR/3 ("Governance" OR "Government" OR "Cabinet" OR "administration" OR "political power" OR "authority")
+		)
 )
 ```
 #### Phrase 2
-This query consist of research on inclusive/accessible + the legislatures. Parts of the debate on the topic is about avoiding that majority groups exclude minorities, but as exclusive rights some times are used to benefit in particular earlier discriminated groups of people, this is not part of the search.
+This query consist of research on inclusive/accessible + the legislatures. Parts of the debate on the topic is about research onthe exclution of minorities, but as exclusive rights some times are used to benefit in particular earlier discriminated groups of people, search on exclusion is not part of the search.
 
 ```py
 TS=
 (
-	(("Inclusive" OR "Accessible" OR "Diversit*" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
-	NEAR/5
-		("Legislature" OR ("Legislative" NEAR/3 ("bod*" OR "assembl*" OR "Council$")) OR "Legislation$" OR "Congress" OR "Parliament$" OR "National Assembl*"
-		OR "Senate" OR "House of Representatives" OR "House of Commons")) 
+	(
+		("Inclusive" OR "Accessible" OR "Diversit*" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Participat*" OR "partake*" OR "Take part" OR "Representative")
+		NEAR/5
+			("Legislature" OR ("Legislative" NEAR/3 ("bod*" OR "assembl*" OR "Council$"))
+			OR "Legislation$" OR "Congress" OR "Parliament$" OR "National Assembl*"	OR "Senate" OR "House of Representatives" OR "House of Commons")
+	) 
 )
 ```
 #### Phrase 3
 This phrase consist of query concerning research on inclusive/accessible + public service
 
-
 ```py
 TS=
 (
-	("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*" OR "partaking" OR "Take part" OR "Representative")
+	("Inclusive" OR "Accessible" OR "Diverse" OR "Responsive" OR "Unresponsive" OR "Receptive" OR "Exclusive" OR "excluding" OR "Participat*"
+	OR "partaking" OR "Take part" OR "Representative")
 	NEAR/5
 		("public service$" OR "civil service$" OR "government service$" OR "Municipal service$" OR "Municipal Council$" OR "City Council$" OR "public sector$" OR "public utilit*")
 )
