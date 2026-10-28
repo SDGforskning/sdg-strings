@@ -554,17 +554,13 @@ https://sdg16now.org/report/target16-4/
 The query consists of 4 phrases.
 
 #### Phrase 1
-This phrase is on research about improving the work for reducting illicit financial flows (IFF) and consist of improving + reducing + illicit/illegal + money transfer
+This phrase is on research about reducing illicit financial flows (IFF) and consist of  reducing + illicit/illegal + money transfer
 
 ```py
 TS=
 (
-	(
-		("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
-		OR "encourag*" OR "facilitat*" OR "ensure")
-		NEAR/5
-	)
-	(
+(	
+	
 	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*"
 	OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
 	NEAR/5
@@ -590,14 +586,11 @@ TS=
 		)
 	)
 				OR
-				
+					(
 						(
-							(
         					("business" OR "economic*" OR "financial" OR "marked" OR "corporate") NEAR/1 ("transparen*")
-    						)
-								OR " ownership regist*" OR "Global Financial Integrity")
-				
-				
+						)
+						OR " ownership regist*" OR "Global Financial Integrity")			
 		
 )
 
@@ -610,20 +603,13 @@ is about tracing armaments, to have more control with the flow of weapons, the q
 ```py
 TS=
 (
-
-("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*" OR "develop" OR "developing"
-					OR "encourag*" OR "facilitat*" OR "ensure")
-
-NEAR/5
-	(
-		("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
-		OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
-		OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
-		NEAR/5
-    		("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
-    		NEAR/5
-        	("armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$"
-			OR "artiller*") 
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*"
+	OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited"
+	OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*" OR "curb*")
+	NEAR/5
+    	("Illicit" OR "illegal*" OR "crim*" or "unlawful*" OR "diversion" OR "diverted" OR "privately manufactured")
+    	NEAR/5
+        	("armament$" OR "firearm$" OR "weapon*" OR "ammunition$" OR "munition$" OR "gun$" OR "handgun$" OR "artiller*") 
 			OR
     			("arms"
 				NEAR/0
@@ -636,7 +622,7 @@ NEAR/5
             			("arms" OR "armament$" OR "firearm$" OR "weapon$" OR "weaponry" OR "ammunition$" OR "munition$"
 						OR "gun$" OR "handgun$" OR "artiller*")
     			)
-		)
+		
 				OR
 					(
 						("increas*" OR "strengthen*" OR "improv*" OR "better" OR "more efficient*" OR "more effectiv*"
@@ -712,17 +698,13 @@ https://www.unodc.org/unodc/en/organized-crime/intro.html
 ```py
 TS=
 (
-("increas*" OR "strengthen*" OR "improv*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "upgrad*" OR "scal* up"
-		OR "build* capacity" OR "capacity building" OR "capacity development" OR "develop" OR "developing" OR "encourag*" OR "facilitat*")
-		NEAR/5
-	(
-		("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "curb*" OR "decreas*"
-		OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*")
-		NEAR/5
-			(("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
-			NEAR/1
-				("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
-				OR "Business" OR "firm$" OR "compan*" OR "professional*"))
+	("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "curb*" OR "decreas*"
+	OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" OR "fight*" OR "abate$" OR "abating" OR "diminish*")
+	NEAR/5
+		(("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud*")
+		NEAR/1
+			("Organi*" OR "underworld$" OR "syndicate$" OR "enterprise$" OR "cartel$" OR "network$" OR "group$" OR "triad$"
+			OR "Business" OR "firm$" OR "compan*" OR "professional*"))
 			OR
 				("mafia$" OR "mafioso" OR "gangster$" OR "gang$" OR "Transnational crime" OR "International crime"
 				OR "global crime" OR "Global Organized Crime Index" OR "Global Financial Integrity" OR "Trade-Based Money Laundering")
@@ -730,7 +712,7 @@ TS=
 				(("ICT" OR "cyber*" OR "internet" OR "computer*" OR "crypto*" OR "block-chain" OR "New technologies")
 				NEAR/5
 				("illicit*" OR "illegal*" OR "crim*" or "unlawful*" OR "corrupt*" OR "fraud *" OR "deception*"))
-	)
+	
 )
 ```
 
