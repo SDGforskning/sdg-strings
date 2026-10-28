@@ -641,21 +641,87 @@ TS=
 
 ### Target 16.5
 
-> **16.5 Substantially reduce corruption and bribery in all their forms**
+>> **16.5 Substantially reduce corruption and bribery in all their forms**
 >
 > 16.5.1 Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months
 >
 > 16.5.2 Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months
-
-This query consists of X phrases.
-
+>
+This target is interpreted to cover research about 
+- fighting and reducing corruption
+- fighting and reducing bribery 
+>
+The United Nations Convention against Corruption (UnCAC) focuses on identifying specific acts of corruption and refrains from giving a definition. The specific acts mentioned are: bribery, embezzlement, trading in influence, abuse for functions, illicit enrichment, laundering of proceeds of crime and concealment and obstruction of justice [of the above mentioned crimes]. Both public and private sectors are covered by the UNCAC. (United Nations. (2003). United Nations Convention Against Corruption. Treaty Series, 2349, 41)
+For practical purposes this definition of corruption is used: abuse of entrusted power for private gain or abuse of public office for private gain. Bribery is the offer or exchange of money, services or other valuables to influence the judgement or conduct of a person in a position of entrusted power. (https://www.u4.no/terms) Christian Michelsen Institute, Anti Corruption Center U4. 
+>
+This query consists of 6 phrases.
+#### Phrase 1
+This phrase searches for research about bribery or corruption expressed by using the general definition stated above. The basic structure is: abuse of entrusted power + private gain.
 ```py
 TS=
 (
+	(
+		("Abus*" OR "misus*" OR "violat*" OR "exploit*" OR "illicit" OR "illegitimate")
+		NEAR/2
+		("entrusted power" OR "public office*" OR "duty")
+	)
+	NEAR/2
+	("private gain*" OR "profit*" OR "winnings" OR "monetary" OR "enrichment"
+	OR "benefit*" OR "pay*")
 
 )
 ```
-
+#### Phrase 2
+This phrase searches for various activities, situations and phenomenon often associated with corruption and bribery. To avoid noise from research where corruption is not the context, corrupt* is searched within a proximity of maximum 15 words. Bribery is not added because it is searched as a stand-alone term in phrase 4. The basic structure is: corrupt + possible context for corruption.
+```py
+TS=
+(
+	(corrupt*)
+	 NEAR/15
+	("embezzle*" OR "fraud" OR "money laundering" OR "extortion" OR "sextortion" OR "clientelism"
+	OR "nepotism" OR "public procurement" OR "kickback*")
+)
+```
+#### Phrase 3
+This phrase searches for research where the term corrupt is used in the sense that is relevant to this SDG target. Due to the term's polysemy it can not be used as a stand-alone search term. The basic structure is:  corrupt acts.
+```py
+TS=
+(
+		("Corrupt*")
+		NEAR/2
+		("act*" OR "risk*" OR "behavior*" OR "behaviour*" OR "conduct*" OR "practice*" OR "bureaucra*" OR "officer*")
+)
+```
+#### Phrase 4
+This phrase searches for research about bribery. The basic structure is: bribery.
+```py
+TS=
+(
+"bribe*" OR "trading in influence" OR "buying influence" OR "selling influence" OR "informal payment*"
+OR "grease payment*" OR "grease money" OR "extra-legal payment*" OR "illegal payment*" OR "money under the counter"
+OR "money under the table" OR "pay* under the counter" OR "pay* under the table" OR "facilitation pay*"
+)
+```
+#### Phrase 5
+This phrase searches for research about corrupt illicit actions affecting democratic functioning. The basic structure is: electoral fraud.
+```py
+TS=
+(
+"election fraud*" OR "electoral fraud" OR "electoral corruption" OR "corrupt election*" OR "buying vote*" OR
+"delivering vote*" OR "voter fraud*" OR "ballot fraud*" OR "political corruption*" OR "political fraud*" OR "political bribe*"
+)
+```
+#### Phrase 6
+This phrase searches for research about anti-corruption. In addition to "anti-corruption", promoting and ensuring transparency and electoral integrity is covered. The phrase consists of this element only.
+```py
+TS=
+(
+	"Anti-corruption" OR "anticorruption” OR "anti-bribery" OR "antibribery" OR "Promoting accountability"
+	OR "promoting transparency" OR "transparent procurement*" OR "counter-corruption" OR
+	"promote electoral integrity" OR "ensure electoral integrity" OR "promote election integrity"
+	OR "ensure election integrity" OR "promoting the integrity of election*"
+)
+```
 ### Target 16.6
 
 > **16.6 Develop effective, accountable and transparent institutions at all levels**
