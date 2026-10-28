@@ -692,14 +692,25 @@ TS=
 >
 > 16.9.1 Proportion of children under 5 years of age whose births have been registered with a civil authority, by age
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about legal identity and birth registration. A legal identity includes name, sex, place and date of birth and nationality.
 
-```py
-TS=
+The term "passport" is not included in the search as the results mostly include research about different kinds of passports 
+and the document itself, such as biometrics, not about having an identity. The term "National ID" describes mostly ID-systems and is also not included.
+
+This query consists of one phrase searching for legal identity or birth registration
+
 (
-
-)
-```
+	("Identity"
+	NEAR/0
+	("legal" OR "paper$" OR "certificate$" OR "credential$" OR "card$")
+	)
+	OR
+	("birth"
+	NEAR/1
+	("certificate$" OR "credential$" OR "registrat*" OR "register$")
+	)
+ 	OR "recognized as a person before the law"
+) 
 
 ### Target 16.10
 
