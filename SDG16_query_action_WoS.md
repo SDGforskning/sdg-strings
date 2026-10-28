@@ -230,7 +230,7 @@ United Nations Children’s Fund, International Classification of
 Violence against Children, UNICEF, New York, 2023. p13.  Available here: https://data.unicef.org/resources/international-classification-of-violence-against-children/
 See also article 19 in the UN Convention on the Right of the Child. https://www.unicef.org/child-rights-convention. 
 
-The complete query consists of 6 phrases. The action element of all phrases is identical containing verbs meaning reducing and ending, in addition two opposites, growth and increase is included.
+The complete query consists of 7 phrases. The action element of all phrases is identical containing verbs meaning reducing and ending, in addition two opposites, growth and increase is included.
 
 #### Phrase 1
 This phrase searches for research about reducing and ending abuse and maltreatment of children.
@@ -348,7 +348,7 @@ TS=
 )
 ```
 #### Phrase 6
-This phrase searches for research about reducing brutal violence against children not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
+This phrase searches for research about reducing murder and brutal violence against children not covered by the term violence. The basic structure is ending/reducing + brutal violence + children.
 ```py
 TS=
 (
