@@ -827,17 +827,26 @@ TS=
 This target is interpreted to cover research about 
 •	non-discriminatory laws and non-discriminatory policies in all areas and in all aspects of sustainable development 
 
-"Sustainable development" is not a part of the search as it is considered implicit that all goals are about obtaining sustainable development. Further, this target is a so called “Means of implementation” target and is therefore foundational to realization of all targets under SDG16. 
+"Sustainable development" is not a part of the search as it is considered implicit that all goals are about obtaining sustainable development. Further, this target is a so called "Means of implementation" target and is therefore foundational to realization of all targets under SDG16. 
 Definition of discrimination from https://unstats.un.org/sdgs/metadata/files/Metadata-16-0b-01.pdf. "Discrimination is any distinction, exclusion, restriction or preference or other differential treatment that is directly or indirectly based on prohibited grounds of discrimination, and which has the intention or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life."
 
-This query consists of two phrases.
+This query consists of one phrase with the basic structure non-discriminatory OR discriminatory + laws OR policies.
+
 ```py
 TS=
 (
+	(
+		("equal" OR "equally" OR "equalit*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "egalitar*" OR
+		"equity" OR "fairness" OR "discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma*" OR
+		"ableis*" OR  "unequal*" OR "exclusion" OR "exclude$" OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$"
+		)
+		NEAR/3
+		("law$" OR "policy" OR "policies" OR "legal*" OR "legislat*" OR "judicial" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR
+		"strateg*" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "principle$")
+	)
 
 )
 ```
-
 
 ## 4. Contributions
 
