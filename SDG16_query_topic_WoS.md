@@ -559,7 +559,7 @@ Even if both public and private institutions could be included, the goal is inte
 "Levels" include the local, national and international levels of institutions such as parliaments, ministries, local governments, law enforcers (police), courts, ombudsman institutions, UN, EU etc. 
 The search includes both names of existing institutions and more generic terms.   
 
-This query consists of one phrase that searches for effective, accountable or transparent institutions as well as the oposite, e.g. ineffective, unaccaoutable and non-transparent. 
+This query consists of one phrase that searches for effective, accountable or transparent institutions as well as the oposite, e.g. ineffective, unaccaoutable and non-transparent institutions. 
 
 ```py
 TS=
