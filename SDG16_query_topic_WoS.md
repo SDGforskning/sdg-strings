@@ -220,21 +220,110 @@ This target is interpreted to cover research about
 
 This includes:
 - reporting of physical, psychological and sexual violence to competent authorities
-reducing the share of unsentenced prisoners and pretrial detention
-ensuring proper prison conditions, including proper health care, safety, enough food and space (overcrowding)
-rehabilitation and social reintegration of convicted/sentenced criminals
-accessing formal or informal dispute resolution mechanisms as a way of solving disputes.
-For the United Nations (UN) system, the rule of law is a principle of governance in which all persons, institutions and entities, public and private, including the State itself, are accountable to laws that are publicly promulgated, equally enforced and independently adjudicated, and which are consistent with international human rights norms and standards. It requires measures to ensure adherence to the principles of supremacy of the law, equality before the law, accountability to the law, fairness in the application of the law, separation of powers, participation in decision-making, legal certainty, avoidance of arbitrariness, and procedural and legal transparency. https://www.un.org/ruleoflaw/what-is-the-rule-of-law/ Justice for all is defined as fair, transparent, effective, non-discriminatory and accountable justice services for all people. https://www.un.org/ruleoflaw/thematic-areas/justice-2/
+- unsentenced prisoners and pretrial detention
+- prison conditions, including health care, safety, food and space (overcrowding)
+- rehabilitation and social reintegration of convicted/sentenced criminals
+- formal or informal dispute resolution mechanisms as a way of solving disputes
+- 
+For the United Nations (UN) system, the rule of law is a principle of governance in which all persons, institutions and entities, public and private, including the State itself, are accountable to laws that are publicly promulgated, equally enforced and independently adjudicated, and which are consistent with international human rights norms and standards. It requires measures to ensure adherence to the principles of supremacy of the law, equality before the law, accountability to the law, fairness in the application of the law, separation of powers, participation in decision-making, legal certainty, avoidance of arbitrariness, and procedural and legal transparency. https://www.un.org/ruleoflaw/what-is-the-rule-of-law/
+Justice for all is defined as fair, transparent, effective, non-discriminatory and accountable justice services for all people. https://www.un.org/ruleoflaw/thematic-areas/justice-2/
 
 This query consists of 6 phrases.
+
+#### Phrase 1
+This phrase searches for the rule of law.
 
 ```py
 TS=
 (
-
+	("law" OR "legal*")
+	NEAR/1
+	("rule" OR "supremacy" OR "equal*" OR "accountab*" OR "fair*" OR "certainty" OR "transparent" OR "transparency" OR "independen*" OR
+  	("avoid*" NEAR/1 "arbitrar*") OR ("participat*" NEAR/1 "decision-making") OR "separation of power*"
+	)
 )
 ```
+#### Phrase 2
+This phrase searches for justice for all.In addition to the search for the term "justice for all", the phrase also searches for variations of a fair, non-discriminatory etc. justice system. 
 
+```py
+TS=
+(
+  	"justice for all" OR 
+	(
+		("Justice" OR "judicial system*" OR "legal system*")
+		NEAR/2
+		("fair*" OR "transparent" OR "effective" OR "non-discriminatory" OR "discriminat*" OR "accountable" OR "equal*" OR "access*")
+	)
+ )
+```
+#### Phrase 3
+This phrase searches for pretrial detention, including variations of imprisonment without sentence.
+
+```py
+TS=
+(
+	("unsentence*" OR "without sentence" OR "without sentencing" OR "without conviction" OR "pretrial")
+  	NEAR/1
+  	("imprisonment" OR "prison" OR "detention" OR "incarcerat*" OR "custody" OR "remand*")
+)
+```
+#### Phrase 4
+This phrase searches for prison conditions and (or) prison overcrowding.
+
+```py
+TS=
+(
+	(
+   		("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "remand*" OR "custody")
+   		NEAR/1
+   		("condition$" OR "food" OR "space" OR "health*" OR "medical")
+  	)
+	OR
+ 	(
+  		("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "alleviat*")
+  		NEAR/5
+  		(
+   			("imprisonment" OR "prison*" OR "detention" OR "incarcerat*" OR "inmate$" OR "custody" OR "remand*")
+			NEAR/1 "overcrowd*"
+		)
+  	)
+)
+```
+#### Phrase 5 
+This phrase seraches for the rehabilitation of prisoners. 
+
+```py
+TS=
+(
+	("rehabilitat*" OR "reintegrat*")
+	NEAR/1
+	("imprisonment" OR "prison*" OR "criminal$" OR "inmate$" OR "incarcerat*")
+)
+```
+#### Phrase 6 
+This phrase searches for the reporting of violence and disputes to competent authorities and (or) the use of a formal or informal dispute resolution mechanism. 
+
+```py
+TS=
+(
+	(
+		(
+   			("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence")
+  			NEAR/1
+   			("solve" OR "solving" OR "resolve" OR "resolving" OR "work out" OR "interpret*" OR "resolution" OR "report")
+		)
+	NEAR/3
+   		("Court*" OR "mechanism*" OR "process*" OR "method*" OR "committee*" OR "law*" OR "legal*" OR "justice" OR
+		"judicial system*" OR "council$" OR "ombudsman" OR "tribunal$")
+	)
+	OR
+  	(
+   		("dispute*" OR "conflict*" OR "argument*" OR "disagree*" OR "feud*" OR "violence")
+		NEAR/1 "mediat*"
+	)
+)
+```
 ### Target 16.4
 
 > **16.4 By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime**
