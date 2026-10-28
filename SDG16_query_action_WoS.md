@@ -248,7 +248,8 @@ TS=
 		 	"maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
 			NEAR/5
 				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
- 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR 							"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+ 				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+				OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
 	) 
 )
@@ -260,25 +261,29 @@ To avoid large amounts of noise from alcohol, substance and drug misuse, the ter
 ```py
 TS=
 (
-	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 		"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*" 
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*"
+	OR "eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		NEAR/5
 			(
-				("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*" OR "illegal 					adoption$" OR "exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r" OR 					"bonded labo$r" OR "forced criminality" OR "forced crime" OR “forced begging”)
+				("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*" OR
+				"illegal adoption$" OR "exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r"
+				OR "bonded labo$r" OR "forced criminality" OR "forced crime" OR “forced begging”)
 			 	NEAR/5
 				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
-				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR 							"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+				"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR
+				"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 			)
 )
 ```
-
 #### Phrase 3
-This phrase searches for research about the reduction and ending of violence, brutality and bullying against children in a physical sense. The basic structure is: ending + violence + children
+This phrase searches for research about reducing and ending violence, brutality and bullying against children in a physical sense. The basic structure is: ending + violence + children
 ```py
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 			"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR
+	"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
  		NEAR/5
 			(
 				("violence" OR "violent" OR "brutality" OR "brutal treatment" OR "physical punishment"
@@ -297,12 +302,13 @@ This phrase searches for research about reducing and ending sexual violence agai
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 		"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	 OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 
+	"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 		 NEAR/5
 			(
 				("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
 			 	OR "sexual harassment" OR "sexual aggression" OR "sexual grooming" OR "sexual extortion"
-			OR
+				OR
 					(
 						("non-consensual" OR "forced" OR "coerced" OR "unsolicited" OR "unwanted")
 							NEAR/1
@@ -323,7 +329,8 @@ This phrase searches for research about reducing and ending psychological and em
 TS=
 (
 	("decreas*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "mitigat*"
-	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR 			"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
+	OR "fight*" OR "combat*" OR "diminish*" OR "stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR
+	"eradicat*" OR "prevent*" OR "protect*” OR "safeguard" OR "keep safe from" OR "increase*" OR "grow*")
 			NEAR/5
 			(
 				(
@@ -331,7 +338,7 @@ TS=
 							NEAR/3
 					("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
 					OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
-					OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR 							"humiliating")
+					OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
 				)
 				 NEAR/5
 						("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
