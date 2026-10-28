@@ -839,13 +839,14 @@ This query consists of one phrase with the basic structure non-discriminatory OR
 TS=
 (
 	(
-		("equal" OR "equally" OR "equalit*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" OR "inclusi*" OR "egalitar*" OR
-		"equity" OR "fairness" OR "discriminat*" OR "inequalit*" OR "harass*" OR "racis*" OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma*" OR
-		"ableis*" OR  "unequal*" OR "exclusion" OR "exclude$" OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$"
+		("equal" OR "equally" OR "equalit*" OR "anti discriminat*" OR "antidiscriminat*" OR "non-discriminat*" OR
+		"inclusi*" OR "egalitar*" OR "equity" OR "fairness" OR "discriminat*" OR "inequalit*" OR "harass*" OR "racis*"
+		OR "sexis*" OR "xenophob*" OR "homophob*" OR "transphob*" OR "stigma*" OR "ableis*" OR  "unequal*" OR "exclusion"
+		OR "exclude$" OR "bias" OR "bias$ed" OR "obstacle$" OR "barrier$"
 		)
 		NEAR/3
-		("law$" OR "policy" OR "policies" OR "legal*" OR "legislat*" OR "judicial" OR "judiciary" OR "agreement$" OR "treaty" OR "treaties" OR
-		"strateg*" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "principle$")
+		("law$" OR "policy" OR "policies" OR "legal*" OR "legislat*" OR "judicial" OR "judiciary" OR "agreement$" OR
+		"treaty" OR "treaties" OR "strateg*" OR "governance" OR "rule" OR "rules" OR "procedur*" OR "principle$")
 	)
 
 )
