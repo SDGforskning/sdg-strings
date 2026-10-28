@@ -195,15 +195,127 @@ TS=
 >
 > 16.2.3 Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18
 
-This target is interpreted to cover research about 
+This target is interpreted to cover research about: 
+- ending and reducing abuse and maltreatment of children 
+- ending and reducing trafficking and exploitation of children  
+- ending and reducing all forms of violence against and torture of children 
+
+All forms of violence is interpreted to include physical, psychological and sexual violence.
+Definition violence against children: “Violence against children refers to any deliberate, unwanted and non-essential act, threatened or actual, against a child or against multiple children that results in or has a high likelihood of resulting in death, injury or other forms of physical and psychological suffering.” 
+United Nations Children’s Fund, International Classification of
+Violence against Children, UNICEF, New York, 2023. p13.  Available here: https://data.unicef.org/resources/international-classification-of-violence-against-children/
+See also article 19 in the UN Convention on the Right of the Child. https://www.unicef.org/child-rights-convention. 
+
+The complete query consists of 7 phrases.
+
+#### Phrase 1
+This phrase searches for research abuse and maltreatment of children.
+The term abuse is used in phrases to avoid noise from “substance abuse”. This results in “double” searching, e.g. child is included in both "child abuse" and in the second part of the topic-search, child*. The basic structure is abuse or maltreatment + children
 
 ```py
 TS=
 (
+	("child abuse" OR "sexual abuse" OR "physical abuse" OR "emotional abuse" OR "psychological abuse" OR
+	"maltreatment" OR "neglect" OR "negligence" OR "ill-treatment")
+			NEAR/5
+	("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+ 	"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+	OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+)
 
+```
+#### Phrase 2 
+This phrase searches for research about exploitation and trafficking of children. The basic structure is exploiting + children.
+To avoid large amounts of noise from alcohol, substance and drug misuse, the term "misuse" is not included among the search terms.
+```py
+TS=
+(
+	("trafficking" OR "abduction" OR "child marriage" OR "forced marriage" OR "child soldier*" OR
+	"illegal adoption$" OR "exploitation" OR "exploiting" OR "enslavement" OR "forced work*" OR "forced labo$r"
+	OR "bonded labo$r" OR "forced criminality" OR "forced crime" OR “forced begging”)
+ 	NEAR/5
+	("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR
+	"schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR
+	"preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
 )
 ```
-
+#### Phrase 3
+This phrase searches for research about violence, brutality and bullying against children in a physical sense. The basic structure is: violence + children
+```py
+TS=
+(
+	("violence" OR "violent" OR "brutality" OR "brutal treatment" OR "physical punishment"
+	OR "corporal punishment" OR "physical aggression" OR "verbal aggression" OR "bullying" OR
+	"beating" OR "physical fighting" OR "physical assault")
+	NEAR/5
+	("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
+	OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+	OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+)
+```
+#### Phrase 4
+This phrase searches for research about sexual violence against children. The first parenthesis in the last part of the phrase, which requires some kind for force might be considered unnecessary. All sexual contact between children and adults is illegal and unwanted. But to cover unwanted sexual contact between children/minors, and to avoid the inclusion of consensual sexual contact between peers, it is included. The basic structure is: sexual violence + children
+```py
+TS=
+(
+				("sexual slavery" OR "child prostitution" OR "child pornography" OR "sexual assault"
+			 	OR "sexual harassment" OR "sexual aggression" OR "sexual grooming" OR "sexual extortion"
+				OR
+					(
+						("non-consensual" OR "forced" OR "coerced" OR "unsolicited" OR "unwanted")
+							NEAR/1
+						("sexual contact" OR "sexual act$" OR "sexual activit*" OR "sexual intercourse")
+					)
+				)
+				 NEAR/5
+				("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids"
+				OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence"
+				OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+)
+```
+#### Phrase 5
+This phrase searches for research about psychological and emotional violence, that is not covered by the terms violence or maltreatment, against children. The basic structure is: emotional violence + children.
+```py
+TS=
+(	(
+		("repeat*" OR "frequent*" OR "constant*" or "systematic*")
+		NEAR/3
+		("Ridicule" OR "ridiculing" OR "denigration" OR "threat*" OR "intimidation" OR "intimidate"
+		OR "intimidating" OR "rejection" OR "rejecting" OR "reject" OR "insulting" OR "insult" OR "ignoring"
+		OR "ignore" OR "scaring" OR "scare" OR "hostility" OR "hostile treatment" OR "humiliation" OR "humiliating")
+	)
+	 NEAR/5
+	("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
+	OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" OR "teen*" OR "preteen$"
+	OR "underage" OR "youth$" OR "juvenile$")
+)
+```
+#### Phrase 6
+This phrase searches for research about murder and brutal violence against children not covered by the term violence. The basic structure is brutal violence + children.
+```py
+TS=
+(
+	("homicide*" OR "killing*" OR "murder*" OR "shooting*" OR "rape*" OR "torture"
+	OR "genital mutilation" OR "FGM" OR "clitoridectomy" OR "excision" OR "infibulation")
+	NEAR/5
+	("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid"
+	OR "kids" OR "schoolchild*" OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$"
+	OR "adolescence" OR "preadolescen*" OR "teen*" OR "preteen$" OR "underage" OR "youth$" OR "juvenile$")
+)
+```
+#### Phrase 7
+This phrase searches for research about online violence against children. The basic structure is: online violence + children.
+```py
+TS=
+(
+		("cyberbullying" OR "online bullying" OR "digital bullying" OR "cyber abuse" OR "cyberabuse" OR "online abuse"
+		OR "digital abuse" OR "cyber-grooming" OR "online grooming")
+		NEAR/5
+		("child*" OR "newborn$" OR "infant$" OR "baby" OR "babies" OR "toddler$" OR "kid" OR "kids" OR "schoolchild*"
+		OR "boy" OR "boys" OR "girl" OR "girls" OR "adolescent$" OR "adolescence" OR "preadolescen*" OR "teen*"
+		OR "preteen$" OR "underage" OR "youth$" OR juvenile$)
+)
+```
 ### Target 16.3
 
 > **16.3 Promote the rule of law at the national and international levels and ensure equal access to justice for all**
