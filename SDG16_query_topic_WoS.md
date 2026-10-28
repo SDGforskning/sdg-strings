@@ -565,7 +565,7 @@ This query consists of one phrase that searches for effective, accountable or tr
 TS=
 (
 	("Effective" OR "successful*" OR "effectual" OR "functional" OR "Accountab*" OR "Responsible" OR "Liable" OR "liability" OR "Answerable" OR
-	"chargeable" OR "Reliab*" OR "Transparent" OR "transparency" OR "openness" OR "open" OR corrupt*" OR "non-transparent" OR "ineffective" OR
+	"chargeable" OR "Reliab*" OR "Transparent" OR "transparency" OR "openness" OR "open" OR "corrupt*" OR "non-transparent" OR "ineffective" OR
 	"unsuccessful*" OR "dysfunctional*" OR "Unaccountab*" OR "unresponsible" OR "Unreliab*" OR "discredit*" OR "bribe*"
 	)
 	NEAR/3
