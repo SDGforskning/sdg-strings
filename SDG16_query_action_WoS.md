@@ -1251,9 +1251,9 @@ It should include research about implementation and adaption of constitutional, 
 Unavoidably the find (hits) will contain all sorts of topics as it is about access to information on anything, like politics, environment, health, urban planning etc, no restriction according to topic.
 
 The query consist of three phrases:
-- Public access to information
-- Killings and kidnapping of journalists
-- Fundamental freedoms for everyone
+- Ensure public access to information
+- Prevent disapperance of journalists, trade unionist etc.
+- Ensure fundamental freedoms for everyone
 
 #### Phrase 1
 The query contains of search for strengthening + public + access/ rights + information/news. It also contains the opposite of reducing/controlling + public + disinformation. 
@@ -1285,7 +1285,7 @@ NEAR/5
 )
 ```
 #### Phrase 2
-This phrase is concerning the fact that killings and kidnappings of journalist and media personell are a threat to access to information in a society. The query consist of Stopping/abolishing + killings/kidnapping/imprisonment + journalists/media staff 
+This phrase is concerning research about killings and kidnappings of journalist and media personell. This is connected to phrase one as it is a threat to public access to information adn fundamental fredoms in phrase 3.  The query consist of Stopping/abolishing + killings/kidnapping/imprisonment + journalists/trade unionist
 ```py
 TS=
 (
