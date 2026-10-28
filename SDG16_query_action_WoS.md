@@ -827,7 +827,7 @@ TS=
 )
 ```
 #### Phrase 5
-This phrase searches for research about fighting and reducing corrupt illicit actions connected with democratic functioning. The basic structure is: reduce/fight + electoral fraud.
+This phrase searches for research about fighting and reducing corrupt illicit actions affecting democratic functioning. The basic structure is: reduce/fight + electoral fraud.
 ```py
 TS=
 (
