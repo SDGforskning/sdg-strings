@@ -578,16 +578,16 @@ TS =
 
 ### Works mentioning the SDG
 
-This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym.
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym. Including "economic growth" produces some noise, but also a few relevant results.
 
 ```py
 TS=
-("SDG 8" OR "SDGs 8" OR "SDG8" OR "sustainable development goal$ 8"
+("SDG 8" OR "SDGs 8" OR "SDG8" OR "SDG 08" OR "SDGs 08" OR "SDG08" OR "sustainable development goal$ 8"
 OR ("sustainable development goal$" AND "goal 8")
 OR
   (
     ("sustainable development goal$" OR "SDG$" OR "goal 8")
-    AND ("economic growth" OR "decent work")
+    NEAR/5 ("economic growth" OR "decent work")
   )
 )
 NOT 
