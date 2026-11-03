@@ -504,7 +504,7 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about promoting safe and secure working environments. The general structure is *action + safety + working environments*
+This phrase is about promoting safe and secure working environments. The general structure is *action + safety + working environments*. The acronym 'OHS' for Occupational Health and Safety produces noise when not combined with workplace-related terms.
 
 ```py
 TS=
@@ -514,16 +514,15 @@ TS=
 	OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "grow*"
 	)
 	NEAR/5
-	(
-		("occupational health and safety" OR "occupational health" OR "occupational safety" OR "OHS")   
+	(("occupational health and safety" OR "occupational health" OR "occupational safety")   
 		OR
-			(("safe" OR "secure" OR "safety" OR "health" OR "well-being" OR "protect*" OR "ergonom*"
+			(("safe" OR "secure" OR "safety" OR "OHS" OR "health" OR "well-being" OR "protect*" OR "ergonom*"
 			OR (("injur*" OR "accident*" OR "risk$" OR "disease*" OR "hazard*") NEAR/5 ("prevent*" OR "minim*" OR "remov*" OR "free" OR "avoid*" OR "mitigat*" OR "reduc*"))
 			)
-    		)
-	)
-	NEAR/10
-		("work* environment*" OR "work* conditions" OR "work place$" OR "workplace$" OR "occupational")
+	        NEAR/10
+		    ("work* environment*" OR "work* conditions" OR "work place$" OR "workplace$" OR "occupational")
+            )
+    )
 )
 ```
 
