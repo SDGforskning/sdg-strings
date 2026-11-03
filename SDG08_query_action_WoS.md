@@ -98,7 +98,7 @@ TS=
     OR "TFP" OR "output per worker" OR "resource efficiency"
   )
   NEAR/15
-  ("diversif*" OR "technolog*" OR "innovat*" OR "entrepreneurship")
+  ("diversif*" OR "technolog*" OR "innovat*" OR "entrepreneur*" OR "automat*")
 )
 ```
 
@@ -133,7 +133,7 @@ TS=
       NEAR/10
       (
         ("productive" OR "decent") NEAR/3 ("activity" OR "activities" OR "job$" OR "work" OR "labo$r")
-        OR "entrepreneurship" OR "job creation" OR "innovat*" OR "creativ*"
+        OR "entrepreneur*" OR "job creation" OR "innovat*" OR "creativ*"
       )
     )
 )
@@ -465,10 +465,10 @@ TS=
   ("stop*" OR "end" OR "ends" OR  "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "halt*" OR "resist*" OR "prohibit*" OR "ban" OR "banned" OR "banning"
   )
   NEAR/15
-      ("forced labo$r" OR "forced work" OR "slavery" OR "slave labo$r" OR "slave work*"
-      OR (("human" OR "labo$r" OR "sex") NEAR/3 "trafficking")
-      OR "child labo$r" OR "child employment" OR "child street labo$r" OR "child agricultural labo$r" OR "child factory labo$r"
-      OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 "soldier$"
+      ("forced labo$r*" OR "forced work*" OR "slavery" OR "slave labo$r*" OR "slave work*"
+      OR (("human" OR "labo$r*" OR "sex") NEAR/3 "trafficking")
+      OR "child labo$r*" OR "child employment" OR "child street labo$r*" OR "child agricultural labo$r*" OR "child factory labo$r*"
+      OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 ("soldier$" OR "combatant*")
       ) 
 )
 )
@@ -523,7 +523,7 @@ TS=
     		)
 	)
 	NEAR/10
-		("work environment*" OR "work conditions" OR "work place$" OR "occupational")
+		("work* environment*" OR "work* conditions" OR "work place$" OR "workplace$" OR "occupational")
 )
 ```
 
