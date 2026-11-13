@@ -1275,7 +1275,11 @@ The search is not searching public*, but public or publicly, to avoid literature
 TS=
 (
 (
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up"
+OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*"
+OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*"
+OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure"
+OR "attain*" OR "achiev*")
 NEAR/5
 (
 (
@@ -1289,20 +1293,28 @@ OR
 )
 OR
 (
-("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*"
+OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
 NEAR/5
-("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news")) OR "deepfake$" OR "incorrect information" OR "false information" OR "inaccurate information")
+("disinfor*" OR "misinform*" OR (("fake" OR "misleadning*") NEAR/3 ("information$" OR "news")) OR "deepfake$" OR "incorrect information"
+OR "false information" OR "inaccurate information")
 )
 )
 ```
 #### Phrase 2
-This phrase is concerning research about killings and kidnappings of journalist and media personell. This is connected to phrase one as it is a threat to public access to information adn fundamental fredoms in phrase 3.  The query consist of Stopping/abolishing + killings/kidnapping/imprisonment + journalists/trade unionist
+This phrase is concerning research about killings and kidnappings of journalist and media personell. This is connected to phrase one as it is a threat to public access to information 
+and fundamental fredoms in phrase 3.  The query consist of Stopping/abolishing + killings/kidnapping/imprisonment + journalists/trade unionist
 ```py
 TS=
 (
-("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*" OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered" OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
+("stop*" OR "end" OR "ends" OR "ended" OR "ending" OR "eliminat*" OR "eradicat*" OR "avoid*" OR "prevent*" OR "combat*" OR "decreas*"
+OR "minimi*" OR "reduc*" OR "restrict*" OR "limit$" OR "limiting" OR "limited" OR "tackl*" OR "alleviat*" OR "lowering" OR "lower$" OR "lowered"
+OR "fight*" OR "combat*" OR "declin*" OR "abate$" OR "abating" OR "diminish*")
 NEAR/5
-(("Killing$" OR "disappear$" OR "torture" OR "kidnapping" OR "detention" OR "imprison*" OR "custody" OR "incarceration") NEAR/3 ("journalis*" OR "media personnel" OR "media staff" OR "trade unionist$" OR "trades unionist$" OR "union member$" OR "trade unionism" OR "human rights advocate$" OR "rights defender$" OR "activist$"))
+(("Killing$" OR "disappear$" OR "torture" OR "kidnapping" OR "detention" OR "imprison*" OR "custody" OR "incarceration")
+NEAR/3 ("journalis*" OR "media personnel" OR "media staff" OR "trade unionist$" OR "trades unionist$" OR "union member$" OR "trade unionism"
+OR "human rights advocate$" OR "rights defender$" OR "activist$"))
 )
 ```
 #### Phrase 3
@@ -1310,9 +1322,14 @@ This phrase is about protecting fundamental freedoms for everyone in a society, 
 ```py
 TS=
 (
-("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up" OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*" OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*" OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining" OR "ensure" OR "attain*" OR "achiev*")
+("increas*" OR "strengthen*" OR "improv*" OR "restor*" OR "enhanc*" OR "better" OR "more efficient*" OR "more effectiv*" OR "higher" OR "upgrad*" OR "scal* up"
+OR "build*" OR "expand" OR "expansion*" OR "accelerat*" OR "advance" OR "advancing" OR "develop" OR "developing" OR "encourag*" OR "facilitat*" OR "promot*"
+OR "raise" OR "raising" OR "raised" OR "foster*" OR "boost*" OR "ensure" OR "attain*" OR "achiev*" OR "maintain*" OR "preserv*" OR "establish*" OR "implement*"
+OR "plan" OR "plans" OR "planned" OR "planning" OR "adopt*" OR "introduc*" OR "develop" OR "development" OR "provid*" OR "sustain$" OR "sustaining"
+OR "ensure" OR "attain*" OR "achiev*")
 NEAR/5
-((("Freedom$" OR "right$") NEAR/3 ("Information" OR "thought" OR "press" OR "opinion" OR "speech" OR "assembl*" OR "association*" OR "worship" OR "religious" OR "belief" OR "religion" OR "conscience")) OR "free press" OR "freedom from want" OR "freedom from fear")
+((("Freedom$" OR "right$") NEAR/3 ("Information" OR "thought" OR "press" OR "opinion" OR "speech" OR "assembl*" OR "association*" OR "worship"
+OR "religious" OR "belief" OR "religion" OR "conscience")) OR "free press" OR "freedom from want" OR "freedom from fear")
 )
 ```
 
