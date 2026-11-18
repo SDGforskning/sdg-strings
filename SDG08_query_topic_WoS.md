@@ -583,10 +583,10 @@ This phrase finds research which mentions this SDG. We include this as we consid
 ```py
 TS=
 ("SDG 8" OR "SDGs 8" OR "SDG8" OR "SDG 08" OR "SDGs 08" OR "SDG08" OR "sustainable development goal$ 8"
-OR ("sustainable development goal$" AND "goal 8")
+OR ("sustainable development goal$" AND ("goal$ 8" OR "8th goal"))
 OR
   (
-    ("sustainable development goal$" OR "SDG$" OR "goal 8")
+    ("sustainable development goal$" OR "SDG$" OR "goal$ 8")
     NEAR/5 ("economic growth" OR "decent work")
   )
 )
@@ -595,14 +595,14 @@ NOT
   OR "secoisolariciresinol diglucoside"
   OR "SD-stearic acid"
   OR "SD-HPMC"
-  OR "short-duration grazing (SDG)"
-  OR "short-duration group (SDG)"
-  OR "set domain group (SDG)"
-  OR "spleen-derived growth factor (SDG)"
-  OR "steel design guide series (SDG)"
-  OR "steel design guide (SDG)"
-  OR "spray-dried gelatin (SDG)"
-  OR "single-display groupware (SDG)"
+  OR "short-duration grazing"
+  OR "short-duration group"
+  OR "set domain group"
+  OR "spleen-derived growth factor"
+  OR "steel design guide series"
+  OR "steel design guide"
+  OR "spray-dried gelatin"
+  OR "single-display groupware"
   )
 ```
 
