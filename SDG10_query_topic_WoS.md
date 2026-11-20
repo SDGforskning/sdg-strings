@@ -276,7 +276,7 @@ This query consists of 1 phrase. The basic structure is *regulation + financial 
 ```py
 TS=
 (
- ("manage$" OR "managing" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR
+ ("manage" OR "managing" OR "control*" OR "regulat*" OR "legislat*" OR "govern$"  OR "governance" OR "monitor*" OR
  "surveillanc*" OR "secure$" OR "securing" OR "assess*" OR "examin*" OR "evaluat*" OR "reform*"  OR "supervis*" OR
  "validat*" OR "mandat*" OR "report*" OR "oversight*" OR "ensurance" OR "financial soundness indicator*"
  )
