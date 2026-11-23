@@ -70,7 +70,7 @@ TS=
     OR "TFP" OR "output per worker" OR "resource efficiency"
   )
   NEAR/15
-  ("diversif*" OR "technolog*" OR "innovat*" OR "entrepreneurship")
+  ("diversif*" OR "technolog*" OR "innovat*" OR "entrepreneur*" OR "automat*")
 )
 ```
 
@@ -99,7 +99,7 @@ TS=
 	NEAR/10
 	(
     	("productive" OR "decent") NEAR/3 ("activity" OR "activities" OR "job$" OR "work" OR "labo$r")
-        OR "entrepreneurship" OR "job creation" OR "innovat*" OR "creativ*"
+        OR "entrepreneur*" OR "job creation" OR "innovat*" OR "creativ*"
 	)
 )
 ```
@@ -369,10 +369,12 @@ This phrase is about forced labour, slavery and human trafficking, and child lab
 ```py
 TS=
 (
-      ("forced labo$r" OR "forced work" OR "slavery" OR "slave labo$r" OR "slave work*" OR "human trafficking" OR "labo$r trafficking" OR "child labo$r" 
-      OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 "soldier$"
-      ) 
-)
+      ("forced labo$r*" OR "forced work*" OR "slavery" OR "slave labo$r*" OR "slave work*"
+      OR (("human" OR "labo$r*" OR "sex") NEAR/3 "trafficking")
+      OR "child labo$r*" OR "child employment" OR "child street labo$r*" OR "child agricultural labo$r*" OR "child factory labo$r*"
+      OR (("child" OR "boy" OR "girl" OR "underage" OR "juvenile") NEAR/3 ("soldier$" OR "combatant*")
+         ) 
+      )
 )
 ```
 
@@ -404,21 +406,19 @@ TS=
 
 #### Phrase 2 
 
-This phrase is about safe and secure working environments. The general structure is *safety + working environments*
+This phrase is about safe and secure working environments. The general structure is *safety + working environments*. The acronym 'OHS' for Occupational Health and Safety produces noise when not combined with workplace-related terms. 
 
 ```py
 TS=
 (
-	(
-		("occupational health and safety" OR "occupational health" OR "occupational safety" OR "OHS")   
+	("occupational health and safety" OR "occupational health" OR "occupational safety")   
 		OR
-			(("safe" OR "secure" OR "safety" OR "health" OR "well-being" OR "protect*" OR "ergonom*"
+			(("safe" OR "secure" OR "safety" OR "OHS" OR "health" OR "well-being" OR "protect*" OR "ergonom*"
 			OR (("injur*" OR "accident*" OR "risk$" OR "disease*" OR "hazard*") NEAR/5 ("prevent*" OR "minim*" OR "remov*" OR "free" OR "avoid*" OR "mitigat*" OR "reduc*"))
 			)
-    		)
-	)
-	NEAR/10
-		("work environment*" OR "work conditions" OR "work place$" OR "occupational")
+	        NEAR/10
+		    ("work* environment*" OR "work* conditions" OR "work place$" OR "workplace$" OR "occupational")
+            )
 )
 ```
 
@@ -576,6 +576,35 @@ TS =
 )
 ```
 
+### Works mentioning the SDG
+
+This phrase finds research which mentions this SDG. We include this as we consider works mentioning the SDG as relevant, and want to ensure they are found. It includes terms for the goal, and excludes specialist terms that may use the `SDG` acronym. Including "economic growth" produces some noise, but also a few relevant results.
+
+```py
+TS=
+("SDG 8" OR "SDGs 8" OR "SDG8" OR "SDG 08" OR "SDGs 08" OR "SDG08" OR "sustainable development goal$ 8"
+OR ("sustainable development goal$" AND ("goal$ 8" OR "8th goal"))
+OR
+  (
+    ("sustainable development goal$" OR "SDG$" OR "goal$ 8")
+    NEAR/5 ("economic growth" OR "decent work")
+  )
+)
+NOT 
+  TS=("secoisolariciresinol diglycoside"
+  OR "secoisolariciresinol diglucoside"
+  OR "SD-stearic acid"
+  OR "SD-HPMC"
+  OR "short-duration grazing"
+  OR "short-duration group"
+  OR "set domain group"
+  OR "spleen-derived growth factor"
+  OR "steel design guide series"
+  OR "steel design guide"
+  OR "spray-dried gelatin"
+  OR "single-display groupware"
+  )
+```
 
 ## 4. Contributions
 
